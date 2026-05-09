@@ -1,0 +1,100 @@
+.main {
+  padding: 40px 0 80px 0;
+}
+
+.pageTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.cardWrapper {
+  display: block;
+}
+
+.card {
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-width: 3px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 196, 204, 0.2);
+  border-color: var(--secondary-color);
+}
+
+.imageBox {
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 16px;
+}
+
+.cardContent {
+  padding: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.regionTag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  background: rgba(0, 196, 204, 0.1);
+  padding: 6px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.rallyTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.rallyDesc {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-top: 2px dashed #EAEAEA;
+  padding-top: 16px;
+  color: var(--secondary-color);
+}

@@ -1,0 +1,35 @@
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 40px 20px;
+}
+
+.heroBox {
+  max-width: 600px;
+  text-align: center;
+  padding: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
