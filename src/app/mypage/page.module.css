@@ -29,8 +29,21 @@
 
 .menuList {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.menuList::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .menuList {
+    flex-direction: column;
+    overflow-x: visible;
+  }
 }
 
 .menuItem {
@@ -46,9 +59,17 @@
   opacity: 0.7;
   border: none;
   background: transparent;
-  width: 100%;
+  width: auto;
   text-align: left;
+  white-space: nowrap;
+  flex-shrink: 0;
   font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .menuItem {
+    width: 100%;
+  }
 }
 
 .menuItem:hover {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import { AuthProvider } from '@/context/AuthContext'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning>
       <body className={inter.className}>
         <AuthProvider>
-          {children}
+          <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+            {children}
+          </div>
+          <Footer />
         </AuthProvider>
       </body>
     </html>

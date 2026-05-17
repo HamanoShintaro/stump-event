@@ -1,136 +1,112 @@
-"use client";
-
-import { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { mockRallies } from "@/data/mock";
-import { useAcquiredStamps } from "@/hooks/useAcquiredStamps";
+import { supabase } from "../../../lib/supabase";
+import HeaderNav from "@/components/HeaderNav";
 import styles from "./page.module.css";
+import { JoinRallyButton, SpotButton } from "./ClientRallyButtons";
+import { getRallyStats } from "@/utils/rallyStats";
+import { Footprints, Star } from "lucide-react";
 
-export default function RallyDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = use(params);
-  const rally = mockRallies.find(r => r.id === resolvedParams.id);
-  const { hasStamp, isLoaded } = useAcquiredStamps();
+export const revalidate = 0; // 常に最新データを取得
 
-  if (!rally) return notFound();
+export default async function RallyDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  
+  // 1. ラリー本体のデータを取得
+  const { data: rally, error: rallyError } = await supabase
+    .from("rallies")
+    .select("*")
+    .eq("id", resolvedParams.id)
+    .single();
+
+  if (rallyError || !rally) {
+    return notFound();
+  }
+
+  // 2. ラリーに紐づくスポット一覧を取得
+  const { data: spots, error: spotsError } = await supabase
+    .from("spots")
+    .select("*")
+    .eq("rally_id", rally.id)
+    .order("order_index", { ascending: true });
+
+  const spotsList = spots || [];
 
   return (
     <div className="container">
       <header>
-        <Link href="/rallies" className={"btn-primary " + styles.backBtn}>
-          ← 戻る
+        <Link href="/" className={"btn-primary " + styles.backBtn}>
+          ← トップへ戻る
         </Link>
+        <HeaderNav />
       </header>
 
       <main className={styles.main}>
+        {/* ラリーヘッダー情報 */}
         <div className={"glass-card " + styles.headerCard}>
-          <div className={styles.imageBox} style={{ backgroundImage: `url(${rally.imageUrl})` }} />
+          <div 
+            className={styles.imageBox} 
+            style={{ backgroundImage: `url(${rally.thumbnail_url || 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80'})` }} 
+          />
           <div className={styles.headerInfo}>
-             <div className={styles.regionTag}>{rally.region}</div>
+             <div className={styles.regionTag}>{rally.prefecture} • {rally.category}</div>
              <h1 className={styles.title}>{rally.title}</h1>
              <p className={styles.description}>{rally.description}</p>
-             <div style={{ marginTop: "auto" }}>
-               <button className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px", marginBottom: "12px" }}>
-                 このラリーに参加する
-               </button>
-               <Link href={`/rallies/${rally.id}/map`} className="btn-primary" style={{ width: "100%", textAlign: "center", background: "rgba(255,255,255,0.2)", color: "inherit", border: "1px solid rgba(0,0,0,0.1)", boxShadow: "none", display: "block" }}>
-                 🗺 マップを見る
-               </Link>
+             <div style={{ display: "flex", gap: "16px", color: "#888", fontWeight: "600", fontSize: "0.95rem", margin: "12px 0 24px 0" }}>
+                <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  <Footprints size={16} strokeWidth={2} />
+                  {getRallyStats(rally).participants}
+                </span>
+                <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--primary-color)" }}>
+                  <Star size={16} fill="currentColor" strokeWidth={2} />
+                  {getRallyStats(rally).favorites}
+                </span>
+             </div>
+             <div style={{ marginTop: "auto", marginBottom: "12px" }}>
+               <JoinRallyButton rallyId={rally.id} />
              </div>
           </div>
         </div>
 
+        {/* スポット一覧セクション */}
         <section className={styles.spotSection}>
-          <h2 className={styles.sectionTitle}>スタンプラリーマップ</h2>
+          <h2 className={styles.sectionTitle} style={{ marginTop: "40px" }}>スポット一覧 ({spotsList.length}箇所)</h2>
           
-          <div className={styles.interactiveMapWrapper}>
-            <img 
-              src={rally.illustrationMapUrl || rally.imageUrl} 
-              alt="マップ" 
-              className={styles.mapImage} 
-            />
-            <div className={styles.mapOverlay}></div>
-            
-            {!rally.hidePinsOnMap && rally.spots.map((spot, index) => {
-              const x = spot.mapX ?? 50;
-              const y = spot.mapY ?? 50;
-              const isAcquired = isLoaded && hasStamp(spot.id);
-              
-              return (
-                <Link 
-                  key={spot.id}
-                  href={`/rallies/${rally.id}/spot/${spot.id}`} 
-                  className={styles.mapPin}
-                  style={{ left: `${x}%`, top: `${y}%`, zIndex: isAcquired ? 15 : 10 }}
-                >
-                  {isAcquired ? (
-                    <div style={{ animation: "stampPop 0.5s ease-out forwards", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <img 
-                        src={spot.stampImageUrl || `https://api.dicebear.com/7.x/shapes/svg?seed=${spot.id}&backgroundColor=transparent`} 
-                        alt="スタンプ" 
-                        style={{ width: "80px", height: "80px", objectFit: "contain", filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.5))", transform: "rotate(-10deg)" }} 
-                      />
+          {spotsList.length > 0 ? (
+            <div className={styles.spotList}>
+              {spotsList.map((spot, index) => (
+                <div key={spot.id} className={"glass-card " + styles.spotCard} style={{ position: "relative", overflow: "hidden", padding: 0 }}>
+                  {spot.image_url && (
+                    <div style={{
+                      width: "100%", height: "180px", 
+                      backgroundImage: `url(${spot.image_url})`, 
+                      backgroundSize: "cover", backgroundPosition: "center",
+                      borderBottom: "1px solid rgba(0,0,0,0.05)"
+                    }} />
+                  )}
+                  <div style={{ padding: "24px" }}>
+                    <div className={styles.spotHeader} style={{ position: "relative", zIndex: 2 }}>
+                      <div className={styles.spotIndex}>{index + 1}</div>
+                      <h3 className={styles.spotName}>{spot.name}</h3>
                     </div>
-                  ) : (
-                    <>
-                      <div className={styles.pinIcon}>📍</div>
-                      <div className={styles.pinLabel}>
-                        <span className={styles.pinIndex}>{index + 1}</span>
-                        {spot.name}
-                      </div>
-                    </>
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-          
-          {!rally.hidePinsOnMap && (
-            <p style={{ marginTop: "16px", textAlign: "center", opacity: 0.8, fontSize: "0.9rem" }}>
-              ピンをタップして詳細を開きます。スタンプを獲得するとマークが変わります！
-            </p>
-          )}
-
-          <h2 className={styles.sectionTitle} style={{ marginTop: "40px" }}>スポット一覧</h2>
-          <div className={styles.spotList}>
-            {rally.spots.map((spot, index) => {
-              const isAcquired = isLoaded && hasStamp(spot.id);
-              return (
-                <div key={spot.id} className={"glass-card " + styles.spotCard} style={{ position: "relative", overflow: "hidden" }}>
-                  {isAcquired && (
-                    <img 
-                      src={spot.stampImageUrl || `https://api.dicebear.com/7.x/shapes/svg?seed=${spot.id}&backgroundColor=transparent`} 
-                      alt="スタンプ" 
-                      style={{ 
-                        position: "absolute", 
-                        right: "-20px", 
-                        top: "50%", 
-                        transform: "translateY(-50%) rotate(-15deg)", 
-                        width: "160px", 
-                        height: "160px", 
-                        objectFit: "contain", 
-                        opacity: 0.4, 
-                        pointerEvents: "none",
-                        filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.2))"
-                      }} 
-                    />
-                  )}
-                  <div className={styles.spotHeader} style={{ position: "relative", zIndex: 2 }}>
-                    <div className={styles.spotIndex}>{index + 1}</div>
-                    <h3 className={styles.spotName}>{spot.name}</h3>
-                  </div>
-                  <p className={styles.spotDesc} style={{ whiteSpace: "pre-wrap", position: "relative", zIndex: 2 }}>{spot.description}</p>
-                  <div className={styles.spotActions} style={{ position: "relative", zIndex: 2 }}>
-                    <Link href={`/rallies/${rally.id}/spot/${spot.id}`} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.9rem" }}>
-                      詳細 / スタンプ獲得
-                    </Link>
+                    <p className={styles.spotDesc} style={{ whiteSpace: "pre-wrap", position: "relative", zIndex: 2, marginBottom: "16px" }}>
+                      {spot.description}
+                    </p>
+                    <p style={{ fontSize: "0.85rem", color: "#666", marginBottom: "16px" }}>📍 {spot.address}</p>
+                    <div className={styles.spotActions} style={{ position: "relative", zIndex: 2 }}>
+                      <SpotButton spotId={spot.id} rallyId={rally.id} />
+                    </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p style={{ textAlign: "center", padding: "40px 0", color: "#888" }}>
+              まだスポットが登録されていません。<br/>Supabaseでスポットを追加してみましょう！
+            </p>
+          )}
         </section>
       </main>
     </div>
-  )
+  );
 }

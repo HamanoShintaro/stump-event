@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { supabase } from "@/lib/supabase";
 import styles from "./page.module.css";
 import { useAuth } from "@/context/AuthContext";
 
@@ -15,10 +14,12 @@ export default function LoginPage() {
   const { user } = useAuth();
   const router = useRouter();
 
-  // If already logged in, redirect to mypage
+  // 既にログインしている場合はマイページへリダイレクト
   useEffect(() => {
     if (user) {
-      router.push("/mypage");
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectPath = urlParams.get('redirect') || '/mypage';
+      router.push(redirectPath);
     }
   }, [user, router]);
 
@@ -27,13 +28,17 @@ export default function LoginPage() {
     setLoadingAction(true);
 
     try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      router.push("/rallies");
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}${new URLSearchParams(window.location.search).get('redirect') || '/mypage'}`
+        }
+      });
+      if (error) throw error;
+      // Note: OAuthの場合、別ページにリダイレクトされるためここの後続処理は基本走りません
     } catch (error: any) {
       console.error(error);
       setErrorMsg("Googleログインに失敗しました。時間をおいて再度お試しください。");
-    } finally {
       setLoadingAction(false);
     }
   };
@@ -42,7 +47,7 @@ export default function LoginPage() {
     <div className="container">
       <header>
         <Link href="/" className="nav-logo">
-          <img src="/service-logo.png" alt="みんなのスタンプラリー" style={{ height: "80px", width: "auto", display: "block" }} />
+          <img src="/logo-square.png" alt="勝手にスタンプラリー" style={{ height: "56px", width: "56px", display: "block", objectFit: "contain" }} />
         </Link>
       </header>
       

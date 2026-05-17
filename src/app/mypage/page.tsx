@@ -16,16 +16,47 @@ const MENU_ITEMS = [
   { id: "profile", icon: "⚙️", label: "ご登録情報" },
 ];
 
+import { supabase } from "@/lib/supabase";
+
 export default function MyPage() {
   const { user, loading, logout } = useAuth();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("search");
+  const [activeTab, setActiveTab] = useState("active");
+
+  const [activeRallies, setActiveRallies] = useState<any[]>([]);
+  const [bookmarkedRallies, setBookmarkedRallies] = useState<any[]>([]);
+  const [dataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
     if (!loading && !user) {
       router.push("/login");
     }
   }, [user, loading, router]);
+
+  useEffect(() => {
+    if (!user) return;
+    const fetchMyData = async () => {
+      setDataLoading(true);
+      // 参加中のラリーを取得
+      const { data: userRalliesData } = await supabase
+        .from("user_rallies")
+        .select(`*, rallies(*)`)
+        .eq("user_id", user.id)
+        .order("joined_at", { ascending: false });
+      
+      // 保存したラリーを取得
+      const { data: userBookmarksData } = await supabase
+        .from("user_bookmarks")
+        .select(`*, rallies(*)`)
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false });
+
+      setActiveRallies(userRalliesData || []);
+      setBookmarkedRallies(userBookmarksData || []);
+      setDataLoading(false);
+    };
+    fetchMyData();
+  }, [user]);
 
   if (loading || !user) {
     return <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>読み込み中...</div>;
@@ -64,20 +95,28 @@ export default function MyPage() {
         return (
           <div>
             <h2 className={styles.sectionTitle}>参加中のスタンプラリー</h2>
-            <div className={styles.mockCard}>
-              <h3 className={styles.mockTitle}>食べログ 食堂百名店2026 最新の名店を巡る週末</h3>
-              <p className={styles.mockDesc}>最終チェックイン: 2026/04/28 14:30</p>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem", fontWeight: "700" }}>
-                <span>進捗率</span>
-                <span>3 / 8 スポット</span>
-              </div>
-              <div className={styles.progressBar}>
-                <div className={styles.progressFill} style={{ width: "37.5%" }}></div>
-              </div>
-              <div style={{ marginTop: "16px", textAlign: "right" }}>
-                <Link href="/rallies/rally-saitama-01" className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.85rem" }}>ラリーを続ける</Link>
-              </div>
-            </div>
+            {dataLoading ? (
+              <p>データを読み込んでいます...</p>
+            ) : activeRallies.length > 0 ? (
+              activeRallies.map((ur) => (
+                <div key={ur.id} className={styles.mockCard}>
+                  <h3 className={styles.mockTitle}>{ur.rallies?.title}</h3>
+                  <p className={styles.mockDesc}>参加日: {new Date(ur.joined_at).toLocaleDateString()}</p>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem", fontWeight: "700" }}>
+                    <span>ステータス</span>
+                    <span>{ur.status === 'COMPLETED' ? 'クリア！🎉' : '進行中'}</span>
+                  </div>
+                  <div className={styles.progressBar}>
+                    <div className={styles.progressFill} style={{ width: ur.status === 'COMPLETED' ? "100%" : "10%" }}></div>
+                  </div>
+                  <div style={{ marginTop: "16px", textAlign: "right" }}>
+                    <Link href={`/rallies/${ur.rally_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.85rem" }}>ラリーを見る</Link>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p style={{ color: '#888' }}>現在参加中のラリーはありません。</p>
+            )}
           </div>
         );
       case "achievements":
@@ -119,19 +158,23 @@ export default function MyPage() {
       case "comments":
         return (
           <div>
-            <h2 className={styles.sectionTitle}>コメント・保存</h2>
-            <div className={styles.mockCard}>
-              <span className={styles.tag} style={{ background: "rgba(0, 196, 204, 0.1)", color: "var(--secondary-color)" }}>保存済み</span>
-              <h3 className={styles.mockTitle} style={{ marginTop: "8px" }}>歴史ロマン溢れる城下町散策</h3>
-              <p className={styles.mockDesc}>保存日: 2026/04/01</p>
-            </div>
-            <div className={styles.mockCard}>
-              <span className={styles.tag} style={{ background: "rgba(255, 209, 102, 0.3)", color: "#b38800" }}>コメント</span>
-              <h3 className={styles.mockTitle} style={{ marginTop: "8px" }}>食べログ 食堂百名店2026</h3>
-              <p className={styles.mockDesc} style={{ fontStyle: "italic", padding: "8px", background: "rgba(255,255,255,0.6)", borderRadius: "8px" }}>
-                「3つ目のスポットのオムライスが絶品でした！」
-              </p>
-            </div>
+            <h2 className={styles.sectionTitle}>保存したラリー</h2>
+            {dataLoading ? (
+              <p>データを読み込んでいます...</p>
+            ) : bookmarkedRallies.length > 0 ? (
+              bookmarkedRallies.map((bm) => (
+                <div key={bm.rally_id} className={styles.mockCard}>
+                  <span className={styles.tag} style={{ background: "rgba(0, 196, 204, 0.1)", color: "var(--secondary-color)" }}>保存済み</span>
+                  <h3 className={styles.mockTitle} style={{ marginTop: "8px" }}>{bm.rallies?.title}</h3>
+                  <p className={styles.mockDesc}>保存日: {new Date(bm.created_at).toLocaleDateString()}</p>
+                  <div style={{ marginTop: "12px", textAlign: "right" }}>
+                    <Link href={`/rallies/${bm.rally_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.85rem" }}>詳細を見る</Link>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p style={{ color: '#888' }}>保存したラリーはありません。</p>
+            )}
           </div>
         );
       case "payment":
@@ -157,7 +200,7 @@ export default function MyPage() {
             <div className={styles.mockCard}>
               <div style={{ marginBottom: "16px" }}>
                 <label style={{ display: "block", fontSize: "0.85rem", opacity: 0.8, marginBottom: "4px" }}>お名前</label>
-                <div style={{ fontWeight: "700", fontSize: "1.1rem" }}>{user.displayName || "ゲストユーザー"}</div>
+                <div style={{ fontWeight: "700", fontSize: "1.1rem" }}>{user.user_metadata?.full_name || "ゲストユーザー"}</div>
               </div>
               <div style={{ marginBottom: "16px" }}>
                 <label style={{ display: "block", fontSize: "0.85rem", opacity: 0.8, marginBottom: "4px" }}>メールアドレス</label>
@@ -183,7 +226,7 @@ export default function MyPage() {
     <div className="container">
       <header>
         <Link href="/" className="nav-logo">
-          <img src="/service-logo.png" alt="みんなのスタンプラリー" style={{ height: "80px", width: "auto", display: "block" }} />
+          <img src="/logo-square.png" alt="勝手にスタンプラリー" style={{ height: "56px", width: "56px", display: "block", objectFit: "contain" }} />
         </Link>
       </header>
 
@@ -192,13 +235,13 @@ export default function MyPage() {
           <aside className={"glass-card " + styles.sidebar}>
             <div style={{ marginBottom: "24px", display: "flex", alignItems: "center", gap: "16px", padding: "0 8px" }}>
               <img 
-                src={user.photoURL || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.uid}`} 
+                src={user.user_metadata?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.id}`} 
                 alt="Profile" 
                 style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "2px solid var(--primary-color)" }} 
               />
               <div>
                 <div style={{ fontSize: "0.8rem", opacity: 0.8 }}>ようこそ</div>
-                <div style={{ fontWeight: "800", fontSize: "1.1rem", color: "var(--primary-color)" }}>{user.displayName || "ユーザー"} さん</div>
+                <div style={{ fontWeight: "800", fontSize: "1.1rem", color: "var(--primary-color)" }}>{user.user_metadata?.full_name || "ユーザー"} さん</div>
               </div>
             </div>
             

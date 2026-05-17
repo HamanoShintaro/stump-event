@@ -3,10 +3,15 @@
 }
 
 .pageTitle {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 8px;
   color: var(--primary-color);
+}
+@media (min-width: 768px) {
+  .pageTitle {
+    font-size: 2.2rem;
+  }
 }
 
 .pageSubtitle {
@@ -18,8 +23,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
 }
 
 .cardWrapper {
@@ -27,32 +38,76 @@
 }
 
 .card {
-  padding: 24px;
+  padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-width: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 196, 204, 0.2);
-  border-color: var(--secondary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 .imageBox {
-  height: 200px;
-  background-size: contain;
+  height: 180px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  border-radius: 16px;
+}
+
+.overlayTopTags {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.categoryBadge {
+  background: var(--accent-color);
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.areaBadge {
+  background: rgba(255, 255, 255, 0.9);
+  color: #555;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  padding: 30px 8px 8px 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
 }
 
 .cardContent {
-  padding: 24px 0 0 0;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -71,21 +126,25 @@
 }
 
 .rallyTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .rallyDesc {
-  font-size: 0.95rem;
-  opacity: 0.8;
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0;
+  flex-grow: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 24px;
-  flex-grow: 1;
 }
 
 .cardFooter {

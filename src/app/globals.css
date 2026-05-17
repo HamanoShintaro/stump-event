@@ -16,6 +16,11 @@
   margin: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--bg-color);
   background-image: url('/background_sp.png');

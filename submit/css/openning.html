@@ -1,0 +1,253 @@
+import React,
+{
+useEffect,
+useState
+}
+
+from "react";
+
+import {
+    motion
+}
+
+from "framer-motion";
+
+import {
+    MapPin,
+    Coffee,
+    BookOpen,
+    CakeSlice,
+    Music,
+    Camera,
+    Stamp,
+    Star
+}
+
+from "lucide-react";
+
+export default function MinstaOpeningAnimation() {
+    const [done,
+    setDone]=useState(false);
+
+    useEffect(()=> {
+            const timer=setTimeout(()=> setDone(true), 7200);
+            return ()=> clearTimeout(timer);
+        }
+
+        , []);
+
+    const spots=[ {
+        Icon: Coffee, x: "18%", y: "35%", color: "text-teal-500", delay: 1.0, label: "レトロ喫茶"
+    }
+
+    ,
+    {
+    Icon: BookOpen, x: "72%", y: "25%", color: "text-teal-500", delay: 1.35, label: "本屋めぐり"
+}
+
+,
+{
+Icon: CakeSlice, x: "78%", y: "58%", color: "text-amber-400", delay: 1.7, label: "ごほうび甘味"
+}
+
+,
+{
+Icon: Music, x: "28%", y: "72%", color: "text-amber-400", delay: 2.05, label: "音楽のある街"
+}
+
+,
+{
+Icon: Camera, x: "52%", y: "45%", color: "text-rose-400", delay: 2.4, label: "写真スポット"
+}
+
+,
+];
+
+const pathD="M 170 330 C 280 210, 420 220, 520 350 S 720 520, 800 310";
+
+return (<div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#fffdf7] font-sans text-[#4a321f]" > {
+        /* Watercolor edge background */
+    }
+
+    <div className="absolute inset-0 opacity-80" > <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-rose-100 blur-3xl" /> <div className="absolute -right-24 top-16 h-80 w-80 rounded-full bg-amber-100 blur-3xl" /> <div className="absolute -bottom-24 left-10 h-96 w-96 rounded-full bg-teal-100 blur-3xl" /> <div className="absolute -bottom-20 right-0 h-96 w-96 rounded-full bg-lime-100 blur-3xl" /> </div> {
+        /* dotted decorations */
+    }
+
+    <motion.div initial= {
+            {
+            opacity: 0
+        }
+    }
+
+    animate= {
+            {
+            opacity: 1
+        }
+    }
+
+    transition= {
+            {
+            duration: 1
+        }
+    }
+
+    className="absolute inset-0"
+
+    > <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" > <path d="M40 120 C180 40,260 180,410 90 S680 50,790 120" fill="none" stroke="#F2B84B" strokeWidth="5" strokeDasharray="12 16" strokeLinecap="round" opacity="0.55" /> <path d="M110 520 C220 450,280 620,390 540" fill="none" stroke="#20B7B1" strokeWidth="5" strokeDasharray="10 15" strokeLinecap="round" opacity="0.45" /> <path d="M820 440 C760 350,890 315,830 250" fill="none" stroke="#F2707B" strokeWidth="5" strokeDasharray="10 15" strokeLinecap="round" opacity="0.5" /> </svg> </motion.div> {
+        /* Main animated map route */
+    }
+
+    <svg className="absolute h-[520px] w-[880px] max-w-[92vw]" viewBox="0 0 1000 700" > <motion.path d= {
+        pathD
+    }
+
+    fill="none"
+    stroke="#F2707B"
+    strokeWidth="7"
+    strokeDasharray="14 18"
+    strokeLinecap="round"
+
+    initial= {
+            {
+            pathLength: 0, opacity: 0
+        }
+    }
+
+    animate= {
+            {
+            pathLength: 1, opacity: 0.9
+        }
+    }
+
+    transition= {
+            {
+            delay: 2.8, duration: 1.8, ease: "easeInOut"
+        }
+    }
+
+    /> </svg> {
+        /* floating spot icons */
+    }
+
+        {
+        spots.map(({
+                Icon, x, y, color, delay, label
+            }
+
+            , i)=> (<motion.div key= {
+                label
+            }
+
+            initial= {
+                    {
+                    scale: 0, opacity: 0, y: 16
+                }
+            }
+
+            animate= {
+                    {
+                    scale: 1, opacity: 1, y: 0
+                }
+            }
+
+            transition= {
+                    {
+                    delay, type: "spring", stiffness: 260, damping: 16
+                }
+            }
+
+            className="absolute flex flex-col items-center gap-2"
+
+            style= {
+                    {
+                    left: x, top: y
+                }
+            }
+
+            > <div className="rounded-2xl bg-white/90 p-3 shadow-lg shadow-black/5 ring-1 ring-black/5" > <Icon className= {
+                `h-7 w-7 $ {
+                    color
+                }
+
+                `
+            }
+
+            strokeWidth= {
+                2.4
+            }
+
+            /> </div> <motion.div initial= {
+                    {
+                    opacity: 0, y: 8
+                }
+            }
+
+            animate= {
+                    {
+                    opacity: 1, y: 0
+                }
+            }
+
+            transition= {
+                    {
+                    delay: delay + 0.25
+                }
+            }
+
+            className="rounded-full bg-white/80 px-3 py-1 text-xs font-bold shadow-sm"
+
+            > {
+                label
+            }
+
+            </motion.div> </motion.div>))
+}
+
+    {
+    /* pins */
+}
+
+    {
+    ["16%", "48%", "79%"].map((left, i)=> (<motion.div key= {
+                left
+            }
+
+            initial= {
+                    {
+                    scale: 0, opacity: 0, y: -20
+                }
+            }
+
+            animate= {
+                    {
+                    scale: 1, opacity: 1, y: 0
+                }
+            }
+
+            transition= {
+                    {
+                    delay: 3.15 + i * 0.28, type: "spring", stiffness: 320, damping: 14
+                }
+            }
+
+            className="absolute"
+
+            style= {
+                    {
+                    left, top: ["48%", "37%", "43%"][i]
+                }
+            }
+
+            > <MapPin className= {
+                `h-12 w-12 drop-shadow-sm $ {
+                    ["text-teal-500", "text-amber-400", "text-rose-400"][i]
+                }
+
+                `
+            }
+
+            fill="currentColor" stroke="white" strokeWidth= {
+                1.8
+            }
+
+            /> </motion.div>

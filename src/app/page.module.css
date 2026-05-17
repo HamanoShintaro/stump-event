@@ -1,5 +1,5 @@
 .hero {
-  min-height: calc(100vh - 120px);
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,26 +10,220 @@
 .heroBox {
   max-width: 600px;
   text-align: center;
-  padding: 40px;
+  padding: 32px 16px;
+}
+
+@media (min-width: 768px) {
+  .heroBox {
+    padding: 40px;
+  }
 }
 
 .title {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 24px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
   font-weight: 800;
   letter-spacing: -0.05em;
   color: var(--primary-color);
 }
 
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+}
+
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   opacity: 0.8;
-  margin-bottom: 32px;
-  font-weight: 600;
+  margin-bottom: 24px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
 }
 
 .cta {
   display: flex;
   justify-content: center;
+}
+
+/* Action Buttons */
+.actionBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #EBE5D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.actionBtn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Featured Section */
+.featuredSection {
+  padding: 40px 20px 80px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: left;
+  margin-bottom: 24px;
+  padding: 8px 16px 8px 12px;
+  border-left: 5px solid var(--primary-color);
+  word-break: keep-all;
+  line-height: 1.2;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  backdrop-filter: blur(4px);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Grid Layout */
+.rallyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .rallyGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Card Styling */
+.rallyCard {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.rallyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.cardImageContainer {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  padding: 30px 8px 8px 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.overlayTopTags {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.rallyCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.categoryBadge {
+  background: var(--accent-color);
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.areaBadge {
+  background: rgba(255, 255, 255, 0.9);
+  color: #555;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardDesc {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardMeta {
+  display: none;
 }
