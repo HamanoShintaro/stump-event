@@ -1,0 +1,157 @@
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #F7F3EA;
+  animation: fadeOut .8s ease 6.5s forwards;
+}
+
+/* 画面全体を流れる背景 */
+.scene-1,
+.scene-2 {
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(199,68,46,.18), transparent 18%),
+    radial-gradient(circle at 80% 20%, rgba(201,171,76,.20), transparent 20%),
+    radial-gradient(circle at 60% 65%, rgba(120,160,150,.16), transparent 22%),
+    linear-gradient(160deg, transparent 35%, rgba(255,255,255,.65) 36%, transparent 48%);
+  transform: rotate(-12deg);
+  animation: driftUp 6.5s ease-in-out forwards;
+}
+
+.scene-2 {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,.9), transparent 16%),
+    radial-gradient(circle at 70% 75%, rgba(199,68,46,.12), transparent 18%),
+    linear-gradient(120deg, transparent 40%, rgba(120,150,170,.18) 42%, transparent 58%);
+  animation-delay: .4s;
+  opacity: .7;
+}
+
+/* 大きな周遊ルート */
+.route {
+  position: absolute;
+  width: 120vw;
+  height: 120vh;
+  left: -10vw;
+  top: 10vh;
+  border: 3px dashed rgba(199,68,46,.45);
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 55% 45% 60% 40%;
+  transform: rotate(-28deg) scale(.8);
+  opacity: 0;
+  animation: routeSweep 4.8s ease .8s forwards;
+}
+
+/* 花・雪・風の粒 */
+.particles::before,
+.particles::after {
+  content: "✦　・　❀　・　✦　・　❀　・　✦　・　";
+  position: absolute;
+  left: -20vw;
+  width: 140vw;
+  font-size: 22px;
+  letter-spacing: 18px;
+  color: rgba(199,68,46,.35);
+  animation: particleFlow 5.5s linear forwards;
+}
+
+.particles::before {
+  top: 18vh;
+}
+
+.particles::after {
+  top: 70vh;
+  color: rgba(201,171,76,.38);
+  animation-delay: .9s;
+}
+
+/* コピー */
+.copy {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 24px;
+  opacity: 0;
+  transform: scale(.96) translateY(18px);
+  animation: copyIn 1s ease 3.7s forwards;
+}
+
+.copy h1 {
+  margin: 0;
+  color: #111;
+  font-size: clamp(34px, 9vw, 54px);
+  line-height: 1.55;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+
+.copy p {
+  margin-top: 28px;
+  color: #555;
+  font-size: clamp(13px, 3.8vw, 17px);
+  line-height: 2;
+  letter-spacing: .13em;
+}
+
+@keyframes driftUp {
+  0% {
+    transform: translateY(45vh) rotate(-12deg) scale(1.1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-35vh) rotate(-12deg) scale(1.25);
+    opacity: .75;
+  }
+}
+
+@keyframes routeSweep {
+  0% {
+    opacity: 0;
+    transform: translateY(40vh) rotate(-28deg) scale(.65);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35vh) rotate(-28deg) scale(1.25);
+  }
+}
+
+@keyframes particleFlow {
+  0% {
+    transform: translateX(-20vw) translateY(20vh) rotate(-8deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(90vw) translateY(-25vh) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes copyIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

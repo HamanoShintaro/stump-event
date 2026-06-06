@@ -4,10 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { Search, X, User, BookOpen, Compass, Bookmark, Bell, Settings, LogOut } from "lucide-react";
 
 export default function HeaderNav() {
   const { user, loading, logout } = useAuth();
+  console.log("--- HeaderNav Auth State ---", { loading, user });
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function HeaderNav() {
     if (cat) params.set("category", cat);
     if (bud) params.set("budget_tier", bud);
 
-    router.push(`/rallies?${params.toString()}`);
+    router.push(`/routes?${params.toString()}`);
     setSearchOpen(false);
   };
 
@@ -70,7 +71,7 @@ export default function HeaderNav() {
         </button>
         <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "var(--text-color)", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
           <Search size={24} color="var(--primary-color)" />
-          ラリーを探す
+          ルートを探す
         </h2>
 
         <form onSubmit={handleSearchSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -152,7 +153,6 @@ export default function HeaderNav() {
               onClick={() => setMenuOpen(!menuOpen)}
               style={{ 
                 position: "relative",
-                top: "-2px",
                 background: "transparent", 
                 border: "none", 
                 cursor: "pointer", 
@@ -160,20 +160,20 @@ export default function HeaderNav() {
                 outline: "none",
                 transform: menuOpen ? "scale(1.05) translateY(-2px)" : "scale(1) translateY(0)",
                 transition: "transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-                filter: menuOpen ? "drop-shadow(0 6px 8px rgba(58, 183, 183, 0.4))" : "drop-shadow(0 4px 4px rgba(0,0,0,0.15))"
+                filter: menuOpen ? "drop-shadow(0 6px 8px rgba(199, 68, 46, 0.3))" : "drop-shadow(0 4px 4px rgba(0,0,0,0.15))"
               }}
             >
               <div style={{
-                width: "44px", height: "44px", backgroundColor: "#3AB7B7",
-                borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)",
+                width: "44px", height: "44px", backgroundColor: "#fff",
+                border: "2px solid var(--primary-color)", borderRadius: "8px",
                 display: "flex", alignItems: "center", justifyContent: "center"
               }}>
                 <img 
                   src={user.user_metadata?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.id}`} 
                   alt="Profile" 
                   style={{ 
-                    width: "32px", height: "32px", borderRadius: "50%", 
-                    background: "#fff", objectFit: "cover", transform: "rotate(45deg)"
+                    width: "36px", height: "36px", borderRadius: "4px", 
+                    background: "#fff", objectFit: "cover"
                   }} 
                 />
               </div>
@@ -212,11 +212,11 @@ export default function HeaderNav() {
 
                 {/* 下部：メニューリンク */}
                 <div style={{ padding: "8px" }}>
-                  <MenuItem href="/mypage" icon="📕" label="スタンプ帳" onClick={() => setMenuOpen(false)} />
-                  <MenuItem href="/rallies" icon="📍" label="ラリー一覧" onClick={() => setMenuOpen(false)} />
-                  <MenuItem href="/mypage" icon="⭐️" label="お気に入り" onClick={() => setMenuOpen(false)} />
-                  <MenuItem href="/mypage" icon="🔔" label="お知らせ" onClick={() => setMenuOpen(false)} badge={3} />
-                  <MenuItem href="/mypage" icon="⚙️" label="設定" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/mypage" icon={BookOpen} label="SHUIN帳" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/routes" icon={Compass} label="ルート一覧" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/mypage" icon={Bookmark} label="お気に入り" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/mypage" icon={Bell} label="お知らせ" onClick={() => setMenuOpen(false)} badge={3} />
+                  <MenuItem href="/mypage" icon={Settings} label="設定" onClick={() => setMenuOpen(false)} />
                   
                   <div style={{ borderTop: "2px dashed #EBE5D9", margin: "8px 0" }}></div>
                   
@@ -226,7 +226,9 @@ export default function HeaderNav() {
                     onMouseOver={e => e.currentTarget.style.background = 'rgba(217, 101, 91, 0.05)'} 
                     onMouseOut={e => e.currentTarget.style.background = 'transparent'}
                   >
-                    <span style={{ fontSize: "1.2rem", marginRight: "12px" }}>🚪</span>
+                    <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "24px", marginRight: "12px" }}>
+                      <LogOut size={20} />
+                    </span>
                     <span>ログアウト</span>
                   </button>
                 </div>
@@ -237,29 +239,20 @@ export default function HeaderNav() {
           /* 未ログイン用アイコン */
           <Link 
             href={`/login?redirect=${pathname}`} 
-            style={{ position: "relative", top: "-2px", display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", transition: "transform 0.2s" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", textDecoration: "none", transition: "transform 0.2s" }}
             onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)'}
             onMouseOut={e => e.currentTarget.style.transform = 'scale(1) translateY(0)'}
           >
             <div style={{ filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.1))" }}>
               <div style={{ 
-                width: "44px", height: "44px", backgroundColor: "#D6CEC3", 
-                borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)",
+                width: "44px", height: "44px", backgroundColor: "#fff", 
+                border: "2px solid #D6CEC3", borderRadius: "8px",
                 display: "flex", alignItems: "center", justifyContent: "center"
               }}>
-                <div style={{
-                  width: "32px", height: "32px", borderRadius: "50%",
-                  background: "#FFFDF9", display: "flex", alignItems: "center", justifyContent: "center",
-                  transform: "rotate(45deg)"
-                }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A39687" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
+                <User size={24} color="#A39687" />
               </div>
             </div>
-            <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "#A39687", marginTop: "2px" }}>ログイン</span>
+            <span style={{ fontSize: "0.65rem", fontWeight: "800", color: "#A39687", marginTop: "4px" }}>ログイン</span>
           </Link>
         )}
       </nav>
@@ -269,7 +262,7 @@ export default function HeaderNav() {
 }
 
 // メニュー項目の共通コンポーネント
-function MenuItem({ href, icon, label, onClick, badge }: { href: string, icon: string, label: string, onClick: () => void, badge?: number }) {
+function MenuItem({ href, icon: Icon, label, onClick, badge }: { href: string, icon: React.ElementType, label: string, onClick: () => void, badge?: number }) {
   return (
     <Link 
       href={href} 
@@ -279,7 +272,9 @@ function MenuItem({ href, icon, label, onClick, badge }: { href: string, icon: s
       onMouseOut={e => e.currentTarget.style.background = 'transparent'}
     >
       <div style={{ display: "flex", alignItems: "center" }}>
-        <span style={{ fontSize: "1.2rem", marginRight: "12px", width: "24px", textAlign: "center" }}>{icon}</span>
+        <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "24px", marginRight: "12px", color: "var(--primary-color)" }}>
+          <Icon size={20} />
+        </span>
         <span>{label}</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>

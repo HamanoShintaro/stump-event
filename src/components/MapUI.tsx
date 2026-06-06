@@ -25,7 +25,7 @@ const UserLocationIcon = L.icon({
   shadowSize: [41, 41]
 });
 
-// カスタムアイコン（カテゴリごとのラリー用）
+// カスタムアイコン（カテゴリごとのナラティブ用）
 const getCategoryIcon = (category: string) => {
   let emoji = "📍";
   let bgColor = "var(--primary-color)";
@@ -150,7 +150,7 @@ export default function MapUI() {
     }
 
     const fetchRallies = async () => {
-      const { data, error } = await supabase.from("rallies").select("*, spots(id, name, order_index, location)");
+      const { data, error } = await supabase.from("routes").select("*, spots(id, name, order_index, location)");
       if (!error && data) {
         const mapRallies = data.map((rally: any) => {
           let totalLat = 0, totalLng = 0, validSpots = 0;
@@ -239,7 +239,7 @@ export default function MapUI() {
         <LocationMarker position={userPos} />
         <RallyFocusController selectedRally={selectedRally} />
 
-        {/* ラリー未選択時：すべてのカテゴリーごとのラリーピンを表示 */}
+        {/* ナラティブ未選択時：すべてのカテゴリーごとのナラティブピンを表示 */}
         {!selectedRally && rallies.map((rally) => {
           if (!rally.avgPos) return null;
           return (
@@ -252,7 +252,7 @@ export default function MapUI() {
           );
         })}
 
-        {/* ラリー選択時：スポットのルートアニメーション */}
+        {/* ナラティブ選択時：スポットのルートアニメーション */}
         {selectedRally && (
           <>
             <Polyline 
@@ -271,7 +271,7 @@ export default function MapUI() {
         )}
       </MapContainer>
 
-      {/* ラリー詳細モーダル（アニメーション後に出現） */}
+      {/* ナラティブ詳細モーダル（アニメーション後に出現） */}
       {showModal && selectedRally && (
         <div style={{
           position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)",
@@ -295,11 +295,11 @@ export default function MapUI() {
           </div>
           
           <button 
-            onClick={() => router.push(`/rallies/${selectedRally.id}`)}
+            onClick={() => router.push(`/routes/${selectedRally.id}`)}
             className="btn-primary"
             style={{ width: "100%", padding: "14px", marginTop: "4px" }}
           >
-            このラリーに挑戦する！
+            このルートを巡る
           </button>
         </div>
       )}

@@ -3,7 +3,7 @@ import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
 
 export const metadata = {
-  title: "地図から探す - みんなのスタンプラリー"
+  title: "地図から探す - SHUIN"
 };
 
 export default function MapPage() {
@@ -11,7 +11,7 @@ export default function MapPage() {
     <main className="container" style={{ paddingBottom: "40px" }}>
       <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <Link href="/" className="nav-logo">
-          <img src="/logo-square.png" alt="みんなのスタンプラリー" style={{ height: "44px", width: "44px", display: "block", objectFit: "contain" }} />
+          <img src="/shuin-logo-horizontal.png" alt="SHUIN まちのしるし" style={{ height: "32px", display: "block", objectFit: "contain" }} />
         </Link>
         <HeaderNav />
       </header>
@@ -21,7 +21,7 @@ export default function MapPage() {
           <span>🗺️</span> 地図から探す
         </h1>
         <p style={{ fontSize: "0.85rem", color: "var(--secondary-color)", marginBottom: "20px", fontWeight: "600" }}>
-          現在地周辺のスタンプスポットを表示しています。<br />ピンをタップすると詳細が見れます。
+          現在地周辺のスポットを表示しています。<br />ピンをタップすると詳細が見れます。
         </p>
         
         <MapWrapper />

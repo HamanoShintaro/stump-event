@@ -1,0 +1,33 @@
+<div class="shuin-join-animation">
+  <div class="washi-bg"></div>
+
+  <div class="route route-1"></div>
+  <div class="route route-2"></div>
+  <div class="route route-3"></div>
+
+  <div class="petals">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="stamp-wrap">
+    <div class="stamp-mark">
+      <div class="stamp-dot"></div>
+    </div>
+    <div class="stamp-shadow"></div>
+  </div>
+
+  <div class="copy">
+    <p class="sub">ナラティブに参加しました</p>
+    <h1>さあ、めぐりに行こう</h1>
+  </div>
+
+  <div class="next-hint">
+    <span></span>
+    行き先を選ぶ
+  </div>
+</div>

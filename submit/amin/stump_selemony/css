@@ -1,0 +1,300 @@
+.stamp-demo {
+  position: relative;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 246, 220, 0.9), transparent 42%),
+    linear-gradient(180deg, #fff9ee 0%, #f4ead7 100%);
+  border-radius: 24px;
+}
+
+.stamp-trigger {
+  position: relative;
+  z-index: 2;
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
+  background: #b94a38;
+  box-shadow: 0 8px 0 #7f2f25;
+  cursor: pointer;
+  transform: translateY(0);
+}
+
+.stamp-trigger:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #7f2f25;
+}
+
+.stamp-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.stamp-stage.is-playing {
+  opacity: 1;
+}
+
+/* 落ちてくるスタンプ本体 */
+.stamp-body {
+  position: absolute;
+  width: min(42vw, 260px);
+  z-index: 5;
+  filter: drop-shadow(0 18px 18px rgba(84, 46, 24, 0.25));
+  transform-origin: 50% 80%;
+  opacity: 0;
+}
+
+.stamp-stage.is-playing .stamp-body {
+  animation: stampDrop 1.2s cubic-bezier(.15, .9, .18, 1) both;
+}
+
+/* 最後に残る印影 */
+.stamp-mark {
+  position: absolute;
+  width: min(44vw, 280px);
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(46px) scale(1.7) rotate(-4deg);
+  filter: blur(5px);
+}
+
+.stamp-stage.is-playing .stamp-mark {
+  animation: stampMark 1.35s ease-out both;
+}
+
+/* 衝撃の白フラッシュ */
+.stamp-flash {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  transform: translateY(44px) scale(0);
+  opacity: 0;
+  z-index: 2;
+}
+
+.stamp-stage.is-playing .stamp-flash {
+  animation: stampFlash 0.5s ease-out 0.58s both;
+}
+
+/* インク飛沫 */
+.ink-burst {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: translateY(52px);
+  z-index: 4;
+}
+
+.ink-burst span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  background: #b13a2f;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.ink-burst span:nth-child(1) {
+  --size: 16px;
+  --x: -112px;
+  --y: -42px;
+}
+
+.ink-burst span:nth-child(2) {
+  --size: 10px;
+  --x: -72px;
+  --y: 28px;
+}
+
+.ink-burst span:nth-child(3) {
+  --size: 18px;
+  --x: 92px;
+  --y: -34px;
+}
+
+.ink-burst span:nth-child(4) {
+  --size: 8px;
+  --x: 132px;
+  --y: 20px;
+}
+
+.ink-burst span:nth-child(5) {
+  --size: 12px;
+  --x: -28px;
+  --y: -88px;
+}
+
+.ink-burst span:nth-child(6) {
+  --size: 7px;
+  --x: 42px;
+  --y: 82px;
+}
+
+.ink-burst span:nth-child(7) {
+  --size: 14px;
+  --x: -132px;
+  --y: 72px;
+}
+
+.ink-burst span:nth-child(8) {
+  --size: 9px;
+  --x: 124px;
+  --y: 76px;
+}
+
+.stamp-stage.is-playing .ink-burst span {
+  animation: inkSplash 0.72s cubic-bezier(.16, .9, .2, 1) 0.58s both;
+}
+
+/* 完了テキスト */
+.stamp-complete-text {
+  position: absolute;
+  bottom: 54px;
+  z-index: 6;
+  font-size: clamp(24px, 7vw, 40px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #7e3329;
+  text-shadow:
+    0 2px 0 #fff4dd,
+    0 8px 18px rgba(98, 45, 24, 0.2);
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+}
+
+.stamp-stage.is-playing .stamp-complete-text {
+  animation: completeText 0.7s cubic-bezier(.16, .9, .2, 1) 1.05s both;
+}
+
+@keyframes stampDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-420px) scale(1.08) rotate(-12deg);
+  }
+
+  42% {
+    opacity: 1;
+    transform: translateY(26px) scale(1) rotate(4deg);
+  }
+
+  52% {
+    transform: translateY(58px) scale(1.08, 0.86) rotate(0deg);
+  }
+
+  62% {
+    transform: translateY(22px) scale(0.96, 1.08) rotate(-2deg);
+  }
+
+  78% {
+    transform: translateY(44px) scale(1) rotate(1deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.92) rotate(8deg);
+  }
+}
+
+@keyframes stampMark {
+  0%,
+  43% {
+    opacity: 0;
+    transform: translateY(54px) scale(1.7) rotate(-4deg);
+    filter: blur(5px);
+  }
+
+  54% {
+    opacity: 0.95;
+    transform: translateY(54px) scale(0.88) rotate(-4deg);
+    filter: blur(1px);
+  }
+
+  66% {
+    opacity: 1;
+    transform: translateY(54px) scale(1.06) rotate(-4deg);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(54px) scale(1) rotate(-4deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes inkSplash {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  18% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+      scale(1);
+  }
+}
+
+@keyframes stampFlash {
+  0% {
+    opacity: 0.95;
+    transform: translateY(44px) scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(44px) scale(2.2);
+  }
+}
+
+@keyframes completeText {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.92);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+  .stamp-stage.is-playing .stamp-body,
+  .stamp-stage.is-playing .stamp-mark,
+  .stamp-stage.is-playing .ink-burst span,
+  .stamp-stage.is-playing .stamp-flash,
+  .stamp-stage.is-playing .stamp-complete-text {
+    animation-duration: 0.001ms;
+    animation-iteration-count: 1;
+  }
+}

@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google'
 import '@/app/globals.css'
 import { AuthProvider } from '@/context/AuthContext'
+import { AlertProvider } from '@/context/AlertContext'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const notoSansJP = Noto_Sans_JP({ subsets: ['latin'], weight: ['400', '500', '700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'みんなのスタンプラリー',
-  description: 'すべての好きが、地図になる。GPSとQRコードを活用した新しいスタンプラリー体験。',
+  title: 'SHUIN まちのしるし',
+  description: '街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。',
 }
 
 export default function RootLayout({
@@ -18,12 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={notoSansJP.className}>
         <AuthProvider>
-          <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-            {children}
-          </div>
-          <Footer />
+          <AlertProvider>
+            <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+              {children}
+            </div>
+            <Footer />
+          </AlertProvider>
         </AuthProvider>
       </body>
     </html>

@@ -18,11 +18,11 @@ export default function Footer() {
         {/* サイトタイトルと説明 */}
         <div>
           <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "var(--primary-color)", marginBottom: "12px", letterSpacing: "-0.05em" }}>
-            みんなのスタンプラリー
+            SHUIN まちのしるし
           </h2>
           <p style={{ fontSize: "0.7rem", color: "var(--secondary-color)", lineHeight: "1.6", fontWeight: "600", wordBreak: "keep-all" }}>
-            日常の散歩から旅行まで、すべての「好き」が地図になる。<br />
-            あなただけのルートを作って、みんなとシェアしよう！
+            街を歩いて、しるしを刻む。<br />
+            訪れた場所が、あなたのしるしになる。
           </p>
         </div>
 
@@ -56,15 +56,15 @@ export default function Footer() {
           display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px 24px", 
           fontSize: "0.8rem", fontWeight: "700", color: "#888"
         }}>
-          <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>利用規約</Link>
-          <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>プライバシーポリシー</Link>
+          <Link href="/terms" style={{ textDecoration: "none", color: "inherit" }}>利用規約</Link>
+          <Link href="/privacy" style={{ textDecoration: "none", color: "inherit" }}>プライバシーポリシー</Link>
           <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>お問合せ</Link>
           <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>運営会社</Link>
         </div>
 
         {/* コピーライト */}
         <div style={{ fontSize: "0.75rem", color: "#A39687", marginTop: "8px", fontWeight: "600" }}>
-          &copy; {new Date().getFullYear()} みんなのスタンプラリー All Rights Reserved.
+          &copy; {new Date().getFullYear()} SHUIN まちのしるし All Rights Reserved.
         </div>
       </div>
     </footer>

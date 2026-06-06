@@ -3,7 +3,7 @@
 本プロジェクトはフロントエンドにNext.js、バックエンドに**Supabase（PostgreSQL）**を利用する前提に基づいた、RDB（リレーショナルデータベース）のスキーマ設計です。
 
 ## 全体アーキテクチャ方針
-* **PostGISの活用**: `spots` テーブルにPostgreSQLの空間データ拡張機能（PostGIS）を利用し、緯度経度（Geography型）を保存します。これにより「現在地から半径Xkm以内のラリー検索」などがSQL一発で高速に行えます。
+* **PostGISの活用**: `spots` テーブルにPostgreSQLの空間データ拡張機能（PostGIS）を利用し、緯度経度（Geography型）を保存します。これにより「現在地から半径Xkm以内のナラティブ検索」などがSQL一発で高速に行えます。
 * **正規化とJOINの活用**: NoSQL設計時に発生していた「カウンターの自前管理」を廃止し、クリア数や称号判定に必要なデータは、必要な時にテーブルを結合（JOIN）して集計する堅牢なRDB設計にしています。
 
 ---
@@ -89,8 +89,8 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 * **avatar_url** (varchar)
 * **created_at** / **updated_at** (timestamptz)
 
-### 2-2. `rallies`（ラリーマスタ）
-運営が作成するスタンプラリーの箱です。
+### 2-2. `rallies`（ナラティブマスタ）
+運営が作成するナラティブの箱です。
 * **id** (uuid, PK)
 * **title** (varchar): タイトル
 * **description** (text): コンセプト・説明文
@@ -102,7 +102,7 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 * **created_at** / **updated_at** (timestamptz)
 
 ### 2-3. `spots`（スポットマスタ）
-ラリーに紐づく具体的な行き先（GPSピン）です。
+ナラティブに紐づく具体的な行き先（GPSピン）です。
 * **id** (uuid, PK)
 * **rally_id** (uuid, FK): `rallies` テーブルへの外部キー
 * **name** (varchar): スポット名
@@ -113,8 +113,8 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 * **radius_meters** (int): チェックイン判定半径（デフォルト 50 等）
 * **order_index** (int): 推奨ルートがある場合の並び順
 
-### 2-4. `user_rallies`（ラリー参加状況・履歴トランザクション）
-ユーザーのラリーに対する状態を管理します。
+### 2-4. `user_rallies`（ナラティブ参加状況・履歴トランザクション）
+ユーザーのナラティブに対する状態を管理します。
 * **id** (uuid, PK)
 * **user_id** (uuid, FK)
 * **rally_id** (uuid, FK)
@@ -122,7 +122,7 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 * **joined_at** (timestamptz): 参加日時
 * **completed_at** (timestamptz): 制覇日時
 * **updated_at** (timestamptz): 最終アクション日時
-* *制約*: `user_id` と `rally_id` でユニーク（同一ラリーの複数回参加を許可する場合は不要）
+* *制約*: `user_id` と `rally_id` でユニーク（同一ナラティブの複数回参加を許可する場合は不要）
 
 ### 2-5. `user_spot_records`（チェックインと思い出の記録）
 各スポットでのスタンプ獲得履歴と、ユーザーのライフログ（メモ・写真）です。
@@ -135,7 +135,7 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 * *制約*: `user_rally_id` と `spot_id` でユニーク
 
 ### 2-6. ユーザーのお気に入り関連（中間テーブル）
-* **`user_bookmarks`**: 「気になる」を押したラリー。(`user_id`, `rally_id`, `created_at`)
+* **`user_bookmarks`**: 「気になる」を押したナラティブ。(`user_id`, `rally_id`, `created_at`)
 * **`user_favorite_spots`**: お気に入りスポット。(`user_id`, `spot_id`, `created_at`)
 
 ### 2-7. 称号関連
@@ -146,7 +146,7 @@ Supabase Auth（認証基盤）の `auth.users` に紐づく公開プロフィ�
 
 ## 3. RDBによるデータアクセスのメリット（SQL例）
 
-**① 現在地から5km以内のラリーを探す（PostGISの真骨頂）**
+**① 現在地から5km以内のナラティブを探す（PostGISの真骨頂）**
 ```sql
 SELECT DISTINCT r.* 
 FROM rallies r

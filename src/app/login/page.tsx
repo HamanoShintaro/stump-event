@@ -45,9 +45,9 @@ export default function LoginPage() {
 
   return (
     <div className="container">
-      <header>
+      <header style={{ padding: "20px 0" }}>
         <Link href="/" className="nav-logo">
-          <img src="/logo-square.png" alt="勝手にスタンプラリー" style={{ height: "56px", width: "56px", display: "block", objectFit: "contain" }} />
+          <img src="/shuin-logo-horizontal.png" alt="SHUIN まちのしるし" style={{ height: "32px", display: "block", objectFit: "contain" }} />
         </Link>
       </header>
       

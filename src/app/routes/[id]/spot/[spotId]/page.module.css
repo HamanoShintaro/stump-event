@@ -1,0 +1,391 @@
+.backBtn {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 20px;
+}
+.backBtn:hover {
+  background: rgba(255, 71, 133, 0.1);
+  box-shadow: none;
+  transform: translateX(-4px);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spotInfoCard {
+  padding: 32px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.description {
+  opacity: 0.8;
+}
+
+.scannerSection {
+  padding: 32px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+}
+
+.errorBox {
+  background: rgba(255, 60, 60, 0.1);
+  color: #ff3c3c;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.distanceBox {
+  padding: 16px;
+  background: rgba(0, 196, 204, 0.05);
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.scannerWrapper {
+  margin-top: 24px;
+}
+
+.successCard {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 71, 133, 0.05) 0%, rgba(0, 196, 204, 0.05) 100%);
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.glowBtn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+.demoOverride {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.stampImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  perspective: 1000px;
+}
+
+.stampImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(3) rotate(-30deg);
+  animation: stampPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+@keyframes stampPop {
+  0% {
+    opacity: 0;
+    transform: scale(3) rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.stampDemo {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  border: 2px solid var(--accent-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(0.85) rotate(-2deg);
+  animation: paperSpread 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stampStage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stampStage.isPlaying {
+  opacity: 1;
+  animation: stageCamera 10s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+/* 落ちてくるスタンプ本体（木製取っ手付き判子） */
+.stampBody {
+  position: absolute;
+  width: 140px;
+  z-index: 5;
+  filter: drop-shadow(0 40px 40px rgba(0, 0, 0, 0.6)) blur(8px);
+  transform-origin: 50% 90%;
+  opacity: 0;
+}
+
+.stampStage.isPlaying .stampBody {
+  animation: stampBodyTimeline 10s cubic-bezier(.25, .8, .25, 1) both;
+}
+
+/* 朱肉のインク飛び散り画像 */
+.inkSplashImage {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  z-index: 4;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px) scale(0.2);
+}
+
+.stampStage.isPlaying .inkSplashImage {
+  animation: inkSplashTimeline 10s cubic-bezier(0.1, 0.8, 0.2, 1) both;
+}
+
+/* 最後に残る印影 */
+.stampMark {
+  position: absolute;
+  width: 130px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(-10px) scale(1) rotate(-4deg);
+}
+
+.stampStage.isPlaying .stampMark {
+  animation: stampMarkTimeline 10s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+/* 衝撃の白フラッシュ */
+.stampFlash {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-10px) scale(0);
+  opacity: 0;
+  z-index: 2;
+}
+
+.stampStage.isPlaying .stampFlash {
+  animation: stampFlashTimeline 10s ease-out both;
+}
+
+/* キーフレーム定義 */
+
+/* 1. 背景の紙を広げる演出 */
+@keyframes paperSpread {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) rotate(-2deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* 2. カメラワーク（紙に近寄る） */
+@keyframes stageCamera {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  70% {
+    transform: scale(1) translateY(0);
+  }
+  85% {
+    transform: scale(1.28) translateY(-12px);
+  }
+  100% {
+    transform: scale(1.28) translateY(-12px);
+  }
+}
+
+/* 3. 判子本体の動作タイムライン */
+@keyframes stampBodyTimeline {
+  /* 0s〜2.0s: 紙が広がるのを待つ (非表示) */
+  0%, 15% {
+    opacity: 0;
+    transform: translateY(-300px) scale(3.5) rotate(-20deg);
+    filter: drop-shadow(0 40px 40px rgba(0, 0, 0, 0.6)) blur(8px);
+  }
+  
+  /* 2.0s〜2.5s: 画面上空にフワッと現れて「構える」 */
+  20% {
+    opacity: 0.3;
+    transform: translateY(-150px) scale(2.2) rotate(-15deg);
+    filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.5)) blur(4px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-100px) scale(1.8) rotate(-10deg);
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.4)) blur(2px);
+  }
+
+  /* 2.5s〜4.5s: 空中で呼吸するようにフワフワと構える（狙いを定める） */
+  35% {
+    transform: translateY(-108px) scale(1.82) rotate(-8deg);
+    filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.4)) blur(2px);
+  }
+  45% {
+    transform: translateY(-100px) scale(1.8) rotate(-10deg);
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.4)) blur(2px);
+  }
+
+  /* 4.5s〜4.65s: ドンッと急落下して着地 */
+  46.5% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1) rotate(0deg);
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4)) blur(0);
+  }
+
+  /* 4.65s〜4.8s: 衝撃によるクッション変形 */
+  48% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1, 0.88) rotate(1deg);
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.4)) blur(0);
+  }
+
+  /* 4.8s〜5.5s: 跳ね返って着地したまま少し静止（インクが広がる） */
+  51%, 55% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1) rotate(0deg);
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4)) blur(0);
+  }
+
+  /* 5.5s〜7.0s: 紙からゆっくりと離れながら、コロンと右に倒れてフェードアウト */
+  70% {
+    opacity: 0;
+    transform: translateY(-60px) translateX(45px) scale(0.9) rotate(60deg);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2)) blur(2px);
+    transform-origin: 50% 90%;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) translateX(45px) scale(0.9) rotate(60deg);
+  }
+}
+
+/* 4. インク飛び散りタイムライン */
+@keyframes inkSplashTimeline {
+  /* 4.65sの着地直前まで非表示 */
+  0%, 46.5% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.2);
+  }
+  /* 着地の瞬間に激しく飛び散る */
+  47% {
+    opacity: 0.95;
+    transform: translateY(-10px) scale(0.7);
+  }
+  /* 少しの間表示を保ちつつ最大へ */
+  51% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.0);
+  }
+  /* 判子が離れ始めると同時に、スタンプマークを隠さないよう急速にフェードアウト */
+  55% {
+    opacity: 0.5;
+    transform: translateY(-10px) scale(1.02);
+  }
+  62% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* 5. スタンプ印影が浮かび上がるタイムライン */
+@keyframes stampMarkTimeline {
+  /* ドンと押す直前まで非表示 */
+  0%, 46.5% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95) rotate(-4deg);
+    filter: blur(2px);
+  }
+  /* 押した瞬間にうっすら朱肉が転写 */
+  47% {
+    opacity: 0.25;
+    transform: translateY(-10px) scale(0.96) rotate(-4deg);
+    filter: blur(1px);
+  }
+  /* 判子が離れコロンと倒れるのに合わせて鮮やかに浮かび上がる */
+  55% {
+    opacity: 0.8;
+    filter: blur(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1) rotate(-4deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1) rotate(-4deg);
+    filter: blur(0);
+  }
+}
+
+/* 6. 着地時のフラッシュ効果 */
+@keyframes stampFlashTimeline {
+  0%, 46.5% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0);
+  }
+  47% {
+    opacity: 0.95;
+    transform: translateY(-10px) scale(0.5);
+  }
+  52% {
+    opacity: 0;
+    transform: translateY(-10px) scale(2.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(2.2);
+  }
+}

@@ -7,12 +7,12 @@ export default function ClientSearchButton() {
   return (
     <button 
       onClick={() => window.dispatchEvent(new Event('openSearchModal'))}
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px", border: "none", background: "none", cursor: "pointer", padding: 0, outline: "none" }}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", border: "none", background: "none", cursor: "pointer", padding: 0, outline: "none" }}
     >
-      <div className={styles.actionBtn} style={{ color: "var(--primary-color)" }}>
-        <Search size={36} />
+      <div className={styles.heroActionBtn}>
+        <Search size={56} strokeWidth={1.5} />
       </div>
-      <span style={{ fontSize: "0.85rem", fontWeight: "800", color: "var(--text-color)", fontFamily: "inherit" }}>検索して探す</span>
+      <span className={styles.heroActionText}>検索して探す</span>
     </button>
   );
 }
