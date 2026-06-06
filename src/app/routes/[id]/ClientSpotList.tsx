@@ -97,24 +97,11 @@ export default function ClientSpotList({
     <>
       {/* 獲得しるし帳セクション */}
       {user && stampedSpotIds.size > 0 && (
-        <div className="glass-card" style={{ padding: "24px", marginBottom: "32px", border: "1.5px solid var(--accent-color)" }}>
-          <h3 style={{ 
-            fontSize: "1.15rem", 
-            fontWeight: "800", 
-            color: "var(--text-color)", 
-            marginBottom: "16px",
-            display: "flex", 
-            alignItems: "center", 
-            gap: "8px" 
-          }}>
+        <div className={`glass-card ${styles.stampedSection}`}>
+          <h3 className={styles.stampedTitle}>
             💮 獲得したしるし帳
           </h3>
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(4, 1fr)", 
-            gap: "16px", 
-            maxWidth: "480px" 
-          }}>
+          <div className={styles.stampedGrid}>
             {spots.map((spot) => {
               const isAcquired = stampedSpotIds.has(spot.id);
               if (!isAcquired) return null;
@@ -123,49 +110,16 @@ export default function ClientSpotList({
                 <button
                   key={spot.id}
                   onClick={() => setSelectedStorySpot(spot)}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "8px",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "8px",
-                    borderRadius: "12px",
-                    transition: "all 0.2s ease",
-                  }}
                   className={styles.stampCollectBtn}
                 >
-                  <div style={{
-                    width: "70px",
-                    height: "70px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(255,255,255,0.8)",
-                    border: "1px dashed rgba(201,168,76,0.5)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: "0 4px 10px rgba(0,0,0,0.05)",
-                    transform: "rotate(-5deg)",
-                    position: "relative",
-                  }}>
+                  <div className={styles.stampCircle}>
                     <img 
                       src={stampImgUrl} 
                       alt={spot.name} 
-                      style={{ width: "52px", height: "52px", objectFit: "contain" }} 
+                      className={styles.stampImg}
                     />
                   </div>
-                  <span style={{ 
-                    fontSize: "0.75rem", 
-                    color: "var(--text-color)", 
-                    fontWeight: "700",
-                    textAlign: "center",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    width: "80px"
-                  }}>
+                  <span className={styles.stampName}>
                     {spot.name}
                   </span>
                 </button>
