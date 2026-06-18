@@ -260,6 +260,15 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     }
   };
 
+  // ハプティクス（触感）— バイブル「スキャン時UX演出設計」準拠。Vibration API対応端末のみ作動（iOS Safari非対応＝無音劣化）。
+  const vibrate = (pattern: number | number[]) => {
+    try {
+      if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+        navigator.vibrate(pattern);
+      }
+    } catch { /* 非対応端末は無視 */ }
+  };
+
   // 3. 押印（しるし獲得）時の演出タイムライン制御 (F4〜F9)
   const triggerCeremony = (visNum: number) => {
     setVisitorNumber(visNum);
@@ -267,22 +276,26 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     
     // 0.0s: F4（紙を広げる）開始
     setCeremonyStep('F4');
+    vibrate([10, 60, 20]); // 漸増（静寂の間の入口）
     
     // 2.0s: F5（スタンプ出現・構える）
     setTimeout(() => {
       setCeremonyStep('F5');
+      vibrate(25); // 構える（立ち上がり）
     }, 2000);
 
     // 4.65s: F6（ドンッと押す・インパクト） - 太鼓の音を再生
     setTimeout(() => {
       setCeremonyStep('F6');
       playSound("/sounds/stamp_down.mp3");
+      vibrate(120); // インパクト（最大・単発「押した」重み）
     }, 4650);
 
     // 5.5s: F7（離す・コロンと倒れる・スタンプ印影が浮かび始める） - ぽよ音を再生
     setTimeout(() => {
       setCeremonyStep('F7');
       playSound("/sounds/stamp_up.mp3");
+      vibrate([30, 70, 30]); // 余韻×2
     }, 5500);
 
     // 7.0s: F8（カメラ近寄る・スタンプが大きく映る）
