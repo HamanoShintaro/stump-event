@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import Link from "next/link";
 import { notFound, useRouter } from "next/navigation";
 import { QRScanner } from "@/components/QRScanner";
@@ -33,6 +33,9 @@ interface Spot {
   is_final?: boolean;
   next_spot_id?: string;
   next_spot_name?: string;
+  act_1a?: string;
+  act_1b?: string;
+  act_2?: string;
 }
 
 type CeremonyStep = 
@@ -63,6 +66,8 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
   const [newlyAcquiredBadges, setNewlyAcquiredBadges] = useState<any[]>([]);
   const [nextDestInfo, setNextDestInfo] = useState<{ isComplete: boolean; nextSpot: Spot | null } | null>(null);
   const [selectedQuizBadge, setSelectedQuizBadge] = useState<any>(null);
+  const [activeAct, setActiveAct] = useState<{ phase: string; text: string } | null>(null);
+  const shownActs = useRef<Set<string>>(new Set());
 
   // 目的地移動先を算出する関数
   const prepareNextDestination = async (stampedSpotId: string) => {
@@ -188,7 +193,10 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
               f7_full: s.f7_full || mockSpot?.f7_full,
               is_final: s.is_final || mockSpot?.is_final || (allSpotsData[allSpotsData.length - 1].id === s.id), // 最終判定
               next_spot_id: s.next_spot_id || mockSpot?.next_spot_id,
-              next_spot_name: s.next_spot_name || mockSpot?.next_spot_name
+              next_spot_name: s.next_spot_name || mockSpot?.next_spot_name,
+              act_1a: s.act_1a || (mockSpot as any)?.act_1a,
+              act_1b: s.act_1b || (mockSpot as any)?.act_1b,
+              act_2: s.act_2 || (mockSpot as any)?.act_2
             };
           });
           setAllSpots(parsedAllSpots);
@@ -236,6 +244,36 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
 
     return () => navigator.geolocation.clearWatch(watchId);
   }, [spot]);
+
+  // 2.5 接近に応じてActバナー（物語の幕が進む）: 300m=壱 / 100m=弐 / 50m=終
+  useEffect(() => {
+    if (distance == null || !spot) return;
+    const phases: Array<{ k: string; thr: number; text?: string; label: string }> = [
+      { k: "2", thr: 50, text: spot.act_2 || "まもなく到着。圏内に入ったら、しるしを刻もう。", label: "幕 ・ 終" },
+      { k: "1b", thr: 100, text: spot.act_1b || spot.f7_fragment, label: "幕 ・ 弐" },
+      { k: "1a", thr: 300, text: spot.act_1a || spot.description, label: "幕 ・ 壱" },
+    ];
+    for (const ph of phases) {
+      if (distance <= ph.thr && ph.text && !shownActs.current.has(ph.k)) {
+        shownActs.current.add(ph.k);
+        setActiveAct({ phase: ph.label, text: ph.text! });
+        break;
+      }
+    }
+  }, [distance, spot]);
+
+  // Actバナー自動クローズ
+  useEffect(() => {
+    if (!activeAct) return;
+    const t = setTimeout(() => setActiveAct(null), 7000);
+    return () => clearTimeout(t);
+  }, [activeAct]);
+
+  // スポット切替で表示済みActをリセット
+  useEffect(() => {
+    shownActs.current = new Set();
+    setActiveAct(null);
+  }, [spot?.id]);
 
   const isPageLoading = loading || stampLoading;
 
@@ -562,6 +600,21 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
 
   return (
     <div style={{ minHeight: "100vh", position: "relative", backgroundColor: "var(--bg-color)" }}>
+      {/* B②/A① 接近Actバナー: 近づくほど物語の幕が進む */}
+      <AnimatePresence>
+        {activeAct && ceremonyStep === 'idle' && (
+          <motion.div
+            initial={{ y: -80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -80, opacity: 0 }}
+            onClick={() => setActiveAct(null)}
+            style={{ position: "fixed", top: "16px", left: "16px", right: "16px", margin: "0 auto", maxWidth: "400px", zIndex: 9000, background: "#0D0D0D", border: "1px solid var(--accent-color)", borderRadius: "14px", padding: "16px 18px", boxShadow: "0 12px 30px rgba(0,0,0,0.5)", cursor: "pointer" }}
+          >
+            <div style={{ color: "var(--accent-color)", fontSize: "0.7rem", letterSpacing: "3px", fontWeight: 700, marginBottom: "6px" }}>{activeAct.phase}</div>
+            <div style={{ color: "#F2ECDD", fontSize: "0.9rem", lineHeight: 1.7 }}>{activeAct.text}</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* A. 押印儀式 ＆ ポストカード プレミアムオーバーレイ演出 */}
       <AnimatePresence>
         {ceremonyStep !== 'idle' && (
