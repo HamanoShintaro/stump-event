@@ -1131,9 +1131,11 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
 
               {isCheckingIn && <div style={{ padding: "40px 0", textAlign: "center" }}><h3>確認中...</h3></div>}
               
-              <div className={styles.demoOverride} onClick={() => performCheckIn(spot.qr_token || "demo-qr")}>
-                🧪 [Demo] 強制押印テスト（Supabase永続化 ＆ プレミアム演出起動）
-              </div>
+              {(process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_DEMO === "true") && (
+                <div className={styles.demoOverride} onClick={() => performCheckIn(spot.qr_token || "demo-qr")}>
+                  🧪 [Demo] 強制押印テスト（Supabase永続化 ＆ プレミアム演出起動）
+                </div>
+              )}
             </div>
           )}
         </main>
