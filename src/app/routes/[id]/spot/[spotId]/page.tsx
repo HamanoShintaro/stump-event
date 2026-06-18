@@ -497,6 +497,69 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     }
   };
 
+  // 6.5 完走称号カードを画像化してシェア（面白さ最低ライン#3：SNS成長ループ）
+  const buildShareCard = async (): Promise<Blob | null> => {
+    try {
+      const W = 1080, H = 1350;
+      const canvas = document.createElement("canvas");
+      canvas.width = W; canvas.height = H;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return null;
+      const gold = "#b9933f", sumi = "#1a1a1a", shu = "#C7442E";
+      ctx.fillStyle = "#F4EEE0"; ctx.fillRect(0, 0, W, H);
+      ctx.strokeStyle = gold; ctx.lineWidth = 6; ctx.strokeRect(36, 36, W - 72, H - 72);
+      ctx.strokeStyle = "#d8caa6"; ctx.lineWidth = 2; ctx.strokeRect(58, 58, W - 116, H - 116);
+      ctx.textAlign = "center";
+      ctx.beginPath(); ctx.arc(W / 2, 250, 78, 0, Math.PI * 2); ctx.fillStyle = shu; ctx.fill();
+      ctx.fillStyle = "#ffffff"; ctx.font = "700 40px serif"; ctx.fillText("朱印", W / 2, 266);
+      const cardTitle = (selectedQuizBadge && selectedQuizBadge.name_ja) ? selectedQuizBadge.name_ja : `${route.title || route.name}の踏破者`;
+      const cardSub = (selectedQuizBadge && selectedQuizBadge.subtitle_en) ? selectedQuizBadge.subtitle_en : `Trailblazer of ${route.title || route.name}`;
+      ctx.fillStyle = sumi; ctx.font = "700 92px serif"; ctx.fillText(cardTitle, W / 2, 560);
+      ctx.fillStyle = "#7a6233"; ctx.font = "italic 30px serif"; ctx.fillText(cardSub, W / 2, 620);
+      ctx.fillStyle = shu; ctx.font = "44px sans-serif"; ctx.fillText("★ ★ ★", W / 2, 712);
+      ctx.fillStyle = "#5a4a2a"; ctx.font = "700 38px sans-serif"; ctx.fillText(route.title || route.name || "", W / 2, 900);
+      ctx.fillStyle = "#8a7a55"; ctx.font = "28px sans-serif"; ctx.fillText(`完走日 ${scannedDate}`, W / 2, 955);
+      ctx.strokeStyle = "#d8caa6"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(120, 1150); ctx.lineTo(W - 120, 1150); ctx.stroke();
+      ctx.fillStyle = "#9a7b1f"; ctx.font = "700 56px serif"; ctx.fillText("SHUIN", W / 2, 1216);
+      ctx.fillStyle = "#8a7a55"; ctx.font = "24px sans-serif"; ctx.fillText("まちのしるし", W / 2, 1258);
+      return await new Promise<Blob | null>((res) => canvas.toBlob((b) => res(b), "image/png"));
+    } catch (e) {
+      console.error("share card build failed", e);
+      return null;
+    }
+  };
+
+  const handleShareCard = async () => {
+    const blob = await buildShareCard();
+    const badgeName = (selectedQuizBadge && selectedQuizBadge.name_ja) ? selectedQuizBadge.name_ja : `${route.title || route.name}の踏破者`;
+    const shareText = `「${route.title || route.name}」を巡り、称号『${badgeName}』を授かりました。
+#SHUIN #まちのしるし`;
+    const nav = navigator as any;
+    if (blob) {
+      const file = new File([blob], "shuin-card.png", { type: "image/png" });
+      if (nav.canShare && nav.canShare({ files: [file] })) {
+        try {
+          await nav.share({ files: [file], title: "SHUIN まちのしるし", text: shareText });
+          return;
+        } catch (err) {
+          console.log("share(image) canceled/failed", err);
+        }
+      }
+      try {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "shuin-card.png";
+        a.click();
+        URL.revokeObjectURL(a.href);
+        await showAlert({ text: "称号カードを画像として保存しました。SNSに投稿してください。", okText: "確認" });
+        return;
+      } catch (err) {
+        console.error("download failed", err);
+      }
+    }
+    await handleShare();
+  };
+
   return (
     <div style={{ minHeight: "100vh", position: "relative", backgroundColor: "var(--bg-color)" }}>
       {/* A. 押印儀式 ＆ ポストカード プレミアムオーバーレイ演出 */}
@@ -970,12 +1033,20 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 {/* 4-3. 最終F7全文 (完結のナラティブ) */}
                 <div style={{ padding: "24px", color: "#F2F2F2", lineHeight: "1.8", fontSize: "0.9rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                   <p style={{ margin: 0, fontStyle: "italic" }}>
-                    「友禅染の職人たちはこの地域から消え去った。しかし、彼らが手作業で積み上げた頑強な護岸の石積みと路地の区割りは、今も中目黒の土台として、美しく息づいている。」
+                    {`「${allSpots[allSpots.length - 1]?.f7_full || route.description || ""}」`}
                   </p>
                 </div>
 
                 {/* 4-4. SNSシェア ＆ 遷移ボタン */}
                 <div style={{ padding: "20px 24px 32px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                  <button
+                    onClick={handleShareCard}
+                    className="btn-primary"
+                    style={{ width: "100%", padding: "14px", fontSize: "0.95rem", letterSpacing: "1px", background: "linear-gradient(135deg, var(--accent-color) 0%, #B8933D 100%)", border: "none", color: "#111111", fontWeight: "800", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                  >
+                    <Share2 size={18} />
+                    称号カードを画像でシェア
+                  </button>
                   <div style={{ display: "flex", gap: "12px" }}>
                     <button 
                       onClick={handleShare}
