@@ -7,7 +7,7 @@ import { JoinRallyButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import BackButton from "@/components/BackButton";
-import { getRouteStats } from "@/utils/routeStats";
+import { getRouteStatsMap } from "@/utils/routeStats";
 import { Footprints, Star } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
@@ -35,6 +35,9 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
 
   const spotsList = spots || [];
 
+  const statsMap = await getRouteStatsMap([rally.id]);
+  const stats = statsMap[rally.id];
+
   return (
     <div className="container">
       <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -53,16 +56,19 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
              <div className={styles.regionTag}>{rally.prefecture} • {rally.category}</div>
              <h1 className={styles.title}>{rally.title}</h1>
              <p className={styles.description}>{rally.description}</p>
+             {(stats.participants > 0 || stats.favorites > 0) && (
              <div style={{ display: "flex", gap: "16px", color: "#888", fontWeight: "600", fontSize: "0.95rem", margin: "12px 0 24px 0" }}>
+                {stats.participants > 0 && (
                 <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                   <Footprints size={16} strokeWidth={2} />
-                  {getRouteStats(rally).participants}
-                </span>
+                  {stats.participants}
+                </span>)}
+                {stats.favorites > 0 && (
                 <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--primary-color)" }}>
                   <Star size={16} fill="currentColor" strokeWidth={2} />
-                  {getRouteStats(rally).favorites}
-                </span>
-             </div>
+                  {stats.favorites}
+                </span>)}
+             </div>)}
              <div style={{ marginTop: "auto", marginBottom: "12px" }}>
                <JoinRallyButton 
                  rallyId={rally.id} 
