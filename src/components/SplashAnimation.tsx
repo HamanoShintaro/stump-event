@@ -1,12 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./SplashAnimation.module.css";
 
 export default function SplashAnimation() {
+  const router = useRouter();
   const [showSplash, setShowSplash] = useState(false);
 
   useEffect(() => {
+    // 初回起動（全期間で一度）はオンボーディングへ誘導
+    if (!localStorage.getItem("shuin_onboarded")) {
+      router.replace("/onboarding");
+      return;
+    }
     // セッションストレージで初回訪問を判定
     const hasVisited = sessionStorage.getItem("has_visited_splash");
     if (!hasVisited) {
@@ -18,7 +25,7 @@ export default function SplashAnimation() {
       const timer = setTimeout(() => setShowSplash(false), 7300);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [router]);
 
   if (!showSplash) return null;
 

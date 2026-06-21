@@ -8,6 +8,7 @@
 
 ## 記入フィールド
 - slug / area_name / title / description / category / prefecture / budget_tier
+- line / station / station_order（路線コンプリート用・任意。同一lineの全駅制覇で路線称号＝Phase2）
 - tags（横断称号用） / completion_badge（完走称号: name_ja, subtitle_en, description）
 - question（自答の問い） + choices A〜D（text / description / badge）
 - spots[]（5件）: name / description / address / lat / lng（GPS実測）/ image_url

@@ -10,6 +10,7 @@ import styles from "./page.module.css";
 const MENU_ITEMS = [
   { id: "search", icon: "🔍", label: "探す" },
   { id: "active", icon: "🚶", label: "進行中" },
+  { id: "diary", icon: "📖", label: "日記" },
   { id: "achievements", icon: "🏆", label: "実績" },
   { id: "my-rallies", icon: "🎨", label: "マイルート" },
   { id: "comments", icon: "💬", label: "保存リスト" },
@@ -40,6 +41,7 @@ export default function MyPage() {
   const [activeTab, setActiveTab] = useState("active");
   const [userBadges, setUserBadges] = useState<any[]>([]);
   const [badgesLoading, setBadgesLoading] = useState(false);
+  const [diary, setDiary] = useState<any[]>([]);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -84,6 +86,32 @@ export default function MyPage() {
     loadBadges(user.id);
   }, [user]);
 
+  useEffect(() => {
+    if (!user) return;
+    (async () => {
+      const { data: evs, error } = await supabase
+        .from("stamp_events")
+        .select("id, created_at, visitor_number, spot_id, route_id")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false });
+      if (error) { console.error("diary fetch error", error); return; }
+      const events = evs || [];
+      const spotIds = [...new Set(events.map((e: any) => e.spot_id).filter(Boolean))];
+      const routeIds = [...new Set(events.map((e: any) => e.route_id).filter(Boolean))];
+      const spotMap: Record<string, string> = {};
+      const routeMap: Record<string, string> = {};
+      if (spotIds.length) {
+        const { data: sp } = await supabase.from("spots").select("id, name").in("id", spotIds);
+        (sp || []).forEach((x: any) => { spotMap[x.id] = x.name; });
+      }
+      if (routeIds.length) {
+        const { data: rt } = await supabase.from("routes").select("id, title, name").in("id", routeIds);
+        (rt || []).forEach((x: any) => { routeMap[x.id] = x.title || x.name; });
+      }
+      setDiary(events.map((e: any) => ({ ...e, spotName: spotMap[e.spot_id], routeName: routeMap[e.route_id] })));
+    })();
+  }, [user]);
+
   const { activeRallies, bookmarkedRallies, dataLoading, leaveNarrative } = useMyPageData(user);
 
   if (loading || !user) {
@@ -97,6 +125,27 @@ export default function MyPage() {
 
   const renderContent = () => {
     switch (activeTab) {
+      case "diary":
+        return (
+          <div>
+            <h2 className={styles.sectionTitle}>日記 ― あなたの来訪記録</h2>
+            {diary.length === 0 ? (
+              <p style={{ color: "#A39687", padding: "20px 0" }}>まだ押印の記録がありません。街を歩いて、しるしを刻みましょう。</p>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                {diary.map((d) => (
+                  <div key={d.id} style={{ display: "flex", gap: "14px", alignItems: "flex-start", padding: "14px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "12px" }}>
+                    <div style={{ minWidth: "72px", fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: 700 }}>{new Date(d.created_at).toLocaleDateString("ja-JP")}</div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontWeight: 700, color: "#5C4E43" }}>{d.spotName || "スポット"}</div>
+                      <div style={{ fontSize: "0.8rem", color: "#A39687", marginTop: "2px" }}>{d.routeName || ""}{d.visitor_number ? ` ・ #${d.visitor_number}番目の来訪者` : ""}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
       case "search":
         return (
           <div>
