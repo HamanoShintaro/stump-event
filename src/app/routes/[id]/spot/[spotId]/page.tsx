@@ -17,7 +17,7 @@ import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
 import { mockRallies } from "@/data/mock";
 import styles from "./page.module.css";
 
-const MAX_DISTANCE_METERS = 100; // 100m within spot to check in
+const MAX_DISTANCE_METERS = 50; // 半径50mでGPS押印可（都市GPS誤差に配慮・調整可）
 
 interface Spot {
   id: string;
@@ -36,6 +36,7 @@ interface Spot {
   act_1a?: string;
   act_1b?: string;
   act_2?: string;
+  qr_only?: boolean;
 }
 
 type CeremonyStep = 
@@ -66,6 +67,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
   const [newlyAcquiredBadges, setNewlyAcquiredBadges] = useState<any[]>([]);
   const [nextDestInfo, setNextDestInfo] = useState<{ isComplete: boolean; nextSpot: Spot | null } | null>(null);
   const [selectedQuizBadge, setSelectedQuizBadge] = useState<any>(null);
+  const [isRevisit, setIsRevisit] = useState(false);
   const [activeAct, setActiveAct] = useState<{ phase: string; text: string } | null>(null);
   const shownActs = useRef<Set<string>>(new Set());
 
@@ -376,6 +378,15 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
         });
       }
 
+      // P3: このユーザーの当該スポット 初回/再訪 を判定
+      const { count: priorCount } = await supabase
+        .from("stamps")
+        .select("*", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .eq("spot_id", spot.id);
+      const isFirst = (priorCount || 0) === 0;
+      setIsRevisit(!isFirst);
+
       // Supabase: 監査ログ(stamp_events)インサート
       const { data: eventData, error: eventError } = await supabase
         .from("stamp_events")
@@ -389,7 +400,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
           distance_to_spot_m: distance || null,
           qr_token_used: qrTokenUsed || null,
           visitor_number: 1,
-          is_first_visit: true
+          is_first_visit: isFirst
         })
         .select()
         .single();
@@ -686,7 +697,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                       }}
                     >
                       <h3 style={{ color: "var(--accent-color)", fontSize: "1.1rem", fontWeight: "700", marginBottom: "8px", borderBottom: "1px dashed rgba(201,168,76,0.3)", paddingBottom: "6px", letterSpacing: "1px" }}>
-                        しるしが刻まれました
+                        {isRevisit ? "おかえりなさい。再びこの地へ" : "しるしが刻まれました"}
                       </h3>
                       <p style={{ color: "#E0D7CD", fontSize: "0.95rem", lineHeight: "1.7", wordBreak: "keep-all", fontStyle: "italic" }}>
                         「{spot.f7_fragment || "この地にかつて息づいていた、人々の記憶としるしが呼び覚まされます。" }」
@@ -779,9 +790,9 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 animate={{ y: 0, opacity: 1 }}
                 style={{
                   width: "100%", maxWidth: "360px",
-                  background: "#121212", border: "1px solid rgba(201,168,76,0.25)",
+                  background: "#15120c", border: "1.5px solid rgba(201,168,76,0.55)",
                   borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.8)"
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.85), 0 0 0 1px rgba(201,168,76,0.12)"
                 }}
               >
                 {/* 2-1. 上部: 称号と来訪記録 */}
@@ -1142,6 +1153,10 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                   >
                     次のルートを探す ➔
                   </button>
+
+                  <a href={process.env.NEXT_PUBLIC_SURVEY_URL || "https://forms.gle/"} target="_blank" rel="noopener noreferrer" style={{ marginTop: "6px", textAlign: "center", fontSize: "0.8rem", color: "#A39687", textDecoration: "underline" }}>
+                    完走アンケートに答える（1分）— あなたの声が次を作ります
+                  </a>
                 </div>
               </motion.div>
             )}
@@ -1250,7 +1265,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 <div className={styles.distanceBox}>
                   <p>現在の距離: <strong>約 {distance}m</strong></p>
                   {isLocationValid ? (
-                    <p style={{ color: "green", fontWeight: "bold" }}>押印可能です！QRから押印してください。</p>
+                    <p style={{ color: "green", fontWeight: "bold" }}>圏内です。押印できます。</p>
                   ) : (
                     <p style={{ color: "red", fontWeight: "bold" }}>あと {distance - MAX_DISTANCE_METERS}m 近づいてください。</p>
                   )}
@@ -1258,6 +1273,12 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
               ) : !locationError ? (
                 <p>現在地を取得中...</p>
               ) : null}
+
+              {isLocationValid && !spot.qr_only && !isCheckingIn && (
+                <button onClick={() => performCheckIn()} className="btn-primary" style={{ width: "100%", padding: "16px", fontSize: "1.05rem", fontWeight: 800, margin: "8px 0 4px" }}>
+                  押印する
+                </button>
+              )}
 
               {(isLocationValid || locationError) && !isCheckingIn && (
                 <div className={styles.scannerWrapper}>

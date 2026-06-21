@@ -22,6 +22,10 @@ function build(area) {
     if (!s.name) errors.push(`spot${i + 1}: name 未設定`);
     if (typeof s.lat !== "number" || typeof s.lng !== "number") errors.push(`spot${i + 1}: lat/lng 未設定(GPS実測)`);
   });
+  // 岩槻FB: 回遊の質のため 買い物/休憩/食事 を最低1つ
+  if (!(area.spots || []).some((s) => ["買い物", "休憩", "食事"].includes(s.spot_type))) {
+    errors.push("回遊ルール: 買い物/休憩/食事のスポットを最低1つ入れてください（岩槻FB）");
+  }
 
   const routeId = randomUUID();
   const spots = (area.spots || []).map((s, i, arr) => {
@@ -29,7 +33,7 @@ function build(area) {
     return {
       _id: id,
       db: { id, route_id: routeId, name: s.name, description: s.description || "", image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, address: s.address || "", location: `POINT(${s.lng} ${s.lat})`, radius_meters: s.radius_meters || 50, order_index: i + 1 },
-      overlay: { id, name: s.name, address: s.address || "", lat: s.lat, lng: s.lng, qr_token: s.qr_token || `shuin-${area.slug}-${i + 1}`, cover_image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, f7_fragment: s.f7_fragment || fragment(s.clue), f7_full: s.f7_full || full(s.clue, s.surprise, s.hook), is_final: i === arr.length - 1 }
+      overlay: { id, name: s.name, address: s.address || "", lat: s.lat, lng: s.lng, qr_token: s.qr_token || `shuin-${area.slug}-${i + 1}`, cover_image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, f7_fragment: s.f7_fragment || fragment(s.clue), f7_full: s.f7_full || full(s.clue, s.surprise, s.hook), spot_type: s.spot_type || "見どころ", is_final: i === arr.length - 1 }
     };
   });
   spots.forEach((s, i) => {

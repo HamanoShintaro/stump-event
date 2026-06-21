@@ -5,6 +5,7 @@ import HeaderNav from "@/components/HeaderNav";
 import styles from "./page.module.css";
 import { JoinRallyButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
+import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import BackButton from "@/components/BackButton";
 import { getRouteStats } from "@/utils/routeStats";
 import { Footprints, Star } from "lucide-react";
@@ -78,6 +79,8 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
           <h2 className={styles.sectionTitle} style={{ marginTop: "40px" }}>スポット一覧 ({spotsList.length}箇所)</h2>
           <ClientSpotList spots={spotsList} routeId={rally.id} routeCategory={rally.category} />
         </section>
+
+        <RouteBadgeTeaser routeId={rally.id} />
       </main>
     </div>
   );
