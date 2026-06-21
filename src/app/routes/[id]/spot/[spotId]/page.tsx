@@ -12,6 +12,7 @@ import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { motion, AnimatePresence } from "framer-motion";
 import { Footprints, Map as MapIcon, Star, CheckCircle, Share2, Compass, Award } from "lucide-react";
 import { evaluateBadges } from "@/utils/badgeEvaluator";
+import BadgeReveal from "./BadgeReveal";
 import { useSpotStampStatus } from "@/hooks/useSpotStampStatus";
 import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
 import { mockRallies } from "@/data/mock";
@@ -818,29 +819,8 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                   </p>
                 </div>
 
-                {/* 新規獲得称号の表示 */}
-                {newlyAcquiredBadges.length > 0 && (
-                  <div style={{ padding: "16px 24px", backgroundColor: "rgba(201,168,76,0.05)", borderTop: "1px dashed rgba(201,168,76,0.2)", borderBottom: "1px dashed rgba(201,168,76,0.2)" }}>
-                    <div style={{ fontSize: "0.75rem", color: "var(--accent-color)", letterSpacing: "1px", fontWeight: "700", marginBottom: "8px", textTransform: "uppercase" }}>
-                      新たなる称号を授かりました
-                    </div>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                      {newlyAcquiredBadges.map((badge) => (
-                        <div key={badge.id} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                          <span style={{ fontSize: "1.1rem" }}>🏆</span>
-                          <div>
-                            <div style={{ fontSize: "0.9rem", fontWeight: "800", color: "#F2F2F2" }}>
-                              {badge.name_ja}
-                            </div>
-                            <div style={{ fontSize: "0.7rem", color: "#888888", fontStyle: "italic" }}>
-                              {badge.subtitle_en} (★{badge.rarity})
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                {/* 新規獲得称号の表示（P2: 封印→タップ開封のリビール演出） */}
+                <BadgeReveal badges={newlyAcquiredBadges} />
 
                 {/* 2-3. 下部: アクションボタン */}
                 <div style={{ padding: "16px 24px 32px", display: "flex", flexDirection: "column", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
