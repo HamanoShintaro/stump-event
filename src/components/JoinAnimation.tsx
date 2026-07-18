@@ -20,7 +20,7 @@ const getRoutePrologue = (title: string, description: string, prologue?: string)
     return `自由が丘の "自由" は、\n何から生まれたのか？\n\n5つの場所に、答えではなく\n食い違う "手がかり" がある。\n\n歩き終えたら、あなたの答えを\n選ぶ。答えで称号が変わる。`;
   }
   if (title.includes("ラーメン") || title.includes("グルメ") || title.includes("食べ歩き")) {
-    return `暖簾 of the road の向こうに隠された、\n極上の一杯をめぐる旅。\n\nこだわりの名店に、それぞれ違った\n受け継がれてきた "しるし" がある。\n\n訪れた証を、あなたのしるし帳へ。`;
+    return `暖簾の向こうに隠された、\n極上の一杯をめぐる旅。\n\nこだわりの名店に、それぞれ違った\n受け継がれてきた "しるし" がある。\n\n訪れた証を、あなたのしるし帳へ。`;
   }
   if (title.includes("自然") || title.includes("癒")) {
     return `豊かな自然が紡ぐ、\n水と緑と生き物の記憶。\n\n瑞々しい場所に、答えではなく\n風のささやきと "手がかり" がある。\n\n歩き終えれば、心にしるしが刻まれる。`;

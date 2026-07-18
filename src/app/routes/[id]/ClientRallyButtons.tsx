@@ -112,24 +112,28 @@ export function JoinRallyButton({
       {loading ? (
         <button className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px", opacity: 0.7 }} disabled>確認中...</button>
       ) : isJoined ? (
-        <button 
-          onClick={() => router.push(`/routes/${rallyId}/map`)}
-          className="btn-primary" 
-          style={{ 
-            width: "100%", 
-            fontSize: "1.1rem", 
-            padding: "16px",
-            background: "linear-gradient(135deg, var(--primary-color) 0%, #E04E39 100%)",
-            border: "none",
-            boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)"
-          }}
-        >
-          参加中｜現在の目的地への地図を見る
-        </button>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+          <button 
+            onClick={() => router.push(`/routes/${rallyId}/map`)}
+            className="btn-primary" 
+            style={{ 
+              width: "100%", 
+              fontSize: "1.1rem", 
+              padding: "16px",
+              background: "linear-gradient(135deg, var(--primary-color) 0%, #E04E39 100%)",
+              border: "none",
+              boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)"
+            }}
+          >
+            参加中｜現在の目的地への地図を見る
+          </button>
+        </div>
       ) : (
-        <button onClick={handleJoin} className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px" }}>
-          {user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
-        </button>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+          <button onClick={handleJoin} className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px" }}>
+            {user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
+          </button>
+        </div>
       )}
     </>
   );

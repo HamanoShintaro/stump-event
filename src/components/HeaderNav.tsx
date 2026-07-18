@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, X, User, BookOpen, Compass, Bookmark, Bell, Settings, LogOut } from "lucide-react";
+import { Search, X, User, BookOpen, Compass, Bookmark, Bell, Settings, LogOut, Award } from "lucide-react";
 
 export default function HeaderNav() {
   const { user, loading, logout } = useAuth();
@@ -205,18 +205,19 @@ export default function HeaderNav() {
                       {user.user_metadata?.full_name || "ユーザー"}
                     </div>
                     <Link href="/mypage" onClick={() => setMenuOpen(false)} style={{ fontSize: "0.8rem", color: "#3AB7B7", textDecoration: "none", fontWeight: "700" }}>
-                      プロフィールを見る ＞
+                      ダッシュボードを見る ＞
                     </Link>
                   </div>
                 </div>
 
                 {/* 下部：メニューリンク */}
                 <div style={{ padding: "8px" }}>
-                  <MenuItem href="/mypage" icon={BookOpen} label="SHUIN帳" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/mypage/diary" icon={BookOpen} label="SHUIN帳" onClick={() => setMenuOpen(false)} />
                   <MenuItem href="/routes" icon={Compass} label="ルート一覧" onClick={() => setMenuOpen(false)} />
-                  <MenuItem href="/mypage" icon={Bookmark} label="お気に入り" onClick={() => setMenuOpen(false)} />
-                  <MenuItem href="/mypage" icon={Bell} label="お知らせ" onClick={() => setMenuOpen(false)} badge={3} />
-                  <MenuItem href="/mypage" icon={Settings} label="設定" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/mypage/bookmarks" icon={Bookmark} label="お気に入り" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/notifications" icon={Bell} label="街の便り" onClick={() => setMenuOpen(false)} badge={3} />
+                  <MenuItem href="/badges" icon={Award} label="称号" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/settings" icon={Settings} label="設定" onClick={() => setMenuOpen(false)} />
                   
                   <div style={{ borderTop: "2px dashed #EBE5D9", margin: "8px 0" }}></div>
                   

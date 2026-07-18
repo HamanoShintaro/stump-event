@@ -43,6 +43,82 @@ function matchSeasonalBadges(date: Date): string[] {
   return codes;
 }
 
+// 路線とエリアの静的マッピング
+function getRailwayForArea(areaName?: string): string {
+  if (!areaName) return "";
+  const map: Record<string, string> = {
+    "自由が丘": "東急東横線",
+    "九品仏": "東急大井町線",
+    "中目黒": "東急東横線"
+  };
+  return map[areaName] || "";
+}
+
+// 一般のレベル閾値マッピング
+function getGeneralLevel(count: number): number {
+  const thresholds = [1, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50, 60, 75, 90, 100];
+  let level = 0;
+  for (let i = 0; i < thresholds.length; i++) {
+    if (count >= thresholds[i]) {
+      level = i + 1;
+    } else {
+      break;
+    }
+  }
+  return level;
+}
+
+// 地域のレベル閾値（スポット数そのもの、最大15）
+function getAreaLevel(count: number): number {
+  return Math.min(count, 15);
+}
+
+// 路線のレベル閾値（スポット数そのもの、最大15）
+function getRailwayLevel(count: number): number {
+  return Math.min(count, 15);
+}
+
+// 都道府県のレベル閾値
+function getPrefectureLevel(count: number): number {
+  const thresholds = [1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 18, 21, 24, 27, 30];
+  let level = 0;
+  for (let i = 0; i < thresholds.length; i++) {
+    if (count >= thresholds[i]) {
+      level = i + 1;
+    } else {
+      break;
+    }
+  }
+  return level;
+}
+
+// 印目（カテゴリ）のレベル閾値
+function getCategoryLevel(count: number): number {
+  return Math.min(count, 15);
+}
+
+// 和風レベル表記名を取得するヘルパー
+function getLevelName(baseName: string, level: number): string {
+  const ranks = ["目録", "免許", "皆伝"];
+  const numbers = ["壱", "弐", "参", "肆", "伍"];
+  
+  const rankIndex = Math.floor((level - 1) / 5);
+  const numIndex = (level - 1) % 5;
+  
+  return `${baseName}${ranks[rankIndex]} ${numbers[numIndex]}`;
+}
+
+// 英語レベル表記名を取得するヘルパー
+function getLevelEnglish(baseNameEn: string, level: number): string {
+  const ranks = ["Mokuroku", "Menkyo", "Kaiden"];
+  const numbers = ["I", "II", "III", "IV", "V"];
+  
+  const rankIndex = Math.floor((level - 1) / 5);
+  const numIndex = (level - 1) % 5;
+  
+  return `${baseNameEn} ${ranks[rankIndex]} ${numbers[numIndex]}`;
+}
+
 /**
  * 称号を評価し、新規獲得した称号があれば Supabase に保存して返す
  */
@@ -71,78 +147,176 @@ export async function evaluateBadges(
     if (routeId) {
       const { data: rData } = await supabase
         .from("routes")
-        .select("id, name, title")
+        .select("id, name, title, area_name, prefecture, category")
         .eq("id", routeId)
         .single();
       route = rData;
     }
 
-    // ユーザーの総スタンプ数（今回の押印を含む）を取得
-    const { count: visitedSpotsCount, error: countError } = await supabase
+    // ユーザーの全押印履歴とルート情報を取得してカウント
+    const { data: userStamps, error: stampsError } = await supabase
       .from("stamps")
-      .select("*", { count: "exact", head: true })
+      .select("id, spot_id, route_id, routes(area_name, prefecture, category)")
       .eq("user_id", userId);
 
-    if (countError) {
-      console.error("Error counting user stamps:", countError);
+    if (stampsError) {
+      console.error("Error fetching user stamps in evaluateBadges:", stampsError);
       return [];
     }
 
-    const totalStamps = visitedSpotsCount || 0;
+    const stampsList = userStamps || [];
+    const totalStamps = stampsList.length;
 
-    // 2. 獲得候補の称号コード (codes) をリストアップ
+    // 2. 各カテゴリの進捗カウントを集計
+    const areaCounts: Record<string, number> = {};
+    const railwayCounts: Record<string, number> = {};
+    const prefCounts: Record<string, number> = {};
+    const categoryCounts: Record<string, number> = {};
+
+    stampsList.forEach((s: any) => {
+      const r = s.routes;
+      if (!r) return;
+      
+      // エリア
+      if (r.area_name) {
+        areaCounts[r.area_name] = (areaCounts[r.area_name] || 0) + 1;
+        
+        // 路線
+        const railway = getRailwayForArea(r.area_name);
+        if (railway) {
+          railwayCounts[railway] = (railwayCounts[railway] || 0) + 1;
+        }
+      }
+      
+      // 都道府県
+      if (r.prefecture) {
+        prefCounts[r.prefecture] = (prefCounts[r.prefecture] || 0) + 1;
+      }
+      
+      // カテゴリ（印目）
+      if (r.category) {
+        categoryCounts[r.category] = (categoryCounts[r.category] || 0) + 1;
+      }
+    });
+
+    // 獲得候補の称号コード (codes) をリストアップ
     const candidateCodes: string[] = [];
     const customBadgeDefs: Record<string, BadgeDefinition> = {};
 
-    // --- (1) カテゴリA: 来訪記録系 ＆ カテゴリC: 物語完結系 ---
+    // --- (1) 初回・ベータ等の特別称号 ---
     if (totalStamps === 1) {
       candidateCodes.push("first_step");
       candidateCodes.push("beta_pioneer"); // β版期間内の初押印として自動付与
     }
 
-    // スポット固有称号
-    const spotVisitorCode = `visitor_of_${spotId}`;
-    candidateCodes.push(spotVisitorCode);
-    customBadgeDefs[spotVisitorCode] = {
-      code: spotVisitorCode,
-      category: "visit",
-      name_ja: `${spot.name}への来訪者`,
-      subtitle_en: `Visitor of ${spot.name}`,
-      rarity: 1,
-      description: `${spot.name}へ初めて訪れ、しるしを刻んだ証`,
-      condition_type: "first_visit",
-      condition_params: { spot_id: spotId }
-    };
+    // --- (2) 段階的なレベル称号の評価 ---
 
-    const spotMemoryCode = `memory_of_${spotId}`;
-    candidateCodes.push(spotMemoryCode);
-    customBadgeDefs[spotMemoryCode] = {
-      code: spotMemoryCode,
-      category: "story",
-      name_ja: `${spot.name}の記憶`,
-      subtitle_en: `Memory of ${spot.name}`,
-      rarity: 1,
-      description: `${spot.name}に秘められた物語の断片を紐解いた証`,
-      condition_type: "story_read",
-      condition_params: { spot_id: spotId }
-    };
+    // 一般（全体の押印スポット数）
+    const generalLevel = getGeneralLevel(totalStamps);
+    for (let l = 1; l <= generalLevel; l++) {
+      const code = `level_badge_general_stamps_${l}`;
+      candidateCodes.push(code);
+      
+      const thresholds = [1, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50, 60, 75, 90, 100];
+      const reqCount = thresholds[l - 1] || 100;
+      
+      customBadgeDefs[code] = {
+        code,
+        category: "general",
+        name_ja: getLevelName("しるし刻みし", l),
+        subtitle_en: getLevelEnglish("Stamps Engraved", l),
+        rarity: Math.floor((l - 1) / 5) + 1,
+        description: `累計${reqCount}箇所のスポットへ訪れ、しるしを重ねた証`,
+        condition_type: "general_stamps_count",
+        condition_params: { count: reqCount }
+      };
+    }
 
-    // --- (2) カテゴリE: 季節系 ---
+    // 地域（エリア）
+    Object.entries(areaCounts).forEach(([areaName, count]) => {
+      const level = getAreaLevel(count);
+      for (let l = 1; l <= level; l++) {
+        const code = `level_badge_area_${areaName}_${l}`;
+        candidateCodes.push(code);
+        customBadgeDefs[code] = {
+          code,
+          category: "area",
+          name_ja: getLevelName(`${areaName}探索`, l),
+          subtitle_en: getLevelEnglish(`${areaName} Exploration`, l),
+          rarity: Math.floor((l - 1) / 5) + 1,
+          description: `${areaName}エリアにて、累計${l}箇所のスポットにしるしを刻んだ証`,
+          condition_type: "area_stamps_count",
+          condition_params: { area_name: areaName, count: l }
+        };
+      }
+    });
+
+    // 路線
+    Object.entries(railwayCounts).forEach(([railwayName, count]) => {
+      const level = getRailwayLevel(count);
+      for (let l = 1; l <= level; l++) {
+        const code = `level_badge_railway_${railwayName}_${l}`;
+        candidateCodes.push(code);
+        customBadgeDefs[code] = {
+          code,
+          category: "railway",
+          name_ja: getLevelName(`${railwayName}沿線`, l),
+          subtitle_en: getLevelEnglish(`${railwayName} Line`, l),
+          rarity: Math.floor((l - 1) / 5) + 1,
+          description: `${railwayName}沿線にて、累計${l}箇所のスポットにしるしを刻んだ証`,
+          condition_type: "railway_stamps_count",
+          condition_params: { railway_name: railwayName, count: l }
+        };
+      }
+    });
+
+    // 都道府県
+    Object.entries(prefCounts).forEach(([prefName, count]) => {
+      const level = getPrefectureLevel(count);
+      for (let l = 1; l <= level; l++) {
+        const code = `level_badge_prefecture_${prefName}_${l}`;
+        candidateCodes.push(code);
+        
+        const thresholds = [1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 18, 21, 24, 27, 30];
+        const reqCount = thresholds[l - 1] || 30;
+
+        customBadgeDefs[code] = {
+          code,
+          category: "prefecture",
+          name_ja: getLevelName(`${prefName}逍遥`, l),
+          subtitle_en: getLevelEnglish(`${prefName} Rambling`, l),
+          rarity: Math.floor((l - 1) / 5) + 1,
+          description: `${prefName}内にて、累計${reqCount}箇所のスポットにしるしを刻んだ証`,
+          condition_type: "prefecture_stamps_count",
+          condition_params: { prefecture: prefName, count: reqCount }
+        };
+      }
+    });
+
+    // 印目（カテゴリ・属性）
+    Object.entries(categoryCounts).forEach(([catName, count]) => {
+      const cleanCatName = catName.replace("を感じたい", "");
+      const level = getCategoryLevel(count);
+      for (let l = 1; l <= level; l++) {
+        const code = `level_badge_theme_${catName}_${l}`;
+        candidateCodes.push(code);
+        customBadgeDefs[code] = {
+          code,
+          category: "theme",
+          name_ja: getLevelName(`${cleanCatName}探究`, l),
+          subtitle_en: getLevelEnglish(`${cleanCatName} Theme`, l),
+          rarity: Math.floor((l - 1) / 5) + 1,
+          description: `「${catName}」カテゴリにて、累計${l}箇所のスポットにしるしを刻んだ証`,
+          condition_type: "theme_stamps_count",
+          condition_params: { category: catName, count: l }
+        };
+      }
+    });
+
+    // --- (3) カテゴリE: 季節系 ---
     const today = new Date();
     const seasonal = matchSeasonalBadges(today);
     candidateCodes.push(...seasonal);
-
-    // --- (3) カテゴリF: 累計系 ＆ 物語収集者 ---
-    if (totalStamps >= 10) {
-      candidateCodes.push("the_persistent");
-      candidateCodes.push("lore_collector");
-    }
-    if (totalStamps >= 50) {
-      candidateCodes.push("the_walker");
-    }
-    if (totalStamps >= 100) {
-      candidateCodes.push("record_keeper");
-    }
 
     // --- (4) カテゴリB: ルート完走系 ---
     if (routeId && route) {

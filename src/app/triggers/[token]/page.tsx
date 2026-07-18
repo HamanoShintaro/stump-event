@@ -9,24 +9,30 @@ import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import styles from "./page.module.css";
 
-// 中目黒のプロローグを含むフォールバック用シード
+// 自由が丘パイロットのフォールバック用シード（B②入口）
 const FALLBACK_NARRATIVES: Record<string, {
   route_id: string;
   route_name: string;
   narrative_title: string;
   act_0_text: string;
 }> = {
-  "shuin-nakameguro-prologue": {
-    route_id: "nakameguro-showa-1", // mock.tsの中目黒ルートIDに準拠
-    route_name: "目黒川、昭和の痕跡をたどる物語",
-    narrative_title: "目黒川と友禅染の記憶",
-    act_0_text: "かつて、目黒川のほとりには友禅染の洗い場が並び、川面は鮮やかな色彩に染まっていたという。\n時代は流れ、職人たちの姿は消えたが、彼らが刻んだしるしは今も街の土台に静かに息づいている。\n\nさあ、しるしを刻み、失われつつある昭和の痕跡をたどる旅へ出かけよう。"
+  "shuin-jiyugaoka-prologue": {
+    route_id: "a4b1c2d3-e4f5-5a6b-7c8d-9e0f1a2b3c4d",
+    route_name: "自由が丘で、「自由」の正体を探す",
+    narrative_title: "自由が丘で、「自由」の正体を探す",
+    act_0_text: `おしゃれな街として知られる自由が丘。でも、この街はなぜ「自由」を名乗るのか？
+5つのスポットには答えではなく、食い違う「手がかり」だけが置かれている。
+
+歩き終えたとき、あなた自身の答えを選ぶ。選んだ答えで、授かる称号が変わる。さあ、しるしを刻む旅へ。`
   },
-  "nakameguro-qr-trigger": {
-    route_id: "nakameguro-showa-1",
-    route_name: "目黒川、昭和の痕跡をたどる物語",
-    narrative_title: "目黒川と友禅染の記憶",
-    act_0_text: "かつて、目黒川のほとりには友禅染の洗い場が並び、川面は鮮やかな色彩に染まっていたという。\n時代は流れ、職人たちの姿は消えたが、彼らが刻んだしるしは今も街の土台に静かに息づいている。\n\nさあ、しるしを刻み、失われつつある昭和の痕跡をたどる旅へ出かけよう。"
+  "jiyugaoka-qr-trigger": {
+    route_id: "a4b1c2d3-e4f5-5a6b-7c8d-9e0f1a2b3c4d",
+    route_name: "自由が丘で、「自由」の正体を探す",
+    narrative_title: "自由が丘で、「自由」の正体を探す",
+    act_0_text: `おしゃれな街として知られる自由が丘。でも、この街はなぜ「自由」を名乗るのか？
+5つのスポットには答えではなく、食い違う「手がかり」だけが置かれている。
+
+歩き終えたとき、あなた自身の答えを選ぶ。選んだ答えで、授かる称号が変わる。さあ、しるしを刻む旅へ。`
   }
 };
 
@@ -96,7 +102,7 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
         }
 
         // (B) テーブルが無いか、見つからない場合はフロントエンドのフォールバックを利用
-        const localFallback = FALLBACK_NARRATIVES[token] || FALLBACK_NARRATIVES["shuin-nakameguro-prologue"];
+        const localFallback = FALLBACK_NARRATIVES[token] || FALLBACK_NARRATIVES["shuin-jiyugaoka-prologue"];
         if (localFallback) {
           // もし本番の Supabase に該当する実データがあるかもしれないので、フォールバックの route_id を使って実データを引きにいく
           const { data: dbRoute } = await supabase
@@ -126,7 +132,7 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
       } catch (err) {
         console.error("Error fetching trigger data", err);
         // エラー時もフォールバックで続行
-        const fallback = FALLBACK_NARRATIVES["shuin-nakameguro-prologue"];
+        const fallback = FALLBACK_NARRATIVES["shuin-jiyugaoka-prologue"];
         setRouteId(fallback.route_id);
         setRouteName(fallback.route_name);
         setNarrativeTitle(fallback.narrative_title);

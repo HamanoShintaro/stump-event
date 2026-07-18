@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -84,13 +84,18 @@ const SpotIcon = L.divIcon({
 });
 
 // A component to recenter the map when user location is found
-function LocationMarker({ position }: { position: [number, number] | null }) {
+function LocationMarker({ position, recenter }: { position: [number, number] | null; recenter: number }) {
   const map = useMap();
+  const centered = useRef(false);
   useEffect(() => {
-    if (position) {
-      map.flyTo(position, 13);
+    if (position && !centered.current) {
+      map.flyTo(position, 16);
+      centered.current = true;
     }
   }, [position, map]);
+  useEffect(() => {
+    if (recenter > 0 && position) map.flyTo(position, 16);
+  }, [recenter]);
 
   return position === null ? null : (
     <Marker position={position} icon={UserLocationIcon} zIndexOffset={1000}>
@@ -117,6 +122,7 @@ export default function MapUI() {
   const router = useRouter();
   const [rallies, setRallies] = useState<any[]>([]);
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
+  const [recenter, setRecenter] = useState(0);
   
   // Animation States
   const [selectedRally, setSelectedRally] = useState<any | null>(null);
@@ -140,10 +146,12 @@ export default function MapUI() {
   };
 
   useEffect(() => {
+    let watchId: number | null = null;
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      watchId = navigator.geolocation.watchPosition(
         (pos) => setUserPos([pos.coords.latitude, pos.coords.longitude]),
-        (err) => setUserPos([35.9522665, 139.6833445])
+        () => setUserPos((prev) => prev || [35.9522665, 139.6833445]),
+        { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
       );
     } else {
       setUserPos([35.9522665, 139.6833445]);
@@ -178,6 +186,7 @@ export default function MapUI() {
       }
     };
     fetchRallies();
+    return () => { if (watchId !== null) navigator.geolocation.clearWatch(watchId); };
   }, []);
 
   // アニメーションロジック
@@ -236,7 +245,7 @@ export default function MapUI() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-        <LocationMarker position={userPos} />
+        <LocationMarker position={userPos} recenter={recenter} />
         <RallyFocusController selectedRally={selectedRally} />
 
         {/* ナラティブ未選択時：すべてのカテゴリーごとのナラティブピンを表示 */}
@@ -270,6 +279,8 @@ export default function MapUI() {
           </>
         )}
       </MapContainer>
+
+      <button onClick={() => setRecenter((n) => n + 1)} aria-label="現在地へ" style={{ position: "absolute", right: "14px", bottom: "14px", zIndex: 1000, width: "46px", height: "46px", borderRadius: "50%", background: "#fff", border: "1px solid #EBE5D9", boxShadow: "0 2px 10px rgba(0,0,0,0.15)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--primary-color)", fontSize: "1.4rem", lineHeight: 1 }}>◎</button>
 
       {/* ナラティブ詳細モーダル（アニメーション後に出現） */}
       {showModal && selectedRally && (

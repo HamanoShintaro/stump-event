@@ -4,7 +4,7 @@ import { supabase } from "../lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import SplashAnimation from "@/components/SplashAnimation";
 import ClientSearchButton from "@/components/ClientSearchButton";
-import { getRouteStats } from "@/utils/routeStats";
+import { getRouteStatsMap } from "@/utils/routeStats";
 import { Footprints, Star, Map } from "lucide-react";
 
 // Next.js App Router: サーバーコンポーネントとしてSupabaseから直接データを取得
@@ -26,6 +26,8 @@ export default async function Home() {
   if (error) {
     console.error('Error fetching rallies:', error);
   }
+
+  const statsMap = await getRouteStatsMap((rallies || []).map((r) => r.id));
 
   return (
     <main>
@@ -84,8 +86,8 @@ export default async function Home() {
                           💰 {rally.budget_tier === 1 ? "~1,000円" : rally.budget_tier === 2 ? "~5,000円" : "5,000円~"}
                         </span>
                         <div style={{ display: "flex", gap: "8px", fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
-                          <span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{getRouteStats(rally).participants}</span>
-                          <span style={{ display: "flex", alignItems: "center", gap: "2px", color: "#FFD700" }}><Star size={12} fill="currentColor" strokeWidth={2} />{getRouteStats(rally).favorites}</span>
+                          {statsMap[rally.id]?.participants > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{statsMap[rally.id].participants}</span>)}
+                          {statsMap[rally.id]?.favorites > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px", color: "#FFD700" }}><Star size={12} fill="currentColor" strokeWidth={2} />{statsMap[rally.id].favorites}</span>)}
                         </div>
                       </div>
                     </div>

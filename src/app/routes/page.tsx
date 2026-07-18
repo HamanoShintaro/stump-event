@@ -2,7 +2,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
-import { getRouteStats } from "@/utils/routeStats";
+import { getRouteStatsMap } from "@/utils/routeStats";
 import { Footprints, Star } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
@@ -31,6 +31,7 @@ export default async function RoutesPage({ searchParams }: { searchParams?: Prom
   }
 
   const ralliesList = rallies || [];
+  const statsMap = await getRouteStatsMap(ralliesList.map((r) => r.id));
 
   return (
     <div className="container">
@@ -66,8 +67,8 @@ export default async function RoutesPage({ searchParams }: { searchParams?: Prom
                           💰 {rally.budget_tier === 1 ? "~1,000円" : rally.budget_tier === 2 ? "~5,000円" : "5,000円~"}
                         </span>
                         <div style={{ display: "flex", gap: "8px", fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
-                          <span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{getRouteStats(rally).participants}</span>
-                          <span style={{ display: "flex", alignItems: "center", gap: "2px", color: "#FFD700" }}><Star size={12} fill="currentColor" strokeWidth={2} />{getRouteStats(rally).favorites}</span>
+                          {statsMap[rally.id]?.participants > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{statsMap[rally.id].participants}</span>)}
+                          {statsMap[rally.id]?.favorites > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px", color: "#FFD700" }}><Star size={12} fill="currentColor" strokeWidth={2} />{statsMap[rally.id].favorites}</span>)}
                         </div>
                       </div>
                     </div>
