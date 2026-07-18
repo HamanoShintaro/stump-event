@@ -369,6 +369,152 @@ const iwatsukiBadges = [
 ];
 
 // ==========================================
+// 2.7. 北浦和ルート (芸術と静寂)
+// ==========================================
+const KITAURAWA_ROUTE_ID = 'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c66';
+const kitaurawaRoute = {
+  id: KITAURAWA_ROUTE_ID,
+  title: "芸術と静寂が交差する街——北浦和をめぐる",
+  description: "文教都市としての落ち着きと、美しい公園、近代美術が融合した北浦和。音と水が舞い踊る噴水から、黒川紀章設計の美術館、歴史ある古刹、そして昭和の空気感を今に残す喫茶店まで。静寂と芸術が交差する街角を歩き、新たな「しるし」を刻むフィールドワークのためのルートです。所要45〜60分・全行程徒歩。",
+  category: "地域を感じたい",
+  prefecture: "埼玉県",
+  budget_tier: 1,
+  is_published: true,
+  thumbnail_url: "/images/kitaurawa/route-eyecatch.png",
+  completion_ceremony_type: "quiz_4choice",
+  completion_quiz_data: {
+    question: '北浦和公園のシンボルであり、クラシック音楽に合わせて水が舞う施設はどれ？',
+    choices: [
+      { key: "A", text: "音楽噴水", description: "定時にクラシック音楽と連動して水が噴出する噴水", badge_code: "shuin_kitaurawa_fountain" },
+      { key: "B", text: "近代美術館", description: "彫刻の並ぶガラス張りの美術館", badge_code: "shuin_kitaurawa_museum" },
+      { key: "C", text: "双鶖庵 (そうしゅうあん)", description: "公園内の伝統的なお茶室", badge_code: "shuin_kitaurawa_tea" },
+      { key: "D", text: "昭和レトロ街灯", description: "西口広場に立つアンティークな街灯", badge_code: "shuin_kitaurawa_lamp" }
+    ]
+  }
+};
+
+const kitaurawaSpots = [
+  {
+    id: 'd2222222-2222-2222-2222-222222222220',
+    route_id: KITAURAWA_ROUTE_ID,
+    name: "始まりの街灯（北浦和駅西口広場）",
+    description: "北浦和駅の西口広場。レトロなデザインの街頭が優しく佇み、ここから広大な北浦和公園へと続く静かな散策の旅が始まります。",
+    image_url: "/images/kitaurawa/spot1.png",
+    address: "埼玉県さいたま市浦和区北浦和4-1",
+    location: "POINT(139.646500 35.871800)",
+    radius_meters: 50,
+    order_index: 1
+  },
+  {
+    id: 'd2222222-2222-2222-2222-222222222221',
+    route_id: KITAURAWA_ROUTE_ID,
+    name: "音と水の舞踏（北浦和公園 音楽噴水）",
+    description: "北浦和公園の中央に位置する美しい大噴水。定時になると、クラシック音楽の旋律と連動してダイナミックに水柱が躍る優雅なアートスポットです。",
+    image_url: "/images/kitaurawa/spot2.png",
+    address: "埼玉県さいたま市浦和区常盤9-30",
+    location: "POINT(139.645200 35.872200)",
+    radius_meters: 50,
+    order_index: 2
+  },
+  {
+    id: 'd2222222-2222-2222-2222-222222222222',
+    route_id: KITAURAWA_ROUTE_ID,
+    name: "グリッドの美学（埼玉県立近代美術館 MOMAS）",
+    description: "世界的建築家・黒川紀章の初期の代表作。格子状 of グリッドフレームが美しい建物で、公園の緑とモダンアートが静かに調和しています。",
+    image_url: "/images/kitaurawa/spot3.png",
+    address: "埼玉県さいたま市浦和区常盤9-30-1",
+    location: "POINT(139.644500 35.872500)",
+    radius_meters: 50,
+    order_index: 3
+  },
+  {
+    id: 'd2222222-2222-2222-2222-222222222223',
+    route_id: KITAURAWA_ROUTE_ID,
+    name: "静寂の山門（廓信寺）",
+    description: "江戸時代初期の慶長年間に建立された浄土宗の古刹。文教都市の喧騒から切り離されたかのような、厳かな松林と静寂に包まれた境内が広がります。",
+    image_url: "/images/kitaurawa/spot4.png",
+    address: "埼玉県さいたま市浦和区北浦和3-15-22",
+    location: "POINT(139.649200 35.874100)",
+    radius_meters: 50,
+    order_index: 4
+  },
+  {
+    id: 'd2222222-2222-2222-2222-222222222224',
+    route_id: KITAURAWA_ROUTE_ID,
+    name: "昭和の余白（純喫茶ひだまり）",
+    description: "北浦和の路地裏に佇む昭和レトロな純喫茶。温かい木のカウンターと名物の自家製プリン、サイフォンで淹れる薫り高い珈琲で旅のしるしを締めくくります。",
+    image_url: "/images/kitaurawa/spot5.png",
+    address: "埼玉県さいたま市浦和区北浦和3-8-1",
+    location: "POINT(139.648000 35.873200)",
+    radius_meters: 50,
+    order_index: 5
+  }
+];
+
+const kitaurawaBadges = [
+  {
+    code: `trailblazer_of_${KITAURAWA_ROUTE_ID}`,
+    category: "route",
+    name_ja: "北浦和の巡礼者",
+    subtitle_en: "Pilgrim of Kita-Urawa",
+    rarity: 2,
+    description: "北浦和の芸術と歴史をめぐるすべてのスポットを訪れ、しるしを刻み終えた証",
+    condition_type: "route_complete",
+    condition_params: { route_id: KITAURAWA_ROUTE_ID },
+    route_id: KITAURAWA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_kitaurawa_fountain",
+    category: "quiz",
+    name_ja: "◇泉の音楽家",
+    subtitle_en: "Fountain Musician",
+    rarity: 3,
+    description: "北浦和公園の象徴を「音楽噴水」と正しく答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: KITAURAWA_ROUTE_ID, choice: "A" },
+    route_id: KITAURAWA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_kitaurawa_museum",
+    category: "quiz",
+    name_ja: "◇審美眼の持ち主",
+    subtitle_en: "The Aesthetic Eye",
+    rarity: 3,
+    description: "北浦和公園の象徴を「近代美術館」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: KITAURAWA_ROUTE_ID, choice: "B" },
+    route_id: KITAURAWA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_kitaurawa_tea",
+    category: "quiz",
+    name_ja: "◇数寄屋の風流人",
+    subtitle_en: "The Tea Master",
+    rarity: 3,
+    description: "北浦和公園の象徴を「双鶖庵」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: KITAURAWA_ROUTE_ID, choice: "C" },
+    route_id: KITAURAWA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_kitaurawa_lamp",
+    category: "quiz",
+    name_ja: "◇ともしびの案内人",
+    subtitle_en: "The Lantern Guide",
+    rarity: 3,
+    description: "北浦和公園の象徴を「昭和レトロ街灯」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: KITAURAWA_ROUTE_ID, choice: "D" },
+    route_id: KITAURAWA_ROUTE_ID,
+    is_active: true
+  }
+];
+
+// ==========================================
 // 4. 埼玉・大宮周辺の5つのルート
 // ==========================================
 const SAITAMA_ROUTE_IDS = [
@@ -504,6 +650,7 @@ async function seed() {
     JIYUGAOKA_ROUTE_ID,
     YONO_ROUTE_ID,
     IWATSUKI_ROUTE_ID,
+    KITAURAWA_ROUTE_ID,
     ...SAITAMA_ROUTE_IDS
   ];
 
@@ -514,7 +661,8 @@ async function seed() {
   const badgeCodes = [
     ...jiyugaokaBadges.map(b => b.code),
     ...yonoBadges.map(b => b.code),
-    ...iwatsukiBadges.map(b => b.code)
+    ...iwatsukiBadges.map(b => b.code),
+    ...kitaurawaBadges.map(b => b.code)
   ];
   await supabase.from('badges').delete().in('code', badgeCodes);
   console.log("Cleared badges.");
@@ -536,6 +684,12 @@ async function seed() {
   await supabase.from('routes').insert([iwatsukiRoute]);
   await supabase.from('spots').insert(iwatsukiSpots);
   await supabase.from('badges').insert(iwatsukiBadges);
+
+  // 3.5. 北浦和ルート登録
+  console.log("Inserting Kitaurawa...");
+  await supabase.from('routes').insert([kitaurawaRoute]);
+  await supabase.from('spots').insert(kitaurawaSpots);
+  await supabase.from('badges').insert(kitaurawaBadges);
 
   // 4. 埼玉・大宮周辺5ルート登録
   console.log("Inserting Saitama/Omiya routes...");
