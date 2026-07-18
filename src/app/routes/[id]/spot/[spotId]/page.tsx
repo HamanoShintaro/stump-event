@@ -10,7 +10,7 @@ import { supabase } from "@/lib/supabase";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { motion, AnimatePresence } from "framer-motion";
-import { Footprints, Map as MapIcon, Star, CheckCircle, Share2, Compass, Award } from "lucide-react";
+import { Footprints, Map as MapIcon, Star, CheckCircle, Share2, Compass, Award, Camera, Image as ImageIcon, Trash2 } from "lucide-react";
 import { evaluateBadges } from "@/utils/badgeEvaluator";
 import BadgeReveal from "./BadgeReveal";
 import { useSpotStampStatus } from "@/hooks/useSpotStampStatus";
@@ -38,6 +38,7 @@ interface Spot {
   act_1b?: string;
   act_2?: string;
   qr_only?: boolean;
+  radius_meters?: number;
 }
 
 type CeremonyStep = 
@@ -48,8 +49,16 @@ type CeremonyStep =
   | 'C1' | 'C2' | 'C3' | 'C4' 
   | 'post_route_card';
 
-export default function SpotCheckInPage({ params }: { params: Promise<{ id: string; spotId: string }> }) {
+export default function SpotCheckInPage({ 
+  params,
+  searchParams
+}: { 
+  params: Promise<{ id: string; spotId: string }>,
+  searchParams: Promise<{ groupId?: string }>
+}) {
   const resolvedParams = use(params);
+  const resolvedSearchParams = use(searchParams);
+  const groupId = resolvedSearchParams.groupId || null;
   const router = useRouter();
   const { user } = useAuth();
   const { showAlert } = useCustomAlert();
@@ -57,11 +66,22 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
   const [route, setRoute] = useState<any>(null);
   const [spot, setSpot] = useState<Spot | null>(null);
   const [allSpots, setAllSpots] = useState<Spot[]>([]);
+
+  // 連れ立ち (Turedachi) 一言メモ・写真用State
+  const [stampEventId, setStampEventId] = useState<string | null>(null);
+  const [memoInput, setMemoInput] = useState("");
+  const [isSavingMemo, setIsSavingMemo] = useState(false);
+  const [memoSaved, setMemoSaved] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [savedPhotoUrl, setSavedPhotoUrl] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(true);
 
   const [locationError, setLocationError] = useState<string | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
   const [isCheckingIn, setIsCheckingIn] = useState(false);
+  const [showQRScanner, setShowQRScanner] = useState(false);
 
   // 演出用ステート
   const [ceremonyStep, setCeremonyStep] = useState<CeremonyStep>('idle');
@@ -116,6 +136,15 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
       // 3. 対象となる未所持スポットが一切ない場合、コンプリート
       if (!nextSpot) {
         setNextDestInfo({ isComplete: true, nextSpot: null });
+        await supabase
+          .from("user_routes")
+          .update({
+            status: "COMPLETED",
+            completed_at: new Date().toISOString()
+          })
+          .eq("user_id", user.id)
+          .eq("route_id", route.id)
+          .eq("status", "IN_PROGRESS");
       } else {
         setNextDestInfo({ isComplete: false, nextSpot });
       }
@@ -199,7 +228,8 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
               next_spot_name: s.next_spot_name || mockSpot?.next_spot_name,
               act_1a: s.act_1a || (mockSpot as any)?.act_1a,
               act_1b: s.act_1b || (mockSpot as any)?.act_1b,
-              act_2: s.act_2 || (mockSpot as any)?.act_2
+              act_2: s.act_2 || (mockSpot as any)?.act_2,
+              radius_meters: s.radius_meters ?? MAX_DISTANCE_METERS,
             };
           });
           setAllSpots(parsedAllSpots);
@@ -221,9 +251,108 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     fetchData();
   }, [resolvedParams.id, resolvedParams.spotId]);
 
-  // 2. GPS監視
+  // 連れ立ち（グループ）時の既存スタンプイベントとメモのロード
   useEffect(() => {
-    if (!spot || spot.lat === 0) return;
+    if (stampAcquired && user && spot) {
+      (async () => {
+        const { data } = await supabase
+          .from("stamp_events")
+          .select("id, memo, photo_url")
+          .eq("user_id", user.id)
+          .eq("spot_id", spot.id)
+          .order("created_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+
+        if (data) {
+          setStampEventId(data.id);
+          if (data.memo) {
+            setMemoInput(data.memo);
+          }
+          if (data.photo_url) {
+            setSavedPhotoUrl(data.photo_url);
+          }
+          if (data.memo || data.photo_url) {
+            setMemoSaved(true);
+          }
+        }
+      })();
+    }
+  }, [stampAcquired, user, spot]);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+    setImagePreview(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
+  const handleSaveMemo = async () => {
+    if (!stampEventId || !user) return;
+    if (!memoInput.trim() && !selectedFile) return;
+    
+    setIsSavingMemo(true);
+    try {
+      let uploadedUrl = null;
+      if (selectedFile) {
+        const fileExt = selectedFile.name.split('.').pop();
+        const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+        const filePath = `stamp-photos/${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('stamps')
+          .upload(filePath, selectedFile, { upsert: true });
+
+        if (uploadError) {
+          console.warn("Storage upload error, using base64 fallback:", uploadError);
+          uploadedUrl = await new Promise<string>((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result as string);
+            reader.readAsDataURL(selectedFile);
+          });
+        } else {
+          const { data } = supabase.storage.from('stamps').getPublicUrl(filePath);
+          uploadedUrl = data.publicUrl;
+        }
+      }
+
+      const updateData: any = {};
+      if (memoInput.trim()) updateData.memo = memoInput.trim();
+      if (uploadedUrl) {
+        updateData.photo_url = uploadedUrl;
+        setSavedPhotoUrl(uploadedUrl);
+      }
+
+      const { error } = await supabase
+        .from("stamp_events")
+        .update(updateData)
+        .eq("id", stampEventId);
+
+      if (error) throw error;
+      setMemoSaved(true);
+    } catch (err: any) {
+      await showAlert({ text: `思い出の共有に失敗しました: ${err.message}`, okText: "確認" });
+    } finally {
+      setIsSavingMemo(false);
+    }
+  };
+
+  // F. ユーザーのクリア進捗＆目的地算出
+  useEffect(() => {
+    if (!route || !spot || !user) return;
 
     if (!navigator.geolocation) {
       setLocationError("お使いのブラウザはGPSをサポートしていません。");
@@ -272,10 +401,11 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     return () => clearTimeout(t);
   }, [activeAct]);
 
-  // スポット切替で表示済みActをリセット
+  // スポット切替で表示済みActをリセット＆QRスキャナーを閉じる
   useEffect(() => {
     shownActs.current = new Set();
     setActiveAct(null);
+    setShowQRScanner(false);
   }, [spot?.id]);
 
   const isPageLoading = loading || stampLoading;
@@ -288,7 +418,8 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
     return notFound();
   }
 
-  const isLocationValid = distance !== null && distance <= MAX_DISTANCE_METERS;
+  const effectiveRadius = spot.radius_meters ?? MAX_DISTANCE_METERS;
+  const isLocationValid = distance !== null && distance <= effectiveRadius;
 
   // 音声再生ヘルパー
   const playSound = (src: string) => {
@@ -395,6 +526,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
           user_id: user.id,
           spot_id: spot.id,
           route_id: route.id,
+          group_id: groupId,
           method: qrTokenUsed ? "qr" : "gps",
           lat: clientLat || null,
           lng: clientLng || null,
@@ -407,6 +539,10 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
         .single();
 
       if (eventError) throw eventError;
+
+      if (eventData) {
+        setStampEventId(eventData.id);
+      }
 
       // 累計来訪者数（ visitor_number ）の仮算出
       const { count } = await supabase
@@ -822,6 +958,114 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 {/* 新規獲得称号の表示（P2: 封印→タップ開封のリビール演出） */}
                 <BadgeReveal badges={newlyAcquiredBadges} />
 
+                {/* 友達との思い出共有 (連れ立ち感想メモ・写真) */}
+                {groupId && (
+                  <div style={{ padding: "0 24px 20px 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
+                    <div style={{ fontSize: "0.75rem", color: "#A39687", fontWeight: "bold", textAlign: "left" }}>
+                      👥 同行メンバーへ感想と写真を共有する
+                    </div>
+                    {memoSaved ? (
+                      <div style={{ padding: "12px", background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)", borderRadius: "8px", fontSize: "0.8rem", color: "var(--accent-color)", display: "flex", flexDirection: "column", gap: "8px" }}>
+                        <div>✓ 思い出を送信しました: 「{memoInput}」</div>
+                        {savedPhotoUrl && (
+                          <div style={{ width: "100%", height: "120px", borderRadius: "6px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+                            <img src={savedPhotoUrl} alt="共有写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                        <div style={{ display: "flex", gap: "8px" }}>
+                          <input 
+                            type="text" 
+                            placeholder="例: ここの景色綺麗ですね！" 
+                            value={memoInput}
+                            onChange={(e) => setMemoInput(e.target.value)}
+                            maxLength={100}
+                            disabled={isSavingMemo}
+                            style={{ 
+                              flex: 1, 
+                              padding: "8px 12px", 
+                              fontSize: "0.85rem", 
+                              background: "rgba(255, 255, 255, 0.05)", 
+                              border: "1px solid rgba(255, 255, 255, 0.1)", 
+                              borderRadius: "6px", 
+                              color: "#FFF",
+                              outline: "none"
+                            }}
+                          />
+                          
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            disabled={isSavingMemo}
+                            style={{
+                              padding: "8px 10px",
+                              background: imagePreview ? "rgba(201,168,76,0.2)" : "rgba(255, 255, 255, 0.05)",
+                              border: "1px solid rgba(255, 255, 255, 0.1)",
+                              borderRadius: "6px",
+                              color: imagePreview ? "var(--accent-color)" : "#FFF",
+                              cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center"
+                            }}
+                            title="写真を添付"
+                          >
+                            <Camera size={16} />
+                          </button>
+
+                          <button 
+                            onClick={handleSaveMemo}
+                            disabled={isSavingMemo || (!memoInput.trim() && !selectedFile)}
+                            className="btn-primary"
+                            style={{ padding: "8px 12px", fontSize: "0.75rem", background: "var(--accent-color)", color: "#111", border: "none", cursor: "pointer", borderRadius: "6px" }}
+                          >
+                            {isSavingMemo ? "送信中" : "送信"}
+                          </button>
+                        </div>
+
+                        {/* ファイルインプット */}
+                        <input 
+                          type="file" 
+                          ref={fileInputRef}
+                          onChange={handleFileChange}
+                          accept="image/*"
+                          style={{ display: "none" }}
+                        />
+
+                        {/* 添付画像プレビュー */}
+                        {imagePreview && (
+                          <div style={{ position: "relative", alignSelf: "flex-start", width: "80px", height: "80px", borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--accent-color)" }}>
+                            <img src={imagePreview} alt="Preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            <button
+                              type="button"
+                              onClick={handleRemoveFile}
+                              style={{
+                                position: "absolute",
+                                top: "2px",
+                                right: "2px",
+                                background: "rgba(0,0,0,0.6)",
+                                border: "none",
+                                borderRadius: "50%",
+                                width: "16px",
+                                height: "16px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: "#FFF",
+                                cursor: "pointer",
+                                fontSize: "10px"
+                              }}
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {/* 2-3. 下部: アクションボタン */}
                 <div style={{ padding: "16px 24px 32px", display: "flex", flexDirection: "column", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
                   {nextDestInfo?.isComplete ? (
@@ -857,9 +1101,9 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                             .from('users')
                             .update({ active_spot_id: nextSpot.id })
                             .eq('id', user.id);
-                          router.push(`/routes/${route.id}/map`);
+                          router.push(`/routes/${route.id}/map${groupId ? `?groupId=${groupId}` : ""}`);
                         } else {
-                          router.push(`/routes/${route.id}/map`);
+                          router.push(`/routes/${route.id}/map${groupId ? `?groupId=${groupId}` : ""}`);
                         }
                       }}
                       className="btn-primary"
@@ -1147,7 +1391,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
       {/* B. 通常の押印画面表示層（IDLE時のみインタラクティブ） */}
       <div className="container" style={{ paddingBottom: "100px" }}>
         <header style={{ padding: "20px 0" }}>
-          <Link href={`/routes/${resolvedParams.id}`} className={"btn-primary " + styles.backBtn}>
+          <Link href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`} className={"btn-primary " + styles.backBtn}>
             ← 戻る
           </Link>
         </header>
@@ -1222,6 +1466,113 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 これまでの来訪回数: {visitCount}回
               </p>
               
+              {/* 連れ立ち思い出写真投稿フォーム */}
+              {groupId && (
+                <div style={{ marginTop: "24px", padding: "16px", background: "#FFFDF9", border: "1.5px solid var(--accent-color, #C9A84C)", borderRadius: "12px", width: "100%", maxWidth: "320px", margin: "16px auto 0", textAlign: "left" }}>
+                  <div style={{ fontSize: "0.75rem", color: "#8A7E72", fontWeight: "bold", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
+                    <span>👥</span> 同行メンバーへ感想と写真を共有する
+                  </div>
+                  {memoSaved ? (
+                    <div style={{ fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: "bold", padding: "10px", background: "rgba(199,68,46,0.05)", borderRadius: "8px", display: "flex", flexDirection: "column", gap: "8px" }}>
+                      <div>✓ 思い出を送信しました: 「{memoInput}」</div>
+                      {savedPhotoUrl && (
+                        <div style={{ width: "100%", height: "120px", borderRadius: "6px", overflow: "hidden", border: "1px solid #EBE5D9" }}>
+                          <img src={savedPhotoUrl} alt="思い出写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                      <div style={{ display: "flex", gap: "8px" }}>
+                        <input 
+                          type="text" 
+                          placeholder="例: 到着しました！" 
+                          value={memoInput}
+                          onChange={(e) => setMemoInput(e.target.value)}
+                          maxLength={100}
+                          disabled={isSavingMemo}
+                          style={{ 
+                            flex: 1, 
+                            padding: "8px 12px", 
+                            fontSize: "0.8rem", 
+                            background: "#FFFDF9", 
+                            border: "1px solid #EBE5D9", 
+                            borderRadius: "6px", 
+                            color: "var(--text-color)",
+                            outline: "none"
+                          }}
+                        />
+
+                        <button
+                          type="button"
+                          onClick={() => fileInputRef.current?.click()}
+                          disabled={isSavingMemo}
+                          style={{
+                            padding: "8px 10px",
+                            background: imagePreview ? "rgba(199,68,46,0.1)" : "#FFFDF9",
+                            border: "1px solid #EBE5D9",
+                            borderRadius: "6px",
+                            color: imagePreview ? "var(--primary-color)" : "#8A7E72",
+                            cursor: "pointer",
+                            display: "flex",
+                            alignItems: "center"
+                          }}
+                        >
+                          <Camera size={16} />
+                        </button>
+
+                        <button 
+                          onClick={handleSaveMemo}
+                          disabled={isSavingMemo || (!memoInput.trim() && !selectedFile)}
+                          className="btn-primary"
+                          style={{ padding: "8px 12px", fontSize: "0.75rem", borderRadius: "6px", cursor: "pointer" }}
+                        >
+                          {isSavingMemo ? "送信中" : "送信"}
+                        </button>
+                      </div>
+
+                      {/* ファイルインプット */}
+                      <input 
+                        type="file" 
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        accept="image/*"
+                        style={{ display: "none" }}
+                      />
+
+                      {/* 添付画像プレビュー */}
+                      {imagePreview && (
+                        <div style={{ position: "relative", alignSelf: "flex-start", width: "80px", height: "80px", borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--primary-color)" }}>
+                          <img src={imagePreview} alt="Preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <button
+                            type="button"
+                            onClick={handleRemoveFile}
+                            style={{
+                              position: "absolute",
+                              top: "2px",
+                              right: "2px",
+                              background: "rgba(0,0,0,0.6)",
+                              border: "none",
+                              borderRadius: "50%",
+                              width: "16px",
+                              height: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              color: "#FFF",
+                              cursor: "pointer",
+                              fontSize: "10px"
+                            }}
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%", maxWidth: "300px", margin: "20px auto 0" }}>
                 <button 
                   onClick={() => triggerCeremony(visitorNumber)}
@@ -1230,7 +1581,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 >
                   💮 セレモニーを再体験する
                 </button>
-                <Link href={`/routes/${resolvedParams.id}`} className={"btn-secondary " + styles.glowBtn}>
+                <Link href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`} className={"btn-secondary " + styles.glowBtn}>
                   ルート詳細に戻る
                 </Link>
               </div>
@@ -1247,7 +1598,7 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                   {isLocationValid ? (
                     <p style={{ color: "green", fontWeight: "bold" }}>圏内です。押印できます。</p>
                   ) : (
-                    <p style={{ color: "red", fontWeight: "bold" }}>あと {distance - MAX_DISTANCE_METERS}m 近づいてください。</p>
+                    <p style={{ color: "red", fontWeight: "bold" }}>あと {distance - effectiveRadius}m 近づいてください。</p>
                   )}
                 </div>
               ) : !locationError ? (
@@ -1260,10 +1611,30 @@ export default function SpotCheckInPage({ params }: { params: Promise<{ id: stri
                 </button>
               )}
 
-              {(isLocationValid || locationError) && !isCheckingIn && (
-                <div className={styles.scannerWrapper}>
-                  <QRScanner onScanSuccess={handleScanSuccess} />
-                  <p style={{ marginTop: "12px", opacity: 0.8, fontSize: "0.9rem" }}>カメラを許可してQRコードを読み取ってください。</p>
+              {/* qr_tokenが設定されているスポットのみQR押印を表示 */}
+              {isLocationValid && spot.qr_token && !isCheckingIn && (
+                <div style={{ marginTop: "8px" }}>
+                  {!showQRScanner ? (
+                    <button
+                      onClick={() => setShowQRScanner(true)}
+                      className="btn-secondary"
+                      style={{ width: "100%", padding: "12px", fontSize: "0.95rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                    >
+                      <span>📷</span> QRコードで押印する
+                    </button>
+                  ) : (
+                    <div className={styles.scannerWrapper}>
+                      <QRScanner onScanSuccess={handleScanSuccess} />
+                      <p style={{ marginTop: "12px", opacity: 0.8, fontSize: "0.9rem" }}>カメラを許可してQRコードを読み取ってください。</p>
+                      <button
+                        onClick={() => setShowQRScanner(false)}
+                        className="btn-secondary"
+                        style={{ marginTop: "8px", padding: "8px 16px", fontSize: "0.85rem" }}
+                      >
+                        キャンセル
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
 

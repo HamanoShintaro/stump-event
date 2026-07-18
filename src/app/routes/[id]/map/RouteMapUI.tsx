@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { Footprints, Map as MapIcon, Star } from "lucide-react";
+import { Footprints, Map as MapIcon, Star, Users } from "lucide-react";
 import { getDistance } from "geolib";
+import { useAuth } from "@/context/AuthContext";
 import styles from "./page.module.css";
 
 // LeafletアイコンのNext.js用のバグ修正
@@ -148,9 +149,22 @@ interface RouteMapUIProps {
   rally: any;
   spots: Spot[];
   activeSpotId: string | null;
+  groupId: string | null;
+  groupMembers?: any[];
+  memberLatestStamps?: Record<string, string>;
+  spotAcquiredMembers?: Record<string, any[]>;
 }
 
-export default function RouteMapUI({ rally, spots, activeSpotId }: RouteMapUIProps) {
+export default function RouteMapUI({ 
+  rally, 
+  spots, 
+  activeSpotId, 
+  groupId, 
+  groupMembers = [], 
+  memberLatestStamps = {}, 
+  spotAcquiredMembers = {} 
+}: RouteMapUIProps) {
+  const { user } = useAuth();
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
   const [selectedSpot, setSelectedSpot] = useState<Spot | null>(null);
 
@@ -324,6 +338,49 @@ export default function RouteMapUI({ rally, spots, activeSpotId }: RouteMapUIPro
             </Marker>
           );
         })}
+
+        {/* 同行メンバーのアバターマーカー */}
+        {groupId && Object.entries(memberLatestStamps).map(([memberId, spotId]) => {
+          const member = groupMembers.find(m => m.user_id === memberId);
+          const spot = spots.find(s => s.id === spotId);
+          if (!spot || !member || memberId === user?.id) return null;
+          
+          // 重なりを避けるため経緯度を少しずらす
+          const memberLat = spot.lat + 0.00015;
+          const memberLng = spot.lng + 0.00015;
+          
+          const memberIcon = L.divIcon({
+            html: `
+              <div style="
+                background-color: var(--accent-color, #C9A84C); 
+                border: 2px solid white; 
+                width: 32px; height: 32px; 
+                border-radius: 50%; 
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                display: flex; justify-content: center; align-items: center;
+              ">
+                ${member.users?.avatar_url 
+                  ? `<img src="${member.users.avatar_url}" style="width: 100%; height: 100%; object-fit: cover;" />` 
+                  : `<span style="font-size: 14px; font-weight: bold; color: white;">${(member.users?.display_name || "👤").slice(0, 1)}</span>`}
+              </div>
+            `,
+            className: 'member-avatar-pin',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+          });
+          
+          return (
+            <Marker key={memberId} position={[memberLat, memberLng]} icon={memberIcon}>
+              <Popup>
+                <div style={{ fontWeight: "700", fontSize: "0.85rem" }}>
+                  {member.users?.display_name || "同行メンバー"}
+                </div>
+                <div style={{ fontSize: "0.75rem", color: "#8A7E72" }}>「{spot.name}」に滞在中</div>
+              </Popup>
+            </Marker>
+          );
+        })}
       </MapContainer>
 
       {selectedSpot ? (
@@ -360,6 +417,41 @@ export default function RouteMapUI({ rally, spots, activeSpotId }: RouteMapUIPro
                   : "スポット詳細をピンから確認中"}
                 {distanceToSelected !== null && ` (${formatDistance(distanceToSelected)})`}
               </p>
+
+              {/* しるしを獲得したメンバー一覧 */}
+              {groupId && spotAcquiredMembers[selectedSpot.id] && spotAcquiredMembers[selectedSpot.id].length > 0 && (
+                <div style={{ marginTop: "12px", borderTop: "1px solid #EBE5D9", paddingTop: "8px" }}>
+                  <div style={{ fontSize: "0.7rem", color: "#A39687", fontWeight: "bold", marginBottom: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                    <Users size={12} color="var(--primary-color)" /> しるしを獲得した同行者
+                  </div>
+                  <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
+                    {spotAcquiredMembers[selectedSpot.id].map(m => (
+                      <div 
+                        key={m.id} 
+                        title={m.display_name}
+                        style={{ 
+                          width: "24px", 
+                          height: "24px", 
+                          borderRadius: "50%", 
+                          background: "#EBE5D9", 
+                          overflow: "hidden", 
+                          border: "1px solid #FFF",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
+                        }}
+                      >
+                        {m.avatar_url ? (
+                          <img src={m.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        ) : (
+                          <span style={{ fontSize: "0.6rem" }}>{(m.display_name || "👤").slice(0, 1)}</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

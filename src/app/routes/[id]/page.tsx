@@ -41,7 +41,7 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
   return (
     <div className="container">
       <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <BackButton />
+        <BackButton href="/routes" />
         <HeaderNav />
       </header>
 

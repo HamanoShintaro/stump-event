@@ -5,43 +5,32 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
+import { useCustomAlert } from "@/hooks/useCustomAlert";
+import HeaderNav from "@/components/HeaderNav";
+import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft } from "lucide-react";
+import { useMyPageData } from "@/hooks/useMyPageData";
 import styles from "./page.module.css";
 
-const MENU_ITEMS = [
-  { id: "search", icon: "🔍", label: "探す" },
-  { id: "active", icon: "🚶", label: "進行中" },
-  { id: "diary", icon: "📖", label: "日記" },
-  { id: "achievements", icon: "🏆", label: "実績" },
-  { id: "my-rallies", icon: "🎨", label: "マイルート" },
-  { id: "comments", icon: "💬", label: "保存リスト" },
-  { id: "payment", icon: "💳", label: "お支払い" },
-  { id: "profile", icon: "⚙️", label: "設定" },
-];
-
-const ALL_STATIC_BADGES = [
-  { code: "first_step", name_ja: "初めての一歩", subtitle_en: "First Step", rarity: 1, description: "初めてのスポットへの押印を記録した証" },
-  { code: "beta_pioneer", name_ja: "ベータ探索者", subtitle_en: "Beta Pioneer", rarity: 3, description: "SHUINの黎明期（β版）に参加し、街のしるしを巡りはじめた先駆者の証" },
-  { code: "cherry_blossom_visitor", name_ja: "桜の頃の訪問者", subtitle_en: "Cherry Blossom Visitor", rarity: 2, description: "桜舞う春の季節（3/20〜4/10）に街を歩き、しるしを刻んだ証" },
-  { code: "midsummer_pathfinder", name_ja: "盛夏の踏破者", subtitle_en: "Midsummer Pathfinder", rarity: 2, description: "陽光照りつける夏の季節（7/20〜8/20）に街を歩き、しるしを刻んだ証" },
-  { code: "autumn_witness", name_ja: "紅葉の証人", subtitle_en: "Autumn Witness", rarity: 2, description: "紅葉色づく秋の季節（10/15〜11/15）に街を歩き、しるしを刻んだ証" },
-  { code: "winter_solstice_walker", name_ja: "冬至の歩者", subtitle_en: "Winter Solstice Walker", rarity: 2, description: "冬至の澄んだ空気の中（12/19〜12/25）を歩き、しるしを刻んだ証" },
-  { code: "new_years_pilgrim", name_ja: "年越しの使者", subtitle_en: "New Year's Pilgrim", rarity: 3, description: "新しい年の始まり（1/1〜1/3）に街を訪れ、しるしを刻んだ証" },
-  { code: "the_persistent", name_ja: "継続する者", subtitle_en: "The Persistent", rarity: 1, description: "累計10箇所のスポットへ訪れ、しるしを重ねてきた証" },
-  { code: "the_walker", name_ja: "歩み続ける者", subtitle_en: "The Walker", rarity: 2, description: "累計50箇所のスポットへ訪れ、街の記憶を巡り続けた証" },
-  { code: "record_keeper", name_ja: "踏破の記録者", subtitle_en: "Record Keeper", rarity: 3, description: "累計100箇所のスポットへ訪れ、数多のしるしを刻み込んだ証" },
-  { code: "lore_collector", name_ja: "物語の収集者", subtitle_en: "Lore Collector", rarity: 2, description: "10箇所のスポットを訪れ、多くの物語片を集めた証" },
-  { code: "keeper_of_stories", name_ja: "語り継ぐ者", subtitle_en: "Keeper of Stories", rarity: 3, description: "ルートの全スポットを巡り、失われつつある物語を心に刻んだ証" }
-];
-
-import { useMyPageData } from "@/hooks/useMyPageData";
+// 街の便り（仮データ - 最新のものを表示）
+const LATEST_NEWS = {
+  date: "2026.07.18",
+  title: "岩槻ルートの公開と「連れ立ち」機能追加のお知らせ",
+  summary: "歴史ある城下町・岩槻をめぐる新しいルートが公開されました。また、友達と一緒に同じルートを巡る「連れ立ち」機能が本日から利用可能になりました。マイページまたはマップ画面から招待コードを入力して合流しましょう！"
+};
 
 export default function MyPage() {
   const { user, loading, logout } = useAuth();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("active");
   const [userBadges, setUserBadges] = useState<any[]>([]);
   const [badgesLoading, setBadgesLoading] = useState(false);
   const [diary, setDiary] = useState<any[]>([]);
+  const [diaryLoading, setDiaryLoading] = useState(false);
+
+  // 連れ立ち用State
+  const [showJoinDialog, setShowJoinDialog] = useState(false);
+  const [inviteCodeInput, setInviteCodeInput] = useState("");
+  const [isJoining, setIsJoining] = useState(false);
+  const { showAlert } = useCustomAlert();
 
   useEffect(() => {
     if (!loading && !user) {
@@ -89,26 +78,33 @@ export default function MyPage() {
   useEffect(() => {
     if (!user) return;
     (async () => {
-      const { data: evs, error } = await supabase
-        .from("stamp_events")
-        .select("id, created_at, visitor_number, spot_id, route_id")
-        .eq("user_id", user.id)
-        .order("created_at", { ascending: false });
-      if (error) { console.error("diary fetch error", error); return; }
-      const events = evs || [];
-      const spotIds = [...new Set(events.map((e: any) => e.spot_id).filter(Boolean))];
-      const routeIds = [...new Set(events.map((e: any) => e.route_id).filter(Boolean))];
-      const spotMap: Record<string, string> = {};
-      const routeMap: Record<string, string> = {};
-      if (spotIds.length) {
-        const { data: sp } = await supabase.from("spots").select("id, name").in("id", spotIds);
-        (sp || []).forEach((x: any) => { spotMap[x.id] = x.name; });
+      setDiaryLoading(true);
+      try {
+        const { data: evs, error } = await supabase
+          .from("stamp_events")
+          .select("id, created_at, visitor_number, spot_id, route_id")
+          .eq("user_id", user.id)
+          .order("created_at", { ascending: false });
+        if (error) { console.error("diary fetch error", error); return; }
+        const events = evs || [];
+        const spotIds = [...new Set(events.map((e: any) => e.spot_id).filter(Boolean))];
+        const routeIds = [...new Set(events.map((e: any) => e.route_id).filter(Boolean))];
+        const spotMap: Record<string, string> = {};
+        const routeMap: Record<string, string> = {};
+        if (spotIds.length) {
+          const { data: sp } = await supabase.from("spots").select("id, name").in("id", spotIds);
+          (sp || []).forEach((x: any) => { spotMap[x.id] = x.name; });
+        }
+        if (routeIds.length) {
+          const { data: rt } = await supabase.from("routes").select("id, title, name").in("id", routeIds);
+          (rt || []).forEach((x: any) => { routeMap[x.id] = x.title || x.name; });
+        }
+        setDiary(events.map((e: any) => ({ ...e, spotName: spotMap[e.spot_id], routeName: routeMap[e.route_id] })));
+      } catch (e) {
+        console.error("Failed to load diary", e);
+      } finally {
+        setDiaryLoading(false);
       }
-      if (routeIds.length) {
-        const { data: rt } = await supabase.from("routes").select("id, title, name").in("id", routeIds);
-        (rt || []).forEach((x: any) => { routeMap[x.id] = x.title || x.name; });
-      }
-      setDiary(events.map((e: any) => ({ ...e, spotName: spotMap[e.spot_id], routeName: routeMap[e.route_id] })));
     })();
   }, [user]);
 
@@ -123,326 +119,439 @@ export default function MyPage() {
     router.push("/");
   };
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case "diary":
-        return (
+  // 獲得した称号（最大3個）
+  const earnedBadges = userBadges.map(ub => ub.badges).filter(Boolean).slice(0, 3);
+
+  const handleJoinGroup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!user) return;
+    
+    const cleanCode = inviteCodeInput.replace(/\s+/g, "");
+    if (cleanCode.length !== 6 || !/^\d{6}$/.test(cleanCode)) {
+      await showAlert({ text: "招待コードは6桁の半角数字で入力してください。", okText: "確認" });
+      return;
+    }
+    
+    setIsJoining(true);
+    try {
+      const { data: grp, error: grpError } = await supabase
+        .from("groups")
+        .select("*")
+        .eq("invite_code", cleanCode)
+        .eq("is_active", true)
+        .maybeSingle();
+        
+      if (grpError) throw grpError;
+      if (!grp) {
+        await showAlert({ text: "指定された招待コードの連れ立ちグループが見つかりません。コードが正しいか、またはすでに解散されていないかご確認ください。", okText: "確認" });
+        return;
+      }
+      
+      const { data: existingMember } = await supabase
+        .from("group_members")
+        .select("id")
+        .eq("group_id", grp.id)
+        .eq("user_id", user.id)
+        .maybeSingle();
+        
+      if (!existingMember) {
+        const { error: joinError } = await supabase
+          .from("group_members")
+          .insert({
+            group_id: grp.id,
+            user_id: user.id
+          });
+          
+        if (joinError) throw joinError;
+      }
+      
+      setShowJoinDialog(false);
+      router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
+    } catch (err: any) {
+      await showAlert({ text: `連れ立ちへの参加に失敗しました: ${err.message}`, okText: "確認" });
+    } finally {
+      setIsJoining(false);
+    }
+  };
+
+  return (
+    <div className="container">
+      <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Link href="/" className="nav-logo">
+          <img src="/shuin-logo-horizontal.png" alt="SHUIN まちのしるし" style={{ height: "32px", display: "block", objectFit: "contain" }} />
+        </Link>
+        <HeaderNav />
+      </header>
+
+      <main style={{ maxWidth: "720px", margin: "0 auto", paddingBottom: "80px" }}>
+        <div style={{ marginBottom: "20px" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "4px", color: "#A39687", textDecoration: "none", fontSize: "0.9rem", fontWeight: "bold" }}>
+            <ChevronLeft size={16} /> ホームへ戻る
+          </Link>
+        </div>
+
+        {/* ユーザープロフィールヘッダー */}
+        <section 
+          className="glass-card" 
+          style={{ 
+            display: "flex", 
+            justifyContent: "space-between", 
+            alignItems: "center", 
+            padding: "24px 20px", 
+            borderRadius: "16px", 
+            border: "1px solid #EBE5D9", 
+            background: "#FFFDF9",
+            boxShadow: "0 4px 15px rgba(92, 78, 67, 0.04)",
+            marginBottom: "24px",
+            flexWrap: "wrap",
+            gap: "16px"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <img 
+              src={user.user_metadata?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.id}`} 
+              alt="Profile" 
+              style={{ width: "64px", height: "64px", borderRadius: "50%", background: "#fff", border: "2px solid var(--primary-color)" }} 
+            />
+            <div>
+              <div style={{ fontSize: "0.8rem", color: "#A39687" }}>ようこそ</div>
+              <h1 style={{ fontWeight: "800", fontSize: "1.3rem", color: "var(--primary-color)", margin: "2px 0 0 0" }}>
+                {user.user_metadata?.full_name || "ユーザー"} さん
+              </h1>
+              <div style={{ fontSize: "0.75rem", color: "#8A7E72", marginTop: "2px" }}>{user.email}</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "8px" }}>
+            <Link href="/settings" className="btn-secondary" style={{ padding: "8px 12px", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "6px", textDecoration: "none", color: "#5C4E43", border: "1px solid #EBE5D9", background: "transparent", borderRadius: "8px" }}>
+              <Settings size={16} /> 設定
+            </Link>
+            <button onClick={handleLogout} className="btn-secondary" style={{ padding: "8px 12px", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "6px", color: "#D9655B", border: "1px solid rgba(217,101,91,0.3)", background: "transparent", borderRadius: "8px", cursor: "pointer" }}>
+              <LogOut size={16} /> ログアウト
+            </button>
+          </div>
+        </section>
+
+        {/* 連れ立ちクイックアクセス */}
+        <section 
+          className="glass-card" 
+          style={{ 
+            padding: "16px 20px", 
+            borderRadius: "14px", 
+            border: "1px solid #EBE5D9",
+            background: "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginBottom: "24px",
+            boxShadow: "0 4px 12px rgba(92, 78, 67, 0.04)"
+          }}
+        >
           <div>
-            <h2 className={styles.sectionTitle}>日記 ― あなたの来訪記録</h2>
-            {diary.length === 0 ? (
-              <p style={{ color: "#A39687", padding: "20px 0" }}>まだ押印の記録がありません。街を歩いて、しるしを刻みましょう。</p>
-            ) : (
+            <h3 style={{ fontSize: "0.95rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 2px 0", display: "flex", alignItems: "center", gap: "6px" }}>
+              <Users size={16} color="var(--primary-color)" /> 友達と「連れ立ち」で巡る
+            </h3>
+            <p style={{ fontSize: "0.75rem", color: "#8A7E72", margin: 0 }}>
+              招待コードを入力して、友達のグループに合流します。
+            </p>
+          </div>
+          <button 
+            onClick={() => {
+              setInviteCodeInput("");
+              setShowJoinDialog(true);
+            }}
+            className="btn-primary" 
+            style={{ 
+              padding: "10px 16px", 
+              fontSize: "0.85rem", 
+              fontWeight: "bold",
+              background: "var(--primary-color)",
+              boxShadow: "0 2px 8px rgba(199, 68, 46, 0.2)"
+            }}
+          >
+            招待コードを入力
+          </button>
+        </section>
+
+        {/* メインダッシュボードコンテンツ */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+          
+          {/* 0. 街の便り */}
+          <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ display: "flex", alignItems: "center", justifyItems: "center" }}><Bell size={18} color="var(--primary-color)" /></span> 街の便り
+              </h2>
+              <Link href="/notifications" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
+                一覧を見る <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div style={{ padding: "14px 16px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "10px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "6px" }}>
+                <span style={{ fontSize: "0.75rem", color: "#A39687" }}>{LATEST_NEWS.date}</span>
+                <span style={{ fontSize: "0.7rem", background: "rgba(217,101,91,0.1)", color: "var(--primary-color)", padding: "1px 5px", borderRadius: "4px", fontWeight: "bold" }}>最新</span>
+              </div>
+              <h3 style={{ fontSize: "0.95rem", fontWeight: 800, color: "#5C4E43", margin: "0 0 6px 0", lineHeight: "1.4" }}>
+                <Link href="/notifications" style={{ textDecoration: "none", color: "inherit" }}>
+                  {LATEST_NEWS.title}
+                </Link>
+              </h3>
+              <p style={{ fontSize: "0.8rem", color: "#8A7E72", margin: 0, lineHeight: "1.4" }}>
+                {LATEST_NEWS.summary}
+              </p>
+            </div>
+          </section>
+
+          {/* 1. 進行中ルート */}
+          <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "1.2rem" }}>🚶</span> 進行中のルート
+              </h2>
+              <Link href="/mypage/active" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
+                すべて見る <ArrowRight size={14} />
+              </Link>
+            </div>
+            
+            {dataLoading ? (
+              <p style={{ color: "#A39687", fontSize: "0.9rem" }}>読み込み中...</p>
+            ) : activeRallies.length > 0 ? (
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                {diary.map((d) => (
-                  <div key={d.id} style={{ display: "flex", gap: "14px", alignItems: "flex-start", padding: "14px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "12px" }}>
-                    <div style={{ minWidth: "72px", fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: 700 }}>{new Date(d.created_at).toLocaleDateString("ja-JP")}</div>
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 700, color: "#5C4E43" }}>{d.spotName || "スポット"}</div>
-                      <div style={{ fontSize: "0.8rem", color: "#A39687", marginTop: "2px" }}>{d.routeName || ""}{d.visitor_number ? ` ・ #${d.visitor_number}番目の来訪者` : ""}</div>
+                {activeRallies.slice(0, 1).map((ur) => (
+                  <div key={ur.id} style={{ padding: "16px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "12px" }}>
+                    <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#5C4E43", margin: "0 0 8px 0" }}>{ur.routes?.title}</h3>
+                    <p style={{ fontSize: "0.75rem", color: "#A39687", margin: "0 0 12px 0" }}>参加日: {new Date(ur.joined_at).toLocaleDateString("ja-JP")}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", fontWeight: "700", color: "#5C4E43", marginBottom: "6px" }}>
+                      <span>クリア状況</span>
+                      <span>{ur.status === 'COMPLETED' ? 'クリア！🎉' : '進行中'}</span>
+                    </div>
+                    <div style={{ width: "100%", height: "8px", background: "#EBE5D9", borderRadius: "4px", overflow: "hidden" }}>
+                      <div style={{ width: ur.status === 'COMPLETED' ? "100%" : "15%", height: "100%", background: "var(--primary-color)" }}></div>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "14px" }}>
+                      <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>離脱する</button>
+                      <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
                     </div>
                   </div>
                 ))}
               </div>
-            )}
-          </div>
-        );
-      case "search":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>ルートを探す</h2>
-            <div className={styles.mockCard}>
-              <h3 className={styles.mockTitle}>📍 現在地から探す</h3>
-              <p className={styles.mockDesc}>あなたの周辺で開催中のルートをマップに表示します。</p>
-              <div style={{ height: "200px", background: "rgba(255,255,255,0.7)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#666", border: "2px dashed #ccc" }}>
-                [Google Maps UI プレースホルダー]
-              </div>
-            </div>
-            <div className={styles.mockCard}>
-              <h3 className={styles.mockTitle}>🔍 条件で検索する</h3>
-              <div style={{ display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" }}>
-                <span className={styles.tag}>地域: 埼玉県</span>
-                <span className={styles.tag}>タグ: グルメ</span>
-                <span className={styles.tag}>所要時間: 2時間〜</span>
-              </div>
-              <button className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.9rem" }}>検索結果を見る (12件)</button>
-            </div>
-          </div>
-        );
-      case "active":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>進行中のルート</h2>
-            {dataLoading ? (
-              <p>データを読み込んでいます...</p>
-            ) : activeRallies.length > 0 ? (
-              activeRallies.map((ur) => (
-                <div key={ur.id} className={styles.mockCard}>
-                  <h3 className={styles.mockTitle}>{ur.routes?.title}</h3>
-                  <p className={styles.mockDesc}>参加日: {new Date(ur.joined_at).toLocaleDateString()}</p>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem", fontWeight: "700" }}>
-                    <span>ステータス</span>
-                    <span>{ur.status === 'COMPLETED' ? 'クリア！🎉' : '進行中'}</span>
-                  </div>
-                  <div className={styles.progressBar}>
-                    <div className={styles.progressFill} style={{ width: ur.status === 'COMPLETED' ? "100%" : "10%" }}></div>
-                  </div>
-                  <div style={{ marginTop: "16px", display: "flex", justifyContent: "flex-end", gap: "8px" }}>
-                    <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.85rem", background: "#f0f0f0", color: "#333", border: "none", borderRadius: "8px", cursor: "pointer" }}>離脱する</button>
-                    <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.85rem" }}>ルートを見る</Link>
-                  </div>
-                </div>
-              ))
             ) : (
-              <p style={{ color: '#888' }}>現在参加中のルートはありません。</p>
+              <div style={{ textAlign: "center", padding: "24px 0", color: "#B3A598" }}>
+                <p style={{ margin: "0 0 12px 0", fontSize: "0.9rem" }}>現在、進行中のルートはありません。</p>
+                <Link href="/routes" className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none", display: "inline-block" }}>ルートを探す</Link>
+              </div>
             )}
-          </div>
-        );
-      case "achievements": {
-        // 獲得済みのバッジコードのリスト
-        const acquiredCodes = new Set(userBadges.map((ub) => ub.badges?.code));
+          </section>
 
-        // 静的バッジの獲得・未獲得を整理
-        const staticBadgesToShow = ALL_STATIC_BADGES.map((b) => {
-          const isAcquired = acquiredCodes.has(b.code);
-          const assignment = userBadges.find((ub) => ub.badges?.code === b.code);
-          return {
-            ...b,
-            isAcquired,
-            acquired_at: assignment ? new Date(assignment.acquired_at).toLocaleDateString("ja-JP") : null,
-          };
-        });
-
-        // 静的バッジにない、動的バッジ（スポット来訪、ルート完走など）を抽出
-        const staticCodes = new Set(ALL_STATIC_BADGES.map((b) => b.code));
-        const dynamicBadgesAcquired = userBadges
-          .filter((ub) => ub.badges && !staticCodes.has(ub.badges.code))
-          .map((ub) => ({
-            code: ub.badges.code,
-            name_ja: ub.badges.name_ja,
-            subtitle_en: ub.badges.subtitle_en,
-            rarity: ub.badges.rarity,
-            description: ub.badges.description || "街のしるしを巡り、物語を紐解いた証",
-            isAcquired: true,
-            acquired_at: new Date(ub.acquired_at).toLocaleDateString("ja-JP"),
-          }));
-
-        // すべてのバッジを結合（獲得済みの動的バッジ ＋ 静的バッジリスト）
-        const allBadges = [...dynamicBadgesAcquired, ...staticBadgesToShow];
-
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>実績と称号</h2>
+          {/* 2. 最近獲得した称号 */}
+          <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "1.2rem" }}>🏆</span> 最近獲得した称号
+              </h2>
+              <Link href="/badges" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
+                すべて見る <ArrowRight size={14} />
+              </Link>
+            </div>
+            
             {badgesLoading ? (
-              <p>実績を読み込んでいます...</p>
-            ) : allBadges.length > 0 ? (
-              <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "16px" }}>
-                {allBadges.map((badge, idx) => (
-                  <div 
-                    key={badge.code + idx} 
-                    className="glass-card"
-                    style={{
-                      background: badge.isAcquired ? "#0D0D0D" : "rgba(18, 18, 18, 0.4)",
-                      border: badge.isAcquired ? "1px solid var(--accent-color)" : "1px solid rgba(255, 255, 255, 0.05)",
-                      borderRadius: "12px",
-                      padding: "20px",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "8px",
-                      opacity: badge.isAcquired ? 1 : 0.45,
-                      boxShadow: badge.isAcquired ? "0 4px 20px rgba(201, 168, 76, 0.15)" : "none",
-                      transition: "all 0.3s ease"
-                    }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                      <div>
-                        <span style={{ 
-                          color: badge.isAcquired ? "var(--accent-color)" : "#888", 
-                          fontSize: "0.75rem", 
-                          fontWeight: "800",
-                          letterSpacing: "1px",
-                          textTransform: "uppercase"
-                        }}>
-                          {badge.isAcquired ? "★".repeat(badge.rarity) : "☆".repeat(badge.rarity)}
-                        </span>
-                        <h3 style={{ 
-                          fontSize: "1.15rem", 
-                          fontWeight: "800", 
-                          color: badge.isAcquired ? "var(--accent-color)" : "#888",
-                          margin: "4px 0 2px",
-                          fontFamily: "serif"
-                        }}>
-                          {badge.isAcquired ? badge.name_ja : "未開のしるし"}
-                        </h3>
-                        <p style={{ 
-                          fontSize: "0.75rem", 
-                          color: badge.isAcquired ? "#888888" : "#555555", 
-                          fontStyle: "italic", 
-                          margin: 0 
-                        }}>
-                          {badge.subtitle_en}
-                        </p>
-                      </div>
-                      <span style={{ fontSize: "1.6rem", opacity: badge.isAcquired ? 1 : 0.2 }}>
-                        {badge.isAcquired ? "🏆" : "🔒"}
-                      </span>
-                    </div>
-                    
-                    <p style={{ 
-                      fontSize: "0.85rem", 
-                      color: badge.isAcquired ? "#F2F2F2" : "#777777", 
-                      margin: "8px 0 4px",
-                      lineHeight: "1.6"
-                    }}>
-                      {badge.description}
-                    </p>
-
-                    {badge.isAcquired && badge.acquired_at && (
-                      <div style={{ 
-                        fontSize: "0.75rem", 
-                        color: "var(--accent-color)", 
-                        alignSelf: "flex-end",
-                        fontWeight: "600",
-                        marginTop: "4px"
-                      }}>
-                        獲得日: {badge.acquired_at}
+              <p style={{ color: "#A39687", fontSize: "0.9rem" }}>読み込み中...</p>
+            ) : earnedBadges.length > 0 ? (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "12px" }}>
+                {earnedBadges.map((badge, idx) => (
+                  <div key={badge.code + idx} style={{ background: "#FFFDF9", border: "1px solid var(--accent-color, #C9A84C)", borderRadius: "10px", padding: "14px 10px", textAlign: "center" }}>
+                    <div style={{ color: "#C9A84C", fontSize: "0.6rem", letterSpacing: "1px", marginBottom: "2px" }}>{"★".repeat(badge.rarity || 1)}</div>
+                    <div style={{ color: "#C9A84C", fontSize: "0.85rem", fontWeight: 800, fontFamily: "var(--font-family), serif", margin: "4px 0 2px" }}>{badge.name_ja}</div>
+                    <div style={{ color: "#9a8f6f", fontSize: "0.65rem", fontStyle: "italic" }}>{badge.subtitle_en}</div>
+                    {badge.acquired_at && (
+                      <div style={{ color: "#6f675a", fontSize: "0.6rem", marginTop: "6px" }}>
+                        {new Date(badge.acquired_at).toLocaleDateString("ja-JP")}
                       </div>
                     )}
                   </div>
                 ))}
               </div>
             ) : (
-              <p>称号データがありません。</p>
+              <div style={{ textAlign: "center", padding: "20px 0", color: "#B3A598" }}>
+                <p style={{ margin: 0, fontSize: "0.9rem" }}>獲得した称号はまだありません。街を歩いて、しるしを刻みましょう。</p>
+              </div>
             )}
-          </div>
-        );
-      }
-      case "my-rallies":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>マイルート（自作ルート）</h2>
-            <div style={{ marginBottom: "20px" }}>
-              <button className="btn-primary">＋ 新しくルートを作成する</button>
-            </div>
-            <div className={styles.mockCard}>
-              <h3 className={styles.mockTitle}>地元民しか知らない裏路地カフェ巡り</h3>
-              <p className={styles.mockDesc}>作成日: 2026/01/15</p>
-              <div style={{ display: "flex", gap: "16px", fontSize: "0.9rem", opacity: 0.8, background: "rgba(255,255,255,0.5)", padding: "12px", borderRadius: "8px" }}>
-                <span>▶️ プレイ数: 142</span>
-                <span>❤️ いいね: 45</span>
-                <span>💬 コメント: 12</span>
-              </div>
-            </div>
-          </div>
-        );
-      case "comments":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>保存したルート</h2>
-            {dataLoading ? (
-              <p>データを読み込んでいます...</p>
-            ) : bookmarkedRallies.length > 0 ? (
-              bookmarkedRallies.map((bm) => (
-                <div key={bm.route_id} className={styles.mockCard}>
-                  <span className={styles.tag} style={{ background: "rgba(0, 196, 204, 0.1)", color: "var(--secondary-color)" }}>保存済み</span>
-                  <h3 className={styles.mockTitle} style={{ marginTop: "8px" }}>{bm.routes?.title}</h3>
-                  <p className={styles.mockDesc}>保存日: {new Date(bm.created_at).toLocaleDateString()}</p>
-                  <div style={{ marginTop: "12px", textAlign: "right" }}>
-                    <Link href={`/routes/${bm.route_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.85rem" }}>詳細を見る</Link>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p style={{ color: '#888' }}>保存したルートはありません。</p>
-            )}
-          </div>
-        );
-      case "payment":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>お支払い情報</h2>
-            <div className={styles.mockCard}>
-              <h3 className={styles.mockTitle}>💳 登録済みのクレジットカード</h3>
-              <div style={{ background: "rgba(255,255,255,0.6)", padding: "16px", borderRadius: "12px", marginTop: "12px" }}>
-                <p className={styles.mockDesc} style={{ fontSize: "1.1rem", letterSpacing: "2px", fontWeight: "700" }}>Visa **** **** **** 1234</p>
-                <p className={styles.mockDesc} style={{ marginBottom: 0 }}>有効期限: 12/28</p>
-              </div>
-              <div style={{ marginTop: "16px", textAlign: "right" }}>
-                <button className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.9rem", background: "var(--text-color)" }}>情報を更新する</button>
-              </div>
-            </div>
-          </div>
-        );
-      case "profile":
-        return (
-          <div>
-            <h2 className={styles.sectionTitle}>ご登録情報</h2>
-            <div className={styles.mockCard}>
-              <div style={{ marginBottom: "16px" }}>
-                <label style={{ display: "block", fontSize: "0.85rem", opacity: 0.8, marginBottom: "4px" }}>お名前</label>
-                <div style={{ fontWeight: "700", fontSize: "1.1rem" }}>{user.user_metadata?.full_name || "ゲストユーザー"}</div>
-              </div>
-              <div style={{ marginBottom: "16px" }}>
-                <label style={{ display: "block", fontSize: "0.85rem", opacity: 0.8, marginBottom: "4px" }}>メールアドレス</label>
-                <div style={{ fontWeight: "700", fontSize: "1.1rem" }}>{user.email}</div>
-              </div>
-              <div style={{ marginBottom: "24px" }}>
-                <label style={{ display: "block", fontSize: "0.85rem", opacity: 0.8, marginBottom: "4px" }}>電話番号</label>
-                <div style={{ fontWeight: "700", fontSize: "1.1rem", color: "#999" }}>未登録</div>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px dashed rgba(0,0,0,0.1)", paddingTop: "20px" }}>
-                <button className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.9rem" }}>プロフィールを編集</button>
-                <button onClick={handleLogout} style={{ background: "transparent", border: "none", color: "var(--primary-color)", fontWeight: "700", cursor: "pointer", textDecoration: "underline" }}>ログアウト</button>
-              </div>
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
+          </section>
 
-  return (
-    <div className="container">
-      <header style={{ padding: "20px 0" }}>
-        <Link href="/" className="nav-logo">
-          <img src="/shuin-logo-horizontal.png" alt="SHUIN まちのしるし" style={{ height: "32px", display: "block", objectFit: "contain" }} />
-        </Link>
-      </header>
-
-      <main className={styles.main}>
-        <div className={styles.dashboard}>
-          <aside className={"glass-card " + styles.sidebar}>
-            <div style={{ marginBottom: "24px", display: "flex", alignItems: "center", gap: "16px", padding: "0 8px" }}>
-              <img 
-                src={user.user_metadata?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.id}`} 
-                alt="Profile" 
-                style={{ width: "56px", height: "56px", borderRadius: "50%", background: "#fff", border: "2px solid var(--primary-color)" }} 
-              />
-              <div>
-                <div style={{ fontSize: "0.8rem", opacity: 0.8 }}>ようこそ</div>
-                <div style={{ fontWeight: "800", fontSize: "1.1rem", color: "var(--primary-color)" }}>{user.user_metadata?.full_name || "ユーザー"} さん</div>
-              </div>
+          {/* 3. 最近の来訪日記 */}
+          <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "1.2rem" }}>📖</span> 最近の来訪日記
+              </h2>
+              <Link href="/mypage/diary" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
+                すべて見る <ArrowRight size={14} />
+              </Link>
             </div>
             
-            <div className={styles.menuList}>
-              {MENU_ITEMS.map((item) => (
-                <button
-                  key={item.id}
-                  className={`${styles.menuItem} ${activeTab === item.id ? styles.active : ""}`}
-                  onClick={() => setActiveTab(item.id)}
-                >
-                  <span style={{ fontSize: "1.3rem" }}>{item.icon}</span>
-                  {item.label}
-                </button>
-              ))}
+            {diaryLoading ? (
+              <p style={{ color: "#A39687", fontSize: "0.9rem" }}>読み込み中...</p>
+            ) : diary.length > 0 ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                {diary.slice(0, 3).map((d) => (
+                  <div key={d.id} style={{ display: "flex", gap: "12px", alignItems: "flex-start", padding: "12px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "10px" }}>
+                    <div style={{ minWidth: "70px", fontSize: "0.75rem", color: "var(--primary-color)", fontWeight: 700 }}>
+                      {new Date(d.created_at).toLocaleDateString("ja-JP")}
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontWeight: 700, color: "#5C4E43", fontSize: "0.9rem" }}>{d.spotName || "スポット"}</div>
+                      <div style={{ fontSize: "0.75rem", color: "#A39687", marginTop: "1px" }}>
+                        {d.routeName || ""}{d.visitor_number ? ` ・ #${d.visitor_number}番目の来訪者` : ""}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style={{ textAlign: "center", padding: "20px 0", color: "#B3A598" }}>
+                <p style={{ margin: 0, fontSize: "0.9rem" }}>押印（来訪）の記録はまだありません。</p>
+              </div>
+            )}
+          </section>
+
+          {/* 4. 保存リスト */}
+          <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "1.2rem" }}>🔖</span> 保存したルート
+              </h2>
+              <Link href="/mypage/bookmarks" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
+                すべて見る <ArrowRight size={14} />
+              </Link>
             </div>
-          </aside>
-          
-          <div className={"glass-card " + styles.content}>
-            {renderContent()}
-          </div>
+            
+            {dataLoading ? (
+              <p style={{ color: "#A39687", fontSize: "0.9rem" }}>読み込み中...</p>
+            ) : bookmarkedRallies.length > 0 ? (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "12px" }}>
+                {bookmarkedRallies.slice(0, 2).map((bm) => (
+                  <div key={bm.route_id} style={{ padding: "14px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "10px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                    <div>
+                      <span style={{ background: "rgba(0, 196, 204, 0.1)", color: "var(--secondary-color)", fontSize: "0.7rem", padding: "2px 6px", borderRadius: "4px", fontWeight: "bold" }}>保存済み</span>
+                      <h3 style={{ fontSize: "0.95rem", fontWeight: 800, color: "#5C4E43", margin: "8px 0 4px 0" }}>{bm.routes?.title}</h3>
+                      <p style={{ fontSize: "0.7rem", color: "#A39687", margin: 0 }}>保存日: {new Date(bm.created_at).toLocaleDateString("ja-JP")}</p>
+                    </div>
+                    <div style={{ marginTop: "12px", textAlign: "right" }}>
+                      <Link href={`/routes/${bm.route_id}`} className="btn-primary" style={{ padding: "5px 10px", fontSize: "0.75rem", textDecoration: "none" }}>詳細を見る</Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style={{ textAlign: "center", padding: "20px 0", color: "#B3A598" }}>
+                <p style={{ margin: 0, fontSize: "0.9rem" }}>保存したルートはありません。</p>
+              </div>
+            )}
+          </section>
+
         </div>
       </main>
+
+      {/* 招待コード入力モーダル */}
+      {showJoinDialog && (
+        <div 
+          style={{ 
+            position: "fixed", 
+            top: 0, 
+            left: 0, 
+            width: "100%", 
+            height: "100%", 
+            background: "rgba(92, 78, 67, 0.4)", 
+            backdropFilter: "blur(4px)",
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            zIndex: 9999,
+            padding: "20px"
+          }}
+        >
+          <div 
+            style={{ 
+              background: "#FFFDF9", 
+              border: "1px solid #EBE5D9", 
+              borderRadius: "16px", 
+              padding: "24px 20px", 
+              width: "100%", 
+              maxWidth: "380px", 
+              boxShadow: "0 10px 25px rgba(92, 78, 67, 0.15)",
+              position: "relative"
+            }}
+          >
+            <button 
+              onClick={() => setShowJoinDialog(false)}
+              style={{ 
+                position: "absolute", 
+                top: "16px", 
+                right: "16px", 
+                background: "transparent", 
+                border: "none", 
+                cursor: "pointer",
+                color: "#A39687"
+              }}
+            >
+              <X size={20} />
+            </button>
+
+            <h3 style={{ fontSize: "1.1rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 8px 0" }}>
+              連れ立ちに加わる
+            </h3>
+            <p style={{ fontSize: "0.8rem", color: "#8A7E72", margin: "0 0 20px 0", lineHeight: "1.4" }}>
+              友達から共有された6桁の招待コードを入力してください。
+            </p>
+
+            <form onSubmit={handleJoinGroup}>
+              <input 
+                type="text" 
+                value={inviteCodeInput}
+                onChange={(e) => setInviteCodeInput(e.target.value)}
+                placeholder="例: 123 456"
+                maxLength={7}
+                disabled={isJoining}
+                style={{ 
+                  width: "100%", 
+                  padding: "12px", 
+                  fontSize: "1.2rem", 
+                  fontWeight: "bold",
+                  textAlign: "center", 
+                  letterSpacing: "2px", 
+                  border: "1px solid #EBE5D9", 
+                  borderRadius: "8px", 
+                  background: "#FFFDF9", 
+                  color: "var(--text-color)",
+                  marginBottom: "16px",
+                  outline: "none"
+                }}
+              />
+
+              <div style={{ display: "flex", gap: "10px" }}>
+                <button 
+                  type="button" 
+                  onClick={() => setShowJoinDialog(false)}
+                  disabled={isJoining}
+                  className="btn-secondary"
+                  style={{ flex: 1, padding: "10px", fontSize: "0.85rem", border: "1px solid #EBE5D9", borderRadius: "8px" }}
+                >
+                  キャンセル
+                </button>
+                <button 
+                  type="submit" 
+                  disabled={isJoining}
+                  className="btn-primary"
+                  style={{ flex: 1, padding: "10px", fontSize: "0.85rem", borderRadius: "8px" }}
+                >
+                  {isJoining ? "参加中..." : "参加する"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

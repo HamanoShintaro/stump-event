@@ -110,7 +110,7 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
   return (
     <div className="container">
       <header style={{ padding: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <BackButton />
+        <BackButton href={`/routes/${resolvedParams.id}`} />
         <HeaderNav />
       </header>
       
