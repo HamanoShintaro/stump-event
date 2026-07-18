@@ -773,7 +773,8 @@ export default function SpotCheckInPage({
             style={{
               position: "fixed", top: 0, left: 0, width: "100%", height: "100%",
               backgroundColor: ceremonyStep === 'post_scan_card' || ceremonyStep === 'post_route_card' ? "#0D0D0D" : "rgba(0,0,0,0.95)",
-              zIndex: 99999, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              zIndex: 99999, display: "flex", flexDirection: "column", alignItems: "center", 
+              justifyContent: ['post_scan_card', 'answer_question', 'post_route_card'].includes(ceremonyStep) ? "flex-start" : "center",
               overflowY: "auto", padding: "20px"
             }}
           >
@@ -927,8 +928,9 @@ export default function SpotCheckInPage({
                 animate={{ y: 0, opacity: 1 }}
                 style={{
                   width: "100%", maxWidth: "360px",
+                  maxHeight: "85vh", overflowY: "auto",
                   background: "#15120c", border: "1.5px solid rgba(201,168,76,0.55)",
-                  borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column",
+                  borderRadius: "16px", display: "flex", flexDirection: "column",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.85), 0 0 0 1px rgba(201,168,76,0.12)"
                 }}
               >
@@ -958,11 +960,11 @@ export default function SpotCheckInPage({
                 {/* 新規獲得称号の表示（P2: 封印→タップ開封のリビール演出） */}
                 <BadgeReveal badges={newlyAcquiredBadges} />
 
-                {/* 友達との思い出共有 (連れ立ち感想メモ・写真) */}
-                {groupId && (
+                {/* 友達との思い出共有 (連れ立ち感想メモ・写真) または ソロの思い出保存 */}
+                (
                   <div style={{ padding: "0 24px 20px 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
                     <div style={{ fontSize: "0.75rem", color: "#A39687", fontWeight: "bold", textAlign: "left" }}>
-                      👥 同行メンバーへ感想と写真を共有する
+                      {groupId ? "👥 同行メンバーへ感想と写真を共有する" : "📷 今日の感想と思い出の写真を残す"}
                     </div>
                     {memoSaved ? (
                       <div style={{ padding: "12px", background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)", borderRadius: "8px", fontSize: "0.8rem", color: "var(--accent-color)", display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -1064,7 +1066,6 @@ export default function SpotCheckInPage({
                       </div>
                     )}
                   </div>
-                )}
 
                 {/* 2-3. 下部: アクションボタン */}
                 <div style={{ padding: "16px 24px 32px", display: "flex", flexDirection: "column", gap: "12px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
@@ -1123,8 +1124,9 @@ export default function SpotCheckInPage({
                 animate={{ y: 0, opacity: 1 }}
                 style={{
                   width: "100%", maxWidth: "380px",
+                  maxHeight: "85vh", overflowY: "auto",
                   background: "#121212", border: "2px solid var(--accent-color)",
-                  borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column",
+                  borderRadius: "20px", display: "flex", flexDirection: "column",
                   boxShadow: "0 25px 60px rgba(0,0,0,0.9)", padding: "28px 24px"
                 }}
               >
@@ -1255,8 +1257,9 @@ export default function SpotCheckInPage({
                 animate={{ y: 0, opacity: 1 }}
                 style={{
                   width: "100%", maxWidth: "380px",
+                  maxHeight: "85vh", overflowY: "auto",
                   background: "#121212", border: "2px solid var(--accent-color)",
-                  borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column",
+                  borderRadius: "20px", display: "flex", flexDirection: "column",
                   boxShadow: "0 25px 60px rgba(0,0,0,0.9)"
                 }}
               >
@@ -1466,11 +1469,11 @@ export default function SpotCheckInPage({
                 これまでの来訪回数: {visitCount}回
               </p>
               
-              {/* 連れ立ち思い出写真投稿フォーム */}
-              {groupId && (
+              {/* 連れ立ち思い出写真投稿フォーム / ソロ思い出投稿フォーム */}
+              (
                 <div style={{ marginTop: "24px", padding: "16px", background: "#FFFDF9", border: "1.5px solid var(--accent-color, #C9A84C)", borderRadius: "12px", width: "100%", maxWidth: "320px", margin: "16px auto 0", textAlign: "left" }}>
                   <div style={{ fontSize: "0.75rem", color: "#8A7E72", fontWeight: "bold", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px" }}>
-                    <span>👥</span> 同行メンバーへ感想と写真を共有する
+                    <span>{groupId ? "👥" : "📷"}</span> {groupId ? "同行メンバーへ感想と写真を共有する" : "今日の感想と思い出の写真を残す"}
                   </div>
                   {memoSaved ? (
                     <div style={{ fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: "bold", padding: "10px", background: "rgba(199,68,46,0.05)", borderRadius: "8px", display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -1571,7 +1574,6 @@ export default function SpotCheckInPage({
                     </div>
                   )}
                 </div>
-              )}
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%", maxWidth: "300px", margin: "20px auto 0" }}>
                 <button 

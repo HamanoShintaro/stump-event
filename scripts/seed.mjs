@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import ws from 'ws';
+import iwatsukiArea from './areas/iwatsuki.mjs';
 
 const supabaseUrl = 'https://fbfarkfvzrfzwdhxvahi.supabase.co';
 const supabaseKey = 'sb_publishable_5hIQc6O45OyXANpsNcG0oA_b4AsNSav';
@@ -8,11 +9,158 @@ const supabase = createClient(supabaseUrl, supabaseKey, {
   realtime: { transport: ws },
 });
 
-// （埼玉ダミーデータ・ヘルパーは自由が丘一本化に伴い削除）
+// ==========================================
+// 1. 自由が丘ルート
+// ==========================================
+const JIYUGAOKA_ROUTE_ID = 'a4b1c2d3-e4f5-5a6b-7c8d-9e0f1a2b3c4d';
+const jiyugaokaRoute = {
+  id: JIYUGAOKA_ROUTE_ID,
+  title: "自由が丘で、\"自由\"の正体を探す",
+  description: "写真映えのヴェネツィア、暮らしの雑貨、桜の緑道。おしゃれな街として知られる自由が丘。でも、この街はなぜ\"自由\"を名乗るのか？ 5つのスポットには答えではなく、食い違う\"手がかり\"だけが置かれている。歩き終えたとき、あなた自身の答えを選ぶ。選んだ答えで、授かる称号が変わる。所要60〜90分・全行程徒歩。",
+  category: "地域を感じたい",
+  prefecture: "東京都",
+  budget_tier: 1,
+  is_published: true,
+  thumbnail_url: "/images/jiyugaoka/route-eyecatch.png",
+  completion_ceremony_type: "quiz_4choice",
+  completion_quiz_data: {
+    question: '自由が丘の"自由"は、何から生まれたか？',
+    choices: [
+      { key: "A", text: "名乗ること", description: "谷畑が学校の名を借り自由が丘と名乗った", badge_code: "shuin_jiyugaoka_sokyu" },
+      { key: "B", text: "手放すこと", description: "本物の川を地下に隠し湿地を捨てて理想を描いた", badge_code: "shuin_jiyugaoka_ankyo" },
+      { key: "C", text: "選び直し続けること", description: "教育→暮らし→再開発と意味を更新し続ける", badge_code: "shuin_jiyugaoka_koshin" },
+      { key: "D", text: "借り物かもしれない", description: "運河も学校名も外から借りた", badge_code: "shuin_jiyugaoka_inyo" }
+    ]
+  }
+};
 
-// 与野のルート・スポット固定データ
+const jiyugaokaSpots = [
+  {
+    id: 'b1111111-1111-1111-1111-111111111111',
+    route_id: JIYUGAOKA_ROUTE_ID,
+    name: "谷畑の権現さま（自由が丘熊野神社）",
+    description: "自由が丘の総鎮守。御朱印（来訪証明）の本家であり、あなたが集める押印の原点。まずここで街の一番古い記憶に触れてから歩き出す。",
+    image_url: "/images/jiyugaoka/spot1.png",
+    address: "東京都目黒区自由が丘1-24-12",
+    location: "POINT(139.669865 35.609138)",
+    radius_meters: 50,
+    order_index: 1
+  },
+  {
+    id: 'b2222222-2222-2222-2222-222222222222',
+    route_id: JIYUGAOKA_ROUTE_ID,
+    name: "水のない街の運河（La Vita／ラ・ヴィータ）",
+    description: "ヴェネツィアの街並みを再現した、自由が丘で最も写真に撮られる一角。運河・橋・ゴンドラが小さな広場に凝縮されている。",
+    image_url: "/images/jiyugaoka/spot2.png",
+    address: "東京都目黒区自由が丘2-8-3",
+    location: "POINT(139.667597 35.611115)",
+    radius_meters: 50,
+    order_index: 2
+  },
+  {
+    id: 'b3333333-3333-3333-3333-333333333333',
+    route_id: JIYUGAOKA_ROUTE_ID,
+    name: "暮らしをDIYする店（TODAY'S SPECIAL Jiyugaoka）",
+    description: "「食とくらしのDIY」がテーマの旗艦店。器・植物・本・服が一棟に詰まり、\"自分で選ぶ暮らし\"の象徴。",
+    image_url: "/images/jiyugaoka/spot3.png",
+    address: "東京都目黒区自由が丘2-17-8",
+    location: "POINT(139.666144 35.608933)",
+    radius_meters: 50,
+    order_index: 3
+  },
+  {
+    id: 'b4444444-4444-4444-4444-444444444444',
+    route_id: JIYUGAOKA_ROUTE_ID,
+    name: "昭和の密度が残るビル（自由が丘デパート）",
+    description: "駅前にそびえる昭和から続く象徴的な商業ビル。約100の小さな店が迷路状に詰まり、再開発が進む今も\"古い自由が丘\"の密度を残す。",
+    image_url: "/images/jiyugaoka/spot4.png",
+    address: "東京都目黒区自由が丘1-28-8",
+    location: "POINT(139.668500 35.607908)",
+    radius_meters: 50,
+    order_index: 4
+  },
+  {
+    id: 'b5555555-5555-5555-5555-555555555555',
+    route_id: JIYUGAOKA_ROUTE_ID,
+    name: "川の上を歩いていた（九品仏川緑道／グリーンストリート）",
+    description: "駅南口からのびる石畳 of 散歩道。かつて流れていた九品仏川を1974年に暗渠化（地下化）してできた道。春は桜のトンネルになる。",
+    image_url: "/images/jiyugaoka/spot5.png",
+    address: "東京都目黒区自由が丘1丁目",
+    location: "POINT(139.668630 35.606353)",
+    radius_meters: 50,
+    order_index: 5
+  }
+];
+
+const jiyugaokaBadges = [
+  {
+    code: `trailblazer_of_${JIYUGAOKA_ROUTE_ID}`,
+    category: "route",
+    name_ja: "自由が丘の巡礼者",
+    subtitle_en: "Pilgrim of Jiyugaoka",
+    rarity: 2,
+    description: "自由が丘の街に秘められたすべての手がかりをめぐり、しるしを刻み終えた証",
+    condition_type: "route_complete",
+    condition_params: { route_id: JIYUGAOKA_ROUTE_ID },
+    route_id: JIYUGAOKA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_jiyugaoka_sokyu",
+    category: "quiz",
+    name_ja: "◇蒼穹（あおぞら）",
+    subtitle_en: "The Azure Sky",
+    rarity: 3,
+    description: "自由とは「自らの意志で名前を名乗り、理想を描くこと」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "A" },
+    route_id: JIYUGAOKA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_jiyugaoka_ankyo",
+    category: "quiz",
+    name_ja: "◇暗渠を見た者",
+    subtitle_en: "The Culvert Witness",
+    rarity: 3,
+    description: "自由とは「本質的な川（現実）を覆い隠し、不都合な過去を手放すこと」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "B" },
+    route_id: JIYUGAOKA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_jiyugaoka_koshin",
+    category: "quiz",
+    name_ja: "◇更新する街の住人",
+    subtitle_en: "The Regenerator",
+    rarity: 3,
+    description: "自由とは「教育から暮らし、再開発へと常に意味を選び直し続けること」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "C" },
+    route_id: JIYUGAOKA_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_jiyugaoka_inyo",
+    category: "quiz",
+    name_ja: "◇引用者",
+    subtitle_en: "The Quoter",
+    rarity: 3,
+    description: "自由とは「他所の名前や概念を借り受けて、新しい自己を語ること」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "D" },
+    route_id: JIYUGAOKA_ROUTE_ID,
+    is_active: true
+  }
+];
+
+jiyugaokaBadges[0].route_id = JIYUGAOKA_ROUTE_ID;
+
+// ==========================================
+// 2. 与野ルート (食事・買い物入り)
+// ==========================================
 const YONO_ROUTE_ID = 'e2b1c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d';
-
 const yonoRoute = {
   id: YONO_ROUTE_ID,
   title: "与野の記憶を辿り、境界を歩く",
@@ -155,270 +303,251 @@ const yonoBadges = [
   }
 ];
 
-// 自由が丘のルート・スポット固定データ
-const JIYUGAOKA_ROUTE_ID = 'a4b1c2d3-e4f5-5a6b-7c8d-9e0f1a2b3c4d';
+// ==========================================
+// 3. 岩槻ルート (動的インポート)
+// ==========================================
+const IWATSUKI_ROUTE_ID = 'd3b1c2d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d';
 
-// DBのスキーマカラムに厳格に合わせたルートオブジェクト
-const jiyugaokaRoute = {
-  id: JIYUGAOKA_ROUTE_ID,
-  title: "自由が丘で、\"自由\"の正体を探す",
-  description: "写真映えのヴェネツィア、暮らしの雑貨、桜の緑道。おしゃれな街として知られる自由が丘。でも、この街はなぜ\"自由\"を名乗るのか？ 5つのスポットには答えではなく、食い違う\"手がかり\"だけが置かれている。歩き終えたとき、あなた自身の答えを選ぶ。選んだ答えで、授かる称号が変わる。所要60〜90分・全行程徒歩。",
-  category: "地域を感じたい",
-  prefecture: "東京都",
-  budget_tier: 1,
+const iwatsukiRoute = {
+  id: IWATSUKI_ROUTE_ID,
+  title: iwatsukiArea.title,
+  description: iwatsukiArea.description,
+  category: iwatsukiArea.category,
+  prefecture: iwatsukiArea.prefecture,
+  budget_tier: iwatsukiArea.budget_tier,
   is_published: true,
-  thumbnail_url: "/images/jiyugaoka/route-eyecatch.png",
+  thumbnail_url: `/images/iwatsuki/route-eyecatch.png`,
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
-    question: '自由が丘の"自由"は、何から生まれたか？',
-    choices: [
-      { key: "A", text: "名乗ること", description: "谷畑が学校の名を借り自由が丘と名乗った", badge_code: "shuin_jiyugaoka_sokyu" },
-      { key: "B", text: "手放すこと", description: "本物の川を地下に隠し湿地を捨てて理想を描いた", badge_code: "shuin_jiyugaoka_ankyo" },
-      { key: "C", text: "選び直し続けること", description: "教育→暮らし→再開発と意味を更新し続ける", badge_code: "shuin_jiyugaoka_koshin" },
-      { key: "D", text: "借り物かもしれない", description: "運河も学校名も外から借りた", badge_code: "shuin_jiyugaoka_inyo" }
-    ]
+    question: iwatsukiArea.question,
+    choices: iwatsukiArea.choices.map(c => ({
+      key: c.key,
+      text: c.text,
+      description: c.description,
+      badge_code: c.badge.code
+    }))
   }
 };
 
-// DBのスキーマカラムに厳格に合わせたスポットオブジェクト
-const jiyugaokaSpots = [
-  {
-    id: 'b1111111-1111-1111-1111-111111111111',
-    route_id: JIYUGAOKA_ROUTE_ID,
-    name: "谷畑の権現さま（自由が丘熊野神社）",
-    description: "自由が丘の総鎮守。御朱印（来訪証明）の本家であり、あなたが集める押印の原点。まずここで街の一番古い記憶に触れてから歩き出す。",
-    image_url: "/images/jiyugaoka/spot1.png",
-    address: "東京都目黒区自由が丘1-24-12",
-    location: "POINT(139.669865 35.609138)",
-    radius_meters: 50,
-    order_index: 1
-  },
-  {
-    id: 'b2222222-2222-2222-2222-222222222222',
-    route_id: JIYUGAOKA_ROUTE_ID,
-    name: "水のない街の運河（La Vita／ラ・ヴィータ）",
-    description: "ヴェネツィアの街並みを再現した、自由が丘で最も写真に撮られる一角。運河・橋・ゴンドラが小さな広場に凝縮されている。",
-    image_url: "/images/jiyugaoka/spot2.png",
-    address: "東京都目黒区自由が丘2-8-3",
-    location: "POINT(139.667597 35.611115)",
-    radius_meters: 50,
-    order_index: 2
-  },
-  {
-    id: 'b3333333-3333-3333-3333-333333333333',
-    route_id: JIYUGAOKA_ROUTE_ID,
-    name: "暮らしをDIYする店（TODAY'S SPECIAL Jiyugaoka）",
-    description: "「食とくらしのDIY」がテーマの旗艦店。器・植物・本・服が一棟に詰まり、\"自分で選ぶ暮らし\"の象徴。",
-    image_url: "/images/jiyugaoka/spot3.png",
-    address: "東京都目黒区自由が丘2-17-8",
-    location: "POINT(139.666144 35.608933)",
-    radius_meters: 50,
-    order_index: 3
-  },
-  {
-    id: 'b4444444-4444-4444-4444-444444444444',
-    route_id: JIYUGAOKA_ROUTE_ID,
-    name: "昭和の密度が残るビル（自由が丘デパート）",
-    description: "駅前にそびえる昭和から続く象徴的な商業ビル。約100の小さな店が迷路状に詰まり、再開発が進む今も\"古い自由が丘\"の密度を残す。",
-    image_url: "/images/jiyugaoka/spot4.png",
-    address: "東京都目黒区自由が丘1-28-8",
-    location: "POINT(139.668500 35.607908)",
-    radius_meters: 50,
-    order_index: 4
-  },
-  {
-    id: 'b5555555-5555-5555-5555-555555555555',
-    route_id: JIYUGAOKA_ROUTE_ID,
-    name: "川の上を歩いていた（九品仏川緑道／グリーンストリート）",
-    description: "駅南口からのびる石畳の散歩道。かつて流れていた九品仏川を1974年に暗渠化（地下化）してできた道。春は桜のトンネルになる。",
-    image_url: "/images/jiyugaoka/spot5.png",
-    address: "東京都目黒区自由が丘1丁目",
-    location: "POINT(139.668630 35.606353)",
-    radius_meters: 50,
-    order_index: 5
-  }
-];
+const iwatsukiSpots = iwatsukiArea.spots.map((s, i) => ({
+  id: `d1111111-1111-1111-1111-11111111111${i}`,
+  route_id: IWATSUKI_ROUTE_ID,
+  name: s.name,
+  description: s.description,
+  image_url: `/images/iwatsuki/spot${i + 1}.png`,
+  address: s.address,
+  location: `POINT(${s.lng} ${s.lat})`,
+  radius_meters: s.radius_meters || 50,
+  order_index: i + 1
+}));
 
-// バッジ（称号）データ
-const jiyugaokaBadges = [
+const iwatsukiBadges = [
   {
-    code: `trailblazer_of_${JIYUGAOKA_ROUTE_ID}`,
+    code: `trailblazer_of_${IWATSUKI_ROUTE_ID}`,
     category: "route",
-    name_ja: "自由が丘の巡礼者",
-    subtitle_en: "Pilgrim of Jiyugaoka",
+    name_ja: iwatsukiArea.completion_badge.name_ja,
+    subtitle_en: iwatsukiArea.completion_badge.subtitle_en,
     rarity: 2,
-    description: "自由が丘の街に秘められたすべての手がかりをめぐり、しるしを刻み終えた証",
+    description: iwatsukiArea.completion_badge.description,
     condition_type: "route_complete",
-    condition_params: { route_id: JIYUGAOKA_ROUTE_ID },
-    route_id: JIYUGAOKA_ROUTE_ID,
+    condition_params: { route_id: IWATSUKI_ROUTE_ID },
+    route_id: IWATSUKI_ROUTE_ID,
     is_active: true
   },
-  {
-    code: "shuin_jiyugaoka_sokyu",
+  ...iwatsukiArea.choices.map(c => ({
+    code: c.badge.code,
     category: "quiz",
-    name_ja: "◇蒼穹（あおぞら）",
-    subtitle_en: "The Azure Sky",
-    rarity: 3,
-    description: "自由とは「自らの意志で名前を名乗り、理想を描くこと」と答えた証",
+    name_ja: c.badge.name_ja,
+    subtitle_en: c.badge.subtitle_en,
+    rarity: c.badge.rarity || 3,
+    description: c.badge.description,
     condition_type: "quiz_choice",
-    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "A" },
-    route_id: JIYUGAOKA_ROUTE_ID,
+    condition_params: { route_id: IWATSUKI_ROUTE_ID, choice: c.key },
+    route_id: IWATSUKI_ROUTE_ID,
     is_active: true
+  }))
+];
+
+// ==========================================
+// 4. 埼玉・大宮周辺の5つのルート
+// ==========================================
+const SAITAMA_ROUTE_IDS = [
+  'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c61',
+  'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c62',
+  'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c63',
+  'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c64',
+  'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c65'
+];
+
+const saitamaRallies = [
+  {
+    id: SAITAMA_ROUTE_IDS[0],
+    title: "蓮田・大宮周辺のラーメン食べ歩き",
+    description: "埼玉の美味しいラーメンを巡るルート。豚骨から醤油まで幅広く！所要60〜90分。",
+    category: "食べたい",
+    prefecture: "埼玉県",
+    budget_tier: 2,
+    is_published: true
   },
   {
-    code: "shuin_jiyugaoka_ankyo",
-    category: "quiz",
-    name_ja: "◇暗渠を見た者",
-    subtitle_en: "The Culvert Witness",
-    rarity: 3,
-    description: "自由とは「本質的な川（現実）を覆い隠し、不都合な過去を手放すこと」と答えた証",
-    condition_type: "quiz_choice",
-    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "B" },
-    route_id: JIYUGAOKA_ROUTE_ID,
-    is_active: true
+    id: SAITAMA_ROUTE_IDS[1],
+    title: "さいたま市自然満気ルート",
+    description: "見沼田んぼや大宮公園など、豊かな自然を感じられるスポットを巡ります。所要90〜120分。",
+    category: "癒されたい",
+    prefecture: "埼玉県",
+    budget_tier: 1,
+    is_published: true
   },
   {
-    code: "shuin_jiyugaoka_koshin",
-    category: "quiz",
-    name_ja: "◇更新する街の住人",
-    subtitle_en: "The Regenerator",
-    rarity: 3,
-    description: "自由とは「教育から暮らし、再開発へと常に意味を選び直し続けること」と答えた証",
-    condition_type: "quiz_choice",
-    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "C" },
-    route_id: JIYUGAOKA_ROUTE_ID,
-    is_active: true
+    id: SAITAMA_ROUTE_IDS[2],
+    title: "埼玉の歴史・神社仏閣巡り",
+    description: "武蔵一宮氷川神社をはじめとする、歴史ある建造物を訪れる散策ルート。所要60〜90分。",
+    category: "地域を感じたい",
+    prefecture: "埼玉県",
+    budget_tier: 1,
+    is_published: true
   },
   {
-    code: "shuin_jiyugaoka_inyo",
-    category: "quiz",
-    name_ja: "◇引用者",
-    subtitle_en: "The Quoter",
-    rarity: 3,
-    description: "自由とは「他所の名前や概念を借り受けて、新しい自己を語ること」と答えた証",
-    condition_type: "quiz_choice",
-    condition_params: { route_id: JIYUGAOKA_ROUTE_ID, choice: "D" },
-    route_id: JIYUGAOKA_ROUTE_ID,
-    is_active: true
+    id: SAITAMA_ROUTE_IDS[3],
+    title: "ご当地B級グルメ探索ルート",
+    description: "さいたま周辺の隠れたB級グルメスポットを食べ尽くす！所要60〜90分。",
+    category: "食べたい",
+    prefecture: "埼玉県",
+    budget_tier: 1,
+    is_published: true
+  },
+  {
+    id: SAITAMA_ROUTE_IDS[4],
+    title: "鉄道博物館と周辺アクティビティ",
+    description: "鉄道博物館を起点に、大宮盆栽美術館など周辺施設を回る親子向けルート。所要120〜180分。",
+    category: "体験したい",
+    prefecture: "埼玉県",
+    budget_tier: 2,
+    is_published: true
   }
 ];
 
+const getSaitamaSpotDetails = (rallyIndex, i) => {
+  const details = [
+    [
+      { name: "麺処 蓮", desc: "あっさり醤油ラーメンが人気。", img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&q=80", addr: "埼玉県蓮田市本町" },
+      { name: "大宮家系 豚骨", desc: "濃厚な家系ラーメン。", img: "https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=600&q=80", addr: "埼玉県さいたま市大宮区大門町" },
+      { name: "つけ麺 さいたま", desc: "極太麺が特徴のつけ麺。", img: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=600&q=80", addr: "埼玉県さいたま市大宮区桜木町" },
+      { name: "中華そば 昭和", desc: "昔ながらの中華そば。", img: "https://images.unsplash.com/photo-1548003666-4e50cd84a229?w=600&q=80", addr: "埼玉県さいたま市大宮区" }
+    ],
+    [
+      { name: "大宮公園", desc: "広大な敷地と桜が有名。", img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80", addr: "埼玉県さいたま市大宮区高鼻町" },
+      { name: "見沼田んぼ", desc: "豊かな自然が残る田園風景。", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=80", addr: "埼玉県さいたま市緑区" },
+      { name: "市民の森", desc: "リスの家などがあり家族連れに人気。", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80", addr: "埼玉県さいたま市北区" },
+      { name: "秋ヶ瀬公園", desc: "バーベキューなども楽しめる広大な公園。", img: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=600&q=80", addr: "埼玉県さいたま市桜区" },
+      { name: "別所沼公園", desc: "メタセコイア並木が美しい。", img: "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&q=80", addr: "埼玉県さいたま市南区" }
+    ],
+    [
+      { name: "武蔵一宮氷川神社", desc: "武蔵国の一宮。長い参道が特徴。", img: "https://picsum.photos/seed/shrine1/600/400", addr: "埼玉県さいたま市大宮区高鼻町1-407" },
+      { name: "調神社", desc: "ウサギが神使の珍しい神社。", img: "https://picsum.photos/seed/shrine2/600/400", addr: "埼玉県さいたま市浦和区岸町3-17-25" },
+      { name: "久伊豆神社", desc: "越谷の総鎮守。", img: "https://picsum.photos/seed/shrine3/600/400", addr: "埼玉県越谷市宮前町17" },
+      { name: "川越氷川神社", desc: "縁結びの神様として有名。", img: "https://picsum.photos/seed/shrine4/600/400", addr: "埼玉県川越市宮下町2-11-3" }
+    ],
+    [
+      { name: "行田ゼリーフライ店", desc: "おからのコロッケのようなご当地グルメ。", img: "https://picsum.photos/seed/food1/600/400", addr: "埼玉県行田市" },
+      { name: "大宮ナポリタン", desc: "大宮発祥のナポリタンを提供するお店。", img: "https://picsum.photos/seed/food2/600/400", addr: "埼玉県さいたま市大宮区" },
+      { name: "武蔵野うどん", desc: "コシの強い肉汁うどん。", img: "https://picsum.photos/seed/food3/600/400", addr: "埼玉県さいたま市" },
+      { name: "川幅うどん", desc: "日本一太いうどん。", img: "https://picsum.photos/seed/food4/600/400", addr: "埼玉県鴻巣市" },
+      { name: "フライ屋", desc: "埼玉北部名物のフライ。", img: "https://picsum.photos/seed/food5/600/400", addr: "埼玉県行田市周辺" }
+    ],
+    [
+      { name: "鉄道博物館", desc: "日本最大級の鉄道博物館。", img: "https://picsum.photos/seed/train1/600/400", addr: "埼玉県さいたま市大宮区大成町3-47" },
+      { name: "大宮盆栽美術館", desc: "世界初の公立の盆栽美術館。", img: "https://picsum.photos/seed/train2/600/400", addr: "埼玉県さいたま市北区土手町2-24-3" },
+      { name: "造幣さいたま博物館", desc: "硬貨の製造工程を見学できる。", img: "https://picsum.photos/seed/train3/600/400", addr: "埼玉県さいたま市大宮区三橋" },
+      { name: "岩槻人形博物館", desc: "人形の街・岩槻の歴史を学べる。", img: "https://picsum.photos/seed/train4/600/400", addr: "埼玉県さいたま市岩槻区本町6-1-1" }
+    ]
+  ];
+  return details[rallyIndex][i] || { name: `スポット ${i + 1}`, desc: "詳細不明のスポットです。", img: "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80", addr: "埼玉県" };
+};
+
+const generateSaitamaSpots = (routeId, rallyIndex) => {
+  const USER_LAT = 35.9522665;
+  const USER_LON = 139.6833445;
+  const spots = [];
+  const count = (rallyIndex === 1 || rallyIndex === 3) ? 5 : 4;
+  for (let i = 0; i < count; i++) {
+    const latOffset = (Math.random() - 0.5) * 0.08;
+    const lonOffset = (Math.random() - 0.5) * 0.08;
+    const lat = USER_LAT + latOffset;
+    const lon = USER_LON + lonOffset;
+    
+    const spotDetail = getSaitamaSpotDetails(rallyIndex, i);
+    
+    spots.push({
+      id: `f${rallyIndex + 1}111111-1111-1111-1111-11111111111${i}`,
+      route_id: routeId,
+      name: spotDetail.name,
+      description: spotDetail.desc,
+      image_url: spotDetail.img,
+      address: spotDetail.addr,
+      location: `POINT(${lon} ${lat})`,
+      radius_meters: 50,
+      order_index: i + 1
+    });
+  }
+  return spots;
+};
+
+// ==========================================
+// シード処理実行
+// ==========================================
 async function seed() {
   console.log("Cleaning up previous seeded data...");
-  // Clear previous routes created by this script (we'll delete by ID or title)
-  const { error: delError } = await supabase.from('routes').delete().neq('title', '');
-  if (delError) {
-    console.log("Cleanup issue (maybe RLS?):", delError.message);
-  } else {
-    console.log("Cleared old routes data.");
+
+  // 全ての既存ルートをクリーンアップ
+  const routeIds = [
+    JIYUGAOKA_ROUTE_ID,
+    YONO_ROUTE_ID,
+    IWATSUKI_ROUTE_ID,
+    ...SAITAMA_ROUTE_IDS
+  ];
+
+  await supabase.from('routes').delete().in('id', routeIds);
+  console.log("Cleared routes.");
+
+  // 全ての既存バッジをクリーンアップ
+  const badgeCodes = [
+    ...jiyugaokaBadges.map(b => b.code),
+    ...yonoBadges.map(b => b.code),
+    ...iwatsukiBadges.map(b => b.code)
+  ];
+  await supabase.from('badges').delete().in('code', badgeCodes);
+  console.log("Cleared badges.");
+
+  // 1. 自由が丘ルート登録
+  console.log("Inserting Jiyugaoka...");
+  await supabase.from('routes').insert([jiyugaokaRoute]);
+  await supabase.from('spots').insert(jiyugaokaSpots);
+  await supabase.from('badges').insert(jiyugaokaBadges);
+
+  // 2. 与野ルート登録
+  console.log("Inserting Yono...");
+  await supabase.from('routes').insert([yonoRoute]);
+  await supabase.from('spots').insert(yonoSpots);
+  await supabase.from('badges').insert(yonoBadges);
+
+  // 3. 岩槻ルート登録
+  console.log("Inserting Iwatsuki...");
+  await supabase.from('routes').insert([iwatsukiRoute]);
+  await supabase.from('spots').insert(iwatsukiSpots);
+  await supabase.from('badges').insert(iwatsukiBadges);
+
+  // 4. 埼玉・大宮周辺5ルート登録
+  console.log("Inserting Saitama/Omiya routes...");
+  for (let i = 0; i < saitamaRallies.length; i++) {
+    const route = saitamaRallies[i];
+    const spots = generateSaitamaSpots(route.id, i);
+    await supabase.from('routes').insert([route]);
+    await supabase.from('spots').insert(spots);
+    console.log(`Inserted Omiya route: ${route.title}`);
   }
 
-  // 自由が丘の削除
-  const { error: delJiyugaokaError } = await supabase.from('routes').delete().eq('id', JIYUGAOKA_ROUTE_ID);
-  if (delJiyugaokaError) {
-    console.log("Cleanup issue Jiyugaoka:", delJiyugaokaError.message);
-  } else {
-    console.log("Cleared old Jiyugaoka route data.");
-  }
-
-  // 与野の削除
-  const { error: delYonoError } = await supabase.from('routes').delete().eq('id', YONO_ROUTE_ID);
-  if (delYonoError) {
-    console.log("Cleanup issue Yono:", delYonoError.message);
-  } else {
-    console.log("Cleared old Yono route data.");
-  }
-
-  // バッジ定義のクリーンアップ（自由が丘のバッジを削除）
-  const badgeCodes = jiyugaokaBadges.map(b => b.code);
-  const { error: delBadgeError } = await supabase.from('badges').delete().in('code', badgeCodes);
-  if (delBadgeError) {
-    console.log("Cleanup issue badges:", delBadgeError.message);
-  } else {
-    console.log("Cleared Jiyugaoka badges.");
-  }
-
-  // 与野のバッジを削除
-  const yonoBadgeCodes = yonoBadges.map(b => b.code);
-  const { error: delYonoBadgeError } = await supabase.from('badges').delete().in('code', yonoBadgeCodes);
-  if (delYonoBadgeError) {
-    console.log("Cleanup issue Yono badges:", delYonoBadgeError.message);
-  } else {
-    console.log("Cleared Yono badges.");
-  }
-
-  // 2. 自由が丘のデータをインサート
-  console.log("Inserting Jiyugaoka route...");
-  
-  const { error: jRouteError } = await supabase
-    .from('routes')
-    .insert([jiyugaokaRoute]);
-
-  if (jRouteError) {
-    console.error("Error inserting Jiyugaoka route:", jRouteError);
-    return;
-  }
-  
-  console.log("Inserted Jiyugaoka route successfully.");
-  
-  // スポットをインサート
-  const { error: jSpotsError } = await supabase
-    .from('spots')
-    .insert(jiyugaokaSpots);
-
-  if (jSpotsError) {
-    console.error("Error inserting Jiyugaoka spots:", jSpotsError);
-  } else {
-    console.log(`Inserted ${jiyugaokaSpots.length} Jiyugaoka spots.`);
-  }
-
-  // 3. バッジ定義をインサート
-  console.log("Inserting Jiyugaoka badges...");
-  const { error: jBadgesError } = await supabase
-    .from('badges')
-    .insert(jiyugaokaBadges);
-
-  if (jBadgesError) {
-    console.error("Error inserting Jiyugaoka badges:", jBadgesError);
-  } else {
-    console.log(`Inserted ${jiyugaokaBadges.length} badges successfully.`);
-  }
-
-  // 4. 与野のデータをインサート
-  console.log("Inserting Yono route...");
-  const { error: yRouteError } = await supabase
-    .from('routes')
-    .insert([yonoRoute]);
-
-  if (yRouteError) {
-    console.error("Error inserting Yono route:", yRouteError);
-    return;
-  }
-  console.log("Inserted Yono route successfully.");
-
-  // 与野スポットをインサート
-  const { error: ySpotsError } = await supabase
-    .from('spots')
-    .insert(yonoSpots);
-
-  if (ySpotsError) {
-    console.error("Error inserting Yono spots:", ySpotsError);
-  } else {
-    console.log(`Inserted ${yonoSpots.length} Yono spots.`);
-  }
-
-  // 与野バッジをインサート
-  const { error: yBadgesError } = await supabase
-    .from('badges')
-    .insert(yonoBadges);
-
-  if (yBadgesError) {
-    console.error("Error inserting Yono badges:", yBadgesError);
-  } else {
-    console.log(`Inserted ${yonoBadges.length} Yono badges successfully.`);
-  }
-
-  console.log("Seeding complete!");
+  console.log("Seeding complete successfully!");
 }
 
 seed();
