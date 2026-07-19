@@ -6,6 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import JoinAnimation from "@/components/JoinAnimation";
+import LoadingOverlay from "@/components/LoadingOverlay";
 
 export function JoinRallyButton({ 
   rallyId, 
@@ -146,6 +147,9 @@ export function JoinRallyButton({
 
   return (
     <>
+      {isNavigating && <LoadingOverlay message="地図へ移動しています..." />}
+      {isCreatingGroup && <LoadingOverlay message="連れ立ちを開始しています..." />}
+
       {showAnimation && (
         <JoinAnimation 
           onComplete={handleAnimationComplete} 
@@ -177,7 +181,7 @@ export function JoinRallyButton({
               cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
             }}
           >
-            {isNavigating ? "読み込み中..." : "参加中｜現在の目的地への地図を見る"}
+            参加中｜現在の目的地への地図を見る
           </button>
 
           <button 
@@ -196,7 +200,7 @@ export function JoinRallyButton({
               cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
             }}
           >
-            {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
+            👥 友達と連れ立ちを開始する
           </button>
         </div>
       ) : (
@@ -213,7 +217,7 @@ export function JoinRallyButton({
               cursor: isNavigating ? "not-allowed" : "pointer"
             }}
           >
-            {isNavigating ? "読み込み中..." : user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
+            {user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
           </button>
         </div>
       )}
@@ -233,18 +237,21 @@ export function SpotButton({ spotId, rallyId }: { spotId: string, rallyId: strin
   };
 
   return (
-    <button 
-      onClick={handleClick} 
-      disabled={isNavigating}
-      className="btn-primary" 
-      style={{ 
-        padding: "8px 16px", 
-        fontSize: "0.9rem",
-        opacity: isNavigating ? 0.7 : 1,
-        cursor: isNavigating ? "not-allowed" : "pointer"
-      }}
-    >
-      {isNavigating ? "読み込み中..." : user ? "詳細 / 押印する" : "詳細を見る"}
-    </button>
+    <>
+      {isNavigating && <LoadingOverlay message="スポットのしるしを読み込んでいます..." />}
+      <button 
+        onClick={handleClick} 
+        disabled={isNavigating}
+        className="btn-primary" 
+        style={{ 
+          padding: "8px 16px", 
+          fontSize: "0.9rem",
+          opacity: isNavigating ? 0.7 : 1,
+          cursor: isNavigating ? "not-allowed" : "pointer"
+        }}
+      >
+        {user ? "詳細 / 押印する" : "詳細を見る"}
+      </button>
+    </>
   );
 }
