@@ -515,6 +515,152 @@ const kitaurawaBadges = [
 ];
 
 // ==========================================
+// 2.9. さいたま新都心ルート (近未来と参道)
+// ==========================================
+const SHINTOSHIN_ROUTE_ID = 'f1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c67';
+const shintoshinRoute = {
+  id: SHINTOSHIN_ROUTE_ID,
+  title: "近未来の都市と、古の参道が交差する——さいたま新都心を歩く",
+  description: "ガラスと金属が織りなす近未来的な駅舎、高層ビル群の中に静かに佇む人工の森「けやきひろば」、および日本の近代化を支えたコクーン（片倉製糸場）の面影。一の鳥居を抜ければ、そこには日本一の長さを誇る氷川神社の静寂な並木道が続きます。新旧が鮮やかに交差する都市と参道をめぐり、歩んだ記憶を刻むためのルートです。所要45〜60分・全行程徒歩。",
+  category: "地域を感じたい",
+  prefecture: "埼玉県",
+  budget_tier: 1,
+  is_published: true,
+  thumbnail_url: "/images/shintoshin/route-eyecatch.png",
+  completion_ceremony_type: "quiz_4choice",
+  completion_quiz_data: {
+    question: 'コクーンシティの名の由来である「コクーン（繭）」は、かつてこの地にあった何の工場に由来する？',
+    choices: [
+      { key: "A", text: "片倉工業の製糸工場", description: "日本のシルク産業を支えた製糸工場があった跡地", badge_code: "shuin_shintoshin_silk" },
+      { key: "B", text: "日本国有鉄道の操車場", description: "かつて敷地全体に広がっていた広大な貨物操車場", badge_code: "shuin_shintoshin_rail" },
+      { key: "C", text: "鐘淵紡績の繊維工場", description: "カネボウのブランドで親しまれた大規模繊維工場", badge_code: "shuin_shintoshin_fiber" },
+      { key: "D", text: "サッポロビールの醸造工場", description: "ビール醸造と麦芽の乾燥用施設があった跡地", badge_code: "shuin_shintoshin_beer" }
+    ]
+  }
+};
+
+const shintoshinSpots = [
+  {
+    id: 'd3333333-3333-3333-3333-333333333330',
+    route_id: SHINTOSHIN_ROUTE_ID,
+    name: "ガラスの改札口（さいたま新都心駅東口デッキ）",
+    description: "光が注ぐガラス張りの近未来的な駅舎。ペデストリアンデッキの大きな空を見上げながら、近未来都市の散策が始まります。",
+    image_url: "/images/shintoshin/spot1.png",
+    address: "埼玉県さいたま市大宮区吉敷町4丁目",
+    location: "POINT(139.633800 35.893800)",
+    radius_meters: 50,
+    order_index: 1
+  },
+  {
+    id: 'd3333333-3333-3333-3333-333333333331',
+    route_id: SHINTOSHIN_ROUTE_ID,
+    name: "産業の面影（コクーンシティ・コクーンプラザ）",
+    description: "製糸工場跡地の記憶を伝えるコクーンプラザ。シンボルの「繭」をかたどったモニュメントが、かつてこの場所で生み出された数千のシルクの歴史を伝えています。",
+    image_url: "/images/shintoshin/spot2.png",
+    address: "埼玉県さいたま市大宮区吉敷町4丁目263-1",
+    location: "POINT(139.635800 35.894200)",
+    radius_meters: 50,
+    order_index: 2
+  },
+  {
+    id: 'd3333333-3333-3333-3333-333333333332',
+    route_id: SHINTOSHIN_ROUTE_ID,
+    name: "空中の広場（けやきひろば）",
+    description: "ビル群の合間に広がる、人工デッキ上の美しいケヤキの林。涼やかな木漏れ日の下で深呼吸し、都市の中の森を体感します。",
+    image_url: "/images/shintoshin/spot3.png",
+    address: "埼玉県さいたま市中央区新都心10",
+    location: "POINT(139.631200 35.894500)",
+    radius_meters: 50,
+    order_index: 3
+  },
+  {
+    id: 'd3333333-3333-3333-3333-333333333333',
+    route_id: SHINTOSHIN_ROUTE_ID,
+    name: "古の境界（一の鳥居と氷川参道）",
+    description: "新都心から少し西に歩いた中山道沿いに立つ、朱色の「氷川神社一の鳥居」。ここから日本一長いケヤキ並木が続く古の参道へと一歩足を踏み入れます。",
+    image_url: "/images/shintoshin/spot4.png",
+    address: "埼玉県さいたま市大宮区吉敷町4丁目",
+    location: "POINT(139.638500 35.891200)",
+    radius_meters: 50,
+    order_index: 4
+  },
+  {
+    id: 'd3333333-3333-3333-3333-333333333334',
+    route_id: SHINTOSHIN_ROUTE_ID,
+    name: "歴史の休息地（コクーンガーデン）",
+    description: "工場の象徴であったレンガの煙突と、大正時代の洋館が残る静かなイングリッシュガーデン。ここが今回のさいたま新都心ルートの最後の押印地です。",
+    image_url: "/images/shintoshin/spot5.png",
+    address: "埼玉県さいたま市大宮区吉敷町4丁目263-6",
+    location: "POINT(139.636600 35.893100)",
+    radius_meters: 50,
+    order_index: 5
+  }
+];
+
+const shintoshinBadges = [
+  {
+    code: `trailblazer_of_${SHINTOSHIN_ROUTE_ID}`,
+    category: "route",
+    name_ja: "新都心の巡礼者",
+    subtitle_en: "Pilgrim of Shintoshin",
+    rarity: 2,
+    description: "さいたま新都心の近未来都市と氷川参道をめぐるすべてのスポットを訪れ、しるしを刻み終えた証",
+    condition_type: "route_complete",
+    condition_params: { route_id: SHINTOSHIN_ROUTE_ID },
+    route_id: SHINTOSHIN_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_shintoshin_silk",
+    category: "quiz",
+    name_ja: "◇絹の歴史家",
+    subtitle_en: "Silk Historian",
+    rarity: 3,
+    description: "新都心のコクーンの歴史を「片倉工業の製糸工場跡地」と正しく答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: SHINTOSHIN_ROUTE_ID, choice: "A" },
+    route_id: SHINTOSHIN_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_shintoshin_rail",
+    category: "quiz",
+    name_ja: "◇鉄路の目撃者",
+    subtitle_en: "Railway Witness",
+    rarity: 3,
+    description: "新都心のコクーンの歴史を「日本国有鉄道の操車場」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: SHINTOSHIN_ROUTE_ID, choice: "B" },
+    route_id: SHINTOSHIN_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_shintoshin_fiber",
+    category: "quiz",
+    name_ja: "◇紡績の学徒",
+    subtitle_en: "Spinning Scholar",
+    rarity: 3,
+    description: "新都心のコクーンの歴史を「鐘淵紡績の繊維工場」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: SHINTOSHIN_ROUTE_ID, choice: "C" },
+    route_id: SHINTOSHIN_ROUTE_ID,
+    is_active: true
+  },
+  {
+    code: "shuin_shintoshin_beer",
+    category: "quiz",
+    name_ja: "◇ビールの愛好家",
+    subtitle_en: "Beer Enthusiast",
+    rarity: 3,
+    description: "新都心のコクーンの歴史を「サッポロビールの醸造工場」と答えた証",
+    condition_type: "quiz_choice",
+    condition_params: { route_id: SHINTOSHIN_ROUTE_ID, choice: "D" },
+    route_id: SHINTOSHIN_ROUTE_ID,
+    is_active: true
+  }
+];
+
+// ==========================================
 // 4. 埼玉・大宮周辺の5つのルート
 // ==========================================
 const SAITAMA_ROUTE_IDS = [
@@ -643,63 +789,28 @@ const generateSaitamaSpots = (routeId, rallyIndex) => {
 // シード処理実行
 // ==========================================
 async function seed() {
-  console.log("Cleaning up previous seeded data...");
+  console.log("Cleaning up previous seeded data (Shintoshin only)...");
 
-  // 全ての既存ルートをクリーンアップ
+  // 新設のさいたま新都心ルートだけをクリーンアップ (既存ルートは削除せず安全に保護！)
   const routeIds = [
-    JIYUGAOKA_ROUTE_ID,
-    YONO_ROUTE_ID,
-    IWATSUKI_ROUTE_ID,
-    KITAURAWA_ROUTE_ID,
-    ...SAITAMA_ROUTE_IDS
+    SHINTOSHIN_ROUTE_ID
   ];
 
   await supabase.from('routes').delete().in('id', routeIds);
-  console.log("Cleared routes.");
+  console.log("Cleared Shintoshin route.");
 
-  // 全ての既存バッジをクリーンアップ
+  // 新設のさいたま新都心のバッジをクリーンアップ
   const badgeCodes = [
-    ...jiyugaokaBadges.map(b => b.code),
-    ...yonoBadges.map(b => b.code),
-    ...iwatsukiBadges.map(b => b.code),
-    ...kitaurawaBadges.map(b => b.code)
+    ...shintoshinBadges.map(b => b.code)
   ];
   await supabase.from('badges').delete().in('code', badgeCodes);
-  console.log("Cleared badges.");
+  console.log("Cleared Shintoshin badges.");
 
-  // 1. 自由が丘ルート登録
-  console.log("Inserting Jiyugaoka...");
-  await supabase.from('routes').insert([jiyugaokaRoute]);
-  await supabase.from('spots').insert(jiyugaokaSpots);
-  await supabase.from('badges').insert(jiyugaokaBadges);
-
-  // 2. 与野ルート登録
-  console.log("Inserting Yono...");
-  await supabase.from('routes').insert([yonoRoute]);
-  await supabase.from('spots').insert(yonoSpots);
-  await supabase.from('badges').insert(yonoBadges);
-
-  // 3. 岩槻ルート登録
-  console.log("Inserting Iwatsuki...");
-  await supabase.from('routes').insert([iwatsukiRoute]);
-  await supabase.from('spots').insert(iwatsukiSpots);
-  await supabase.from('badges').insert(iwatsukiBadges);
-
-  // 3.5. 北浦和ルート登録
-  console.log("Inserting Kitaurawa...");
-  await supabase.from('routes').insert([kitaurawaRoute]);
-  await supabase.from('spots').insert(kitaurawaSpots);
-  await supabase.from('badges').insert(kitaurawaBadges);
-
-  // 4. 埼玉・大宮周辺5ルート登録
-  console.log("Inserting Saitama/Omiya routes...");
-  for (let i = 0; i < saitamaRallies.length; i++) {
-    const route = saitamaRallies[i];
-    const spots = generateSaitamaSpots(route.id, i);
-    await supabase.from('routes').insert([route]);
-    await supabase.from('spots').insert(spots);
-    console.log(`Inserted Omiya route: ${route.title}`);
-  }
+  // 新設：さいたま新都心ルートの登録のみ実行
+  console.log("Inserting Shintoshin...");
+  await supabase.from('routes').insert([shintoshinRoute]);
+  await supabase.from('spots').insert(shintoshinSpots);
+  await supabase.from('badges').insert(shintoshinBadges);
 
   console.log("Seeding complete successfully!");
 }
