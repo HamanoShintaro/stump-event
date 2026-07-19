@@ -25,6 +25,7 @@ export function JoinRallyButton({
   const [showAnimation, setShowAnimation] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
   const [isCreatingGroup, setIsCreatingGroup] = useState(false);
+  const [isDisbanding, setIsDisbanding] = useState(false);
   const [partnerNames, setPartnerNames] = useState<string[]>([]);
   const [activeGroupId, setActiveGroupId] = useState<string | null>(null);
   const [inviteCode, setInviteCode] = useState<string | null>(null);
@@ -190,6 +191,46 @@ export function JoinRallyButton({
     }
   };
 
+  const handleLeaveGroup = async () => {
+    if (!user || !activeGroupId) return;
+
+    setIsDisbanding(true);
+    try {
+      // 自分がグループ作成者かどうかチェック
+      const { data: grp } = await supabase
+        .from('groups')
+        .select('created_by')
+        .eq('id', activeGroupId)
+        .single();
+
+      if (grp && grp.created_by === user.id) {
+        // 作成者の場合: グループ全体を非アクティブ化 (解散)
+        await supabase
+          .from('groups')
+          .update({ is_active: false, status: 'COMPLETED' })
+          .eq('id', activeGroupId);
+      } else {
+        // 一般参加者の場合: メンバーから自分を削除 (退出)
+        await supabase
+          .from('group_members')
+          .delete()
+          .eq('group_id', activeGroupId)
+          .eq('user_id', user.id);
+      }
+
+      await showAlert({ text: "連れ立ちセッションを終了（退出・解散）しました。ソロプレイに戻ります。", okText: "確認" });
+      
+      // クライアントの状態をソロにリセット
+      setActiveGroupId(null);
+      setInviteCode(null);
+      setPartnerNames([]);
+    } catch (err: any) {
+      await showAlert({ text: `連れ立ちの終了に失敗しました: ${err.message}`, okText: "確認" });
+    } finally {
+      setIsDisbanding(false);
+    }
+  };
+
   return (
     <>
       {showAnimation && (
@@ -204,71 +245,141 @@ export function JoinRallyButton({
       {loading ? (
         <button className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px", opacity: 0.7 }} disabled>確認中...</button>
       ) : isJoined ? (
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
-          {partnerNames.length > 0 && (
-            <div style={{
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
+          
+          {/* 連れ立ち進行中ダッシュボードカード */}
+          {activeGroupId && (
+            <div className="glass-card" style={{
+              padding: "20px",
+              border: "1.5px solid var(--accent-color)",
+              background: "rgba(255, 255, 255, 0.9)",
+              borderRadius: "20px",
               display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "12px 16px",
-              borderRadius: "16px",
-              background: "rgba(201, 168, 76, 0.08)", // Kogane (var(--accent-color))
-              border: "1.5px dashed var(--accent-color)",
-              color: "#5C4E43",
-              fontSize: "0.85rem",
-              fontWeight: 700,
-              width: "100%",
-              boxSizing: "border-box"
+              flexDirection: "column",
+              gap: "14px",
+              boxShadow: "0 8px 24px rgba(201, 168, 76, 0.12)",
+              width: "100%"
             }}>
-              <span style={{ fontSize: "1.1rem" }}>👥</span>
-              <span>{partnerNames.join(' さん、')} さんと連れ立ち中</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px" }}>
+                <span style={{ fontSize: "1.2rem" }}>👥</span>
+                <span style={{ fontWeight: 800, color: "var(--secondary-color)", fontSize: "1rem" }}>連れ立ちセッション進行中</span>
+              </div>
+              
+              <div style={{ fontSize: "0.85rem", color: "#5C4E43", lineHeight: 1.5 }}>
+                {partnerNames.length > 0 ? (
+                  <>
+                    同行者: <strong>{partnerNames.join(' さん、')} さん</strong> と一緒に巡っています。
+                  </>
+                ) : (
+                  <>
+                    現在、友達の合流を待っています。<br/>
+                    下記の招待コードを友達に教えてください。
+                  </>
+                )}
+              </div>
+
+              {inviteCode && (
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  background: "rgba(201, 168, 76, 0.08)",
+                  padding: "10px 16px",
+                  borderRadius: "12px",
+                  border: "1px dashed var(--accent-color)"
+                }}>
+                  <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#5C4E43" }}>
+                    招待コード: <span style={{ fontSize: "1.1rem", letterSpacing: "1px", color: "var(--primary-color)", fontWeight: "bold" }}>{inviteCode}</span>
+                  </div>
+                  <button 
+                    onClick={async () => {
+                      try {
+                        await navigator.clipboard.writeText(inviteCode);
+                        await showAlert({ text: "招待コードをクリップボードにコピーしました！", okText: "確認" });
+                      } catch (err) {
+                        await showAlert({ text: `招待コードは 【 ${inviteCode} 】 です。`, okText: "閉じる" });
+                      }
+                    }}
+                    style={{
+                      background: "white",
+                      border: "1px solid #EBE5D9",
+                      padding: "4px 10px",
+                      borderRadius: "6px",
+                      fontSize: "0.75rem",
+                      fontWeight: 700,
+                      cursor: "pointer"
+                    }}
+                  >
+                    コピー
+                  </button>
+                </div>
+              )}
+
+              <div style={{ display: "flex", gap: "10px", marginTop: "4px" }}>
+                <button 
+                  onClick={() => {
+                    setIsNavigating(true);
+                    router.push(`/routes/${rallyId}/map`);
+                  }}
+                  disabled={isNavigating || isDisbanding}
+                  className="btn-primary"
+                  style={{
+                    flex: 2,
+                    fontSize: "0.95rem",
+                    padding: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                    boxShadow: "none"
+                  }}
+                >
+                  {isNavigating ? "読み込み中..." : "🗺️ 地図を表示"}
+                </button>
+                
+                <button 
+                  onClick={handleLeaveGroup}
+                  disabled={isNavigating || isDisbanding}
+                  className="btn-secondary"
+                  style={{
+                    flex: 1.2,
+                    fontSize: "0.85rem",
+                    padding: "12px",
+                    borderColor: "#C7442E",
+                    color: "#C7442E",
+                    background: "rgba(199, 68, 46, 0.03)"
+                  }}
+                >
+                  {isDisbanding ? "処理中..." : "連れ立ちをやめる"}
+                </button>
+              </div>
             </div>
           )}
-          <button 
-            onClick={() => {
-              setIsNavigating(true);
-              router.push(`/routes/${rallyId}/map`);
-            }}
-            disabled={isNavigating || isCreatingGroup}
-            className="btn-primary" 
-            style={{ 
-              width: "100%", 
-              fontSize: "1.1rem", 
-              padding: "16px",
-              background: "linear-gradient(135deg, var(--primary-color) 0%, #E04E39 100%)",
-              border: "none",
-              boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)",
-              opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
-              cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
-            }}
-          >
-            {isNavigating ? "読み込み中..." : "参加中｜現在の目的地への地図を見る"}
-          </button>
 
-          {activeGroupId && inviteCode ? (
-            <button 
-              onClick={async () => {
-                await showAlert({ 
-                  text: `現在の連れ立ち招待コードは\n\n【 ${inviteCode} 】\n\nです。お友達にこのコードを伝えて合流してください。`, 
-                  okText: "閉じる" 
-                });
-              }}
-              className="btn-secondary"
-              style={{
-                width: "100%",
-                fontSize: "1.1rem",
-                padding: "16px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                cursor: "pointer"
-              }}
-            >
-              👥 招待コードを確認
-            </button>
-          ) : (
-            !activeGroupId && (
+          {/* 連れ立ち中でない場合の通常表示 */}
+          {!activeGroupId && (
+            <>
+              <button 
+                onClick={() => {
+                  setIsNavigating(true);
+                  router.push(`/routes/${rallyId}/map`);
+                }}
+                disabled={isNavigating || isCreatingGroup}
+                className="btn-primary" 
+                style={{ 
+                  width: "100%", 
+                  fontSize: "1.1rem", 
+                  padding: "16px",
+                  background: "linear-gradient(135deg, var(--primary-color) 0%, #E04E39 100%)",
+                  border: "none",
+                  boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)",
+                  opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
+                  cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
+                }}
+              >
+                {isNavigating ? "読み込み中..." : "現在の目的地への地図を見る"}
+              </button>
+
               <button 
                 onClick={handleCreateGroup}
                 disabled={isNavigating || isCreatingGroup}
@@ -287,7 +398,7 @@ export function JoinRallyButton({
               >
                 {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
               </button>
-            )
+            </>
           )}
         </div>
       ) : (
