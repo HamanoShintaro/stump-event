@@ -25,6 +25,7 @@ export function JoinRallyButton({
   const [showAnimation, setShowAnimation] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
   const [isCreatingGroup, setIsCreatingGroup] = useState(false);
+  const [partnerNames, setPartnerNames] = useState<string[]>([]);
   const { showAlert } = useCustomAlert();
 
   useEffect(() => {
@@ -48,6 +49,43 @@ export function JoinRallyButton({
           console.error("Error checking route join status:", error);
         }
         if (data && data.status !== 'CANCELED') setIsJoined(true);
+
+        // アクティブな連れ立ち中の相手をフェッチ (安全なSequential方式)
+        const { data: myMemberships } = await supabase
+          .from('group_members')
+          .select('group_id')
+          .eq('user_id', user.id);
+
+        if (myMemberships && myMemberships.length > 0) {
+          const groupIds = myMemberships.map(m => m.group_id);
+          const { data: activeGroups } = await supabase
+            .from('groups')
+            .select('id')
+            .in('id', groupIds)
+            .eq('route_id', rallyId)
+            .eq('is_active', true);
+
+          if (activeGroups && activeGroups.length > 0) {
+            const activeGroupId = activeGroups[0].id;
+            const { data: members } = await supabase
+              .from('group_members')
+              .select('user_id')
+              .eq('group_id', activeGroupId)
+              .neq('user_id', user.id); // 自分以外のメンバー
+
+            if (members && members.length > 0) {
+              const userIds = members.map(m => m.user_id);
+              const { data: userProfiles } = await supabase
+                .from('users')
+                .select('display_name')
+                .in('id', userIds);
+
+              if (userProfiles) {
+                setPartnerNames(userProfiles.map(u => u.display_name));
+              }
+            }
+          }
+        }
       } catch (err) {
         console.error("checkStatus catch error:", err);
       } finally {
@@ -159,6 +197,25 @@ export function JoinRallyButton({
         <button className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px", opacity: 0.7 }} disabled>確認中...</button>
       ) : isJoined ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+          {partnerNames.length > 0 && (
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 16px",
+              borderRadius: "16px",
+              background: "rgba(201, 168, 76, 0.08)", // Kogane (var(--accent-color))
+              border: "1.5px dashed var(--accent-color)",
+              color: "#5C4E43",
+              fontSize: "0.85rem",
+              fontWeight: 700,
+              width: "100%",
+              boxSizing: "border-box"
+            }}>
+              <span style={{ fontSize: "1.1rem" }}>👥</span>
+              <span>{partnerNames.join(' さん、')} さんと連れ立ち中</span>
+            </div>
+          )}
           <button 
             onClick={() => {
               setIsNavigating(true);
