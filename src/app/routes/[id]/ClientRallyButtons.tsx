@@ -26,6 +26,7 @@ export function JoinRallyButton({
   const [isNavigating, setIsNavigating] = useState(false);
   const [isCreatingGroup, setIsCreatingGroup] = useState(false);
   const [partnerNames, setPartnerNames] = useState<string[]>([]);
+  const [activeGroupId, setActiveGroupId] = useState<string | null>(null);
   const { showAlert } = useCustomAlert();
 
   useEffect(() => {
@@ -66,11 +67,12 @@ export function JoinRallyButton({
             .eq('is_active', true);
 
           if (activeGroups && activeGroups.length > 0) {
-            const activeGroupId = activeGroups[0].id;
+            const actGrpId = activeGroups[0].id;
+            setActiveGroupId(actGrpId);
             const { data: members } = await supabase
               .from('group_members')
               .select('user_id')
-              .eq('group_id', activeGroupId)
+              .eq('group_id', actGrpId)
               .neq('user_id', user.id); // 自分以外のメンバー
 
             if (members && members.length > 0) {
@@ -169,6 +171,8 @@ export function JoinRallyButton({
 
       if (memberError) throw memberError;
 
+      setActiveGroupId(newGrp.id);
+
       await showAlert({ 
         text: `連れ立ちグループを作成しました！\n招待コード: ${inviteCode}\n\n友達にこのコードを伝えて合流してください。`, 
         okText: "マップへ進む" 
@@ -237,24 +241,26 @@ export function JoinRallyButton({
             {isNavigating ? "読み込み中..." : "参加中｜現在の目的地への地図を見る"}
           </button>
 
-          <button 
-            onClick={handleCreateGroup}
-            disabled={isNavigating || isCreatingGroup}
-            className="btn-secondary"
-            style={{
-              width: "100%",
-              fontSize: "1.1rem",
-              padding: "16px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "8px",
-              opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
-              cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
-            }}
-          >
-            {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
-          </button>
+          {!activeGroupId && (
+            <button 
+              onClick={handleCreateGroup}
+              disabled={isNavigating || isCreatingGroup}
+              className="btn-secondary"
+              style={{
+                width: "100%",
+                fontSize: "1.1rem",
+                padding: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
+                cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
+              }}
+            >
+              {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
+            </button>
+          )}
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
