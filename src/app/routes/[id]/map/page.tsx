@@ -323,43 +323,6 @@ export default function MapPage({
           </button>
         </div>
 
-        {/* 連れ立ち用タブ切り替えヘッダー */}
-        {groupId && (
-          <div style={{ display: "flex", width: "100%", borderBottom: "1px solid #EBE5D9", marginTop: "4px" }}>
-            <button 
-              onClick={() => setActiveTab("map")}
-              style={{ 
-                flex: 1, 
-                padding: "8px", 
-                background: "transparent", 
-                border: "none", 
-                borderBottom: activeTab === "map" ? "2px solid var(--primary-color)" : "2px solid transparent",
-                fontWeight: activeTab === "map" ? "bold" : "normal",
-                color: activeTab === "map" ? "var(--primary-color)" : "#8A7E72",
-                cursor: "pointer",
-                fontSize: "0.85rem"
-              }}
-            >
-              🗺️ 連れ立ち地図
-            </button>
-            <button 
-              onClick={() => setActiveTab("diary")}
-              style={{ 
-                flex: 1, 
-                padding: "8px", 
-                background: "transparent", 
-                border: "none", 
-                borderBottom: activeTab === "diary" ? "2px solid var(--primary-color)" : "2px solid transparent",
-                fontWeight: activeTab === "diary" ? "bold" : "normal",
-                color: activeTab === "diary" ? "var(--primary-color)" : "#8A7E72",
-                cursor: "pointer",
-                fontSize: "0.85rem"
-              }}
-            >
-              📖 連れ立ち日記
-            </button>
-          </div>
-        )}
       </header>
 
       {/* リアルタイムお祝いトースト */}
@@ -388,81 +351,15 @@ export default function MapPage({
       )}
       
       <main className={styles.mapContainer} style={{ position: "relative" }}>
-        {activeTab === "map" ? (
-          <RouteMapUI 
-            rally={rally} 
-            spots={spots} 
-            activeSpotId={activeSpotId} 
-            groupId={groupId}
-            groupMembers={groupMembers}
-            memberLatestStamps={memberLatestStamps}
-            spotAcquiredMembers={spotAcquiredMembers}
-          />
-        ) : (
-          /* 連れ立ち共有写真日記 */
-          <div style={{ padding: "20px", overflowY: "auto", height: "100%", background: "#FAF6EE" }}>
-            <h3 style={{ fontSize: "1rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 16px 0", borderBottom: "1px solid #EBE5D9", paddingBottom: "8px" }}>
-              👥 みんなの連れ立ち日記
-            </h3>
-            
-            {stampEvents.length > 0 ? (
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                {stampEvents.map((e) => {
-                  const m = groupMembers.find(member => member.user_id === e.user_id)?.users || { display_name: "同行メンバー" };
-                  const s = spots.find(spot => spot.id === e.spot_id) || { name: "スポット" };
-                  return (
-                    <div 
-                      key={e.id}
-                      style={{ 
-                        background: "#FFFDF9", 
-                        border: "1px solid #EBE5D9", 
-                        borderRadius: "12px", 
-                        padding: "16px",
-                        boxShadow: "0 2px 8px rgba(92, 78, 67, 0.03)"
-                      }}
-                    >
-                      <div style={{ display: "flex", justifyItems: "center", gap: "10px", marginBottom: "12px" }}>
-                        <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "#EBE5D9", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          {m.avatar_url ? (
-                            <img src={m.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                          ) : (
-                            <span style={{ fontSize: "0.8rem", color: "#8A7E72" }}>👤</span>
-                          )}
-                        </div>
-                        <div>
-                          <div style={{ fontSize: "0.8rem", fontWeight: "800", color: "var(--text-color)" }}>{m.display_name}</div>
-                          <div style={{ fontSize: "0.65rem", color: "#A39687" }}>
-                            {new Date(e.created_at).toLocaleString("ja-JP")} ・ {s.name} に到着
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {e.memo ? (
-                        <p style={{ fontSize: "0.85rem", color: "#5C4E43", margin: "0 0 10px 0", lineHeight: "1.5", padding: "8px 12px", background: "rgba(92,78,67,0.02)", borderRadius: "6px" }}>
-                          {e.memo}
-                        </p>
-                      ) : (
-                        <p style={{ fontSize: "0.8rem", color: "#A39687", fontStyle: "italic", margin: "0 0 10px 0" }}>
-                          しるしを押しました。
-                        </p>
-                      )}
-
-                      {e.photo_url && (
-                        <div style={{ width: "100%", height: "200px", borderRadius: "8px", overflow: "hidden", border: "1px solid #EBE5D9" }}>
-                          <img src={e.photo_url} alt="思い出写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <div style={{ textAlign: "center", padding: "40px 0", color: "#B3A598" }}>
-                <p style={{ fontSize: "0.9rem", margin: 0 }}>まだ同行メンバーの押印記録がありません。</p>
-              </div>
-            )}
-          </div>
-        )}
+        <RouteMapUI 
+          rally={rally} 
+          spots={spots} 
+          activeSpotId={activeSpotId} 
+          groupId={groupId}
+          groupMembers={groupMembers}
+          memberLatestStamps={memberLatestStamps}
+          spotAcquiredMembers={spotAcquiredMembers}
+        />
       </main>
 
       {/* 招待コード表示モーダル */}
