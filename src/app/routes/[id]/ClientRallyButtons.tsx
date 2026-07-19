@@ -23,6 +23,8 @@ export function JoinRallyButton({
   const [isJoined, setIsJoined] = useState(false);
   const [loading, setLoading] = useState(true);
   const [showAnimation, setShowAnimation] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [isCreatingGroup, setIsCreatingGroup] = useState(false);
   const { showAlert } = useCustomAlert();
 
   useEffect(() => {
@@ -57,10 +59,12 @@ export function JoinRallyButton({
 
   const handleJoin = async () => {
     if (!user) {
+      setIsNavigating(true);
       // 未ログインなら、この画面に戻ってくるようにリダイレクト先を指定してログイン画面へ
       router.push(`/login?redirect=/routes/${rallyId}`);
       return;
     }
+    setIsNavigating(true);
     // DBに参加データを登録・更新
     const { data: existing } = await supabase
       .from('user_routes')
@@ -85,6 +89,7 @@ export function JoinRallyButton({
       
     if (error) {
       console.error("Join error:", error);
+      setIsNavigating(false);
       await showAlert({ text: `参加に失敗しました: ${error.message}`, okText: "確認" });
     } else {
       setIsJoined(true);
@@ -94,8 +99,49 @@ export function JoinRallyButton({
 
   const handleAnimationComplete = () => {
     setShowAnimation(false);
+    setIsNavigating(true);
     // アニメーション完了後に一覧画面へ遷移し、最初の行き先を選ばせる
     router.push(`/routes/${rallyId}/destinations`);
+  };
+
+  const handleCreateGroup = async () => {
+    if (!user) return;
+    setIsCreatingGroup(true);
+    try {
+      const inviteCode = Math.floor(100000 + Math.random() * 900000).toString();
+      const { data: newGrp, error: grpError } = await supabase
+        .from("groups")
+        .insert({
+          route_id: rallyId,
+          invite_code: inviteCode,
+          created_by: user.id,
+          status: "WAITING"
+        })
+        .select()
+        .single();
+
+      if (grpError) throw grpError;
+
+      const { error: memberError } = await supabase
+        .from("group_members")
+        .insert({
+          group_id: newGrp.id,
+          user_id: user.id
+        });
+
+      if (memberError) throw memberError;
+
+      await showAlert({ 
+        text: `連れ立ちグループを作成しました！\n招待コード: ${inviteCode}\n\n友達にこのコードを伝えて合流してください。`, 
+        okText: "マップへ進む" 
+      });
+      setIsNavigating(true);
+      router.push(`/routes/${rallyId}/map?groupId=${newGrp.id}`);
+    } catch (err: any) {
+      await showAlert({ text: `グループの作成に失敗しました: ${err.message}`, okText: "確認" });
+    } finally {
+      setIsCreatingGroup(false);
+    }
   };
 
   return (
@@ -114,7 +160,11 @@ export function JoinRallyButton({
       ) : isJoined ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
           <button 
-            onClick={() => router.push(`/routes/${rallyId}/map`)}
+            onClick={() => {
+              setIsNavigating(true);
+              router.push(`/routes/${rallyId}/map`);
+            }}
+            disabled={isNavigating || isCreatingGroup}
             className="btn-primary" 
             style={{ 
               width: "100%", 
@@ -122,16 +172,48 @@ export function JoinRallyButton({
               padding: "16px",
               background: "linear-gradient(135deg, var(--primary-color) 0%, #E04E39 100%)",
               border: "none",
-              boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)"
+              boxShadow: "0 4px 15px rgba(199, 68, 46, 0.3)",
+              opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
+              cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
             }}
           >
-            参加中｜現在の目的地への地図を見る
+            {isNavigating ? "読み込み中..." : "参加中｜現在の目的地への地図を見る"}
+          </button>
+
+          <button 
+            onClick={handleCreateGroup}
+            disabled={isNavigating || isCreatingGroup}
+            className="btn-secondary"
+            style={{
+              width: "100%",
+              fontSize: "1.1rem",
+              padding: "16px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+              opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
+              cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
+            }}
+          >
+            {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
           </button>
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
-          <button onClick={handleJoin} className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px" }}>
-            {user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
+          <button 
+            onClick={handleJoin} 
+            disabled={isNavigating}
+            className="btn-primary" 
+            style={{ 
+              width: "100%", 
+              fontSize: "1.1rem", 
+              padding: "16px",
+              opacity: isNavigating ? 0.7 : 1,
+              cursor: isNavigating ? "not-allowed" : "pointer"
+            }}
+          >
+            {isNavigating ? "読み込み中..." : user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
           </button>
         </div>
       )}
@@ -142,15 +224,27 @@ export function JoinRallyButton({
 export function SpotButton({ spotId, rallyId }: { spotId: string, rallyId: string }) {
   const { user } = useAuth();
   const router = useRouter();
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const handleClick = () => {
+    setIsNavigating(true);
     // 未ログインでも詳細画面には行けるが、スタンプ獲得などはできない（詳細画面側で制御）
     router.push(`/routes/${rallyId}/spot/${spotId}`);
   };
 
   return (
-    <button onClick={handleClick} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.9rem" }}>
-      {user ? "詳細 / 押印する" : "詳細を見る"}
+    <button 
+      onClick={handleClick} 
+      disabled={isNavigating}
+      className="btn-primary" 
+      style={{ 
+        padding: "8px 16px", 
+        fontSize: "0.9rem",
+        opacity: isNavigating ? 0.7 : 1,
+        cursor: isNavigating ? "not-allowed" : "pointer"
+      }}
+    >
+      {isNavigating ? "読み込み中..." : user ? "詳細 / 押印する" : "詳細を見る"}
     </button>
   );
 }
