@@ -39,6 +39,7 @@ export default function ClientSpotList({
 
   const [activeSpotId, setActiveSpotId] = useState<string | null>(null);
   const [isSettingDest, setIsSettingDest] = useState<string | null>(null);
+  const [isJoined, setIsJoined] = useState(false);
 
   const stampImgUrl = getCategoryStampUrl(routeCategory);
   const [selectedStorySpot, setSelectedStorySpot] = useState<Spot | null>(null);
@@ -59,6 +60,29 @@ export default function ClientSpotList({
     }
     fetchActiveSpot();
   }, [user]);
+
+  // ユーザーがルートに参加しているかをチェック
+  useEffect(() => {
+    if (!user) {
+      setIsJoined(false);
+      return;
+    }
+    async function checkJoin() {
+      if (!user) return;
+      const { data } = await supabase
+        .from('user_routes')
+        .select('status')
+        .eq('user_id', user.id)
+        .eq('route_id', routeId)
+        .maybeSingle();
+      if (data && data.status !== 'CANCELED') {
+        setIsJoined(true);
+      } else {
+        setIsJoined(false);
+      }
+    }
+    checkJoin();
+  }, [user, routeId]);
 
   // 目的地設定処理
   const handleSetDestination = async (spotId: string) => {
@@ -328,23 +352,25 @@ export default function ClientSpotList({
                     )}
                   </div>
                 ) : (
-                  <button 
-                    className={isStamped ? "btn-secondary" : "btn-primary"} 
-                    style={{ 
-                      width: "100%", 
-                      padding: "12px", 
-                      fontSize: "0.95rem",
-                      ...(isStamped ? {
-                        opacity: 0.8,
-                        borderColor: "rgba(0, 0, 0, 0.15)",
-                        color: "rgba(0, 0, 0, 0.6)"
-                      } : {})
-                    }}
-                    onClick={() => handleSetDestination(spot.id)}
-                    disabled={isSettingDest !== null}
-                  >
-                    {isSettingDest === spot.id ? "設定中..." : "ここを目的地にする"}
-                  </button>
+                  isJoined && (
+                    <button 
+                      className={isStamped ? "btn-secondary" : "btn-primary"} 
+                      style={{ 
+                        width: "100%", 
+                        padding: "12px", 
+                        fontSize: "0.95rem",
+                        ...(isStamped ? {
+                          opacity: 0.8,
+                          borderColor: "rgba(0, 0, 0, 0.15)",
+                          color: "rgba(0, 0, 0, 0.6)"
+                        } : {})
+                      }}
+                      onClick={() => handleSetDestination(spot.id)}
+                      disabled={isSettingDest !== null}
+                    >
+                      {isSettingDest === spot.id ? "設定中..." : "ここを目的地にする"}
+                    </button>
+                  )
                 )}
               </div>
             </div>
