@@ -317,12 +317,7 @@ export default function SpotCheckInPage({
           .upload(filePath, selectedFile, { upsert: true });
 
         if (uploadError) {
-          console.warn("Storage upload error, using base64 fallback:", uploadError);
-          uploadedUrl = await new Promise<string>((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result as string);
-            reader.readAsDataURL(selectedFile);
-          });
+          throw new Error(`画像のアップロードに失敗しました。バケットが存在しないか、アップロード権限がありません。 (${uploadError.message})`);
         } else {
           const { data } = supabase.storage.from('stamps').getPublicUrl(filePath);
           uploadedUrl = data.publicUrl;
@@ -970,8 +965,16 @@ export default function SpotCheckInPage({
                       <div style={{ padding: "12px", background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.3)", borderRadius: "8px", fontSize: "0.8rem", color: "var(--accent-color)", display: "flex", flexDirection: "column", gap: "8px" }}>
                         <div>✓ 思い出を送信しました: 「{memoInput}」</div>
                         {savedPhotoUrl && (
-                          <div style={{ width: "100%", height: "120px", borderRadius: "6px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
-                            <img src={savedPhotoUrl} alt="共有写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                          <div style={{ width: "100%", borderRadius: "6px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)" }}>
+                            {savedPhotoUrl.startsWith('data:image/') && savedPhotoUrl.length > 200000 ? (
+                              <div style={{ padding: "12px", fontSize: "0.75rem", color: "#A39687", textAlign: "center", background: "rgba(255,255,255,0.05)" }}>
+                                ⚠️ 画像のサイズが大きすぎるため表示できません (URL保存推奨)
+                              </div>
+                            ) : (
+                              <div style={{ width: "100%", height: "120px" }}>
+                                <img src={savedPhotoUrl} alt="共有写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
@@ -1025,15 +1028,6 @@ export default function SpotCheckInPage({
                             {isSavingMemo ? "送信中" : "送信"}
                           </button>
                         </div>
-
-                        {/* ファイルインプット */}
-                        <input 
-                          type="file" 
-                          ref={fileInputRef}
-                          onChange={handleFileChange}
-                          accept="image/*"
-                          style={{ display: "none" }}
-                        />
 
                         {/* 添付画像プレビュー */}
                         {imagePreview && (
@@ -1479,8 +1473,16 @@ export default function SpotCheckInPage({
                     <div style={{ fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: "bold", padding: "10px", background: "rgba(199,68,46,0.05)", borderRadius: "8px", display: "flex", flexDirection: "column", gap: "8px" }}>
                       <div>✓ 思い出を送信しました: 「{memoInput}」</div>
                       {savedPhotoUrl && (
-                        <div style={{ width: "100%", height: "120px", borderRadius: "6px", overflow: "hidden", border: "1px solid #EBE5D9" }}>
-                          <img src={savedPhotoUrl} alt="思い出写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <div style={{ width: "100%", borderRadius: "6px", overflow: "hidden", border: "1px solid #EBE5D9" }}>
+                          {savedPhotoUrl.startsWith('data:image/') && savedPhotoUrl.length > 200000 ? (
+                            <div style={{ padding: "12px", fontSize: "0.75rem", color: "#8A7E72", textAlign: "center", background: "#F5F0E6" }}>
+                              ⚠️ 画像のサイズが大きすぎるため表示できません
+                            </div>
+                          ) : (
+                            <div style={{ width: "100%", height: "120px" }}>
+                              <img src={savedPhotoUrl} alt="思い出写真" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -1533,15 +1535,6 @@ export default function SpotCheckInPage({
                           {isSavingMemo ? "送信中" : "送信"}
                         </button>
                       </div>
-
-                      {/* ファイルインプット */}
-                      <input 
-                        type="file" 
-                        ref={fileInputRef}
-                        onChange={handleFileChange}
-                        accept="image/*"
-                        style={{ display: "none" }}
-                      />
 
                       {/* 添付画像プレビュー */}
                       {imagePreview && (
@@ -1650,6 +1643,15 @@ export default function SpotCheckInPage({
             </div>
           )}
         </main>
+
+        {/* 共通の思い出写真ファイル入力（refの重複競合を避けるため最下部に配置） */}
+        <input 
+          type="file" 
+          ref={fileInputRef}
+          onChange={handleFileChange}
+          accept="image/*"
+          style={{ display: "none" }}
+        />
       </div>
     </div>
   );

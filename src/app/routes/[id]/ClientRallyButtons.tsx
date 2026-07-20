@@ -11,12 +11,14 @@ export function JoinRallyButton({
   rallyId, 
   routeTitle, 
   routeDescription, 
-  routePrologue 
+  routePrologue,
+  groupId = null
 }: { 
   rallyId: string;
   routeTitle: string;
   routeDescription: string;
   routePrologue?: string;
+  groupId?: string | null;
 }) {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
@@ -319,7 +321,8 @@ export function JoinRallyButton({
                 <button 
                   onClick={() => {
                     setIsNavigating(true);
-                    router.push(`/routes/${rallyId}/map`);
+                    const targetGroupId = activeGroupId || groupId;
+                    router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
                   }}
                   disabled={isNavigating || isDisbanding}
                   className="btn-primary"
@@ -362,7 +365,8 @@ export function JoinRallyButton({
               <button 
                 onClick={() => {
                   setIsNavigating(true);
-                  router.push(`/routes/${rallyId}/map`);
+                  const targetGroupId = activeGroupId || groupId;
+                  router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
                 }}
                 disabled={isNavigating || isCreatingGroup}
                 className="btn-primary" 

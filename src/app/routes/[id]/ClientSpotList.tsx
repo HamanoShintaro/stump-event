@@ -26,11 +26,13 @@ interface Spot {
 export default function ClientSpotList({ 
   spots, 
   routeId, 
-  routeCategory 
+  routeCategory,
+  groupId = null
 }: { 
   spots: Spot[]; 
   routeId: string;
   routeCategory?: string;
+  groupId?: string | null;
 }) {
   const { user } = useAuth();
   const router = useRouter();
@@ -105,7 +107,7 @@ export default function ClientSpotList({
     } else {
       setActiveSpotId(spotId);
       // マップへ自動遷移
-      router.push(`/routes/${routeId}/map`);
+      router.push(`/routes/${routeId}/map` + (groupId ? `?groupId=${groupId}` : ""));
     }
   };
 
@@ -303,7 +305,7 @@ export default function ClientSpotList({
                       <button 
                         className="btn-primary" 
                         style={{ width: "100%", padding: "10px 16px", fontSize: "0.9rem", fontWeight: "700" }}
-                        onClick={() => router.push(`/routes/${routeId}/spot/${spot.id}`)}
+                        onClick={() => router.push(`/routes/${routeId}/spot/${spot.id}` + (groupId ? `?groupId=${groupId}` : ""))}
                       >
                         {isStamped ? "しるしを見る" : (user ? "詳細 / 押印する" : "詳細を見る")}
                       </button>
@@ -344,7 +346,7 @@ export default function ClientSpotList({
                           padding: "10px 16px",
                           fontSize: "0.9rem"
                         }}
-                        onClick={() => router.push(`/routes/${routeId}/map`)}
+                        onClick={() => router.push(`/routes/${routeId}/map` + (groupId ? `?groupId=${groupId}` : ""))}
                       >
                         <MapIcon size={16} />
                         マップを表示

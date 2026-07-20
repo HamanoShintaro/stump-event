@@ -589,30 +589,55 @@ export default function DiaryPage() {
                     </div>
                     
                     {/* 写真の表示 (共有写真を優先、なければ自分の写真) */}
-                    {(groupInfo?.sharedPhoto || selectedEvent.photo_url) && (
-                      <div 
-                        onClick={() => setZoomPhotoUrl(groupInfo?.sharedPhoto || selectedEvent.photo_url)}
-                        style={{ 
-                          width: "100%", 
-                          maxHeight: "180px", 
-                          borderRadius: "6px", 
-                          overflow: "hidden", 
-                          border: "1px solid #EBE5D9", 
-                          marginBottom: (groupInfo?.sharedMemo || selectedEvent.memo) ? "8px" : "0",
-                          cursor: "pointer",
-                          transition: "opacity 0.2s"
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.opacity = "0.8"}
-                        onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
-                        title="タップで拡大表示"
-                      >
-                        <img 
-                          src={groupInfo?.sharedPhoto || selectedEvent.photo_url} 
-                          alt="思い出の写真" 
-                          style={{ width: "100%", height: "100%", objectFit: "cover" }} 
-                        />
-                      </div>
-                    )}
+                    {(() => {
+                      const photoUrl = groupInfo?.sharedPhoto || selectedEvent.photo_url;
+                      if (!photoUrl) return null;
+                      
+                      const isTooLargeBase64 = photoUrl.startsWith('data:image/') && photoUrl.length > 200000;
+                      
+                      return (
+                        <div 
+                          onClick={() => {
+                            if (!isTooLargeBase64) {
+                              setZoomPhotoUrl(photoUrl);
+                            }
+                          }}
+                          style={{ 
+                            width: "100%", 
+                            borderRadius: "6px", 
+                            overflow: "hidden", 
+                            border: "1px solid #EBE5D9", 
+                            marginBottom: (groupInfo?.sharedMemo || selectedEvent.memo) ? "8px" : "0",
+                            cursor: isTooLargeBase64 ? "default" : "pointer",
+                            transition: isTooLargeBase64 ? "none" : "opacity 0.2s",
+                            background: "#F5F0E6",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: isTooLargeBase64 ? "16px" : "0"
+                          }}
+                          onMouseEnter={(e) => {
+                            if (!isTooLargeBase64) e.currentTarget.style.opacity = "0.8";
+                          }}
+                          onMouseLeave={(e) => {
+                            if (!isTooLargeBase64) e.currentTarget.style.opacity = "1";
+                          }}
+                          title={isTooLargeBase64 ? undefined : "タップで拡大表示"}
+                        >
+                          {isTooLargeBase64 ? (
+                            <span style={{ fontSize: "0.75rem", color: "#8A7E72", textAlign: "center" }}>
+                              ⚠️ 画像のサイズが大きすぎるため表示できません
+                            </span>
+                          ) : (
+                            <img 
+                              src={photoUrl} 
+                              alt="思い出の写真" 
+                              style={{ width: "100%", height: "100%", maxHeight: "180px", objectFit: "cover" }} 
+                            />
+                          )}
+                        </div>
+                      );
+                    })()}
                     
                     {/* メモの表示 (共有メモを優先、なければ自分のメモ) */}
                     {(groupInfo?.sharedMemo || selectedEvent.memo) && (

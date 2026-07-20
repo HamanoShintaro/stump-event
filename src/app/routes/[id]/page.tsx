@@ -12,8 +12,16 @@ import { Footprints, Star } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
 
-export default async function RallyDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function RallyDetailPage({ 
+  params,
+  searchParams
+}: { 
+  params: Promise<{ id: string }>,
+  searchParams: Promise<{ groupId?: string }>
+}) {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const groupId = resolvedSearchParams.groupId || null;
   
   // 1. ルート本体のデータを取得
   const { data: rally, error: rallyError } = await supabase
@@ -75,6 +83,7 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
                  routeTitle={rally.title}
                  routeDescription={rally.description}
                  routePrologue={rally.theme_prologue}
+                 groupId={groupId}
                />
              </div>
           </div>
@@ -83,7 +92,7 @@ export default async function RallyDetailPage({ params }: { params: Promise<{ id
         {/* スポット一覧セクション */}
         <section className={styles.spotSection}>
           <h2 className={styles.sectionTitle} style={{ marginTop: "40px" }}>スポット一覧 ({spotsList.length}箇所)</h2>
-          <ClientSpotList spots={spotsList} routeId={rally.id} routeCategory={rally.category} />
+          <ClientSpotList spots={spotsList} routeId={rally.id} routeCategory={rally.category} groupId={groupId} />
         </section>
 
         <RouteBadgeTeaser routeId={rally.id} />

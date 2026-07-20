@@ -197,24 +197,13 @@ const yonoSpots = [
   {
     id: 'c2222222-2222-2222-2222-222222222222',
     route_id: YONO_ROUTE_ID,
-    name: "自家焙煎珈琲と洋食の香り（カフェ・ド・コバ）",
-    description: "与野駅東口すぐの場所で長年愛される自家焙煎珈琲のお店。どこか懐かしい昭和レトロな空間で、名物のナポリタンや香り豊かな珈琲を味わいながらひと息つきましょう。",
+    name: "昭和レトロな洋食と珈琲（レストラン ヒロ）",
+    description: "与野駅東口から歩いてすぐの場所にある、昭和レトロな雰囲気を色濃く残す洋食と喫茶のお店。懐かしい佇まいの店内で、名物の洋食メニューや香り高い珈琲を味わいながら、散策の途中にほっと一息つきましょう。",
     image_url: "/images/yono/spot2.png",
-    address: "埼玉県さいたま市浦和区上木崎1丁目10-1",
-    location: "POINT(139.640200 35.879500)",
+    address: "埼玉県さいたま市浦和区上木崎2-2-16",
+    location: "POINT(139.640348 35.885797)",
     radius_meters: 50,
     order_index: 2
-  },
-  {
-    id: 'c3333333-3333-3333-3333-333333333333',
-    route_id: YONO_ROUTE_ID,
-    name: "針ヶ谷の総鎮守（針ヶ谷氷川神社）",
-    description: "与野駅近くの針ヶ谷地区に静かに佇むお社。鳥居をくぐると厳かな空気が漂い、旅の安全としるしの獲得を見守ってくれます。",
-    image_url: "/images/yono/spot3.png",
-    address: "埼玉県さいたま市浦和区針ヶ谷4-1-2",
-    location: "POINT(139.635812 35.877202)",
-    radius_meters: 50,
-    order_index: 3
   },
   {
     id: 'c4444444-4444-4444-4444-444444444444',
@@ -224,6 +213,17 @@ const yonoSpots = [
     image_url: "/images/yono/spot4.png",
     address: "埼玉県さいたま市中央区下落合1010",
     location: "POINT(139.637500 35.878800)",
+    radius_meters: 50,
+    order_index: 3
+  },
+  {
+    id: 'c3333333-3333-3333-3333-333333333333',
+    route_id: YONO_ROUTE_ID,
+    name: "下落合の総鎮守・アニメの聖地（下落合氷川神社）",
+    description: "与野駅西口から西へ進んだ下落合の住宅街に佇む神社。古くから下落合の鎮守として地域の人々に親しまれているほか、アニメ『弱キャラ友崎くん』の舞台としてもファンに知られています。境内を静かに巡り、旅の安全とともに次のしるしを獲得しましょう。",
+    image_url: "/images/yono/spot3.png",
+    address: "埼玉県さいたま市中央区下落合5丁目4",
+    location: "POINT(139.628610 35.884389)",
     radius_meters: 50,
     order_index: 4
   },
