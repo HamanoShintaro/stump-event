@@ -43,6 +43,9 @@ export default function RoutesClientView({
     setKeyword,
     durationFilter,
     setDurationFilter,
+    selectedArea,
+    setSelectedArea,
+    areaList,
     sortBy,
     handleSortChange,
     locating,
@@ -64,7 +67,7 @@ export default function RoutesClientView({
 
   return (
     <div>
-      {/* 街歩き探索バー（キーワード・所要時間・並び替え） */}
+      {/* 街歩き探索バー（キーワード・所要時間・街エリア図鑑・並び替え） */}
       <div className={"glass-card " + styles.discoveryBar}>
         <div className={styles.searchRow}>
           <div className={styles.searchInputWrapper}>
@@ -124,6 +127,80 @@ export default function RoutesClientView({
           ))}
         </div>
 
+        {/* 🏘️ 街・エリア図鑑から探す */}
+        {areaList.length > 0 && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+              paddingTop: "8px",
+              borderTop: "1px dashed rgba(201, 168, 76, 0.35)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "var(--font-size-small)",
+                fontWeight: 800,
+                color: "var(--text-color)",
+                opacity: 0.8,
+              }}
+            >
+              🏘️ 街・エリア図鑑から探す
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                overflowX: "auto",
+                paddingBottom: "4px",
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedArea("すべて")}
+                className={
+                  selectedArea === "すべて"
+                    ? "btn-primary"
+                    : "btn-secondary"
+                }
+                style={{
+                  padding: "5px 12px",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  borderRadius: "999px",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                }}
+              >
+                すべて
+              </button>
+              {areaList.map((area) => {
+                const isActive = selectedArea === area.areaName;
+                return (
+                  <button
+                    key={area.areaName}
+                    type="button"
+                    onClick={() => setSelectedArea(area.areaName)}
+                    className={isActive ? "btn-primary" : "btn-secondary"}
+                    style={{
+                      padding: "5px 12px",
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      borderRadius: "999px",
+                      whiteSpace: "nowrap",
+                      flexShrink: 0,
+                    }}
+                  >
+                    {area.areaName} ({area.count})
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* URL検索条件バッジ */}
         {hasServerFilters && (
           <div className={styles.activeServerFilters}>
@@ -148,18 +225,19 @@ export default function RoutesClientView({
       <div className={styles.resultMetaRow}>
         <span>
           全 <strong>{filteredRoutes.length}</strong> ルート
+          {selectedArea !== "すべて" ? `（${selectedArea}）` : ""}
         </span>
       </div>
 
       {/* ルートカード一覧 */}
       <div className={styles.grid}>
         {filteredRoutes.length > 0 ? (
-          filteredRoutes.map((rally) => {
-            const { walkMetrics, distanceFromUserKm, stats } = rally;
+          filteredRoutes.map((routeItem) => {
+            const { walkMetrics, distanceFromUserKm, stats } = routeItem;
             return (
               <Link
-                href={`/routes/${rally.id}`}
-                key={rally.id}
+                href={`/routes/${routeItem.id}`}
+                key={routeItem.id}
                 className={styles.cardWrapper}
               >
                 <div className={"glass-card " + styles.card}>
@@ -167,14 +245,19 @@ export default function RoutesClientView({
                     className={styles.imageBox}
                     style={{
                       backgroundImage: `url(${
-                        rally.thumbnail_url ||
+                        routeItem.thumbnail_url ||
                         "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
                       })`,
                     }}
                   >
                     <div className={styles.overlayTopTags}>
-                      <div className={styles.categoryBadge}>{rally.category}</div>
-                      <div className={styles.areaBadge}>{rally.prefecture}</div>
+                      <div className={styles.categoryBadge}>{routeItem.category}</div>
+                      <div className={styles.areaBadge}>{routeItem.prefecture}</div>
+                      {routeItem.routeAreas?.[0] && (
+                        <div className={styles.areaBadge}>
+                          📍 {routeItem.routeAreas[0]}
+                        </div>
+                      )}
                       {distanceFromUserKm !== null && (
                         <div className={styles.distanceBadge}>
                           <Navigation size={10} />
@@ -199,9 +282,9 @@ export default function RoutesClientView({
                           }}
                         >
                           💰{" "}
-                          {rally.budget_tier === 1
+                          {routeItem.budget_tier === 1
                             ? "~1,000円"
-                            : rally.budget_tier === 2
+                            : routeItem.budget_tier === 2
                               ? "~5,000円"
                               : "5,000円~"}
                         </span>
@@ -232,7 +315,7 @@ export default function RoutesClientView({
                                 display: "flex",
                                 alignItems: "center",
                                 gap: "2px",
-                                color: "#FFD700",
+                                color: "var(--accent-color)",
                               }}
                             >
                               <Star
@@ -248,8 +331,8 @@ export default function RoutesClientView({
                     </div>
                   </div>
                   <div className={styles.cardContent}>
-                    <h2 className={styles.rallyTitle}>{rally.title}</h2>
-                    <p className={styles.rallyDesc}>{rally.description}</p>
+                    <h2 className={styles.rallyTitle}>{routeItem.title}</h2>
+                    <p className={styles.rallyDesc}>{routeItem.description}</p>
                     <div className={styles.walkMetaStrip}>
                       <span className={styles.walkMetaItem}>
                         <MapPin size={12} color="var(--primary-color)" />
@@ -282,6 +365,7 @@ export default function RoutesClientView({
               onClick={() => {
                 setKeyword("");
                 setDurationFilter("all");
+                setSelectedArea("すべて");
               }}
               style={{ padding: "8px 20px", fontSize: "0.85rem" }}
             >

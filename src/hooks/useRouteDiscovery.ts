@@ -8,6 +8,11 @@ import { RouteStat } from "@/utils/routeStats";
 export type DurationFilter = "all" | "short" | "medium" | "long";
 export type RouteSortBy = "newest" | "nearby" | "walkable" | "popular";
 
+export interface AreaOption {
+  areaName: string;
+  count: number;
+}
+
 export interface EnrichedRoute {
   id: string;
   title: string;
@@ -22,7 +27,37 @@ export interface EnrichedRoute {
   walkMetrics: RouteWalkMetrics;
   distanceFromUserKm: number | null;
   stats: RouteStat;
+  routeAreas: string[];
   [key: string]: any;
+}
+
+function extractCityFromAddress(address?: string | null): string | null {
+  if (!address || typeof address !== "string") return null;
+  const trimmed = address.trim();
+  if (!trimmed) return null;
+  const withoutPref = trimmed.replace(
+    /^(?:東京都|北海道|(?:京都|大阪)府|.{2,3}県)/,
+    ""
+  );
+  const match = withoutPref.match(/^([^\d\s]+?[市区町村])/);
+  return match && match[1] ? match[1].trim() : null;
+}
+
+function collectRouteAreas(route: any): string[] {
+  const areaSet = new Set<string>();
+  if (typeof route?.area_name === "string" && route.area_name.trim()) {
+    areaSet.add(route.area_name.trim());
+  }
+  const spots = Array.isArray(route?.spots) ? route.spots : [];
+  for (const s of spots) {
+    if (typeof s?.city === "string" && s.city.trim()) {
+      areaSet.add(s.city.trim());
+    } else {
+      const parsed = extractCityFromAddress(s?.address);
+      if (parsed) areaSet.add(parsed);
+    }
+  }
+  return Array.from(areaSet);
 }
 
 export function useRouteDiscovery(
@@ -32,6 +67,7 @@ export function useRouteDiscovery(
 ) {
   const [keyword, setKeyword] = useState(initialKeyword);
   const [durationFilter, setDurationFilter] = useState<DurationFilter>("all");
+  const [selectedArea, setSelectedArea] = useState<string>("すべて");
   const [sortBy, setSortBy] = useState<RouteSortBy>("newest");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [locating, setLocating] = useState(false);
@@ -108,20 +144,48 @@ export function useRouteDiscovery(
       }
 
       const stats = statsMap[route.id] || { participants: 0, favorites: 0 };
+      const routeAreas = collectRouteAreas(route);
 
       return {
         ...route,
         walkMetrics,
         distanceFromUserKm,
         stats,
+        routeAreas,
       };
     });
   }, [initialRoutes, statsMap, userLocation]);
+
+  const areaList: AreaOption[] = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const route of enrichedRoutes) {
+      for (const area of route.routeAreas) {
+        counts.set(area, (counts.get(area) || 0) + 1);
+      }
+    }
+    return Array.from(counts.entries())
+      .map(([areaName, count]) => ({ areaName, count }))
+      .sort((a, b) => b.count - a.count || a.areaName.localeCompare(b.areaName, "ja"))
+      .slice(0, 15);
+  }, [enrichedRoutes]);
 
   const filteredRoutes = useMemo(() => {
     const q = keyword.trim().toLowerCase();
 
     const matches = enrichedRoutes.filter((route) => {
+      // Area filter
+      if (selectedArea && selectedArea !== "すべて") {
+        const matchesArea =
+          route.routeAreas.includes(selectedArea) ||
+          (route.area_name || "").includes(selectedArea) ||
+          (route.spots || []).some(
+            (s: any) =>
+              (s?.city || "") === selectedArea ||
+              (s?.address || "").includes(selectedArea)
+          );
+        if (!matchesArea) return false;
+      }
+
       // Keyword filter
       if (q) {
         const inTitle = (route.title || "").toLowerCase().includes(q);
@@ -180,13 +244,16 @@ export function useRouteDiscovery(
     }
 
     return sorted;
-  }, [enrichedRoutes, keyword, durationFilter, sortBy]);
+  }, [enrichedRoutes, selectedArea, keyword, durationFilter, sortBy]);
 
   return {
     keyword,
     setKeyword,
     durationFilter,
     setDurationFilter,
+    selectedArea,
+    setSelectedArea,
+    areaList,
     sortBy,
     handleSortChange,
     userLocation,
