@@ -7,6 +7,16 @@ import L from "leaflet";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
+  Compass,
+  Footprints,
+  MapPin,
+  Clock,
+  Bookmark,
+  CheckCircle2,
+  BookOpen,
+  X,
+} from "lucide-react";
+import {
   useDiscoveryMap,
   DiscoveryRoute,
   VisitedFootprint,
@@ -33,56 +43,8 @@ const UserLocationIcon = L.icon({
 
 // カスタムアイコン（カテゴリごとのルートピン＋進捗・踏破・保存バッジ）
 const getRoutePinIcon = (route: DiscoveryRoute) => {
-  let emoji = "📍";
-  let bgColor = "var(--primary-color)";
-
-  switch (route.category) {
-    case "食べたい":
-      emoji = "🍔";
-      bgColor = "#E98A5C";
-      break;
-    case "見たい":
-      emoji = "👀";
-      bgColor = "#5C9BE9";
-      break;
-    case "体験したい":
-      emoji = "🎨";
-      bgColor = "#9D5CE9";
-      break;
-    case "集めたい":
-      emoji = "💎";
-      bgColor = "#5CE9A6";
-      break;
-    case "推しに触れたい":
-      emoji = "💖";
-      bgColor = "#E95C9A";
-      break;
-    case "学びたい":
-      emoji = "📚";
-      bgColor = "#E9D25C";
-      break;
-    case "癒されたい":
-    case "癒やされたい":
-      emoji = "♨️";
-      bgColor = "#8CE95C";
-      break;
-    case "達成したい":
-      emoji = "🏆";
-      bgColor = "#FFD700";
-      break;
-    case "人と過ごしたい":
-      emoji = "🤝";
-      bgColor = "#5CE9DF";
-      break;
-    case "地域を感じたい":
-      emoji = "🏮";
-      bgColor = "#D9655B";
-      break;
-    default:
-      emoji = "🚩";
-      bgColor = "#D9655B";
-      break;
-  }
+  const stampUrl = getCategoryStampUrl(route.category);
+  const bgColor = "var(--primary-color)";
 
   const { stampedCount, totalCount, isCompleted, isInProgress } = route.progress;
   let badgeHtml = "";
@@ -96,14 +58,14 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
         background: var(--primary-color);
         color: #fff;
         border: 1.5px solid var(--accent-color);
-        border-radius: 10px;
+        border-radius: 6px;
         padding: 1px 5px;
         font-size: 10px;
         font-weight: 800;
         line-height: 1.2;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         white-space: nowrap;
-      ">💮済</div>
+      ">済</div>
     `;
   } else if (stampedCount > 0 || isInProgress) {
     badgeHtml = `
@@ -114,7 +76,7 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
         background: #FFFDF9;
         color: var(--primary-color);
         border: 1.5px solid var(--primary-color);
-        border-radius: 10px;
+        border-radius: 6px;
         padding: 1px 5px;
         font-size: 10px;
         font-weight: 800;
@@ -130,17 +92,15 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
         top: -6px;
         right: -6px;
         background: #FFFDF9;
-        color: var(--accent-color);
+        color: #6E5314;
         border: 1.5px solid var(--accent-color);
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 10px;
+        border-radius: 6px;
+        padding: 1px 4px;
+        font-size: 9px;
+        font-weight: 800;
+        line-height: 1.2;
         box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      ">🔖</div>
+      ">栞</div>
     `;
   }
 
@@ -148,18 +108,17 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
     html: `
       <div style="
         background-color: #FFFDF9;
-        border: 3px solid ${isCompleted ? "var(--accent-color)" : bgColor};
+        border: 2.5px solid ${isCompleted ? "var(--accent-color)" : bgColor};
         width: 44px;
         height: 44px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.18);
         position: relative;
       ">
-        ${emoji}
+        <img src="${stampUrl}" alt="" style="width: 28px; height: 28px; object-fit: contain;" />
         ${badgeHtml}
         <div style="
           position: absolute;
@@ -274,7 +233,7 @@ function LocationMarker({
   return position === null ? null : (
     <Marker position={position} icon={UserLocationIcon} zIndexOffset={1000}>
       <Popup>
-        <div style={{ fontWeight: "bold", textAlign: "center" }}>📍 あなたの現在地</div>
+        <div style={{ fontWeight: "bold", textAlign: "center" }}>あなたの現在地</div>
       </Popup>
     </Marker>
   );
@@ -405,16 +364,16 @@ export default function MapUI() {
           pointerEvents: "none",
         }}
       >
-        {/* レイヤー切り替えピル */}
+        {/* レイヤー切り替えセグメントコントロール */}
         <div
           style={{
             display: "inline-flex",
             alignSelf: "flex-start",
-            background: "rgba(255, 253, 249, 0.95)",
+            background: "rgba(239, 233, 220, 0.96)",
             backdropFilter: "blur(10px)",
             padding: "4px",
-            borderRadius: "999px",
-            border: "1px solid #EBE5D9",
+            borderRadius: "10px",
+            border: "1px solid #E5DEC9",
             boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
             pointerEvents: "auto",
             gap: "4px",
@@ -424,35 +383,47 @@ export default function MapUI() {
             type="button"
             onClick={() => setMapLayerMode("routes")}
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "5px",
               border: "none",
-              borderRadius: "999px",
+              borderRadius: "7px",
               padding: "7px 14px",
-              fontSize: "0.8rem",
+              fontSize: "0.78rem",
               fontWeight: 800,
               cursor: "pointer",
-              background: mapLayerMode === "routes" ? "var(--primary-color)" : "transparent",
-              color: mapLayerMode === "routes" ? "#fff" : "var(--text-color)",
+              background: mapLayerMode === "routes" ? "#FFFDF9" : "transparent",
+              color: mapLayerMode === "routes" ? "var(--primary-color)" : "var(--text-color)",
+              boxShadow:
+                mapLayerMode === "routes" ? "0 1px 4px rgba(44, 37, 32, 0.12)" : "none",
               transition: "all 0.2s ease",
             }}
           >
-            🧭 ルートを探す ({filteredRoutes.length})
+            <Compass size={14} strokeWidth={1.75} />
+            ルートを探す ({filteredRoutes.length})
           </button>
           <button
             type="button"
             onClick={() => setMapLayerMode("footprints")}
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "5px",
               border: "none",
-              borderRadius: "999px",
+              borderRadius: "7px",
               padding: "7px 14px",
-              fontSize: "0.8rem",
+              fontSize: "0.78rem",
               fontWeight: 800,
               cursor: "pointer",
-              background: mapLayerMode === "footprints" ? "var(--primary-color)" : "transparent",
-              color: mapLayerMode === "footprints" ? "#fff" : "var(--text-color)",
+              background: mapLayerMode === "footprints" ? "#FFFDF9" : "transparent",
+              color: mapLayerMode === "footprints" ? "var(--primary-color)" : "var(--text-color)",
+              boxShadow:
+                mapLayerMode === "footprints" ? "0 1px 4px rgba(44, 37, 32, 0.12)" : "none",
               transition: "all 0.2s ease",
             }}
           >
-            💮 自分の足跡 ({visitedFootprints.length}箇所)
+            <Footprints size={14} strokeWidth={1.75} />
+            自分の足跡 ({visitedFootprints.length}箇所)
           </button>
         </div>
 
@@ -477,15 +448,15 @@ export default function MapUI() {
               }}
               style={{
                 border: isAllFiltersDefault
-                  ? "1.5px solid var(--primary-color)"
-                  : "1px solid #EBE5D9",
+                  ? "1px solid #2C2520"
+                  : "1px solid #E5DEC9",
                 background: isAllFiltersDefault
-                  ? "var(--primary-color)"
+                  ? "#2C2520"
                   : "rgba(255, 253, 249, 0.94)",
-                color: isAllFiltersDefault ? "#fff" : "var(--text-color)",
-                borderRadius: "999px",
-                padding: "5px 12px",
-                fontSize: "0.75rem",
+                color: isAllFiltersDefault ? "#FFFDF9" : "var(--text-color)",
+                borderRadius: "6px",
+                padding: "5px 11px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
@@ -502,25 +473,29 @@ export default function MapUI() {
                 setSelectedRally(null);
               }}
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
                 border:
                   durationFilter === "short"
-                    ? "1.5px solid var(--primary-color)"
-                    : "1px solid #EBE5D9",
+                    ? "1px solid #2C2520"
+                    : "1px solid #E5DEC9",
                 background:
                   durationFilter === "short"
-                    ? "var(--primary-color)"
+                    ? "#2C2520"
                     : "rgba(255, 253, 249, 0.94)",
-                color: durationFilter === "short" ? "#fff" : "var(--text-color)",
-                borderRadius: "999px",
-                padding: "5px 12px",
-                fontSize: "0.75rem",
+                color: durationFilter === "short" ? "#FFFDF9" : "var(--text-color)",
+                borderRadius: "6px",
+                padding: "5px 11px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
             >
-              🌿 45分以内の気軽な散歩
+              <Clock size={12} strokeWidth={1.75} />
+              45分以内の気軽な散歩
             </button>
 
             <button
@@ -530,25 +505,29 @@ export default function MapUI() {
                 setSelectedRally(null);
               }}
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
                 border:
                   statusFilter === "in_progress"
-                    ? "1.5px solid var(--primary-color)"
-                    : "1px solid #EBE5D9",
+                    ? "1px solid #2C2520"
+                    : "1px solid #E5DEC9",
                 background:
                   statusFilter === "in_progress"
-                    ? "var(--primary-color)"
+                    ? "#2C2520"
                     : "rgba(255, 253, 249, 0.94)",
-                color: statusFilter === "in_progress" ? "#fff" : "var(--text-color)",
-                borderRadius: "999px",
-                padding: "5px 12px",
-                fontSize: "0.75rem",
+                color: statusFilter === "in_progress" ? "#FFFDF9" : "var(--text-color)",
+                borderRadius: "6px",
+                padding: "5px 11px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
             >
-              ⏳ 巡っている途中
+              <Footprints size={12} strokeWidth={1.75} />
+              巡っている途中
             </button>
 
             <button
@@ -558,25 +537,29 @@ export default function MapUI() {
                 setSelectedRally(null);
               }}
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
                 border:
                   statusFilter === "bookmarked"
-                    ? "1.5px solid var(--accent-color)"
-                    : "1px solid #EBE5D9",
+                    ? "1px solid #2C2520"
+                    : "1px solid #E5DEC9",
                 background:
                   statusFilter === "bookmarked"
-                    ? "var(--primary-color)"
+                    ? "#2C2520"
                     : "rgba(255, 253, 249, 0.94)",
-                color: statusFilter === "bookmarked" ? "#fff" : "var(--text-color)",
-                borderRadius: "999px",
-                padding: "5px 12px",
-                fontSize: "0.75rem",
+                color: statusFilter === "bookmarked" ? "#FFFDF9" : "var(--text-color)",
+                borderRadius: "6px",
+                padding: "5px 11px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
             >
-              🔖 保存済み（栞）
+              <Bookmark size={12} strokeWidth={1.75} />
+              保存済み（栞）
             </button>
 
             <button
@@ -586,25 +569,29 @@ export default function MapUI() {
                 setSelectedRally(null);
               }}
               style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
                 border:
                   statusFilter === "completed"
-                    ? "1.5px solid var(--accent-color)"
-                    : "1px solid #EBE5D9",
+                    ? "1px solid #2C2520"
+                    : "1px solid #E5DEC9",
                 background:
                   statusFilter === "completed"
-                    ? "var(--primary-color)"
+                    ? "#2C2520"
                     : "rgba(255, 253, 249, 0.94)",
-                color: statusFilter === "completed" ? "#fff" : "var(--text-color)",
-                borderRadius: "999px",
-                padding: "5px 12px",
-                fontSize: "0.75rem",
+                color: statusFilter === "completed" ? "#FFFDF9" : "var(--text-color)",
+                borderRadius: "6px",
+                padding: "5px 11px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
             >
-              💮 踏破済み
+              <CheckCircle2 size={12} strokeWidth={1.75} />
+              踏破済み
             </button>
           </div>
         )}
@@ -775,11 +762,15 @@ export default function MapUI() {
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "3px",
                   }}
                 >
+                  <MapPin size={11} strokeWidth={1.75} />
                   {route.distanceFromUserKm !== null
-                    ? `📍 現在地から約${route.distanceFromUserKm}km`
-                    : `📍 ${route.prefecture || "街歩き"}`}{" "}
+                    ? `現在地から約${route.distanceFromUserKm}km`
+                    : `${route.prefecture || "街歩き"}`}{" "}
                   ・ 約{route.walkMetrics.estimatedMinutes}分
                 </div>
                 <div
@@ -813,9 +804,13 @@ export default function MapUI() {
                         marginLeft: "auto",
                         color: "var(--primary-color)",
                         fontWeight: 800,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "2px",
                       }}
                     >
-                      💮{route.progress.stampedCount}/{route.progress.totalCount}
+                      <CheckCircle2 size={11} strokeWidth={1.75} />
+                      {route.progress.stampedCount}/{route.progress.totalCount}
                     </span>
                   )}
                 </div>
@@ -940,28 +935,40 @@ export default function MapUI() {
                 style={{
                   background: "rgba(199, 68, 46, 0.08)",
                   padding: "2px 8px",
-                  borderRadius: "8px",
+                  borderRadius: "6px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "3px",
                 }}
               >
-                📍 全{selectedRally.walkMetrics.spotCount}箇所
+                <MapPin size={12} strokeWidth={1.75} />
+                全{selectedRally.walkMetrics.spotCount}箇所
               </span>
               <span
                 style={{
                   background: "rgba(199, 68, 46, 0.08)",
                   padding: "2px 8px",
-                  borderRadius: "8px",
+                  borderRadius: "6px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "3px",
                 }}
               >
-                👣 約{selectedRally.walkMetrics.distanceKm.toFixed(1)}km
+                <Footprints size={12} strokeWidth={1.75} />
+                約{selectedRally.walkMetrics.distanceKm.toFixed(1)}km
               </span>
               <span
                 style={{
                   background: "rgba(199, 68, 46, 0.08)",
                   padding: "2px 8px",
-                  borderRadius: "8px",
+                  borderRadius: "6px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "3px",
                 }}
               >
-                ⏱️ 約{selectedRally.walkMetrics.estimatedMinutes}分
+                <Clock size={12} strokeWidth={1.75} />
+                約{selectedRally.walkMetrics.estimatedMinutes}分
               </span>
               {selectedRally.distanceFromUserKm !== null && (
                 <span
@@ -969,7 +976,7 @@ export default function MapUI() {
                     background: "rgba(201, 168, 76, 0.14)",
                     color: "var(--text-color)",
                     padding: "2px 8px",
-                    borderRadius: "8px",
+                    borderRadius: "6px",
                   }}
                 >
                   現在地から約{selectedRally.distanceFromUserKm}km
@@ -1022,7 +1029,10 @@ export default function MapUI() {
                   marginBottom: "4px",
                 }}
               >
-                <span>💮 獲得したしるし</span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                  <CheckCircle2 size={13} strokeWidth={1.75} color="var(--primary-color)" />
+                  獲得したしるし
+                </span>
                 <span style={{ color: "var(--primary-color)" }}>
                   {selectedRally.progress.stampedCount} / {selectedRally.progress.totalCount} 個
                 </span>
@@ -1085,7 +1095,9 @@ export default function MapUI() {
             boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
           }}
         >
-          <div style={{ fontSize: "1.8rem", marginBottom: "6px" }}>💮</div>
+          <div style={{ marginBottom: "8px", display: "flex", justifyContent: "center" }}>
+            <Footprints size={28} strokeWidth={1.75} color="var(--primary-color)" />
+          </div>
           <h3
             style={{
               fontSize: "1rem",
@@ -1106,9 +1118,18 @@ export default function MapUI() {
               type="button"
               onClick={() => setMapLayerMode("routes")}
               className="btn-primary"
-              style={{ width: "100%", padding: "10px 16px", fontSize: "0.85rem" }}
+              style={{
+                width: "100%",
+                padding: "10px 16px",
+                fontSize: "0.85rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+              }}
             >
-              🧭 ルートを探す
+              <Compass size={15} strokeWidth={1.75} />
+              ルートを探す
             </button>
           ) : (
             <button
@@ -1162,9 +1183,12 @@ export default function MapUI() {
               borderRadius: "50%",
               cursor: "pointer",
               fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            ✕
+            <X size={15} />
           </button>
 
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -1204,7 +1228,7 @@ export default function MapUI() {
                     background: "rgba(199, 68, 46, 0.1)",
                     color: "var(--primary-color)",
                     padding: "2px 8px",
-                    borderRadius: "999px",
+                    borderRadius: "6px",
                   }}
                 >
                   来訪 {selectedFootprint.visitCount}回
@@ -1235,9 +1259,13 @@ export default function MapUI() {
                   color: "var(--primary-color)",
                   textDecoration: "none",
                   fontWeight: 700,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
                 }}
               >
-                🧭 {selectedFootprint.routeTitle} ▸
+                <Compass size={12} strokeWidth={1.75} />
+                {selectedFootprint.routeTitle} ▸
               </Link>
             </div>
           </div>
@@ -1288,9 +1316,18 @@ export default function MapUI() {
               type="button"
               onClick={() => router.push("/mypage/diary")}
               className="btn-secondary"
-              style={{ flex: 1, padding: "10px", fontSize: "0.82rem" }}
+              style={{
+                flex: 1,
+                padding: "10px",
+                fontSize: "0.82rem",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "5px",
+              }}
             >
-              📖 SHUIN帳で見る
+              <BookOpen size={14} strokeWidth={1.75} />
+              SHUIN帳で見る
             </button>
             <button
               type="button"

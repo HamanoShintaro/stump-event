@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import HeaderNav from "@/components/HeaderNav";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
-import { Bell, FileText, Shield, LogOut, UserX, ChevronRight } from "lucide-react";
+import { Bell, FileText, Shield, LogOut, UserX, ChevronRight, HelpCircle } from "lucide-react";
 
 const cardStyle: CSSProperties = { background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "14px", padding: "18px", marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "space-between" };
 
@@ -102,6 +102,8 @@ export default function SettingsPage() {
         <p style={{ fontSize: "0.75rem", color: "#B3A598", margin: "-8px 4px 16px" }}>※プッシュ通知配信は準備中です。</p>
 
         <section style={{ ...cardStyle, padding: 0, display: "block" }}>
+          <LinkRow href="/guide" icon={HelpCircle} label="街歩きの手引き・よくある質問" />
+          <div style={{ borderTop: "1px solid #EBE5D9" }} />
           <LinkRow href="/terms" icon={FileText} label="利用規約" />
           <div style={{ borderTop: "1px solid #EBE5D9" }} />
           <LinkRow href="/privacy" icon={Shield} label="プライバシーポリシー" />

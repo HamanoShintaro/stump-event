@@ -54,12 +54,13 @@ export default function Footer() {
         {/* リンク集 */}
         <div style={{ 
           display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px 24px", 
-          fontSize: "0.8rem", fontWeight: "700", color: "#888"
+          fontSize: "0.8rem", fontWeight: "700", color: "#5C4E43"
         }}>
+          <Link href="/guide" style={{ textDecoration: "none", color: "var(--primary-color)", fontWeight: 800 }}>街歩きの手引き・使い方</Link>
+          <Link href="/routes" style={{ textDecoration: "none", color: "inherit" }}>ルート一覧</Link>
           <Link href="/terms" style={{ textDecoration: "none", color: "inherit" }}>利用規約</Link>
           <Link href="/privacy" style={{ textDecoration: "none", color: "inherit" }}>プライバシーポリシー</Link>
           <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>お問合せ</Link>
-          <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>運営会社</Link>
         </div>
 
         {/* コピーライト */}

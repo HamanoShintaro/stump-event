@@ -54,16 +54,16 @@
 .stickyActionBar {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 40;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 32px;
   padding: 16px 20px;
-  background: transparent;
+  background: rgba(247, 243, 234, 0.82);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.28);
   animation: floatUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: 0.3s;
   opacity: 0;
@@ -71,9 +71,8 @@
 
 .contentSection {
   position: relative;
-  z-index: 10;
   background-color: transparent;
-  padding: 40px 0 80px;
+  padding: 28px 0 80px;
 }
 
 .heroActionBtnWrapper {

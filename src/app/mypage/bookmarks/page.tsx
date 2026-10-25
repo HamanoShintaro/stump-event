@@ -6,16 +6,27 @@ import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import HeaderNav from "@/components/HeaderNav";
-import { ChevronLeft, MapPin, BookmarkMinus, ArrowRight } from "lucide-react";
+import {
+  ChevronLeft,
+  MapPin,
+  BookmarkMinus,
+  Bookmark,
+  ArrowRight,
+  Footprints,
+  Clock,
+  Coins,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 
 type PlannerFilter = "all" | "quick" | "leisurely" | "unvisited" | "in_progress";
 
 const PLANNER_FILTERS: { value: PlannerFilter; label: string }[] = [
   { value: "all", label: "すべて" },
-  { value: "quick", label: "🌿 気軽な散歩（〜45分）" },
-  { value: "leisurely", label: "🍵 じっくり散策（45分〜）" },
-  { value: "unvisited", label: "✨ まだ歩いていないルート" },
-  { value: "in_progress", label: "🚶 巡っている途中" },
+  { value: "quick", label: "気軽な散歩（〜45分）" },
+  { value: "leisurely", label: "じっくり散策（45分〜）" },
+  { value: "unvisited", label: "まだ歩いていないルート" },
+  { value: "in_progress", label: "巡っている途中" },
 ];
 
 export default function BookmarkedRoutesPage() {
@@ -113,31 +124,35 @@ export default function BookmarkedRoutesPage() {
           いつか歩きたい街や、心惹かれた物語を挟んでおける一覧です。今日の空き時間や進捗に合わせて選ぶことができます。
         </p>
 
-        {/* お散歩プランナー絞り込みバー */}
+        {/* お散歩プランナー絞り込みバー（角丸6pxの静かなタグ群） */}
         {bookmarkedRallies.length > 0 && (
           <div
             className="glass-card"
             style={{
               background: "#FFFDF9",
-              border: "1px solid #EBE5D9",
-              borderRadius: "14px",
+              border: "1px solid #E5DEC9",
+              borderRadius: "12px",
               padding: "12px 14px",
               marginBottom: "22px",
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: "6px",
               flexWrap: "wrap",
             }}
           >
             <span
               style={{
-                fontSize: "0.72rem",
+                fontSize: "0.74rem",
                 fontWeight: 800,
-                color: "#A39687",
-                marginRight: "2px",
+                color: "#6E6256",
+                marginRight: "4px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
               }}
             >
-              🔖 今日の気分で選ぶ:
+              <Bookmark size={13} strokeWidth={2} color="var(--primary-color)" />
+              <span>今日の気分で選ぶ:</span>
             </span>
             {PLANNER_FILTERS.map((pf) => {
               const active = plannerFilter === pf.value;
@@ -147,16 +162,16 @@ export default function BookmarkedRoutesPage() {
                   type="button"
                   onClick={() => setPlannerFilter(pf.value)}
                   style={{
-                    padding: "6px 12px",
-                    borderRadius: "16px",
+                    padding: "5px 10px",
+                    borderRadius: "6px",
                     border: "1px solid",
-                    borderColor: active ? "var(--primary-color)" : "#EBE5D9",
-                    background: active ? "var(--primary-color)" : "#FAF6EE",
-                    color: active ? "#fff" : "var(--text-color)",
-                    fontSize: "0.76rem",
-                    fontWeight: 700,
+                    borderColor: active ? "#2C2520" : "transparent",
+                    background: active ? "#2C2520" : "#F2ECE1",
+                    color: active ? "#FFFDF9" : "#4A3E35",
+                    fontSize: "0.75rem",
+                    fontWeight: active ? 700 : 600,
                     cursor: "pointer",
-                    transition: "all 0.2s ease",
+                    transition: "all 0.15s ease",
                   }}
                 >
                   {pf.label}
@@ -198,13 +213,13 @@ export default function BookmarkedRoutesPage() {
                     style={{
                       padding: 0,
                       background: "#FFFDF9",
-                      border: "1px solid #EBE5D9",
-                      borderRadius: "16px",
+                      border: "1px solid #E5DEC9",
+                      borderRadius: "14px",
                       overflow: "hidden",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
-                      boxShadow: "0 4px 14px rgba(92, 78, 67, 0.05)",
+                      boxShadow: "0 4px 14px rgba(92, 78, 67, 0.04)",
                     }}
                   >
                     {/* サムネイル画像 */}
@@ -226,8 +241,8 @@ export default function BookmarkedRoutesPage() {
                         {route.prefecture && (
                           <span
                             style={{
-                              background: "rgba(17, 17, 17, 0.72)",
-                              color: "#fff",
+                              background: "rgba(28, 23, 20, 0.78)",
+                              color: "#FFFDF9",
                               fontSize: "0.7rem",
                               fontWeight: 700,
                               padding: "3px 8px",
@@ -245,7 +260,7 @@ export default function BookmarkedRoutesPage() {
                           <span
                             style={{
                               background: "rgba(199, 68, 46, 0.88)",
-                              color: "#fff",
+                              color: "#FFFDF9",
                               fontSize: "0.7rem",
                               fontWeight: 700,
                               padding: "3px 8px",
@@ -260,6 +275,9 @@ export default function BookmarkedRoutesPage() {
                       {/* 進捗ステータスバッジ */}
                       <span
                         style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
                           background: "rgba(255, 253, 249, 0.94)",
                           color:
                             progressStatus === "completed"
@@ -269,22 +287,35 @@ export default function BookmarkedRoutesPage() {
                                 : "var(--text-color)",
                           border:
                             progressStatus === "completed"
-                              ? "1.5px solid var(--accent-color)"
+                              ? "1px solid var(--accent-color)"
                               : progressStatus === "in_progress"
-                                ? "1.5px solid var(--primary-color)"
-                                : "1px solid #EBE5D9",
+                                ? "1px solid var(--primary-color)"
+                                : "1px solid #E5DEC9",
                           fontSize: "0.68rem",
-                          padding: "3px 9px",
-                          borderRadius: "8px",
+                          padding: "3px 8px",
+                          borderRadius: "6px",
                           fontWeight: 800,
                           whiteSpace: "nowrap",
                         }}
                       >
-                        {progressStatus === "completed"
-                          ? "💮 踏破済み"
-                          : progressStatus === "in_progress"
-                            ? `🚶 巡礼中 ${stampedCount}/${totalSpots}箇所`
-                            : "✨ 未踏"}
+                        {progressStatus === "completed" ? (
+                          <>
+                            <CheckCircle2 size={11} strokeWidth={2} />
+                            <span>踏破済み</span>
+                          </>
+                        ) : progressStatus === "in_progress" ? (
+                          <>
+                            <Footprints size={11} strokeWidth={2} />
+                            <span>
+                              巡礼中 {stampedCount}/{totalSpots}箇所
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <Sparkles size={11} strokeWidth={2} />
+                            <span>未踏</span>
+                          </>
+                        )}
                       </span>
                     </div>
 
@@ -324,30 +355,61 @@ export default function BookmarkedRoutesPage() {
                           {spotCount > 0 && (
                             <span
                               style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
                                 fontSize: "0.72rem",
                                 fontWeight: 700,
                                 color: "#5C4E43",
                                 background: "#FAF6EE",
                                 border: "1px solid #EBE5D9",
                                 padding: "3px 8px",
-                                borderRadius: "8px",
+                                borderRadius: "6px",
                               }}
                             >
-                              📍 全{spotCount}箇所 ・ 👣 約{distanceKm}km ・ ⏱️ 約{estMin}分
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: "2px" }}>
+                                <MapPin size={11} strokeWidth={2} color="var(--primary-color)" />
+                                全{spotCount}箇所
+                              </span>
+                              <span>・</span>
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: "2px" }}>
+                                <Footprints size={11} strokeWidth={2} color="var(--primary-color)" />
+                                約{distanceKm}km
+                              </span>
+                              <span>・</span>
+                              <span style={{ display: "inline-flex", alignItems: "center", gap: "2px" }}>
+                                <Clock size={11} strokeWidth={2} color="var(--primary-color)" />
+                                約{estMin}分
+                              </span>
                             </span>
                           )}
                           {(route.budget || route.budget_tier) && (
                             <span
                               style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "3px",
                                 fontSize: "0.7rem",
                                 fontWeight: 700,
                                 color: "#6E5314",
                                 background: "rgba(201, 168, 76, 0.14)",
                                 padding: "3px 8px",
-                                borderRadius: "8px",
+                                borderRadius: "6px",
                               }}
                             >
-                              💴 {route.budget || (route.budget_tier === 1 ? "〜1,000円" : route.budget_tier === 2 ? "1,000〜2,000円" : route.budget_tier === 3 ? "2,000〜3,000円" : route.budget_tier === 4 ? "3,000〜5,000円" : "5,000円〜")}
+                              <Coins size={11} strokeWidth={2} />
+                              <span>
+                                {route.budget ||
+                                  (route.budget_tier === 1
+                                    ? "〜1,000円"
+                                    : route.budget_tier === 2
+                                      ? "1,000〜2,000円"
+                                      : route.budget_tier === 3
+                                        ? "2,000〜3,000円"
+                                        : route.budget_tier === 4
+                                          ? "3,000〜5,000円"
+                                          : "5,000円〜")}
+                              </span>
                             </span>
                           )}
                         </div>
@@ -385,20 +447,22 @@ export default function BookmarkedRoutesPage() {
                         <button
                           type="button"
                           onClick={() => removeBookmark(bm.route_id)}
-                          className="btn-secondary"
                           style={{
-                            padding: "7px 12px",
+                            padding: "7px 11px",
                             fontSize: "0.75rem",
+                            fontWeight: 600,
                             display: "inline-flex",
                             alignItems: "center",
                             gap: "4px",
-                            borderRadius: "8px",
-                            borderColor: "#EBE5D9",
-                            color: "#8A7E72",
+                            borderRadius: "6px",
+                            border: "1px solid #E5DEC9",
+                            background: "#FAF6EE",
+                            color: "#6E6256",
+                            cursor: "pointer",
                           }}
                         >
-                          <BookmarkMinus size={13} />
-                          🔖 保存を解除
+                          <BookmarkMinus size={13} strokeWidth={2} />
+                          <span>保存を解除</span>
                         </button>
 
                         <Link
@@ -414,7 +478,7 @@ export default function BookmarkedRoutesPage() {
                             borderRadius: "8px",
                           }}
                         >
-                          このルートを巡る
+                          <span>このルートを巡る</span>
                           <ArrowRight size={13} />
                         </Link>
                       </div>

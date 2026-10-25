@@ -261,8 +261,8 @@ export function useRouteDestinations(
         recommendedSpot: closest,
         recommendationReason:
           unstamped.length > 0
-            ? `🧭 現在地から最も近い未押印スポット（徒歩約${closest.walkMinutesFromUser}分）`
-            : `🧭 現在地から最も近い再訪スポット（徒歩約${closest.walkMinutesFromUser}分）`,
+            ? `現在地から最も近い未押印スポット（徒歩約${closest.walkMinutesFromUser}分）`
+            : `現在地から最も近い再訪スポット（徒歩約${closest.walkMinutesFromUser}分）`,
       };
     }
 
@@ -271,8 +271,8 @@ export function useRouteDestinations(
       recommendedSpot: nextInOrder,
       recommendationReason:
         unstamped.length > 0
-          ? "✨ 順路で次に訪れるおすすめの場所"
-          : "✨ すべてのしるしを獲得済み・もう一度訪れる場所",
+          ? "順路で次に訪れるおすすめの場所"
+          : "すべてのしるしを獲得済み・もう一度訪れる場所",
     };
   }, [enrichedSpots]);
 

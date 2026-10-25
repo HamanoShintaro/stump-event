@@ -51,10 +51,10 @@ const TIME_BAND_LABELS: Record<
   "morning" | "afternoon" | "evening" | "night",
   string
 > = {
-  morning: "🌅 清々しい朝の散歩（5〜10時）",
-  afternoon: "☀️ 陽だまりの昼下がり（11〜15時）",
-  evening: "🌇 夕暮れの逍遥（16〜18時）",
-  night: "🌙 宵まちの散策（19時〜）",
+  morning: "清々しい朝の散歩（5〜10時）",
+  afternoon: "陽だまりの昼下がり（11〜15時）",
+  evening: "夕暮れの逍遥（16〜18時）",
+  night: "宵まちの散策（19時〜）",
 };
 
 export function useCommunityEchoes({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
@@ -9,7 +10,24 @@ import { evaluateBadges, isSiteUsageBadge } from "@/utils/badgeEvaluator";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
-import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft, RefreshCw, MapPin, BookOpen } from "lucide-react";
+import {
+  Users,
+  X,
+  Settings,
+  LogOut,
+  Bell,
+  ArrowRight,
+  ChevronLeft,
+  RefreshCw,
+  MapPin,
+  BookOpen,
+  Map as MapIcon,
+  Sparkles,
+  ScrollText,
+  Bookmark,
+  Footprints,
+  Award,
+} from "lucide-react";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import { useLifelogStats } from "@/hooks/useLifelogStats";
 import { useCompanionArchive } from "@/hooks/useCompanionArchive";
@@ -26,7 +44,7 @@ import styles from "./page.module.css";
 const LATEST_NEWS = {
   date: "2026.10.25",
   title: "【秋の大型更新】「連れ立ち旅路のしおり（共有アルバム）」、「保存したルートのお散歩プランナー」、スポット詳細「街角の余韻」が登場",
-  summary: "仲間との歩みと共有写真を1ページで一覧できる「📜 連れ立ち旅路のしおり（/groups/[groupId]）」、保存したルートを所要時間や進行度で整理できる「🔖 お散歩プランナー」、スポット詳細の「🍃 街角の余韻」と行き先選択の「🧭 街歩きコンパス」が新たに加わりました。"
+  summary: "仲間との歩みと共有写真を1ページで一覧できる「連れ立ち旅路のしおり（/groups/[groupId]）」、保存したルートを所要時間や進行度で整理できる「お散歩プランナー」、スポット詳細の「街角の余韻」と行き先選択の「街歩きコンパス」が新たに加わりました。"
 };
 
 export default function MyPage() {
@@ -221,8 +239,8 @@ export default function MyPage() {
       await showAlert({
         text:
           partnerNames.length > 0
-            ? `👥 連れ立ちに合流しました！\n同行メンバー: ${partnerNames.join("、")} さん\n同じルートのマップへ移動します。`
-            : `👥 連れ立ちグループ（コード: ${cleanCode}）に参加しました！\nマップへ移動します。`,
+            ? `連れ立ちに合流しました。\n同行メンバー: ${partnerNames.join("、")} さん\n同じルートのマップへ移動します。`
+            : `連れ立ちグループ（コード: ${cleanCode}）に参加しました。\nマップへ移動します。`,
         okText: "マップへ進む",
       });
       router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
@@ -378,7 +396,8 @@ export default function MyPage() {
                     gap: "8px",
                   }}
                 >
-                  <span>👥</span> 連れ立ちの記憶帳（ともに歩いた仲間と旅路）
+                  <Users size={18} strokeWidth={2} color="var(--primary-color)" />
+                  <span>連れ立ちの記憶帳（ともに歩いた仲間と旅路）</span>
                 </h2>
               </div>
               <Link
@@ -557,8 +576,9 @@ export default function MyPage() {
                             {new Date(sess.walkedAt).toLocaleDateString("ja-JP")}
                           </span>
                           {sess.partnerNames.length > 0 && (
-                            <span style={{ fontSize: "0.72rem", color: "var(--text-color)", fontWeight: 700 }}>
-                              👥 {sess.partnerNames.join("、")} さんと同行
+                            <span style={{ fontSize: "0.72rem", color: "var(--text-color)", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                              <Users size={12} strokeWidth={2} color="var(--primary-color)" />
+                              <span>{sess.partnerNames.join("、")} さんと同行</span>
                             </span>
                           )}
                         </div>
@@ -583,15 +603,19 @@ export default function MyPage() {
                           style={{
                             padding: "5px 10px",
                             fontSize: "0.74rem",
-                            borderRadius: "8px",
+                            borderRadius: "6px",
                             textDecoration: "none",
                             background: "#FFFDF9",
                             borderColor: "var(--accent-color)",
                             color: "var(--text-color)",
                             fontWeight: 800,
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
                           }}
                         >
-                          📜 旅路のしおり
+                          <ScrollText size={13} strokeWidth={2} />
+                          <span>旅路のしおり</span>
                         </Link>
                         {sess.routeId && (
                           <Link
@@ -600,12 +624,16 @@ export default function MyPage() {
                             style={{
                               padding: "5px 10px",
                               fontSize: "0.74rem",
-                              borderRadius: "8px",
+                              borderRadius: "6px",
                               textDecoration: "none",
                               background: "#FFFDF9",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              gap: "4px",
                             }}
                           >
-                            📖 記録を見る
+                            <BookOpen size={13} strokeWidth={2} />
+                            <span>記録を見る</span>
                           </Link>
                         )}
                         {sess.routeId && (
@@ -615,11 +643,15 @@ export default function MyPage() {
                             style={{
                               padding: "5px 10px",
                               fontSize: "0.74rem",
-                              borderRadius: "8px",
+                              borderRadius: "6px",
                               textDecoration: "none",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              gap: "4px",
                             }}
                           >
-                            🗺️ マップへ
+                            <MapIcon size={13} strokeWidth={2} />
+                            <span>マップへ</span>
                           </Link>
                         )}
                       </div>
@@ -645,7 +677,8 @@ export default function MyPage() {
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px", flexWrap: "wrap", gap: "8px" }}>
             <h2 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--text-color)", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
-              <span>🗺️</span> あなたの街歩きの軌跡
+              <MapIcon size={18} strokeWidth={2} color="var(--primary-color)" />
+              <span>あなたの街歩きの軌跡</span>
             </h2>
             <Link
               href="/mypage/diary"
@@ -822,7 +855,8 @@ export default function MyPage() {
                   ふと振り返る、あの日の街角の記憶
                 </div>
                 <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--text-color)", margin: "2px 0 0 0", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span>🌸</span> 記憶の一頁（あの日のしるし）
+                  <Sparkles size={17} strokeWidth={2} color="var(--primary-color)" />
+                  <span>記憶の一頁（あの日のしるし）</span>
                 </h2>
               </div>
 
@@ -838,14 +872,15 @@ export default function MyPage() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "5px",
-                    borderRadius: "18px",
+                    borderRadius: "8px",
                     border: "1px solid var(--accent-color)",
                     background: "#FFFDF9",
                     color: "var(--text-color)",
                     cursor: "pointer",
                   }}
                 >
-                  <RefreshCw size={13} /> 🔄 別の記憶をめくる
+                  <RefreshCw size={13} />
+                  <span>別の記憶をめくる</span>
                 </button>
               )}
             </div>
@@ -914,13 +949,17 @@ export default function MyPage() {
                       style={{
                         fontSize: "0.68rem",
                         padding: "1px 7px",
-                        borderRadius: "10px",
+                        borderRadius: "6px",
                         background: "rgba(217, 101, 91, 0.12)",
                         color: "var(--primary-color)",
                         fontWeight: 700,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "3px",
                       }}
                     >
-                      👥 連れ立ちの記憶
+                      <Users size={11} strokeWidth={2} />
+                      <span>連れ立ちの記憶</span>
                     </span>
                   )}
                   {memoryHighlight.visitOrder >= 2 && (
@@ -928,13 +967,13 @@ export default function MyPage() {
                       style={{
                         fontSize: "0.68rem",
                         padding: "1px 7px",
-                        borderRadius: "10px",
+                        borderRadius: "6px",
                         background: "rgba(201, 168, 76, 0.16)",
                         color: "#8C6D1F",
                         fontWeight: 700,
                       }}
                     >
-                      🔄 {memoryHighlight.visitOrderLabel}
+                      {memoryHighlight.visitOrderLabel}
                     </span>
                   )}
                   {memoryHighlight.visitorNumber != null && (
@@ -1065,7 +1104,8 @@ export default function MyPage() {
           <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
               <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ fontSize: "1.2rem" }}>🚶</span> 進行中のルート
+                <Footprints size={18} strokeWidth={2} color="var(--primary-color)" />
+                <span>進行中のルート</span>
               </h2>
               <Link href="/mypage/active" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
                 すべて見る <ArrowRight size={14} />
@@ -1110,17 +1150,18 @@ export default function MyPage() {
                         color: "#5C4E43"
                       }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "4px", flexWrap: "wrap" }}>
-                          <span>👥 連れ立ち中</span>
+                          <Users size={14} strokeWidth={2} color="var(--primary-color)" />
+                          <span>連れ立ち中</span>
                           <span style={{
                             fontSize: "0.7rem",
                             padding: "1px 8px",
-                            borderRadius: "10px",
+                            borderRadius: "6px",
                             background: ur.group.partners.length > 0 ? "#E8F5E9" : "#FFF8E1",
                             color: ur.group.partners.length > 0 ? "#2E7D32" : "#B78103",
                             border: `1px solid ${ur.group.partners.length > 0 ? "#A5D6A7" : "#FFE082"}`,
                             fontWeight: 700
                           }}>
-                            {ur.group.partners.length > 0 ? `✓ 合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
+                            {ur.group.partners.length > 0 ? `合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
                           </span>
                           <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "#fff", border: "1px solid #EBE5D9", padding: "1px 6px", borderRadius: "4px", color: "var(--primary-color)" }}>
                             コード: {ur.group.inviteCode}
@@ -1140,8 +1181,14 @@ export default function MyPage() {
                       <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>進行中から外す</button>
                       {ur.group && (
                         <>
-                          <Link href={`/groups/${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--accent-color)", color: "var(--text-color)", borderRadius: "6px", fontWeight: 700, background: "#FFFDF9" }}>📜 旅路のしおり</Link>
-                          <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", fontWeight: 700 }}>🗺️ 連れ立ちマップ</Link>
+                          <Link href={`/groups/${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--accent-color)", color: "var(--text-color)", borderRadius: "6px", fontWeight: 700, background: "#FFFDF9", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                            <ScrollText size={13} strokeWidth={2} />
+                            <span>旅路のしおり</span>
+                          </Link>
+                          <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                            <MapIcon size={13} strokeWidth={2} />
+                            <span>連れ立ちマップ</span>
+                          </Link>
                         </>
                       )}
                       <Link href={`/routes/${ur.route_id}${ur.group ? `?groupId=${ur.group.id}` : ""}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
@@ -1162,7 +1209,8 @@ export default function MyPage() {
           <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "8px" }}>
               <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ fontSize: "1.2rem" }}>🏆</span> 最近獲得した称号
+                <Award size={18} strokeWidth={2} color="var(--primary-color)" />
+                <span>最近獲得した称号</span>
                 {unseenCount > 0 && (
                   <span style={{ backgroundColor: "var(--primary-color)", color: "#fff", fontSize: "0.72rem", padding: "2px 8px", borderRadius: "10px", fontWeight: 800 }}>
                     新着 {unseenCount}
@@ -1202,7 +1250,8 @@ export default function MyPage() {
           <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
               <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ fontSize: "1.2rem" }}>📖</span> 最近の来訪日記
+                <BookOpen size={18} strokeWidth={2} color="var(--primary-color)" />
+                <span>最近の来訪日記</span>
               </h2>
               <Link href="/mypage/diary" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
                 すべて見る <ArrowRight size={14} />
@@ -1225,7 +1274,7 @@ export default function MyPage() {
                       </div>
                       {d.memo && (
                         <div style={{ fontSize: "0.8rem", color: "#5C4E43", marginTop: "6px", background: "#F9F6F0", padding: "6px 10px", borderRadius: "6px", borderLeft: "3px solid var(--accent-color)" }}>
-                          💬 {d.memo}
+                          「{d.memo}」
                         </div>
                       )}
                     </div>
@@ -1250,7 +1299,8 @@ export default function MyPage() {
           <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
               <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ fontSize: "1.2rem" }}>🔖</span> 保存したルート
+                <Bookmark size={18} strokeWidth={2} color="var(--primary-color)" />
+                <span>保存したルート</span>
               </h2>
               <Link href="/mypage/bookmarks" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
                 すべて見る <ArrowRight size={14} />
@@ -1284,105 +1334,108 @@ export default function MyPage() {
         </div>
       </main>
 
-      {/* 招待コード入力モーダル */}
-      {showJoinDialog && (
-        <div 
-          style={{ 
-            position: "fixed", 
-            top: 0, 
-            left: 0, 
-            width: "100%", 
-            height: "100%", 
-            background: "rgba(92, 78, 67, 0.4)", 
-            backdropFilter: "blur(4px)",
-            display: "flex", 
-            alignItems: "center", 
-            justifyContent: "center", 
-            zIndex: 9999,
-            padding: "20px"
-          }}
-        >
+      {/* 招待コード入力モーダル（createPortalでbody直下に描画） */}
+      {typeof document !== "undefined" &&
+        showJoinDialog &&
+        createPortal(
           <div 
             style={{ 
-              background: "#FFFDF9", 
-              border: "1px solid #EBE5D9", 
-              borderRadius: "16px", 
-              padding: "24px 20px", 
+              position: "fixed", 
+              top: 0, 
+              left: 0, 
               width: "100%", 
-              maxWidth: "380px", 
-              boxShadow: "0 10px 25px rgba(92, 78, 67, 0.15)",
-              position: "relative"
+              height: "100%", 
+              background: "rgba(92, 78, 67, 0.4)", 
+              backdropFilter: "blur(4px)",
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "center", 
+              zIndex: 10000,
+              padding: "20px"
             }}
           >
-            <button 
-              onClick={() => setShowJoinDialog(false)}
+            <div 
               style={{ 
-                position: "absolute", 
-                top: "16px", 
-                right: "16px", 
-                background: "transparent", 
-                border: "none", 
-                cursor: "pointer",
-                color: "#A39687"
+                background: "#FFFDF9", 
+                border: "1px solid #EBE5D9", 
+                borderRadius: "16px", 
+                padding: "24px 20px", 
+                width: "100%", 
+                maxWidth: "380px", 
+                boxShadow: "0 10px 25px rgba(92, 78, 67, 0.15)",
+                position: "relative"
               }}
             >
-              <X size={20} />
-            </button>
-
-            <h3 style={{ fontSize: "1.1rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 8px 0" }}>
-              連れ立ちに加わる
-            </h3>
-            <p style={{ fontSize: "0.8rem", color: "#8A7E72", margin: "0 0 20px 0", lineHeight: "1.4" }}>
-              友達から共有された6桁の招待コードを入力してください。
-            </p>
-
-            <form onSubmit={handleJoinGroup}>
-              <input 
-                type="text" 
-                value={inviteCodeInput}
-                onChange={(e) => setInviteCodeInput(e.target.value)}
-                placeholder="例: 123 456"
-                maxLength={7}
-                disabled={isJoining}
+              <button 
+                onClick={() => setShowJoinDialog(false)}
                 style={{ 
-                  width: "100%", 
-                  padding: "12px", 
-                  fontSize: "1.2rem", 
-                  fontWeight: "bold",
-                  textAlign: "center", 
-                  letterSpacing: "2px", 
-                  border: "1px solid #EBE5D9", 
-                  borderRadius: "8px", 
-                  background: "#FFFDF9", 
-                  color: "var(--text-color)",
-                  marginBottom: "16px",
-                  outline: "none"
+                  position: "absolute", 
+                  top: "16px", 
+                  right: "16px", 
+                  background: "transparent", 
+                  border: "none", 
+                  cursor: "pointer",
+                  color: "#A39687"
                 }}
-              />
+              >
+                <X size={20} />
+              </button>
 
-              <div style={{ display: "flex", gap: "10px" }}>
-                <button 
-                  type="button" 
-                  onClick={() => setShowJoinDialog(false)}
+              <h3 style={{ fontSize: "1.1rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 8px 0" }}>
+                連れ立ちに加わる
+              </h3>
+              <p style={{ fontSize: "0.8rem", color: "#8A7E72", margin: "0 0 20px 0", lineHeight: "1.4" }}>
+                友達から共有された6桁の招待コードを入力してください。
+              </p>
+
+              <form onSubmit={handleJoinGroup}>
+                <input 
+                  type="text" 
+                  value={inviteCodeInput}
+                  onChange={(e) => setInviteCodeInput(e.target.value)}
+                  placeholder="例: 123 456"
+                  maxLength={7}
                   disabled={isJoining}
-                  className="btn-secondary"
-                  style={{ flex: 1, padding: "10px", fontSize: "0.85rem", border: "1px solid #EBE5D9", borderRadius: "8px" }}
-                >
-                  キャンセル
-                </button>
-                <button 
-                  type="submit" 
-                  disabled={isJoining}
-                  className="btn-primary"
-                  style={{ flex: 1, padding: "10px", fontSize: "0.85rem", borderRadius: "8px" }}
-                >
-                  {isJoining ? "参加中..." : "参加する"}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+                  style={{ 
+                    width: "100%", 
+                    padding: "12px", 
+                    fontSize: "1.2rem", 
+                    fontWeight: "bold",
+                    textAlign: "center", 
+                    letterSpacing: "2px", 
+                    border: "1px solid #EBE5D9", 
+                    borderRadius: "8px", 
+                    background: "#FFFDF9", 
+                    color: "var(--text-color)",
+                    marginBottom: "16px",
+                    outline: "none"
+                  }}
+                />
+
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <button 
+                    type="button" 
+                    onClick={() => setShowJoinDialog(false)}
+                    disabled={isJoining}
+                    className="btn-secondary"
+                    style={{ flex: 1, padding: "10px", fontSize: "0.85rem", border: "1px solid #EBE5D9", borderRadius: "8px" }}
+                  >
+                    キャンセル
+                  </button>
+                  <button 
+                    type="submit" 
+                    disabled={isJoining}
+                    className="btn-primary"
+                    style={{ flex: 1, padding: "10px", fontSize: "0.85rem", borderRadius: "8px" }}
+                  >
+                    {isJoining ? "参加中..." : "参加する"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }

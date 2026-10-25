@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { Footprints, Clock, MapPin, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 import { useCommunityEchoes } from "@/hooks/useCommunityEchoes";
+import {
+  IconLeaf,
+  IconFootprints,
+  IconClock,
+  IconMapPin,
+  IconUsers,
+  IconStampSeal,
+} from "@/components/icons/ShuinIcons";
 
 interface CommunityEchoesSectionProps {
   routeId: string;
@@ -17,6 +26,12 @@ export default function CommunityEchoesSection({
   spots = [],
   refreshKey,
 }: CommunityEchoesSectionProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { totalFootprints, popularTimeBand, echoItems, loading } =
     useCommunityEchoes({
       routeId,
@@ -36,12 +51,94 @@ export default function CommunityEchoesSection({
 
   const isSpotLevel = Boolean(spotId);
   const sectionTitle = isSpotLevel
-    ? "🍃 街角の余韻（この場所を訪れた旅人のしるし）"
-    : "🍃 街角の余韻（このルートを歩いた旅人の足跡）";
+    ? "街角の余韻（この場所を訪れた旅人のしるし）"
+    : "街角の余韻（このルートを歩いた旅人の足跡）";
 
   const sectionSubtitle = isSpotLevel
     ? "これまでにこの場所を訪れ、しるしを刻んだ旅人たちの気配と季節の言葉。"
     : "この街歩きの物語をめぐり、各地で刻まれた旅人たちの足跡とひとこと。";
+
+  const lightboxNode =
+    mounted && lightboxPhoto
+      ? createPortal(
+          <div
+            role="dialog"
+            aria-modal="true"
+            onClick={() => setLightboxPhoto(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 9999,
+              background: "rgba(25, 20, 18, 0.75)",
+              backdropFilter: "blur(4px)",
+              WebkitBackdropFilter: "blur(4px)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                maxWidth: "520px",
+                width: "100%",
+                background: "var(--bg-color)",
+                borderRadius: "18px",
+                border: "2px solid var(--accent-color)",
+                padding: "16px",
+                position: "relative",
+                boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setLightboxPhoto(null)}
+                aria-label="閉じる"
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "12px",
+                  background: "var(--bg-color)",
+                  border: "1px solid var(--accent-color)",
+                  borderRadius: "999px",
+                  padding: "4px",
+                  cursor: "pointer",
+                  color: "var(--text-color)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <X size={18} />
+              </button>
+              <img
+                src={lightboxPhoto.url}
+                alt={lightboxPhoto.caption}
+                style={{
+                  width: "100%",
+                  maxHeight: "65vh",
+                  objectFit: "contain",
+                  borderRadius: "12px",
+                  display: "block",
+                  marginBottom: "10px",
+                }}
+              />
+              <div
+                style={{
+                  fontSize: "var(--font-size-small)",
+                  fontWeight: 700,
+                  color: "var(--text-color)",
+                  textAlign: "center",
+                }}
+              >
+                {lightboxPhoto.caption}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )
+      : null;
 
   return (
     <section
@@ -82,9 +179,13 @@ export default function CommunityEchoesSection({
                 color: "var(--text-color)",
                 margin: "0 0 4px 0",
                 lineHeight: 1.4,
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
               }}
             >
-              {sectionTitle}
+              <IconLeaf size={20} color="var(--primary-color)" />
+              <span>{sectionTitle}</span>
             </h3>
             <p
               style={{
@@ -109,39 +210,20 @@ export default function CommunityEchoesSection({
             }}
           >
             <span
+              className="shuin-badge"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "5px",
-                padding: "5px 12px",
-                borderRadius: "999px",
                 background: "rgba(199, 68, 46, 0.08)",
-                border: "1px solid rgba(199, 68, 46, 0.25)",
+                borderColor: "rgba(199, 68, 46, 0.25)",
                 color: "var(--primary-color)",
-                fontSize: "var(--font-size-small)",
-                fontWeight: 800,
               }}
             >
-              <Footprints size={13} />
+              <IconFootprints size={13} color="var(--primary-color)" />
               <span>刻まれた足跡 累計 {totalFootprints} 回</span>
             </span>
 
             {popularTimeBand && (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "5px",
-                  padding: "5px 12px",
-                  borderRadius: "999px",
-                  background: "rgba(201, 168, 76, 0.14)",
-                  border: "1px solid rgba(201, 168, 76, 0.4)",
-                  color: "var(--text-color)",
-                  fontSize: "var(--font-size-small)",
-                  fontWeight: 700,
-                }}
-              >
-                <Clock size={13} />
+              <span className="shuin-badge">
+                <IconClock size={13} color="#5C4E43" />
                 <span>よく巡られる時間帯: {popularTimeBand}</span>
               </span>
             )}
@@ -195,7 +277,7 @@ export default function CommunityEchoesSection({
                         fontSize: "0.7rem",
                         fontWeight: 800,
                         padding: "2px 8px",
-                        borderRadius: "999px",
+                        borderRadius: "6px",
                       }}
                     >
                       {item.seasonTimeLabel}
@@ -216,11 +298,15 @@ export default function CommunityEchoesSection({
                           fontWeight: 700,
                           color: "var(--primary-color)",
                           background: "rgba(199, 68, 46, 0.08)",
-                          padding: "2px 6px",
-                          borderRadius: "999px",
+                          padding: "2px 7px",
+                          borderRadius: "6px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "3px",
                         }}
                       >
-                        👥 連れ立ち
+                        <IconUsers size={11} color="var(--primary-color)" />
+                        <span>連れ立ち</span>
                       </span>
                     )}
                   </div>
@@ -249,7 +335,7 @@ export default function CommunityEchoesSection({
                       color: "var(--primary-color)",
                     }}
                   >
-                    <MapPin size={12} />
+                    <IconMapPin size={12} color="var(--primary-color)" />
                     <span>{item.spotName}</span>
                     {item.visitorNumber && (
                       <span
@@ -272,9 +358,13 @@ export default function CommunityEchoesSection({
                       fontSize: "0.72rem",
                       color: "var(--primary-color)",
                       fontWeight: 700,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
                     }}
                   >
-                    💮 #{item.visitorNumber}番目の来訪者として押印
+                    <IconStampSeal size={13} color="var(--primary-color)" />
+                    <span>#{item.visitorNumber}番目の来訪者として押印</span>
                   </div>
                 )}
 
@@ -356,83 +446,7 @@ export default function CommunityEchoesSection({
         )}
       </div>
 
-      {/* 写真ライトボックスモーダル */}
-      {lightboxPhoto && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          onClick={() => setLightboxPhoto(null)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 9999,
-            background: "rgba(25, 20, 18, 0.75)",
-            backdropFilter: "blur(4px)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              maxWidth: "520px",
-              width: "100%",
-              background: "var(--bg-color)",
-              borderRadius: "18px",
-              border: "2px solid var(--accent-color)",
-              padding: "16px",
-              position: "relative",
-              boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
-            }}
-          >
-            <button
-              type="button"
-              onClick={() => setLightboxPhoto(null)}
-              aria-label="閉じる"
-              style={{
-                position: "absolute",
-                top: "12px",
-                right: "12px",
-                background: "var(--bg-color)",
-                border: "1px solid var(--accent-color)",
-                borderRadius: "999px",
-                padding: "4px",
-                cursor: "pointer",
-                color: "var(--text-color)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <X size={18} />
-            </button>
-            <img
-              src={lightboxPhoto.url}
-              alt={lightboxPhoto.caption}
-              style={{
-                width: "100%",
-                maxHeight: "65vh",
-                objectFit: "contain",
-                borderRadius: "12px",
-                display: "block",
-                marginBottom: "10px",
-              }}
-            />
-            <div
-              style={{
-                fontSize: "var(--font-size-small)",
-                fontWeight: 700,
-                color: "var(--text-color)",
-                textAlign: "center",
-              }}
-            >
-              {lightboxPhoto.caption}
-            </div>
-          </div>
-        </div>
-      )}
+      {lightboxNode}
     </section>
   );
 }

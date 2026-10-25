@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
@@ -14,7 +15,16 @@ import {
   getDisplayNameFromAuthUser,
   uploadStampPhotoWithFallback,
 } from "@/utils/stampMedia";
-import { Map as MapIcon } from "lucide-react";
+import {
+  Map as MapIcon,
+  MapPin,
+  Footprints,
+  Sparkles,
+  Camera,
+  MessageSquareQuote,
+  Users,
+  CheckCircle2,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getDistance } from "geolib";
 import { parseWKBPoint } from "@/utils/wkb";
@@ -292,8 +302,9 @@ export default function ClientSpotList({
       {/* 獲得しるし帳セクション */}
       {user && stampedSpotIds.size > 0 && (
         <div className={`glass-card ${styles.stampedSection}`}>
-          <h3 className={styles.stampedTitle}>
-            💮 獲得したしるし帳
+          <h3 className={styles.stampedTitle} style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px", width: "100%" }}>
+            <CheckCircle2 size={18} strokeWidth={2} color="var(--primary-color)" />
+            <span>獲得したしるし帳</span>
           </h3>
           <p style={{ fontSize: "0.78rem", color: "#8A7E72", margin: "-6px 0 12px 0", textAlign: "center" }}>
             印をタップすると、物語・登録した写真やコメント・同行者の思い出を見られます
@@ -329,16 +340,17 @@ export default function ClientSpotList({
                         background: "#FFFDF9",
                         border: "1px solid var(--accent-color)",
                         borderRadius: "10px",
-                        padding: "1px 5px",
+                        padding: "2px 5px",
                         fontSize: "0.68rem",
+                        color: "var(--primary-color)",
                         display: "flex",
                         alignItems: "center",
-                        gap: "2px",
+                        gap: "3px",
                         boxShadow: "0 2px 6px rgba(0,0,0,0.12)"
                       }}>
-                        {hasPhoto && <span>📷</span>}
-                        {myEv?.memo && !hasPhoto && <span>💬</span>}
-                        {hasPartnerMemory && <span>👥</span>}
+                        {hasPhoto && <Camera size={11} strokeWidth={2} />}
+                        {myEv?.memo && !hasPhoto && <MessageSquareQuote size={11} strokeWidth={2} />}
+                        {hasPartnerMemory && <Users size={11} strokeWidth={2} />}
                       </div>
                     )}
                   </div>
@@ -468,14 +480,15 @@ export default function ClientSpotList({
                     background: "rgba(255, 253, 249, 0.96)",
                     border: "1.5px solid var(--accent-color)",
                     color: "var(--primary-color)",
-                    padding: "5px 12px",
-                    borderRadius: "999px",
-                    fontSize: "0.76rem",
+                    padding: "4px 10px",
+                    borderRadius: "6px",
+                    fontSize: "0.75rem",
                     fontWeight: 800,
                     boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                     zIndex: 3,
                   }}>
-                    <span>✨ 次のおすすめ訪問先</span>
+                    <Sparkles size={13} strokeWidth={2} />
+                    <span>次のおすすめ訪問先</span>
                   </div>
                 )}
 
@@ -526,14 +539,15 @@ export default function ClientSpotList({
                       border: "1.5px solid var(--accent-color)",
                       color: "var(--primary-color)",
                       padding: "3px 10px",
-                      borderRadius: "999px",
+                      borderRadius: "6px",
                       fontSize: "0.74rem",
                       fontWeight: 800,
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "4px",
                     }}>
-                      ✨ 次のおすすめ訪問先
+                      <Sparkles size={12} strokeWidth={2} />
+                      <span>次のおすすめ訪問先</span>
                     </span>
                   )}
                   {/* 画像がない場合のしるし獲得済みバッジ */}
@@ -565,7 +579,10 @@ export default function ClientSpotList({
               <p className={styles.spotDesc} style={{ whiteSpace: "pre-wrap", position: "relative", zIndex: 2, marginBottom: "16px" }}>
                 {spot.description}
               </p>
-              <p style={{ fontSize: "0.85rem", color: "#666", marginBottom: "16px" }}>📍 {spot.address}</p>
+              <p style={{ fontSize: "0.85rem", color: "#666", marginBottom: "16px", display: "flex", alignItems: "center", gap: "5px" }}>
+                <MapPin size={14} strokeWidth={2} color="var(--primary-color)" style={{ flexShrink: 0 }} />
+                <span>{spot.address}</span>
+              </p>
               <div className={styles.spotActions} style={{ position: "relative", zIndex: 2 }}>
                 {isActive ? (
                   <div style={{ display: "flex", gap: "12px", width: "100%", flexWrap: "wrap" }}>
@@ -674,13 +691,19 @@ export default function ClientSpotList({
                   fontWeight: 700,
                   color: "var(--text-color)",
                   boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
                 }}
               >
-                🐾 次のスポット「{segmentConnector.nextName}」まで 約
-                {segmentConnector.distMeters < 1000
-                  ? `${segmentConnector.distMeters}m`
-                  : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
-                （徒歩約{segmentConnector.walkMin}分）
+                <Footprints size={13} strokeWidth={2} color="var(--primary-color)" />
+                <span>
+                  次のスポット「{segmentConnector.nextName}」まで 約
+                  {segmentConnector.distMeters < 1000
+                    ? `${segmentConnector.distMeters}m`
+                    : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
+                  （徒歩約{segmentConnector.walkMin}分）
+                </span>
               </div>
               <div
                 style={{
@@ -697,285 +720,292 @@ export default function ClientSpotList({
       })}
       </div>
 
-      {/* ストーリー＆しるし思い出モーダル */}
-      <AnimatePresence>
-        {selectedStorySpot && (() => {
-          const myEv = mySpotEvents[selectedStorySpot.id];
-          const partnerMemories = (sharedMemoriesBySpot[selectedStorySpot.id] || []).filter((m) => !m.isMe);
+      {/* ストーリー＆しるし思い出モーダル（createPortalでbody直下に描画） */}
+      {typeof document !== "undefined" &&
+        createPortal(
+          <AnimatePresence>
+            {selectedStorySpot && (() => {
+              const myEv = mySpotEvents[selectedStorySpot.id];
+              const partnerMemories = (sharedMemoriesBySpot[selectedStorySpot.id] || []).filter((m) => !m.isMe);
 
-          return (
-            <div 
-              style={{
-                position: "fixed",
-                top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.6)",
-                backdropFilter: "blur(5px)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: 10000,
-                padding: "20px"
-              }}
-              onClick={() => setSelectedStorySpot(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  backgroundColor: "var(--bg-color)",
-                  border: "2px solid var(--accent-color)",
-                  borderRadius: "20px",
-                  width: "100%",
-                  maxWidth: "430px",
-                  maxHeight: "88vh",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
-                  overflow: "hidden",
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column"
-                }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div style={{ height: "6px", backgroundColor: "var(--accent-color)", flexShrink: 0 }} />
-                
-                <div style={{ padding: "24px 20px", overflowY: "auto", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                  {/* しるし印影 */}
-                  <div style={{
-                    width: "76px",
-                    height: "76px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(255,255,255,0.9)",
-                    border: "1px dashed rgba(201,168,76,0.6)",
+              return (
+                <div 
+                  style={{
+                    position: "fixed",
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.6)",
+                    backdropFilter: "blur(5px)",
                     display: "flex",
-                    alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 15px rgba(0,0,0,0.06)",
-                    marginBottom: "14px",
-                    transform: "rotate(-3deg)"
-                  }}>
-                    <img 
-                      src={stampImgUrl} 
-                      alt={selectedStorySpot.name} 
-                      style={{ width: "56px", height: "56px", objectFit: "contain" }} 
-                    />
-                  </div>
+                    alignItems: "center",
+                    zIndex: 10000,
+                    padding: "20px"
+                  }}
+                  onClick={() => setSelectedStorySpot(null)}
+                >
+                  <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      backgroundColor: "var(--bg-color)",
+                      border: "2px solid var(--accent-color)",
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "430px",
+                      maxHeight: "88vh",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
+                      overflow: "hidden",
+                      position: "relative",
+                      display: "flex",
+                      flexDirection: "column"
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div style={{ height: "6px", backgroundColor: "var(--accent-color)", flexShrink: 0 }} />
+                    
+                    <div style={{ padding: "24px 20px", overflowY: "auto", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+                      {/* しるし印影 */}
+                      <div style={{
+                        width: "76px",
+                        height: "76px",
+                        borderRadius: "50%",
+                        backgroundColor: "rgba(255,255,255,0.9)",
+                        border: "1px dashed rgba(201,168,76,0.6)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 6px 15px rgba(0,0,0,0.06)",
+                        marginBottom: "14px",
+                        transform: "rotate(-3deg)"
+                      }}>
+                        <img 
+                          src={stampImgUrl} 
+                          alt={selectedStorySpot.name} 
+                          style={{ width: "56px", height: "56px", objectFit: "contain" }} 
+                        />
+                      </div>
 
-                  <h3 style={{ 
-                    fontSize: "1.3rem", 
-                    fontWeight: "800", 
-                    color: "var(--text-color)", 
-                    marginBottom: "4px",
-                    fontFamily: "serif" 
-                  }}>
-                    {selectedStorySpot.name}の記憶
-                  </h3>
-                  <p style={{ fontSize: "0.75rem", color: "#888", fontStyle: "italic", marginBottom: "16px" }}>
-                    Memory of {selectedStorySpot.name}
-                  </p>
+                      <h3 style={{ 
+                        fontSize: "1.3rem", 
+                        fontWeight: "800", 
+                        color: "var(--text-color)", 
+                        marginBottom: "4px",
+                        fontFamily: "serif" 
+                      }}>
+                        {selectedStorySpot.name}の記憶
+                      </h3>
+                      <p style={{ fontSize: "0.75rem", color: "#888", fontStyle: "italic", marginBottom: "16px" }}>
+                        Memory of {selectedStorySpot.name}
+                      </p>
 
-                  {/* 自分がこの印に登録した写真・コメント */}
-                  <div style={{
-                    width: "100%",
-                    background: "#FFFDF9",
-                    border: "1px solid #EBE5D9",
-                    borderRadius: "12px",
-                    padding: "14px",
-                    marginBottom: "16px",
-                    textAlign: "left"
-                  }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-                      <span style={{ fontSize: "0.8rem", fontWeight: 800, color: "#5C4E43" }}>
-                        📸 あなたの印の記録
-                      </span>
-                      {!isEditingModalMemory && (
-                        <button
-                          type="button"
-                          onClick={() => setIsEditingModalMemory(true)}
-                          style={{
-                            background: "none",
-                            border: "1px solid var(--primary-color)",
-                            color: "var(--primary-color)",
-                            borderRadius: "6px",
-                            padding: "2px 8px",
-                            fontSize: "0.72rem",
-                            fontWeight: 700,
-                            cursor: "pointer"
-                          }}
-                        >
-                          {myEv?.photoUrl || myEv?.memo ? "写真・コメントを編集" : "＋ 写真・コメントを残す"}
-                        </button>
-                      )}
-                    </div>
-
-                    {!isEditingModalMemory ? (
-                      myEv?.photoUrl || myEv?.memo ? (
-                        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                          {myEv.photoUrl && (
-                            <img
-                              src={myEv.photoUrl}
-                              alt="押印写真"
-                              style={{ width: "100%", maxHeight: "220px", objectFit: "cover", borderRadius: "8px", border: "1px solid #EBE5D9" }}
-                            />
-                          )}
-                          {myEv.memo && (
-                            <p style={{ margin: 0, fontSize: "0.88rem", color: "#5C4E43", background: "#F9F6F0", padding: "8px 10px", borderRadius: "6px" }}>
-                              💬 {myEv.memo}
-                            </p>
+                      {/* 自分がこの印に登録した写真・コメント */}
+                      <div style={{
+                        width: "100%",
+                        background: "#FFFDF9",
+                        border: "1px solid #EBE5D9",
+                        borderRadius: "12px",
+                        padding: "14px",
+                        marginBottom: "16px",
+                        textAlign: "left"
+                      }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                          <span style={{ fontSize: "0.8rem", fontWeight: 800, color: "#5C4E43", display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                            <Camera size={14} strokeWidth={2} color="var(--primary-color)" />
+                            <span>あなたの印の記録</span>
+                          </span>
+                          {!isEditingModalMemory && (
+                            <button
+                              type="button"
+                              onClick={() => setIsEditingModalMemory(true)}
+                              style={{
+                                background: "none",
+                                border: "1px solid var(--primary-color)",
+                                color: "var(--primary-color)",
+                                borderRadius: "6px",
+                                padding: "2px 8px",
+                                fontSize: "0.72rem",
+                                fontWeight: 700,
+                                cursor: "pointer"
+                              }}
+                            >
+                              {myEv?.photoUrl || myEv?.memo ? "写真・コメントを編集" : "＋ 写真・コメントを残す"}
+                            </button>
                           )}
                         </div>
-                      ) : (
-                        <p style={{ margin: 0, fontSize: "0.8rem", color: "#A39687" }}>
-                          この印にはまだ写真やコメントが登録されていません。「＋ 写真・コメントを残す」からいつでも追加できます。
-                        </p>
-                      )
-                    ) : (
-                      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                        {modalPhotoPreview && (
-                          <div style={{ position: "relative" }}>
-                            <img
-                              src={modalPhotoPreview}
-                              alt="プレビュー"
-                              style={{ width: "100%", maxHeight: "180px", objectFit: "cover", borderRadius: "8px", border: "1px solid #EBE5D9" }}
+
+                        {!isEditingModalMemory ? (
+                          myEv?.photoUrl || myEv?.memo ? (
+                            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                              {myEv.photoUrl && (
+                                <img
+                                  src={myEv.photoUrl}
+                                  alt="押印写真"
+                                  style={{ width: "100%", maxHeight: "220px", objectFit: "cover", borderRadius: "8px", border: "1px solid #EBE5D9" }}
+                                />
+                              )}
+                              {myEv.memo && (
+                                <p style={{ margin: 0, fontSize: "0.88rem", color: "#5C4E43", background: "#F9F6F0", padding: "8px 10px", borderRadius: "6px" }}>
+                                  「{myEv.memo}」
+                                </p>
+                              )}
+                            </div>
+                          ) : (
+                            <p style={{ margin: 0, fontSize: "0.8rem", color: "#A39687" }}>
+                              この印にはまだ写真やコメントが登録されていません。「＋ 写真・コメントを残す」からいつでも追加できます。
+                            </p>
+                          )
+                        ) : (
+                          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                            {modalPhotoPreview && (
+                              <div style={{ position: "relative" }}>
+                                <img
+                                  src={modalPhotoPreview}
+                                  alt="プレビュー"
+                                  style={{ width: "100%", maxHeight: "180px", objectFit: "cover", borderRadius: "8px", border: "1px solid #EBE5D9" }}
+                                />
+                              </div>
+                            )}
+                            <label style={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "6px",
+                              padding: "8px 12px",
+                              borderRadius: "8px",
+                              border: "1px dashed var(--primary-color)",
+                              color: "var(--primary-color)",
+                              fontSize: "0.8rem",
+                              fontWeight: 700,
+                              cursor: "pointer",
+                              background: "rgba(199,68,46,0.04)"
+                            }}>
+                              <Camera size={14} strokeWidth={2} />
+                              <span>写真を選択・変更する</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                style={{ display: "none" }}
+                                onChange={(e) => {
+                                  const f = e.target.files?.[0];
+                                  if (f) {
+                                    setModalPhotoFile(f);
+                                    setModalPhotoPreview(URL.createObjectURL(f));
+                                  }
+                                }}
+                              />
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="ひとこと感想・コメントを入力..."
+                              value={modalMemoInput}
+                              onChange={(e) => setModalMemoInput(e.target.value)}
+                              style={{
+                                width: "100%",
+                                padding: "8px 10px",
+                                borderRadius: "8px",
+                                border: "1px solid #D5CEC4",
+                                fontSize: "0.85rem"
+                              }}
                             />
+                            <div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
+                              <button
+                                type="button"
+                                onClick={() => setIsEditingModalMemory(false)}
+                                className="btn-secondary"
+                                style={{ padding: "6px 12px", fontSize: "0.78rem" }}
+                              >
+                                キャンセル
+                              </button>
+                              <button
+                                type="button"
+                                disabled={isSavingModalMemory}
+                                onClick={handleSaveModalMemory}
+                                className="btn-primary"
+                                style={{ padding: "6px 14px", fontSize: "0.78rem" }}
+                              >
+                                {isSavingModalMemory ? "保存中..." : "保存する"}
+                              </button>
+                            </div>
                           </div>
                         )}
-                        <label style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "6px",
-                          padding: "8px 12px",
-                          borderRadius: "8px",
-                          border: "1px dashed var(--primary-color)",
-                          color: "var(--primary-color)",
-                          fontSize: "0.8rem",
-                          fontWeight: 700,
-                          cursor: "pointer",
-                          background: "rgba(199,68,46,0.04)"
+                      </div>
+
+                      {/* 同行メンバーの共有された写真・コメント */}
+                      {partnerMemories.length > 0 && (
+                        <div style={{
+                          width: "100%",
+                          background: "rgba(201, 168, 76, 0.08)",
+                          border: "1px dashed var(--accent-color)",
+                          borderRadius: "12px",
+                          padding: "14px",
+                          marginBottom: "16px",
+                          textAlign: "left"
                         }}>
-                          📷 写真を選択・変更する
-                          <input
-                            type="file"
-                            accept="image/*"
-                            style={{ display: "none" }}
-                            onChange={(e) => {
-                              const f = e.target.files?.[0];
-                              if (f) {
-                                setModalPhotoFile(f);
-                                setModalPhotoPreview(URL.createObjectURL(f));
-                              }
-                            }}
-                          />
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="ひとこと感想・コメントを入力..."
-                          value={modalMemoInput}
-                          onChange={(e) => setModalMemoInput(e.target.value)}
-                          style={{
-                            width: "100%",
-                            padding: "8px 10px",
-                            borderRadius: "8px",
-                            border: "1px solid #D5CEC4",
-                            fontSize: "0.85rem"
-                          }}
-                        />
-                        <div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
-                          <button
-                            type="button"
-                            onClick={() => setIsEditingModalMemory(false)}
-                            className="btn-secondary"
-                            style={{ padding: "6px 12px", fontSize: "0.78rem" }}
-                          >
-                            キャンセル
-                          </button>
-                          <button
-                            type="button"
-                            disabled={isSavingModalMemory}
-                            onClick={handleSaveModalMemory}
-                            className="btn-primary"
-                            style={{ padding: "6px 14px", fontSize: "0.78rem" }}
-                          >
-                            {isSavingModalMemory ? "保存中..." : "保存する"}
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* 同行メンバーの共有された写真・コメント */}
-                  {partnerMemories.length > 0 && (
-                    <div style={{
-                      width: "100%",
-                      background: "rgba(201, 168, 76, 0.08)",
-                      border: "1px dashed var(--accent-color)",
-                      borderRadius: "12px",
-                      padding: "14px",
-                      marginBottom: "16px",
-                      textAlign: "left"
-                    }}>
-                      <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#5C4E43", marginBottom: "10px" }}>
-                        👥 連れ立ちメンバーの共有された印 ({partnerMemories.length}名)
-                      </div>
-                      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                        {partnerMemories.map((pm) => (
-                          <div key={pm.id} style={{ background: "#FFFDF9", padding: "10px", borderRadius: "8px", border: "1px solid #EBE5D9" }}>
-                            <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--primary-color)", marginBottom: "4px" }}>
-                              {pm.displayName} さんの印
-                            </div>
-                            {pm.photoUrl && (
-                              <img
-                                src={pm.photoUrl}
-                                alt={`${pm.displayName}さんの写真`}
-                                style={{ width: "100%", maxHeight: "180px", objectFit: "cover", borderRadius: "6px", marginBottom: pm.memo ? "6px" : 0 }}
-                              />
-                            )}
-                            {pm.memo ? (
-                              <div style={{ fontSize: "0.84rem", color: "#5C4E43" }}>💬 {pm.memo}</div>
-                            ) : !pm.photoUrl ? (
-                              <div style={{ fontSize: "0.78rem", color: "#A39687" }}>💮 このスポットで押印しました</div>
-                            ) : null}
+                          <div style={{ fontSize: "0.8rem", fontWeight: 800, color: "#5C4E43", marginBottom: "10px", display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                            <Users size={14} strokeWidth={2} color="var(--primary-color)" />
+                            <span>連れ立ちメンバーの共有された印 ({partnerMemories.length}名)</span>
                           </div>
-                        ))}
+                          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                            {partnerMemories.map((pm) => (
+                              <div key={pm.id} style={{ background: "#FFFDF9", padding: "10px", borderRadius: "8px", border: "1px solid #EBE5D9" }}>
+                                <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--primary-color)", marginBottom: "4px" }}>
+                                  {pm.displayName} さんの印
+                                </div>
+                                {pm.photoUrl && (
+                                  <img
+                                    src={pm.photoUrl}
+                                    alt={`${pm.displayName}さんの写真`}
+                                    style={{ width: "100%", maxHeight: "180px", objectFit: "cover", borderRadius: "6px", marginBottom: pm.memo ? "6px" : 0 }}
+                                  />
+                                )}
+                                {pm.memo ? (
+                                  <div style={{ fontSize: "0.84rem", color: "#5C4E43" }}>「{pm.memo}」</div>
+                                ) : !pm.photoUrl ? (
+                                  <div style={{ fontSize: "0.78rem", color: "#A39687" }}>このスポットで押印しました</div>
+                                ) : null}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* ストーリー本文 */}
+                      <div style={{
+                        backgroundColor: "rgba(255,255,255,0.5)",
+                        border: "1px solid rgba(0,0,0,0.04)",
+                        borderRadius: "12px",
+                        padding: "16px",
+                        width: "100%",
+                        color: "var(--text-color)",
+                        fontSize: "0.9rem",
+                        lineHeight: "1.75",
+                        textAlign: "justify",
+                        marginBottom: "18px",
+                        letterSpacing: "0.03em"
+                      }}>
+                        <p style={{ margin: 0, whiteSpace: "pre-wrap" }}>
+                          {selectedStorySpot.f7_full || selectedStorySpot.description || "このスポットの記憶はまだ謎に包まれています。"}
+                        </p>
                       </div>
+
+                      {/* 閉じるボタン */}
+                      <button
+                        className="btn-secondary"
+                        style={{ width: "100%", padding: "12px", fontSize: "0.95rem", fontWeight: "700" }}
+                        onClick={() => setSelectedStorySpot(null)}
+                      >
+                        閉じる
+                      </button>
                     </div>
-                  )}
-
-                  {/* ストーリー本文 */}
-                  <div style={{
-                    backgroundColor: "rgba(255,255,255,0.5)",
-                    border: "1px solid rgba(0,0,0,0.04)",
-                    borderRadius: "12px",
-                    padding: "16px",
-                    width: "100%",
-                    color: "var(--text-color)",
-                    fontSize: "0.9rem",
-                    lineHeight: "1.75",
-                    textAlign: "justify",
-                    marginBottom: "18px",
-                    letterSpacing: "0.03em"
-                  }}>
-                    <p style={{ margin: 0, whiteSpace: "pre-wrap" }}>
-                      {selectedStorySpot.f7_full || selectedStorySpot.description || "このスポットの記憶はまだ謎に包まれています。"}
-                    </p>
-                  </div>
-
-                  {/* 閉じるボタン */}
-                  <button
-                    className="btn-secondary"
-                    style={{ width: "100%", padding: "12px", fontSize: "0.95rem", fontWeight: "700" }}
-                    onClick={() => setSelectedStorySpot(null)}
-                  >
-                    閉じる
-                  </button>
+                  </motion.div>
                 </div>
-              </motion.div>
-            </div>
-          );
-        })()}
-      </AnimatePresence>
+              );
+            })()}
+          </AnimatePresence>,
+          document.body
+        )}
     </>
   );
 }

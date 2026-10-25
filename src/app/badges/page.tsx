@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { Sparkles, BookOpen } from "lucide-react";
 import HeaderNav from "@/components/HeaderNav";
 import { useAuth } from "@/context/AuthContext";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
@@ -21,14 +23,15 @@ function FilterChip({
     <button
       onClick={onClick}
       style={{
-        padding: "6px 14px",
-        borderRadius: "16px",
-        border: active ? "1px solid var(--primary-color)" : "1px solid #EBE5D9",
-        background: active ? "var(--primary-color)" : "#FFFDF9",
-        color: active ? "#fff" : "#5C4E43",
+        padding: "6px 12px",
+        borderRadius: "6px",
+        border: active ? "1px solid #2C2520" : "1px solid #E5DEC9",
+        background: active ? "#2C2520" : "#F2ECE1",
+        color: active ? "#FFFDF9" : "#5C4E43",
         fontWeight: 700,
-        fontSize: "0.85rem",
+        fontSize: "0.8rem",
         cursor: "pointer",
+        transition: "all 0.2s ease",
       }}
     >
       {label}
@@ -111,87 +114,90 @@ export default function BadgesPage() {
         <HeaderNav />
       </header>
       <main style={{ maxWidth: "720px", margin: "0 auto", paddingBottom: "60px" }}>
-        {ceremonyBadges.length > 0 && (
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(13, 13, 13, 0.94)",
-              backdropFilter: "blur(6px)",
-              zIndex: 9999,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px",
-              overflowY: "auto",
-            }}
-          >
+        {ceremonyBadges.length > 0 &&
+          typeof document !== "undefined" &&
+          createPortal(
             <div
               style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
                 width: "100%",
-                maxWidth: "400px",
-                background: "#15120c",
-                border: "1.5px solid var(--accent-color)",
-                borderRadius: "18px",
-                boxShadow: "0 24px 60px rgba(0,0,0,0.85)",
-                overflow: "hidden",
+                height: "100%",
+                backgroundColor: "rgba(13, 13, 13, 0.94)",
+                backdropFilter: "blur(6px)",
+                zIndex: 9999,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "20px",
+                overflowY: "auto",
               }}
             >
-              <div style={{ padding: "24px 20px 12px", textAlign: "center" }}>
-                <span
-                  style={{
-                    color: "var(--accent-color)",
-                    fontSize: "0.72rem",
-                    letterSpacing: "3px",
-                    fontWeight: 900,
-                    border: "1px solid var(--accent-color)",
-                    padding: "4px 12px",
-                    borderRadius: "14px",
-                  }}
-                >
-                  称号授与の儀
-                </span>
-                <h2
-                  style={{
-                    color: "#F2E9D5",
-                    fontSize: "1.25rem",
-                    fontWeight: 800,
-                    marginTop: "14px",
-                    marginBottom: "4px",
-                    fontFamily: "serif",
-                  }}
-                >
-                  歩みの積み重ねにより、新たな称号を授かりました
-                </h2>
-                <p style={{ color: "#9a8f6f", fontSize: "0.8rem", margin: 0 }}>
-                  封印をタップして称号を開封してください
-                </p>
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "400px",
+                  background: "#15120c",
+                  border: "1.5px solid var(--accent-color)",
+                  borderRadius: "18px",
+                  boxShadow: "0 24px 60px rgba(0,0,0,0.85)",
+                  overflow: "hidden",
+                }}
+              >
+                <div style={{ padding: "24px 20px 12px", textAlign: "center" }}>
+                  <span
+                    style={{
+                      color: "var(--accent-color)",
+                      fontSize: "0.72rem",
+                      letterSpacing: "3px",
+                      fontWeight: 900,
+                      border: "1px solid var(--accent-color)",
+                      padding: "4px 12px",
+                      borderRadius: "14px",
+                    }}
+                  >
+                    称号授与の儀
+                  </span>
+                  <h2
+                    style={{
+                      color: "#F2E9D5",
+                      fontSize: "1.25rem",
+                      fontWeight: 800,
+                      marginTop: "14px",
+                      marginBottom: "4px",
+                      fontFamily: "serif",
+                    }}
+                  >
+                    歩みの積み重ねにより、新たな称号を授かりました
+                  </h2>
+                  <p style={{ color: "#9a8f6f", fontSize: "0.8rem", margin: 0 }}>
+                    封印をタップして称号を開封してください
+                  </p>
+                </div>
+                <BadgeReveal badges={ceremonyBadges} />
+                <div style={{ padding: "20px 24px 24px" }}>
+                  <button
+                    onClick={() => {
+                      markAllSeen();
+                      setCeremonyBadges([]);
+                    }}
+                    className="btn-primary"
+                    style={{
+                      width: "100%",
+                      padding: "14px",
+                      fontSize: "0.95rem",
+                      fontWeight: 800,
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    称号を受け取る
+                  </button>
+                </div>
               </div>
-              <BadgeReveal badges={ceremonyBadges} />
-              <div style={{ padding: "20px 24px 24px" }}>
-                <button
-                  onClick={() => {
-                    markAllSeen();
-                    setCeremonyBadges([]);
-                  }}
-                  className="btn-primary"
-                  style={{
-                    width: "100%",
-                    padding: "14px",
-                    fontSize: "0.95rem",
-                    fontWeight: 800,
-                    letterSpacing: "1px",
-                  }}
-                >
-                  称号を受け取る
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+            </div>,
+            document.body
+          )}
 
         <h1
           style={{
@@ -236,7 +242,8 @@ export default function BadgesPage() {
                   gap: "6px",
                 }}
               >
-                <span>✨</span> 次なる境地への歩み（あと少しで授かる称号）
+                <Sparkles size={16} strokeWidth={1.75} color="var(--accent-color)" />
+                次なる境地への歩み（あと少しで授かる称号）
               </h2>
               <p style={{ fontSize: "0.76rem", color: "#8A7E72", margin: 0 }}>
                 これまでの足跡から、もうすぐ到達できる次の称号をご案内します。
@@ -374,7 +381,8 @@ export default function BadgesPage() {
                   gap: "6px",
                 }}
               >
-                <span>📖</span> ライフログの境地（歩みのスタイル）
+                <BookOpen size={16} strokeWidth={1.75} color="var(--primary-color)" />
+                ライフログの境地（歩みのスタイル）
               </h2>
               <p style={{ fontSize: "0.76rem", color: "#8A7E72", margin: 0 }}>
                 総印数・連れ立ち・記憶の記録・再訪の4つの軸で深まるあなたの街歩きスタイルです。

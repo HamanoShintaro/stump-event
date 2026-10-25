@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { use, useState } from "react";
+import { createPortal } from "react-dom";
 import { useAuth } from "@/context/AuthContext";
 import HeaderNav from "@/components/HeaderNav";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
@@ -17,6 +18,12 @@ import {
   Users,
   BookOpen,
   ArrowRight,
+  ScrollText,
+  Footprints,
+  Clock,
+  Map as MapIcon,
+  CheckCircle2,
+  Camera,
 } from "lucide-react";
 
 interface PageProps {
@@ -217,24 +224,39 @@ export default function GroupJourneyPage({ params }: PageProps) {
                 letterSpacing: "0.08em",
                 background: "rgba(199, 68, 46, 0.1)",
                 padding: "4px 12px",
-                borderRadius: "20px",
+                borderRadius: "6px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
               }}
             >
-              📜 連れ立ち旅路のしおり
+              <ScrollText size={13} strokeWidth={1.75} />
+              連れ立ち旅路のしおり
             </span>
             <span
               style={{
                 fontSize: "0.72rem",
                 fontWeight: 800,
                 padding: "3px 10px",
-                borderRadius: "12px",
+                borderRadius: "6px",
                 background: groupInfo.isActive
                   ? "rgba(201, 168, 76, 0.2)"
                   : "rgba(92, 78, 67, 0.08)",
                 color: groupInfo.isActive ? "#6E5314" : "#8A7E72",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
               }}
             >
-              {groupInfo.isActive ? "👥 連れ立ち進行中" : "📖 旅路の記録"}
+              {groupInfo.isActive ? (
+                <>
+                  <Users size={12} strokeWidth={1.75} /> 連れ立ち進行中
+                </>
+              ) : (
+                <>
+                  <BookOpen size={12} strokeWidth={1.75} /> 旅路の記録
+                </>
+              )}
             </span>
           </div>
 
@@ -285,12 +307,27 @@ export default function GroupJourneyPage({ params }: PageProps) {
                 background: "#FFFDF9",
                 border: "1px solid #EBE5D9",
                 padding: "3px 10px",
-                borderRadius: "10px",
+                borderRadius: "6px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                flexWrap: "wrap",
               }}
             >
-              📍 全{groupInfo.walkMetrics.spotCount}箇所 ・ 👣 約
-              {groupInfo.walkMetrics.distanceKm}km ・ ⏱️ 約
-              {groupInfo.walkMetrics.estimatedMinutes}分
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "3px" }}>
+                <MapPin size={12} strokeWidth={1.75} color="var(--primary-color)" />
+                全{groupInfo.walkMetrics.spotCount}箇所
+              </span>
+              <span>・</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "3px" }}>
+                <Footprints size={12} strokeWidth={1.75} color="var(--primary-color)" />
+                約{groupInfo.walkMetrics.distanceKm}km
+              </span>
+              <span>・</span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "3px" }}>
+                <Clock size={12} strokeWidth={1.75} color="var(--primary-color)" />
+                約{groupInfo.walkMetrics.estimatedMinutes}分
+              </span>
             </span>
           </div>
 
@@ -392,9 +429,14 @@ export default function GroupJourneyPage({ params }: PageProps) {
               boxShadow: "0 4px 14px rgba(199, 68, 46, 0.25)",
             }}
           >
-            {joining
-              ? "マップを準備しています..."
-              : "🗺️ 連れ立ちマップを開いて巡る"}
+            {joining ? (
+              "マップを準備しています..."
+            ) : (
+              <>
+                <MapIcon size={17} strokeWidth={1.75} />
+                連れ立ちマップを開いて巡る
+              </>
+            )}
           </button>
         </section>
 
@@ -530,9 +572,13 @@ export default function GroupJourneyPage({ params }: PageProps) {
                           fontSize: "0.82rem",
                           fontWeight: 900,
                           color: "var(--primary-color)",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
                         }}
                       >
-                        💮 {member.stampedCount} / {member.totalSpots} 箇所
+                        <CheckCircle2 size={13} strokeWidth={1.75} />
+                        {member.stampedCount} / {member.totalSpots} 箇所
                       </span>
                     </div>
 
@@ -649,7 +695,7 @@ export default function GroupJourneyPage({ params }: PageProps) {
                           gap: "4px",
                         }}
                       >
-                        💮{" "}
+                        <CheckCircle2 size={13} strokeWidth={1.75} color="var(--primary-color)" />
                         {spot.stampedMembers
                           .map((m) => `${m.displayName}さん`)
                           .join("、")}
@@ -705,8 +751,9 @@ export default function GroupJourneyPage({ params }: PageProps) {
                         {spot.name}
                       </h3>
                       {spot.address && (
-                        <div style={{ fontSize: "0.72rem", color: "#8A7E72" }}>
-                          📍 {spot.address}
+                        <div style={{ fontSize: "0.72rem", color: "#8A7E72", display: "flex", alignItems: "center", gap: "3px" }}>
+                          <MapPin size={11} strokeWidth={1.75} />
+                          {spot.address}
                         </div>
                       )}
                     </div>
@@ -761,9 +808,13 @@ export default function GroupJourneyPage({ params }: PageProps) {
                               style={{
                                 fontWeight: 800,
                                 color: "var(--primary-color)",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "4px",
                               }}
                             >
-                              📷 {mem.displayName} さんの思い出
+                              <Camera size={12} strokeWidth={1.75} />
+                              {mem.displayName} さんの思い出
                             </span>
                             <span style={{ color: "#8A7E72" }}>
                               {new Date(mem.createdAt).toLocaleDateString("ja-JP")}
@@ -811,48 +862,51 @@ export default function GroupJourneyPage({ params }: PageProps) {
       </main>
 
       {/* 写真拡大ライトボックス */}
-      {zoomPhotoUrl && (
-        <div
-          onClick={() => setZoomPhotoUrl(null)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(0, 0, 0, 0.88)",
-            backdropFilter: "blur(6px)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 2000,
-            padding: "20px",
-            cursor: "zoom-out",
-          }}
-        >
-          <img
-            src={zoomPhotoUrl}
-            alt="拡大写真"
+      {zoomPhotoUrl &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            onClick={() => setZoomPhotoUrl(null)}
             style={{
-              maxWidth: "95%",
-              maxHeight: "85vh",
-              objectFit: "contain",
-              borderRadius: "8px",
-            }}
-          />
-          <span
-            style={{
-              color: "#fff",
-              marginTop: "14px",
-              fontSize: "0.82rem",
-              opacity: 0.75,
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              background: "rgba(0, 0, 0, 0.88)",
+              backdropFilter: "blur(6px)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 9999,
+              padding: "20px",
+              cursor: "zoom-out",
             }}
           >
-            タップして閉じる
-          </span>
-        </div>
-      )}
+            <img
+              src={zoomPhotoUrl}
+              alt="拡大写真"
+              style={{
+                maxWidth: "95%",
+                maxHeight: "85vh",
+                objectFit: "contain",
+                borderRadius: "8px",
+              }}
+            />
+            <span
+              style={{
+                color: "#fff",
+                marginTop: "14px",
+                fontSize: "0.82rem",
+                opacity: 0.75,
+              }}
+            >
+              タップして閉じる
+            </span>
+          </div>,
+          document.body
+        )}
     </div>
   );
 }

@@ -11,6 +11,11 @@ import {
   Clock,
   MapPin,
   Navigation,
+  Building2,
+  Coins,
+  SlidersHorizontal,
+  RotateCcw,
+  Tag,
   X,
 } from "lucide-react";
 
@@ -25,9 +30,9 @@ interface RoutesClientViewProps {
 
 const DURATION_OPTIONS: { value: DurationFilter; label: string }[] = [
   { value: "all", label: "すべて" },
-  { value: "short", label: "⏱️ 気軽にお散歩（〜45分）" },
-  { value: "medium", label: "🍵 じっくり散策（45〜90分）" },
-  { value: "long", label: "🥾 たっぷり巡る（90分〜）" },
+  { value: "short", label: "気軽な散歩 (~45分)" },
+  { value: "medium", label: "じっくり (45~90分)" },
+  { value: "long", label: "たっぷり (90分~)" },
 ];
 
 export default function RoutesClientView({
@@ -67,11 +72,11 @@ export default function RoutesClientView({
 
   return (
     <div>
-      {/* 街歩き探索バー（キーワード・所要時間・街エリア図鑑・並び替え） */}
-      <div className={"glass-card " + styles.discoveryBar}>
+      {/* 街歩き探索バー（キーワード・所要時間セグメント・街エリア図鑑・並び替え） */}
+      <div className={styles.discoveryBar}>
         <div className={styles.searchRow}>
           <div className={styles.searchInputWrapper}>
-            <Search size={18} className={styles.searchIcon} />
+            <Search size={17} strokeWidth={1.9} className={styles.searchIcon} />
             <input
               type="text"
               value={keyword}
@@ -93,86 +98,65 @@ export default function RoutesClientView({
           </div>
 
           <div className={styles.sortWrapper}>
+            <SlidersHorizontal size={15} strokeWidth={1.9} className={styles.sortIcon} />
             <select
               value={sortBy}
               onChange={(e) => handleSortChange(e.target.value as RouteSortBy)}
               className={styles.sortSelect}
               aria-label="並び替え"
             >
-              <option value="newest">✨ 新着順</option>
+              <option value="newest">新着順</option>
               <option value="nearby">
-                🧭 現在地から近い順{locating ? "（測位中...）" : ""}
+                現在地から近い順{locating ? "（測位中...）" : ""}
               </option>
-              <option value="walkable">👣 気軽に歩ける順（短時間）</option>
-              <option value="popular">🔥 人気・保存数順</option>
+              <option value="walkable">気軽に歩ける順（短時間）</option>
+              <option value="popular">人気・保存数順</option>
             </select>
           </div>
         </div>
 
-        {/* 所要時間クイックフィルター */}
-        <div className={styles.filterPillsRow}>
-          {DURATION_OPTIONS.map((opt) => (
-            <button
-              key={opt.value}
-              type="button"
-              onClick={() => setDurationFilter(opt.value)}
-              className={
-                durationFilter === opt.value
-                  ? styles.filterPillActive
-                  : styles.filterPill
-              }
-            >
-              {opt.label}
-            </button>
-          ))}
+        {/* 所要時間セグメントバー（丸ピルボタンと明確に区別したタブ型UI） */}
+        <div className={styles.segmentedGroup}>
+          <div className={styles.sectionMicroLabel}>
+            <Clock size={13} strokeWidth={2} />
+            <span>歩きたい時間の目安</span>
+          </div>
+          <div className={styles.segmentedBar} role="tablist" aria-label="所要時間フィルター">
+            {DURATION_OPTIONS.map((opt) => (
+              <button
+                key={opt.value}
+                type="button"
+                role="tab"
+                aria-selected={durationFilter === opt.value}
+                onClick={() => setDurationFilter(opt.value)}
+                className={
+                  durationFilter === opt.value
+                    ? styles.segmentTabActive
+                    : styles.segmentTab
+                }
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* 🏘️ 街・エリア図鑑から探す */}
+        {/* 街・エリア図鑑から探す（角丸6pxの静かなタグ群） */}
         {areaList.length > 0 && (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-              paddingTop: "8px",
-              borderTop: "1px dashed rgba(201, 168, 76, 0.35)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "var(--font-size-small)",
-                fontWeight: 800,
-                color: "var(--text-color)",
-                opacity: 0.8,
-              }}
-            >
-              🏘️ 街・エリア図鑑から探す
+          <div className={styles.areaDirectorySection}>
+            <div className={styles.sectionMicroLabel}>
+              <Building2 size={13} strokeWidth={2} />
+              <span>街・エリア図鑑から探す</span>
             </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                overflowX: "auto",
-                paddingBottom: "4px",
-              }}
-            >
+            <div className={styles.areaTagsScroll}>
               <button
                 type="button"
                 onClick={() => setSelectedArea("すべて")}
                 className={
                   selectedArea === "すべて"
-                    ? "btn-primary"
-                    : "btn-secondary"
+                    ? styles.areaTagActive
+                    : styles.areaTag
                 }
-                style={{
-                  padding: "5px 12px",
-                  fontSize: "0.78rem",
-                  fontWeight: 700,
-                  borderRadius: "999px",
-                  whiteSpace: "nowrap",
-                  flexShrink: 0,
-                }}
               >
                 すべて
               </button>
@@ -183,17 +167,10 @@ export default function RoutesClientView({
                     key={area.areaName}
                     type="button"
                     onClick={() => setSelectedArea(area.areaName)}
-                    className={isActive ? "btn-primary" : "btn-secondary"}
-                    style={{
-                      padding: "5px 12px",
-                      fontSize: "0.78rem",
-                      fontWeight: 700,
-                      borderRadius: "999px",
-                      whiteSpace: "nowrap",
-                      flexShrink: 0,
-                    }}
+                    className={isActive ? styles.areaTagActive : styles.areaTag}
                   >
-                    {area.areaName} ({area.count})
+                    <span>{area.areaName}</span>
+                    <span className={styles.areaTagCount}>({area.count})</span>
                   </button>
                 );
               })}
@@ -206,13 +183,22 @@ export default function RoutesClientView({
           <div className={styles.activeServerFilters}>
             <span className={styles.filterLabel}>絞り込み条件:</span>
             {activePrefecture && (
-              <span className={styles.activeFilterTag}>📍 {activePrefecture}</span>
+              <span className={styles.activeFilterTag}>
+                <MapPin size={12} strokeWidth={2} />
+                {activePrefecture}
+              </span>
             )}
             {activeCategory && (
-              <span className={styles.activeFilterTag}>🏷️ {activeCategory}</span>
+              <span className={styles.activeFilterTag}>
+                <Tag size={12} strokeWidth={2} />
+                {activeCategory}
+              </span>
             )}
             {budgetFilterLabel && (
-              <span className={styles.activeFilterTag}>💰 {budgetFilterLabel}</span>
+              <span className={styles.activeFilterTag}>
+                <Coins size={12} strokeWidth={2} />
+                {budgetFilterLabel}
+              </span>
             )}
             <Link href="/routes" className={styles.resetFiltersLink}>
               条件を解除
@@ -240,7 +226,7 @@ export default function RoutesClientView({
                 key={routeItem.id}
                 className={styles.cardWrapper}
               >
-                <div className={"glass-card " + styles.card}>
+                <div className={styles.card}>
                   <div
                     className={styles.imageBox}
                     style={{
@@ -255,13 +241,14 @@ export default function RoutesClientView({
                       <div className={styles.areaBadge}>{routeItem.prefecture}</div>
                       {routeItem.routeAreas?.[0] && (
                         <div className={styles.areaBadge}>
-                          📍 {routeItem.routeAreas[0]}
+                          <MapPin size={10} strokeWidth={2} />
+                          <span>{routeItem.routeAreas[0]}</span>
                         </div>
                       )}
                       {distanceFromUserKm !== null && (
                         <div className={styles.distanceBadge}>
-                          <Navigation size={10} />
-                          現在地から約{distanceFromUserKm}km
+                          <Navigation size={10} strokeWidth={2} />
+                          <span>現在地から約{distanceFromUserKm}km</span>
                         </div>
                       )}
                     </div>
@@ -276,24 +263,29 @@ export default function RoutesClientView({
                       >
                         <span
                           style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
                             fontSize: "0.72rem",
-                            fontWeight: "bold",
+                            fontWeight: 700,
                             textShadow: "0 1px 2px rgba(0,0,0,0.8)",
                           }}
                         >
-                          💰{" "}
-                          {routeItem.budget_tier === 1
-                            ? "~1,000円"
-                            : routeItem.budget_tier === 2
-                              ? "~5,000円"
-                              : "5,000円~"}
+                          <Coins size={12} strokeWidth={2} />
+                          <span>
+                            {routeItem.budget_tier === 1
+                              ? "〜1,000円"
+                              : routeItem.budget_tier === 2
+                                ? "〜5,000円"
+                                : "5,000円〜"}
+                          </span>
                         </span>
                         <div
                           style={{
                             display: "flex",
                             gap: "8px",
                             fontSize: "0.72rem",
-                            fontWeight: "bold",
+                            fontWeight: 700,
                             textShadow: "0 1px 2px rgba(0,0,0,0.8)",
                           }}
                         >
@@ -302,7 +294,7 @@ export default function RoutesClientView({
                               style={{
                                 display: "flex",
                                 alignItems: "center",
-                                gap: "2px",
+                                gap: "3px",
                               }}
                             >
                               <Footprints size={12} strokeWidth={2} />
@@ -314,7 +306,7 @@ export default function RoutesClientView({
                               style={{
                                 display: "flex",
                                 alignItems: "center",
-                                gap: "2px",
+                                gap: "3px",
                                 color: "var(--accent-color)",
                               }}
                             >
@@ -335,17 +327,17 @@ export default function RoutesClientView({
                     <p className={styles.rallyDesc}>{routeItem.description}</p>
                     <div className={styles.walkMetaStrip}>
                       <span className={styles.walkMetaItem}>
-                        <MapPin size={12} color="var(--primary-color)" />
+                        <MapPin size={12} strokeWidth={2} color="var(--primary-color)" />
                         全{walkMetrics.spotCount}箇所
                       </span>
                       <span className={styles.walkMetaDivider}>•</span>
                       <span className={styles.walkMetaItem}>
-                        <Footprints size={12} color="var(--primary-color)" />
+                        <Footprints size={12} strokeWidth={2} color="var(--primary-color)" />
                         約{walkMetrics.distanceKm.toFixed(1)}km
                       </span>
                       <span className={styles.walkMetaDivider}>•</span>
                       <span className={styles.walkMetaItem}>
-                        <Clock size={12} color="var(--primary-color)" />
+                        <Clock size={12} strokeWidth={2} color="var(--primary-color)" />
                         約{walkMetrics.estimatedMinutes}分
                       </span>
                     </div>
@@ -367,9 +359,16 @@ export default function RoutesClientView({
                 setDurationFilter("all");
                 setSelectedArea("すべて");
               }}
-              style={{ padding: "8px 20px", fontSize: "0.85rem" }}
+              style={{
+                padding: "8px 20px",
+                fontSize: "0.85rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+              }}
             >
-              検索条件をリセットする
+              <RotateCcw size={14} strokeWidth={2} />
+              <span>検索条件をリセットする</span>
             </button>
           </div>
         )}

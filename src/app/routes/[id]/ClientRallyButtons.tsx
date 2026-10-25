@@ -15,7 +15,7 @@ import {
 } from "@/utils/stampMedia";
 import JoinAnimation from "@/components/JoinAnimation";
 import { useRouteBookmark } from "@/hooks/useRouteBookmark";
-import { Bookmark, Star } from "lucide-react";
+import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Copy } from "lucide-react";
 
 export function BookmarkRouteButton({
   routeId,
@@ -34,27 +34,28 @@ export function BookmarkRouteButton({
       type="button"
       onClick={toggleBookmark}
       disabled={loading}
-      className="btn-secondary"
       style={{
         width: "100%",
-        padding: "12px 16px",
-        fontSize: "0.95rem",
+        padding: "11px 16px",
+        fontSize: "0.88rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         gap: "8px",
-        borderColor: isBookmarked ? "var(--accent-color)" : "var(--text-color)",
-        background: isBookmarked ? "rgba(201, 168, 76, 0.14)" : "transparent",
+        borderRadius: "10px",
+        border: isBookmarked ? "1px solid var(--accent-color)" : "1px solid #DED6C6",
+        background: isBookmarked ? "rgba(201, 168, 76, 0.14)" : "#F6F1E6",
         color: "var(--text-color)",
         fontWeight: 700,
+        cursor: loading ? "wait" : "pointer",
         transition: "all 0.2s ease",
       }}
     >
       <Bookmark
-        size={18}
+        size={16}
         fill={isBookmarked ? "var(--accent-color)" : "none"}
         color={isBookmarked ? "var(--primary-color)" : "currentColor"}
-        strokeWidth={2.2}
+        strokeWidth={2}
       />
       <span>
         {isBookmarked ? "保存済み（いつか歩きたい街）" : "このルートを保存する（栞）"}
@@ -66,14 +67,14 @@ export function BookmarkRouteButton({
             alignItems: "center",
             gap: "3px",
             marginLeft: "4px",
-            fontSize: "0.82rem",
+            fontSize: "0.78rem",
             color: "var(--primary-color)",
             background: "rgba(199, 68, 46, 0.08)",
             padding: "2px 8px",
-            borderRadius: "10px",
+            borderRadius: "6px",
           }}
         >
-          <Star size={12} fill="currentColor" />
+          <Star size={11} fill="currentColor" />
           {favoriteCount}
         </span>
       )}
@@ -110,7 +111,7 @@ export function JoinRallyButton({
   const { showAlert } = useCustomAlert();
 
   const handlePartnerJoined = useCallback((partner: CompanionMember) => {
-    setLiveJoinNotice(`🎉 ${partner.displayName} さんが連れ立ちに合流しました！`);
+    setLiveJoinNotice(`${partner.displayName} さんが連れ立ちに合流しました。`);
   }, []);
 
   const {
@@ -349,8 +350,8 @@ export function JoinRallyButton({
       await showAlert({
         text:
           currentPartners.length > 0
-            ? `👥 連れ立ちに合流しました！\n同行メンバー: ${currentPartners.join("、")} さん\nマップへ移動します。`
-            : `👥 連れ立ちグループ（コード: ${cleanCode}）に参加しました！`,
+            ? `連れ立ちに合流しました。\n同行メンバー: ${currentPartners.join("、")} さん\nマップへ移動します。`
+            : `連れ立ちグループ（コード: ${cleanCode}）に参加しました。`,
         okText: "マップへ進む",
       });
       setIsNavigating(true);
@@ -432,19 +433,19 @@ export function JoinRallyButton({
               width: "100%"
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px", flexWrap: "wrap" }}>
-                <span style={{ fontSize: "1.2rem" }}>👥</span>
+                <Users size={18} strokeWidth={2} color="var(--primary-color)" />
                 <span style={{ fontWeight: 800, color: "var(--secondary-color)", fontSize: "1rem" }}>連れ立ちセッション進行中</span>
                 <span style={{
                   marginLeft: "auto",
                   fontSize: "0.72rem",
                   fontWeight: 800,
                   padding: "2px 10px",
-                  borderRadius: "12px",
+                  borderRadius: "6px",
                   background: partnerNames.length > 0 ? "#E8F5E9" : "#FFF8E1",
                   color: partnerNames.length > 0 ? "#2E7D32" : "#B78103",
                   border: `1px solid ${partnerNames.length > 0 ? "#A5D6A7" : "#FFE082"}`,
                 }}>
-                  {partnerNames.length > 0 ? `✓ 合流済み（同行 ${partnerNames.length}名）` : "合流待ち"}
+                  {partnerNames.length > 0 ? `合流済み（同行 ${partnerNames.length}名）` : "合流待ち"}
                 </span>
               </div>
 
@@ -532,9 +533,13 @@ export function JoinRallyButton({
                         fontSize: "0.8rem",
                         padding: 0,
                         fontWeight: 600,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "5px",
                       }}
                     >
-                      🔑 友達から受け取った招待コードを入力して合流する場合はこちら
+                      <KeyRound size={13} strokeWidth={2} />
+                      <span>友達から受け取った招待コードを入力して合流する場合はこちら</span>
                     </button>
                   ) : (
                     <form onSubmit={handleJoinByCode} style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
@@ -588,7 +593,8 @@ export function JoinRallyButton({
                     boxShadow: "none"
                   }}
                 >
-                  {isNavigating ? "読み込み中..." : "🗺️ 地図を表示"}
+                  <MapIcon size={16} strokeWidth={2} />
+                  <span>{isNavigating ? "読み込み中..." : "地図を表示"}</span>
                 </button>
                 
                 <button 
@@ -652,7 +658,8 @@ export function JoinRallyButton({
                     cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
                   }}
                 >
-                  {isCreatingGroup ? "作成中..." : "👥 招待コードを発行（連れ立ち開始）"}
+                  <Users size={16} strokeWidth={2} />
+                  <span>{isCreatingGroup ? "作成中..." : "招待コードを発行（連れ立ち開始）"}</span>
                 </button>
 
                 <button
@@ -670,7 +677,8 @@ export function JoinRallyButton({
                     gap: "6px",
                   }}
                 >
-                  🔑 招待コードを入力して合流
+                  <KeyRound size={16} strokeWidth={2} />
+                  <span>招待コードを入力して合流</span>
                 </button>
               </div>
 
@@ -758,9 +766,18 @@ export function JoinRallyButton({
                 type="button"
                 onClick={() => setShowJoinByCodeInput((prev) => !prev)}
                 className="btn-secondary"
-                style={{ width: "100%", padding: "12px", fontSize: "0.92rem" }}
+                style={{
+                  width: "100%",
+                  padding: "12px",
+                  fontSize: "0.92rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "6px",
+                }}
               >
-                🔑 友達の招待コードで連れ立ち参加する
+                <KeyRound size={15} strokeWidth={2} />
+                <span>友達の招待コードで連れ立ち参加する</span>
               </button>
               {showJoinByCodeInput && (
                 <form

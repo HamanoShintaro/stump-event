@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import HeaderNav from "@/components/HeaderNav";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Users, Map as MapIcon } from "lucide-react";
 
 export default function ActiveRoutesPage() {
   const { user, loading } = useAuth();
@@ -92,17 +92,18 @@ export default function ActiveRoutesPage() {
                     color: "#5C4E43"
                   }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "6px", flexWrap: "wrap" }}>
-                      <span>👥 連れ立ち中</span>
+                      <Users size={15} strokeWidth={2} color="var(--primary-color)" />
+                      <span>連れ立ち中</span>
                       <span style={{
                         fontSize: "0.7rem",
                         padding: "1px 8px",
-                        borderRadius: "10px",
+                        borderRadius: "6px",
                         background: ur.group.partners.length > 0 ? "#E8F5E9" : "#FFF8E1",
                         color: ur.group.partners.length > 0 ? "#2E7D32" : "#B78103",
                         border: `1px solid ${ur.group.partners.length > 0 ? "#A5D6A7" : "#FFE082"}`,
                         fontWeight: 700
                       }}>
-                        {ur.group.partners.length > 0 ? `✓ 合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
+                        {ur.group.partners.length > 0 ? `合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
                       </span>
                       <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "#fff", border: "1px solid #EBE5D9", padding: "1px 6px", borderRadius: "4px", color: "var(--primary-color)" }}>
                         コード: {ur.group.inviteCode}
@@ -121,7 +122,10 @@ export default function ActiveRoutesPage() {
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "12px", flexWrap: "wrap" }}>
                   <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", background: "transparent", border: "1px solid rgba(217,101,91,0.3)", color: "#D9655B", borderRadius: "8px", cursor: "pointer" }}>進行中から外す</button>
                   {ur.group && (
-                    <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "8px", fontWeight: 700 }}>🗺️ 連れ立ちマップ</Link>
+                    <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "8px", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "5px" }}>
+                      <MapIcon size={15} strokeWidth={2} />
+                      <span>連れ立ちマップ</span>
+                    </Link>
                   )}
                   <Link href={`/routes/${ur.route_id}${ur.group ? `?groupId=${ur.group.id}` : ""}`} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none" }}>再開する</Link>
                 </div>

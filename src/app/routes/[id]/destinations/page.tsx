@@ -3,7 +3,17 @@
 import React, { use } from "react";
 import Link from "next/link";
 import { notFound, useSearchParams } from "next/navigation";
-import { MapPin, Compass, Footprints, Map as MapIcon, Sparkles } from "lucide-react";
+import {
+  MapPin,
+  Compass,
+  Footprints,
+  Map as MapIcon,
+  Sparkles,
+  CheckCircle2,
+  Users,
+  ScrollText,
+  Navigation,
+} from "lucide-react";
 import { useRouteDestinations } from "@/hooks/useRouteDestinations";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
@@ -80,8 +90,8 @@ export default function DestinationsPage({
           className="glass-card"
           style={{
             padding: "18px 20px",
-            borderRadius: "16px",
-            border: "1.5px solid var(--accent-color)",
+            borderRadius: "14px",
+            border: "1px solid #E5DEC9",
             background: "var(--bg-color)",
             marginBottom: "20px",
           }}
@@ -119,16 +129,22 @@ export default function DestinationsPage({
 
             <div
               style={{
-                fontSize: "0.85rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                fontSize: "0.82rem",
                 fontWeight: 800,
                 color: "var(--primary-color)",
                 background: "rgba(199, 68, 46, 0.08)",
-                border: "1px solid rgba(199, 68, 46, 0.25)",
-                padding: "4px 12px",
-                borderRadius: "999px",
+                border: "1px solid rgba(199, 68, 46, 0.22)",
+                padding: "4px 10px",
+                borderRadius: "6px",
               }}
             >
-              💮 獲得したしるし {stampedCount} / {totalSpots} 箇所
+              <CheckCircle2 size={14} strokeWidth={2} />
+              <span>
+                獲得したしるし {stampedCount} / {totalSpots} 箇所
+              </span>
             </div>
           </div>
 
@@ -136,9 +152,9 @@ export default function DestinationsPage({
           <div
             style={{
               width: "100%",
-              height: "8px",
+              height: "6px",
               borderRadius: "999px",
-              background: "rgba(201, 168, 76, 0.2)",
+              background: "#E8E0D2",
               overflow: "hidden",
               marginBottom: "14px",
             }}
@@ -157,16 +173,20 @@ export default function DestinationsPage({
           {partnerNames.length > 0 && (
             <div
               style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
                 fontSize: "var(--font-size-small)",
                 fontWeight: 700,
                 color: "var(--text-color)",
-                background: "rgba(201, 168, 76, 0.14)",
+                background: "#F2ECE1",
                 padding: "6px 12px",
-                borderRadius: "10px",
+                borderRadius: "8px",
                 marginBottom: "12px",
               }}
             >
-              👥 {partnerNames.join("さん・")}さんと連れ立ち散策中
+              <Users size={14} strokeWidth={2} color="var(--primary-color)" />
+              <span>{partnerNames.join("さん・")}さんと連れ立ち散策中</span>
             </div>
           )}
 
@@ -187,14 +207,14 @@ export default function DestinationsPage({
                 padding: "9px 14px",
                 fontSize: "0.8rem",
                 fontWeight: 700,
-                borderRadius: "999px",
+                borderRadius: "8px",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "6px",
               }}
             >
-              <Compass size={14} />
+              <Compass size={14} strokeWidth={2} />
               <span>
                 {locating
                   ? "現在地を測位中..."
@@ -212,7 +232,7 @@ export default function DestinationsPage({
                 padding: "9px 14px",
                 fontSize: "0.8rem",
                 fontWeight: 700,
-                borderRadius: "999px",
+                borderRadius: "8px",
                 textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
@@ -220,24 +240,24 @@ export default function DestinationsPage({
                 gap: "6px",
               }}
             >
-              <MapIcon size={14} />
+              <MapIcon size={14} strokeWidth={2} />
               <span>ルートマップを見る</span>
             </Link>
           </div>
         </div>
 
-        {/* 2. ✨ 次のおすすめ訪問先カード */}
+        {/* 2. 次のおすすめ訪問先カード */}
         {recommendedSpot && (
           <div
             className="glass-card"
             style={{
               padding: "18px 20px",
-              borderRadius: "18px",
-              border: "2px solid var(--accent-color)",
+              borderRadius: "16px",
+              border: "1.5px solid var(--accent-color)",
               background:
                 "linear-gradient(145deg, rgba(255,253,248,0.98) 0%, rgba(246,236,210,0.92) 100%)",
               marginBottom: "24px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+              boxShadow: "0 6px 20px rgba(44, 37, 32, 0.06)",
             }}
           >
             <div
@@ -248,13 +268,13 @@ export default function DestinationsPage({
                 fontSize: "var(--font-size-small)",
                 fontWeight: 800,
                 color: "var(--primary-color)",
-                background: "rgba(199, 68, 46, 0.1)",
+                background: "rgba(199, 68, 46, 0.08)",
                 padding: "3px 10px",
-                borderRadius: "999px",
+                borderRadius: "6px",
                 marginBottom: "8px",
               }}
             >
-              <Sparkles size={13} />
+              <Sparkles size={13} strokeWidth={2} />
               <span>{recommendationReason}</span>
             </div>
 
@@ -298,14 +318,20 @@ export default function DestinationsPage({
             {recommendedSpot.distanceFromUserM !== null && (
               <div
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
                   fontSize: "0.8rem",
                   fontWeight: 700,
                   color: "var(--primary-color)",
                   marginBottom: "8px",
                 }}
               >
-                📍 現在地から約 {recommendedSpot.distanceFromUserM}m（徒歩約{" "}
-                {recommendedSpot.walkMinutesFromUser}分）
+                <MapPin size={13} strokeWidth={2} />
+                <span>
+                  現在地から約 {recommendedSpot.distanceFromUserM}m（徒歩約{" "}
+                  {recommendedSpot.walkMinutesFromUser}分）
+                </span>
               </div>
             )}
 
@@ -331,12 +357,19 @@ export default function DestinationsPage({
                 padding: "13px 16px",
                 fontSize: "0.95rem",
                 fontWeight: 800,
-                borderRadius: "999px",
+                borderRadius: "10px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
               }}
             >
-              {settingSpotId === recommendedSpot.id
-                ? "設定中..."
-                : "🧭 ここを次の目的地にしてマップを開く"}
+              <Navigation size={15} strokeWidth={2} />
+              <span>
+                {settingSpotId === recommendedSpot.id
+                  ? "設定中..."
+                  : "ここを次の目的地にしてマップを開く"}
+              </span>
             </button>
           </div>
         )}
@@ -377,16 +410,20 @@ export default function DestinationsPage({
                         <span
                           style={{
                             marginLeft: "auto",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
                             backgroundColor: "rgba(201, 168, 76, 0.14)",
                             border: "1px solid var(--accent-color)",
                             color: "var(--text-color)",
                             padding: "3px 10px",
-                            borderRadius: "12px",
+                            borderRadius: "6px",
                             fontSize: "0.75rem",
                             fontWeight: 800,
                           }}
                         >
-                          💮 しるし獲得済み
+                          <CheckCircle2 size={13} strokeWidth={2} color="var(--primary-color)" />
+                          <span>しるし獲得済み</span>
                         </span>
                       )}
                     </div>
@@ -410,11 +447,11 @@ export default function DestinationsPage({
                             fontWeight: 800,
                             color: "var(--primary-color)",
                             background: "rgba(199, 68, 46, 0.08)",
-                            padding: "3px 10px",
-                            borderRadius: "999px",
+                            padding: "3px 8px",
+                            borderRadius: "6px",
                           }}
                         >
-                          <MapPin size={12} />
+                          <MapPin size={12} strokeWidth={2} />
                           <span>
                             現在地から約 {spot.distanceFromUserM}m（徒歩約{" "}
                             {spot.walkMinutesFromUser}分）
@@ -439,17 +476,23 @@ export default function DestinationsPage({
                     {spot.companionNamesAtSpot.length > 0 && (
                       <div
                         style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "6px",
                           fontSize: "0.75rem",
                           fontWeight: 700,
                           color: "var(--primary-color)",
                           background: "rgba(201, 168, 76, 0.14)",
                           padding: "5px 10px",
-                          borderRadius: "8px",
+                          borderRadius: "6px",
                           marginBottom: "10px",
                         }}
                       >
-                        👥 {spot.companionNamesAtSpot.join("さん・")}
-                        さんがこの場所で押印しています
+                        <Users size={13} strokeWidth={2} />
+                        <span>
+                          {spot.companionNamesAtSpot.join("さん・")}
+                          さんがこの場所で押印しています
+                        </span>
                       </div>
                     )}
 
@@ -458,17 +501,26 @@ export default function DestinationsPage({
                     {spot.f7_fragment && (
                       <div
                         style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "6px",
                           fontSize: "0.78rem",
                           color: "var(--text-color)",
                           padding: "8px 12px",
-                          borderRadius: "10px",
+                          borderRadius: "8px",
                           background: "rgba(201, 168, 76, 0.1)",
                           borderLeft: "3px solid var(--accent-color)",
                           marginBottom: "16px",
                           lineHeight: 1.5,
                         }}
                       >
-                        📜 物語の断片: 「{spot.f7_fragment}」
+                        <ScrollText
+                          size={14}
+                          strokeWidth={2}
+                          color="var(--primary-color)"
+                          style={{ flexShrink: 0, marginTop: "2px" }}
+                        />
+                        <span>物語の断片: 「{spot.f7_fragment}」</span>
                       </div>
                     )}
 
@@ -480,8 +532,17 @@ export default function DestinationsPage({
                           gap: "8px",
                         }}
                       >
-                        <div className={styles.activeStatus}>
-                          🎯 現在このスポットを目的地に設定しています
+                        <div
+                          className={styles.activeStatus}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "6px",
+                          }}
+                        >
+                          <Navigation size={15} strokeWidth={2} />
+                          <span>現在このスポットを目的地に設定しています</span>
                         </div>
                         <div style={{ display: "flex", gap: "8px" }}>
                           <Link
@@ -494,7 +555,7 @@ export default function DestinationsPage({
                               fontSize: "0.9rem",
                               fontWeight: 800,
                               textDecoration: "none",
-                              borderRadius: "12px",
+                              borderRadius: "10px",
                             }}
                           >
                             マップで向かう
@@ -507,7 +568,7 @@ export default function DestinationsPage({
                               fontSize: "0.85rem",
                               fontWeight: 700,
                               textDecoration: "none",
-                              borderRadius: "12px",
+                              borderRadius: "10px",
                             }}
                           >
                             スポット詳細
@@ -521,9 +582,10 @@ export default function DestinationsPage({
                           className="btn-primary"
                           style={{
                             flex: "1 1 200px",
-                            padding: "14px",
-                            fontSize: "0.98rem",
+                            padding: "13px",
+                            fontSize: "0.95rem",
                             fontWeight: 800,
+                            borderRadius: "10px",
                           }}
                           onClick={() => selectDestination(spot.id)}
                           disabled={settingSpotId !== null || !user}
@@ -536,10 +598,11 @@ export default function DestinationsPage({
                           href={spotDetailHref}
                           className="btn-secondary"
                           style={{
-                            padding: "14px 16px",
+                            padding: "13px 16px",
                             fontSize: "0.85rem",
                             fontWeight: 700,
                             textDecoration: "none",
+                            borderRadius: "10px",
                             display: "inline-flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -568,7 +631,7 @@ export default function DestinationsPage({
                         margin: "-6px 0",
                       }}
                     >
-                      <Footprints size={13} color="var(--primary-color)" />
+                      <Footprints size={13} strokeWidth={2} color="var(--primary-color)" />
                       <span>
                         次のスポットまで 約 {spot.stepDistanceToNextM}m（徒歩約{" "}
                         {spot.stepWalkMinutesToNext}分）

@@ -26,10 +26,10 @@ export interface MoodFilterOption {
 
 export const MOOD_FILTER_OPTIONS: MoodFilterOption[] = [
   { value: "all", label: "すべて" },
-  { value: "shrine_history", label: "⛩️ 社寺・歴史" },
-  { value: "cafe_gourmet", label: "☕ 甘味・カフェ・食" },
-  { value: "nature_park", label: "🌿 公園・自然・癒し" },
-  { value: "culture_art", label: "🎨 文化・建築・街並み" },
+  { value: "shrine_history", label: "社寺・歴史" },
+  { value: "cafe_gourmet", label: "甘味・カフェ・食" },
+  { value: "nature_park", label: "公園・自然・癒し" },
+  { value: "culture_art", label: "文化・建築・街並み" },
 ];
 
 export type FortuneLabel = "大吉縁" | "吉縁" | "風流縁" | "発見縁";
@@ -167,7 +167,7 @@ function getTimeSceneByHour(hour: number): TimeSceneInfo {
   if (hour >= 5 && hour <= 10) {
     return {
       key: "morning",
-      icon: "🌅",
+      icon: "sunrise",
       title: "清々しい朝の街歩き",
       subtitle: "朝の澄んだ空気のなか、静かな社寺や緑道をめぐるひととき。",
     };
@@ -175,7 +175,7 @@ function getTimeSceneByHour(hour: number): TimeSceneInfo {
   if (hour >= 11 && hour <= 15) {
     return {
       key: "afternoon",
-      icon: "☀️",
+      icon: "sun",
       title: "陽だまりの昼下がり散策",
       subtitle: "美味しい甘味やランチ、路地裏の小さな名店を訪ねる午後。",
     };
@@ -183,15 +183,15 @@ function getTimeSceneByHour(hour: number): TimeSceneInfo {
   if (hour >= 16 && hour <= 18) {
     return {
       key: "evening",
-      icon: "🌇",
+      icon: "sunset",
       title: "茜色の夕暮れ逍遥",
       subtitle: "夕日が街並みを染める頃、少し寄り道して帰る風流な散歩道。",
     };
   }
   return {
     key: "night",
-    icon: "🌙",
-    title: "静寂の宵まち・明日への散歩支度",
+    icon: "moon",
+    title: "静寂の宵まち・明日の散歩支度",
     subtitle: "灯りがともる夜の街角や、次に歩きたい物語をゆっくり探す時間。",
   };
 }

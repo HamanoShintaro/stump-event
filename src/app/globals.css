@@ -84,22 +84,164 @@ a {
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 253, 249, 0.88);
   color: var(--text-color);
-  border: 1.5px solid var(--text-color);
-  padding: 14px 28px;
+  border: 1px solid #D6CEC3;
+  padding: 12px 24px;
   border-radius: 30px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .btn-secondary:hover {
-  background: rgba(17, 17, 17, 0.05);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(239, 233, 220, 0.9);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Segmented / Underline Tabs (for switching views or scenes) */
+.shuin-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 2px;
+  border-bottom: 1.5px solid rgba(201, 168, 76, 0.35);
+}
+
+.shuin-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  padding: 9px 4px;
+  margin-bottom: -1.5px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #5C4E43;
+  opacity: 0.8;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+@media (min-width: 640px) {
+  .shuin-tabs {
+    display: flex;
+    gap: 6px;
+  }
+  .shuin-tab {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+}
+
+.shuin-tab:hover {
+  opacity: 1;
+  background: rgba(201, 168, 76, 0.08);
+  border-radius: 8px 8px 0 0;
+}
+
+.shuin-tab-active,
+.shuin-tab[aria-selected="true"] {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: rgba(199, 68, 46, 0.05);
+  border-radius: 8px 8px 0 0;
+  font-weight: 800;
+  opacity: 1;
+}
+
+/* Compact Filter Tags (for mood / category / area filters) */
+.shuin-chip {
+  background: #EFE9DC;
+  color: #5C4E43;
+  border: 1px solid rgba(214, 206, 195, 0.7);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.shuin-chip:hover {
+  background: #E5DEC9;
+  color: var(--text-color);
+}
+
+.shuin-chip-active {
+  background: #2C2520;
+  color: var(--bg-color);
+  border-color: #2C2520;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(44, 37, 32, 0.18);
+}
+
+.shuin-chip-active:hover {
+  background: #1E1915;
+  color: var(--bg-color);
+}
+
+/* Auxiliary Inline Text / Link Action */
+.shuin-link-btn {
+  background: transparent;
+  border: none;
+  padding: 4px 6px;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(199, 68, 46, 0.35);
+  transition: opacity 0.2s ease;
+  font-family: inherit;
+}
+
+.shuin-link-btn:hover {
+  opacity: 0.8;
+  text-decoration-color: var(--primary-color);
+}
+
+.shuin-link-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* Unified Washi Badge */
+.shuin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(201, 168, 76, 0.14);
+  color: #5C4E43;
+  border: 1px solid rgba(201, 168, 76, 0.35);
 }
 
 .container {

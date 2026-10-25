@@ -1,36 +1,38 @@
 .main {
-  padding: 40px 0 80px 0;
+  padding: 28px 0 80px 0;
 }
 
 .pageTitle {
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   font-weight: 800;
-  margin-bottom: 8px;
-  color: var(--primary-color);
+  margin-bottom: 6px;
+  color: var(--text-color);
+  letter-spacing: 0.04em;
 }
 @media (min-width: 768px) {
   .pageTitle {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 
 .pageSubtitle {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 24px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  color: #5C4E43;
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .discoveryBar {
   padding: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border-radius: 16px;
-  border: 1px solid #EBE5D9;
-  background: rgba(255, 253, 249, 0.92);
+  gap: 14px;
+  border-radius: 14px;
+  border: 1px solid #E5DEC9;
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: 0 4px 18px rgba(44, 37, 32, 0.04);
 }
 
 .searchRow {
@@ -56,24 +58,25 @@
 .searchIcon {
   position: absolute;
   left: 12px;
-  color: var(--primary-color);
+  color: #6E6256;
   pointer-events: none;
 }
 
 .searchInput {
   width: 100%;
-  padding: 11px 36px 11px 38px;
-  border-radius: 12px;
-  border: 1.5px solid #EBE5D9;
-  background: #ffffff;
-  font-size: 0.92rem;
+  padding: 10px 36px 10px 38px;
+  border-radius: 10px;
+  border: 1px solid #DED6C6;
+  background: #FFFDF9;
+  font-size: 0.9rem;
   color: var(--text-color);
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .searchInput:focus {
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(199, 68, 46, 0.1);
 }
 
 .clearKeywordBtn {
@@ -90,52 +93,155 @@
 }
 
 .sortWrapper {
+  position: relative;
   min-width: 210px;
+  display: flex;
+  align-items: center;
+}
+
+.sortIcon {
+  position: absolute;
+  left: 11px;
+  color: #6E6256;
+  pointer-events: none;
 }
 
 .sortSelect {
   width: 100%;
-  padding: 11px 12px;
-  border-radius: 12px;
-  border: 1.5px solid #EBE5D9;
-  background: #ffffff;
-  font-size: 0.88rem;
+  padding: 10px 12px 10px 32px;
+  border-radius: 10px;
+  border: 1px solid #DED6C6;
+  background: #FFFDF9;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-color);
   cursor: pointer;
 }
 
-.filterPillsRow {
+/* 所要時間セグメントタブバー（丸ピルボタンの乱立を解消） */
+.segmentedGroup {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.filterPill {
-  background: #ffffff;
-  border: 1px solid #E2DAD0;
+.sectionMicroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6E6256;
+  letter-spacing: 0.04em;
+}
+
+.segmentedBar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  background: #EFE9DC;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+@media (min-width: 640px) {
+  .segmentedBar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.segmentTab {
+  background: transparent;
+  border: none;
+  color: #5C4E43;
+  padding: 8px 6px;
+  border-radius: 7px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.segmentTab:hover {
   color: var(--text-color);
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.filterPill:hover {
-  border-color: var(--primary-color);
+.segmentTabActive {
+  background: #FFFDF9;
+  border: none;
+  color: var(--primary-color);
+  padding: 8px 6px;
+  border-radius: 7px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(44, 37, 32, 0.1);
+  text-align: center;
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
-.filterPillActive {
-  background: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+/* 街・エリア図鑑タグ（角丸6pxの落ち着いたタグ） */
+.areaDirectorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #EAE3D5;
+}
+
+.areaTagsScroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.areaTag {
+  background: #F2ECE1;
+  border: 1px solid transparent;
+  color: #4A3E35;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.areaTag:hover {
+  background: #E8E0D2;
+}
+
+.areaTagActive {
+  background: #2C2520;
+  border: 1px solid #2C2520;
+  color: #FFFDF9;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.areaTagCount {
+  font-size: 0.7rem;
+  opacity: 0.75;
 }
 
 .activeServerFilters {
@@ -144,20 +250,23 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-top: 8px;
-  border-top: 1px dashed #EBE5D9;
-  font-size: 0.8rem;
+  border-top: 1px dashed #E5DEC9;
+  font-size: 0.78rem;
 }
 
 .filterLabel {
   font-weight: 700;
-  color: #8A7E72;
+  color: #6E6256;
 }
 
 .activeFilterTag {
-  background: rgba(201, 168, 76, 0.16);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(201, 168, 76, 0.15);
   color: var(--text-color);
   padding: 3px 10px;
-  border-radius: 12px;
+  border-radius: 6px;
   font-weight: 700;
 }
 
@@ -173,15 +282,15 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
-  font-size: 0.88rem;
-  color: #6E6256;
+  font-size: 0.85rem;
+  color: #5C4E43;
 }
 
 .distanceBadge {
-  background: rgba(44, 38, 35, 0.85);
-  color: #ffffff;
-  padding: 4px 8px;
-  border-radius: 12px;
+  background: rgba(44, 37, 32, 0.86);
+  color: #FFFDF9;
+  padding: 3px 8px;
+  border-radius: 6px;
   font-size: 0.68rem;
   font-weight: 700;
   display: inline-flex;
@@ -196,10 +305,10 @@
   gap: 6px;
   margin-top: 10px;
   padding-top: 8px;
-  border-top: 1px dashed #EBE5D9;
+  border-top: 1px solid #EFE9DC;
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: #4A3E35;
 }
 
 .walkMetaItem {
@@ -215,15 +324,15 @@
 .emptyStateBox {
   grid-column: 1 / -1;
   text-align: center;
-  padding: 48px 20px;
-  background: rgba(255, 253, 249, 0.8);
-  border-radius: 16px;
+  padding: 44px 20px;
+  background: rgba(255, 253, 249, 0.85);
+  border-radius: 14px;
   border: 1px dashed #D6CEC3;
 }
 
 .emptyStateText {
-  color: #8A7E72;
-  margin-bottom: 16px;
+  color: #6E6256;
+  margin-bottom: 14px;
   font-weight: 600;
 }
 
@@ -235,12 +344,14 @@
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    gap: 22px;
   }
 }
 
 .cardWrapper {
   display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card {
@@ -249,19 +360,19 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--border-radius);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #E5DEC9;
+  border-radius: 14px;
+  background: #FFFDF9;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(44, 37, 32, 0.08);
 }
 
 .imageBox {
-  height: 180px;
+  height: 172px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -279,23 +390,24 @@
 }
 
 .categoryBadge {
-  background: var(--accent-color);
-  color: #333;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
+  background: rgba(44, 37, 32, 0.85);
+  color: #FFFDF9;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .areaBadge {
-  background: rgba(255, 255, 255, 0.9);
-  color: #555;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
+  background: rgba(255, 253, 249, 0.92);
+  color: #3D332B;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .cardOverlay {
@@ -303,9 +415,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-  padding: 30px 8px 8px 8px;
-  color: white;
+  background: linear-gradient(to top, rgba(28, 23, 20, 0.84) 0%, rgba(28, 23, 20, 0.35) 60%, transparent 100%);
+  padding: 26px 10px 8px 10px;
+  color: #FFFDF9;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -313,29 +425,18 @@
 }
 
 .cardContent {
-  padding: 12px;
+  padding: 13px 14px 14px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.regionTag {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--secondary-color);
-  background: rgba(0, 196, 204, 0.1);
-  padding: 6px 12px;
-  border-radius: 12px;
-  display: inline-block;
-  align-self: flex-start;
-  margin-bottom: 12px;
-}
-
 .rallyTitle {
   font-size: 0.95rem;
   font-weight: 800;
-  margin-bottom: 4px;
-  line-height: 1.4;
+  margin-bottom: 5px;
+  line-height: 1.42;
+  color: var(--text-color);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -343,23 +444,13 @@
 }
 
 .rallyDesc {
-  font-size: 0.75rem;
-  color: #888;
+  font-size: 0.76rem;
+  color: #6E6256;
   margin-bottom: 0;
   flex-grow: 1;
+  line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.cardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  font-weight: 700;
-  border-top: 2px dashed #EAEAEA;
-  padding-top: 16px;
-  color: var(--secondary-color);
 }
