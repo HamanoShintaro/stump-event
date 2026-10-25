@@ -12,6 +12,19 @@ const fragment = (clue) => {
 };
 const full = (clue, surprise, hook) => [clue, surprise, hook].filter(Boolean).join("\n\n");
 
+function parsePrefectureAndCity(address) {
+  if (!address) return { prefecture: "", city: "" };
+  const trimmed = String(address).trim();
+  const prefMatch = trimmed.match(/^(東京都|北海道|(?:京都|大阪)府|.{2,3}県)(.*)$/);
+  let prefecture = prefMatch ? prefMatch[1] : "";
+  const rest = prefMatch ? prefMatch[2].trim() : trimmed;
+  const cityMatch = rest.match(
+    /^(?:(千代田区|中央区|港区|新宿区|文京区|台東区|墨田区|江東区|品川区|目黒区|大田区|世田谷区|渋谷区|中野区|杉並区|豊島区|北区|荒川区|板橋区|練馬区|足立区|葛飾区|江戸川区)|(市川市|市原市|四日市市|廿日市市|野々市市|大和郡山市|郡山市|蒲郡市|小郡市|[^市郡区]+?市)|([^市]+?郡))/
+  );
+  const city = cityMatch ? (cityMatch[1] || cityMatch[2] || cityMatch[3] || "") : "";
+  return { prefecture, city };
+}
+
 function build(area) {
   const errors = [];
   if (!area.slug) errors.push("slug が未設定");
@@ -30,10 +43,13 @@ function build(area) {
   const routeId = randomUUID();
   const spots = (area.spots || []).map((s, i, arr) => {
     const id = randomUUID();
+    const parsed = parsePrefectureAndCity(s.address);
+    const prefecture = s.prefecture || parsed.prefecture || area.prefecture || "";
+    const city = s.city || parsed.city || "";
     return {
       _id: id,
-      db: { id, route_id: routeId, name: s.name, description: s.description || "", image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, address: s.address || "", location: `POINT(${s.lng} ${s.lat})`, radius_meters: s.radius_meters || 50, order_index: i + 1 },
-      overlay: { id, name: s.name, address: s.address || "", lat: s.lat, lng: s.lng, qr_token: s.qr_token || `shuin-${area.slug}-${i + 1}`, cover_image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, f7_fragment: s.f7_fragment || fragment(s.clue), f7_full: s.f7_full || full(s.clue, s.surprise, s.hook), spot_type: s.spot_type || "見どころ", is_final: i === arr.length - 1 }
+      db: { id, route_id: routeId, name: s.name, description: s.description || "", image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, address: s.address || "", prefecture, city, location: `POINT(${s.lng} ${s.lat})`, radius_meters: s.radius_meters || 50, order_index: i + 1 },
+      overlay: { id, name: s.name, address: s.address || "", prefecture, city, lat: s.lat, lng: s.lng, qr_token: s.qr_token || `shuin-${area.slug}-${i + 1}`, cover_image_url: s.image_url || `/images/${area.slug}/spot${i + 1}.png`, f7_fragment: s.f7_fragment || fragment(s.clue), f7_full: s.f7_full || full(s.clue, s.surprise, s.hook), spot_type: s.spot_type || "見どころ", is_final: i === arr.length - 1 }
     };
   });
   spots.forEach((s, i) => {

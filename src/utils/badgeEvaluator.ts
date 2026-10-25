@@ -13,6 +13,67 @@ interface BadgeDefinition {
   condition_params: any;
 }
 
+// サイト利用度に応じた「称号」かどうかの判定（ルート固有の踏破印・自答の儀・旧スポット印を除外）
+export function isSiteUsageBadge(badge?: { code?: string; category?: string } | null): boolean {
+  if (!badge || !badge.code) return false;
+  if (badge.category === "route" || badge.category === "quiz") return false;
+  if (
+    badge.code.startsWith("visitor_of_") ||
+    badge.code.startsWith("memory_of_") ||
+    badge.code.startsWith("trailblazer_of_") ||
+    badge.code.startsWith("storyteller_of_") ||
+    badge.code.startsWith("shuin_")
+  ) {
+    return false;
+  }
+  return true;
+}
+
+const UNSEEN_BADGES_KEY_PREFIX = "shuin_unseen_badges_";
+
+export function getUnseenBadges(userId?: string | null): Badge[] {
+  if (!userId || typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(`${UNSEEN_BADGES_KEY_PREFIX}${userId}`);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter(isSiteUsageBadge) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function addUnseenBadges(userId: string, badges: Badge[]): void {
+  if (!userId || typeof window === "undefined") return;
+  const siteBadges = (badges || []).filter(isSiteUsageBadge);
+  if (siteBadges.length === 0) return;
+  try {
+    const current = getUnseenBadges(userId);
+    const existingCodes = new Set(current.map((b) => b.code));
+    const merged = [...current];
+    for (const b of siteBadges) {
+      if (!existingCodes.has(b.code)) {
+        existingCodes.add(b.code);
+        merged.push(b);
+      }
+    }
+    window.localStorage.setItem(`${UNSEEN_BADGES_KEY_PREFIX}${userId}`, JSON.stringify(merged));
+    window.dispatchEvent(new CustomEvent("shuinBadgesUpdated"));
+  } catch (e) {
+    console.error("Failed to save unseen badges:", e);
+  }
+}
+
+export function clearUnseenBadges(userId?: string | null): void {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(`${UNSEEN_BADGES_KEY_PREFIX}${userId}`);
+    window.dispatchEvent(new CustomEvent("shuinBadgesUpdated"));
+  } catch (e) {
+    console.error("Failed to clear unseen badges:", e);
+  }
+}
+
 // 季節バッジの判定ヘルパー
 function matchSeasonalBadges(date: Date): string[] {
   const month = date.getMonth() + 1; // 1-12
@@ -43,15 +104,55 @@ function matchSeasonalBadges(date: Date): string[] {
   return codes;
 }
 
-// 路線とエリアの静的マッピング
-function getRailwayForArea(areaName?: string): string {
-  if (!areaName) return "";
+// 住所文字列から都道府県（prefecture）と市区郡（city: 東京23区は「〇〇区」、それ以外は「〇〇市」「〇〇郡」）を抽出するヘルパー
+export function parsePrefectureAndCity(address?: string): { prefecture: string; city: string } {
+  if (!address) return { prefecture: "", city: "" };
+  const trimmed = address.trim();
+  const prefMatch = trimmed.match(/^(東京都|北海道|(?:京都|大阪)府|.{2,3}県)(.*)$/);
+  let prefecture = prefMatch ? prefMatch[1] : "";
+  const rest = prefMatch ? prefMatch[2].trim() : trimmed;
+
+  const cityMatch = rest.match(
+    /^(?:(千代田区|中央区|港区|新宿区|文京区|台東区|墨田区|江東区|品川区|目黒区|大田区|世田谷区|渋谷区|中野区|杉並区|豊島区|北区|荒川区|板橋区|練馬区|足立区|葛飾区|江戸川区)|(市川市|市原市|四日市市|廿日市市|野々市市|大和郡山市|郡山市|蒲郡市|小郡市|[^市郡区]+?市)|([^市]+?郡))/
+  );
+  const city = cityMatch ? (cityMatch[1] || cityMatch[2] || cityMatch[3] || "") : "";
+
+  if (!prefecture && city) {
+    if (cityMatch?.[1]) prefecture = "東京都";
+    else if (city === "横浜市" || city === "川崎市") prefecture = "神奈川県";
+    else if (city === "さいたま市" || city === "春日部市") prefecture = "埼玉県";
+  }
+
+  return { prefecture, city };
+}
+
+// 路線とエリア・ルートのマッピング
+function getRailwayForSpotOrRoute(areaOrCity?: string, routeTitle?: string): string {
+  if (routeTitle) {
+    if (
+      routeTitle.includes("自由が丘") ||
+      routeTitle.includes("中目黒") ||
+      routeTitle.includes("東横") ||
+      routeTitle.includes("渋谷") ||
+      routeTitle.includes("多摩川") ||
+      routeTitle.includes("大倉山")
+    ) {
+      return "東急東横線";
+    }
+    if (routeTitle.includes("九品仏")) return "東急大井町線";
+    if (routeTitle.includes("岩槻") || routeTitle.includes("大宮〜七里") || routeTitle.includes("野田")) {
+      return "東武野田線";
+    }
+  }
+  if (!areaOrCity) return "";
   const map: Record<string, string> = {
     "自由が丘": "東急東横線",
     "九品仏": "東急大井町線",
-    "中目黒": "東急東横線"
+    "中目黒": "東急東横線",
+    "目黒区": "東急東横線",
+    "渋谷区": "東急東横線"
   };
-  return map[areaName] || "";
+  return map[areaOrCity] || "";
 }
 
 // 一般のレベル閾値マッピング
@@ -124,22 +225,22 @@ function getLevelEnglish(baseNameEn: string, level: number): string {
  */
 export async function evaluateBadges(
   userId: string,
-  stampEventId: string,
-  spotId: string,
+  stampEventId?: string | null,
+  spotId?: string,
   routeId?: string
 ): Promise<Badge[]> {
   try {
     // 1. 関連データの事前取得
-    // スポット情報を取得 (称号名や説明に使う)
-    const { data: spot, error: spotError } = await supabase
-      .from("spots")
-      .select("id, name")
-      .eq("id", spotId)
-      .single();
+    if (spotId) {
+      const { error: spotError } = await supabase
+        .from("spots")
+        .select("*")
+        .eq("id", spotId)
+        .single();
 
-    if (spotError || !spot) {
-      console.error("Error fetching spot in evaluateBadges:", spotError);
-      return [];
+      if (spotError) {
+        console.error("Error fetching spot in evaluateBadges:", spotError);
+      }
     }
 
     // ルート情報を取得 (指定されている場合)
@@ -147,16 +248,16 @@ export async function evaluateBadges(
     if (routeId) {
       const { data: rData } = await supabase
         .from("routes")
-        .select("id, name, title, area_name, prefecture, category")
+        .select("*")
         .eq("id", routeId)
         .single();
       route = rData;
     }
 
-    // ユーザーの全押印履歴とルート情報を取得してカウント
+    // ユーザーの全押印履歴とスポット・ルート情報を取得してカウント
     const { data: userStamps, error: stampsError } = await supabase
       .from("stamps")
-      .select("id, spot_id, route_id, routes(area_name, prefecture, category)")
+      .select("id, spot_id, route_id, spots(*), routes(*)")
       .eq("user_id", userId);
 
     if (stampsError) {
@@ -174,25 +275,28 @@ export async function evaluateBadges(
     const categoryCounts: Record<string, number> = {};
 
     stampsList.forEach((s: any) => {
-      const r = s.routes;
-      if (!r) return;
-      
-      // エリア
-      if (r.area_name) {
-        areaCounts[r.area_name] = (areaCounts[r.area_name] || 0) + 1;
-        
-        // 路線
-        const railway = getRailwayForArea(r.area_name);
-        if (railway) {
-          railwayCounts[railway] = (railwayCounts[railway] || 0) + 1;
-        }
+      const sp = s.spots || {};
+      const r = s.routes || {};
+      const parsed = parsePrefectureAndCity(sp.address);
+      const city = sp.city || parsed.city;
+      const pref = sp.prefecture || parsed.prefecture || r.prefecture;
+
+      // 地域（エリア：東京23区は「〇〇区」、それ以外は「〇〇市」「〇〇郡」単位）
+      if (city) {
+        areaCounts[city] = (areaCounts[city] || 0) + 1;
       }
-      
+
+      // 路線
+      const railway = getRailwayForSpotOrRoute(r.area_name || city, r.title || r.name);
+      if (railway) {
+        railwayCounts[railway] = (railwayCounts[railway] || 0) + 1;
+      }
+
       // 都道府県
-      if (r.prefecture) {
-        prefCounts[r.prefecture] = (prefCounts[r.prefecture] || 0) + 1;
+      if (pref) {
+        prefCounts[pref] = (prefCounts[pref] || 0) + 1;
       }
-      
+
       // カテゴリ（印目）
       if (r.category) {
         categoryCounts[r.category] = (categoryCounts[r.category] || 0) + 1;
@@ -232,21 +336,21 @@ export async function evaluateBadges(
       };
     }
 
-    // 地域（エリア）
-    Object.entries(areaCounts).forEach(([areaName, count]) => {
+    // 地域（エリア：市区郡単位）
+    Object.entries(areaCounts).forEach(([cityName, count]) => {
       const level = getAreaLevel(count);
       for (let l = 1; l <= level; l++) {
-        const code = `level_badge_area_${areaName}_${l}`;
+        const code = `level_badge_area_${cityName}_${l}`;
         candidateCodes.push(code);
         customBadgeDefs[code] = {
           code,
           category: "area",
-          name_ja: getLevelName(`${areaName}探索`, l),
-          subtitle_en: getLevelEnglish(`${areaName} Exploration`, l),
+          name_ja: getLevelName(`${cityName}探索`, l),
+          subtitle_en: getLevelEnglish(`${cityName} Exploration`, l),
           rarity: Math.floor((l - 1) / 5) + 1,
-          description: `${areaName}エリアにて、累計${l}箇所のスポットにしるしを刻んだ証`,
+          description: `${cityName}エリアにて、累計${l}箇所のスポットにしるしを刻んだ証`,
           condition_type: "area_stamps_count",
-          condition_params: { area_name: areaName, count: l }
+          condition_params: { city: cityName, area_name: cityName, count: l }
         };
       }
     });
@@ -313,10 +417,12 @@ export async function evaluateBadges(
       }
     });
 
-    // --- (3) カテゴリE: 季節系 ---
-    const today = new Date();
-    const seasonal = matchSeasonalBadges(today);
-    candidateCodes.push(...seasonal);
+    // --- (3) カテゴリE: 季節系（押印イベント発生時のみ判定） ---
+    if (stampEventId && totalStamps > 0) {
+      const today = new Date();
+      const seasonal = matchSeasonalBadges(today);
+      candidateCodes.push(...seasonal);
+    }
 
     // --- (4) カテゴリB: ルート完走系 ---
     if (routeId && route) {
@@ -570,7 +676,7 @@ export async function evaluateBadges(
           .insert({
             user_id: userId,
             badge_id: badge.id,
-            triggered_by_stamp_event_id: stampEventId,
+            triggered_by_stamp_event_id: stampEventId || null,
             acquired_at: new Date().toISOString()
           });
 
@@ -580,6 +686,10 @@ export async function evaluateBadges(
           newlyAcquiredBadges.push(badge);
         }
       }
+    }
+
+    if (newlyAcquiredBadges.length > 0) {
+      addUnseenBadges(userId, newlyAcquiredBadges);
     }
 
     return newlyAcquiredBadges;

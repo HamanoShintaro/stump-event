@@ -1,3 +1,3 @@
-import { useCustomAlert } from "../context/AlertContext";
+import { useCustomAlert } from "@/context/AlertContext";
 
 export { useCustomAlert };

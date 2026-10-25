@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import HeaderNav from "@/components/HeaderNav";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
+import { evaluateBadges, isSiteUsageBadge } from "@/utils/badgeEvaluator";
+import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
+import BadgeReveal from "@/app/routes/[id]/spot/[spotId]/BadgeReveal";
 
 type Badge = {
   code: string; name_ja: string; subtitle_en?: string; description?: string;
@@ -20,7 +23,7 @@ function FilterChip({ active, onClick, label }: { active: boolean; onClick: () =
 // 称号コードからグループキー、レベル、カテゴリを解析するヘルパー
 function parseLevelBadge(code: string) {
   if (!code || !code.startsWith("level_badge_")) return null;
-  // 例: level_badge_area_自由が丘_3 -> parts: ["level", "badge", "area", "自由が丘", "3"]
+  // 例: level_badge_area_目黒区_3 -> parts: ["level", "badge", "area", "目黒区", "3"]
   const parts = code.split("_");
   const levelStr = parts[parts.length - 1];
   const level = parseInt(levelStr, 10);
@@ -37,15 +40,26 @@ function parseLevelBadge(code: string) {
 
 export default function BadgesPage() {
   const { user, loading } = useAuth();
+  const { unseenBadges, markAllSeen, refresh: refreshUnseen } = useBadgeNotifications(user?.id);
+  const [ceremonyBadges, setCeremonyBadges] = useState<any[]>([]);
   const [items, setItems] = useState<Badge[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
   const [rarityFilter, setRarityFilter] = useState<number | null>(null);
   const [showUnearned, setShowUnearned] = useState(true);
 
   useEffect(() => {
+    if (unseenBadges.length > 0 && ceremonyBadges.length === 0) {
+      setCeremonyBadges(unseenBadges);
+    }
+  }, [unseenBadges, ceremonyBadges.length]);
+
+  useEffect(() => {
     async function fetchBadges() {
       if (!user) { setDataLoading(false); return; }
       setDataLoading(true);
+      // 過去の押印履歴に対して未付与のレベル称号があれば評価・同期する
+      await evaluateBadges(user.id);
+      refreshUnseen();
       // 取得済（badge_assignments）と、収集可能なカタログ（badges）を取得
       const [earnedRes, catalogRes] = await Promise.all([
         supabase.from("badge_assignments").select("acquired_at, badges(*)").eq("user_id", user.id).order("acquired_at", { ascending: false }),
@@ -55,12 +69,12 @@ export default function BadgesPage() {
 
       const earnedList = (earnedRes.data || [])
         .map((a: any) => ({ ...a.badges, acquired_at: a.acquired_at }))
-        .filter((b: any) => b && b.code);
+        .filter((b: any) => isSiteUsageBadge(b));
       const earnedCodes = new Set(earnedList.map((b: any) => b.code));
 
-      // 未取得シルエット＝カタログのうち未取得。ただし自答(quiz)は4択排他なので除外。
+      // 未取得シルエット＝カタログのうち未取得（サイト利用度に応じた称号のみ）
       const unearned = (catalogRes.data || [])
-        .filter((b: any) => b && b.code && !earnedCodes.has(b.code) && b.category !== "quiz");
+        .filter((b: any) => isSiteUsageBadge(b) && !earnedCodes.has(b.code));
 
       const allRawItems = [
         ...earnedList.map((b: any) => ({ ...b, earned: true })),
@@ -174,7 +188,83 @@ export default function BadgesPage() {
         <HeaderNav />
       </header>
       <main style={{ maxWidth: "720px", margin: "0 auto", paddingBottom: "60px" }}>
+        {ceremonyBadges.length > 0 && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(13, 13, 13, 0.94)",
+              backdropFilter: "blur(6px)",
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
+              overflowY: "auto",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                background: "#15120c",
+                border: "1.5px solid var(--accent-color)",
+                borderRadius: "18px",
+                boxShadow: "0 24px 60px rgba(0,0,0,0.85)",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ padding: "24px 20px 12px", textAlign: "center" }}>
+                <span
+                  style={{
+                    color: "var(--accent-color)",
+                    fontSize: "0.72rem",
+                    letterSpacing: "3px",
+                    fontWeight: 900,
+                    border: "1px solid var(--accent-color)",
+                    padding: "4px 12px",
+                    borderRadius: "14px",
+                  }}
+                >
+                  称号授与の儀
+                </span>
+                <h2 style={{ color: "#F2E9D5", fontSize: "1.25rem", fontWeight: 800, marginTop: "14px", marginBottom: "4px", fontFamily: "serif" }}>
+                  歩みの積み重ねにより、新たな称号を授かりました
+                </h2>
+                <p style={{ color: "#9a8f6f", fontSize: "0.8rem", margin: 0 }}>
+                  封印をタップして称号を開封してください
+                </p>
+              </div>
+              <BadgeReveal badges={ceremonyBadges} />
+              <div style={{ padding: "20px 24px 24px" }}>
+                <button
+                  onClick={() => {
+                    markAllSeen();
+                    setCeremonyBadges([]);
+                  }}
+                  className="btn-primary"
+                  style={{
+                    width: "100%",
+                    padding: "14px",
+                    fontSize: "0.95rem",
+                    fontWeight: 800,
+                    letterSpacing: "1px",
+                  }}
+                >
+                  称号を受け取る
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--text-color)", margin: "12px 0 4px" }}>称号一覧</h1>
+        <p style={{ color: "#A39687", fontSize: "0.85rem", marginBottom: "6px" }}>
+          街を巡り、しるしを重ねた歩みに応じて授かる称号です。
+        </p>
         <p style={{ color: "#A39687", fontSize: "0.9rem", marginBottom: "16px" }}>
           取得 <span style={{ color: "var(--primary-color)", fontWeight: 800 }}>{earnedCount}</span> 件 ・ 未取得 {unearnedCount} 件
         </p>

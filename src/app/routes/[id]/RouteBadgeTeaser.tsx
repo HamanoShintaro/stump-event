@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 
-// 62_badge_logic / 自由が丘v2 M5①: このルートで授かる称号を提示し、未取得はシルエットで「欠け」を見せて収集を促す
+// このルートで授かる「ルートの踏破印（メイン＋自答の儀によるサブ）」を1つの実績として提示
 export default function RouteBadgeTeaser({ routeId }: { routeId: string }) {
   const { user } = useAuth();
-  const [badges, setBadges] = useState<any[]>([]);
-  const [earned, setEarned] = useState<Set<string>>(new Set());
+  const [mainBadge, setMainBadge] = useState<any | null>(null);
+  const [quizBadges, setQuizBadges] = useState<any[]>([]);
+  const [earnedCodes, setEarnedCodes] = useState<Set<string>>(new Set());
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -19,58 +20,98 @@ export default function RouteBadgeTeaser({ routeId }: { routeId: string }) {
         .select("*")
         .eq("route_id", routeId)
         .eq("is_active", true);
-      const list = (bs || []).filter((b: any) => b.category === "route" || b.category === "quiz");
-      list.sort((a: any, b: any) => (a.category === "route" ? 0 : 1) - (b.category === "route" ? 0 : 1));
+      const list = bs || [];
+      const routeB = list.find((b: any) => b.category === "route") || null;
+      const quizBs = list.filter((b: any) => b.category === "quiz");
+
       const earnedSet = new Set<string>();
       if (user) {
         const { data: as } = await supabase
           .from("badge_assignments")
-          .select("badges(code)")
-          .eq("user_id", user.id);
-        (as || []).forEach((x: any) => { if (x.badges && x.badges.code) earnedSet.add(x.badges.code); });
+          .select("acquired_at, badges(code)")
+          .eq("user_id", user.id)
+          .order("acquired_at", { ascending: false });
+        (as || []).forEach((x: any) => {
+          if (x.badges && x.badges.code) earnedSet.add(x.badges.code);
+        });
       }
-      if (active) { setBadges(list); setEarned(earnedSet); setLoaded(true); }
+      if (active) {
+        setMainBadge(routeB);
+        setQuizBadges(quizBs);
+        setEarnedCodes(earnedSet);
+        setLoaded(true);
+      }
     })();
-    return () => { active = false; };
+    return () => {
+      active = false;
+    };
   }, [routeId, user]);
 
-  if (!loaded || badges.length === 0) return null;
-  const got = badges.filter((b) => earned.has(b.code)).length;
+  if (!loaded || (!mainBadge && quizBadges.length === 0)) return null;
+
+  const earnedSub = quizBadges.find((b) => earnedCodes.has(b.code)) || null;
+  const isCompleted = Boolean((mainBadge && earnedCodes.has(mainBadge.code)) || earnedSub);
 
   return (
     <section style={{ marginTop: "40px" }}>
       <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text-color)", marginBottom: "4px" }}>
-        このルートで授かるしるし
+        このルートで授かる踏破印（SHUIN）
       </h2>
       <p style={{ fontSize: "0.85rem", color: "#A39687", marginBottom: "16px" }}>
-        歩き終え、自答すると授かる称号が変わる ・ {got}/{badges.length} 取得
+        最後まで巡り「自答の儀」で答えを選ぶと、メイン印にあなただけの副印（サブ）が刻まれます ・ {isCompleted ? "踏破済" : "未踏破"}
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "12px" }}>
-        {badges.map((b) => {
-          const isGot = earned.has(b.code);
-          return (
-            <div
-              key={b.code}
-              style={{
-                background: "#121212",
-                border: "1px solid " + (isGot ? "#C9A84C" : "rgba(201,168,76,0.25)"),
-                borderRadius: "12px",
-                padding: "16px 12px",
-                textAlign: "center",
-                opacity: isGot ? 1 : 0.6,
-                filter: isGot ? "none" : "grayscale(0.6)",
-              }}
-            >
-              <div style={{ color: "#C9A84C", fontSize: "0.7rem", letterSpacing: "2px" }}>{"★".repeat(b.rarity || 1)}</div>
-              <div style={{ color: "#C9A84C", fontSize: "1rem", fontWeight: 800, fontFamily: "serif", margin: "8px 0 4px" }}>
-                {isGot ? b.name_ja : "◇ " + b.name_ja}
-              </div>
-              <div style={{ color: "#9a8f6f", fontSize: "0.68rem", fontStyle: "italic" }}>
-                {isGot ? b.subtitle_en : "未取得"}
-              </div>
+      <div
+        style={{
+          background: "#121212",
+          border: "1px solid " + (isCompleted ? "var(--accent-color)" : "rgba(201,168,76,0.25)"),
+          borderRadius: "14px",
+          padding: "20px 18px",
+          maxWidth: "360px",
+          opacity: isCompleted ? 1 : 0.75,
+          filter: isCompleted ? "none" : "grayscale(0.5)",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+          <span style={{ color: "var(--accent-color)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "1px" }}>
+            メイン（踏破印）
+          </span>
+          <span style={{ color: "var(--accent-color)", fontSize: "0.75rem", letterSpacing: "2px" }}>
+            {"★".repeat((mainBadge && mainBadge.rarity) || 2)}
+          </span>
+        </div>
+        <div style={{ color: "var(--accent-color)", fontSize: "1.15rem", fontWeight: 800, fontFamily: "serif", marginBottom: "4px" }}>
+          {isCompleted ? mainBadge?.name_ja || "ルートの巡礼者" : `◇ ${mainBadge?.name_ja || "ルートの巡礼者"}`}
+        </div>
+        <div style={{ color: "#9a8f6f", fontSize: "0.72rem", fontStyle: "italic", marginBottom: "14px" }}>
+          {isCompleted ? mainBadge?.subtitle_en || "" : "全スポットをめぐると刻印されます"}
+        </div>
+
+        {quizBadges.length > 0 && (
+          <div
+            style={{
+              borderTop: "1px dashed rgba(201,168,76,0.3)",
+              paddingTop: "12px",
+            }}
+          >
+            <div style={{ color: "#A39687", fontSize: "0.72rem", fontWeight: 700, marginBottom: "4px" }}>
+              サブ（自答の儀の選択印）
             </div>
-          );
-        })}
+            {earnedSub ? (
+              <>
+                <div style={{ color: "#F2E9D5", fontSize: "0.95rem", fontWeight: 800 }}>
+                  {earnedSub.name_ja}
+                </div>
+                <div style={{ color: "#9a8f6f", fontSize: "0.75rem", marginTop: "2px" }}>
+                  {earnedSub.description}
+                </div>
+              </>
+            ) : (
+              <div style={{ color: "#888", fontSize: "0.8rem" }}>
+                ◇ 自答の儀での選択に応じて刻印（全{quizBadges.length}種から1つ）
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, X, User, BookOpen, Compass, Bookmark, Bell, Settings, LogOut, Award } from "lucide-react";
+import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 
 export default function HeaderNav() {
   const { user, loading, logout } = useAuth();
+  const { unseenCount } = useBadgeNotifications(user?.id);
   console.log("--- HeaderNav Auth State ---", { loading, user });
   const pathname = usePathname();
   const router = useRouter();
@@ -177,6 +179,31 @@ export default function HeaderNav() {
                   }} 
                 />
               </div>
+              {unseenCount > 0 && (
+                <span
+                  aria-label={`新着称号 ${unseenCount}件`}
+                  style={{
+                    position: "absolute",
+                    top: "-6px",
+                    right: "-6px",
+                    minWidth: "20px",
+                    height: "20px",
+                    padding: "0 5px",
+                    borderRadius: "10px",
+                    backgroundColor: "var(--primary-color)",
+                    color: "#fff",
+                    fontSize: "0.72rem",
+                    fontWeight: "800",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "2px solid #FFFDF9",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                  }}
+                >
+                  {unseenCount}
+                </span>
+              )}
             </button>
 
             {/* 展開メニュー */}
@@ -216,7 +243,7 @@ export default function HeaderNav() {
                   <MenuItem href="/routes" icon={Compass} label="ルート一覧" onClick={() => setMenuOpen(false)} />
                   <MenuItem href="/mypage/bookmarks" icon={Bookmark} label="お気に入り" onClick={() => setMenuOpen(false)} />
                   <MenuItem href="/notifications" icon={Bell} label="街の便り" onClick={() => setMenuOpen(false)} badge={3} />
-                  <MenuItem href="/badges" icon={Award} label="称号" onClick={() => setMenuOpen(false)} />
+                  <MenuItem href="/badges" icon={Award} label="称号" onClick={() => setMenuOpen(false)} badge={unseenCount > 0 ? unseenCount : undefined} />
                   <MenuItem href="/settings" icon={Settings} label="設定" onClick={() => setMenuOpen(false)} />
                   
                   <div style={{ borderTop: "2px dashed #EBE5D9", margin: "8px 0" }}></div>

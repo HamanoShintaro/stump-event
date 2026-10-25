@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -169,12 +170,17 @@ export default function RouteMapUI({
   const [selectedSpot, setSelectedSpot] = useState<Spot | null>(null);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => setUserPos([pos.coords.latitude, pos.coords.longitude]),
-        (err) => console.log("User location access denied or failed", err)
-      );
-    }
+    if (!navigator.geolocation) return;
+
+    const watchId = navigator.geolocation.watchPosition(
+      (pos) => setUserPos([pos.coords.latitude, pos.coords.longitude]),
+      (err) => console.log("User location access denied or failed", err),
+      { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
+    );
+
+    return () => {
+      navigator.geolocation.clearWatch(watchId);
+    };
   }, []);
 
   // 地図の初期境界 (Bounds) を算出
@@ -420,6 +426,26 @@ export default function RouteMapUI({
                   : "スポット詳細をピンから確認中"}
                 {distanceToSelected !== null && ` (${formatDistance(distanceToSelected)})`}
               </p>
+
+              {activeSpotId === selectedSpot.id && (
+                <div style={{ marginTop: "12px" }}>
+                  <Link 
+                    href={`/routes/${rally.id}/spot/${selectedSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                    className="btn-primary"
+                    style={{ 
+                      display: "inline-flex", 
+                      alignItems: "center", 
+                      gap: "6px",
+                      padding: "8px 16px",
+                      fontSize: "0.85rem",
+                      textDecoration: "none",
+                      fontWeight: "bold"
+                    }}
+                  >
+                    しるしを刻む
+                  </Link>
+                </div>
+              )}
 
               {/* しるしを獲得したメンバー一覧 */}
               {groupId && spotAcquiredMembers[selectedSpot.id] && spotAcquiredMembers[selectedSpot.id].length > 0 && (

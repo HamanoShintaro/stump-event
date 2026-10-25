@@ -966,9 +966,6 @@ export default function SpotCheckInPage({
                   </p>
                 </div>
 
-                {/* 新規獲得称号の表示（P2: 封印→タップ開封のリビール演出） */}
-                <BadgeReveal badges={newlyAcquiredBadges} />
-
                 {/* 友達との思い出共有 (連れ立ち感想メモ・写真) または ソロの思い出保存 */}
                 (
                   <div style={{ padding: "0 24px 20px 24px", display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -1097,7 +1094,7 @@ export default function SpotCheckInPage({
                         fontWeight: "700"
                       }}
                     >
-                      🏆 ルート完走 — 称号を受け取る
+                      💮 ルート完走 — 踏破印を刻む
                     </button>
                   ) : (
                     <button 
@@ -1283,11 +1280,14 @@ export default function SpotCheckInPage({
                   
                   <div style={{ height: "16px" }} />
                   
+                  <div style={{ fontSize: "0.75rem", color: "#A39687", letterSpacing: "2px", marginBottom: "4px", fontWeight: "700" }}>
+                    ルートの踏破印（メイン）
+                  </div>
                   <h2 style={{ fontSize: "1.45rem", fontWeight: "900", color: "var(--accent-color)", marginBottom: "6px", fontFamily: "serif" }}>
-                    {route.title || route.name}の踏破者
+                    {newlyAcquiredBadges.find((b: any) => b.category === "route")?.name_ja || `${route.area_name || route.title || route.name}の巡礼者`}
                   </h2>
                   <div style={{ fontSize: "0.85rem", color: "#888888", letterSpacing: "1px", fontStyle: "italic", marginBottom: "12px" }}>
-                    Trailblazer of {route.title || route.name}
+                    {newlyAcquiredBadges.find((b: any) => b.category === "route")?.subtitle_en || `Pilgrim of ${route.area_name || route.title || route.name}`}
                   </div>
                   <div style={{ color: "var(--accent-color)", fontSize: "1.2rem", letterSpacing: "4px" }}>★★★</div>
                   {selectedQuizBadge && (
@@ -1298,7 +1298,7 @@ export default function SpotCheckInPage({
                       border: "1px dashed rgba(201,168,76,0.3)",
                       textAlign: "left"
                     }}>
-                      <div style={{ fontSize: "0.75rem", color: "#888", letterSpacing: "1px", marginBottom: "4px", fontWeight: "700" }}>授かりし称号</div>
+                      <div style={{ fontSize: "0.75rem", color: "#888", letterSpacing: "1px", marginBottom: "4px", fontWeight: "700" }}>自答の儀・副印（サブ）</div>
                       <div style={{ fontSize: "1.05rem", fontWeight: "800", color: "var(--accent-color)" }}>
                         {selectedQuizBadge.name_ja}
                       </div>

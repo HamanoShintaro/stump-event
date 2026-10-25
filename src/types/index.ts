@@ -3,6 +3,8 @@ export interface Spot {
   name: string;
   description?: string;
   address?: string;
+  prefecture?: string; // e.g. "東京都", "埼玉県"
+  city?: string; // 東京23区は「〇〇区」、それ以外は「〇〇市」「〇〇郡」
   lat: number;
   lng: number;
   qr_token?: string; // Used for QR check-in
