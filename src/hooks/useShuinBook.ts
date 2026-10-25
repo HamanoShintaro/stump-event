@@ -51,6 +51,20 @@ export interface ShuinGroupInfo {
   loading: boolean;
 }
 
+export interface ShuinFilterSummary {
+  totalStamps: number;
+  uniqueCities: string[];
+  uniqueRoutes: Array<{
+    id: string;
+    title: string;
+    count: number;
+    storyIntro?: string;
+  }>;
+  companionsList: string[];
+  photosCount: number;
+  memosCount: number;
+}
+
 /**
  * 住所文字列から市区町村名を簡易抽出するフォールバック
  */
@@ -95,6 +109,7 @@ export function useShuinBook(user: any) {
   const [selectedMonth, setSelectedMonth] = useState<string>("すべて");
   const [selectedCity, setSelectedCity] = useState<string>("すべて");
   const [selectedCompanion, setSelectedCompanion] = useState<string>("すべて");
+  const [selectedRouteId, setSelectedRouteId] = useState<string>("すべて");
   const [lifeFilter, setLifeFilter] = useState<ShuinLifeFilter>("all");
   const [viewMode, setViewMode] = useState<ShuinViewMode>("grid");
   const [selectedEvent, setSelectedEvent] = useState<ShuinDiaryEvent | null>(null);
@@ -103,6 +118,28 @@ export function useShuinBook(user: any) {
   const [showParticipatedModal, setShowParticipatedModal] = useState(false);
   const [zoomPhotoUrl, setZoomPhotoUrl] = useState<string | null>(null);
   const [groupInfo, setGroupInfo] = useState<ShuinGroupInfo | null>(null);
+
+  // URLクエリパラメータ（?companion= / ?routeId= / ?view=）からの初期状態復元
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const compParam = params.get("companion");
+      const routeParam = params.get("routeId");
+      const viewParam = params.get("view");
+      if (compParam && compParam.trim()) {
+        setSelectedCompanion(compParam.trim());
+      }
+      if (routeParam && routeParam.trim()) {
+        setSelectedRouteId(routeParam.trim());
+      }
+      if (viewParam === "album" || viewParam === "grid") {
+        setViewMode(viewParam);
+      }
+    } catch {
+      // ignore URL parse error
+    }
+  }, []);
 
   // 連れ立ち（グループ）詳細情報のフェッチ（モーダル選択時）
   useEffect(() => {
@@ -277,14 +314,18 @@ export function useShuinBook(user: any) {
           prefecture: string;
           f7_fragment: string;
           f7_full: string;
+          route_id?: string;
         }
       > = {};
-      const routeMap: Record<string, { title: string; category?: string; prefecture?: string }> = {};
+      const routeMap: Record<
+        string,
+        { title: string; category?: string; prefecture?: string; description?: string }
+      > = {};
 
       if (spotIds.length) {
         const { data: sp } = await supabase
           .from("spots")
-          .select("id, name, address, city, prefecture, f7_fragment, f7_full")
+          .select("id, name, address, city, prefecture, f7_fragment, f7_full, route_id")
           .in("id", spotIds);
 
         (sp || []).forEach((x: any) => {
@@ -295,14 +336,18 @@ export function useShuinBook(user: any) {
             prefecture: x.prefecture || "",
             f7_fragment: x.f7_fragment || "",
             f7_full: x.f7_full || "",
+            route_id: x.route_id,
           };
+          if (x.route_id && !routeIds.includes(x.route_id)) {
+            routeIds.push(x.route_id);
+          }
         });
       }
 
       if (routeIds.length) {
         const { data: rt } = await supabase
           .from("routes")
-          .select("id, title, category, prefecture")
+          .select("id, title, category, prefecture, description")
           .in("id", routeIds);
 
         (rt || []).forEach((x: any) => {
@@ -310,6 +355,7 @@ export function useShuinBook(user: any) {
             title: x.title,
             category: x.category,
             prefecture: x.prefecture,
+            description: x.description || "",
           };
         });
       }
@@ -460,10 +506,15 @@ export function useShuinBook(user: any) {
       if (extraRouteIds.length > 0) {
         const { data: extraRt } = await supabase
           .from("routes")
-          .select("id, title, category, prefecture")
+          .select("id, title, category, prefecture, description")
           .in("id", extraRouteIds);
         (extraRt || []).forEach((x: any) => {
-          routeMap[x.id] = { title: x.title, category: x.category, prefecture: x.prefecture };
+          routeMap[x.id] = {
+            title: x.title,
+            category: x.category,
+            prefecture: x.prefecture,
+            description: x.description || "",
+          };
         });
       }
 
@@ -559,6 +610,8 @@ export function useShuinBook(user: any) {
           route_id: rid,
           routeTitle: routeMap[rid]?.title || "ルート",
           category: routeMap[rid]?.category,
+          prefecture: routeMap[rid]?.prefecture,
+          storyIntro: routeMap[rid]?.description || "",
           stampedSpotsCount,
           totalSpots,
           latestActivityAt,
@@ -586,7 +639,6 @@ export function useShuinBook(user: any) {
       const enrichedDiary: ShuinDiaryEvent[] = events.map((e: any) => {
         const d = new Date(e.created_at);
         const yearMonth = `${d.getFullYear()}年${d.getMonth() + 1}月`;
-        const rInfo = routeMap[e.route_id] || { title: "ルート" };
         const spInfo = spotDetailMap[e.spot_id] || {
           name: "スポット",
           address: "",
@@ -595,8 +647,10 @@ export function useShuinBook(user: any) {
           f7_fragment: "",
           f7_full: "",
         };
+        const resolvedRouteId = e.route_id || spInfo.route_id || "";
+        const rInfo = routeMap[resolvedRouteId] || { title: "ルート" };
 
-        const resolvedGroupId = e.group_id || routeToGroupIdMap[e.route_id] || null;
+        const resolvedGroupId = e.group_id || routeToGroupIdMap[resolvedRouteId] || null;
         const groupSpotKey = resolvedGroupId ? `${resolvedGroupId}-${e.spot_id}` : "";
         const sharedInfo = groupSpotKey ? sharedEventMap[groupSpotKey] : undefined;
         const localSavedMemo = readLocalMemo(e.id);
@@ -619,6 +673,7 @@ export function useShuinBook(user: any) {
 
         return {
           ...e,
+          route_id: resolvedRouteId,
           spotName: spInfo.name,
           spotAddress: spInfo.address,
           spotCity,
@@ -797,7 +852,46 @@ export function useShuinBook(user: any) {
       .map(([name]) => name);
   }, [diary]);
 
-  // 選択された年月・街・同行者・ライフログ条件でのフィルタリング
+  // 押印記録があるルート一覧（ルート別フィルターおよびストーリー絵巻用）
+  const diaryRoutes = useMemo(() => {
+    const map = new Map<
+      string,
+      {
+        id: string;
+        title: string;
+        count: number;
+        category?: string;
+        prefecture?: string;
+        storyIntro?: string;
+      }
+    >();
+    const prMap = new Map<string, any>();
+    participatedRoutes.forEach((pr) => {
+      if (pr?.route_id) prMap.set(pr.route_id, pr);
+    });
+
+    diary.forEach((d) => {
+      if (!d.route_id) return;
+      const pr = prMap.get(d.route_id);
+      const existing = map.get(d.route_id);
+      if (!existing) {
+        map.set(d.route_id, {
+          id: d.route_id,
+          title: d.routeName || pr?.routeTitle || "ルート",
+          count: 1,
+          category: d.category || pr?.category,
+          prefecture: d.spotPrefecture || pr?.prefecture,
+          storyIntro: pr?.storyIntro || "",
+        });
+      } else {
+        existing.count += 1;
+      }
+    });
+
+    return Array.from(map.values());
+  }, [diary, participatedRoutes]);
+
+  // 選択された年月・街・同行者・ルート・ライフログ条件でのフィルタリング
   const filteredDiary = useMemo(() => {
     return diary.filter((d) => {
       if (selectedMonth !== "すべて" && d.yearMonth !== selectedMonth) {
@@ -812,6 +906,9 @@ export function useShuinBook(user: any) {
       ) {
         return false;
       }
+      if (selectedRouteId !== "すべて" && d.route_id !== selectedRouteId) {
+        return false;
+      }
       if (lifeFilter === "tsuredachi" && !d.group_id) {
         return false;
       }
@@ -823,7 +920,60 @@ export function useShuinBook(user: any) {
       }
       return true;
     });
-  }, [diary, selectedMonth, selectedCity, selectedCompanion, lifeFilter]);
+  }, [diary, selectedMonth, selectedCity, selectedCompanion, selectedRouteId, lifeFilter]);
+
+  // 現在の絞り込み条件に対する月間・旅路の紀行サマリー
+  const currentFilterSummary = useMemo<ShuinFilterSummary>(() => {
+    const citySet = new Set<string>();
+    const compSet = new Set<string>();
+    const routeCountMap = new Map<
+      string,
+      { id: string; title: string; count: number; storyIntro?: string }
+    >();
+    let photosCount = 0;
+    let memosCount = 0;
+
+    const prMap = new Map<string, any>();
+    participatedRoutes.forEach((pr) => {
+      if (pr?.route_id) prMap.set(pr.route_id, pr);
+    });
+
+    filteredDiary.forEach((d) => {
+      if (d.spotAreaLabel) citySet.add(d.spotAreaLabel);
+      (d.companionNames || []).forEach((c) => {
+        if (c && c.trim()) compSet.add(c.trim());
+      });
+      if (d.hasPhoto || d.photo_url || d.sharedPhotoUrl) {
+        photosCount += 1;
+      }
+      if (d.memo || d.sharedMemoText) {
+        memosCount += 1;
+      }
+      if (d.route_id) {
+        const pr = prMap.get(d.route_id);
+        const existing = routeCountMap.get(d.route_id);
+        if (!existing) {
+          routeCountMap.set(d.route_id, {
+            id: d.route_id,
+            title: d.routeName || pr?.routeTitle || "ルート",
+            count: 1,
+            storyIntro: pr?.storyIntro || "",
+          });
+        } else {
+          existing.count += 1;
+        }
+      }
+    });
+
+    return {
+      totalStamps: filteredDiary.length,
+      uniqueCities: Array.from(citySet),
+      uniqueRoutes: Array.from(routeCountMap.values()).sort((a, b) => b.count - a.count),
+      companionsList: Array.from(compSet),
+      photosCount,
+      memosCount,
+    };
+  }, [filteredDiary, participatedRoutes]);
 
   // 選択された月における完走ルート
   const filteredCompletedRoutes = useMemo(() => {
@@ -869,6 +1019,10 @@ export function useShuinBook(user: any) {
     companions,
     selectedCompanion,
     setSelectedCompanion,
+    selectedRouteId,
+    setSelectedRouteId,
+    diaryRoutes,
+    currentFilterSummary,
     lifeFilter,
     setLifeFilter,
     viewMode,

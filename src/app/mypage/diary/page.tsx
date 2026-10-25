@@ -54,6 +54,10 @@ export default function DiaryPage() {
     companions,
     selectedCompanion,
     setSelectedCompanion,
+    selectedRouteId,
+    setSelectedRouteId,
+    diaryRoutes,
+    currentFilterSummary,
     lifeFilter,
     setLifeFilter,
     viewMode,
@@ -83,6 +87,7 @@ export default function DiaryPage() {
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [cardDataUrl, setCardDataUrl] = useState<string | null>(null);
   const [generatingCard, setGeneratingCard] = useState(false);
+  const [storyScrollRouteId, setStoryScrollRouteId] = useState<string | null>(null);
 
   const handlePhotoUploadChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -729,13 +734,237 @@ export default function DiaryPage() {
                   })}
                 </div>
               )}
+
+              {/* 📜 巡ったルート別フィルター ＆ ルート絵巻ボタン */}
+              {diaryRoutes.length > 0 && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    overflowX: "auto",
+                    scrollbarWidth: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: "#A39687",
+                      whiteSpace: "nowrap",
+                      marginRight: "2px",
+                    }}
+                  >
+                    📜 物語ルート:
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedRouteId("すべて")}
+                    style={{
+                      padding: "4px 12px",
+                      borderRadius: "14px",
+                      border: "1px solid",
+                      borderColor: selectedRouteId === "すべて" ? "var(--primary-color)" : "#EBE5D9",
+                      background:
+                        selectedRouteId === "すべて" ? "rgba(199, 68, 46, 0.1)" : "#FAF6EE",
+                      color: selectedRouteId === "すべて" ? "var(--primary-color)" : "#5C4E43",
+                      fontSize: "0.74rem",
+                      fontWeight: 700,
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    すべて
+                  </button>
+                  {diaryRoutes.map((rt) => {
+                    const active = selectedRouteId === rt.id;
+                    return (
+                      <div
+                        key={rt.id}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setSelectedRouteId(rt.id)}
+                          style={{
+                            padding: "4px 12px",
+                            borderRadius: "14px",
+                            border: "1px solid",
+                            borderColor: active ? "var(--primary-color)" : "#EBE5D9",
+                            background: active ? "rgba(199, 68, 46, 0.12)" : "#FAF6EE",
+                            color: active ? "var(--primary-color)" : "#5C4E43",
+                            fontSize: "0.74rem",
+                            fontWeight: 700,
+                            cursor: "pointer",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {rt.title} ({rt.count})
+                        </button>
+                        {rt.count > 0 && (
+                          <button
+                            type="button"
+                            onClick={() => setStoryScrollRouteId(rt.id)}
+                            title="このルートの物語と歩みを絵巻で振り返る"
+                            style={{
+                              padding: "4px 10px",
+                              borderRadius: "14px",
+                              border: "1px solid var(--accent-color)",
+                              background: "#FFFDF9",
+                              color: "#6E5314",
+                              fontSize: "0.7rem",
+                              fontWeight: 800,
+                              cursor: "pointer",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            📜 物語と歩みを振り返る（絵巻）
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
+
+            {/* 📜 月間・旅路の紀行サマリーバナー */}
+            {(selectedMonth !== "すべて" ||
+              selectedCompanion !== "すべて" ||
+              selectedCity !== "すべて" ||
+              selectedRouteId !== "すべて") &&
+              currentFilterSummary.totalStamps > 0 && (
+                <section
+                  className="glass-card"
+                  style={{
+                    background: "linear-gradient(135deg, #FFFDF9 0%, #FAF4E6 100%)",
+                    border: "1.5px solid var(--accent-color)",
+                    borderRadius: "16px",
+                    padding: "16px 20px",
+                    marginBottom: "24px",
+                    boxShadow: "0 4px 14px rgba(201, 168, 76, 0.1)",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      flexWrap: "wrap",
+                      gap: "12px",
+                    }}
+                  >
+                    <div style={{ flex: "1 1 260px" }}>
+                      <div
+                        style={{
+                          fontSize: "var(--font-size-small)",
+                          color: "var(--accent-color)",
+                          fontWeight: 800,
+                          letterSpacing: "0.05em",
+                          marginBottom: "2px",
+                        }}
+                      >
+                        📜 月間・旅路の紀行サマリー
+                      </div>
+                      <h2
+                        style={{
+                          fontSize: "1.02rem",
+                          fontWeight: 800,
+                          color: "var(--text-color)",
+                          margin: "0 0 6px 0",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {selectedCompanion !== "すべて"
+                          ? `👥 ${selectedCompanion}さんとの旅路 — ともにめぐった記憶`
+                          : selectedMonth !== "すべて"
+                            ? `📖 ${selectedMonth}の紀行録 — ${Math.max(1, currentFilterSummary.uniqueCities.length)}つの街をめぐり、${currentFilterSummary.totalStamps}個のしるし${currentFilterSummary.photosCount > 0 ? `と${currentFilterSummary.photosCount}枚の写真` : ""}を刻みました`
+                            : selectedRouteId !== "すべて"
+                              ? `📜 「${currentFilterSummary.uniqueRoutes[0]?.title || "ルート"}」の紀行録`
+                              : `📍 ${selectedCity}の紀行録 — ${currentFilterSummary.totalStamps}個のしるしを刻みました`}
+                      </h2>
+                      <p
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "#5C4E43",
+                          margin: 0,
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        訪れた街 {Math.max(1, currentFilterSummary.uniqueCities.length)}エリア ・ 巡ったルート{" "}
+                        {Math.max(1, currentFilterSummary.uniqueRoutes.length)}本 ・ 押印{" "}
+                        {currentFilterSummary.totalStamps}個
+                        {currentFilterSummary.photosCount > 0
+                          ? ` ・ 思い出写真 ${currentFilterSummary.photosCount}枚`
+                          : ""}
+                        {currentFilterSummary.memosCount > 0
+                          ? ` ・ あとがき ${currentFilterSummary.memosCount}件`
+                          : ""}
+                      </p>
+
+                      {currentFilterSummary.uniqueRoutes.length > 0 && (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "6px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          {currentFilterSummary.uniqueRoutes.map((ur) => (
+                            <button
+                              key={ur.id}
+                              type="button"
+                              onClick={() => setStoryScrollRouteId(ur.id)}
+                              style={{
+                                fontSize: "0.74rem",
+                                fontWeight: 800,
+                                padding: "4px 10px",
+                                borderRadius: "12px",
+                                border: "1px solid var(--accent-color)",
+                                background: "#FFFDF9",
+                                color: "#5C4E43",
+                                cursor: "pointer",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "4px",
+                              }}
+                            >
+                              📜 {ur.title}（絵巻を開く ▸）
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedMonth("すべて");
+                        setSelectedCity("すべて");
+                        setSelectedCompanion("すべて");
+                        setSelectedRouteId("すべて");
+                      }}
+                      className="btn-secondary"
+                      style={{
+                        padding: "6px 12px",
+                        fontSize: "0.74rem",
+                        borderRadius: "10px",
+                        background: "#FFFDF9",
+                      }}
+                    >
+                      全期間に戻す
+                    </button>
+                  </div>
+                </section>
+              )}
 
             {/* 1. ルートの踏破印（メイン＋サブ） */}
             {filteredCompletedRoutes.length > 0 &&
               lifeFilter === "all" &&
               selectedCity === "すべて" &&
-              selectedCompanion === "すべて" && (
+              selectedCompanion === "すべて" &&
+              selectedRouteId === "すべて" && (
               <section style={{ marginBottom: "28px" }}>
                 <h2
                   style={{
@@ -903,6 +1132,7 @@ export default function DiaryPage() {
                     setSelectedMonth("すべて");
                     setSelectedCity("すべて");
                     setSelectedCompanion("すべて");
+                    setSelectedRouteId("すべて");
                     setLifeFilter("all");
                   }}
                   className="btn-secondary"
@@ -2335,7 +2565,37 @@ export default function DiaryPage() {
                         )}
                       </div>
 
-                      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "2px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-end",
+                          gap: "8px",
+                          flexWrap: "wrap",
+                          marginTop: "2px",
+                        }}
+                      >
+                        {pr.stampedSpotsCount > 0 && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setShowParticipatedModal(false);
+                              setStoryScrollRouteId(pr.route_id);
+                            }}
+                            className="btn-secondary"
+                            style={{
+                              padding: "8px 12px",
+                              fontSize: "0.78rem",
+                              borderRadius: "8px",
+                              border: "1px solid var(--accent-color)",
+                              background: "#FFFDF9",
+                              color: "#5C4E43",
+                              fontWeight: 800,
+                              cursor: "pointer",
+                            }}
+                          >
+                            📜 物語と歩みを振り返る（絵巻）
+                          </button>
+                        )}
                         <Link
                           href={`/routes/${pr.route_id}`}
                           onClick={() => setShowParticipatedModal(false)}
@@ -2389,6 +2649,478 @@ export default function DiaryPage() {
           </div>
         </div>
       )}
+
+      {/* 📜 物語の回顧録（ルート別ストーリー絵巻）モーダル */}
+      {storyScrollRouteId &&
+        (() => {
+          const prMeta = participatedRoutes.find((p) => p.route_id === storyScrollRouteId);
+          const drMeta = diaryRoutes.find((r) => r.id === storyScrollRouteId);
+          const routeEvents = [...diary]
+            .filter((d) => d.route_id === storyScrollRouteId)
+            .sort(
+              (a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+            );
+
+          const routeTitle =
+            prMeta?.routeTitle ||
+            drMeta?.title ||
+            routeEvents[0]?.routeName ||
+            "物語のルート";
+          const routeCategory =
+            prMeta?.category || drMeta?.category || routeEvents[0]?.category;
+          const routePrefecture =
+            prMeta?.prefecture || drMeta?.prefecture || routeEvents[0]?.spotPrefecture || "";
+          const routeStoryIntro = prMeta?.storyIntro || drMeta?.storyIntro || "";
+          const stampImg = getCategoryStampUrl(routeCategory);
+          const completedInfo = filteredCompletedRoutes.find(
+            (cr) => cr.route_id === storyScrollRouteId
+          );
+
+          return (
+            <div
+              onClick={() => setStoryScrollRouteId(null)}
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                background: "rgba(38, 30, 24, 0.78)",
+                backdropFilter: "blur(5px)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 1200,
+                padding: "20px",
+              }}
+            >
+              <div
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  background: "linear-gradient(180deg, #FFFDF9 0%, #FAF5E8 100%)",
+                  border: "2px solid var(--accent-color)",
+                  borderRadius: "20px",
+                  padding: "26px 22px",
+                  maxWidth: "540px",
+                  maxHeight: "88vh",
+                  overflowY: "auto",
+                  width: "100%",
+                  boxShadow: "0 16px 40px rgba(38, 30, 24, 0.3)",
+                  color: "var(--text-color)",
+                  position: "relative",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setStoryScrollRouteId(null)}
+                  style={{
+                    position: "absolute",
+                    top: "16px",
+                    right: "16px",
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                    color: "#8A7E72",
+                    padding: "4px",
+                  }}
+                  aria-label="閉じる"
+                >
+                  <X size={20} />
+                </button>
+
+                {/* 絵巻ヘッダー */}
+                <div
+                  style={{
+                    textAlign: "center",
+                    borderBottom: "1px dashed var(--accent-color)",
+                    paddingBottom: "16px",
+                    marginBottom: "18px",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: "var(--accent-color)",
+                      letterSpacing: "0.12em",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    📜 物語の回顧録（ストーリー絵巻）
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: "1.25rem",
+                      fontWeight: 900,
+                      color: "var(--text-color)",
+                      margin: "0 0 8px 0",
+                      fontFamily: "'Noto Serif JP', serif",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {routeTitle}
+                  </h3>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: "8px",
+                      flexWrap: "wrap",
+                      fontSize: "0.74rem",
+                    }}
+                  >
+                    {routePrefecture && (
+                      <span
+                        style={{
+                          padding: "2px 9px",
+                          borderRadius: "12px",
+                          background: "#FAF6EE",
+                          border: "1px solid #EBE5D9",
+                          color: "#5C4E43",
+                          fontWeight: 700,
+                        }}
+                      >
+                        📍 {routePrefecture}
+                      </span>
+                    )}
+                    {routeCategory && (
+                      <span
+                        style={{
+                          padding: "2px 9px",
+                          borderRadius: "12px",
+                          background: "rgba(199, 68, 46, 0.1)",
+                          color: "var(--primary-color)",
+                          fontWeight: 800,
+                        }}
+                      >
+                        {routeCategory}
+                      </span>
+                    )}
+                    <span
+                      style={{
+                        padding: "2px 9px",
+                        borderRadius: "12px",
+                        background: "rgba(201, 168, 76, 0.18)",
+                        color: "#6E5314",
+                        fontWeight: 800,
+                      }}
+                    >
+                      刻んだ足跡 {routeEvents.length} 幕
+                    </span>
+                  </div>
+
+                  {routeStoryIntro && (
+                    <p
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#6E6256",
+                        margin: "12px 0 0 0",
+                        lineHeight: 1.6,
+                        textAlign: "left",
+                        background: "#FFFDF9",
+                        padding: "10px 14px",
+                        borderRadius: "10px",
+                        border: "1px solid #EBE5D9",
+                      }}
+                    >
+                      {routeStoryIntro}
+                    </p>
+                  )}
+                </div>
+
+                {/* 時系列の歩み（第1幕〜最終幕） */}
+                {routeEvents.length > 0 ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "16px",
+                      position: "relative",
+                    }}
+                  >
+                    {routeEvents.map((ev, idx) => {
+                      const vDate = new Date(ev.created_at);
+                      const dStr = vDate.toLocaleDateString("ja-JP", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      });
+                      const tStr = vDate.toLocaleTimeString("ja-JP", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      });
+                      const storyText = ev.spotFullStory || ev.spotFragment || "";
+                      const displayPhoto = ev.photo_url || ev.sharedPhotoUrl;
+                      const displayMemo = ev.memo || ev.sharedMemoText;
+
+                      return (
+                        <div
+                          key={ev.id}
+                          style={{
+                            background: "#FFFDF9",
+                            border: "1px solid #EBE5D9",
+                            borderRadius: "14px",
+                            padding: "14px 16px",
+                            boxShadow: "0 2px 8px rgba(92, 78, 67, 0.04)",
+                            position: "relative",
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              flexWrap: "wrap",
+                              gap: "6px",
+                              marginBottom: "8px",
+                              borderBottom: "1px dashed #EBE5D9",
+                              paddingBottom: "6px",
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: "0.72rem",
+                                fontWeight: 800,
+                                color: "var(--primary-color)",
+                                background: "rgba(199, 68, 46, 0.1)",
+                                padding: "2px 8px",
+                                borderRadius: "10px",
+                              }}
+                            >
+                              第 {idx + 1} 幕
+                            </span>
+                            <span style={{ fontSize: "0.74rem", color: "#8A7E72", fontWeight: 700 }}>
+                              {dStr} {tStr}
+                            </span>
+                          </div>
+
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "12px",
+                              marginBottom: storyText || displayPhoto || displayMemo ? "10px" : 0,
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: "46px",
+                                height: "46px",
+                                borderRadius: "50%",
+                                background: "#fff",
+                                border: "1.5px dashed var(--primary-color)",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                flexShrink: 0,
+                              }}
+                            >
+                              <img
+                                src={stampImg}
+                                alt="SHUIN印影"
+                                style={{ width: "84%", height: "84%", objectFit: "contain" }}
+                              />
+                            </div>
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div
+                                style={{
+                                  fontSize: "0.98rem",
+                                  fontWeight: 900,
+                                  color: "var(--text-color)",
+                                  fontFamily: "'Noto Serif JP', serif",
+                                }}
+                              >
+                                {ev.spotName}
+                              </div>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: "8px",
+                                  flexWrap: "wrap",
+                                  marginTop: "2px",
+                                  fontSize: "0.7rem",
+                                  color: "#8A7E72",
+                                }}
+                              >
+                                {ev.spotAreaLabel && <span>📍 {ev.spotAreaLabel}</span>}
+                                {ev.visitor_number && (
+                                  <span style={{ color: "var(--primary-color)", fontWeight: 700 }}>
+                                    第 {ev.visitor_number} 番のしるし
+                                  </span>
+                                )}
+                                {ev.companionNames && ev.companionNames.length > 0 && (
+                                  <span style={{ color: "#6E5314", fontWeight: 700 }}>
+                                    👥 {ev.companionNames.join("、")} さんと同行
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+
+                          {storyText && (
+                            <div
+                              style={{
+                                background: "#FAF6EE",
+                                borderLeft: "3px solid var(--accent-color)",
+                                borderRadius: "6px",
+                                padding: "8px 12px",
+                                fontSize: "0.78rem",
+                                color: "#5C4E43",
+                                lineHeight: 1.6,
+                                marginBottom: displayPhoto || displayMemo ? "10px" : 0,
+                                whiteSpace: "pre-line",
+                              }}
+                            >
+                              {storyText}
+                            </div>
+                          )}
+
+                          {(displayPhoto || displayMemo) && (
+                            <div
+                              style={{
+                                background: "#FFFDF9",
+                                border: "1px dashed var(--accent-color)",
+                                borderRadius: "10px",
+                                padding: "10px",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "8px",
+                              }}
+                            >
+                              {displayPhoto && (
+                                <img
+                                  src={displayPhoto}
+                                  alt={ev.spotName}
+                                  onClick={() => setZoomPhotoUrl(displayPhoto)}
+                                  style={{
+                                    width: "100%",
+                                    maxHeight: "190px",
+                                    objectFit: "cover",
+                                    borderRadius: "8px",
+                                    border: "1px solid #EBE5D9",
+                                    cursor: "pointer",
+                                  }}
+                                />
+                              )}
+                              {displayMemo && (
+                                <div
+                                  style={{
+                                    fontSize: "0.82rem",
+                                    color: "var(--text-color)",
+                                    fontStyle: "italic",
+                                    lineHeight: 1.5,
+                                  }}
+                                >
+                                  「 {displayMemo} 」
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <p style={{ textAlign: "center", color: "#8A7E72", fontSize: "0.85rem" }}>
+                    このルートの押印記録はまだありません。
+                  </p>
+                )}
+
+                {/* 完走の踏破印がある場合は巻末に表示 */}
+                {completedInfo && (
+                  <div
+                    style={{
+                      marginTop: "18px",
+                      padding: "14px 16px",
+                      borderRadius: "14px",
+                      background: "rgba(201, 168, 76, 0.14)",
+                      border: "1.5px solid var(--accent-color)",
+                      textAlign: "center",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        color: "var(--primary-color)",
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      💮 物語の結び — 授かった踏破印
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "1.05rem",
+                        fontWeight: 900,
+                        color: "var(--text-color)",
+                        fontFamily: "'Noto Serif JP', serif",
+                        marginTop: "4px",
+                      }}
+                    >
+                      {completedInfo.mainName}
+                    </div>
+                    {completedInfo.subName && (
+                      <div
+                        style={{
+                          fontSize: "0.82rem",
+                          fontWeight: 800,
+                          color: "var(--primary-color)",
+                          marginTop: "4px",
+                        }}
+                      >
+                        副印（自答の儀）: {completedInfo.subName}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    marginTop: "20px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setStoryScrollRouteId(null)}
+                    className="btn-secondary"
+                    style={{
+                      flex: 1,
+                      padding: "10px",
+                      borderRadius: "10px",
+                      fontSize: "0.85rem",
+                      cursor: "pointer",
+                    }}
+                  >
+                    閉じる
+                  </button>
+                  <Link
+                    href={`/routes/${storyScrollRouteId}`}
+                    onClick={() => setStoryScrollRouteId(null)}
+                    className="btn-primary"
+                    style={{
+                      flex: 1,
+                      padding: "10px",
+                      borderRadius: "10px",
+                      fontSize: "0.85rem",
+                      textDecoration: "none",
+                      textAlign: "center",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "6px",
+                    }}
+                  >
+                    このルートのページへ <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
       {/* 写真拡大ライトボックス */}
       {zoomPhotoUrl && (

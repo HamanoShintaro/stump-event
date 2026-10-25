@@ -12,6 +12,7 @@ import HeaderNav from "@/components/HeaderNav";
 import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft, RefreshCw, MapPin, BookOpen } from "lucide-react";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import { useLifelogStats } from "@/hooks/useLifelogStats";
+import { useCompanionArchive } from "@/hooks/useCompanionArchive";
 import { getCategoryStampUrl } from "@/utils/stampHelper";
 import { activateUserRoute } from "@/utils/userRoutes";
 import {
@@ -24,8 +25,8 @@ import styles from "./page.module.css";
 // 街の便り（最新のものを表示）
 const LATEST_NEWS = {
   date: "2026.10.25",
-  title: "【秋の大型更新】気軽な街歩きコンパス・SHUIN帳「旅のアルバム」＆「記憶の一頁」が登場",
-  summary: "現在地からの距離や30〜45分で歩ける「気軽な街歩き提案コンパス」、SHUIN帳の「旅のアルバム（日記帳）ビュー＆あとがき編集」、ルート保存（栞）、そしてマイページの「街歩きの軌跡」「記憶の一頁」が新たに加わりました。"
+  title: "【秋の大型更新】時間帯・気分別キュレーション＆「街歩きみくじ」、マイページ「連れ立ちの記憶帳」＆SHUIN帳「物語の回顧録（ルート絵巻）」が登場",
+  summary: "今この瞬間の気分でルートを選べる「時間帯・気分別キュレーション」と「🎴 今日の街歩きみくじ（縁結び）」、マイページの「👥 連れ立ちの記憶帳」、そしてSHUIN帳の「📜 月間・同行者紀行サマリー」「📜 物語の回顧録（ルート絵巻）」が新たに加わりました。"
 };
 
 export default function MyPage() {
@@ -38,6 +39,10 @@ export default function MyPage() {
     hasMultipleHighlights,
     loading: lifelogLoading,
   } = useLifelogStats(user?.id);
+  const {
+    companionSummaries,
+    recentGroupSessions,
+  } = useCompanionArchive(user?.id);
   const router = useRouter();
   const [userBadges, setUserBadges] = useState<any[]>([]);
   const [badgesLoading, setBadgesLoading] = useState(false);
@@ -327,6 +332,288 @@ export default function MyPage() {
             招待コードを入力
           </button>
         </section>
+
+        {/* 👥 連れ立ちの記憶帳（ともに歩いた仲間と旅路） */}
+        {(companionSummaries.length > 0 || recentGroupSessions.length > 0) && (
+          <section
+            className="glass-card"
+            style={{
+              padding: "20px 24px",
+              borderRadius: "16px",
+              border: "1px solid var(--accent-color)",
+              background: "linear-gradient(135deg, #FFFDF9 0%, #FAF5E8 100%)",
+              marginBottom: "24px",
+              boxShadow: "0 4px 14px rgba(201, 168, 76, 0.08)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "8px",
+                marginBottom: "14px",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: "var(--font-size-small)",
+                    color: "var(--accent-color)",
+                    fontWeight: 800,
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  誰かと歩いた街角の風景と、分かち合ったしるし
+                </div>
+                <h2
+                  style={{
+                    fontSize: "1.05rem",
+                    fontWeight: 800,
+                    color: "var(--text-color)",
+                    margin: "2px 0 0 0",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <span>👥</span> 連れ立ちの記憶帳（ともに歩いた仲間と旅路）
+                </h2>
+              </div>
+              <Link
+                href="/mypage/diary?view=album"
+                style={{
+                  fontSize: "0.78rem",
+                  color: "var(--primary-color)",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
+                }}
+              >
+                旅のアルバムを開く <ArrowRight size={13} />
+              </Link>
+            </div>
+
+            {/* 一緒に歩いた仲間チップ */}
+            {companionSummaries.length > 0 && (
+              <div style={{ marginBottom: recentGroupSessions.length > 0 ? "16px" : 0 }}>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 800,
+                    color: "#6E5314",
+                    marginBottom: "8px",
+                  }}
+                >
+                  一緒に歩いた仲間（タップでその人とのSHUIN帳を開く）
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))",
+                    gap: "10px",
+                  }}
+                >
+                  {companionSummaries.map((comp) => (
+                    <Link
+                      key={comp.companionName}
+                      href={`/mypage/diary?companion=${encodeURIComponent(comp.companionName)}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        background: "#FFFDF9",
+                        border: "1px solid #EBE5D9",
+                        borderRadius: "12px",
+                        padding: "10px 12px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        boxShadow: "0 2px 6px rgba(92, 78, 67, 0.04)",
+                        transition: "all 0.2s ease",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "38px",
+                          height: "38px",
+                          borderRadius: "50%",
+                          background: "rgba(201, 168, 76, 0.16)",
+                          border: "1.5px solid var(--accent-color)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 800,
+                          fontSize: "0.85rem",
+                          color: "var(--text-color)",
+                          flexShrink: 0,
+                          overflow: "hidden",
+                        }}
+                      >
+                        {comp.avatarUrl ? (
+                          <img
+                            src={comp.avatarUrl}
+                            alt={comp.companionName}
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                          />
+                        ) : (
+                          comp.companionName.slice(0, 1)
+                        )}
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div
+                          style={{
+                            fontSize: "0.88rem",
+                            fontWeight: 800,
+                            color: "var(--text-color)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            gap: "4px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {comp.companionName} さん
+                          </span>
+                          <span style={{ fontSize: "0.7rem", color: "var(--primary-color)" }}>▸</span>
+                        </div>
+                        <div style={{ fontSize: "0.72rem", color: "#6E5314", fontWeight: 700, marginTop: "2px" }}>
+                          ともに刻んだ印 {comp.sharedStampsCount}個 ・ {comp.routesCount}ルート
+                        </div>
+                        {comp.latestWalkedAt && (
+                          <div style={{ fontSize: "0.66rem", color: "#8A7E72", marginTop: "1px" }}>
+                            最終同行: {new Date(comp.latestWalkedAt).toLocaleDateString("ja-JP")}
+                          </div>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 最近の連れ立ち旅路 */}
+            {recentGroupSessions.length > 0 && (
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 800,
+                    color: "#6E5314",
+                    marginBottom: "8px",
+                  }}
+                >
+                  最近の連れ立ち旅路
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                  {recentGroupSessions.slice(0, 3).map((sess) => (
+                    <div
+                      key={sess.groupId}
+                      style={{
+                        background: "#FFFDF9",
+                        border: "1px solid #EBE5D9",
+                        borderRadius: "12px",
+                        padding: "10px 14px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        flexWrap: "wrap",
+                        gap: "10px",
+                      }}
+                    >
+                      <div style={{ flex: "1 1 220px", minWidth: 0 }}>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "6px",
+                            flexWrap: "wrap",
+                            marginBottom: "3px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "0.66rem",
+                              fontWeight: 800,
+                              padding: "1px 7px",
+                              borderRadius: "10px",
+                              background: sess.isActive
+                                ? "rgba(199, 68, 46, 0.12)"
+                                : "rgba(201, 168, 76, 0.16)",
+                              color: sess.isActive ? "var(--primary-color)" : "#6E5314",
+                            }}
+                          >
+                            {sess.isActive ? "連れ立ち進行中" : "同行の記録"}
+                          </span>
+                          <span style={{ fontSize: "0.7rem", color: "#8A7E72" }}>
+                            {new Date(sess.walkedAt).toLocaleDateString("ja-JP")}
+                          </span>
+                          {sess.partnerNames.length > 0 && (
+                            <span style={{ fontSize: "0.72rem", color: "var(--text-color)", fontWeight: 700 }}>
+                              👥 {sess.partnerNames.join("、")} さんと同行
+                            </span>
+                          )}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: "0.88rem",
+                            fontWeight: 800,
+                            color: "var(--text-color)",
+                          }}
+                        >
+                          {sess.routeTitle}
+                        </div>
+                        <div style={{ fontSize: "0.72rem", color: "#8A7E72", marginTop: "2px" }}>
+                          自分の押印 {sess.myStampedCount}個 ・ 共有思い出 {sess.sharedMemoriesCount}件
+                        </div>
+                      </div>
+
+                      <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                        {sess.routeId && (
+                          <Link
+                            href={`/mypage/diary?routeId=${encodeURIComponent(sess.routeId)}`}
+                            className="btn-secondary"
+                            style={{
+                              padding: "5px 10px",
+                              fontSize: "0.74rem",
+                              borderRadius: "8px",
+                              textDecoration: "none",
+                              background: "#FFFDF9",
+                            }}
+                          >
+                            📖 記録を見る
+                          </Link>
+                        )}
+                        {sess.routeId && (
+                          <Link
+                            href={`/routes/${sess.routeId}/map?groupId=${sess.groupId}`}
+                            className="btn-primary"
+                            style={{
+                              padding: "5px 10px",
+                              fontSize: "0.74rem",
+                              borderRadius: "8px",
+                              textDecoration: "none",
+                            }}
+                          >
+                            🗺️ マップへ
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
 
         {/* 街歩きの軌跡（ライフログ集計） */}
         <section
