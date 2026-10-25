@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { isRouteCurrentlyActive, getRemainingActiveHours } from "@/utils/userRoutes";
+import { parseMemberDisplayName, syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
 
 export function useMyPageData(user: any) {
   const [activeRallies, setActiveRallies] = useState<any[]>([]);
@@ -92,7 +93,7 @@ export function useMyPageData(user: any) {
         }
       }
 
-      // 保存したルートを取得
+      // 保存したルートを取得 (Supabase + localStorage フォールバック統合)
       const { data: userBookmarksData, error: bookmarksError } = await supabase
         .from("user_bookmarks")
         .select(`*, routes(*)`)
@@ -103,24 +104,58 @@ export function useMyPageData(user: any) {
         console.error("Error fetching user bookmarks:", bookmarksError);
       }
 
+      let mergedBookmarks: any[] = userBookmarksData || [];
+      if (typeof window !== "undefined") {
+        try {
+          const rawLocal = window.localStorage.getItem(`shuin_bookmarks_${user.id}`);
+          const localRouteIds: string[] = rawLocal ? JSON.parse(rawLocal) : [];
+          if (Array.isArray(localRouteIds) && localRouteIds.length > 0) {
+            const dbRouteIds = new Set(mergedBookmarks.map((b: any) => b.route_id));
+            const missingRouteIds = localRouteIds.filter((id) => !dbRouteIds.has(id));
+            if (missingRouteIds.length > 0) {
+              const { data: missingRoutes } = await supabase
+                .from("routes")
+                .select("*")
+                .in("id", missingRouteIds);
+              if (missingRoutes && missingRoutes.length > 0) {
+                const localItems = missingRoutes.map((r: any) => ({
+                  route_id: r.id,
+                  user_id: user.id,
+                  created_at: new Date().toISOString(),
+                  routes: r,
+                }));
+                mergedBookmarks = [...localItems, ...mergedBookmarks];
+              }
+            }
+          }
+        } catch {
+          // ignore localStorage read error
+        }
+      }
+
       // 連れ立ち（グループ）情報のフェッチ
       let activeRalliesWithGroups = activeRalliesFiltered;
       try {
+        await syncUserProfileAndGroupStatus(supabase, user);
+
         const { data: myMemberships } = await supabase
           .from("group_members")
           .select(`
             group_id,
+            joined_at,
             groups (
               id,
               route_id,
               invite_code,
-              is_active
+              is_active,
+              created_at
             )
           `)
-          .eq("user_id", user.id);
+          .eq("user_id", user.id)
+          .order("joined_at", { ascending: false });
 
         const activeGroupList = (myMemberships || [])
-          .map((m: any) => m.groups)
+          .map((m: any) => (Array.isArray(m.groups) ? m.groups[0] : m.groups))
           .filter((g: any) => g && g.is_active);
 
         const activeGroupIds = activeGroupList.map((g: any) => g.id);
@@ -132,24 +167,29 @@ export function useMyPageData(user: any) {
             .select(`
               group_id,
               user_id,
+              status,
+              joined_at,
               users:user_id (
                 id,
                 display_name,
                 avatar_url
               )
             `)
-            .in("group_id", activeGroupIds);
+            .in("group_id", activeGroupIds)
+            .order("joined_at", { ascending: true });
             
           if (membersData) {
             membersData.forEach((m: any) => {
               if (!groupMembersMap[m.group_id]) {
                 groupMembersMap[m.group_id] = [];
               }
-              if (m.user_id !== user.id && m.users) {
+              if (m.user_id !== user.id) {
+                const u = Array.isArray(m.users) ? m.users[0] : m.users;
+                const partnerIdx = groupMembersMap[m.group_id].length;
                 groupMembersMap[m.group_id].push({
-                  id: m.users.id,
-                  displayName: m.users.display_name,
-                  avatarUrl: m.users.avatar_url
+                  id: m.user_id,
+                  displayName: parseMemberDisplayName(m, user.id, partnerIdx),
+                  avatarUrl: u?.avatar_url || null
                 });
               }
             });
@@ -157,7 +197,10 @@ export function useMyPageData(user: any) {
         }
 
         activeRalliesWithGroups = activeRalliesFiltered.map((ur: any) => {
-          const group = activeGroupList.find((g: any) => g.route_id === ur.route_id);
+          const candidateGroups = activeGroupList.filter((g: any) => g.route_id === ur.route_id);
+          const group =
+            candidateGroups.find((g: any) => (groupMembersMap[g.id]?.length || 0) > 0) ||
+            candidateGroups[0];
           if (group) {
             const partners = groupMembersMap[group.id] || [];
             return {
@@ -176,7 +219,7 @@ export function useMyPageData(user: any) {
       }
 
       setActiveRallies(activeRalliesWithGroups);
-      setBookmarkedRallies(userBookmarksData || []);
+      setBookmarkedRallies(mergedBookmarks);
     } catch (e) {
       console.error(e);
     } finally {
@@ -232,5 +275,6 @@ export function useMyPageData(user: any) {
     bookmarkedRallies,
     dataLoading,
     leaveNarrative,
+    refreshMyPageData: fetchMyData,
   };
 }

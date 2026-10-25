@@ -1,12 +1,85 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { isRouteCurrentlyActive, fetchCurrentActiveUserRoute, activateUserRoute } from "@/utils/userRoutes";
+import { useCompanionGroup } from "@/hooks/useCompanionGroup";
+import {
+  buildMemberStatusWithDisplayName,
+  CompanionMember,
+  fetchGroupCompanionMembers,
+  syncUserProfileAndGroupStatus,
+} from "@/utils/stampMedia";
 import JoinAnimation from "@/components/JoinAnimation";
+import { useRouteBookmark } from "@/hooks/useRouteBookmark";
+import { Bookmark, Star } from "lucide-react";
+
+export function BookmarkRouteButton({
+  routeId,
+  initialFavoriteCount = 0,
+}: {
+  routeId: string;
+  initialFavoriteCount?: number;
+}) {
+  const { isBookmarked, favoriteCount, loading, toggleBookmark } = useRouteBookmark(
+    routeId,
+    initialFavoriteCount
+  );
+
+  return (
+    <button
+      type="button"
+      onClick={toggleBookmark}
+      disabled={loading}
+      className="btn-secondary"
+      style={{
+        width: "100%",
+        padding: "12px 16px",
+        fontSize: "0.95rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "8px",
+        borderColor: isBookmarked ? "var(--accent-color)" : "var(--text-color)",
+        background: isBookmarked ? "rgba(201, 168, 76, 0.14)" : "transparent",
+        color: "var(--text-color)",
+        fontWeight: 700,
+        transition: "all 0.2s ease",
+      }}
+    >
+      <Bookmark
+        size={18}
+        fill={isBookmarked ? "var(--accent-color)" : "none"}
+        color={isBookmarked ? "var(--primary-color)" : "currentColor"}
+        strokeWidth={2.2}
+      />
+      <span>
+        {isBookmarked ? "保存済み（いつか歩きたい街）" : "このルートを保存する（栞）"}
+      </span>
+      {favoriteCount > 0 && (
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "3px",
+            marginLeft: "4px",
+            fontSize: "0.82rem",
+            color: "var(--primary-color)",
+            background: "rgba(199, 68, 46, 0.08)",
+            padding: "2px 8px",
+            borderRadius: "10px",
+          }}
+        >
+          <Star size={12} fill="currentColor" />
+          {favoriteCount}
+        </span>
+      )}
+    </button>
+  );
+}
 
 export function JoinRallyButton({ 
   rallyId, 
@@ -30,10 +103,28 @@ export function JoinRallyButton({
   const [isNavigating, setIsNavigating] = useState(false);
   const [isCreatingGroup, setIsCreatingGroup] = useState(false);
   const [isDisbanding, setIsDisbanding] = useState(false);
-  const [partnerNames, setPartnerNames] = useState<string[]>([]);
-  const [activeGroupId, setActiveGroupId] = useState<string | null>(null);
-  const [inviteCode, setInviteCode] = useState<string | null>(null);
+  const [showJoinByCodeInput, setShowJoinByCodeInput] = useState(false);
+  const [joinCodeInput, setJoinCodeInput] = useState("");
+  const [isJoiningByCode, setIsJoiningByCode] = useState(false);
+  const [liveJoinNotice, setLiveJoinNotice] = useState<string | null>(null);
   const { showAlert } = useCustomAlert();
+
+  const handlePartnerJoined = useCallback((partner: CompanionMember) => {
+    setLiveJoinNotice(`🎉 ${partner.displayName} さんが連れ立ちに合流しました！`);
+  }, []);
+
+  const {
+    effectiveGroupId: activeGroupId,
+    setEffectiveGroupId: setActiveGroupId,
+    inviteCode,
+    setInviteCode,
+    partnerNames,
+    refreshGroupData,
+  } = useCompanionGroup({
+    routeId: rallyId,
+    urlGroupId: groupId,
+    onPartnerJoined: handlePartnerJoined,
+  });
 
   useEffect(() => {
     if (authLoading) {
@@ -75,46 +166,6 @@ export function JoinRallyButton({
             .from('user_routes')
             .update({ status: data.completed_at ? 'COMPLETED' : 'CANCELED' })
             .eq('id', data.id);
-        }
-
-        // アクティブな連れ立ち中の相手をフェッチ (安全なSequential方式)
-        const { data: myMemberships } = await supabase
-          .from('group_members')
-          .select('group_id')
-          .eq('user_id', user.id);
-
-        if (myMemberships && myMemberships.length > 0) {
-          const groupIds = myMemberships.map(m => m.group_id);
-          const { data: activeGroups } = await supabase
-            .from('groups')
-            .select('id, invite_code')
-            .in('id', groupIds)
-            .eq('route_id', rallyId)
-            .eq('is_active', true);
-
-          if (activeGroups && activeGroups.length > 0) {
-            const actGrpId = activeGroups[0].id;
-            const code = activeGroups[0].invite_code;
-            setActiveGroupId(actGrpId);
-            setInviteCode(code);
-            const { data: members } = await supabase
-              .from('group_members')
-              .select('user_id')
-              .eq('group_id', actGrpId)
-              .neq('user_id', user.id); // 自分以外のメンバー
-
-            if (members && members.length > 0) {
-              const userIds = members.map(m => m.user_id);
-              const { data: userProfiles } = await supabase
-                .from('users')
-                .select('display_name')
-                .in('id', userIds);
-
-              if (userProfiles) {
-                setPartnerNames(userProfiles.map(u => u.display_name));
-              }
-            }
-          }
         }
       } catch (err) {
         console.error("checkStatus catch error:", err);
@@ -169,20 +220,22 @@ export function JoinRallyButton({
   const handleAnimationComplete = () => {
     setShowAnimation(false);
     setIsNavigating(true);
+    const targetGroupId = activeGroupId || groupId;
     // アニメーション完了後に一覧画面へ遷移し、最初の行き先を選ばせる
-    router.push(`/routes/${rallyId}/destinations`);
+    router.push(`/routes/${rallyId}/destinations${targetGroupId ? `?groupId=${targetGroupId}` : ""}`);
   };
 
   const handleCreateGroup = async () => {
     if (!user) return;
     setIsCreatingGroup(true);
     try {
-      const inviteCode = Math.floor(100000 + Math.random() * 900000).toString();
+      await syncUserProfileAndGroupStatus(supabase, user);
+      const newInviteCode = Math.floor(100000 + Math.random() * 900000).toString();
       const { data: newGrp, error: grpError } = await supabase
         .from("groups")
         .insert({
           route_id: rallyId,
-          invite_code: inviteCode,
+          invite_code: newInviteCode,
           created_by: user.id,
           status: "WAITING"
         })
@@ -191,20 +244,23 @@ export function JoinRallyButton({
 
       if (grpError) throw grpError;
 
+      const statusValue = buildMemberStatusWithDisplayName(user);
       const { error: memberError } = await supabase
         .from("group_members")
         .insert({
           group_id: newGrp.id,
-          user_id: user.id
+          user_id: user.id,
+          status: statusValue,
         });
 
       if (memberError) throw memberError;
 
       setActiveGroupId(newGrp.id);
-      setInviteCode(inviteCode);
+      setInviteCode(newInviteCode);
+      await refreshGroupData();
 
       await showAlert({ 
-        text: `連れ立ちグループを作成しました！\n招待コード: ${inviteCode}\n\n友達にこのコードを伝えて合流してください。`, 
+        text: `連れ立ちグループを作成しました！\n招待コード: ${newInviteCode}\n\n友達にこのコードを伝えて合流してください。`, 
         okText: "マップへ進む" 
       });
       setIsNavigating(true);
@@ -213,6 +269,96 @@ export function JoinRallyButton({
       await showAlert({ text: `グループの作成に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
       setIsCreatingGroup(false);
+    }
+  };
+
+  const handleJoinByCode = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!user) return;
+
+    const cleanCode = joinCodeInput.replace(/\s+/g, "");
+    if (cleanCode.length !== 6 || !/^\d{6}$/.test(cleanCode)) {
+      await showAlert({ text: "招待コードは6桁の半角数字で入力してください。", okText: "確認" });
+      return;
+    }
+
+    setIsJoiningByCode(true);
+    try {
+      const { data: grp, error: grpError } = await supabase
+        .from("groups")
+        .select("*")
+        .eq("invite_code", cleanCode)
+        .eq("is_active", true)
+        .maybeSingle();
+
+      if (grpError) throw grpError;
+      if (!grp) {
+        await showAlert({
+          text: "指定された招待コードの連れ立ちグループが見つかりません。コードが正しいかご確認ください。",
+          okText: "確認",
+        });
+        return;
+      }
+
+      // もし自分で先に待機用グループを作ってしまっていた場合は非アクティブ化して友達のグループへ合流する
+      if (activeGroupId && activeGroupId !== grp.id && partnerNames.length === 0) {
+        await supabase
+          .from("groups")
+          .update({ is_active: false, status: "COMPLETED" })
+          .eq("id", activeGroupId)
+          .eq("created_by", user.id);
+      }
+
+      await syncUserProfileAndGroupStatus(supabase, user, grp.id);
+      const statusValue = buildMemberStatusWithDisplayName(user);
+
+      const { data: existingMember } = await supabase
+        .from("group_members")
+        .select("user_id, status")
+        .eq("group_id", grp.id)
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      if (!existingMember) {
+        const { error: joinError } = await supabase
+          .from("group_members")
+          .insert({
+            group_id: grp.id,
+            user_id: user.id,
+            status: statusValue,
+          });
+        if (joinError) throw joinError;
+      } else if (existingMember.status !== statusValue) {
+        await supabase
+          .from("group_members")
+          .update({ status: statusValue })
+          .eq("group_id", grp.id)
+          .eq("user_id", user.id);
+      }
+
+      await activateUserRoute(user.id, grp.route_id);
+      setIsJoined(true);
+      setActiveGroupId(grp.id);
+      setInviteCode(grp.invite_code);
+      setShowJoinByCodeInput(false);
+      setJoinCodeInput("");
+
+      const currentMembers = await fetchGroupCompanionMembers(supabase, grp.id, user);
+      const currentPartners = currentMembers.filter((m) => !m.isMe).map((m) => m.displayName);
+
+      await showAlert({
+        text:
+          currentPartners.length > 0
+            ? `👥 連れ立ちに合流しました！\n同行メンバー: ${currentPartners.join("、")} さん\nマップへ移動します。`
+            : `👥 連れ立ちグループ（コード: ${cleanCode}）に参加しました！`,
+        okText: "マップへ進む",
+      });
+      setIsNavigating(true);
+      router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
+    } catch (err: any) {
+      await showAlert({ text: `連れ立ちへの合流に失敗しました: ${err.message}`, okText: "確認" });
+    } finally {
+      setIsJoiningByCode(false);
     }
   };
 
@@ -248,7 +394,7 @@ export function JoinRallyButton({
       // クライアントの状態をソロにリセット
       setActiveGroupId(null);
       setInviteCode(null);
-      setPartnerNames([]);
+      setLiveJoinNotice(null);
     } catch (err: any) {
       await showAlert({ text: `連れ立ちの終了に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
@@ -285,20 +431,51 @@ export function JoinRallyButton({
               boxShadow: "0 8px 24px rgba(201, 168, 76, 0.12)",
               width: "100%"
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px", flexWrap: "wrap" }}>
                 <span style={{ fontSize: "1.2rem" }}>👥</span>
                 <span style={{ fontWeight: 800, color: "var(--secondary-color)", fontSize: "1rem" }}>連れ立ちセッション進行中</span>
+                <span style={{
+                  marginLeft: "auto",
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  padding: "2px 10px",
+                  borderRadius: "12px",
+                  background: partnerNames.length > 0 ? "#E8F5E9" : "#FFF8E1",
+                  color: partnerNames.length > 0 ? "#2E7D32" : "#B78103",
+                  border: `1px solid ${partnerNames.length > 0 ? "#A5D6A7" : "#FFE082"}`,
+                }}>
+                  {partnerNames.length > 0 ? `✓ 合流済み（同行 ${partnerNames.length}名）` : "合流待ち"}
+                </span>
               </div>
+
+              {liveJoinNotice && (
+                <div style={{
+                  background: "#E8F5E9",
+                  border: "1px solid #81C784",
+                  color: "#1B5E20",
+                  padding: "10px 14px",
+                  borderRadius: "10px",
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                }}>
+                  {liveJoinNotice}
+                </div>
+              )}
               
-              <div style={{ fontSize: "0.85rem", color: "#5C4E43", lineHeight: 1.5 }}>
+              <div style={{ fontSize: "0.88rem", color: "#5C4E43", lineHeight: 1.6 }}>
                 {partnerNames.length > 0 ? (
-                  <>
-                    同行者: <strong>{partnerNames.join(' さん、')} さん</strong> と一緒に巡っています。
-                  </>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                    <div>
+                      同行者: <strong style={{ color: "var(--primary-color)", fontSize: "0.95rem" }}>{partnerNames.join(' さん、')} さん</strong> と一緒に巡っています。
+                    </div>
+                    <div style={{ fontSize: "0.78rem", color: "#8A7E72" }}>
+                      スポットで押印（SHUIN）した写真やコメントはお互いに共有されます。
+                    </div>
+                  </div>
                 ) : (
                   <>
                     現在、友達の合流を待っています。<br/>
-                    下記の招待コードを友達に教えてください。
+                    下記の招待コードを友達に教えてください（友達が参加するとこの画面に自動で表示されます）。
                   </>
                 )}
               </div>
@@ -337,6 +514,57 @@ export function JoinRallyButton({
                   >
                     コピー
                   </button>
+                </div>
+              )}
+
+              {partnerNames.length === 0 && (
+                <div style={{ fontSize: "0.8rem" }}>
+                  {!showJoinByCodeInput ? (
+                    <button
+                      type="button"
+                      onClick={() => setShowJoinByCodeInput(true)}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "var(--primary-color)",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                        fontSize: "0.8rem",
+                        padding: 0,
+                        fontWeight: 600,
+                      }}
+                    >
+                      🔑 友達から受け取った招待コードを入力して合流する場合はこちら
+                    </button>
+                  ) : (
+                    <form onSubmit={handleJoinByCode} style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
+                      <input
+                        type="text"
+                        inputMode="numeric"
+                        maxLength={6}
+                        placeholder="6桁の招待コード"
+                        value={joinCodeInput}
+                        onChange={(e) => setJoinCodeInput(e.target.value)}
+                        style={{
+                          flex: 1,
+                          padding: "8px 12px",
+                          borderRadius: "8px",
+                          border: "1px solid #D5CEC4",
+                          fontSize: "0.9rem",
+                          letterSpacing: "2px",
+                          textAlign: "center",
+                        }}
+                      />
+                      <button
+                        type="submit"
+                        disabled={isJoiningByCode || joinCodeInput.trim().length !== 6}
+                        className="btn-primary"
+                        style={{ padding: "8px 14px", fontSize: "0.82rem", whiteSpace: "nowrap" }}
+                      >
+                        {isJoiningByCode ? "合流中..." : "合流する"}
+                      </button>
+                    </form>
+                  )}
                 </div>
               )}
 
@@ -407,24 +635,92 @@ export function JoinRallyButton({
                 {isNavigating ? "読み込み中..." : "現在の目的地への地図を見る"}
               </button>
 
-              <button 
-                onClick={handleCreateGroup}
-                disabled={isNavigating || isCreatingGroup}
-                className="btn-secondary"
-                style={{
-                  width: "100%",
-                  fontSize: "1.1rem",
-                  padding: "16px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "8px",
-                  opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
-                  cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
-                }}
-              >
-                {isCreatingGroup ? "グループを作成中..." : "👥 友達と連れ立ちを開始する"}
-              </button>
+              <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                <button 
+                  onClick={handleCreateGroup}
+                  disabled={isNavigating || isCreatingGroup}
+                  className="btn-secondary"
+                  style={{
+                    flex: "1 1 200px",
+                    fontSize: "0.95rem",
+                    padding: "14px 12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                    opacity: (isNavigating || isCreatingGroup) ? 0.7 : 1,
+                    cursor: (isNavigating || isCreatingGroup) ? "not-allowed" : "pointer"
+                  }}
+                >
+                  {isCreatingGroup ? "作成中..." : "👥 招待コードを発行（連れ立ち開始）"}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setShowJoinByCodeInput((prev) => !prev)}
+                  disabled={isNavigating || isCreatingGroup}
+                  className="btn-secondary"
+                  style={{
+                    flex: "1 1 200px",
+                    fontSize: "0.95rem",
+                    padding: "14px 12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                  }}
+                >
+                  🔑 招待コードを入力して合流
+                </button>
+              </div>
+
+              {showJoinByCodeInput && (
+                <form
+                  onSubmit={handleJoinByCode}
+                  className="glass-card"
+                  style={{
+                    padding: "16px",
+                    borderRadius: "14px",
+                    border: "1px solid var(--accent-color)",
+                    background: "#FFFDF9",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#5C4E43" }}>
+                    友達から共有された6桁の招待コードを入力してください
+                  </div>
+                  <div style={{ display: "flex", gap: "8px" }}>
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={6}
+                      placeholder="123456"
+                      value={joinCodeInput}
+                      onChange={(e) => setJoinCodeInput(e.target.value)}
+                      style={{
+                        flex: 1,
+                        padding: "10px 12px",
+                        borderRadius: "8px",
+                        border: "1px solid #D5CEC4",
+                        fontSize: "1.1rem",
+                        letterSpacing: "4px",
+                        textAlign: "center",
+                        fontWeight: 700,
+                      }}
+                    />
+                    <button
+                      type="submit"
+                      disabled={isJoiningByCode || joinCodeInput.trim().length !== 6}
+                      className="btn-primary"
+                      style={{ padding: "10px 18px", fontSize: "0.9rem", whiteSpace: "nowrap" }}
+                    >
+                      {isJoiningByCode ? "合流中..." : "合流する"}
+                    </button>
+                  </div>
+                </form>
+              )}
             </>
           )}
         </div>
@@ -455,21 +751,73 @@ export function JoinRallyButton({
                   : "このルートに参加する"
                 : "ログインしてこのルートに参加する"}
           </button>
+
+          {user && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <button
+                type="button"
+                onClick={() => setShowJoinByCodeInput((prev) => !prev)}
+                className="btn-secondary"
+                style={{ width: "100%", padding: "12px", fontSize: "0.92rem" }}
+              >
+                🔑 友達の招待コードで連れ立ち参加する
+              </button>
+              {showJoinByCodeInput && (
+                <form
+                  onSubmit={handleJoinByCode}
+                  style={{
+                    padding: "14px",
+                    borderRadius: "12px",
+                    border: "1px solid var(--accent-color)",
+                    background: "#FFFDF9",
+                    display: "flex",
+                    gap: "8px",
+                  }}
+                >
+                  <input
+                    type="text"
+                    inputMode="numeric"
+                    maxLength={6}
+                    placeholder="6桁の招待コード"
+                    value={joinCodeInput}
+                    onChange={(e) => setJoinCodeInput(e.target.value)}
+                    style={{
+                      flex: 1,
+                      padding: "10px",
+                      borderRadius: "8px",
+                      border: "1px solid #D5CEC4",
+                      fontSize: "1rem",
+                      letterSpacing: "3px",
+                      textAlign: "center",
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isJoiningByCode || joinCodeInput.trim().length !== 6}
+                    className="btn-primary"
+                    style={{ padding: "10px 16px", fontSize: "0.9rem", whiteSpace: "nowrap" }}
+                  >
+                    {isJoiningByCode ? "合流中..." : "合流して参加"}
+                  </button>
+                </form>
+              )}
+            </div>
+          )}
         </div>
       )}
     </>
   );
 }
 
-export function SpotButton({ spotId, rallyId }: { spotId: string, rallyId: string }) {
+export function SpotButton({ spotId, rallyId, groupId }: { spotId: string; rallyId: string; groupId?: string | null }) {
   const { user } = useAuth();
   const router = useRouter();
   const [isNavigating, setIsNavigating] = useState(false);
 
   const handleClick = () => {
     setIsNavigating(true);
-    // 未ログインでも詳細画面には行けるが、スタンプ獲得などはできない（詳細画面側で制御）
-    router.push(`/routes/${rallyId}/spot/${spotId}`);
+    // 未ログインでも詳細画面には行けるが、押印獲得などはできない（詳細画面側で制御）
+    router.push(`/routes/${rallyId}/spot/${spotId}${groupId ? `?groupId=${groupId}` : ""}`);
   };
 
   return (

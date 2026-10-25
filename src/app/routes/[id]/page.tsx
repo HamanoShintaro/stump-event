@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import styles from "./page.module.css";
-import { JoinRallyButton } from "./ClientRallyButtons";
+import { JoinRallyButton, BookmarkRouteButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
-import { Footprints, Star } from "lucide-react";
+import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
+import { Footprints, Star, MapPin, Clock, Wallet } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
 
@@ -44,7 +45,16 @@ export default async function RallyDetailPage({
   const spotsList = spots || [];
 
   const statsMap = await getRouteStatsMap([rally.id]);
-  const stats = statsMap[rally.id];
+  const stats = statsMap[rally.id] || { participants: 0, favorites: 0 };
+  const walkMetrics = computeRouteWalkMetrics(spotsList, rally.rarity_estimated_min);
+  const budgetLabel =
+    rally.budget_tier === 1
+      ? "〜1,000円"
+      : rally.budget_tier === 2
+        ? "〜5,000円"
+        : rally.budget_tier === 3
+          ? "5,000円〜"
+          : "気軽に散策";
 
   return (
     <div className="container">
@@ -64,26 +74,51 @@ export default async function RallyDetailPage({
              <div className={styles.regionTag}>{rally.prefecture} • {rally.category}</div>
              <h1 className={styles.title}>{rally.title}</h1>
              <p className={styles.description}>{rally.description}</p>
+
+             {/* 街歩きの目安スペックバー */}
+             <div className={styles.walkSpecGrid}>
+               <div className={styles.walkSpecItem}>
+                 <MapPin size={15} color="var(--primary-color)" />
+                 <span>全 {walkMetrics.spotCount} 箇所</span>
+               </div>
+               <div className={styles.walkSpecItem}>
+                 <Footprints size={15} color="var(--primary-color)" />
+                 <span>歩行 約 {walkMetrics.distanceKm.toFixed(1)} km</span>
+               </div>
+               <div className={styles.walkSpecItem}>
+                 <Clock size={15} color="var(--primary-color)" />
+                 <span>目安 約 {walkMetrics.estimatedMinutes} 分</span>
+               </div>
+               <div className={styles.walkSpecItem}>
+                 <Wallet size={15} color="var(--primary-color)" />
+                 <span>予算 {budgetLabel}</span>
+               </div>
+             </div>
+
              {(stats.participants > 0 || stats.favorites > 0) && (
-             <div style={{ display: "flex", gap: "16px", color: "#888", fontWeight: "600", fontSize: "0.95rem", margin: "12px 0 24px 0" }}>
+             <div style={{ display: "flex", gap: "16px", color: "#888", fontWeight: "600", fontSize: "0.95rem", margin: "4px 0 16px 0" }}>
                 {stats.participants > 0 && (
                 <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                   <Footprints size={16} strokeWidth={2} />
-                  {stats.participants}
+                  {stats.participants}人が巡っています
                 </span>)}
                 {stats.favorites > 0 && (
                 <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--primary-color)" }}>
                   <Star size={16} fill="currentColor" strokeWidth={2} />
-                  {stats.favorites}
+                  {stats.favorites}人が保存
                 </span>)}
              </div>)}
-             <div style={{ marginTop: "auto", marginBottom: "12px" }}>
+             <div style={{ marginTop: "auto", marginBottom: "12px", display: "flex", flexDirection: "column", gap: "10px" }}>
                <JoinRallyButton 
                  rallyId={rally.id} 
                  routeTitle={rally.title}
                  routeDescription={rally.description}
                  routePrologue={rally.theme_prologue}
                  groupId={groupId}
+               />
+               <BookmarkRouteButton
+                 routeId={rally.id}
+                 initialFavoriteCount={stats.favorites}
                />
              </div>
           </div>

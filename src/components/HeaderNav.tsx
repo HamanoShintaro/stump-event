@@ -40,11 +40,13 @@ export default function HeaderNav() {
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    const q = (formData.get("q") as string)?.trim();
     const pref = formData.get("prefecture") as string;
     const cat = formData.get("category") as string;
     const bud = formData.get("budget_tier") as string;
 
     const params = new URLSearchParams();
+    if (q) params.set("q", q);
     if (pref) params.set("prefecture", pref);
     if (cat) params.set("category", cat);
     if (bud) params.set("budget_tier", bud);
@@ -77,6 +79,16 @@ export default function HeaderNav() {
         </h2>
 
         <form onSubmit={handleSearchSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div>
+            <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "700", color: "#5C4E43", marginBottom: "8px" }}>キーワード（街名・駅名・スポット）</label>
+            <input
+              type="text"
+              name="q"
+              placeholder="例: 谷根千、鎌倉、カフェ、神社..."
+              style={{ width: "100%", padding: "12px", borderRadius: "8px", border: "1px solid #EBE5D9", background: "white", fontSize: "0.95rem" }}
+            />
+          </div>
+
           <div>
             <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "700", color: "#5C4E43", marginBottom: "8px" }}>都道府県</label>
             <select name="prefecture" style={{ width: "100%", padding: "12px", borderRadius: "8px", border: "1px solid #EBE5D9", background: "white", fontSize: "1rem" }}>

@@ -87,7 +87,33 @@
 .description {
   font-size: 1rem;
   opacity: 0.8;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+.walkSpecGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  background: rgba(255, 253, 249, 0.85);
+  border: 1px solid #EBE5D9;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .walkSpecGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.walkSpecItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 .spotSection {
