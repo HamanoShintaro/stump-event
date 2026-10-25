@@ -12,6 +12,11 @@ import HeaderNav from "@/components/HeaderNav";
 import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft } from "lucide-react";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import { activateUserRoute } from "@/utils/userRoutes";
+import {
+  buildMemberStatusWithDisplayName,
+  fetchGroupCompanionMembers,
+  syncUserProfileAndGroupStatus,
+} from "@/utils/stampMedia";
 import styles from "./page.module.css";
 
 // 街の便り（仮データ - 最新のものを表示）
@@ -87,24 +92,33 @@ export default function MyPage() {
       try {
         const { data: evs, error } = await supabase
           .from("stamp_events")
-          .select("id, created_at, visitor_number, spot_id, route_id")
+          .select("id, created_at, visitor_number, spot_id, route_id, group_id, memo, photo_url")
           .eq("user_id", user.id)
           .order("created_at", { ascending: false });
         if (error) { console.error("diary fetch error", error); return; }
         const events = evs || [];
         const spotIds = [...new Set(events.map((e: any) => e.spot_id).filter(Boolean))];
-        const routeIds = [...new Set(events.map((e: any) => e.route_id).filter(Boolean))];
-        const spotMap: Record<string, string> = {};
-        const routeMap: Record<string, string> = {};
+        const spotMap: Record<string, { name: string; routeName: string }> = {};
         if (spotIds.length) {
-          const { data: sp } = await supabase.from("spots").select("id, name").in("id", spotIds);
-          (sp || []).forEach((x: any) => { spotMap[x.id] = x.name; });
+          const { data: sp } = await supabase
+            .from("spots")
+            .select("id, name, route_id, routes(id, title, name)")
+            .in("id", spotIds);
+          (sp || []).forEach((x: any) => {
+            const rt = Array.isArray(x.routes) ? x.routes[0] : x.routes;
+            spotMap[x.id] = {
+              name: x.name,
+              routeName: rt?.title || rt?.name || "",
+            };
+          });
         }
-        if (routeIds.length) {
-          const { data: rt } = await supabase.from("routes").select("id, title, name").in("id", routeIds);
-          (rt || []).forEach((x: any) => { routeMap[x.id] = x.title || x.name; });
-        }
-        setDiary(events.map((e: any) => ({ ...e, spotName: spotMap[e.spot_id], routeName: routeMap[e.route_id] })));
+        setDiary(
+          events.map((e: any) => ({
+            ...e,
+            spotName: spotMap[e.spot_id]?.name,
+            routeName: spotMap[e.spot_id]?.routeName,
+          }))
+        );
       } catch (e) {
         console.error("Failed to load diary", e);
       } finally {
@@ -155,9 +169,12 @@ export default function MyPage() {
         return;
       }
       
+      await syncUserProfileAndGroupStatus(supabase, user, grp.id);
+      const statusValue = buildMemberStatusWithDisplayName(user);
+
       const { data: existingMember } = await supabase
         .from("group_members")
-        .select("id")
+        .select("user_id, status")
         .eq("group_id", grp.id)
         .eq("user_id", user.id)
         .maybeSingle();
@@ -167,16 +184,33 @@ export default function MyPage() {
           .from("group_members")
           .insert({
             group_id: grp.id,
-            user_id: user.id
+            user_id: user.id,
+            status: statusValue,
           });
           
         if (joinError) throw joinError;
+      } else if (existingMember.status !== statusValue) {
+        await supabase
+          .from("group_members")
+          .update({ status: statusValue })
+          .eq("group_id", grp.id)
+          .eq("user_id", user.id);
       }
 
       // 連れ立ちのルートを進行中（最大1個）として設定
       await activateUserRoute(user.id, grp.route_id);
+
+      const currentMembers = await fetchGroupCompanionMembers(supabase, grp.id, user);
+      const partnerNames = currentMembers.filter((m) => !m.isMe).map((m) => m.displayName);
       
       setShowJoinDialog(false);
+      await showAlert({
+        text:
+          partnerNames.length > 0
+            ? `👥 連れ立ちに合流しました！\n同行メンバー: ${partnerNames.join("、")} さん\n同じルートのマップへ移動します。`
+            : `👥 連れ立ちグループ（コード: ${cleanCode}）に参加しました！\nマップへ移動します。`,
+        okText: "マップへ進む",
+      });
       router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
     } catch (err: any) {
       await showAlert({ text: `連れ立ちへの参加に失敗しました: ${err.message}`, okText: "確認" });
@@ -362,25 +396,39 @@ export default function MyPage() {
                         fontSize: "0.8rem",
                         color: "#5C4E43"
                       }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "4px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "4px", flexWrap: "wrap" }}>
                           <span>👥 連れ立ち中</span>
+                          <span style={{
+                            fontSize: "0.7rem",
+                            padding: "1px 8px",
+                            borderRadius: "10px",
+                            background: ur.group.partners.length > 0 ? "#E8F5E9" : "#FFF8E1",
+                            color: ur.group.partners.length > 0 ? "#2E7D32" : "#B78103",
+                            border: `1px solid ${ur.group.partners.length > 0 ? "#A5D6A7" : "#FFE082"}`,
+                            fontWeight: 700
+                          }}>
+                            {ur.group.partners.length > 0 ? `✓ 合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
+                          </span>
                           <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "#fff", border: "1px solid #EBE5D9", padding: "1px 6px", borderRadius: "4px", color: "var(--primary-color)" }}>
                             コード: {ur.group.inviteCode}
                           </span>
                         </div>
                         <div style={{ color: "#8A7E72" }}>
                           {ur.group.partners.length > 0 ? (
-                            <>同行者: <strong style={{ color: "#5C4E43" }}>{ur.group.partners.map((p: any) => p.displayName).join(", ")} さん</strong></>
+                            <>同行者: <strong style={{ color: "#5C4E43" }}>{ur.group.partners.map((p: any) => p.displayName).join("、")} さん</strong></>
                           ) : (
-                            <>同行する友達の合流を待っています</>
+                            <>同行する友達の合流を待っています（招待コードを共有してください）</>
                           )}
                         </div>
                       </div>
                     )}
 
-                    <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "14px" }}>
+                    <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "14px", flexWrap: "wrap" }}>
                       <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>進行中から外す</button>
-                      <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
+                      {ur.group && (
+                        <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", fontWeight: 700 }}>🗺️ 連れ立ちマップ</Link>
+                      )}
+                      <Link href={`/routes/${ur.route_id}${ur.group ? `?groupId=${ur.group.id}` : ""}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
                     </div>
                   </div>
                   );
@@ -457,9 +505,21 @@ export default function MyPage() {
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 700, color: "#5C4E43", fontSize: "0.9rem" }}>{d.spotName || "スポット"}</div>
                       <div style={{ fontSize: "0.75rem", color: "#A39687", marginTop: "1px" }}>
-                        {d.routeName || ""}{d.visitor_number ? ` ・ #${d.visitor_number}番目の来訪者` : ""}
+                        {d.routeName || ""}
                       </div>
+                      {d.memo && (
+                        <div style={{ fontSize: "0.8rem", color: "#5C4E43", marginTop: "6px", background: "#F9F6F0", padding: "6px 10px", borderRadius: "6px", borderLeft: "3px solid var(--accent-color)" }}>
+                          💬 {d.memo}
+                        </div>
+                      )}
                     </div>
+                    {d.photo_url && (
+                      <img
+                        src={d.photo_url}
+                        alt="押印写真"
+                        style={{ width: "48px", height: "48px", objectFit: "cover", borderRadius: "8px", border: "1px solid #EBE5D9", flexShrink: 0 }}
+                      />
+                    )}
                   </div>
                 ))}
               </div>

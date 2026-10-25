@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { User, Session } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
+import { syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
 
 interface AuthContextType {
   user: User | null;
@@ -27,6 +28,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.log("--- AuthContext: getInitialSession success ---", { hasSession: !!data.session });
         setSession(data.session);
         setUser(data.session?.user ?? null);
+        if (data.session?.user) {
+          syncUserProfileAndGroupStatus(supabase, data.session.user);
+        }
       } catch (error) {
         console.error("--- AuthContext: Error getting initial session ---", error);
       } finally {
@@ -44,6 +48,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       try {
         setSession(session);
         setUser(session?.user ?? null);
+        if (session?.user) {
+          syncUserProfileAndGroupStatus(supabase, session.user);
+        }
       } catch (error) {
         console.error("--- AuthContext: Error in onAuthStateChange ---", error);
       } finally {

@@ -154,6 +154,7 @@ interface RouteMapUIProps {
   groupMembers?: any[];
   memberLatestStamps?: Record<string, string>;
   spotAcquiredMembers?: Record<string, any[]>;
+  sharedMemoriesBySpot?: Record<string, any[]>;
 }
 
 export default function RouteMapUI({ 
@@ -163,7 +164,8 @@ export default function RouteMapUI({
   groupId, 
   groupMembers = [], 
   memberLatestStamps = {}, 
-  spotAcquiredMembers = {} 
+  spotAcquiredMembers = {},
+  sharedMemoriesBySpot = {}
 }: RouteMapUIProps) {
   const { user } = useAuth();
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
@@ -427,57 +429,69 @@ export default function RouteMapUI({
                 {distanceToSelected !== null && ` (${formatDistance(distanceToSelected)})`}
               </p>
 
-              {activeSpotId === selectedSpot.id && (
-                <div style={{ marginTop: "12px" }}>
-                  <Link 
-                    href={`/routes/${rally.id}/spot/${selectedSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
-                    className="btn-primary"
-                    style={{ 
-                      display: "inline-flex", 
-                      alignItems: "center", 
-                      gap: "6px",
-                      padding: "8px 16px",
-                      fontSize: "0.85rem",
-                      textDecoration: "none",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    しるしを刻む
-                  </Link>
-                </div>
-              )}
+              <div style={{ marginTop: "12px" }}>
+                <Link 
+                  href={`/routes/${rally.id}/spot/${selectedSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                  className="btn-primary"
+                  style={{ 
+                    display: "inline-flex", 
+                    alignItems: "center", 
+                    gap: "6px",
+                    padding: "8px 16px",
+                    fontSize: "0.85rem",
+                    textDecoration: "none",
+                    fontWeight: "bold"
+                  }}
+                >
+                  {activeSpotId === selectedSpot.id ? "しるしを刻む" : "スポット詳細 / 押印へ"}
+                </Link>
+              </div>
 
-              {/* しるしを獲得したメンバー一覧 */}
+              {/* しるしを獲得したメンバー＆共有された写真・コメント一覧 */}
               {groupId && spotAcquiredMembers[selectedSpot.id] && spotAcquiredMembers[selectedSpot.id].length > 0 && (
                 <div style={{ marginTop: "12px", borderTop: "1px solid #EBE5D9", paddingTop: "8px" }}>
-                  <div style={{ fontSize: "0.7rem", color: "#A39687", fontWeight: "bold", marginBottom: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
-                    <Users size={12} color="var(--primary-color)" /> しるしを獲得した同行者
+                  <div style={{ fontSize: "0.7rem", color: "#A39687", fontWeight: "bold", marginBottom: "6px", display: "flex", alignItems: "center", gap: "4px" }}>
+                    <Users size={12} color="var(--primary-color)" /> しるしを刻んだメンバー ({spotAcquiredMembers[selectedSpot.id].length}名)
                   </div>
-                  <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
-                    {spotAcquiredMembers[selectedSpot.id].map(m => (
-                      <div 
-                        key={m.id} 
-                        title={m.display_name}
-                        style={{ 
-                          width: "24px", 
-                          height: "24px", 
-                          borderRadius: "50%", 
-                          background: "#EBE5D9", 
-                          overflow: "hidden", 
-                          border: "1px solid #FFF",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
-                        }}
-                      >
-                        {m.avatar_url ? (
-                          <img src={m.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                        ) : (
-                          <span style={{ fontSize: "0.6rem" }}>{(m.display_name || "👤").slice(0, 1)}</span>
-                        )}
-                      </div>
-                    ))}
+                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                    {(sharedMemoriesBySpot[selectedSpot.id] || spotAcquiredMembers[selectedSpot.id]).map((m: any) => {
+                      const name = m.displayName || m.display_name || "同行メンバー";
+                      const photo = m.photoUrl || m.photo_url;
+                      const memo = m.memo;
+                      return (
+                        <div
+                          key={m.userId || m.id}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "8px",
+                            background: "#FAF6EE",
+                            padding: "5px 8px",
+                            borderRadius: "8px",
+                            border: "1px solid #EBE5D9",
+                            fontSize: "0.75rem"
+                          }}
+                        >
+                          {photo && (
+                            <img
+                              src={photo}
+                              alt=""
+                              style={{ width: "32px", height: "32px", borderRadius: "6px", objectFit: "cover", flexShrink: 0 }}
+                            />
+                          )}
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ fontWeight: 700, color: "#5C4E43" }}>
+                              {name} {m.isMe ? "（あなた）" : "さん"}
+                            </div>
+                            {memo && (
+                              <div style={{ color: "#8A7E72", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                💬 {memo}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               )}

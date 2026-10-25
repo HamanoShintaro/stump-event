@@ -2,11 +2,12 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { notFound, useRouter } from "next/navigation";
+import { notFound, useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { useRouteStamps } from "@/hooks/useRouteStamps";
+import { resolveActiveGroupForRoute, getDisplayNameFromAuthUser } from "@/utils/stampMedia";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
 import BackButton from "@/components/BackButton";
@@ -22,12 +23,15 @@ interface Spot {
 export default function DestinationsPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlGroupId = searchParams.get("groupId");
   const { user } = useAuth();
   const { stampedSpotIds } = useRouteStamps(resolvedParams.id, user?.id);
   
   const [rally, setRally] = useState<any>(null);
   const [spots, setSpots] = useState<Spot[]>([]);
   const [activeSpotId, setActiveSpotId] = useState<string | null>(null);
+  const [effectiveGroupId, setEffectiveGroupId] = useState<string | null>(urlGroupId);
   const [loading, setLoading] = useState(true);
   const [settingSpotId, setSettingSpotId] = useState<string | null>(null);
   const { showAlert } = useCustomAlert();
@@ -69,6 +73,10 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
         if (userData) {
           setActiveSpotId(userData.active_spot_id);
         }
+        const resolvedGroup = await resolveActiveGroupForRoute(supabase, user, resolvedParams.id, urlGroupId);
+        if (resolvedGroup) {
+          setEffectiveGroupId(resolvedGroup.groupId);
+        }
       }
       
       setLoading(false);
@@ -88,7 +96,14 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
     // 自動的に行が作成されて active_spot_id が確実に保存されるよう upsert を使用します。
     const { error } = await supabase
       .from('users')
-      .upsert({ id: user.id, active_spot_id: spot.id }, { onConflict: 'id' });
+      .upsert(
+        {
+          id: user.id,
+          active_spot_id: spot.id,
+          display_name: getDisplayNameFromAuthUser(user),
+        },
+        { onConflict: 'id' }
+      );
       
     setSettingSpotId(null);
     
@@ -96,8 +111,8 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
       await showAlert({ text: "行き先の設定に失敗しました: " + error.message, okText: "確認" });
     } else {
       setActiveSpotId(spot.id);
-      // 行き先設定後、マップ画面へ遷移
-      router.push(`/routes/${rally.id}/map`);
+      // 行き先設定後、マップ画面へ遷移（連れ立ち中はgroupIdを引き継ぐ）
+      router.push(`/routes/${rally.id}/map${effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""}`);
     }
   };
 

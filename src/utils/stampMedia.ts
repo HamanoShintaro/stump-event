@@ -379,20 +379,20 @@ export async function fetchGroupSharedMemoriesForSpots(
   if (memberUserIds.length > 0) {
     const { data: byUsers } = await supabase
       .from("stamp_events")
-      .select("id, user_id, spot_id, group_id, memo, photo_url, acquired_at")
+      .select("id, user_id, spot_id, group_id, memo, photo_url, created_at")
       .in("spot_id", spotIds)
       .in("user_id", memberUserIds)
-      .order("acquired_at", { ascending: false });
+      .order("created_at", { ascending: false });
     if (byUsers) rows.push(...byUsers);
   }
 
   if (groupId) {
     const { data: byGroup } = await supabase
       .from("stamp_events")
-      .select("id, user_id, spot_id, group_id, memo, photo_url, acquired_at")
+      .select("id, user_id, spot_id, group_id, memo, photo_url, created_at")
       .in("spot_id", spotIds)
       .eq("group_id", groupId)
-      .order("acquired_at", { ascending: false });
+      .order("created_at", { ascending: false });
     if (byGroup) rows.push(...byGroup);
   }
 
@@ -426,7 +426,7 @@ export async function fetchGroupSharedMemoriesForSpots(
         avatarUrl: member?.avatarUrl || null,
         memo,
         photoUrl,
-        acquiredAt: r.acquired_at,
+        acquiredAt: r.created_at,
         isMe,
       });
     } else {

@@ -90,15 +90,25 @@ export default function ActiveRoutesPage() {
                     fontSize: "0.85rem",
                     color: "#E0D7CD"
                   }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "6px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "6px", flexWrap: "wrap" }}>
                       <span>👥 連れ立ち中</span>
+                      <span style={{
+                        fontSize: "0.7rem",
+                        padding: "1px 8px",
+                        borderRadius: "10px",
+                        background: ur.group.partners.length > 0 ? "rgba(46, 125, 50, 0.25)" : "rgba(201, 168, 76, 0.2)",
+                        color: ur.group.partners.length > 0 ? "#81C784" : "var(--accent-color)",
+                        border: "1px solid rgba(255,255,255,0.2)",
+                      }}>
+                        {ur.group.partners.length > 0 ? `✓ 合流済み（同行 ${ur.group.partners.length}名）` : "合流待ち"}
+                      </span>
                       <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", padding: "1px 6px", borderRadius: "4px", color: "var(--accent-color)" }}>
                         コード: {ur.group.inviteCode}
                       </span>
                     </div>
                     <div style={{ color: "#B3A598" }}>
                       {ur.group.partners.length > 0 ? (
-                        <>同行者: <strong style={{ color: "#E0D7CD" }}>{ur.group.partners.map((p: any) => p.displayName).join(", ")} さん</strong></>
+                        <>同行者: <strong style={{ color: "#E0D7CD" }}>{ur.group.partners.map((p: any) => p.displayName).join("、")} さん</strong></>
                       ) : (
                         <>同行する友達の合流を待っています</>
                       )}
@@ -106,9 +116,12 @@ export default function ActiveRoutesPage() {
                   </div>
                 )}
 
-                <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "12px" }}>
+                <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "12px", flexWrap: "wrap" }}>
                   <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", background: "transparent", border: "1px solid rgba(217,101,91,0.3)", color: "#D9655B", borderRadius: "8px", cursor: "pointer" }}>進行中から外す</button>
-                  <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none" }}>再開する</Link>
+                  {ur.group && (
+                    <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none", border: "1px solid var(--accent-color)", color: "var(--accent-color)", borderRadius: "8px" }}>🗺️ 連れ立ちマップ</Link>
+                  )}
+                  <Link href={`/routes/${ur.route_id}${ur.group ? `?groupId=${ur.group.id}` : ""}`} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none" }}>再開する</Link>
                 </div>
               </div>
               );
