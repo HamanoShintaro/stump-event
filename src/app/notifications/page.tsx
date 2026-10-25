@@ -17,6 +17,15 @@ interface NotificationItem {
 
 const NOTIFICATIONS_DATA: NotificationItem[] = [
   {
+    id: "news-2026-10-25",
+    title: "【秋の大型更新】気軽な街歩き提案コンパス・SHUIN帳「旅のアルバム」＆マイページ「記憶の一頁」が登場",
+    date: "2026/10/25",
+    category: "system",
+    categoryLabel: "アップデート",
+    summary: "現在地からの距離や30〜45分で歩ける「ご近所・気軽な街歩き提案コンパス」、SHUIN帳の「旅のアルバム＆あとがき編集」、ルート保存（栞）、そしてマイページの「街歩きの軌跡」「記憶の一頁」が新たに加わりました。",
+    content: "日頃よりSHUIN（まちのしるし）をご利用いただきありがとうございます。\n秋の街歩きシーズンに向けて、日常の延長でふらっと街へ出かけ、歩いた軌跡をより深く味わえる4つの新機能を公開いたしました。\n\n■ 1. ご近所・気軽な街歩き提案コンパス（トップページ＆ルート一覧）\n・現在地から各ルートの最初のスポットまでの「距離（m/km）」と「徒歩分数」がひと目で分かるようになりました。\n・トップページに「📍 現在地から近い順」「☕ 30〜45分の気軽な街歩き」タブが登場し、駅名や街名・スポット名でのキーワード検索にも対応しました。\n\n■ 2. ルート保存（栞）機能と「あなたとこの場所の記憶（来訪履歴）」\n・気になるルートに「🔖 このルートを保存する（栞）」でしおりを挟み、マイページの「保存したルート」からいつでも見返せます。\n・各スポット詳細画面では、あなたが過去にその場所を訪れた日付・回数・写真・メモの履歴（来訪タイムライン）を振り返ることができます。\n\n■ 3. SHUIN帳の「旅のアルバム（日記帳）ビュー」＆思い出のあとがき機能\n・SHUIN帳に、写真と物語を日記のように読み返せる「旅のアルバム」ビューと、ライフログ絞り込みチップ（👥 連れ立ちの記憶 / 📷 写真・言葉あり / 🔄 再訪した場所 / 訪れた街）が加わりました。\n・帰宅後や後日でも、SHUIN帳から当時の思い出の「あとがき（感想メモ）」や写真をいつでも追記・編集できます。また、連れ立ち中はルートマップ上から「連れ立ち思い出アルバム」をリアルタイムに開けます。\n\n■ 4. マイページの「街歩きの軌跡」＆「記憶の一頁（あの日のしるし）」\n・マイページ上部に、これまでに訪れた街（市区郡）や累計押印・なじみの再訪数・紡いだ思い出の集計ボードと、過去の印象的な来訪記憶をランダムに浮かび上がらせる「🌸 記憶の一頁」カードが登場しました。\n\n心地よい秋風のなか、あなたの街の新しいしるしを探しに出かけてみませんか。"
+  },
+  {
     id: "news-1",
     title: "【新ルート公開】「自由が丘で、\"自由\"の正体を探す」が登場しました",
     date: "2026/07/18",
@@ -118,13 +127,14 @@ export default function NotificationsPage() {
                 className="glass-card"
                 onClick={() => toggleExpand(item.id)}
                 style={{
-                  border: isExpanded ? "1px solid var(--accent-color, #C9A84C)" : "1px solid #EBE5D9",
-                  background: isExpanded ? "#121212" : "#FFFDF9",
+                  border: isExpanded ? "1px solid var(--accent-color)" : "1px solid #EBE5D9",
+                  background: isExpanded ? "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)" : "#FFFDF9",
                   borderRadius: "14px",
                   padding: "18px 20px",
                   cursor: "pointer",
                   transition: "all 0.2s ease",
-                  userSelect: "none"
+                  userSelect: "none",
+                  boxShadow: isExpanded ? "0 6px 18px rgba(92, 78, 67, 0.08)" : "0 2px 8px rgba(92, 78, 67, 0.03)"
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px" }}>
@@ -152,7 +162,7 @@ export default function NotificationsPage() {
                     <h2 style={{ 
                       fontSize: "1.05rem", 
                       fontWeight: 800, 
-                      color: isExpanded ? "var(--accent-color)" : "#5C4E43", 
+                      color: isExpanded ? "var(--primary-color)" : "#5C4E43", 
                       margin: "0 0 6px 0",
                       lineHeight: "1.4"
                     }}>
@@ -178,7 +188,7 @@ export default function NotificationsPage() {
                       paddingTop: "16px", 
                       borderTop: "1px dashed #EBE5D9",
                       fontSize: "0.88rem",
-                      color: isExpanded ? "#E0D7CD" : "#5C4E43",
+                      color: "#5C4E43",
                       lineHeight: "1.7",
                       whiteSpace: "pre-line"
                     }}

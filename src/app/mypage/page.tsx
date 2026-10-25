@@ -9,8 +9,10 @@ import { evaluateBadges, isSiteUsageBadge } from "@/utils/badgeEvaluator";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
-import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft } from "lucide-react";
+import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft, RefreshCw, MapPin, BookOpen } from "lucide-react";
 import { useMyPageData } from "@/hooks/useMyPageData";
+import { useLifelogStats } from "@/hooks/useLifelogStats";
+import { getCategoryStampUrl } from "@/utils/stampHelper";
 import { activateUserRoute } from "@/utils/userRoutes";
 import {
   buildMemberStatusWithDisplayName,
@@ -19,16 +21,23 @@ import {
 } from "@/utils/stampMedia";
 import styles from "./page.module.css";
 
-// 街の便り（仮データ - 最新のものを表示）
+// 街の便り（最新のものを表示）
 const LATEST_NEWS = {
-  date: "2026.07.18",
-  title: "岩槻ルートの公開と「連れ立ち」機能追加のお知らせ",
-  summary: "歴史ある城下町・岩槻をめぐる新しいルートが公開されました。また、友達と一緒に同じルートを巡る「連れ立ち」機能が本日から利用可能になりました。マイページまたはマップ画面から招待コードを入力して合流しましょう！"
+  date: "2026.10.25",
+  title: "【秋の大型更新】気軽な街歩きコンパス・SHUIN帳「旅のアルバム」＆「記憶の一頁」が登場",
+  summary: "現在地からの距離や30〜45分で歩ける「気軽な街歩き提案コンパス」、SHUIN帳の「旅のアルバム（日記帳）ビュー＆あとがき編集」、ルート保存（栞）、そしてマイページの「街歩きの軌跡」「記憶の一頁」が新たに加わりました。"
 };
 
 export default function MyPage() {
   const { user, loading, logout } = useAuth();
   const { unseenCount } = useBadgeNotifications(user?.id);
+  const {
+    stats: lifelogStats,
+    memoryHighlight,
+    nextMemoryHighlight,
+    hasMultipleHighlights,
+    loading: lifelogLoading,
+  } = useLifelogStats(user?.id);
   const router = useRouter();
   const [userBadges, setUserBadges] = useState<any[]>([]);
   const [badgesLoading, setBadgesLoading] = useState(false);
@@ -318,6 +327,407 @@ export default function MyPage() {
             招待コードを入力
           </button>
         </section>
+
+        {/* 街歩きの軌跡（ライフログ集計） */}
+        <section
+          className="glass-card"
+          style={{
+            padding: "20px 24px",
+            borderRadius: "16px",
+            border: "1px solid #EBE5D9",
+            background: "#FFFDF9",
+            marginBottom: "24px",
+            boxShadow: "0 4px 14px rgba(92, 78, 67, 0.04)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px", flexWrap: "wrap", gap: "8px" }}>
+            <h2 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--text-color)", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
+              <span>🗺️</span> あなたの街歩きの軌跡
+            </h2>
+            <Link
+              href="/mypage/diary"
+              style={{
+                fontSize: "0.8rem",
+                color: "var(--primary-color)",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                textDecoration: "none",
+              }}
+            >
+              SHUIN帳を開く <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          {lifelogLoading ? (
+            <p style={{ color: "#A39687", fontSize: "0.85rem", margin: 0 }}>歩みの記録を集計しています...</p>
+          ) : (
+            <>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(145px, 1fr))",
+                  gap: "12px",
+                }}
+              >
+                {/* 1. 訪れた街（市区郡） */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)",
+                    border: "1px solid #EBE5D9",
+                    borderRadius: "12px",
+                    padding: "14px 12px",
+                  }}
+                >
+                  <div style={{ fontSize: "var(--font-size-small)", color: "#8A7E72", fontWeight: 700, marginBottom: "6px" }}>
+                    訪れた街（市区郡）
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--primary-color)", lineHeight: 1 }}>
+                      {lifelogStats.visitedCitiesCount}
+                    </span>
+                    <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-color)" }}>街</span>
+                  </div>
+                  <div style={{ fontSize: "0.72rem", color: "#A39687", marginTop: "6px" }}>
+                    巡った場所 {lifelogStats.uniqueSpots} 箇所
+                  </div>
+                </div>
+
+                {/* 2. 刻んだしるし（累計押印） */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)",
+                    border: "1px solid #EBE5D9",
+                    borderRadius: "12px",
+                    padding: "14px 12px",
+                  }}
+                >
+                  <div style={{ fontSize: "var(--font-size-small)", color: "#8A7E72", fontWeight: 700, marginBottom: "6px" }}>
+                    刻んだしるし（累計押印）
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--primary-color)", lineHeight: 1 }}>
+                      {lifelogStats.totalStamps}
+                    </span>
+                    <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-color)" }}>個</span>
+                  </div>
+                  <div style={{ fontSize: "0.72rem", color: "#A39687", marginTop: "6px" }}>
+                    なじみの再訪 {lifelogStats.revisitCount}回
+                  </div>
+                </div>
+
+                {/* 3. 巡り終えた物語（完走） */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)",
+                    border: "1px solid #EBE5D9",
+                    borderRadius: "12px",
+                    padding: "14px 12px",
+                  }}
+                >
+                  <div style={{ fontSize: "var(--font-size-small)", color: "#8A7E72", fontWeight: 700, marginBottom: "6px" }}>
+                    巡り終えた物語（完走）
+                  </div>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--accent-color)", lineHeight: 1 }}>
+                      {lifelogStats.completedRoutesCount}
+                    </span>
+                    <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--text-color)" }}>ルート</span>
+                  </div>
+                  <div style={{ fontSize: "0.72rem", color: "#A39687", marginTop: "6px" }}>
+                    踏破印を授与
+                  </div>
+                </div>
+
+                {/* 4. 紡いだ思い出（連れ立ち・写真・言葉） */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg, #FFFDF9 0%, #FAF6EE 100%)",
+                    border: "1px solid #EBE5D9",
+                    borderRadius: "12px",
+                    padding: "14px 12px",
+                  }}
+                >
+                  <div style={{ fontSize: "var(--font-size-small)", color: "#8A7E72", fontWeight: 700, marginBottom: "6px" }}>
+                    紡いだ思い出
+                  </div>
+                  <div style={{ fontSize: "0.85rem", fontWeight: 800, color: "var(--text-color)", lineHeight: 1.35, marginTop: "4px" }}>
+                    連れ立ち <span style={{ color: "var(--primary-color)" }}>{lifelogStats.tsuredachiVisitsCount}</span>回 ・ 記録 <span style={{ color: "var(--primary-color)" }}>{lifelogStats.memoriesRecordedCount}</span>件
+                  </div>
+                  <div style={{ fontSize: "0.72rem", color: "#A39687", marginTop: "6px" }}>
+                    写真・あとがきの記憶
+                  </div>
+                </div>
+              </div>
+
+              {lifelogStats.visitedCitiesList.length > 0 && (
+                <div
+                  style={{
+                    marginTop: "12px",
+                    paddingTop: "12px",
+                    borderTop: "1px dashed #EBE5D9",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: "6px",
+                  }}
+                >
+                  <span style={{ fontSize: "var(--font-size-small)", color: "#8A7E72", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                    <MapPin size={12} color="var(--primary-color)" /> 足跡を残した街:
+                  </span>
+                  {lifelogStats.visitedCitiesList.map((city) => (
+                    <span
+                      key={city}
+                      style={{
+                        fontSize: "0.72rem",
+                        padding: "2px 8px",
+                        borderRadius: "12px",
+                        background: "#FAF6EE",
+                        border: "1px solid #EBE5D9",
+                        color: "var(--text-color)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </section>
+
+        {/* 記憶の一頁（あの日のしるし） */}
+        {memoryHighlight && (
+          <section
+            className="glass-card"
+            style={{
+              padding: "20px 24px",
+              borderRadius: "16px",
+              border: "1px solid var(--accent-color)",
+              background: "linear-gradient(135deg, #FFFDF9 0%, #FAF4E6 100%)",
+              marginBottom: "28px",
+              boxShadow: "0 6px 18px rgba(201, 168, 76, 0.1)",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", flexWrap: "wrap", marginBottom: "12px" }}>
+              <div>
+                <div style={{ fontSize: "var(--font-size-small)", color: "var(--accent-color)", fontWeight: 800, letterSpacing: "0.06em" }}>
+                  ふと振り返る、あの日の街角の記憶
+                </div>
+                <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--text-color)", margin: "2px 0 0 0", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span>🌸</span> 記憶の一頁（あの日のしるし）
+                </h2>
+              </div>
+
+              {hasMultipleHighlights && (
+                <button
+                  type="button"
+                  onClick={nextMemoryHighlight}
+                  className="btn-secondary"
+                  style={{
+                    padding: "6px 12px",
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    borderRadius: "18px",
+                    border: "1px solid var(--accent-color)",
+                    background: "#FFFDF9",
+                    color: "var(--text-color)",
+                    cursor: "pointer",
+                  }}
+                >
+                  <RefreshCw size={13} /> 🔄 別の記憶をめくる
+                </button>
+              )}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "16px",
+                alignItems: "flex-start",
+                background: "#FFFDF9",
+                border: "1px solid #EBE5D9",
+                borderRadius: "12px",
+                padding: "16px",
+                flexWrap: "wrap",
+              }}
+            >
+              {/* SHUIN印影 */}
+              <div
+                style={{
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "12px",
+                  background: "#FAF6EE",
+                  border: "1px solid #EBE5D9",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  position: "relative",
+                }}
+              >
+                <img
+                  src={getCategoryStampUrl(memoryHighlight.routeCategory)}
+                  alt="SHUIN印影"
+                  style={{ width: "52px", height: "52px", objectFit: "contain", opacity: 0.9 }}
+                />
+              </div>
+
+              {/* 記憶の詳細 */}
+              <div style={{ flex: "1 1 220px", minWidth: 0 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", marginBottom: "4px" }}>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "var(--primary-color)" }}>
+                    {new Date(memoryHighlight.visitedAt).toLocaleDateString("ja-JP", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  {memoryHighlight.spotArea && (
+                    <span
+                      style={{
+                        fontSize: "0.68rem",
+                        padding: "1px 7px",
+                        borderRadius: "10px",
+                        background: "#FAF6EE",
+                        border: "1px solid #EBE5D9",
+                        color: "#5C4E43",
+                        fontWeight: 700,
+                      }}
+                    >
+                      {memoryHighlight.spotArea}
+                    </span>
+                  )}
+                  {memoryHighlight.isTsuredachi && (
+                    <span
+                      style={{
+                        fontSize: "0.68rem",
+                        padding: "1px 7px",
+                        borderRadius: "10px",
+                        background: "rgba(217, 101, 91, 0.12)",
+                        color: "var(--primary-color)",
+                        fontWeight: 700,
+                      }}
+                    >
+                      👥 連れ立ちの記憶
+                    </span>
+                  )}
+                  {memoryHighlight.visitOrder >= 2 && (
+                    <span
+                      style={{
+                        fontSize: "0.68rem",
+                        padding: "1px 7px",
+                        borderRadius: "10px",
+                        background: "rgba(201, 168, 76, 0.16)",
+                        color: "#8C6D1F",
+                        fontWeight: 700,
+                      }}
+                    >
+                      🔄 {memoryHighlight.visitOrderLabel}
+                    </span>
+                  )}
+                  {memoryHighlight.visitorNumber != null && (
+                    <span style={{ fontSize: "0.68rem", color: "#A39687", fontWeight: 700 }}>
+                      #{memoryHighlight.visitorNumber}番目の来訪者
+                    </span>
+                  )}
+                </div>
+
+                <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--text-color)", margin: "0 0 2px 0" }}>
+                  {memoryHighlight.spotName}
+                </h3>
+                <div style={{ fontSize: "0.75rem", color: "#8A7E72", marginBottom: "8px" }}>
+                  {memoryHighlight.routeName}
+                </div>
+
+                {memoryHighlight.memo ? (
+                  <div
+                    style={{
+                      fontSize: "0.82rem",
+                      color: "var(--text-color)",
+                      background: "#FAF6EE",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      borderLeft: "3px solid var(--accent-color)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    「{memoryHighlight.memo}」
+                  </div>
+                ) : memoryHighlight.spotFragment ? (
+                  <div
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "#6F6256",
+                      background: "#FAF6EE",
+                      padding: "8px 12px",
+                      borderRadius: "8px",
+                      borderLeft: "3px solid #D8CEBE",
+                      lineHeight: 1.5,
+                      fontStyle: "italic",
+                    }}
+                  >
+                    {memoryHighlight.spotFragment}
+                  </div>
+                ) : null}
+              </div>
+
+              {/* 思い出写真サムネイル */}
+              {memoryHighlight.photoUrl && (
+                <img
+                  src={memoryHighlight.photoUrl}
+                  alt={memoryHighlight.spotName}
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                    border: "1px solid #EBE5D9",
+                    flexShrink: 0,
+                  }}
+                />
+              )}
+            </div>
+
+            <div style={{ marginTop: "12px", display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
+              {memoryHighlight.routeId && (
+                <Link
+                  href={`/routes/${memoryHighlight.routeId}`}
+                  style={{
+                    fontSize: "0.78rem",
+                    color: "#8A7E72",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  このルートをもう一度見る
+                </Link>
+              )}
+              <Link
+                href="/mypage/diary"
+                style={{
+                  fontSize: "0.82rem",
+                  color: "var(--primary-color)",
+                  textDecoration: "none",
+                  fontWeight: 800,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
+                }}
+              >
+                <BookOpen size={14} /> SHUIN帳でこの記録を見る ▸
+              </Link>
+            </div>
+          </section>
+        )}
 
         {/* メインダッシュボードコンテンツ */}
         <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
