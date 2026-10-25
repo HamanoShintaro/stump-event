@@ -61,13 +61,13 @@ async function run() {
     } else {
       // Fallback mappings if artifact is not generated due to server capacity limits
       const fallbackMap = {
-        'spot_temple': 'kitaurawa/spot4.png',
-        'spot_landmark': 'jiyugaoka/spot2.png',
-        'spot_park': 'jiyugaoka/spot5.png',
-        'spot_cafe': 'kitaurawa/spot5.png',
-        'spot_bakery': 'yono/spot4.png',
-        'spot_store': 'jiyugaoka/spot3.png',
-        'spot_ramen': 'yono/spot2.png'
+        'spot_temple': 'kitaurawa/spot4.jpg',
+        'spot_landmark': 'jiyugaoka/spot2.jpg',
+        'spot_park': 'jiyugaoka/spot5.jpg',
+        'spot_cafe': 'kitaurawa/spot5.jpg',
+        'spot_bakery': 'yono/spot4.jpg',
+        'spot_store': 'jiyugaoka/spot3.jpg',
+        'spot_ramen': 'yono/spot2.jpg'
       };
 
       if (fallbackMap[key]) {

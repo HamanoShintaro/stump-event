@@ -21,7 +21,7 @@ const jiyugaokaRoute = {
   prefecture: "東京都",
   budget_tier: 1,
   is_published: true,
-  thumbnail_url: "/images/jiyugaoka/route-eyecatch.png",
+  thumbnail_url: "/images/jiyugaoka/route-eyecatch.jpg",
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
     question: '自由が丘の"自由"は、何から生まれたか？',
@@ -40,7 +40,7 @@ const jiyugaokaSpots = [
     route_id: JIYUGAOKA_ROUTE_ID,
     name: "谷畑の権現さま（自由が丘熊野神社）",
     description: "自由が丘の総鎮守。御朱印（来訪証明）の本家であり、あなたが集める押印の原点。まずここで街の一番古い記憶に触れてから歩き出す。",
-    image_url: "/images/jiyugaoka/spot1.png",
+    image_url: "/images/jiyugaoka/spot1.jpg",
     address: "東京都目黒区自由が丘1-24-12",
     location: "POINT(139.669865 35.609138)",
     radius_meters: 50,
@@ -51,7 +51,7 @@ const jiyugaokaSpots = [
     route_id: JIYUGAOKA_ROUTE_ID,
     name: "水のない街の運河（La Vita／ラ・ヴィータ）",
     description: "ヴェネツィアの街並みを再現した、自由が丘で最も写真に撮られる一角。運河・橋・ゴンドラが小さな広場に凝縮されている。",
-    image_url: "/images/jiyugaoka/spot2.png",
+    image_url: "/images/jiyugaoka/spot2.jpg",
     address: "東京都目黒区自由が丘2-8-3",
     location: "POINT(139.667597 35.611115)",
     radius_meters: 50,
@@ -62,7 +62,7 @@ const jiyugaokaSpots = [
     route_id: JIYUGAOKA_ROUTE_ID,
     name: "暮らしをDIYする店（TODAY'S SPECIAL Jiyugaoka）",
     description: "「食とくらしのDIY」がテーマの旗艦店。器・植物・本・服が一棟に詰まり、\"自分で選ぶ暮らし\"の象徴。",
-    image_url: "/images/jiyugaoka/spot3.png",
+    image_url: "/images/jiyugaoka/spot3.jpg",
     address: "東京都目黒区自由が丘2-17-8",
     location: "POINT(139.666144 35.608933)",
     radius_meters: 50,
@@ -73,7 +73,7 @@ const jiyugaokaSpots = [
     route_id: JIYUGAOKA_ROUTE_ID,
     name: "昭和の密度が残るビル（自由が丘デパート）",
     description: "駅前にそびえる昭和から続く象徴的な商業ビル。約100の小さな店が迷路状に詰まり、再開発が進む今も\"古い自由が丘\"の密度を残す。",
-    image_url: "/images/jiyugaoka/spot4.png",
+    image_url: "/images/jiyugaoka/spot4.jpg",
     address: "東京都目黒区自由が丘1-28-8",
     location: "POINT(139.668500 35.607908)",
     radius_meters: 50,
@@ -84,7 +84,7 @@ const jiyugaokaSpots = [
     route_id: JIYUGAOKA_ROUTE_ID,
     name: "川の上を歩いていた（九品仏川緑道／グリーンストリート）",
     description: "駅南口からのびる石畳 of 散歩道。かつて流れていた九品仏川を1974年に暗渠化（地下化）してできた道。春は桜のトンネルになる。",
-    image_url: "/images/jiyugaoka/spot5.png",
+    image_url: "/images/jiyugaoka/spot5.jpg",
     address: "東京都目黒区自由が丘1丁目",
     location: "POINT(139.668630 35.606353)",
     radius_meters: 50,
@@ -169,7 +169,7 @@ const yonoRoute = {
   prefecture: "埼玉県",
   budget_tier: 1,
   is_published: true,
-  thumbnail_url: "/images/yono/route-eyecatch.png",
+  thumbnail_url: "/images/yono/route-eyecatch.jpg",
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
     question: '与野駅周辺の境界は、かつて何の境界だった？',
@@ -188,7 +188,7 @@ const yonoSpots = [
     route_id: YONO_ROUTE_ID,
     name: "大正浪漫香る駅前（与野駅東口広場）",
     description: "大正元年に開業した与野駅。東口周辺には大正から昭和にかけての風情を残す古いレンガ調の建物や街並みが広がり、かつての面影を残しています。",
-    image_url: "/images/yono/spot1.png",
+    image_url: "/images/yono/spot1.jpg",
     address: "埼玉県さいたま市浦和区上木崎1丁目",
     location: "POINT(139.639818 35.879712)",
     radius_meters: 50,
@@ -199,7 +199,7 @@ const yonoSpots = [
     route_id: YONO_ROUTE_ID,
     name: "昭和レトロな洋食と珈琲（レストラン ヒロ）",
     description: "与野駅東口から歩いてすぐの場所にある、昭和レトロな雰囲気を色濃く残す洋食と喫茶のお店。懐かしい佇まいの店内で、名物の洋食メニューや香り高い珈琲を味わいながら、散策の途中にほっと一息つきましょう。",
-    image_url: "/images/yono/spot2.png",
+    image_url: "/images/yono/spot2.jpg",
     address: "埼玉県さいたま市浦和区上木崎2-2-16",
     location: "POINT(139.640348 35.885797)",
     radius_meters: 50,
@@ -210,7 +210,7 @@ const yonoSpots = [
     route_id: YONO_ROUTE_ID,
     name: "老舗和菓子店で甘味選び（大こくや）",
     description: "明治創業の歴史を持つ、与野駅西口からほど近い老舗和菓子店。名物の大福や季節の団子など、伝統の製法で丁寧に作られる甘味をお土産に買い求めましょう。",
-    image_url: "/images/yono/spot4.png",
+    image_url: "/images/yono/spot4.jpg",
     address: "埼玉県さいたま市中央区下落合1010",
     location: "POINT(139.637500 35.878800)",
     radius_meters: 50,
@@ -221,7 +221,7 @@ const yonoSpots = [
     route_id: YONO_ROUTE_ID,
     name: "下落合の総鎮守・アニメの聖地（下落合氷川神社）",
     description: "与野駅西口から西へ進んだ下落合の住宅街に佇む神社。古くから下落合の鎮守として地域の人々に親しまれているほか、アニメ『弱キャラ友崎くん』の舞台としてもファンに知られています。境内を静かに巡り、旅の安全とともに次のしるしを獲得しましょう。",
-    image_url: "/images/yono/spot3.png",
+    image_url: "/images/yono/spot3.jpg",
     address: "埼玉県さいたま市中央区下落合5丁目4",
     location: "POINT(139.628610 35.884389)",
     radius_meters: 50,
@@ -232,7 +232,7 @@ const yonoSpots = [
     route_id: YONO_ROUTE_ID,
     name: "旅のしるべ（与野中央公園）",
     description: "散策の最後に訪れる、豊かな緑に包まれた与野中央公園。木々の梢を揺らす風を感じながら、今日のフィールドワークで巡った与野の街の記憶を振り返り、最後の押印を完了します。",
-    image_url: "/images/yono/spot5.png",
+    image_url: "/images/yono/spot5.jpg",
     address: "埼玉県さいたま市中央区新中里4丁目",
     location: "POINT(139.627700 35.874800)",
     radius_meters: 50,
@@ -316,7 +316,7 @@ const iwatsukiRoute = {
   prefecture: iwatsukiArea.prefecture,
   budget_tier: iwatsukiArea.budget_tier,
   is_published: true,
-  thumbnail_url: `/images/iwatsuki/route-eyecatch.png`,
+  thumbnail_url: `/images/iwatsuki/route-eyecatch.jpg`,
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
     question: iwatsukiArea.question,
@@ -334,7 +334,7 @@ const iwatsukiSpots = iwatsukiArea.spots.map((s, i) => ({
   route_id: IWATSUKI_ROUTE_ID,
   name: s.name,
   description: s.description,
-  image_url: `/images/iwatsuki/spot${i + 1}.png`,
+  image_url: `/images/iwatsuki/spot${i + 1}.jpg`,
   address: s.address,
   location: `POINT(${s.lng} ${s.lat})`,
   radius_meters: s.radius_meters || 50,
@@ -380,7 +380,7 @@ const kitaurawaRoute = {
   prefecture: "埼玉県",
   budget_tier: 1,
   is_published: true,
-  thumbnail_url: "/images/kitaurawa/route-eyecatch.png",
+  thumbnail_url: "/images/kitaurawa/route-eyecatch.jpg",
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
     question: '北浦和公園のシンボルであり、クラシック音楽に合わせて水が舞う施設はどれ？',
@@ -399,7 +399,7 @@ const kitaurawaSpots = [
     route_id: KITAURAWA_ROUTE_ID,
     name: "始まりの街灯（北浦和駅西口広場）",
     description: "北浦和駅の西口広場。レトロなデザインの街頭が優しく佇み、ここから広大な北浦和公園へと続く静かな散策の旅が始まります。",
-    image_url: "/images/kitaurawa/spot1.png",
+    image_url: "/images/kitaurawa/spot1.jpg",
     address: "埼玉県さいたま市浦和区北浦和4-1",
     location: "POINT(139.646500 35.871800)",
     radius_meters: 50,
@@ -410,7 +410,7 @@ const kitaurawaSpots = [
     route_id: KITAURAWA_ROUTE_ID,
     name: "音と水の舞踏（北浦和公園 音楽噴水）",
     description: "北浦和公園の中央に位置する美しい大噴水。定時になると、クラシック音楽の旋律と連動してダイナミックに水柱が躍る優雅なアートスポットです。",
-    image_url: "/images/kitaurawa/spot2.png",
+    image_url: "/images/kitaurawa/spot2.jpg",
     address: "埼玉県さいたま市浦和区常盤9-30",
     location: "POINT(139.645200 35.872200)",
     radius_meters: 50,
@@ -421,7 +421,7 @@ const kitaurawaSpots = [
     route_id: KITAURAWA_ROUTE_ID,
     name: "グリッドの美学（埼玉県立近代美術館 MOMAS）",
     description: "世界的建築家・黒川紀章の初期の代表作。格子状 of グリッドフレームが美しい建物で、公園の緑とモダンアートが静かに調和しています。",
-    image_url: "/images/kitaurawa/spot3.png",
+    image_url: "/images/kitaurawa/spot3.jpg",
     address: "埼玉県さいたま市浦和区常盤9-30-1",
     location: "POINT(139.644500 35.872500)",
     radius_meters: 50,
@@ -432,7 +432,7 @@ const kitaurawaSpots = [
     route_id: KITAURAWA_ROUTE_ID,
     name: "静寂の山門（廓信寺）",
     description: "江戸時代初期の慶長年間に建立された浄土宗の古刹。文教都市の喧騒から切り離されたかのような、厳かな松林と静寂に包まれた境内が広がります。",
-    image_url: "/images/kitaurawa/spot4.png",
+    image_url: "/images/kitaurawa/spot4.jpg",
     address: "埼玉県さいたま市浦和区北浦和3-15-22",
     location: "POINT(139.649200 35.874100)",
     radius_meters: 50,
@@ -443,7 +443,7 @@ const kitaurawaSpots = [
     route_id: KITAURAWA_ROUTE_ID,
     name: "昭和の余白（純喫茶ひだまり）",
     description: "北浦和の路地裏に佇む昭和レトロな純喫茶。温かい木のカウンターと名物の自家製プリン、サイフォンで淹れる薫り高い珈琲で旅のしるしを締めくくります。",
-    image_url: "/images/kitaurawa/spot5.png",
+    image_url: "/images/kitaurawa/spot5.jpg",
     address: "埼玉県さいたま市浦和区北浦和3-8-1",
     location: "POINT(139.648000 35.873200)",
     radius_meters: 50,
@@ -526,7 +526,7 @@ const shintoshinRoute = {
   prefecture: "埼玉県",
   budget_tier: 1,
   is_published: true,
-  thumbnail_url: "/images/shintoshin/route-eyecatch.png",
+  thumbnail_url: "/images/shintoshin/route-eyecatch.jpg",
   completion_ceremony_type: "quiz_4choice",
   completion_quiz_data: {
     question: 'コクーンシティの名の由来である「コクーン（繭）」は、かつてこの地にあった何の工場に由来する？',
@@ -545,7 +545,7 @@ const shintoshinSpots = [
     route_id: SHINTOSHIN_ROUTE_ID,
     name: "ガラスの改札口（さいたま新都心駅東口デッキ）",
     description: "光が注ぐガラス張りの近未来的な駅舎。ペデストリアンデッキの大きな空を見上げながら、近未来都市の散策が始まります。",
-    image_url: "/images/shintoshin/spot1.png",
+    image_url: "/images/shintoshin/spot1.jpg",
     address: "埼玉県さいたま市大宮区吉敷町4丁目",
     location: "POINT(139.633800 35.893800)",
     radius_meters: 50,
@@ -556,7 +556,7 @@ const shintoshinSpots = [
     route_id: SHINTOSHIN_ROUTE_ID,
     name: "産業の面影（コクーンシティ・コクーンプラザ）",
     description: "製糸工場跡地の記憶を伝えるコクーンプラザ。シンボルの「繭」をかたどったモニュメントが、かつてこの場所で生み出された数千のシルクの歴史を伝えています。",
-    image_url: "/images/shintoshin/spot2.png",
+    image_url: "/images/shintoshin/spot2.jpg",
     address: "埼玉県さいたま市大宮区吉敷町4丁目263-1",
     location: "POINT(139.635800 35.894200)",
     radius_meters: 50,
@@ -567,7 +567,7 @@ const shintoshinSpots = [
     route_id: SHINTOSHIN_ROUTE_ID,
     name: "空中の広場（けやきひろば）",
     description: "ビル群の合間に広がる、人工デッキ上の美しいケヤキの林。涼やかな木漏れ日の下で深呼吸し、都市の中の森を体感します。",
-    image_url: "/images/shintoshin/spot3.png",
+    image_url: "/images/shintoshin/spot3.jpg",
     address: "埼玉県さいたま市中央区新都心10",
     location: "POINT(139.631200 35.894500)",
     radius_meters: 50,
@@ -578,7 +578,7 @@ const shintoshinSpots = [
     route_id: SHINTOSHIN_ROUTE_ID,
     name: "古の境界（一の鳥居と氷川参道）",
     description: "新都心から少し西に歩いた中山道沿いに立つ、朱色の「氷川神社一の鳥居」。ここから日本一長いケヤキ並木が続く古の参道へと一歩足を踏み入れます。",
-    image_url: "/images/shintoshin/spot4.png",
+    image_url: "/images/shintoshin/spot4.jpg",
     address: "埼玉県さいたま市大宮区吉敷町4丁目",
     location: "POINT(139.638500 35.891200)",
     radius_meters: 50,
@@ -589,7 +589,7 @@ const shintoshinSpots = [
     route_id: SHINTOSHIN_ROUTE_ID,
     name: "歴史の休息地（コクーンガーデン）",
     description: "工場の象徴であったレンガの煙突と、大正時代の洋館が残る静かなイングリッシュガーデン。ここが今回のさいたま新都心ルートの最後の押印地です。",
-    image_url: "/images/shintoshin/spot5.png",
+    image_url: "/images/shintoshin/spot5.jpg",
     address: "埼玉県さいたま市大宮区吉敷町4丁目263-6",
     location: "POINT(139.636600 35.893100)",
     radius_meters: 50,
@@ -786,31 +786,18 @@ const generateSaitamaSpots = (routeId, rallyIndex) => {
 };
 
 // ==========================================
-// シード処理実行
+// シード処理実行 (非破壊UPSERT)
 // ==========================================
 async function seed() {
-  console.log("Cleaning up previous seeded data (Shintoshin only)...");
+  console.log("Upserting route, spot, and badge master data safely...");
 
-  // 新設のさいたま新都心ルートだけをクリーンアップ (既存ルートは削除せず安全に保護！)
-  const routeIds = [
-    SHINTOSHIN_ROUTE_ID
-  ];
+  const allRoutes = [jiyugaokaRoute, yonoRoute, iwatsukiRoute, kitaurawaRoute, shintoshinRoute];
+  const allSpots = [...jiyugaokaSpots, ...yonoSpots, ...iwatsukiSpots, ...kitaurawaSpots, ...shintoshinSpots];
+  const allBadges = [...jiyugaokaBadges, ...yonoBadges, ...iwatsukiBadges, ...kitaurawaBadges, ...shintoshinBadges];
 
-  await supabase.from('routes').delete().in('id', routeIds);
-  console.log("Cleared Shintoshin route.");
-
-  // 新設のさいたま新都心のバッジをクリーンアップ
-  const badgeCodes = [
-    ...shintoshinBadges.map(b => b.code)
-  ];
-  await supabase.from('badges').delete().in('code', badgeCodes);
-  console.log("Cleared Shintoshin badges.");
-
-  // 新設：さいたま新都心ルートの登録のみ実行
-  console.log("Inserting Shintoshin...");
-  await supabase.from('routes').insert([shintoshinRoute]);
-  await supabase.from('spots').insert(shintoshinSpots);
-  await supabase.from('badges').insert(shintoshinBadges);
+  await supabase.from('routes').upsert(allRoutes, { onConflict: 'id' });
+  await supabase.from('spots').upsert(allSpots, { onConflict: 'id' });
+  await supabase.from('badges').upsert(allBadges, { onConflict: 'code' });
 
   console.log("Seeding complete successfully!");
 }
