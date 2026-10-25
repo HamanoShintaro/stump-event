@@ -8,6 +8,7 @@ import { supabase } from "@/lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { activateUserRoute } from "@/utils/userRoutes";
+import { resolveActiveGroupForRoute, syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
 import { ChevronLeft, Copy, User, Check, Play } from "lucide-react";
 
 interface PageProps {
@@ -50,6 +51,9 @@ export default function GroupWaitRoom({ params }: PageProps) {
       setGroup(gData);
 
       if (gData) {
+        await syncUserProfileAndGroupStatus(supabase, user, groupId);
+        await resolveActiveGroupForRoute(supabase, user, gData.route_id, groupId);
+        await activateUserRoute(user.id, gData.route_id);
         router.replace(`/routes/${gData.route_id}/map?groupId=${groupId}`);
         return;
       }

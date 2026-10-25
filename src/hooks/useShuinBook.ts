@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { supabase } from "@/lib/supabase";
 import { isRouteCurrentlyActive } from "@/utils/userRoutes";
-import { parseMemberDisplayName } from "@/utils/stampMedia";
+import { parseMemberDisplayName, uploadStampPhotoWithFallback } from "@/utils/stampMedia";
 
 export type ShuinViewMode = "grid" | "album";
 export type ShuinLifeFilter = "all" | "tsuredachi" | "with_memory" | "revisit";
@@ -42,6 +42,12 @@ export interface ShuinGroupInfo {
   sharedPhoto: string | null;
   sharedMemo: string | null;
   photoUploaderName: string;
+  companionMemories: Array<{
+    userId: string;
+    displayName: string;
+    photoUrl: string | null;
+    memo: string | null;
+  }>;
   loading: boolean;
 }
 
@@ -111,6 +117,7 @@ export function useShuinBook(user: any) {
         sharedPhoto: selectedEvent.sharedPhotoUrl || selectedEvent.photo_url || null,
         sharedMemo: selectedEvent.sharedMemoText || selectedEvent.memo || null,
         photoUploaderName: "",
+        companionMemories: [],
         loading: true,
       });
 
@@ -121,11 +128,16 @@ export function useShuinBook(user: any) {
           .eq("group_id", selectedEvent.group_id);
 
         const membersList: string[] = [];
+        const memberNameByUserId: Record<string, string> = {};
+        const partnerUserIds: string[] = [];
+
         if (!membersError && membersData && membersData.length > 0) {
           let partnerIdx = 0;
           membersData.forEach((m: any) => {
             if (m.user_id !== user?.id) {
               const name = parseMemberDisplayName(m, user?.id, partnerIdx++);
+              memberNameByUserId[m.user_id] = name;
+              partnerUserIds.push(m.user_id);
               if (name && !membersList.includes(name)) {
                 membersList.push(name);
               }
@@ -140,31 +152,75 @@ export function useShuinBook(user: any) {
           membersList.push("小春");
         }
 
-        const { data: sharedEvents, error: photoError } = await supabase
-          .from("stamp_events")
-          .select("photo_url, memo, user_id")
-          .eq("group_id", selectedEvent.group_id)
-          .eq("spot_id", selectedEvent.spot_id)
-          .not("photo_url", "is", null)
-          .order("created_at", { ascending: false })
-          .limit(1);
+        // group_id 一致分 ＋ 同行メンバーがこのスポットで刻んだ stamp_events 全件を取得（写真なしコメントも含める）
+        const queries: Promise<any>[] = [
+          Promise.resolve(
+            supabase
+              .from("stamp_events")
+              .select("id, photo_url, memo, user_id, created_at")
+              .eq("group_id", selectedEvent.group_id)
+              .eq("spot_id", selectedEvent.spot_id)
+              .order("created_at", { ascending: false })
+          ),
+        ];
+        if (partnerUserIds.length > 0) {
+          queries.push(
+            Promise.resolve(
+              supabase
+                .from("stamp_events")
+                .select("id, photo_url, memo, user_id, created_at")
+                .eq("spot_id", selectedEvent.spot_id)
+                .in("user_id", partnerUserIds)
+                .order("created_at", { ascending: false })
+            )
+          );
+        }
+
+        const results = await Promise.all(queries);
+        const mergedEvents: any[] = [];
+        const seenEvIds = new Set<string>();
+        results.forEach((res) => {
+          (res.data || []).forEach((ev: any) => {
+            if (ev?.id && !seenEvIds.has(ev.id)) {
+              seenEvIds.add(ev.id);
+              mergedEvents.push(ev);
+            }
+          });
+        });
 
         let sharedPhoto = selectedEvent.photo_url || null;
         let sharedMemo = selectedEvent.memo || null;
         let photoUploaderName = "";
+        const companionMemoryMap = new Map<
+          string,
+          { userId: string; displayName: string; photoUrl: string | null; memo: string | null }
+        >();
 
-        if (!photoError && sharedEvents && sharedEvents.length > 0) {
-          sharedPhoto = sharedEvents[0].photo_url;
-          if (!sharedMemo && sharedEvents[0].memo) {
-            sharedMemo = sharedEvents[0].memo;
+        for (const ev of mergedEvents) {
+          if (ev.user_id === user?.id) continue;
+          const displayName = memberNameByUserId[ev.user_id] || membersList[0] || "同行の友だち";
+          const existing = companionMemoryMap.get(ev.user_id);
+          const photoUrl = ev.photo_url && String(ev.photo_url).trim() ? String(ev.photo_url).trim() : null;
+          const memo = ev.memo && String(ev.memo).trim() ? String(ev.memo).trim() : null;
+
+          if (!existing) {
+            companionMemoryMap.set(ev.user_id, {
+              userId: ev.user_id,
+              displayName,
+              photoUrl,
+              memo,
+            });
+          } else {
+            if (!existing.photoUrl && photoUrl) existing.photoUrl = photoUrl;
+            if (!existing.memo && memo) existing.memo = memo;
           }
-          if (sharedEvents[0].user_id !== user?.id) {
-            const { data: uData } = await supabase
-              .from("users")
-              .select("display_name")
-              .eq("id", sharedEvents[0].user_id)
-              .maybeSingle();
-            photoUploaderName = uData?.display_name || membersList[0] || "友だち";
+
+          if (!sharedPhoto && photoUrl) {
+            sharedPhoto = photoUrl;
+            photoUploaderName = displayName;
+          }
+          if (!sharedMemo && memo) {
+            sharedMemo = memo;
           }
         }
 
@@ -174,6 +230,7 @@ export function useShuinBook(user: any) {
             sharedPhoto,
             sharedMemo,
             photoUploaderName,
+            companionMemories: Array.from(companionMemoryMap.values()),
             loading: false,
           });
         }
@@ -256,9 +313,26 @@ export function useShuinBook(user: any) {
         });
       }
 
-      // 各グループのメンバーと共有写真・メモを一括解決（アルバムビューでも表示できるよう）
-      const groupEventPairs = events.filter((e: any) => e.group_id);
-      const groupIds = [...new Set(groupEventPairs.map((e: any) => e.group_id))];
+      // 各グループのメンバーと共有写真・メモを一括解決（URLからgroupIdが欠落して押印されたケースもルート単位で補完）
+      const { data: myGroupRows } = await supabase
+        .from("group_members")
+        .select("group_id, groups(id, route_id, is_active)")
+        .eq("user_id", user.id);
+
+      const routeToGroupIdMap: Record<string, string> = {};
+      (myGroupRows || []).forEach((row: any) => {
+        const g = Array.isArray(row.groups) ? row.groups[0] : row.groups;
+        if (g?.id && g?.route_id) {
+          routeToGroupIdMap[g.route_id] = g.id;
+        }
+      });
+
+      const groupIds = [
+        ...new Set([
+          ...events.map((e: any) => e.group_id).filter(Boolean),
+          ...Object.values(routeToGroupIdMap),
+        ]),
+      ];
       const sharedPhotoKeys = new Set<string>(); // "groupId-spotId"
       const sharedEventMap: Record<string, { photo_url: string | null; memo: string | null }> = {};
       const groupCompanionNamesMap: Record<string, string[]> = {};
@@ -267,7 +341,7 @@ export function useShuinBook(user: any) {
         const [sharedPhotosRes, groupMembersRes] = await Promise.all([
           supabase
             .from("stamp_events")
-            .select("group_id, spot_id, photo_url, memo, created_at")
+            .select("group_id, spot_id, user_id, photo_url, memo, created_at")
             .in("group_id", groupIds)
             .order("created_at", { ascending: false }),
           supabase
@@ -276,32 +350,19 @@ export function useShuinBook(user: any) {
             .in("group_id", groupIds),
         ]);
 
-        (sharedPhotosRes.data || []).forEach((sp: any) => {
-          const key = `${sp.group_id}-${sp.spot_id}`;
-          if (sp.photo_url) {
-            sharedPhotoKeys.add(key);
-          }
-          if (!sharedEventMap[key]) {
-            sharedEventMap[key] = {
-              photo_url: sp.photo_url || null,
-              memo: sp.memo || null,
-            };
-          } else {
-            if (!sharedEventMap[key].photo_url && sp.photo_url) {
-              sharedEventMap[key].photo_url = sp.photo_url;
-            }
-            if (!sharedEventMap[key].memo && sp.memo) {
-              sharedEventMap[key].memo = sp.memo;
-            }
-          }
-        });
-
+        const partnerUserIds = new Set<string>();
+        const userToGroupIds: Record<string, string[]> = {};
         const idxCounter: Record<string, number> = {};
+
         (groupMembersRes.data || []).forEach((gm: any) => {
           if (!groupCompanionNamesMap[gm.group_id]) {
             groupCompanionNamesMap[gm.group_id] = [];
           }
           if (gm.user_id !== user.id) {
+            partnerUserIds.add(gm.user_id);
+            if (!userToGroupIds[gm.user_id]) userToGroupIds[gm.user_id] = [];
+            userToGroupIds[gm.user_id].push(gm.group_id);
+
             const cIdx = idxCounter[gm.group_id] || 0;
             idxCounter[gm.group_id] = cIdx + 1;
             const name = parseMemberDisplayName(gm, user.id, cIdx);
@@ -309,6 +370,43 @@ export function useShuinBook(user: any) {
               groupCompanionNamesMap[gm.group_id].push(name);
             }
           }
+        });
+
+        let partnerSpotEvents: any[] = [];
+        if (partnerUserIds.size > 0 && spotIds.length > 0) {
+          const { data: pse } = await supabase
+            .from("stamp_events")
+            .select("group_id, spot_id, user_id, photo_url, memo, created_at")
+            .in("user_id", Array.from(partnerUserIds))
+            .in("spot_id", spotIds)
+            .order("created_at", { ascending: false });
+          if (pse) partnerSpotEvents = pse;
+        }
+
+        const allSharedCandidates = [...(sharedPhotosRes.data || []), ...partnerSpotEvents];
+        allSharedCandidates.forEach((sp: any) => {
+          const candidateGroupIds = sp.group_id
+            ? [sp.group_id]
+            : userToGroupIds[sp.user_id] || [];
+          candidateGroupIds.forEach((gid: string) => {
+            const key = `${gid}-${sp.spot_id}`;
+            if (sp.photo_url) {
+              sharedPhotoKeys.add(key);
+            }
+            if (!sharedEventMap[key]) {
+              sharedEventMap[key] = {
+                photo_url: sp.photo_url || null,
+                memo: sp.memo || null,
+              };
+            } else {
+              if (!sharedEventMap[key].photo_url && sp.photo_url) {
+                sharedEventMap[key].photo_url = sp.photo_url;
+              }
+              if (!sharedEventMap[key].memo && sp.memo) {
+                sharedEventMap[key].memo = sp.memo;
+              }
+            }
+          });
         });
 
         if (
@@ -497,7 +595,8 @@ export function useShuinBook(user: any) {
           f7_full: "",
         };
 
-        const groupSpotKey = e.group_id ? `${e.group_id}-${e.spot_id}` : "";
+        const resolvedGroupId = e.group_id || routeToGroupIdMap[e.route_id] || null;
+        const groupSpotKey = resolvedGroupId ? `${resolvedGroupId}-${e.spot_id}` : "";
         const sharedInfo = groupSpotKey ? sharedEventMap[groupSpotKey] : undefined;
         const localSavedMemo = readLocalMemo(e.id);
         const effectiveMemo = localSavedMemo !== null ? localSavedMemo : e.memo || null;
@@ -530,14 +629,14 @@ export function useShuinBook(user: any) {
           category: rInfo.category,
           memo: effectiveMemo,
           photo_url: e.photo_url || null,
-          group_id: e.group_id || null,
+          group_id: resolvedGroupId,
           hasPhoto,
           hasMemory,
           yearMonth,
           visitOrder,
           totalVisitsToSpot,
           isRevisit,
-          companionNames: e.group_id ? groupCompanionNamesMap[e.group_id] || [] : [],
+          companionNames: resolvedGroupId ? groupCompanionNamesMap[resolvedGroupId] || [] : [],
           sharedPhotoUrl: sharedInfo?.photo_url || e.photo_url || null,
           sharedMemoText: effectiveMemo || sharedInfo?.memo || null,
         };
@@ -613,6 +712,53 @@ export function useShuinBook(user: any) {
       );
 
       return true;
+    },
+    [user]
+  );
+
+  // 思い出写真の追加・更新（SHUIN帳からいつでも印に写真を登録できるようにする）
+  const updateEventPhoto = useCallback(
+    async (eventId: string, spotId: string, file: File): Promise<string | null> => {
+      if (!user || !eventId || !file) return null;
+      const uploadedUrl = await uploadStampPhotoWithFallback(supabase, user.id, spotId, file);
+
+      const { error } = await supabase
+        .from("stamp_events")
+        .update({ photo_url: uploadedUrl })
+        .eq("id", eventId)
+        .eq("user_id", user.id);
+
+      if (error) {
+        throw error;
+      }
+
+      setDiary((prev) =>
+        prev.map((item) =>
+          item.id === eventId
+            ? {
+                ...item,
+                photo_url: uploadedUrl,
+                sharedPhotoUrl: uploadedUrl,
+                hasPhoto: true,
+                hasMemory: true,
+              }
+            : item
+        )
+      );
+
+      setSelectedEvent((prev) =>
+        prev && prev.id === eventId
+          ? {
+              ...prev,
+              photo_url: uploadedUrl,
+              sharedPhotoUrl: uploadedUrl,
+              hasPhoto: true,
+              hasMemory: true,
+            }
+          : prev
+      );
+
+      return uploadedUrl;
     },
     [user]
   );
@@ -714,6 +860,7 @@ export function useShuinBook(user: any) {
     setZoomPhotoUrl,
     groupInfo,
     updateEventMemo,
+    updateEventPhoto,
     visitedCitiesCount,
     tsuredachiCount,
     withMemoryCount,

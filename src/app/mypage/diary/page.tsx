@@ -64,6 +64,7 @@ export default function DiaryPage() {
     setZoomPhotoUrl,
     groupInfo,
     updateEventMemo,
+    updateEventPhoto,
     visitedCitiesCount,
     tsuredachiCount,
     withMemoryCount,
@@ -73,6 +74,28 @@ export default function DiaryPage() {
   const [isEditingMemo, setIsEditingMemo] = useState(false);
   const [memoDraft, setMemoDraft] = useState("");
   const [savingMemo, setSavingMemo] = useState(false);
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
+
+  const handlePhotoUploadChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !selectedEvent || uploadingPhoto) return;
+    setUploadingPhoto(true);
+    try {
+      await updateEventPhoto(selectedEvent.id, selectedEvent.spot_id, file);
+      await showAlert({
+        text: "この印に思い出の写真を刻みました。",
+        okText: "閉じる",
+      });
+    } catch (err: any) {
+      await showAlert({
+        text: `写真の登録に失敗しました: ${err.message}`,
+        okText: "確認",
+      });
+    } finally {
+      setUploadingPhoto(false);
+      e.target.value = "";
+    }
+  };
 
   useEffect(() => {
     if (!loading && !user) {
@@ -945,10 +968,7 @@ export default function DiaryPage() {
                   const stampImg = getCategoryStampUrl(d.category);
                   const displayPhoto = d.photo_url || d.sharedPhotoUrl;
                   const displayMemo = d.memo || d.sharedMemoText;
-                  const isTooLargeBase64 =
-                    displayPhoto &&
-                    displayPhoto.startsWith("data:image/") &&
-                    displayPhoto.length > 200000;
+                  const isTooLargeBase64 = false;
 
                   return (
                     <article
@@ -1559,21 +1579,14 @@ export default function DiaryPage() {
                         )}
                       </div>
 
-                      {/* 写真の表示 */}
+                       {/* 写真の表示 */}
                       {(() => {
-                        const photoUrl = groupInfo?.sharedPhoto || selectedEvent.photo_url;
+                        const photoUrl = selectedEvent.photo_url || groupInfo?.sharedPhoto;
                         if (!photoUrl) return null;
-
-                        const isTooLargeBase64 =
-                          photoUrl.startsWith("data:image/") && photoUrl.length > 200000;
 
                         return (
                           <div
-                            onClick={() => {
-                              if (!isTooLargeBase64) {
-                                setZoomPhotoUrl(photoUrl);
-                              }
-                            }}
+                            onClick={() => setZoomPhotoUrl(photoUrl)}
                             style={{
                               width: "100%",
                               borderRadius: "6px",
@@ -1581,38 +1594,25 @@ export default function DiaryPage() {
                               border: "1px solid #EBE5D9",
                               marginBottom:
                                 groupInfo?.sharedMemo || selectedEvent.memo ? "8px" : "0",
-                              cursor: isTooLargeBase64 ? "default" : "pointer",
-                              transition: isTooLargeBase64 ? "none" : "opacity 0.2s",
+                              cursor: "pointer",
+                              transition: "opacity 0.2s",
                               background: "#F5F0E6",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              padding: isTooLargeBase64 ? "16px" : "0",
                             }}
-                            title={isTooLargeBase64 ? undefined : "タップで拡大表示"}
+                            title="タップで拡大表示"
                           >
-                            {isTooLargeBase64 ? (
-                              <span
-                                style={{
-                                  fontSize: "0.75rem",
-                                  color: "#8A7E72",
-                                  textAlign: "center",
-                                }}
-                              >
-                                ⚠️ 画像のサイズが大きすぎるため表示できません
-                              </span>
-                            ) : (
-                              <img
-                                src={photoUrl}
-                                alt="思い出の写真"
-                                style={{
-                                  width: "100%",
-                                  height: "100%",
-                                  maxHeight: "180px",
-                                  objectFit: "cover",
-                                }}
-                              />
-                            )}
+                            <img
+                              src={photoUrl}
+                              alt="思い出の写真"
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                maxHeight: "180px",
+                                objectFit: "cover",
+                              }}
+                            />
                           </div>
                         );
                       })()}
@@ -1634,7 +1634,62 @@ export default function DiaryPage() {
                     </div>
                   )}
 
-                  {/* ✍️ 思い出のあとがき（一言メモ）編集セクション */}
+                  {/* 同行メンバーの共有された印・写真・コメント一覧 */}
+                  {groupInfo && groupInfo.companionMemories && groupInfo.companionMemories.length > 0 && (
+                    <div
+                      style={{
+                        background: "rgba(201, 168, 76, 0.08)",
+                        border: "1px dashed var(--accent-color)",
+                        borderRadius: "10px",
+                        padding: "12px",
+                        margin: "0 0 16px 0",
+                        textAlign: "left",
+                      }}
+                    >
+                      <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#5C4E43", marginBottom: "8px" }}>
+                        👥 連れ立ちメンバーの共有された印 ({groupInfo.companionMemories.length}名)
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                        {groupInfo.companionMemories.map((cm) => (
+                          <div
+                            key={cm.userId}
+                            style={{
+                              background: "#FFFDF9",
+                              border: "1px solid #EBE5D9",
+                              borderRadius: "8px",
+                              padding: "8px 10px",
+                            }}
+                          >
+                            <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--primary-color)", marginBottom: "4px" }}>
+                              {cm.displayName} さん
+                            </div>
+                            {cm.photoUrl && (
+                              <img
+                                src={cm.photoUrl}
+                                alt={`${cm.displayName}さんの写真`}
+                                onClick={() => setZoomPhotoUrl(cm.photoUrl)}
+                                style={{
+                                  width: "100%",
+                                  maxHeight: "150px",
+                                  objectFit: "cover",
+                                  borderRadius: "6px",
+                                  marginBottom: cm.memo ? "6px" : 0,
+                                  cursor: "pointer",
+                                }}
+                              />
+                            )}
+                            {cm.memo ? (
+                              <div style={{ fontSize: "0.82rem", color: "#5C4E43" }}>💬 {cm.memo}</div>
+                            ) : !cm.photoUrl ? (
+                              <div style={{ fontSize: "0.74rem", color: "#8A7E72" }}>💮 一緒にこのスポットで押印しました</div>
+                            ) : null}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ✍️ 思い出の写真・あとがき（一言メモ）編集セクション */}
                   <div
                     style={{
                       background: "#FAF6EE",
@@ -1650,6 +1705,8 @@ export default function DiaryPage() {
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
+                        flexWrap: "wrap",
+                        gap: "6px",
                         marginBottom: isEditingMemo ? "8px" : "0",
                       }}
                     >
@@ -1664,29 +1721,60 @@ export default function DiaryPage() {
                         }}
                       >
                         <Edit3 size={13} color="var(--primary-color)" />
-                        思い出のあとがき（一言メモ）
+                        写真・あとがき（一言メモ）
                       </span>
-                      {!isEditingMemo && (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setMemoDraft(selectedEvent.memo || "");
-                            setIsEditingMemo(true);
-                          }}
+                      <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+                        <label
                           style={{
-                            background: "transparent",
+                            background: "#FFFDF9",
                             border: "1px solid var(--primary-color)",
                             borderRadius: "14px",
                             padding: "3px 10px",
                             fontSize: "0.72rem",
                             fontWeight: 700,
                             color: "var(--primary-color)",
-                            cursor: "pointer",
+                            cursor: uploadingPhoto ? "wait" : "pointer",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
                           }}
                         >
-                          {selectedEvent.memo ? "編集する" : "あとがきを綴る"}
-                        </button>
-                      )}
+                          <Camera size={12} />
+                          {uploadingPhoto
+                            ? "保存中..."
+                            : selectedEvent.photo_url
+                              ? "写真を変更"
+                              : "写真を追加"}
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handlePhotoUploadChange}
+                            disabled={uploadingPhoto}
+                            style={{ display: "none" }}
+                          />
+                        </label>
+                        {!isEditingMemo && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setMemoDraft(selectedEvent.memo || "");
+                              setIsEditingMemo(true);
+                            }}
+                            style={{
+                              background: "transparent",
+                              border: "1px solid var(--primary-color)",
+                              borderRadius: "14px",
+                              padding: "3px 10px",
+                              fontSize: "0.72rem",
+                              fontWeight: 700,
+                              color: "var(--primary-color)",
+                              cursor: "pointer",
+                            }}
+                          >
+                            {selectedEvent.memo ? "あとがきを編集" : "あとがきを綴る"}
+                          </button>
+                        )}
+                      </div>
                     </div>
 
                     {isEditingMemo && (
