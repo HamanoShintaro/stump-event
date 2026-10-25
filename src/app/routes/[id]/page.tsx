@@ -9,6 +9,7 @@ import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
+import { parseWKBPoint } from "@/utils/wkb";
 import { Footprints, Star, MapPin, Clock, Wallet } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
@@ -42,7 +43,22 @@ export default async function RallyDetailPage({
     .eq("route_id", rally.id)
     .order("order_index", { ascending: true });
 
-  const spotsList = spots || [];
+  const spotsList = (spots || []).map((s: any) => {
+    let lat = typeof s.lat === "number" ? s.lat : null;
+    let lng = typeof s.lng === "number" ? s.lng : null;
+    if ((lat === null || lng === null) && typeof s.location === "string") {
+      const parsed = parseWKBPoint(s.location);
+      if (parsed) {
+        lat = parsed.lat;
+        lng = parsed.lng;
+      }
+    }
+    return {
+      ...s,
+      lat,
+      lng,
+    };
+  });
 
   const statsMap = await getRouteStatsMap([rally.id]);
   const stats = statsMap[rally.id] || { participants: 0, favorites: 0 };

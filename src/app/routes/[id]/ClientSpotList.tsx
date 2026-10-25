@@ -16,6 +16,8 @@ import {
 } from "@/utils/stampMedia";
 import { Map as MapIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getDistance } from "geolib";
+import { parseWKBPoint } from "@/utils/wkb";
 import styles from "./page.module.css";
 
 interface Spot {
@@ -26,6 +28,20 @@ interface Spot {
   address?: string;
   f7_fragment?: string;
   f7_full?: string;
+  lat?: number | null;
+  lng?: number | null;
+  location?: string;
+}
+
+function getSpotCoord(spot?: Spot | null): { lat: number; lng: number } | null {
+  if (!spot) return null;
+  if (typeof spot.lat === "number" && typeof spot.lng === "number" && !Number.isNaN(spot.lat) && !Number.isNaN(spot.lng)) {
+    return { lat: spot.lat, lng: spot.lng };
+  }
+  if (typeof spot.location === "string") {
+    return parseWKBPoint(spot.location);
+  }
+  return null;
 }
 
 export default function ClientSpotList({ 
@@ -265,6 +281,12 @@ export default function ClientSpotList({
 
   const targetGroupQuery = (effectiveGroupId || groupId) ? `?groupId=${effectiveGroupId || groupId}` : "";
 
+  // 次のおすすめ訪問先（未押印の最初のスポット）
+  const nextRecommendedSpotId = useMemo(() => {
+    const firstUnstamped = spots.find((s) => !stampedSpotIds.has(s.id));
+    return firstUnstamped ? firstUnstamped.id : null;
+  }, [spots, stampedSpotIds]);
+
   return (
     <>
       {/* 獲得しるし帳セクション */}
@@ -334,12 +356,44 @@ export default function ClientSpotList({
         {spots.map((spot, index) => {
         const isStamped = user && stampedSpotIds.has(spot.id);
         const isActive = spot.id === activeSpotId;
+        const isNextRecommended = !isStamped && spot.id === nextRecommendedSpotId;
+
+        const nextSpot = index < spots.length - 1 ? spots[index + 1] : null;
+        let segmentConnector: { distMeters: number; walkMin: number; nextName: string } | null = null;
+        if (nextSpot) {
+          const currCoord = getSpotCoord(spot);
+          const nextCoord = getSpotCoord(nextSpot);
+          if (currCoord && nextCoord) {
+            try {
+              const straight = getDistance(
+                { latitude: currCoord.lat, longitude: currCoord.lng },
+                { latitude: nextCoord.lat, longitude: nextCoord.lng }
+              );
+              const distMeters = Math.max(50, Math.round(straight * 1.25));
+              const walkMin = Math.max(1, Math.round(distMeters / 70));
+              segmentConnector = {
+                distMeters,
+                walkMin,
+                nextName: nextSpot.name,
+              };
+            } catch {
+              segmentConnector = null;
+            }
+          }
+        }
 
         return (
+          <div key={spot.id}>
           <div 
-            key={spot.id} 
             className={"glass-card " + styles.spotCard + (isActive ? ` ${styles.spotCardActive}` : "")} 
-            style={{ position: "relative", overflow: "hidden", padding: 0 }}
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              padding: 0,
+              ...(isNextRecommended && !isActive
+                ? { border: "1.5px solid var(--accent-color)", boxShadow: "0 6px 22px rgba(201, 168, 76, 0.14)" }
+                : {}),
+            }}
           >
             {/* 画像がない場合のでかでかと重ねる目的地スタンプ */}
             {!spot.image_url && isActive && (
@@ -402,6 +456,29 @@ export default function ClientSpotList({
                   </div>
                 )}
 
+                {/* 次のおすすめ訪問先バッジ */}
+                {isNextRecommended && (
+                  <div style={{
+                    position: "absolute",
+                    top: "14px",
+                    left: "14px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    background: "rgba(255, 253, 249, 0.96)",
+                    border: "1.5px solid var(--accent-color)",
+                    color: "var(--primary-color)",
+                    padding: "5px 12px",
+                    borderRadius: "999px",
+                    fontSize: "0.76rem",
+                    fontWeight: 800,
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                    zIndex: 3,
+                  }}>
+                    <span>✨ 次のおすすめ訪問先</span>
+                  </div>
+                )}
+
                 {/* 押印済みバッジ */}
                 {isStamped && (
                   <div style={{
@@ -443,6 +520,22 @@ export default function ClientSpotList({
                   <Link href={`/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`} className={styles.spotNameLink}>
                     {spot.name}
                   </Link>
+                  {!spot.image_url && isNextRecommended && (
+                    <span style={{
+                      backgroundColor: "rgba(255, 253, 249, 0.98)",
+                      border: "1.5px solid var(--accent-color)",
+                      color: "var(--primary-color)",
+                      padding: "3px 10px",
+                      borderRadius: "999px",
+                      fontSize: "0.74rem",
+                      fontWeight: 800,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
+                    }}>
+                      ✨ 次のおすすめ訪問先
+                    </span>
+                  )}
                   {/* 画像がない場合のしるし獲得済みバッジ */}
                   {!spot.image_url && isStamped && (
                     <span style={{
@@ -551,6 +644,54 @@ export default function ClientSpotList({
                 )}
               </div>
             </div>
+          </div>
+
+          {/* スポット間の徒歩目安コネクター */}
+          {segmentConnector && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "4px 0",
+              }}
+            >
+              <div
+                style={{
+                  width: "2px",
+                  height: "14px",
+                  borderLeft: "2px dashed var(--accent-color)",
+                  opacity: 0.7,
+                }}
+              />
+              <div
+                style={{
+                  background: "rgba(255, 253, 249, 0.94)",
+                  border: "1px dashed var(--accent-color)",
+                  borderRadius: "999px",
+                  padding: "4px 14px",
+                  fontSize: "0.76rem",
+                  fontWeight: 700,
+                  color: "var(--text-color)",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                }}
+              >
+                🐾 次のスポット「{segmentConnector.nextName}」まで 約
+                {segmentConnector.distMeters < 1000
+                  ? `${segmentConnector.distMeters}m`
+                  : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
+                （徒歩約{segmentConnector.walkMin}分）
+              </div>
+              <div
+                style={{
+                  width: "2px",
+                  height: "14px",
+                  borderLeft: "2px dashed var(--accent-color)",
+                  opacity: 0.7,
+                }}
+              />
+            </div>
+          )}
           </div>
         );
       })}
