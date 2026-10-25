@@ -5,10 +5,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
+import { evaluateBadges, isSiteUsageBadge } from "@/utils/badgeEvaluator";
+import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
 import { Users, X, Settings, LogOut, Bell, ArrowRight, ChevronLeft } from "lucide-react";
 import { useMyPageData } from "@/hooks/useMyPageData";
+import { activateUserRoute } from "@/utils/userRoutes";
 import styles from "./page.module.css";
 
 // 街の便り（仮データ - 最新のものを表示）
@@ -20,6 +23,7 @@ const LATEST_NEWS = {
 
 export default function MyPage() {
   const { user, loading, logout } = useAuth();
+  const { unseenCount } = useBadgeNotifications(user?.id);
   const router = useRouter();
   const [userBadges, setUserBadges] = useState<any[]>([]);
   const [badgesLoading, setBadgesLoading] = useState(false);
@@ -44,6 +48,7 @@ export default function MyPage() {
     async function loadBadges(userId: string) {
       setBadgesLoading(true);
       try {
+        await evaluateBadges(userId);
         const { data, error } = await supabase
           .from("badge_assignments")
           .select(`
@@ -119,8 +124,11 @@ export default function MyPage() {
     router.push("/");
   };
 
-  // 獲得した称号（最大3個）
-  const earnedBadges = userBadges.map(ub => ub.badges).filter(Boolean).slice(0, 3);
+  // 獲得した称号（サイト利用度に応じた称号のみ、最大3個）
+  const earnedBadges = userBadges
+    .map(ub => ub.badges ? { ...ub.badges, acquired_at: ub.acquired_at } : null)
+    .filter((b): b is any => isSiteUsageBadge(b))
+    .slice(0, 3);
 
   const handleJoinGroup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -164,6 +172,9 @@ export default function MyPage() {
           
         if (joinError) throw joinError;
       }
+
+      // 連れ立ちのルートを進行中（最大1個）として設定
+      await activateUserRoute(user.id, grp.route_id);
       
       setShowJoinDialog(false);
       router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
@@ -318,23 +329,62 @@ export default function MyPage() {
               <p style={{ color: "#A39687", fontSize: "0.9rem" }}>読み込み中...</p>
             ) : activeRallies.length > 0 ? (
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                {activeRallies.slice(0, 1).map((ur) => (
+                {activeRallies.slice(0, 1).map((ur) => {
+                  const totalSpots = ur.totalSpots || 0;
+                  const stampedCount = ur.stampedCount || 0;
+                  const progressPct = totalSpots > 0 ? Math.min(100, Math.round((stampedCount / totalSpots) * 100)) : 0;
+                  return (
                   <div key={ur.id} style={{ padding: "16px", background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "12px" }}>
                     <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#5C4E43", margin: "0 0 8px 0" }}>{ur.routes?.title}</h3>
-                    <p style={{ fontSize: "0.75rem", color: "#A39687", margin: "0 0 12px 0" }}>参加日: {new Date(ur.joined_at).toLocaleDateString("ja-JP")}</p>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.75rem", color: "#A39687", margin: "0 0 12px 0", flexWrap: "wrap", gap: "6px" }}>
+                      <span>参加日: {new Date(ur.joined_at).toLocaleDateString("ja-JP")}</span>
+                      {ur.remainingHours != null && (
+                        <span style={{ color: "var(--primary-color)", fontWeight: 700 }}>
+                          残り有効時間: 約{ur.remainingHours}時間
+                        </span>
+                      )}
+                    </div>
                     <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", fontWeight: "700", color: "#5C4E43", marginBottom: "6px" }}>
-                      <span>クリア状況</span>
-                      <span>{ur.status === 'COMPLETED' ? 'クリア！🎉' : '進行中'}</span>
+                      <span>獲得したしるし</span>
+                      <span>{totalSpots > 0 ? `${stampedCount} / ${totalSpots} 個` : `${stampedCount} 個`}（進行中）</span>
                     </div>
                     <div style={{ width: "100%", height: "8px", background: "#EBE5D9", borderRadius: "4px", overflow: "hidden" }}>
-                      <div style={{ width: ur.status === 'COMPLETED' ? "100%" : "15%", height: "100%", background: "var(--primary-color)" }}></div>
+                      <div style={{ width: `${progressPct}%`, height: "100%", background: "var(--primary-color)", transition: "width 0.3s ease" }}></div>
                     </div>
+
+                    {ur.group && (
+                      <div style={{ 
+                        marginTop: "12px", 
+                        padding: "10px 12px", 
+                        background: "rgba(201, 168, 76, 0.08)", 
+                        border: "1px dashed var(--accent-color)", 
+                        borderRadius: "8px",
+                        fontSize: "0.8rem",
+                        color: "#5C4E43"
+                      }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "4px" }}>
+                          <span>👥 連れ立ち中</span>
+                          <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "#fff", border: "1px solid #EBE5D9", padding: "1px 6px", borderRadius: "4px", color: "var(--primary-color)" }}>
+                            コード: {ur.group.inviteCode}
+                          </span>
+                        </div>
+                        <div style={{ color: "#8A7E72" }}>
+                          {ur.group.partners.length > 0 ? (
+                            <>同行者: <strong style={{ color: "#5C4E43" }}>{ur.group.partners.map((p: any) => p.displayName).join(", ")} さん</strong></>
+                          ) : (
+                            <>同行する友達の合流を待っています</>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
                     <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "14px" }}>
-                      <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>離脱する</button>
+                      <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>進行中から外す</button>
                       <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div style={{ textAlign: "center", padding: "24px 0", color: "#B3A598" }}>
@@ -346,12 +396,17 @@ export default function MyPage() {
 
           {/* 2. 最近獲得した称号 */}
           <section className="glass-card" style={{ padding: "20px 24px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.05)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "8px" }}>
               <h2 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#5C4E43", margin: 0, display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ fontSize: "1.2rem" }}>🏆</span> 最近獲得した称号
+                {unseenCount > 0 && (
+                  <span style={{ backgroundColor: "var(--primary-color)", color: "#fff", fontSize: "0.72rem", padding: "2px 8px", borderRadius: "10px", fontWeight: 800 }}>
+                    新着 {unseenCount}
+                  </span>
+                )}
               </h2>
               <Link href="/badges" style={{ fontSize: "0.85rem", color: "var(--primary-color)", fontWeight: "bold", display: "flex", alignItems: "center", gap: "4px", textDecoration: "none" }}>
-                すべて見る <ArrowRight size={14} />
+                {unseenCount > 0 ? "称号を受け取る" : "すべて見る"} <ArrowRight size={14} />
               </Link>
             </div>
             

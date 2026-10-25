@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { isRouteCurrentlyActive, fetchCurrentActiveUserRoute, activateUserRoute } from "@/utils/userRoutes";
 import JoinAnimation from "@/components/JoinAnimation";
 
 export function JoinRallyButton({ 
@@ -23,6 +24,7 @@ export function JoinRallyButton({
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [isJoined, setIsJoined] = useState(false);
+  const [hasPastParticipation, setHasPastParticipation] = useState(false);
   const [loading, setLoading] = useState(true);
   const [showAnimation, setShowAnimation] = useState(false);
   const [isNavigating, setIsNavigating] = useState(false);
@@ -44,16 +46,36 @@ export function JoinRallyButton({
     }
     const checkStatus = async () => {
       try {
-        const { data, error } = await supabase
-          .from('user_routes')
-          .select('id, status')
-          .eq('user_id', user.id)
-          .eq('route_id', rallyId)
-          .maybeSingle();
-        if (error) {
-          console.error("Error checking route join status:", error);
+        const [urRes, stampCountRes] = await Promise.all([
+          supabase
+            .from('user_routes')
+            .select('id, status, joined_at, completed_at')
+            .eq('user_id', user.id)
+            .eq('route_id', rallyId)
+            .maybeSingle(),
+          supabase
+            .from('stamps')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', user.id)
+            .eq('route_id', rallyId),
+        ]);
+
+        const data = urRes.data;
+        if (urRes.error) {
+          console.error("Error checking route join status:", urRes.error);
         }
-        if (data && data.status !== 'CANCELED') setIsJoined(true);
+
+        const currentlyActive = isRouteCurrentlyActive(data);
+        setIsJoined(currentlyActive);
+        setHasPastParticipation(Boolean(data) || (stampCountRes.count || 0) > 0);
+
+        // 24時間経過したIN_PROGRESSレコードがあればDB側も整理しておく
+        if (data && !currentlyActive && (data.status === 'IN_PROGRESS' || data.status === 'in_progress')) {
+          await supabase
+            .from('user_routes')
+            .update({ status: data.completed_at ? 'COMPLETED' : 'CANCELED' })
+            .eq('id', data.id);
+        }
 
         // アクティブな連れ立ち中の相手をフェッチ (安全なSequential方式)
         const { data: myMemberships } = await supabase
@@ -111,27 +133,25 @@ export function JoinRallyButton({
       return;
     }
     setIsNavigating(true);
-    // DBに参加データを登録・更新
-    const { data: existing } = await supabase
-      .from('user_routes')
-      .select('id')
-      .eq('user_id', user.id)
-      .eq('route_id', rallyId)
-      .maybeSingle();
 
-    let error;
-    if (existing) {
-      const { error: updateError } = await supabase
-        .from('user_routes')
-        .update({ status: 'IN_PROGRESS' })
-        .eq('id', existing.id);
-      error = updateError;
-    } else {
-      const { error: insertError } = await supabase
-        .from('user_routes')
-        .insert({ user_id: user.id, route_id: rallyId, status: 'IN_PROGRESS' });
-      error = insertError;
+    // 他に現在進行中（24時間以内）のルートがあるかチェック（最大1個制限）
+    const activeOther = await fetchCurrentActiveUserRoute(user.id);
+    if (activeOther && activeOther.route_id !== rallyId) {
+      const otherRouteObj: any = Array.isArray(activeOther.routes) ? activeOther.routes[0] : activeOther.routes;
+      const otherTitle = otherRouteObj?.title || otherRouteObj?.name || "別のルート";
+      const confirmSwitch = await showAlert({
+        text: `現在「${otherTitle}」が進行中です。\n進行中に設定できるルートは1つまでのため、進行中のルートを切り替えて参加しますか？\n※これまでに獲得した押印（SHUIN）や参加履歴は消えずに残ります。`,
+        okText: "切り替えて参加する",
+        ngText: "キャンセル",
+      });
+      if (!confirmSwitch) {
+        setIsNavigating(false);
+        return;
+      }
     }
+
+    // DBに参加データを登録・更新（他の進行中ルートは解除し、このルートのみをIN_PROGRESS＋現在日時に設定）
+    const { error } = await activateUserRoute(user.id, rallyId);
       
     if (error) {
       console.error("Join error:", error);
@@ -139,6 +159,9 @@ export function JoinRallyButton({
       await showAlert({ text: `参加に失敗しました: ${error.message}`, okText: "確認" });
     } else {
       setIsJoined(true);
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("shuin-route-joined", { detail: { routeId: rallyId } }));
+      }
       setShowAnimation(true);
     }
   };
@@ -407,6 +430,11 @@ export function JoinRallyButton({
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+          {user && hasPastParticipation && (
+            <div style={{ fontSize: "0.82rem", color: "#8A7E72", textAlign: "center", lineHeight: 1.5 }}>
+              これまでに参加・押印した記録があるルートです。<br />再参加すると本日から24時間「進行中」に設定されます。
+            </div>
+          )}
           <button 
             onClick={handleJoin} 
             disabled={isNavigating}
@@ -419,7 +447,13 @@ export function JoinRallyButton({
               cursor: isNavigating ? "not-allowed" : "pointer"
             }}
           >
-            {isNavigating ? "読み込み中..." : user ? "このルートに参加する" : "ログインしてこのルートに参加する"}
+            {isNavigating
+              ? "読み込み中..."
+              : user
+                ? hasPastParticipation
+                  ? "このルートに再参加する"
+                  : "このルートに参加する"
+                : "ログインしてこのルートに参加する"}
           </button>
         </div>
       )}

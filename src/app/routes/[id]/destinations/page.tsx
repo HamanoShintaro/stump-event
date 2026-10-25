@@ -6,6 +6,7 @@ import { notFound, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { useRouteStamps } from "@/hooks/useRouteStamps";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
 import BackButton from "@/components/BackButton";
@@ -22,6 +23,7 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
   const resolvedParams = use(params);
   const router = useRouter();
   const { user } = useAuth();
+  const { stampedSpotIds } = useRouteStamps(resolvedParams.id, user?.id);
   
   const [rally, setRally] = useState<any>(null);
   const [spots, setSpots] = useState<Spot[]>([]);
@@ -121,6 +123,7 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
         <div className={styles.spotList}>
           {spots.map((spot, index) => {
             const isActive = spot.id === activeSpotId;
+            const isStamped = Boolean(user && stampedSpotIds.has(spot.id));
             return (
               <div key={spot.id} className={styles.spotCard}>
                 {spot.image_url && (
@@ -130,9 +133,23 @@ export default function DestinationsPage({ params }: { params: Promise<{ id: str
                   />
                 )}
                 <div className={styles.spotContent}>
-                  <div className={styles.spotHeader}>
+                  <div className={styles.spotHeader} style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
                     <div className={styles.spotIndex}>{index + 1}</div>
-                    <h2 className={styles.spotName}>{spot.name}</h2>
+                    <h2 className={styles.spotName} style={{ margin: 0 }}>{spot.name}</h2>
+                    {isStamped && (
+                      <span style={{
+                        marginLeft: "auto",
+                        backgroundColor: "rgba(201, 168, 76, 0.12)",
+                        border: "1px solid var(--accent-color)",
+                        color: "var(--text-color)",
+                        padding: "3px 10px",
+                        borderRadius: "12px",
+                        fontSize: "0.75rem",
+                        fontWeight: 800
+                      }}>
+                        💮 しるし獲得済み
+                      </span>
+                    )}
                   </div>
                   <p className={styles.spotDesc}>{spot.description}</p>
                   

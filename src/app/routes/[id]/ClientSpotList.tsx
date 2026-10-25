@@ -9,6 +9,7 @@ import { SpotButton } from "./ClientRallyButtons";
 import { getCategoryStampUrl } from "@/utils/stampHelper";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { isRouteCurrentlyActive } from "@/utils/userRoutes";
 import { Map as MapIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./page.module.css";
@@ -63,7 +64,7 @@ export default function ClientSpotList({
     fetchActiveSpot();
   }, [user]);
 
-  // ユーザーがルートに参加しているかをチェック
+  // ユーザーがルートに参加（現在進行中）しているかをチェック
   useEffect(() => {
     if (!user) {
       setIsJoined(false);
@@ -73,17 +74,26 @@ export default function ClientSpotList({
       if (!user) return;
       const { data } = await supabase
         .from('user_routes')
-        .select('status')
+        .select('status, joined_at')
         .eq('user_id', user.id)
         .eq('route_id', routeId)
         .maybeSingle();
-      if (data && data.status !== 'CANCELED') {
+      if (isRouteCurrentlyActive(data)) {
         setIsJoined(true);
       } else {
         setIsJoined(false);
       }
     }
     checkJoin();
+
+    const handleJoinedEvent = (e: Event) => {
+      const customEv = e as CustomEvent;
+      if (customEv.detail?.routeId === routeId) {
+        setIsJoined(true);
+      }
+    };
+    window.addEventListener("shuin-route-joined", handleJoinedEvent);
+    return () => window.removeEventListener("shuin-route-joined", handleJoinedEvent);
   }, [user, routeId]);
 
   // 目的地設定処理

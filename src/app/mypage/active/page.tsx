@@ -46,7 +46,11 @@ export default function ActiveRoutesPage() {
           <p style={{ color: "#A39687" }}>読み込み中...</p>
         ) : activeRallies.length > 0 ? (
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            {activeRallies.map((ur) => (
+            {activeRallies.map((ur) => {
+              const totalSpots = ur.totalSpots || 0;
+              const stampedCount = ur.stampedCount || 0;
+              const progressPct = totalSpots > 0 ? Math.min(100, Math.round((stampedCount / totalSpots) * 100)) : 0;
+              return (
               <div 
                 key={ur.id} 
                 className="glass-card" 
@@ -58,22 +62,57 @@ export default function ActiveRoutesPage() {
                 }}
               >
                 <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--accent-color)", margin: "0 0 8px 0" }}>{ur.routes?.title}</h3>
-                <p style={{ fontSize: "0.8rem", color: "#A39687", margin: "0 0 16px 0" }}>参加日: {new Date(ur.joined_at).toLocaleDateString("ja-JP")}</p>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.8rem", color: "#A39687", margin: "0 0 16px 0", flexWrap: "wrap", gap: "6px" }}>
+                  <span>参加日: {new Date(ur.joined_at).toLocaleDateString("ja-JP")}</span>
+                  {ur.remainingHours != null && (
+                    <span style={{ color: "var(--accent-color)", fontWeight: 700 }}>
+                      残り有効時間: 約{ur.remainingHours}時間（参加から24時間有効）
+                    </span>
+                  )}
+                </div>
                 
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.9rem", fontWeight: "700", color: "#E0D7CD", marginBottom: "8px" }}>
-                  <span>進捗状況</span>
-                  <span>{ur.status === 'COMPLETED' ? 'クリア！🎉' : '進行中'}</span>
+                  <span>獲得したしるし</span>
+                  <span>{totalSpots > 0 ? `${stampedCount} / ${totalSpots} 個` : `${stampedCount} 個`}（進行中）</span>
                 </div>
                 <div style={{ width: "100%", height: "8px", background: "#333", borderRadius: "4px", overflow: "hidden", marginBottom: "16px" }}>
-                  <div style={{ width: ur.status === 'COMPLETED' ? "100%" : "15%", height: "100%", background: "var(--primary-color)" }}></div>
+                  <div style={{ width: `${progressPct}%`, height: "100%", background: "var(--primary-color)", transition: "width 0.3s ease" }}></div>
                 </div>
 
+                {ur.group && (
+                  <div style={{ 
+                    marginTop: "16px", 
+                    marginBottom: "16px",
+                    padding: "12px 16px", 
+                    background: "rgba(201, 168, 76, 0.08)", 
+                    border: "1px dashed var(--accent-color)", 
+                    borderRadius: "10px",
+                    fontSize: "0.85rem",
+                    color: "#E0D7CD"
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "bold", marginBottom: "6px" }}>
+                      <span>👥 連れ立ち中</span>
+                      <span style={{ marginLeft: "auto", fontSize: "0.75rem", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", padding: "1px 6px", borderRadius: "4px", color: "var(--accent-color)" }}>
+                        コード: {ur.group.inviteCode}
+                      </span>
+                    </div>
+                    <div style={{ color: "#B3A598" }}>
+                      {ur.group.partners.length > 0 ? (
+                        <>同行者: <strong style={{ color: "#E0D7CD" }}>{ur.group.partners.map((p: any) => p.displayName).join(", ")} さん</strong></>
+                      ) : (
+                        <>同行する友達の合流を待っています</>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "12px" }}>
-                  <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", background: "transparent", border: "1px solid rgba(217,101,91,0.3)", color: "#D9655B", borderRadius: "8px", cursor: "pointer" }}>離脱する</button>
+                  <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem", background: "transparent", border: "1px solid rgba(217,101,91,0.3)", color: "#D9655B", borderRadius: "8px", cursor: "pointer" }}>進行中から外す</button>
                   <Link href={`/routes/${ur.route_id}`} className="btn-primary" style={{ padding: "8px 16px", fontSize: "0.85rem", textDecoration: "none" }}>再開する</Link>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <div style={{ textAlign: "center", padding: "40px 0", color: "#B3A598" }}>

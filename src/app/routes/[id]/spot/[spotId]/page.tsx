@@ -93,7 +93,7 @@ export default function SpotCheckInPage({
   const shownActs = useRef<Set<string>>(new Set());
 
   // 目的地移動先を算出する関数
-  const prepareNextDestination = async (stampedSpotId: string) => {
+  const prepareNextDestination = async (stampedSpotId: string, isFromCheckIn = false) => {
     if (!user || !route || !spot || allSpots.length === 0) return;
     try {
       const { data: stampData } = await supabase
@@ -133,18 +133,32 @@ export default function SpotCheckInPage({
         }
       }
 
-      // 3. 対象となる未所持スポットが一切ない場合、コンプリート
+      // 3. 対象となる未所持スポットが一切ない場合、完走（進行中から外す）
       if (!nextSpot) {
         setNextDestInfo({ isComplete: true, nextSpot: null });
-        await supabase
-          .from("user_routes")
-          .update({
-            status: "COMPLETED",
-            completed_at: new Date().toISOString()
-          })
-          .eq("user_id", user.id)
-          .eq("route_id", route.id)
-          .eq("status", "IN_PROGRESS");
+        if (isFromCheckIn) {
+          await supabase
+            .from("user_routes")
+            .update({
+              status: "COMPLETED",
+              completed_at: new Date().toISOString()
+            })
+            .eq("user_id", user.id)
+            .eq("route_id", route.id)
+            .in("status", ["IN_PROGRESS", "in_progress"]);
+        } else {
+          // 初回完走（completed_atがnull）の場合のみページ表示時でもCOMPLETEDへ同期する（再参加直後の勝手な完走化を防止）
+          await supabase
+            .from("user_routes")
+            .update({
+              status: "COMPLETED",
+              completed_at: new Date().toISOString()
+            })
+            .eq("user_id", user.id)
+            .eq("route_id", route.id)
+            .is("completed_at", null)
+            .in("status", ["IN_PROGRESS", "in_progress"]);
+        }
       } else {
         setNextDestInfo({ isComplete: false, nextSpot });
       }
@@ -577,7 +591,7 @@ export default function SpotCheckInPage({
       setIsCheckingIn(false);
       
       // 次の目的地を算出
-      await prepareNextDestination(spot.id);
+      await prepareNextDestination(spot.id, true);
     } catch (e: any) {
       console.error("Checkin error:", e);
       setIsCheckingIn(false);

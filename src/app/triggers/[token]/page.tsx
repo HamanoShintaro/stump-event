@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { isRouteCurrentlyActive, activateUserRoute } from "@/utils/userRoutes";
 import styles from "./page.module.css";
 
 // 自由が丘パイロットのフォールバック用シード（B②入口）
@@ -175,27 +176,20 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
 
     setIsJoining(true);
     try {
-      // (A) すでに user_routes (進行状態) に登録されているか確認
+      // (A) すでに user_routes (進行状態・24時間以内) に登録されているか確認
       const { data: existingProgress } = await supabase
         .from("user_routes")
-        .select("id, status")
+        .select("id, status, joined_at")
         .eq("user_id", user.id)
         .eq("route_id", routeId)
         .maybeSingle();
 
-      if (existingProgress) {
-        // すでに参加済みの場合はそのままルート詳細かマップにリダイレクト
+      if (isRouteCurrentlyActive(existingProgress)) {
+        // すでに有効な進行中状態の場合はそのままルート詳細にリダイレクト
         router.push(`/routes/${routeId}`);
       } else {
-        // (B) まだ参加していない場合は user_routes にインサート（status: 'in_progress'）
-        const { error: joinError } = await supabase
-          .from("user_routes")
-          .insert({
-            user_id: user.id,
-            route_id: routeId,
-            status: "in_progress",
-            joined_at: new Date().toISOString()
-          });
+        // (B) まだ参加していない、または完走後・24時間経過後の再参加の場合は進行中ルート（最大1個）として設定
+        const { error: joinError } = await activateUserRoute(user.id, routeId);
 
         if (joinError) throw joinError;
 

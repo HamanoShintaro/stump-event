@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { activateUserRoute } from "@/utils/userRoutes";
 import { ChevronLeft, Copy, User, Check, Play } from "lucide-react";
 
 interface PageProps {
@@ -159,16 +160,10 @@ export default function GroupWaitRoom({ params }: PageProps) {
         throw error;
       }
 
-      // 同時に進行中ルートとして登録する
-      const { error: activeError } = await supabase
-        .from("user_routes")
-        .insert({
-          user_id: user.id,
-          route_id: group.route_id,
-          status: "IN_PROGRESS"
-        });
+      // 同時に進行中ルート（最大1個）として登録する
+      const { error: activeError } = await activateUserRoute(user.id, group.route_id);
       
-      if (activeError && activeError.code !== "23505") { // 重複は無視
+      if (activeError) {
         console.error("Failed to register active route for host:", activeError);
       }
 
