@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { JoinRallyButton, BookmarkRouteButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
+import CommunityEchoesSection from "@/components/CommunityEchoesSection";
 import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
@@ -145,6 +146,12 @@ export default async function RallyDetailPage({
           <h2 className={styles.sectionTitle} style={{ marginTop: "40px" }}>スポット一覧 ({spotsList.length}箇所)</h2>
           <ClientSpotList spots={spotsList} routeId={rally.id} routeCategory={rally.category} groupId={groupId} />
         </section>
+
+        {/* 街角の余韻（このルートを歩いた旅人の足跡） */}
+        <CommunityEchoesSection
+          routeId={rally.id}
+          spots={spotsList.map((s: any) => ({ id: s.id, name: s.name }))}
+        />
 
         <RouteBadgeTeaser routeId={rally.id} />
       </main>

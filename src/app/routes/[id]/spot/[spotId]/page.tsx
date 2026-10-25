@@ -17,6 +17,7 @@ import { evaluateBadges } from "@/utils/badgeEvaluator";
 import BadgeReveal from "./BadgeReveal";
 import { useSpotStampStatus } from "@/hooks/useSpotStampStatus";
 import { useSpotVisitHistory } from "@/hooks/useSpotVisitHistory";
+import CommunityEchoesSection from "@/components/CommunityEchoesSection";
 import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
 import { mockRallies } from "@/data/mock";
 import styles from "./page.module.css";
@@ -2103,6 +2104,16 @@ export default function SpotCheckInPage({
                 ))}
               </div>
             </div>
+          )}
+
+          {/* 街角の余韻（この場所を訪れた旅人のしるし） */}
+          {ceremonyStep === 'idle' && (
+            <CommunityEchoesSection
+              routeId={resolvedParams.id}
+              spotId={resolvedParams.spotId}
+              spots={spot ? [{ id: spot.id, name: spot.name }] : []}
+              refreshKey={`${visitCount}-${memoSaved ? 1 : 0}`}
+            />
           )}
         </main>
 
