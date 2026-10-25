@@ -21,7 +21,7 @@ export default async function RoutesPage({
   // Supabaseからルート一覧（紐づくスポット情報も含む）を取得
   let query = supabase
     .from("routes")
-    .select("*, spots(id, name, description, address, city, order_index, location)")
+    .select("*, spots(id, name, description, address, order_index, location)")
     .eq("is_published", true)
     .order("created_at", { ascending: false });
 

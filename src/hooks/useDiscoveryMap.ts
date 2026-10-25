@@ -165,7 +165,7 @@ export function useDiscoveryMap() {
       try {
         const { data, error } = await supabase
           .from("routes")
-          .select("*, spots(id, name, order_index, location, address, city)")
+          .select("*, spots(id, name, description, order_index, location, address)")
           .order("created_at", { ascending: false });
 
         if (!error && data && mounted) {

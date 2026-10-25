@@ -325,7 +325,7 @@ export function useShuinBook(user: any) {
       if (spotIds.length) {
         const { data: sp } = await supabase
           .from("spots")
-          .select("id, name, address, city, prefecture, f7_fragment, f7_full, route_id")
+          .select("*")
           .in("id", spotIds);
 
         (sp || []).forEach((x: any) => {

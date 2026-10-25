@@ -75,7 +75,7 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
           // ルートとナラティブを取得
           const { data: routeData } = await supabase
             .from("routes")
-            .select("id, name, title")
+            .select("id, title")
             .eq("id", linkedRouteId)
             .maybeSingle();
 
@@ -87,7 +87,7 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
             .maybeSingle();
 
           if (routeData) {
-            setRouteName(routeData.title || routeData.name || "謎に包まれたルート");
+            setRouteName(routeData.title || "謎に包まれたルート");
           }
           if (narrativeData) {
             setNarrativeTitle(narrativeData.title || "失われた物語の記憶");
@@ -108,13 +108,13 @@ export default function QRTriggerPage({ params }: { params: Promise<{ token: str
           // もし本番の Supabase に該当する実データがあるかもしれないので、フォールバックの route_id を使って実データを引きにいく
           const { data: dbRoute } = await supabase
             .from("routes")
-            .select("id, name, title")
+            .select("id, title")
             .eq("id", localFallback.route_id)
             .maybeSingle();
 
           if (dbRoute) {
             setRouteId(dbRoute.id);
-            setRouteName(dbRoute.title || dbRoute.name || localFallback.route_name);
+            setRouteName(dbRoute.title || localFallback.route_name);
           } else {
             // DBにルートがなければ、完全にモックIDとモック名を利用（開発中・実地テストでの強靭性のため）
             setRouteId(localFallback.route_id);

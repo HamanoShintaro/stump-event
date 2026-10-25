@@ -163,7 +163,7 @@ export function useLifelogStats(userId: string | undefined) {
         if (allSpotIds.length > 0) {
           const { data: spotsData } = await supabase
             .from("spots")
-            .select("id, name, address, city, prefecture, f7_fragment, route_id")
+            .select("*")
             .in("id", allSpotIds);
 
           (spotsData || []).forEach((sp: any) => {

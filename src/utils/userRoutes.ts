@@ -45,7 +45,7 @@ export function getRemainingActiveHours(joinedAt?: string | null): number {
 export async function fetchCurrentActiveUserRoute(userId: string) {
   const { data, error } = await supabase
     .from("user_routes")
-    .select("id, route_id, status, joined_at, completed_at, routes(id, title, name)")
+    .select("id, route_id, status, joined_at, completed_at, routes(id, title)")
     .eq("user_id", userId)
     .in("status", ["IN_PROGRESS", "in_progress"])
     .order("joined_at", { ascending: false });

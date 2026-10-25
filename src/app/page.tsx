@@ -16,7 +16,7 @@ export default async function Home() {
   // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む）
   const { data: rallies, error } = await supabase
     .from('routes')
-    .select('*, spots(id, name, description, address, city, order_index, location)')
+    .select('*, spots(id, name, description, address, order_index, location)')
     .eq('is_published', true)
     .order('created_at', { ascending: false });
 

@@ -116,7 +116,7 @@ export default function MyPage() {
         if (spotIds.length) {
           const { data: sp } = await supabase
             .from("spots")
-            .select("id, name, route_id, routes(id, title, name)")
+            .select("id, name, route_id, routes(id, title)")
             .in("id", spotIds);
           (sp || []).forEach((x: any) => {
             const rt = Array.isArray(x.routes) ? x.routes[0] : x.routes;
