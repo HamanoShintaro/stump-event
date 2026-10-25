@@ -336,7 +336,7 @@ export default function BookmarkedRoutesPage() {
                               📍 全{spotCount}箇所 ・ 👣 約{distanceKm}km ・ ⏱️ 約{estMin}分
                             </span>
                           )}
-                          {route.budget && (
+                          {(route.budget || route.budget_tier) && (
                             <span
                               style={{
                                 fontSize: "0.7rem",
@@ -347,7 +347,7 @@ export default function BookmarkedRoutesPage() {
                                 borderRadius: "8px",
                               }}
                             >
-                              💴 {route.budget}
+                              💴 {route.budget || (route.budget_tier === 1 ? "〜1,000円" : route.budget_tier === 2 ? "1,000〜2,000円" : route.budget_tier === 3 ? "2,000〜3,000円" : route.budget_tier === 4 ? "3,000〜5,000円" : "5,000円〜")}
                             </span>
                           )}
                         </div>

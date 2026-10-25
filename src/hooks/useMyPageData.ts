@@ -97,7 +97,7 @@ export function useMyPageData(user: any) {
       // 保存したルートを取得 (Supabase + localStorage フォールバック統合)
       const { data: userBookmarksData, error: bookmarksError } = await supabase
         .from("user_bookmarks")
-        .select(`*, routes(*, spots(id, name, address, city, order_index, location))`)
+        .select(`*, routes(*, spots(id, name, address, order_index, location))`)
         .eq("user_id", user.id)
         .order("created_at", { ascending: false });
         
@@ -116,7 +116,7 @@ export function useMyPageData(user: any) {
             if (missingRouteIds.length > 0) {
               const { data: missingRoutes } = await supabase
                 .from("routes")
-                .select("*, spots(id, name, address, city, order_index, location)")
+                .select("*, spots(id, name, address, order_index, location)")
                 .in("id", missingRouteIds);
               if (missingRoutes && missingRoutes.length > 0) {
                 const localItems = missingRoutes.map((r: any) => ({
@@ -166,7 +166,7 @@ export function useMyPageData(user: any) {
           const spotsList = Array.isArray(rt.spots) ? rt.spots : [];
           const walkMetrics = computeRouteWalkMetrics(
             spotsList,
-            rt.estimated_time_min ?? null
+            rt.rarity_estimated_min ?? rt.estimated_time_min ?? null
           );
           const totalSpots = spotsList.length;
           const stampedCount = stampedSpotsByRoute[bm.route_id]?.size || 0;

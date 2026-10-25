@@ -106,7 +106,7 @@ export function useGroupJourney(
       const spotIds = orderedSpots.map((s) => s.id).filter(Boolean);
       const walkMetrics = computeRouteWalkMetrics(
         orderedSpots,
-        routeObj?.estimated_time_min ?? null
+        routeObj?.rarity_estimated_min ?? routeObj?.estimated_time_min ?? null
       );
 
       setGroupInfo({
