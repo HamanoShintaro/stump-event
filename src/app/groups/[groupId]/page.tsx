@@ -1,353 +1,858 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { use, useEffect, useState } from "react";
+import { use, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { supabase } from "@/lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
-import { activateUserRoute } from "@/utils/userRoutes";
-import { resolveActiveGroupForRoute, syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
-import { ChevronLeft, Copy, User, Check, Play } from "lucide-react";
+import { useGroupJourney } from "@/hooks/useGroupJourney";
+import { getCategoryStampUrl } from "@/utils/stampHelper";
+import {
+  ChevronLeft,
+  Copy,
+  User,
+  Check,
+  Share2,
+  MapPin,
+  Users,
+  BookOpen,
+  ArrowRight,
+} from "lucide-react";
 
 interface PageProps {
   params: Promise<{ groupId: string }>;
 }
 
-export default function GroupWaitRoom({ params }: PageProps) {
+export default function GroupJourneyPage({ params }: PageProps) {
   const { groupId } = use(params);
-  const { user, loading } = useAuth();
-  const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
   const { showAlert } = useCustomAlert();
 
-  const [group, setGroup] = useState<any | null>(null);
-  const [members, setMembers] = useState<any[]>([]);
-  const [pageLoading, setPageLoading] = useState(true);
-  const [copied, setCopied] = useState(false);
-  const [isStarting, setIsStarting] = useState(false);
+  const {
+    groupInfo,
+    memberProgressList,
+    spotSharedMatrix,
+    loading,
+    joining,
+    notFound,
+    joinAndOpenMap,
+  } = useGroupJourney(groupId, user?.id, user?.email);
 
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push("/login");
-    }
-  }, [user, loading, router]);
-
-  // メンバー情報とグループ情報のロード
-  const fetchGroupAndMembers = async () => {
-    if (!user) return;
-    try {
-      // 1. グループ情報をロード
-      const { data: gData, error: gError } = await supabase
-        .from("groups")
-        .select("*, routes(title)")
-        .eq("id", groupId)
-        .single();
-
-      if (gError) {
-        console.error("Failed to load group:", gError);
-        return;
-      }
-      setGroup(gData);
-
-      if (gData) {
-        await syncUserProfileAndGroupStatus(supabase, user, groupId);
-        await resolveActiveGroupForRoute(supabase, user, gData.route_id, groupId);
-        await activateUserRoute(user.id, gData.route_id);
-        router.replace(`/routes/${gData.route_id}/map?groupId=${groupId}`);
-        return;
-      }
-
-      // 2. メンバーリストをロード
-      const { data: mData, error: mError } = await supabase
-        .from("group_members")
-        .select("*, users:user_id(display_name, avatar_url)")
-        .eq("group_id", groupId);
-
-      if (mError) {
-        console.error("Failed to load members:", mError);
-        return;
-      }
-
-      setMembers(mData || []);
-
-      // 3. 自分自身がメンバーに含まれているか確認
-      const isMember = (mData || []).some((m: any) => m.user_id === user.id);
-      if (!isMember) {
-        // 自動で参加メンバーに追加
-        const { error: joinError } = await supabase
-          .from("group_members")
-          .insert({ group_id: groupId, user_id: user.id });
-
-        if (joinError) {
-          console.error("Failed to auto-join group:", joinError);
-        } else {
-          // 再ロード
-          const { data: refetchedMembers } = await supabase
-            .from("group_members")
-            .select("*, users:user_id(display_name, avatar_url)")
-            .eq("group_id", groupId);
-          setMembers(refetchedMembers || []);
-        }
-      }
-    } catch (err) {
-      console.error("Error in fetchGroupAndMembers:", err);
-    } finally {
-      setPageLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (user && groupId) {
-      fetchGroupAndMembers();
-    }
-  }, [user, groupId]);
-
-  // リアルタイムリスナーと定期ポーリング（ハイブリッド同期）
-  useEffect(() => {
-    if (!groupId) return;
-
-    // 1. Supabase Realtime リスナー
-    const channel = supabase
-      .channel(`room-${groupId}`)
-      .on(
-        "postgres_changes",
-        { event: "*", schema: "public", table: "group_members", filter: `group_id=eq.${groupId}` },
-        () => {
-          fetchGroupAndMembers();
-        }
-      )
-      .on(
-        "postgres_changes",
-        { event: "UPDATE", schema: "public", table: "groups", filter: `id=eq.${groupId}` },
-        (payload: any) => {
-          if (payload.new && payload.new.status === "STARTED") {
-            router.push(`/routes/${payload.new.route_id}/map?groupId=${groupId}`);
-          }
-        }
-      )
-      .subscribe();
-
-    // 2. ポーリングバックアップ（リアルタイム通信のタイムアウトや切断用）
-    const pollInterval = setInterval(() => {
-      fetchGroupAndMembers();
-    }, 4000);
-
-    return () => {
-      supabase.removeChannel(channel);
-      clearInterval(pollInterval);
-    };
-  }, [groupId, user]);
+  const [copiedCode, setCopiedCode] = useState(false);
+  const [zoomPhotoUrl, setZoomPhotoUrl] = useState<string | null>(null);
 
   const handleCopyCode = async () => {
-    if (!group) return;
+    if (!groupInfo?.inviteCode) return;
     try {
-      await navigator.clipboard.writeText(group.invite_code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Copy failed", err);
+      await navigator.clipboard.writeText(groupInfo.inviteCode);
+      setCopiedCode(true);
+      setTimeout(() => setCopiedCode(false), 2000);
+    } catch {
+      await showAlert({
+        text: `招待コード: ${groupInfo.inviteCode}`,
+        okText: "閉じる",
+      });
     }
   };
 
-  const handleStartGroup = async () => {
-    if (!group || !user) return;
-    setIsStarting(true);
+  const handleShareJourney = async () => {
+    if (!groupInfo) return;
+    const shareUrl =
+      typeof window !== "undefined" ? window.location.href : "";
+    const shareText = `「${groupInfo.routeTitle}」を連れ立ちで巡っています（招待コード: ${groupInfo.inviteCode}） #SHUIN #まちのしるし`;
+
     try {
-      // groups のステータスを STARTED に更新
-      const { error } = await supabase
-        .from("groups")
-        .update({ status: "STARTED" })
-        .eq("id", groupId);
-
-      if (error) {
-        throw error;
+      if (typeof navigator !== "undefined" && navigator.share) {
+        await navigator.share({
+          title: `${groupInfo.routeTitle} — 連れ立ち旅路のしおり`,
+          text: shareText,
+          url: shareUrl,
+        });
+        return;
       }
-
-      // 同時に進行中ルート（最大1個）として登録する
-      const { error: activeError } = await activateUserRoute(user.id, group.route_id);
-      
-      if (activeError) {
-        console.error("Failed to register active route for host:", activeError);
+      if (typeof navigator !== "undefined" && navigator.clipboard && shareUrl) {
+        await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+        await showAlert({
+          text: "連れ立ち旅路のしおりURLと招待コードをコピーしました。友人に共有しましょう。",
+          okText: "閉じる",
+        });
       }
-
-      router.push(`/routes/${group.route_id}/map?groupId=${groupId}`);
     } catch (err: any) {
-      await showAlert({ text: `連れ立ちの出発に失敗しました: ${err.message}`, okText: "確認" });
-    } finally {
-      setIsStarting(false);
+      if (err?.name !== "AbortError") {
+        await showAlert({
+          text: "共有リンクのコピーに失敗しました。",
+          okText: "確認",
+        });
+      }
     }
   };
 
-  const isHost = group && user && group.created_by === user.id;
-
-  if (loading || pageLoading) {
+  if (authLoading || loading) {
     return (
       <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>
-        <p style={{ color: "#A39687" }}>連れ立ちの準備をしています...</p>
+        <p style={{ color: "#A39687", fontSize: "var(--font-size-body)" }}>
+          連れ立ち旅路のしおりを開いています...
+        </p>
       </div>
     );
   }
 
-  if (!group) {
+  if (notFound || !groupInfo) {
     return (
       <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>
-        <p style={{ color: "var(--primary-color)", fontWeight: "bold" }}>連れ立ちグループが見つかりませんでした。</p>
-        <Link href="/mypage" className="btn-secondary" style={{ display: "inline-block", marginTop: "20px", textDecoration: "none" }}>
+        <p style={{ color: "var(--primary-color)", fontWeight: "bold" }}>
+          指定された連れ立ちグループが見つかりませんでした。
+        </p>
+        <Link
+          href="/mypage"
+          className="btn-secondary"
+          style={{ display: "inline-block", marginTop: "20px", textDecoration: "none" }}
+        >
           マイページへ戻る
         </Link>
       </div>
     );
   }
 
-  // 招待コードのフォーマット表示（例: 389 421）
-  const displayCode = group.invite_code
-    ? `${group.invite_code.slice(0, 3)} ${group.invite_code.slice(3)}`
-    : "";
+  const displayCode = groupInfo.inviteCode
+    ? `${groupInfo.inviteCode.slice(0, 3)} ${groupInfo.inviteCode.slice(3)}`
+    : "------";
+  const stampImg = getCategoryStampUrl(groupInfo.routeCategory);
+  const totalSharedMemories = spotSharedMatrix.reduce(
+    (sum, s) => sum + s.memories.length,
+    0
+  );
 
   return (
     <div className="container">
-      <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <header
+        style={{
+          padding: "20px 0",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <Link href="/" className="nav-logo">
-          <img src="/shuin-logo-horizontal.png" alt="SHUIN まちのしるし" style={{ height: "32px", display: "block", objectFit: "contain" }} />
+          <img
+            src="/shuin-logo-horizontal.png"
+            alt="SHUIN まちのしるし"
+            style={{ height: "32px", display: "block", objectFit: "contain" }}
+          />
         </Link>
         <HeaderNav />
       </header>
 
-      <main style={{ maxWidth: "480px", margin: "0 auto", paddingBottom: "80px" }}>
-        <div style={{ marginBottom: "20px" }}>
-          <Link href="/mypage" style={{ display: "flex", alignItems: "center", gap: "4px", color: "#A39687", textDecoration: "none", fontSize: "0.9rem", fontWeight: "bold" }}>
+      <main style={{ maxWidth: "640px", margin: "0 auto", paddingBottom: "80px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "8px",
+            marginBottom: "18px",
+          }}
+        >
+          <Link
+            href="/mypage"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              color: "#A39687",
+              textDecoration: "none",
+              fontSize: "0.88rem",
+              fontWeight: "bold",
+            }}
+          >
             <ChevronLeft size={16} /> マイページへ戻る
           </Link>
+
+          {groupInfo.routeId && (
+            <Link
+              href={`/routes/${groupInfo.routeId}`}
+              style={{
+                fontSize: "0.82rem",
+                color: "var(--primary-color)",
+                fontWeight: 800,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+            >
+              ルートの詳細を見る <ArrowRight size={13} />
+            </Link>
+          )}
         </div>
 
-        <div style={{ background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "16px", padding: "24px 20px", textAlign: "center", boxShadow: "0 4px 12px rgba(92, 78, 67, 0.05)", marginBottom: "24px" }}>
-          <span style={{ fontSize: "0.8rem", color: "var(--primary-color)", fontWeight: "900", letterSpacing: "1px", background: "rgba(199, 68, 46, 0.08)", padding: "4px 10px", borderRadius: "20px" }}>
-            連れ立ち（グループ）待機中
-          </span>
-          <h1 style={{ fontSize: "1.2rem", fontWeight: "800", color: "var(--text-color)", margin: "16px 0 6px 0", lineHeight: "1.4" }}>
-            {group.routes?.title}
-          </h1>
-          <p style={{ fontSize: "0.85rem", color: "#8A7E72", margin: "0 0 24px 0" }}>友達と同じルートを歩き、しるしを共有しましょう。</p>
+        {/* 1. ヘッダー＆招待・アクションしおりカード */}
+        <section
+          className="glass-card"
+          style={{
+            background: "linear-gradient(135deg, #FFFDF9 0%, #FAF4E6 100%)",
+            border: "1.5px solid var(--accent-color)",
+            borderRadius: "18px",
+            padding: "24px 22px",
+            boxShadow: "0 6px 20px rgba(92, 78, 67, 0.08)",
+            marginBottom: "24px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "8px",
+              marginBottom: "10px",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "0.74rem",
+                color: "var(--primary-color)",
+                fontWeight: 900,
+                letterSpacing: "0.08em",
+                background: "rgba(199, 68, 46, 0.1)",
+                padding: "4px 12px",
+                borderRadius: "20px",
+              }}
+            >
+              📜 連れ立ち旅路のしおり
+            </span>
+            <span
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                padding: "3px 10px",
+                borderRadius: "12px",
+                background: groupInfo.isActive
+                  ? "rgba(201, 168, 76, 0.2)"
+                  : "rgba(92, 78, 67, 0.08)",
+                color: groupInfo.isActive ? "#6E5314" : "#8A7E72",
+              }}
+            >
+              {groupInfo.isActive ? "👥 連れ立ち進行中" : "📖 旅路の記録"}
+            </span>
+          </div>
 
-          {/* 招待コード */}
-          <div style={{ background: "rgba(92, 78, 67, 0.03)", border: "1px dashed #EBE5D9", borderRadius: "12px", padding: "16px", margin: "20px 0" }}>
-            <div style={{ fontSize: "0.75rem", color: "#A39687", fontWeight: "bold", marginBottom: "6px" }}>招待コード</div>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "12px" }}>
-              <span style={{ fontSize: "2rem", fontWeight: "900", color: "var(--text-color)", letterSpacing: "2px", fontFamily: "monospace" }}>
-                {displayCode}
-              </span>
-              <button 
-                onClick={handleCopyCode}
-                style={{ 
-                  background: copied ? "var(--accent-color)" : "#FFFDF9", 
-                  border: "1px solid #EBE5D9", 
-                  borderRadius: "8px", 
-                  padding: "8px", 
-                  cursor: "pointer",
-                  display: "flex",
+          <h1
+            style={{
+              fontSize: "var(--font-size-h2)",
+              fontWeight: 900,
+              color: "var(--text-color)",
+              margin: "6px 0 8px 0",
+              lineHeight: 1.4,
+              fontFamily: "'Noto Serif JP', serif",
+            }}
+          >
+            {groupInfo.routeTitle}
+          </h1>
+
+          {/* 街歩きメトリクスバー */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "8px",
+              fontSize: "0.78rem",
+              color: "#5C4E43",
+              fontWeight: 700,
+              marginBottom: "16px",
+            }}
+          >
+            {groupInfo.routePrefecture && (
+              <span
+                style={{
+                  display: "inline-flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  transition: "all 0.2s"
+                  gap: "3px",
+                  background: "#FFFDF9",
+                  border: "1px solid #EBE5D9",
+                  padding: "3px 9px",
+                  borderRadius: "10px",
                 }}
-                title="コードをコピー"
               >
-                {copied ? <Check size={16} color="#FFF" /> : <Copy size={16} color="#A39687" />}
+                <MapPin size={12} color="var(--primary-color)" />
+                {groupInfo.routePrefecture}
+              </span>
+            )}
+            <span
+              style={{
+                background: "#FFFDF9",
+                border: "1px solid #EBE5D9",
+                padding: "3px 10px",
+                borderRadius: "10px",
+              }}
+            >
+              📍 全{groupInfo.walkMetrics.spotCount}箇所 ・ 👣 約
+              {groupInfo.walkMetrics.distanceKm}km ・ ⏱️ 約
+              {groupInfo.walkMetrics.estimatedMinutes}分
+            </span>
+          </div>
+
+          {/* 招待コード＆共有ボックス */}
+          <div
+            style={{
+              background: "#FFFDF9",
+              border: "1px dashed var(--accent-color)",
+              borderRadius: "14px",
+              padding: "14px 16px",
+              marginBottom: "18px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "12px",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontSize: "0.72rem",
+                  color: "#8A7E72",
+                  fontWeight: 700,
+                  marginBottom: "2px",
+                }}
+              >
+                合流用の招待コード（6桁）
+              </div>
+              <div
+                style={{
+                  fontSize: "1.6rem",
+                  fontWeight: 900,
+                  color: "var(--text-color)",
+                  letterSpacing: "2px",
+                  fontFamily: "monospace",
+                }}
+              >
+                {displayCode}
+              </div>
+            </div>
+
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              <button
+                type="button"
+                onClick={handleCopyCode}
+                className="btn-secondary"
+                style={{
+                  padding: "8px 12px",
+                  fontSize: "0.78rem",
+                  borderRadius: "10px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: copiedCode ? "var(--accent-color)" : "#FFFDF9",
+                  color: copiedCode ? "#fff" : "var(--text-color)",
+                }}
+              >
+                {copiedCode ? <Check size={14} /> : <Copy size={14} />}
+                {copiedCode ? "コピー済み" : "コードをコピー"}
+              </button>
+
+              <button
+                type="button"
+                onClick={handleShareJourney}
+                className="btn-secondary"
+                style={{
+                  padding: "8px 12px",
+                  fontSize: "0.78rem",
+                  borderRadius: "10px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  background: "#FFFDF9",
+                }}
+              >
+                <Share2 size={14} />
+                しおりを共有
               </button>
             </div>
-            <div style={{ fontSize: "0.7rem", color: "#A39687", marginTop: "8px" }}>友達にこのコードを共有して参加させてください。</div>
           </div>
-        </div>
 
-        {/* 参加メンバー一覧 */}
-        <div style={{ background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "16px", padding: "20px", boxShadow: "0 4px 12px rgba(92, 78, 67, 0.05)", marginBottom: "24px" }}>
-          <h3 style={{ fontSize: "0.9rem", fontWeight: "800", color: "var(--text-color)", margin: "0 0 16px 0", textAlign: "left", display: "flex", alignItems: "center", gap: "6px" }}>
-            <User size={16} color="var(--primary-color)" /> 同行するメンバー ({members.length}人)
-          </h3>
+          {/* メインアクション：連れ立ちマップを開いて巡る */}
+          <button
+            type="button"
+            onClick={joinAndOpenMap}
+            disabled={joining}
+            className="btn-primary"
+            style={{
+              width: "100%",
+              padding: "14px 20px",
+              fontSize: "0.95rem",
+              fontWeight: 900,
+              borderRadius: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
+              boxShadow: "0 4px 14px rgba(199, 68, 46, 0.25)",
+            }}
+          >
+            {joining
+              ? "マップを準備しています..."
+              : "🗺️ 連れ立ちマップを開いて巡る"}
+          </button>
+        </section>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            {members.map((m: any) => {
-              const u = m.users || {};
-              const isMe = m.user_id === user?.id;
-              const isGroupHost = m.user_id === group.created_by;
+        {/* 2. 👥 同行メンバーの歩み（進捗一覧） */}
+        <section
+          className="glass-card"
+          style={{
+            background: "#FFFDF9",
+            border: "1px solid #EBE5D9",
+            borderRadius: "16px",
+            padding: "20px",
+            boxShadow: "0 4px 12px rgba(92, 78, 67, 0.04)",
+            marginBottom: "24px",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "14px",
+              flexWrap: "wrap",
+              gap: "8px",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "1rem",
+                fontWeight: 800,
+                color: "var(--text-color)",
+                margin: 0,
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+              }}
+            >
+              <Users size={17} color="var(--primary-color)" /> 同行メンバーの歩み（
+              {memberProgressList.length}名）
+            </h2>
+            <span style={{ fontSize: "0.75rem", color: "#8A7E72", fontWeight: 700 }}>
+              共有された思い出 {totalSharedMemories}件
+            </span>
+          </div>
+
+          {memberProgressList.length > 0 ? (
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              {memberProgressList.map((member) => {
+                const pct =
+                  member.totalSpots > 0
+                    ? Math.min(
+                        100,
+                        Math.round((member.stampedCount / member.totalSpots) * 100)
+                      )
+                    : 0;
+                return (
+                  <div
+                    key={member.userId}
+                    style={{
+                      padding: "12px 14px",
+                      background: member.isMe
+                        ? "rgba(201, 168, 76, 0.08)"
+                        : "#FAF6EE",
+                      border: member.isMe
+                        ? "1px solid var(--accent-color)"
+                        : "1px solid #EBE5D9",
+                      borderRadius: "12px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginBottom: "8px",
+                        gap: "8px",
+                      }}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                        <div
+                          style={{
+                            width: "34px",
+                            height: "34px",
+                            borderRadius: "50%",
+                            background: "#FFFDF9",
+                            border: "1.5px solid var(--accent-color)",
+                            overflow: "hidden",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexShrink: 0,
+                            fontWeight: 800,
+                            fontSize: "0.85rem",
+                            color: "var(--text-color)",
+                          }}
+                        >
+                          {member.avatarUrl ? (
+                            <img
+                              src={member.avatarUrl}
+                              alt={member.displayName}
+                              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            />
+                          ) : (
+                            <User size={16} color="#8A7E72" />
+                          )}
+                        </div>
+                        <div>
+                          <span
+                            style={{
+                              fontSize: "0.9rem",
+                              fontWeight: 800,
+                              color: "var(--text-color)",
+                            }}
+                          >
+                            {member.displayName} さん
+                          </span>
+                          {member.isMe && (
+                            <span
+                              style={{
+                                fontSize: "0.7rem",
+                                color: "var(--primary-color)",
+                                marginLeft: "6px",
+                                fontWeight: 800,
+                              }}
+                            >
+                              （あなた）
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <span
+                        style={{
+                          fontSize: "0.82rem",
+                          fontWeight: 900,
+                          color: "var(--primary-color)",
+                        }}
+                      >
+                        💮 {member.stampedCount} / {member.totalSpots} 箇所
+                      </span>
+                    </div>
+
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "6px",
+                        background: "#EBE5D9",
+                        borderRadius: "3px",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: `${pct}%`,
+                          height: "100%",
+                          background:
+                            pct >= 100
+                              ? "var(--accent-color)"
+                              : "var(--primary-color)",
+                          transition: "width 0.3s ease",
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <p style={{ fontSize: "0.85rem", color: "#8A7E72", margin: 0 }}>
+              まだ同行メンバーの記録がありません。招待コードを共有して一緒に巡りましょう。
+            </p>
+          )}
+        </section>
+
+        {/* 3. 📖 スポット別・みんなの共有しるし絵巻 */}
+        <section
+          className="glass-card"
+          style={{
+            background: "#FFFDF9",
+            border: "1px solid #EBE5D9",
+            borderRadius: "16px",
+            padding: "20px",
+            boxShadow: "0 4px 12px rgba(92, 78, 67, 0.04)",
+          }}
+        >
+          <div style={{ marginBottom: "16px" }}>
+            <h2
+              style={{
+                fontSize: "1.02rem",
+                fontWeight: 800,
+                color: "var(--text-color)",
+                margin: "0 0 4px 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+              }}
+            >
+              <BookOpen size={17} color="var(--primary-color)" /> スポット別・みんなの共有しるし絵巻
+            </h2>
+            <p style={{ fontSize: "0.76rem", color: "#8A7E72", margin: 0 }}>
+              各スポットで仲間が刻んだ押印と、共有された写真・一言メモがリアルタイムに並びます。
+            </p>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            {spotSharedMatrix.map((spot, idx) => {
+              const hasStamped = spot.stampedMembers.length > 0;
               return (
-                <div 
-                  key={m.id}
-                  style={{ 
-                    display: "flex", 
-                    alignItems: "center", 
-                    justifyContent: "space-between",
-                    padding: "10px 12px", 
-                    background: "rgba(92, 78, 67, 0.02)", 
-                    borderRadius: "8px",
-                    border: isMe ? "1px solid var(--accent-color)" : "1px solid transparent"
+                <div
+                  key={spot.spotId}
+                  style={{
+                    background: hasStamped ? "#FFFDF9" : "#FAF6EE",
+                    border: hasStamped
+                      ? "1.5px solid var(--accent-color)"
+                      : "1px solid #EBE5D9",
+                    borderRadius: "14px",
+                    padding: "14px 16px",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#EBE5D9", overflow: "hidden", display: "flex", alignItems: "center", justifyItems: "center" }}>
-                      {u.avatar_url ? (
-                        <img src={u.avatar_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                      ) : (
-                        <User size={18} style={{ margin: "auto" }} color="#8A7E72" />
-                      )}
-                    </div>
-                    <div>
-                      <span style={{ fontSize: "0.9rem", fontWeight: "700", color: "var(--text-color)" }}>
-                        {u.display_name || "名無しの旅人"}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                      gap: "8px",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        padding: "2px 9px",
+                        borderRadius: "10px",
+                        background: hasStamped
+                          ? "rgba(199, 68, 46, 0.12)"
+                          : "rgba(92, 78, 67, 0.08)",
+                        color: hasStamped ? "var(--primary-color)" : "#8A7E72",
+                      }}
+                    >
+                      第 {idx + 1} 番
+                    </span>
+
+                    {hasStamped ? (
+                      <span
+                        style={{
+                          fontSize: "0.74rem",
+                          fontWeight: 800,
+                          color: "#6E5314",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
+                        }}
+                      >
+                        💮{" "}
+                        {spot.stampedMembers
+                          .map((m) => `${m.displayName}さん`)
+                          .join("、")}
+                        が押印
                       </span>
-                      {isMe && <span style={{ fontSize: "0.7rem", color: "var(--accent-color)", marginLeft: "6px", fontWeight: "bold" }}>（あなた）</span>}
+                    ) : (
+                      <span style={{ fontSize: "0.72rem", color: "#A39687" }}>
+                        未訪問
+                      </span>
+                    )}
+                  </div>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      marginBottom:
+                        spot.storyFragment || spot.memories.length > 0 ? "10px" : 0,
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "44px",
+                        height: "44px",
+                        borderRadius: "50%",
+                        background: "#fff",
+                        border: hasStamped
+                          ? "1.5px dashed var(--primary-color)"
+                          : "1px solid #EBE5D9",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                        opacity: hasStamped ? 1 : 0.35,
+                      }}
+                    >
+                      <img
+                        src={stampImg}
+                        alt="SHUIN印"
+                        style={{ width: "82%", height: "82%", objectFit: "contain" }}
+                      />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <h3
+                        style={{
+                          fontSize: "0.96rem",
+                          fontWeight: 800,
+                          color: "var(--text-color)",
+                          margin: "0 0 2px 0",
+                        }}
+                      >
+                        {spot.name}
+                      </h3>
+                      {spot.address && (
+                        <div style={{ fontSize: "0.72rem", color: "#8A7E72" }}>
+                          📍 {spot.address}
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  {isGroupHost && (
-                    <span style={{ fontSize: "0.7rem", color: "var(--primary-color)", background: "rgba(199, 68, 46, 0.08)", padding: "2px 6px", borderRadius: "4px", fontWeight: "bold" }}>
-                      立ち上げ人
-                    </span>
+                  {hasStamped && spot.storyFragment && (
+                    <div
+                      style={{
+                        background: "#FAF6EE",
+                        borderLeft: "3px solid var(--accent-color)",
+                        borderRadius: "6px",
+                        padding: "8px 12px",
+                        fontSize: "0.76rem",
+                        color: "#5C4E43",
+                        lineHeight: 1.55,
+                        marginBottom: spot.memories.length > 0 ? "10px" : 0,
+                      }}
+                    >
+                      {spot.storyFragment}
+                    </div>
+                  )}
+
+                  {spot.memories.length > 0 && (
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "8px",
+                        marginTop: "6px",
+                      }}
+                    >
+                      {spot.memories.map((mem) => (
+                        <div
+                          key={mem.id}
+                          style={{
+                            background: "#FAF6EE",
+                            border: "1px dashed var(--accent-color)",
+                            borderRadius: "10px",
+                            padding: "10px 12px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              marginBottom: "6px",
+                              fontSize: "0.72rem",
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontWeight: 800,
+                                color: "var(--primary-color)",
+                              }}
+                            >
+                              📷 {mem.displayName} さんの思い出
+                            </span>
+                            <span style={{ color: "#8A7E72" }}>
+                              {new Date(mem.createdAt).toLocaleDateString("ja-JP")}
+                            </span>
+                          </div>
+
+                          {mem.photoUrl && (
+                            <img
+                              src={mem.photoUrl}
+                              alt={`${mem.displayName}さんの写真`}
+                              onClick={() => setZoomPhotoUrl(mem.photoUrl)}
+                              style={{
+                                width: "100%",
+                                maxHeight: "200px",
+                                objectFit: "cover",
+                                borderRadius: "8px",
+                                border: "1px solid #EBE5D9",
+                                marginBottom: mem.comment ? "6px" : 0,
+                                cursor: "pointer",
+                              }}
+                            />
+                          )}
+
+                          {mem.comment && (
+                            <div
+                              style={{
+                                fontSize: "0.82rem",
+                                color: "var(--text-color)",
+                                fontStyle: "italic",
+                                lineHeight: 1.5,
+                              }}
+                            >
+                              「 {mem.comment} 」
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   )}
                 </div>
               );
             })}
           </div>
-        </div>
-
-        {/* アクションボタン */}
-        <div style={{ marginTop: "32px", textAlign: "center" }}>
-          {isHost ? (
-            <button
-              onClick={handleStartGroup}
-              disabled={isStarting}
-              className="btn-primary"
-              style={{ 
-                width: "100%", 
-                padding: "14px 20px", 
-                fontSize: "1rem", 
-                fontWeight: "900",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-                boxShadow: "0 4px 14px rgba(199, 68, 46, 0.3)"
-              }}
-            >
-              <Play size={18} fill="currentColor" /> {isStarting ? "出発準備中..." : "連れ立ちを出発させる"}
-            </button>
-          ) : (
-            <div style={{ padding: "16px", background: "rgba(92, 78, 67, 0.03)", borderRadius: "12px", border: "1px dashed #EBE5D9" }}>
-              <div className="loading-spinner" style={{ width: "24px", height: "24px", border: "3px solid #EBE5D9", borderTop: "3px solid var(--primary-color)", borderRadius: "50%", margin: "0 auto 12px auto", animation: "spin 1s linear infinite" }}></div>
-              <p style={{ fontSize: "0.85rem", color: "#8A7E72", margin: 0, fontWeight: "bold" }}>
-                立ち上げ人が出発するのを待っています...
-              </p>
-            </div>
-          )}
-        </div>
+        </section>
       </main>
-      
-      <style jsx global>{`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
+
+      {/* 写真拡大ライトボックス */}
+      {zoomPhotoUrl && (
+        <div
+          onClick={() => setZoomPhotoUrl(null)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0, 0, 0, 0.88)",
+            backdropFilter: "blur(6px)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 2000,
+            padding: "20px",
+            cursor: "zoom-out",
+          }}
+        >
+          <img
+            src={zoomPhotoUrl}
+            alt="拡大写真"
+            style={{
+              maxWidth: "95%",
+              maxHeight: "85vh",
+              objectFit: "contain",
+              borderRadius: "8px",
+            }}
+          />
+          <span
+            style={{
+              color: "#fff",
+              marginTop: "14px",
+              fontSize: "0.82rem",
+              opacity: 0.75,
+            }}
+          >
+            タップして閉じる
+          </span>
+        </div>
+      )}
     </div>
   );
 }

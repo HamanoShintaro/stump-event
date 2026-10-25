@@ -25,8 +25,8 @@ import styles from "./page.module.css";
 // 街の便り（最新のものを表示）
 const LATEST_NEWS = {
   date: "2026.10.25",
-  title: "【秋の大型更新】時間帯・気分別キュレーション＆「街歩きみくじ」、マイページ「連れ立ちの記憶帳」＆SHUIN帳「物語の回顧録（ルート絵巻）」が登場",
-  summary: "今この瞬間の気分でルートを選べる「時間帯・気分別キュレーション」と「🎴 今日の街歩きみくじ（縁結び）」、マイページの「👥 連れ立ちの記憶帳」、そしてSHUIN帳の「📜 月間・同行者紀行サマリー」「📜 物語の回顧録（ルート絵巻）」が新たに加わりました。"
+  title: "【秋の大型更新】「連れ立ち旅路のしおり（共有アルバム）」、「保存したルートのお散歩プランナー」、スポット詳細「街角の余韻」が登場",
+  summary: "仲間との歩みと共有写真を1ページで一覧できる「📜 連れ立ち旅路のしおり（/groups/[groupId]）」、保存したルートを所要時間や進行度で整理できる「🔖 お散歩プランナー」、スポット詳細の「🍃 街角の余韻」と行き先選択の「🧭 街歩きコンパス」が新たに加わりました。"
 };
 
 export default function MyPage() {
@@ -577,6 +577,22 @@ export default function MyPage() {
                       </div>
 
                       <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                        <Link
+                          href={`/groups/${sess.groupId}`}
+                          className="btn-secondary"
+                          style={{
+                            padding: "5px 10px",
+                            fontSize: "0.74rem",
+                            borderRadius: "8px",
+                            textDecoration: "none",
+                            background: "#FFFDF9",
+                            borderColor: "var(--accent-color)",
+                            color: "var(--text-color)",
+                            fontWeight: 800,
+                          }}
+                        >
+                          📜 旅路のしおり
+                        </Link>
                         {sess.routeId && (
                           <Link
                             href={`/mypage/diary?routeId=${encodeURIComponent(sess.routeId)}`}
@@ -1123,7 +1139,10 @@ export default function MyPage() {
                     <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "14px", flexWrap: "wrap" }}>
                       <button onClick={() => leaveNarrative(ur.route_id)} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", background: "#f5f5f5", color: "#5c4e43", border: "none", borderRadius: "6px", cursor: "pointer" }}>進行中から外す</button>
                       {ur.group && (
-                        <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", fontWeight: 700 }}>🗺️ 連れ立ちマップ</Link>
+                        <>
+                          <Link href={`/groups/${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--accent-color)", color: "var(--text-color)", borderRadius: "6px", fontWeight: 700, background: "#FFFDF9" }}>📜 旅路のしおり</Link>
+                          <Link href={`/routes/${ur.route_id}/map?groupId=${ur.group.id}`} className="btn-secondary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", fontWeight: 700 }}>🗺️ 連れ立ちマップ</Link>
+                        </>
                       )}
                       <Link href={`/routes/${ur.route_id}${ur.group ? `?groupId=${ur.group.id}` : ""}`} className="btn-primary" style={{ padding: "6px 12px", fontSize: "0.8rem", textDecoration: "none" }}>再開する</Link>
                     </div>

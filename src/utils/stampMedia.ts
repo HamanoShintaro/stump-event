@@ -454,3 +454,24 @@ export async function fetchGroupSharedMemoriesForSpots(
 
   return result;
 }
+
+/**
+ * stamp_events レコードから写真URLとコメント（memo）を安全に抽出する
+ */
+export function extractStampMemories(row: any): {
+  photoUrl: string | null;
+  comment: string | null;
+} {
+  if (!row) return { photoUrl: null, comment: null };
+  const rawPhoto =
+    typeof row.photo_url === "string" && row.photo_url.trim()
+      ? row.photo_url.trim()
+      : null;
+  const rawMemo =
+    typeof row.memo === "string" && row.memo.trim() ? row.memo.trim() : null;
+  return {
+    photoUrl: rawPhoto,
+    comment: rawMemo,
+  };
+}
+

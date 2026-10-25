@@ -3,6 +3,7 @@ import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { isRouteCurrentlyActive, getRemainingActiveHours } from "@/utils/userRoutes";
 import { parseMemberDisplayName, syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
+import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 
 export function useMyPageData(user: any) {
   const [activeRallies, setActiveRallies] = useState<any[]>([]);
@@ -96,7 +97,7 @@ export function useMyPageData(user: any) {
       // 保存したルートを取得 (Supabase + localStorage フォールバック統合)
       const { data: userBookmarksData, error: bookmarksError } = await supabase
         .from("user_bookmarks")
-        .select(`*, routes(*)`)
+        .select(`*, routes(*, spots(id, name, address, city, order_index, location))`)
         .eq("user_id", user.id)
         .order("created_at", { ascending: false });
         
@@ -115,7 +116,7 @@ export function useMyPageData(user: any) {
             if (missingRouteIds.length > 0) {
               const { data: missingRoutes } = await supabase
                 .from("routes")
-                .select("*")
+                .select("*, spots(id, name, address, city, order_index, location)")
                 .in("id", missingRouteIds);
               if (missingRoutes && missingRoutes.length > 0) {
                 const localItems = missingRoutes.map((r: any) => ({
@@ -131,6 +132,59 @@ export function useMyPageData(user: any) {
         } catch {
           // ignore localStorage read error
         }
+      }
+
+      // 保存したルートのお散歩プランナー情報（walkMetrics・stampedCount・progressStatus）を付与
+      if (mergedBookmarks.length > 0) {
+        const bookmarkRouteIds = Array.from(
+          new Set<string>(mergedBookmarks.map((b: any) => b.route_id).filter(Boolean))
+        );
+        const [bmStampsRes, bmEventsRes] = await Promise.all([
+          supabase
+            .from("stamps")
+            .select("route_id, spot_id")
+            .eq("user_id", user.id)
+            .in("route_id", bookmarkRouteIds),
+          supabase
+            .from("stamp_events")
+            .select("route_id, spot_id")
+            .eq("user_id", user.id)
+            .in("route_id", bookmarkRouteIds),
+        ]);
+
+        const stampedSpotsByRoute: Record<string, Set<string>> = {};
+        [...(bmStampsRes.data || []), ...(bmEventsRes.data || [])].forEach((row: any) => {
+          if (!row?.route_id || !row?.spot_id) return;
+          if (!stampedSpotsByRoute[row.route_id]) {
+            stampedSpotsByRoute[row.route_id] = new Set<string>();
+          }
+          stampedSpotsByRoute[row.route_id].add(row.spot_id);
+        });
+
+        mergedBookmarks = mergedBookmarks.map((bm: any) => {
+          const rt = bm.routes || {};
+          const spotsList = Array.isArray(rt.spots) ? rt.spots : [];
+          const walkMetrics = computeRouteWalkMetrics(
+            spotsList,
+            rt.estimated_time_min ?? null
+          );
+          const totalSpots = spotsList.length;
+          const stampedCount = stampedSpotsByRoute[bm.route_id]?.size || 0;
+          const progressStatus: "unvisited" | "in_progress" | "completed" =
+            totalSpots > 0 && stampedCount >= totalSpots
+              ? "completed"
+              : stampedCount > 0
+                ? "in_progress"
+                : "unvisited";
+
+          return {
+            ...bm,
+            walkMetrics,
+            stampedCount,
+            totalSpots,
+            progressStatus,
+          };
+        });
       }
 
       // 連れ立ち（グループ）情報のフェッチ
