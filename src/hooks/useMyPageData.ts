@@ -270,11 +270,52 @@ export function useMyPageData(user: any) {
     }
   };
 
+  const removeBookmark = async (routeId: string) => {
+    if (!user || !routeId) return;
+
+    const confirmRemove = await showAlert({
+      text: "このルートを保存一覧（栞）から外しますか？",
+      okText: "保存を解除する",
+      ngText: "キャンセル",
+    });
+    if (!confirmRemove) return;
+
+    // localStorage からも削除
+    if (typeof window !== "undefined") {
+      try {
+        const key = `shuin_bookmarks_${user.id}`;
+        const raw = window.localStorage.getItem(key);
+        const list: string[] = raw ? JSON.parse(raw) : [];
+        if (Array.isArray(list)) {
+          window.localStorage.setItem(
+            key,
+            JSON.stringify(list.filter((id) => id !== routeId))
+          );
+        }
+      } catch {
+        // ignore storage error
+      }
+    }
+
+    try {
+      await supabase
+        .from("user_bookmarks")
+        .delete()
+        .eq("user_id", user.id)
+        .eq("route_id", routeId);
+    } catch (err) {
+      console.warn("Bookmark delete warning:", err);
+    }
+
+    setBookmarkedRallies((prev) => prev.filter((b) => b.route_id !== routeId));
+  };
+
   return {
     activeRallies,
     bookmarkedRallies,
     dataLoading,
     leaveNarrative,
+    removeBookmark,
     refreshMyPageData: fetchMyData,
   };
 }
