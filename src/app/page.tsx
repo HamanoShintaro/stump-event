@@ -4,17 +4,19 @@ import { supabase } from "../lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import SplashAnimation from "@/components/SplashAnimation";
 import ClientSearchButton from "@/components/ClientSearchButton";
+import NearbyDiscoverySection from "@/components/NearbyDiscoverySection";
 import { getRouteStatsMap } from "@/utils/routeStats";
+import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 import { Footprints, Star, Map } from "lucide-react";
 
 // Next.js App Router: サーバーコンポーネントとしてSupabaseから直接データを取得
 export const revalidate = 0; // 最新のデータを常に取得
 
 export default async function Home() {
-  // 公開中（is_published = true）のナラティブを最新順に取得
+  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む）
   const { data: rallies, error } = await supabase
     .from('routes')
-    .select('*')
+    .select('*, spots(id, name, address, city, order_index, location)')
     .eq('is_published', true)
     .order('created_at', { ascending: false });
 
@@ -61,43 +63,54 @@ export default async function Home() {
 
       {/* コンテンツ部分 (通常スクロール) */}
       <div className={styles.contentSection}>
-        {/* 注目ナラティブ（データベースから取得した一覧） */}
+        {/* ご近所の再発見・気軽な街歩きコンパス */}
+        <NearbyDiscoverySection routes={rallies || []} statsMap={statsMap} />
+
+        {/* 注目のルート（データベースから取得した一覧） */}
         <section className={`${styles.featuredSection} container`}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <h2 className={styles.sectionTitle}>注目のルート</h2>
           </div>
           <div className={styles.rallyGrid}>
             {rallies && rallies.length > 0 ? (
-              rallies.map((rally) => (
-                <Link href={`/routes/${rally.id}`} key={rally.id} className={styles.rallyCard}>
-                  <div className={styles.cardImageContainer}>
-                    <img 
-                      src={rally.thumbnail_url || 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80'} 
-                      alt={rally.title} 
-                      className={styles.cardImage} 
-                    />
-                    <div className={styles.overlayTopTags}>
-                      <div className={styles.categoryBadge}>{rally.category}</div>
-                      <div className={styles.areaBadge}>{rally.prefecture}</div>
-                    </div>
-                    <div className={styles.cardOverlay}>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-                        <span style={{ fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
-                          💰 {rally.budget_tier === 1 ? "~1,000円" : rally.budget_tier === 2 ? "~5,000円" : "5,000円~"}
-                        </span>
-                        <div style={{ display: "flex", gap: "8px", fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
-                          {statsMap[rally.id]?.participants > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{statsMap[rally.id].participants}</span>)}
-                          {statsMap[rally.id]?.favorites > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px", color: "#FFD700" }}><Star size={12} fill="currentColor" strokeWidth={2} />{statsMap[rally.id].favorites}</span>)}
+              rallies.map((rally) => {
+                const walkMetrics = computeRouteWalkMetrics(rally.spots || [], rally.rarity_estimated_min);
+                return (
+                  <Link href={`/routes/${rally.id}`} key={rally.id} className={styles.rallyCard}>
+                    <div className={styles.cardImageContainer}>
+                      <img 
+                        src={rally.thumbnail_url || 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80'} 
+                        alt={rally.title} 
+                        className={styles.cardImage} 
+                      />
+                      <div className={styles.overlayTopTags}>
+                        <div className={styles.categoryBadge}>{rally.category}</div>
+                        <div className={styles.areaBadge}>{rally.prefecture}</div>
+                      </div>
+                      <div className={styles.cardOverlay}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+                          <span style={{ fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
+                            💰 {rally.budget_tier === 1 ? "~1,000円" : rally.budget_tier === 2 ? "~5,000円" : "5,000円~"}
+                          </span>
+                          <div style={{ display: "flex", gap: "8px", fontSize: "0.7rem", fontWeight: "bold", textShadow: "0 1px 2px rgba(0,0,0,0.8)" }}>
+                            {statsMap[rally.id]?.participants > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px" }}><Footprints size={12} strokeWidth={2} />{statsMap[rally.id].participants}</span>)}
+                            {statsMap[rally.id]?.favorites > 0 && (<span style={{ display: "flex", alignItems: "center", gap: "2px", color: "var(--accent-color)" }}><Star size={12} fill="currentColor" strokeWidth={2} />{statsMap[rally.id].favorites}</span>)}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={styles.cardContent}>
-                    <h3 className={styles.cardTitle}>{rally.title}</h3>
-                    <p className={styles.cardDesc}>{rally.description}</p>
-                  </div>
-                </Link>
-              ))
+                    <div className={styles.cardContent}>
+                      <h3 className={styles.cardTitle}>{rally.title}</h3>
+                      {walkMetrics.spotCount > 0 && (
+                        <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "var(--primary-color)", marginBottom: "6px" }}>
+                          📍 全{walkMetrics.spotCount}箇所 ・ 👣 約{walkMetrics.distanceKm}km（約{walkMetrics.estimatedMinutes}分）
+                        </div>
+                      )}
+                      <p className={styles.cardDesc}>{rally.description}</p>
+                    </div>
+                  </Link>
+                );
+              })
             ) : (
               <p style={{ textAlign: "center", width: "100%", color: "#888", padding: "40px 0" }}>
                 現在公開中のルートはありません。<br/>
