@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
 import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
+import { generateShuinCardDataUrl } from "@/utils/shuinCardGenerator";
 import {
   useShuinBook,
   ShuinDiaryEvent,
@@ -25,6 +26,8 @@ import {
   Edit3,
   Check,
   RotateCcw,
+  Download,
+  Share2,
 } from "lucide-react";
 
 const LIFE_FILTERS: { value: ShuinLifeFilter; label: string }[] = [
@@ -48,6 +51,9 @@ export default function DiaryPage() {
     visitedCities,
     selectedCity,
     setSelectedCity,
+    companions,
+    selectedCompanion,
+    setSelectedCompanion,
     lifeFilter,
     setLifeFilter,
     viewMode,
@@ -75,6 +81,8 @@ export default function DiaryPage() {
   const [memoDraft, setMemoDraft] = useState("");
   const [savingMemo, setSavingMemo] = useState(false);
   const [uploadingPhoto, setUploadingPhoto] = useState(false);
+  const [cardDataUrl, setCardDataUrl] = useState<string | null>(null);
+  const [generatingCard, setGeneratingCard] = useState(false);
 
   const handlePhotoUploadChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -107,6 +115,81 @@ export default function DiaryPage() {
     setSelectedEvent(ev);
     setMemoDraft(ev.memo || "");
     setIsEditingMemo(startEditing);
+    setCardDataUrl(null);
+  };
+
+  const handleGenerateCard = async () => {
+    if (!selectedEvent || generatingCard) return;
+    setGeneratingCard(true);
+    try {
+      const dataUrl = await generateShuinCardDataUrl(selectedEvent, {
+        photoUrl:
+          selectedEvent.photo_url ||
+          groupInfo?.sharedPhoto ||
+          selectedEvent.sharedPhotoUrl ||
+          null,
+        memo:
+          selectedEvent.memo ||
+          groupInfo?.sharedMemo ||
+          selectedEvent.sharedMemoText ||
+          null,
+        companions:
+          groupInfo && groupInfo.members.length > 0
+            ? groupInfo.members
+            : selectedEvent.companionNames,
+      });
+      setCardDataUrl(dataUrl);
+    } catch (err: any) {
+      await showAlert({
+        text: `御朱印紙面画像の生成に失敗しました: ${err.message || ""}`,
+        okText: "確認",
+      });
+    } finally {
+      setGeneratingCard(false);
+    }
+  };
+
+  const handleDownloadCard = () => {
+    if (!cardDataUrl || !selectedEvent) return;
+    const link = document.createElement("a");
+    const safeSpot = (selectedEvent.spotName || "shuin").replace(/[\\/:*?"<>|]/g, "_");
+    const datePart = new Date(selectedEvent.created_at).toISOString().slice(0, 10);
+    link.href = cardDataUrl;
+    link.download = `SHUIN_${safeSpot}_${datePart}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleShareCard = async () => {
+    if (!cardDataUrl || !selectedEvent) return;
+    try {
+      const res = await fetch(cardDataUrl);
+      const blob = await res.blob();
+      const safeSpot = (selectedEvent.spotName || "shuin").replace(/[\\/:*?"<>|]/g, "_");
+      const file = new File([blob], `SHUIN_${safeSpot}.png`, { type: "image/png" });
+      if (
+        typeof navigator !== "undefined" &&
+        navigator.share &&
+        (!navigator.canShare || navigator.canShare({ files: [file] }))
+      ) {
+        await navigator.share({
+          title: `${selectedEvent.spotName} — SHUIN まちのしるし`,
+          text: `「${selectedEvent.spotName}」を訪れ、しるしを刻みました。 #SHUIN #まちのしるし`,
+          files: [file],
+        });
+      } else {
+        handleDownloadCard();
+        await showAlert({
+          text: "お使いの環境では直接共有に対応していないため、御朱印紙面画像をダウンロードしました。",
+          okText: "閉じる",
+        });
+      }
+    } catch (err: any) {
+      if (err?.name !== "AbortError") {
+        handleDownloadCard();
+      }
+    }
   };
 
   const handleSaveMemo = async () => {
@@ -596,10 +679,63 @@ export default function DiaryPage() {
                   })}
                 </div>
               )}
+
+              {/* 👥 一緒に歩いた人（同行者フィルター） */}
+              {companions.length > 0 && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    overflowX: "auto",
+                    scrollbarWidth: "none",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: "#A39687",
+                      whiteSpace: "nowrap",
+                      marginRight: "2px",
+                    }}
+                  >
+                    👥 一緒に歩いた人:
+                  </span>
+                  {["すべて", ...companions].map((comp) => {
+                    const active = selectedCompanion === comp;
+                    return (
+                      <button
+                        key={comp}
+                        type="button"
+                        onClick={() => setSelectedCompanion(comp)}
+                        style={{
+                          padding: "4px 12px",
+                          borderRadius: "14px",
+                          border: "1px solid",
+                          borderColor: active ? "var(--accent-color)" : "#EBE5D9",
+                          background: active ? "rgba(201, 168, 76, 0.18)" : "#FAF6EE",
+                          color: active ? "#6E5314" : "#5C4E43",
+                          fontSize: "0.74rem",
+                          fontWeight: 700,
+                          cursor: "pointer",
+                          whiteSpace: "nowrap",
+                          transition: "all 0.2s",
+                        }}
+                      >
+                        {comp === "すべて" ? "すべて" : `👥 ${comp} さん`}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* 1. ルートの踏破印（メイン＋サブ） */}
-            {filteredCompletedRoutes.length > 0 && lifeFilter === "all" && selectedCity === "すべて" && (
+            {filteredCompletedRoutes.length > 0 &&
+              lifeFilter === "all" &&
+              selectedCity === "すべて" &&
+              selectedCompanion === "すべて" && (
               <section style={{ marginBottom: "28px" }}>
                 <h2
                   style={{
@@ -766,6 +902,7 @@ export default function DiaryPage() {
                   onClick={() => {
                     setSelectedMonth("すべて");
                     setSelectedCity("すべて");
+                    setSelectedCompanion("すべて");
                     setLifeFilter("all");
                   }}
                   className="btn-secondary"
@@ -1845,10 +1982,138 @@ export default function DiaryPage() {
                     )}
                   </div>
 
+                  {/* 📜 この日のしるしを御朱印紙面（画像）にする */}
+                  <div
+                    style={{
+                      background: "rgba(201, 168, 76, 0.1)",
+                      border: "1.5px solid var(--accent-color)",
+                      borderRadius: "12px",
+                      padding: "14px 12px",
+                      marginBottom: "18px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {!cardDataUrl ? (
+                      <>
+                        <div
+                          style={{
+                            fontSize: "0.74rem",
+                            color: "#6E5314",
+                            fontWeight: 700,
+                            marginBottom: "8px",
+                          }}
+                        >
+                          日付・場所・写真・あとがきを和紙の記念紙面に仕立てます
+                        </div>
+                        <button
+                          type="button"
+                          disabled={generatingCard}
+                          onClick={handleGenerateCard}
+                          className="btn-secondary"
+                          style={{
+                            width: "100%",
+                            padding: "10px 14px",
+                            fontSize: "0.82rem",
+                            borderRadius: "10px",
+                            borderColor: "var(--accent-color)",
+                            background: "#FFFDF9",
+                            color: "#5C4E43",
+                            fontWeight: 800,
+                          }}
+                        >
+                          {generatingCard
+                            ? "📜 御朱印紙面を仕立てています..."
+                            : "📜 この日のしるしを御朱印紙面（画像）にする"}
+                        </button>
+                      </>
+                    ) : (
+                      <div>
+                        <div
+                          style={{
+                            fontSize: "0.76rem",
+                            fontWeight: 800,
+                            color: "#6E5314",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          📜 特製・御朱印紙面カードができあがりました
+                        </div>
+                        <div
+                          style={{
+                            borderRadius: "10px",
+                            overflow: "hidden",
+                            border: "1px solid #EBE5D9",
+                            marginBottom: "10px",
+                            background: "#F7F3EA",
+                          }}
+                        >
+                          <img
+                            src={cardDataUrl}
+                            alt="特製御朱印紙面カード"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              display: "block",
+                            }}
+                          />
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "8px",
+                            justifyContent: "center",
+                            flexWrap: "wrap",
+                          }}
+                        >
+                          <button
+                            type="button"
+                            onClick={handleDownloadCard}
+                            className="btn-secondary"
+                            style={{
+                              flex: 1,
+                              minWidth: "140px",
+                              padding: "9px 10px",
+                              fontSize: "0.76rem",
+                              borderRadius: "8px",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "5px",
+                              background: "#FFFDF9",
+                            }}
+                          >
+                            <Download size={14} />
+                            📥 画像を保存する
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleShareCard}
+                            className="btn-primary"
+                            style={{
+                              flex: 1,
+                              minWidth: "130px",
+                              padding: "9px 10px",
+                              fontSize: "0.76rem",
+                              borderRadius: "8px",
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "5px",
+                            }}
+                          >
+                            <Share2 size={14} />
+                            📤 シェアする
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                   <button
                     onClick={() => {
                       setSelectedEvent(null);
                       setIsEditingMemo(false);
+                      setCardDataUrl(null);
                     }}
                     className="btn-primary"
                     style={{

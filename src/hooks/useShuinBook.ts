@@ -94,6 +94,7 @@ export function useShuinBook(user: any) {
   const [diaryLoading, setDiaryLoading] = useState(false);
   const [selectedMonth, setSelectedMonth] = useState<string>("すべて");
   const [selectedCity, setSelectedCity] = useState<string>("すべて");
+  const [selectedCompanion, setSelectedCompanion] = useState<string>("すべて");
   const [lifeFilter, setLifeFilter] = useState<ShuinLifeFilter>("all");
   const [viewMode, setViewMode] = useState<ShuinViewMode>("grid");
   const [selectedEvent, setSelectedEvent] = useState<ShuinDiaryEvent | null>(null);
@@ -780,13 +781,35 @@ export function useShuinBook(user: any) {
     return ["すべて", ...Array.from(citySet)];
   }, [diary]);
 
-  // 選択された年月・街・ライフログ条件でのフィルタリング
+  // 一緒に歩いた同行者リスト（出現頻度順・重複排除）
+  const companions = useMemo(() => {
+    const freqMap = new Map<string, number>();
+    diary.forEach((d) => {
+      (d.companionNames || []).forEach((name) => {
+        const cleaned = name.trim();
+        if (cleaned) {
+          freqMap.set(cleaned, (freqMap.get(cleaned) || 0) + 1);
+        }
+      });
+    });
+    return Array.from(freqMap.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([name]) => name);
+  }, [diary]);
+
+  // 選択された年月・街・同行者・ライフログ条件でのフィルタリング
   const filteredDiary = useMemo(() => {
     return diary.filter((d) => {
       if (selectedMonth !== "すべて" && d.yearMonth !== selectedMonth) {
         return false;
       }
       if (selectedCity !== "すべて" && d.spotAreaLabel !== selectedCity) {
+        return false;
+      }
+      if (
+        selectedCompanion !== "すべて" &&
+        !(d.companionNames || []).includes(selectedCompanion)
+      ) {
         return false;
       }
       if (lifeFilter === "tsuredachi" && !d.group_id) {
@@ -800,7 +823,7 @@ export function useShuinBook(user: any) {
       }
       return true;
     });
-  }, [diary, selectedMonth, selectedCity, lifeFilter]);
+  }, [diary, selectedMonth, selectedCity, selectedCompanion, lifeFilter]);
 
   // 選択された月における完走ルート
   const filteredCompletedRoutes = useMemo(() => {
@@ -843,6 +866,9 @@ export function useShuinBook(user: any) {
     visitedCities,
     selectedCity,
     setSelectedCity,
+    companions,
+    selectedCompanion,
+    setSelectedCompanion,
     lifeFilter,
     setLifeFilter,
     viewMode,
