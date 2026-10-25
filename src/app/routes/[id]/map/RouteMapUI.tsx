@@ -266,6 +266,9 @@ export default function RouteMapUI({
         @keyframes mapdash {
           to { stroke-dashoffset: -20; }
         }
+        .leaflet-tile-pane {
+          filter: sepia(0.12) saturate(0.85) brightness(1.02);
+        }
       `}</style>
 
       {/* 地図コンテナ */}
@@ -276,8 +279,8 @@ export default function RouteMapUI({
         zoomControl={false}
       >
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
         <MapController center={userPos} bounds={mapBounds} />

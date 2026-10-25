@@ -238,12 +238,15 @@ export default function MapUI() {
         @keyframes mapdash {
           to { stroke-dashoffset: -20; }
         }
+        .leaflet-tile-pane {
+          filter: sepia(0.12) saturate(0.85) brightness(1.02);
+        }
       `}</style>
 
       <MapContainer center={userPos} zoom={13} style={{ width: "100%", height: "100%", zIndex: 1 }} zoomControl={false}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <LocationMarker position={userPos} recenter={recenter} />
         <RallyFocusController selectedRally={selectedRally} />
