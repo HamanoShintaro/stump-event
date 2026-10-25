@@ -271,6 +271,12 @@ export default function ClientSpotList({
     }
   };
 
+  // 次のおすすめ訪問先（未押印の最初のスポット）
+  const nextRecommendedSpotId = useMemo(() => {
+    const firstUnstamped = spots.find((s) => !stampedSpotIds.has(s.id));
+    return firstUnstamped ? firstUnstamped.id : null;
+  }, [spots, stampedSpotIds]);
+
   if (spots.length === 0) {
     return (
       <p style={{ textAlign: "center", padding: "40px 0", color: "#888" }}>
@@ -280,12 +286,6 @@ export default function ClientSpotList({
   }
 
   const targetGroupQuery = (effectiveGroupId || groupId) ? `?groupId=${effectiveGroupId || groupId}` : "";
-
-  // 次のおすすめ訪問先（未押印の最初のスポット）
-  const nextRecommendedSpotId = useMemo(() => {
-    const firstUnstamped = spots.find((s) => !stampedSpotIds.has(s.id));
-    return firstUnstamped ? firstUnstamped.id : null;
-  }, [spots, stampedSpotIds]);
 
   return (
     <>
