@@ -28,7 +28,11 @@ export default function BackButton({ href }: BackButtonProps) {
 
   if (href) {
     return (
-      <Link href={href} style={buttonStyle}>
+      <Link
+        href={href}
+        onClick={() => triggerNavigationLoading(href)}
+        style={buttonStyle}
+      >
         <ChevronLeft size={20} />
         <span>戻る</span>
       </Link>

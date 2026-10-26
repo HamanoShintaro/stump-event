@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 
 const getLocalBookmarkKey = (userId: string) => `shuin_bookmarks_${userId}`;
 
@@ -98,7 +99,9 @@ export function useRouteBookmark(routeId: string, initialFavoriteCount = 0) {
         ngText: "閉じる",
       });
       if (goLogin) {
-        router.push(`/login?redirect=/routes/${routeId}`);
+        const loginUrl = `/login?redirect=/routes/${routeId}`;
+        triggerNavigationLoading(loginUrl);
+        router.push(loginUrl);
       }
       return;
     }

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 const NAVIGATION_START_EVENT = "shuin:navigation-start";
-const SHOW_DELAY_MS = 220;
+const MIN_DISPLAY_MS = 450;
 const MAX_LOADING_MS = 8000;
 
 interface NavigationStartDetail {
@@ -51,13 +51,14 @@ export function useNavigationLoading() {
   const [isNavigating, setIsNavigating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("しるしを辿っています…");
 
-  const delayTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const startedAtRef = useRef<number | null>(null);
+  const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const safetyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearTimers = useCallback(() => {
-    if (delayTimerRef.current) {
-      clearTimeout(delayTimerRef.current);
-      delayTimerRef.current = null;
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+      hideTimerRef.current = null;
     }
     if (safetyTimerRef.current) {
       clearTimeout(safetyTimerRef.current);
@@ -65,16 +66,15 @@ export function useNavigationLoading() {
     }
   }, []);
 
-  const startPendingNavigation = useCallback(
+  const startNavigation = useCallback(
     (customMessage?: string) => {
       clearTimers();
+      startedAtRef.current = Date.now();
       setLoadingMessage(customMessage || "しるしを辿っています…");
-
-      delayTimerRef.current = setTimeout(() => {
-        setIsNavigating(true);
-      }, SHOW_DELAY_MS);
+      setIsNavigating(true);
 
       safetyTimerRef.current = setTimeout(() => {
+        startedAtRef.current = null;
         setIsNavigating(false);
       }, MAX_LOADING_MS);
     },
@@ -82,14 +82,30 @@ export function useNavigationLoading() {
   );
 
   // パスまたはクエリパラメータが変化したら遷移完了としてローディングを解除
+  // キャッシュ済みの戻る遷移等で一瞬で切り替わった場合も、最低表示時間(MIN_DISPLAY_MS)はアニメーションを見せる
   useEffect(() => {
-    clearTimers();
-    setIsNavigating(false);
+    if (startedAtRef.current === null) {
+      return;
+    }
+
+    const elapsed = Date.now() - startedAtRef.current;
+    const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+
+    if (hideTimerRef.current) {
+      clearTimeout(hideTimerRef.current);
+    }
+
+    hideTimerRef.current = setTimeout(() => {
+      clearTimers();
+      startedAtRef.current = null;
+      setIsNavigating(false);
+    }, remaining);
   }, [pathname, searchKey, clearTimers]);
 
   useEffect(() => {
+    // キャプチャフェーズ(true)で検知することで、Next.jsの<Link>がe.preventDefault()を呼ぶ前に確実に捕捉する
     const handleDocumentClick = (event: MouseEvent) => {
-      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
         return;
       }
@@ -131,7 +147,7 @@ export function useNavigationLoading() {
           return;
         }
 
-        startPendingNavigation();
+        startNavigation();
       } catch {
         // 無効なURLは無視
       }
@@ -139,19 +155,19 @@ export function useNavigationLoading() {
 
     const handleCustomNavigationStart = (event: Event) => {
       const customEvent = event as CustomEvent<NavigationStartDetail>;
-      startPendingNavigation(customEvent.detail?.message);
+      startNavigation(customEvent.detail?.message);
     };
 
     const handlePopState = () => {
-      startPendingNavigation();
+      startNavigation();
     };
 
-    document.addEventListener("click", handleDocumentClick);
+    document.addEventListener("click", handleDocumentClick, true);
     window.addEventListener(NAVIGATION_START_EVENT, handleCustomNavigationStart);
     window.addEventListener("popstate", handlePopState);
 
     return () => {
-      document.removeEventListener("click", handleDocumentClick);
+      document.removeEventListener("click", handleDocumentClick, true);
       window.removeEventListener(
         NAVIGATION_START_EVENT,
         handleCustomNavigationStart
@@ -159,7 +175,7 @@ export function useNavigationLoading() {
       window.removeEventListener("popstate", handlePopState);
       clearTimers();
     };
-  }, [startPendingNavigation, clearTimers]);
+  }, [startNavigation, clearTimers]);
 
   return {
     isNavigating,

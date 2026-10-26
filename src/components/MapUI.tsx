@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import {
   Compass,
   Footprints,
@@ -1090,7 +1091,11 @@ export default function MapUI() {
 
           <button
             type="button"
-            onClick={() => router.push(`/routes/${selectedRally.id}`)}
+            onClick={() => {
+              const targetUrl = `/routes/${selectedRally.id}`;
+              triggerNavigationLoading(targetUrl);
+              router.push(targetUrl);
+            }}
             className="btn-primary"
             style={{ width: "100%", padding: "12px", marginTop: "2px", fontSize: "0.92rem" }}
           >
@@ -1157,7 +1162,10 @@ export default function MapUI() {
           ) : (
             <button
               type="button"
-              onClick={() => router.push("/login?redirect=/map")}
+              onClick={() => {
+                triggerNavigationLoading("/login?redirect=/map");
+                router.push("/login?redirect=/map");
+              }}
               className="btn-primary"
               style={{ width: "100%", padding: "10px 16px", fontSize: "0.85rem" }}
             >
@@ -1338,7 +1346,10 @@ export default function MapUI() {
           <div style={{ display: "flex", gap: "8px", marginTop: "2px" }}>
             <button
               type="button"
-              onClick={() => router.push("/mypage/diary")}
+              onClick={() => {
+                triggerNavigationLoading("/mypage/diary");
+                router.push("/mypage/diary");
+              }}
               className="btn-secondary"
               style={{
                 flex: 1,
@@ -1355,11 +1366,11 @@ export default function MapUI() {
             </button>
             <button
               type="button"
-              onClick={() =>
-                router.push(
-                  `/routes/${selectedFootprint.routeId}/spot/${selectedFootprint.spotId}`
-                )
-              }
+              onClick={() => {
+                const targetUrl = `/routes/${selectedFootprint.routeId}/spot/${selectedFootprint.spotId}`;
+                triggerNavigationLoading(targetUrl);
+                router.push(targetUrl);
+              }}
               className="btn-primary"
               style={{ flex: 1, padding: "10px", fontSize: "0.82rem" }}
             >

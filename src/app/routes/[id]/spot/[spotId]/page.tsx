@@ -10,6 +10,7 @@ import { supabase } from "@/lib/supabase";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import { uploadStampPhotoWithFallback } from "@/utils/stampMedia";
 import { motion, AnimatePresence } from "framer-motion";
@@ -1233,15 +1234,17 @@ export default function SpotCheckInPage({
                         }
                         setCeremonyStep('idle');
                         const nextSpot = nextDestInfo?.nextSpot;
+                        const mapUrl = `/routes/${route.id}/map${groupId ? `?groupId=${groupId}` : ""}`;
+                        triggerNavigationLoading(mapUrl, "地図を広げています…");
                         if (nextSpot && user) {
                           // 次のスポットに目的地を設定してマップに遷移
                           await supabase
                             .from('users')
                             .update({ active_spot_id: nextSpot.id })
                             .eq('id', user.id);
-                          router.push(`/routes/${route.id}/map${groupId ? `?groupId=${groupId}` : ""}`);
+                          router.push(mapUrl);
                         } else {
-                          router.push(`/routes/${route.id}/map${groupId ? `?groupId=${groupId}` : ""}`);
+                          router.push(mapUrl);
                         }
                       }}
                       className="btn-primary"
@@ -1495,6 +1498,7 @@ export default function SpotCheckInPage({
                     <button 
                       onClick={() => {
                         setCeremonyStep('idle');
+                        triggerNavigationLoading("/mypage");
                         router.push(`/mypage`);
                       }}
                       className="btn-secondary"
@@ -1510,6 +1514,7 @@ export default function SpotCheckInPage({
                   <button 
                     onClick={() => {
                       setCeremonyStep('idle');
+                      triggerNavigationLoading("/routes");
                       router.push(`/routes`);
                     }}
                     className="btn-primary"
