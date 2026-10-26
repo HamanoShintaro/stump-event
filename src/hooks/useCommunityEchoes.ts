@@ -11,6 +11,7 @@ export interface CommunityEchoItem {
   visitorNumber: number | null;
   visitedAt: string;
   formattedDate: string;
+  formattedTime: string;
   seasonTimeLabel: string;
   travelerLabel: string;
   memo: string | null;
@@ -216,6 +217,10 @@ export function useCommunityEchoes({
         const formattedDate = `${validDate.getFullYear()}.${String(
           validDate.getMonth() + 1
         ).padStart(2, "0")}.${String(validDate.getDate()).padStart(2, "0")}`;
+        const formattedTime = `${String(validDate.getHours()).padStart(
+          2,
+          "0"
+        )}:${String(validDate.getMinutes()).padStart(2, "0")}`;
 
         const resolvedName = row.user_id ? userNameMap.get(row.user_id) : null;
         const visNum =
@@ -230,6 +235,7 @@ export function useCommunityEchoes({
           visitorNumber: visNum,
           visitedAt: row.created_at || new Date().toISOString(),
           formattedDate,
+          formattedTime,
           seasonTimeLabel: `${season}の${shortLabel}`,
           travelerLabel: resolvedName ? `${resolvedName} さん` : "街歩きの旅人",
           memo: row.memo && String(row.memo).trim() ? String(row.memo).trim() : null,

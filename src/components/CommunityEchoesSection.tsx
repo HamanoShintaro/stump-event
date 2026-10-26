@@ -223,7 +223,7 @@ export default function CommunityEchoesSection({
 
             {popularTimeBand && (
               <span className="shuin-badge">
-                <IconClock size={13} color="#5C4E43" />
+                <IconClock size={13} color="var(--text-color)" />
                 <span>よく巡られる時間帯: {popularTimeBand}</span>
               </span>
             )}
@@ -317,9 +317,15 @@ export default function CommunityEchoesSection({
                       color: "var(--text-color)",
                       opacity: 0.65,
                       fontWeight: 700,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
                     }}
                   >
-                    {item.formattedDate}
+                    <IconClock size={11} color="var(--text-color)" />
+                    <span>
+                      {item.formattedDate} {item.formattedTime}
+                    </span>
                   </span>
                 </div>
 
@@ -374,7 +380,7 @@ export default function CommunityEchoesSection({
                     onClick={() =>
                       setLightboxPhoto({
                         url: item.photoUrl!,
-                        caption: `${item.spotName}（${item.seasonTimeLabel}・${item.travelerLabel}）`,
+                        caption: `${item.spotName}（${item.formattedDate} ${item.formattedTime}・${item.seasonTimeLabel}・${item.travelerLabel}）`,
                       })
                     }
                     style={{
