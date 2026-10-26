@@ -334,14 +334,22 @@ export default function MapPage({
 
       if (spotsData) {
         const parsedSpots = spotsData.map((s: any) => {
-          const pt = parseWKBPoint(s.location);
+          let lat = typeof s.lat === "number" ? s.lat : null;
+          let lng = typeof s.lng === "number" ? s.lng : null;
+          if ((lat === null || lng === null) && typeof s.location === "string") {
+            const pt = parseWKBPoint(s.location);
+            if (pt) {
+              lat = pt.lat;
+              lng = pt.lng;
+            }
+          }
           return {
             id: s.id,
             name: s.name,
             description: s.description,
             image_url: s.image_url,
-            lat: pt?.lat || 0,
-            lng: pt?.lng || 0
+            lat: lat || 0,
+            lng: lng || 0
           };
         }).filter((s) => s.lat !== 0);
         setSpots(parsedSpots);

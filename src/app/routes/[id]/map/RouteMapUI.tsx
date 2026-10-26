@@ -190,6 +190,10 @@ export default function RouteMapUI({
     };
   }, []);
 
+  const defaultCenter: [number, number] = spots.length > 0 
+    ? [spots.reduce((sum, s) => sum + s.lat, 0) / spots.length, spots.reduce((sum, s) => sum + s.lng, 0) / spots.length] 
+    : [35.6812, 139.7671];
+
   // 地図の初期境界 (Bounds) を算出
   let mapBounds: L.LatLngBounds | null = null;
   const activeSpot = spots.find(s => s.id === activeSpotId);
@@ -201,17 +205,19 @@ export default function RouteMapUI({
       L.latLng(activeSpot.lat, activeSpot.lng)
     ]);
   } else if (spots.length > 0) {
-    // 通常時または現在地未取得時は、ルート全体のピンと現在地を含む境界にする
+    // 通常時または参加前プレビュー時はルート全体のピンを含む境界にする（現在地が2.5km以内の場合のみ現在地も含める）
     const latLngs = spots.map(s => L.latLng(s.lat, s.lng));
     if (userPos) {
-      latLngs.push(L.latLng(userPos[0], userPos[1]));
+      const distFromRouteCenter = getDistance(
+        { latitude: userPos[0], longitude: userPos[1] },
+        { latitude: defaultCenter[0], longitude: defaultCenter[1] }
+      );
+      if (distFromRouteCenter <= 2500) {
+        latLngs.push(L.latLng(userPos[0], userPos[1]));
+      }
     }
     mapBounds = L.latLngBounds(latLngs);
   }
-
-  const defaultCenter: [number, number] = spots.length > 0 
-    ? [spots.reduce((sum, s) => sum + s.lat, 0) / spots.length, spots.reduce((sum, s) => sum + s.lng, 0) / spots.length] 
-    : [35.6812, 139.7671];
 
   const trajectoryPath = spots.map(s => [s.lat, s.lng] as [number, number]);
 

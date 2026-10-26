@@ -760,6 +760,31 @@ export function JoinRallyButton({
                 : "ログインしてこのルートに参加する"}
           </button>
 
+          <button
+            type="button"
+            onClick={() => {
+              setIsNavigating(true);
+              const targetGroupId = activeGroupId || groupId;
+              router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
+            }}
+            disabled={isNavigating}
+            className="btn-secondary"
+            style={{
+              width: "100%",
+              padding: "12px",
+              fontSize: "0.92rem",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "6px",
+              opacity: isNavigating ? 0.7 : 1,
+              cursor: isNavigating ? "not-allowed" : "pointer",
+            }}
+          >
+            <MapIcon size={16} strokeWidth={2} color="var(--primary-color)" />
+            <span>地図でルートを確認する</span>
+          </button>
+
           {user && (
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <button
