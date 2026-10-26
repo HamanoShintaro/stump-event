@@ -3,7 +3,11 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { supabase } from "@/lib/supabase";
 import { isRouteCurrentlyActive } from "@/utils/userRoutes";
-import { parseMemberDisplayName, uploadStampPhotoWithFallback } from "@/utils/stampMedia";
+import {
+  normalizeLocalImageUrl,
+  parseMemberDisplayName,
+  uploadStampPhotoWithFallback,
+} from "@/utils/stampMedia";
 
 export type ShuinViewMode = "grid" | "album";
 export type ShuinLifeFilter = "all" | "tsuredachi" | "with_memory" | "revisit";
@@ -238,7 +242,7 @@ export function useShuinBook(user: any) {
           if (ev.user_id === user?.id) continue;
           const displayName = memberNameByUserId[ev.user_id] || membersList[0] || "同行の友だち";
           const existing = companionMemoryMap.get(ev.user_id);
-          const photoUrl = ev.photo_url && String(ev.photo_url).trim() ? String(ev.photo_url).trim() : null;
+          const photoUrl = normalizeLocalImageUrl(ev.photo_url);
           const memo = ev.memo && String(ev.memo).trim() ? String(ev.memo).trim() : null;
 
           if (!existing) {
@@ -435,19 +439,20 @@ export function useShuinBook(user: any) {
           const candidateGroupIds = sp.group_id
             ? [sp.group_id]
             : userToGroupIds[sp.user_id] || [];
+          const normalizedSpPhoto = normalizeLocalImageUrl(sp.photo_url);
           candidateGroupIds.forEach((gid: string) => {
             const key = `${gid}-${sp.spot_id}`;
-            if (sp.photo_url) {
+            if (normalizedSpPhoto) {
               sharedPhotoKeys.add(key);
             }
             if (!sharedEventMap[key]) {
               sharedEventMap[key] = {
-                photo_url: sp.photo_url || null,
+                photo_url: normalizedSpPhoto,
                 memo: sp.memo || null,
               };
             } else {
-              if (!sharedEventMap[key].photo_url && sp.photo_url) {
-                sharedEventMap[key].photo_url = sp.photo_url;
+              if (!sharedEventMap[key].photo_url && normalizedSpPhoto) {
+                sharedEventMap[key].photo_url = normalizedSpPhoto;
               }
               if (!sharedEventMap[key].memo && sp.memo) {
                 sharedEventMap[key].memo = sp.memo;
@@ -656,8 +661,9 @@ export function useShuinBook(user: any) {
         const localSavedMemo = readLocalMemo(e.id);
         const effectiveMemo = localSavedMemo !== null ? localSavedMemo : e.memo || null;
 
+        const normalizedEventPhoto = normalizeLocalImageUrl(e.photo_url);
         const hasPhoto = Boolean(
-          e.photo_url || (groupSpotKey && sharedPhotoKeys.has(groupSpotKey))
+          normalizedEventPhoto || (groupSpotKey && sharedPhotoKeys.has(groupSpotKey))
         );
         const hasMemory = Boolean(
           hasPhoto || effectiveMemo || (sharedInfo && sharedInfo.memo)
@@ -684,7 +690,7 @@ export function useShuinBook(user: any) {
           routeName: rInfo.title,
           category: rInfo.category,
           memo: effectiveMemo,
-          photo_url: e.photo_url || null,
+          photo_url: normalizedEventPhoto,
           group_id: resolvedGroupId,
           hasPhoto,
           hasMemory,
@@ -693,7 +699,7 @@ export function useShuinBook(user: any) {
           totalVisitsToSpot,
           isRevisit,
           companionNames: resolvedGroupId ? groupCompanionNamesMap[resolvedGroupId] || [] : [],
-          sharedPhotoUrl: sharedInfo?.photo_url || e.photo_url || null,
+          sharedPhotoUrl: sharedInfo?.photo_url || normalizedEventPhoto,
           sharedMemoText: effectiveMemo || sharedInfo?.memo || null,
         };
       });

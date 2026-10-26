@@ -13,6 +13,7 @@ import { isRouteCurrentlyActive } from "@/utils/userRoutes";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import {
   getDisplayNameFromAuthUser,
+  normalizeLocalImageUrl,
   uploadStampPhotoWithFallback,
 } from "@/utils/stampMedia";
 import {
@@ -87,6 +88,11 @@ export default function ClientSpotList({
 
   const stampImgUrl = getCategoryStampUrl(routeCategory);
   const [selectedStorySpot, setSelectedStorySpot] = useState<Spot | null>(null);
+  const [isPortalMounted, setIsPortalMounted] = useState(false);
+
+  useEffect(() => {
+    setIsPortalMounted(true);
+  }, []);
 
   // 自分の各スポットの stamp_events (写真・コメント)
   const [mySpotEvents, setMySpotEvents] = useState<
@@ -111,15 +117,16 @@ export default function ClientSpotList({
       const map: Record<string, { id: string; memo: string | null; photoUrl: string | null; acquiredAt: string }> = {};
       for (const row of data) {
         const existing = map[row.spot_id];
+        const normalizedPhoto = normalizeLocalImageUrl(row.photo_url);
         if (!existing) {
           map[row.spot_id] = {
             id: row.id,
             memo: row.memo || null,
-            photoUrl: row.photo_url || null,
+            photoUrl: normalizedPhoto,
             acquiredAt: row.created_at,
           };
         } else {
-          if (!existing.photoUrl && row.photo_url) existing.photoUrl = row.photo_url;
+          if (!existing.photoUrl && normalizedPhoto) existing.photoUrl = normalizedPhoto;
           if (!existing.memo && row.memo) existing.memo = row.memo;
         }
       }
@@ -721,7 +728,8 @@ export default function ClientSpotList({
       </div>
 
       {/* ストーリー＆しるし思い出モーダル（createPortalでbody直下に描画） */}
-      {typeof document !== "undefined" &&
+      {isPortalMounted &&
+        typeof document !== "undefined" &&
         createPortal(
           <AnimatePresence>
             {selectedStorySpot && (() => {

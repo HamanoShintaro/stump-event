@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { parseWKBPoint } from "@/utils/wkb";
 import { computeRouteWalkMetrics, RouteWalkMetrics } from "@/utils/routeMetrics";
 import { isRouteCurrentlyActive } from "@/utils/userRoutes";
+import { normalizeLocalImageUrl } from "@/utils/stampMedia";
 
 export type MapLayerMode = "routes" | "footprints";
 export type MapDurationFilter = "all" | "short" | "medium";
@@ -243,7 +244,7 @@ export function useDiscoveryMap() {
         const [stampsRes, eventsRes, userRoutesRes, bookmarksRes] = await Promise.all([
           supabase
             .from("stamps")
-            .select("spot_id, route_id, created_at")
+            .select("spot_id, route_id, acquired_at")
             .eq("user_id", user.id),
           supabase
             .from("stamp_events")
@@ -376,8 +377,7 @@ export function useDiscoveryMap() {
             (ev.memo && String(ev.memo).trim()) ||
             readLocalMemo(ev.id) ||
             null;
-          const photoUrl =
-            ev.photo_url && String(ev.photo_url).trim() ? String(ev.photo_url).trim() : null;
+          const photoUrl = normalizeLocalImageUrl(ev.photo_url);
 
           const existing = footprintBySpot.get(ev.spot_id);
           if (!existing) {
@@ -421,7 +421,7 @@ export function useDiscoveryMap() {
             lat: meta.lat,
             lng: meta.lng,
             visitCount: 1,
-            latestStampedAt: st.created_at || new Date().toISOString(),
+            latestStampedAt: st.acquired_at || st.created_at || new Date().toISOString(),
             latestMemo: null,
             latestPhotoUrl: null,
             visitorNumber: null,

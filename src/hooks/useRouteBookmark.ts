@@ -60,7 +60,7 @@ export function useRouteBookmark(routeId: string, initialFavoriteCount = 0) {
         const localIds = readLocalBookmarks(user.id);
         const { data, error } = await supabase
           .from("user_bookmarks")
-          .select("id")
+          .select("route_id")
           .eq("user_id", user.id)
           .eq("route_id", routeId)
           .maybeSingle();
@@ -118,7 +118,7 @@ export function useRouteBookmark(routeId: string, initialFavoriteCount = 0) {
         writeLocalBookmarks(user.id, [...localIds, routeId]);
         const { data: existing } = await supabase
           .from("user_bookmarks")
-          .select("id")
+          .select("route_id")
           .eq("user_id", user.id)
           .eq("route_id", routeId)
           .maybeSingle();

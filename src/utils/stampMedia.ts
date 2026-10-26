@@ -415,7 +415,7 @@ export async function fetchGroupSharedMemoriesForSpots(
     const existing = perSpotUser.get(key);
 
     const memo = r.memo && String(r.memo).trim() ? String(r.memo).trim() : null;
-    const photoUrl = r.photo_url && String(r.photo_url).trim() ? String(r.photo_url).trim() : null;
+    const photoUrl = normalizeLocalImageUrl(r.photo_url);
 
     if (!existing) {
       perSpotUser.set(key, {
@@ -455,6 +455,29 @@ export async function fetchGroupSharedMemoriesForSpots(
   return result;
 }
 
+const OPTIMIZED_LOCAL_DIRS = new Set([
+  "jiyugaoka",
+  "yono",
+  "iwatsuki",
+  "kitaurawa",
+  "shintoshin",
+]);
+
+/**
+ * 圧縮最適化済みディレクトリ（/images/{jiyugaoka,yono,iwatsuki,kitaurawa,shintoshin}/）の
+ * 旧 .png ローカルパスを .jpg に正規化する
+ */
+export function normalizeLocalImageUrl(url: string | null | undefined): string | null {
+  if (!url || typeof url !== "string") return null;
+  const trimmed = url.trim();
+  if (!trimmed) return null;
+  const match = trimmed.match(/^\/images\/([^/]+)\/([^/]+)\.png$/i);
+  if (match && OPTIMIZED_LOCAL_DIRS.has(match[1].toLowerCase())) {
+    return `/images/${match[1]}/${match[2]}.jpg`;
+  }
+  return trimmed;
+}
+
 /**
  * stamp_events レコードから写真URLとコメント（memo）を安全に抽出する
  */
@@ -463,10 +486,7 @@ export function extractStampMemories(row: any): {
   comment: string | null;
 } {
   if (!row) return { photoUrl: null, comment: null };
-  const rawPhoto =
-    typeof row.photo_url === "string" && row.photo_url.trim()
-      ? row.photo_url.trim()
-      : null;
+  const rawPhoto = normalizeLocalImageUrl(row.photo_url);
   const rawMemo =
     typeof row.memo === "string" && row.memo.trim() ? row.memo.trim() : null;
   return {

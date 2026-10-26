@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { supabase } from "@/lib/supabase";
+import { normalizeLocalImageUrl } from "@/utils/stampMedia";
 
 export interface CommunityEchoItem {
   id: string;
@@ -232,10 +233,7 @@ export function useCommunityEchoes({
           seasonTimeLabel: `${season}の${shortLabel}`,
           travelerLabel: resolvedName ? `${resolvedName} さん` : "街歩きの旅人",
           memo: row.memo && String(row.memo).trim() ? String(row.memo).trim() : null,
-          photoUrl:
-            row.photo_url && String(row.photo_url).trim()
-              ? String(row.photo_url).trim()
-              : null,
+          photoUrl: normalizeLocalImageUrl(row.photo_url),
           isTsuredachi: Boolean(row.group_id),
         };
       });
