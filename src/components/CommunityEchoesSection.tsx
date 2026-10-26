@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
-import { X } from "lucide-react";
+import React from "react";
 import { useCommunityEchoes } from "@/hooks/useCommunityEchoes";
 import {
   IconLeaf,
@@ -26,12 +24,6 @@ export default function CommunityEchoesSection({
   spots = [],
   refreshKey,
 }: CommunityEchoesSectionProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const { totalFootprints, popularTimeBand, echoItems, loading } =
     useCommunityEchoes({
       routeId,
@@ -39,11 +31,6 @@ export default function CommunityEchoesSection({
       spots,
       refreshKey,
     });
-
-  const [lightboxPhoto, setLightboxPhoto] = useState<{
-    url: string;
-    caption: string;
-  } | null>(null);
 
   if (loading) {
     return null;
@@ -57,88 +44,6 @@ export default function CommunityEchoesSection({
   const sectionSubtitle = isSpotLevel
     ? "これまでにこの場所を訪れ、しるしを刻んだ旅人たちの気配と季節の言葉。"
     : "この街歩きの物語をめぐり、各地で刻まれた旅人たちの足跡とひとこと。";
-
-  const lightboxNode =
-    mounted && lightboxPhoto
-      ? createPortal(
-          <div
-            role="dialog"
-            aria-modal="true"
-            onClick={() => setLightboxPhoto(null)}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 9999,
-              background: "rgba(25, 20, 18, 0.75)",
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px",
-            }}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                maxWidth: "520px",
-                width: "100%",
-                background: "var(--bg-color)",
-                borderRadius: "18px",
-                border: "2px solid var(--accent-color)",
-                padding: "16px",
-                position: "relative",
-                boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setLightboxPhoto(null)}
-                aria-label="閉じる"
-                style={{
-                  position: "absolute",
-                  top: "12px",
-                  right: "12px",
-                  background: "var(--bg-color)",
-                  border: "1px solid var(--accent-color)",
-                  borderRadius: "999px",
-                  padding: "4px",
-                  cursor: "pointer",
-                  color: "var(--text-color)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <X size={18} />
-              </button>
-              <img
-                src={lightboxPhoto.url}
-                alt={lightboxPhoto.caption}
-                style={{
-                  width: "100%",
-                  maxHeight: "65vh",
-                  objectFit: "contain",
-                  borderRadius: "12px",
-                  display: "block",
-                  marginBottom: "10px",
-                }}
-              />
-              <div
-                style={{
-                  fontSize: "var(--font-size-small)",
-                  fontWeight: 700,
-                  color: "var(--text-color)",
-                  textAlign: "center",
-                }}
-              >
-                {lightboxPhoto.caption}
-              </div>
-            </div>
-          </div>,
-          document.body
-        )
-      : null;
 
   return (
     <section
@@ -374,39 +279,6 @@ export default function CommunityEchoesSection({
                   </div>
                 )}
 
-                {item.photoUrl && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setLightboxPhoto({
-                        url: item.photoUrl!,
-                        caption: `${item.spotName}（${item.formattedDate} ${item.formattedTime}・${item.seasonTimeLabel}・${item.travelerLabel}）`,
-                      })
-                    }
-                    style={{
-                      padding: 0,
-                      border: "1px solid rgba(201, 168, 76, 0.35)",
-                      borderRadius: "10px",
-                      overflow: "hidden",
-                      cursor: "pointer",
-                      background: "transparent",
-                      width: "100%",
-                      height: "130px",
-                    }}
-                  >
-                    <img
-                      src={item.photoUrl}
-                      alt={item.spotName}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        display: "block",
-                      }}
-                    />
-                  </button>
-                )}
-
                 {item.memo ? (
                   <div
                     style={{
@@ -451,8 +323,6 @@ export default function CommunityEchoesSection({
           </div>
         )}
       </div>
-
-      {lightboxNode}
     </section>
   );
 }

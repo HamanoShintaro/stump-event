@@ -195,16 +195,12 @@ export function useCommunityEchoes({
         }
       }
 
-      // Prioritize events with memo or photo_url first, then recent visits
+      // Prioritize events with memo first, then recent visits
       const withMemory = rows.filter(
-        (r: any) =>
-          (r.memo && String(r.memo).trim().length > 0) ||
-          (r.photo_url && String(r.photo_url).trim().length > 0)
+        (r: any) => r.memo && String(r.memo).trim().length > 0
       );
       const withoutMemory = rows.filter(
-        (r: any) =>
-          !(r.memo && String(r.memo).trim().length > 0) &&
-          !(r.photo_url && String(r.photo_url).trim().length > 0)
+        (r: any) => !(r.memo && String(r.memo).trim().length > 0)
       );
 
       const prioritized = [...withMemory, ...withoutMemory].slice(0, 6);
