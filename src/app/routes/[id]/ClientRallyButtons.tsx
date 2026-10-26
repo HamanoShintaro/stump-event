@@ -15,6 +15,7 @@ import {
 } from "@/utils/stampMedia";
 import JoinAnimation from "@/components/JoinAnimation";
 import { useRouteBookmark } from "@/hooks/useRouteBookmark";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Copy } from "lucide-react";
 
 export function BookmarkRouteButton({
@@ -180,8 +181,10 @@ export function JoinRallyButton({
   const handleJoin = async () => {
     if (!user) {
       setIsNavigating(true);
+      const loginUrl = `/login?redirect=/routes/${rallyId}`;
+      triggerNavigationLoading(loginUrl);
       // 未ログインなら、この画面に戻ってくるようにリダイレクト先を指定してログイン画面へ
-      router.push(`/login?redirect=/routes/${rallyId}`);
+      router.push(loginUrl);
       return;
     }
     setIsNavigating(true);
@@ -222,8 +225,10 @@ export function JoinRallyButton({
     setShowAnimation(false);
     setIsNavigating(true);
     const targetGroupId = activeGroupId || groupId;
+    const destUrl = `/routes/${rallyId}/destinations${targetGroupId ? `?groupId=${targetGroupId}` : ""}`;
+    triggerNavigationLoading(destUrl);
     // アニメーション完了後に一覧画面へ遷移し、最初の行き先を選ばせる
-    router.push(`/routes/${rallyId}/destinations${targetGroupId ? `?groupId=${targetGroupId}` : ""}`);
+    router.push(destUrl);
   };
 
   const handleCreateGroup = async () => {
@@ -265,7 +270,9 @@ export function JoinRallyButton({
         okText: "マップへ進む" 
       });
       setIsNavigating(true);
-      router.push(`/routes/${rallyId}/map?groupId=${newGrp.id}`);
+      const mapUrl = `/routes/${rallyId}/map?groupId=${newGrp.id}`;
+      triggerNavigationLoading(mapUrl);
+      router.push(mapUrl);
     } catch (err: any) {
       await showAlert({ text: `グループの作成に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
@@ -355,7 +362,9 @@ export function JoinRallyButton({
         okText: "マップへ進む",
       });
       setIsNavigating(true);
-      router.push(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
+      const mapUrl = `/routes/${grp.route_id}/map?groupId=${grp.id}`;
+      triggerNavigationLoading(mapUrl);
+      router.push(mapUrl);
     } catch (err: any) {
       await showAlert({ text: `連れ立ちへの合流に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
@@ -578,7 +587,9 @@ export function JoinRallyButton({
                   onClick={() => {
                     setIsNavigating(true);
                     const targetGroupId = activeGroupId || groupId;
-                    router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
+                    const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+                    triggerNavigationLoading(mapUrl);
+                    router.push(mapUrl);
                   }}
                   disabled={isNavigating || isDisbanding}
                   className="btn-primary"
@@ -623,7 +634,9 @@ export function JoinRallyButton({
                 onClick={() => {
                   setIsNavigating(true);
                   const targetGroupId = activeGroupId || groupId;
-                  router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
+                  const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+                  triggerNavigationLoading(mapUrl);
+                  router.push(mapUrl);
                 }}
                 disabled={isNavigating || isCreatingGroup}
                 className="btn-primary" 
@@ -765,7 +778,9 @@ export function JoinRallyButton({
             onClick={() => {
               setIsNavigating(true);
               const targetGroupId = activeGroupId || groupId;
-              router.push(`/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
+              const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+              triggerNavigationLoading(mapUrl);
+              router.push(mapUrl);
             }}
             disabled={isNavigating}
             className="btn-secondary"
@@ -858,8 +873,10 @@ export function SpotButton({ spotId, rallyId, groupId }: { spotId: string; rally
 
   const handleClick = () => {
     setIsNavigating(true);
+    const spotUrl = `/routes/${rallyId}/spot/${spotId}${groupId ? `?groupId=${groupId}` : ""}`;
+    triggerNavigationLoading(spotUrl);
     // 未ログインでも詳細画面には行けるが、押印獲得などはできない（詳細画面側で制御）
-    router.push(`/routes/${rallyId}/spot/${spotId}${groupId ? `?groupId=${groupId}` : ""}`);
+    router.push(spotUrl);
   };
 
   return (

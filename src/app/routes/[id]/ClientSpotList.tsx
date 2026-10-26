@@ -29,6 +29,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { getDistance } from "geolib";
 import { parseWKBPoint } from "@/utils/wkb";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import styles from "./page.module.css";
 
 interface Spot {
@@ -283,8 +284,10 @@ export default function ClientSpotList({
     } else {
       setActiveSpotId(spotId);
       const targetGroupId = effectiveGroupId || groupId;
+      const mapUrl = `/routes/${routeId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+      triggerNavigationLoading(mapUrl);
       // マップへ自動遷移
-      router.push(`/routes/${routeId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : ""));
+      router.push(mapUrl);
     }
   };
 
@@ -597,7 +600,11 @@ export default function ClientSpotList({
                       <button 
                         className="btn-primary" 
                         style={{ width: "100%", padding: "10px 16px", fontSize: "0.9rem", fontWeight: "700" }}
-                        onClick={() => router.push(`/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`)}
+                        onClick={() => {
+                          const spotUrl = `/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`;
+                          triggerNavigationLoading(spotUrl);
+                          router.push(spotUrl);
+                        }}
                       >
                         {isStamped ? "しるしを見る" : (user ? "詳細 / 押印する" : "詳細を見る")}
                       </button>
@@ -638,7 +645,11 @@ export default function ClientSpotList({
                           padding: "10px 16px",
                           fontSize: "0.9rem"
                         }}
-                        onClick={() => router.push(`/routes/${routeId}/map${targetGroupQuery}`)}
+                        onClick={() => {
+                          const mapUrl = `/routes/${routeId}/map${targetGroupQuery}`;
+                          triggerNavigationLoading(mapUrl);
+                          router.push(mapUrl);
+                        }}
                       >
                         <MapIcon size={16} />
                         マップを表示

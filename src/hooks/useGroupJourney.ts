@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { computeRouteWalkMetrics, RouteWalkMetrics } from "@/utils/routeMetrics";
 import { activateUserRoute } from "@/utils/userRoutes";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import {
   parseMemberDisplayName,
   extractStampMemories,
@@ -430,10 +431,14 @@ export function useGroupJourney(
         await activateUserRoute(userId, groupInfo.routeId);
       }
 
-      router.push(`/routes/${groupInfo.routeId}/map?groupId=${groupId}`);
+      const mapUrl = `/routes/${groupInfo.routeId}/map?groupId=${groupId}`;
+      triggerNavigationLoading(mapUrl);
+      router.push(mapUrl);
     } catch (err) {
       console.error("Failed to join and open map:", err);
-      router.push(`/routes/${groupInfo.routeId}/map?groupId=${groupId}`);
+      const mapUrl = `/routes/${groupInfo.routeId}/map?groupId=${groupId}`;
+      triggerNavigationLoading(mapUrl);
+      router.push(mapUrl);
     } finally {
       setJoining(false);
     }

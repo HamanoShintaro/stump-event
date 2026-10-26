@@ -10,6 +10,7 @@ import { evaluateBadges, isSiteUsageBadge } from "@/utils/badgeEvaluator";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import {
   Users,
   X,
@@ -162,7 +163,7 @@ export default function MyPage() {
   const { activeRallies, bookmarkedRallies, dataLoading, leaveNarrative } = useMyPageData(user);
 
   if (loading || !user) {
-    return <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>読み込み中...</div>;
+    return <LoadingOverlay />;
   }
 
   const handleLogout = async () => {

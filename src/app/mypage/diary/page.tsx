@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
 import { generateShuinCardDataUrl } from "@/utils/shuinCardGenerator";
 import {
@@ -220,11 +221,7 @@ export default function DiaryPage() {
   };
 
   if (loading || !user) {
-    return (
-      <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>
-        読み込み中...
-      </div>
-    );
+    return <LoadingOverlay />;
   }
 
   return (

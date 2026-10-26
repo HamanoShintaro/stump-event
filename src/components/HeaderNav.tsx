@@ -19,6 +19,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 
 export default function HeaderNav() {
   const { user, loading, logout } = useAuth();
@@ -64,7 +65,9 @@ export default function HeaderNav() {
     if (cat) params.set("category", cat);
     if (bud) params.set("budget_tier", bud);
 
-    router.push(`/routes?${params.toString()}`);
+    const targetUrl = `/routes?${params.toString()}`;
+    triggerNavigationLoading(targetUrl);
+    router.push(targetUrl);
     setSearchOpen(false);
   };
 

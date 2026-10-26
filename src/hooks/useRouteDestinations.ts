@@ -9,6 +9,7 @@ import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { useRouteStamps } from "@/hooks/useRouteStamps";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import { parseWKBPoint } from "@/utils/wkb";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { getDisplayNameFromAuthUser } from "@/utils/stampMedia";
 
 export interface EnrichedDestinationSpot {
@@ -306,11 +307,11 @@ export function useRouteDestinations(
       }
 
       setActiveSpotId(spotId);
-      router.push(
-        `/routes/${routeId}/map${
-          effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""
-        }`
-      );
+      const mapUrl = `/routes/${routeId}/map${
+        effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""
+      }`;
+      triggerNavigationLoading(mapUrl);
+      router.push(mapUrl);
     },
     [user, showAlert, routeId, effectiveGroupId, router]
   );

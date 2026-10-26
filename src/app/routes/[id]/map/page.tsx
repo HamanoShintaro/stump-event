@@ -8,6 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import {
   buildMemberStatusWithDisplayName,
@@ -373,7 +374,7 @@ export default function MapPage({
   }, [resolvedParams.id, user]);
 
   if (loading) {
-    return <div style={{ padding: 40, textAlign: "center", paddingTop: "100px" }}>読み込み中...</div>;
+    return <LoadingOverlay message="地図を広げています…" />;
   }
 
   if (!rally) {

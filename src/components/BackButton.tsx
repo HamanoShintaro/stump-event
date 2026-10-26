@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
+import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 
 interface BackButtonProps {
   /** 指定された場合、router.back() ではなくこのパスへ固定遷移します */
@@ -36,7 +37,10 @@ export default function BackButton({ href }: BackButtonProps) {
 
   return (
     <button
-      onClick={() => router.back()}
+      onClick={() => {
+        triggerNavigationLoading();
+        router.back();
+      }}
       style={buttonStyle}
     >
       <ChevronLeft size={20} />

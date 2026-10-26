@@ -9,6 +9,7 @@ import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import { uploadStampPhotoWithFallback } from "@/utils/stampMedia";
 import { motion, AnimatePresence } from "framer-motion";
@@ -488,7 +489,7 @@ export default function SpotCheckInPage({
   const isPageLoading = loading || stampLoading;
 
   if (isPageLoading) {
-    return <div style={{ padding: 40, textAlign: "center", paddingTop: "100px" }}>読み込み中...</div>;
+    return <LoadingOverlay />;
   }
 
   if (!route || !spot) {

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Sparkles, BookOpen } from "lucide-react";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { useAuth } from "@/context/AuthContext";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { useBadgesProgress, parseLevelBadge } from "@/hooks/useBadgesProgress";
@@ -67,14 +68,7 @@ export default function BadgesPage() {
   const rarities = [1, 2, 3, 4, 5];
 
   if (loading || dataLoading) {
-    return (
-      <div
-        className="container"
-        style={{ padding: "60px 0", textAlign: "center", color: "#A39687" }}
-      >
-        読み込み中...
-      </div>
-    );
+    return <LoadingOverlay />;
   }
 
   if (!user) {

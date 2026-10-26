@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useMyPageData } from "@/hooks/useMyPageData";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { ChevronLeft, Users, Map as MapIcon } from "lucide-react";
 
 export default function ActiveRoutesPage() {
@@ -21,7 +22,7 @@ export default function ActiveRoutesPage() {
   const { activeRallies, dataLoading, leaveNarrative } = useMyPageData(user);
 
   if (loading || !user) {
-    return <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>読み込み中...</div>;
+    return <LoadingOverlay />;
   }
 
   return (

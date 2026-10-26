@@ -18,6 +18,7 @@ import { useRouteDestinations } from "@/hooks/useRouteDestinations";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
 import BackButton from "@/components/BackButton";
+import LoadingOverlay from "@/components/LoadingOverlay";
 
 export default function DestinationsPage({
   params,
@@ -47,11 +48,7 @@ export default function DestinationsPage({
   } = useRouteDestinations(resolvedParams.id, urlGroupId);
 
   if (loading) {
-    return (
-      <div style={{ padding: 40, textAlign: "center", paddingTop: "100px" }}>
-        読み込み中...
-      </div>
-    );
+    return <LoadingOverlay />;
   }
 
   if (!route) {

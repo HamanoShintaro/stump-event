@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import type { CSSProperties, ElementType } from "react";
 import { useRouter } from "next/navigation";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { Bell, FileText, Shield, LogOut, UserX, ChevronRight, HelpCircle } from "lucide-react";
@@ -58,7 +59,7 @@ export default function SettingsPage() {
   };
 
   if (loading) {
-    return <div className="container" style={{ padding: "60px 0", textAlign: "center", color: "#A39687" }}>読み込み中...</div>;
+    return <LoadingOverlay />;
   }
 
   if (!user) {

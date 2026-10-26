@@ -5,6 +5,7 @@ import { use, useState } from "react";
 import { createPortal } from "react-dom";
 import { useAuth } from "@/context/AuthContext";
 import HeaderNav from "@/components/HeaderNav";
+import LoadingOverlay from "@/components/LoadingOverlay";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { useGroupJourney } from "@/hooks/useGroupJourney";
 import { getCategoryStampUrl } from "@/utils/stampHelper";
@@ -95,13 +96,7 @@ export default function GroupJourneyPage({ params }: PageProps) {
   };
 
   if (authLoading || loading) {
-    return (
-      <div className="container" style={{ padding: "80px 20px", textAlign: "center" }}>
-        <p style={{ color: "#A39687", fontSize: "var(--font-size-body)" }}>
-          連れ立ち旅路のしおりを開いています...
-        </p>
-      </div>
-    );
+    return <LoadingOverlay message="連れ立ち旅路のしおりを開いています…" />;
   }
 
   if (notFound || !groupInfo) {

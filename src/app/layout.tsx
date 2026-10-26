@@ -4,6 +4,7 @@ import '@/app/globals.css'
 import { AuthProvider } from '@/context/AuthContext'
 import { AlertProvider } from '@/context/AlertContext'
 import Footer from '@/components/Footer'
+import NavigationLoadingProvider from '@/components/NavigationLoadingProvider'
 
 const notoSansJP = Noto_Sans_JP({ subsets: ['latin'], weight: ['400', '500', '700', '800'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={notoSansJP.className}>
         <AuthProvider>
           <AlertProvider>
+            <NavigationLoadingProvider />
             <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
               {children}
             </div>

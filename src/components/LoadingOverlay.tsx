@@ -1,59 +1,46 @@
 "use client";
 
-import { Loader2 } from "lucide-react";
+import styles from "./LoadingOverlay.module.css";
 
-export default function LoadingOverlay({ message = "読み込み中..." }: { message?: string }) {
+interface LoadingOverlayProps {
+  message?: string;
+  fullScreen?: boolean;
+}
+
+export default function LoadingOverlay({
+  message = "しるしを辿っています…",
+  fullScreen = true,
+}: LoadingOverlayProps) {
   return (
-    <div style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      width: "100vw",
-      height: "100vh",
-      backgroundColor: "rgba(247, 243, 234, 0.75)", // 和紙カラーベースの半透明背景
-      backdropFilter: "blur(8px)",
-      WebkitBackdropFilter: "blur(8px)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 99999,
-      pointerEvents: "all" // タップ等の操作を完全にブロック
-    }}>
-      <style>{`
-        @keyframes loading-spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
-      <div style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        padding: "32px 48px",
-        borderRadius: "24px",
-        background: "rgba(255, 255, 255, 0.9)",
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.08)",
-        border: "1px solid rgba(255, 255, 255, 0.6)",
-      }}>
-        <Loader2 
-          size={36} 
-          color="var(--primary-color)" 
-          style={{
-            animation: "loading-spin 1s linear infinite"
-          }} 
-        />
-        <span style={{
-          color: "var(--text-color)",
-          fontSize: "1rem",
-          fontWeight: 600,
-          letterSpacing: "0.05em"
-        }}>
-          {message}
-        </span>
+    <div
+      className={fullScreen ? styles.shuinLoadingOverlay : styles.shuinLoadingInline}
+      role="status"
+      aria-live="polite"
+      aria-label={message}
+    >
+      <div className={styles.shuinLoading}>
+        <div className={styles.shuinLoadingArt} aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <circle className={styles.shuinLoadingHalo} cx="60" cy="60" r="42" />
+            <circle
+              className={`${styles.shuinLoadingHalo} ${styles.shuinLoadingHaloLate}`}
+              cx="60"
+              cy="60"
+              r="42"
+            />
+            <path
+              className={styles.shuinLoadingRoute}
+              d="M25 70 C19 49 32 24 56 20 C82 15 103 35 101 59 C99 82 83 100 60 100 C46 100 34 94 27 83"
+            />
+            <circle className={styles.shuinLoadingSeal} cx="60" cy="60" r="23" />
+            <path
+              className={styles.shuinLoadingInner}
+              d="M49 61 Q60 48 71 61 M52 67 Q60 59 68 67"
+            />
+            <circle className={styles.shuinLoadingSpark} cx="96" cy="33" r="2" />
+          </svg>
+        </div>
+        <p className={styles.shuinLoadingCaption}>{message}</p>
       </div>
     </div>
   );
