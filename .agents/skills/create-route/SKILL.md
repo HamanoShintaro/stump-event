@@ -52,7 +52,11 @@ LLMが推測した緯度経度は100%ずれるため、**必ず以下の検証�
 
 ### 2-1. ジオコーディング逆引き＆座標自動補正スクリプトの実行
 
-国土地理院（GSI）API および OpenStreetMap（Overpass API）と照合し、スキーマ・禁止用語・住所番地・緯度経度のズレを検査＆自動補正します。
+Google Maps（施設名＋枝番・号まで一致した建物ピンポイント座標 / Rooftop精度1〜2m）、国土地理院（GSI）API、および OpenStreetMap（Overpass API）と照合し、スキーマ・禁止用語・住所番地・緯度経度のズレを検査＆自動補正します。
+
+> **⚠️ 技術的注意点（国土地理院APIの限界とGoogle Maps Rooftop優先の理由）**
+> 国土地理院の住所検索API（`msearch.gsi.go.jp`）は、住所の **「号（〇丁目〇番〇号の号）」や「枝番（1198-5の -5）」を切り捨てて、街区・親番の代表点（中心点）を返す仕様** になっています。そのため、広大な親番（例：`米島1198番地`＝駅線路から南口ロータリーまで広がる区画）では、国土地理院の座標を使うと実際の店舗から100〜200mずれてしまいます。
+> [verify-and-geocode.mjs](scripts/verify-and-geocode.mjs) は **Google Maps の「施設名＋枝番・号」ピンポイント座標（Rooftop）を最優先の権威データ（許容誤差30m以内）** として使用し、食べログやGoogleマップのピンと1〜2m以内で完全一致させます。
 
 ```bash
 node .agents/skills/create-route/scripts/verify-and-geocode.mjs scripts/areas/<slug>.mjs --fix

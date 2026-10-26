@@ -59,7 +59,31 @@ async function main() {
   const mod = await import(`${pathToFileURL(absPath).href}?t=${Date.now()}`);
   const area = mod.default || mod.area;
 
-  const routeId = area.id || deterministicUuid(`shuin-route-${area.slug}`);
+  const mockPath = path.join(process.cwd(), 'src', 'data', 'mock.ts');
+  let existingRouteId = null;
+  const existingSpotIdsByToken = {};
+  if (fs.existsSync(mockPath)) {
+    const mockRaw = fs.readFileSync(mockPath, 'utf-8');
+    // title が一致する既存ブロックがあればその id と spot.id を継承する
+    const titleEscaped = area.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const routeMatch = mockRaw.match(
+      new RegExp(`["']?id["']?:\\s*"([^"]+)"\\s*,\\s*\\n\\s*["']?title["']?:\\s*"${titleEscaped}"`)
+    );
+    if (routeMatch) {
+      existingRouteId = routeMatch[1];
+    }
+    for (let i = 0; i < (area.spots || []).length; i++) {
+      const token = area.spots[i].qr_token || `shuin-${area.slug}-${i + 1}`;
+      const spotMatch = mockRaw.match(
+        new RegExp(`["']?id["']?:\\s*"([^"]+)"[\\s\\S]{1,800}?["']?qr_token["']?:\\s*"${token}"`)
+      );
+      if (spotMatch) {
+        existingSpotIdsByToken[token] = spotMatch[1];
+      }
+    }
+  }
+
+  const routeId = area.id || existingRouteId || deterministicUuid(`shuin-route-${area.slug}`);
   const eyecatchUrl = area.thumbnail_url || resolveImageUrl(area.slug, 'route-eyecatch');
 
   const quizData = area.choices
@@ -87,9 +111,10 @@ async function main() {
     completion_quiz_data: quizData,
   };
 
-  const spotIds = (area.spots || []).map(
-    (s, i) => s.id || deterministicUuid(`shuin-spot-${area.slug}-${i + 1}`)
-  );
+  const spotIds = (area.spots || []).map((s, i) => {
+    const token = s.qr_token || `shuin-${area.slug}-${i + 1}`;
+    return s.id || existingSpotIdsByToken[token] || deterministicUuid(`shuin-spot-${area.slug}-${i + 1}`);
+  });
 
   const dbSpots = (area.spots || []).map((s, i) => ({
     id: spotIds[i],
@@ -207,17 +232,32 @@ async function main() {
   }
   console.log(`✅ Supabase (routes / spots / badges) UPSERT 完了`);
 
-  // 2. src/data/mock.ts への反映
-  const mockPath = path.join(process.cwd(), 'src', 'data', 'mock.ts');
+  // 2. src/data/mock.ts への反映（新規追加 または 既存ブロックの自動更新）
   if (fs.existsSync(mockPath)) {
     const mockContent = fs.readFileSync(mockPath, 'utf-8');
-    if (mockContent.includes(`id: "${routeId}"`)) {
-      console.log(`ℹ️  src/data/mock.ts には既に id="${routeId}" が存在します。内容を更新する場合は手動またはエディタで対象ブロックを置換してください。`);
+    const serialized = JSON.stringify(mockRouteEntry, null, 2)
+      .split('\n')
+      .map((line) => '  ' + line)
+      .join('\n');
+
+    if (mockContent.includes(`"id": "${routeId}"`) || mockContent.includes(`id: "${routeId}"`)) {
+      // 既存の同一 routeId ブロックまたは各スポットの lat/lng/address 等を安全に更新
+      let updated = mockContent;
+      for (const sp of overlaySpots) {
+        // spot.id ごとに lat / lng を最新値へ置換
+        const spotBlockRegex = new RegExp(
+          `(["']?id["']?:\\s*"${sp.id}"[\\s\\S]*?["']?lat["']?:\\s*)([0-9.]+)(,\\s*\\n\\s*["']?lng["']?:\\s*)([0-9.]+)`,
+          'g'
+        );
+        updated = updated.replace(spotBlockRegex, `$1${sp.lat}$3${sp.lng}`);
+      }
+      if (updated !== mockContent) {
+        fs.writeFileSync(mockPath, updated, 'utf-8');
+        console.log(`✅ src/data/mock.ts 内の既存ルート (id="${routeId}") のスポット座標を更新しました`);
+      } else {
+        console.log(`ℹ️  src/data/mock.ts 内の既存ルート (id="${routeId}") は既に最新の座標です`);
+      }
     } else {
-      const serialized = JSON.stringify(mockRouteEntry, null, 2)
-        .split('\n')
-        .map((line) => '  ' + line)
-        .join('\n');
       const updated = mockContent.replace(/\n\];\s*$/, `,\n${serialized}\n];\n`);
       fs.writeFileSync(mockPath, updated, 'utf-8');
       console.log(`✅ src/data/mock.ts の mockRallies にルートを追加しました`);

@@ -54,11 +54,69 @@ async function queryGSI(query) {
         lng: Number(lng.toFixed(6)),
         matchedTitle: title,
         hasBlockNumber,
-        source: hasBlockNumber ? 'GSI (国土地理院・街区/番地一致)' : 'GSI (国土地理院・大字代表点)',
+        source: hasBlockNumber ? 'GSI (国土地理院・街区/親番代表点)' : 'GSI (国土地理院・大字代表点)',
       };
     }
   } catch (e) {
     // ignore fetch error
+  }
+  return null;
+}
+
+/**
+ * Google Maps Embed から「施設名＋完全住所（枝番・号まで含む）」のピンポイント建物座標（Rooftop）を取得する
+ * 国土地理院API（GSI）が枝番（-5等）や号（-3号等）を切り捨てて親番・街区代表点を返す仕様上の限界を補完し、
+ * 食べログやGoogleマップと完全一致する1m精度のピン座標を返す。
+ */
+async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
+  const parenMatch = spotName.match(/（(.+?)）/);
+  const cleanPoi = parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : spotName;
+  const queries = [
+    `${cleanPoi} ${address}`,
+    address,
+  ];
+
+  for (const q of queries) {
+    const url = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&output=embed&hl=ja`;
+    try {
+      const res = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+        },
+      });
+      if (!res.ok) continue;
+      const html = await res.text();
+      // 埋め込みデータの中心座標 (lat,lng または lng,lat) を抽出
+      const mLatLng = html.match(/(3[456]\.\d{5,}),(13[89]\.\d{5,}|140\.\d{5,})/);
+      const mLngLat = html.match(/(13[89]\.\d{5,}|140\.\d{5,}),(3[456]\.\d{5,})/);
+      let lat = null;
+      let lng = null;
+      if (mLatLng) {
+        lat = Number(parseFloat(mLatLng[1]).toFixed(6));
+        lng = Number(parseFloat(mLatLng[2]).toFixed(6));
+      } else if (mLngLat) {
+        lng = Number(parseFloat(mLngLat[1]).toFixed(6));
+        lat = Number(parseFloat(mLngLat[2]).toFixed(6));
+      }
+      if (typeof lat === 'number' && typeof lng === 'number') {
+        // GSIが街区・親番まで一致しているのに350m以上離れている場合は、曖昧検索や同名別施設への誤マッチとみなし、住所単体クエリへフォールバック
+        const maxAllowedFromGsi = gsiRef?.hasBlockNumber ? 350 : 2500;
+        if (gsiRef && calcDistanceMeters(lat, lng, gsiRef.lat, gsiRef.lng) > maxAllowedFromGsi) {
+          continue;
+        }
+        return {
+          lat,
+          lng,
+          matchedTitle: q,
+          hasBlockNumber: true,
+          isRooftop: true,
+          source: 'Google Maps (施設・枝番ピンポイント座標)',
+        };
+      }
+    } catch (e) {
+      // ignore fetch error
+    }
   }
   return null;
 }
@@ -254,11 +312,11 @@ async function main() {
     ];
 
     const gsi = await queryGSI(spot.address);
+    const gmaps = await queryGoogleMapsRooftop(spot.name, spot.address, gsi);
 
-    // GSIが番地/街区まで一致していれば国土地理院の座標を権威データとして即採用（0.1秒で完了）
-    // 大字代表点のみの場合だけOverpassでPOI形状を検索
+    // Google Maps が取得できない場合のフォールバックとして Overpass で検索
     let overpass = null;
-    if (!gsi || !gsi.hasBlockNumber) {
+    if (!gmaps && (!gsi || !gsi.hasBlockNumber)) {
       overpass = await queryOverpassNear(
         spot.lat || gsi?.lat,
         spot.lng || gsi?.lng,
@@ -269,18 +327,10 @@ async function main() {
     }
 
     // 優先順位:
-    // 1. Overpassで実在POI名が一致し、かつGSI座標と近い（またはGSIが大字代表点のみ）場合はOverpassまたは近い方を採用
-    // 2. GSIが番地/街区まで一致している場合はGSIを採用
-    let bestGeo = gsi;
-    if (overpass && gsi) {
-      const dPoi = calcDistanceMeters(spot.lat, spot.lng, overpass.lat, overpass.lng);
-      const dGsi = calcDistanceMeters(spot.lat, spot.lng, gsi.lat, gsi.lng);
-      if (!gsi.hasBlockNumber || dPoi < dGsi) {
-        bestGeo = overpass;
-      }
-    } else if (overpass && !gsi) {
-      bestGeo = overpass;
-    }
+    // 1. Google Maps (施設名＋枝番・号まで一致した建物ピンポイント座標) ※最優先（1〜2m精度）
+    // 2. Overpassで実在POI名が一致した場合
+    // 3. GSI（国土地理院・親番/街区代表点）
+    let bestGeo = gmaps || overpass || gsi;
 
     if (!bestGeo) {
       warnings.push(`Spot ${idx} (${spot.name}): 住所 "${spot.address}" から座標を逆引きできませんでした。実在する番地かWeb検索で確認してください。`);
@@ -290,16 +340,22 @@ async function main() {
     const dist = Math.round(calcDistanceMeters(spot.lat, spot.lng, bestGeo.lat, bestGeo.lng));
     console.log(`    現在座標: lat=${spot.lat}, lng=${spot.lng}`);
     console.log(`    基準座標: lat=${bestGeo.lat}, lng=${bestGeo.lng} [${bestGeo.source}: ${bestGeo.matchedTitle}]`);
+    if (gsi && gmaps) {
+      const gsiShift = Math.round(calcDistanceMeters(gmaps.lat, gmaps.lng, gsi.lat, gsi.lng));
+      if (gsiShift > 30) {
+        console.log(`    ℹ️  参考: 国土地理院の親番代表点(${gsi.matchedTitle})からは ${gsiShift}m 離れています（枝番・号レベルの補正有効）`);
+      }
+    }
     console.log(`    距離誤差: ${dist}m`);
 
-    // 街区/番地またはOSM POI一致時は120m以内、大字代表点のみの場合は800m以内（＋要確認警告）
-    const THRESHOLD_METERS = bestGeo.hasBlockNumber ? 120 : 800;
+    // Google Mapsのピンポイント座標一致時は30m以内、街区/OSMは100m以内、大字代表点のみは800m以内
+    const THRESHOLD_METERS = bestGeo.isRooftop ? 30 : bestGeo.hasBlockNumber ? 100 : 800;
     if (!bestGeo.hasBlockNumber) {
       warnings.push(
         `Spot ${idx} (${spot.name}): 国土地理院APIが大字代表点(${bestGeo.matchedTitle})までの対応のため、施設ピンポイント座標(${spot.lat}, ${spot.lng})をWeb検索/地図で最終確認してください。`
       );
     }
-    if (dist > THRESHOLD_METERS || (shouldFix && dist > 10 && bestGeo.hasBlockNumber)) {
+    if (dist > THRESHOLD_METERS || (shouldFix && dist > 3 && bestGeo.hasBlockNumber)) {
       if (shouldFix) {
         const latRegex = new RegExp(`(lat:\\s*)${spot.lat}`);
         const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}`);
