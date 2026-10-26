@@ -353,36 +353,44 @@ export function useGroupJourney(
   useEffect(() => {
     if (!groupId) return;
 
-    const channel = supabase
-      .channel(`group-journey-${groupId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "group_members",
-          filter: `group_id=eq.${groupId}`,
-        },
-        () => {
-          fetchGroupJourney();
-        }
-      )
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "stamp_events",
-          filter: `group_id=eq.${groupId}`,
-        },
-        () => {
-          fetchGroupJourney();
-        }
-      )
-      .subscribe();
+    const channelName = `group-journey-${groupId}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+    let channel: ReturnType<typeof supabase.channel> | null = null;
+    try {
+      channel = supabase
+        .channel(channelName)
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table: "group_members",
+            filter: `group_id=eq.${groupId}`,
+          },
+          () => {
+            fetchGroupJourney();
+          }
+        )
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table: "stamp_events",
+            filter: `group_id=eq.${groupId}`,
+          },
+          () => {
+            fetchGroupJourney();
+          }
+        )
+        .subscribe();
+    } catch (err) {
+      console.warn("Group journey realtime subscription warning:", err);
+    }
 
     return () => {
-      supabase.removeChannel(channel);
+      if (channel) {
+        supabase.removeChannel(channel);
+      }
     };
   }, [groupId, fetchGroupJourney]);
 

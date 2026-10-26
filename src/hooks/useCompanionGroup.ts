@@ -20,6 +20,8 @@ interface UseCompanionGroupOptions {
   onMemoryUpdated?: (memory: { userId: string; spotId: string; hasPhoto: boolean; hasMemo: boolean }) => void;
 }
 
+let companionChannelCounter = 0;
+
 export function useCompanionGroup({
   routeId,
   urlGroupId,
@@ -36,6 +38,13 @@ export function useCompanionGroup({
 
   const knownPartnerIdsRef = useRef<Set<string>>(new Set());
   const initializedPartnersRef = useRef<boolean>(false);
+  const onPartnerJoinedRef = useRef(onPartnerJoined);
+  const onMemoryUpdatedRef = useRef(onMemoryUpdated);
+  const userIdRef = useRef<string | undefined>(user?.id);
+  onPartnerJoinedRef.current = onPartnerJoined;
+  onMemoryUpdatedRef.current = onMemoryUpdated;
+  userIdRef.current = user?.id;
+
   const spotIdsKey = spotIds.join(",");
 
   const refreshMembersAndMemories = useCallback(
@@ -45,10 +54,10 @@ export function useCompanionGroup({
       setMembers(memberList);
 
       const currentPartners = memberList.filter((m) => !m.isMe);
-      if (initializedPartnersRef.current && onPartnerJoined) {
+      if (initializedPartnersRef.current && onPartnerJoinedRef.current) {
         for (const p of currentPartners) {
           if (!knownPartnerIdsRef.current.has(p.userId)) {
-            onPartnerJoined(p);
+            onPartnerJoinedRef.current(p);
           }
         }
       }
@@ -67,8 +76,11 @@ export function useCompanionGroup({
         setSharedMemoriesBySpot(memories);
       }
     },
-    [user, spotIdsKey, onPartnerJoined]
+    [user, spotIdsKey]
   );
+
+  const refreshRef = useRef(refreshMembersAndMemories);
+  refreshRef.current = refreshMembersAndMemories;
 
   // 初期解決: URLのgroupId または ルートに対する参加中グループを自動検出
   useEffect(() => {
@@ -114,56 +126,68 @@ export function useCompanionGroup({
   useEffect(() => {
     if (!effectiveGroupId) return;
 
-    const channel = supabase
-      .channel(`companion_group_${effectiveGroupId}`)
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "group_members",
-          filter: `group_id=eq.${effectiveGroupId}`,
-        },
-        () => {
-          refreshMembersAndMemories(effectiveGroupId);
-        }
-      )
-      .on(
-        "postgres_changes",
-        {
-          event: "*",
-          schema: "public",
-          table: "stamp_events",
-        },
-        (payload: any) => {
-          const rec = payload.new as any;
-          if (!rec) return;
-          const isGroupMatch = rec.group_id === effectiveGroupId;
-          const isMemberMatch = knownPartnerIdsRef.current.has(rec.user_id) || (user && rec.user_id === user.id);
-          if (isGroupMatch || isMemberMatch) {
-            refreshMembersAndMemories(effectiveGroupId);
-            if (onMemoryUpdated && user && rec.user_id !== user.id) {
-              onMemoryUpdated({
-                userId: rec.user_id,
-                spotId: rec.spot_id,
-                hasPhoto: Boolean(rec.photo_url),
-                hasMemo: Boolean(rec.memo),
-              });
+    const channelName = `companion_group_${effectiveGroupId}_${++companionChannelCounter}`;
+    let channel: ReturnType<typeof supabase.channel> | null = null;
+
+    try {
+      channel = supabase
+        .channel(channelName)
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table: "group_members",
+            filter: `group_id=eq.${effectiveGroupId}`,
+          },
+          () => {
+            refreshRef.current(effectiveGroupId);
+          }
+        )
+        .on(
+          "postgres_changes",
+          {
+            event: "*",
+            schema: "public",
+            table: "stamp_events",
+          },
+          (payload: any) => {
+            const rec = payload.new as any;
+            if (!rec) return;
+            const currentUserId = userIdRef.current;
+            const isGroupMatch = rec.group_id === effectiveGroupId;
+            const isMemberMatch =
+              knownPartnerIdsRef.current.has(rec.user_id) ||
+              Boolean(currentUserId && rec.user_id === currentUserId);
+            if (isGroupMatch || isMemberMatch) {
+              refreshRef.current(effectiveGroupId);
+              if (onMemoryUpdatedRef.current && currentUserId && rec.user_id !== currentUserId) {
+                onMemoryUpdatedRef.current({
+                  userId: rec.user_id,
+                  spotId: rec.spot_id,
+                  hasPhoto: Boolean(rec.photo_url),
+                  hasMemo: Boolean(rec.memo),
+                });
+              }
             }
           }
-        }
-      )
-      .subscribe();
+        )
+        .subscribe();
+    } catch (err) {
+      console.warn("Realtime subscription warning:", err);
+    }
 
     const intervalId = setInterval(() => {
-      refreshMembersAndMemories(effectiveGroupId);
+      refreshRef.current(effectiveGroupId);
     }, 6000);
 
     return () => {
-      supabase.removeChannel(channel);
+      if (channel) {
+        supabase.removeChannel(channel);
+      }
       clearInterval(intervalId);
     };
-  }, [effectiveGroupId, user, refreshMembersAndMemories, onMemoryUpdated]);
+  }, [effectiveGroupId]);
 
   const partners = members.filter((m) => !m.isMe);
   const partnerNames = partners.map((p) => p.displayName);
