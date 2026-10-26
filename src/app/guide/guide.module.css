@@ -1,0 +1,1139 @@
+/* ==========================================================================
+   SHUIN Guide Page — Mobile-First (SP 375px–430px) Visual & Interactive Styles
+   Designed in collaboration with OpenAI Codex
+   ========================================================================== */
+
+@keyframes guideStampDrop {
+  0% {
+    opacity: 0;
+    transform: scale(1.24) rotate(-8deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.95) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-4deg);
+  }
+}
+
+@keyframes guideInkBloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  70% {
+    opacity: 0.42;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 0.34;
+    transform: scale(1);
+  }
+}
+
+@keyframes guideStoryUnfold {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes guideOracleLift {
+  0% {
+    opacity: 0.65;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes guidePulseRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.guidePageWrapper {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px 88px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .guidePageWrapper {
+    max-width: 680px;
+    padding: 0 24px 96px;
+  }
+}
+
+.guideHeader {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section (SP-First Visual Collage + 4-Step Quick Ribbon)
+   -------------------------------------------------------------------------- */
+.heroSection {
+  position: relative;
+  border-radius: 22px;
+  padding: 24px 16px 22px;
+  margin-bottom: 36px;
+  background: color-mix(in srgb, var(--bg-color) 94%, white 6%);
+  border: 1.5px solid color-mix(in srgb, var(--accent-color) 65%, transparent);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-align: center;
+}
+
+.heroTopBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 9%, var(--bg-color));
+  border: 1px solid color-mix(in srgb, var(--primary-color) 28%, transparent);
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: var(--font-size-h1);
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.32;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+}
+
+.heroSubcopy {
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.03em;
+  margin: 0 0 16px;
+}
+
+/* Visual Collage Stage */
+.heroCollage {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 228px;
+  margin: 0 auto 18px;
+}
+
+.heroPhotoFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84%;
+  height: 204px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--bg-color) 92%, white 8%);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--text-color) 14%, transparent);
+  background: var(--bg-color);
+}
+
+.heroPhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroPhotoCaptionPill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  background: color-mix(in srgb, var(--bg-color) 92%, white 8%);
+  color: var(--text-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 55%, transparent);
+}
+
+.heroFloatingShuinCard {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 132px;
+  padding: 10px 10px 8px;
+  border-radius: 14px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--accent-color);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--text-color) 16%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transform: rotate(-2deg);
+}
+
+.heroFloatingStampImg {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.heroFloatingLabel {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--text-color);
+  letter-spacing: 0.04em;
+}
+
+.heroFloatingSub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* 4-Step Single-Row Ribbon (SP 4 columns, min-height 52px) */
+.stepRibbon {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0 auto 18px;
+  max-width: 400px;
+}
+
+.stepRibbonItem {
+  min-height: 56px;
+  padding: 7px 4px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 55%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.stepRibbonItem:hover,
+.stepRibbonItem:active {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.stepRibbonNum {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--primary-color) 12%, var(--bg-color));
+  border: 1px solid color-mix(in srgb, var(--primary-color) 38%, transparent);
+  color: var(--primary-color);
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.stepRibbonLabel {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.heroActionNote {
+  margin-top: 8px;
+  font-size: var(--font-size-small);
+  color: color-mix(in srgb, var(--text-color) 72%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   Step Section Common Layout
+   -------------------------------------------------------------------------- */
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-bottom: 48px;
+}
+
+.stepSection {
+  scroll-margin-top: 20px;
+}
+
+.stepHeader {
+  margin-bottom: 14px;
+}
+
+.stepEyebrowRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.stepStampBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepSealSquare {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1.5px solid var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 10%, var(--bg-color));
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepCodeText {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 0.08em;
+}
+
+.demoNoticeTag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-color) 18%, var(--bg-color));
+  color: color-mix(in srgb, var(--text-color) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 42%, transparent);
+}
+
+.stepTitle {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.38;
+  margin: 0 0 4px;
+}
+
+.stepLead {
+  font-size: var(--font-size-body);
+  color: color-mix(in srgb, var(--text-color) 82%, transparent);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Interactive Stage Card */
+.stageCard {
+  background: color-mix(in srgb, var(--bg-color) 95%, white 5%);
+  border: 1.5px solid color-mix(in srgb, var(--accent-color) 58%, transparent);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.stageFooterRow {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stageHelperText {
+  font-size: var(--font-size-small);
+  color: color-mix(in srgb, var(--text-color) 72%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   Step 1: Mood & Duration Route Picker + Omikuji
+   -------------------------------------------------------------------------- */
+.pickerLabel {
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: color-mix(in srgb, var(--text-color) 78%, transparent);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.durationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.choiceBtn {
+  min-height: 46px;
+  padding: 8px 6px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1.5px solid color-mix(in srgb, var(--text-color) 16%, transparent);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.choiceBtnActive {
+  border-color: var(--primary-color);
+  background: color-mix(in srgb, var(--primary-color) 10%, var(--bg-color));
+  color: var(--primary-color);
+  font-weight: 800;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--primary-color) 16%, transparent);
+}
+
+.routePreviewCard {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 55%, transparent);
+  animation: guideOracleLift 0.22s ease-out;
+}
+
+.routePreviewImageWrap {
+  position: relative;
+  height: 172px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-color);
+}
+
+.routePreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.routePreviewTopBadges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.routeAreaPill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  background: color-mix(in srgb, var(--bg-color) 94%, white 6%);
+  color: var(--text-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 50%, transparent);
+}
+
+.routeFortunePill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  background: color-mix(in srgb, var(--bg-color) 94%, white 6%);
+  color: var(--primary-color);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
+}
+
+.routePreviewBody {
+  padding: 14px;
+}
+
+.routePreviewTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+.routePreviewCopy {
+  font-size: var(--font-size-body);
+  color: color-mix(in srgb, var(--text-color) 82%, transparent);
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.routeMetaBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed color-mix(in srgb, var(--accent-color) 45%, transparent);
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.routeSpotsFlow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: var(--font-size-small);
+  color: color-mix(in srgb, var(--text-color) 76%, transparent);
+}
+
+.oracleActionRow {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.oracleDrawBtn {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 14px;
+  border: 1.5px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 14%, var(--bg-color));
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+
+.oracleDrawBtn:hover,
+.oracleDrawBtn:active {
+  transform: translateY(-1px);
+  border-color: var(--primary-color);
+}
+
+/* --------------------------------------------------------------------------
+   Step 2: Interactive GPS Range & Shuin Stamp Simulator
+   -------------------------------------------------------------------------- */
+.radarMapBox {
+  position: relative;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: color-mix(in srgb, var(--accent-color) 10%, var(--bg-color));
+  border: 1px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+  overflow: hidden;
+}
+
+.radarTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.radarSpotTitle {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.distanceStatusPill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.distanceStatusRange {
+  background: color-mix(in srgb, var(--primary-color) 12%, var(--bg-color));
+  color: var(--primary-color);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+.distanceStatusWalking {
+  background: var(--bg-color);
+  color: color-mix(in srgb, var(--text-color) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-color) 22%, transparent);
+}
+
+/* Mini Illustrated Walk Track */
+.walkTrackSvgWrap {
+  position: relative;
+  height: 54px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.washiStampSheet {
+  position: relative;
+  min-height: 210px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--bg-color);
+  background-image: url("/stamps/bg_see.png");
+  background-size: cover;
+  background-position: center;
+  border: 1.5px solid color-mix(in srgb, var(--accent-color) 65%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.washiStampSheetOverlay {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--bg-color) 76%, transparent);
+  pointer-events: none;
+}
+
+.stampStageContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stampTargetCircle {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  border: 2px dashed color-mix(in srgb, var(--primary-color) 50%, transparent);
+  background: color-mix(in srgb, var(--bg-color) 85%, white 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.stampTargetPulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  animation: guidePulseRing 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.stampedVisualWrap {
+  position: relative;
+  width: 150px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.inkSplashLayer {
+  position: absolute;
+  width: 148px;
+  height: 148px;
+  object-fit: contain;
+  pointer-events: none;
+  animation: guideInkBloom 0.55s ease-out forwards;
+}
+
+.stampedSealImg {
+  position: relative;
+  z-index: 2;
+  width: 132px;
+  height: 92px;
+  object-fit: contain;
+  animation: guideStampDrop 0.42s cubic-bezier(0.2, 1.3, 0.34, 1) forwards;
+}
+
+.unlockedStoryCard {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-color) 94%, white 6%);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 65%, transparent);
+  text-align: left;
+  animation: guideStoryUnfold 0.35s ease-out forwards;
+}
+
+.unlockedStoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+.unlockedStoryTitle {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 4px;
+}
+
+.unlockedStoryBody {
+  font-size: var(--font-size-body);
+  color: color-mix(in srgb, var(--text-color) 84%, transparent);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Step 3: Photo Memory Card & Companion Journey Timeline
+   -------------------------------------------------------------------------- */
+.modeSwitchTabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.memoryPolaroidCard {
+  border-radius: 16px;
+  padding: 12px;
+  background: var(--bg-color);
+  border: 1.5px solid color-mix(in srgb, var(--accent-color) 58%, transparent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--text-color) 7%, transparent);
+  margin-bottom: 12px;
+}
+
+.memoryPhotoBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 210px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: var(--bg-color);
+}
+
+.memoryPhotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.memoryCornerSeal {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  padding: 4px;
+  background: color-mix(in srgb, var(--bg-color) 92%, white 8%);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 60%, transparent);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--text-color) 16%, transparent);
+}
+
+.memoryMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--text-color) 74%, transparent);
+  margin-bottom: 8px;
+}
+
+.photoThumbRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.photoThumbBtn {
+  position: relative;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  background: var(--bg-color);
+}
+
+.photoThumbBtnActive {
+  border-color: var(--primary-color);
+}
+
+.photoThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.noteInputLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.noteInputField {
+  width: 100%;
+  min-height: 46px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--accent-color) 65%, transparent);
+  background: color-mix(in srgb, var(--bg-color) 60%, white 40%);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.noteInputField:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
+
+/* Companion Timeline */
+.companionTimeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent-color);
+  margin: 4px 0 12px 6px;
+}
+
+.timelineCard {
+  position: relative;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: var(--bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 50%, transparent);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -23px;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 2px solid var(--bg-color);
+}
+
+.timelineThumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.echoAccordionBtn {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1px dashed color-mix(in srgb, var(--accent-color) 65%, transparent);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: var(--font-size-small);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Step 4: SHUIN Book Grid, Emaki Scroll & Title Showcase
+   -------------------------------------------------------------------------- */
+.reviewTabsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.shuinGrid3x2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.shuinCellBtn {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  padding: 8px 6px;
+  background-color: var(--bg-color);
+  background-size: cover;
+  background-position: center;
+  border: 1.5px solid color-mix(in srgb, var(--accent-color) 52%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+  overflow: hidden;
+}
+
+.shuinCellBtnActive {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary-color) 20%, transparent);
+  transform: translateY(-2px);
+}
+
+.shuinCellStampImg {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  margin: auto 0;
+}
+
+.shuinCellEmptyCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px dashed color-mix(in srgb, var(--accent-color) 70%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+  color: color-mix(in srgb, var(--text-color) 45%, transparent);
+  font-size: var(--font-size-small);
+  font-weight: 800;
+}
+
+.shuinCellSpotName {
+  width: 100%;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  background: color-mix(in srgb, var(--bg-color) 88%, white 12%);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+.selectedPageDetailCard {
+  border-radius: 14px;
+  padding: 12px;
+  background: var(--bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 58%, transparent);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.selectedPageThumb {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Emaki Vertical Scroll Showcase (No nested scroll trap) */
+.emakiScrollPaper {
+  border-radius: 16px;
+  padding: 16px 14px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--accent-color);
+  position: relative;
+}
+
+.emakiNodeList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0;
+  position: relative;
+}
+
+.emakiNodeItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-color) 65%, white 35%);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 45%, transparent);
+}
+
+/* Title Showcase */
+.titleMedallionCard {
+  border-radius: 16px;
+  padding: 18px 14px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--accent-color);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.titleMedallionSeal {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  border: 2px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 12%, var(--bg-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion & Final CTA
+   -------------------------------------------------------------------------- */
+.faqSection {
+  border-radius: 20px;
+  padding: 22px 16px;
+  background: color-mix(in srgb, var(--bg-color) 95%, white 5%);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 52%, transparent);
+  margin-bottom: 32px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 42%, transparent);
+  overflow: hidden;
+}
+
+.faqItemOpen {
+  border-color: var(--accent-color);
+}
+
+.faqTriggerBtn {
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--text-color);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.faqAnswerBox {
+  padding: 10px 14px 14px;
+  font-size: var(--font-size-body);
+  color: color-mix(in srgb, var(--text-color) 82%, transparent);
+  line-height: 1.65;
+  border-top: 1px dashed color-mix(in srgb, var(--accent-color) 42%, transparent);
+}
+
+.bottomCtaCard {
+  border-radius: 22px;
+  padding: 26px 18px;
+  background: color-mix(in srgb, var(--primary-color) 7%, var(--bg-color));
+  border: 1.5px solid var(--accent-color);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .routePreviewCard,
+  .inkSplashLayer,
+  .stampedSealImg,
+  .unlockedStoryCard,
+  .stampTargetPulse {
+    animation: none !important;
+  }
+}
