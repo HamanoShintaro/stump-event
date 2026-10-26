@@ -1,6 +1,7 @@
 import HeaderNav from "@/components/HeaderNav";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
+import { IconMap, IconScroll, IconChevronRight } from "@/components/icons/ShuinIcons";
 
 export const metadata = {
   title: "街歩き発見マップ - SHUIN",
@@ -50,7 +51,8 @@ export default function MapPage() {
                 gap: "8px",
               }}
             >
-              <span>🗺️</span> 地図から巡る・足跡を振り返る
+              <IconMap size={22} color="var(--primary-color)" strokeWidth={1.9} />
+              地図から巡る・足跡を振り返る
             </h1>
             <p
               style={{
@@ -67,18 +69,23 @@ export default function MapPage() {
           <Link
             href="/routes"
             style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "5px",
               fontSize: "0.8rem",
               fontWeight: 800,
               color: "var(--primary-color)",
               textDecoration: "none",
-              padding: "6px 12px",
-              borderRadius: "999px",
+              padding: "7px 12px",
+              borderRadius: "8px",
               border: "1px solid var(--primary-color)",
               background: "rgba(199, 68, 46, 0.05)",
               whiteSpace: "nowrap",
             }}
           >
-            📋 一覧でルートを探す ▸
+            <IconScroll size={14} color="var(--primary-color)" />
+            一覧でルートを探す
+            <IconChevronRight size={13} color="var(--primary-color)" />
           </Link>
         </div>
 

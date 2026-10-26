@@ -14,7 +14,15 @@ import {
   CompanionMember,
   syncUserProfileAndGroupStatus,
 } from "@/utils/stampMedia";
-import { Copy, Check, X } from "lucide-react";
+import { Copy, Check, X, KeyRound, ChevronLeft } from "lucide-react";
+import {
+  IconUsers,
+  IconBook,
+  IconMapPin,
+  IconPen,
+  IconStampSeal,
+  IconSparkles,
+} from "@/components/icons/ShuinIcons";
 import styles from "./page.module.css";
 
 // RouteMapUI は Leaflet (window 依存) を使用するため、dynamic インポートで SSR を無効化
@@ -68,7 +76,7 @@ export default function MapPage({
 
   const handlePartnerJoined = useCallback(
     (partner: CompanionMember) => {
-      showToast(`🎉 ${partner.displayName} さんが連れ立ちに合流しました！`);
+      showToast(`${partner.displayName} さんが連れ立ちに合流しました！`);
     },
     [showToast]
   );
@@ -77,9 +85,9 @@ export default function MapPage({
     (mem: { userId: string; spotId: string; hasPhoto: boolean; hasMemo: boolean }) => {
       const spotName = spots.find((s) => s.id === mem.spotId)?.name || "スポット";
       if (mem.hasPhoto || mem.hasMemo) {
-        showToast(`📸 同行メンバーが「${spotName}」の印に写真・コメントを共有しました！`);
+        showToast(`同行メンバーが「${spotName}」の印に写真・コメントを共有しました！`);
       } else {
-        showToast(`🌸 同行メンバーが「${spotName}」に到着し、しるしを刻みました！`);
+        showToast(`同行メンバーが「${spotName}」に到着し、しるしを刻みました！`);
       }
     },
     [spots, showToast]
@@ -285,7 +293,7 @@ export default function MapPage({
       setShowInviteModal(false);
       await refreshGroupData();
       router.replace(`/routes/${grp.route_id}/map?groupId=${grp.id}`);
-      showToast("👥 連れ立ちグループに合流しました！");
+      showToast("連れ立ちグループに合流しました！");
     } catch (err: any) {
       await showAlert({ text: `合流に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
@@ -368,8 +376,20 @@ export default function MapPage({
     <div className={styles.container}>
       <header className={styles.header} style={{ display: "flex", flexDirection: "column", gap: "8px", padding: "12px 16px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-          <Link href={`/routes/${rally.id}${effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""}`} className="btn-primary" style={{ padding: "8px 14px", fontSize: "0.85rem" }}>
-            ← 戻る
+          <Link
+            href={`/routes/${rally.id}${effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""}`}
+            className="btn-secondary"
+            style={{
+              padding: "7px 12px",
+              fontSize: "0.82rem",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              textDecoration: "none",
+            }}
+          >
+            <ChevronLeft size={15} strokeWidth={2} />
+            戻る
           </Link>
           <h1 className={styles.title} style={{ fontSize: "0.95rem", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, textAlign: "center", padding: "0 8px" }}>
             {rally.title}
@@ -384,15 +404,16 @@ export default function MapPage({
               background: "transparent",
               border: "1.5px solid var(--primary-color)",
               color: "var(--primary-color)",
-              borderRadius: "20px",
+              borderRadius: "8px",
               cursor: "pointer",
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
-              gap: "4px",
+              gap: "5px",
               whiteSpace: "nowrap"
             }}
           >
-            👥 {isCreatingGroup ? "作成中..." : effectiveGroupId ? "連れ立ち設定" : "友達を誘う"}
+            <IconUsers size={14} color="var(--primary-color)" />
+            {isCreatingGroup ? "作成中..." : effectiveGroupId ? "連れ立ち設定" : "友達を誘う"}
           </button>
         </div>
 
@@ -412,8 +433,26 @@ export default function MapPage({
             flexWrap: "wrap"
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
-              <span style={{ fontWeight: 800, color: partnerNames.length > 0 ? "#2E7D32" : "#B78103" }}>
-                {partnerNames.length > 0 ? `🟢 連れ立ち合流中 (${partnerNames.length + 1}名)` : "🟡 友達の合流待ち"}
+              <span
+                style={{
+                  fontWeight: 800,
+                  color: partnerNames.length > 0 ? "#2E7D32" : "#B78103",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "5px",
+                }}
+              >
+                <span
+                  style={{
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "50%",
+                    background: partnerNames.length > 0 ? "#2E7D32" : "#B78103",
+                    display: "inline-block",
+                    flexShrink: 0,
+                  }}
+                />
+                {partnerNames.length > 0 ? `連れ立ち合流中 (${partnerNames.length + 1}名)` : "友達の合流待ち"}
               </span>
               <span style={{ color: "#5C4E43" }}>
                 {partnerNames.length > 0
@@ -430,15 +469,19 @@ export default function MapPage({
                 background: "var(--primary-color)",
                 color: "#fff",
                 border: "none",
-                borderRadius: "14px",
-                padding: "4px 10px",
+                borderRadius: "8px",
+                padding: "5px 10px",
                 fontSize: "0.72rem",
                 fontWeight: 700,
                 cursor: "pointer",
-                whiteSpace: "nowrap"
+                whiteSpace: "nowrap",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
               }}
             >
-              📖 共有された印・写真 ({allSharedMemoriesList.length})
+              <IconBook size={13} color="#fff" />
+              共有された印・写真 ({allSharedMemoriesList.length})
             </button>
           </div>
         )}
@@ -463,10 +506,14 @@ export default function MapPage({
             fontWeight: "800",
             maxWidth: "92vw",
             textAlign: "center",
-            animation: "slideDownToast 0.4s ease-out"
+            animation: "slideDownToast 0.4s ease-out",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
           }}
         >
-          {toastMessage}
+          <IconSparkles size={15} color="var(--primary-color)" />
+          <span>{toastMessage}</span>
         </div>
       )}
       
@@ -530,8 +577,19 @@ export default function MapPage({
             >
               <X size={20} />
             </button>
-            <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#5C4E43", margin: "0 0 6px 0" }}>
-              📖 連れ立ち共有しるし帳
+            <h3
+              style={{
+                fontSize: "1.05rem",
+                fontWeight: 800,
+                color: "#5C4E43",
+                margin: "0 0 6px 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+              }}
+            >
+              <IconBook size={18} color="var(--primary-color)" />
+              連れ立ち共有しるし帳
             </h3>
             <p style={{ fontSize: "0.78rem", color: "#8A7E72", margin: "0 0 14px 0" }}>
               同行メンバー（{members.map((m) => m.displayName).join("、")}）が刻んだ印と写真・コメント
@@ -559,9 +617,18 @@ export default function MapPage({
                       </span>
                       <Link
                         href={`/routes/${rally.id}/spot/${spotId}${effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""}`}
-                        style={{ fontSize: "0.75rem", color: "#5C4E43", fontWeight: 700, textDecoration: "underline" }}
+                        style={{
+                          fontSize: "0.75rem",
+                          color: "#5C4E43",
+                          fontWeight: 700,
+                          textDecoration: "underline",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "3px",
+                        }}
                       >
-                        📍 {spotName}
+                        <IconMapPin size={12} color="var(--primary-color)" />
+                        {spotName}
                       </Link>
                     </div>
                     {memory.photoUrl && (
@@ -572,11 +639,34 @@ export default function MapPage({
                       />
                     )}
                     {memory.memo ? (
-                      <div style={{ fontSize: "0.85rem", color: "#5C4E43", background: "#FFFDF9", padding: "8px 10px", borderRadius: "8px" }}>
-                        💬 {memory.memo}
+                      <div
+                        style={{
+                          fontSize: "0.85rem",
+                          color: "#5C4E43",
+                          background: "#FFFDF9",
+                          padding: "8px 10px",
+                          borderRadius: "8px",
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "6px",
+                        }}
+                      >
+                        <IconPen size={14} color="#8A7E72" style={{ marginTop: "2px", flexShrink: 0 }} />
+                        <span>{memory.memo}</span>
                       </div>
                     ) : !memory.photoUrl ? (
-                      <div style={{ fontSize: "0.78rem", color: "#8A7E72" }}>💮 しるしを刻みました</div>
+                      <div
+                        style={{
+                          fontSize: "0.78rem",
+                          color: "#8A7E72",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
+                        }}
+                      >
+                        <IconStampSeal size={13} color="var(--primary-color)" />
+                        しるしを刻みました
+                      </div>
                     ) : null}
                   </div>
                 ))}
@@ -632,7 +722,21 @@ export default function MapPage({
               <X size={20} />
             </button>
 
-            <div style={{ fontSize: "2rem", marginBottom: "8px" }}>👥</div>
+            <div
+              style={{
+                width: "48px",
+                height: "48px",
+                borderRadius: "50%",
+                background: "rgba(199, 68, 46, 0.08)",
+                border: "1px solid rgba(199, 68, 46, 0.22)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "10px",
+              }}
+            >
+              <IconUsers size={24} color="var(--primary-color)" />
+            </div>
             <h3 style={{ fontSize: "1.1rem", fontWeight: "800", color: "#5C4E43", margin: "0 0 8px 0" }}>
               友達と連れ立ちで巡る
             </h3>
@@ -649,9 +753,14 @@ export default function MapPage({
                 borderRadius: "8px",
                 fontSize: "0.82rem",
                 fontWeight: 700,
-                marginBottom: "14px"
+                marginBottom: "14px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "5px",
               }}>
-                ✓ 現在合流中: {partnerNames.join("、")} さん
+                <Check size={14} strokeWidth={2.5} />
+                現在合流中: {partnerNames.join("、")} さん
               </div>
             )}
 
@@ -703,8 +812,19 @@ export default function MapPage({
             )}
 
             <div style={{ borderTop: "1px solid #EBE5D9", paddingTop: "14px", textAlign: "left" }}>
-              <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#5C4E43", marginBottom: "8px" }}>
-                🔑 友達から招待コードを受け取った場合:
+              <div
+                style={{
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  color: "#5C4E43",
+                  marginBottom: "8px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "5px",
+                }}
+              >
+                <KeyRound size={14} color="var(--primary-color)" />
+                友達から招待コードを受け取った場合:
               </div>
               <form onSubmit={handleJoinGroupFromModal} style={{ display: "flex", gap: "8px" }}>
                 <input

@@ -5,44 +5,49 @@ import Link from "next/link";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { Footprints, Map as MapIcon, Star, Users } from "lucide-react";
+import {
+  Map as MapIcon,
+  MapPin,
+  Navigation,
+  MessageSquare,
+  Users,
+  X,
+} from "lucide-react";
 import { getDistance } from "geolib";
 import { useAuth } from "@/context/AuthContext";
+import { getUserLocationPinMarkup } from "@/components/icons/ShuinIcons";
 import styles from "./page.module.css";
 
-// LeafletアイコンのNext.js用のバグ修正
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+// カスタムアイコン：現在地用（単色SVGピン）
+const UserLocationIcon = L.divIcon({
+  html: getUserLocationPinMarkup(),
+  className: "user-location-pin",
+  iconSize: [34, 34],
+  iconAnchor: [17, 17],
+  popupAnchor: [0, -16],
 });
 
-// カスタムアイコン：現在地用
-const UserLocationIcon = L.icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
-// カスタムアイコン：目的地ピン (🎯)
+// カスタムアイコン：目的地ピン（単色SVG）
 const ActiveSpotIcon = L.divIcon({
   html: `
     <div style="
       background-color: var(--primary-color, #C7442E); 
-      border: 3px solid white; 
+      border: 3px solid #FFFDF9; 
       width: 44px; height: 44px; 
       border-radius: 50%; 
       display: flex; justify-content: center; align-items: center; 
-      font-size: 20px; 
       box-shadow: 0 4px 12px rgba(199,68,46,0.4);
       position: relative;
       animation: pulseMarker 2s infinite ease-in-out;
     ">
-      🎯
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="4" />
+        <line x1="12" y1="2" x2="12" y2="5" />
+        <line x1="12" y1="19" x2="12" y2="22" />
+        <line x1="2" y1="12" x2="5" y2="12" />
+        <line x1="19" y1="12" x2="22" y2="12" />
+      </svg>
       <div style="
         position: absolute;
         bottom: -9px;
@@ -297,7 +302,10 @@ export default function RouteMapUI({
         {userPos && (
           <Marker position={userPos} icon={UserLocationIcon}>
             <Popup>
-              <div style={{ fontWeight: "700" }}>📍 あなたの現在地</div>
+              <div style={{ fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                <MapPin size={14} color="var(--primary-color)" />
+                あなたの現在地
+              </div>
             </Popup>
           </Marker>
         )}
@@ -373,7 +381,9 @@ export default function RouteMapUI({
               ">
                 ${member.users?.avatar_url 
                   ? `<img src="${member.users.avatar_url}" style="width: 100%; height: 100%; object-fit: cover;" />` 
-                  : `<span style="font-size: 14px; font-weight: bold; color: white;">${(member.users?.display_name || "👤").slice(0, 1)}</span>`}
+                  : member.users?.display_name
+                    ? `<span style="font-size: 13px; font-weight: bold; color: white;">${member.users.display_name.slice(0, 1)}</span>`
+                    : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`}
               </div>
             `,
             className: 'member-avatar-pin',
@@ -398,15 +408,16 @@ export default function RouteMapUI({
         <div className={"glass-card " + styles.infoOverlay}>
           <button 
             onClick={() => setSelectedSpot(null)}
+            aria-label="閉じる"
             style={{ 
               position: "absolute", top: "12px", right: "12px", 
-              background: "rgba(0,0,0,0.05)", border: "none", 
-              width: "24px", height: "24px", borderRadius: "50%", 
+              background: "rgba(0,0,0,0.06)", border: "none", 
+              width: "26px", height: "26px", borderRadius: "50%", 
               cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "12px", fontWeight: "bold"
+              color: "var(--text-color)"
             }}
           >
-            ✕
+            <X size={14} strokeWidth={2} />
           </button>
           
           <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
@@ -422,11 +433,16 @@ export default function RouteMapUI({
               <h3 style={{ margin: 0, fontSize: "1.1rem", fontWeight: "800", color: "var(--text-color)" }}>
                 {selectedSpot.name}
               </h3>
-              <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#666" }}>
-                {activeSpotId === selectedSpot.id 
-                  ? "🎯 現在の目的地です" 
-                  : "スポット詳細をピンから確認中"}
-                {distanceToSelected !== null && ` (${formatDistance(distanceToSelected)})`}
+              <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#666", display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}>
+                {activeSpotId === selectedSpot.id ? (
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", color: "var(--primary-color)", fontWeight: 700 }}>
+                    <Navigation size={13} strokeWidth={2} />
+                    現在の目的地です
+                  </span>
+                ) : (
+                  <span>スポット詳細をピンから確認中</span>
+                )}
+                {distanceToSelected !== null && <span>({formatDistance(distanceToSelected)})</span>}
               </p>
 
               <div style={{ marginTop: "12px" }}>
@@ -484,8 +500,9 @@ export default function RouteMapUI({
                               {name} {m.isMe ? "（あなた）" : "さん"}
                             </div>
                             {memo && (
-                              <div style={{ color: "#8A7E72", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                                💬 {memo}
+                              <div style={{ color: "#8A7E72", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: "4px" }}>
+                                <MessageSquare size={11} strokeWidth={1.75} style={{ flexShrink: 0 }} />
+                                <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{memo}</span>
                               </div>
                             )}
                           </div>
@@ -503,7 +520,22 @@ export default function RouteMapUI({
         <div className={"glass-card " + styles.infoOverlay} style={{ borderLeft: "4px solid var(--primary-color)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "16px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <span style={{ fontSize: "1.5rem" }}>🎯</span>
+              <div
+                style={{
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "10px",
+                  background: "rgba(199, 68, 46, 0.1)",
+                  border: "1px solid rgba(199, 68, 46, 0.24)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "var(--primary-color)",
+                  flexShrink: 0,
+                }}
+              >
+                <Navigation size={18} strokeWidth={2} />
+              </div>
               <div>
                 <div style={{ fontSize: "0.75rem", color: "#888", fontWeight: "600", letterSpacing: "0.5px" }}>現在の目的地</div>
                 <div style={{ fontSize: "1.05rem", fontWeight: "800", color: "var(--text-color)", marginTop: "2px" }}>{activeSpot.name}</div>

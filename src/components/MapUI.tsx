@@ -14,6 +14,7 @@ import {
   Bookmark,
   CheckCircle2,
   BookOpen,
+  LocateFixed,
   X,
 } from "lucide-react";
 import {
@@ -21,32 +22,28 @@ import {
   DiscoveryRoute,
   VisitedFootprint,
 } from "@/hooks/useDiscoveryMap";
-import { getCategoryStampUrl } from "@/utils/stampHelper";
+import {
+  CategoryShuinIcon,
+  getCategorySvgMarkup,
+  getStampSealSvgMarkup,
+  getUserLocationPinMarkup,
+} from "@/components/icons/ShuinIcons";
 
-// Fix standard marker icon issue in Leaflet with Next.js
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
-
-// カスタムアイコン（現在地用）
-const UserLocationIcon = L.icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+// カスタムアイコン（現在地用・単色SVGピン）
+const UserLocationIcon = L.divIcon({
+  html: getUserLocationPinMarkup(),
+  className: "user-location-pin",
+  iconSize: [34, 34],
+  iconAnchor: [17, 17],
+  popupAnchor: [0, -16],
 });
 
 // カスタムアイコン（カテゴリごとのルートピン＋進捗・踏破・保存バッジ）
 const getRoutePinIcon = (route: DiscoveryRoute) => {
-  const stampUrl = getCategoryStampUrl(route.category);
   const bgColor = "var(--primary-color)";
-
   const { stampedCount, totalCount, isCompleted, isInProgress } = route.progress;
+  const iconColor = isCompleted ? "#8C6A1D" : "var(--primary-color)";
+  const svgIcon = getCategorySvgMarkup(route.category, iconColor, 21, 1.9);
   let badgeHtml = "";
 
   if (isCompleted) {
@@ -118,7 +115,7 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
         box-shadow: 0 4px 10px rgba(0,0,0,0.18);
         position: relative;
       ">
-        <img src="${stampUrl}" alt="" style="width: 28px; height: 28px; object-fit: contain;" />
+        ${svgIcon}
         ${badgeHtml}
         <div style="
           position: absolute;
@@ -139,9 +136,13 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
   });
 };
 
-// カスタムアイコン（自分の足跡レイヤー用 SHUIN 印影ピン）
+// カスタムアイコン（自分の足跡レイヤー用 SHUIN 印影ピン・単色SVG）
 const getFootprintPinIcon = (fp: VisitedFootprint, isSelected: boolean) => {
-  const stampUrl = getCategoryStampUrl(fp.routeCategory);
+  const sealSvg = getStampSealSvgMarkup(
+    "var(--primary-color)",
+    isSelected ? 22 : 20,
+    1.95
+  );
   const visitBadge =
     fp.visitCount > 1
       ? `<div style="
@@ -176,7 +177,7 @@ const getFootprintPinIcon = (fp: VisitedFootprint, isSelected: boolean) => {
         transform: ${isSelected ? "scale(1.08)" : "rotate(-4deg)"};
         transition: transform 0.2s ease;
       ">
-        <img src="${stampUrl}" alt="" style="width: 30px; height: 30px; object-fit: contain;" />
+        ${sealSvg}
         ${visitBadge}
       </div>
     `,
@@ -693,12 +694,11 @@ export default function MapUI() {
           alignItems: "center",
           justifyContent: "center",
           color: "var(--primary-color)",
-          fontSize: "1.35rem",
           lineHeight: 1,
           transition: "bottom 0.25s ease",
         }}
       >
-        ◎
+        <LocateFixed size={19} strokeWidth={1.85} />
       </button>
 
       {/* ルート未選択時：近くのルート・おすすめルート横スクロールカルーセル */}
@@ -899,9 +899,12 @@ export default function MapUI() {
               cursor: "pointer",
               fontWeight: "bold",
               zIndex: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            ✕
+            <X size={15} />
           </button>
 
           <img
@@ -1205,10 +1208,11 @@ export default function MapUI() {
                 flexShrink: 0,
               }}
             >
-              <img
-                src={getCategoryStampUrl(selectedFootprint.routeCategory)}
-                alt={selectedFootprint.spotName}
-                style={{ width: "38px", height: "38px", objectFit: "contain" }}
+              <CategoryShuinIcon
+                category={selectedFootprint.routeCategory}
+                size={24}
+                color="var(--primary-color)"
+                strokeWidth={1.85}
               />
             </div>
             <div style={{ minWidth: 0, flex: 1, paddingRight: "20px" }}>

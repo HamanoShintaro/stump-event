@@ -423,25 +423,25 @@ export function useBadgesProgress(
         setLifelogRanks([
           computeLifelogRank(
             "total_shuin",
-            "🐾 街歩きの総印数",
+            "街歩きの総印数",
             "訪れたスポットに刻んだ累計のしるし",
             totalStamps
           ),
           computeLifelogRank(
             "tsuredachi",
-            "👥 連れ立ちの歩み",
+            "連れ立ちの歩み",
             "友人や家族と共に街を巡ったしるし",
             tsuredachiCount
           ),
           computeLifelogRank(
             "memory_weaver",
-            "🖋️ 記憶の紡ぎ手",
+            "記憶の紡ぎ手",
             "写真や思い出のあとがきを添えた記録",
             withMemoryCount
           ),
           computeLifelogRank(
             "revisit",
-            "🔄 なじみの再訪",
+            "なじみの再訪",
             "季節や日を変えて再び訪れた場所のしるし",
             revisitCount
           ),

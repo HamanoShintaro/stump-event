@@ -846,3 +846,189 @@ export function IconQrCode({
     />
   );
 }
+
+/** ルートカテゴリに応じた単色和風SVGアイコンコンポーネント */
+export function CategoryShuinIcon({
+  category,
+  size = 18,
+  color = "currentColor",
+  strokeWidth = 1.8,
+  className,
+  style,
+}: ShuinIconProps & { category?: string }) {
+  const normalized = (category || "").trim().normalize("NFC");
+  if (normalized === "食べたい" || normalized === "eat") {
+    return <IconTeacup size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "見たい" || normalized === "see") {
+    return <IconTown size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "体験したい" || normalized === "experience") {
+    return <IconLantern size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "集めたい" || normalized === "collect") {
+    return <IconStampSeal size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "推しに触れたい" || normalized === "fave") {
+    return <IconSakura size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "学びたい" || normalized === "learn") {
+    return <IconScroll size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "癒されたい" || normalized === "癒やされたい" || normalized === "heal") {
+    return <IconLeaf size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "達成したい" || normalized === "achieve") {
+    return <IconOmikuji size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  if (normalized === "人と過ごしたい" || normalized === "social") {
+    return <IconUsers size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+  }
+  return <IconTorii size={size} color={color} strokeWidth={strokeWidth} className={className} style={style} />;
+}
+
+/** Leaflet L.divIcon 用のカテゴリ別単色SVGマークアップ文字列 */
+export function getCategorySvgMarkup(
+  category?: string,
+  color = "var(--primary-color)",
+  size = 21,
+  strokeWidth = 1.9
+): string {
+  const normalized = (category || "").trim().normalize("NFC");
+  let paths = "";
+
+  if (normalized === "食べたい" || normalized === "eat") {
+    paths = `
+      <path d="M6 9h12v5a6 6 0 0 1-12 0V9Z" />
+      <path d="M9 19h6" />
+      <path d="M4 21h16" />
+      <path d="M10 4c0 1.2-1 1.8-1 3" />
+      <path d="M14 4c0 1.2-1 1.8-1 3" />
+    `;
+  } else if (normalized === "見たい" || normalized === "see") {
+    paths = `
+      <path d="M3 10l9-6 9 6" />
+      <path d="M5 9.5V20h14V9.5" />
+      <path d="M9 14h6v6H9v-6Z" />
+      <path d="M3 20h18" />
+    `;
+  } else if (normalized === "体験したい" || normalized === "experience") {
+    paths = `
+      <path d="M9 3h6" />
+      <path d="M12 3v2" />
+      <rect x="6" y="5" width="12" height="13" rx="5" />
+      <path d="M6.5 9.5h11" />
+      <path d="M6.5 13.5h11" />
+      <path d="M9 18h6" />
+      <path d="M12 18v3" />
+    `;
+  } else if (normalized === "集めたい" || normalized === "collect") {
+    paths = `
+      <rect x="4" y="4" width="16" height="16" rx="3" />
+      <rect x="7" y="7" width="10" height="10" rx="1.5" />
+      <path d="M12 9.5v5" />
+      <path d="M9.5 12h5" />
+    `;
+  } else if (normalized === "推しに触れたい" || normalized === "fave") {
+    paths = `
+      <circle cx="12" cy="12" r="2.2" />
+      <path d="M12 3c1.8 1.5 2.5 3.6 1.5 5.5M12 3c-1.8 1.5-2.5 3.6-1.5 5.5" />
+      <path d="M20.5 9.2c-1 2.1-2.8 3.4-4.9 3.1M20.5 9.2c-2.1-.9-4.3-.4-5.6 1.2" />
+      <path d="M17.3 19.2c-2.2-.3-4-1.6-4.4-3.7M17.3 19.2c.2-2.2-.9-4.2-2.8-5" />
+      <path d="M6.7 19.2c-.2-2.2.9-4.2 2.8-5M6.7 19.2c2.2-.3 4-1.6 4.4-3.7" />
+      <path d="M3.5 9.2c2.1-.9 4.3-.4 5.6 1.2M3.5 9.2c1 2.1 2.8 3.4 4.9 3.1" />
+    `;
+  } else if (normalized === "学びたい" || normalized === "learn") {
+    paths = `
+      <path d="M6 4h11a2 2 0 0 1 2 2v11a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2Z" />
+      <path d="M9 9h6" />
+      <path d="M9 13h6" />
+      <path d="M9 17h4" />
+    `;
+  } else if (normalized === "癒されたい" || normalized === "癒やされたい" || normalized === "heal") {
+    paths = `
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    `;
+  } else if (normalized === "達成したい" || normalized === "achieve") {
+    paths = `
+      <path d="M8 3h8l3 3.5V21H5V6.5L8 3Z" />
+      <circle cx="12" cy="7" r="1" />
+      <path d="M12 10.5v6.5" />
+      <path d="M9 13h6" />
+    `;
+  } else if (normalized === "人と過ごしたい" || normalized === "social") {
+    paths = `
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    `;
+  } else {
+    paths = `
+      <path d="M3 5c3 1.2 15 1.2 18 0" />
+      <path d="M4 9h16" />
+      <path d="M7 5.5V20" />
+      <path d="M17 5.5V20" />
+      <path d="M12 5.8V9" />
+      <path d="M5.5 20h3" />
+      <path d="M15.5 20h3" />
+    `;
+  }
+
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;">${paths}</svg>`;
+}
+
+/** Leaflet L.divIcon 用の朱印（落款）単色SVGマークアップ文字列 */
+export function getStampSealSvgMarkup(
+  color = "var(--primary-color)",
+  size = 21,
+  strokeWidth = 1.9
+): string {
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;">
+    <rect x="4" y="4" width="16" height="16" rx="3" />
+    <rect x="7" y="7" width="10" height="10" rx="1.5" />
+    <path d="M12 9.5v5" />
+    <path d="M9.5 12h5" />
+  </svg>`;
+}
+
+/** Leaflet L.divIcon 用の現在地ピンSVGマークアップ文字列（外部3D PNG画像の代替） */
+export function getUserLocationPinMarkup(): string {
+  return `
+    <div style="
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    ">
+      <div style="
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(199, 68, 46, 0.2);
+        border: 1.5px solid rgba(199, 68, 46, 0.4);
+      "></div>
+      <div style="
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #2C2520;
+        border: 2.5px solid #FFFDF9;
+        box-shadow: 0 2px 8px rgba(44, 37, 32, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+      ">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFDF9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="var(--primary-color)" stroke="#FFFDF9" stroke-width="2" />
+        </svg>
+      </div>
+    </div>
+  `;
+}
