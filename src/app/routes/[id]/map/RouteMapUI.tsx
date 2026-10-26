@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -11,10 +11,17 @@ import {
   Navigation,
   MessageSquare,
   Users,
+  LocateFixed,
+  Maximize2,
   X,
 } from "lucide-react";
 import { getDistance } from "geolib";
 import { useAuth } from "@/context/AuthContext";
+import {
+  useRouteMap,
+  RouteSpot,
+  RouteMapViewportAction,
+} from "@/hooks/useRouteMap";
 import { getUserLocationPinMarkup } from "@/components/icons/ShuinIcons";
 import styles from "./page.module.css";
 
@@ -61,26 +68,39 @@ const ActiveSpotIcon = L.divIcon({
       "></div>
     </div>
   `,
-  className: 'active-spot-pin',
+  className: "active-spot-pin",
   iconSize: [44, 52],
-  iconAnchor: [22, 52]
+  iconAnchor: [22, 52],
 });
 
-// カスタムアイコン：通常のスポットピン (順番番号)
-const getNumberIcon = (index: number) => {
+// カスタムアイコン：通常のスポットピン (順番番号 / 選択中ハイライト対応)
+const getNumberIcon = (index: number, isSelected = false) => {
+  const borderColor = isSelected
+    ? "var(--primary-color, #C7442E)"
+    : "var(--secondary-color, #111111)";
+  const bgColor = isSelected ? "var(--primary-color, #C7442E)" : "#FFFFFF";
+  const textColor = isSelected ? "#FFFDF9" : "var(--secondary-color, #111111)";
+  const size = isSelected ? 42 : 36;
+  const height = isSelected ? 50 : 43;
+
   return L.divIcon({
     html: `
       <div style="
-        background-color: white; 
-        border: 3px solid var(--secondary-color, #111111); 
-        width: 36px; height: 36px; 
+        background-color: ${bgColor}; 
+        border: 3px solid ${isSelected ? "#FFFDF9" : borderColor}; 
+        width: ${size}px; height: ${size}px; 
         border-radius: 50%; 
         display: flex; justify-content: center; align-items: center; 
-        font-size: 14px; 
+        font-size: ${isSelected ? "15px" : "14px"}; 
         font-weight: 800;
-        color: var(--secondary-color, #111111);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        color: ${textColor};
+        box-shadow: ${
+          isSelected
+            ? "0 4px 14px rgba(199,68,46,0.45)"
+            : "0 4px 8px rgba(0,0,0,0.15)"
+        };
         position: relative;
+        transition: all 0.2s ease;
       ">
         ${index}
         <div style="
@@ -92,13 +112,13 @@ const getNumberIcon = (index: number) => {
           height: 0;
           border-left: 5px solid transparent;
           border-right: 5px solid transparent;
-          border-top: 7px solid var(--secondary-color, #111111);
+          border-top: 7px solid ${borderColor};
         "></div>
       </div>
     `,
-    className: 'spot-number-pin',
-    iconSize: [36, 43],
-    iconAnchor: [18, 43]
+    className: "spot-number-pin",
+    iconSize: [size, height],
+    iconAnchor: [size / 2, height],
   });
 };
 
@@ -123,90 +143,64 @@ const getArrowIcon = (angle: number) => {
         </svg>
       </div>
     `,
-    className: 'nav-arrow-icon',
+    className: "nav-arrow-icon",
     iconSize: [36, 36],
-    iconAnchor: [18, 18]
+    iconAnchor: [18, 18],
   });
 };
 
-// 現在地が特定された際、マップをそこへセンタリングするコンポーネント
-function MapController({ center, bounds }: { center: [number, number] | null; bounds: L.LatLngBounds | null }) {
+/**
+ * マップのカメラ（縮尺・中心）制御コンポーネント
+ *
+ * 責務の切り分け：
+ * 1. 「デフォルトの縮尺に戻る（overview）」:
+ *    - 初回表示時、およびユーザーが「ルート全体」ボタンを押した時のみ実行。
+ *    - GPSの微小な変動やピンクリック時の再レンダリングでは絶対に発火させない。
+ * 2. 「自動で寄る（focus-spot / focus-user）」:
+ *    - スポットピンをクリックした時は、そのスポットへフォーカス（現在ズームが浅ければ17へ寄る、既に拡大中ならその倍率を維持して中心移動）。
+ *    - 「現在地」ボタンを押した時は現在地へ寄る（zoom 16）。
+ */
+function RouteMapViewportController({
+  spots,
+  activeSpot,
+  userPos,
+  defaultCenter,
+  viewportAction,
+}: {
+  spots: RouteSpot[];
+  activeSpot: RouteSpot | null;
+  userPos: [number, number] | null;
+  defaultCenter: [number, number];
+  viewportAction: RouteMapViewportAction;
+}) {
   const map = useMap();
-  useEffect(() => {
-    if (bounds) {
-      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15, animate: true, duration: 1.2 });
-    } else if (center) {
-      map.setView(center, 14, { animate: true });
+  const initializedRef = useRef(false);
+  const lastActionIdRef = useRef<number>(-1);
+
+  const fitRouteOverview = (animate: boolean) => {
+    if (spots.length === 0) return;
+
+    if (activeSpot && userPos) {
+      const dist = getDistance(
+        { latitude: userPos[0], longitude: userPos[1] },
+        { latitude: activeSpot.lat, longitude: activeSpot.lng }
+      );
+      if (dist <= 3000) {
+        const bounds = L.latLngBounds([
+          L.latLng(userPos[0], userPos[1]),
+          L.latLng(activeSpot.lat, activeSpot.lng),
+        ]);
+        map.fitBounds(bounds, {
+          padding: [60, 60],
+          maxZoom: 16,
+          animate,
+          duration: animate ? 0.9 : 0,
+        });
+        return;
+      }
     }
-  }, [center, bounds, map]);
-  return null;
-}
 
-interface Spot {
-  id: string;
-  name: string;
-  description: string;
-  image_url?: string;
-  lat: number;
-  lng: number;
-}
-
-interface RouteMapUIProps {
-  rally: any;
-  spots: Spot[];
-  activeSpotId: string | null;
-  groupId: string | null;
-  groupMembers?: any[];
-  memberLatestStamps?: Record<string, string>;
-  spotAcquiredMembers?: Record<string, any[]>;
-  sharedMemoriesBySpot?: Record<string, any[]>;
-}
-
-export default function RouteMapUI({ 
-  rally, 
-  spots, 
-  activeSpotId, 
-  groupId, 
-  groupMembers = [], 
-  memberLatestStamps = {}, 
-  spotAcquiredMembers = {},
-  sharedMemoriesBySpot = {}
-}: RouteMapUIProps) {
-  const { user } = useAuth();
-  const [userPos, setUserPos] = useState<[number, number] | null>(null);
-  const [selectedSpot, setSelectedSpot] = useState<Spot | null>(null);
-
-  useEffect(() => {
-    if (!navigator.geolocation) return;
-
-    const watchId = navigator.geolocation.watchPosition(
-      (pos) => setUserPos([pos.coords.latitude, pos.coords.longitude]),
-      (err) => console.log("User location access denied or failed", err),
-      { enableHighAccuracy: true, maximumAge: 10000, timeout: 5000 }
-    );
-
-    return () => {
-      navigator.geolocation.clearWatch(watchId);
-    };
-  }, []);
-
-  const defaultCenter: [number, number] = spots.length > 0 
-    ? [spots.reduce((sum, s) => sum + s.lat, 0) / spots.length, spots.reduce((sum, s) => sum + s.lng, 0) / spots.length] 
-    : [35.6812, 139.7671];
-
-  // 地図の初期境界 (Bounds) を算出
-  let mapBounds: L.LatLngBounds | null = null;
-  const activeSpot = spots.find(s => s.id === activeSpotId);
-
-  if (activeSpot && userPos) {
-    // 行き先（目的地）が設定され、現在地も取得できている場合は、その2点にフォーカス
-    mapBounds = L.latLngBounds([
-      L.latLng(userPos[0], userPos[1]),
-      L.latLng(activeSpot.lat, activeSpot.lng)
-    ]);
-  } else if (spots.length > 0) {
-    // 通常時または参加前プレビュー時はルート全体のピンを含む境界にする（現在地が2.5km以内の場合のみ現在地も含める）
-    const latLngs = spots.map(s => L.latLng(s.lat, s.lng));
+    const latLngs = spots.map((s) => L.latLng(s.lat, s.lng));
     if (userPos) {
       const distFromRouteCenter = getDistance(
         { latitude: userPos[0], longitude: userPos[1] },
@@ -216,48 +210,91 @@ export default function RouteMapUI({
         latLngs.push(L.latLng(userPos[0], userPos[1]));
       }
     }
-    mapBounds = L.latLngBounds(latLngs);
-  }
+    const bounds = L.latLngBounds(latLngs);
+    map.fitBounds(bounds, {
+      padding: [55, 55],
+      maxZoom: 16,
+      animate,
+      duration: animate ? 0.9 : 0,
+    });
+  };
 
-  const trajectoryPath = spots.map(s => [s.lat, s.lng] as [number, number]);
+  // 初回マウント時（spots読み込み完了時）に1回だけルート全体を表示
+  useEffect(() => {
+    if (!initializedRef.current && spots.length > 0) {
+      fitRouteOverview(false);
+      initializedRef.current = true;
+      lastActionIdRef.current = viewportAction.id;
+    }
+  }, [spots]);
 
-  // 現在地から目的地への角度（方位）と中間地点を計算
-  let navLinePath: [number, number][] = [];
-  let navArrowPos: [number, number] | null = null;
-  let navArrowAngle = 0;
+  // ユーザーの明示アクション（ピンタップ / ルート全体ボタン / 現在地ボタン）時のみカメラを動かす
+  useEffect(() => {
+    if (!initializedRef.current) return;
+    if (viewportAction.id === lastActionIdRef.current) return;
+    lastActionIdRef.current = viewportAction.id;
 
-  if (userPos && activeSpot) {
-    navLinePath = [userPos, [activeSpot.lat, activeSpot.lng]];
-    
-    // 現在地と目的地の緯度・経度の中間地点
-    navArrowPos = [
-      (userPos[0] + activeSpot.lat) / 2,
-      (userPos[1] + activeSpot.lng) / 2
-    ];
-    
-    // 方位角の計算
-    const dy = activeSpot.lat - userPos[0];
-    const dx = activeSpot.lng - userPos[1];
-    navArrowAngle = Math.atan2(dx, dy) * (180 / Math.PI);
-  }
+    if (viewportAction.type === "overview") {
+      fitRouteOverview(true);
+    } else if (viewportAction.type === "focus-spot") {
+      const { spot } = viewportAction;
+      // 既に詳しく拡大して見ている場合（zoom 17以上）はその倍率を維持し、全体表示など浅い場合は zoom 17 まで寄る
+      const targetZoom = Math.max(map.getZoom(), 17);
+      map.flyTo([spot.lat, spot.lng], targetZoom, {
+        animate: true,
+        duration: 0.65,
+      });
+    } else if (viewportAction.type === "focus-user" && userPos) {
+      const targetZoom = Math.max(map.getZoom(), 16);
+      map.flyTo(userPos, targetZoom, {
+        animate: true,
+        duration: 0.75,
+      });
+    }
+  }, [viewportAction, map, userPos]);
 
-  // 目的地までの距離を計算
-  let distanceToActive: number | null = null;
-  if (userPos && activeSpot) {
-    distanceToActive = getDistance(
-      { latitude: userPos[0], longitude: userPos[1] },
-      { latitude: activeSpot.lat, longitude: activeSpot.lng }
-    );
-  }
+  return null;
+}
 
-  // 選択したスポットまでの距離を計算
-  let distanceToSelected: number | null = null;
-  if (userPos && selectedSpot) {
-    distanceToSelected = getDistance(
-      { latitude: userPos[0], longitude: userPos[1] },
-      { latitude: selectedSpot.lat, longitude: selectedSpot.lng }
-    );
-  }
+interface RouteMapUIProps {
+  rally: any;
+  spots: RouteSpot[];
+  activeSpotId: string | null;
+  groupId: string | null;
+  groupMembers?: any[];
+  memberLatestStamps?: Record<string, string>;
+  spotAcquiredMembers?: Record<string, any[]>;
+  sharedMemoriesBySpot?: Record<string, any[]>;
+}
+
+export default function RouteMapUI({
+  rally,
+  spots,
+  activeSpotId,
+  groupId,
+  groupMembers = [],
+  memberLatestStamps = {},
+  spotAcquiredMembers = {},
+  sharedMemoriesBySpot = {},
+}: RouteMapUIProps) {
+  const { user } = useAuth();
+  const {
+    userPos,
+    defaultCenter,
+    activeSpot,
+    selectedSpot,
+    viewportAction,
+    selectAndFocusSpot,
+    clearSelectedSpot,
+    resetToRouteOverview,
+    focusOnUserLocation,
+    trajectoryPath,
+    navLinePath,
+    navArrowPos,
+    navArrowAngle,
+    distanceToActive,
+    distanceToSelected,
+  } = useRouteMap({ spots, activeSpotId });
 
   const formatDistance = (meters: number) => {
     if (meters >= 1000) {
@@ -291,9 +328,9 @@ export default function RouteMapUI({
       `}</style>
 
       {/* 地図コンテナ */}
-      <MapContainer 
-        center={defaultCenter} 
-        zoom={14} 
+      <MapContainer
+        center={defaultCenter}
+        zoom={14}
         style={{ width: "100%", height: "100%", zIndex: 1 }}
         zoomControl={false}
       >
@@ -302,13 +339,26 @@ export default function RouteMapUI({
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <MapController center={userPos} bounds={mapBounds} />
+        <RouteMapViewportController
+          spots={spots}
+          activeSpot={activeSpot}
+          userPos={userPos}
+          defaultCenter={defaultCenter}
+          viewportAction={viewportAction}
+        />
 
         {/* ユーザー現在地 */}
         {userPos && (
           <Marker position={userPos} icon={UserLocationIcon}>
             <Popup>
-              <div style={{ fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+              <div
+                style={{
+                  fontWeight: "700",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "4px",
+                }}
+              >
                 <MapPin size={14} color="var(--primary-color)" />
                 あなたの現在地
               </div>
@@ -318,10 +368,10 @@ export default function RouteMapUI({
 
         {/* スポット同士を繋ぐ軌跡ライン */}
         {trajectoryPath.length > 1 && (
-          <Polyline 
-            positions={trajectoryPath} 
-            color="var(--primary-color, #C7442E)" 
-            weight={4} 
+          <Polyline
+            positions={trajectoryPath}
+            color="var(--primary-color, #C7442E)"
+            weight={4}
             opacity={0.7}
             className="animated-polyline"
           />
@@ -330,201 +380,413 @@ export default function RouteMapUI({
         {/* 現在地から目的地へのナビゲーションライン ＆ 向きを示す矢印マーカー */}
         {navLinePath.length > 0 && navArrowPos && (
           <>
-            <Polyline 
-              positions={navLinePath} 
-              color="var(--primary-color, #C7442E)" 
-              weight={3} 
+            <Polyline
+              positions={navLinePath}
+              color="var(--primary-color, #C7442E)"
+              weight={3}
               opacity={0.85}
               dashArray="6, 8"
             />
-            <Marker 
-              position={navArrowPos} 
+            <Marker
+              position={navArrowPos}
               icon={getArrowIcon(navArrowAngle)}
               interactive={false}
             />
           </>
         )}
 
-        {/* 各スポットのピン */}
+        {/* 各スポットのピン（タップ時にそのスポットへ自動で寄る。標準Popupは出して画面が二重にならないよう整理） */}
         {spots.map((spot, index) => {
           const isActive = spot.id === activeSpotId;
+          const isSelected = selectedSpot?.id === spot.id;
           return (
-            <Marker 
-              key={spot.id} 
-              position={[spot.lat, spot.lng]} 
-              icon={isActive ? ActiveSpotIcon : getNumberIcon(index + 1)}
+            <Marker
+              key={spot.id}
+              position={[spot.lat, spot.lng]}
+              icon={isActive ? ActiveSpotIcon : getNumberIcon(index + 1, isSelected)}
+              zIndexOffset={isSelected ? 900 : isActive ? 600 : 0}
               eventHandlers={{
-                click: () => setSelectedSpot(spot)
+                click: () => selectAndFocusSpot(spot),
               }}
-            >
-              <Popup>
-                <div style={{ fontWeight: "700" }}>{spot.name}</div>
-              </Popup>
-            </Marker>
+            />
           );
         })}
 
         {/* 同行メンバーのアバターマーカー */}
-        {groupId && Object.entries(memberLatestStamps).map(([memberId, spotId]) => {
-          const member = groupMembers.find(m => m.user_id === memberId);
-          const spot = spots.find(s => s.id === spotId);
-          if (!spot || !member || memberId === user?.id) return null;
-          
-          // 重なりを避けるため経緯度を少しずらす
-          const memberLat = spot.lat + 0.00015;
-          const memberLng = spot.lng + 0.00015;
-          
-          const memberIcon = L.divIcon({
-            html: `
-              <div style="
-                background-color: var(--accent-color, #C9A84C); 
-                border: 2px solid white; 
-                width: 32px; height: 32px; 
-                border-radius: 50%; 
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-                display: flex; justify-content: center; align-items: center;
-              ">
-                ${member.users?.avatar_url 
-                  ? `<img src="${member.users.avatar_url}" style="width: 100%; height: 100%; object-fit: cover;" />` 
-                  : member.users?.display_name
-                    ? `<span style="font-size: 13px; font-weight: bold; color: white;">${member.users.display_name.slice(0, 1)}</span>`
-                    : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`}
-              </div>
-            `,
-            className: 'member-avatar-pin',
-            iconSize: [32, 32],
-            iconAnchor: [16, 16]
-          });
-          
-          return (
-            <Marker key={memberId} position={[memberLat, memberLng]} icon={memberIcon}>
-              <Popup>
-                <div style={{ fontWeight: "700", fontSize: "0.85rem" }}>
-                  {member.users?.display_name || "同行メンバー"}
+        {groupId &&
+          Object.entries(memberLatestStamps).map(([memberId, spotId]) => {
+            const member = groupMembers.find((m) => m.user_id === memberId);
+            const spot = spots.find((s) => s.id === spotId);
+            if (!spot || !member || memberId === user?.id) return null;
+
+            // 重なりを避けるため経緯度を少しずらす
+            const memberLat = spot.lat + 0.00015;
+            const memberLng = spot.lng + 0.00015;
+
+            const memberIcon = L.divIcon({
+              html: `
+                <div style="
+                  background-color: var(--accent-color, #C9A84C); 
+                  border: 2px solid white; 
+                  width: 32px; height: 32px; 
+                  border-radius: 50%; 
+                  overflow: hidden;
+                  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                  display: flex; justify-content: center; align-items: center;
+                ">
+                  ${
+                    member.users?.avatar_url
+                      ? `<img src="${member.users.avatar_url}" style="width: 100%; height: 100%; object-fit: cover;" />`
+                      : member.users?.display_name
+                        ? `<span style="font-size: 13px; font-weight: bold; color: white;">${member.users.display_name.slice(0, 1)}</span>`
+                        : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`
+                  }
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "#8A7E72" }}>「{spot.name}」に滞在中</div>
-              </Popup>
-            </Marker>
-          );
-        })}
+              `,
+              className: "member-avatar-pin",
+              iconSize: [32, 32],
+              iconAnchor: [16, 16],
+            });
+
+            return (
+              <Marker
+                key={memberId}
+                position={[memberLat, memberLng]}
+                icon={memberIcon}
+              >
+                <Popup>
+                  <div style={{ fontWeight: "700", fontSize: "0.85rem" }}>
+                    {member.users?.display_name || "同行メンバー"}
+                  </div>
+                  <div style={{ fontSize: "0.75rem", color: "#8A7E72" }}>
+                    「{spot.name}」に滞在中
+                  </div>
+                </Popup>
+              </Marker>
+            );
+          })}
       </MapContainer>
+
+      {/* 右側フローティング視点切り替えボタン群（ルート全体に戻す ／ 現在地へ戻る） */}
+      <div
+        style={{
+          position: "absolute",
+          right: "16px",
+          bottom: selectedSpot ? "205px" : "108px",
+          zIndex: 10,
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          alignItems: "flex-end",
+          transition: "bottom 0.25s ease",
+        }}
+      >
+        <button
+          type="button"
+          onClick={resetToRouteOverview}
+          title="ルート全体の縮尺・中央に戻す"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px",
+            padding: "9px 13px",
+            borderRadius: "999px",
+            background: "rgba(255, 253, 249, 0.96)",
+            backdropFilter: "blur(8px)",
+            border: "1.5px solid #EBE5D9",
+            boxShadow: "0 4px 12px rgba(44, 37, 32, 0.14)",
+            color: "var(--text-color)",
+            fontSize: "0.78rem",
+            fontWeight: 800,
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <Maximize2 size={14} color="var(--primary-color)" strokeWidth={2} />
+          ルート全体
+        </button>
+
+        {userPos && (
+          <button
+            type="button"
+            onClick={focusOnUserLocation}
+            title="現在地へ移動"
+            aria-label="現在地へ移動"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "9px 13px",
+              borderRadius: "999px",
+              background: "rgba(255, 253, 249, 0.96)",
+              backdropFilter: "blur(8px)",
+              border: "1.5px solid #EBE5D9",
+              boxShadow: "0 4px 12px rgba(44, 37, 32, 0.14)",
+              color: "var(--text-color)",
+              fontSize: "0.78rem",
+              fontWeight: 800,
+              cursor: "pointer",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <LocateFixed size={15} color="var(--primary-color)" strokeWidth={2} />
+            現在地
+          </button>
+        )}
+      </div>
 
       {selectedSpot ? (
         <div className={"glass-card " + styles.infoOverlay}>
-          <button 
-            onClick={() => setSelectedSpot(null)}
+          <button
+            onClick={clearSelectedSpot}
             aria-label="閉じる"
-            style={{ 
-              position: "absolute", top: "12px", right: "12px", 
-              background: "rgba(0,0,0,0.06)", border: "none", 
-              width: "26px", height: "26px", borderRadius: "50%", 
-              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-              color: "var(--text-color)"
+            style={{
+              position: "absolute",
+              top: "12px",
+              right: "12px",
+              background: "rgba(0,0,0,0.06)",
+              border: "none",
+              width: "26px",
+              height: "26px",
+              borderRadius: "50%",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "var(--text-color)",
             }}
           >
             <X size={14} strokeWidth={2} />
           </button>
-          
+
           <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
             {selectedSpot.image_url && (
-              <div style={{
-                width: "80px", height: "80px", borderRadius: "12px",
-                backgroundImage: `url(${selectedSpot.image_url})`,
-                backgroundSize: "cover", backgroundPosition: "center",
-                flexShrink: 0
-              }} />
+              <div
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "12px",
+                  backgroundImage: `url(${selectedSpot.image_url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  flexShrink: 0,
+                }}
+              />
             )}
-            <div>
-              <h3 style={{ margin: 0, fontSize: "1.1rem", fontWeight: "800", color: "var(--text-color)" }}>
+            <div style={{ flex: 1, minWidth: 0, paddingRight: "18px" }}>
+              <h3
+                style={{
+                  margin: 0,
+                  fontSize: "1.05rem",
+                  fontWeight: "800",
+                  color: "var(--text-color)",
+                }}
+              >
                 {selectedSpot.name}
               </h3>
-              <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#666", display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}>
+              <p
+                style={{
+                  margin: "4px 0 0",
+                  fontSize: "0.82rem",
+                  color: "#666",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "5px",
+                  flexWrap: "wrap",
+                }}
+              >
                 {activeSpotId === selectedSpot.id ? (
-                  <span style={{ display: "inline-flex", alignItems: "center", gap: "4px", color: "var(--primary-color)", fontWeight: 700 }}>
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "4px",
+                      color: "var(--primary-color)",
+                      fontWeight: 700,
+                    }}
+                  >
                     <Navigation size={13} strokeWidth={2} />
                     現在の目的地です
                   </span>
                 ) : (
-                  <span>スポット詳細をピンから確認中</span>
+                  <span>スポットにフォーカス中</span>
                 )}
-                {distanceToSelected !== null && <span>({formatDistance(distanceToSelected)})</span>}
+                {distanceToSelected !== null && (
+                  <span>({formatDistance(distanceToSelected)})</span>
+                )}
               </p>
 
-              <div style={{ marginTop: "12px" }}>
-                <Link 
+              <div
+                style={{
+                  marginTop: "12px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link
                   href={`/routes/${rally.id}/spot/${selectedSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
                   className="btn-primary"
-                  style={{ 
-                    display: "inline-flex", 
-                    alignItems: "center", 
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
                     gap: "6px",
                     padding: "8px 16px",
                     fontSize: "0.85rem",
                     textDecoration: "none",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
                   }}
                 >
-                  {activeSpotId === selectedSpot.id ? "しるしを刻む" : "スポット詳細 / 押印へ"}
+                  {activeSpotId === selectedSpot.id
+                    ? "しるしを刻む"
+                    : "スポット詳細 / 押印へ"}
                 </Link>
+                <button
+                  type="button"
+                  onClick={resetToRouteOverview}
+                  className="btn-secondary"
+                  style={{
+                    padding: "7px 12px",
+                    fontSize: "0.78rem",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}
+                >
+                  <Maximize2 size={12} strokeWidth={2} />
+                  全体表示に戻す
+                </button>
               </div>
 
               {/* しるしを獲得したメンバー＆共有された写真・コメント一覧 */}
-              {groupId && spotAcquiredMembers[selectedSpot.id] && spotAcquiredMembers[selectedSpot.id].length > 0 && (
-                <div style={{ marginTop: "12px", borderTop: "1px solid #EBE5D9", paddingTop: "8px" }}>
-                  <div style={{ fontSize: "0.7rem", color: "#A39687", fontWeight: "bold", marginBottom: "6px", display: "flex", alignItems: "center", gap: "4px" }}>
-                    <Users size={12} color="var(--primary-color)" /> しるしを刻んだメンバー ({spotAcquiredMembers[selectedSpot.id].length}名)
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-                    {(sharedMemoriesBySpot[selectedSpot.id] || spotAcquiredMembers[selectedSpot.id]).map((m: any) => {
-                      const name = m.displayName || m.display_name || "同行メンバー";
-                      const photo = m.photoUrl || m.photo_url;
-                      const memo = m.memo;
-                      return (
-                        <div
-                          key={m.userId || m.id}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px",
-                            background: "#FAF6EE",
-                            padding: "5px 8px",
-                            borderRadius: "8px",
-                            border: "1px solid #EBE5D9",
-                            fontSize: "0.75rem"
-                          }}
-                        >
-                          {photo && (
-                            <img
-                              src={photo}
-                              alt=""
-                              style={{ width: "32px", height: "32px", borderRadius: "6px", objectFit: "cover", flexShrink: 0 }}
-                            />
-                          )}
-                          <div style={{ flex: 1, minWidth: 0 }}>
-                            <div style={{ fontWeight: 700, color: "#5C4E43" }}>
-                              {name} {m.isMe ? "（あなた）" : "さん"}
-                            </div>
-                            {memo && (
-                              <div style={{ color: "#8A7E72", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", display: "flex", alignItems: "center", gap: "4px" }}>
-                                <MessageSquare size={11} strokeWidth={1.75} style={{ flexShrink: 0 }} />
-                                <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{memo}</span>
-                              </div>
+              {groupId &&
+                spotAcquiredMembers[selectedSpot.id] &&
+                spotAcquiredMembers[selectedSpot.id].length > 0 && (
+                  <div
+                    style={{
+                      marginTop: "12px",
+                      borderTop: "1px solid #EBE5D9",
+                      paddingTop: "8px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: "0.7rem",
+                        color: "#A39687",
+                        fontWeight: "bold",
+                        marginBottom: "6px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                      }}
+                    >
+                      <Users size={12} color="var(--primary-color)" />{" "}
+                      しるしを刻んだメンバー (
+                      {spotAcquiredMembers[selectedSpot.id].length}名)
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "6px",
+                      }}
+                    >
+                      {(
+                        sharedMemoriesBySpot[selectedSpot.id] ||
+                        spotAcquiredMembers[selectedSpot.id]
+                      ).map((m: any) => {
+                        const name =
+                          m.displayName || m.display_name || "同行メンバー";
+                        const photo = m.photoUrl || m.photo_url;
+                        const memo = m.memo;
+                        return (
+                          <div
+                            key={m.userId || m.id}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "8px",
+                              background: "#FAF6EE",
+                              padding: "5px 8px",
+                              borderRadius: "8px",
+                              border: "1px solid #EBE5D9",
+                              fontSize: "0.75rem",
+                            }}
+                          >
+                            {photo && (
+                              <img
+                                src={photo}
+                                alt=""
+                                style={{
+                                  width: "32px",
+                                  height: "32px",
+                                  borderRadius: "6px",
+                                  objectFit: "cover",
+                                  flexShrink: 0,
+                                }}
+                              />
                             )}
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div style={{ fontWeight: 700, color: "#5C4E43" }}>
+                                {name} {m.isMe ? "（あなた）" : "さん"}
+                              </div>
+                              {memo && (
+                                <div
+                                  style={{
+                                    color: "#8A7E72",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "4px",
+                                  }}
+                                >
+                                  <MessageSquare
+                                    size={11}
+                                    strokeWidth={1.75}
+                                    style={{ flexShrink: 0 }}
+                                  />
+                                  <span
+                                    style={{
+                                      overflow: "hidden",
+                                      textOverflow: "ellipsis",
+                                    }}
+                                  >
+                                    {memo}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </div>
         </div>
       ) : activeSpot ? (
-        /* 目的地が設定されている場合のデフォルトナビ表示 */
-        <div className={"glass-card " + styles.infoOverlay} style={{ borderLeft: "4px solid var(--primary-color)" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", gap: "16px" }}>
+        /* 目的地が設定されている場合のデフォルトナビ表示（タップでその目的地へ寄る） */
+        <div
+          className={"glass-card " + styles.infoOverlay}
+          style={{
+            borderLeft: "4px solid var(--primary-color)",
+            cursor: "pointer",
+          }}
+          onClick={() => selectAndFocusSpot(activeSpot)}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "100%",
+              gap: "16px",
+            }}
+          >
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <div
                 style={{
@@ -543,14 +805,47 @@ export default function RouteMapUI({
                 <Navigation size={18} strokeWidth={2} />
               </div>
               <div>
-                <div style={{ fontSize: "0.75rem", color: "#888", fontWeight: "600", letterSpacing: "0.5px" }}>現在の目的地</div>
-                <div style={{ fontSize: "1.05rem", fontWeight: "800", color: "var(--text-color)", marginTop: "2px" }}>{activeSpot.name}</div>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#888",
+                    fontWeight: "600",
+                    letterSpacing: "0.5px",
+                  }}
+                >
+                  現在の目的地（タップでフォーカス）
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.05rem",
+                    fontWeight: "800",
+                    color: "var(--text-color)",
+                    marginTop: "2px",
+                  }}
+                >
+                  {activeSpot.name}
+                </div>
               </div>
             </div>
             {distanceToActive !== null && (
               <div style={{ textAlign: "right", flexShrink: 0 }}>
-                <div style={{ fontSize: "0.75rem", color: "#888", fontWeight: "600" }}>目的地まで</div>
-                <div style={{ fontSize: "1.3rem", fontWeight: "800", color: "var(--primary-color)", marginTop: "2px" }}>
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    color: "#888",
+                    fontWeight: "600",
+                  }}
+                >
+                  目的地まで
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "800",
+                    color: "var(--primary-color)",
+                    marginTop: "2px",
+                  }}
+                >
                   {formatDistance(distanceToActive)}
                 </div>
               </div>
@@ -559,9 +854,19 @@ export default function RouteMapUI({
         </div>
       ) : (
         <div className={"glass-card " + styles.infoOverlay}>
-          <p style={{ margin: 0, fontSize: "0.9rem", color: "#5C4E43", fontWeight: "700", display: "flex", alignItems: "center", gap: "8px" }}>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "0.9rem",
+              color: "#5C4E43",
+              fontWeight: "700",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
             <MapIcon size={18} color="var(--primary-color)" />
-            しるしピンをタップするとスポット情報を確認できます。
+            しるしピンをタップするとその場所へ寄り、詳細を確認できます。
           </p>
         </div>
       )}

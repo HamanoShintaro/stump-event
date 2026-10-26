@@ -211,7 +211,7 @@ const getOrderedSpotIcon = (orderIndex: number) =>
     iconAnchor: [14, 14],
   });
 
-// A component to recenter the map when user location is found
+// A component to recenter the map when user location is found or explicitly requested
 function LocationMarker({
   position,
   recenter,
@@ -221,6 +221,7 @@ function LocationMarker({
 }) {
   const map = useMap();
   const centered = useRef(false);
+  const lastRecenterRef = useRef(0);
   useEffect(() => {
     if (position && !centered.current) {
       map.flyTo(position, 14);
@@ -228,7 +229,11 @@ function LocationMarker({
     }
   }, [position, map]);
   useEffect(() => {
-    if (recenter > 0 && position) map.flyTo(position, 15);
+    // ユーザーが「現在地へ」ボタンを押した時のみ（GPS更新では発火させない）
+    if (recenter > 0 && recenter !== lastRecenterRef.current && position) {
+      lastRecenterRef.current = recenter;
+      map.flyTo(position, 15);
+    }
   }, [recenter, position, map]);
 
   return position === null ? null : (
@@ -240,7 +245,7 @@ function LocationMarker({
   );
 }
 
-// Focus map on selected route's spots or footprints layer
+// Focus map on selected route's spots or footprints layer ONLY when the selection ID or mode actually changes
 function MapViewportController({
   selectedRally,
   selectedFootprint,
@@ -253,28 +258,43 @@ function MapViewportController({
   visitedFootprints: VisitedFootprint[];
 }) {
   const map = useMap();
+  const lastRallyIdRef = useRef<string | null>(null);
+  const lastFootprintIdRef = useRef<string | null>(null);
+  const lastLayerModeRef = useRef<"routes" | "footprints">("routes");
 
   useEffect(() => {
-    if (selectedRally && selectedRally.spots && selectedRally.spots.length > 0) {
-      const bounds = L.latLngBounds(selectedRally.spots.map((s) => s.pos));
-      map.flyToBounds(bounds, { padding: [70, 70], duration: 1.0, maxZoom: 16 });
+    const currentId = selectedRally?.id || null;
+    if (currentId !== lastRallyIdRef.current) {
+      lastRallyIdRef.current = currentId;
+      if (selectedRally && selectedRally.spots && selectedRally.spots.length > 0) {
+        const bounds = L.latLngBounds(selectedRally.spots.map((s) => s.pos));
+        map.flyToBounds(bounds, { padding: [70, 70], duration: 1.0, maxZoom: 16 });
+      }
     }
   }, [selectedRally, map]);
 
   useEffect(() => {
-    if (selectedFootprint) {
-      map.flyTo([selectedFootprint.lat, selectedFootprint.lng], 16, { duration: 0.8 });
+    const currentFpId = selectedFootprint?.spotId || null;
+    if (currentFpId !== lastFootprintIdRef.current) {
+      lastFootprintIdRef.current = currentFpId;
+      if (selectedFootprint) {
+        const targetZoom = Math.max(map.getZoom(), 16);
+        map.flyTo([selectedFootprint.lat, selectedFootprint.lng], targetZoom, { duration: 0.8 });
+      }
     }
   }, [selectedFootprint, map]);
 
   useEffect(() => {
-    if (mapLayerMode === "footprints" && !selectedFootprint && visitedFootprints.length > 0) {
-      const bounds = L.latLngBounds(
-        visitedFootprints.map((fp) => [fp.lat, fp.lng] as [number, number])
-      );
-      map.flyToBounds(bounds, { padding: [80, 80], duration: 1.0, maxZoom: 15 });
+    if (mapLayerMode !== lastLayerModeRef.current) {
+      lastLayerModeRef.current = mapLayerMode;
+      if (mapLayerMode === "footprints" && visitedFootprints.length > 0) {
+        const bounds = L.latLngBounds(
+          visitedFootprints.map((fp) => [fp.lat, fp.lng] as [number, number])
+        );
+        map.flyToBounds(bounds, { padding: [80, 80], duration: 1.0, maxZoom: 15 });
+      }
     }
-  }, [mapLayerMode, visitedFootprints, selectedFootprint, map]);
+  }, [mapLayerMode, visitedFootprints, map]);
 
   return null;
 }
