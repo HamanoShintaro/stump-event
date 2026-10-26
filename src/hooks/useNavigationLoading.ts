@@ -8,6 +8,7 @@ const MIN_DISPLAY_MS = 450;
 const MAX_LOADING_MS = 8000;
 
 interface NavigationStartDetail {
+  targetPath?: string;
   message?: string;
 }
 
@@ -21,6 +22,8 @@ export function triggerNavigationLoading(
 ): void {
   if (typeof window === "undefined") return;
 
+  let resolvedTargetPath: string | undefined;
+
   if (targetHref) {
     try {
       const url = new URL(targetHref, window.location.origin);
@@ -31,6 +34,7 @@ export function triggerNavigationLoading(
       ) {
         return;
       }
+      resolvedTargetPath = `${url.pathname}${url.search}`;
     } catch {
       // 相対パス等のパース失敗時はそのままイベント発火に進む
     }
@@ -38,7 +42,7 @@ export function triggerNavigationLoading(
 
   window.dispatchEvent(
     new CustomEvent<NavigationStartDetail>(NAVIGATION_START_EVENT, {
-      detail: { message },
+      detail: { targetPath: resolvedTargetPath, message },
     })
   );
 }
@@ -47,11 +51,15 @@ export function useNavigationLoading() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const searchKey = searchParams?.toString() ?? "";
+  const currentReactPath = `${pathname}${searchKey ? `?${searchKey}` : ""}`;
 
   const [isNavigating, setIsNavigating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("しるしを辿っています…");
 
   const startedAtRef = useRef<number | null>(null);
+  const originPathRef = useRef<string | null>(null);
+  const targetPathRef = useRef<string | null>(null);
+  const lastLocationRef = useRef<string>(currentReactPath);
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const safetyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -67,14 +75,22 @@ export function useNavigationLoading() {
   }, []);
 
   const startNavigation = useCallback(
-    (customMessage?: string) => {
+    (
+      originPath: string,
+      targetPath?: string,
+      customMessage?: string
+    ) => {
       clearTimers();
       startedAtRef.current = Date.now();
+      originPathRef.current = originPath;
+      targetPathRef.current = targetPath ?? null;
       setLoadingMessage(customMessage || "しるしを辿っています…");
       setIsNavigating(true);
 
       safetyTimerRef.current = setTimeout(() => {
         startedAtRef.current = null;
+        originPathRef.current = null;
+        targetPathRef.current = null;
         setIsNavigating(false);
       }, MAX_LOADING_MS);
     },
@@ -84,7 +100,20 @@ export function useNavigationLoading() {
   // パスまたはクエリパラメータが変化したら遷移完了としてローディングを解除
   // キャッシュ済みの戻る遷移等で一瞬で切り替わった場合も、最低表示時間(MIN_DISPLAY_MS)はアニメーションを見せる
   useEffect(() => {
+    lastLocationRef.current = currentReactPath;
+
     if (startedAtRef.current === null) {
+      return;
+    }
+
+    const hasMovedFromOrigin =
+      originPathRef.current !== null &&
+      currentReactPath !== originPathRef.current;
+    const hasReachedTarget =
+      targetPathRef.current !== null &&
+      currentReactPath === targetPathRef.current;
+
+    if (!hasMovedFromOrigin && !hasReachedTarget) {
       return;
     }
 
@@ -98,9 +127,11 @@ export function useNavigationLoading() {
     hideTimerRef.current = setTimeout(() => {
       clearTimers();
       startedAtRef.current = null;
+      originPathRef.current = null;
+      targetPathRef.current = null;
       setIsNavigating(false);
     }, remaining);
-  }, [pathname, searchKey, clearTimers]);
+  }, [currentReactPath, isNavigating, clearTimers]);
 
   useEffect(() => {
     // キャプチャフェーズ(true)で検知することで、Next.jsの<Link>がe.preventDefault()を呼ぶ前に確実に捕捉する
@@ -139,15 +170,15 @@ export function useNavigationLoading() {
         const destUrl = new URL(anchor.href, window.location.origin);
         if (destUrl.origin !== window.location.origin) return;
 
-        // 同一パス＆同一クエリへのリンク押下時は遷移が発生しないため無視
-        if (
-          destUrl.pathname === window.location.pathname &&
-          destUrl.search === window.location.search
-        ) {
+        const currentPathAndSearch = `${window.location.pathname}${window.location.search}`;
+        const destPathAndSearch = `${destUrl.pathname}${destUrl.search}`;
+
+        // 同一パス＆同一クエリへのリンク（同一ページ内ハッシュ移動 /guide#step-1 等を含む）は無視
+        if (destPathAndSearch === currentPathAndSearch) {
           return;
         }
 
-        startNavigation();
+        startNavigation(currentPathAndSearch, destPathAndSearch);
       } catch {
         // 無効なURLは無視
       }
@@ -155,11 +186,23 @@ export function useNavigationLoading() {
 
     const handleCustomNavigationStart = (event: Event) => {
       const customEvent = event as CustomEvent<NavigationStartDetail>;
-      startNavigation(customEvent.detail?.message);
+      const currentPathAndSearch = `${window.location.pathname}${window.location.search}`;
+      startNavigation(
+        currentPathAndSearch,
+        customEvent.detail?.targetPath,
+        customEvent.detail?.message
+      );
     };
 
     const handlePopState = () => {
-      startNavigation();
+      const newPathAndSearch = `${window.location.pathname}${window.location.search}`;
+      // 同一ページ内のハッシュ移動（#step-1 等）で発火する popstate は画面遷移ではないため無視
+      if (newPathAndSearch === lastLocationRef.current) {
+        return;
+      }
+      const prevPath = lastLocationRef.current;
+      lastLocationRef.current = newPathAndSearch;
+      startNavigation(prevPath, newPathAndSearch);
     };
 
     document.addEventListener("click", handleDocumentClick, true);
