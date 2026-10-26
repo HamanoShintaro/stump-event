@@ -18,9 +18,7 @@ export default function TokushohoPage() {
     "請求があった場合には遅滞なく開示いたします";
   const phone =
     process.env.NEXT_PUBLIC_LEGAL_PHONE ||
-    "請求があった場合には遅滞なく開示いたします（※お問い合わせはメールにて承っております）";
-  const email =
-    process.env.NEXT_PUBLIC_LEGAL_EMAIL || "support@shuin-walk.jp";
+    "請求があった場合には遅滞なく開示いたします（※お問い合わせは専用フォームにて承っております）";
 
   const items: LegalItem[] = [
     {
@@ -40,8 +38,34 @@ export default function TokushohoPage() {
       value: phone,
     },
     {
-      label: "メールアドレス",
-      value: email,
+      label: "連絡先（お問い合わせ窓口）",
+      value: (
+        <div>
+          <div>
+            当サービスの{" "}
+            <Link
+              href="/contact?category=legal"
+              style={{
+                color: "var(--primary-color)",
+                fontWeight: 800,
+                textDecoration: "underline",
+              }}
+            >
+              お問い合わせフォーム
+            </Link>{" "}
+            よりご連絡ください。
+          </div>
+          <div
+            style={{
+              fontSize: "var(--font-size-small)",
+              opacity: 0.8,
+              marginTop: "4px",
+            }}
+          >
+            ※ 請求があった場合には遅滞なく電子メールアドレスを開示いたします。
+          </div>
+        </div>
+      ),
     },
     {
       label: "販売価格",

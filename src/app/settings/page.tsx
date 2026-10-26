@@ -25,6 +25,7 @@ import {
   Camera,
   Users,
   Scale,
+  Mail,
 } from "lucide-react";
 
 const cardStyle: CSSProperties = { background: "#FFFDF9", border: "1px solid #EBE5D9", borderRadius: "14px", padding: "18px", marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "space-between" };
@@ -82,7 +83,14 @@ export default function SettingsPage() {
   };
 
   const handleWithdraw = async () => {
-    await showAlert({ text: "退会（アカウント削除）をご希望の場合は、お問い合わせよりご連絡ください。データ削除のお手続きをご案内します。", okText: "確認" });
+    const goContact = await showAlert({
+      text: "退会（アカウント削除）をご希望の場合は、お問い合わせフォームよりご連絡ください。データ削除のお手続きをご案内します。",
+      okText: "お問い合わせフォームへ",
+      ngText: "キャンセル",
+    });
+    if (goContact) {
+      router.push("/contact?category=withdraw");
+    }
   };
 
   if (loading) {
@@ -249,6 +257,8 @@ export default function SettingsPage() {
 
         <section style={{ ...cardStyle, padding: 0, display: "block" }}>
           <LinkRow href="/guide" icon={HelpCircle} label="街歩きの手引き・よくある質問" />
+          <div style={{ borderTop: "1px solid #EBE5D9" }} />
+          <LinkRow href="/contact" icon={Mail} label="お問い合わせ" />
           <div style={{ borderTop: "1px solid #EBE5D9" }} />
           <LinkRow href="/terms" icon={FileText} label="利用規約" />
           <div style={{ borderTop: "1px solid #EBE5D9" }} />
