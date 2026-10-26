@@ -74,12 +74,52 @@ async function generateOpenAIImage(apiKey, prompt, model = 'gpt-image-1', size =
   throw new Error('OpenAI APIレスポンスに画像データが含まれていません');
 }
 
+const EYECATCH_STYLE_PRESETS = [
+  {
+    name: 'Architectural Sketch & Watercolor',
+    style:
+      'Clean architectural pen-and-ink linework with luminous transparent watercolor washes, sky blue and sunlit emerald greens, crisp white sketch paper background, Monocle / Casa Brutus magazine editorial illustration aesthetic.',
+  },
+  {
+    name: 'Patisserie & Cafe Gouache',
+    style:
+      'Warm artisanal food & lifestyle gouache painting, creamy pastel and amber coffee tones, soft morning window light, Popeye / Hanako / Paris patisserie guidebook illustration style, rich brushstrokes.',
+  },
+  {
+    name: 'Mid-Century Modern Screenprint',
+    style:
+      'Stylish mid-century modern silkscreen / risograph poster art, bold geometric composition, teal, mustard yellow, terracotta, and cream palette, sophisticated urban culture magazine cover aesthetic.',
+  },
+  {
+    name: 'Cinematic Botanical & Waterfront',
+    style:
+      'Breezy plein-air botanical and waterside landscape painting, sparkling water reflections, lush dappled tree canopy (komorebi), Makoto Shinkai / Studio Ghibli inspired atmospheric background art.',
+  },
+  {
+    name: 'Nostalgic Showa Retro & Twilight',
+    style:
+      'Nostalgic twilight / golden-hour townscape illustration, warm lantern and kissaten window glow against deep indigo and violet evening sky, expressive woodblock-inspired modern narrative illustration.',
+  },
+  {
+    name: 'Nordic & Garden Suburb Pastel',
+    style:
+      'Airy European garden-suburb editorial illustration, soft chalk pastel and colored pencil textures, tree-lined avenues, brick and stone textures, gentle afternoon sunlight.',
+  },
+];
+
 function buildEyecatchPrompt(area) {
+  if (area.eyecatch_prompt) {
+    return `${area.eyecatch_prompt} Strict rule: NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
+  }
+  // slug のハッシュとカテゴリから毎回異なるビジュアルスタイルを選択（和紙・朱色のワンパターン化を防止）
+  const seed = [...String(area.slug || area.title)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  const preset = EYECATCH_STYLE_PRESETS[seed % EYECATCH_STYLE_PRESETS.length];
   return [
-    `A refined, atmospheric editorial illustration of a cultural walking route in ${area.area_name} (${area.prefecture}, Japan).`,
-    `Theme: "${area.title}".`,
-    `Story context: ${area.description}`,
-    `Visual style: Warm Japanese Washi paper texture, modern editorial travel magazine illustration, subtle vermilion (Shu-iro) and gold accents, rich architectural and natural details specific to ${area.area_name}, soft natural lighting, no text or letters in the image.`,
+    `An original, highly distinctive illustration of "${area.area_name}" (${area.prefecture}, Japan) capturing the theme: "${area.title}".`,
+    `Scene & key motifs: ${area.description}`,
+    `Artistic medium & palette (${preset.name}): ${preset.style}`,
+    `Composition: Dynamic camera angle tailored to the neighborhood's character (avoid generic flat isometric maps or repetitive red/gold frames).`,
+    `Strict rule: NO text, NO letters, NO Japanese/English characters, NO watermarks in the image.`,
   ].join(' ');
 }
 

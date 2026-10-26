@@ -80,16 +80,25 @@ node .agents/skills/create-route/scripts/verify-and-geocode.mjs scripts/areas/<s
 
 ---
 
-## Step 3: アイキャッチ＆スポット画像のハイブリッド生成（コスト＆クオリティ最適化）
+## Step 3: アイキャッチ＆スポット画像のハイブリッド生成（コスト＆クオリティ＆多様性最適化）
 
-クレジット消費を最小限に抑えつつ一覧画面の顔となるアイキャッチの品質を高めるため、**「アイキャッチ1枚のみOpenAI生成 ＋ スポット5枚はAntigravity内蔵 `image-generator` で多様化生成」** のハイブリッド方式で `public/images/<slug>/` に配置します。
+クレジット消費を最小限に抑えつつ一覧画面の顔となるアイキャッチの品質と多様性を高めるため、**「アイキャッチ1枚のみOpenAI生成（ルートごとに画風・配色・構図を変化） ＋ スポット5枚はAntigravity内蔵 `image-generator` で多様化生成」** のハイブリッド方式で `public/images/<slug>/` に配置します。
 
 ### 3-1. ルートのアイキャッチ画像（`route-eyecatch.png` / 1枚のみ）を OpenAI で生成
+- **⚠️ ワンパターン防止ルール（重要）**:
+  - すべてのルートを「歴史・和紙・朱色と金（Washi paper / vermilion and gold）」にすると一覧画面が同じような画像ばかりになってしまいます。
+  - エリア定義ファイル（`scripts/areas/<slug>.mjs`）に **`eyecatch_prompt`** フィールドを設定し、その街とカテゴリー（「食べたい」「見たい」「体験したい」「癒されたい」「学びたい」「地域を感じたい」等）に合わせた固有の画風・色彩・アングルを指定してください：
+    - **建築・デザイン・カルチャー系（例：代官山・大倉山）**: ペン＆透明水彩の建築スケッチ調（Casa Brutus / Monocle風、爽やかな空色と新緑）
+    - **パティスリー・カフェ・パンめぐり系（例：自由が丘・都立大学・元住吉）**: ガッシュ＆色鉛筆の温かなフード・ライフスタイル誌調（パステル＆アンバー配色）
+    - **水辺・緑道・公園・渓谷系（例：中目黒・多摩川・妙蓮寺）**: 光と水面の反射、木漏れ日を描いたシネマティック風景画調
+    - **横丁・商店街・純喫茶・レトロ系（例：祐天寺・学芸大学・白楽）**: 夕暮れのマジックアワーと琥珀色の灯りを活かしたノスタルジック・ポスター／版画調
+    - **学園都市・ミッドセンチュリー系（例：日吉・田園調布）**: シルクスクリーン／リソグラフ風のモダンな幾何学・エディトリアルアート調
+
 ```bash
 node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs
 ```
-- デフォルトで `route-eyecatch.png` 1枚のみを OpenAI（`gpt-image-1` / `gpt-image-1-mini`）で生成し、幅800pxに自動リサイズします。
-- ※ 万一OpenAIクレジット残高切れ（`credit_balance_exhausted`）の場合は、アイキャッチも 3-2 の `image-generator`（ワイド俯瞰構図）で生成します。
+- デフォルトで `route-eyecatch.png` 1枚のみを OpenAI（`gpt-image-1` / `gpt-image-1-mini`）で生成し、幅800pxに自動リサイズします（`eyecatch_prompt` 未設定時も [generate-images-openai.mjs](scripts/generate-images-openai.mjs) が6種類の異なるアートスタイルプリセットを自動ローテーションします）。
+- ※ 万一OpenAIクレジット残高切れ（`credit_balance_exhausted`）の場合は、アイキャッチも 3-2 の `image-generator` で生成します。
 
 ### 3-2. 各スポット画像（`spot1.png` 〜 `spot5.png` / 5枚）を Antigravity 内蔵 `image-generator` で生成
 Antigravity内蔵の `invoke_subagent`（`TypeName: "image-generator"`）を使用します。**全画像が同じ画風・色味・構図になるのを防ぐため、必ず以下の多様化ルールをプロンプトに適用してください**：
