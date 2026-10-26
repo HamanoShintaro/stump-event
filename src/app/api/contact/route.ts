@@ -102,10 +102,14 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 3. メール転送通知（RESEND_API_KEY ＆ CONTACT_NOTIFY_EMAIL 設定時）
+    // 3. メール転送通知（サーバーサイドのみで宛先を保持し、公開画面には一切露出しない）
+    const notifyEmail =
+      process.env.CONTACT_NOTIFY_EMAIL || "shintaro.action@gmail.com";
     const resendApiKey = process.env.RESEND_API_KEY;
-    const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL;
-    if (resendApiKey && notifyEmail) {
+    const mailSubject = `【SHUIN お問い合わせ】${categoryLabel}（${trimmedName}様）`;
+    const mailText = `種別: ${categoryLabel}\nお名前: ${trimmedName}\n返信先メールアドレス: ${trimmedEmail}\nユーザーID: ${userId || "未ログイン"}\n\n--- お問い合わせ内容 ---\n${trimmedMessage}`;
+
+    if (resendApiKey) {
       try {
         await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -117,12 +121,41 @@ export async function POST(req: NextRequest) {
             from: "SHUIN Contact <onboarding@resend.dev>",
             to: [notifyEmail],
             reply_to: trimmedEmail,
-            subject: `【SHUIN お問い合わせ】${categoryLabel}（${trimmedName}様）`,
-            text: `種別: ${categoryLabel}\nお名前: ${trimmedName}\nメールアドレス: ${trimmedEmail}\nユーザーID: ${userId || "未ログイン"}\n\n--- お問い合わせ内容 ---\n${trimmedMessage}`,
+            subject: mailSubject,
+            text: mailText,
           }),
         });
       } catch (mailErr) {
-        console.warn("Contact email notification warning:", mailErr);
+        console.warn("Contact Resend email notification warning:", mailErr);
+      }
+    } else {
+      // RESEND_API_KEY 未設定時は FormSubmit AJAX エンドポイント経由で通知メールを送信
+      try {
+        const origin =
+          req.headers.get("origin") ||
+          process.env.NEXT_PUBLIC_SITE_URL ||
+          "https://shuin-event.vercel.app";
+
+        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(notifyEmail)}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Origin: origin,
+            Referer: `${origin}/contact`,
+          },
+          body: JSON.stringify({
+            _subject: mailSubject,
+            _replyto: trimmedEmail,
+            category: categoryLabel,
+            name: trimmedName,
+            email: trimmedEmail,
+            user_id: userId || "未ログイン",
+            message: trimmedMessage,
+          }),
+        });
+      } catch (fallbackMailErr) {
+        console.warn("Contact fallback email warning:", fallbackMailErr);
       }
     }
 

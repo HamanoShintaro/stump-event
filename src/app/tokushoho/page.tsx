@@ -22,6 +22,55 @@ export default function TokushohoPage() {
 
   const items: LegalItem[] = [
     {
+      label: "販売価格",
+      value: (
+        <div>
+          <div>
+            <strong>SHUIN プレミアム（月額プラン）</strong>：月額{" "}
+            {PREMIUM_MONTHLY_PRICE_JPY.toLocaleString()}円（税込）
+          </div>
+          <div style={{ fontSize: "var(--font-size-small)", opacity: 0.8, marginTop: "4px" }}>
+            ※ 基本機能（ルートの閲覧・参加、現地での押印・SHUIN収集、累計{FREE_PHOTO_LIMIT}枚までの思い出写真記録、招待コード入力による連れ立ちへの合流）は無料でご利用いただけます。
+          </div>
+        </div>
+      ),
+    },
+    {
+      label: "役務（サービス）の提供時期",
+      value:
+        "決済完了後、ただちに「SHUIN プレミアム」の全機能（思い出写真の無制限記録・見返し、連れ立ち招待コードの発行・主催機能）をご利用いただけます。",
+    },
+    {
+      label: "お支払方法",
+      value:
+        "クレジットカード決済（Visa / Mastercard / American Express / JCB / Diners Club / Discover）、Apple Pay、Google Pay（決済代行会社：Stripe, Inc.）",
+    },
+    {
+      label: "お支払時期",
+      value:
+        "初回お申し込み時に即時決済されます。以降はご契約更新日（毎月同日）に自動的に決済されます。",
+    },
+    {
+      label: "中途解約（サブスクリプションの停止）について",
+      value:
+        "マイページの「設定」画面内のプラン管理メニューより、24時間いつでも解約手続きが可能です。次回更新日の前日までに解約手続きを完了された場合、次回以降の請求は発生いたしません。なお、解約後もそれまでに獲得された押印（SHUIN）や記録済みの思い出データが削除されることはありません。",
+    },
+    {
+      label: "返品・交換・キャンセルについて",
+      value:
+        "デジタルコンテンツおよびオンラインサービスの性質上、決済完了後の返品・返金・日割り計算による返金には応じられません。あらかじめご了承ください。",
+    },
+    {
+      label: "商品代金以外の必要料金",
+      value:
+        "サイトの閲覧、コンテンツのダウンロード、現地での位置情報（GPS）通信および写真のアップロード等に必要となるインターネット接続料金・通信料金は、お客様のご負担となります。",
+    },
+    {
+      label: "動作環境",
+      value:
+        "位置情報（GPS）機能およびカメラ機能を備えたスマートフォン・タブレット端末の最新ブラウザ（iOS Safari / Android Chrome 等）を推奨いたします。",
+    },
+    {
       label: "販売事業者名（屋号）",
       value: sellerName,
     },
@@ -66,55 +115,6 @@ export default function TokushohoPage() {
           </div>
         </div>
       ),
-    },
-    {
-      label: "販売価格",
-      value: (
-        <div>
-          <div>
-            <strong>SHUIN プレミアム（月額プラン）</strong>：月額{" "}
-            {PREMIUM_MONTHLY_PRICE_JPY.toLocaleString()}円（税込）
-          </div>
-          <div style={{ fontSize: "var(--font-size-small)", opacity: 0.8, marginTop: "4px" }}>
-            ※ 基本機能（ルートの閲覧・参加、現地での押印・SHUIN収集、累計{FREE_PHOTO_LIMIT}枚までの思い出写真記録、招待コード入力による連れ立ちへの合流）は無料でご利用いただけます。
-          </div>
-        </div>
-      ),
-    },
-    {
-      label: "商品代金以外の必要料金",
-      value:
-        "サイトの閲覧、コンテンツのダウンロード、現地での位置情報（GPS）通信および写真のアップロード等に必要となるインターネット接続料金・通信料金は、お客様のご負担となります。",
-    },
-    {
-      label: "お支払方法",
-      value:
-        "クレジットカード決済（Visa / Mastercard / American Express / JCB / Diners Club / Discover）、Apple Pay、Google Pay（決済代行会社：Stripe, Inc.）",
-    },
-    {
-      label: "お支払時期",
-      value:
-        "初回お申し込み時に即時決済されます。以降はご契約更新日（毎月同日）に自動的に決済されます。",
-    },
-    {
-      label: "役務（サービス）の提供時期",
-      value:
-        "決済完了後、ただちに「SHUIN プレミアム」の全機能（思い出写真の無制限記録・見返し、連れ立ち招待コードの発行・主催機能）をご利用いただけます。",
-    },
-    {
-      label: "返品・交換・キャンセルについて",
-      value:
-        "デジタルコンテンツおよびオンラインサービスの性質上、決済完了後の返品・返金・日割り計算による返金には応じられません。あらかじめご了承ください。",
-    },
-    {
-      label: "中途解約（サブスクリプションの停止）について",
-      value:
-        "マイページの「設定」画面内のプラン管理メニューより、24時間いつでも解約手続きが可能です。次回更新日の前日までに解約手続きを完了された場合、次回以降の請求は発生いたしません。なお、解約後もそれまでに獲得された押印（SHUIN）や記録済みの思い出データが削除されることはありません。",
-    },
-    {
-      label: "動作環境",
-      value:
-        "位置情報（GPS）機能およびカメラ機能を備えたスマートフォン・タブレット端末の最新ブラウザ（iOS Safari / Android Chrome 等）を推奨いたします。",
     },
   ];
 
