@@ -24,40 +24,52 @@
   overflow: hidden;
   margin-bottom: 24px;
 }
+
 @media (min-width: 768px) {
   .headerCard {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
     padding: 24px;
     margin-bottom: 40px;
   }
 }
 
-@media (min-width: 768px) {
-  .headerCard {
-    flex-direction: row;
-    min-height: 350px;
-  }
-}
-
 .imageBox {
-  height: 180px;
-  background-size: contain;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  background-color: var(--bg-color);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 16px;
+  border: 6px solid var(--bg-color);
+  outline: 1px solid rgba(201, 168, 76, 0.45);
+  box-shadow:
+    0 10px 28px rgba(44, 37, 32, 0.12),
+    inset 0 0 0 1px rgba(44, 37, 32, 0.08);
 }
 
 @media (min-width: 768px) {
   .imageBox {
-    width: 50%;
-    min-height: 350px;
+    width: 45%;
+    max-width: 380px;
+    flex-shrink: 0;
   }
 }
 
 .headerInfo {
-  padding: 24px 0 0 0;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+@media (min-width: 768px) {
+  .headerInfo {
+    padding: 4px 0 0 0;
+  }
 }
 
 .regionTag {
