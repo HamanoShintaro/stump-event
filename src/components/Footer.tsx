@@ -60,6 +60,7 @@ export default function Footer() {
           <Link href="/routes" style={{ textDecoration: "none", color: "inherit" }}>ルート一覧</Link>
           <Link href="/terms" style={{ textDecoration: "none", color: "inherit" }}>利用規約</Link>
           <Link href="/privacy" style={{ textDecoration: "none", color: "inherit" }}>プライバシーポリシー</Link>
+          <Link href="/tokushoho" style={{ textDecoration: "none", color: "inherit" }}>特定商取引法に基づく表記</Link>
           <Link href="#" style={{ textDecoration: "none", color: "inherit" }}>お問合せ</Link>
         </div>
 

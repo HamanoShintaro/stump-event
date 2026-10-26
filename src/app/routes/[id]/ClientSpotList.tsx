@@ -11,6 +11,8 @@ import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { isRouteCurrentlyActive } from "@/utils/userRoutes";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
+import { useSubscription } from "@/hooks/useSubscription";
+import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import {
   getDisplayNameFromAuthUser,
   normalizeLocalImageUrl,
@@ -104,6 +106,15 @@ export default function ClientSpotList({
   const [modalPhotoFile, setModalPhotoFile] = useState<File | null>(null);
   const [modalPhotoPreview, setModalPhotoPreview] = useState<string | null>(null);
   const [isSavingModalMemory, setIsSavingModalMemory] = useState(false);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+
+  const {
+    usedPhotoCount,
+    canUploadPhotoForSpot,
+    processingCheckout,
+    startCheckout,
+    refreshSubscription,
+  } = useSubscription({ activeGroupId: effectiveGroupId || groupId });
 
   const fetchMySpotEvents = useCallback(async () => {
     if (!user || spotIds.length === 0) return;
@@ -156,6 +167,10 @@ export default function ClientSpotList({
 
   const handleSaveModalMemory = async () => {
     if (!user || !selectedStorySpot) return;
+    if (modalPhotoFile && !canUploadPhotoForSpot(selectedStorySpot.id)) {
+      setShowUpgradeModal(true);
+      return;
+    }
     setIsSavingModalMemory(true);
     try {
       let finalPhotoUrl = mySpotEvents[selectedStorySpot.id]?.photoUrl || null;
@@ -197,6 +212,7 @@ export default function ClientSpotList({
 
       await fetchMySpotEvents();
       await refreshGroupData();
+      await refreshSubscription();
       setModalPhotoFile(null);
       setIsEditingModalMemory(false);
       await showAlert({ text: "この印に写真・コメントを記録しました！", okText: "確認" });
@@ -909,6 +925,11 @@ export default function ClientSpotList({
                                 onChange={(e) => {
                                   const f = e.target.files?.[0];
                                   if (f) {
+                                    if (!canUploadPhotoForSpot(selectedStorySpot.id)) {
+                                      e.target.value = "";
+                                      setShowUpgradeModal(true);
+                                      return;
+                                    }
                                     setModalPhotoFile(f);
                                     setModalPhotoPreview(URL.createObjectURL(f));
                                   }
@@ -1025,6 +1046,15 @@ export default function ClientSpotList({
           </AnimatePresence>,
           document.body
         )}
+
+      <PremiumUpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        onUpgrade={() => startCheckout(`/routes/${routeId}`)}
+        isProcessing={processingCheckout}
+        reason="photo_limit"
+        usedPhotoCount={usedPhotoCount}
+      />
     </>
   );
 }

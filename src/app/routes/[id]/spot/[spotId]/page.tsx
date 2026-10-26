@@ -10,8 +10,10 @@ import { supabase } from "@/lib/supabase";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
+import { useSubscription } from "@/hooks/useSubscription";
 import { uploadStampPhotoWithFallback } from "@/utils/stampMedia";
 import { motion, AnimatePresence } from "framer-motion";
 import { Footprints, Map as MapIcon, Star, CheckCircle, Share2, Compass, Award, Camera, Image as ImageIcon, Trash2 } from "lucide-react";
@@ -98,8 +100,19 @@ export default function SpotCheckInPage({
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [savedPhotoUrl, setSavedPhotoUrl] = useState<string | null>(null);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(true);
+  const {
+    isPremium,
+    usedPhotoCount,
+    freePhotoLimit,
+    isCompanionPhotoBonusActive,
+    canUploadPhotoForSpot,
+    processingCheckout,
+    startCheckout,
+    refreshSubscription,
+  } = useSubscription({ activeGroupId: groupId });
 
   const [locationError, setLocationError] = useState<string | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
@@ -330,9 +343,22 @@ export default function SpotCheckInPage({
     }
   }, [stampAcquired, user, spot, groupId, refreshGroupData]);
 
+  const handlePhotoButtonClick = () => {
+    if (!canUploadPhotoForSpot(spot?.id)) {
+      setShowUpgradeModal(true);
+      return;
+    }
+    fileInputRef.current?.click();
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      if (!canUploadPhotoForSpot(spot?.id)) {
+        e.target.value = "";
+        setShowUpgradeModal(true);
+        return;
+      }
       setSelectedFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -353,6 +379,10 @@ export default function SpotCheckInPage({
   const handleSaveMemo = async () => {
     if (!user || !spot) return;
     if (!memoInput.trim() && !selectedFile && !savedPhotoUrl) return;
+    if (selectedFile && !canUploadPhotoForSpot(spot.id)) {
+      setShowUpgradeModal(true);
+      return;
+    }
     
     setIsSavingMemo(true);
     try {
@@ -422,6 +452,7 @@ export default function SpotCheckInPage({
       setMemoSaved(true);
       await refreshGroupData();
       await refetchHistory();
+      await refreshSubscription();
     } catch (err: any) {
       await showAlert({ text: `思い出の保存・共有に失敗しました: ${err.message}`, okText: "確認" });
     } finally {
@@ -1039,8 +1070,15 @@ export default function SpotCheckInPage({
 
                 {/* 友達との思い出共有 (連れ立ち感想メモ・写真) または ソロの思い出保存 */}
                 <div style={{ padding: "0 24px 20px 24px", display: "flex", flexDirection: "column", gap: "10px" }}>
-                  <div style={{ fontSize: "0.78rem", color: "var(--accent-color)", fontWeight: "bold", textAlign: "left" }}>
-                    {groupId ? `👥 同行メンバー（${partnerNames.join("、") || "友だち"}）へ印の写真・感想を共有する` : "📷 この印に今日の感想と思い出の写真を残す"}
+                  <div style={{ fontSize: "0.78rem", color: "var(--accent-color)", fontWeight: "bold", textAlign: "left", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "6px" }}>
+                    <span>{groupId ? `👥 同行メンバー（${partnerNames.join("、") || "友だち"}）へ印の写真・感想を共有する` : "📷 この印に今日の感想と思い出の写真を残す"}</span>
+                    <span style={{ fontSize: "0.68rem", opacity: 0.85 }}>
+                      {isPremium
+                        ? "プレミアム（写真無制限）"
+                        : isCompanionPhotoBonusActive
+                          ? "連れ立ち特典（写真解放中）"
+                          : `無料写真枠 ${usedPhotoCount}/${freePhotoLimit}枚`}
+                    </span>
                   </div>
                   {memoSaved ? (
                     <div style={{ padding: "12px", background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.35)", borderRadius: "8px", fontSize: "0.82rem", color: "var(--accent-color)", display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -1095,7 +1133,7 @@ export default function SpotCheckInPage({
                         
                         <button
                           type="button"
-                          onClick={() => fileInputRef.current?.click()}
+                          onClick={handlePhotoButtonClick}
                           disabled={isSavingMemo}
                           style={{
                             padding: "8px 10px",
@@ -1678,7 +1716,7 @@ export default function SpotCheckInPage({
 
                       <button
                         type="button"
-                        onClick={() => fileInputRef.current?.click()}
+                        onClick={handlePhotoButtonClick}
                         disabled={isSavingMemo}
                         style={{
                           padding: "8px 10px",
@@ -1833,7 +1871,7 @@ export default function SpotCheckInPage({
                             />
                             <button
                               type="button"
-                              onClick={() => fileInputRef.current?.click()}
+                              onClick={handlePhotoButtonClick}
                               style={{ padding: "8px 10px", border: "1px solid #EBE5D9", borderRadius: "6px", background: "#FFF", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "0.75rem", fontWeight: 700 }}
                             >
                               <Camera size={16} /> 写真
@@ -2130,6 +2168,19 @@ export default function SpotCheckInPage({
           onChange={handleFileChange}
           accept="image/*"
           style={{ display: "none" }}
+        />
+
+        <PremiumUpgradeModal
+          isOpen={showUpgradeModal}
+          onClose={() => setShowUpgradeModal(false)}
+          onUpgrade={() =>
+            startCheckout(
+              `/routes/${resolvedParams.id}/spot/${resolvedParams.spotId}${groupId ? `?groupId=${groupId}` : ""}`
+            )
+          }
+          isProcessing={processingCheckout}
+          reason="photo_limit"
+          usedPhotoCount={usedPhotoCount}
         />
       </div>
     </div>

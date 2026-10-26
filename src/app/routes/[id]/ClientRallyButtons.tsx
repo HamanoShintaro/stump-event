@@ -14,9 +14,11 @@ import {
   syncUserProfileAndGroupStatus,
 } from "@/utils/stampMedia";
 import JoinAnimation from "@/components/JoinAnimation";
+import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { useRouteBookmark } from "@/hooks/useRouteBookmark";
+import { useSubscription } from "@/hooks/useSubscription";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
-import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Copy } from "lucide-react";
+import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Sparkles } from "lucide-react";
 
 export function BookmarkRouteButton({
   routeId,
@@ -109,7 +111,14 @@ export function JoinRallyButton({
   const [joinCodeInput, setJoinCodeInput] = useState("");
   const [isJoiningByCode, setIsJoiningByCode] = useState(false);
   const [liveJoinNotice, setLiveJoinNotice] = useState<string | null>(null);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const { showAlert } = useCustomAlert();
+  const {
+    canCreateCompanionGroup,
+    usedPhotoCount,
+    processingCheckout,
+    startCheckout,
+  } = useSubscription({ activeGroupId: groupId });
 
   const handlePartnerJoined = useCallback((partner: CompanionMember) => {
     setLiveJoinNotice(`${partner.displayName} さんが連れ立ちに合流しました。`);
@@ -233,6 +242,10 @@ export function JoinRallyButton({
 
   const handleCreateGroup = async () => {
     if (!user) return;
+    if (!canCreateCompanionGroup) {
+      setShowUpgradeModal(true);
+      return;
+    }
     setIsCreatingGroup(true);
     try {
       await syncUserProfileAndGroupStatus(supabase, user);
@@ -672,7 +685,26 @@ export function JoinRallyButton({
                   }}
                 >
                   <Users size={16} strokeWidth={2} />
-                  <span>{isCreatingGroup ? "作成中..." : "招待コードを発行（連れ立ち開始）"}</span>
+                  <span>{isCreatingGroup ? "作成中..." : "招待コードを発行（連れ立ち主催）"}</span>
+                  {!canCreateCompanionGroup && (
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "2px",
+                        fontSize: "0.68rem",
+                        padding: "1px 6px",
+                        borderRadius: "999px",
+                        background: "rgba(201, 168, 76, 0.2)",
+                        border: "1px solid var(--accent-color)",
+                        color: "var(--primary-color)",
+                        fontWeight: 800,
+                      }}
+                    >
+                      <Sparkles size={10} />
+                      プレミアム
+                    </span>
+                  )}
                 </button>
 
                 <button
@@ -862,6 +894,15 @@ export function JoinRallyButton({
           )}
         </div>
       )}
+
+      <PremiumUpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        onUpgrade={() => startCheckout(`/routes/${rallyId}`)}
+        isProcessing={processingCheckout}
+        reason="companion_host"
+        usedPhotoCount={usedPhotoCount}
+      />
     </>
   );
 }

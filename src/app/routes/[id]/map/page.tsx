@@ -9,7 +9,9 @@ import { useAuth } from "@/context/AuthContext";
 import { parseWKBPoint } from "@/utils/wkb";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
+import { useSubscription } from "@/hooks/useSubscription";
 import {
   buildMemberStatusWithDisplayName,
   CompanionMember,
@@ -60,11 +62,18 @@ export default function MapPage({
 
   // 友達招待・合流関連State
   const [showInviteModal, setShowInviteModal] = useState(false);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [isCreatingGroup, setIsCreatingGroup] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [joinCodeInput, setJoinCodeInput] = useState("");
   const [isJoiningByCode, setIsJoiningByCode] = useState(false);
   const { showAlert } = useCustomAlert();
+  const {
+    canCreateCompanionGroup,
+    usedPhotoCount,
+    processingCheckout,
+    startCheckout,
+  } = useSubscription({ activeGroupId: urlGroupId });
 
   const spotIds = useMemo(() => spots.map((s) => s.id), [spots]);
 
@@ -186,6 +195,11 @@ export default function MapPage({
       } catch (err: any) {
         await showAlert({ text: `招待コードの取得に失敗しました: ${err.message}`, okText: "確認" });
       }
+    } else if (!canCreateCompanionGroup) {
+      // 無料プランの場合は、友達から受け取った招待コードでの合流は無料で可能なためモーダルを開き、
+      // 自分がホストとしてコードを発行する場合にプレミアム案内を表示する
+      setCopySuccess(false);
+      setShowInviteModal(true);
     } else {
       setIsCreatingGroup(true);
       try {
@@ -773,7 +787,7 @@ export default function MapPage({
               </div>
             )}
 
-            {currentInviteCode && (
+            {currentInviteCode ? (
               <>
                 <div 
                   style={{ 
@@ -818,6 +832,31 @@ export default function MapPage({
                   )}
                 </button>
               </>
+            ) : (
+              <div
+                style={{
+                  background: "rgba(201, 168, 76, 0.1)",
+                  border: "1px dashed var(--accent-color)",
+                  borderRadius: "12px",
+                  padding: "14px",
+                  marginBottom: "16px",
+                }}
+              >
+                <div style={{ fontSize: "0.8rem", color: "var(--text-color)", marginBottom: "10px", lineHeight: 1.5 }}>
+                  あなたが幹事（ホスト）として招待コードを発行すると、同行する友達は無料プランのまま合流・写真共有ができます。
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowInviteModal(false);
+                    setShowUpgradeModal(true);
+                  }}
+                  className="btn-primary"
+                  style={{ width: "100%", padding: "11px 14px", fontSize: "0.84rem", fontWeight: 800 }}
+                >
+                  招待コードを発行する（SHUIN プレミアム）
+                </button>
+              </div>
             )}
 
             <div style={{ borderTop: "1px solid #EBE5D9", paddingTop: "14px", textAlign: "left" }}>
@@ -866,6 +905,15 @@ export default function MapPage({
           </div>
         </div>
       )}
+
+      <PremiumUpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        onUpgrade={() => startCheckout(`/routes/${resolvedParams.id}/map`)}
+        isProcessing={processingCheckout}
+        reason="companion_host"
+        usedPhotoCount={usedPhotoCount}
+      />
 
       <style jsx global>{`
         @keyframes slideDownToast {

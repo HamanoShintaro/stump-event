@@ -8,6 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import HeaderNav from "@/components/HeaderNav";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import PremiumUpgradeModal, { UpgradeTriggerReason } from "@/components/PremiumUpgradeModal";
 import { getCategoryStampUrl, getCategoryBgUrl } from "@/utils/stampHelper";
 import { generateShuinCardDataUrl } from "@/utils/shuinCardGenerator";
 import {
@@ -15,6 +16,7 @@ import {
   ShuinDiaryEvent,
   ShuinLifeFilter,
 } from "@/hooks/useShuinBook";
+import { useSubscription } from "@/hooks/useSubscription";
 import {
   ChevronLeft,
   Calendar,
@@ -94,13 +96,33 @@ export default function DiaryPage() {
   const [cardDataUrl, setCardDataUrl] = useState<string | null>(null);
   const [generatingCard, setGeneratingCard] = useState(false);
   const [storyScrollRouteId, setStoryScrollRouteId] = useState<string | null>(null);
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [upgradeReason, setUpgradeReason] = useState<UpgradeTriggerReason>("photo_limit");
+
+  const {
+    isPremium,
+    usedPhotoCount,
+    freePhotoLimit,
+    remainingFreePhotos,
+    canUploadPhotoForSpot,
+    processingCheckout,
+    startCheckout,
+    refreshSubscription,
+  } = useSubscription({ activeGroupId: selectedEvent?.group_id || null });
 
   const handlePhotoUploadChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file || !selectedEvent || uploadingPhoto) return;
+    if (!canUploadPhotoForSpot(selectedEvent.spot_id)) {
+      e.target.value = "";
+      setUpgradeReason("photo_limit");
+      setShowUpgradeModal(true);
+      return;
+    }
     setUploadingPhoto(true);
     try {
       await updateEventPhoto(selectedEvent.id, selectedEvent.spot_id, file);
+      await refreshSubscription();
       await showAlert({
         text: "この印に思い出の写真を刻みました。",
         okText: "閉じる",
@@ -347,6 +369,54 @@ export default function DiaryPage() {
                 旅のアルバム（日記帳）
               </button>
             </div>
+          )}
+        </div>
+
+        {/* 思い出写真枠・プレミアムステータスバー */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "10px",
+            padding: "10px 14px",
+            marginBottom: "18px",
+            borderRadius: "12px",
+            background: "rgba(255, 253, 249, 0.92)",
+            border: isPremium ? "1px solid var(--accent-color)" : "1px solid #EBE5D9",
+            fontSize: "0.8rem",
+            color: "var(--text-color)",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+            <Camera size={15} color="var(--primary-color)" />
+            <span style={{ fontWeight: 700 }}>
+              {isPremium
+                ? `SHUIN プレミアム：思い出の写真記録・見返し 無制限（現在 ${usedPhotoCount}枚）`
+                : `思い出の写真記録枠：${usedPhotoCount} / ${freePhotoLimit} 枚（無料プラン残り ${remainingFreePhotos}枚）`}
+            </span>
+          </div>
+          {!isPremium && (
+            <button
+              type="button"
+              onClick={() => {
+                setUpgradeReason("general");
+                setShowUpgradeModal(true);
+              }}
+              style={{
+                background: "rgba(201, 168, 76, 0.16)",
+                border: "1px solid var(--accent-color)",
+                color: "var(--primary-color)",
+                borderRadius: "999px",
+                padding: "4px 12px",
+                fontSize: "0.75rem",
+                fontWeight: 800,
+                cursor: "pointer",
+              }}
+            >
+              無制限にする（プレミアム）
+            </button>
           )}
         </div>
 
@@ -3265,6 +3335,15 @@ export default function DiaryPage() {
           </div>,
           document.body
         )}
+
+      <PremiumUpgradeModal
+        isOpen={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        onUpgrade={() => startCheckout("/mypage/diary")}
+        isProcessing={processingCheckout}
+        reason={upgradeReason}
+        usedPhotoCount={usedPhotoCount}
+      />
     </div>
   );
 }
