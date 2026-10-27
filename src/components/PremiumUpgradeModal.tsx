@@ -3,11 +3,12 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { Camera, Users, Sparkles, Check, X, ShieldCheck } from "lucide-react";
+import { Camera, Users, Sparkles, Check, X, ShieldCheck, ArrowLeft } from "lucide-react";
 import {
   FREE_PHOTO_LIMIT,
   PREMIUM_MONTHLY_PRICE_JPY,
 } from "@/hooks/useSubscription";
+import { useEmbeddedCheckout } from "@/hooks/useEmbeddedCheckout";
 
 export type UpgradeTriggerReason =
   | "photo_limit"
@@ -31,6 +32,14 @@ export default function PremiumUpgradeModal({
   reason = "general",
   usedPhotoCount = 0,
 }: PremiumUpgradeModalProps) {
+  const {
+    isEmbeddedCheckoutActive,
+    mountingCheckout,
+    checkoutError,
+    containerRef,
+    cancelEmbeddedCheckout,
+  } = useEmbeddedCheckout(isOpen, onClose);
+
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -86,7 +95,7 @@ export default function PremiumUpgradeModal({
           border: "1.5px solid var(--accent-color)",
           borderRadius: "22px",
           width: "100%",
-          maxWidth: "500px",
+          maxWidth: isEmbeddedCheckoutActive ? "540px" : "500px",
           maxHeight: "92dvh",
           overflowY: "auto",
           boxShadow:
@@ -100,9 +109,10 @@ export default function PremiumUpgradeModal({
           style={{
             position: "relative",
             width: "100%",
-            height: "224px",
+            height: isEmbeddedCheckoutActive ? "124px" : "224px",
             overflow: "hidden",
             backgroundColor: "var(--text-color)",
+            transition: "height 0.25s ease",
           }}
         >
           <img
@@ -223,8 +233,94 @@ export default function PremiumUpgradeModal({
 
         {/* 本文エリア */}
         <div style={{ padding: "20px 20px 24px" }}>
-          {/* トリガー理由に応じたコンテキスト通知（写真上限到達時・連れ立ち主催時） */}
-          {contextNotice && (
+          {isEmbeddedCheckoutActive ? (
+            <div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "10px",
+                  marginBottom: "12px",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={cancelEmbeddedCheckout}
+                  className="btn-secondary"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "7px 12px",
+                    fontSize: "var(--font-size-small)",
+                    fontWeight: 800,
+                  }}
+                >
+                  <ArrowLeft size={14} />
+                  <span>プラン詳細へ戻る</span>
+                </button>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    fontSize: "var(--font-size-small)",
+                    fontWeight: 700,
+                    opacity: 0.8,
+                  }}
+                >
+                  <ShieldCheck size={14} color="var(--primary-color)" />
+                  <span>Stripe 暗号化決済</span>
+                </div>
+              </div>
+
+              {checkoutError && (
+                <div
+                  style={{
+                    padding: "12px 14px",
+                    borderRadius: "10px",
+                    backgroundColor: "rgba(199, 68, 46, 0.08)",
+                    border: "1px solid rgba(199, 68, 46, 0.3)",
+                    color: "var(--primary-color)",
+                    fontSize: "var(--font-size-small)",
+                    fontWeight: 700,
+                    marginBottom: "12px",
+                  }}
+                >
+                  {checkoutError}
+                </div>
+              )}
+
+              {mountingCheckout && (
+                <div
+                  style={{
+                    padding: "28px 16px",
+                    textAlign: "center",
+                    fontSize: "var(--font-size-small)",
+                    fontWeight: 700,
+                    opacity: 0.75,
+                  }}
+                >
+                  決済フォームを読み込んでいます...
+                </div>
+              )}
+
+              <div
+                ref={containerRef}
+                style={{
+                  minHeight: "360px",
+                  borderRadius: "14px",
+                  overflow: "hidden",
+                  backgroundColor: "var(--bg-color)",
+                  border: "1px solid rgba(201, 168, 76, 0.4)",
+                }}
+              />
+            </div>
+          ) : (
+            <>
+              {/* トリガー理由に応じたコンテキスト通知（写真上限到達時・連れ立ち主催時） */}
+              {contextNotice && (
             <div
               style={{
                 padding: "10px 14px",
@@ -863,6 +959,8 @@ export default function PremiumUpgradeModal({
           >
             今は旅人プラン（無料）のまま続ける
           </button>
+            </>
+          )}
 
           {/* 規約・特商法リンク */}
           <div

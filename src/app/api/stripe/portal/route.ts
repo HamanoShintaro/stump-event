@@ -5,8 +5,9 @@ export const dynamic = "force-dynamic";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
-    const { customerId, returnUrl } = body as {
+    const { customerId, email, returnUrl } = body as {
       customerId?: string | null;
+      email?: string | null;
       returnUrl?: string;
     };
 
@@ -21,7 +22,25 @@ export async function POST(req: NextRequest) {
         ? `${origin}${returnUrl}`
         : `${origin}/settings`;
 
-    if (!secretKey || !customerId) {
+    let resolvedCustomerId = customerId || null;
+
+    if (secretKey && !resolvedCustomerId && email) {
+      const searchParams = new URLSearchParams({ email, limit: "1" });
+      const custRes = await fetch(
+        `https://api.stripe.com/v1/customers?${searchParams.toString()}`,
+        {
+          headers: {
+            Authorization: `Bearer ${secretKey}`,
+          },
+        }
+      );
+      const custData = await custRes.json().catch(() => null);
+      if (custRes.ok && custData?.data?.[0]?.id) {
+        resolvedCustomerId = String(custData.data[0].id);
+      }
+    }
+
+    if (!secretKey || !resolvedCustomerId) {
       return NextResponse.json({
         ok: true,
         mockMode: true,
@@ -30,7 +49,7 @@ export async function POST(req: NextRequest) {
     }
 
     const params = new URLSearchParams();
-    params.append("customer", customerId);
+    params.append("customer", resolvedCustomerId);
     params.append("return_url", safeReturnUrl);
 
     const portalRes = await fetch(

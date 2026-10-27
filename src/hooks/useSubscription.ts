@@ -4,6 +4,10 @@ import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
+import {
+  EMBEDDED_CHECKOUT_OPEN_EVENT,
+  EmbeddedCheckoutPayload,
+} from "@/hooks/useEmbeddedCheckout";
 
 export const FREE_PHOTO_LIMIT = 10;
 export const PREMIUM_MONTHLY_PRICE_JPY = 480;
@@ -82,12 +86,72 @@ export function useSubscription(options?: UseSubscriptionOptions) {
         // カラム未追加環境の場合はフォールバック
       }
 
-      const resolvedPremium = dbPremium || localPremium;
+      let resolvedPremium = dbPremium || localPremium;
+      let resolvedStatus = resolvedPremium
+        ? dbStatus !== "free"
+          ? dbStatus
+          : "active"
+        : "free";
+      let resolvedCustomerId = dbCustomerId;
+
+      // 2.5. Stripe APIキー設定時はStripeの最新契約状態とリアルタイム同期（解約・削除の即時反映）
+      try {
+        const syncParams = new URLSearchParams({
+          userId: user.id,
+          ...(user.email ? { email: user.email } : {}),
+          ...(dbCustomerId ? { customerId: dbCustomerId } : {}),
+        });
+        const syncRes = await fetch(
+          `/api/stripe/checkout?${syncParams.toString()}`,
+          { cache: "no-store" }
+        );
+        const syncData = await syncRes.json().catch(() => null);
+
+        if (syncRes.ok && syncData?.synced) {
+          resolvedPremium = Boolean(syncData.isPremium);
+          resolvedStatus = resolvedPremium ? "active" : "free";
+          if (syncData.customerId) {
+            resolvedCustomerId = String(syncData.customerId);
+          }
+
+          try {
+            if (resolvedPremium) {
+              localStorage.setItem(getLocalPremiumKey(user.id), "active");
+            } else {
+              localStorage.removeItem(getLocalPremiumKey(user.id));
+            }
+          } catch {
+            // ignore storage error
+          }
+
+          if (
+            dbPremium !== resolvedPremium ||
+            dbStatus !== resolvedStatus ||
+            (resolvedCustomerId && dbCustomerId !== resolvedCustomerId)
+          ) {
+            try {
+              await supabase
+                .from("users")
+                .update({
+                  is_premium: resolvedPremium,
+                  subscription_status: resolvedStatus,
+                  ...(resolvedCustomerId
+                    ? { stripe_customer_id: resolvedCustomerId }
+                    : {}),
+                })
+                .eq("id", user.id);
+            } catch {
+              // ignore db update error
+            }
+          }
+        }
+      } catch {
+        // ネットワークエラー時はDB/ローカルキャッシュを維持
+      }
+
       setIsPremium(resolvedPremium);
-      setSubscriptionStatus(
-        resolvedPremium ? (dbStatus !== "free" ? dbStatus : "active") : "free"
-      );
-      setStripeCustomerId(dbCustomerId);
+      setSubscriptionStatus(resolvedStatus);
+      setStripeCustomerId(resolvedCustomerId);
 
       // 3. ユーザーがこれまでに登録した思い出写真の枚数（スポット単位で重複排除）を集計
       const { data: photoRows } = await supabase
@@ -137,7 +201,7 @@ export function useSubscription(options?: UseSubscriptionOptions) {
     } finally {
       setLoadingSubscription(false);
     }
-  }, [user?.id, activeGroupId]);
+  }, [user?.id, user?.email, activeGroupId]);
 
   useEffect(() => {
     fetchSubscriptionAndQuota();
@@ -154,29 +218,47 @@ export function useSubscription(options?: UseSubscriptionOptions) {
     };
   }, [fetchSubscriptionAndQuota]);
 
-  // URLパラメータ ?checkout=success で戻ってきた場合の自動反映
+  // URLパラメータ ?checkout=success で戻ってきた場合の自動反映（処理後にURLパラメータをクリーンアップ）
   useEffect(() => {
     if (typeof window === "undefined" || !user?.id) return;
     const params = new URLSearchParams(window.location.search);
     if (params.get("checkout") === "success") {
-      try {
-        localStorage.setItem(getLocalPremiumKey(user.id), "active");
-      } catch {
-        // ignore
-      }
-      supabase
-        .from("users")
-        .upsert(
-          {
-            id: user.id,
-            is_premium: true,
-            subscription_status: "active",
-          },
-          { onConflict: "id" }
-        )
-        .then(() => {
-          fetchSubscriptionAndQuota();
-        });
+      const sessionId = params.get("session_id");
+      params.delete("checkout");
+      params.delete("session_id");
+      const cleanSearch = params.toString();
+      const cleanUrl =
+        window.location.pathname + (cleanSearch ? `?${cleanSearch}` : "");
+      window.history.replaceState({}, "", cleanUrl);
+
+      (async () => {
+        if (sessionId) {
+          try {
+            const verifyRes = await fetch("/api/stripe/checkout", {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ sessionId }),
+            });
+            const verifyData = await verifyRes.json().catch(() => null);
+            if (verifyData?.customerId) {
+              await supabase
+                .from("users")
+                .upsert(
+                  {
+                    id: user.id,
+                    is_premium: true,
+                    subscription_status: "active",
+                    stripe_customer_id: String(verifyData.customerId),
+                  },
+                  { onConflict: "id" }
+                );
+            }
+          } catch {
+            // ignore
+          }
+        }
+        await fetchSubscriptionAndQuota();
+      })();
     }
   }, [user?.id, fetchSubscriptionAndQuota]);
 
@@ -236,6 +318,7 @@ export function useSubscription(options?: UseSubscriptionOptions) {
             userId: user.id,
             email: user.email,
             returnUrl: currentPath,
+            embedded: true,
           }),
         });
 
@@ -246,6 +329,27 @@ export function useSubscription(options?: UseSubscriptionOptions) {
             text: data.error || "決済画面の準備に失敗しました。",
             okText: "確認",
           });
+          return false;
+        }
+
+        if (
+          data.embedded &&
+          data.clientSecret &&
+          data.publishableKey &&
+          typeof window !== "undefined"
+        ) {
+          const payload: EmbeddedCheckoutPayload = {
+            clientSecret: String(data.clientSecret),
+            publishableKey: String(data.publishableKey),
+            sessionId: String(data.sessionId || ""),
+            userId: user.id,
+          };
+          window.dispatchEvent(
+            new CustomEvent<EmbeddedCheckoutPayload>(
+              EMBEDDED_CHECKOUT_OPEN_EVENT,
+              { detail: payload }
+            )
+          );
           return false;
         }
 
@@ -324,6 +428,7 @@ export function useSubscription(options?: UseSubscriptionOptions) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             customerId: stripeCustomerId,
+            email: user.email,
             returnUrl: currentPath,
           }),
         });
