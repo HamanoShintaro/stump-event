@@ -239,10 +239,122 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setShowUpgradeModal(true)}
-              className="btn-primary"
-              style={{ width: "100%", padding: "12px 16px", fontSize: "0.92rem", fontWeight: 800 }}
+              style={{
+                width: "100%",
+                padding: 0,
+                border: "1.5px solid var(--accent-color)",
+                borderRadius: "14px",
+                overflow: "hidden",
+                position: "relative",
+                cursor: "pointer",
+                textAlign: "left",
+                backgroundColor: "var(--text-color)",
+                boxShadow: "0 8px 22px rgba(0, 0, 0, 0.14)",
+                display: "block",
+              }}
             >
-              SHUIN プレミアムを見る（月額¥{PREMIUM_MONTHLY_PRICE_JPY}）
+              {/* 背景の特製SHUIN帳アートワーク */}
+              <img
+                src="/images/premium-hero.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "75% center",
+                }}
+              />
+              {/* 左側の可読性を確保するグラデーションオーバーレイ */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(90deg, rgba(28, 25, 21, 0.92) 0%, rgba(28, 25, 21, 0.78) 52%, rgba(28, 25, 21, 0.28) 100%)",
+                }}
+              />
+              <div
+                style={{
+                  position: "relative",
+                  zIndex: 1,
+                  padding: "16px 18px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "6px",
+                  color: "var(--bg-color)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    alignSelf: "flex-start",
+                    padding: "2px 9px",
+                    borderRadius: "999px",
+                    backgroundColor: "rgba(201, 168, 76, 0.2)",
+                    border: "1px solid var(--accent-color)",
+                    color: "var(--accent-color)",
+                    fontSize: "10px",
+                    fontWeight: 900,
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  <Sparkles size={11} />
+                  <span>SHUIN PREMIUM</span>
+                </div>
+                <div
+                  style={{
+                    fontSize: "1.08rem",
+                    fontWeight: 900,
+                    letterSpacing: "0.02em",
+                    lineHeight: 1.35,
+                  }}
+                >
+                  歩いた日々を、一冊の宝物に。
+                </div>
+                <div
+                  style={{
+                    fontSize: "var(--font-size-small)",
+                    opacity: 0.88,
+                    lineHeight: 1.45,
+                    maxWidth: "78%",
+                  }}
+                >
+                  思い出の写真を枚数無制限で記録。大切な人との「連れ立ち」主催も。
+                </div>
+                <div
+                  style={{
+                    marginTop: "6px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "10px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      padding: "8px 14px",
+                      borderRadius: "999px",
+                      backgroundColor: "var(--primary-color)",
+                      color: "#fff",
+                      fontSize: "0.84rem",
+                      fontWeight: 800,
+                      boxShadow: "0 4px 12px rgba(199, 68, 46, 0.35)",
+                    }}
+                  >
+                    <span>SHUIN プレミアムを見る（月額¥{PREMIUM_MONTHLY_PRICE_JPY}）</span>
+                    <ChevronRight size={15} />
+                  </span>
+                </div>
+              </div>
             </button>
           )}
         </section>
