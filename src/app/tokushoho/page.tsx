@@ -20,7 +20,7 @@ export default function TokushohoPage() {
     process.env.NEXT_PUBLIC_LEGAL_PHONE ||
     "請求があった場合には遅滞なく開示いたします（※お問い合わせは専用フォームにて承っております）";
 
-  const items: LegalItem[] = [
+  const serviceItems: LegalItem[] = [
     {
       label: "販売価格",
       value: (
@@ -70,6 +70,9 @@ export default function TokushohoPage() {
       value:
         "位置情報（GPS）機能およびカメラ機能を備えたスマートフォン・タブレット端末の最新ブラウザ（iOS Safari / Android Chrome 等）を推奨いたします。",
     },
+  ];
+
+  const operatorItems: LegalItem[] = [
     {
       label: "販売事業者名（屋号）",
       value: sellerName,
@@ -118,6 +121,37 @@ export default function TokushohoPage() {
     },
   ];
 
+  const renderItem = (item: LegalItem) => (
+    <div
+      key={item.label}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "6px",
+        padding: "16px 0",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
+      }}
+    >
+      <div
+        style={{
+          fontWeight: 800,
+          fontSize: "0.92rem",
+          color: "var(--primary-color)",
+        }}
+      >
+        {item.label}
+      </div>
+      <div
+        style={{
+          fontSize: "var(--font-size-body)",
+          color: "var(--text-color)",
+        }}
+      >
+        {item.value}
+      </div>
+    </div>
+  );
+
   return (
     <div
       style={{
@@ -158,36 +192,52 @@ export default function TokushohoPage() {
             borderTop: "1px solid rgba(0, 0, 0, 0.08)",
           }}
         >
-          {items.map((item) => (
-            <div
-              key={item.label}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
-                padding: "16px 0",
-                borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
-              }}
-            >
-              <div
-                style={{
-                  fontWeight: 800,
-                  fontSize: "0.92rem",
-                  color: "var(--primary-color)",
-                }}
-              >
-                {item.label}
-              </div>
-              <div
-                style={{
-                  fontSize: "var(--font-size-body)",
-                  color: "var(--text-color)",
-                }}
-              >
-                {item.value}
-              </div>
-            </div>
-          ))}
+          {serviceItems.map(renderItem)}
+        </div>
+
+        <div
+          style={{
+            marginTop: "28px",
+            marginBottom: "12px",
+            padding: "16px 18px",
+            background: "var(--bg-color)",
+            borderRadius: "12px",
+            borderLeft: "4px solid var(--accent-color)",
+          }}
+        >
+          <div
+            style={{
+              fontWeight: 800,
+              fontSize: "0.92rem",
+              color: "var(--text-color)",
+              marginBottom: "6px",
+            }}
+          >
+            【運営体制および窓口の一本化について】
+          </div>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "var(--font-size-small)",
+              color: "var(--text-color)",
+              opacity: 0.9,
+              lineHeight: 1.7,
+            }}
+          >
+            当サービスは、AI技術の活用と少人数での運営体制により固定費を最小限に抑えることで、スポンサー広告に忖度しない純粋な「街歩きの物語」の編纂と、手軽にご利用いただける価格での提供を実現しております。
+            <br />
+            そのため、お電話等によるリアルタイム窓口は設けておらず、すべてのお問い合わせを専用フォームへ一本化しております（これにより営業スパム等を防ぎ、ご利用者様からのご連絡を確実に確認できる体制としております）。なお、特定商取引法に基づき開示請求があった場合には、遅滞なく開示いたします。
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            borderTop: "1px solid rgba(0, 0, 0, 0.08)",
+          }}
+        >
+          {operatorItems.map(renderItem)}
         </div>
 
         <div
