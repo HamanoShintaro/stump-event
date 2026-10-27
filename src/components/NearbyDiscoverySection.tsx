@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Star, X } from "lucide-react";
+import styles from "./NearbyDiscoverySection.module.css";
 import {
   useNearbyDiscovery,
   DiscoveryTabMode,
@@ -43,14 +44,14 @@ interface NearbyDiscoverySectionProps {
 function renderTimeSceneIcon(key: TimeSceneKey) {
   switch (key) {
     case "morning":
-      return <IconSunrise size={22} color="var(--primary-color)" />;
+      return <IconSunrise size={15} color="var(--primary-color)" />;
     case "afternoon":
-      return <IconSun size={22} color="var(--primary-color)" />;
+      return <IconSun size={15} color="var(--primary-color)" />;
     case "evening":
-      return <IconSunset size={22} color="var(--primary-color)" />;
+      return <IconSunset size={15} color="var(--primary-color)" />;
     case "night":
     default:
-      return <IconMoon size={22} color="var(--primary-color)" />;
+      return <IconMoon size={15} color="var(--primary-color)" />;
   }
 }
 
@@ -87,7 +88,9 @@ export default function NearbyDiscoverySection({
     moodFilteredRoutes,
     oracleResult,
     isOracleOpen,
+    oraclePhase,
     drawWalkOracle,
+    openSavedWalkOracle,
     redrawWalkOracle,
     closeOracleModal,
   } = useDailyWalkOracle(routes);
@@ -120,373 +123,385 @@ export default function NearbyDiscoverySection({
             aria-modal="true"
             aria-labelledby="walk-oracle-title"
             onClick={closeOracleModal}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 9999,
-              background: "rgba(30, 24, 20, 0.62)",
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "20px",
-            }}
+            className={styles.oracleBackdrop}
           >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                width: "100%",
-                maxWidth: "440px",
-                maxHeight: "90vh",
-                overflowY: "auto",
-                background: "var(--bg-color)",
-                border: "2px solid var(--accent-color)",
-                borderRadius: "22px",
-                padding: "24px 20px",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
-                position: "relative",
-              }}
-            >
-              <button
-                type="button"
-                onClick={closeOracleModal}
-                aria-label="閉じる"
-                style={{
-                  position: "absolute",
-                  top: "14px",
-                  right: "14px",
-                  background: "transparent",
-                  border: "none",
-                  color: "var(--text-color)",
-                  cursor: "pointer",
-                  padding: "4px",
-                }}
-              >
-                <X size={20} />
-              </button>
-
-              {/* おみくじ朱印ヘッダー */}
-              <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                <div
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    padding: "4px 14px",
-                    borderRadius: "999px",
-                    border: "1.5px solid var(--primary-color)",
-                    background: "rgba(199, 68, 46, 0.08)",
-                    color: "var(--primary-color)",
-                    fontSize: "var(--font-size-small)",
-                    fontWeight: 800,
-                    letterSpacing: "0.1em",
-                    marginBottom: "8px",
-                  }}
-                >
-                  <IconOmikuji size={14} color="var(--primary-color)" />
-                  <span>本日の街歩き縁結び</span>
-                </div>
-                <div
-                  id="walk-oracle-title"
-                  style={{
-                    fontSize: "var(--font-size-h1)",
-                    fontWeight: 900,
-                    color: "var(--primary-color)",
-                    letterSpacing: "0.14em",
-                    margin: "2px 0 4px",
-                  }}
-                >
-                  【 {oracleResult.fortuneLabel} 】
-                </div>
-                <p
-                  style={{
-                    fontSize: "var(--font-size-small)",
-                    color: "var(--text-color)",
-                    opacity: 0.75,
-                    margin: 0,
-                  }}
-                >
-                  今日あなたとご縁が結ばれた街歩きの物語はこちらです
-                </p>
-              </div>
-
-              {/* 選ばれたルートカード */}
+            {oraclePhase === "drawing" ? (
+              /* Phase 1: みくじ筒を振り、御札を手繰り寄せる所作（約1秒の溜め） */
               <div
-                style={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  border: "1.5px solid var(--accent-color)",
-                  background: "rgba(255,255,255,0.7)",
-                  marginBottom: "14px",
-                }}
+                onClick={(e) => e.stopPropagation()}
+                className={styles.ritualDrawingCard}
+                 aria-live="polite"
               >
-                <div style={{ position: "relative", height: "148px" }}>
-                  <img
-                    src={
-                      oracleResult.route.thumbnail_url ||
-                      "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                    }
-                    alt={oracleResult.route.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "8px",
-                      left: "8px",
-                      display: "flex",
-                      gap: "6px",
-                    }}
-                  >
-                    {oracleResult.route.prefecture && (
-                      <span
-                        style={{
-                          background: "var(--bg-color)",
-                          color: "var(--text-color)",
-                          fontSize: "0.7rem",
-                          fontWeight: 800,
-                          padding: "3px 8px",
-                          borderRadius: "6px",
-                        }}
-                      >
-                        {oracleResult.route.prefecture}
+                <div className={styles.cornerOrnamentTL} />
+                <div className={styles.cornerOrnamentTR} />
+                <div className={styles.cornerOrnamentBL} />
+                <div className={styles.cornerOrnamentBR} />
+
+                <div className={styles.ritualStageHalo}>
+                  <div className={styles.ritualPulseRing} />
+                  <div className={styles.ritualCylinderUnit}>
+                    <div className={styles.ritualStickSlip}>
+                      <span className={styles.ritualStickText}>御籤</span>
+                    </div>
+                    <div className={styles.ritualCylinderBox}>
+                      <span className={styles.ritualCylinderPlaque}>
+                        街歩縁結
                       </span>
-                    )}
-                    {oracleResult.route.category && (
-                      <span
-                        style={{
-                          background: "var(--accent-color)",
-                          color: "var(--text-color)",
-                          fontSize: "0.7rem",
-                          fontWeight: 800,
-                          padding: "3px 8px",
-                          borderRadius: "6px",
-                        }}
-                      >
-                        {oracleResult.route.category}
-                      </span>
-                    )}
+                    </div>
                   </div>
                 </div>
 
-                <div style={{ padding: "12px 14px" }}>
-                  <h3
+                <div
+                  id="walk-oracle-title"
+                  className={styles.ritualStatusTitle}
+                >
+                  街の縁を手繰り寄せています…
+                </div>
+                <p className={styles.ritualStatusSub}>
+                  今日あなたと響き合う物語を占っています
+                </p>
+              </div>
+            ) : (
+              /* Phase 2 & 3: 和紙（御札）が縦に開帳し、朱印が刻まれる結果表示 */
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className={styles.oraclePaperModal}
+              >
+                <button
+                  type="button"
+                  onClick={closeOracleModal}
+                  aria-label="閉じる"
+                  className={styles.closeModalBtn}
+                >
+                  <X size={18} />
+                </button>
+
+                <div className={styles.oraclePaperInnerFrame}>
+                  <div className={styles.cornerOrnamentTL} />
+                  <div className={styles.cornerOrnamentTR} />
+                  <div className={styles.cornerOrnamentBL} />
+                  <div className={styles.cornerOrnamentBR} />
+
+                  {/* おみくじ朱印ヘッダー（落款印アニメーション＋縁結び運勢） */}
+                  <div className={styles.oracleHeaderSection}>
+                    <div className={styles.oracleEyebrowPill}>
+                      <IconOmikuji size={13} color="var(--primary-color)" />
+                      <span>本日の街歩き縁結び</span>
+                    </div>
+
+                    <div className={styles.fortuneStampRow}>
+                      <div
+                        className={styles.vermilionSealStamp}
+                        aria-hidden="true"
+                      >
+                        <span className={styles.vermilionSealTop}>SHUIN</span>
+                        <span className={styles.vermilionSealMainChar}>
+                          {oracleResult.sealChar}
+                        </span>
+                      </div>
+
+                      <div className={styles.fortuneTitleBlock}>
+                        <div className={styles.fortuneReadingText}>
+                          {oracleResult.fortuneReading}
+                        </div>
+                        <div
+                          id="walk-oracle-title"
+                          className={styles.fortuneMainTitle}
+                        >
+                          【 {oracleResult.fortuneLabel} 】
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className={styles.fortuneSubtitleText}>
+                      {oracleResult.fortuneSubtitle}
+                    </p>
+                  </div>
+
+                  {/* Stagger 1: 選ばれたルートカード */}
+                  <div
+                    className={styles.staggerBlock1}
                     style={{
-                      fontSize: "1rem",
-                      fontWeight: 800,
-                      color: "var(--text-color)",
-                      margin: "0 0 6px 0",
-                      lineHeight: 1.4,
+                      borderRadius: "14px",
+                      overflow: "hidden",
+                      border: "1.5px solid var(--accent-color)",
+                      background: "rgba(255,255,255,0.78)",
+                      marginBottom: "14px",
                     }}
                   >
-                    {oracleResult.route.title}
-                  </h3>
+                    <div style={{ position: "relative", height: "144px" }}>
+                      <img
+                        src={
+                          oracleResult.route.thumbnail_url ||
+                          "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
+                        }
+                        alt={oracleResult.route.title}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "8px",
+                          left: "8px",
+                          display: "flex",
+                          gap: "6px",
+                        }}
+                      >
+                        {oracleResult.route.prefecture && (
+                          <span
+                            style={{
+                              background: "var(--bg-color)",
+                              color: "var(--text-color)",
+                              fontSize: "0.7rem",
+                              fontWeight: 800,
+                              padding: "3px 8px",
+                              borderRadius: "6px",
+                            }}
+                          >
+                            {oracleResult.route.prefecture}
+                          </span>
+                        )}
+                        {oracleResult.route.category && (
+                          <span
+                            style={{
+                              background: "var(--accent-color)",
+                              color: "var(--text-color)",
+                              fontSize: "0.7rem",
+                              fontWeight: 800,
+                              padding: "3px 8px",
+                              borderRadius: "6px",
+                            }}
+                          >
+                            {oracleResult.route.category}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div style={{ padding: "12px 14px" }}>
+                      <h3
+                        style={{
+                          fontSize: "1rem",
+                          fontWeight: 800,
+                          color: "var(--text-color)",
+                          margin: "0 0 6px 0",
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {oracleResult.route.title}
+                      </h3>
+                      <div
+                        style={{
+                          fontSize: "0.76rem",
+                          fontWeight: 700,
+                          color: "var(--primary-color)",
+                          marginBottom: "6px",
+                          display: "flex",
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                          gap: "8px",
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <IconMapPin size={13} color="var(--primary-color)" />
+                          全{oracleResult.route.walkMetrics.spotCount}箇所
+                        </span>
+                        <span
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <IconFootprints
+                            size={13}
+                            color="var(--primary-color)"
+                          />
+                          約{oracleResult.route.walkMetrics.distanceKm}km
+                        </span>
+                        <span
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "3px",
+                          }}
+                        >
+                          <IconClock size={13} color="var(--primary-color)" />
+                          約{oracleResult.route.walkMetrics.estimatedMinutes}分
+                        </span>
+                      </div>
+                      {oracleResult.route.description && (
+                        <p
+                          style={{
+                            fontSize: "0.78rem",
+                            color: "var(--text-color)",
+                            opacity: 0.8,
+                            margin: 0,
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {oracleResult.route.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Stagger 2: 今日の注目スポット ＆ 散策の心得 */}
                   <div
+                    className={styles.staggerBlock2}
                     style={{
-                      fontSize: "0.76rem",
-                      fontWeight: 700,
-                      color: "var(--primary-color)",
-                      marginBottom: "6px",
+                      borderRadius: "14px",
+                      padding: "12px 14px",
+                      background: "rgba(201, 168, 76, 0.12)",
+                      border: "1px solid rgba(201, 168, 76, 0.38)",
+                      marginBottom: "16px",
                       display: "flex",
-                      alignItems: "center",
-                      flexWrap: "wrap",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                  >
+                    <div>
+                      <div
+                        style={{
+                          fontSize: "var(--font-size-small)",
+                          fontWeight: 800,
+                          color: "var(--primary-color)",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "5px",
+                          marginBottom: "2px",
+                        }}
+                      >
+                        <IconSparkles size={13} color="var(--primary-color)" />
+                        <span>今日の注目スポット</span>
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "0.86rem",
+                          fontWeight: 800,
+                          color: "var(--text-color)",
+                        }}
+                      >
+                        {oracleResult.luckySpot.name}
+                      </div>
+                      {oracleResult.luckySpot.address && (
+                        <div
+                          style={{
+                            fontSize: "var(--font-size-small)",
+                            color: "var(--text-color)",
+                            opacity: 0.72,
+                          }}
+                        >
+                          {oracleResult.luckySpot.address}
+                        </div>
+                      )}
+                    </div>
+
+                    <div
+                      style={{
+                        borderTop: "1px dashed rgba(201, 168, 76, 0.45)",
+                        paddingTop: "8px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "var(--font-size-small)",
+                          fontWeight: 800,
+                          color: "var(--text-color)",
+                          marginBottom: "3px",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "5px",
+                        }}
+                      >
+                        <IconScroll size={13} color="var(--primary-color)" />
+                        <span>本日の散策の心得</span>
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "var(--text-color)",
+                          lineHeight: 1.55,
+                        }}
+                      >
+                        {oracleResult.walkTip}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stagger 3: アクションボタン */}
+                  <div
+                    className={styles.staggerBlock3}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
                       gap: "8px",
                     }}
                   >
-                    <span
+                    <Link
+                      href={`/routes/${oracleResult.route.id}`}
+                      onClick={closeOracleModal}
+                      className="btn-primary"
                       style={{
+                        textDecoration: "none",
+                        textAlign: "center",
+                        padding: "12px 16px",
+                        borderRadius: "999px",
+                        fontWeight: 800,
+                        fontSize: "0.9rem",
                         display: "inline-flex",
                         alignItems: "center",
-                        gap: "3px",
+                        justifyContent: "center",
+                        gap: "6px",
                       }}
                     >
-                      <IconMapPin size={13} color="var(--primary-color)" />
-                      全{oracleResult.route.walkMetrics.spotCount}箇所
-                    </span>
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "3px",
-                      }}
-                    >
-                      <IconFootprints size={13} color="var(--primary-color)" />
-                      約{oracleResult.route.walkMetrics.distanceKm}km
-                    </span>
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "3px",
-                      }}
-                    >
-                      <IconClock size={13} color="var(--primary-color)" />
-                      約{oracleResult.route.walkMetrics.estimatedMinutes}分
-                    </span>
-                  </div>
-                  {oracleResult.route.description && (
-                    <p
-                      style={{
-                        fontSize: "0.78rem",
-                        color: "var(--text-color)",
-                        opacity: 0.8,
-                        margin: 0,
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {oracleResult.route.description}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* 今日の注目スポット ＆ 散策の心得 */}
-              <div
-                style={{
-                  borderRadius: "14px",
-                  padding: "12px 14px",
-                  background: "rgba(201, 168, 76, 0.12)",
-                  border: "1px solid rgba(201, 168, 76, 0.35)",
-                  marginBottom: "18px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      fontSize: "var(--font-size-small)",
-                      fontWeight: 800,
-                      color: "var(--primary-color)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      marginBottom: "2px",
-                    }}
-                  >
-                    <IconSparkles size={13} color="var(--primary-color)" />
-                    <span>今日の注目スポット</span>
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "0.86rem",
-                      fontWeight: 800,
-                      color: "var(--text-color)",
-                    }}
-                  >
-                    {oracleResult.luckySpot.name}
-                  </div>
-                  {oracleResult.luckySpot.address && (
-                    <div
-                      style={{
-                        fontSize: "var(--font-size-small)",
-                        color: "var(--text-color)",
-                        opacity: 0.72,
-                      }}
-                    >
-                      {oracleResult.luckySpot.address}
+                      <span>このルートを見る</span>
+                      <IconChevronRight size={16} color="currentColor" />
+                    </Link>
+                    <div style={{ display: "flex", gap: "8px" }}>
+                      <button
+                        type="button"
+                        onClick={redrawWalkOracle}
+                        className="btn-secondary"
+                        style={{
+                          flex: 1,
+                          padding: "9px 12px",
+                          borderRadius: "999px",
+                          fontSize: "0.78rem",
+                          fontWeight: 700,
+                        }}
+                      >
+                        <IconRefresh size={14} color="var(--primary-color)" />
+                        <span>もういちど縁を結ぶ（引き直す）</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={closeOracleModal}
+                        className="btn-secondary"
+                        style={{
+                          padding: "9px 16px",
+                          borderRadius: "999px",
+                          fontSize: "0.78rem",
+                          fontWeight: 700,
+                        }}
+                      >
+                        閉じる
+                      </button>
                     </div>
-                  )}
-                </div>
-
-                <div
-                  style={{
-                    borderTop: "1px dashed rgba(201, 168, 76, 0.45)",
-                    paddingTop: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: "var(--font-size-small)",
-                      fontWeight: 800,
-                      color: "var(--text-color)",
-                      marginBottom: "3px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                    }}
-                  >
-                    <IconScroll size={13} color="var(--primary-color)" />
-                    <span>本日の散策の心得</span>
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "0.8rem",
-                      color: "var(--text-color)",
-                      lineHeight: 1.55,
-                    }}
-                  >
-                    {oracleResult.walkTip}
                   </div>
                 </div>
               </div>
-
-              {/* アクションボタン */}
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                }}
-              >
-                <Link
-                  href={`/routes/${oracleResult.route.id}`}
-                  onClick={closeOracleModal}
-                  className="btn-primary"
-                  style={{
-                    textDecoration: "none",
-                    textAlign: "center",
-                    padding: "12px 16px",
-                    borderRadius: "999px",
-                    fontWeight: 800,
-                    fontSize: "0.9rem",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "6px",
-                  }}
-                >
-                  <span>このルートを見る</span>
-                  <IconChevronRight size={16} color="currentColor" />
-                </Link>
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <button
-                    type="button"
-                    onClick={redrawWalkOracle}
-                    className="btn-secondary"
-                    style={{
-                      flex: 1,
-                      padding: "9px 12px",
-                      borderRadius: "999px",
-                      fontSize: "0.78rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    <IconRefresh size={14} color="var(--primary-color)" />
-                    <span>もういちど縁を結ぶ（引き直す）</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={closeOracleModal}
-                    className="btn-secondary"
-                    style={{
-                      padding: "9px 16px",
-                      borderRadius: "999px",
-                      fontSize: "0.78rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    閉じる
-                  </button>
-                </div>
-              </div>
-            </div>
+            )}
           </div>,
           document.body
         )
@@ -512,90 +527,122 @@ export default function NearbyDiscoverySection({
           boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
         }}
       >
-        {/* 時間帯別・今日の街歩きキュレーションバナー ＆ 1つのPrimary CTA（街歩きみくじ） */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "12px",
-            padding: "14px 16px",
-            marginBottom: "18px",
-            borderRadius: "14px",
-            background: "rgba(201, 168, 76, 0.12)",
-            border: "1px solid rgba(201, 168, 76, 0.4)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              flex: "1 1 250px",
-            }}
-          >
-            <div
-              style={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "10px",
-                background: "rgba(199, 68, 46, 0.08)",
-                border: "1px solid rgba(199, 68, 46, 0.22)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-              }}
-              aria-hidden="true"
-            >
-              {renderTimeSceneIcon(timeScene.key)}
-            </div>
-            <div>
-              <div
-                style={{
-                  fontSize: "0.9rem",
-                  fontWeight: 800,
-                  color: "var(--text-color)",
-                  marginBottom: "2px",
-                  lineHeight: 1.35,
-                  wordBreak: "keep-all",
-                }}
-              >
-                {timeScene.title}
-              </div>
-              <div
-                style={{
-                  fontSize: "var(--font-size-small)",
-                  color: "var(--text-color)",
-                  opacity: 0.78,
-                  lineHeight: 1.45,
-                }}
-              >
-                {timeScene.subtitle}
-              </div>
-            </div>
-          </div>
+        {/* ============================================================
+            街歩きみくじ・縁結びの御札匣（トップページ専用意匠）
+           ============================================================ */}
+        <div className={styles.omikujiSanctuaryCard}>
+          <div className={styles.omikujiSanctuaryInner}>
+            {/* 四隅の組子・角飾り罫 */}
+            <div className={styles.cornerOrnamentTL} />
+            <div className={styles.cornerOrnamentTR} />
+            <div className={styles.cornerOrnamentBL} />
+            <div className={styles.cornerOrnamentBR} />
 
-          <button
-            type="button"
-            onClick={drawWalkOracle}
-            className="btn-primary"
-            style={{
-              padding: "10px 18px",
-              fontSize: "0.84rem",
-              fontWeight: 800,
-              borderRadius: "999px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              boxShadow: "0 4px 14px rgba(199, 68, 46, 0.25)",
-              cursor: "pointer",
-            }}
-          >
-            <IconOmikuji size={16} color="currentColor" />
-            <span>今日の街歩きみくじを引く</span>
-          </button>
+            {/* 左端の縦書き添え札「街歩きみくじ」 */}
+            <div className={styles.verticalTitleStrip} aria-hidden="true">
+              <span className={styles.verticalTitleSeal}>縁</span>
+              <span className={styles.verticalTitleText}>街歩きみくじ</span>
+            </div>
+
+            {/* 背景の透かし落款 */}
+            <div className={styles.watermarkSeal} aria-hidden="true">
+              結
+            </div>
+
+            {/* メイン情報＋みくじ筒アクション */}
+            <div className={styles.sanctuaryBody}>
+              <div className={styles.sceneIntroColumn}>
+                <div className={styles.sceneEyebrowRow}>
+                  <span className={styles.sceneTimePill}>
+                    {renderTimeSceneIcon(timeScene.key)}
+                    <span>{timeScene.title}</span>
+                  </span>
+                  <span className={styles.sceneSubtitleTag}>
+                    一振りで出会う、今日の物語
+                  </span>
+                </div>
+                <h3 className={styles.sceneHeadline}>
+                  どこを歩こうか迷ったら、今日のご縁を占ってみませんか
+                </h3>
+                <p className={styles.sceneLead}>{timeScene.subtitle}</p>
+              </div>
+
+              {/* みくじ筒モチーフ ＆ 街歩きみくじを引くボタン */}
+              <div className={styles.drawActionColumn}>
+                <div
+                  className={styles.miniCylinderWrap}
+                  onClick={
+                    oracleResult ? redrawWalkOracle : drawWalkOracle
+                  }
+                  role="presentation"
+                  title="みくじ筒を振って今日の縁を結ぶ"
+                >
+                  <div className={styles.miniStickPeek} />
+                  <div className={styles.miniCylinderBody}>
+                    <span className={styles.miniCylinderLabel}>御籤</span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={drawWalkOracle}
+                  className={`btn-primary ${styles.drawPrimaryBtn}`}
+                >
+                  <IconOmikuji size={16} color="currentColor" />
+                  <span>
+                    {oracleResult
+                      ? "みくじ筒を振って占う"
+                      : "今日の街歩きみくじを引く"}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* 今日すでにおみくじを引いている場合：トップページ上に「本日の結び（控え札）」を表示 */}
+            {oracleResult && (
+              <div className={styles.savedSlipWrapper}>
+                <div className={styles.savedSlipCard}>
+                  <div className={styles.savedSlipStamp} aria-hidden="true">
+                    <span className={styles.savedSlipStampChar}>
+                      {oracleResult.sealChar}
+                    </span>
+                  </div>
+                  <div className={styles.savedSlipInfo}>
+                    <div className={styles.savedSlipMetaRow}>
+                      <span className={styles.savedSlipBadge}>
+                        本日の結び：【{oracleResult.fortuneLabel}】
+                      </span>
+                      <span className={styles.savedSlipSpotHint}>
+                        ・ 注目：{oracleResult.luckySpot.name}
+                      </span>
+                    </div>
+                    <div className={styles.savedSlipRouteTitle}>
+                      {oracleResult.route.title}
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.savedSlipActions}>
+                  <button
+                    type="button"
+                    onClick={openSavedWalkOracle}
+                    className={`btn-secondary ${styles.savedSlipOpenBtn}`}
+                  >
+                    <IconScroll size={14} color="var(--primary-color)" />
+                    <span>本日の御札をひらく</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={redrawWalkOracle}
+                    className={`btn-secondary ${styles.savedSlipRedrawBtn}`}
+                  >
+                    <IconRefresh size={13} color="var(--primary-color)" />
+                    <span>引き直す</span>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* ヘッダー部分 ＆ 補助アクション（現在地測位リンクボタン） */}

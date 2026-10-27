@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { computeRouteWalkMetrics, RouteWalkMetrics } from "@/utils/routeMetrics";
 
 export type TimeSceneKey = "morning" | "afternoon" | "evening" | "night";
@@ -34,8 +34,20 @@ export const MOOD_FILTER_OPTIONS: MoodFilterOption[] = [
 
 export type FortuneLabel = "大吉縁" | "吉縁" | "風流縁" | "発見縁";
 
+export type OracleRitualPhase = "idle" | "drawing" | "unfolding" | "revealed";
+
+export interface FortuneMeta {
+  label: FortuneLabel;
+  reading: string;
+  subtitle: string;
+  sealChar: string;
+}
+
 export interface OracleResult {
   fortuneLabel: FortuneLabel;
+  fortuneReading: string;
+  fortuneSubtitle: string;
+  sealChar: string;
   walkTip: string;
   luckySpot: {
     name: string;
@@ -54,7 +66,32 @@ export interface OracleResult {
   };
 }
 
-const FORTUNE_LABELS: FortuneLabel[] = ["大吉縁", "吉縁", "風流縁", "発見縁"];
+const FORTUNE_META_LIST: FortuneMeta[] = [
+  {
+    label: "大吉縁",
+    reading: "だいきちえん",
+    subtitle: "思いがけない街の輝きと巡り会う、最良の散歩日和",
+    sealChar: "結",
+  },
+  {
+    label: "吉縁",
+    reading: "きちえん",
+    subtitle: "穏やかな風とともに、心地よい歩みを刻める吉日",
+    sealChar: "福",
+  },
+  {
+    label: "風流縁",
+    reading: "ふうりゅうえん",
+    subtitle: "路地裏の陰影や季節の移ろいに、心が澄みわたる日",
+    sealChar: "雅",
+  },
+  {
+    label: "発見縁",
+    reading: "はっけんえん",
+    subtitle: "見慣れたはずの街角に、新しい物語が顔を出す日",
+    sealChar: "発",
+  },
+];
 
 const WALK_TIPS: string[] = [
   "路地裏の小さな祠や老舗の看板に目を向けると、素敵な発見がありそうです。",
@@ -211,11 +248,24 @@ export function useDailyWalkOracle(routes: any[] = []) {
   const [moodFilter, setMoodFilter] = useState<MoodFilterKey>("all");
   const [oracleResult, setOracleResult] = useState<OracleResult | null>(null);
   const [isOracleOpen, setIsOracleOpen] = useState(false);
+  const [oraclePhase, setOraclePhase] = useState<OracleRitualPhase>("idle");
+
+  const timersRef = useRef<Array<ReturnType<typeof setTimeout>>>([]);
+
+  const clearRitualTimers = useCallback(() => {
+    for (const t of timersRef.current) {
+      clearTimeout(t);
+    }
+    timersRef.current = [];
+  }, []);
 
   useEffect(() => {
     const currentHour = new Date().getHours();
     setTimeScene(getTimeSceneByHour(currentHour));
-  }, []);
+    return () => {
+      clearRitualTimers();
+    };
+  }, [clearRitualTimers]);
 
   const routesWithMetrics = useMemo(() => {
     return (routes || []).map((route) => {
@@ -260,8 +310,8 @@ export function useDailyWalkOracle(routes: any[] = []) {
       tipIdx: number,
       spotIdx: number
     ): OracleResult => {
-      const fortuneLabel =
-        FORTUNE_LABELS[Math.abs(fortuneIdx) % FORTUNE_LABELS.length];
+      const fortuneMeta =
+        FORTUNE_META_LIST[Math.abs(fortuneIdx) % FORTUNE_META_LIST.length];
       const walkTip = WALK_TIPS[Math.abs(tipIdx) % WALK_TIPS.length];
       const spots = Array.isArray(targetRoute.spots) ? targetRoute.spots : [];
       const chosenSpot =
@@ -273,7 +323,10 @@ export function useDailyWalkOracle(routes: any[] = []) {
             };
 
       return {
-        fortuneLabel,
+        fortuneLabel: fortuneMeta.label,
+        fortuneReading: fortuneMeta.reading,
+        fortuneSubtitle: fortuneMeta.subtitle,
+        sealChar: fortuneMeta.sealChar,
         walkTip,
         luckySpot: {
           name: chosenSpot?.name || "街角の注目スポット",
@@ -284,6 +337,56 @@ export function useDailyWalkOracle(routes: any[] = []) {
       };
     },
     []
+  );
+
+  // 初回マウント時に「本日すでに引いたおみくじ（控え札）」があればトップ表示用に復元する
+  useEffect(() => {
+    if (routesWithMetrics.length === 0 || typeof window === "undefined") return;
+    try {
+      const raw = localStorage.getItem(getTodayStorageKey());
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      const savedRoute = routesWithMetrics.find(
+        (r) => r.id === parsed?.routeId
+      );
+      if (savedRoute) {
+        const restored = buildOracleFromRoute(
+          savedRoute,
+          parsed.fortuneIdx ?? 0,
+          parsed.tipIdx ?? 0,
+          parsed.spotIdx ?? 0
+        );
+        setOracleResult((prev) => prev || restored);
+      }
+    } catch {
+      // ignore storage errors
+    }
+  }, [routesWithMetrics, buildOracleFromRoute]);
+
+  const startRitualSequence = useCallback(
+    (skipDrawingShake = false) => {
+      clearRitualTimers();
+      setIsOracleOpen(true);
+
+      if (skipDrawingShake) {
+        setOraclePhase("unfolding");
+        const tReveal = setTimeout(() => {
+          setOraclePhase("revealed");
+        }, 380);
+        timersRef.current.push(tReveal);
+        return;
+      }
+
+      setOraclePhase("drawing");
+      const tUnfold = setTimeout(() => {
+        setOraclePhase("unfolding");
+      }, 960);
+      const tReveal = setTimeout(() => {
+        setOraclePhase("revealed");
+      }, 1380);
+      timersRef.current.push(tUnfold, tReveal);
+    },
+    [clearRitualTimers]
   );
 
   const generateNewOracle = useCallback(
@@ -299,7 +402,7 @@ export function useDailyWalkOracle(routes: any[] = []) {
 
       const pickedRoute =
         candidates[Math.floor(Math.random() * candidates.length)] || pool[0];
-      const fortuneIdx = Math.floor(Math.random() * FORTUNE_LABELS.length);
+      const fortuneIdx = Math.floor(Math.random() * FORTUNE_META_LIST.length);
       const tipIdx = Math.floor(Math.random() * WALK_TIPS.length);
       const spotsLen = Array.isArray(pickedRoute.spots)
         ? Math.max(1, pickedRoute.spots.length)
@@ -313,7 +416,7 @@ export function useDailyWalkOracle(routes: any[] = []) {
         spotIdx
       );
       setOracleResult(result);
-      setIsOracleOpen(true);
+      startRitualSequence(false);
 
       if (typeof window !== "undefined") {
         try {
@@ -331,7 +434,12 @@ export function useDailyWalkOracle(routes: any[] = []) {
         }
       }
     },
-    [moodFilteredRoutes, routesWithMetrics, buildOracleFromRoute]
+    [
+      moodFilteredRoutes,
+      routesWithMetrics,
+      buildOracleFromRoute,
+      startRitualSequence,
+    ]
   );
 
   const drawWalkOracle = useCallback(() => {
@@ -353,7 +461,7 @@ export function useDailyWalkOracle(routes: any[] = []) {
               parsed.spotIdx ?? 0
             );
             setOracleResult(result);
-            setIsOracleOpen(true);
+            startRitualSequence(false);
             return;
           }
         }
@@ -363,15 +471,30 @@ export function useDailyWalkOracle(routes: any[] = []) {
     }
 
     generateNewOracle();
-  }, [routesWithMetrics, buildOracleFromRoute, generateNewOracle]);
+  }, [
+    routesWithMetrics,
+    buildOracleFromRoute,
+    generateNewOracle,
+    startRitualSequence,
+  ]);
+
+  const openSavedWalkOracle = useCallback(() => {
+    if (!oracleResult) {
+      drawWalkOracle();
+      return;
+    }
+    startRitualSequence(true);
+  }, [oracleResult, drawWalkOracle, startRitualSequence]);
 
   const redrawWalkOracle = useCallback(() => {
     generateNewOracle(oracleResult?.route?.id);
   }, [generateNewOracle, oracleResult]);
 
   const closeOracleModal = useCallback(() => {
+    clearRitualTimers();
     setIsOracleOpen(false);
-  }, []);
+    setOraclePhase("idle");
+  }, [clearRitualTimers]);
 
   return {
     timeScene,
@@ -380,7 +503,9 @@ export function useDailyWalkOracle(routes: any[] = []) {
     moodFilteredRoutes,
     oracleResult,
     isOracleOpen,
+    oraclePhase,
     drawWalkOracle,
+    openSavedWalkOracle,
     redrawWalkOracle,
     closeOracleModal,
   };
