@@ -110,12 +110,14 @@ function writeLocalMemo(eventId: string, memo: string | null) {
 export function useShuinBook(user: any) {
   const [diary, setDiary] = useState<ShuinDiaryEvent[]>([]);
   const [diaryLoading, setDiaryLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedMonth, setSelectedMonth] = useState<string>("すべて");
   const [selectedCity, setSelectedCity] = useState<string>("すべて");
   const [selectedCompanion, setSelectedCompanion] = useState<string>("すべて");
   const [selectedRouteId, setSelectedRouteId] = useState<string>("すべて");
   const [lifeFilter, setLifeFilter] = useState<ShuinLifeFilter>("all");
   const [viewMode, setViewMode] = useState<ShuinViewMode>("grid");
+  const [isFilterSheetOpen, setIsFilterSheetOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<ShuinDiaryEvent | null>(null);
   const [completedRoutes, setCompletedRoutes] = useState<any[]>([]);
   const [participatedRoutes, setParticipatedRoutes] = useState<any[]>([]);
@@ -897,9 +899,27 @@ export function useShuinBook(user: any) {
     return Array.from(map.values());
   }, [diary, participatedRoutes]);
 
-  // 選択された年月・街・同行者・ルート・ライフログ条件でのフィルタリング
+  // 選択されたキーワード・年月・街・同行者・ルート・ライフログ条件でのフィルタリング
   const filteredDiary = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
     return diary.filter((d) => {
+      if (q) {
+        const haystacks = [
+          d.spotName,
+          d.spotAreaLabel,
+          d.spotAddress,
+          d.routeName,
+          d.memo || "",
+          d.sharedMemoText || "",
+          ...(d.companionNames || []),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        if (!haystacks.includes(q)) {
+          return false;
+        }
+      }
       if (selectedMonth !== "すべて" && d.yearMonth !== selectedMonth) {
         return false;
       }
@@ -926,7 +946,42 @@ export function useShuinBook(user: any) {
       }
       return true;
     });
-  }, [diary, selectedMonth, selectedCity, selectedCompanion, selectedRouteId, lifeFilter]);
+  }, [
+    diary,
+    searchQuery,
+    selectedMonth,
+    selectedCity,
+    selectedCompanion,
+    selectedRouteId,
+    lifeFilter,
+  ]);
+
+  const activeFilterCount = useMemo(() => {
+    let count = 0;
+    if (searchQuery.trim().length > 0) count += 1;
+    if (selectedMonth !== "すべて") count += 1;
+    if (selectedCity !== "すべて") count += 1;
+    if (selectedCompanion !== "すべて") count += 1;
+    if (selectedRouteId !== "すべて") count += 1;
+    if (lifeFilter !== "all") count += 1;
+    return count;
+  }, [
+    searchQuery,
+    selectedMonth,
+    selectedCity,
+    selectedCompanion,
+    selectedRouteId,
+    lifeFilter,
+  ]);
+
+  const resetAllFilters = useCallback(() => {
+    setSearchQuery("");
+    setSelectedMonth("すべて");
+    setSelectedCity("すべて");
+    setSelectedCompanion("すべて");
+    setSelectedRouteId("すべて");
+    setLifeFilter("all");
+  }, []);
 
   // 現在の絞り込み条件に対する月間・旅路の紀行サマリー
   const currentFilterSummary = useMemo<ShuinFilterSummary>(() => {
@@ -1016,6 +1071,8 @@ export function useShuinBook(user: any) {
   return {
     diary,
     diaryLoading,
+    searchQuery,
+    setSearchQuery,
     months,
     selectedMonth,
     setSelectedMonth,
@@ -1033,6 +1090,10 @@ export function useShuinBook(user: any) {
     setLifeFilter,
     viewMode,
     setViewMode,
+    isFilterSheetOpen,
+    setIsFilterSheetOpen,
+    activeFilterCount,
+    resetAllFilters,
     filteredDiary,
     completedRoutes,
     filteredCompletedRoutes,
