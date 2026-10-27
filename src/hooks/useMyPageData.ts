@@ -1,15 +1,116 @@
 import { useState, useCallback, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
-import { isRouteCurrentlyActive, getRemainingActiveHours } from "@/utils/userRoutes";
-import { parseMemberDisplayName, syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
+import { isRouteCurrentlyActive, getRemainingActiveHours, activateUserRoute } from "@/utils/userRoutes";
+import {
+  parseMemberDisplayName,
+  syncUserProfileAndGroupStatus,
+  buildMemberStatusWithDisplayName,
+  fetchGroupCompanionMembers,
+} from "@/utils/stampMedia";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
+import { evaluateBadges } from "@/utils/badgeEvaluator";
 
 export function useMyPageData(user: any) {
   const [activeRallies, setActiveRallies] = useState<any[]>([]);
   const [bookmarkedRallies, setBookmarkedRallies] = useState<any[]>([]);
   const [dataLoading, setDataLoading] = useState(true);
+  const [userBadges, setUserBadges] = useState<any[]>([]);
+  const [badgesLoading, setBadgesLoading] = useState(false);
+  const [diary, setDiary] = useState<any[]>([]);
+  const [diaryLoading, setDiaryLoading] = useState(false);
+  const [isJoining, setIsJoining] = useState(false);
   const { showAlert } = useCustomAlert();
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      setBadgesLoading(true);
+      try {
+        await evaluateBadges(user.id);
+        const { data, error } = await supabase
+          .from("badge_assignments")
+          .select(`
+            id,
+            acquired_at,
+            badges (
+              id,
+              code,
+              category,
+              name_ja,
+              subtitle_en,
+              rarity,
+              description
+            )
+          `)
+          .eq("user_id", user.id)
+          .order("acquired_at", { ascending: false });
+
+        if (!cancelled && !error && data) {
+          setUserBadges(data);
+        }
+      } catch (err) {
+        console.error("Failed to load user badges", err);
+      } finally {
+        if (!cancelled) setBadgesLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      setDiaryLoading(true);
+      try {
+        const { data: evs, error } = await supabase
+          .from("stamp_events")
+          .select("id, created_at, visitor_number, spot_id, route_id, group_id, memo, photo_url")
+          .eq("user_id", user.id)
+          .order("created_at", { ascending: false });
+        if (error) {
+          console.error("diary fetch error", error);
+          return;
+        }
+        const events = evs || [];
+        const spotIds = [...new Set(events.map((e: any) => e.spot_id).filter(Boolean))];
+        const spotMap: Record<string, { name: string; routeName: string }> = {};
+        if (spotIds.length) {
+          const { data: sp } = await supabase
+            .from("spots")
+            .select("id, name, route_id, routes(id, title)")
+            .in("id", spotIds);
+          (sp || []).forEach((x: any) => {
+            const rt = Array.isArray(x.routes) ? x.routes[0] : x.routes;
+            spotMap[x.id] = {
+              name: x.name,
+              routeName: rt?.title || rt?.name || "",
+            };
+          });
+        }
+        if (!cancelled) {
+          setDiary(
+            events.map((e: any) => ({
+              ...e,
+              spotName: spotMap[e.spot_id]?.name,
+              routeName: spotMap[e.spot_id]?.routeName,
+            }))
+          );
+        }
+      } catch (e) {
+        console.error("Failed to load diary", e);
+      } finally {
+        if (!cancelled) setDiaryLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
 
   const fetchMyData = useCallback(async () => {
     if (!user) {
@@ -364,10 +465,92 @@ export function useMyPageData(user: any) {
     setBookmarkedRallies((prev) => prev.filter((b) => b.route_id !== routeId));
   };
 
+  const joinCompanionGroupByCode = async (rawCode: string): Promise<string | null> => {
+    if (!user) return null;
+
+    const cleanCode = rawCode.replace(/\s+/g, "");
+    if (cleanCode.length !== 6 || !/^\d{6}$/.test(cleanCode)) {
+      await showAlert({ text: "招待コードは6桁の半角数字で入力してください。", okText: "確認" });
+      return null;
+    }
+
+    setIsJoining(true);
+    try {
+      const { data: grp, error: grpError } = await supabase
+        .from("groups")
+        .select("*")
+        .eq("invite_code", cleanCode)
+        .eq("is_active", true)
+        .maybeSingle();
+
+      if (grpError) throw grpError;
+      if (!grp) {
+        await showAlert({
+          text: "指定された招待コードの連れ立ちグループが見つかりません。コードが正しいか、またはすでに解散されていないかご確認ください。",
+          okText: "確認",
+        });
+        return null;
+      }
+
+      await syncUserProfileAndGroupStatus(supabase, user, grp.id);
+      const statusValue = buildMemberStatusWithDisplayName(user);
+
+      const { data: existingMember } = await supabase
+        .from("group_members")
+        .select("user_id, status")
+        .eq("group_id", grp.id)
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      if (!existingMember) {
+        const { error: joinError } = await supabase
+          .from("group_members")
+          .insert({
+            group_id: grp.id,
+            user_id: user.id,
+            status: statusValue,
+          });
+
+        if (joinError) throw joinError;
+      } else if (existingMember.status !== statusValue) {
+        await supabase
+          .from("group_members")
+          .update({ status: statusValue })
+          .eq("group_id", grp.id)
+          .eq("user_id", user.id);
+      }
+
+      await activateUserRoute(user.id, grp.route_id);
+
+      const currentMembers = await fetchGroupCompanionMembers(supabase, grp.id, user);
+      const partnerNames = currentMembers.filter((m) => !m.isMe).map((m) => m.displayName);
+
+      await showAlert({
+        text:
+          partnerNames.length > 0
+            ? `連れ立ちに合流しました。\n同行メンバー: ${partnerNames.join("、")} さん\n同じルートのマップへ移動します。`
+            : `連れ立ちグループ（コード: ${cleanCode}）に参加しました。\nマップへ移動します。`,
+        okText: "マップへ進む",
+      });
+      return `/routes/${grp.route_id}/map?groupId=${grp.id}`;
+    } catch (err: any) {
+      await showAlert({ text: `連れ立ちへの参加に失敗しました: ${err.message}`, okText: "確認" });
+      return null;
+    } finally {
+      setIsJoining(false);
+    }
+  };
+
   return {
     activeRallies,
     bookmarkedRallies,
     dataLoading,
+    userBadges,
+    badgesLoading,
+    diary,
+    diaryLoading,
+    isJoining,
+    joinCompanionGroupByCode,
     leaveNarrative,
     removeBookmark,
     refreshMyPageData: fetchMyData,

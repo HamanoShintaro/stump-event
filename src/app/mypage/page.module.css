@@ -141,3 +141,24 @@
   font-weight: 700;
   margin-right: 8px;
 }
+
+.hubGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.splitColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 680px) {
+  .splitColumns {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 18px;
+  }
+}
+

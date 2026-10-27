@@ -301,66 +301,103 @@ export default function HeaderNav() {
           position: "relative",
           display: "flex",
           alignItems: "center",
-          gap: "10px",
+          gap: "8px",
         }}
       >
-        {/* 街歩きの手引き（使い方）ボタン */}
+        {/* 共通探索導線：ルートを探す（アカウントメニューから独立） */}
         <Link
-          href="/guide"
-          title="街歩きの手引き（使い方）"
+          href="/routes"
+          title="ルートを探す"
           style={{
-            background: "rgba(255, 253, 249, 0.92)",
-            border: "1px solid #D6CEC3",
+            background: pathname?.startsWith("/routes")
+              ? "var(--primary-color)"
+              : "rgba(255, 253, 249, 0.94)",
+            border: pathname?.startsWith("/routes")
+              ? "1px solid var(--primary-color)"
+              : "1px solid #D6CEC3",
             borderRadius: "999px",
-            height: "40px",
+            height: "38px",
             padding: "0 12px",
             display: "inline-flex",
             alignItems: "center",
             gap: "5px",
             fontSize: "0.76rem",
             fontWeight: 800,
-            color: "#5C4E43",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+            color: pathname?.startsWith("/routes") ? "#FFFDF9" : "var(--text-color)",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
             textDecoration: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <Compass
+            size={15}
+            color={pathname?.startsWith("/routes") ? "#FFFDF9" : "var(--primary-color)"}
+          />
+          <span>ルートを探す</span>
+        </Link>
+
+        {/* 街歩きの手引き（使い方）ボタン */}
+        <Link
+          href="/guide"
+          title="街歩きの手引き（使い方）"
+          aria-label="街歩きの手引き（使い方）"
+          style={{
+            background: "rgba(255, 253, 249, 0.92)",
+            border: "1px solid #D6CEC3",
+            borderRadius: "999px",
+            height: "38px",
+            padding: "0 10px",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "4px",
+            fontSize: "0.74rem",
+            fontWeight: 800,
+            color: "#5C4E43",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
           }}
         >
           <HelpCircle size={15} color="var(--primary-color)" />
           <span>手引き</span>
         </Link>
 
-        {/* 検索ボタン */}
+        {/* 検索ボタン（キーワード・条件で直接探す） */}
         <button
           type="button"
           onClick={() => setSearchOpen(true)}
-          aria-label="ルートを検索"
+          aria-label="条件を指定してルートを検索"
+          title="条件を指定してルートを検索"
           style={{
             background: "rgba(255, 253, 249, 0.92)",
             border: "1px solid #D6CEC3",
             borderRadius: "50%",
-            width: "40px",
-            height: "40px",
+            width: "38px",
+            height: "38px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+            boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
             color: "var(--primary-color)",
             transition: "transform 0.2s",
+            flexShrink: 0,
           }}
           onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
           onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <Search size={19} />
+          <Search size={18} />
         </button>
 
         {loading ? (
           <div style={{ width: "40px", height: "40px" }}></div>
         ) : user ? (
           <>
-            {/* ログイン済み：アイコンのみのボタン（タップでメニュー展開） */}
+            {/* ログイン済み：アカウントメニュー開閉ボタン */}
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="アカウントメニューを開く"
               style={{
                 position: "relative",
                 background: "transparent",
@@ -380,8 +417,8 @@ export default function HeaderNav() {
             >
               <div
                 style={{
-                  width: "44px",
-                  height: "44px",
+                  width: "40px",
+                  height: "40px",
                   backgroundColor: "#fff",
                   border: "2px solid var(--primary-color)",
                   borderRadius: "8px",
@@ -397,8 +434,8 @@ export default function HeaderNav() {
                   }
                   alt="Profile"
                   style={{
-                    width: "36px",
-                    height: "36px",
+                    width: "32px",
+                    height: "32px",
                     borderRadius: "4px",
                     background: "#fff",
                     objectFit: "cover",
@@ -432,18 +469,18 @@ export default function HeaderNav() {
               )}
             </button>
 
-            {/* 展開メニュー */}
+            {/* アカウントメニュー（自分に紐づく記録・通知・設定に限定） */}
             {menuOpen && (
               <div
                 style={{
                   position: "absolute",
-                  top: "calc(100% + 16px)",
+                  top: "calc(100% + 14px)",
                   right: 0,
                   background: "#FFFDF9",
-                  border: "2px solid #EBE5D9",
+                  border: "1.5px solid #EBE5D9",
                   borderRadius: "16px",
                   width: "248px",
-                  boxShadow: "0 10px 25px rgba(136, 115, 96, 0.18)",
+                  boxShadow: "0 12px 28px rgba(92, 78, 67, 0.18)",
                   zIndex: 1000,
                   overflow: "hidden",
                 }}
@@ -452,6 +489,7 @@ export default function HeaderNav() {
                 <button
                   type="button"
                   onClick={() => setMenuOpen(false)}
+                  aria-label="メニューを閉じる"
                   style={{
                     position: "absolute",
                     top: "12px",
@@ -460,21 +498,22 @@ export default function HeaderNav() {
                     border: "none",
                     cursor: "pointer",
                     color: "#B3A598",
-                    fontSize: "1.2rem",
+                    fontSize: "1.1rem",
                     lineHeight: 1,
                   }}
                 >
                   ✕
                 </button>
 
-                {/* 上部：プロフィール領域 */}
+                {/* 上部：マイページへの入口 */}
                 <div
                   style={{
                     padding: "16px",
-                    borderBottom: "2px dashed #EBE5D9",
+                    borderBottom: "1px dashed #EBE5D9",
                     display: "flex",
                     alignItems: "center",
                     gap: "12px",
+                    background: "#FAF6EE",
                   }}
                 >
                   <img
@@ -488,14 +527,15 @@ export default function HeaderNav() {
                       height: "40px",
                       borderRadius: "50%",
                       border: "1px solid #EBE5D9",
+                      background: "#FFFDF9",
                     }}
                   />
                   <div style={{ flex: 1, overflow: "hidden" }}>
                     <div
                       style={{
                         fontWeight: "800",
-                        fontSize: "1rem",
-                        color: "#5C4E43",
+                        fontSize: "0.95rem",
+                        color: "var(--text-color)",
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
@@ -507,29 +547,25 @@ export default function HeaderNav() {
                       href="/mypage"
                       onClick={() => setMenuOpen(false)}
                       style={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.78rem",
                         color: "var(--primary-color)",
                         textDecoration: "none",
-                        fontWeight: "700",
+                        fontWeight: "800",
+                        display: "inline-block",
+                        marginTop: "2px",
                       }}
                     >
-                      マイページを見る ＞
+                      マイページを見る →
                     </Link>
                   </div>
                 </div>
 
-                {/* 下部：メニューリンク */}
+                {/* 中段：自分の活動・所有情報 */}
                 <div style={{ padding: "8px" }}>
                   <MenuItem
                     href="/mypage/diary"
                     icon={BookOpen}
                     label="SHUIN帳"
-                    onClick={() => setMenuOpen(false)}
-                  />
-                  <MenuItem
-                    href="/routes"
-                    icon={Compass}
-                    label="ルート一覧"
                     onClick={() => setMenuOpen(false)}
                   />
                   <MenuItem
@@ -539,24 +575,24 @@ export default function HeaderNav() {
                     onClick={() => setMenuOpen(false)}
                   />
                   <MenuItem
+                    href="/badges"
+                    icon={Award}
+                    label="獲得した称号"
+                    onClick={() => setMenuOpen(false)}
+                    badge={unseenCount > 0 ? unseenCount : undefined}
+                  />
+
+                  <div
+                    style={{ borderTop: "1px dashed #EBE5D9", margin: "6px 8px" }}
+                  />
+
+                  {/* 下段：お知らせ・アカウント管理 */}
+                  <MenuItem
                     href="/notifications"
                     icon={Bell}
                     label="街の便り"
                     onClick={() => setMenuOpen(false)}
                     badge={3}
-                  />
-                  <MenuItem
-                    href="/badges"
-                    icon={Award}
-                    label="称号"
-                    onClick={() => setMenuOpen(false)}
-                    badge={unseenCount > 0 ? unseenCount : undefined}
-                  />
-                  <MenuItem
-                    href="/guide"
-                    icon={HelpCircle}
-                    label="街歩きの手引き（使い方）"
-                    onClick={() => setMenuOpen(false)}
                   />
                   <MenuItem
                     href="/settings"
@@ -566,8 +602,8 @@ export default function HeaderNav() {
                   />
 
                   <div
-                    style={{ borderTop: "2px dashed #EBE5D9", margin: "8px 0" }}
-                  ></div>
+                    style={{ borderTop: "1px dashed #EBE5D9", margin: "6px 8px" }}
+                  />
 
                   <button
                     type="button"
@@ -579,12 +615,13 @@ export default function HeaderNav() {
                       width: "100%",
                       display: "flex",
                       alignItems: "center",
-                      padding: "12px 16px",
+                      padding: "11px 14px",
                       background: "transparent",
                       border: "none",
                       cursor: "pointer",
                       color: "#D9655B",
                       fontWeight: "700",
+                      fontSize: "0.86rem",
                       borderRadius: "8px",
                       transition: "background 0.2s",
                     }}
@@ -602,10 +639,10 @@ export default function HeaderNav() {
                         alignItems: "center",
                         justifyContent: "center",
                         width: "24px",
-                        marginRight: "12px",
+                        marginRight: "10px",
                       }}
                     >
-                      <LogOut size={20} />
+                      <LogOut size={18} />
                     </span>
                     <span>ログアウト</span>
                   </button>
