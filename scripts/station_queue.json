@@ -1,0 +1,55 @@
+{
+  "description": "全国津々浦々・ランダム順の駅ルート作成キュー（5駅ごとに利用者目線フィードバック＆スキル改善を行い、2時間インターバルで進行）",
+  "interval_hours": 2,
+  "batch_size": 5,
+  "batches": [
+    {
+      "batch_id": 1,
+      "status": "completed",
+      "theme_note": "Iteration #1の5処方箋（一筆書き動線・現地視覚物・タイトル/終着/4択の脱テンプレ・五感表現）を適用する全国ランダム第1弾",
+      "stations": [
+        { "slug": "otaru", "station": "小樽", "line": "JR函館本線", "prefecture": "北海道", "city": "小樽市", "vibe": "石造倉庫の運河・旧手宮線廃線跡・北のウォール街の近代建築と硝子・ルタオ/北菓楼" },
+        { "slug": "kakunodate", "station": "角館", "line": "JR田沢湖線・秋田内陸縦貫鉄道", "prefecture": "秋田県", "city": "仙北市", "vibe": "黒板塀と枝垂れ桜の武家屋敷通り・樺細工の手仕事・味噌醤油蔵のレンガ蔵" },
+        { "slug": "ojoji_tokoname", "station": "常滑", "line": "名鉄常滑線", "prefecture": "愛知県", "city": "常滑市", "vibe": "土管坂と登り窯の煙突が並ぶやきもの散歩道・黒塀の路地・招き猫と窯元の器カフェ" },
+        { "slug": "onomichi", "station": "尾道", "line": "JR山陽本線", "prefecture": "広島県", "city": "尾道市", "vibe": "尾道水道の渡し船と潮風・千光寺へ続く石段と猫の細道・古民家再生のパン屋と尾道帆布" },
+        { "slug": "mojiko", "station": "門司港", "line": "JR鹿児島本線", "prefecture": "福岡県", "city": "北九州市", "vibe": "ネオ・ルネサンス様式の門司港駅舎・関門海峡の潮騒と跳ね橋・赤煉瓦の国際貿易建築と焼きカレー" }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "status": "pending",
+      "theme_note": "城下町・湧水・港町・炭鉱遺産・宿場町の全国ミックス第2弾",
+      "stations": [
+        { "slug": "hirosaki", "station": "弘前", "line": "JR奥羽本線・弘南鉄道", "prefecture": "青森県", "city": "弘前市", "vibe": "洋館と教会が並ぶハイカラ城下町・藤田記念庭園とアップルパイ・ねぷたの情熱" },
+        { "slug": "mishima", "station": "三島", "line": "JR東海道本線・伊豆箱根鉄道", "prefecture": "静岡県", "city": "三島市", "vibe": "富士山の雪解け水が湧き出す源兵衛川の飛び石せせらぎ・三嶋大社と桜家うなぎ" },
+        { "slug": "nagahama", "station": "長浜", "line": "JR北陸本線", "prefecture": "滋賀県", "city": "長浜市", "vibe": "秀吉が開いた琵琶湖畔の城下町・黒壁スクエアの硝子工房・大通寺と旧長浜駅舎" },
+        { "slug": "kotohira", "station": "琴平", "line": "JR土讃線・高松琴平電気鉄道", "prefecture": "香川県", "city": "仲多度郡琴平町", "vibe": "こんぴらさんの石段参道・現存最古の芝居小屋『旧金毘羅大芝居（金丸座）』・高燈籠と灸まん" },
+        { "slug": "beppu", "station": "別府", "line": "JR日豊本線", "prefecture": "大分県", "city": "別府市", "vibe": "路地裏の湯けむりと共同浴場（竹瓦温泉の唐破風屋根）・別府タワーと地獄蒸し・レトロ商店街" }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "status": "pending",
+      "theme_note": "水郷・木曽路・古都・瀬戸内・薩摩の全国ミックス第3弾",
+      "stations": [
+        { "slug": "sawara", "station": "佐原", "line": "JR成田線", "prefecture": "千葉県", "city": "香取市", "vibe": "小野川沿いの柳並木と江戸優り（えどまさり）の商家町・伊能忠敬旧宅と樋橋（ジャージャー橋）" },
+        { "slug": "matsumoto", "station": "松本", "line": "JR篠ノ井線・アルピコ交通", "prefecture": "長野県", "city": "松本市", "vibe": "北アルプスを背にする漆黒の国宝松本城・なまこ壁の中町通りと縄手通り・湧水井戸と民藝家具" },
+        { "slug": "uji", "station": "宇治", "line": "JR奈良線・京阪宇治線", "prefecture": "京都府", "city": "宇治市", "vibe": "宇治川の急流と朝霧橋・10円玉の鳳凰堂（平等院）と宇治上神社・焙じ茶が香る茶舗通り" },
+        { "slug": "kurashiki", "station": "倉敷", "line": "JR山陽本線・伯備線", "prefecture": "岡山県", "city": "倉敷市", "vibe": "白壁なまこ壁と倉敷川の川舟流し・日本初の西洋美術館（大原美術館）とアイビースクエアの赤煉瓦" },
+        { "slug": "ibusuki", "station": "指宿", "line": "JR指宿枕崎線", "prefecture": "鹿児島県", "city": "指宿市", "vibe": "錦江湾の波音と砂むし温泉の湯気・南国の蘇鉄並木と薩摩伝承館" }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "status": "pending",
+      "theme_note": "北の大地・みちのく・北陸・紀伊半島・肥前の全国ミックス第4弾",
+      "stations": [
+        { "slug": "hakodate", "station": "函館", "line": "JR函館本線・道南いさりび鉄道", "prefecture": "北海道", "city": "函館市", "vibe": "海へまっすぐ下る八幡坂・赤レンガ倉庫群と異国情緒の教会群・朝市と路面電車" },
+        { "slug": "hiraizumi", "station": "平泉", "line": "JR東北本線", "prefecture": "岩手県", "city": "西磐井郡平泉町", "vibe": "奥州藤原氏の浄土庭園（毛越寺の曲水の宴・大泉が池）と中尊寺金色堂への杉並木・弁慶餅" },
+        { "slug": "takaoka", "station": "高岡", "line": "JR氷見線・城端線・あいの風とやま鉄道", "prefecture": "富山県", "city": "高岡市", "vibe": "国宝・瑞龍寺の壮麗な伽藍配置・高岡大仏と金屋町の千本格子（高岡銅器の鋳物通り）" },
+        { "slug": "ise_shi", "station": "伊勢市", "line": "JR参宮線・近鉄山田線", "prefecture": "三重県", "city": "伊勢市", "vibe": "伊勢神宮（外宮）の清らかな玉砂利と古木・河崎の蔵街（伊勢の台所）と老舗の御饌" },
+        { "slug": "arita", "station": "有田", "line": "JR佐世保線・松浦鉄道", "prefecture": "佐賀県", "city": "西松浦郡有田町", "vibe": "400年の磁器の里・トンバイ塀（登り窯の廃材煉瓦塀）の裏通りと陶山神社の磁器製大鳥居" }
+      ]
+    }
+  ]
+}

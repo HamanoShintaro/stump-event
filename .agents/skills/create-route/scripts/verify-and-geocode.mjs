@@ -70,9 +70,17 @@ async function queryGSI(query) {
  */
 async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const parenMatch = spotName.match(/（(.+?)）/);
-  const cleanPoi = parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : spotName;
+  const bracketMatch = spotName.match(/『(.+?)』/);
+  const beforeParen = spotName.split(/[（『]/)[0].trim();
+  const candidates = [
+    parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : null,
+    bracketMatch ? bracketMatch[1].replace(/[／/].*$/, '').trim() : null,
+    beforeParen.length >= 2 && beforeParen.length <= 18 ? beforeParen : null,
+    spotName,
+  ].filter(Boolean);
+  const uniquePois = [...new Set(candidates)];
   const queries = [
-    `${cleanPoi} ${address}`,
+    ...uniquePois.map((p) => `${p} ${address}`),
     address,
   ];
 
@@ -87,9 +95,9 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
       });
       if (!res.ok) continue;
       const html = await res.text();
-      // 埋め込みデータの中心座標 (lat,lng または lng,lat) を抽出
-      const mLatLng = html.match(/(3[456]\.\d{5,}),(13[89]\.\d{5,}|140\.\d{5,})/);
-      const mLngLat = html.match(/(13[89]\.\d{5,}|140\.\d{5,}),(3[456]\.\d{5,})/);
+      // 埋め込みデータの中心座標 (lat,lng または lng,lat) を抽出（日本全国: 北緯24〜46度・東経122〜146度に対応）
+      const mLatLng = html.match(/((?:2[4-9]|[34]\d)\.\d{5,}),((?:12[2-9]|13\d|14[0-6])\.\d{5,})/);
+      const mLngLat = html.match(/((?:12[2-9]|13\d|14[0-6])\.\d{5,}),((?:2[4-9]|[34]\d)\.\d{5,})/);
       let lat = null;
       let lng = null;
       if (mLatLng) {
@@ -250,8 +258,9 @@ async function main() {
 
   for (const item of textTargets) {
     if (!item.text) continue;
+    const cleanedText = String(item.text).replace(/ギャラリー/g, '');
     for (const rule of PROHIBITED_TERMS) {
-      if (String(item.text).includes(rule.term)) {
+      if (cleanedText.includes(rule.term)) {
         errors.push(`禁止用語検出 [${item.label}]: 「${rule.term}」が含まれています（${rule.reason}）`);
       }
     }
@@ -357,8 +366,8 @@ async function main() {
     }
     if (dist > THRESHOLD_METERS || (shouldFix && dist > 3 && bestGeo.hasBlockNumber)) {
       if (shouldFix) {
-        const latRegex = new RegExp(`(lat:\\s*)${spot.lat}`);
-        const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}`);
+        const latRegex = new RegExp(`(lat:\\s*)${spot.lat}(?=[,\\s\\r\\n])`);
+        const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}(?=[,\\s\\r\\n])`);
         fileContent = fileContent.replace(latRegex, `$1${bestGeo.lat}`);
         fileContent = fileContent.replace(lngRegex, `$1${bestGeo.lng}`);
         spot.lat = bestGeo.lat;
@@ -378,6 +387,57 @@ async function main() {
   if (shouldFix && fixedCount > 0) {
     fs.writeFileSync(absPath, fileContent, 'utf-8');
     console.log(`\n💾 ${fixedCount}件のスポット座標を ${targetArg} に保存しました。`);
+  }
+
+  // 4.5. 徒歩動線・距離感・ジグザグ・脱テンプレ検査（利用者目線チェック）
+  console.log(`\n🚶 徒歩動線・距離感・構造バリエーション検査...`);
+  let totalStraightMeters = 0;
+  const spots = area.spots || [];
+  for (let i = 0; i < spots.length - 1; i++) {
+    const s1 = spots[i];
+    const s2 = spots[i + 1];
+    if (typeof s1.lat === 'number' && typeof s2.lat === 'number') {
+      const legMeters = Math.round(calcDistanceMeters(s1.lat, s1.lng, s2.lat, s2.lng));
+      const estWalkMeters = Math.round(legMeters * 1.3);
+      const estMinutes = Math.max(1, Math.round(estWalkMeters / 80));
+      totalStraightMeters += legMeters;
+      console.log(`  Spot ${i + 1} → Spot ${i + 2}: 直線 ${legMeters}m (推定歩行 約${estWalkMeters}m / 徒歩約${estMinutes}分)`);
+      if (legMeters > 1100) {
+        warnings.push(
+          `徒歩距離過大 [Spot ${i + 1} → Spot ${i + 2}]: 直線 ${legMeters}m（推定徒歩 約${estMinutes}分）離れています。スポット順序の入れ替えや近隣スポットへの変更を検討してください（推奨: 直線850m以内）。`
+        );
+      }
+    }
+  }
+  const totalEstWalkKm = ((totalStraightMeters * 1.3) / 1000).toFixed(1);
+  console.log(`  総移動距離（Spot 1〜${spots.length}間）: 直線 ${totalStraightMeters}m (推定歩行 約${totalEstWalkKm}km)`);
+  if (totalStraightMeters > 3200) {
+    warnings.push(
+      `総歩行距離過大: Spot 1〜${spots.length}間の直線合計が ${totalStraightMeters}m（推定歩行 約${totalEstWalkKm}km）あります。街歩きとして疲弊しないようコンパクトな一筆書き（直線合計2.8km以内推奨）に収めてください。`
+    );
+  }
+
+  // ジグザグ（逆戻り）検出: ベクトル間の折り返し角度をチェック
+  for (let i = 0; i < spots.length - 2; i++) {
+    const A = spots[i];
+    const B = spots[i + 1];
+    const C = spots[i + 2];
+    const d1 = calcDistanceMeters(A.lat, A.lng, B.lat, B.lng);
+    const d2 = calcDistanceMeters(B.lat, B.lng, C.lat, C.lng);
+    const dAC = calcDistanceMeters(A.lat, A.lng, C.lat, C.lng);
+    // 400m以上移動した後に、進行方向が大きく逆戻りして A-C 間が d1 や d2 より短い場合
+    if (d1 > 400 && d2 > 400 && dAC < Math.max(d1, d2) * 0.75) {
+      warnings.push(
+        `ジグザグ動線検出 [Spot ${i + 1} → ${i + 2} → ${i + 3}]: 行って戻る折り返し移動が発生しています（${i + 1}→${i + 2}: ${Math.round(d1)}m, ${i + 2}→${i + 3}: ${Math.round(d2)}m, ${i + 1}〜${i + 3}直線: ${Math.round(dAC)}m）。一筆書きになるよう順番を見直してください。`
+      );
+    }
+  }
+
+  // タイトル・4択のテンプレ化チェック（警告）
+  if (area.title && new RegExp(`——${area.station}、`).test(area.title)) {
+    warnings.push(
+      `タイトル構文の定型化: 「——${area.station}、」の定型フォーマットになっています。他の駅と並んだ際の金太郎飴感を防ぐため、異なる構文・リズムも活用してください。`
+    );
   }
 
   // 5. サブエージェント／Web検索用のファクトチェックシート出力

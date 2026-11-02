@@ -1,0 +1,299 @@
+{
+  "description": "SHUIN ルート品質スコア台帳（5.0点満点）。3.0点以下（needs_replacement: true）は後続の品質改善フェーズで優先的に差し替え・改修を行う。",
+  "criteria": {
+    "story_originality": "物語の切り口・スケールの跳躍・街の個性（1.0点）",
+    "walking_flow": "徒歩動線の一筆書き度・距離の無理のなさ（1.0点）",
+    "visual_tangibility": "現地で目に見える実体・五感体験の有無（埋め戻し遺跡でないか）（1.0点）",
+    "anti_template": "タイトル・終着スポット・4択の非テンプレ度（1.0点）",
+    "spot_harmony": "飲食/買い物スポットと物語テーマの噛み合い度（1.0点）"
+  },
+  "routes": [
+    {
+      "slug": "komuro",
+      "station": "小室",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 4.6,
+      "grade": "S (高品質・お手本)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.7,
+        "spot_harmony": 1.0
+      },
+      "good_points": "総歩行2.2kmの完璧な一筆書き動線。1979年街びらきのレトロ商店街の器のカフェ（トトノエ）から、鎌倉期の古刹（本覚寺）で出土した1万1千年前の2cmのバイオリン形土偶へ飛躍する物語が白眉。",
+      "issues": "タイトルと4択（D=レア4固定）のみ第1世代のテンプレ構文。"
+    },
+    {
+      "slug": "shiroi",
+      "station": "白井",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 4.2,
+      "grade": "A (高品質)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.9,
+        "walking_flow": 0.9,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.6,
+        "spot_harmony": 0.9
+      },
+      "good_points": "江戸時代の寺子屋の筆子塔（佛法寺）から直径12mドームのプラネタリウム（文化センター）へ『復（ふく）地区の学びのバトン』を繋ぐ構成が知的。梨の街にちなむ『ポワリエ（梨の木）』もテーマと合致。",
+      "issues": "タイトル・4択の構文が定型。"
+    },
+    {
+      "slug": "akiyama",
+      "station": "秋山",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 3.8,
+      "grade": "B (良質)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.8,
+        "walking_flow": 0.8,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.6,
+        "spot_harmony": 0.8
+      },
+      "good_points": "切通し駅の地形と、武田遺臣・秋山虎康の三匹獅子舞、谷津の湧水弁天（秋山厳島神社）から松戸レモンのパティスリーへ繋ぐ動線が比較的まとまっている。",
+      "issues": "寺社4連続＋最後に洋菓子店の典型構成。"
+    },
+    {
+      "slug": "imba_nihon_idai",
+      "station": "印旛日本医大",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 3.5,
+      "grade": "B (物語はS級だが動線改修推奨)",
+      "needs_replacement": false,
+      "needs_route_order_fix": true,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.3,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.6,
+        "spot_harmony": 0.7
+      },
+      "good_points": "『若萩』『舞姫』の新町名が天平の松虫姫伝説に由来する導入から、牛の石像が立つ牛むぐりの池、国重文・松虫寺、すぐ隣のマツムシコーヒーへ至る物語は鳥肌ものの完成度。",
+      "issues": "Spot 2（駅東側）→Spot 3（駅西側の四季の華へ逆戻り）→Spot 4（北東の松虫寺へ約1.9km移動）と駅をまたぐジグザグ往復が発生している。四季の華をSpot 1にするだけで4.7点に化ける。"
+    },
+    {
+      "slug": "inzai_makinohara",
+      "station": "印西牧の原",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 3.3,
+      "grade": "C (企画は良いが距離過大)",
+      "needs_replacement": false,
+      "needs_route_order_fix": true,
+      "breakdown": {
+        "story_originality": 0.9,
+        "walking_flow": 0.4,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.6,
+        "spot_harmony": 0.6
+      },
+      "good_points": "造成残土で造った渦巻き展望山『ひょうたん山（標高41m）』と南口の大観覧車『そらっぱ（高さ50m）』を南北の空の展望台として対比させた着眼点が抜群。",
+      "issues": "駅からSpot 1（滝野公園）まで徒歩15分と遠く、Spot 3（皇大神宮）→Spot 4（クーロンヌ）間が国道沿いに約1.8km（徒歩23分）あり歩くときつい。"
+    },
+    {
+      "slug": "matsuhidai",
+      "station": "松飛台",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 3.2,
+      "grade": "C (標準・ややテンプレ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.6,
+        "visual_tangibility": 0.7,
+        "anti_template": 0.5,
+        "spot_harmony": 0.7
+      },
+      "good_points": "松戸と飛地（または松戸飛行場）の歴史背景と、地域のベーカリーカフェの組み合わせ。",
+      "issues": "ややスポット間の移動が長く、構成が定型的。"
+    },
+    {
+      "slug": "omachi",
+      "station": "大町",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 3.4,
+      "grade": "C+ (自然体験は良いが定型)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.7,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.5,
+        "spot_harmony": 0.7
+      },
+      "good_points": "大町自然観察園（長田谷津）の湧水と動植物園の自然体験が明確。",
+      "issues": "タイトル・4択の構文がテンプレ通り。"
+    },
+    {
+      "slug": "chiba_newtown_chuo",
+      "station": "千葉ニュータウン中央",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 2.4,
+      "grade": "D (低品質・要差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.3,
+        "visual_tangibility": 0.2,
+        "anti_template": 0.6,
+        "spot_harmony": 0.6
+      },
+      "good_points": "Spot 4『武西の百庚申（100基の庚申塔のL字整列）』とSpot 3『北総花の丘公園』、およびデータセンター都市×強固な台地の切り口自体は良い。",
+      "issues": "【要差替理由】Spot 1『大塚前公園』とSpot 2『多々羅田公園』が、造成前に発掘調査されただけで現在は埋め戻された『普通の住宅街の近隣公園（芝生と遊具のみ）』であり、さらにその2つの公園間を約1.9km（24分）歩かせるため、現地ユーザーのガッカリ感が大きい。"
+    },
+    {
+      "slug": "shin_kamagaya",
+      "station": "新鎌ヶ谷",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 2.2,
+      "grade": "D (低品質・要差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.1,
+        "visual_tangibility": 0.6,
+        "anti_template": 0.4,
+        "spot_harmony": 0.4
+      },
+      "good_points": "明治の開墾史や地域の和洋菓子の掘り起こしは丁寧。",
+      "issues": "【要差替理由】駅の南1.5km → 北へ1.4km戻る → 南東へ1.7km → 西へ1.5kmという総歩行8.4kmの激しい南北ジグザグ往復になっており、徒歩ルートとして破綻している。"
+    },
+    {
+      "slug": "nishi_shiroi",
+      "station": "西白井",
+      "line": "北総線",
+      "prefecture": "千葉県",
+      "iteration": 1,
+      "score": 2.1,
+      "grade": "D (低品質・要差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.1,
+        "visual_tangibility": 0.6,
+        "anti_template": 0.4,
+        "spot_harmony": 0.3
+      },
+      "good_points": "JRA競馬学校や中木戸諏訪神社など個別の史実は興味深い。",
+      "issues": "【要差替理由】駅から北へ2km → 駅前に1.9km戻る → 北東へ1.7km → 南へ1.7kmと総歩行9.2kmのピンポン移動になっており、徒歩で巡るのが困難。"
+    },
+    {
+      "slug": "tokoname",
+      "station": "常滑",
+      "line": "名鉄常滑線",
+      "prefecture": "愛知県",
+      "iteration": 2,
+      "score": 4.85,
+      "grade": "S+ (最高品質・五感と密度の極致)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.9,
+        "spot_harmony": 0.95
+      },
+      "good_points": "スポット間合計732m（実歩行1.5km）の超高密度一筆書き。巨大猫とこにゃん→水琴窟が響く廻船問屋→靴底にケサワが噛む土管坂→10本煙突の陶栄窯→木造土管工場リノベのMADOYAMAまで、100〜250mごとに視覚・聴覚・触覚の驚きが連続する傑作。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "onomichi",
+      "station": "尾道",
+      "line": "JR山陽本線",
+      "prefecture": "広島県",
+      "iteration": 2,
+      "score": 4.85,
+      "grade": "S+ (最高品質・立体箱庭ルート)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 0.95
+      },
+      "good_points": "Spot 1に商店街のベーカリー『パン屋航路』を置き、大楠とロープウェイが交差する艮神社→猫の細道→千光寺の赤堂・驚音楼へ登り、最後に海辺の石階段『住吉浜の雁木』へ降りて渡船の波音で締める立体的な構成が完璧。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "mojiko",
+      "station": "門司港",
+      "line": "JR鹿児島本線",
+      "prefecture": "福岡県",
+      "iteration": 2,
+      "score": 4.85,
+      "grade": "S+ (最高品質・港町ループ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "第一船だまりをぐるりと一周する760mの完璧なループ。中盤（Spot 3）に熱々の焼きカレーを置き、ラストを関門海峡へ跳ね上がる『ブルーウィングもじ』で締める。4択の問い『もしこの港町で誰かと待ち合わせをするなら？』も秀逸。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "kakunodate",
+      "station": "角館",
+      "line": "JR田沢湖線",
+      "prefecture": "秋田県",
+      "iteration": 2,
+      "score": 4.8,
+      "grade": "S (高品質・明暗対比ルート)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.95,
+        "visual_tangibility": 0.95,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "商人町（安藤醸造の明治25年赤レンガ座敷蔵と醤油ソフト）→田町の西宮家（5つの土蔵）→火除けを越えて内町の黒板塀・樺細工・青柳家→最後に土手を駆け上がり視界が180度開ける桧木内川堤という空間の明暗演出が見事。レビュー指摘を受けSpot 1とSpot 2の順序を南→北へ完全一筆書き化済み（4.50→4.80に向上）。",
+      "issues": "Spot 1・Spot 2順序入れ替えにより解消済み。"
+    },
+    {
+      "slug": "otaru",
+      "station": "小樽",
+      "line": "JR函館本線",
+      "prefecture": "北海道",
+      "iteration": 2,
+      "score": 4.75,
+      "grade": "S (高品質・北の港町ループ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.9,
+        "spot_harmony": 0.95
+      },
+      "good_points": "車道を横切る明治13年の錆びた鉄レール（旧手宮線跡）から始まり、北のウォール街（日銀旧小樽支店）、167個の石油ランプが揺れる北一硝子三号館、小樽軟石の北菓楼を経て、海側の運河遊歩道から夕暮れの浅草橋街園へ抜ける時計回りループ。",
+      "issues": "Spot 4→5で運河沿い遊歩道を通る案内を追記し解消済み。"
+    }
+  ]
+}
