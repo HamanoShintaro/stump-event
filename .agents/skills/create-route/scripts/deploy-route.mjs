@@ -232,7 +232,7 @@ async function main() {
   }
   console.log(`✅ Supabase (routes / spots / badges) UPSERT 完了`);
 
-  // 2. src/data/mock.ts への反映（新規追加 または 既存ブロックの自動更新）
+  // 2. src/data/mock.ts への反映（新規追加 または 既存ブロックの完全更新）
   if (fs.existsSync(mockPath)) {
     const mockContent = fs.readFileSync(mockPath, 'utf-8');
     const serialized = JSON.stringify(mockRouteEntry, null, 2)
@@ -241,21 +241,48 @@ async function main() {
       .join('\n');
 
     if (mockContent.includes(`"id": "${routeId}"`) || mockContent.includes(`id: "${routeId}"`)) {
-      // 既存の同一 routeId ブロックまたは各スポットの lat/lng/address 等を安全に更新
-      let updated = mockContent;
-      for (const sp of overlaySpots) {
-        // spot.id ごとに lat / lng を最新値へ置換
-        const spotBlockRegex = new RegExp(
-          `(["']?id["']?:\\s*"${sp.id}"[\\s\\S]*?["']?lat["']?:\\s*)([0-9.]+)(,\\s*\\n\\s*["']?lng["']?:\\s*)([0-9.]+)`,
-          'g'
-        );
-        updated = updated.replace(spotBlockRegex, `$1${sp.lat}$3${sp.lng}`);
-      }
-      if (updated !== mockContent) {
-        fs.writeFileSync(mockPath, updated, 'utf-8');
-        console.log(`✅ src/data/mock.ts 内の既存ルート (id="${routeId}") のスポット座標を更新しました`);
-      } else {
-        console.log(`ℹ️  src/data/mock.ts 内の既存ルート (id="${routeId}") は既に最新の座標です`);
+      // 既存の同一 routeId ブロック全体を検索して最新データで置換する
+      const idIdx = mockContent.indexOf(`"${routeId}"`);
+      // 直前の "  {" を探す
+      const blockStart = mockContent.lastIndexOf('\n  {', idIdx);
+      if (blockStart !== -1) {
+        let depth = 0;
+        let blockEnd = -1;
+        let inString = false;
+        let escape = false;
+        for (let i = blockStart + 1; i < mockContent.length; i++) {
+          const ch = mockContent[i];
+          if (escape) {
+            escape = false;
+            continue;
+          }
+          if (ch === '\\') {
+            escape = true;
+            continue;
+          }
+          if (ch === '"') {
+            inString = !inString;
+            continue;
+          }
+          if (!inString) {
+            if (ch === '{') depth++;
+            else if (ch === '}') {
+              depth--;
+              if (depth === 0) {
+                blockEnd = i + 1;
+                break;
+              }
+            }
+          }
+        }
+        if (blockEnd !== -1) {
+          const updated =
+            mockContent.slice(0, blockStart + 1) +
+            serialized +
+            mockContent.slice(blockEnd);
+          fs.writeFileSync(mockPath, updated, 'utf-8');
+          console.log(`✅ src/data/mock.ts 内の既存ルート (id="${routeId}") を最新内容に更新しました`);
+        }
       }
     } else {
       const updated = mockContent.replace(/\n\];\s*$/, `,\n${serialized}\n];\n`);
