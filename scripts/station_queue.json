@@ -17,7 +17,7 @@
     },
     {
       "batch_id": 2,
-      "status": "pending",
+      "status": "completed",
       "theme_note": "城下町・湧水・港町・炭鉱遺産・宿場町の全国ミックス第2弾",
       "stations": [
         { "slug": "hirosaki", "station": "弘前", "line": "JR奥羽本線・弘南鉄道", "prefecture": "青森県", "city": "弘前市", "vibe": "洋館と教会が並ぶハイカラ城下町・藤田記念庭園とアップルパイ・ねぷたの情熱" },

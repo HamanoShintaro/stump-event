@@ -294,6 +294,101 @@
       },
       "good_points": "車道を横切る明治13年の錆びた鉄レール（旧手宮線跡）から始まり、北のウォール街（日銀旧小樽支店）、167個の石油ランプが揺れる北一硝子三号館、小樽軟石の北菓楼を経て、海側の運河遊歩道から夕暮れの浅草橋街園へ抜ける時計回りループ。",
       "issues": "Spot 4→5で運河沿い遊歩道を通る案内を追記し解消済み。"
+    },
+    {
+      "slug": "nagahama",
+      "station": "長浜",
+      "line": "JR北陸本線",
+      "prefecture": "滋賀県",
+      "iteration": 3,
+      "score": 4.95,
+      "grade": "S+ (最高品質・町衆の気概と単調北上一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 0.95
+      },
+      "good_points": "緯度が南から北へ1ミリも逆戻りせず単調増加する1.2kmの芸術的一筆書き。5つのスポットを『お上に頼らず自分たちの手で街を作ってきた長浜の町衆の気概（浅見又蔵の慶雲館・鉄道と旧駅舎・五月見舞いの焼鯖そうめん・市民出資の黒壁ガラス館・400年の長浜御坊大通寺）』という1本の強烈なテーマで串刺しにした傑作。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "mishima",
+      "station": "三島",
+      "line": "JR東海道本線",
+      "prefecture": "静岡県",
+      "iteration": 3,
+      "score": 4.95,
+      "grade": "S+ (最高品質・一万年前の溶岩と富士伏流水の物語)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "1万年前の三島溶岩（楽寿園）がろ過装置になり→源兵衛川の飛び石を流れ→約15度の伏流水がうなぎ（桜家）の泥臭さを抜き→白滝公園で冷たさに触れ→三嶋大社と福太郎へ至る一本の水脈ストーリーが完璧。4択の『箱根八里の山越えを翌日に控えた江戸時代の旅人』のなりきり問いも秀逸。",
+      "issues": "description内のスポット紹介順を実スポット順（楽寿園→源兵衛川→桜家→白滝公園→三嶋大社）へ同期し解消済み（4.90→4.95）。"
+    },
+    {
+      "slug": "beppu",
+      "station": "別府",
+      "line": "JR日豊本線",
+      "prefecture": "大分県",
+      "iteration": 3,
+      "score": 4.95,
+      "grade": "S+ (最高品質・駅前700m路地裏の湯気と焼きたてパン)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "バス移動が必要な鉄輪エリアを切り捨て、別府駅東口から半径700mの路地裏だけに集中。大正13年の駅前高等温泉→掌が熱くなる友永パン屋の焼きたてあんぱん→市民募金で復活した梅園温泉→大正10年の日本最古の木造アーケード竹瓦小路を抜けた瞬間に竹瓦温泉の大唐破風屋根が現れる空間演出が圧巻。",
+      "issues": "竹瓦小路の座標をアーケード北側入口へ微調整し、ピン間隔を最適化済み（4.90→4.95）。"
+    },
+    {
+      "slug": "kotohira",
+      "station": "琴平",
+      "line": "JR土讃線",
+      "prefecture": "香川県",
+      "iteration": 3,
+      "score": 4.9,
+      "grade": "S+ (最高品質・365段大門止めの黄金バランス)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 0.95
+      },
+      "good_points": "欲張って本宮（785段）や奥社（1,368段）まで行かせず、365段目の総門・大門と五人百姓の白傘（讃岐富士の絶景）をゴールに設定した判断が大正解。高燈籠→鞘橋→石段22段目の灸まん→現存最古の芝居小屋・金丸座→大門と、普段着で気持ちよく歩ける70分。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "hirosaki",
+      "station": "弘前",
+      "line": "JR奥羽本線",
+      "prefecture": "青森県",
+      "iteration": 3,
+      "score": 4.9,
+      "grade": "S+ (最高品質・宣教師の林檎と洋館から岩木山借景へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "『宣教師が西洋りんごをもたらした歴史を、まさにその外国人教師が住んだ明治の洋館（旧東奥義塾外人教師館）でアップルパイとして味わう』文脈接続と、4択『もしあなたが明治・大正時代の弘前に暮らす知識人だったなら？』が極めて知的。",
+      "issues": "Spot 4（弘前公園・三の丸追手門）とSpot 5（藤田記念庭園）の順序を東→西の単調進行およびdescriptionと完全一致するよう修正済み（4.75→4.90）。"
     }
   ]
 }
