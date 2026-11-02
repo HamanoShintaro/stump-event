@@ -23,6 +23,8 @@ import {
 // Next.js App Router: サーバーコンポーネントとしてSupabaseから直接データを取得
 export const revalidate = 0; // 最新のデータを常に取得
 
+const FEATURED_ROUTES_LIMIT = 6;
+
 export default async function Home() {
   // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む）
   const { data: rallies, error } = await supabase
@@ -35,7 +37,9 @@ export default async function Home() {
     console.error("Error fetching rallies:", error);
   }
 
-  const statsMap = await getRouteStatsMap((rallies || []).map((r) => r.id));
+  const allRallies = rallies || [];
+  const featuredRallies = allRallies.slice(0, FEATURED_ROUTES_LIMIT);
+  const statsMap = await getRouteStatsMap(allRallies.map((r) => r.id));
 
   return (
     <main>
@@ -186,16 +190,16 @@ export default async function Home() {
         </div>
 
         {/* ご近所の再発見・気軽な街歩きコンパス */}
-        <NearbyDiscoverySection routes={rallies || []} statsMap={statsMap} />
+        <NearbyDiscoverySection routes={allRallies} statsMap={statsMap} />
 
-        {/* 注目のルート（データベースから取得した一覧） */}
+        {/* 注目のルート（データベースから取得した一覧・最大6件） */}
         <section className={`${styles.featuredSection} container`}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <h2 className={styles.sectionTitle}>注目のルート</h2>
           </div>
           <div className={styles.rallyGrid}>
-            {rallies && rallies.length > 0 ? (
-              rallies.map((rally) => {
+            {featuredRallies.length > 0 ? (
+              featuredRallies.map((rally) => {
                 const walkMetrics = computeRouteWalkMetrics(
                   rally.spots || [],
                   rally.rarity_estimated_min
@@ -353,6 +357,30 @@ export default async function Home() {
               </p>
             )}
           </div>
+
+          {allRallies.length > FEATURED_ROUTES_LIMIT && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "32px",
+              }}
+            >
+              <Link
+                href="/routes"
+                className="btn-secondary"
+                style={{
+                  textDecoration: "none",
+                  fontSize: "var(--font-size-body)",
+                  padding: "13px 28px",
+                }}
+              >
+                <IconCompass size={17} color="var(--primary-color)" />
+                <span>すべてのルートを見る（全{allRallies.length}件）</span>
+                <IconChevronRight size={16} color="var(--primary-color)" />
+              </Link>
+            </div>
+          )}
         </section>
       </div>
     </main>
