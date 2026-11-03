@@ -9,6 +9,10 @@ CREATE TABLE IF NOT EXISTS inquiries (
   category VARCHAR(64) NOT NULL DEFAULT 'general',
   message TEXT NOT NULL,
   status VARCHAR(32) NOT NULL DEFAULT 'OPEN',
+  reply_subject TEXT,
+  reply_body TEXT,
+  review_reason TEXT,
+  replied_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -23,6 +27,27 @@ BEGIN
     CREATE POLICY "Anyone can insert inquiries"
       ON inquiries
       FOR INSERT
+      WITH CHECK (true);
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'inquiries' AND policyname = 'Support agent can select inquiries'
+  ) THEN
+    CREATE POLICY "Support agent can select inquiries"
+      ON inquiries
+      FOR SELECT
+      USING (true);
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'inquiries' AND policyname = 'Support agent can update inquiries'
+  ) THEN
+    CREATE POLICY "Support agent can update inquiries"
+      ON inquiries
+      FOR UPDATE
+      USING (true)
       WITH CHECK (true);
   END IF;
 END $$;
