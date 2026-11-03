@@ -89,14 +89,26 @@
     },
     {
       "batch_id": 8,
-      "status": "pending",
+      "status": "completed",
       "theme_note": "HeartRails全国駅APIによる完全ランダム抽選第3弾（浜通りの田園駅・常磐線の玄関駅・中国山地の第三セクター温泉駅・広島の路面電車電停・伊勢街道の私鉄駅）",
       "stations": [
-        { "slug": "kusano", "station": "草野", "line": "JR常磐線", "prefecture": "福島県", "city": "いわき市", "vibe": "夏井川渓谷の出口に広がるいわき市平下神谷の田園と古社寺・磐城三十三観音や地元和菓子" },
-        { "slug": "ryugasakishi", "station": "龍ケ崎市", "line": "JR常磐線", "prefecture": "茨城県", "city": "龍ケ崎市", "vibe": "関東鉄道竜ヶ崎線の起点・牛久沼畔のうなぎ（鶴舞家等）と龍ケ崎コロッケ・城下町の歴史" },
-        { "slug": "awakura_onsen", "station": "あわくら温泉", "line": "智頭急行智頭線", "prefecture": "岡山県", "city": "英田郡西粟倉村", "vibe": "百年の森林（もり）が育む清流と湯の里・あわくら旬の里・旧影石小学校や木工クラフトとジビエ" },
-        { "slug": "betsuin_mae", "station": "別院前", "line": "広島電鉄横川線", "prefecture": "広島県", "city": "広島市中区", "vibe": "路面電車がゴトゴト走る寺町の石畳と本願寺広島別院・旧太田川（本川）の雁木と地元お好み焼き・喫茶" },
-        { "slug": "suzukashi", "station": "鈴鹿市", "line": "近鉄鈴鹿線", "prefecture": "三重県", "city": "鈴鹿市", "vibe": "神戸（かんべ）城跡の石垣と堀・伊勢街道神戸宿の町並み・龍光寺（寝釈迦）と老舗和菓子（大徳屋長久）" }
+        { "slug": "kusano", "station": "草野", "line": "JR常磐線", "prefecture": "福島県", "city": "いわき市", "vibe": "夏井川から引かれた農業用水路『小川江筋』と澤村神社・下神谷宿の愛宕花園神社・木村ミルクプラントと銘菓じゃんがら" },
+        { "slug": "ryugasakishi", "station": "龍ケ崎市", "line": "JR常磐線", "prefecture": "茨城県", "city": "龍ケ崎市", "vibe": "関東鉄道竜ヶ崎線の1両気動車・高橋肉店の揚げたて龍ケ崎コロッケ・伊勢屋の焼き団子と撞舞通り・大統寺と般若院の樹齢400年シダレザクラ" },
+        { "slug": "awakura_onsen", "station": "あわくら温泉", "line": "智頭急行智頭線", "prefecture": "岡山県", "city": "英田郡西粟倉村", "vibe": "百年の森林（もり）が育む大社神社と吉野川・にしあわくら小林菓子店のジャージー牛乳シュークリーム・黄金泉と薪ボイラーの元湯" },
+        { "slug": "betsuin_mae", "station": "別院前", "line": "広島電鉄横川線", "prefecture": "広島県", "city": "広島市中区", "vibe": "安芸門徒の総本山格『本願寺広島別院』と廣瀬神社・空鞘稲生神社の被爆クスノキと本川の雁木・MISAKI BAKERYのカヌレと御菓子所高木" },
+        { "slug": "suzukashi", "station": "鈴鹿市", "line": "近鉄鈴鹿線", "prefecture": "三重県", "city": "鈴鹿市", "vibe": "伊勢街道神戸宿の見附と亀屋清泉庵・寝釈迦の龍光寺と鉤の手の油伊旅館・もち久本店の立石餅と織田信孝ゆかりの神戸城跡天守台" }
+      ]
+    },
+    {
+      "batch_id": 9,
+      "status": "pending",
+      "theme_note": "HeartRails全国駅APIによる完全ランダム抽選第4弾（筑後平野の大本山門前駅・紀の川沿いのローカル駅・津軽の私鉄駅・開業したてのLRT電停・豊橋の路面電車坂上電停）",
+      "stations": [
+        { "slug": "zendoji", "station": "善導寺", "line": "JR久大本線", "prefecture": "福岡県", "city": "久留米市", "vibe": "浄土宗大本山『善導寺』の大伽藍と大楠・木造駅舎の記憶・筑後川流域の門前町と老舗和菓子・うどん" },
+        { "slug": "otani_wakayama", "station": "大谷", "line": "JR和歌山線", "prefecture": "和歌山県", "city": "伊都郡かつらぎ町", "vibe": "和泉山脈と紀の川に抱かれた高野山麓かつらぎ町の果樹園・旧大和街道の社寺と地元の直売・甘味" },
+        { "slug": "hiraka", "station": "平賀", "line": "弘南鉄道弘南線", "prefecture": "青森県", "city": "平川市", "vibe": "弘南鉄道の中心駅・世界一の扇ねぷた展示館・津軽のりんご畑と源泉掛け流しの町ナカ温泉・地元食堂" },
+        { "slug": "yoto_3_chome", "station": "陽東3丁目", "line": "宇都宮芳賀ライトレール", "prefecture": "栃木県", "city": "宇都宮市", "vibe": "黄色と黒の次世代LRT（ライトライン）が走る陽東エリア・宇都宮大学峰/陽東キャンパスの緑と地域のパン・カフェ・公園" },
+        { "slug": "higashida_sakaue", "station": "東田坂上", "line": "豊橋鉄道東田本線", "prefecture": "愛知県", "city": "豊橋市", "vibe": "路面電車（市電）が坂を登りきった台地の電停・飽海（あくみ）や東田神明宮の歴史・手筒花火ゆかりの神社と老舗和洋菓子" }
       ]
     }
   ]
