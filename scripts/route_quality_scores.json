@@ -579,6 +579,101 @@
       },
       "good_points": "李荘窯業所（陶祖・李参平住居跡）→香蘭社（古陶磁陳列館）→深川製磁本店→線路が参道を横切る陶山神社の白磁大鳥居→1本北の裏通りのトンバイ塀とアリタポーセリンラボへと至る内山地区の高密度動線。レビュー指摘を受けSpot 1のアプローチ表現とSpot 1→2の方角・徒歩分数（南へ徒歩5分）およびquestionのなりきり表現を即座に修正し4.75→4.90へ向上。",
       "issues": "Spot 1のclue/hookの方角・距離表記を実座標に合わせて修正済み。"
+    },
+    {
+      "slug": "obuse",
+      "station": "小布施",
+      "line": "長野電鉄長野線",
+      "prefecture": "長野県",
+      "iteration": 6,
+      "score": 4.95,
+      "grade": "S+ (最高品質・栗の小径と北斎80代の怒涛天井絵をめぐる376m高密度ループ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 0.95
+      },
+      "good_points": "小布施駅から東へ進んで時計回りにぐるりと一周し駅へ戻れる超コンパクト＆高密度なループ動線（スポット間直線合計376m）。創業二百年の桜井甘精堂→パトロン高井鴻山の書斎『翛然楼』→栗の間伐材を敷き詰めた『栗の小径と北斎館（男浪・女浪）』→市村本家の酒蔵『桝一市村酒造場の手盃台』→竹風堂の栗おこわと日本のあかり博物館へと立体的に繋がる構成が圧巻。",
+      "issues": "categoryを『食べたい』へ振り分け最適化済み（一発合格）。"
+    },
+    {
+      "slug": "takayama",
+      "station": "高山",
+      "line": "JR高山本線",
+      "prefecture": "岐阜県",
+      "iteration": 6,
+      "score": 4.95,
+      "grade": "S+ (最高品質・現存唯一の代官所から杉玉の町並みと飛騨の匠の吹き抜け梁へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "緯度が南から北へ1ミリも逆戻りせず単調増加する1.6kmの王道一筆書き。高山陣屋→朱塗りの中橋→上三之町（出格子と造り酒屋の杉玉）→宮川朝市と二四三屋の焦がし生醤油『みだらしだんご』→明治の名棟梁が組み上げた重要文化財『日下部民藝館』の吹き抜け赤松梁へと至るクライマックスが白眉。",
+      "issues": "categoryを『地域を感じたい』へ振り分け最適化済み（一発合格）。"
+    },
+    {
+      "slug": "marugame",
+      "station": "丸亀",
+      "line": "JR予讃線",
+      "prefecture": "香川県",
+      "iteration": 6,
+      "score": 4.95,
+      "grade": "S+ (最高品質・金毘羅参りの湊灯籠から日本一60mの扇の勾配石垣と現存天守へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "Batch #2の琴平と歴史的につながる『金毘羅参りの船客が上陸した湊町・丸亀』という切り口が秀逸。旧丸亀港の太助灯籠→駅前の谷口吉生建築MIMOCA→旧金毘羅街道・通町の秋寅の館と寳月堂（六万石）→丸亀城大手一の門（うちわ工房『竹』）→総高60mの石垣の上にちょこんと乗る現存十二天守『丸亀城天守』へと南へ一直線に登る構成。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "matsue",
+      "station": "松江",
+      "line": "JR山陰本線",
+      "prefecture": "島根県",
+      "iteration": 6,
+      "score": 4.95,
+      "grade": "S+ (最高品質・不昧公の茶心から千鳥城の望楼、八雲の塩見縄手へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "京橋のたもと（風流堂の復刻銘菓『山川』）からカラコロ工房（旧日銀松江支店の地下大金庫室）→明治の擬洋風迎賓館・興雲閣→国宝松江城天守→塩見縄手の小泉八雲記念館・旧居へと、緯度が南から北へ単調増加する完璧な城下町縦断ルート。レイクラインバスの補足とcategory『学びたい』への振り分けで4.90→4.95へ向上。",
+      "issues": "Spot 1へのレイクラインバス案内追記済み。"
+    },
+    {
+      "slug": "shimabara",
+      "station": "島原",
+      "line": "島原鉄道線",
+      "prefecture": "長崎県",
+      "iteration": 6,
+      "score": 4.9,
+      "grade": "S+ (最高品質・1792年の地殻変動が生んだ名水脈と水屋敷・かんざらし)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "道路の真ん中を御用水が走る鉄砲町武家屋敷→白亜の五層天守・島原城→1792年眉山崩壊後に湧出した『鯉の泳ぐまち 清流亭』→1日3,000トンの湧水池の真上に縁側が張り出す『湧水庭園 四明荘』→浜の川湧水と大正4年創業『元祖かんざらし 銀水』へと北西から南東へ水脈に沿って下る一筆書き。",
+      "issues": "categoryを『癒されたい』へ振り分け最適化済み（一発合格）。"
     }
   ]
 }
