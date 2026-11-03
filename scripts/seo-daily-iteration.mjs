@@ -234,7 +234,9 @@ async function auditSupabaseRoutesSeo() {
     const withoutPref = address
       .trim()
       .replace(/^(?:東京都|北海道|(?:京都|大阪)府|.{2,3}県)/, "");
-    const match = withoutPref.match(/^([^\d\s]+?[市区町村])/);
+    const match = withoutPref.match(
+      /^([^\d\s]+?市[^\d\s]+?区|[^\d\s]+?[市区町村])/
+    );
     return match && match[1] ? match[1].trim() : null;
   }
 
@@ -269,7 +271,15 @@ async function auditSupabaseRoutesSeo() {
         return cand;
       }
     }
+    if (title && typeof title === "string") {
+      const dashMatch = title.match(/[—―ー]{1,2}([一-龠々ヶノァ-ヶー]{2,8})の/);
+      if (dashMatch && dashMatch[1]) return dashMatch[1].trim();
+    }
     if (cityName) {
+      const wardMatch = cityName.match(/市([^\d\s]+?)区$/);
+      if (wardMatch && wardMatch[1] && wardMatch[1].length >= 2) {
+        return wardMatch[1].trim();
+      }
       const cleanCity = cityName
         .replace(/^.+?郡/, "")
         .replace(/[市区町村]$/, "")

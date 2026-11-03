@@ -17,7 +17,10 @@ export function extractCityFromAddress(address?: string | null): string | null {
     /^(?:東京都|北海道|(?:京都|大阪)府|.{2,3}県)/,
     ""
   );
-  const match = withoutPref.match(/^([^\d\s]+?[市区町村])/);
+  // 政令指定都市（例: さいたま市岩槻区・北九州市門司区）は「〇〇市〇〇区」まで抽出
+  const match = withoutPref.match(
+    /^([^\d\s]+?市[^\d\s]+?区|[^\d\s]+?[市区町村])/
+  );
   return match && match[1] ? match[1].trim() : null;
 }
 
@@ -43,7 +46,7 @@ export function extractAreaFromTitle(
   ]);
   let match: RegExpExecArray | null;
   while ((match = stationRegex.exec(combined)) !== null) {
-    let cand = match[1]
+    const cand = match[1]
       .replace(
         /^(?:JR|北総線|東武|京成|名鉄|近鉄|南海|阪急|阪神|京阪|西鉄|東京メトロ|都営|小田急|東急|西武|相鉄|京王|京急|江ノ電|箱根登山|伊豆箱根|アルピコ交通|島原鉄道|高松琴平電鉄|琴電|道南いさりび鉄道|あいの風とやま鉄道|秋田内陸縦貫鉄道|旧国鉄|旧)+/,
         ""
@@ -59,8 +62,20 @@ export function extractAreaFromTitle(
     }
   }
 
-  // 2. 市区町村名から郡を除いた地名（例: 上高井郡小布施町 -> 小布施、鎌倉市 -> 鎌倉）
+  // 2. タイトル中の「——〇〇の」パターン（例: 「人形師が宿った城下町——岩槻のしるしを刻む」）
+  if (title && typeof title === "string") {
+    const dashMatch = title.match(/[—―ー]{1,2}([一-龠々ヶノァ-ヶー]{2,8})の/);
+    if (dashMatch && dashMatch[1]) {
+      return dashMatch[1].trim();
+    }
+  }
+
+  // 3. 政令指定都市の区名または市区町村名から郡を除いた地名（例: さいたま市岩槻区 -> 岩槻、上高井郡小布施町 -> 小布施）
   if (cityName) {
+    const wardMatch = cityName.match(/市([^\d\s]+?)区$/);
+    if (wardMatch && wardMatch[1] && wardMatch[1].length >= 2) {
+      return wardMatch[1].trim();
+    }
     const cleanCity = cityName
       .replace(/^.+?郡/, "")
       .replace(/[市区町村]$/, "")
