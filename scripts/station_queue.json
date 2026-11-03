@@ -77,14 +77,26 @@
     },
     {
       "batch_id": 7,
-      "status": "pending",
+      "status": "completed",
       "theme_note": "HeartRails全国駅APIによる完全ランダム抽選第2弾（海辺のローカル駅・原生林の駅・紡績と漁師町の私鉄駅・出雲平野の単線駅・巨大ターミナル駅）",
       "stations": [
         { "slug": "yasuoka", "station": "安岡", "line": "JR山陰本線", "prefecture": "山口県", "city": "下関市", "vibe": "響灘の潮風が吹く安岡漁港と脇之浦の町並み・安岡八幡宮・海沿いの防波堤と地元鮮魚や蒲鉾の暮らし" },
         { "slug": "kawayu_onsen", "station": "川湯温泉", "line": "JR釧網本線", "prefecture": "北海道", "city": "川上郡弟子屈町", "vibe": "昭和11年築の木造駅舎とステンドグラスの『オーチャードグラス』・駅構内の源泉掛け流し足湯・アカエゾマツの森と硫黄山の風" },
-        { "slug": "kawagoe_tomisuhara", "station": "川越富洲原", "line": "近鉄名古屋線", "prefecture": "三重県", "city": "三重郡川越町・四日市市", "vibe": "旧東洋紡績富田工場ゆかりの『富田の一本松』と聖公会教会・伊勢湾の古い漁師町（天カ須賀の住吉神社・しぐれ茶屋）" },
-        { "slug": "hamayama_koen_kitaguchi", "station": "浜山公園北口", "line": "一畑電車大社線", "prefecture": "島根県", "city": "出雲市", "vibe": "北山山系を仰ぐ一畑電車の単線無人駅・県立浜山公園の松林・島根ワイナリーのぶどう畑と遥堪（ようかん）の社" },
-        { "slug": "omiya", "station": "大宮", "line": "JR各線・東武アーバンパークライン", "prefecture": "埼玉県", "city": "さいたま市大宮区", "vibe": "鉄道の街の活気とすずらん通り・ケヤキ並木が2km続く氷川参道・二千年の古社『武蔵一宮 氷川神社』と大宮公園の舟遊池" }
+        { "slug": "kawagoe_tomisuhara", "station": "川越富洲原", "line": "近鉄名古屋線", "prefecture": "三重県", "city": "三重郡川越町・四日市市", "vibe": "旧東洋紡績富田工場ゆかりの『松原公園と聖武天皇社』・塩役運河跡の境界線・富田一色の飛び出し看板と天カ須賀の蛤しぐれ煮" },
+        { "slug": "hamayama_koen_kitaguchi", "station": "浜山公園北口", "line": "一畑電車大社線", "prefecture": "島根県", "city": "出雲市", "vibe": "北山山系を仰ぐ一畑電車の単線無人駅・県立浜山公園の黒松林・坂根屋の出雲ぜんざい・築地松と島根ワイナリー・阿須伎神社" },
+        { "slug": "omiya", "station": "大宮", "line": "JR京浜東北線", "prefecture": "埼玉県", "city": "さいたま市大宮区", "vibe": "鉄道の街の活気とすずらん通り・ケヤキ並木が2km続く氷川参道・二千年の古社『武蔵一宮 氷川神社（蛇の池）』と大宮公園の舟遊池" }
+      ]
+    },
+    {
+      "batch_id": 8,
+      "status": "pending",
+      "theme_note": "HeartRails全国駅APIによる完全ランダム抽選第3弾（浜通りの田園駅・常磐線の玄関駅・中国山地の第三セクター温泉駅・広島の路面電車電停・伊勢街道の私鉄駅）",
+      "stations": [
+        { "slug": "kusano", "station": "草野", "line": "JR常磐線", "prefecture": "福島県", "city": "いわき市", "vibe": "夏井川渓谷の出口に広がるいわき市平下神谷の田園と古社寺・磐城三十三観音や地元和菓子" },
+        { "slug": "ryugasakishi", "station": "龍ケ崎市", "line": "JR常磐線", "prefecture": "茨城県", "city": "龍ケ崎市", "vibe": "関東鉄道竜ヶ崎線の起点・牛久沼畔のうなぎ（鶴舞家等）と龍ケ崎コロッケ・城下町の歴史" },
+        { "slug": "awakura_onsen", "station": "あわくら温泉", "line": "智頭急行智頭線", "prefecture": "岡山県", "city": "英田郡西粟倉村", "vibe": "百年の森林（もり）が育む清流と湯の里・あわくら旬の里・旧影石小学校や木工クラフトとジビエ" },
+        { "slug": "betsuin_mae", "station": "別院前", "line": "広島電鉄横川線", "prefecture": "広島県", "city": "広島市中区", "vibe": "路面電車がゴトゴト走る寺町の石畳と本願寺広島別院・旧太田川（本川）の雁木と地元お好み焼き・喫茶" },
+        { "slug": "suzukashi", "station": "鈴鹿市", "line": "近鉄鈴鹿線", "prefecture": "三重県", "city": "鈴鹿市", "vibe": "神戸（かんべ）城跡の石垣と堀・伊勢街道神戸宿の町並み・龍光寺（寝釈迦）と老舗和菓子（大徳屋長久）" }
       ]
     }
   ]
