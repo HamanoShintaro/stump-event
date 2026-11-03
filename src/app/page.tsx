@@ -26,10 +26,12 @@ export const revalidate = 0; // 最新のデータを常に取得
 const FEATURED_ROUTES_LIMIT = 6;
 
 export default async function Home() {
-  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む）
+  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む・クイズJSONや長文解説は除外して軽量化）
   const { data: rallies, error } = await supabase
     .from("routes")
-    .select("*, spots(id, name, description, address, order_index, location)")
+    .select(
+      "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
+    )
     .eq("is_published", true)
     .order("created_at", { ascending: false });
 
@@ -202,7 +204,7 @@ export default async function Home() {
               featuredRallies.map((rally) => {
                 const walkMetrics = computeRouteWalkMetrics(
                   rally.spots || [],
-                  rally.rarity_estimated_min
+                  (rally as any).rarity_estimated_min
                 );
                 return (
                   <Link

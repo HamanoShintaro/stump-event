@@ -461,10 +461,11 @@ const OPTIMIZED_LOCAL_DIRS = new Set([
   "iwatsuki",
   "kitaurawa",
   "shintoshin",
+  "higashi-iwatsuki",
 ]);
 
 /**
- * 圧縮最適化済みディレクトリ（/images/{jiyugaoka,yono,iwatsuki,kitaurawa,shintoshin}/）の
+ * 圧縮最適化済みディレクトリ（/images/{jiyugaoka,yono,iwatsuki,kitaurawa,shintoshin,higashi-iwatsuki}/）の
  * 旧 .png ローカルパスを .jpg に正規化する
  */
 export function normalizeLocalImageUrl(url: string | null | undefined): string | null {
