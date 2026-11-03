@@ -354,6 +354,12 @@
   color: inherit;
 }
 
+/* ファーストビュー外のカード（7件目以降）のレイアウト・描画を遅延し、1,000件超でも初期描画を高速化 */
+.cardWrapper:nth-child(n + 7) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 315px;
+}
+
 .card {
   padding: 0;
   overflow: hidden;

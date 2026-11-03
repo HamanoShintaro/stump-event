@@ -26,20 +26,32 @@ export const revalidate = 0; // 最新のデータを常に取得
 const FEATURED_ROUTES_LIMIT = 6;
 
 export default async function Home() {
-  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む・クイズJSONや長文解説は除外して軽量化）
-  const { data: rallies, error } = await supabase
-    .from("routes")
-    .select(
-      "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
-    )
-    .eq("is_published", true)
-    .order("created_at", { ascending: false });
+  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む・クイズJSONや長文解説は除外し、1,000件上限を超えてもページング取得）
+  const PAGE_SIZE = 1000;
+  const allRallies: any[] = [];
+  let offset = 0;
 
-  if (error) {
-    console.error("Error fetching rallies:", error);
+  while (true) {
+    const { data: batch, error } = await supabase
+      .from("routes")
+      .select(
+        "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
+      )
+      .eq("is_published", true)
+      .order("created_at", { ascending: false })
+      .range(offset, offset + PAGE_SIZE - 1);
+
+    if (error) {
+      console.error("Error fetching rallies:", error);
+      break;
+    }
+
+    if (!batch || batch.length === 0) break;
+    allRallies.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
+    offset += PAGE_SIZE;
   }
 
-  const allRallies = rallies || [];
   const featuredRallies = allRallies.slice(0, FEATURED_ROUTES_LIMIT);
   const statsMap = await getRouteStatsMap(allRallies.map((r) => r.id));
 

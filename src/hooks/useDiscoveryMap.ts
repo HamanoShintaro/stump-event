@@ -66,24 +66,164 @@ export interface VisitedFootprint {
   visitorNumber: number | null;
 }
 
+export interface MapViewportBounds {
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+  zoom: number;
+  centerLat: number;
+  centerLng: number;
+}
+
+export interface RouteCluster {
+  id: string;
+  center: [number, number];
+  bounds: [[number, number], [number, number]];
+  count: number;
+  routes: DiscoveryRoute[];
+  hasCompleted: boolean;
+  hasInProgress: boolean;
+  hasBookmarked: boolean;
+  representativeCategory?: string;
+}
+
+export type MapRenderableItem =
+  | { type: "route"; route: DiscoveryRoute }
+  | { type: "cluster"; cluster: RouteCluster };
+
 const DEFAULT_CENTER: [number, number] = [35.9522665, 139.6833445];
+const LAST_POS_STORAGE_KEY = "shuin_last_user_pos_v1";
+const ROUTE_CACHE_TTL_MS = 3 * 60 * 1000;
+const SUPABASE_PAGE_SIZE = 1000;
+
+// モジュールレベルの軽量キャッシュ（画面遷移時の再フェッチ・再計算を防止）
+let cachedProcessedRoutes: { data: any[]; timestamp: number } | null = null;
+
+function readInitialUserPos(): [number, number] {
+  if (typeof window === "undefined") return DEFAULT_CENTER;
+  try {
+    const raw = window.sessionStorage.getItem(LAST_POS_STORAGE_KEY);
+    if (!raw) return DEFAULT_CENTER;
+    const parsed = JSON.parse(raw);
+    if (
+      Array.isArray(parsed) &&
+      parsed.length === 2 &&
+      typeof parsed[0] === "number" &&
+      typeof parsed[1] === "number" &&
+      !Number.isNaN(parsed[0]) &&
+      !Number.isNaN(parsed[1])
+    ) {
+      return [parsed[0], parsed[1]];
+    }
+  } catch {
+    // ignore storage read error
+  }
+  return DEFAULT_CENTER;
+}
+
+function saveLastUserPos(pos: [number, number]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage.setItem(LAST_POS_STORAGE_KEY, JSON.stringify(pos));
+  } catch {
+    // ignore storage write error
+  }
+}
+
+async function yieldToMainThread(): Promise<void> {
+  const win = typeof window !== "undefined" ? (window as any) : null;
+  if (win && "scheduler" in win && win.scheduler && "yield" in win.scheduler) {
+    await win.scheduler.yield();
+  } else {
+    await new Promise<void>((resolve) => setTimeout(resolve, 0));
+  }
+}
 
 function extractLatLng(spot: any): [number, number] | null {
   if (!spot) return null;
-  if (typeof spot.lat === "number" && typeof spot.lng === "number" && !Number.isNaN(spot.lat) && !Number.isNaN(spot.lng)) {
+  if (
+    typeof spot.lat === "number" &&
+    typeof spot.lng === "number" &&
+    !Number.isNaN(spot.lat) &&
+    !Number.isNaN(spot.lng)
+  ) {
     return [spot.lat, spot.lng];
   }
   if (typeof spot.location === "string") {
     const parsed = parseWKBPoint(spot.location);
     if (parsed) return [parsed.lat, parsed.lng];
   }
-  if (spot.location && typeof spot.location === "object" && Array.isArray(spot.location.coordinates)) {
+  if (
+    spot.location &&
+    typeof spot.location === "object" &&
+    Array.isArray(spot.location.coordinates)
+  ) {
     const [lng, lat] = spot.location.coordinates;
     if (typeof lat === "number" && typeof lng === "number") {
       return [lat, lng];
     }
   }
   return null;
+}
+
+function processSingleRoute(rally: any): any | null {
+  if (!rally || rally.is_published === false) return null;
+  const rawSpots = Array.isArray(rally.spots) ? rally.spots : [];
+  const validSpots: DiscoverySpot[] = [];
+  let totalLat = 0;
+  let totalLng = 0;
+
+  for (const spot of rawSpots) {
+    const pos = extractLatLng(spot);
+    if (pos) {
+      totalLat += pos[0];
+      totalLng += pos[1];
+      validSpots.push({
+        ...spot,
+        pos,
+        lat: pos[0],
+        lng: pos[1],
+      });
+    }
+  }
+
+  validSpots.sort((a, b) => (a.order_index ?? 0) - (b.order_index ?? 0));
+  if (validSpots.length === 0) return null;
+
+  const walkMetrics = computeRouteWalkMetrics(validSpots, rally.rarity_estimated_min);
+  const avgPos: [number, number] = [
+    totalLat / validSpots.length,
+    totalLng / validSpots.length,
+  ];
+
+  return {
+    ...rally,
+    spots: validSpots,
+    avgPos,
+    walkMetrics,
+  };
+}
+
+// 1,000〜1,800件規模のルート処理でもメインスレッドを50ms以上ブロックしない非同期バッチ処理
+async function processRoutesNonBlocking(rows: any[]): Promise<any[]> {
+  const results: any[] = [];
+  let deadline =
+    typeof performance !== "undefined" ? performance.now() + 50 : Date.now() + 50;
+
+  for (const row of rows) {
+    const item = processSingleRoute(row);
+    if (item) {
+      results.push(item);
+    }
+    const now = typeof performance !== "undefined" ? performance.now() : Date.now();
+    if (now >= deadline) {
+      await yieldToMainThread();
+      deadline =
+        (typeof performance !== "undefined" ? performance.now() : Date.now()) + 50;
+    }
+  }
+  return results;
 }
 
 function readLocalBookmarks(userId: string): string[] {
@@ -110,11 +250,26 @@ function readLocalMemo(eventId: string): string | null {
 export function useDiscoveryMap() {
   const { user } = useAuth();
 
-  const [rawRoutes, setRawRoutes] = useState<any[]>([]);
-  const [userPos, setUserPos] = useState<[number, number] | null>(null);
+  const [rawRoutes, setRawRoutes] = useState<any[]>(() =>
+    cachedProcessedRoutes &&
+    Date.now() - cachedProcessedRoutes.timestamp < ROUTE_CACHE_TTL_MS
+      ? cachedProcessedRoutes.data
+      : []
+  );
+  // 初回GPS測位完了を待たずに即座にマップを描画するため、キャッシュ座標またはDEFAULT_CENTERで初期化
+  const [userPos, setUserPos] = useState<[number, number]>(readInitialUserPos);
   const [hasRealGps, setHasRealGps] = useState(false);
   const [recenter, setRecenter] = useState(0);
-  const [loadingRoutes, setLoadingRoutes] = useState(true);
+  const [loadingRoutes, setLoadingRoutes] = useState<boolean>(
+    () =>
+      !(
+        cachedProcessedRoutes &&
+        Date.now() - cachedProcessedRoutes.timestamp < ROUTE_CACHE_TTL_MS
+      )
+  );
+
+  // 現在の地図表示領域（Bounding Box & Zoom）
+  const [mapViewport, setMapViewport] = useState<MapViewportBounds | null>(null);
 
   // User data states
   const [stampedByRoute, setStampedByRoute] = useState<Record<string, Set<string>>>({});
@@ -131,11 +286,12 @@ export function useDiscoveryMap() {
   // Selection & animation states
   const [selectedRallyId, setSelectedRallyId] = useState<string | null>(null);
   const [selectedFootprint, setSelectedFootprint] = useState<VisitedFootprint | null>(null);
+  const [focusedClusterIds, setFocusedClusterIds] = useState<string[] | null>(null);
   const [drawnSpots, setDrawnSpots] = useState<DiscoverySpot[]>([]);
   const [showModal, setShowModal] = useState(false);
   const hasRealGpsRef = useRef(false);
 
-  // 1. Geolocation tracking (微小なGPS揺れによる不要な再計算を防ぐため5m以上の移動時のみ更新)
+  // 1. Geolocation tracking (微小なGPS揺れによる不要な再計算を防ぐため10m以上の移動時のみ更新)
   useEffect(() => {
     let watchId: number | null = null;
     if (typeof window !== "undefined" && "geolocation" in navigator) {
@@ -146,30 +302,32 @@ export function useDiscoveryMap() {
           setUserPos((prev) => {
             if (!prev || !hasRealGpsRef.current) {
               hasRealGpsRef.current = true;
-              return [nextLat, nextLng];
+              const nextPos: [number, number] = [nextLat, nextLng];
+              saveLastUserPos(nextPos);
+              return nextPos;
             }
             try {
               const movedMeters = getDistance(
                 { latitude: prev[0], longitude: prev[1] },
                 { latitude: nextLat, longitude: nextLng }
               );
-              if (movedMeters < 5) {
+              if (movedMeters < 10) {
                 return prev;
               }
             } catch {
               // ignore distance calc error
             }
-            return [nextLat, nextLng];
+            const nextPos: [number, number] = [nextLat, nextLng];
+            saveLastUserPos(nextPos);
+            return nextPos;
           });
           setHasRealGps(true);
         },
         () => {
-          setUserPos((prev) => prev || DEFAULT_CENTER);
+          // 測位失敗時は現在の座標を維持
         },
-        { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+        { enableHighAccuracy: false, maximumAge: 15000, timeout: 10000 }
       );
-    } else {
-      setUserPos(DEFAULT_CENTER);
     }
     return () => {
       if (watchId !== null && typeof window !== "undefined" && "geolocation" in navigator) {
@@ -178,60 +336,58 @@ export function useDiscoveryMap() {
     };
   }, []);
 
-  // 2. Fetch published routes & spots
+  // 2. Fetch published routes & spots (軽量カラムのみ取得 + 1,000件上限を超える段階的ページング取得)
   useEffect(() => {
+    if (
+      cachedProcessedRoutes &&
+      Date.now() - cachedProcessedRoutes.timestamp < ROUTE_CACHE_TTL_MS
+    ) {
+      setRawRoutes(cachedProcessedRoutes.data);
+      setLoadingRoutes(false);
+      return;
+    }
+
     let mounted = true;
-    const fetchRoutes = async () => {
+    const fetchAllRoutesPaged = async () => {
       setLoadingRoutes(true);
       try {
-        const { data, error } = await supabase
-          .from("routes")
-          .select("*, spots(id, name, description, order_index, location, address)")
-          .order("created_at", { ascending: false });
+        let offset = 0;
+        const accumulated: any[] = [];
 
-        if (!error && data && mounted) {
-          const published = data.filter((r: any) => r.is_published !== false);
-          const processed = published
-            .map((rally: any) => {
-              const rawSpots = Array.isArray(rally.spots) ? rally.spots : [];
-              const validSpots: DiscoverySpot[] = [];
-              let totalLat = 0;
-              let totalLng = 0;
+        while (mounted) {
+          const { data, error } = await supabase
+            .from("routes")
+            .select(
+              "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, order_index, location)"
+            )
+            .eq("is_published", true)
+            .order("created_at", { ascending: false })
+            .range(offset, offset + SUPABASE_PAGE_SIZE - 1);
 
-              for (const spot of rawSpots) {
-                const pos = extractLatLng(spot);
-                if (pos) {
-                  totalLat += pos[0];
-                  totalLng += pos[1];
-                  validSpots.push({
-                    ...spot,
-                    pos,
-                    lat: pos[0],
-                    lng: pos[1],
-                  });
-                }
-              }
+          if (error || !data || !mounted) {
+            break;
+          }
 
-              validSpots.sort((a, b) => (a.order_index ?? 0) - (b.order_index ?? 0));
+          const processedBatch = await processRoutesNonBlocking(data);
+          if (!mounted) break;
 
-              if (validSpots.length === 0) return null;
+          accumulated.push(...processedBatch);
 
-              const walkMetrics = computeRouteWalkMetrics(validSpots, rally.rarity_estimated_min);
-              const avgPos: [number, number] = [
-                totalLat / validSpots.length,
-                totalLng / validSpots.length,
-              ];
+          // 最初の1ページ目が届いた時点で即座にUIへ反映し、以降（1,001件目〜）はバックグラウンドで追加反映
+          setRawRoutes([...accumulated]);
+          setLoadingRoutes(false);
 
-              return {
-                ...rally,
-                spots: validSpots,
-                avgPos,
-                walkMetrics,
-              };
-            })
-            .filter(Boolean);
+          if (data.length < SUPABASE_PAGE_SIZE) {
+            break;
+          }
+          offset += SUPABASE_PAGE_SIZE;
+        }
 
-          setRawRoutes(processed);
+        if (mounted && accumulated.length > 0) {
+          cachedProcessedRoutes = {
+            data: accumulated,
+            timestamp: Date.now(),
+          };
         }
       } catch (err) {
         console.error("Failed to fetch map routes:", err);
@@ -240,7 +396,7 @@ export function useDiscoveryMap() {
       }
     };
 
-    fetchRoutes();
+    fetchAllRoutesPaged();
     return () => {
       mounted = false;
     };
@@ -529,10 +685,164 @@ export function useDiscoveryMap() {
     });
   }, [enrichedRoutes, durationFilter, statusFilter]);
 
-  // 7. Nearby / Featured routes sorted by distance from user (top 5)
+  // 7. Viewport Bounding Box による画面内ルート絞り込み（Step B: 画面外DOM生成の排除）
+  const viewportRoutes: DiscoveryRoute[] = useMemo(() => {
+    if (!mapViewport) {
+      // 初回マウント直後（Leafletのbounds通知前）は現在地周辺（約25km圏内）または先頭60件に絞る
+      const nearInitial = filteredRoutes.filter((r) => {
+        if (!r.avgPos) return false;
+        return (
+          Math.abs(r.avgPos[0] - userPos[0]) <= 0.22 &&
+          Math.abs(r.avgPos[1] - userPos[1]) <= 0.25
+        );
+      });
+      return nearInitial.length > 0 ? nearInitial : filteredRoutes.slice(0, 60);
+    }
+
+    // 少しのドラッグ操作でピンが急に消えないよう、現在の表示領域に上下左右25%のバッファを持たせる
+    const latSpan = Math.max(0.008, mapViewport.north - mapViewport.south);
+    const lngSpan = Math.max(0.008, mapViewport.east - mapViewport.west);
+    const minLat = mapViewport.south - latSpan * 0.25;
+    const maxLat = mapViewport.north + latSpan * 0.25;
+    const minLng = mapViewport.west - lngSpan * 0.25;
+    const maxLng = mapViewport.east + lngSpan * 0.25;
+
+    return filteredRoutes.filter((r) => {
+      if (!r.avgPos) return false;
+      const [lat, lng] = r.avgPos;
+      return lat >= minLat && lat <= maxLat && lng >= minLng && lng <= maxLng;
+    });
+  }, [filteredRoutes, mapViewport, userPos]);
+
+  // 8. ズームレベルに応じた空間グリッド・クラスタリング（Step B: 数百〜1,800件でも同時描画ピン数を数十個以下に制御）
+  const mapRenderItems: MapRenderableItem[] = useMemo(() => {
+    if (viewportRoutes.length === 0) return [];
+    if (viewportRoutes.length === 1) {
+      return [{ type: "route", route: viewportRoutes[0] }];
+    }
+
+    const zoom = mapViewport?.zoom ?? 13;
+    let cellLat: number;
+    let cellLng: number;
+
+    if (zoom >= 16) {
+      // 最大ズーム付近では実質的に同一座標（同じ駅前など約50m圏内）の重なりピンのみ束ねる
+      cellLat = 0.00045;
+      cellLng = 0.00055;
+    } else if (zoom >= 15) {
+      cellLat = 0.0012;
+      cellLng = 0.0014;
+    } else {
+      // 画面上で約55〜65px四方のグリッドで高速クラスタリング（O(N)）
+      const baseDeg = 360 / Math.pow(2, zoom + 2.35);
+      cellLat = baseDeg * 0.85;
+      cellLng = baseDeg;
+    }
+
+    const buckets = new Map<string, DiscoveryRoute[]>();
+    for (const route of viewportRoutes) {
+      const [lat, lng] = route.avgPos;
+      const key = `${Math.floor(lat / cellLat)}_${Math.floor(lng / cellLng)}`;
+      const bucket = buckets.get(key);
+      if (bucket) {
+        bucket.push(route);
+      } else {
+        buckets.set(key, [route]);
+      }
+    }
+
+    const items: MapRenderableItem[] = [];
+    for (const [key, group] of buckets.entries()) {
+      if (group.length === 1) {
+        items.push({ type: "route", route: group[0] });
+      } else {
+        let sumLat = 0;
+        let sumLng = 0;
+        let minLat = Infinity;
+        let maxLat = -Infinity;
+        let minLng = Infinity;
+        let maxLng = -Infinity;
+        let hasCompleted = false;
+        let hasInProgress = false;
+        let hasBookmarked = false;
+
+        for (const r of group) {
+          const [lat, lng] = r.avgPos;
+          sumLat += lat;
+          sumLng += lng;
+          if (lat < minLat) minLat = lat;
+          if (lat > maxLat) maxLat = lat;
+          if (lng < minLng) minLng = lng;
+          if (lng > maxLng) maxLng = lng;
+          if (r.progress.isCompleted) hasCompleted = true;
+          if (r.progress.isInProgress || r.progress.stampedCount > 0) hasInProgress = true;
+          if (r.isBookmarked) hasBookmarked = true;
+        }
+
+        items.push({
+          type: "cluster",
+          cluster: {
+            id: `cluster_${zoom}_${key}`,
+            center: [sumLat / group.length, sumLng / group.length],
+            bounds: [
+              [minLat, minLng],
+              [maxLat, maxLng],
+            ],
+            count: group.length,
+            routes: group,
+            hasCompleted,
+            hasInProgress,
+            hasBookmarked,
+            representativeCategory: group[0].category,
+          },
+        });
+      }
+    }
+
+    return items;
+  }, [viewportRoutes, mapViewport?.zoom]);
+
+  // 9. 足跡レイヤーの画面内カリング（選択中の足跡は常に保持）
+  const visibleFootprints: VisitedFootprint[] = useMemo(() => {
+    if (!mapViewport || visitedFootprints.length <= 80) {
+      return visitedFootprints;
+    }
+    const latSpan = Math.max(0.008, mapViewport.north - mapViewport.south);
+    const lngSpan = Math.max(0.008, mapViewport.east - mapViewport.west);
+    const minLat = mapViewport.south - latSpan * 0.25;
+    const maxLat = mapViewport.north + latSpan * 0.25;
+    const minLng = mapViewport.west - lngSpan * 0.25;
+    const maxLng = mapViewport.east + lngSpan * 0.25;
+
+    return visitedFootprints.filter((fp) => {
+      if (selectedFootprint && fp.spotId === selectedFootprint.spotId) return true;
+      return fp.lat >= minLat && fp.lat <= maxLat && fp.lng >= minLng && fp.lng <= maxLng;
+    });
+  }, [visitedFootprints, mapViewport, selectedFootprint]);
+
+  // 10. 下部カルーセル用ルート一覧（現在の地図表示エリア内のルートを優先し、0件時は現在地から近い順）
   const nearbyRoutes: DiscoveryRoute[] = useMemo(() => {
-    const copy = [...filteredRoutes];
+    if (focusedClusterIds && focusedClusterIds.length > 0) {
+      const idSet = new Set(focusedClusterIds);
+      const clusterMatches = filteredRoutes.filter((r) => idSet.has(r.id));
+      if (clusterMatches.length > 0) {
+        return clusterMatches.slice(0, 8);
+      }
+    }
+
+    const sourceList = viewportRoutes.length > 0 ? viewportRoutes : filteredRoutes;
+    const refLat = mapViewport ? mapViewport.centerLat : userPos[0];
+    const refLng = mapViewport ? mapViewport.centerLng : userPos[1];
+
+    const copy = [...sourceList];
     copy.sort((a, b) => {
+      if (viewportRoutes.length > 0 && a.avgPos && b.avgPos) {
+        const distA =
+          Math.pow(a.avgPos[0] - refLat, 2) + Math.pow(a.avgPos[1] - refLng, 2);
+        const distB =
+          Math.pow(b.avgPos[0] - refLat, 2) + Math.pow(b.avgPos[1] - refLng, 2);
+        return distA - distB;
+      }
       if (a.distanceFromUserKm !== null && b.distanceFromUserKm !== null) {
         return a.distanceFromUserKm - b.distanceFromUserKm;
       }
@@ -540,8 +850,8 @@ export function useDiscoveryMap() {
       if (b.distanceFromUserKm !== null) return 1;
       return 0;
     });
-    return copy.slice(0, 5);
-  }, [filteredRoutes]);
+    return copy.slice(0, 8);
+  }, [focusedClusterIds, viewportRoutes, filteredRoutes, mapViewport, userPos]);
 
   const selectedRally = useMemo(
     () => enrichedRoutes.find((r) => r.id === selectedRallyId) || null,
@@ -552,7 +862,25 @@ export function useDiscoveryMap() {
     setSelectedRallyId(rally ? rally.id : null);
     if (rally) {
       setSelectedFootprint(null);
+      setFocusedClusterIds(null);
     }
+  }, []);
+
+  const updateMapViewport = useCallback((next: MapViewportBounds) => {
+    setMapViewport((prev) => {
+      if (
+        prev &&
+        prev.zoom === next.zoom &&
+        Math.abs(prev.north - next.north) < 0.0002 &&
+        Math.abs(prev.south - next.south) < 0.0002 &&
+        Math.abs(prev.east - next.east) < 0.0002 &&
+        Math.abs(prev.west - next.west) < 0.0002
+      ) {
+        return prev;
+      }
+      return next;
+    });
+    setFocusedClusterIds(null);
   }, []);
 
   // 選択中ルートのスポット一覧（現在地 userPos の更新に影響されない安定したメモ化配列）
@@ -571,9 +899,7 @@ export function useDiscoveryMap() {
     );
   }, [selectedRallyId, rawRoutes]);
 
-  // 8. Spot drawing animation when a route is selected
-  // 現在地(userPos)の移動で enrichedRoutes / selectedRally の参照が変わってもリセットされないよう、
-  // selectedRallySpots のみを依存配列にして1スポットずつ順番に描画する
+  // 11. Spot drawing animation when a route is selected
   useEffect(() => {
     if (!selectedRallySpots || selectedRallySpots.length === 0) {
       setDrawnSpots([]);
@@ -611,6 +937,7 @@ export function useDiscoveryMap() {
     setMapLayerMode(mode);
     setSelectedRallyId(null);
     setSelectedFootprint(null);
+    setFocusedClusterIds(null);
     setShowModal(false);
   }, []);
 
@@ -634,13 +961,19 @@ export function useDiscoveryMap() {
     routeProgressMap,
     bookmarkedRouteIds,
     visitedFootprints,
+    visibleFootprints,
     enrichedRoutes,
     filteredRoutes,
+    viewportRoutes,
+    mapRenderItems,
     nearbyRoutes,
     selectedRally,
     setSelectedRally,
     selectedFootprint,
     setSelectedFootprint,
+    focusedClusterIds,
+    setFocusedClusterIds,
+    updateMapViewport,
     drawnSpots,
     showModal,
     setShowModal,

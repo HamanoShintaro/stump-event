@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+  useMapEvents,
+  Polyline,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useRouter } from "next/navigation";
@@ -22,6 +30,9 @@ import {
   useDiscoveryMap,
   DiscoveryRoute,
   VisitedFootprint,
+  RouteCluster,
+  MapRenderableItem,
+  MapViewportBounds,
 } from "@/hooks/useDiscoveryMap";
 import {
   CategoryShuinIcon,
@@ -29,6 +40,12 @@ import {
   getStampSealSvgMarkup,
   getUserLocationPinMarkup,
 } from "@/components/icons/ShuinIcons";
+
+// アイコンインスタンスのキャッシュ（再レンダー時の不要なDOM破棄・再生成を防止）
+const routePinIconCache = new Map<string, L.DivIcon>();
+const clusterPinIconCache = new Map<string, L.DivIcon>();
+const footprintPinIconCache = new Map<string, L.DivIcon>();
+const orderedSpotIconCache = new Map<number, L.DivIcon>();
 
 // カスタムアイコン（現在地用・単色SVGピン）
 const UserLocationIcon = L.divIcon({
@@ -40,9 +57,16 @@ const UserLocationIcon = L.divIcon({
 });
 
 // カスタムアイコン（カテゴリごとのルートピン＋進捗・踏破・保存バッジ）
-const getRoutePinIcon = (route: DiscoveryRoute) => {
-  const bgColor = "var(--primary-color)";
+const getRoutePinIcon = (route: DiscoveryRoute): L.DivIcon => {
   const { stampedCount, totalCount, isCompleted, isInProgress } = route.progress;
+  const cacheKey = `${route.category || ""}_${stampedCount}_${totalCount}_${
+    isCompleted ? 1 : 0
+  }_${isInProgress ? 1 : 0}_${route.isBookmarked ? 1 : 0}`;
+
+  const cached = routePinIconCache.get(cacheKey);
+  if (cached) return cached;
+
+  const bgColor = "var(--primary-color)";
   const iconColor = isCompleted ? "#8C6A1D" : "var(--primary-color)";
   const svgIcon = getCategorySvgMarkup(route.category, iconColor, 21, 1.9);
   let badgeHtml = "";
@@ -102,7 +126,7 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
     `;
   }
 
-  return L.divIcon({
+  const icon = L.divIcon({
     html: `
       <div style="
         background-color: #FFFDF9;
@@ -135,10 +159,101 @@ const getRoutePinIcon = (route: DiscoveryRoute) => {
     iconSize: [44, 52],
     iconAnchor: [22, 52],
   });
+
+  if (routePinIconCache.size > 500) {
+    routePinIconCache.clear();
+  }
+  routePinIconCache.set(cacheKey, icon);
+  return icon;
+};
+
+// カスタムアイコン（密集エリアのルートを束ねるクラスターピン）
+const getClusterPinIcon = (cluster: RouteCluster): L.DivIcon => {
+  const cacheKey = `${cluster.count}_${cluster.representativeCategory || ""}_${
+    cluster.hasCompleted ? 1 : 0
+  }_${cluster.hasInProgress ? 1 : 0}_${cluster.hasBookmarked ? 1 : 0}`;
+
+  const cached = clusterPinIconCache.get(cacheKey);
+  if (cached) return cached;
+
+  const borderColor = cluster.hasCompleted
+    ? "var(--accent-color)"
+    : "var(--primary-color)";
+  const svgIcon = getCategorySvgMarkup(
+    cluster.representativeCategory,
+    "var(--primary-color)",
+    19,
+    1.9
+  );
+
+  const size = cluster.count >= 20 ? 50 : 46;
+
+  const icon = L.divIcon({
+    html: `
+      <div style="
+        background-color: #FFFDF9;
+        border: 2.5px solid ${borderColor};
+         outline: 2px solid rgba(199, 68, 46, 0.22);
+        width: ${size}px;
+        height: ${size}px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 14px rgba(44, 37, 32, 0.24);
+        position: relative;
+      ">
+        ${svgIcon}
+        <div style="
+          position: absolute;
+          top: -7px;
+          right: -10px;
+          background: var(--primary-color);
+          color: #FFFDF9;
+          border: 1.5px solid var(--accent-color);
+          border-radius: 999px;
+          padding: 1px 6px;
+          font-size: 10px;
+          font-weight: 800;
+          line-height: 1.25;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+          white-space: nowrap;
+        ">${cluster.count}件</div>
+        <div style="
+          position: absolute;
+          bottom: -9px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 8px solid ${borderColor};
+        "></div>
+      </div>
+    `,
+    className: "cluster-pin",
+    iconSize: [size, size + 8],
+    iconAnchor: [size / 2, size + 8],
+  });
+
+  if (clusterPinIconCache.size > 300) {
+    clusterPinIconCache.clear();
+  }
+  clusterPinIconCache.set(cacheKey, icon);
+  return icon;
 };
 
 // カスタムアイコン（自分の足跡レイヤー用 SHUIN 印影ピン・単色SVG）
-const getFootprintPinIcon = (fp: VisitedFootprint, isSelected: boolean) => {
+const getFootprintPinIcon = (
+  fp: VisitedFootprint,
+  isSelected: boolean
+): L.DivIcon => {
+  const cacheKey = `${fp.visitCount}_${isSelected ? 1 : 0}`;
+  const cached = footprintPinIconCache.get(cacheKey);
+  if (cached) return cached;
+
   const sealSvg = getStampSealSvgMarkup(
     "var(--primary-color)",
     isSelected ? 22 : 20,
@@ -162,7 +277,7 @@ const getFootprintPinIcon = (fp: VisitedFootprint, isSelected: boolean) => {
         ">×${fp.visitCount}</div>`
       : "";
 
-  return L.divIcon({
+  const icon = L.divIcon({
     html: `
       <div style="
         background-color: #FFFDF9;
@@ -186,11 +301,17 @@ const getFootprintPinIcon = (fp: VisitedFootprint, isSelected: boolean) => {
     iconSize: [44, 44],
     iconAnchor: [22, 22],
   });
+
+  footprintPinIconCache.set(cacheKey, icon);
+  return icon;
 };
 
 // カスタムアイコン（スポット）
-const getOrderedSpotIcon = (orderIndex: number) =>
-  L.divIcon({
+const getOrderedSpotIcon = (orderIndex: number): L.DivIcon => {
+  const cached = orderedSpotIconCache.get(orderIndex);
+  if (cached) return cached;
+
+  const icon = L.divIcon({
     html: `
       <div style="
         background: var(--primary-color);
@@ -212,6 +333,49 @@ const getOrderedSpotIcon = (orderIndex: number) =>
     iconAnchor: [14, 14],
   });
 
+  orderedSpotIconCache.set(orderIndex, icon);
+  return icon;
+};
+
+// 地図のパン・ズーム完了時（moveend / zoomend）にのみ現在の表示矩形（Bounding Box）を通知するコンポーネント
+function MapViewportTracker({
+  onViewportChange,
+}: {
+  onViewportChange: (bounds: MapViewportBounds) => void;
+}) {
+  const map = useMap();
+
+  const reportViewport = () => {
+    const b = map.getBounds();
+    const c = map.getCenter();
+    onViewportChange({
+      north: b.getNorth(),
+      south: b.getSouth(),
+      east: b.getEast(),
+      west: b.getWest(),
+      zoom: map.getZoom(),
+      centerLat: c.lat,
+      centerLng: c.lng,
+    });
+  };
+
+  useEffect(() => {
+    reportViewport();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map]);
+
+  useMapEvents({
+    moveend: () => {
+      reportViewport();
+    },
+    zoomend: () => {
+      reportViewport();
+    },
+  });
+
+  return null;
+}
+
 // A component to recenter the map when user location is found or explicitly requested
 function LocationMarker({
   position,
@@ -231,7 +395,7 @@ function LocationMarker({
     if (position && hasRealGps && !centeredOnRealGps.current) {
       centeredOnRealGps.current = true;
       if (!hasActiveSelection) {
-        map.flyTo(position, 14);
+        map.flyTo(position, 14, { duration: 0.9 });
       }
     }
   }, [position, hasRealGps, hasActiveSelection, map]);
@@ -240,7 +404,7 @@ function LocationMarker({
     if (recenter > 0 && recenter !== lastRecenterRef.current && position) {
       lastRecenterRef.current = recenter;
       map.stop();
-      map.flyTo(position, 15);
+      map.flyTo(position, 15, { duration: 0.8 });
     }
   }, [recenter, position, map]);
 
@@ -308,6 +472,76 @@ function MapViewportController({
   return null;
 }
 
+// 画面内のルートピン・クラスターピンを描画するコンポーネント
+function RouteClusterLayer({
+  items,
+  onSelectRoute,
+  onFocusClusterRoutes,
+}: {
+  items: MapRenderableItem[];
+  onSelectRoute: (route: DiscoveryRoute) => void;
+  onFocusClusterRoutes: (routeIds: string[]) => void;
+}) {
+  const map = useMap();
+
+  return (
+    <>
+      {items.map((item) => {
+        if (item.type === "route") {
+          const rally = item.route;
+          if (!rally.avgPos) return null;
+          return (
+            <Marker
+              key={rally.id}
+              position={rally.avgPos}
+              icon={getRoutePinIcon(rally)}
+              eventHandlers={{ click: () => onSelectRoute(rally) }}
+            />
+          );
+        }
+
+        const { cluster } = item;
+        return (
+          <Marker
+            key={cluster.id}
+            position={cluster.center}
+            icon={getClusterPinIcon(cluster)}
+            eventHandlers={{
+              click: () => {
+                const latSpan = Math.abs(cluster.bounds[1][0] - cluster.bounds[0][0]);
+                const lngSpan = Math.abs(cluster.bounds[1][1] - cluster.bounds[0][1]);
+                const currentZoom = map.getZoom();
+
+                // まだズームインで展開できる場合はスムーズにズームイン
+                if (currentZoom < 16 && (latSpan > 0.0005 || lngSpan > 0.0005)) {
+                  map.stop();
+                  map.flyToBounds(L.latLngBounds(cluster.bounds), {
+                    padding: [70, 70],
+                    maxZoom: Math.min(16, currentZoom + 2),
+                    duration: 0.65,
+                  });
+                } else if (currentZoom < 16) {
+                  map.stop();
+                  map.flyTo(cluster.center, Math.min(16, currentZoom + 2), {
+                    duration: 0.6,
+                  });
+                  onFocusClusterRoutes(cluster.routes.map((r) => r.id));
+                } else {
+                  // 最大ズームでも同一駅・同一座標にあるルート群は下部カルーセルにまとめつつ代表ルートを選択
+                  onFocusClusterRoutes(cluster.routes.map((r) => r.id));
+                  if (cluster.routes[0]) {
+                    onSelectRoute(cluster.routes[0]);
+                  }
+                }
+              },
+            }}
+          />
+        );
+      })}
+    </>
+  );
+}
+
 export default function MapUI() {
   const router = useRouter();
   const {
@@ -323,23 +557,20 @@ export default function MapUI() {
     statusFilter,
     setStatusFilter,
     visitedFootprints,
+    visibleFootprints,
     filteredRoutes,
+    viewportRoutes,
+    mapRenderItems,
     nearbyRoutes,
     selectedRally,
     setSelectedRally,
     selectedFootprint,
     setSelectedFootprint,
+    setFocusedClusterIds,
+    updateMapViewport,
     drawnSpots,
     showModal,
   } = useDiscoveryMap();
-
-  if (!userPos) {
-    return (
-      <div style={{ padding: "40px", textAlign: "center", color: "var(--text-color)", opacity: 0.7 }}>
-        マップを読み込み中...
-      </div>
-    );
-  }
 
   const isAllFiltersDefault = durationFilter === "all" && statusFilter === "all";
 
@@ -369,9 +600,6 @@ export default function MapUI() {
         @keyframes mapdash {
           to { stroke-dashoffset: -20; }
         }
-        .leaflet-tile-pane {
-          filter: sepia(0.12) saturate(0.85) brightness(1.02);
-        }
         .map-hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -400,8 +628,7 @@ export default function MapUI() {
           style={{
             display: "inline-flex",
             alignSelf: "flex-start",
-            background: "rgba(239, 233, 220, 0.96)",
-            backdropFilter: "blur(10px)",
+            background: "rgba(239, 233, 220, 0.97)",
             padding: "4px",
             borderRadius: "10px",
             border: "1px solid #E5DEC9",
@@ -427,11 +654,11 @@ export default function MapUI() {
               color: mapLayerMode === "routes" ? "var(--primary-color)" : "var(--text-color)",
               boxShadow:
                 mapLayerMode === "routes" ? "0 1px 4px rgba(44, 37, 32, 0.12)" : "none",
-              transition: "all 0.2s ease",
+              transition: "background-color 0.2s ease, color 0.2s ease",
             }}
           >
             <Compass size={14} strokeWidth={1.75} />
-            ルートを探す ({filteredRoutes.length})
+            ルートを探す ({viewportRoutes.length}/{filteredRoutes.length})
           </button>
           <button
             type="button"
@@ -450,7 +677,7 @@ export default function MapUI() {
               color: mapLayerMode === "footprints" ? "var(--primary-color)" : "var(--text-color)",
               boxShadow:
                 mapLayerMode === "footprints" ? "0 1px 4px rgba(44, 37, 32, 0.12)" : "none",
-              transition: "all 0.2s ease",
+              transition: "background-color 0.2s ease, color 0.2s ease",
             }}
           >
             <Footprints size={14} strokeWidth={1.75} />
@@ -483,7 +710,7 @@ export default function MapUI() {
                   : "1px solid #E5DEC9",
                 background: isAllFiltersDefault
                   ? "#2C2520"
-                  : "rgba(255, 253, 249, 0.94)",
+                  : "rgba(255, 253, 249, 0.96)",
                 color: isAllFiltersDefault ? "#FFFDF9" : "var(--text-color)",
                 borderRadius: "6px",
                 padding: "5px 11px",
@@ -514,7 +741,7 @@ export default function MapUI() {
                 background:
                   durationFilter === "short"
                     ? "#2C2520"
-                    : "rgba(255, 253, 249, 0.94)",
+                    : "rgba(255, 253, 249, 0.96)",
                 color: durationFilter === "short" ? "#FFFDF9" : "var(--text-color)",
                 borderRadius: "6px",
                 padding: "5px 11px",
@@ -546,7 +773,7 @@ export default function MapUI() {
                 background:
                   statusFilter === "in_progress"
                     ? "#2C2520"
-                    : "rgba(255, 253, 249, 0.94)",
+                    : "rgba(255, 253, 249, 0.96)",
                 color: statusFilter === "in_progress" ? "#FFFDF9" : "var(--text-color)",
                 borderRadius: "6px",
                 padding: "5px 11px",
@@ -578,7 +805,7 @@ export default function MapUI() {
                 background:
                   statusFilter === "bookmarked"
                     ? "#2C2520"
-                    : "rgba(255, 253, 249, 0.94)",
+                    : "rgba(255, 253, 249, 0.96)",
                 color: statusFilter === "bookmarked" ? "#FFFDF9" : "var(--text-color)",
                 borderRadius: "6px",
                 padding: "5px 11px",
@@ -610,7 +837,7 @@ export default function MapUI() {
                 background:
                   statusFilter === "completed"
                     ? "#2C2520"
-                    : "rgba(255, 253, 249, 0.94)",
+                    : "rgba(255, 253, 249, 0.96)",
                 color: statusFilter === "completed" ? "#FFFDF9" : "var(--text-color)",
                 borderRadius: "6px",
                 padding: "5px 11px",
@@ -631,6 +858,7 @@ export default function MapUI() {
       <MapContainer
         center={userPos}
         zoom={13}
+        preferCanvas={true}
         style={{ width: "100%", height: "100%", zIndex: 1 }}
         zoomControl={false}
       >
@@ -638,6 +866,7 @@ export default function MapUI() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <MapViewportTracker onViewportChange={updateMapViewport} />
         <LocationMarker
           position={userPos}
           hasRealGps={hasRealGps}
@@ -651,19 +880,14 @@ export default function MapUI() {
           visitedFootprints={visitedFootprints}
         />
 
-        {/* モード1: ルートを探す */}
-        {mapLayerMode === "routes" && !selectedRally &&
-          filteredRoutes.map((rally) => {
-            if (!rally.avgPos) return null;
-            return (
-              <Marker
-                key={rally.id}
-                position={rally.avgPos}
-                icon={getRoutePinIcon(rally)}
-                eventHandlers={{ click: () => setSelectedRally(rally) }}
-              />
-            );
-          })}
+        {/* モード1: ルートを探す（画面内Bounding Box絞り込み ＋ ズーム連動クラスタリング） */}
+        {mapLayerMode === "routes" && !selectedRally && (
+          <RouteClusterLayer
+            items={mapRenderItems}
+            onSelectRoute={setSelectedRally}
+            onFocusClusterRoutes={setFocusedClusterIds}
+          />
+        )}
 
         {/* ルート選択時：スポットのルートアニメーション */}
         {mapLayerMode === "routes" && selectedRally && (
@@ -691,9 +915,9 @@ export default function MapUI() {
           </>
         )}
 
-        {/* モード2: 自分の足跡（押印ライフログピン） */}
+        {/* モード2: 自分の足跡（押印ライフログピン・画面内カリング対応） */}
         {mapLayerMode === "footprints" &&
-          visitedFootprints.map((fp) => (
+          visibleFootprints.map((fp) => (
             <Marker
               key={fp.spotId}
               position={[fp.lat, fp.lng]}
@@ -736,7 +960,7 @@ export default function MapUI() {
         <LocateFixed size={19} strokeWidth={1.85} />
       </button>
 
-      {/* ルート未選択時：近くのルート・おすすめルート横スクロールカルーセル */}
+      {/* ルート未選択時：表示エリア内・近くのルート横スクロールカルーセル */}
       {mapLayerMode === "routes" && !selectedRally && nearbyRoutes.length > 0 && (
         <div
           className="map-hide-scrollbar"
@@ -760,8 +984,7 @@ export default function MapUI() {
               style={{
                 flex: "0 0 245px",
                 textAlign: "left",
-                background: "rgba(255, 253, 249, 0.96)",
-                backdropFilter: "blur(10px)",
+                background: "rgba(255, 253, 249, 0.98)",
                 border: "1px solid #EBE5D9",
                 borderRadius: "16px",
                 padding: "10px 12px",
@@ -778,6 +1001,8 @@ export default function MapUI() {
                   "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=300&q=80"
                 }
                 alt={route.title}
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: "54px",
                   height: "54px",
@@ -865,7 +1090,7 @@ export default function MapUI() {
             transform: "translateX(-50%)",
             width: "calc(100% - 32px)",
             maxWidth: "360px",
-            background: "rgba(255, 253, 249, 0.96)",
+            background: "rgba(255, 253, 249, 0.98)",
             border: "1px solid #EBE5D9",
             borderRadius: "18px",
             padding: "16px 18px",
@@ -874,7 +1099,14 @@ export default function MapUI() {
             boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
           }}
         >
-          <p style={{ margin: "0 0 10px", fontSize: "0.85rem", color: "var(--text-color)", fontWeight: 700 }}>
+          <p
+            style={{
+              margin: "0 0 10px",
+              fontSize: "0.85rem",
+              color: "var(--text-color)",
+              fontWeight: 700,
+            }}
+          >
             条件に一致するルートがありません
           </p>
           <button
@@ -901,8 +1133,7 @@ export default function MapUI() {
             transform: "translateX(-50%)",
             width: "calc(100% - 32px)",
             maxWidth: "410px",
-            background: "rgba(255, 253, 249, 0.97)",
-            backdropFilter: "blur(12px)",
+            background: "rgba(255, 253, 249, 0.99)",
             borderRadius: "22px",
             padding: "18px",
             zIndex: 1000,
@@ -948,6 +1179,7 @@ export default function MapUI() {
               "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
             }
             alt={selectedRally.title}
+            decoding="async"
             style={{
               width: "100%",
               height: "128px",
@@ -1128,7 +1360,7 @@ export default function MapUI() {
             transform: "translateX(-50%)",
             width: "calc(100% - 32px)",
             maxWidth: "380px",
-            background: "rgba(255, 253, 249, 0.96)",
+            background: "rgba(255, 253, 249, 0.98)",
             border: "1.5px solid var(--accent-color)",
             borderRadius: "20px",
             padding: "20px",
@@ -1199,8 +1431,7 @@ export default function MapUI() {
             transform: "translateX(-50%)",
             width: "calc(100% - 32px)",
             maxWidth: "410px",
-            background: "rgba(255, 253, 249, 0.98)",
-            backdropFilter: "blur(12px)",
+            background: "rgba(255, 253, 249, 0.99)",
             borderRadius: "22px",
             padding: "18px",
             zIndex: 1000,
@@ -1332,6 +1563,8 @@ export default function MapUI() {
                 <img
                   src={selectedFootprint.latestPhotoUrl}
                   alt="記録写真"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: "64px",
                     height: "64px",
