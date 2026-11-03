@@ -429,4 +429,65 @@
   }
 }
 
+/* エリア散策・デート案内（SEO＆街歩きガイドセクション） */
+.seoGuideSection {
+  margin-top: 48px;
+  padding: 24px;
+  border-radius: 18px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+}
+
+.seoGuideTitle {
+  font-size: var(--font-size-h2, 1.35rem);
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.seoGuideLead {
+  font-size: var(--font-size-body, 0.95rem);
+  color: var(--text-color);
+  opacity: 0.88;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.seoFaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.seoFaqItem {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-left: 3px solid var(--primary-color);
+}
+
+.seoFaqQuestion {
+  font-size: var(--font-size-body, 0.95rem);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.seoFaqAnswer {
+  font-size: var(--font-size-body, 0.9rem);
+  color: var(--text-color);
+  opacity: 0.85;
+  line-height: 1.65;
+}
+
+.seoAreaLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+
 

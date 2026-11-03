@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
@@ -11,34 +12,27 @@ import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 import { parseWKBPoint } from "@/utils/wkb";
+import {
+  buildRouteJsonLd,
+  buildRouteSeoMetadata,
+  extractRouteAreaInfo,
+} from "@/utils/seo";
 import { Footprints, Star, MapPin, Clock, Wallet } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
 
-export default async function RallyDetailPage({ 
-  params,
-  searchParams
-}: { 
-  params: Promise<{ id: string }>,
-  searchParams: Promise<{ groupId?: string }>
-}) {
-  const resolvedParams = await params;
-  const resolvedSearchParams = await searchParams;
-  const groupId = resolvedSearchParams.groupId || null;
-  
-  // 1. ルート本体のデータを取得
+async function fetchRouteWithSpots(routeId: string) {
   const { data: rally, error: rallyError } = await supabase
     .from("routes")
     .select("*")
-    .eq("id", resolvedParams.id)
+    .eq("id", routeId)
     .single();
 
   if (rallyError || !rally) {
-    return notFound();
+    return null;
   }
 
-  // 2. ルートに紐づくスポット一覧を取得
-  const { data: spots, error: spotsError } = await supabase
+  const { data: spots } = await supabase
     .from("spots")
     .select("*")
     .eq("route_id", rally.id)
@@ -61,20 +55,62 @@ export default async function RallyDetailPage({
     };
   });
 
+  const walkMetrics = computeRouteWalkMetrics(
+    spotsList,
+    rally.rarity_estimated_min
+  );
+
+  return { rally, spotsList, walkMetrics };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const loaded = await fetchRouteWithSpots(resolvedParams.id);
+  if (!loaded) {
+    return {
+      title: "ルートが見つかりません",
+    };
+  }
+  return buildRouteSeoMetadata(
+    loaded.rally,
+    loaded.spotsList,
+    loaded.walkMetrics
+  );
+}
+
+export default async function RallyDetailPage({ 
+  params,
+  searchParams
+}: { 
+  params: Promise<{ id: string }>,
+  searchParams: Promise<{ groupId?: string }>
+}) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const groupId = resolvedSearchParams.groupId || null;
+
+  const loaded = await fetchRouteWithSpots(resolvedParams.id);
+  if (!loaded) {
+    return notFound();
+  }
+
+  const { rally, spotsList, walkMetrics } = loaded;
   const statsMap = await getRouteStatsMap([rally.id]);
   const stats = statsMap[rally.id] || { participants: 0, favorites: 0 };
-  const walkMetrics = computeRouteWalkMetrics(spotsList, rally.rarity_estimated_min);
-  const budgetLabel =
-    rally.budget_tier === 1
-      ? "〜1,000円"
-      : rally.budget_tier === 2
-        ? "〜5,000円"
-        : rally.budget_tier === 3
-          ? "5,000円〜"
-          : "気軽に散策";
+  const areaInfo = extractRouteAreaInfo(rally, spotsList);
+  const jsonLd = buildRouteJsonLd(rally, spotsList, walkMetrics);
+  const budgetLabel = areaInfo.budgetLabel;
 
   return (
     <div className="container">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header style={{ padding: "20px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <BackButton href="/routes" />
         <HeaderNav />
@@ -154,6 +190,66 @@ export default async function RallyDetailPage({
         />
 
         <RouteBadgeTeaser routeId={rally.id} />
+
+        {/* エリア散策・デート案内（検索意図マッチ＆街歩きガイド） */}
+        <section className={styles.seoGuideSection} aria-labelledby="area-walk-guide-title">
+          <h2 id="area-walk-guide-title" className={styles.seoGuideTitle}>
+            {areaInfo.areaName}の散策・デートコース案内
+          </h2>
+          <p className={styles.seoGuideLead}>
+            「{rally.title}」は、{areaInfo.fullAreaLabel}の風景と物語を徒歩でめぐる街歩きルートです。
+            {areaInfo.spotNames.length > 0 && (
+              <>
+                {areaInfo.spotNames.join("、")}など全{walkMetrics.spotCount}箇所を訪れながら、
+              </>
+            )}
+            約{walkMetrics.estimatedMinutes}分（歩行距離 約{walkMetrics.distanceKm.toFixed(1)}km・予算目安 {budgetLabel}）で休日の散策やデート、ひとり歩きのひとときを楽しめます。訪れた場所ごとに「SHUIN（まちのしるし）」を押印し、街の記憶を手元に残すことができます。
+          </p>
+
+          <div className={styles.seoFaqList}>
+            <div className={styles.seoFaqItem}>
+              <h3 className={styles.seoFaqQuestion}>
+                Q. {areaInfo.areaName}での散策やデートにかかる所要時間・距離はどのくらいですか？
+              </h3>
+              <p className={styles.seoFaqAnswer}>
+                全{walkMetrics.spotCount}箇所のスポットを歩いてめぐるコースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。カフェや買い物のスポットも組み込まれているため、会話や休憩をはさみながら無理なく歩けます。
+              </p>
+            </div>
+            <div className={styles.seoFaqItem}>
+              <h3 className={styles.seoFaqQuestion}>
+                Q. この{areaInfo.areaName}ルートではどの順番でスポットをめぐりますか？
+              </h3>
+              <p className={styles.seoFaqAnswer}>
+                {areaInfo.spotNames.map((name, i) => `${i + 1}. ${name}`).join(" → ")} の順に一筆書きでめぐる構成になっています。現地を訪れて押印すると、それぞれの場所に眠る物語の断片が開かれます。
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.seoAreaLinks}>
+            <Link
+              href={`/routes?q=${encodeURIComponent(areaInfo.areaName)}`}
+              className="btn-secondary"
+            >
+              {areaInfo.areaName}周辺のルートをもっと見る
+            </Link>
+            {areaInfo.cityName && areaInfo.cityName !== areaInfo.areaName && (
+              <Link
+                href={`/routes?q=${encodeURIComponent(areaInfo.cityName)}`}
+                className="btn-secondary"
+              >
+                {areaInfo.cityName}の散策ルート一覧
+              </Link>
+            )}
+            {areaInfo.prefecture && (
+              <Link
+                href={`/routes?prefecture=${encodeURIComponent(areaInfo.prefecture)}`}
+                className="btn-secondary"
+              >
+                {areaInfo.prefecture}の街歩き・デートコース一覧
+              </Link>
+            )}
+          </div>
+        </section>
       </main>
     </div>
   );
