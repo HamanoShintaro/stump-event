@@ -248,10 +248,27 @@ async function cmdReplyOrDraft(mode, args) {
   const nextStatus =
     mode === "reply" ? (emailSent ? "REPLIED" : "REPLIED_LOGGED") : "NEEDS_REVIEW";
 
-  const { error: updateErr } = await supabase
+  const fullUpdatePayload = {
+    status: nextStatus,
+    reply_subject: subject,
+    reply_body: body,
+    review_reason: reason || null,
+    replied_at: mode === "reply" ? new Date().toISOString() : null,
+  };
+
+  let { error: updateErr } = await supabase
     .from("inquiries")
-    .update({ status: nextStatus })
+    .update(fullUpdatePayload)
     .eq("id", id);
+
+  // 旧スキーマ環境（reply_subject等未追加）の場合は status のみで安全にフォールバック更新
+  if (updateErr) {
+    const fallbackRes = await supabase
+      .from("inquiries")
+      .update({ status: nextStatus })
+      .eq("id", id);
+    updateErr = fallbackRes.error;
+  }
 
   if (updateErr) {
     console.warn("⚠️ ステータス更新警告:", updateErr.message);
