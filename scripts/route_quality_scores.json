@@ -706,8 +706,8 @@
       "line": "都営新宿線・大江戸線",
       "prefecture": "東京都",
       "iteration": 7,
-      "score": 2.5,
-      "grade": "C (要ユニーク化改修：Spot 1の最初の一歩から重い『桜なべ』を配置した生理的ちぐはぐさと年号22回・『〜こと。』語尾連発)",
+      "score": 2.1,
+      "grade": "C (直近20作品20位：Spot 1の重い桜鍋スタート＋年号22回＋『〜こと。』語尾により要改修)",
       "needs_replacement": true,
       "breakdown": {
         "story_originality": 1,
@@ -726,9 +726,9 @@
       "line": "北大阪急行電鉄南北線",
       "prefecture": "大阪府",
       "iteration": 7,
-      "score": 3.4,
-      "grade": "B+ (江戸のため池・竹林→昭和歩車分離緑道・竹見台マーケット→現代パークカフェの3層逆転劇、旧文体のため中位へ)",
-      "needs_replacement": false,
+      "score": 2.7,
+      "grade": "C (直近20作品17位：江戸溜池×昭和歩車分離緑道の3層発見は優秀だが目次型descriptionと『〜こと。』5連発の旧文体によりリライト対象へ溶融)",
+      "needs_replacement": true,
       "breakdown": {
         "story_originality": 1,
         "walking_flow": 0.95,
@@ -746,9 +746,9 @@
       "line": "仙台市地下鉄南北線",
       "prefecture": "宮城県",
       "iteration": 7,
-      "score": 3.05,
-      "grade": "B (昼のガラス建築・足元の1664年古地図から宵の文化横丁へ深まる時間軸、年号17回と旧文体でボーダー直上)",
-      "needs_replacement": false,
+      "score": 2.4,
+      "grade": "C (直近20作品18位：元号17回登場の解説調＋目次型description＋『〜こと。』語尾により要改修)",
+      "needs_replacement": true,
       "breakdown": {
         "story_originality": 1,
         "walking_flow": 1,
@@ -766,9 +766,9 @@
       "line": "JR羽越本線",
       "prefecture": "秋田県",
       "iteration": 7,
-      "score": 3.5,
-      "grade": "B+ (海岸砂丘のろ過→12℃湧水→酒蔵＋硅砂→ガラス工房→旧河道緑道の完璧な因果、旧文体のため3.5へ)",
-      "needs_replacement": false,
+      "score": 2.8,
+      "grade": "C (直近20作品16位：砂丘ろ過12℃湧水×酒蔵・硝子の企画は優秀だが目次型descriptionと『〜こと。』5連発の旧文体によりリライト対象へ溶融)",
+      "needs_replacement": true,
       "breakdown": {
         "story_originality": 1,
         "walking_flow": 1,
@@ -786,8 +786,8 @@
       "line": "JR鹿児島本線",
       "prefecture": "熊本県",
       "iteration": 7,
-      "score": 2.9,
-      "grade": "C+ (要ユニーク化改修：ローカル駅1.1km圏内に火造り刃物・六菓匠・赤酒煉瓦蔵・13段の殿様雁木を凝縮、目次型descriptionと『〜こと。』5連発で3.0未満へ)",
+      "score": 2.3,
+      "grade": "C (直近20作品19位：河港の手仕事は濃密だが教科書的な解説文体と『〜こと。』5連発により要改修)",
       "needs_replacement": true,
       "breakdown": {
         "story_originality": 1,
@@ -806,8 +806,8 @@
       "line": "JR山陰本線",
       "prefecture": "山口県",
       "iteration": 8,
-      "score": 4.1,
-      "grade": "S (直近20作品3位：年号ゼロ×『Spot 1のパンとSpot 4の揚げたて天ぷらをSpot 5の防波堤で食べる』身体アクション伏線回収)",
+      "score": 4,
+      "grade": "S (直近20作品3位：年号0回・大楠の葉擦れから白壁の足音・蒲鉾の湯気・響灘の防波堤へ五感だけで導く純度)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.95,
@@ -825,8 +825,8 @@
       "line": "JR釧網本線",
       "prefecture": "北海道",
       "iteration": 8,
-      "score": 3.9,
-      "grade": "A+ (直近20作品6位タイ：『次の汽車まで90分』の時間制約×氷点下原生林からpH1.7足湯・1936年木造駅舎のシチューへ至る温度差ドラマ)",
+      "score": 3.65,
+      "grade": "A (直近20作品7位：『次の汽車まで90分』×氷点下の原生林とpH1.7足湯・木造駅舎シチューの温度差体験)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.9,
@@ -844,8 +844,8 @@
       "line": "近鉄名古屋線",
       "prefecture": "三重県",
       "iteration": 8,
-      "score": 4.3,
-      "grade": "S+ (直近20作品1位：紡績と英国教会の街区から徒歩5分で幅1.8mの江戸漁師町路地・飛び出し看板・蛤の浮かし煮・117字の堤防短詩へ抜ける境界線ミステリー)",
+      "score": 4.25,
+      "grade": "S+ (直近20作品1位：塩役運河跡を一歩跨ぐと近代紡績街区から一間幅の漁師町路地へ一変する都市ミステリー＆clue文字量の黄金比)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.95,
@@ -863,8 +863,8 @@
       "line": "一畑電車大社線",
       "prefecture": "島根県",
       "iteration": 8,
-      "score": 3.75,
-      "grade": "A (直近20作品9位：単線無人駅から黒松砂丘林・出雲ぜんざい・築地松・砂丘ぶどうワイン＆しまね和牛・風土記の古社へ抜ける大人の休日リズム)",
+      "score": 3.35,
+      "grade": "B (直近20作品11位：単線無人駅→黒松砂丘林→出雲ぜんざい→築地松→島根ワイナリー→風土記の古社)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
@@ -882,8 +882,8 @@
       "line": "JR京浜東北線",
       "prefecture": "埼玉県",
       "iteration": 8,
-      "score": 3.65,
-      "grade": "A- (直近20作品10位：巨大ターミナルの24時間純喫茶モーニングから2kmのケヤキトンネル・酒まんじゅう・禁足の湧水池『蛇の池』へ歩速を落とす減速体験)",
+      "score": 3.15,
+      "grade": "B (直近20作品14位：24時間純喫茶モーニングから氷川参道・蛇の池・赤松林へと心拍数を落とす都市の減速)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
@@ -901,8 +901,8 @@
       "line": "JR常磐線",
       "prefecture": "福島県",
       "iteration": 9,
-      "score": 4.0,
-      "grade": "A+ (直近20作品5位：17字の読点なしタイトル×命の水路『小川江筋』から低温殺菌牛乳・水を使わない銘菓じゃんがらへ繋がる水の因果)",
+      "score": 3.3,
+      "grade": "B (直近20作品12位：17字短詩タイトル×命の水路『小川江筋』から低温殺菌牛乳・銘菓じゃんがらへ繋がる水の因果)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
@@ -920,8 +920,8 @@
       "line": "JR常磐線",
       "prefecture": "茨城県",
       "iteration": 9,
-      "score": 4.05,
-      "grade": "A+ (直近20作品4位：1両気動車7分の乗り換え導入×揚げたてコロッケ・高さ14m撞舞の辻・樹齢400年シダレザクラの一筆書き)",
+      "score": 3.75,
+      "grade": "A (直近20作品6位：1両気動車7分の乗り換え導入×揚げたてコロッケ・高さ14m撞舞の辻・樹齢400年シダレザクラ)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
@@ -939,8 +939,8 @@
       "line": "智頭急行智頭線",
       "prefecture": "岡山県",
       "iteration": 9,
-      "score": 3.9,
-      "grade": "A+ (直近20作品6位タイ：森林率93%の村の間伐材薪ボイラーが沸かすラジウム温泉×ジャージー牛乳シュークリームの生態系循環)",
+      "score": 3.55,
+      "grade": "B+ (直近20作品9位：森林率93%の村の間伐材薪ボイラーが沸かす温泉×ジャージー牛乳シュークリームの生態系循環)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
@@ -958,8 +958,8 @@
       "line": "広島電鉄横川線",
       "prefecture": "広島県",
       "iteration": 9,
-      "score": 3.85,
-      "grade": "A (直近20作品8位：路面電車の寺町から被爆クスノキ・江戸期の川岸石段『雁木』・焼きたてカヌレ・大正創業の鶴亀もなかへ抜ける水都散歩)",
+      "score": 3.05,
+      "grade": "B (直近20作品15位：路面電車の寺町から被爆クスノキ・本川の雁木・カヌレ・鶴亀もなかへ抜ける水都散歩の標準基準点)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.8,
@@ -977,8 +977,8 @@
       "line": "近鉄鈴鹿線",
       "prefecture": "三重県",
       "iteration": 9,
-      "score": 4.15,
-      "grade": "S (直近20作品2位：『鈴鹿＝サーキット』の先入観を覆す1.0km凝縮の伊勢街道神戸宿・鉤の手・立石餅・織田信孝の野面積み天守台)",
+      "score": 3.9,
+      "grade": "A+ (直近20作品4位：『鈴鹿＝サーキット』の先入観を覆す1.0km凝縮の神戸宿見附・龍光寺・鉤の手・立石餅・天守台)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.9,
@@ -989,6 +989,101 @@
       },
       "good_points": "6km離れた鈴鹿サーキットや白子地区を完全除外し、近鉄鈴鹿市駅まわりの1.0kmに凝縮された『伊勢街道・神戸宿』と『神戸城下町』を発掘。北口の見附石垣と亀屋清泉庵→16畳の大涅槃図が眠る寝釈迦の寺・龍光寺→街道が直角に折れる鉤の手の『油伊旅館』→油を一滴も使わない街道銘菓『もち久本店の立石餅』→織田信長の三男・信孝が五重天守を築いた『神戸城跡の野面積み天守台』へと北から南へ単調減少する完璧な一筆書き。",
       "issues": "特になし（Batch #8 最高位）。"
+    },
+    {
+      "slug": "zendoji",
+      "station": "善導寺",
+      "line": "JR久大本線",
+      "prefecture": "福岡県",
+      "iteration": 10,
+      "score": 3.6,
+      "grade": "A (直近20作品8位：木造駅舎から店先炙りたてブリュレクレープ・八女玉露の蹴洞・樹齢800年の大楠と耳納連山を仰ぐ門前町ルート)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.8,
+        "walking_flow": 0.75,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.75,
+        "spot_harmony": 0.7
+      },
+      "good_points": "『木造駅舎の風と八百年の大楠が落とす影』（18字・読点なし）の詩的タイトルのもと、木造駅舎前の喫茶ぎんか→ガスバーナーで目の前でキャラメリゼするブリュレクレープ立ち食い（ル・ボヌール）→八女玉露を練り込んだ銘菓『蹴洞』（隆勝堂）→樹齢800年の大楠と重文伽藍が聳える浄土宗大本山善導寺→耳納連山の断層崖を望む与田集落の西誓寺へと展開。Critic指摘を受けてSpot 3・4のhook分数・方角と主役スポットのclue描写密度も強化済み。",
+      "issues": "Spot 3→4が849mとやや長めな点。"
+    },
+    {
+      "slug": "otani_wakayama",
+      "station": "大谷",
+      "line": "JR和歌山線",
+      "prefecture": "和歌山県",
+      "iteration": 10,
+      "score": 3.45,
+      "grade": "B+ (直近20作品10位：村人が私財で造った請願駅×合祀で並んだ三基の石鳥居・高野山領官省符荘の路地・徳川頼宣の千間堤)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.8,
+        "walking_flow": 0.8,
+        "visual_tangibility": 0.75,
+        "anti_template": 0.7,
+        "spot_harmony": 0.6
+      },
+      "good_points": "戦後に村人が建設費を全額出し合って造った請願駅・JR大谷駅から、明治の合祀で3基の石鳥居が並んだ大谷神社、駅前で単線ホームを眺めるCafe Kissako、平安期の高野山直轄荘園『官省符荘』の折れ曲がった路地を残す元興寺、果樹園の喫茶木の実、徳川頼宣が築かせた延長1.8kmの『紀の川・千間堤』へと北から南へ1.2kmで抜ける端正な一筆書き。Critic指摘を受けてdescriptionの順序とclueの五感描写も強化済み。",
+      "issues": "5スポット中に喫茶店が2軒（Spot 2・Spot 4）含まれる点（処方箋㉟により次回以降は1ルート1軒に抑制）。"
+    },
+    {
+      "slug": "hiraka",
+      "station": "平賀",
+      "line": "弘南鉄道弘南線",
+      "prefecture": "青森県",
+      "iteration": 10,
+      "score": 4.15,
+      "grade": "S (直近20作品2位・Batch #9 最高傑作：鳥居の上で笑う緑パンツの鬼コ×高さ12mの世界一の扇ねぷた×平川サガリ焼肉と源泉掛け流し温泉)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.85,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.85,
+        "spot_harmony": 0.8
+      },
+      "good_points": "『鳥居の上で笑う鬼コと世界一の扇ねぷた』（18字・読点なし）。石鳥居の笠木の上で緑のパンツを履いてニカッと笑う魔除けの『鬼コ』（柏木町八幡宮）から、高さ12m・重さ6トンの現役山車『世界一の扇ねぷた』、北限の桃のどら焼き『わさもどら！』、りんご農家のスタミナ源として広まった豚横隔膜焼肉『平川サガリ』（焼肉弁当 紀文）、マイ風呂道具文化が息づく源泉掛け流し『鷹の羽温泉』へと、津軽の民俗・食・湯が完璧な生理的リズムで噛み合った傑作。",
+      "issues": "特になし（Spot 3→4のピン間隔も74mへ最適化済み）。"
+    },
+    {
+      "slug": "yoto_3_chome",
+      "station": "陽東3丁目",
+      "line": "宇都宮芳賀ライトレール",
+      "prefecture": "栃木県",
+      "iteration": 10,
+      "score": 3.25,
+      "grade": "B (直近20作品13位：国内75年ぶり全線新設の黄色いLRT×落馬伝説の伏明神・大正のフランス式庭園と木造『峰ヶ丘講堂』)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.75,
+        "walking_flow": 0.65,
+        "visual_tangibility": 0.75,
+        "anti_template": 0.7,
+        "spot_harmony": 0.6
+      },
+      "good_points": "『黄色い路面電車を降りて百年学都の並木へ』（19字・読点なし）。国内75年ぶり全線新設の次世代LRT『ライトライン』の陽東3丁目電停から、麦工房くるみの木の胡桃パン、チバコーヒーの自家焙煎豆、街家かふぇ木・木の固めプリン、武士も馬を降りた『伏明神』の小祠が眠る鶏峯神社、そして大正13年築の国登録有形文化財『峰ヶ丘講堂』と左右対称のフランス式庭園（宇都宮大学峰キャンパス）へと新旧100年の学都を繋ぐ構成。Critic指摘を受けてテイクアウト珈琲の生理的矛盾も解消済み。",
+      "issues": "Spot 1→2（785m）およびSpot 2→3（884m）の移動がやや長く、総直線距離が2.5kmある点。"
+    },
+    {
+      "slug": "higashida_sakaue",
+      "station": "東田坂上",
+      "line": "豊橋鉄道東田本線",
+      "prefecture": "愛知県",
+      "iteration": 10,
+      "score": 3.85,
+      "grade": "A (直近20作品5位：急坂を登る市電×三八朝市ゆかりの『おかゆモーニング』・手筒花火の東田神明宮・道元禅師真筆『正法眼蔵』の全久院・四つ折りピレーネ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.85,
+        "walking_flow": 0.85,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.8,
+        "spot_harmony": 0.75
+      },
+      "good_points": "路面電車が急坂を登りきった台地の上で、大正期の三八朝市に由来する温かい『おかゆモーニング』（珈琲家 参八通り）から朝を始め、吉田藩主・小笠原家菩提寺の臨済寺、10mの火柱と轟音ハネが響く手筒花火の舞台『東田神明宮』、道元禅師真筆の国重文『正法眼蔵』を守り継ぐ全久院、職人が手作業で四隅を折りたたむ豊橋銘菓『ピレーネ』（ボンとらや）へと西から東へ1.5kmで抜ける完璧な一筆書き。Critic指摘を受けてSpot 2・3のclueの五感描写も大幅に増強済み。",
+      "issues": "タイトルのみ読点ありの20字構文。"
     }
   ]
 }

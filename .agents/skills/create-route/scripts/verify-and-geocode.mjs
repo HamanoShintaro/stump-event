@@ -95,9 +95,9 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
       });
       if (!res.ok) continue;
       const html = await res.text();
-      // 埋め込みデータの中心座標 (lat,lng または lng,lat) を抽出（日本全国: 北緯24〜46度・東経122〜146度に対応）
-      const mLatLng = html.match(/((?:2[4-9]|[34]\d)\.\d{5,}),((?:12[2-9]|13\d|14[0-6])\.\d{5,})/);
-      const mLngLat = html.match(/((?:12[2-9]|13\d|14[0-6])\.\d{5,}),((?:2[4-9]|[34]\d)\.\d{5,})/);
+      // 埋め込みデータの中心座標 ([lat,lng] または lng,lat) を抽出（カメラ高度 3333.75... 等の末尾2桁誤マッチを防ぐため負の後読みを使用）
+      const mLatLng = html.match(/(?<![0-9.])((?:2[4-9]|[34]\d)\.\d{5,}),((?:12[2-9]|13\d|14[0-6])\.\d{5,})/);
+      const mLngLat = html.match(/(?<![0-9.])((?:12[2-9]|13\d|14[0-6])\.\d{5,}),((?:2[4-9]|[34]\d)\.\d{5,})/);
       let lat = null;
       let lng = null;
       if (mLatLng) {
