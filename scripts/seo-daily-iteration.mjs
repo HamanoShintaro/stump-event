@@ -282,7 +282,7 @@ const OUTING_INTENT_PATTERNS = [
   /観光\s*おすすめ/,
   /観光\s*マップ/,
   /観光\s*所要時間/,
-  /観光$/,
+  /観光/,
   /見どころ/,
   /おすすめ\s*スポット/,
   /名所/,
@@ -300,32 +300,51 @@ const OUTING_INTENT_PATTERNS = [
   /美観地区/,
   /運河/,
   /神社/,
-  /寺/,
+  /神宮/,
+  /大社/,
+  /八幡/,
+  /お寺|寺院|寺社|名刹|古刹/,
 ];
 
 const NOISE_PATTERNS = [
   /天気/,
   /ホテル/,
   /宿泊/,
+  /旅館\s*予約/,
   /賃貸/,
   /マンション/,
+  /アパート/,
+  /不動産/,
+  /土地/,
   /事件/,
   /事故/,
+  /火事/,
+  /火災/,
   /病院/,
+  /クリニック/,
   /皮膚科/,
   /歯医者/,
   /眼科/,
+  /内科/,
   /整形外科/,
   /郵便局/,
   /市役所/,
   /区役所/,
+  /町役場/,
+  /村役場/,
   /ハローワーク/,
+  /警察署/,
+  /交番/,
   /競艇/,
   /パチンコ/,
+  /スロット/,
   /時刻表/,
+  /終電/,
   /定期代/,
+  /定期券/,
   /駐車場/,
   /レンタカー/,
+  /カーシェア/,
   /バスツアー/,
   /移住/,
   /治安/,
@@ -333,12 +352,43 @@ const NOISE_PATTERNS = [
   /高校/,
   /大学/,
   /中学校/,
+  /小学校/,
+  /幼稚園/,
+  /保育園/,
+  /美容院/,
+  /美容室/,
+  /理髪/,
+  /ネイル/,
+  /求人/,
+  /バイト/,
+  /パート/,
+  /スーパー/,
+  /ドラッグストア/,
+  /薬局/,
+  /犬\s*散歩/,
+  /ペット\s*散歩/,
+  /じゅん\s*散歩/,
+  /散歩\s*番組/,
+  /芸能人/,
+  /有名人/,
+  /有田哲平/,
 ];
 
-function isOutingIntentSuggestion(s) {
+function isOutingIntentSuggestion(s, areaName = "", city = "") {
   if (!s || typeof s !== "string") return false;
   if (NOISE_PATTERNS.some((re) => re.test(s))) return false;
-  return OUTING_INTENT_PATTERNS.some((re) => re.test(s));
+
+  // 地名（areaName, city）を除去した検索意図部分を抽出して誤判定（地名に含まれる「寺」など）を防止
+  let intentPart = s;
+  if (areaName) {
+    intentPart = intentPart.split(areaName).join(" ");
+  }
+  if (city) {
+    intentPart = intentPart.split(city).join(" ");
+  }
+  intentPart = intentPart.trim();
+
+  return OUTING_INTENT_PATTERNS.some((re) => re.test(intentPart));
 }
 
 function buildSmartHookFromSuggestions(areaName, realSuggestions, gscQueries, routeCategory) {
@@ -515,13 +565,18 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       new Set([...sugKanko, ...sugBase, ...sugSanpo])
     );
 
-    const filteredSuggestions = rawSuggestions.filter(isOutingIntentSuggestion);
+    const filteredSuggestions = rawSuggestions.filter((s) =>
+      isOutingIntentSuggestion(s, areaName, info.city)
+    );
 
     // If suburban/residential station had few matches on `{areaName} 観光 `, also check `{city} 観光 `
     if (filteredSuggestions.length < 3 && info.city) {
       const sugCity = await fetchGoogleSuggestions(`${info.city} 観光 `);
       for (const s of sugCity) {
-        if (isOutingIntentSuggestion(s) && !filteredSuggestions.includes(s)) {
+        if (
+          isOutingIntentSuggestion(s, areaName, info.city) &&
+          !filteredSuggestions.includes(s)
+        ) {
           filteredSuggestions.push(s);
         }
       }
