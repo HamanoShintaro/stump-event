@@ -72,35 +72,22 @@
 @keyframes paperUnfoldReveal {
   0% {
     opacity: 0;
-    transform: scaleY(0.18) scaleX(0.92) translateY(-18px);
-    filter: blur(3px);
-  }
-  65% {
-    opacity: 1;
-    transform: scaleY(1.02) scaleX(1) translateY(0);
-    filter: blur(0);
+    transform: translateY(10px) scale(0.98);
   }
   100% {
     opacity: 1;
-    transform: scaleY(1) scaleX(1) translateY(0);
-    filter: blur(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes sealStampImpact {
   0% {
     opacity: 0;
-    transform: scale(2.15) rotate(-14deg);
-    filter: blur(2px);
+    transform: scale(1.75) rotate(-12deg);
   }
-  60% {
+  65% {
     opacity: 1;
-    transform: scale(0.92) rotate(-3deg);
-    filter: blur(0);
-  }
-  82% {
-    opacity: 1;
-    transform: scale(1.05) rotate(-5deg);
+    transform: scale(0.94) rotate(-3deg);
   }
   100% {
     opacity: 1;
@@ -110,11 +97,9 @@
 
 @keyframes floatFadeUp {
   0% {
-    opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(6px);
   }
   100% {
-    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -163,7 +148,7 @@
 
 @media (max-width: 560px) {
   .omikujiSanctuaryInner {
-    padding: 16px 14px 16px 42px;
+    padding: 16px 14px;
   }
 }
 
@@ -207,7 +192,7 @@
   border-right: 2px solid var(--accent-color);
 }
 
-/* 左端の縦書き添え札「街歩きみくじ」 */
+/* 左端の縦書き添え札「街歩きみくじ」（writing-modeによるSafari/モバイルFlex高さ崩壊を防ぐため1文字幅ブロックで縦並び表現） */
 .verticalTitleStrip {
   position: absolute;
   top: 12px;
@@ -226,8 +211,7 @@
 
 @media (max-width: 560px) {
   .verticalTitleStrip {
-    left: 6px;
-    width: 24px;
+    display: none;
   }
 }
 
@@ -243,17 +227,19 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
+  flex-shrink: 0;
   box-shadow: 0 2px 5px rgba(199, 68, 46, 0.25);
 }
 
 .verticalTitleText {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  display: block;
+  width: 1.1em;
+  text-align: center;
+  word-break: break-all;
   font-size: 0.72rem;
   font-weight: 900;
-  letter-spacing: 0.16em;
   color: var(--primary-color);
-  line-height: 1;
+  line-height: 1.22;
 }
 
 /* 背景の透かし落款印 */
@@ -432,23 +418,27 @@
 }
 
 .miniCylinderLabel {
-  writing-mode: vertical-rl;
+  display: block;
+  width: 1.1em;
+  text-align: center;
+  word-break: break-all;
   font-size: 0.58rem;
   font-weight: 900;
   color: var(--text-color);
-  letter-spacing: 0.08em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .drawPrimaryBtn {
-  padding: 11px 20px;
-  font-size: 0.85rem;
+  padding: 11px 18px;
+  font-size: 0.84rem;
   font-weight: 800;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -456,9 +446,11 @@
    ========================================================================== */
 
 .savedSlipWrapper {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px dashed rgba(201, 168, 76, 0.5);
+  position: relative;
+  z-index: 3;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(201, 168, 76, 0.55);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -468,20 +460,21 @@
 
 .savedSlipCard {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   flex: 1 1 260px;
   min-width: 0;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(201, 168, 76, 0.55);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(201, 168, 76, 0.6);
   border-left: 4px solid var(--primary-color);
   border-radius: 12px;
-  padding: 9px 12px;
+  padding: 11px 14px;
 }
 
 .savedSlipStamp {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
   background: rgba(199, 68, 46, 0.08);
@@ -491,11 +484,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
   transform: rotate(-5deg);
 }
 
 .savedSlipStampChar {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 900;
   line-height: 1;
 }
@@ -503,38 +497,45 @@
 .savedSlipInfo {
   min-width: 0;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .savedSlipMetaRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  margin-bottom: 2px;
 }
 
 .savedSlipBadge {
-  font-size: 0.68rem;
+  display: inline-block;
+  font-size: 0.72rem;
   font-weight: 900;
   color: var(--primary-color);
-  letter-spacing: 0.06em;
-}
-
-.savedSlipSpotHint {
-  font-size: 0.68rem;
-  color: var(--text-color);
-  opacity: 0.68;
+  letter-spacing: 0.04em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .savedSlipRouteTitle {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: var(--text-color);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.savedSlipSpotHint {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-color);
+  opacity: 0.78;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .savedSlipActions {
@@ -544,21 +545,34 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 640px) {
+  .savedSlipActions {
+    width: 100%;
+  }
+  .savedSlipOpenBtn {
+    flex: 1;
+  }
+}
+
 .savedSlipOpenBtn {
-  padding: 8px 16px;
+  padding: 9px 16px;
   font-size: 0.78rem;
   font-weight: 800;
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .savedSlipRedrawBtn {
-  padding: 7px 13px;
+  padding: 8px 14px;
   font-size: 0.75rem;
   font-weight: 700;
   border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -643,11 +657,14 @@
 }
 
 .ritualStickText {
-  writing-mode: vertical-rl;
+  display: block;
+  width: 1.1em;
+  text-align: center;
+  word-break: break-all;
   font-size: 0.62rem;
   font-weight: 900;
   color: var(--primary-color);
-  letter-spacing: 0.1em;
+  line-height: 1.15;
   margin-top: 8px;
 }
 
@@ -689,23 +706,25 @@
 }
 
 .ritualCylinderPlaque {
-  padding: 6px 5px;
+  display: block;
+  width: 1.8em;
+  text-align: center;
+  word-break: break-all;
+  padding: 5px 4px;
   border: 1.5px solid var(--primary-color);
   border-radius: 4px;
   background: var(--bg-color);
-  writing-mode: vertical-rl;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 900;
   color: var(--text-color);
-  letter-spacing: 0.16em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .ritualStatusTitle {
   font-size: 1.05rem;
   font-weight: 900;
   color: var(--primary-color);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   margin-bottom: 6px;
 }
 
@@ -725,22 +744,21 @@
   background: var(--bg-color);
   border: 2px solid var(--accent-color);
   border-radius: 22px;
-  padding: 24px 20px 22px;
+  padding: 20px 16px 18px;
   box-shadow: 0 24px 60px rgba(17, 17, 17, 0.35);
   position: relative;
-  transform-origin: top center;
-  animation: paperUnfoldReveal 0.44s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: paperUnfoldReveal 0.32s ease-out forwards;
 }
 
 .oraclePaperInnerFrame {
   position: relative;
   border: 1px solid rgba(201, 168, 76, 0.45);
   border-radius: 16px;
-  padding: 18px 16px 16px;
+  padding: 18px 14px 16px;
   background: linear-gradient(
     180deg,
-    rgba(255, 253, 249, 0.92) 0%,
-    rgba(247, 243, 234, 0.96) 100%
+    rgba(255, 253, 249, 0.96) 0%,
+    rgba(247, 243, 234, 0.98) 100%
   );
 }
 
@@ -752,7 +770,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(201, 168, 76, 0.45);
   color: var(--text-color);
   cursor: pointer;
@@ -784,8 +802,9 @@
   color: var(--primary-color);
   font-size: var(--font-size-small);
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 .fortuneStampRow {
@@ -793,12 +812,13 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin: 4px 0 6px;
+  margin: 4px 0 8px;
 }
 
 .vermilionSealStamp {
   width: 52px;
   height: 52px;
+  flex-shrink: 0;
   border-radius: 12px;
   border: 2.5px solid var(--primary-color);
   background: rgba(199, 68, 46, 0.1);
@@ -809,7 +829,7 @@
   justify-content: center;
   box-shadow: inset 0 0 0 2px rgba(255, 253, 248, 0.7),
     0 4px 14px rgba(199, 68, 46, 0.22);
-  animation: sealStampImpact 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: sealStampImpact 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .vermilionSealTop {
@@ -828,46 +848,66 @@
 
 .fortuneTitleBlock {
   text-align: left;
+  min-width: 0;
 }
 
 .fortuneReadingText {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: var(--primary-color);
-  letter-spacing: 0.16em;
-  margin-bottom: 1px;
+  letter-spacing: 0.12em;
+  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .fortuneMainTitle {
-  font-size: var(--font-size-h1);
+  font-size: clamp(1.35rem, 5.5vw, 1.8rem);
   font-weight: 900;
   color: var(--primary-color);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .fortuneSubtitleText {
-  font-size: var(--font-size-small);
+  font-size: 0.8rem;
   color: var(--text-color);
-  opacity: 0.82;
+  opacity: 0.86;
   margin: 4px 0 0;
   font-weight: 700;
+  line-height: 1.5;
 }
 
-/* 段階的フェードイン */
-.staggerBlock1 {
-  opacity: 0;
-  animation: floatFadeUp 0.36s ease-out 0.12s forwards;
-}
-
-.staggerBlock2 {
-  opacity: 0;
-  animation: floatFadeUp 0.36s ease-out 0.24s forwards;
-}
-
+/* モーダル内の各ブロック（opacity:0 固定によるモバイル描画消失を防ぐ） */
+.staggerBlock1,
+.staggerBlock2,
 .staggerBlock3 {
-  opacity: 0;
-  animation: floatFadeUp 0.36s ease-out 0.36s forwards;
+  opacity: 1;
+  animation: floatFadeUp 0.28s ease-out;
+}
+
+.modalSubActionRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modalRedrawBtn {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.modalCloseActionBtn {
+  flex-shrink: 0;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* ユーザーのモーション軽減設定への配慮 */

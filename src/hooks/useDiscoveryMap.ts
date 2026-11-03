@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { getDistance } from "geolib";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
@@ -133,14 +133,34 @@ export function useDiscoveryMap() {
   const [selectedFootprint, setSelectedFootprint] = useState<VisitedFootprint | null>(null);
   const [drawnSpots, setDrawnSpots] = useState<DiscoverySpot[]>([]);
   const [showModal, setShowModal] = useState(false);
+  const hasRealGpsRef = useRef(false);
 
-  // 1. Geolocation tracking
+  // 1. Geolocation tracking (微小なGPS揺れによる不要な再計算を防ぐため5m以上の移動時のみ更新)
   useEffect(() => {
     let watchId: number | null = null;
     if (typeof window !== "undefined" && "geolocation" in navigator) {
       watchId = navigator.geolocation.watchPosition(
         (pos) => {
-          setUserPos([pos.coords.latitude, pos.coords.longitude]);
+          const nextLat = pos.coords.latitude;
+          const nextLng = pos.coords.longitude;
+          setUserPos((prev) => {
+            if (!prev || !hasRealGpsRef.current) {
+              hasRealGpsRef.current = true;
+              return [nextLat, nextLng];
+            }
+            try {
+              const movedMeters = getDistance(
+                { latitude: prev[0], longitude: prev[1] },
+                { latitude: nextLat, longitude: nextLng }
+              );
+              if (movedMeters < 5) {
+                return prev;
+              }
+            } catch {
+              // ignore distance calc error
+            }
+            return [nextLat, nextLng];
+          });
           setHasRealGps(true);
         },
         () => {
@@ -535,38 +555,57 @@ export function useDiscoveryMap() {
     }
   }, []);
 
+  // 選択中ルートのスポット一覧（現在地 userPos の更新に影響されない安定したメモ化配列）
+  const selectedRallySpots = useMemo(() => {
+    if (!selectedRallyId) return null;
+    const targetRawRoute = rawRoutes.find((r: any) => r.id === selectedRallyId);
+    if (
+      !targetRawRoute ||
+      !Array.isArray(targetRawRoute.spots) ||
+      targetRawRoute.spots.length === 0
+    ) {
+      return null;
+    }
+    return [...targetRawRoute.spots].sort(
+      (a: DiscoverySpot, b: DiscoverySpot) => (a.order_index ?? 0) - (b.order_index ?? 0)
+    );
+  }, [selectedRallyId, rawRoutes]);
+
   // 8. Spot drawing animation when a route is selected
+  // 現在地(userPos)の移動で enrichedRoutes / selectedRally の参照が変わってもリセットされないよう、
+  // selectedRallySpots のみを依存配列にして1スポットずつ順番に描画する
   useEffect(() => {
-    if (selectedRally && selectedRally.spots && selectedRally.spots.length > 0) {
-      const sortedSpots = [...selectedRally.spots].sort(
-        (a, b) => (a.order_index ?? 0) - (b.order_index ?? 0)
-      );
-      setDrawnSpots([sortedSpots[0]]);
-      setShowModal(false);
-
-      let i = 1;
-      const interval = setInterval(() => {
-        if (i < sortedSpots.length) {
-          setDrawnSpots((prev) => {
-            const nextSpot = sortedSpots[i];
-            if (nextSpot && !prev.some((s) => s && s.id === nextSpot.id)) {
-              return [...prev, nextSpot];
-            }
-            return prev;
-          });
-          i++;
-        } else {
-          clearInterval(interval);
-          setTimeout(() => setShowModal(true), 450);
-        }
-      }, 500);
-
-      return () => clearInterval(interval);
-    } else {
+    if (!selectedRallySpots || selectedRallySpots.length === 0) {
       setDrawnSpots([]);
       setShowModal(false);
+      return;
     }
-  }, [selectedRally]);
+
+    setDrawnSpots([selectedRallySpots[0]]);
+    setShowModal(false);
+
+    let visibleCount = 1;
+    let modalTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const interval = setInterval(() => {
+      if (visibleCount < selectedRallySpots.length) {
+        visibleCount += 1;
+        setDrawnSpots(selectedRallySpots.slice(0, visibleCount));
+      } else {
+        clearInterval(interval);
+        modalTimer = setTimeout(() => {
+          setShowModal(true);
+        }, 450);
+      }
+    }, 500);
+
+    return () => {
+      clearInterval(interval);
+      if (modalTimer) {
+        clearTimeout(modalTimer);
+      }
+    };
+  }, [selectedRallySpots]);
 
   const handleLayerModeChange = useCallback((mode: MapLayerMode) => {
     setMapLayerMode(mode);

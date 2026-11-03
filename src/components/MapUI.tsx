@@ -215,24 +215,31 @@ const getOrderedSpotIcon = (orderIndex: number) =>
 // A component to recenter the map when user location is found or explicitly requested
 function LocationMarker({
   position,
+  hasRealGps,
   recenter,
+  hasActiveSelection,
 }: {
   position: [number, number] | null;
+  hasRealGps: boolean;
   recenter: number;
+  hasActiveSelection: boolean;
 }) {
   const map = useMap();
-  const centered = useRef(false);
+  const centeredOnRealGps = useRef(false);
   const lastRecenterRef = useRef(0);
   useEffect(() => {
-    if (position && !centered.current) {
-      map.flyTo(position, 14);
-      centered.current = true;
+    if (position && hasRealGps && !centeredOnRealGps.current) {
+      centeredOnRealGps.current = true;
+      if (!hasActiveSelection) {
+        map.flyTo(position, 14);
+      }
     }
-  }, [position, map]);
+  }, [position, hasRealGps, hasActiveSelection, map]);
   useEffect(() => {
     // ユーザーが「現在地へ」ボタンを押した時のみ（GPS更新では発火させない）
     if (recenter > 0 && recenter !== lastRecenterRef.current && position) {
       lastRecenterRef.current = recenter;
+      map.stop();
       map.flyTo(position, 15);
     }
   }, [recenter, position, map]);
@@ -269,6 +276,7 @@ function MapViewportController({
       lastRallyIdRef.current = currentId;
       if (selectedRally && selectedRally.spots && selectedRally.spots.length > 0) {
         const bounds = L.latLngBounds(selectedRally.spots.map((s) => s.pos));
+        map.stop();
         map.flyToBounds(bounds, { padding: [70, 70], duration: 1.0, maxZoom: 16 });
       }
     }
@@ -305,6 +313,7 @@ export default function MapUI() {
   const {
     user,
     userPos,
+    hasRealGps,
     recenter,
     triggerRecenter,
     mapLayerMode,
@@ -629,7 +638,12 @@ export default function MapUI() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <LocationMarker position={userPos} recenter={recenter} />
+        <LocationMarker
+          position={userPos}
+          hasRealGps={hasRealGps}
+          recenter={recenter}
+          hasActiveSelection={Boolean(selectedRally || selectedFootprint)}
+        />
         <MapViewportController
           selectedRally={selectedRally}
           selectedFootprint={selectedFootprint}

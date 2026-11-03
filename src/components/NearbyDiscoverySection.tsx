@@ -208,7 +208,7 @@ export default function NearbyDiscoverySection({
                           id="walk-oracle-title"
                           className={styles.fortuneMainTitle}
                         >
-                          【 {oracleResult.fortuneLabel} 】
+                          【{oracleResult.fortuneLabel}】
                         </div>
                       </div>
                     </div>
@@ -468,32 +468,19 @@ export default function NearbyDiscoverySection({
                       <span>このルートを見る</span>
                       <IconChevronRight size={16} color="currentColor" />
                     </Link>
-                    <div style={{ display: "flex", gap: "8px" }}>
+                    <div className={styles.modalSubActionRow}>
                       <button
                         type="button"
                         onClick={redrawWalkOracle}
-                        className="btn-secondary"
-                        style={{
-                          flex: 1,
-                          padding: "9px 12px",
-                          borderRadius: "999px",
-                          fontSize: "0.78rem",
-                          fontWeight: 700,
-                        }}
+                        className={`btn-secondary ${styles.modalRedrawBtn}`}
                       >
                         <IconRefresh size={14} color="var(--primary-color)" />
-                        <span>もういちど縁を結ぶ（引き直す）</span>
+                        <span>もういちど引く（引き直す）</span>
                       </button>
                       <button
                         type="button"
                         onClick={closeOracleModal}
-                        className="btn-secondary"
-                        style={{
-                          padding: "9px 16px",
-                          borderRadius: "999px",
-                          fontSize: "0.78rem",
-                          fontWeight: 700,
-                        }}
+                        className={`btn-secondary ${styles.modalCloseActionBtn}`}
                       >
                         閉じる
                       </button>
@@ -612,12 +599,12 @@ export default function NearbyDiscoverySection({
                       <span className={styles.savedSlipBadge}>
                         本日の結び：【{oracleResult.fortuneLabel}】
                       </span>
-                      <span className={styles.savedSlipSpotHint}>
-                        ・ 注目：{oracleResult.luckySpot.name}
-                      </span>
                     </div>
                     <div className={styles.savedSlipRouteTitle}>
                       {oracleResult.route.title}
+                    </div>
+                    <div className={styles.savedSlipSpotHint}>
+                      注目スポット：{oracleResult.luckySpot.name}
                     </div>
                   </div>
                 </div>
