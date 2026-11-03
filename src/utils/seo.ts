@@ -64,7 +64,7 @@ export function extractAreaFromTitle(
 
   // 2. タイトル中の「——〇〇の」パターン（例: 「人形師が宿った城下町——岩槻のしるしを刻む」）
   if (title && typeof title === "string") {
-    const dashMatch = title.match(/[—―ー]{1,2}([一-龠々ヶノァ-ヶー]{2,8})の/);
+    const dashMatch = title.match(/(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/);
     if (dashMatch && dashMatch[1]) {
       return dashMatch[1].trim();
     }

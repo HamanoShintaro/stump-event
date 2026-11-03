@@ -272,7 +272,7 @@ async function auditSupabaseRoutesSeo() {
       }
     }
     if (title && typeof title === "string") {
-      const dashMatch = title.match(/[—―ー]{1,2}([一-龠々ヶノァ-ヶー]{2,8})の/);
+      const dashMatch = title.match(/(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/);
       if (dashMatch && dashMatch[1]) return dashMatch[1].trim();
     }
     if (cityName) {
