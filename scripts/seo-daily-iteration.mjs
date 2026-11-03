@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * SHUIN 日次SEOトラフィック分析 ＆ ルートSEO監査スクリプト
+ * SHUIN 日次SEOトラフィック分析 ＆ 地域別リアル検索意図（Googleサジェスト＋Search Console）自動反映スクリプト
  *
- * 1. Google Search Console API から直近の検索クエリ・表示回数・CTR・掲載順位を取得
- *    （環境変数 GSC_SERVICE_ACCOUNT_JSON または GOOGLE_APPLICATION_CREDENTIALS が設定されている場合）
- * 2. Supabase 上の公開済みルート（routes / spots）の「地域名＋散策／デート」SEO監査を実行
- * 3. 改善優先度リスト（CTR改善対象・順位引き上げ対象・地域キーワード補強対象）を
- *    /tmp/shuin_seo_daily_report.json に出力
+ * 1. Google Search Console API から直近の検索クエリ・表示回数・CTR・掲載順位を全件取得（固定ワードに限定せず実トラフィックのあるクエリを把握）
+ * 2. Google Autocomplete (Suggest) API から、各ルートの「地域名 × 一般的なお出かけ・観光・街歩き検索意図」の上位サジェストワードを取得
+ * 3. 両者を統合して各ルートの最適タイトルフック・実検索キーワード群を `src/data/seo_area_keywords.json` に自動生成・更新
+ * 4. 分析サマリーと改善候補を `/tmp/shuin_seo_daily_report.json` に出力
  */
 
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
+import { pathToFileURL } from "url";
 import ws from "ws";
 import { createClient } from "@supabase/supabase-js";
 
@@ -114,6 +114,10 @@ function loadServiceAccount() {
       fs.readFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS, "utf8")
     );
   }
+  const defaultLocalSa = path.resolve(process.cwd(), "gsc-service-account.json");
+  if (fs.existsSync(defaultLocalSa)) {
+    return JSON.parse(fs.readFileSync(defaultLocalSa, "utf8"));
+  }
   return null;
 }
 
@@ -123,7 +127,7 @@ async function fetchSearchConsoleMetrics() {
     return {
       status: "unconfigured",
       message:
-        "Google Search Console サービスアカウント（GSC_SERVICE_ACCOUNT_JSON または GOOGLE_APPLICATION_CREDENTIALS）が未設定のため、Supabase上のルートSEO監査モードで実行しました。",
+        "Google Search Console サービスアカウント未設定のため、Googleサジェスト（実検索トレンド）＋Supabaseルート監査モードで実行しました。",
       rows: [],
     };
   }
@@ -131,9 +135,9 @@ async function fetchSearchConsoleMetrics() {
   try {
     const token = await getGoogleAccessToken(sa);
     const endDate = new Date();
-    endDate.setDate(endDate.getDate() - 2); // GSC data lag is ~2 days
+    endDate.setDate(endDate.getDate() - 2);
     const startDate = new Date(endDate);
-    startDate.setDate(startDate.getDate() - 14);
+    startDate.setDate(startDate.getDate() - 28);
 
     const apiEndpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
       SITE_URL
@@ -149,7 +153,7 @@ async function fetchSearchConsoleMetrics() {
         startDate: formatDate(startDate),
         endDate: formatDate(endDate),
         dimensions: ["query", "page"],
-        rowLimit: 250,
+        rowLimit: 500,
       }),
     });
 
@@ -186,190 +190,446 @@ async function fetchSearchConsoleMetrics() {
   }
 }
 
-async function auditSupabaseRoutesSeo() {
+export function extractCityFromAddress(address) {
+  if (!address || typeof address !== "string") return null;
+  const withoutPref = address
+    .trim()
+    .replace(/^(?:東京都|北海道|(?:京都|大阪)府|.{2,3}県)/, "");
+  const match = withoutPref.match(
+    /^([^\d\s]+?市[^\d\s]+?区|[^\d\s]+?[市区町村])/
+  );
+  return match && match[1] ? match[1].trim() : null;
+}
+
+export function extractAreaFromTitleOrDesc(title, description, cityName) {
+  const combined = `${title || ""} ${description || ""}`;
+  const stationRegex = /([一-龠々ヶノァ-ヶー]{2,10})駅/g;
+  const stopWords = new Set([
+    "レトロな",
+    "最初の",
+    "かつての",
+    "現在の",
+    "終着の",
+    "始発の",
+    "無人の",
+    "木造の",
+    "赤煉瓦の",
+  ]);
+  let match;
+  while ((match = stationRegex.exec(combined)) !== null) {
+    const cand = match[1]
+      .replace(
+        /^(?:JR|北総線|東武|京成|名鉄|近鉄|南海|阪急|阪神|京阪|西鉄|東京メトロ|都営|小田急|東急|西武|相鉄|京王|京急|江ノ電|箱根登山|伊豆箱根|アルピコ交通|島原鉄道|高松琴平電鉄|琴電|道南いさりび鉄道|あいの風とやま鉄道|秋田内陸縦貫鉄道|旧国鉄|旧)+/,
+        ""
+      )
+      .trim();
+    if (
+      cand.length >= 2 &&
+      cand.length <= 8 &&
+      !stopWords.has(cand) &&
+      !/[のはがをにへでとやもからまでより]$/.test(cand)
+    ) {
+      return cand;
+    }
+  }
+  if (title && typeof title === "string") {
+    const dashMatch = title.match(
+      /(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/
+    );
+    if (dashMatch && dashMatch[1]) return dashMatch[1].trim();
+  }
+  if (cityName) {
+    const wardMatch = cityName.match(/市([^\d\s]+?)区$/);
+    if (wardMatch && wardMatch[1] && wardMatch[1].length >= 2) {
+      return wardMatch[1].trim();
+    }
+    const cleanCity = cityName
+      .replace(/^.+?郡/, "")
+      .replace(/[市区町村]$/, "")
+      .trim();
+    if (cleanCity.length >= 2) return cleanCity;
+  }
+  return null;
+}
+
+async function fetchGoogleSuggestions(seedQuery) {
+  try {
+    const url =
+      "https://suggestqueries.google.com/complete/search?client=firefox&hl=ja&q=" +
+      encodeURIComponent(seedQuery);
+    const res = await fetch(url);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Array.isArray(data?.[1]) ? data[1] : [];
+  } catch {
+    return [];
+  }
+}
+
+// 街歩き・お出かけ・観光文脈に合致する一般的な検索意図キーワードの判定
+const OUTING_INTENT_PATTERNS = [
+  /モデル\s*コース/,
+  /車なし/,
+  /徒歩/,
+  /半日/,
+  /日帰り/,
+  /食べ歩き/,
+  /街歩き/,
+  /まち歩き/,
+  /散歩/,
+  /散策/,
+  /観光\s*スポット/,
+  /観光\s*おすすめ/,
+  /観光\s*マップ/,
+  /観光\s*所要時間/,
+  /観光$/,
+  /見どころ/,
+  /おすすめ\s*スポット/,
+  /名所/,
+  /穴場/,
+  /カフェ/,
+  /ランチ/,
+  /グルメ/,
+  /お土産/,
+  /デート/,
+  /休日/,
+  /お出かけ/,
+  /レトロ/,
+  /御朱印/,
+  /城下町/,
+  /美観地区/,
+  /運河/,
+  /神社/,
+  /寺/,
+];
+
+const NOISE_PATTERNS = [
+  /天気/,
+  /ホテル/,
+  /宿泊/,
+  /賃貸/,
+  /マンション/,
+  /事件/,
+  /事故/,
+  /病院/,
+  /皮膚科/,
+  /歯医者/,
+  /眼科/,
+  /整形外科/,
+  /郵便局/,
+  /市役所/,
+  /区役所/,
+  /ハローワーク/,
+  /競艇/,
+  /パチンコ/,
+  /時刻表/,
+  /定期代/,
+  /駐車場/,
+  /レンタカー/,
+  /バスツアー/,
+  /移住/,
+  /治安/,
+  /年収/,
+  /高校/,
+  /大学/,
+  /中学校/,
+];
+
+function isOutingIntentSuggestion(s) {
+  if (!s || typeof s !== "string") return false;
+  if (NOISE_PATTERNS.some((re) => re.test(s))) return false;
+  return OUTING_INTENT_PATTERNS.some((re) => re.test(s));
+}
+
+function buildSmartHookFromSuggestions(areaName, realSuggestions, gscQueries, routeCategory) {
+  const joined = [...gscQueries, ...realSuggestions].join(" ");
+
+  const hasModelCourse = /モデル\s*コース/.test(joined);
+  const hasCarFree = /車なし|徒歩/.test(joined);
+  const hasHalfDay = /半日/.test(joined);
+  const hasFoodWalk = /食べ歩き/.test(joined);
+  const hasLunchCafe = /ランチ|カフェ|グルメ/.test(joined);
+  const hasMap = /マップ/.test(joined);
+  const hasDuration = /所要時間/.test(joined);
+  const hasWalkCourse = /散歩|街歩き|散策/.test(joined);
+  const hasSpots = /スポット|見どころ|おすすめ|名所|周辺\s*観光/.test(joined);
+
+  // 実際の検索需要（Googleサジェスト・Search Console上位）に合わせて最も検索されやすいフックフレーズを組み立てる
+  let mainPhrase = "";
+
+  if (hasModelCourse && hasHalfDay) {
+    mainPhrase = "半日観光モデルコース";
+  } else if (hasModelCourse && hasCarFree) {
+    mainPhrase = "観光モデルコース（車なし・徒歩）";
+  } else if (hasModelCourse && hasFoodWalk) {
+    mainPhrase = "観光・食べ歩きモデルコース";
+  } else if (hasModelCourse) {
+    mainPhrase = "観光モデルコース";
+  } else if (hasFoodWalk) {
+    mainPhrase = "観光・食べ歩きコース";
+  } else if (hasWalkCourse && hasLunchCafe) {
+    mainPhrase = "散歩コース・カフェ＆ランチ巡り";
+  } else if (hasSpots && hasLunchCafe) {
+    mainPhrase = "観光スポット・グルメ＆街歩き";
+  } else if (hasSpots) {
+    mainPhrase = "観光スポット・街歩きコース";
+  } else if (hasWalkCourse) {
+    mainPhrase = "散歩・街歩きコース";
+  } else if (routeCategory === "食べたい" || hasLunchCafe) {
+    mainPhrase = "グルメ・カフェ＆街歩きコース";
+  } else {
+    mainPhrase = "観光・街歩きモデルコース";
+  }
+
+  const subHooks = [];
+  if (hasFoodWalk && !mainPhrase.includes("食べ歩き")) subHooks.push("食べ歩き");
+  if (hasLunchCafe && !mainPhrase.includes("グルメ") && !mainPhrase.includes("ランチ")) {
+    subHooks.push("グルメ・カフェ");
+  }
+  if (hasMap) subHooks.push("マップ");
+  if (hasDuration) subHooks.push("所要時間");
+  if (subHooks.length === 0) subHooks.push("徒歩マップ・所要時間");
+
+  return {
+    titleHook: `${areaName}の${mainPhrase}`,
+    subHook: subHooks.slice(0, 2).join("・"),
+  };
+}
+
+async function loadLocalAreaDefinitionsByTitle() {
+  const areasDir = path.resolve(process.cwd(), "scripts/areas");
+  const titleMap = new Map();
+  if (!fs.existsSync(areasDir)) return titleMap;
+
+  const files = fs
+    .readdirSync(areasDir)
+    .filter((f) => f.endsWith(".mjs") && !f.startsWith("_"));
+
+  for (const file of files) {
+    try {
+      const fullPath = path.join(areasDir, file);
+      const mod = await import(pathToFileURL(fullPath).href);
+      const area = mod.default || mod.area;
+      if (area && area.title) {
+        titleMap.set(String(area.title).trim(), {
+          slug: area.slug || file.replace(/\.mjs$/, ""),
+          station: area.station || area.area_name || null,
+          area_name: area.area_name || area.station || null,
+          line: area.line || null,
+          tags: Array.isArray(area.tags) ? area.tags : [],
+        });
+      }
+    } catch {
+      // ignore broken area definition
+    }
+  }
+  return titleMap;
+}
+
+async function discoverAreaSearchIntents(routes, gscRows) {
+  const existingPath = path.resolve(
+    process.cwd(),
+    "src/data/seo_area_keywords.json"
+  );
+  let existingData = { byRouteId: {}, byAreaName: {} };
+  if (fs.existsSync(existingPath)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(existingPath, "utf8")) || {};
+      if (parsed.byRouteId && parsed.byAreaName) {
+        existingData = parsed;
+      }
+    } catch {
+      existingData = { byRouteId: {}, byAreaName: {} };
+    }
+  }
+
+  const localAreaMap = await loadLocalAreaDefinitionsByTitle();
+
+  // Group routes by unique areaName so we don't query the same area twice
+  const areaMap = new Map();
+  const routeToAreaMeta = new Map();
+
+  for (const r of routes) {
+    const spots = Array.isArray(r.spots) ? r.spots : [];
+    const city =
+      spots.map((s) => extractCityFromAddress(s.address)).find(Boolean) || null;
+    const localDef = localAreaMap.get(String(r.title || "").trim());
+    const extractedArea =
+      localDef?.area_name ||
+      localDef?.station ||
+      extractAreaFromTitleOrDesc(r.title, r.description, city);
+    const primaryArea =
+      extractedArea ||
+      (city ? city.replace(/^.+?郡/, "").replace(/[市区町村]$/, "") : r.prefecture || "街歩き");
+
+    routeToAreaMeta.set(r.id, {
+      routeId: r.id,
+      areaName: primaryArea,
+      station: localDef?.station || primaryArea,
+      line: localDef?.line || null,
+      tags: localDef?.tags || [],
+      city,
+      prefecture: r.prefecture || "",
+      category: r.category || "",
+    });
+
+    if (!areaMap.has(primaryArea)) {
+      areaMap.set(primaryArea, {
+        areaName: primaryArea,
+        city,
+        prefecture: r.prefecture || "",
+        line: localDef?.line || null,
+        tags: localDef?.tags || [],
+        sampleCategory: r.category || "",
+        routeIds: [],
+      });
+    }
+    areaMap.get(primaryArea).routeIds.push(r.id);
+  }
+
+  const byAreaName = { ...(existingData.byAreaName || {}) };
+  const byRouteId = { ...(existingData.byRouteId || {}) };
+
+  for (const [areaName, info] of areaMap.entries()) {
+    // 1. Check GSC queries matching this area or routes in this area
+    const matchingGsc = (gscRows || [])
+      .filter(
+        (row) =>
+          row.query.includes(areaName) ||
+          info.routeIds.some((id) => row.page.includes(id))
+      )
+      .sort((a, b) => b.impressions - a.impressions);
+
+    const gscTopQueries = Array.from(
+      new Set(matchingGsc.map((r) => r.query).filter(Boolean))
+    ).slice(0, 8);
+
+    // 2. Fetch Google Suggest for general search intent around this area
+    const [sugBase, sugKanko, sugSanpo] = await Promise.all([
+      fetchGoogleSuggestions(`${areaName} `),
+      fetchGoogleSuggestions(`${areaName} 観光 `),
+      fetchGoogleSuggestions(`${areaName} 散歩`),
+    ]);
+
+    const rawSuggestions = Array.from(
+      new Set([...sugKanko, ...sugBase, ...sugSanpo])
+    );
+
+    const filteredSuggestions = rawSuggestions.filter(isOutingIntentSuggestion);
+
+    // If suburban/residential station had few matches on `{areaName} 観光 `, also check `{city} 観光 `
+    if (filteredSuggestions.length < 3 && info.city) {
+      const sugCity = await fetchGoogleSuggestions(`${info.city} 観光 `);
+      for (const s of sugCity) {
+        if (isOutingIntentSuggestion(s) && !filteredSuggestions.includes(s)) {
+          filteredSuggestions.push(s);
+        }
+      }
+    }
+
+    // 実際のGoogleサジェスト＋GSCクエリのみでフックを判定（フォールバック混ぜ前）
+    const realSuggestions = [...filteredSuggestions];
+
+    const { titleHook, subHook } = buildSmartHookFromSuggestions(
+      areaName,
+      realSuggestions,
+      gscTopQueries,
+      info.sampleCategory
+    );
+
+    // Ensure essential high-intent general queries are also represented in keywords list
+    const fallbackIntents = [
+      `${areaName} 観光 モデルコース`,
+      `${areaName} 街歩き`,
+      `${areaName} 散歩コース`,
+      `${areaName} 観光 所要時間`,
+      `${areaName} おすすめスポット`,
+    ];
+    for (const fb of fallbackIntents) {
+      if (filteredSuggestions.length < 8 && !filteredSuggestions.includes(fb)) {
+        filteredSuggestions.push(fb);
+      }
+    }
+
+    const areaEntry = {
+      areaName,
+      city: info.city,
+      prefecture: info.prefecture,
+      line: info.line,
+      tags: info.tags,
+      titleHook,
+      subHook,
+      topSearchKeywords: Array.from(
+        new Set([...gscTopQueries, ...filteredSuggestions, ...(info.tags || [])])
+      ).slice(0, 12),
+      gscTopQueries,
+      updatedAt: new Date().toISOString().split("T")[0],
+    };
+
+    byAreaName[areaName] = areaEntry;
+    for (const routeId of info.routeIds) {
+      byRouteId[routeId] = areaEntry;
+    }
+  }
+
+  const outputPayload = {
+    updatedAt: new Date().toISOString(),
+    byAreaName,
+    byRouteId,
+  };
+
+  fs.mkdirSync(path.dirname(existingPath), { recursive: true });
+  fs.writeFileSync(
+    existingPath,
+    JSON.stringify(outputPayload, null, 2) + "\n",
+    "utf8"
+  );
+
+  return byAreaName;
+}
+
+async function main() {
+  const gscResult = await fetchSearchConsoleMetrics();
+
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey =
     process.env.SUPABASE_SERVICE_ROLE_KEY ||
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  if (!supabaseUrl || !supabaseKey) {
-    return {
-      status: "skipped",
-      totalPublishedRoutes: 0,
-      improvementCandidates: [],
-      areaCoverage: {},
-    };
-  }
-
-  const supabase = createClient(supabaseUrl, supabaseKey, {
-    auth: { persistSession: false },
-    realtime: { transport: ws },
-  });
-  const PAGE_SIZE = 1000;
   const routes = [];
-  let offset = 0;
-
-  while (true) {
-    const { data, error } = await supabase
-      .from("routes")
-      .select(
-        "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, address, order_index)"
-      )
-      .eq("is_published", true)
-      .order("created_at", { ascending: false })
-      .range(offset, offset + PAGE_SIZE - 1);
-
-    if (error || !data || data.length === 0) break;
-    routes.push(...data);
-    if (data.length < PAGE_SIZE) break;
-    offset += PAGE_SIZE;
-  }
-
-  const improvementCandidates = [];
-  const prefectureCounts = {};
-  const seoTitlePreviews = [];
-
-  function extractCityFromAddress(address) {
-    if (!address || typeof address !== "string") return null;
-    const withoutPref = address
-      .trim()
-      .replace(/^(?:東京都|北海道|(?:京都|大阪)府|.{2,3}県)/, "");
-    const match = withoutPref.match(
-      /^([^\d\s]+?市[^\d\s]+?区|[^\d\s]+?[市区町村])/
-    );
-    return match && match[1] ? match[1].trim() : null;
-  }
-
-  function extractAreaFromTitleOrDesc(title, description, cityName) {
-    const combined = `${title || ""} ${description || ""}`;
-    const stationRegex = /([一-龠々ヶノァ-ヶー]{2,10})駅/g;
-    const stopWords = new Set([
-      "レトロな",
-      "最初の",
-      "かつての",
-      "現在の",
-      "終着の",
-      "始発の",
-      "無人の",
-      "木造の",
-      "赤煉瓦の",
-    ]);
-    let match;
-    while ((match = stationRegex.exec(combined)) !== null) {
-      const cand = match[1]
-        .replace(
-          /^(?:JR|北総線|東武|京成|名鉄|近鉄|南海|阪急|阪神|京阪|西鉄|東京メトロ|都営|小田急|東急|西武|相鉄|京王|京急|江ノ電|箱根登山|伊豆箱根|アルピコ交通|島原鉄道|高松琴平電鉄|琴電|道南いさりび鉄道|あいの風とやま鉄道|秋田内陸縦貫鉄道|旧国鉄|旧)+/,
-          ""
-        )
-        .trim();
-      if (
-        cand.length >= 2 &&
-        cand.length <= 8 &&
-        !stopWords.has(cand) &&
-        !/[のはがをにへでとやもからまでより]$/.test(cand)
-      ) {
-        return cand;
-      }
-    }
-    if (title && typeof title === "string") {
-      const dashMatch = title.match(/(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/);
-      if (dashMatch && dashMatch[1]) return dashMatch[1].trim();
-    }
-    if (cityName) {
-      const wardMatch = cityName.match(/市([^\d\s]+?)区$/);
-      if (wardMatch && wardMatch[1] && wardMatch[1].length >= 2) {
-        return wardMatch[1].trim();
-      }
-      const cleanCity = cityName
-        .replace(/^.+?郡/, "")
-        .replace(/[市区町村]$/, "")
-        .trim();
-      if (cleanCity.length >= 2) return cleanCity;
-    }
-    return null;
-  }
-
-  for (const r of routes) {
-    const pref = (r.prefecture || "未設定").trim();
-    prefectureCounts[pref] = (prefectureCounts[pref] || 0) + 1;
-
-    const spots = Array.isArray(r.spots) ? r.spots : [];
-    const city =
-      spots.map((s) => extractCityFromAddress(s.address)).find(Boolean) || null;
-    const extractedArea = extractAreaFromTitleOrDesc(r.title, r.description, city);
-    const primaryArea =
-      extractedArea || (city ? city.replace(/[市区町村]$/, "") : pref);
-
-    seoTitlePreviews.push({
-      routeId: r.id,
-      primaryArea,
-      city,
-      prefecture: pref,
-      title: r.title,
+  if (supabaseUrl && supabaseKey) {
+    const supabase = createClient(supabaseUrl, supabaseKey, {
+      auth: { persistSession: false },
+      realtime: { transport: ws },
     });
+    const PAGE_SIZE = 1000;
+    let offset = 0;
+    while (true) {
+      const { data, error } = await supabase
+        .from("routes")
+        .select(
+          "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, address, order_index)"
+        )
+        .eq("is_published", true)
+        .order("created_at", { ascending: false })
+        .range(offset, offset + PAGE_SIZE - 1);
 
-    const issues = [];
-
-    if (!extractedArea && !city) {
-      issues.push("area_name_fallback_to_prefecture");
-    }
-    if (!r.description || r.description.trim().length < 100) {
-      issues.push("description_short_for_seo");
-    }
-    const missingAddressSpots = spots.filter(
-      (s) => !s.address || String(s.address).trim().length < 5
-    );
-    if (missingAddressSpots.length > 0) {
-      issues.push(`spots_missing_detailed_address(${missingAddressSpots.length})`);
-    }
-    if (!r.thumbnail_url) {
-      issues.push("missing_thumbnail_og_image");
-    }
-
-    if (issues.length > 0) {
-      improvementCandidates.push({
-        routeId: r.id,
-        title: r.title,
-        prefecture: pref,
-        primaryArea,
-        city,
-        issues,
-      });
+      if (error || !data || data.length === 0) break;
+      routes.push(...data);
+      if (data.length < PAGE_SIZE) break;
+      offset += PAGE_SIZE;
     }
   }
 
-  // Also load scripts/route_quality_scores.json to find low-score routes that hurt SEO engagement
-  let qualityCandidates = [];
-  const qualityPath = path.resolve(process.cwd(), "scripts/route_quality_scores.json");
-  if (fs.existsSync(qualityPath)) {
-    try {
-      const qData = JSON.parse(fs.readFileSync(qualityPath, "utf8"));
-      qualityCandidates = (qData.routes || [])
-        .filter((item) => item.needs_replacement || item.score < 3.5)
-        .sort((a, b) => a.score - b.score)
-        .slice(0, 15);
-    } catch {
-      // ignore
-    }
-  }
-
-  return {
-    status: "ok",
-    totalPublishedRoutes: routes.length,
-    prefectureCounts,
-    improvementCandidates: improvementCandidates.slice(0, 30),
-    qualityCandidates,
-    sampleSeoTitles: seoTitlePreviews.slice(0, 15),
-  };
-}
-
-async function main() {
-  const gscResult = await fetchSearchConsoleMetrics();
-  const routeAudit = await auditSupabaseRoutesSeo();
-
-  const walkDateQueries = (gscResult.rows || []).filter((r) =>
-    /散策|デート|街歩き|散歩|コース|観光|お出かけ/.test(r.query)
+  const areaKeywordsMap = await discoverAreaSearchIntents(
+    routes,
+    gscResult.rows || []
   );
+
+  // Top queries from GSC (unfiltered, sorted by impressions so we see real user intent!)
+  const topGscQueriesByImpressions = [...(gscResult.rows || [])]
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, 30);
 
   const lowCtrOpportunities = (gscResult.rows || [])
     .filter((r) => r.impressions >= 15 && r.ctr < 0.03)
@@ -389,21 +649,23 @@ async function main() {
     gscPeriod: gscResult.period || null,
     summary: {
       totalGscRows: (gscResult.rows || []).length,
-      walkAndDateQueryCount: walkDateQueries.length,
       lowCtrOpportunityCount: lowCtrOpportunities.length,
       strikingDistanceQueryCount: strikingDistanceQueries.length,
-      totalPublishedRoutes: routeAudit.totalPublishedRoutes,
-      routeSeoIssueCount: routeAudit.improvementCandidates.length,
+      totalPublishedRoutes: routes.length,
+      totalAreasAnalyzed: Object.keys(areaKeywordsMap).length,
     },
-    walkDateQueries: walkDateQueries.slice(0, 20),
+    topGscQueriesByImpressions,
     lowCtrOpportunities,
     strikingDistanceQueries,
-    routeAudit,
+    sampleAreaIntents: Object.values(areaKeywordsMap).slice(0, 20),
   };
 
   const outPath = "/tmp/shuin_seo_daily_report.json";
   fs.writeFileSync(outPath, JSON.stringify(report, null, 2), "utf8");
   console.log(`✅ SHUIN SEO Daily Report written to ${outPath}`);
+  console.log(
+    `✅ Updated src/data/seo_area_keywords.json for ${Object.keys(areaKeywordsMap).length} areas`
+  );
   console.log(JSON.stringify(report.summary, null, 2));
 }
 

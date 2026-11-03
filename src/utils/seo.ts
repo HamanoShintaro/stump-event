@@ -1,5 +1,28 @@
 import type { Metadata } from "next";
 import type { RouteWalkMetrics } from "@/utils/routeMetrics";
+import seoAreaKeywordsData from "@/data/seo_area_keywords.json";
+
+interface AreaKeywordEntry {
+  areaName: string;
+  city?: string | null;
+  prefecture?: string;
+  line?: string | null;
+  tags?: string[];
+  titleHook: string;
+  subHook: string;
+  topSearchKeywords: string[];
+  gscTopQueries?: string[];
+  updatedAt?: string;
+}
+
+const byRouteIdMap = (seoAreaKeywordsData?.byRouteId || {}) as Record<
+  string,
+  AreaKeywordEntry
+>;
+const byAreaNameMap = (seoAreaKeywordsData?.byAreaName || {}) as Record<
+  string,
+  AreaKeywordEntry
+>;
 
 export function getSiteUrl(): string {
   const raw =
@@ -64,7 +87,9 @@ export function extractAreaFromTitle(
 
   // 2. タイトル中の「——〇〇の」パターン（例: 「人形師が宿った城下町——岩槻のしるしを刻む」）
   if (title && typeof title === "string") {
-    const dashMatch = title.match(/(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/);
+    const dashMatch = title.match(
+      /(?:[—―─]{1,2}|ー{2})([一-龠々ヶノァ-ヶー]{2,8})の/
+    );
     if (dashMatch && dashMatch[1]) {
       return dashMatch[1].trim();
     }
@@ -93,6 +118,9 @@ export interface RouteAreaSeoInfo {
   cityName: string | null;
   prefecture: string;
   fullAreaLabel: string;
+  titleHook: string;
+  subHook: string;
+  topSearchKeywords: string[];
   spotNames: string[];
   budgetLabel: string;
 }
@@ -116,6 +144,8 @@ export function extractRouteAreaInfo(
     }
   }
 
+  const matchedByRoute = rally?.id ? byRouteIdMap[rally.id] : undefined;
+
   const explicitArea =
     typeof rally?.area_name === "string" && rally.area_name.trim()
       ? rally.area_name.trim()
@@ -127,16 +157,20 @@ export function extractRouteAreaInfo(
   );
 
   const areaName =
+    matchedByRoute?.areaName ||
     explicitArea ||
     titleArea ||
-    (cityName ? cityName.replace(/[市区町村]$/, "") : "") ||
+    (cityName ? cityName.replace(/^.+?郡/, "").replace(/[市区町村]$/, "") : "") ||
     prefecture ||
     "街歩き";
 
+  const matchedEntry = matchedByRoute || byAreaNameMap[areaName];
+
+  const resolvedCity = cityName || matchedEntry?.city || null;
   const fullAreaLabel = [
     prefecture,
-    cityName && cityName !== areaName ? cityName : null,
-    areaName && areaName !== prefecture && areaName !== cityName
+    resolvedCity && resolvedCity !== areaName ? resolvedCity : null,
+    areaName && areaName !== prefecture && areaName !== resolvedCity
       ? `${areaName}エリア`
       : null,
   ]
@@ -156,11 +190,28 @@ export function extractRouteAreaInfo(
           ? "5,000円〜"
           : "気軽に散策";
 
+  const titleHook =
+    matchedEntry?.titleHook || `${areaName}の観光・街歩きモデルコース`;
+  const subHook = matchedEntry?.subHook || "徒歩マップ・所要時間";
+  const topSearchKeywords =
+    matchedEntry?.topSearchKeywords && matchedEntry.topSearchKeywords.length > 0
+      ? matchedEntry.topSearchKeywords
+      : [
+          `${areaName} 観光 モデルコース`,
+          `${areaName} 街歩き`,
+          `${areaName} 散歩コース`,
+          `${areaName} 観光 所要時間`,
+          `${areaName} おすすめスポット`,
+        ];
+
   return {
     areaName,
-    cityName,
+    cityName: resolvedCity,
     prefecture,
     fullAreaLabel: fullAreaLabel || areaName,
+    titleHook,
+    subHook,
+    topSearchKeywords,
     spotNames,
     budgetLabel,
   };
@@ -177,12 +228,7 @@ export function buildRouteSeoMetadata(
   const distKm = walkMetrics.distanceKm.toFixed(1);
   const spotCount = walkMetrics.spotCount || spotsList.length;
 
-  const primaryArea =
-    info.cityName && !info.cityName.includes(info.areaName)
-      ? `${info.areaName}（${info.cityName}）`
-      : info.areaName;
-
-  const seoTitle = `${primaryArea}の散策・デートコース｜${rally.title}（徒歩約${mins}分・全${spotCount}箇所）`;
+  const seoTitle = `${info.titleHook}｜${rally.title}（徒歩約${mins}分・${info.subHook}）`;
 
   const spotsPreview =
     info.spotNames.length > 0
@@ -192,27 +238,14 @@ export function buildRouteSeoMetadata(
   const rawDesc = typeof rally?.description === "string" ? rally.description.trim() : "";
   const descExcerpt = rawDesc.length > 90 ? `${rawDesc.slice(0, 90)}…` : rawDesc;
 
-  const seoDescription = `【${info.fullAreaLabel}の散策・デート・街歩きモデルコース】${
+  const seoDescription = `【${info.fullAreaLabel}・${info.titleHook}】${
     spotsPreview ? `${spotsPreview}の全${spotCount}箇所を` : `全${spotCount}箇所を`
   }徒歩約${mins}分（約${distKm}km・予算目安${info.budgetLabel}）でめぐる物語「${rally.title}」。${descExcerpt}`;
 
   const keywordSet = new Set<string>([
-    `${info.areaName} 散策`,
-    `${info.areaName} デート`,
-    `${info.areaName} 街歩き`,
-    `${info.areaName} 散歩`,
-    `${info.areaName} モデルコース`,
-    `${info.areaName} お出かけ`,
+    ...info.topSearchKeywords,
     ...(info.cityName
-      ? [
-          `${info.cityName} 散策`,
-          `${info.cityName} デート`,
-          `${info.cityName} 街歩き`,
-          `${info.cityName} 散歩コース`,
-        ]
-      : []),
-    ...(info.prefecture
-      ? [`${info.prefecture} 散策`, `${info.prefecture} デート穴場`]
+      ? [`${info.cityName} 観光`, `${info.cityName} 街歩き`]
       : []),
     ...info.spotNames.slice(0, 5),
     "SHUIN",
@@ -234,7 +267,7 @@ export function buildRouteSeoMetadata(
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${ seoTitle } | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN まちのしるし`,
       description: seoDescription,
       url: canonicalUrl,
       siteName: "SHUIN まちのしるし",
@@ -243,7 +276,7 @@ export function buildRouteSeoMetadata(
       images: [
         {
           url: ogImageUrl,
-          alt: `${info.areaName}の散策・デートコース「${rally.title}」`,
+          alt: `${info.titleHook}「${rally.title}」`,
         },
       ],
     },
@@ -277,11 +310,11 @@ export function buildRouteJsonLd(
   const touristTrip = {
     "@type": "TouristTrip",
     "@id": `${canonicalUrl}#trip`,
-    name: `${info.areaName}の散策・デートコース：${rally.title}`,
+    name: `${info.titleHook}：${rally.title}`,
     description: rally.description,
     url: canonicalUrl,
     image: ogImageUrl,
-    touristType: ["街歩き・散策", "デート・お出かけ", "歴史・文化散策"],
+    touristType: info.topSearchKeywords.slice(0, 5),
     itinerary: {
       "@type": "ItemList",
       numberOfItems: spotsList.length,
@@ -319,7 +352,7 @@ export function buildRouteJsonLd(
       {
         "@type": "ListItem",
         position: 2,
-        name: "街歩き・散策ルート一覧",
+        name: "街歩きルート一覧",
         item: `${siteUrl}/routes`,
       },
       ...(info.prefecture
@@ -327,7 +360,7 @@ export function buildRouteJsonLd(
             {
               "@type": "ListItem",
               position: 3,
-              name: `${info.prefecture}の散策・デートコース`,
+              name: `${info.prefecture}の観光・街歩きルート`,
               item: `${siteUrl}/routes?prefecture=${encodeURIComponent(info.prefecture)}`,
             },
             {
@@ -353,18 +386,18 @@ export function buildRouteJsonLd(
     mainEntity: [
       {
         "@type": "Question",
-        name: `${info.areaName}の散策・デートコース「${rally.title}」の所要時間と歩行距離は？`,
+        name: `${info.titleHook}「${rally.title}」の所要時間と歩行距離は？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${info.areaName}（${info.fullAreaLabel}）をめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、徒歩での所要時間は約${mins}分が目安です。休日の気軽な街歩きやデートコースとして楽しめます。`,
+          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコースとして楽しめます。`,
         },
       },
       {
         "@type": "Question",
-        name: `この${info.areaName}ルートではどんなスポットを訪れますか？予算の目安は？`,
+        name: `この${info.areaName}ルートではどんな観光スポット・立ち寄り先をめぐりますか？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${info.spotNames.join(" → ")}の順に全${spotCount}箇所を訪れます。カフェや立ち寄りを含めた予算目安は「${info.budgetLabel}」です。`,
+          text: `${info.spotNames.join(" → ")}の順に全${spotCount}箇所を訪れます。グルメ・カフェや買い物の立ち寄りを含めた予算目安は「${info.budgetLabel}」です。`,
         },
       },
     ],

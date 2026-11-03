@@ -191,28 +191,28 @@ export default async function RallyDetailPage({
 
         <RouteBadgeTeaser routeId={rally.id} />
 
-        {/* エリア散策・デート案内（検索意図マッチ＆街歩きガイド） */}
+        {/* エリア別・検索意図マッチ街歩きガイド */}
         <section className={styles.seoGuideSection} aria-labelledby="area-walk-guide-title">
           <h2 id="area-walk-guide-title" className={styles.seoGuideTitle}>
-            {areaInfo.areaName}の散策・デートコース案内
+            {areaInfo.titleHook}案内（{areaInfo.subHook}）
           </h2>
           <p className={styles.seoGuideLead}>
-            「{rally.title}」は、{areaInfo.fullAreaLabel}の風景と物語を徒歩でめぐる街歩きルートです。
+            「{rally.title}」は、{areaInfo.fullAreaLabel}の風景と物語を徒歩（車なし）でめぐる街歩きルートです。
             {areaInfo.spotNames.length > 0 && (
               <>
-                {areaInfo.spotNames.join("、")}など全{walkMetrics.spotCount}箇所を訪れながら、
+                {areaInfo.spotNames.join("、")}など全{walkMetrics.spotCount}箇所のスポットを訪れながら、
               </>
             )}
-            約{walkMetrics.estimatedMinutes}分（歩行距離 約{walkMetrics.distanceKm.toFixed(1)}km・予算目安 {budgetLabel}）で休日の散策やデート、ひとり歩きのひとときを楽しめます。訪れた場所ごとに「SHUIN（まちのしるし）」を押印し、街の記憶を手元に残すことができます。
+            所要時間 約{walkMetrics.estimatedMinutes}分（歩行距離 約{walkMetrics.distanceKm.toFixed(1)}km・予算目安 {budgetLabel}）で巡ることができます。訪れた場所ごとに「SHUIN（まちのしるし）」を押印し、街の記憶を手元に残すことができます。
           </p>
 
           <div className={styles.seoFaqList}>
             <div className={styles.seoFaqItem}>
               <h3 className={styles.seoFaqQuestion}>
-                Q. {areaInfo.areaName}での散策やデートにかかる所要時間・距離はどのくらいですか？
+                Q. {areaInfo.areaName}の観光・街歩きにかかる所要時間や距離はどのくらいですか？
               </h3>
               <p className={styles.seoFaqAnswer}>
-                全{walkMetrics.spotCount}箇所のスポットを歩いてめぐるコースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。カフェや買い物のスポットも組み込まれているため、会話や休憩をはさみながら無理なく歩けます。
+                全{walkMetrics.spotCount}箇所のスポットを徒歩でめぐるモデルコースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。食事・カフェや買い物のスポットも組み込まれているため、車なしでの半日観光や休日のお出かけにも適しています。
               </p>
             </div>
             <div className={styles.seoFaqItem}>
@@ -237,7 +237,7 @@ export default async function RallyDetailPage({
                 href={`/routes?q=${encodeURIComponent(areaInfo.cityName)}`}
                 className="btn-secondary"
               >
-                {areaInfo.cityName}の散策ルート一覧
+                {areaInfo.cityName}のルート一覧
               </Link>
             )}
             {areaInfo.prefecture && (
@@ -245,7 +245,7 @@ export default async function RallyDetailPage({
                 href={`/routes?prefecture=${encodeURIComponent(areaInfo.prefecture)}`}
                 className="btn-secondary"
               >
-                {areaInfo.prefecture}の街歩き・デートコース一覧
+                {areaInfo.prefecture}の観光・街歩きルート一覧
               </Link>
             )}
           </div>
