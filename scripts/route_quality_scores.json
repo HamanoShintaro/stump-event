@@ -484,6 +484,101 @@
       },
       "good_points": "香取街道の小堀屋本店（日高昆布の黒切り蕎麦）→正文堂書店（大鬼瓦と黒漆喰土戸）から、忠敬橋で小野川沿いへ折れて三菱館→伊能忠敬旧宅（17歳から50歳まで過ごした醸造商人の生活空間）→30分ごとに落水する樋橋（ジャージャー橋）へと抜けるL字型一筆書きが王道かつ高密度。",
       "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "takaoka",
+      "station": "高岡",
+      "line": "JR氷見線",
+      "prefecture": "富山県",
+      "iteration": 5,
+      "score": 4.95,
+      "grade": "S+ (最高品質・商人町の土蔵から職人町の千本格子と錫鳴りへ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "北東から北西へ1ミリも逆戻りしない1.6kmの一筆書き。高岡大仏→天保9年創業の大野屋（とこなつ・高岡ラムネ）→山町筋の黒漆喰土蔵（菅野家住宅）から、千保川（鳳鳴橋）を渡った瞬間に繊細な千本格子と石畳の銅片が輝く職人町・金屋町へ空気が一変し、大寺幸八郎商店の『錫鳴り』と真鍮風鈴の音色で結ぶ構成が白眉。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "hakodate",
+      "station": "函館",
+      "line": "JR函館本線",
+      "prefecture": "北海道",
+      "iteration": 5,
+      "score": 4.9,
+      "grade": "S+ (最高品質・摩周丸から八幡坂の振り返り伏線回収へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "5つのスポット名すべてから説明的な丸括弧を排した端正な構成。Spot 1『青函連絡船 摩周丸』の甲板から赤レンガと函館山を眺め、金森赤レンガ倉庫・ラッキーピエロ本店を経て、Spot 4『八幡坂』を登りきって振り返った真正面に、先ほど乗っていた摩周丸が海に浮かんでいるという映画的な伏線回収が秀逸。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "hiraizumi",
+      "station": "平泉",
+      "line": "JR東北本線",
+      "prefecture": "岩手県",
+      "iteration": 5,
+      "score": 4.9,
+      "grade": "S+ (最高品質・金鶏山を北極星に見立てた浄土の都市計画)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "南の観自在王院跡・毛越寺と北の中尊寺の間の距離を、都市設計の基準点である世界遺産『金鶏山』東麓（平泉文化遺産センター）をSpot 3に置くことで徒歩10分ずつの快適なステップに分割しつつ、『街全体が1つの曼荼羅として設計されていた』という知的驚きに変えた構成が見事。",
+      "issues": "questionを奥州藤原氏の祈りを問う形式へブラッシュアップ済み。"
+    },
+    {
+      "slug": "ise_shi",
+      "station": "伊勢市",
+      "line": "JR参宮線",
+      "prefecture": "三重県",
+      "iteration": 5,
+      "score": 4.9,
+      "grade": "S+ (最高品質・外宮の朝詣から参道朝かゆと河崎蔵街へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "4km離れた内宮を混ぜず、外宮（聖）と勢田川水運の問屋街・河崎（俗・伊勢の台所）の二面性に集中。朝一番に外宮（Spot 1）とせんぐう館（Spot 2）を参拝し、帰り道に外宮参道（Spot 3）で参宮あわびの朝かゆと赤福餅を味わい、そのまま駅を越えて河崎（播田屋本店・伊勢河崎商人館）へ抜ける一直線動線が極めてスマート。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "arita",
+      "station": "有田",
+      "line": "JR佐世保線",
+      "prefecture": "佐賀県",
+      "iteration": 5,
+      "score": 4.9,
+      "grade": "S+ (最高品質・陶祖の白磁から磁器大鳥居とトンバイ塀へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "李荘窯業所（陶祖・李参平住居跡）→香蘭社（古陶磁陳列館）→深川製磁本店→線路が参道を横切る陶山神社の白磁大鳥居→1本北の裏通りのトンバイ塀とアリタポーセリンラボへと至る内山地区の高密度動線。レビュー指摘を受けSpot 1のアプローチ表現とSpot 1→2の方角・徒歩分数（南へ徒歩5分）およびquestionのなりきり表現を即座に修正し4.75→4.90へ向上。",
+      "issues": "Spot 1のclue/hookの方角・距離表記を実座標に合わせて修正済み。"
     }
   ]
 }

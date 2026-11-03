@@ -41,7 +41,7 @@
     },
     {
       "batch_id": 4,
-      "status": "pending",
+      "status": "completed",
       "theme_note": "北の大地・みちのく・北陸・紀伊半島・肥前の全国ミックス第4弾",
       "stations": [
         { "slug": "hakodate", "station": "函館", "line": "JR函館本線・道南いさりび鉄道", "prefecture": "北海道", "city": "函館市", "vibe": "海へまっすぐ下る八幡坂・赤レンガ倉庫群と異国情緒の教会群・朝市と路面電車" },
@@ -49,6 +49,30 @@
         { "slug": "takaoka", "station": "高岡", "line": "JR氷見線・城端線・あいの風とやま鉄道", "prefecture": "富山県", "city": "高岡市", "vibe": "国宝・瑞龍寺の壮麗な伽藍配置・高岡大仏と金屋町の千本格子（高岡銅器の鋳物通り）" },
         { "slug": "ise_shi", "station": "伊勢市", "line": "JR参宮線・近鉄山田線", "prefecture": "三重県", "city": "伊勢市", "vibe": "伊勢神宮（外宮）の清らかな玉砂利と古木・河崎の蔵街（伊勢の台所）と老舗の御饌" },
         { "slug": "arita", "station": "有田", "line": "JR佐世保線・松浦鉄道", "prefecture": "佐賀県", "city": "西松浦郡有田町", "vibe": "400年の磁器の里・トンバイ塀（登り窯の廃材煉瓦塀）の裏通りと陶山神社の磁器製大鳥居" }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "status": "pending",
+      "theme_note": "山陰の水都・北信濃の栗と北斎・飛騨の匠・讃岐の石垣と団扇・島原の湧水めぐり第5弾",
+      "stations": [
+        { "slug": "matsue", "station": "松江", "line": "JR山陰本線", "prefecture": "島根県", "city": "松江市", "vibe": "国宝松江城と堀川遊覧・塩見縄手の武家屋敷と小泉八雲記念館・不昧公ゆかりの茶の湯と和菓子" },
+        { "slug": "obuse", "station": "小布施", "line": "長野電鉄長野線", "prefecture": "長野県", "city": "上高井郡小布施町", "vibe": "栗の木レンガが敷かれた『栗の小径』・晩年の葛飾北斎が逗留した高井鴻山記念館と北斎館・栗おこわと造り酒屋" },
+        { "slug": "takayama", "station": "高山", "line": "JR高山本線", "prefecture": "岐阜県", "city": "高山市", "vibe": "現存唯一の代官・郡代所『高山陣屋』・宮川の赤い中橋と杉玉が揺れる上三之町・醤油の香ばしいみだらし団子" },
+        { "slug": "marugame", "station": "丸亀", "line": "JR予讃線", "prefecture": "香川県", "city": "丸亀市", "vibe": "金毘羅参りの湊に立つ太助灯籠・伝統工芸の丸亀うちわ・高さ60mの扇の勾配石垣と現存十二天守『丸亀城』" },
+        { "slug": "shimabara", "station": "島原", "line": "島原鉄道線", "prefecture": "長崎県", "city": "島原市", "vibe": "島原城と鉄砲町武家屋敷の水路・1日1,000トンの湧水が流れる『鯉の泳ぐまち』と四明荘・名物かんざらし『銀水』" }
+      ]
+    },
+    {
+      "batch_id": 6,
+      "status": "pending",
+      "theme_note": "庄内藩の致道館・足利学校と鑁阿寺・近江八幡の水郷・萩の城下町・日田の豆田町第6弾",
+      "stations": [
+        { "slug": "tsuruoka", "station": "鶴岡", "line": "JR羽越本線", "prefecture": "山形県", "city": "鶴岡市", "vibe": "庄内藩校・致道館と致道博物館の擬洋風建築・鶴ヶ岡城址公園と絵ろうそく・庄内食文化" },
+        { "slug": "ashikaga", "station": "足利", "line": "JR両毛線", "prefecture": "栃木県", "city": "足利市", "vibe": "日本最古の学校『史跡足利学校』・堀と土塁に囲まれた足利氏館跡『国宝 鑁阿寺』・石畳の北仲通り" },
+        { "slug": "omi_hachiman", "station": "近江八幡", "line": "JR琵琶湖線・近江鉄道", "prefecture": "滋賀県", "city": "近江八幡市", "vibe": "近江商人の発祥地・新町通りの白壁土蔵と八幡堀の石畳・ヴォーリズ建築とたねや・クラブハリエ日牟禮ヴィレッジ" },
+        { "slug": "higashi_hagi", "station": "東萩", "line": "JR山陰本線", "prefecture": "山口県", "city": "萩市", "vibe": "吉田松陰の松下村塾と松陰神社・夏みかんが覗く城下町（菊屋横丁・高杉晋作誕生地）・萩焼の器" },
+        { "slug": "hita", "station": "日田", "line": "JR久大本線・日田彦山線", "prefecture": "大分県", "city": "日田市", "vibe": "江戸幕府の天領として栄えた豆田町の商家群（草野本家・廣瀬資料館・クンチョウ酒造）・三隈川の鵜飼と日田下駄" }
       ]
     }
   ]
