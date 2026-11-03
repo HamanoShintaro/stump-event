@@ -674,6 +674,101 @@
       },
       "good_points": "道路の真ん中を御用水が走る鉄砲町武家屋敷→白亜の五層天守・島原城→1792年眉山崩壊後に湧出した『鯉の泳ぐまち 清流亭』→1日3,000トンの湧水池の真上に縁側が張り出す『湧水庭園 四明荘』→浜の川湧水と大正4年創業『元祖かんざらし 銀水』へと北西から南東へ水脈に沿って下る一筆書き。",
       "issues": "categoryを『癒されたい』へ振り分け最適化済み（一発合格）。"
+    },
+    {
+      "slug": "morishita",
+      "station": "森下",
+      "line": "都営新宿線・大江戸線",
+      "prefecture": "東京都",
+      "iteration": 7,
+      "score": 4.95,
+      "grade": "S+ (最高品質・宮大工の出桁造り桜鍋から深川発祥の社、のらくろード、震災復興RC清澄長屋、芭蕉庵合流点へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "明治30年創業『桜なべ みの家 本店』の宮大工・出桁造りと下足番の木札の音から始まり、「深川」地名発祥の『深川神明宮』、『高橋のらくろード』、昭和3年築の震災復興RC集合住宅『清澄長屋』、隅田川合流点の『芭蕉庵史跡展望庭園』へ抜ける下町再発見ルート。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "momoyamadai",
+      "station": "桃山台",
+      "line": "北大阪急行電鉄南北線",
+      "prefecture": "大阪府",
+      "iteration": 7,
+      "score": 4.95,
+      "grade": "S+ (最高品質・ベッドタウン再発見の手本：江戸のため池と孟宗竹林からラドバーン方式緑道・竹見台マーケットへ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "一見普通のベッドタウン駅から、江戸期の新田開発のため池（春日大池）・タケノコ産地の孟宗竹林→1960年代のラドバーン方式（歩車分離緑道）と竹見台マーケット→パリの公園を模した千里南公園と雨乞い伝承の牛ヶ首池・カリヨン塔という3つの時代層を掘り起こした傑作。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "kotodai_koen",
+      "station": "勾当台公園",
+      "line": "仙台市地下鉄南北線",
+      "prefecture": "宮城県",
+      "iteration": 7,
+      "score": 4.95,
+      "grade": "S+ (最高品質・伊東豊雄建築とケヤキ並木から寛文四年城下絵図を踏み、路地奥のづんだ餅と文化横丁の赤提灯へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "せんだいメディアテークの13本の鉄骨チューブから定禅寺通のケヤキ並木、地下鉄駅真上の『古図広場（寛文四年仙台城下絵図の巨大陶板）』で足元の400年前の道筋を確かめ、元料亭『甘味処 彦いち』のづんだ餅、大正生まれの『文化横丁 源氏』のコの字カウンターへ至るL字一筆書き。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "araya",
+      "station": "新屋",
+      "line": "JR羽越本線",
+      "prefecture": "秋田県",
+      "iteration": 7,
+      "score": 4.95,
+      "grade": "S+ (最高品質・ローカル駅再発見の白眉：海岸砂丘の伏流水と硅砂が育てた酒蔵・ガラス工房・旧河道緑道)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 0.95
+      },
+      "good_points": "南から北へ緯度が単調増加する999mの一筆書き。海岸砂丘が天然ろ過装置となって湧く軟水（日吉神社・愛宕下お地蔵湧水・螺旋の清水）と砂丘の硅砂（新屋ガラス工房）、旧雄物川の舟運水路跡（大川端帯状近隣公園）という完璧な地形・生業の因果ストーリー。completion_badge順序も同期済み（4.90→4.95）。",
+      "issues": "completion_badge.descriptionのスポット順序を修正し解消済み。"
+    },
+    {
+      "slug": "kawashiri",
+      "station": "川尻",
+      "line": "JR鹿児島本線",
+      "prefecture": "熊本県",
+      "iteration": 7,
+      "score": 4.95,
+      "grade": "S+ (最高品質・火造りの川尻刃物と開懐世利六菓匠、赤酒の煉瓦蔵から13段の石階段『殿様雁木』へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 0.95
+      },
+      "good_points": "くまもと工芸会館（川尻刃物）→菓舗 梅園と中町通り（開懐世利六菓匠）→瑞鷹 川尻本蔵（東肥大正蔵と赤酒）→河尻御茶屋跡→川尻御蔵前船着場跡（13段の殿様雁木）と1.1kmに肥後細川藩の河港遺産と手仕事が凝縮。completion_badge順序も同期済み（4.90→4.95）。",
+      "issues": "completion_badge.descriptionのスポット順序を修正し解消済み。"
     }
   ]
 }
