@@ -389,6 +389,101 @@
       },
       "good_points": "『宣教師が西洋りんごをもたらした歴史を、まさにその外国人教師が住んだ明治の洋館（旧東奥義塾外人教師館）でアップルパイとして味わう』文脈接続と、4択『もしあなたが明治・大正時代の弘前に暮らす知識人だったなら？』が極めて知的。",
       "issues": "Spot 4（弘前公園・三の丸追手門）とSpot 5（藤田記念庭園）の順序を東→西の単調進行およびdescriptionと完全一致するよう修正済み（4.75→4.90）。"
+    },
+    {
+      "slug": "matsumoto",
+      "station": "松本",
+      "line": "JR篠ノ井線",
+      "prefecture": "長野県",
+      "iteration": 4,
+      "score": 4.95,
+      "grade": "S+ (最高品質・二つの国宝と松本民芸家具の南北縦断)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "緯度が南から北へ1ミリも逆戻りせず単調増加する1.3kmの一筆書き。開運堂本店（民藝包装意匠とソフトクリームロボット）→中町通り珈琲まるも（70年使い込まれた飴色の松本民芸家具）→女鳥羽川・縄手通り→国宝松本城→町民寄付7割と宮大工が築いた国宝旧開智学校へと抜ける構成が白眉。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "uji",
+      "station": "宇治",
+      "line": "JR奈良線",
+      "prefecture": "京都府",
+      "iteration": 4,
+      "score": 4.95,
+      "grade": "S+ (最高品質・宇治川両岸と二つの世界遺産をめぐる水辺ループ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "西岸の中村藤吉本店（明治製茶工場と生茶ゼリイ）・平等院鳳凰堂から、中州の橘島と朱塗りの朝霧橋で宇治川の急流を渡り、東岸の宇治上神社（現存日本最古の神社建築と桐原水）、宇治橋東詰の通圓茶屋（創業1160年）へと一周する立体水辺動線が芸術的。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "kurashiki",
+      "station": "倉敷",
+      "line": "JR山陽本線",
+      "prefecture": "岡山県",
+      "iteration": 4,
+      "score": 4.95,
+      "grade": "S+ (最高品質・アイレベルから鶴形山俯瞰への視座跳躍)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 1.0,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "橘香堂の『焼きたて1分以内』の手焼きむらすずめから始まり、大原美術館・語らい座大原本邸・倉敷アイビースクエアを目線の高さで歩いた後、最後に鶴形山の阿智神社（絵馬殿）へ登って、今まで歩いてきた本瓦屋根の『甍の波』を一望するクライマックス演出が鳥肌級。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "ibusuki",
+      "station": "指宿",
+      "line": "JR指宿枕崎線",
+      "prefecture": "鹿児島県",
+      "iteration": 4,
+      "score": 4.95,
+      "grade": "S+ (最高品質・駅前足湯から波打ち際の黒砂蒸気へ下る地熱動線)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 1.0,
+        "spot_harmony": 1.0
+      },
+      "good_points": "10km離れた長崎鼻や池田湖の広域トラップを完全回避し、指宿駅前の足湯から指宿港の太平次公園（幕末の海運豪商・濵﨑太平次像）、大正8年創業・鳥越屋の『たぬきケーキ』、いぶすき元湯温泉を経て、波打ち際から80度超の湯気が噴き出す湯之浜海岸（砂楽）へ一直線に下る構成が圧巻。",
+      "issues": "特になし（一発合格）。"
+    },
+    {
+      "slug": "sawara",
+      "station": "佐原",
+      "line": "JR成田線",
+      "prefecture": "千葉県",
+      "iteration": 4,
+      "score": 4.9,
+      "grade": "S+ (最高品質・江戸優りの商家町と樋橋の音風景)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 1.0,
+        "walking_flow": 0.95,
+        "visual_tangibility": 1.0,
+        "anti_template": 0.95,
+        "spot_harmony": 1.0
+      },
+      "good_points": "香取街道の小堀屋本店（日高昆布の黒切り蕎麦）→正文堂書店（大鬼瓦と黒漆喰土戸）から、忠敬橋で小野川沿いへ折れて三菱館→伊能忠敬旧宅（17歳から50歳まで過ごした醸造商人の生活空間）→30分ごとに落水する樋橋（ジャージャー橋）へと抜けるL字型一筆書きが王道かつ高密度。",
+      "issues": "特になし（一発合格）。"
     }
   ]
 }

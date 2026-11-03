@@ -29,7 +29,7 @@
     },
     {
       "batch_id": 3,
-      "status": "pending",
+      "status": "completed",
       "theme_note": "水郷・木曽路・古都・瀬戸内・薩摩の全国ミックス第3弾",
       "stations": [
         { "slug": "sawara", "station": "佐原", "line": "JR成田線", "prefecture": "千葉県", "city": "香取市", "vibe": "小野川沿いの柳並木と江戸優り（えどまさり）の商家町・伊能忠敬旧宅と樋橋（ジャージャー橋）" },
