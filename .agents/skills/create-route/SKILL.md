@@ -149,8 +149,12 @@ node .agents/skills/create-route/scripts/deploy-route.mjs scripts/areas/<slug>.m
 ```
 
 ### 最終確認と画像表示・リリース完了ゲート（必須）
-1. **型チェック・ビルド確認**: `npx tsc --noEmit` および `npm run build` を実行し、エラーが0件であることを確認します。
-2. **全体のファクト＆オーバーレイ最終確認**: [src/data/mock.ts](../../src/data/mock.ts) に追記されたオーバーレイ（`f7_fragment`, `f7_full`, `lat`, `lng`, `address`）および `public/images/<slug>/` 配下の全画像ファイル（`route-eyecatch.png`, `spot1.png`〜`spot5.png`）が実在し破損していないことを確認します。
-3. **画像の本番反映（Gitコミット＆プッシュ）**:
+1. **処方箋㊲〜㊴のセルフチェック（必須）**:
+   - `question`（4択の問い）に「歩いてみて／歩いた今日」「いちばん心に残った／記憶に刻まれたのはどれ？」という事後アンケート構文が含まれていないこと（具体的な行動・シチュエーション選択型の問いになっていること）。
+   - `clue` が「短尺ブレススポット（75〜105字）×1箇所」＋「主役の長尺スポット（185〜230字）×2箇所以上」の黄金比になっており、`grep -n "のだ。" scripts/areas/<slug>.mjs` が **0件** であること。
+   - Spot 1 に固有性の薄い新興住宅地の駅前公園を数合わせで置いておらず、Spot 1〜5 の緯度・経度が折り返し逆走のない一筆書きになっていること。
+2. **型チェック・ビルド確認**: `npx tsc --noEmit` および `npm run build` を実行し、エラーが0件であることを確認します。
+3. **全体のファクト＆オーバーレイ最終確認**: [src/data/mock.ts](../../src/data/mock.ts) に追記されたオーバーレイ（`f7_fragment`, `f7_full`, `lat`, `lng`, `address`）および `public/images/<slug>/` 配下の全画像ファイル（`route-eyecatch.png`, `spot1.png`〜`spot5.png`）が実在し破損していないことを確認します。
+4. **画像の本番反映（Gitコミット＆プッシュ）**:
    - Supabase DBには即座に反映されますが、`public/images/<slug>/` の画像ファイルと `src/data/mock.ts` はGitへプッシュされない限り本番サイト（Vercel）で画像が表示されません。
    - 必ず [AGENTS.md](../../AGENTS.md) の「AIリリース・品質保証規定（Step 1〜4）」に従い、ローカルコミット → サブエージェントQAレビュー → `git push origin main` → 画像がアクセス可能であることの確認まで完了させてからユーザーに報告してください。
