@@ -570,48 +570,97 @@
     {
       "batch_id": 13,
       "drawn_at": "2026-11-04T03:08:28.712Z",
+      "status": "completed",
+      "theme_note": "処方箋㊸〜㊺（16方位・徒歩分数の機械的算出、150m圏内隣接配置、起点駅のSpot 1固定・タイトル20文字以内厳守）を適用する全国ランダム第13弾",
+      "selection_method": "HeartRails Express API Complete Nationwide Random Draw (1 station x 5 random prefectures/lines)",
+      "stations": [
+        {
+          "slug": "hitoyoshi",
+          "station": "人吉",
+          "line": "JR肥薩線",
+          "prefecture": "熊本県",
+          "city": "人吉市",
+          "vibe": "国内唯一の現役石造り機関庫とMOZOCAステーション868・国宝『青井阿蘇神社』の茅葺き楼門と禊橋・球磨の麦味噌蔵と百年老舗『上村うなぎ屋』・鍛冶屋町通りの石畳と球磨茶の石蔵『立山商店』"
+        },
+        {
+          "slug": "ogoso",
+          "station": "小古曽",
+          "line": "四日市あすなろう鉄道内部線",
+          "prefecture": "三重県",
+          "city": "四日市市",
+          "vibe": "ナローゲージが走る小古曽駅・低温発酵パン『カサネベーカリー』・筒粥神事の式内社『小古曽神社』・屋根に海獣『摩伽羅』が乗る黄檗宗『観音寺』・洋食モンヴェールと東海道・伊勢街道の分岐点『日永の追分』の湧水"
+        },
+        {
+          "slug": "hirata_shiga",
+          "station": "平田",
+          "line": "近江鉄道八日市線",
+          "prefecture": "滋賀県",
+          "city": "東近江市",
+          "vibe": "万葉集『蒲生野』の故地を走る平田駅・下羽田集落の光明寺とベーカリーキタギシ・万葉ロマンの里『乙畔』・鎌倉時代『正応元年』銘の石燈籠が立つ羽田神社・近江六蔵の酒粕を使ったお猪口入り『湖のくに生チーズケーキ』の工房しゅしゅ"
+        },
+        {
+          "slug": "kouda_nagasaki",
+          "station": "高田",
+          "line": "JR長崎旧線",
+          "prefecture": "長崎県",
+          "city": "西彼杵郡長与町",
+          "vibe": "みかん段々畑の谷を走る長崎本線旧線（長与支線）のJR高田駅・高田天満宮・焼きたてカステラが香る『文明堂総本店 長崎工場売店』・山裾の地福院とフランスの古い館を思わせる洋館カフェ『amboise（アンボワーズ）』"
+        },
+        {
+          "slug": "sekijujimae",
+          "station": "赤十字前",
+          "line": "福井鉄道福武線",
+          "prefecture": "福井県",
+          "city": "福井市",
+          "vibe": "陰陽師・安倍晴明を祀る火伏せの『木田晴明神社』・旧藩士町の『毛矢珈琲』・九頭竜川の守護神『毛谷黒龍神社』・継体天皇と枝垂れ桜の『足羽神社』・青緑色の笏谷石145段が続く愛宕坂と歌人・橘曙覧の草堂『黄金舎』"
+        }
+      ]
+    },
+    {
+      "batch_id": 14,
+      "drawn_at": "2026-11-04T04:07:08.000Z",
       "status": "pending",
       "selection_method": "HeartRails Express API Complete Nationwide Random Draw (1 station x 5 random prefectures/lines)",
       "stations": [
         {
-          "name": "人吉",
+          "name": "来宮",
+          "line": "JR伊東線",
+          "prefecture": "静岡県",
+          "postal": "4130017",
+          "lng": 139.065575,
+          "lat": 35.098723
+        },
+        {
+          "name": "巣子",
+          "line": "いわて銀河鉄道線",
+          "prefecture": "岩手県",
+          "postal": "0200611",
+          "lng": 141.148674,
+          "lat": 39.783345
+        },
+        {
+          "name": "白石",
           "line": "JR肥薩線",
           "prefecture": "熊本県",
-          "postal": "8680008",
-          "lng": 130.753797,
-          "lat": 32.216142
+          "postal": "8696302",
+          "lng": 130.608328,
+          "lat": 32.305694
         },
         {
-          "name": "小古曽",
-          "line": "四日市あすなろう鉄道内部線",
-          "prefecture": "三重県",
-          "postal": "5100958",
-          "lng": 136.592322,
-          "lat": 34.928701
+          "name": "三次",
+          "line": "JR芸備線",
+          "prefecture": "広島県",
+          "postal": "7280014",
+          "lng": 132.855976,
+          "lat": 34.802646
         },
         {
-          "name": "平田",
-          "line": "近江鉄道八日市線",
-          "prefecture": "滋賀県",
-          "postal": "5270087",
-          "lng": 136.146612,
-          "lat": 35.11023
-        },
-        {
-          "name": "高田",
-          "line": "JR長崎旧線",
-          "prefecture": "長崎県",
-          "postal": "8512127",
-          "lng": 129.869457,
-          "lat": 32.819475
-        },
-        {
-          "name": "赤十字前",
-          "line": "福井鉄道福武線",
-          "prefecture": "福井県",
-          "postal": "9188005",
-          "lng": 136.216623,
-          "lat": 36.048683
+          "name": "七戸十和田",
+          "line": "東北新幹線",
+          "prefecture": "青森県",
+          "postal": "0392501",
+          "lng": 141.153817,
+          "lat": 40.719954
         }
       ]
     }
