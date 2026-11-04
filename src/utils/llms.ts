@@ -161,6 +161,7 @@ export async function generateLlmsTxtContent(): Promise<string> {
     "## 主要ページ",
     "",
     `- [トップページ](${siteUrl}): おすすめの街歩きルート・エリア検索`,
+    `- [全国エリア・都道府県別ルート一覧](${siteUrl}/areas): 都道府県・街エリアごとのまとめページ`,
     `- [全国の街歩きルート一覧](${siteUrl}/routes): 都道府県・キーワード・タグからルートを探す`,
     `- [街歩きマップ](${siteUrl}/map): 地図から全国のルート・スポットを探す`,
     `- [SHUINの楽しみ方ガイド](${siteUrl}/guide): 街を巡り、押印してSHUINを集める方法`,
@@ -178,7 +179,8 @@ export async function generateLlmsTxtContent(): Promise<string> {
   }
 
   for (const [pref, prefRoutes] of groupedByPref.entries()) {
-    lines.push(`### ${pref}（${prefRoutes.length}ルート）`);
+    const prefHubUrl = `${siteUrl}/areas/${encodeURIComponent(pref)}`;
+    lines.push(`### [${pref}の街歩きルートまとめ](${prefHubUrl})（${prefRoutes.length}ルート）`);
     lines.push("");
     for (const r of prefRoutes) {
       const routeUrl = `${siteUrl}/routes/${r.id}`;
@@ -205,6 +207,7 @@ export async function generateLlmsFullTxtContent(): Promise<string> {
     "> 街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。日本全国の駅や街を徒歩（車なし）でめぐる観光モデルコース・半日街歩き・散歩ルートの詳細データです。",
     "",
     `- サイトURL: ${siteUrl}`,
+    `- 全国エリア・都道府県一覧URL: ${siteUrl}/areas`,
     `- ルート一覧URL: ${siteUrl}/routes`,
     `- 要約版インデックス: ${siteUrl}/llms.txt`,
     `- 収録ルート数: ${routes.length}`,
@@ -215,12 +218,14 @@ export async function generateLlmsFullTxtContent(): Promise<string> {
 
   for (const r of routes) {
     const routeUrl = `${siteUrl}/routes/${r.id}`;
+    const prefHubUrl = `${siteUrl}/areas/${encodeURIComponent(r.prefecture)}`;
     const mins = r.walkMetrics.estimatedMinutes;
     const distKm = r.walkMetrics.distanceKm.toFixed(1);
 
     lines.push(`## [${r.areaInfo.fullAreaLabel}] ${r.title}`);
     lines.push("");
     lines.push(`- **URL**: ${routeUrl}`);
+    lines.push(`- **都道府県まとめURL**: ${prefHubUrl}`);
     lines.push(`- **エリア**: ${r.areaInfo.fullAreaLabel}`);
     lines.push(
       `- **所要時間・距離目安**: 徒歩約${mins}分 / 歩行距離 約${distKm}km（全${r.spots.length}スポット）`
@@ -235,13 +240,14 @@ export async function generateLlmsFullTxtContent(): Promise<string> {
     lines.push("");
     for (let i = 0; i < r.spots.length; i++) {
       const spot = r.spots[i];
+      const spotUrl = `${siteUrl}/routes/${r.id}/spot/${spot.id}`;
       const addrPart = spot.address ? `（住所: ${spot.address}）` : "";
       const coordPart =
         typeof spot.lat === "number" && typeof spot.lng === "number"
           ? ` [緯度: ${spot.lat.toFixed(5)}, 経度: ${spot.lng.toFixed(5)}]`
           : "";
       lines.push(
-        `${i + 1}. **${spot.name}**${addrPart}${coordPart}: ${spot.description}`
+        `${i + 1}. **[${spot.name}](${spotUrl})**${addrPart}${coordPart}: ${spot.description}`
       );
     }
     lines.push("");

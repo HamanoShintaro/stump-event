@@ -78,6 +78,27 @@ export default async function RoutesPage({
         <p className={styles.pageSubtitle}>
           街の風景や物語をめぐるこだわりのルート一覧。今の気分や歩く時間に合わせて、気になる街を探してみましょう。
         </p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            flexWrap: "wrap",
+            marginBottom: "20px",
+          }}
+        >
+          <Link href="/areas" className="btn-secondary">
+            都道府県・街エリア一覧から探す
+          </Link>
+          {prefecture && (
+            <Link
+              href={`/areas/${encodeURIComponent(prefecture)}`}
+              className="btn-secondary"
+            >
+              {prefecture}の街歩きまとめページを見る
+            </Link>
+          )}
+        </div>
 
         <RoutesClientView
           initialRoutes={ralliesList}

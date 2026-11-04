@@ -377,6 +377,8 @@ export default async function Home() {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                flexWrap: "wrap",
+                gap: "12px",
                 marginTop: "32px",
               }}
             >
@@ -391,6 +393,19 @@ export default async function Home() {
               >
                 <IconCompass size={17} color="var(--primary-color)" />
                 <span>すべてのルートを見る（全{allRallies.length}件）</span>
+                <IconChevronRight size={16} color="var(--primary-color)" />
+              </Link>
+              <Link
+                href="/areas"
+                className="btn-secondary"
+                style={{
+                  textDecoration: "none",
+                  fontSize: "var(--font-size-body)",
+                  padding: "13px 24px",
+                }}
+              >
+                <IconMapPin size={17} color="var(--primary-color)" />
+                <span>都道府県・エリア別に探す</span>
                 <IconChevronRight size={16} color="var(--primary-color)" />
               </Link>
             </div>

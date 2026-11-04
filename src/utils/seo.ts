@@ -15,13 +15,112 @@ interface AreaKeywordEntry {
   updatedAt?: string;
 }
 
-const byRouteIdMap = (seoAreaKeywordsData?.byRouteId || {}) as Record<
+export interface PrefectureKeywordEntry {
+  prefecture: string;
+  region: string;
+  routeCount: number;
+  spotCount: number;
+  maturityTier: "rich" | "growing" | "empty";
+  areaNames: string[];
+  cities?: string[];
+  lines?: string[];
+  categories?: string[];
+  featuredSpots: string[];
+  titleHook: string;
+  subHook: string;
+  leadSummary: string;
+  topSearchKeywords: string[];
+  gscTopQueries?: string[];
+  updatedAt?: string;
+}
+
+export const PREFECTURE_REGION_MAP: Record<string, string> = {
+  北海道: "北海道・東北",
+  青森県: "北海道・東北",
+  岩手県: "北海道・東北",
+  宮城県: "北海道・東北",
+  秋田県: "北海道・東北",
+  山形県: "北海道・東北",
+  福島県: "北海道・東北",
+  茨城県: "関東",
+  栃木県: "関東",
+  群馬県: "関東",
+  埼玉県: "関東",
+  千葉県: "関東",
+  東京都: "関東",
+  神奈川県: "関東",
+  新潟県: "中部・北陸",
+  富山県: "中部・北陸",
+  石川県: "中部・北陸",
+  福井県: "中部・北陸",
+  山梨県: "中部・北陸",
+  長野県: "中部・北陸",
+  岐阜県: "中部・北陸",
+  静岡県: "中部・北陸",
+  愛知県: "中部・北陸",
+  三重県: "近畿",
+  滋賀県: "近畿",
+  京都府: "近畿",
+  大阪府: "近畿",
+  兵庫県: "近畿",
+  奈良県: "近畿",
+  和歌山県: "近畿",
+  鳥取県: "中国・四国",
+  島根県: "中国・四国",
+  岡山県: "中国・四国",
+  広島県: "中国・四国",
+  山口県: "中国・四国",
+  徳島県: "中国・四国",
+  香川県: "中国・四国",
+  愛媛県: "中国・四国",
+  高知県: "中国・四国",
+  福岡県: "九州・沖縄",
+  佐賀県: "九州・沖縄",
+  長崎県: "九州・沖縄",
+  熊本県: "九州・沖縄",
+  大分県: "九州・沖縄",
+  宮崎県: "九州・沖縄",
+  鹿児島県: "九州・沖縄",
+  沖縄県: "九州・沖縄",
+};
+
+export const REGION_ORDER = [
+  "関東",
+  "近畿",
+  "中部・北陸",
+  "北海道・東北",
+  "中国・四国",
+  "九州・沖縄",
+] as const;
+
+export const ALL_PREFECTURE_NAMES = Object.keys(PREFECTURE_REGION_MAP);
+
+export function normalizePrefectureParam(rawParam?: string | null): string | null {
+  if (!rawParam || typeof rawParam !== "string") return null;
+  let decoded = rawParam.trim();
+  try {
+    decoded = decodeURIComponent(decoded).trim();
+  } catch {
+    // ignore malformed URI component
+  }
+  if (PREFECTURE_REGION_MAP[decoded]) return decoded;
+  const matched = ALL_PREFECTURE_NAMES.find(
+    (p) => p.replace(/[都府県]$/, "") === decoded
+  );
+  return matched || null;
+}
+
+const byRouteIdMap = ((seoAreaKeywordsData as any)?.byRouteId || {}) as Record<
   string,
   AreaKeywordEntry
 >;
-const byAreaNameMap = (seoAreaKeywordsData?.byAreaName || {}) as Record<
+const byAreaNameMap = ((seoAreaKeywordsData as any)?.byAreaName || {}) as Record<
   string,
   AreaKeywordEntry
+>;
+const byPrefectureMap = ((seoAreaKeywordsData as any)?.byPrefecture || {}) as Record<
+  string,
+  PrefectureKeywordEntry
 >;
 
 export function getSiteUrl(): string {
@@ -361,7 +460,7 @@ export function buildRouteJsonLd(
               "@type": "ListItem",
               position: 3,
               name: `${info.prefecture}の観光・街歩きルート`,
-              item: `${siteUrl}/routes?prefecture=${encodeURIComponent(info.prefecture)}`,
+              item: `${siteUrl}/areas/${encodeURIComponent(info.prefecture)}`,
             },
             {
               "@type": "ListItem",
@@ -406,5 +505,377 @@ export function buildRouteJsonLd(
   return {
     "@context": "https://schema.org",
     "@graph": [touristTrip, breadcrumb, faqPage],
+  };
+}
+
+export function extractPrefectureHubSeoInfo(
+  prefecture: string,
+  routesList: any[]
+): PrefectureKeywordEntry {
+  const cached = byPrefectureMap[prefecture];
+  const region = PREFECTURE_REGION_MAP[prefecture] || cached?.region || "全国";
+
+  const areaSet = new Set<string>(cached?.areaNames || []);
+  const citySet = new Set<string>(cached?.cities || []);
+  const categorySet = new Set<string>(cached?.categories || []);
+  const spotNames: string[] = [...(cached?.featuredSpots || [])];
+  let liveSpotCount = 0;
+
+  for (const r of routesList || []) {
+    const spots = Array.isArray(r.spots) ? r.spots : [];
+    liveSpotCount += spots.length;
+    const info = extractRouteAreaInfo(r, spots);
+    if (info.areaName && info.areaName !== prefecture) {
+      areaSet.add(info.areaName);
+    }
+    if (info.cityName) {
+      citySet.add(info.cityName);
+    }
+    if (r.category) {
+      categorySet.add(r.category);
+    }
+    for (const s of spots) {
+      if (s?.name && spotNames.length < 16 && !spotNames.includes(s.name)) {
+        spotNames.push(s.name);
+      }
+    }
+  }
+
+  const routeCount = routesList.length || cached?.routeCount || 0;
+  const spotCount = liveSpotCount || cached?.spotCount || routeCount * 5;
+  const maturityTier: "rich" | "growing" | "empty" =
+    routeCount >= 3 ? "rich" : routeCount >= 1 ? "growing" : "empty";
+
+  const areaNames = Array.from(areaSet);
+  const shortPref = prefecture.replace(/[都府県]$/, "");
+  const titleHook =
+    cached?.titleHook || `${prefecture}の観光・街歩きモデルコース`;
+  const subHook = cached?.subHook || "徒歩マップ・所要時間";
+
+  const areaPreview =
+    areaNames.length > 0
+      ? `${areaNames.slice(0, 6).join("・")}${areaNames.length > 6 ? "など" : ""}`
+      : prefecture;
+  const spotPreview =
+    spotNames.length > 0
+      ? `${spotNames.slice(0, 5).join("、")}${spotNames.length > 5 ? "など" : ""}`
+      : "";
+
+  const leadSummary =
+    routeCount >= 3
+      ? `${prefecture}では現在、${areaPreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
+      : routeCount >= 1
+        ? `${prefecture}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${prefecture}内の新たな駅・エリアのルートも拡充しています。`
+        : `${prefecture}エリアの街歩きルートは現在準備・拡充中です。近隣の${region}エリアで公開中のルートから気になる街を探してみてください。`;
+
+  const topSearchKeywords =
+    cached?.topSearchKeywords && cached.topSearchKeywords.length > 0
+      ? cached.topSearchKeywords
+      : [
+          `${prefecture} 観光 モデルコース`,
+          `${shortPref} 街歩き`,
+          `${shortPref} 散歩コース`,
+          `${shortPref} 日帰り 観光 電車`,
+          ...areaNames.slice(0, 6).map((a) => `${a} 街歩き`),
+        ];
+
+  return {
+    prefecture,
+    region,
+    routeCount,
+    spotCount,
+    maturityTier,
+    areaNames,
+    cities: Array.from(citySet),
+    lines: cached?.lines || [],
+    categories: Array.from(categorySet),
+    featuredSpots: spotNames.slice(0, 12),
+    titleHook,
+    subHook,
+    leadSummary,
+    topSearchKeywords,
+  };
+}
+
+export function buildPrefectureHubSeoMetadata(
+  prefecture: string,
+  routesList: any[]
+): Metadata {
+  const siteUrl = getSiteUrl();
+  const hubInfo = extractPrefectureHubSeoInfo(prefecture, routesList);
+  const canonicalUrl = `${siteUrl}/areas/${encodeURIComponent(prefecture)}`;
+
+  const areaPreview =
+    hubInfo.areaNames.length > 0
+      ? `（${hubInfo.areaNames.slice(0, 4).join("・")}${hubInfo.areaNames.length > 4 ? "ほか" : ""}）`
+      : "";
+
+  const seoTitle = `${hubInfo.titleHook}一覧${areaPreview}｜全${hubInfo.routeCount}ルート・${hubInfo.spotCount}スポット`;
+  const seoDescription = hubInfo.leadSummary;
+
+  const firstThumb = routesList.find((r) => r?.thumbnail_url)?.thumbnail_url;
+  const ogImageUrl = firstThumb
+    ? firstThumb.startsWith("http")
+      ? firstThumb
+      : `${siteUrl}${firstThumb}`
+    : `${siteUrl}/shuin-logo-horizontal.png`;
+
+  return {
+    title: seoTitle,
+    description: seoDescription,
+    keywords: [
+      ...hubInfo.topSearchKeywords,
+      ...hubInfo.featuredSpots.slice(0, 6),
+      "SHUIN",
+      "まちのしるし",
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${seoTitle} | SHUIN まちのしるし`,
+      description: seoDescription,
+      url: canonicalUrl,
+      siteName: "SHUIN まちのしるし",
+      locale: "ja_JP",
+      type: "website",
+      images: [{ url: ogImageUrl, alt: seoTitle }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${seoTitle} | SHUIN まちのしるし`,
+      description: seoDescription,
+      images: [ogImageUrl],
+    },
+  };
+}
+
+export function buildPrefectureHubJsonLd(
+  prefecture: string,
+  routesList: any[]
+) {
+  const siteUrl = getSiteUrl();
+  const hubInfo = extractPrefectureHubSeoInfo(prefecture, routesList);
+  const canonicalUrl = `${siteUrl}/areas/${encodeURIComponent(prefecture)}`;
+
+  const collectionPage = {
+    "@type": "CollectionPage",
+    "@id": `${canonicalUrl}#collection`,
+    name: `${hubInfo.titleHook}一覧`,
+    description: hubInfo.leadSummary,
+    url: canonicalUrl,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: routesList.length,
+      itemListElement: routesList.map((r: any, idx: number) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        url: `${siteUrl}/routes/${r.id}`,
+        name: r.title,
+        description: r.description,
+      })),
+    },
+  };
+
+  const breadcrumb = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "SHUIN まちのしるし",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "全国エリア別ルート一覧",
+        item: `${siteUrl}/areas`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${prefecture}の観光・街歩きルート`,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const faqPage = {
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `${prefecture}で車なし（電車・徒歩）で巡れる街歩き・観光モデルコースはありますか？`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: hubInfo.leadSummary,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `${prefecture}のルートではどのエリアやスポットをめぐることができますか？`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${hubInfo.areaNames.length > 0 ? `${hubInfo.areaNames.join("・")}の各駅・街エリアを中心に、` : ""}${hubInfo.featuredSpots.length > 0 ? `${hubInfo.featuredSpots.slice(0, 8).join("、")}など` : ""}計${hubInfo.spotCount}箇所のスポットを一筆書きの徒歩ルートで巡ることができます。`,
+        },
+      },
+    ],
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [collectionPage, breadcrumb, faqPage],
+  };
+}
+
+export function buildSpotSeoMetadata(
+  rally: any,
+  spot: any,
+  spotsList: any[],
+  walkMetrics: RouteWalkMetrics
+): Metadata {
+  const siteUrl = getSiteUrl();
+  const areaInfo = extractRouteAreaInfo(rally, spotsList);
+  const spotOrder =
+    spotsList.findIndex((s) => s.id === spot.id) + 1 ||
+    spot.order_index ||
+    1;
+  const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
+
+  const seoTitle = `${spot.name}（${areaInfo.areaName}）の見どころ・街歩き案内｜${rally.title}`;
+  const rawSpotDesc =
+    typeof spot?.description === "string" && spot.description.trim()
+      ? spot.description.trim()
+      : `${areaInfo.fullAreaLabel}の街歩きルート「${rally.title}」第${spotOrder}スポット。`;
+  const descExcerpt =
+    rawSpotDesc.length > 100 ? `${rawSpotDesc.slice(0, 100)}…` : rawSpotDesc;
+
+  const seoDescription = `【${areaInfo.fullAreaLabel}・${spot.name}】${descExcerpt}（所在地：${spot.address || areaInfo.fullAreaLabel}）。徒歩約${walkMetrics.estimatedMinutes}分で全${walkMetrics.spotCount}箇所をめぐる物語「${rally.title}」の立ち寄りスポット案内。`;
+
+  const imgRaw = spot?.image_url || spot?.cover_image_url || rally?.thumbnail_url;
+  const ogImageUrl = imgRaw
+    ? imgRaw.startsWith("http")
+      ? imgRaw
+      : `${siteUrl}${imgRaw}`
+    : `${siteUrl}/shuin-logo-horizontal.png`;
+
+  return {
+    title: seoTitle,
+    description: seoDescription,
+    keywords: [
+      spot.name,
+      `${spot.name} 見どころ`,
+      `${spot.name} 歴史`,
+      `${spot.name} アクセス`,
+      areaInfo.areaName,
+      ...areaInfo.topSearchKeywords.slice(0, 5),
+      "SHUIN",
+      "まちのしるし",
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${seoTitle} | SHUIN まちのしるし`,
+      description: seoDescription,
+      url: canonicalUrl,
+      siteName: "SHUIN まちのしるし",
+      locale: "ja_JP",
+      type: "article",
+      images: [{ url: ogImageUrl, alt: `${spot.name}（${areaInfo.areaName}）` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${seoTitle} | SHUIN まちのしるし`,
+      description: seoDescription,
+      images: [ogImageUrl],
+    },
+  };
+}
+
+export function buildSpotJsonLd(
+  rally: any,
+  spot: any,
+  spotsList: any[]
+) {
+  const siteUrl = getSiteUrl();
+  const areaInfo = extractRouteAreaInfo(rally, spotsList);
+  const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
+  const routeUrl = `${siteUrl}/routes/${rally.id}`;
+
+  const attraction = {
+    "@type": "TouristAttraction",
+    "@id": `${canonicalUrl}#attraction`,
+    name: spot.name,
+    description: spot.description || `${areaInfo.areaName}の立ち寄りスポット`,
+    url: canonicalUrl,
+    address: spot.address || areaInfo.fullAreaLabel,
+    isPartOf: {
+      "@type": "TouristTrip",
+      name: rally.title,
+      url: routeUrl,
+    },
+    ...(typeof spot.lat === "number" && typeof spot.lng === "number"
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: spot.lat,
+            longitude: spot.lng,
+          },
+        }
+      : {}),
+  };
+
+  const breadcrumb = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "SHUIN まちのしるし",
+        item: siteUrl,
+      },
+      ...(areaInfo.prefecture
+        ? [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: `${areaInfo.prefecture}の観光・街歩きルート`,
+              item: `${siteUrl}/areas/${encodeURIComponent(areaInfo.prefecture)}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: `${areaInfo.areaName}：${rally.title}`,
+              item: routeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: spot.name,
+              item: canonicalUrl,
+            },
+          ]
+        : [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: `${areaInfo.areaName}：${rally.title}`,
+              item: routeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: spot.name,
+              item: canonicalUrl,
+            },
+          ]),
+    ],
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [attraction, breadcrumb],
   };
 }

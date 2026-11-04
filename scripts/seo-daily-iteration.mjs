@@ -635,20 +635,76 @@ async function loadLocalAreaDefinitionsByTitle() {
   return titleMap;
 }
 
+const REGION_BY_PREFECTURE = {
+  北海道: "北海道・東北",
+  青森県: "北海道・東北",
+  岩手県: "北海道・東北",
+  宮城県: "北海道・東北",
+  秋田県: "北海道・東北",
+  山形県: "北海道・東北",
+  福島県: "北海道・東北",
+  茨城県: "関東",
+  栃木県: "関東",
+  群馬県: "関東",
+  埼玉県: "関東",
+  千葉県: "関東",
+  東京都: "関東",
+  神奈川県: "関東",
+  新潟県: "中部・北陸",
+  富山県: "中部・北陸",
+  石川県: "中部・北陸",
+  福井県: "中部・北陸",
+  山梨県: "中部・北陸",
+  長野県: "中部・北陸",
+  岐阜県: "中部・北陸",
+  静岡県: "中部・北陸",
+  愛知県: "中部・北陸",
+  三重県: "近畿",
+  滋賀県: "近畿",
+  京都府: "近畿",
+  大阪府: "近畿",
+  兵庫県: "近畿",
+  奈良県: "近畿",
+  和歌山県: "近畿",
+  鳥取県: "中国・四国",
+  島根県: "中国・四国",
+  岡山県: "中国・四国",
+  広島県: "中国・四国",
+  山口県: "中国・四国",
+  徳島県: "中国・四国",
+  香川県: "中国・四国",
+  愛媛県: "中国・四国",
+  高知県: "中国・四国",
+  福岡県: "九州・沖縄",
+  佐賀県: "九州・沖縄",
+  長崎県: "九州・沖縄",
+  熊本県: "九州・沖縄",
+  大分県: "九州・沖縄",
+  宮崎県: "九州・沖縄",
+  鹿児島県: "九州・沖縄",
+  沖縄県: "九州・沖縄",
+};
+
+const ALL_PREFECTURES = Object.keys(REGION_BY_PREFECTURE);
+
 async function discoverAreaSearchIntents(routes, gscRows) {
   const existingPath = path.resolve(
     process.cwd(),
     "src/data/seo_area_keywords.json"
   );
-  let existingData = { byRouteId: {}, byAreaName: {} };
+  let existingData = { byRouteId: {}, byAreaName: {}, byPrefecture: {} };
   if (fs.existsSync(existingPath)) {
     try {
       const parsed = JSON.parse(fs.readFileSync(existingPath, "utf8")) || {};
       if (parsed.byRouteId && parsed.byAreaName) {
-        existingData = parsed;
+        existingData = {
+          byRouteId: parsed.byRouteId || {},
+          byAreaName: parsed.byAreaName || {},
+          byPrefecture: parsed.byPrefecture || {},
+        };
       }
     } catch {
-      existingData = { byRouteId: {}, byAreaName: {} };
+      existingData = { byRouteId: {}, byAreaName: {}, byPrefecture: {} };
     }
   }
 
@@ -656,6 +712,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 
   // Group routes by unique areaName so we don't query the same area twice
   const areaMap = new Map();
+  const prefectureMap = new Map();
   const routeToAreaMeta = new Map();
 
   for (const r of routes) {
@@ -671,6 +728,8 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       extractedArea ||
       (city ? city.replace(/^.+?郡/, "").replace(/[市区町村]$/, "") : r.prefecture || "街歩き");
 
+    const pref = String(r.prefecture || "").trim();
+
     routeToAreaMeta.set(r.id, {
       routeId: r.id,
       areaName: primaryArea,
@@ -678,7 +737,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       line: localDef?.line || null,
       tags: localDef?.tags || [],
       city,
-      prefecture: r.prefecture || "",
+      prefecture: pref,
       category: r.category || "",
     });
 
@@ -686,7 +745,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       areaMap.set(primaryArea, {
         areaName: primaryArea,
         city,
-        prefecture: r.prefecture || "",
+        prefecture: pref,
         line: localDef?.line || null,
         tags: localDef?.tags || [],
         sampleCategory: r.category || "",
@@ -694,10 +753,39 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       });
     }
     areaMap.get(primaryArea).routeIds.push(r.id);
+
+    if (pref) {
+      if (!prefectureMap.has(pref)) {
+        prefectureMap.set(pref, {
+          prefecture: pref,
+          region: REGION_BY_PREFECTURE[pref] || "全国",
+          routeIds: [],
+          areaNames: new Set(),
+          cities: new Set(),
+          lines: new Set(),
+          categories: new Set(),
+          spotNames: [],
+          spotCount: 0,
+        });
+      }
+      const pEntry = prefectureMap.get(pref);
+      pEntry.routeIds.push(r.id);
+      if (primaryArea && primaryArea !== pref) pEntry.areaNames.add(primaryArea);
+      if (city) pEntry.cities.add(city);
+      if (localDef?.line) pEntry.lines.add(localDef.line);
+      if (r.category) pEntry.categories.add(r.category);
+      pEntry.spotCount += spots.length;
+      for (const s of spots) {
+        if (s?.name && pEntry.spotNames.length < 18 && !pEntry.spotNames.includes(s.name)) {
+          pEntry.spotNames.push(s.name);
+        }
+      }
+    }
   }
 
   const byAreaName = { ...(existingData.byAreaName || {}) };
   const byRouteId = { ...(existingData.byRouteId || {}) };
+  const byPrefecture = { ...(existingData.byPrefecture || {}) };
 
   for (const [areaName, info] of areaMap.entries()) {
     // 1. Check GSC queries matching this area or routes in this area
@@ -786,8 +874,96 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     }
   }
 
+  // 都道府県別ハブ（/areas/[prefecture]）の検索意図・充実度ティア・自動ガイド文を更新
+  for (const [pref, pInfo] of prefectureMap.entries()) {
+    const shortPref = pref.replace(/[都府県]$/, "");
+    const routeCount = pInfo.routeIds.length;
+    const spotCount = pInfo.spotCount;
+    const maturityTier = routeCount >= 3 ? "rich" : routeCount >= 1 ? "growing" : "empty";
+    const areaList = Array.from(pInfo.areaNames);
+    const cityList = Array.from(pInfo.cities);
+    const lineList = Array.from(pInfo.lines);
+    const categoryList = Array.from(pInfo.categories);
+
+    const matchingPrefGsc = (gscRows || [])
+      .filter(
+        (row) =>
+          row.query.includes(shortPref) ||
+          row.page.includes(encodeURIComponent(pref)) ||
+          pInfo.routeIds.some((id) => row.page.includes(id))
+      )
+      .sort((a, b) => b.impressions - a.impressions);
+
+    const gscTopQueries = Array.from(
+      new Set(matchingPrefGsc.map((r) => r.query).filter(Boolean))
+    ).slice(0, 8);
+
+    const [sugPrefKanko, sugPrefSanpo] = await Promise.all([
+      fetchGoogleSuggestions(`${shortPref} 観光 `),
+      fetchGoogleSuggestions(`${shortPref} 街歩き`),
+    ]);
+
+    const filteredPrefSuggestions = Array.from(
+      new Set([...sugPrefKanko, ...sugPrefSanpo])
+    ).filter((s) => isOutingIntentSuggestion(s, shortPref, pref));
+
+    const { titleHook, subHook } = buildSmartHookFromSuggestions(
+      pref,
+      filteredPrefSuggestions,
+      gscTopQueries,
+      categoryList[0] || ""
+    );
+
+    const fallbackPrefKeywords = [
+      `${pref} 観光 モデルコース`,
+      `${shortPref} 街歩き`,
+      `${shortPref} 散歩コース`,
+      `${shortPref} 日帰り 観光 電車`,
+      `${shortPref} 穴場スポット`,
+      ...areaList.slice(0, 6).map((a) => `${a} 街歩き`),
+    ];
+
+    const topSearchKeywords = Array.from(
+      new Set([...gscTopQueries, ...filteredPrefSuggestions, ...fallbackPrefKeywords])
+    ).slice(0, 14);
+
+    const areaPreview =
+      areaList.length > 0
+        ? `${areaList.slice(0, 6).join("・")}${areaList.length > 6 ? "など" : ""}`
+        : pref;
+    const spotPreview =
+      pInfo.spotNames.length > 0
+        ? `${pInfo.spotNames.slice(0, 5).join("、")}${pInfo.spotNames.length > 5 ? "など" : ""}`
+        : "";
+
+    const leadSummary =
+      routeCount >= 3
+        ? `${pref}では現在、${areaPreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
+        : `${pref}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
+
+    byPrefecture[pref] = {
+      prefecture: pref,
+      region: pInfo.region,
+      routeCount,
+      spotCount,
+      maturityTier,
+      areaNames: areaList,
+      cities: cityList,
+      lines: lineList,
+      categories: categoryList,
+      featuredSpots: pInfo.spotNames.slice(0, 12),
+      titleHook,
+      subHook,
+      leadSummary,
+      topSearchKeywords,
+      gscTopQueries,
+      updatedAt: new Date().toISOString().split("T")[0],
+    };
+  }
+
   const outputPayload = {
     updatedAt: new Date().toISOString(),
+    byPrefecture,
     byAreaName,
     byRouteId,
   };
@@ -799,7 +975,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     "utf8"
   );
 
-  return byAreaName;
+  return { byAreaName, byPrefecture };
 }
 
 async function main() {
@@ -838,9 +1014,19 @@ async function main() {
     }
   }
 
-  const areaKeywordsMap = await discoverAreaSearchIntents(
-    routes,
-    gscResult.rows || []
+  const { byAreaName: areaKeywordsMap, byPrefecture: prefectureKeywordsMap } =
+    await discoverAreaSearchIntents(routes, gscResult.rows || []);
+
+  // 都道府県ハブ（/areas, /areas/[prefecture]）およびスポット個別ページ（/routes/[id]/spot/[spotId]）監査
+  const prefEntries = Object.values(prefectureKeywordsMap);
+  const richPrefectures = prefEntries
+    .filter((p) => p.maturityTier === "rich")
+    .sort((a, b) => b.routeCount - a.routeCount);
+  const growingPrefectures = prefEntries
+    .filter((p) => p.maturityTier === "growing")
+    .sort((a, b) => b.routeCount - a.routeCount);
+  const uncoveredPrefectures = ALL_PREFECTURES.filter(
+    (pref) => !prefectureKeywordsMap[pref]
   );
 
   // LLMO (llms.txt / llms-full.txt) 配信データ品質・カバレッジ監査
@@ -895,6 +1081,43 @@ async function main() {
       }
     }
   }
+
+  const prefectureHubAudit = {
+    hubIndexUrl: `${PUBLIC_SITE_URL}/areas`,
+    filesPresent: {
+      areasIndexPage: fs.existsSync(
+        path.resolve(process.cwd(), "src/app/areas/page.tsx")
+      ),
+      prefectureHubPage: fs.existsSync(
+        path.resolve(process.cwd(), "src/app/areas/[prefecture]/page.tsx")
+      ),
+      spotSeoLayout: fs.existsSync(
+        path.resolve(
+          process.cwd(),
+          "src/app/routes/[id]/spot/[spotId]/layout.tsx"
+        )
+      ),
+    },
+    coveredPrefecturesCount: prefEntries.length,
+    richPrefecturesCount: richPrefectures.length,
+    growingPrefecturesCount: growingPrefectures.length,
+    uncoveredPrefecturesCount: uncoveredPrefectures.length,
+    uncoveredPrefectures,
+    richPrefectures: richPrefectures.map((p) => ({
+      prefecture: p.prefecture,
+      routeCount: p.routeCount,
+      spotCount: p.spotCount,
+      areaNames: p.areaNames,
+      titleHook: p.titleHook,
+    })),
+    growingPrefectures: growingPrefectures.map((p) => ({
+      prefecture: p.prefecture,
+      routeCount: p.routeCount,
+      spotCount: p.spotCount,
+      areaNames: p.areaNames,
+      titleHook: p.titleHook,
+    })),
+  };
 
   const llmsAudit = {
     endpoints: [`${PUBLIC_SITE_URL}/llms.txt`, `${PUBLIC_SITE_URL}/llms-full.txt`],
@@ -954,11 +1177,15 @@ async function main() {
       highBounceRoutePageCount: highBounceRoutePages.length,
       totalPublishedRoutes: routes.length,
       totalAreasAnalyzed: Object.keys(areaKeywordsMap).length,
+      totalPrefecturesCovered: prefEntries.length,
+      richPrefecturesCount: richPrefectures.length,
+      growingPrefecturesCount: growingPrefectures.length,
       llmsTotalSpots: totalSpotsCount,
       llmsSpotGapsCount: routesWithSpotGaps.length,
       llmsShortDescriptionsCount: routesWithShortDescriptions.length,
       llmsTerminologyViolationsCount: terminologyViolations.length,
     },
+    prefectureHubAudit,
     llmsAudit,
     topGscQueriesByImpressions,
     lowCtrOpportunities,
@@ -972,7 +1199,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(report, null, 2), "utf8");
   console.log(`✅ SHUIN SEO Daily Report written to ${outPath}`);
   console.log(
-    `✅ Updated src/data/seo_area_keywords.json for ${Object.keys(areaKeywordsMap).length} areas`
+    `✅ Updated src/data/seo_area_keywords.json for ${Object.keys(areaKeywordsMap).length} areas & ${prefEntries.length} prefectures`
   );
   console.log(JSON.stringify(report.summary, null, 2));
 }

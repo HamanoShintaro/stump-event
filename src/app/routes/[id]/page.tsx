@@ -220,7 +220,22 @@ export default async function RallyDetailPage({
                 Q. この{areaInfo.areaName}ルートではどの順番でスポットをめぐりますか？
               </h3>
               <p className={styles.seoFaqAnswer}>
-                {areaInfo.spotNames.map((name, i) => `${i + 1}. ${name}`).join(" → ")} の順に一筆書きでめぐる構成になっています。現地を訪れて押印すると、それぞれの場所に眠る物語の断片が開かれます。
+                {spotsList.map((spot: any, i: number) => (
+                  <span key={spot.id}>
+                    {i > 0 && " → "}
+                    <Link
+                      href={`/routes/${rally.id}/spot/${spot.id}`}
+                      style={{
+                        color: "var(--primary-color)",
+                        textDecoration: "underline",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {i + 1}. {spot.name}
+                    </Link>
+                  </span>
+                ))}{" "}
+                の順に一筆書きでめぐる構成になっています。現地を訪れて押印すると、それぞれの場所に眠る物語の断片が開かれます。
               </p>
             </div>
           </div>
@@ -242,12 +257,15 @@ export default async function RallyDetailPage({
             )}
             {areaInfo.prefecture && (
               <Link
-                href={`/routes?prefecture=${encodeURIComponent(areaInfo.prefecture)}`}
+                href={`/areas/${encodeURIComponent(areaInfo.prefecture)}`}
                 className="btn-secondary"
               >
-                {areaInfo.prefecture}の観光・街歩きルート一覧
+                {areaInfo.prefecture}の観光・街歩きルートまとめ
               </Link>
             )}
+            <Link href="/areas" className="btn-secondary">
+              全国エリア・都道府県一覧
+            </Link>
           </div>
         </section>
       </main>

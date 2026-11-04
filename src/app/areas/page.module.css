@@ -1,0 +1,371 @@
+.main {
+  padding-bottom: 72px;
+}
+
+.breadcrumbNav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  opacity: 0.78;
+  margin-bottom: 18px;
+}
+
+.breadcrumbLink {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.heroCard {
+  padding: 28px 24px;
+  border-radius: 20px;
+  border: 1px solid var(--accent-color);
+  margin-bottom: 32px;
+}
+
+.regionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.14);
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pageTitle {
+  font-size: var(--font-size-h1);
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+}
+
+.pageLead {
+  font-size: var(--font-size-body);
+  color: var(--text-color);
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+}
+
+.statsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.statPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--bg-color);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.areaTagsSection {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-body);
+  color: var(--text-color);
+  opacity: 0.85;
+  margin: 0 0 20px 0;
+  line-height: 1.7;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.areaTagChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.areaTagChip:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.regionSection {
+  margin-bottom: 40px;
+}
+
+.prefGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.prefCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.prefCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.prefCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.prefName {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.prefCountBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.18);
+  color: var(--primary-color);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+}
+
+.prefAreaPreview {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.prefSpotPreview {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  opacity: 0.72;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.routeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.routeCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.routeCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+}
+
+.routeThumbBox {
+  position: relative;
+  width: 100%;
+  height: 188px;
+  overflow: hidden;
+}
+
+.routeThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.routeBadgeRow {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.routeAreaBadge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  border: 1px solid var(--accent-color);
+}
+
+.routeCategoryBadge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+}
+
+.routeBody {
+  padding: 18px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.routeTitle {
+  font-size: var(--font-size-body);
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.45;
+  margin: 0 0 8px 0;
+}
+
+.routeSpecs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.routeDesc {
+  font-size: var(--font-size-body);
+  color: var(--text-color);
+  opacity: 0.86;
+  line-height: 1.65;
+  margin: 0 0 14px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.routeSpotChips {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(212, 175, 55, 0.45);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.spotMiniTag {
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+  opacity: 0.82;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.neighborSection {
+  margin: 36px 0;
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid var(--accent-color);
+}
+
+.seoGuideBox {
+  margin-top: 40px;
+  padding: 26px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.faqItem {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--bg-color);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.faqQuestion {
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+}
+
+.faqAnswer {
+  font-size: var(--font-size-body);
+  color: var(--text-color);
+  opacity: 0.88;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.actionLinksRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
