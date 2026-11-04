@@ -14,6 +14,10 @@ import crypto from "crypto";
 import { pathToFileURL } from "url";
 import ws from "ws";
 import { createClient } from "@supabase/supabase-js";
+import {
+  buildDailySnsPostForRoute,
+  dispatchSnsPostIfConfigured,
+} from "./sns-daily-post.mjs";
 
 // Load .env.local if present
 const envPath = path.resolve(process.cwd(), ".env.local");
@@ -990,6 +994,7 @@ async function main() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   const routes = [];
+  const microFeedbackList = [];
   if (supabaseUrl && supabaseKey) {
     const supabase = createClient(supabaseUrl, supabaseKey, {
       auth: { persistSession: false },
@@ -1011,6 +1016,20 @@ async function main() {
       routes.push(...data);
       if (data.length < PAGE_SIZE) break;
       offset += PAGE_SIZE;
+    }
+
+    try {
+      const { data: fbRows } = await supabase
+        .from("inquiries")
+        .select("id, name, message, status, created_at")
+        .eq("category", "micro_feedback")
+        .order("created_at", { ascending: false })
+        .limit(30);
+      if (Array.isArray(fbRows)) {
+        microFeedbackList.push(...fbRows);
+      }
+    } catch {
+      // ignore if inquiries table not accessible
     }
   }
 
@@ -1161,6 +1180,35 @@ async function main() {
     .sort((a, b) => b.screenPageViews - a.screenPageViews)
     .slice(0, 15);
 
+  // 本日のSNS紹介ルート選定 ＆ マイクロフィードバック集計
+  let dailySnsPick = null;
+  if (routes.length > 0) {
+    const daySeed = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+    const pickedRoute = routes[daySeed % routes.length];
+    const postPayload = buildDailySnsPostForRoute(pickedRoute, null);
+    const shouldAutoPost =
+      process.argv.includes("--post-sns") ||
+      Boolean(
+        process.env.BLUESKY_IDENTIFIER ||
+          process.env.SNS_WEBHOOK_URL ||
+          process.env.X_USER_ACCESS_TOKEN
+      );
+    const dispatchResult = await dispatchSnsPostIfConfigured(
+      postPayload,
+      shouldAutoPost
+    );
+    dailySnsPick = {
+      ...postPayload,
+      dispatchResult,
+    };
+  }
+
+  const microFeedbackSummary = {
+    totalRecentCount: microFeedbackList.length,
+    openCount: microFeedbackList.filter((f) => f.status === "OPEN").length,
+    recentItems: microFeedbackList.slice(0, 15),
+  };
+
   const report = {
     generatedAt: new Date().toISOString(),
     siteUrl: SITE_URL,
@@ -1184,7 +1232,11 @@ async function main() {
       llmsSpotGapsCount: routesWithSpotGaps.length,
       llmsShortDescriptionsCount: routesWithShortDescriptions.length,
       llmsTerminologyViolationsCount: terminologyViolations.length,
+      microFeedbackOpenCount: microFeedbackSummary.openCount,
+      dailySnsRouteId: dailySnsPick?.routeId || null,
     },
+    dailySnsPick,
+    microFeedbackSummary,
     prefectureHubAudit,
     llmsAudit,
     topGscQueriesByImpressions,

@@ -32,6 +32,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { getDistance } from "geolib";
 import { parseWKBPoint } from "@/utils/wkb";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
+import { trackRouteMapOpen, trackSpotDetailOpen } from "@/utils/analytics";
 import styles from "./page.module.css";
 
 interface Spot {
@@ -299,6 +300,7 @@ export default function ClientSpotList({
       await showAlert({ text: "目的地の設定に失敗しました: " + error.message, okText: "確認" });
     } else {
       setActiveSpotId(spotId);
+      trackRouteMapOpen(routeId);
       const targetGroupId = effectiveGroupId || groupId;
       const mapUrl = `/routes/${routeId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
       triggerNavigationLoading(mapUrl);

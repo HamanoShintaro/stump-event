@@ -41,3 +41,40 @@ export function trackRouteBookmark(routeId: string, isBookmarked: boolean) {
     bookmark_action: isBookmarked ? "add" : "remove",
   });
 }
+
+export function trackSpotDetailOpen(
+  routeId: string,
+  spotId: string,
+  spotName?: string
+) {
+  trackEvent("spot_detail_open", {
+    route_id: routeId,
+    spot_id: spotId,
+    spot_name: spotName || "",
+  });
+}
+
+export function trackRouteMapOpen(routeId: string) {
+  trackEvent("route_map_open", {
+    route_id: routeId,
+  });
+}
+
+export function trackRouteShare(routeId: string, platform: string) {
+  trackEvent("route_share", {
+    route_id: routeId,
+    method: platform,
+  });
+}
+
+export function trackMicroFeedback(
+  routeId: string,
+  sentiment: string,
+  hasRequestedArea: boolean
+) {
+  trackEvent("route_micro_feedback", {
+    route_id: routeId,
+    sentiment,
+    has_requested_area: hasRequestedArea,
+  });
+}

@@ -8,6 +8,7 @@ import { JoinRallyButton, BookmarkRouteButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import CommunityEchoesSection from "@/components/CommunityEchoesSection";
+import RouteMicroFeedbackCard from "@/components/RouteMicroFeedbackCard";
 import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
@@ -190,6 +191,13 @@ export default async function RallyDetailPage({
         />
 
         <RouteBadgeTeaser routeId={rally.id} />
+
+        {/* 1タップ・マイクロアンケート ＆ SNSシェア */}
+        <RouteMicroFeedbackCard
+          routeId={rally.id}
+          routeTitle={rally.title}
+          areaName={areaInfo.areaName}
+        />
 
         {/* エリア別・検索意図マッチ街歩きガイド */}
         <section className={styles.seoGuideSection} aria-labelledby="area-walk-guide-title">

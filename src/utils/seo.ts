@@ -352,6 +352,7 @@ export function buildRouteSeoMetadata(
   ]);
 
   const canonicalUrl = `${siteUrl}/routes/${rally.id}`;
+  const dynamicOgUrl = `${canonicalUrl}/opengraph-image`;
   const ogImageUrl = rally?.thumbnail_url
     ? rally.thumbnail_url.startsWith("http")
       ? rally.thumbnail_url
@@ -374,6 +375,12 @@ export function buildRouteSeoMetadata(
       type: "article",
       images: [
         {
+          url: dynamicOgUrl,
+          width: 1200,
+          height: 630,
+          alt: `${info.titleHook}「${rally.title}」`,
+        },
+        {
           url: ogImageUrl,
           alt: `${info.titleHook}「${rally.title}」`,
         },
@@ -383,7 +390,7 @@ export function buildRouteSeoMetadata(
       card: "summary_large_image",
       title: `${seoTitle} | SHUIN まちのしるし`,
       description: seoDescription,
-      images: [ogImageUrl],
+      images: [dynamicOgUrl],
     },
   };
 }
