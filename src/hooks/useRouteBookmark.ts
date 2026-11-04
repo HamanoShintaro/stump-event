@@ -6,6 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
+import { trackRouteBookmark } from "@/utils/analytics";
 
 const getLocalBookmarkKey = (userId: string) => `shuin_bookmarks_${userId}`;
 
@@ -115,6 +116,7 @@ export function useRouteBookmark(routeId: string, initialFavoriteCount = 0) {
     // Optimistic update
     setIsBookmarked(nextState);
     setFavoriteCount((prev) => Math.max(0, prev + (nextState ? 1 : -1)));
+    trackRouteBookmark(routeId, nextState);
 
     try {
       if (nextState) {

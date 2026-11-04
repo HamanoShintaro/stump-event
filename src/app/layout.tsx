@@ -5,6 +5,7 @@ import { AuthProvider } from '@/context/AuthContext'
 import { AlertProvider } from '@/context/AlertContext'
 import Footer from '@/components/Footer'
 import NavigationLoadingProvider from '@/components/NavigationLoadingProvider'
+import GoogleAnalyticsTag from '@/components/GoogleAnalyticsTag'
 import { getSiteUrl } from '@/utils/seo'
 
 const notoSansJP = Noto_Sans_JP({ subsets: ['latin'], weight: ['400', '500', '700', '800'] })
@@ -62,6 +63,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body className={notoSansJP.className}>
+        <GoogleAnalyticsTag />
         <AuthProvider>
           <AlertProvider>
             <NavigationLoadingProvider />

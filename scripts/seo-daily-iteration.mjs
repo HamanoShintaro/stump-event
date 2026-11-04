@@ -87,7 +87,8 @@ async function getGoogleAccessToken(cred) {
   const header = { alg: "RS256", typ: "JWT" };
   const payload = {
     iss: cred.client_email,
-    scope: "https://www.googleapis.com/auth/webmasters.readonly",
+    scope:
+      "https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/analytics.readonly",
     aud: "https://oauth2.googleapis.com/token",
     iat: now,
     exp: now + 3600,
@@ -220,6 +221,93 @@ async function fetchSearchConsoleMetrics() {
     return {
       status: "ok",
       period: { startDate: formatDate(startDate), endDate: formatDate(endDate) },
+      rows,
+    };
+  } catch (err) {
+    return {
+      status: "error",
+      message: err instanceof Error ? err.message : String(err),
+      rows: [],
+    };
+  }
+}
+
+async function fetchGa4Metrics() {
+  const propertyId = (process.env.GA4_PROPERTY_ID || "")
+    .replace(/^properties\//, "")
+    .trim();
+  if (!propertyId) {
+    return {
+      status: "unconfigured",
+      message:
+        "GA4_PROPERTY_ID が未設定です。GA4作成後に GA4_PROPERTY_ID（数字のプロパティID）を .env.local に設定すると、ページ別滞在時間・エンゲージメント率・ルート参加CV数も自動取得されます。",
+      rows: [],
+    };
+  }
+
+  const sa = loadServiceAccount();
+  if (!sa) {
+    return {
+      status: "unconfigured",
+      message: "Google 認証情報が未設定のため GA4 Data API をスキップしました。",
+      rows: [],
+    };
+  }
+
+  try {
+    const token = await getGoogleAccessToken(sa);
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+    if (sa.type === "authorized_user") {
+      headers["x-goog-user-project"] =
+        sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
+    }
+
+    const endpoint = `https://analyticsdata.googleapis.com/v1beta/properties/${encodeURIComponent(
+      propertyId
+    )}:runReport`;
+
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        dateRanges: [{ startDate: "28daysAgo", endDate: "yesterday" }],
+        dimensions: [{ name: "pagePath" }],
+        metrics: [
+          { name: "screenPageViews" },
+          { name: "activeUsers" },
+          { name: "engagementRate" },
+          { name: "averageSessionDuration" },
+          { name: "eventCount" },
+        ],
+        limit: 250,
+      }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      return {
+        status: "error",
+        message: `GA4 Data API 応答エラー (${res.status}): ${errText}`,
+        rows: [],
+      };
+    }
+
+    const data = await res.json();
+    const rows = (data.rows || []).map((r) => ({
+      pagePath: r.dimensionValues?.[0]?.value || "",
+      screenPageViews: Number(r.metricValues?.[0]?.value || 0),
+      activeUsers: Number(r.metricValues?.[1]?.value || 0),
+      engagementRate: Number(r.metricValues?.[2]?.value || 0),
+      averageSessionDuration: Number(r.metricValues?.[3]?.value || 0),
+      eventCount: Number(r.metricValues?.[4]?.value || 0),
+    }));
+
+    return {
+      status: "ok",
+      propertyId,
       rows,
     };
   } catch (err) {
@@ -685,7 +773,10 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 }
 
 async function main() {
-  const gscResult = await fetchSearchConsoleMetrics();
+  const [gscResult, ga4Result] = await Promise.all([
+    fetchSearchConsoleMetrics(),
+    fetchGa4Metrics(),
+  ]);
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey =
@@ -807,16 +898,30 @@ async function main() {
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15);
 
+  const highBounceRoutePages = (ga4Result.rows || [])
+    .filter(
+      (r) =>
+        r.pagePath.startsWith("/routes/") &&
+        r.screenPageViews >= 10 &&
+        r.engagementRate < 0.45
+    )
+    .sort((a, b) => b.screenPageViews - a.screenPageViews)
+    .slice(0, 15);
+
   const report = {
     generatedAt: new Date().toISOString(),
     siteUrl: SITE_URL,
     gscStatus: gscResult.status,
     gscMessage: gscResult.message || null,
     gscPeriod: gscResult.period || null,
+    ga4Status: ga4Result.status,
+    ga4Message: ga4Result.message || null,
     summary: {
       totalGscRows: (gscResult.rows || []).length,
       lowCtrOpportunityCount: lowCtrOpportunities.length,
       strikingDistanceQueryCount: strikingDistanceQueries.length,
+      totalGa4Pages: (ga4Result.rows || []).length,
+      highBounceRoutePageCount: highBounceRoutePages.length,
       totalPublishedRoutes: routes.length,
       totalAreasAnalyzed: Object.keys(areaKeywordsMap).length,
       llmsTotalSpots: totalSpotsCount,
@@ -828,6 +933,8 @@ async function main() {
     topGscQueriesByImpressions,
     lowCtrOpportunities,
     strikingDistanceQueries,
+    topGa4Pages: (ga4Result.rows || []).slice(0, 20),
+    highBounceRoutePages,
     sampleAreaIntents: Object.values(areaKeywordsMap).slice(0, 20),
   };
 

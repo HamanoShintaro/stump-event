@@ -18,6 +18,7 @@ import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { useRouteBookmark } from "@/hooks/useRouteBookmark";
 import { useSubscription } from "@/hooks/useSubscription";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
+import { trackRouteJoin } from "@/utils/analytics";
 import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Sparkles } from "lucide-react";
 
 export function BookmarkRouteButton({
@@ -223,6 +224,7 @@ export function JoinRallyButton({
       await showAlert({ text: `参加に失敗しました: ${error.message}`, okText: "確認" });
     } else {
       setIsJoined(true);
+      trackRouteJoin(rallyId, routeTitle);
       if (typeof window !== "undefined") {
         window.dispatchEvent(new CustomEvent("shuin-route-joined", { detail: { routeId: rallyId } }));
       }
