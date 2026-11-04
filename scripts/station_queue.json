@@ -619,48 +619,97 @@
     {
       "batch_id": 14,
       "drawn_at": "2026-11-04T04:07:08.000Z",
+      "status": "completed",
+      "theme_note": "処方箋㉗〜㊽適用: 質問文の5駅完全異構造化・Spot1/5メタ開幕句の完全廃止・寺社上限2件以下とイラスト余白表現の徹底（来宮・巣子・白石・三次・七戸十和田）",
+      "selection_method": "HeartRails Express API Complete Nationwide Random Draw (1 station x 5 random prefectures/lines)",
+      "stations": [
+        {
+          "slug": "kinomiya",
+          "station": "来宮",
+          "line": "JR伊東線",
+          "prefecture": "静岡県",
+          "city": "熱海市",
+          "vibe": "樹齢二千年超の国指定天然記念物・來宮神社の『大楠』・御神前の麦こがしを練り込む駅前ベーカリー『KINOMIYA KUWON』・坪内逍遙が自ら設計した別荘庭園『双柿舎』・自家製寒天の『甘味処 福屋』・名勝庭園とアールデコ洋館の『起雲閣』"
+        },
+        {
+          "slug": "sugo",
+          "station": "巣子",
+          "line": "IGRいわて銀河鉄道線",
+          "prefecture": "岩手県",
+          "city": "滝沢市",
+          "vibe": "岩手山の火山扇状地と南部馬の牧の記憶を伝える『馬頭観世音・巣子稲荷神社』・旬のタルトと焼き菓子の『菓子屋 Horn』・鉄鍋もやしあんかけの『もやしらーめん みちのく』・蔵造り風の『結の蔵』・自家製粉の手打ち蕎麦『石臼そば 安曇野 巣子店』"
+        },
+        {
+          "slug": "shiroishi_kumamoto",
+          "station": "白石",
+          "line": "JR肥薩線",
+          "prefecture": "熊本県",
+          "city": "葦北郡芦北町・球磨郡球磨村",
+          "vibe": "球磨川渓谷の神瀬集落を支える『大岩商店』・川舟の目印となった灯台型石燈籠の『神瀬住吉神社（日本遺産）』・球磨杉の『球磨村森林組合』・白い石灰岩の断崖を望む『白石の渡し跡（白石渓谷河畔）』・間口45mの巨鍾乳洞と神秘の御池『神瀬石灰洞窟（国指定名勝）』"
+        },
+        {
+          "slug": "miyoshi",
+          "station": "三次",
+          "line": "JR芸備線",
+          "prefecture": "広島県",
+          "city": "三次市",
+          "vibe": "三川合流の巴橋たもとの古民家カフェ『喫茶キナリ』・昭和2年築の旧三次銀行本店を活用した『辻村寿三郎人形館』・旧銀行建築と伝統銘菓・乳団子の『風季舎 昌平本家』・うだつ町家のベーカリー『mugimugi cafe』・江戸期の妖怪物語『稲生物怪録』の舞台『湯本豪一記念日本妖怪博物館（三次もののけミュージアム）』"
+        },
+        {
+          "slug": "shichinohe_towada",
+          "station": "七戸十和田",
+          "line": "東北新幹線",
+          "prefecture": "青森県",
+          "city": "上北郡七戸町",
+          "vibe": "樹齢300年のクルメツツジが咲く高台の『天王神社』・中世南部一族の巨城と盛岡藩代官所跡『国指定史跡 七戸城跡』・旧奥州街道七戸宿の『赤牛食堂』・駿馬の焼印を押す駒饅頭の老舗『愛生堂』・1777年創業の八甲田伏流水の酒蔵『盛田庄兵衛（駒泉）』"
+        }
+      ]
+    },
+    {
+      "batch_id": 15,
+      "drawn_at": "2026-11-04T07:30:07.000Z",
       "status": "pending",
       "selection_method": "HeartRails Express API Complete Nationwide Random Draw (1 station x 5 random prefectures/lines)",
       "stations": [
         {
-          "name": "来宮",
-          "line": "JR伊東線",
-          "prefecture": "静岡県",
-          "postal": "4130017",
-          "lng": 139.065575,
-          "lat": 35.098723
+          "name": "桂",
+          "line": "阪急嵐山線",
+          "prefecture": "京都府",
+          "postal": "6158107",
+          "lng": 135.703302,
+          "lat": 34.979522
         },
         {
-          "name": "巣子",
-          "line": "いわて銀河鉄道線",
-          "prefecture": "岩手県",
-          "postal": "0200611",
-          "lng": 141.148674,
-          "lat": 39.783345
-        },
-        {
-          "name": "白石",
+          "name": "八代",
           "line": "JR肥薩線",
           "prefecture": "熊本県",
-          "postal": "8696302",
-          "lng": 130.608328,
-          "lat": 32.305694
+          "postal": "8660823",
+          "lng": 130.621609,
+          "lat": 32.503805
         },
         {
-          "name": "三次",
-          "line": "JR芸備線",
-          "prefecture": "広島県",
-          "postal": "7280014",
-          "lng": 132.855976,
-          "lat": 34.802646
+          "name": "猪谷",
+          "line": "JR高山本線",
+          "prefecture": "富山県",
+          "postal": "9392187",
+          "lng": 137.237975,
+          "lat": 36.471625
         },
         {
-          "name": "七戸十和田",
-          "line": "東北新幹線",
-          "prefecture": "青森県",
-          "postal": "0392501",
-          "lng": 141.153817,
-          "lat": 40.719954
+          "name": "篠栗",
+          "line": "JR篠栗線",
+          "prefecture": "福岡県",
+          "postal": "8112413",
+          "lng": 130.524515,
+          "lat": 33.624045
+        },
+        {
+          "name": "木ノ本",
+          "line": "JR北陸本線",
+          "prefecture": "滋賀県",
+          "postal": "5290425",
+          "lng": 136.221706,
+          "lat": 35.505933
         }
       ]
     }

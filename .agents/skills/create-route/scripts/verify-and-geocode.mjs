@@ -73,9 +73,9 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const bracketMatch = spotName.match(/『(.+?)』/);
   const beforeParen = spotName.split(/[（『]/)[0].trim();
   const candidates = [
+    beforeParen.length >= 2 && beforeParen.length <= 24 ? beforeParen : null,
     parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : null,
     bracketMatch ? bracketMatch[1].replace(/[／/].*$/, '').trim() : null,
-    beforeParen.length >= 2 && beforeParen.length <= 18 ? beforeParen : null,
     spotName,
   ].filter(Boolean);
   const uniquePois = [...new Set(candidates)];
@@ -109,7 +109,8 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
       }
       if (typeof lat === 'number' && typeof lng === 'number') {
         // GSIが街区・親番まで一致しているのに350m以上離れている場合は、曖昧検索や同名別施設への誤マッチとみなし、住所単体クエリへフォールバック
-        const maxAllowedFromGsi = gsiRef?.hasBlockNumber ? 350 : 2500;
+        // ※大字代表点のみ（hasBlockNumber === false）の場合は、広大な山間部の大字（例: 球磨村神瀬など）で数km離れることがあるため 8000m まで許容する
+        const maxAllowedFromGsi = gsiRef?.hasBlockNumber ? 350 : 8000;
         if (gsiRef && calcDistanceMeters(lat, lng, gsiRef.lat, gsiRef.lng) > maxAllowedFromGsi) {
           continue;
         }
