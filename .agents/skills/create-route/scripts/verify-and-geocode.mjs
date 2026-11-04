@@ -25,6 +25,7 @@ const PROHIBITED_TERMS = [
   { term: 'スタンプ', reason: '「押印」（行為）または「SHUIN」「しるし」（収集物）を使用してください' },
   { term: '挑戦する', reason: '「めぐる」「巡る」「訪れる」などの風流な表現を使用してください' },
   { term: 'クリアする', reason: '「巡り終える」「しるしを刻み終える」「結ぶ」を使用してください' },
+  { term: '回遊', reason: '「散策」「巡り」「文脈」「シナリオ」などの表現を使用してください' },
 ];
 
 // Haversine distance in meters
