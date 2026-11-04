@@ -716,7 +716,7 @@
     {
       "batch_id": 16,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "slug": "wakayamako",
@@ -757,6 +757,53 @@
           "prefecture": "福井県",
           "lat": 35.895695,
           "lng": 136.198935
+        }
+      ]
+    },
+    {
+      "batch_id": 17,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "阿品東",
+          "line": "広島電鉄宮島線",
+          "prefecture": "広島県",
+          "postal": "7380054",
+          "lat": 34.326488,
+          "lng": 132.318579
+        },
+        {
+          "station": "厚狭",
+          "line": "JR美祢線",
+          "prefecture": "山口県",
+          "postal": "7570001",
+          "lat": 34.053361,
+          "lng": 131.159965
+        },
+        {
+          "station": "西大垣",
+          "line": "養老鉄道",
+          "prefecture": "岐阜県",
+          "postal": "5030973",
+          "lat": 35.360298,
+          "lng": 136.603363
+        },
+        {
+          "station": "いわて沼宮内",
+          "line": "東北新幹線",
+          "prefecture": "岩手県",
+          "postal": "0284303",
+          "lat": 39.960155,
+          "lng": 141.216955
+        },
+        {
+          "station": "水前寺公園",
+          "line": "熊本市電健軍線",
+          "prefecture": "熊本県",
+          "postal": "8620956",
+          "lat": 32.789908,
+          "lng": 130.732455
         }
       ]
     }

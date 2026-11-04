@@ -5,7 +5,7 @@
  * （スポット5枚は Antigravity 内蔵の image-generator サブエージェントで生成するハイブリッド運用）
  *
  * 使い方:
- *   node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--model gpt-image-1|gpt-image-1-mini] [--force] [--include-spots]
+ *   node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--model gpt-image-2|gpt-image-1.5|gpt-image-1-mini] [--spot-model gpt-image-1.5|gpt-image-1-mini] [--force] [--include-spots]
  */
 
 import fs from 'fs';
@@ -34,9 +34,12 @@ function loadEnvKey(keyName) {
   return null;
 }
 
-async function generateOpenAIImage(apiKey, prompt, model = 'gpt-image-1', size = '1024x1024') {
+const MODEL_FALLBACK_CHAIN = ['gpt-image-2', 'gpt-image-1.5', 'gpt-image-1-mini'];
+
+async function generateOpenAIImage(apiKey, prompt, model = 'gpt-image-1.5', size = '1024x1024') {
+  const normalizedModel = model === 'gpt-image-1' ? 'gpt-image-1.5' : model;
   const body = {
-    model,
+    model: normalizedModel,
     prompt,
     n: 1,
     size,
@@ -54,10 +57,16 @@ async function generateOpenAIImage(apiKey, prompt, model = 'gpt-image-1', size =
 
   if (!res.ok) {
     const errText = await res.text();
-    // gpt-image-1 で組織認証エラー等の場合は gpt-image-1-mini にフォールバック（残高不足時は即エラー）
-    if (model === 'gpt-image-1' && !errText.includes('credit_balance_exhausted') && !errText.includes('insufficient_quota')) {
-      console.warn(`  ⚠️ ${model} 呼び出し失敗のため gpt-image-1-mini にフォールバックします...`);
-      return generateOpenAIImage(apiKey, prompt, 'gpt-image-1-mini', size);
+    // 残高切れ以外のエラー（モデル制限・429レート上限等）は次のモデルへ自動フォールバック
+    if (!errText.includes('credit_balance_exhausted') && !errText.includes('insufficient_quota')) {
+      const idx = MODEL_FALLBACK_CHAIN.indexOf(normalizedModel);
+      const nextModel = idx !== -1 && idx + 1 < MODEL_FALLBACK_CHAIN.length
+        ? MODEL_FALLBACK_CHAIN[idx + 1]
+        : (normalizedModel !== 'gpt-image-1-mini' ? 'gpt-image-1-mini' : null);
+      if (nextModel) {
+        console.warn(`  ⚠️ ${normalizedModel} 呼び出し失敗(${res.status})のため ${nextModel} にフォールバックします...`);
+        return generateOpenAIImage(apiKey, prompt, nextModel, size);
+      }
     }
     throw new Error(`OpenAI API Error (${res.status}): ${errText}`);
   }
@@ -144,8 +153,8 @@ function buildSpotPrompt(area, spot, idx) {
     `Scene description: ${spot.description}`,
     `Key visual discovery on site: ${spot.surprise || spot.clue}`,
     `Category mood: ${mood}.`,
-    `Camera angle, lighting & medium: ${angleStyle}`,
-    `Strict rule: No text, no signage letters, no characters, no watermarks.`,
+    `Camera angle, lighting & medium: ${angleStyle} Focus on partial framing, close-up textures, light, steam, or shadows rather than a full literal architectural photo spoiler, leaving room for the visitor's imagination.`,
+    `Strict rule: No people, no text, no signage letters, no characters, no watermarks.`,
   ].join(' ');
 }
 
@@ -163,10 +172,12 @@ async function main() {
   const force = args.includes('--force');
   const includeSpots = args.includes('--include-spots');
   const modelFlagIdx = args.indexOf('--model');
-  const preferredModel = modelFlagIdx !== -1 && args[modelFlagIdx + 1] ? args[modelFlagIdx + 1] : 'gpt-image-1';
+  const preferredModel = modelFlagIdx !== -1 && args[modelFlagIdx + 1] ? args[modelFlagIdx + 1] : 'gpt-image-2';
+  const spotModelFlagIdx = args.indexOf('--spot-model');
+  const preferredSpotModel = spotModelFlagIdx !== -1 && args[spotModelFlagIdx + 1] ? args[spotModelFlagIdx + 1] : null;
 
   if (!targetArg) {
-    console.error('使い方: node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--model gpt-image-1|gpt-image-1-mini] [--force] [--include-spots]');
+    console.error('使い方: node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--model gpt-image-2|gpt-image-1.5|gpt-image-1-mini] [--spot-model gpt-image-1.5|gpt-image-1-mini] [--force] [--include-spots]');
     process.exit(1);
   }
 
@@ -185,20 +196,21 @@ async function main() {
 
   console.log(`🎨 OpenAI (${preferredModel}) でアイキャッチ画像を生成します: public/images/${area.slug}/route-eyecatch.png`);
 
-  // 1. アイキャッチ画像（デフォルトはこれ1枚のみ生成）
+  // 1. アイキャッチ画像（デフォルトはこれ1枚のみ生成、1536x1024の横長比率で生成）
   const eyecatchPath = path.join(outDir, 'route-eyecatch.png');
   if (fs.existsSync(eyecatchPath) && !force) {
     console.log(`  ⏭️  route-eyecatch.png は既に存在するためスキップ（上書きする場合は --force）`);
   } else {
-    console.log(`  🖼️  生成中: route-eyecatch.png ...`);
-    const buf = await generateOpenAIImage(apiKey, buildEyecatchPrompt(area), preferredModel, '1024x1024');
+    console.log(`  🖼️  生成中: route-eyecatch.png (${preferredModel}) ...`);
+    const buf = await generateOpenAIImage(apiKey, buildEyecatchPrompt(area), preferredModel, '1536x1024');
     fs.writeFileSync(eyecatchPath, buf);
     optimizePng(eyecatchPath, 800);
     console.log(`  ✅ 保存完了: public/images/${area.slug}/route-eyecatch.png`);
   }
 
-  // 2. 各スポット画像（--include-spots 指定時のみOpenAIで生成。通常はAntigravity内蔵 image-generator を使用）
+  // 2. 各スポット画像（--include-spots 指定時のみOpenAIで生成。gpt-image-1.5 と gpt-image-1-mini に交互分散）
   if (includeSpots) {
+    const spotModels = preferredSpotModel ? [preferredSpotModel] : ['gpt-image-1.5', 'gpt-image-1-mini'];
     for (let i = 0; i < (area.spots || []).length; i++) {
       const spot = area.spots[i];
       const spotFile = `spot${i + 1}.png`;
@@ -209,14 +221,15 @@ async function main() {
         continue;
       }
 
-      console.log(`  🖼️  生成中: ${spotFile} (${spot.name}) ...`);
-      const buf = await generateOpenAIImage(apiKey, buildSpotPrompt(area, spot, i + 1), preferredModel, '1024x1024');
+      const spotModel = spotModels[i % spotModels.length];
+      console.log(`  🖼️  生成中: ${spotFile} (${spot.name}) [${spotModel}] ...`);
+      const buf = await generateOpenAIImage(apiKey, buildSpotPrompt(area, spot, i + 1), spotModel, '1024x1024');
       fs.writeFileSync(spotPath, buf);
       optimizePng(spotPath, 560);
       console.log(`  ✅ 保存完了: public/images/${area.slug}/${spotFile}`);
     }
   } else {
-    console.log(`  ℹ️  スポット画像（spot1〜spot5.png）はコスト節約のため Antigravity 内蔵の image-generator サブエージェントで生成します。`);
+    console.log(`  ℹ️  スポット画像（spot1〜spot5.png）はコスト節約のため Antigravity 内蔵の image-generator サブエージェントで生成します（429上限時は --include-spots で OpenAI 分散フォールバック可能）。`);
   }
 
   console.log(`\n🎉 OpenAI アイキャッチ画像の生成・最適化が完了しました！`);
