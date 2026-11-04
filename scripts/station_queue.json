@@ -972,7 +972,7 @@
     {
       "batch_id": 21,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "西11丁目",
@@ -980,7 +980,8 @@
           "prefecture": "北海道",
           "postal": "0600042",
           "lat": 43.058557,
-          "lng": 141.341036
+          "lng": 141.341036,
+          "slug": "nishi_11_chome"
         },
         {
           "station": "内子",
@@ -988,7 +989,8 @@
           "prefecture": "愛媛県",
           "postal": "7913301",
           "lat": 33.549305,
-          "lng": 132.646207
+          "lng": 132.646207,
+          "slug": "uchiko"
         },
         {
           "station": "浦和",
@@ -996,7 +998,8 @@
           "prefecture": "埼玉県",
           "postal": "3300063",
           "lat": 35.858496,
-          "lng": 139.657109
+          "lng": 139.657109,
+          "slug": "urawa"
         },
         {
           "station": "青海川",
@@ -1004,7 +1007,8 @@
           "prefecture": "新潟県",
           "postal": "9493661",
           "lat": 37.346143,
-          "lng": 138.486169
+          "lng": 138.486169,
+          "slug": "omigawa"
         },
         {
           "station": "遠州西ヶ崎",
@@ -1012,7 +1016,56 @@
           "prefecture": "静岡県",
           "postal": "4313115",
           "lat": 34.776821,
-          "lng": 137.773905
+          "lng": 137.773905,
+          "slug": "enshu_nishigasaki"
+        }
+      ],
+      "completed_at": "2026-11-05"
+    },
+    {
+      "batch_id": 22,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "首里",
+          "line": "沖縄ゆいレール",
+          "prefecture": "沖縄県",
+          "postal": "9030806",
+          "lat": 26.219191,
+          "lng": 127.725492
+        },
+        {
+          "station": "青野山",
+          "line": "JR山口線",
+          "prefecture": "島根県",
+          "postal": "6995607",
+          "lat": 34.480962,
+          "lng": 131.803191
+        },
+        {
+          "station": "山本",
+          "line": "JR筑肥西線",
+          "prefecture": "佐賀県",
+          "postal": "8470002",
+          "lat": 33.393472,
+          "lng": 129.981122
+        },
+        {
+          "station": "日向沓掛",
+          "line": "JR日豊本線",
+          "prefecture": "宮崎県",
+          "postal": "8891602",
+          "lat": 31.842241,
+          "lng": 131.344763
+        },
+        {
+          "station": "新里",
+          "line": "弘南鉄道弘南線",
+          "prefecture": "青森県",
+          "postal": "0368083",
+          "lat": 40.587445,
+          "lng": 140.519879
         }
       ]
     }
