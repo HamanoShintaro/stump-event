@@ -40,8 +40,11 @@ if (fs.existsSync(envPath)) {
 
 const SITE_URL =
   process.env.GSC_SITE_URL ||
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://shuin-event.vercel.app";
+  "sc-domain:shuin.app";
+
+const PUBLIC_SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://shuin.app"
+).replace(/\/+$/, "");
 
 function formatDate(d) {
   return d.toISOString().split("T")[0];
@@ -175,12 +178,18 @@ async function fetchSearchConsoleMetrics() {
       SITE_URL
     )}/searchAnalytics/query`;
 
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+    if (sa.type === "authorized_user") {
+      headers["x-goog-user-project"] =
+        sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
+    }
+
     const res = await fetch(apiEndpoint, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
+      headers,
       body: JSON.stringify({
         startDate: formatDate(startDate),
         endDate: formatDate(endDate),
@@ -767,7 +776,7 @@ async function main() {
   }
 
   const llmsAudit = {
-    endpoints: [`${SITE_URL}/llms.txt`, `${SITE_URL}/llms-full.txt`],
+    endpoints: [`${PUBLIC_SITE_URL}/llms.txt`, `${PUBLIC_SITE_URL}/llms-full.txt`],
     filesPresent: {
       llmsUtil: fs.existsSync(path.resolve(process.cwd(), "src/utils/llms.ts")),
       llmsRoute: fs.existsSync(path.resolve(process.cwd(), "src/app/llms.txt/route.ts")),

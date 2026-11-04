@@ -28,7 +28,7 @@ export function getSiteUrl(): string {
   const raw =
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.SITE_URL ||
-    "https://shuin-event.vercel.app";
+    "https://shuin.app";
   return raw.replace(/\/+$/, "");
 }
 
