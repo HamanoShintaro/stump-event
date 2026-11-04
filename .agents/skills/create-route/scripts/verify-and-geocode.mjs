@@ -47,14 +47,24 @@ async function queryGSI(query) {
     if (!res.ok) return null;
     const data = await res.json();
     if (Array.isArray(data) && data.length > 0 && data[0].geometry?.coordinates) {
-      const [lng, lat] = data[0].geometry.coordinates;
-      const title = data[0].properties?.title || query;
+      // query に含まれない別大字（例: 「大そね/大埇」検索時に「大改野」が data[0] に来るケース）を避けるため、title の文字が query に含まれる候補を優先
+      const best = data.find((d) => {
+        const t = d.properties?.title || '';
+        const base = t.replace(/[0-9０-９一二三四五六七八九十]+(番地?|丁目|号).*$/, '');
+        return base && query.includes(base);
+      }) || data[0];
+      const [lng, lat] = best.geometry.coordinates;
+      const title = best.properties?.title || query;
       const hasBlockNumber = /[0-9０-９一二三四五六七八九十]+(番|丁目|号)/.test(title);
+      const allCoords = data
+        .filter((d) => d.geometry?.coordinates)
+        .map((d) => ({ lat: Number(d.geometry.coordinates[1].toFixed(6)), lng: Number(d.geometry.coordinates[0].toFixed(6)) }));
       return {
         lat: Number(lat.toFixed(6)),
         lng: Number(lng.toFixed(6)),
         matchedTitle: title,
         hasBlockNumber,
+        allCoords,
         source: hasBlockNumber ? 'GSI (国土地理院・街区/親番代表点)' : 'GSI (国土地理院・大字代表点)',
       };
     }
@@ -112,8 +122,14 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         // GSIが街区・親番まで一致しているのに350m以上離れている場合は、曖昧検索や同名別施設への誤マッチとみなし、住所単体クエリへフォールバック
         // ※大字代表点のみ（hasBlockNumber === false）の場合は、広大な山間部の大字（例: 球磨村神瀬など）で数km離れることがあるため 8000m まで許容する
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber ? 350 : 8000;
-        if (gsiRef && calcDistanceMeters(lat, lng, gsiRef.lat, gsiRef.lng) > maxAllowedFromGsi) {
-          continue;
+        if (gsiRef) {
+          const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
+            ? gsiRef.allCoords
+            : [{ lat: gsiRef.lat, lng: gsiRef.lng }];
+          const minDist = Math.min(...refList.map((r) => calcDistanceMeters(lat, lng, r.lat, r.lng)));
+          if (minDist > maxAllowedFromGsi) {
+            continue;
+          }
         }
         return {
           lat,
