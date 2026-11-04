@@ -2,7 +2,8 @@ import Script from "next/script";
 
 export default function GoogleAnalyticsTag() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+  const gaId =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-3GHBQQ49KK";
 
   if (!gtmId && !gaId) {
     return null;
