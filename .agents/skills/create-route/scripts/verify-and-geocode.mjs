@@ -90,12 +90,15 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
     spotName,
   ].filter(Boolean);
   const uniquePois = [...new Set(candidates)];
+  const cleanAddress = address.replace(/大字|字/g, '');
+  const addressVariants = cleanAddress !== address ? [cleanAddress, address] : [address];
   const queries = [
-    ...uniquePois.map((p) => `${p} ${address}`),
-    address,
+    ...uniquePois.flatMap((p) => addressVariants.map((a) => `${p} ${a}`)),
+    ...addressVariants,
   ];
 
   for (const q of queries) {
+    const isPoiQuery = q !== address && q !== cleanAddress;
     const url = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&output=embed&hl=ja`;
     try {
       const res = await fetch(url, {
@@ -119,9 +122,11 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         lat = Number(parseFloat(mLngLat[2]).toFixed(6));
       }
       if (typeof lat === 'number' && typeof lng === 'number') {
-        // GSIが街区・親番まで一致しているのに350m以上離れている場合は、曖昧検索や同名別施設への誤マッチとみなし、住所単体クエリへフォールバック
-        // ※大字代表点のみ（hasBlockNumber === false）の場合は、広大な山間部の大字（例: 球磨村神瀬など）で数km離れることがあるため 8000m まで許容する
-        const maxAllowedFromGsi = gsiRef?.hasBlockNumber ? 350 : 8000;
+        // 都市部の「丁目」街区一致時は350m、地方の大字＋番地（丁目なし）は650m、大字代表点のみ（hasBlockNumber === false）はPOI検索時1800m・住所検索時8000mまで許容
+        const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
+        const maxAllowedFromGsi = gsiRef?.hasBlockNumber
+          ? (hasChome ? 350 : 650)
+          : (isPoiQuery ? 1800 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
             ? gsiRef.allCoords
@@ -384,8 +389,8 @@ async function main() {
     }
     if (dist > THRESHOLD_METERS || (shouldFix && dist > 3 && bestGeo.hasBlockNumber)) {
       if (shouldFix) {
-        const latRegex = new RegExp(`(lat:\\s*)${spot.lat}(?=[,\\s\\r\\n])`);
-        const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}(?=[,\\s\\r\\n])`);
+        const latRegex = new RegExp(`(lat:\\s*)${spot.lat}0*(?=[,\\s\\r\\n])`);
+        const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}0*(?=[,\\s\\r\\n])`);
         fileContent = fileContent.replace(latRegex, `$1${bestGeo.lat}`);
         fileContent = fileContent.replace(lngRegex, `$1${bestGeo.lng}`);
         spot.lat = bestGeo.lat;

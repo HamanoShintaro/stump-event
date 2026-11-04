@@ -919,7 +919,7 @@
     {
       "batch_id": 20,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "今津",
@@ -927,7 +927,8 @@
           "prefecture": "大分県",
           "postal": "8790103",
           "lat": 33.571929,
-          "lng": 131.267462
+          "lng": 131.267462,
+          "slug": "imazu_nakatsu"
         },
         {
           "station": "新野",
@@ -935,7 +936,8 @@
           "prefecture": "徳島県",
           "postal": "7791510",
           "lat": 33.846813,
-          "lng": 134.600283
+          "lng": 134.600283,
+          "slug": "aratano"
         },
         {
           "station": "郡元",
@@ -943,7 +945,8 @@
           "prefecture": "鹿児島県",
           "postal": "8900063",
           "lat": 31.562925,
-          "lng": 130.549388
+          "lng": 130.549388,
+          "slug": "korimoto"
         },
         {
           "station": "佐敷",
@@ -951,7 +954,8 @@
           "prefecture": "熊本県",
           "postal": "8695442",
           "lat": 32.302447,
-          "lng": 130.497277
+          "lng": 130.497277,
+          "slug": "sashiki"
         },
         {
           "station": "善師野",
@@ -959,7 +963,56 @@
           "prefecture": "愛知県",
           "postal": "4840003",
           "lat": 35.389744,
-          "lng": 136.980027
+          "lng": 136.980027,
+          "slug": "zenjino"
+        }
+      ],
+      "completed_at": "2026-11-04"
+    },
+    {
+      "batch_id": 21,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "西11丁目",
+          "line": "札幌市東西線",
+          "prefecture": "北海道",
+          "postal": "0600042",
+          "lat": 43.058557,
+          "lng": 141.341036
+        },
+        {
+          "station": "内子",
+          "line": "JR予讃支線",
+          "prefecture": "愛媛県",
+          "postal": "7913301",
+          "lat": 33.549305,
+          "lng": 132.646207
+        },
+        {
+          "station": "浦和",
+          "line": "JR湘南新宿ライン",
+          "prefecture": "埼玉県",
+          "postal": "3300063",
+          "lat": 35.858496,
+          "lng": 139.657109
+        },
+        {
+          "station": "青海川",
+          "line": "JR信越本線",
+          "prefecture": "新潟県",
+          "postal": "9493661",
+          "lat": 37.346143,
+          "lng": 138.486169
+        },
+        {
+          "station": "遠州西ヶ崎",
+          "line": "遠州鉄道",
+          "prefecture": "静岡県",
+          "postal": "4313115",
+          "lat": 34.776821,
+          "lng": 137.773905
         }
       ]
     }
