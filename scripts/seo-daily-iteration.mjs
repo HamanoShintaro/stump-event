@@ -233,7 +233,7 @@ async function fetchSearchConsoleMetrics() {
 }
 
 async function fetchGa4Metrics() {
-  const propertyId = (process.env.GA4_PROPERTY_ID || "")
+  const propertyId = (process.env.GA4_PROPERTY_ID || "562267296")
     .replace(/^properties\//, "")
     .trim();
   if (!propertyId) {
@@ -255,14 +255,44 @@ async function fetchGa4Metrics() {
   }
 
   try {
-    const token = await getGoogleAccessToken(sa);
+    let token = await getGoogleAccessToken(sa);
     const headers = {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
+
+    // gcloud ADC (authorized_user) の場合、IAM Credentials API でキーレス・サービスアカウントの analytics.readonly トークンを自動発行
     if (sa.type === "authorized_user") {
-      headers["x-goog-user-project"] =
+      const impersonateEmail =
+        process.env.GA4_IMPERSONATE_SERVICE_ACCOUNT ||
+        "shuin-seo-bot@jba-system.iam.gserviceaccount.com";
+      const quotaProject =
         sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
+
+      const impRes = await fetch(
+        `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${encodeURIComponent(
+          impersonateEmail
+        )}:generateAccessToken`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "x-goog-user-project": quotaProject,
+          },
+          body: JSON.stringify({
+            scope: ["https://www.googleapis.com/auth/analytics.readonly"],
+          }),
+        }
+      );
+
+      if (impRes.ok) {
+        const impData = await impRes.json();
+        if (impData.accessToken) {
+          token = impData.accessToken;
+          headers.Authorization = `Bearer ${token}`;
+        }
+      }
     }
 
     const endpoint = `https://analyticsdata.googleapis.com/v1beta/properties/${encodeURIComponent(
