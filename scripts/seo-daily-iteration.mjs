@@ -58,11 +58,32 @@ function base64UrlEncode(strOrBuf) {
     .replace(/=+$/, "");
 }
 
-async function getGoogleAccessToken(serviceAccount) {
+async function getGoogleAccessToken(cred) {
+  // Pattern A: gcloud Application Default Credentials (authorized_user — キーレス認証)
+  if (cred.type === "authorized_user" && cred.refresh_token) {
+    const res = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        client_id: cred.client_id,
+        client_secret: cred.client_secret,
+        refresh_token: cred.refresh_token,
+        grant_type: "refresh_token",
+      }),
+    });
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`Google ADC OAuth token error (${res.status}): ${errText}`);
+    }
+    const data = await res.json();
+    return data.access_token;
+  }
+
+  // Pattern B: Service Account JSON Key (service_account)
   const now = Math.floor(Date.now() / 1000);
   const header = { alg: "RS256", typ: "JWT" };
   const payload = {
-    iss: serviceAccount.client_email,
+    iss: cred.client_email,
     scope: "https://www.googleapis.com/auth/webmasters.readonly",
     aud: "https://oauth2.googleapis.com/token",
     iat: now,
@@ -74,7 +95,7 @@ async function getGoogleAccessToken(serviceAccount) {
   )}`;
   const signer = crypto.createSign("RSA-SHA256");
   signer.update(unsignedJwt);
-  const signature = signer.sign(serviceAccount.private_key);
+  const signature = signer.sign(cred.private_key);
   const jwt = `${unsignedJwt}.${base64UrlEncode(signature)}`;
 
   const res = await fetch("https://oauth2.googleapis.com/token", {
@@ -117,6 +138,17 @@ function loadServiceAccount() {
   const defaultLocalSa = path.resolve(process.cwd(), "gsc-service-account.json");
   if (fs.existsSync(defaultLocalSa)) {
     return JSON.parse(fs.readFileSync(defaultLocalSa, "utf8"));
+  }
+  // Default gcloud ADC path (~/.config/gcloud/application_default_credentials.json)
+  const homeDir = process.env.HOME || "";
+  if (homeDir) {
+    const adcPath = path.join(
+      homeDir,
+      ".config/gcloud/application_default_credentials.json"
+    );
+    if (fs.existsSync(adcPath)) {
+      return JSON.parse(fs.readFileSync(adcPath, "utf8"));
+    }
   }
   return null;
 }
