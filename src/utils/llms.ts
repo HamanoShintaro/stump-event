@@ -51,7 +51,7 @@ export async function fetchAllPublishedRoutesForLlms(): Promise<EnrichedRouteFor
   while (true) {
     const { data, error } = await supabase
       .from("routes")
-      .select("id, title, description, prefecture, budget_tier, rarity_estimated_min, created_at, is_published")
+      .select("id, title, description, prefecture, budget_tier, created_at, is_published")
       .eq("is_published", true)
       .order("created_at", { ascending: false })
       .range(offset, offset + PAGE_SIZE - 1);
