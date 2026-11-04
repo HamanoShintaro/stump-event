@@ -815,7 +815,7 @@
     {
       "batch_id": 18,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "苧ヶ瀬",
@@ -823,7 +823,8 @@
           "prefecture": "岐阜県",
           "postal": "5090141",
           "lat": 35.403273,
-          "lng": 136.912266
+          "lng": 136.912266,
+          "slug": "ogase"
         },
         {
           "station": "八栗登山口",
@@ -831,7 +832,8 @@
           "prefecture": "香川県",
           "postal": "7610121",
           "lat": 34.355192,
-          "lng": 134.133711
+          "lng": 134.133711,
+          "slug": "yakuri_tozanguchi"
         },
         {
           "station": "八戸",
@@ -839,7 +841,8 @@
           "prefecture": "青森県",
           "postal": "0391101",
           "lat": 40.5092,
-          "lng": 141.431499
+          "lng": 141.431499,
+          "slug": "hachinohe"
         },
         {
           "station": "上田",
@@ -847,7 +850,8 @@
           "prefecture": "長野県",
           "postal": "3860025",
           "lat": 36.396579,
-          "lng": 138.249298
+          "lng": 138.249298,
+          "slug": "ueda"
         },
         {
           "station": "弓削",
@@ -855,7 +859,55 @@
           "prefecture": "岡山県",
           "postal": "7093614",
           "lat": 34.925457,
-          "lng": 133.957849
+          "lng": 133.957849,
+          "slug": "yuge"
+        }
+      ]
+    },
+    {
+      "batch_id": 19,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "柳川",
+          "line": "岡山電軌清輝橋線",
+          "prefecture": "岡山県",
+          "postal": "7000815",
+          "lat": 34.665635,
+          "lng": 133.925507
+        },
+        {
+          "station": "桜町",
+          "line": "長崎電軌桜町支線",
+          "prefecture": "長崎県",
+          "postal": "8500054",
+          "lat": 32.750792,
+          "lng": 129.8755
+        },
+        {
+          "station": "後免町",
+          "line": "土佐電後免線",
+          "prefecture": "高知県",
+          "postal": "7830004",
+          "lat": 33.574403,
+          "lng": 133.650227
+        },
+        {
+          "station": "市川大野",
+          "line": "JR武蔵野線",
+          "prefecture": "千葉県",
+          "postal": "2720805",
+          "lat": 35.755432,
+          "lng": 139.951227
+        },
+        {
+          "station": "神畑",
+          "line": "上田電鉄別所線",
+          "prefecture": "長野県",
+          "postal": "3861103",
+          "lat": 36.377841,
+          "lng": 138.216965
         }
       ]
     }

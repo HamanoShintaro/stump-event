@@ -1606,19 +1606,19 @@
       "line": "阪急嵐山線",
       "prefecture": "京都府",
       "iteration": 16,
-      "score": 4.1,
+      "score": 4,
       "grade": "S (直近20作品1位・Batch #15 最高傑作：無水カレーパンから下桂春日神社、京都六地蔵の桂地蔵、地面に生えた孟宗竹を編む250mの『桂垣』、おくどさんで炊く中村軒の『麦代餅』へ抜ける白眉)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.95,
         "walking_flow": 0.85,
         "visual_tangibility": 0.9,
-        "anti_template": 0.75,
-        "spot_harmony": 0.65
+        "anti_template": 0.7,
+        "spot_harmony": 0.6
       },
       "good_points": "『生きた竹を編む桂垣と麦代餅の旧山陰街道』（19字・読点なし）。桂離宮の予約必須な内部ではなく、外周道路沿いに250m連なる「地面に生えたままの孟宗竹を折り曲げて枝葉ごと編み込んだ『桂垣（笹垣）』と『穂垣』」という誰でも歩いて観察できる職人技に焦点。野菜と果実の水分だけで煮込んだ『飯゜処 詣』のカレーパンから、王朝貴族の荘園鎮守『下桂春日神社』、小野篁が一木から彫った身の丈2.6mの『桂地蔵（地蔵寺）』、そして薪のかまど（おくどさん）で炊く粒あんと麦5合の商慣習を伝える『御菓子司 中村軒』の麦代餅へと西から東へ抜ける五感のストーリーが完璧に調和。",
       "issues": "特になし（Batch #15 単独トップ＆直近20作品1位）。",
-      "previous_inflated_score": 4.15
+      "previous_inflated_score": 4.1
     },
     {
       "slug": "yatsushiro",
@@ -1626,19 +1626,19 @@
       "line": "JR肥薩線",
       "prefecture": "熊本県",
       "iteration": 16,
-      "score": 3.5,
+      "score": 3.35,
       "grade": "A- (直近20作品7位：肥後の粉食だご汁と石臼白玉から、白い石灰岩『白石』積みの八代城跡、妙見祭の霊獣『亀蛇』、伊東豊雄建築の珈琲、名勝・松浜軒へ664mの単調増加で抜ける城下町ルート)",
       "needs_replacement": false,
       "breakdown": {
-        "story_originality": 0.8,
-        "walking_flow": 0.85,
+        "story_originality": 0.75,
+        "walking_flow": 0.8,
         "visual_tangibility": 0.8,
-        "anti_template": 0.55,
+        "anti_template": 0.5,
         "spot_harmony": 0.5
       },
       "good_points": "『白石の城壁と亀蛇が躍る球磨川河口の城下町』（20字・読点なし）。黒い熊本城と対照的な「白い石灰岩（白石）の八代城跡」を軸に、『甘味茶屋 一休庵』のだご汁と白玉ぜんざい、樹齢200年の杉木組み空間でユネスコ無形文化遺産の霊獣「亀蛇（ガメ）」と出会う『お祭りでんでん館』、伊東豊雄設計の博物館内『ENDELEA COFFEE』、そして球磨川の伏流水が肥後菖蒲を潤す大名茶屋庭園『松浜軒』へと南東から北西へ664mで抜ける美しい一筆書き。",
       "issues": "特になし。",
-      "previous_inflated_score": 3.6
+      "previous_inflated_score": 3.5
     },
     {
       "slug": "inotani",
@@ -1646,19 +1646,19 @@
       "line": "JR高山本線",
       "prefecture": "富山県",
       "iteration": 16,
-      "score": 2.25,
+      "score": 2.15,
       "grade": "C (直近20作品19位・差し替え候補：富山藩の西猪谷関所と加賀藩の東猪谷関所、1億3000万年前の褶曲地層『猪谷の背斜・向斜』のテーマは秀逸だが、飲食・手土産0件かつ郵便局ポストを『休憩』にするハックにより2.50へ溶解)",
       "needs_replacement": true,
       "breakdown": {
-        "story_originality": 0.7,
+        "story_originality": 0.65,
         "walking_flow": 0.45,
-        "visual_tangibility": 0.6,
+        "visual_tangibility": 0.55,
         "anti_template": 0.25,
         "spot_harmony": 0.25
       },
       "good_points": "『神通峡の褶曲と二つの関所が向き合う谷』（18字・読点なし）。越中と飛騨の国境・猪谷駅から、籠渡しと円空仏の『猪谷関所館（西猪谷関所）』、白亜紀の手取層群が波打つ国の天然記念物『猪谷の背斜・向斜（神峡橋）』、対岸の加賀藩東猪谷関所跡の碑が立つ『東猪谷 素盞鳴社・猪谷発電所』を結ぶ国境×地質テーマ。",
       "issues": "5スポット中に飲食・甘味・買い物（手土産）が0件であり、Spot 3の『細入郵便局』を「赤い丸型ポストの横で足を休める」として『休憩』カテゴリに割り当てるハックが発生している点（処方箋51へ昇華）。",
-      "previous_inflated_score": 2.35
+      "previous_inflated_score": 2.25
     },
     {
       "slug": "sasaguri",
@@ -1666,19 +1666,19 @@
       "line": "JR篠栗線",
       "prefecture": "福岡県",
       "iteration": 16,
-      "score": 2.55,
+      "score": 2.45,
       "grade": "C (直近20作品16位・差し替え候補：菅原道真息女の紅姫稲荷や旧遍路宿ゆかりの第54番札所・中町延命寺、村嶋饅頭店の題材は良いが、Spot 2『千鳥屋本家』とSpot 4『村嶋饅頭店』で饅頭・和菓子店が重複し2.80へ溶解)",
       "needs_replacement": true,
       "breakdown": {
         "story_originality": 0.65,
-        "walking_flow": 0.65,
+        "walking_flow": 0.6,
         "visual_tangibility": 0.6,
-        "anti_template": 0.35,
+        "anti_template": 0.3,
         "spot_harmony": 0.3
       },
       "good_points": "『お遍路の旧道に香る湯気と紅姫の祈り』（17字・読点なし）。菅原道真の息女を祀る『紅姫稲荷神社』から、特産の山人参茶が香るターコイズブルーの交流拠点『339Re』、旧道で80年手蒸しを続ける『村嶋饅頭店（やぶれ饅頭・がめの葉餅）』、明治の遍路宿「嶋屋旅館」の敷地に立つ『第54番札所 中町延命寺』へと西から東へ抜ける構成。",
       "issues": "Spot 2に広域チェーンの『千鳥屋本家 篠栗店』、Spot 4に『村嶋饅頭店』と、5スポット中に饅頭・和菓子店（買い物）が2軒重複している点（処方箋52へ昇華）。",
-      "previous_inflated_score": 2.65
+      "previous_inflated_score": 2.55
     },
     {
       "slug": "kinomoto",
@@ -1686,19 +1686,19 @@
       "line": "JR北陸本線",
       "prefecture": "滋賀県",
       "iteration": 16,
-      "score": 3.65,
+      "score": 3.55,
       "grade": "A (直近20作品6位：1532年創業の二大酒蔵『山路酒造（桑酒）』『冨田酒造（七本鎗）』と身代わり片目蛙の木之本地蔵院、たくあんサラダパンの本店、杉桶天然醸造のダイコウ醤油を北から南へ581mで一直線に結ぶ発酵宿場ルート)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
-        "walking_flow": 0.8,
+        "walking_flow": 0.75,
         "visual_tangibility": 0.8,
         "anti_template": 0.6,
-        "spot_harmony": 0.6
+        "spot_harmony": 0.55
       },
       "good_points": "『北国街道・木之本宿の五百年の発酵と地蔵尊』（20字・読点なし）。北国街道の北端・1532年創業の『山路酒造（桑酒）』をSpot 1に据え、南へ単調減少（581m）で『木之本地蔵院（片目を閉じた身代わり蛙）』、刻みたくあん漬け×マヨネーズの『つるやパン 木之本本店（サラダパン）』、魯山人の扁額『酒猶兵』が掛かる『冨田酒造（七本鎗）』、そして地下15mの井戸水と杉桶で2〜3年天然醸造する『ダイコウ醤油』へと一筆書きで抜ける発酵×祈りの高純度ルート。",
       "issues": "特になし（Spot 1/2の入れ替えにより北→南の完全単調減少一筆書きに改善済み）。",
-      "previous_inflated_score": 3.75
+      "previous_inflated_score": 3.65
     },
     {
       "slug": "wakayamako",
@@ -1706,19 +1706,19 @@
       "line": "南海和歌山港線",
       "prefecture": "和歌山県",
       "iteration": 17,
-      "score": 2.85,
+      "score": 2.75,
       "grade": "C (直近20作品14位・差し替え候補：早朝営業の『みなと食堂』と1958年開発の世界初の抹茶ソフト『玉林園 グリーンコーナー 築地橋店（グリーンソフト）』は秀逸だが、Spot 1『薬種畑』とSpot 4『湊御殿跡』の2箇所が現地に遺構のない地名旧跡となったため2.95へ溶解)",
       "needs_replacement": true,
       "breakdown": {
-        "story_originality": 0.75,
+        "story_originality": 0.7,
         "walking_flow": 0.7,
         "visual_tangibility": 0.55,
-        "anti_template": 0.45,
+        "anti_template": 0.4,
         "spot_harmony": 0.4
       },
       "good_points": "『朝めしの湯気と御薬草園の湊町』（14字・読点なし）。出船を待つ船客と港湾労働者の朝を支える『みなと食堂』の小鉢・豚汁から、堀止運河を渡る『パン・カフェ ミヌース』、1958年に世界初の抹茶ソフトクリームを開発した『玉林園 グリーンコーナー 築地橋店（グリーンソフト）』へ抜ける港町ルート。",
       "issues": "Spot 1『薬種畑（薬種畑団地周辺）』とSpot 4『湊御殿跡（建物は西浜へ移築済み）』の2箇所が現地に遺構のない地名旧跡となっている点（処方箋54へ昇華）。",
-      "previous_inflated_score": 2.95
+      "previous_inflated_score": 2.85
     },
     {
       "slug": "josui",
@@ -1726,19 +1726,19 @@
       "line": "名鉄豊田線",
       "prefecture": "愛知県",
       "iteration": 17,
-      "score": 2.7,
+      "score": 2.6,
       "grade": "C (直近20作品16位・差し替え候補：旧名古屋海軍航空隊の滑走路跡を開墾した『開豊神社』と高加水食パン「水パン」の『Grand Maison Blue』は良いが、Spot 2〜5が「パン→珈琲→洋菓子→現代街区公園」の新興住宅地テンプレに流れたため2.80へ溶解)",
       "needs_replacement": true,
       "breakdown": {
         "story_originality": 0.65,
-        "walking_flow": 0.7,
-        "visual_tangibility": 0.65,
+        "walking_flow": 0.65,
+        "visual_tangibility": 0.6,
         "anti_template": 0.35,
         "spot_harmony": 0.35
       },
       "good_points": "『滑走路が眠る台地と水パンの街』（14字・読点なし・年号0回）。旧名古屋海軍航空隊（伊保原飛行場）の滑走路跡地を戦後に開拓農民が切り拓いた『開豊神社（草薙隊之碑・開拓碑）』と、浄水の名にちなむ高加水食パン「水パン」の『Grand Maison Blue』を軸に東から西・南へ一筆書きで結ぶ構成。",
       "issues": "Spot 2（パン）→Spot 3（珈琲）→Spot 4（洋菓子・パン）→Spot 5（現代街区公園『浄水公園』）が新興住宅地の汎用パターンに流れている点（処方箋55へ昇華）。",
-      "previous_inflated_score": 2.8
+      "previous_inflated_score": 2.7
     },
     {
       "slug": "nagayo",
@@ -1746,19 +1746,19 @@
       "line": "JR長崎本線",
       "prefecture": "長崎県",
       "iteration": 17,
-      "score": 3.8,
+      "score": 3.7,
       "grade": "A (Batch #16 準最高位・直近20作品5位：曲線駅舎内の自家焙煎コーヒースタンド『GOOOOOOOD. STATION』から、全長116mの赤いアーチ橋とスロープカーがある山城跡『中尾城公園』へ登り、長与みかん大福の『ワルツの森 ひさ家』、七面大天女仮堂を経て、全長115m・23室の登り窯遺構が眠る県指定史跡『長与皿山窯跡（長与三彩）』へと南から北へ単調増加で抜ける立体構成)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
-        "walking_flow": 0.85,
+        "walking_flow": 0.8,
         "visual_tangibility": 0.85,
-        "anti_template": 0.65,
+        "anti_template": 0.6,
         "spot_harmony": 0.6
       },
       "good_points": "『大村湾へ続くみかん谷と古窯の風』（15字・読点なし）。JR長与駅の『GOOOOOOOD. STATION』から、谷を跨ぐ116mの赤いエアロブリッジとスロープカーがある山城跡『中尾城公園』、天明年間からの温州みかんを使った『ワルツの森 ひさ家（まるごとみかん大福）』、禁教後の歴史を伝える『七面大天女仮堂』を経て、竹林に全長115m・23室の連房式登り窯が眠る『長与皿山窯跡（長与三彩）』へ北上する構成。",
       "issues": "特になし。",
-      "previous_inflated_score": 3.9
+      "previous_inflated_score": 3.8
     },
     {
       "slug": "iejigawa",
@@ -1766,67 +1766,8 @@
       "line": "JR予土線",
       "prefecture": "高知県",
       "iteration": 17,
-      "score": 3.95,
-      "grade": "S (Batch #16 最高傑作・直近20作品3位：予土線最高所185.5mの『家地川駅』から水辺ベンチのある『家地川公園』へ降り、四万十川から南の分水嶺をトンネルで貫いて150m低い太平洋側の伊与木川水系へ水を落とす1937年竣工『家地川取水堰（佐賀取水堰）』の地形トリックを解明。精緻な彫刻の『河内神社』を経て、廃校の小学校1階で住民が営む『集落活動センターけやき（けやきコンビニ・ふれあい食堂）』で結ぶ山間無人駅の理想形)",
-      "needs_replacement": false,
-      "breakdown": {
-        "story_originality": 0.9,
-        "walking_flow": 0.85,
-        "visual_tangibility": 0.9,
-        "anti_template": 0.65,
-        "spot_harmony": 0.65
-      },
-      "good_points": "『分水堰の桜影と廃校に灯る山の売店』（16字・読点なし）。予土線最高所（標高185.5m・隣は川奥ループ信号場）の『家地川駅』から『家地川公園』へ降り、四万十川の水をトンネルで太平洋側の伊与木川水系へ流域変更して発電する1937年竣工の『家地川取水堰』の謎を解き明かし、欄間彫刻の『河内神社』から旧小学校の『集落活動センターけやき（けやきコンビニ）』へ942mで結ぶ白眉の構成。",
-      "issues": "特になし。",
-      "previous_inflated_score": 4.05
-    },
-    {
-      "slug": "echizen_takefu",
-      "station": "越前たけふ",
-      "line": "北陸新幹線",
-      "prefecture": "福井県",
-      "iteration": 17,
-      "score": 3.5,
-      "grade": "B+ (直近20作品9位：越前打刃物・和紙が揃う『道の駅 越前たけふ』から村国山東麓の『大屋町の宮座ゆかりの里（穴地蔵古墳麓）』と武生総社大神宮の鍵番を務めた『神明神社』という超ローカル民俗史を掘り起こし、暖炉カフェ『Le Bois』の自家製プリンから石臼挽きの『本手打ちそば 山楽（おろしそば・とりそば）』へと北上する構成)",
-      "needs_replacement": false,
-      "breakdown": {
-        "story_originality": 0.85,
-        "walking_flow": 0.7,
-        "visual_tangibility": 0.8,
-        "anti_template": 0.6,
-        "spot_harmony": 0.55
-      },
-      "good_points": "『宮座の杜と辛味大根が香る越前そば』（16字・読点なし）。新幹線の単独駅隣の『道の駅 越前たけふ』から、6世紀の横穴式石室に1501年銘の地蔵石仏を祀る穴地蔵古墳と500年続く『大屋町の宮座ゆかりの里』、日野川向こうの武生総社大神宮の鍵番を務めた葛岡町の『神明神社』を掘り起こし、暖炉カフェ『Le Bois』の自家製プリンと『本手打ちそば 山楽』のおろしそば・親鶏のとりそばへ北上する構成。",
-      "issues": "特になし。",
-      "previous_inflated_score": 3.6
-    },
-    {
-      "slug": "ajina_higashi",
-      "station": "阿品東",
-      "line": "広島電鉄宮島線",
-      "prefecture": "広島県",
-      "iteration": 18,
-      "score": 3.25,
-      "grade": "B- (直近20作品13位：宮島対岸の本土側から外宮・地御前神社と管絃祭の御笠浜、火立岩と明治天皇御上陸のおあがり場、路面電車と大野瀬戸を見下ろす2階カフェ、地御前かき直売所を結ぶ視点が秀逸)",
-      "needs_replacement": false,
-      "breakdown": {
-        "story_originality": 0.85,
-        "walking_flow": 0.55,
-        "visual_tangibility": 0.8,
-        "anti_template": 0.55,
-        "spot_harmony": 0.5
-      },
-      "good_points": "『管絃の海を渡る潮風と地御前かきの浜』（17字・読点なし）。阿品の地名由来である足摩乳命の『岩鏡神社』から『おあがり場公園』、路面電車と瀬戸内海を望む2階カフェ『kitchen & drink yuba』、厳島神社外宮『地御前神社』、地御前かき直売所『峠水産』へ抜ける構成。",
-      "issues": "Spot 3→4が直線1,169m（徒歩19分）とやや距離がある。"
-    },
-    {
-      "slug": "asa",
-      "station": "厚狭",
-      "line": "JR美祢線",
-      "prefecture": "山口県",
-      "iteration": 18,
       "score": 3.85,
-      "grade": "A (Batch #17 最高位・直近20作品4位：室町期の実在開拓者『三年寝太郎（平賀清恒）』が築いた寝太郎堰の物語を軸に、炙り鬼豚麺、創業90年書店の米粉シフォン、1887年創業『永山酒造』の山猿、1905年創業『もりなが松陰堂』の玄米おはぎへ一本の水と米の物語が貫かれている)",
+      "grade": "S (Batch #16 最高傑作・直近20作品3位：予土線最高所185.5mの『家地川駅』から水辺ベンチのある『家地川公園』へ降り、四万十川から南の分水嶺をトンネルで貫いて150m低い太平洋側の伊与木川水系へ水を落とす1937年竣工『家地川取水堰（佐賀取水堰）』の地形トリックを解明。精緻な彫刻の『河内神社』を経て、廃校の小学校1階で住民が営む『集落活動センターけやき（けやきコンビニ・ふれあい食堂）』で結ぶ山間無人駅の理想形)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.9,
@@ -1835,8 +1776,69 @@
         "anti_template": 0.65,
         "spot_harmony": 0.65
       },
+      "good_points": "『分水堰の桜影と廃校に灯る山の売店』（16字・読点なし）。予土線最高所（標高185.5m・隣は川奥ループ信号場）の『家地川駅』から『家地川公園』へ降り、四万十川の水をトンネルで太平洋側の伊与木川水系へ流域変更して発電する1937年竣工の『家地川取水堰』の謎を解き明かし、欄間彫刻の『河内神社』から旧小学校の『集落活動センターけやき（けやきコンビニ）』へ942mで結ぶ白眉の構成。",
+      "issues": "特になし。",
+      "previous_inflated_score": 3.95
+    },
+    {
+      "slug": "echizen_takefu",
+      "station": "越前たけふ",
+      "line": "北陸新幹線",
+      "prefecture": "福井県",
+      "iteration": 17,
+      "score": 3.4,
+      "grade": "B+ (直近20作品9位：越前打刃物・和紙が揃う『道の駅 越前たけふ』から村国山東麓の『大屋町の宮座ゆかりの里（穴地蔵古墳麓）』と武生総社大神宮の鍵番を務めた『神明神社』という超ローカル民俗史を掘り起こし、暖炉カフェ『Le Bois』の自家製プリンから石臼挽きの『本手打ちそば 山楽（おろしそば・とりそば）』へと北上する構成)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.8,
+        "walking_flow": 0.7,
+        "visual_tangibility": 0.75,
+        "anti_template": 0.6,
+        "spot_harmony": 0.55
+      },
+      "good_points": "『宮座の杜と辛味大根が香る越前そば』（16字・読点なし）。新幹線の単独駅隣の『道の駅 越前たけふ』から、6世紀の横穴式石室に1501年銘の地蔵石仏を祀る穴地蔵古墳と500年続く『大屋町の宮座ゆかりの里』、日野川向こうの武生総社大神宮の鍵番を務めた葛岡町の『神明神社』を掘り起こし、暖炉カフェ『Le Bois』の自家製プリンと『本手打ちそば 山楽』のおろしそば・親鶏のとりそばへ北上する構成。",
+      "issues": "特になし。",
+      "previous_inflated_score": 3.5
+    },
+    {
+      "slug": "ajina_higashi",
+      "station": "阿品東",
+      "line": "広島電鉄宮島線",
+      "prefecture": "広島県",
+      "iteration": 18,
+      "score": 2.95,
+      "grade": "C (【新規溶解】外宮・地御前神社と牡蠣直売所は魅力的だが、Spot 3→4の1,169m移動と総直線2.4kmの負荷により2.95へ溶解)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.8,
+        "walking_flow": 0.45,
+        "visual_tangibility": 0.75,
+        "anti_template": 0.5,
+        "spot_harmony": 0.45
+      },
+      "good_points": "『管絃の海を渡る潮風と地御前かきの浜』（17字・読点なし）。阿品の地名由来である足摩乳命の『岩鏡神社』から『おあがり場公園』、路面電車と瀬戸内海を望む2階カフェ『kitchen & drink yuba』、厳島神社外宮『地御前神社』、地御前かき直売所『峠水産』へ抜ける構成。",
+      "issues": "Spot 3→4が直線1,169m（徒歩19分）とやや距離がある。",
+      "previous_inflated_score": 3.25
+    },
+    {
+      "slug": "asa",
+      "station": "厚狭",
+      "line": "JR美祢線",
+      "prefecture": "山口県",
+      "iteration": 18,
+      "score": 3.75,
+      "grade": "A (Batch #17 最高位・直近20作品4位：室町期の実在開拓者『三年寝太郎（平賀清恒）』が築いた寝太郎堰の物語を軸に、炙り鬼豚麺、創業90年書店の米粉シフォン、1887年創業『永山酒造』の山猿、1905年創業『もりなが松陰堂』の玄米おはぎへ一本の水と米の物語が貫かれている)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.85,
+        "walking_flow": 0.8,
+        "visual_tangibility": 0.85,
+        "anti_template": 0.65,
+        "spot_harmony": 0.6
+      },
       "good_points": "『三年寝太郎の堰と酒蔵が息づく宿場道』（17字・読点なし）。三年寝太郎の実在灌漑堰の物語から『鬼豚専門店 泉屋』、『佐々木書店 BOOK CAFE』の米粉シフォン、『永山酒造』の銘酒山猿・焼酎寝太郎、『もりなが松陰堂』の玄米おはぎへ875mで結ぶ好構成。",
-      "issues": "特になし。"
+      "issues": "特になし。",
+      "previous_inflated_score": 3.85
     },
     {
       "slug": "nishi_ogaki",
@@ -1844,18 +1846,19 @@
       "line": "養老鉄道",
       "prefecture": "岐阜県",
       "iteration": 18,
-      "score": 3.45,
+      "score": 3.3,
       "grade": "B (直近20作品11位：1913年築の木造駅舎と検修庫が残る西大垣駅から、被圧地下水が自噴する大垣八幡神社、1755年創業『御菓子つちや』の二つ割り青竹入り堂上蜂屋柿羊羹、船町ベースの酒素饅頭とオダマキ、芭蕉むすびの地『住吉燈台』へ抜ける格調高い構成)",
       "needs_replacement": false,
       "breakdown": {
-        "story_originality": 0.85,
-        "walking_flow": 0.65,
-        "visual_tangibility": 0.85,
+        "story_originality": 0.8,
+        "walking_flow": 0.6,
+        "visual_tangibility": 0.8,
         "anti_template": 0.55,
         "spot_harmony": 0.55
       },
       "good_points": "『大正の木造駅舎から湧水と柿羊羹の川湊へ』（19字・読点なし）。1913年築の木造駅舎から自噴湧水・青竹柿羊羹・酒素饅頭・住吉燈台へと「水の都・大垣」の歴史と食を立体的に描く。",
-      "issues": "Spot 1→2（959m）とSpot 2→3（748m）で前半に700m超え区間が2連続。"
+      "issues": "Spot 1→2（959m）とSpot 2→3（748m）で前半に700m超え区間が2連続。",
+      "previous_inflated_score": 3.45
     },
     {
       "slug": "iwate_numakunai",
@@ -1863,18 +1866,19 @@
       "line": "東北新幹線",
       "prefecture": "岩手県",
       "iteration": 18,
-      "score": 2.95,
+      "score": 2.8,
       "grade": "C (【差し替え候補（処方箋60）】御料馬・瀧澤號の墓碑（沼福寺）や南部流風流山車の沼宮内稲荷神社、春みどりキャベツのいわてまち焼きうどんは魅力的だが、Spot 2『菓子司 丸中』とSpot 3『西田だんご店』で甘い菓子店が2連続しているため2.95へ位置づけ)",
       "needs_replacement": true,
       "breakdown": {
-        "story_originality": 0.8,
-        "walking_flow": 0.7,
-        "visual_tangibility": 0.7,
+        "story_originality": 0.75,
+        "walking_flow": 0.65,
+        "visual_tangibility": 0.65,
         "anti_template": 0.4,
         "spot_harmony": 0.35
       },
       "good_points": "『北上川源流の宿場町と御料馬が眠る杜』（17字・読点なし）。明治天皇の御料馬・瀧澤號を馬産地の町民が手厚く葬った沼福寺の墓碑と南部流風流山車の歴史が光る。",
-      "issues": "Spot 2『菓子司 丸中』とSpot 3『西田だんご店』で和洋菓子・甘味店が2連続している（処方箋60）。"
+      "issues": "Spot 2『菓子司 丸中』とSpot 3『西田だんご店』で和洋菓子・甘味店が2連続している（処方箋60）。",
+      "previous_inflated_score": 2.95
     },
     {
       "slug": "suizenji_koen",
@@ -1882,20 +1886,116 @@
       "line": "熊本市電健軍線",
       "prefecture": "熊本県",
       "iteration": 18,
-      "score": 3.75,
+      "score": 3.65,
       "grade": "A- (直近20作品7位：水道水100%を天然地下水で賄う熊本市の『湧水亭』から、せいろ湯気の『はやしのいきなり団子』、伝統野菜・水前寺菜の紫レモネード＆シフォン（茶寮松柏）、水前寺成趣園、震災から7割の古材で再建された1871年築『ジェーンズ邸』へ368mで凝縮)",
       "needs_replacement": false,
       "breakdown": {
         "story_originality": 0.85,
-        "walking_flow": 0.85,
-        "visual_tangibility": 0.85,
+        "walking_flow": 0.8,
+        "visual_tangibility": 0.8,
         "anti_template": 0.6,
         "spot_harmony": 0.6
       },
       "good_points": "『阿蘇の湧水庭園と水前寺菜が彩る参道』（17字・読点なし）。阿蘇の伏流水・いきなり団子・水前寺菜の紫色素スイーツ・桃山式池泉庭園・ジェーンズ邸が368mの超コンパクト動線に凝縮。",
+      "issues": "特になし。",
+      "previous_inflated_score": 3.75
+    },
+    {
+      "slug": "ogase",
+      "station": "苧ヶ瀬",
+      "line": "名鉄各務原線",
+      "prefecture": "岐阜県",
+      "iteration": 19,
+      "score": 3.6,
+      "grade": "B+ (直近20作品8位：1877年築の農村歌舞伎舞台『村国座』から洋菓子、水上社殿『八大龍王総本殿』、池畔純喫茶、龍神が法話を聴く薬王院へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.9,
+        "walking_flow": 0.75,
+        "visual_tangibility": 0.85,
+        "anti_template": 0.55,
+        "spot_harmony": 0.55
+      },
+      "good_points": "『農村歌舞伎の舞台から龍神が棲む薬師の池へ』（20字・読点なし）。1877年築の農村歌舞伎芝居小屋『村国座』と701年出現伝承の『苧ヶ瀬池・八大龍王総本殿』、岐阜モーニング文化を立体的に結ぶ構成。",
       "issues": "特になし。"
+    },
+    {
+      "slug": "yakuri_tozanguchi",
+      "station": "八栗登山口",
+      "line": "四国ケーブル線",
+      "prefecture": "香川県",
+      "iteration": 19,
+      "score": 3.9,
+      "grade": "A (Batch #18 準最高位・直近20作品3位：五剣山の山麓駅から文化財屋敷の山田家うどん、イサム・ノグチ石庭、屋島合戦の洲崎寺、和菓子へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.8,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.65,
+        "spot_harmony": 0.6
+      },
+      "good_points": "『五剣山の石匠が刻む庭と屋島合戦の祈り道』（19字・読点なし）。宝永地震で東峰が崩落した五剣山の麓から、800坪の文化財屋敷『うどん本陣 山田家』、庵治石の『イサム・ノグチ庭園美術館』、屋島合戦の『洲崎寺』、『菓匠 柴野』へ抜ける高密度構成。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "hachinohe",
+      "station": "八戸",
+      "line": "JR東北本線",
+      "prefecture": "青森県",
+      "iteration": 19,
+      "score": 2.85,
+      "grade": "C (【差し替え候補（処方箋63）】旧尻内駅の馬市とせんべい汁・八幡馬は良いが、Spot 4が一般的な街区公園『一番町中央公園』フィラーのため2.85へ溶解)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.75,
+        "walking_flow": 0.75,
+        "visual_tangibility": 0.65,
+        "anti_template": 0.35,
+        "spot_harmony": 0.35
+      },
+      "good_points": "『南部馬の市が立った駅とせんべい汁の街角』（19字・読点なし）。旧『尻内駅』の馬市の歴史と、30分煮込んでも溶けない専用せんべいの『八戸せんべい汁』、日本三大駒『八幡馬』の切り口が秀逸。",
+      "issues": "Spot 4『一番町中央公園』が特別な歴史遺構や茶屋のない一般的な現代街区公園（処方箋63）。"
+    },
+    {
+      "slug": "ueda",
+      "station": "上田",
+      "line": "北陸新幹線",
+      "prefecture": "長野県",
+      "iteration": 19,
+      "score": 4.1,
+      "grade": "S (直近20作品1位・Batch #18 最高傑作：大正建築のみすゞ飴からくるみそば、柳町の酒蔵・町家パン・1683年保命水へ抜ける白眉)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.95,
+        "walking_flow": 0.9,
+        "visual_tangibility": 0.9,
+        "anti_template": 0.7,
+        "spot_harmony": 0.65
+      },
+      "good_points": "『真田の城下を潤す酒蔵と琥珀色のみすゞ飴』（19字・読点なし）。1924年築『飯島商店』の国産6種完熟果汁みすゞ飴から池波正太郎ゆかりの『刀屋』のくるみそば、北国街道柳町の『岡崎酒造（信州亀齢）』・『ルヴァン信州上田店』・1683年『保命水』へと一直線に抜ける傑作。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "yuge",
+      "station": "弓削",
+      "line": "JR津山線",
+      "prefecture": "岡山県",
+      "iteration": 19,
+      "score": 3.45,
+      "grade": "B (直近20作品10位：300基の川柳句碑から小川柳の蕎麦、料理守護神『厨神社』、名物『中島ブロイラー』の鶏串へ ※川を渡るジグザグ2.5kmで微減点)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.85,
+        "walking_flow": 0.65,
+        "visual_tangibility": 0.8,
+        "anti_template": 0.6,
+        "spot_harmony": 0.55
+      },
+      "good_points": "『川柳の小径と厨の社が守るゆず香る里』（17字・読点なし）。約300基の川柳句碑が並ぶ『川柳の小径』、延喜式内社に比定される料理・台所の守護神『厨神社』、1962年創業『中島ブロイラー』の回転ロースト鶏串という題材発掘が抜群。",
+      "issues": "誕生寺川と津山線を横断するジグザグ動線により総直線距離が2,521m（処方箋61）。"
     }
   ],
-  "updated_at": "2026-11-04T20:13:00+09:00",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #14〜#17 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。"
+  "updated_at": "2026-11-04T21:05:00+09:00",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #15〜#18 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。"
 }
