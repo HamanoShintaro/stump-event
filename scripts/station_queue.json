@@ -668,7 +668,7 @@
     {
       "batch_id": 15,
       "drawn_at": "2026-11-04T07:30:07.000Z",
-      "status": "pending",
+      "status": "completed",
       "selection_method": "HeartRails Express API Complete Nationwide Random Draw (1 station x 5 random prefectures/lines)",
       "stations": [
         {
@@ -710,6 +710,53 @@
           "postal": "5290425",
           "lng": 136.221706,
           "lat": 35.505933
+        }
+      ]
+    },
+    {
+      "batch_id": 16,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "slug": "wakayamako",
+          "station": "和歌山港",
+          "line": "南海和歌山港線",
+          "prefecture": "和歌山県",
+          "lat": 34.217321,
+          "lng": 135.146488
+        },
+        {
+          "slug": "josui",
+          "station": "浄水",
+          "line": "名鉄豊田線",
+          "prefecture": "愛知県",
+          "lat": 35.121298,
+          "lng": 137.137186
+        },
+        {
+          "slug": "nagayo",
+          "station": "長与",
+          "line": "JR長崎本線（長与支線）",
+          "prefecture": "長崎県",
+          "lat": 32.818981,
+          "lng": 129.879434
+        },
+        {
+          "slug": "iejigawa",
+          "station": "家地川",
+          "line": "JR予土線",
+          "prefecture": "高知県",
+          "lat": 33.1614,
+          "lng": 133.074784
+        },
+        {
+          "slug": "echizen_takefu",
+          "station": "越前たけふ",
+          "line": "北陸新幹線",
+          "prefecture": "福井県",
+          "lat": 35.895695,
+          "lng": 136.198935
         }
       ]
     }
