@@ -695,7 +695,7 @@ async function main() {
       const { data, error } = await supabase
         .from("routes")
         .select(
-          "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, address, order_index)"
+          "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, description, address, location, order_index)"
         )
         .eq("is_published", true)
         .order("created_at", { ascending: false })
@@ -712,6 +712,76 @@ async function main() {
     routes,
     gscResult.rows || []
   );
+
+  // LLMO (llms.txt / llms-full.txt) 配信データ品質・カバレッジ監査
+  const forbiddenRegex = /(?<!ギャ)ラリー|スタンプラリー|ナラティブ|スタンプ/;
+  let totalSpotsCount = 0;
+  const routesWithSpotGaps = [];
+  const routesWithShortDescriptions = [];
+  const terminologyViolations = [];
+
+  for (const r of routes) {
+    const spots = Array.isArray(r.spots) ? r.spots : [];
+    totalSpotsCount += spots.length;
+
+    const missingAddressSpots = spots.filter((s) => !s.address || !String(s.address).trim());
+    const missingLocationSpots = spots.filter((s) => !s.location);
+    if (spots.length < 5 || missingAddressSpots.length > 0 || missingLocationSpots.length > 0) {
+      routesWithSpotGaps.push({
+        routeId: r.id,
+        title: r.title,
+        spotCount: spots.length,
+        missingAddressCount: missingAddressSpots.length,
+        missingLocationCount: missingLocationSpots.length,
+      });
+    }
+
+    const descLen = String(r.description || "").trim().length;
+    const shortSpotDescs = spots.filter((s) => String(s.description || "").trim().length < 30);
+    if (descLen < 60 || shortSpotDescs.length > 0) {
+      routesWithShortDescriptions.push({
+        routeId: r.id,
+        title: r.title,
+        routeDescLength: descLen,
+        shortSpotNames: shortSpotDescs.map((s) => s.name),
+      });
+    }
+
+    if (forbiddenRegex.test(String(r.title || "")) || forbiddenRegex.test(String(r.description || ""))) {
+      terminologyViolations.push({
+        type: "route",
+        routeId: r.id,
+        title: r.title,
+      });
+    }
+    for (const s of spots) {
+      if (forbiddenRegex.test(String(s.name || "")) || forbiddenRegex.test(String(s.description || ""))) {
+        terminologyViolations.push({
+          type: "spot",
+          routeId: r.id,
+          spotId: s.id,
+          name: s.name,
+        });
+      }
+    }
+  }
+
+  const llmsAudit = {
+    endpoints: [`${SITE_URL}/llms.txt`, `${SITE_URL}/llms-full.txt`],
+    filesPresent: {
+      llmsUtil: fs.existsSync(path.resolve(process.cwd(), "src/utils/llms.ts")),
+      llmsRoute: fs.existsSync(path.resolve(process.cwd(), "src/app/llms.txt/route.ts")),
+      llmsFullRoute: fs.existsSync(path.resolve(process.cwd(), "src/app/llms-full.txt/route.ts")),
+    },
+    totalPublishedRoutesInLlms: routes.length,
+    totalSpotsInLlms: totalSpotsCount,
+    routesWithSpotGapsCount: routesWithSpotGaps.length,
+    routesWithShortDescriptionsCount: routesWithShortDescriptions.length,
+    terminologyViolationsCount: terminologyViolations.length,
+    routesWithSpotGaps: routesWithSpotGaps.slice(0, 10),
+    routesWithShortDescriptions: routesWithShortDescriptions.slice(0, 10),
+    terminologyViolations: terminologyViolations.slice(0, 10),
+  };
 
   // Top queries from GSC (unfiltered, sorted by impressions so we see real user intent!)
   const topGscQueriesByImpressions = [...(gscResult.rows || [])]
@@ -740,7 +810,12 @@ async function main() {
       strikingDistanceQueryCount: strikingDistanceQueries.length,
       totalPublishedRoutes: routes.length,
       totalAreasAnalyzed: Object.keys(areaKeywordsMap).length,
+      llmsTotalSpots: totalSpotsCount,
+      llmsSpotGapsCount: routesWithSpotGaps.length,
+      llmsShortDescriptionsCount: routesWithShortDescriptions.length,
+      llmsTerminologyViolationsCount: terminologyViolations.length,
     },
+    llmsAudit,
     topGscQueriesByImpressions,
     lowCtrOpportunities,
     strikingDistanceQueries,
