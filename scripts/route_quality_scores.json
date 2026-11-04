@@ -2008,7 +2008,7 @@
       "line": "岡山電軌清輝橋線",
       "prefecture": "岡山県",
       "iteration": 20,
-      "score": 3.6,
+      "score": 3.45,
       "grade": "A (Batch #19 準最高位・直近20作品3位：「岡山」地名発祥の岡山寺から野田屋町カフェ、1669年旧岡山藩藩学跡の泮池・石橋、1923年築の岡山禁酒会館、無添加豆大福の長楽堂へ880mで抜ける高密度城下ルート)",
       "needs_replacement": false,
       "breakdown": {
@@ -2028,7 +2028,7 @@
       "line": "長崎電軌桜町支線",
       "prefecture": "長崎県",
       "iteration": 20,
-      "score": 3.9,
+      "score": 3.75,
       "grade": "S (直近20作品1位・Batch #19 最高傑作：ネルドリップ珈琲＋炭酸水の老舗喫茶『囁き坂』から、1609年サント・ドミンゴ教会と代官屋敷が重なる地下遺構、明治31年創業『田中旭榮堂』の栗饅頭、長崎奉行所立山役所、明治18年創業『月見茶屋』のぼた餅へ723mで登る白眉の立体構成)",
       "needs_replacement": false,
       "breakdown": {
@@ -2048,7 +2048,7 @@
       "line": "土佐電後免線",
       "prefecture": "高知県",
       "iteration": 20,
-      "score": 2.95,
+      "score": 2.8,
       "grade": "B (直近20作品11位：海洋堂SpaceFactoryなんこくのソフビ工場見学とコミベーカリーの窯出しチーズケーキは魅力的だが、やなせたかし関連の小公園2箇所重複とごめんシャモ研究会の店舗性で微減点)",
       "needs_replacement": true,
       "breakdown": {
@@ -2069,7 +2069,7 @@
       "line": "JR武蔵野線",
       "prefecture": "千葉県",
       "iteration": 20,
-      "score": 2.65,
+      "score": 2.55,
       "grade": "C (【差し替え候補（処方箋64・65）】250年続く市川の梨『ありのみ（峰月堂）』と平将門伝説の大野城跡（天満天神宮・本光寺）は良いが、果樹園の通年性と洋館カフェの文脈乖離により2.85へ位置づけ)",
       "needs_replacement": true,
       "breakdown": {
@@ -2089,7 +2089,7 @@
       "line": "上田電鉄別所線",
       "prefecture": "長野県",
       "iteration": 20,
-      "score": 3.4,
+      "score": 3.2,
       "grade": "B+ (直近20作品6位：すり鉢の耳に親指を掛ける『出汁巻玉子サンド（なかざわ商店）』から塩田北条氏ゆかりの『超誓寺』、老舗とんかつ『味楽亭』、地名発祥の『加美畑神社』、乾燥気候を活かした天然酵母パン『LEVRE and BON』へ北上する好構成)",
       "needs_replacement": false,
       "breakdown": {
@@ -2109,7 +2109,7 @@
       "line": "JR日豊本線",
       "prefecture": "大分県",
       "iteration": 21,
-      "score": 3.5,
+      "score": 3.3,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2127,7 +2127,7 @@
       "line": "JR牟岐線",
       "prefecture": "徳島県",
       "iteration": 21,
-      "score": 2.95,
+      "score": 2.8,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2145,7 +2145,7 @@
       "line": "鹿児島市電谷山線",
       "prefecture": "鹿児島県",
       "iteration": 21,
-      "score": 2.7,
+      "score": 2.6,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.2,
@@ -2163,7 +2163,7 @@
       "line": "肥薩おれんじ鉄道線",
       "prefecture": "熊本県",
       "iteration": 21,
-      "score": 3.95,
+      "score": 3.8,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2181,8 +2181,8 @@
       "line": "名鉄広見線",
       "prefecture": "愛知県",
       "iteration": 21,
-      "score": 3.25,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.8,
         "flow": 3.6,
@@ -2199,7 +2199,7 @@
       "line": "札幌市東西線",
       "prefecture": "北海道",
       "iteration": 22,
-      "score": 4.15,
+      "score": 4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2216,7 +2216,7 @@
       "line": "JR予讃支線",
       "prefecture": "愛媛県",
       "iteration": 22,
-      "score": 3.85,
+      "score": 3.7,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4,
@@ -2233,7 +2233,7 @@
       "line": "JR湘南新宿ライン",
       "prefecture": "埼玉県",
       "iteration": 22,
-      "score": 3.95,
+      "score": 3.8,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2250,7 +2250,7 @@
       "line": "JR信越本線",
       "prefecture": "新潟県",
       "iteration": 22,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.4,
@@ -2267,7 +2267,7 @@
       "line": "遠州鉄道",
       "prefecture": "静岡県",
       "iteration": 22,
-      "score": 3.4,
+      "score": 3.15,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2277,10 +2277,95 @@
         "anti_template": 3
       },
       "notes": "大正14年英国製電気機関車『ED28 2』が常駐する遠州西ヶ崎駅と大海亀の化身『正覚坊大権現』を祀る臨済宗『天竜山 蔵泉院』の発掘力は抜群だが、後半がフレンチパン屋＋八幡社＋徒歩12分の郊外イタリアン生パスタへシフトしたため3.40（処方箋71）。"
+    },
+    {
+      "slug": "shuri",
+      "station": "首里",
+      "line": "沖縄ゆいレール",
+      "prefecture": "沖縄県",
+      "iteration": 23,
+      "score": 4.2,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.3,
+        "flow": 4.1,
+        "rhythm": 4.2,
+        "question": 4.2,
+        "anti_template": 4.2
+      },
+      "notes": "首里城正殿前だけで完結させず、王府の職人町だった『首里三箇（鳥堀・赤田・崎山）』と当蔵の路地を辿り、TOUCA BAKE SHOP→首里そば→瑞泉酒造（戦前黒麹菌の里帰り）→首里染織館 suikara→国宝王陵『玉陵』へ1,479mで抜けるSランク傑作。"
+    },
+    {
+      "slug": "aonoyama",
+      "station": "青野山",
+      "line": "JR山口線",
+      "prefecture": "島根県",
+      "iteration": 23,
+      "score": 3.9,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.9,
+        "flow": 4,
+        "rhythm": 3.9,
+        "question": 3.9,
+        "anti_template": 3.8
+      },
+      "notes": "標高907.6mのトロイデ式火山・青野山（妹山）が真正面に迫る『JR青野山駅』（Spot 1）から、石州赤瓦と山容を望む『麓耕つつじの里』、石見の大元信仰を伝える『大元神社』、カワラケツメイを焙煎する『秀翠園』のまめ茶、事業承継された『ブルーボウル』の杵つき草餅へと紡ぐ1,410mの良作。"
+    },
+    {
+      "slug": "yamamoto_saga",
+      "station": "山本",
+      "line": "JR筑肥線",
+      "prefecture": "佐賀県",
+      "iteration": 23,
+      "score": 2.8,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.3,
+        "flow": 2.4,
+        "rhythm": 2.9,
+        "question": 3,
+        "anti_template": 2.4
+      },
+      "notes": "3世紀末『末盧国』の王墓とされる全長108.5mの前方後円墳『久里双水古墳』と『赤い窯のピザ屋さん』、2026年3月開店の『うお眞』は光るが、4区間総直線2,310mの距離超過と実質ランチ飲食店3軒（買い物枠ゼロ）のため2.80（処方箋74・75）。"
+    },
+    {
+      "slug": "hyuga_kutsukake",
+      "station": "日向沓掛",
+      "line": "JR日豊本線",
+      "prefecture": "宮崎県",
+      "iteration": 23,
+      "score": 3.45,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 3.5,
+        "rhythm": 3.5,
+        "question": 3.5,
+        "anti_template": 3.2
+      },
+      "notes": "築80年超の古民家と日本庭園で宮崎うどんと甘味を味わう『うどん茶房 ふなや』、『黒木商店』の秘伝味付ホルモン、『炭火焼ゆうちゃん』の鶏炭火焼が光る1,580m構成（前半Spot 1・2が食事2連続のため3.45）。"
+    },
+    {
+      "slug": "nisato_hirosaki",
+      "station": "新里",
+      "line": "弘南鉄道弘南線",
+      "prefecture": "青森県",
+      "iteration": 23,
+      "score": 3.2,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 2.8,
+        "rhythm": 3.3,
+        "question": 3.3,
+        "anti_template": 3
+      },
+      "notes": "新里駅構内の大正10年製『8620形蒸気機関車（48640号）』、2026年4月復活の『支那そば おぐら』、弘前アップルパイの『お菓子のヒロヤ』、国指定史跡『堀越城跡』の骨格は魅力的だが、700m超え2区間（総直線2,022m）のため3.20（処方箋75）。"
     }
   ],
   "updated_at": "2026-11-05",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #18〜#21 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #19〜#22 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.34
+  "moving_window_average": 3.31
 }

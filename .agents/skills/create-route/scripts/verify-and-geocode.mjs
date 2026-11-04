@@ -55,7 +55,13 @@ async function queryGSI(query) {
       }) || data[0];
       const [lng, lat] = best.geometry.coordinates;
       const title = best.properties?.title || query;
-      const hasBlockNumber = /[0-9０-９一二三四五六七八九十]+(番|丁目|号)/.test(title);
+      const toHalf = (s) => s.replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));
+      const halfTitle = toHalf(title);
+      const halfQuery = toHalf(query);
+      const banchiMatch = halfTitle.match(/(\d+)番/);
+      const hasBlockNumber = banchiMatch
+        ? new RegExp(`(?:^|[^0-9])${banchiMatch[1]}(?:[^0-9]|$)`).test(halfQuery)
+        : /[0-9０-９一二三四五六七八九十]+(丁目|号)/.test(title);
       const allCoords = data
         .filter((d) => d.geometry?.coordinates)
         .map((d) => ({ lat: Number(d.geometry.coordinates[1].toFixed(6)), lng: Number(d.geometry.coordinates[0].toFixed(6)) }));
@@ -83,8 +89,10 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const parenMatch = spotName.match(/（(.+?)）/);
   const bracketMatch = spotName.match(/『(.+?)』/);
   const beforeParen = spotName.split(/[（『]/)[0].trim();
+  const strippedJr = beforeParen.replace(/^(?:JR|ＪＲ)\s*/, '').trim();
   const candidates = [
     beforeParen.length >= 2 && beforeParen.length <= 24 ? beforeParen : null,
+    strippedJr !== beforeParen && strippedJr.length >= 2 ? strippedJr : null,
     parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : null,
     bracketMatch ? bracketMatch[1].replace(/[／/].*$/, '').trim() : null,
     spotName,
@@ -126,7 +134,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber
           ? (hasChome ? 350 : 650)
-          : (isPoiQuery ? 1800 : 8000);
+          : (isPoiQuery ? 3500 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
             ? gsiRef.allCoords
@@ -308,6 +316,40 @@ async function main() {
     errors.push(`spots は最低3件（原則5件）必要です`);
   } else if (!area.spots.some((s) => ['買い物', '休憩', '食事'].includes(s.spot_type))) {
     errors.push(`回遊ルール違反: 買い物/休憩/食事 のスポットを最低1つ入れてください`);
+  }
+
+  // 3.5. 処方箋72・73機械的チェック（question禁止構文・Spot 1/5メタ枕詞・clue文字数と語尾）
+  if (area.question && /一番|いちばん|最も|もっとも|歩いてみて|歩いた今日|歩いて、/.test(area.question)) {
+    errors.push(`処方箋73違反 [question]: 禁止構文（一番/いちばん/最も/歩いてみて/歩いて、等）が含まれています ("${area.question}")`);
+  }
+  if (Array.isArray(area.spots) && area.spots.length === 5) {
+    const clueLengths = area.spots.map((s) => (s.clue || '').length);
+    const shortIndices = clueLengths
+      .map((len, idx) => (len >= 75 && len <= 105 ? idx : -1))
+      .filter((idx) => idx !== -1);
+    if (shortIndices.length !== 1 || ![1, 2, 3].includes(shortIndices[0])) {
+      errors.push(
+        `処方箋72・73違反 [clue文字数]: 中盤（Spot 2〜4）のうち1箇所のみを短尺ブレススポット（75〜105字）にしてください（現在文字数: [${clueLengths.join(', ')}]）`
+      );
+    } else {
+      const shortIdx = shortIndices[0];
+      area.spots.forEach((s, idx) => {
+        const len = (s.clue || '').length;
+        if (idx !== shortIdx && (len < 185 || len > 230)) {
+          errors.push(
+            `処方箋72・73違反 [Spot ${idx + 1} clue文字数]: 長尺スポットは185〜230字必須です（現在 ${len}字: ${s.name}）`
+          );
+        }
+      });
+    }
+    area.spots.forEach((s, idx) => {
+      if (/(?:のだ|ものだ|である)。/.test(s.clue || '')) {
+        errors.push(`処方箋72違反 [Spot ${idx + 1} clue語尾]: 解説調の語尾（のだ。/ものだ。/である。）が含まれています (${s.name})`);
+      }
+      if ((idx === 0 || idx === 4) && /旅の始まり|旅の出発点|旅のクライマックス|旅の結び/.test(s.clue || '')) {
+        errors.push(`処方箋73違反 [Spot ${idx + 1} clue]: 禁止メタ表現（旅の始まり/旅の出発点/旅のクライマックス/旅の結び）が含まれています (${s.name})`);
+      }
+    });
   }
 
   // 4. 住所・電話番号・緯度経度のクロスチェック（GSI + OSM Overpass）

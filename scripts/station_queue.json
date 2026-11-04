@@ -1025,7 +1025,7 @@
     {
       "batch_id": 22,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "首里",
@@ -1033,7 +1033,8 @@
           "prefecture": "沖縄県",
           "postal": "9030806",
           "lat": 26.219191,
-          "lng": 127.725492
+          "lng": 127.725492,
+          "slug": "shuri"
         },
         {
           "station": "青野山",
@@ -1041,7 +1042,8 @@
           "prefecture": "島根県",
           "postal": "6995607",
           "lat": 34.480962,
-          "lng": 131.803191
+          "lng": 131.803191,
+          "slug": "aonoyama"
         },
         {
           "station": "山本",
@@ -1049,7 +1051,8 @@
           "prefecture": "佐賀県",
           "postal": "8470002",
           "lat": 33.393472,
-          "lng": 129.981122
+          "lng": 129.981122,
+          "slug": "yamamoto_saga"
         },
         {
           "station": "日向沓掛",
@@ -1057,7 +1060,8 @@
           "prefecture": "宮崎県",
           "postal": "8891602",
           "lat": 31.842241,
-          "lng": 131.344763
+          "lng": 131.344763,
+          "slug": "hyuga_kutsukake"
         },
         {
           "station": "新里",
@@ -1065,7 +1069,56 @@
           "prefecture": "青森県",
           "postal": "0368083",
           "lat": 40.587445,
-          "lng": 140.519879
+          "lng": 140.519879,
+          "slug": "nisato_hirosaki"
+        }
+      ],
+      "completed_at": "2026-11-05"
+    },
+    {
+      "batch_id": 23,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "蟹江",
+          "line": "JR関西本線",
+          "prefecture": "愛知県",
+          "postal": "4970032",
+          "lat": 35.142071,
+          "lng": 136.793908
+        },
+        {
+          "station": "新桐生",
+          "line": "東武桐生線",
+          "prefecture": "群馬県",
+          "postal": "3760013",
+          "lat": 36.39505,
+          "lng": 139.320078
+        },
+        {
+          "station": "紀伊御坊",
+          "line": "紀州鉄道",
+          "prefecture": "和歌山県",
+          "postal": "6440002",
+          "lat": 33.894292,
+          "lng": 135.154655
+        },
+        {
+          "station": "会津水沼",
+          "line": "JR只見線",
+          "prefecture": "福島県",
+          "postal": "9680001",
+          "lat": 37.483026,
+          "lng": 139.560733
+        },
+        {
+          "station": "市役所",
+          "line": "長崎電軌桜町支線",
+          "prefecture": "長崎県",
+          "postal": "8500874",
+          "lat": 32.74942,
+          "lng": 129.88065
         }
       ]
     }
