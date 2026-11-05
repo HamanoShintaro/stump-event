@@ -2289,7 +2289,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 23,
-      "score": 3.95,
+      "score": 3.85,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2307,7 +2307,7 @@
       "line": "JR山口線",
       "prefecture": "島根県",
       "iteration": 23,
-      "score": 3.6,
+      "score": 3.45,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2325,7 +2325,7 @@
       "line": "JR筑肥線",
       "prefecture": "佐賀県",
       "iteration": 23,
-      "score": 2.6,
+      "score": 2.5,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2343,7 +2343,7 @@
       "line": "JR日豊本線",
       "prefecture": "宮崎県",
       "iteration": 23,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2361,7 +2361,7 @@
       "line": "弘南鉄道弘南線",
       "prefecture": "青森県",
       "iteration": 23,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2379,7 +2379,7 @@
       "line": "長崎電軌桜町支線",
       "prefecture": "長崎県",
       "iteration": 24,
-      "score": 4,
+      "score": 3.9,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2397,7 +2397,7 @@
       "line": "紀州鉄道",
       "prefecture": "和歌山県",
       "iteration": 24,
-      "score": 3.85,
+      "score": 3.7,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2415,7 +2415,7 @@
       "line": "JR関西本線",
       "prefecture": "愛知県",
       "iteration": 24,
-      "score": 3.6,
+      "score": 3.45,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2433,8 +2433,8 @@
       "line": "東武桐生線",
       "prefecture": "群馬県",
       "iteration": 24,
-      "score": 3.15,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.4,
         "flow": 3.2,
@@ -2451,7 +2451,7 @@
       "line": "JR只見線",
       "prefecture": "福島県",
       "iteration": 24,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2469,7 +2469,7 @@
       "line": "東武日光線",
       "prefecture": "栃木県",
       "iteration": 25,
-      "score": 4.05,
+      "score": 3.95,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2486,7 +2486,7 @@
       "line": "流鉄流山線",
       "prefecture": "千葉県",
       "iteration": 25,
-      "score": 3.85,
+      "score": 3.75,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2503,7 +2503,7 @@
       "line": "JR佐世保線",
       "prefecture": "佐賀県",
       "iteration": 25,
-      "score": 3.55,
+      "score": 3.4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2520,8 +2520,8 @@
       "line": "富士急行線",
       "prefecture": "山梨県",
       "iteration": 25,
-      "score": 3.15,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
         "flow": 2.9,
@@ -2537,7 +2537,7 @@
       "line": "JR山陰本線",
       "prefecture": "鳥取県",
       "iteration": 25,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2547,11 +2547,96 @@
         "anti_template": 2.2
       },
       "notes": "処方箋79該当: 楽健寺酵母の天然酵母パンnichi、美萩野あじさい公園、末恒駅跨線橋、伏野神社、カフェレストサブレの叙情性は良いが、起点駅がSpot 3配置（駅通過トリック）かつ土曜限定パン屋＋完全予約制カフェのため2.75（要入替枠）。"
+    },
+    {
+      "slug": "asato",
+      "station": "安里",
+      "line": "沖縄ゆいレール",
+      "prefecture": "沖縄県",
+      "iteration": 26,
+      "score": 4.15,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.4,
+        "flow": 4.1,
+        "rhythm": 4.1,
+        "question": 4.1,
+        "anti_template": 4.1
+      },
+      "notes": "戦後復興期の迷宮・栄町市場のCOFFEE potohotoと黄金鰹出汁のそば処玉家栄町店から、壺屋やちむん通りの国重文・新垣家住宅、康熙21年開窯の育陶園本店、17世紀の荒焼窯・南窯（フェーヌカマ）へ抜ける濃密な896m路地一筆書き（改修休館中の壺屋焼物博物館も的確に除外）。"
+    },
+    {
+      "slug": "okawara_kyoto",
+      "station": "大河原",
+      "line": "JR関西本線",
+      "prefecture": "京都府",
+      "iteration": 26,
+      "score": 4,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.3,
+        "flow": 3.9,
+        "rhythm": 4,
+        "question": 3.9,
+        "anti_template": 3.9
+      },
+      "notes": "木津川の欄干のない潜没橋・恋路橋から、後醍醐天皇の寵姫を祀る恋志谷神社、原木椎茸のしい玉焼きのいきいき亭、築百年の土壁米蔵パン屋・ミッシーのぱん、平安後期の木造薬師如来立像が眠る春光寺へと渓谷と茶郷を一筆書きで結ぶ好構成。"
+    },
+    {
+      "slug": "senzai",
+      "station": "前栽",
+      "line": "近鉄天理線",
+      "prefecture": "奈良県",
+      "iteration": 26,
+      "score": 3.6,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.7,
+        "flow": 3.7,
+        "rhythm": 3.6,
+        "question": 3.5,
+        "anti_template": 3.5
+      },
+      "notes": "大正4年の天理軽便鉄道に始まる前栽駅から、文政10年に大坂東横堀の石工・河内屋吉兵衛が刻んだ浪速狛犬が残る御霊神社、晴耕雨読にちなんだ珈琲雨読、気まぐれ家、パン工房OTOまで西から東へ綺麗に抜ける動線。"
+    },
+    {
+      "slug": "obase_nishikodaimae",
+      "station": "小波瀬西工大前",
+      "line": "JR日豊本線",
+      "prefecture": "福岡県",
+      "iteration": 26,
+      "score": 3.45,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 3.4,
+        "rhythm": 3.5,
+        "question": 3.4,
+        "anti_template": 3.4
+      },
+      "notes": "豊国造の祖・大原足尼命を祀る千七百年の大原八幡神社から、信号場起源の小波瀬西工大前駅、手打の味小泉苅田店、直火自家焙煎珈琲煎、パン工房小麦へと南から北へたどる堅実な構成。"
+    },
+    {
+      "slug": "aina",
+      "station": "藍那",
+      "line": "神戸電鉄粟生線",
+      "prefecture": "兵庫県",
+      "iteration": 26,
+      "score": 2.75,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.5,
+        "flow": 2.6,
+        "rhythm": 2.8,
+        "question": 2.8,
+        "anti_template": 2.1
+      },
+      "notes": "処方箋78・81該当: 藍那天津彦根神社の茅葺き農村舞台や相談ヶ辻の歴史掘り起こしは丁寧だが、有人飲食・購買スポットがゼロ（古民家縁側を無料休憩カウント）かつ有料国営公園（あいな里山公園）の園内2スポット分割のため2.75（要入替枠）。"
     }
   ],
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-05T04:09:36.823Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #21〜#24 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
-  "last_updated_iteration": 25
+  "last_updated_iteration": 26
 }

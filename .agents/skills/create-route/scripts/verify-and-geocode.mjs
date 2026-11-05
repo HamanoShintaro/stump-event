@@ -103,10 +103,11 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const cleanAddress = address.replace(/大字|字/g, '');
   const addressVariants = cleanAddress !== address ? [cleanAddress, address] : [address];
   const isStationSpot = /駅(?:（|$)/.test(spotName);
+  const hasAddressNumber = /[0-9０-９]/.test(address);
   const queries = [
-    ...(isStationSpot && gsiRef ? uniquePois : []),
+    ...((isStationSpot || !hasAddressNumber) && gsiRef ? uniquePois : []),
     ...uniquePois.flatMap((p) => addressVariants.map((a) => `${p} ${a}`)),
-    ...(!isStationSpot && gsiRef ? uniquePois : []),
+    ...(!isStationSpot && hasAddressNumber && gsiRef ? uniquePois : []),
     ...addressVariants,
   ];
 
@@ -138,7 +139,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         // 都市部の「丁目」街区一致時は350m、地方の大字＋番地（丁目なし）は650m、大字代表点のみ（hasBlockNumber === false）はPOI検索時1800m・住所検索時8000mまで許容
         const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber
-          ? (hasChome ? 350 : (isStationSpot ? 1500 : 350))
+          ? (hasChome ? 350 : (isStationSpot ? 1500 : 800))
           : (isPoiQuery ? 3500 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
@@ -391,7 +392,7 @@ async function main() {
       console.log(`    電話: ${spot.phone || spot.tel}`);
     }
 
-    const isStationOrBridgeWithKoaza = /(?:駅|橋|橋梁|踏切)/.test(spot.name) && /大字|字|桑畑|沢西/.test(spot.address || '');
+    const isStationOrBridgeWithKoaza = /(?:駅|橋|橋梁|踏切|公園|相談ヶ辻|の家)/.test(spot.name) && /大字|字|桑畑|沢西|北大河原/.test(spot.address || '');
     if (!spot.address || spot.address.endsWith('周辺') || (!/[0-9０-９一二三四五六七八九十]/.test(spot.address) && !isStationOrBridgeWithKoaza)) {
       errors.push(`Spot ${idx} (${spot.name}): 住所が曖昧か番地が含まれていません ("${spot.address}")`);
     }

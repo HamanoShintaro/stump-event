@@ -1184,7 +1184,7 @@
     {
       "batch_id": 25,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "藍那",
@@ -1225,6 +1225,49 @@
           "postal": "8000344",
           "lat": 33.752992,
           "lng": 130.97197
+        }
+      ],
+      "completed_at": "2026-11-05T04:09:54.954Z"
+    },
+    {
+      "batch_id": 26,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "大山駅",
+          "line": "東武東上本線",
+          "prefecture": "東京都",
+          "lat": 35.748398,
+          "lng": 139.702589
+        },
+        {
+          "station": "辻駅",
+          "line": "JR徳島線",
+          "prefecture": "徳島県",
+          "lat": 34.02912,
+          "lng": 133.873856
+        },
+        {
+          "station": "三方駅",
+          "line": "JR小浜線",
+          "prefecture": "福井県",
+          "lat": 35.555282,
+          "lng": 135.909259
+        },
+        {
+          "station": "高茶屋駅",
+          "line": "JR紀勢本線",
+          "prefecture": "三重県",
+          "lat": 34.667277,
+          "lng": 136.51256
+        },
+        {
+          "station": "上毛高原駅",
+          "line": "上越新幹線",
+          "prefecture": "群馬県",
+          "lat": 36.69317,
+          "lng": 138.977572
         }
       ]
     }
