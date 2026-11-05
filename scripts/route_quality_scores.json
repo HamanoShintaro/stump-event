@@ -2109,7 +2109,7 @@
       "line": "JR日豊本線",
       "prefecture": "大分県",
       "iteration": 21,
-      "score": 3.3,
+      "score": 3.15,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2127,7 +2127,7 @@
       "line": "JR牟岐線",
       "prefecture": "徳島県",
       "iteration": 21,
-      "score": 2.8,
+      "score": 2.7,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2145,7 +2145,7 @@
       "line": "鹿児島市電谷山線",
       "prefecture": "鹿児島県",
       "iteration": 21,
-      "score": 2.6,
+      "score": 2.5,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.2,
@@ -2163,7 +2163,7 @@
       "line": "肥薩おれんじ鉄道線",
       "prefecture": "熊本県",
       "iteration": 21,
-      "score": 3.8,
+      "score": 3.65,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2181,7 +2181,7 @@
       "line": "名鉄広見線",
       "prefecture": "愛知県",
       "iteration": 21,
-      "score": 2.95,
+      "score": 2.8,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.8,
@@ -2199,7 +2199,7 @@
       "line": "札幌市東西線",
       "prefecture": "北海道",
       "iteration": 22,
-      "score": 4,
+      "score": 3.9,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2216,7 +2216,7 @@
       "line": "JR予讃支線",
       "prefecture": "愛媛県",
       "iteration": 22,
-      "score": 3.7,
+      "score": 3.55,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4,
@@ -2233,7 +2233,7 @@
       "line": "JR湘南新宿ライン",
       "prefecture": "埼玉県",
       "iteration": 22,
-      "score": 3.8,
+      "score": 3.65,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2250,7 +2250,7 @@
       "line": "JR信越本線",
       "prefecture": "新潟県",
       "iteration": 22,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.4,
@@ -2267,8 +2267,8 @@
       "line": "遠州鉄道",
       "prefecture": "静岡県",
       "iteration": 22,
-      "score": 3.15,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.8,
         "flow": 3.3,
@@ -2284,7 +2284,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 23,
-      "score": 4.2,
+      "score": 4.05,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2301,7 +2301,7 @@
       "line": "JR山口線",
       "prefecture": "島根県",
       "iteration": 23,
-      "score": 3.9,
+      "score": 3.75,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2318,7 +2318,7 @@
       "line": "JR筑肥線",
       "prefecture": "佐賀県",
       "iteration": 23,
-      "score": 2.8,
+      "score": 2.7,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2335,7 +2335,7 @@
       "line": "JR日豊本線",
       "prefecture": "宮崎県",
       "iteration": 23,
-      "score": 3.45,
+      "score": 3.25,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.6,
@@ -2352,8 +2352,8 @@
       "line": "弘南鉄道弘南線",
       "prefecture": "青森県",
       "iteration": 23,
-      "score": 3.2,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
         "flow": 2.8,
@@ -2362,10 +2362,96 @@
         "anti_template": 3
       },
       "notes": "新里駅構内の大正10年製『8620形蒸気機関車（48640号）』、2026年4月復活の『支那そば おぐら』、弘前アップルパイの『お菓子のヒロヤ』、国指定史跡『堀越城跡』の骨格は魅力的だが、700m超え2区間（総直線2,022m）のため3.20（処方箋75）。"
+    },
+    {
+      "slug": "shiyakusho_nagasaki",
+      "station": "市役所",
+      "line": "長崎電軌桜町支線",
+      "prefecture": "長崎県",
+      "iteration": 24,
+      "score": 4.1,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.2,
+        "flow": 4.2,
+        "rhythm": 4,
+        "question": 4,
+        "anti_template": 4.1
+      },
+      "notes": "Batch #23 Best (Sランク): 先行sakuramachi_nagasakiと重複ゼロで松翁軒本店・眼鏡橋・興福寺・岩永梅寿軒・ツル茶んを1.2kmで結ぶ濃密な和華蘭ルート。"
+    },
+    {
+      "slug": "kii_gobo",
+      "station": "紀伊御坊",
+      "line": "紀州鉄道",
+      "prefecture": "和歌山県",
+      "iteration": 24,
+      "score": 3.95,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.1,
+        "flow": 3.8,
+        "rhythm": 4,
+        "question": 3.9,
+        "anti_template": 3.95
+      },
+      "notes": "日本最短級の紀州鉄道・キハ603から画廊喫茶さぼーる、本願寺日高別院、元禄創業の堀河屋野村（三ツ星醤油・径山寺味噌）、小竹八幡神社へ抜ける発酵×寺内町ルート。"
+    },
+    {
+      "slug": "kanie",
+      "station": "蟹江",
+      "line": "JR関西本線",
+      "prefecture": "愛知県",
+      "iteration": 24,
+      "score": 3.7,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.8,
+        "flow": 3.7,
+        "rhythm": 3.7,
+        "question": 3.6,
+        "anti_template": 3.7
+      },
+      "notes": "駅前UN kanyeのあんバター仏蘭西菓子カニアンヌから蟹江川沿いに須成祭の巻藁船展示（祭人）、冨吉建速神社・龍照院、香風園須成店の西尾抹茶へ至る水郷動線。"
+    },
+    {
+      "slug": "shin_kiryu",
+      "station": "新桐生",
+      "line": "東武桐生線",
+      "prefecture": "群馬県",
+      "iteration": 24,
+      "score": 3.3,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.4,
+        "flow": 3.2,
+        "rhythm": 3.3,
+        "question": 3.3,
+        "anti_template": 3.3
+      },
+      "notes": "1932年開業の洋風三角屋根駅舎から線路脇の正礼山普門院、ベーカリーHitosio、日本料理うおせん、根岸屋の花ぱんをめぐる広沢町ルート。"
+    },
+    {
+      "slug": "aizu_mizunuma",
+      "station": "会津水沼",
+      "line": "JR只見線",
+      "prefecture": "福島県",
+      "iteration": 24,
+      "score": 2.85,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.5,
+        "flow": 3.2,
+        "rhythm": 3.1,
+        "question": 2.5,
+        "anti_template": 1.95
+      },
+      "notes": "処方箋78該当: 第四只見川橋梁と水沼の道祖神（穴あき小石奉納）の民俗・景観は秀逸だが、5スポット中に有人飲食・商店がゼロ（無人駅待合室を休憩カウント）のため2.85（要入替枠）。"
     }
   ],
   "updated_at": "2026-11-05",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #19〜#22 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.31
+  "moving_window_average": 3.31,
+  "last_updated_iteration": 24
 }

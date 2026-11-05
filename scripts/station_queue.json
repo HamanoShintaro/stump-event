@@ -1078,7 +1078,7 @@
     {
       "batch_id": 23,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "蟹江",
@@ -1086,7 +1086,8 @@
           "prefecture": "愛知県",
           "postal": "4970032",
           "lat": 35.142071,
-          "lng": 136.793908
+          "lng": 136.793908,
+          "slug": "kanie"
         },
         {
           "station": "新桐生",
@@ -1094,7 +1095,8 @@
           "prefecture": "群馬県",
           "postal": "3760013",
           "lat": 36.39505,
-          "lng": 139.320078
+          "lng": 139.320078,
+          "slug": "shin_kiryu"
         },
         {
           "station": "紀伊御坊",
@@ -1102,7 +1104,8 @@
           "prefecture": "和歌山県",
           "postal": "6440002",
           "lat": 33.894292,
-          "lng": 135.154655
+          "lng": 135.154655,
+          "slug": "kii_gobo"
         },
         {
           "station": "会津水沼",
@@ -1110,7 +1113,8 @@
           "prefecture": "福島県",
           "postal": "9680001",
           "lat": 37.483026,
-          "lng": 139.560733
+          "lng": 139.560733,
+          "slug": "aizu_mizunuma"
         },
         {
           "station": "市役所",
@@ -1118,7 +1122,56 @@
           "prefecture": "長崎県",
           "postal": "8500874",
           "lat": 32.74942,
-          "lng": 129.88065
+          "lng": 129.88065,
+          "slug": "shiyakusho_nagasaki"
+        }
+      ],
+      "completed_at": "2026-11-05T01:38:36.049Z"
+    },
+    {
+      "batch_id": 24,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "末恒",
+          "line": "JR山陰本線",
+          "prefecture": "鳥取県",
+          "postal": "6890201",
+          "lat": 35.52395,
+          "lng": 134.135739
+        },
+        {
+          "station": "永尾",
+          "line": "JR佐世保線",
+          "prefecture": "佐賀県",
+          "postal": "8492301",
+          "lat": 33.193439,
+          "lng": 129.980476
+        },
+        {
+          "station": "富士急ハイランド",
+          "line": "富士急行線",
+          "prefecture": "山梨県",
+          "postal": "4010301",
+          "lat": 35.488974,
+          "lng": 138.782048
+        },
+        {
+          "station": "鰭ヶ崎",
+          "line": "流鉄流山線",
+          "prefecture": "千葉県",
+          "postal": "2700161",
+          "lat": 35.840948,
+          "lng": 139.911121
+        },
+        {
+          "station": "東武日光",
+          "line": "東武日光線",
+          "prefecture": "栃木県",
+          "postal": "3211406",
+          "lat": 36.748233,
+          "lng": 139.61975
         }
       ]
     }

@@ -61,7 +61,7 @@ async function queryGSI(query) {
       const banchiMatch = halfTitle.match(/(\d+)番/);
       const hasBlockNumber = banchiMatch
         ? new RegExp(`(?:^|[^0-9])${banchiMatch[1]}(?:[^0-9]|$)`).test(halfQuery)
-        : /[0-9０-９一二三四五六七八九十]+(丁目|号)/.test(title);
+        : /[0-9０-９一二三四五六七八九十]+号/.test(title);
       const allCoords = data
         .filter((d) => d.geometry?.coordinates)
         .map((d) => ({ lat: Number(d.geometry.coordinates[1].toFixed(6)), lng: Number(d.geometry.coordinates[0].toFixed(6)) }));
@@ -90,9 +90,11 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const bracketMatch = spotName.match(/『(.+?)』/);
   const beforeParen = spotName.split(/[（『]/)[0].trim();
   const strippedJr = beforeParen.replace(/^(?:JR|ＪＲ)\s*/, '').trim();
+  const strippedRail = strippedJr.replace(/^(?:東武|近鉄|名鉄|南海|京阪|阪神|阪急|西鉄|京成|京王|小田急|東急|西武|相鉄|紀州鉄道)\s*/, '').trim();
   const candidates = [
     beforeParen.length >= 2 && beforeParen.length <= 24 ? beforeParen : null,
     strippedJr !== beforeParen && strippedJr.length >= 2 ? strippedJr : null,
+    strippedRail !== strippedJr && strippedRail.length >= 2 ? strippedRail : null,
     parenMatch ? parenMatch[1].replace(/[／/].*$/, '').trim() : null,
     bracketMatch ? bracketMatch[1].replace(/[／/].*$/, '').trim() : null,
     spotName,
@@ -100,8 +102,11 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const uniquePois = [...new Set(candidates)];
   const cleanAddress = address.replace(/大字|字/g, '');
   const addressVariants = cleanAddress !== address ? [cleanAddress, address] : [address];
+  const isStationSpot = /駅(?:（|$)/.test(spotName);
   const queries = [
+    ...(isStationSpot && gsiRef ? uniquePois : []),
     ...uniquePois.flatMap((p) => addressVariants.map((a) => `${p} ${a}`)),
+    ...(!isStationSpot && gsiRef ? uniquePois : []),
     ...addressVariants,
   ];
 
@@ -318,7 +323,23 @@ async function main() {
     errors.push(`回遊ルール違反: 買い物/休憩/食事 のスポットを最低1つ入れてください`);
   }
 
-  // 3.5. 処方箋72・73機械的チェック（question禁止構文・Spot 1/5メタ枕詞・clue文字数と語尾）
+  // 3.5. 処方箋72・73・77機械的チェック（title規定・spot_type規定・question禁止構文・Spot 1/5メタ枕詞・clue文字数と語尾）
+  if (area.title) {
+    if (area.title.includes('、') || area.title.length < 15 || area.title.length > 24 || /をたどる道$/.test(area.title)) {
+      errors.push(
+        `処方箋42・77違反 [title]: 読点「、」なし・15〜24字・末尾「〜をたどる道」禁止を守ってください（現在 ${area.title.length}字: "${area.title}"）`
+      );
+    }
+  }
+  if (Array.isArray(area.spots)) {
+    area.spots.forEach((s, idx) => {
+      if (!['見どころ', '食事', '休憩', '買い物'].includes(s.spot_type)) {
+        errors.push(
+          `処方箋77違反 [Spot ${idx + 1} spot_type]: 許可値は 見どころ/食事/休憩/買い物 の4種のみです（現在 "${s.spot_type}": ${s.name}）`
+        );
+      }
+    });
+  }
   if (area.question && /一番|いちばん|最も|もっとも|歩いてみて|歩いた今日|歩いて、/.test(area.question)) {
     errors.push(`処方箋73違反 [question]: 禁止構文（一番/いちばん/最も/歩いてみて/歩いて、等）が含まれています ("${area.question}")`);
   }
@@ -366,7 +387,8 @@ async function main() {
       console.log(`    電話: ${spot.phone || spot.tel}`);
     }
 
-    if (!spot.address || spot.address.endsWith('周辺') || !/[0-9０-９一二三四五六七八九十]/.test(spot.address)) {
+    const isStationOrBridgeWithKoaza = /(?:駅|橋|橋梁)/.test(spot.name) && /字|桑畑|沢西/.test(spot.address || '');
+    if (!spot.address || spot.address.endsWith('周辺') || (!/[0-9０-９一二三四五六七八九十]/.test(spot.address) && !isStationOrBridgeWithKoaza)) {
       errors.push(`Spot ${idx} (${spot.name}): 住所が曖昧か番地が含まれていません ("${spot.address}")`);
     }
 
