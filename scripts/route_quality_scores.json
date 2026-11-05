@@ -2469,7 +2469,7 @@
       "line": "東武日光線",
       "prefecture": "栃木県",
       "iteration": 25,
-      "score": 3.85,
+      "score": 3.75,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2486,7 +2486,7 @@
       "line": "流鉄流山線",
       "prefecture": "千葉県",
       "iteration": 25,
-      "score": 3.65,
+      "score": 3.5,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2503,8 +2503,8 @@
       "line": "JR佐世保線",
       "prefecture": "佐賀県",
       "iteration": 25,
-      "score": 3.25,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.9,
         "flow": 3.5,
@@ -2512,7 +2512,7 @@
         "question": 3.5,
         "anti_template": 3.4
       },
-      "notes": "昭和22年築の純木造駅舎が残るJR佐世保線永尾駅から、黒髪山系を仰ぐ犬走・鳥海集落の石積水路、築120年の古民家『とのみの HOKAO COFFEE』、狩野派絵師・広渡三舟筆の150枚彩色天井絵が眠る鳥海天満宮へ抜ける里山ルート。"
+      "notes": "昭和22年築の純木造駅舎が残るJR佐世保線永尾駅から、黒髪山系を仰ぐ犬走・鳥海集落の石積水路、築120年の古民家『とのみの HOKAO COFFEE』、狩野派絵師・広渡三舟筆の150枚彩色天井絵が眠る鳥海天満宮へ抜ける里山ルート（世代交代により2.95要入替枠へ溶解）。"
     },
     {
       "slug": "fujikyu_highland",
@@ -2520,7 +2520,7 @@
       "line": "富士急行線",
       "prefecture": "山梨県",
       "iteration": 25,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2529,7 +2529,7 @@
         "question": 3.2,
         "anti_template": 3
       },
-      "notes": "新西原の老舗アマノベーカリー、甲斐絹シルクパウダー入り麺の『ほうとう うどん あまの』、飛騨伝統木組みのふじやま温泉、フジヤマミュージアムから富士急ハイランド駅へ抜ける構成（着駅ゴール型のため3.15）。"
+      "notes": "新西原の老舗アマノベーカリー、甲斐絹シルクパウダー入り麺の『ほうとう うどん あまの』、飛騨伝統木組みのふじやま温泉、フジヤマミュージアムから富士急ハイランド駅へ抜ける構成（着駅ゴール型のため要入替枠）。"
     },
     {
       "slug": "suetsune",
@@ -2537,7 +2537,7 @@
       "line": "JR山陰本線",
       "prefecture": "鳥取県",
       "iteration": 25,
-      "score": 2.55,
+      "score": 2.5,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2546,7 +2546,7 @@
         "question": 2.9,
         "anti_template": 2.2
       },
-      "notes": "処方箋79該当: 楽健寺酵母の天然酵母パンnichi、美萩野あじさい公園、末恒駅跨線橋、伏野神社、カフェレストサブレの叙情性は良いが、起点駅がSpot 3配置（駅通過トリック）かつ土曜限定パン屋＋完全予約制カフェのため2.75（要入替枠）。"
+      "notes": "処方箋79該当: 楽健寺酵母の天然酵母パンnichi、美萩野あじさい公園、末恒駅跨線橋、伏野神社、カフェレストサブレの叙情性は良いが、起点駅がSpot 3配置（駅通過トリック）かつ土曜限定パン屋＋完全予約制カフェのため要入替枠。"
     },
     {
       "slug": "asato",
@@ -2554,7 +2554,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 26,
-      "score": 4.05,
+      "score": 3.95,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.4,
@@ -2571,7 +2571,7 @@
       "line": "JR関西本線",
       "prefecture": "京都府",
       "iteration": 26,
-      "score": 3.9,
+      "score": 3.8,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2588,7 +2588,7 @@
       "line": "近鉄天理線",
       "prefecture": "奈良県",
       "iteration": 26,
-      "score": 3.45,
+      "score": 3.3,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.7,
@@ -2605,7 +2605,7 @@
       "line": "JR日豊本線",
       "prefecture": "福岡県",
       "iteration": 26,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2622,7 +2622,7 @@
       "line": "神戸電鉄粟生線",
       "prefecture": "兵庫県",
       "iteration": 26,
-      "score": 2.65,
+      "score": 2.55,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2631,7 +2631,7 @@
         "question": 2.8,
         "anti_template": 2.1
       },
-      "notes": "処方箋78・81該当: 藍那天津彦根神社の茅葺き農村舞台や相談ヶ辻の歴史掘り起こしは丁寧だが、有人飲食・購買スポットがゼロ（古民家縁側を無料休憩カウント）かつ有料国営公園（あいな里山公園）の園内2スポット分割のため2.75（要入替枠）。"
+      "notes": "処方箋78・81該当: 藍那天津彦根神社の茅葺き農村舞台や相談ヶ辻の歴史掘り起こしは丁寧だが、有人飲食・購買スポットがゼロ（古民家縁側を無料休憩カウント）かつ有料国営公園（あいな里山公園）の園内2スポット分割のため要入替枠。"
     },
     {
       "slug": "oyama_tokyo",
@@ -2639,7 +2639,7 @@
       "line": "東武東上本線",
       "prefecture": "東京都",
       "iteration": 27,
-      "score": 4.1,
+      "score": 4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2656,7 +2656,7 @@
       "line": "JR小浜線",
       "prefecture": "福井県",
       "iteration": 27,
-      "score": 3.95,
+      "score": 3.85,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2673,7 +2673,7 @@
       "line": "JR徳島線",
       "prefecture": "徳島県",
       "iteration": 27,
-      "score": 3.75,
+      "score": 3.6,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2690,8 +2690,8 @@
       "line": "JR紀勢本線",
       "prefecture": "三重県",
       "iteration": 27,
-      "score": 3.15,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
         "flow": 3.3,
@@ -2699,7 +2699,7 @@
         "question": 3.2,
         "anti_template": 2.65
       },
-      "notes": "処方箋82該当: 正和堂の生引たまりみたらし団子・葛プリン、明治26年参宮鉄道開業の高茶屋駅、高茶屋神社（粟嶋さん）、津の炭火焼きうなぎ『うなぎ のぐち』は魅力的だが、Spot 4（休憩枠）に全国展開の大手外食チェーン『まいどおおきに食堂』を採用したため3.15。"
+      "notes": "処方箋82該当: 正和堂の生引たまりみたらし団子・葛プリン、明治26年参宮鉄道開業の高茶屋駅、高茶屋神社（粟嶋さん）、津の炭火焼きうなぎ『うなぎ のぐち』は魅力的だが、Spot 4（休憩枠）に全国展開の大手外食チェーン『まいどおおきに食堂』を採用したため2.95（要入替枠へ溶解）。"
     },
     {
       "slug": "jomo_kogen",
@@ -2707,7 +2707,7 @@
       "line": "上越新幹線",
       "prefecture": "群馬県",
       "iteration": 27,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2716,12 +2716,97 @@
         "question": 3,
         "anti_template": 2.15
       },
-      "notes": "処方箋83該当: 日本百名月の嶽林寺（お駒堂・指月会）と国指定史跡・矢瀬遺跡の縄文四本柱は秀逸だが、Spot 2（イヌワシストア）とSpot 3（上毛高原そば）が同一駅舎内16mの2スポット分割であり、さらにSpot 3（駅そば）とSpot 4（手打ちそば天丸）で蕎麦店2連発となっているため2.85（要入替枠）。"
+      "notes": "処方箋83該当: 日本百名月の嶽林寺（お駒堂・指月会）と国指定史跡・矢瀬遺跡の縄文四本柱は秀逸だが、Spot 2（イヌワシストア）とSpot 3（上毛高原そば）が同一駅舎内16mの2スポット分割であり、さらにSpot 3（駅そば）とSpot 4（手打ちそば天丸）で蕎麦店2連発となっているため要入替枠。"
+    },
+    {
+      "slug": "koriyama",
+      "station": "郡山",
+      "line": "東北新幹線",
+      "prefecture": "福島県",
+      "iteration": 28,
+      "score": 4.05,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.2,
+        "flow": 4.2,
+        "rhythm": 4,
+        "question": 4,
+        "anti_template": 3.85
+      },
+      "notes": "東北新幹線郡山駅の『水と緑の光のプロムナード』から、仁愛元年（1865年）創業・日本三大まんじゅう『柏屋本店』（薄皮茶屋・朝茶会）、安積開拓の拠点となった『安積国造神社』と大同2年開基の『高岳山 如宝寺』（重文・銅造観音菩薩立像、石造笠塔婆）を経て、大正13年創業『大友パン店』のクリームボックスへと1,297m・経度100%単調減少で抜ける王道ルート。"
+    },
+    {
+      "slug": "kizu",
+      "station": "木津",
+      "line": "JR大和路線",
+      "prefecture": "京都府",
+      "iteration": 28,
+      "score": 3.95,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.3,
+        "flow": 3.9,
+        "rhythm": 3.8,
+        "question": 3.9,
+        "anti_template": 3.85
+      },
+      "notes": "店内に実物の国鉄EF66-49号機電気機関車（ブルートレイン牽引機）の先頭車両が鎮座する天然酵母ベーカリー『パン・オ・セーグル』から、建築家・中筋修設計の『JR木津駅』、橘諸兄創建の『木津御霊神社』、平重衡の最期を悼む『安福寺（哀堂・鎌倉十三重石塔）』、行基が架けた泉大橋の橋柱から文殊菩薩を刻んだ『大智寺』へと1,265mで抜ける発見密度の高いルート。"
+    },
+    {
+      "slug": "nagi",
+      "station": "那岐",
+      "line": "JR因美線",
+      "prefecture": "鳥取県",
+      "iteration": 28,
+      "score": 3.6,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.1,
+        "flow": 3.9,
+        "rhythm": 3.3,
+        "question": 3.5,
+        "anti_template": 3.2
+      },
+      "notes": "昭和7年築の木造駅舎に町立診療所が同居する『那岐駅』から、智頭杉薪ボイラーの湯処『ナギノ森ノ宿（神楽の湯）』、旧那岐保育園舎、拝殿と本殿の間を因美線の線路が横切る全国稀有の『那岐神社』、山門前で頬杖をつく「かんがえ地蔵（如意輪観音）」の『極楽寺』へ経度100%単調減少で抜ける里山ルート。"
+    },
+    {
+      "slug": "miraidaira",
+      "station": "みらい平",
+      "line": "つくばエクスプレス線",
+      "prefecture": "茨城県",
+      "iteration": 28,
+      "score": 3.3,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 3.6,
+        "rhythm": 3.2,
+        "question": 3.2,
+        "anti_template": 2.9
+      },
+      "notes": "陽光台の『CRAFT BAKERY』から掘割構造の『みらい平駅』、400年の国重文『小張松下流綱火』を伝える『小張愛宕神社』と小張城主・太田吉勝開基の『善空寺』を経て、つくばみらい産コシヒカリ粉カヌレの『Patisserie Lien』へ2軸完全単調で抜ける新旧対比ルート。"
+    },
+    {
+      "slug": "shin_minamata",
+      "station": "新水俣",
+      "line": "九州新幹線",
+      "prefecture": "熊本県",
+      "iteration": 28,
+      "score": 2.75,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.3,
+        "flow": 2.4,
+        "rhythm": 2.8,
+        "question": 3,
+        "anti_template": 2.25
+      },
+      "notes": "処方箋84・85該当: 初野貝塚近くの『新水俣駅（まつぼっくり）』から相良・島津・加藤清正ゆかりの『水俣城跡』と昭和8年創業『柳屋本舗 本店（美貴もなか）』へ抜ける骨格は良いが、Spot 1→2が直線1,016m（徒歩17分）離れ、その中継点に『水俣古城簡易郵便局（外観見学）』を挟んだため2.75（要入替枠）。"
     }
   ],
-  "updated_at": "2026-11-05T05:25:33.731Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #23〜#26 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.35 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-05T06:46:00.000Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.35,
-  "last_updated_iteration": 27
+  "moving_window_average": 3.34,
+  "last_updated_iteration": 28
 }

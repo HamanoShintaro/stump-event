@@ -361,8 +361,8 @@ async function main() {
       }
     });
   }
-  if (area.question && /一番|いちばん|最も|もっとも|歩いてみて|歩いた今日|歩いて、/.test(area.question)) {
-    errors.push(`処方箋73違反 [question]: 禁止構文（一番/いちばん/最も/歩いてみて/歩いて、等）が含まれています ("${area.question}")`);
+  if (area.question && /一番|いちばん|最も|もっとも|歩いてみて|歩いた今日|歩いて、|心に.{0,6}(?:残った|刻まれた)|記憶に.{0,6}(?:残った|刻まれた)|たどった道のりで|巡った歩みのなかで/.test(area.question)) {
+    errors.push(`処方箋73・85違反 [question]: 禁止構文（一番/いちばん/最も/歩いてみて/心に残った/記憶に残った/たどった道のりで 等）が含まれています ("${area.question}")`);
   }
   if (Array.isArray(area.spots) && area.spots.length === 5) {
     const clueLengths = area.spots.map((s) => (s.clue || '').length);
@@ -527,9 +527,9 @@ async function main() {
       const hookMinMatch = (s1.hook || '').match(/徒歩(\d+)分/);
       if (hookMinMatch) {
         const hookMin = parseInt(hookMinMatch[1], 10);
-        if (Math.abs(hookMin - estMinutes) > 1) {
+        if (Math.abs(hookMin - estMinutes) > 0) {
           errors.push(
-            `処方箋56・80違反 [Spot ${i + 1} hook徒歩分数]: hookの「徒歩${hookMin}分」が座標実測値「徒歩${estMinutes}分（直線${legMeters}m×1.3÷80）」とずれています`
+            `処方箋56・80・85違反 [Spot ${i + 1} hook徒歩分数]: hookの「徒歩${hookMin}分」が座標実測値「徒歩${estMinutes}分（直線${legMeters}m×1.3÷80）」とずれています`
           );
         }
       }

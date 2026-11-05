@@ -1280,7 +1280,7 @@
     {
       "batch_id": 27,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "那岐",
@@ -1288,7 +1288,8 @@
           "prefecture": "鳥取県",
           "postal": "6891451",
           "lat": 35.213769,
-          "lng": 134.209968
+          "lng": 134.209968,
+          "slug": "nagi"
         },
         {
           "station": "みらい平",
@@ -1296,7 +1297,8 @@
           "prefecture": "茨城県",
           "postal": "3002416",
           "lat": 35.99514,
-          "lng": 140.038555
+          "lng": 140.038555,
+          "slug": "miraidaira"
         },
         {
           "station": "郡山",
@@ -1304,7 +1306,8 @@
           "prefecture": "福島県",
           "postal": "9638003",
           "lat": 37.398187,
-          "lng": 140.389363
+          "lng": 140.389363,
+          "slug": "koriyama"
         },
         {
           "station": "木津",
@@ -1312,7 +1315,8 @@
           "prefecture": "京都府",
           "postal": "6190214",
           "lat": 34.735962,
-          "lng": 135.824794
+          "lng": 135.824794,
+          "slug": "kizu"
         },
         {
           "station": "新水俣",
@@ -1320,7 +1324,56 @@
           "prefecture": "熊本県",
           "postal": "8670002",
           "lat": 32.210825,
-          "lng": 130.428893
+          "lng": 130.428893,
+          "slug": "shin_minamata"
+        }
+      ],
+      "completed_at": "2026-11-05T06:49:02.252Z"
+    },
+    {
+      "batch_id": 28,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "邑久",
+          "line": "JR赤穂線",
+          "prefecture": "岡山県",
+          "postal": "7014246",
+          "lat": 34.668526,
+          "lng": 134.091027
+        },
+        {
+          "station": "あいの里教育大",
+          "line": "JR札沼線",
+          "prefecture": "北海道",
+          "postal": "0028071",
+          "lat": 43.15528,
+          "lng": 141.39842
+        },
+        {
+          "station": "安茂里",
+          "line": "JR信越本線",
+          "prefecture": "長野県",
+          "postal": "3800941",
+          "lat": 36.630262,
+          "lng": 138.161791
+        },
+        {
+          "station": "黒田原",
+          "line": "JR東北本線",
+          "prefecture": "栃木県",
+          "postal": "3293222",
+          "lat": 37.022848,
+          "lng": 140.119586
+        },
+        {
+          "station": "虫川大杉",
+          "line": "北越急行ほくほく線",
+          "prefecture": "新潟県",
+          "postal": "9420305",
+          "lat": 37.154897,
+          "lng": 138.441409
         }
       ]
     }
