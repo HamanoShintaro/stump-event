@@ -1131,7 +1131,7 @@
     {
       "batch_id": 24,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "末恒",
@@ -1139,7 +1139,8 @@
           "prefecture": "鳥取県",
           "postal": "6890201",
           "lat": 35.52395,
-          "lng": 134.135739
+          "lng": 134.135739,
+          "slug": "suetsune"
         },
         {
           "station": "永尾",
@@ -1147,7 +1148,8 @@
           "prefecture": "佐賀県",
           "postal": "8492301",
           "lat": 33.193439,
-          "lng": 129.980476
+          "lng": 129.980476,
+          "slug": "nagao_saga"
         },
         {
           "station": "富士急ハイランド",
@@ -1155,7 +1157,8 @@
           "prefecture": "山梨県",
           "postal": "4010301",
           "lat": 35.488974,
-          "lng": 138.782048
+          "lng": 138.782048,
+          "slug": "fujikyu_highland"
         },
         {
           "station": "鰭ヶ崎",
@@ -1163,7 +1166,8 @@
           "prefecture": "千葉県",
           "postal": "2700161",
           "lat": 35.840948,
-          "lng": 139.911121
+          "lng": 139.911121,
+          "slug": "hiregasaki"
         },
         {
           "station": "東武日光",
@@ -1171,7 +1175,56 @@
           "prefecture": "栃木県",
           "postal": "3211406",
           "lat": 36.748233,
-          "lng": 139.61975
+          "lng": 139.61975,
+          "slug": "tobu_nikko"
+        }
+      ],
+      "completed_at": "2026-11-05T03:02:24.059Z"
+    },
+    {
+      "batch_id": 25,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "藍那",
+          "line": "神戸電鉄粟生線",
+          "prefecture": "兵庫県",
+          "postal": "6511104",
+          "lat": 34.732432,
+          "lng": 135.118033
+        },
+        {
+          "station": "安里",
+          "line": "沖縄ゆいレール",
+          "prefecture": "沖縄県",
+          "postal": "9020067",
+          "lat": 26.216737,
+          "lng": 127.695736
+        },
+        {
+          "station": "前栽",
+          "line": "近鉄天理線",
+          "prefecture": "奈良県",
+          "postal": "6320078",
+          "lat": 34.600996,
+          "lng": 135.816536
+        },
+        {
+          "station": "大河原",
+          "line": "JR関西本線",
+          "prefecture": "京都府",
+          "postal": "6191411",
+          "lat": 34.77175,
+          "lng": 135.987635
+        },
+        {
+          "station": "小波瀬西工大前",
+          "line": "JR日豊本線",
+          "prefecture": "福岡県",
+          "postal": "8000344",
+          "lat": 33.752992,
+          "lng": 130.97197
         }
       ]
     }

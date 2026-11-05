@@ -90,7 +90,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
   const bracketMatch = spotName.match(/『(.+?)』/);
   const beforeParen = spotName.split(/[（『]/)[0].trim();
   const strippedJr = beforeParen.replace(/^(?:JR|ＪＲ)\s*/, '').trim();
-  const strippedRail = strippedJr.replace(/^(?:東武|近鉄|名鉄|南海|京阪|阪神|阪急|西鉄|京成|京王|小田急|東急|西武|相鉄|紀州鉄道)\s*/, '').trim();
+  const strippedRail = strippedJr.replace(/^(?:(?:東武|近鉄|名鉄|南海|京阪|阪神|阪急|西鉄|京成|京王|小田急|東急|西武|相鉄|紀州鉄道|流鉄|富士急行)\s*|[^\s]+線\s*)+/, '').trim();
   const candidates = [
     beforeParen.length >= 2 && beforeParen.length <= 24 ? beforeParen : null,
     strippedJr !== beforeParen && strippedJr.length >= 2 ? strippedJr : null,
@@ -138,7 +138,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         // 都市部の「丁目」街区一致時は350m、地方の大字＋番地（丁目なし）は650m、大字代表点のみ（hasBlockNumber === false）はPOI検索時1800m・住所検索時8000mまで許容
         const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber
-          ? (hasChome ? 350 : 650)
+          ? (hasChome ? 350 : (isStationSpot ? 1500 : 350))
           : (isPoiQuery ? 3500 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
@@ -155,6 +155,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
           matchedTitle: q,
           hasBlockNumber: true,
           isRooftop: true,
+          isPoiMatch: isPoiQuery,
           source: 'Google Maps (施設・枝番ピンポイント座標)',
         };
       }
@@ -370,6 +371,9 @@ async function main() {
       if ((idx === 0 || idx === 4) && /旅の始まり|旅の出発点|旅のクライマックス|旅の結び/.test(s.clue || '')) {
         errors.push(`処方箋73違反 [Spot ${idx + 1} clue]: 禁止メタ表現（旅の始まり/旅の出発点/旅のクライマックス/旅の結び）が含まれています (${s.name})`);
       }
+      if (/（[12]\d{3}年）|\([12]\d{3}年\)/.test(`${s.clue || ''}${s.surprise || ''}`)) {
+        errors.push(`処方箋68・80違反 [Spot ${idx + 1} clue/surprise]: 西暦括弧書き（例: （1928年））が含まれています。和暦のみで記述してください (${s.name})`);
+      }
     });
   }
 
@@ -387,7 +391,7 @@ async function main() {
       console.log(`    電話: ${spot.phone || spot.tel}`);
     }
 
-    const isStationOrBridgeWithKoaza = /(?:駅|橋|橋梁)/.test(spot.name) && /字|桑畑|沢西/.test(spot.address || '');
+    const isStationOrBridgeWithKoaza = /(?:駅|橋|橋梁|踏切)/.test(spot.name) && /大字|字|桑畑|沢西/.test(spot.address || '');
     if (!spot.address || spot.address.endsWith('周辺') || (!/[0-9０-９一二三四五六七八九十]/.test(spot.address) && !isStationOrBridgeWithKoaza)) {
       errors.push(`Spot ${idx} (${spot.name}): 住所が曖昧か番地が含まれていません ("${spot.address}")`);
     }
@@ -410,9 +414,9 @@ async function main() {
     const gsi = await queryGSI(spot.address);
     const gmaps = await queryGoogleMapsRooftop(spot.name, spot.address, gsi);
 
-    // Google Maps が取得できない場合のフォールバックとして Overpass で検索
+    // Google Maps が取得できない場合、または大字代表点のみ（!gsi.hasBlockNumber）の場合に Overpass で実在POI形状を検索
     let overpass = null;
-    if (!gmaps && (!gsi || !gsi.hasBlockNumber)) {
+    if (!gsi || !gsi.hasBlockNumber) {
       overpass = await queryOverpassNear(
         spot.lat || gsi?.lat,
         spot.lng || gsi?.lng,
@@ -423,10 +427,15 @@ async function main() {
     }
 
     // 優先順位:
-    // 1. Google Maps (施設名＋枝番・号まで一致した建物ピンポイント座標) ※最優先（1〜2m精度）
-    // 2. Overpassで実在POI名が一致した場合
-    // 3. GSI（国土地理院・親番/街区代表点）
-    let bestGeo = gmaps || overpass || gsi;
+    // 1. 大字代表点のみ（!gsi.hasBlockNumber）かつ Overpass で実在POI名が一致し、Google Maps が 500m 以上離れた大字代表点にフォールバックしている場合は Overpass を優先
+    // 2. Google Maps (施設名＋枝番・号まで一致した建物ピンポイント座標) ※最優先（1〜2m精度）
+    // 3. Overpassで実在POI名が一致した場合
+    // 4. GSI（国土地理院・親番/街区代表点）
+    const preferOverpass =
+      overpass &&
+      (!gsi || !gsi.hasBlockNumber) &&
+      (!gmaps || !gmaps.isPoiMatch || calcDistanceMeters(overpass.lat, overpass.lng, gmaps.lat, gmaps.lng) > 500);
+    let bestGeo = preferOverpass ? overpass : (gmaps || overpass || gsi);
 
     if (!bestGeo) {
       warnings.push(`Spot ${idx} (${spot.name}): 住所 "${spot.address}" から座標を逆引きできませんでした。実在する番地かWeb検索で確認してください。`);
@@ -489,6 +498,15 @@ async function main() {
       const estMinutes = Math.max(1, Math.round(estWalkMeters / 80));
       totalStraightMeters += legMeters;
       console.log(`  Spot ${i + 1} → Spot ${i + 2}: 直線 ${legMeters}m (推定歩行 約${estWalkMeters}m / 徒歩約${estMinutes}分)`);
+      const hookMinMatch = (s1.hook || '').match(/徒歩(\d+)分/);
+      if (hookMinMatch) {
+        const hookMin = parseInt(hookMinMatch[1], 10);
+        if (Math.abs(hookMin - estMinutes) > 1) {
+          errors.push(
+            `処方箋56・80違反 [Spot ${i + 1} hook徒歩分数]: hookの「徒歩${hookMin}分」が座標実測値「徒歩${estMinutes}分（直線${legMeters}m×1.3÷80）」とずれています`
+          );
+        }
+      }
       if (legMeters > 1100) {
         warnings.push(
           `徒歩距離過大 [Spot ${i + 1} → Spot ${i + 2}]: 直線 ${legMeters}m（推定徒歩 約${estMinutes}分）離れています。スポット順序の入れ替えや近隣スポットへの変更を検討してください（推奨: 直線850m以内）。`

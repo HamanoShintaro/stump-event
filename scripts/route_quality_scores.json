@@ -2199,7 +2199,7 @@
       "line": "札幌市東西線",
       "prefecture": "北海道",
       "iteration": 22,
-      "score": 3.9,
+      "score": 3.75,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2208,7 +2208,8 @@
         "question": 4,
         "anti_template": 4.1
       },
-      "notes": "【Batch #21 最高傑作（Sランク）】明治11年創建『三吉神社』→2026年2月向かい新ビル移転の『中国料理 布袋 本店』三度揚げ特大ザンギ＆マーボー麺→深煎りネルドリップ『板東珈琲』→明治38年創業『三八菓舗 本社店』→札幌軟石の重要文化財『札幌市資料館（旧札幌控訴院）』へと西8丁目〜西13丁目を813mで貫く白眉の構成。"
+      "notes": "【Batch #21 最高傑作（Sランク）】明治11年創建『三吉神社』→2026年2月向かい新ビル移転の『中国料理 布袋 本店』三度揚げ特大ザンギ＆マーボー麺→深煎りネルドリップ『板東珈琲』→明治38年創業『三八菓舗 本社店』→札幌軟石の重要文化財『札幌市資料館（旧札幌控訴院）』へと西8丁目〜西13丁目を813mで貫く白眉の構成。",
+      "previous_inflated_score": 3.9
     },
     {
       "slug": "uchiko",
@@ -2216,7 +2217,7 @@
       "line": "JR予讃支線",
       "prefecture": "愛媛県",
       "iteration": 22,
-      "score": 3.55,
+      "score": 3.4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4,
@@ -2225,7 +2226,8 @@
         "question": 3.8,
         "anti_template": 3.7
       },
-      "notes": "大正5年創建の芝居小屋『内子座（保存修理工事中）』→『商いと暮らし博物館』→豪商分家『下芳我邸』の手打ち蕎麦と宇和島風鯛めし→寛政2年創業『大森和蠟燭屋』→パリ万博を席巻した伊予晒蝋の本拠『木蝋資料館 上芳我邸』へと828mで北上する高密度産業史ルート。"
+      "notes": "大正5年創建の芝居小屋『内子座（保存修理工事中）』→『商いと暮らし博物館』→豪商分家『下芳我邸』の手打ち蕎麦と宇和島風鯛めし→寛政2年創業『大森和蠟燭屋』→パリ万博を席巻した伊予晒蝋の本拠『木蝋資料館 上芳我邸』へと828mで北上する高密度産業史ルート。",
+      "previous_inflated_score": 3.55
     },
     {
       "slug": "urawa",
@@ -2233,7 +2235,7 @@
       "line": "JR湘南新宿ライン",
       "prefecture": "埼玉県",
       "iteration": 22,
-      "score": 3.65,
+      "score": 3.5,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2242,7 +2244,8 @@
         "question": 3.9,
         "anti_template": 3.8
       },
-      "notes": "鳥居がなく狛兎が迎える延喜式内社『調神社』→明治21年創業『うなぎ 満寿家』の炭火鰻重→明治8年創業・当日限り『ときわだんご本舗』→生の深谷ねぎを使った『ねぎみそ煎餅 かたおか』→埼玉県政発祥の礎となった関東檀林『寶珠山 玉蔵院』へ958mで抜ける王道宿場構成。"
+      "notes": "鳥居がなく狛兎が迎える延喜式内社『調神社』→明治21年創業『うなぎ 満寿家』の炭火鰻重→明治8年創業・当日限り『ときわだんご本舗』→生の深谷ねぎを使った『ねぎみそ煎餅 かたおか』→埼玉県政発祥の礎となった関東檀林『寶珠山 玉蔵院』へ958mで抜ける王道宿場構成。",
+      "previous_inflated_score": 3.65
     },
     {
       "slug": "omigawa",
@@ -2250,7 +2253,7 @@
       "line": "JR信越本線",
       "prefecture": "新潟県",
       "iteration": 22,
-      "score": 2.65,
+      "score": 2.55,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.4,
@@ -2259,7 +2262,8 @@
         "question": 2.8,
         "anti_template": 2.2
       },
-      "notes": "『レストラン ジロー』の魚介パエリア、北国街道の茶屋の屋号を継ぎ2階を無料展望室として開放する『酒の新茶屋』、青海川駅足元の『青海川海水浴場』は魅力的だが、初稿で恋人岬隣接売店の連鎖休業見落とし（処方箋70）とSpot 3文字数不足（処方箋72）があったため2.85（要差替）。"
+      "notes": "『レストラン ジロー』の魚介パエリア、北国街道の茶屋の屋号を継ぎ2階を無料展望室として開放する『酒の新茶屋』、青海川駅足元の『青海川海水浴場』は魅力的だが、初稿で恋人岬隣接売店の連鎖休業見落とし（処方箋70）とSpot 3文字数不足（処方箋72）があったため2.85（要差替）。",
+      "previous_inflated_score": 2.65
     },
     {
       "slug": "enshu_nishigasaki",
@@ -2267,7 +2271,7 @@
       "line": "遠州鉄道",
       "prefecture": "静岡県",
       "iteration": 22,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.8,
@@ -2276,7 +2280,8 @@
         "question": 3.4,
         "anti_template": 3
       },
-      "notes": "大正14年英国製電気機関車『ED28 2』が常駐する遠州西ヶ崎駅と大海亀の化身『正覚坊大権現』を祀る臨済宗『天竜山 蔵泉院』の発掘力は抜群だが、後半がフレンチパン屋＋八幡社＋徒歩12分の郊外イタリアン生パスタへシフトしたため3.40（処方箋71）。"
+      "notes": "大正14年英国製電気機関車『ED28 2』が常駐する遠州西ヶ崎駅と大海亀の化身『正覚坊大権現』を祀る臨済宗『天竜山 蔵泉院』の発掘力は抜群だが、後半がフレンチパン屋＋八幡社＋徒歩12分の郊外イタリアン生パスタへシフトしたため3.40（処方箋71）。",
+      "previous_inflated_score": 2.95
     },
     {
       "slug": "shuri",
@@ -2284,7 +2289,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 23,
-      "score": 4.05,
+      "score": 3.95,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2293,7 +2298,8 @@
         "question": 4.2,
         "anti_template": 4.2
       },
-      "notes": "首里城正殿前だけで完結させず、王府の職人町だった『首里三箇（鳥堀・赤田・崎山）』と当蔵の路地を辿り、TOUCA BAKE SHOP→首里そば→瑞泉酒造（戦前黒麹菌の里帰り）→首里染織館 suikara→国宝王陵『玉陵』へ1,479mで抜けるSランク傑作。"
+      "notes": "首里城正殿前だけで完結させず、王府の職人町だった『首里三箇（鳥堀・赤田・崎山）』と当蔵の路地を辿り、TOUCA BAKE SHOP→首里そば→瑞泉酒造（戦前黒麹菌の里帰り）→首里染織館 suikara→国宝王陵『玉陵』へ1,479mで抜けるSランク傑作。",
+      "previous_inflated_score": 4.05
     },
     {
       "slug": "aonoyama",
@@ -2301,7 +2307,7 @@
       "line": "JR山口線",
       "prefecture": "島根県",
       "iteration": 23,
-      "score": 3.75,
+      "score": 3.6,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2310,7 +2316,8 @@
         "question": 3.9,
         "anti_template": 3.8
       },
-      "notes": "標高907.6mのトロイデ式火山・青野山（妹山）が真正面に迫る『JR青野山駅』（Spot 1）から、石州赤瓦と山容を望む『麓耕つつじの里』、石見の大元信仰を伝える『大元神社』、カワラケツメイを焙煎する『秀翠園』のまめ茶、事業承継された『ブルーボウル』の杵つき草餅へと紡ぐ1,410mの良作。"
+      "notes": "標高907.6mのトロイデ式火山・青野山（妹山）が真正面に迫る『JR青野山駅』（Spot 1）から、石州赤瓦と山容を望む『麓耕つつじの里』、石見の大元信仰を伝える『大元神社』、カワラケツメイを焙煎する『秀翠園』のまめ茶、事業承継された『ブルーボウル』の杵つき草餅へと紡ぐ1,410mの良作。",
+      "previous_inflated_score": 3.75
     },
     {
       "slug": "yamamoto_saga",
@@ -2318,7 +2325,7 @@
       "line": "JR筑肥線",
       "prefecture": "佐賀県",
       "iteration": 23,
-      "score": 2.7,
+      "score": 2.6,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2327,7 +2334,8 @@
         "question": 3,
         "anti_template": 2.4
       },
-      "notes": "3世紀末『末盧国』の王墓とされる全長108.5mの前方後円墳『久里双水古墳』と『赤い窯のピザ屋さん』、2026年3月開店の『うお眞』は光るが、4区間総直線2,310mの距離超過と実質ランチ飲食店3軒（買い物枠ゼロ）のため2.80（処方箋74・75）。"
+      "notes": "3世紀末『末盧国』の王墓とされる全長108.5mの前方後円墳『久里双水古墳』と『赤い窯のピザ屋さん』、2026年3月開店の『うお眞』は光るが、4区間総直線2,310mの距離超過と実質ランチ飲食店3軒（買い物枠ゼロ）のため2.80（処方箋74・75）。",
+      "previous_inflated_score": 2.7
     },
     {
       "slug": "hyuga_kutsukake",
@@ -2335,8 +2343,8 @@
       "line": "JR日豊本線",
       "prefecture": "宮崎県",
       "iteration": 23,
-      "score": 3.25,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
         "flow": 3.5,
@@ -2344,7 +2352,8 @@
         "question": 3.5,
         "anti_template": 3.2
       },
-      "notes": "築80年超の古民家と日本庭園で宮崎うどんと甘味を味わう『うどん茶房 ふなや』、『黒木商店』の秘伝味付ホルモン、『炭火焼ゆうちゃん』の鶏炭火焼が光る1,580m構成（前半Spot 1・2が食事2連続のため3.45）。"
+      "notes": "築80年超の古民家と日本庭園で宮崎うどんと甘味を味わう『うどん茶房 ふなや』、『黒木商店』の秘伝味付ホルモン、『炭火焼ゆうちゃん』の鶏炭火焼が光る1,580m構成（前半Spot 1・2が食事2連続のため3.45）。",
+      "previous_inflated_score": 3.25
     },
     {
       "slug": "nisato_hirosaki",
@@ -2352,7 +2361,7 @@
       "line": "弘南鉄道弘南線",
       "prefecture": "青森県",
       "iteration": 23,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2361,7 +2370,8 @@
         "question": 3.3,
         "anti_template": 3
       },
-      "notes": "新里駅構内の大正10年製『8620形蒸気機関車（48640号）』、2026年4月復活の『支那そば おぐら』、弘前アップルパイの『お菓子のヒロヤ』、国指定史跡『堀越城跡』の骨格は魅力的だが、700m超え2区間（総直線2,022m）のため3.20（処方箋75）。"
+      "notes": "新里駅構内の大正10年製『8620形蒸気機関車（48640号）』、2026年4月復活の『支那そば おぐら』、弘前アップルパイの『お菓子のヒロヤ』、国指定史跡『堀越城跡』の骨格は魅力的だが、700m超え2区間（総直線2,022m）のため3.20（処方箋75）。",
+      "previous_inflated_score": 2.95
     },
     {
       "slug": "shiyakusho_nagasaki",
@@ -2369,7 +2379,7 @@
       "line": "長崎電軌桜町支線",
       "prefecture": "長崎県",
       "iteration": 24,
-      "score": 4.1,
+      "score": 4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2378,7 +2388,8 @@
         "question": 4,
         "anti_template": 4.1
       },
-      "notes": "Batch #23 Best (Sランク): 先行sakuramachi_nagasakiと重複ゼロで松翁軒本店・眼鏡橋・興福寺・岩永梅寿軒・ツル茶んを1.2kmで結ぶ濃密な和華蘭ルート。"
+      "notes": "Batch #23 Best (Sランク): 先行sakuramachi_nagasakiと重複ゼロで松翁軒本店・眼鏡橋・興福寺・岩永梅寿軒・ツル茶んを1.2kmで結ぶ濃密な和華蘭ルート。",
+      "previous_inflated_score": 4.1
     },
     {
       "slug": "kii_gobo",
@@ -2386,7 +2397,7 @@
       "line": "紀州鉄道",
       "prefecture": "和歌山県",
       "iteration": 24,
-      "score": 3.95,
+      "score": 3.85,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2395,7 +2406,8 @@
         "question": 3.9,
         "anti_template": 3.95
       },
-      "notes": "日本最短級の紀州鉄道・キハ603から画廊喫茶さぼーる、本願寺日高別院、元禄創業の堀河屋野村（三ツ星醤油・径山寺味噌）、小竹八幡神社へ抜ける発酵×寺内町ルート。"
+      "notes": "日本最短級の紀州鉄道・キハ603から画廊喫茶さぼーる、本願寺日高別院、元禄創業の堀河屋野村（三ツ星醤油・径山寺味噌）、小竹八幡神社へ抜ける発酵×寺内町ルート。",
+      "previous_inflated_score": 3.95
     },
     {
       "slug": "kanie",
@@ -2403,7 +2415,7 @@
       "line": "JR関西本線",
       "prefecture": "愛知県",
       "iteration": 24,
-      "score": 3.7,
+      "score": 3.6,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2412,7 +2424,8 @@
         "question": 3.6,
         "anti_template": 3.7
       },
-      "notes": "駅前UN kanyeのあんバター仏蘭西菓子カニアンヌから蟹江川沿いに須成祭の巻藁船展示（祭人）、冨吉建速神社・龍照院、香風園須成店の西尾抹茶へ至る水郷動線。"
+      "notes": "駅前UN kanyeのあんバター仏蘭西菓子カニアンヌから蟹江川沿いに須成祭の巻藁船展示（祭人）、冨吉建速神社・龍照院、香風園須成店の西尾抹茶へ至る水郷動線。",
+      "previous_inflated_score": 3.7
     },
     {
       "slug": "shin_kiryu",
@@ -2420,7 +2433,7 @@
       "line": "東武桐生線",
       "prefecture": "群馬県",
       "iteration": 24,
-      "score": 3.3,
+      "score": 3.15,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.4,
@@ -2429,7 +2442,8 @@
         "question": 3.3,
         "anti_template": 3.3
       },
-      "notes": "1932年開業の洋風三角屋根駅舎から線路脇の正礼山普門院、ベーカリーHitosio、日本料理うおせん、根岸屋の花ぱんをめぐる広沢町ルート。"
+      "notes": "1932年開業の洋風三角屋根駅舎から線路脇の正礼山普門院、ベーカリーHitosio、日本料理うおせん、根岸屋の花ぱんをめぐる広沢町ルート。",
+      "previous_inflated_score": 3.3
     },
     {
       "slug": "aizu_mizunuma",
@@ -2437,7 +2451,7 @@
       "line": "JR只見線",
       "prefecture": "福島県",
       "iteration": 24,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2446,12 +2460,98 @@
         "question": 2.5,
         "anti_template": 1.95
       },
-      "notes": "処方箋78該当: 第四只見川橋梁と水沼の道祖神（穴あき小石奉納）の民俗・景観は秀逸だが、5スポット中に有人飲食・商店がゼロ（無人駅待合室を休憩カウント）のため2.85（要入替枠）。"
+      "notes": "処方箋78該当: 第四只見川橋梁と水沼の道祖神（穴あき小石奉納）の民俗・景観は秀逸だが、5スポット中に有人飲食・商店がゼロ（無人駅待合室を休憩カウント）のため2.85（要入替枠）。",
+      "previous_inflated_score": 2.85
+    },
+    {
+      "slug": "tobu_nikko",
+      "station": "東武日光",
+      "line": "東武日光線",
+      "prefecture": "栃木県",
+      "iteration": 25,
+      "score": 4.05,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.2,
+        "flow": 4.3,
+        "rhythm": 4,
+        "question": 4,
+        "anti_template": 3.9
+      },
+      "notes": "Batch #24 Best (Sランク): 東武日光駅のアルペン風三角屋根から、さかえやの揚げゆばまんじゅう、松葉屋の二重引きさしみ湯波、建保元年創建・天台宗龍蔵寺（芸州八士の墓）、文化元年創業・湯沢屋鉢石カフェの大谷石蔵（酒饅頭・豆乳水羊羹・抹茶）へ2軸完全単調で登る門前坂道ルート。"
+    },
+    {
+      "slug": "hiregasaki",
+      "station": "鰭ヶ崎",
+      "line": "流鉄流山線",
+      "prefecture": "千葉県",
+      "iteration": 25,
+      "score": 3.85,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.9,
+        "flow": 4,
+        "rhythm": 3.9,
+        "question": 3.8,
+        "anti_template": 3.7
+      },
+      "notes": "平安初期創建・守龍山東福寺の百八段石段と朱塗仁王門から、注文焙煎の南流山こーひー焙煎、紙切符が生きる流鉄流山線鰭ヶ崎駅、白みりん銘菓『一茶の宿』の菓匠美しまや、石臼自家製粉の手打ちそば東吾まで752mで抜ける五感ルート。"
+    },
+    {
+      "slug": "nagao_saga",
+      "station": "永尾",
+      "line": "JR佐世保線",
+      "prefecture": "佐賀県",
+      "iteration": 25,
+      "score": 3.55,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.9,
+        "flow": 3.5,
+        "rhythm": 3.6,
+        "question": 3.5,
+        "anti_template": 3.4
+      },
+      "notes": "昭和22年築の純木造駅舎が残るJR佐世保線永尾駅から、黒髪山系を仰ぐ犬走・鳥海集落の石積水路、築120年の古民家『とのみの HOKAO COFFEE』、狩野派絵師・広渡三舟筆の150枚彩色天井絵が眠る鳥海天満宮へ抜ける里山ルート。"
+    },
+    {
+      "slug": "fujikyu_highland",
+      "station": "富士急ハイランド",
+      "line": "富士急行線",
+      "prefecture": "山梨県",
+      "iteration": 25,
+      "score": 3.15,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 2.9,
+        "rhythm": 3.3,
+        "question": 3.2,
+        "anti_template": 3
+      },
+      "notes": "新西原の老舗アマノベーカリー、甲斐絹シルクパウダー入り麺の『ほうとう うどん あまの』、飛騨伝統木組みのふじやま温泉、フジヤマミュージアムから富士急ハイランド駅へ抜ける構成（着駅ゴール型のため3.15）。"
+    },
+    {
+      "slug": "suetsune",
+      "station": "末恒",
+      "line": "JR山陰本線",
+      "prefecture": "鳥取県",
+      "iteration": 25,
+      "score": 2.75,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.3,
+        "flow": 2.4,
+        "rhythm": 3,
+        "question": 2.9,
+        "anti_template": 2.2
+      },
+      "notes": "処方箋79該当: 楽健寺酵母の天然酵母パンnichi、美萩野あじさい公園、末恒駅跨線橋、伏野神社、カフェレストサブレの叙情性は良いが、起点駅がSpot 3配置（駅通過トリック）かつ土曜限定パン屋＋完全予約制カフェのため2.75（要入替枠）。"
     }
   ],
   "updated_at": "2026-11-05",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #19〜#22 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #21〜#24 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.31,
-  "last_updated_iteration": 24
+  "moving_window_average": 3.33,
+  "last_updated_iteration": 25
 }
