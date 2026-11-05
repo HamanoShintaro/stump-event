@@ -1232,42 +1232,95 @@
     {
       "batch_id": 26,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "大山駅",
           "line": "東武東上本線",
           "prefecture": "東京都",
           "lat": 35.748398,
-          "lng": 139.702589
+          "lng": 139.702589,
+          "slug": "oyama_tokyo"
         },
         {
           "station": "辻駅",
           "line": "JR徳島線",
           "prefecture": "徳島県",
           "lat": 34.02912,
-          "lng": 133.873856
+          "lng": 133.873856,
+          "slug": "tsuji_tokushima"
         },
         {
           "station": "三方駅",
           "line": "JR小浜線",
           "prefecture": "福井県",
           "lat": 35.555282,
-          "lng": 135.909259
+          "lng": 135.909259,
+          "slug": "mikata"
         },
         {
           "station": "高茶屋駅",
           "line": "JR紀勢本線",
           "prefecture": "三重県",
           "lat": 34.667277,
-          "lng": 136.51256
+          "lng": 136.51256,
+          "slug": "takachaya"
         },
         {
           "station": "上毛高原駅",
           "line": "上越新幹線",
           "prefecture": "群馬県",
           "lat": 36.69317,
-          "lng": 138.977572
+          "lng": 138.977572,
+          "slug": "jomo_kogen"
+        }
+      ],
+      "completed_at": "2026-11-05T05:26:17.872Z"
+    },
+    {
+      "batch_id": 27,
+      "selection_method": "true_random_nationwide_via_heartrails_api",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "那岐",
+          "line": "JR因美線",
+          "prefecture": "鳥取県",
+          "postal": "6891451",
+          "lat": 35.213769,
+          "lng": 134.209968
+        },
+        {
+          "station": "みらい平",
+          "line": "つくばエクスプレス線",
+          "prefecture": "茨城県",
+          "postal": "3002416",
+          "lat": 35.99514,
+          "lng": 140.038555
+        },
+        {
+          "station": "郡山",
+          "line": "東北新幹線",
+          "prefecture": "福島県",
+          "postal": "9638003",
+          "lat": 37.398187,
+          "lng": 140.389363
+        },
+        {
+          "station": "木津",
+          "line": "JR大和路線",
+          "prefecture": "京都府",
+          "postal": "6190214",
+          "lat": 34.735962,
+          "lng": 135.824794
+        },
+        {
+          "station": "新水俣",
+          "line": "九州新幹線",
+          "prefecture": "熊本県",
+          "postal": "8670002",
+          "lat": 32.210825,
+          "lng": 130.428893
         }
       ]
     }

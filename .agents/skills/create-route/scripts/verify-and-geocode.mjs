@@ -40,6 +40,25 @@ function calcDistanceMeters(lat1, lng1, lat2, lng2) {
   return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+function calcBearing16(lat1, lng1, lat2, lng2) {
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const toDeg = (rad) => (rad * 180) / Math.PI;
+  const dLng = toRad(lng2 - lng1);
+  const y = Math.sin(dLng) * Math.cos(toRad(lat2));
+  const x =
+    Math.cos(toRad(lat1)) * Math.sin(toRad(lat2)) -
+    Math.sin(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.cos(dLng);
+  const brng = (toDeg(Math.atan2(y, x)) + 360) % 360;
+  const dirs = [
+    '北', '北北東', '北東', '東北東',
+    '東', '東南東', '南東', '南南東',
+    '南', '南南西', '南西', '西南西',
+    '西', '西北西', '北西', '北北西',
+  ];
+  const idx = Math.round(brng / 22.5) % 16;
+  return { brng, dir16: dirs[idx], idx, dirs };
+}
+
 async function queryGSI(query) {
   const url = `https://msearch.gsi.go.jp/address-search/AddressSearch?q=${encodeURIComponent(query)}`;
   try {
@@ -497,14 +516,39 @@ async function main() {
       const legMeters = Math.round(calcDistanceMeters(s1.lat, s1.lng, s2.lat, s2.lng));
       const estWalkMeters = Math.round(legMeters * 1.3);
       const estMinutes = Math.max(1, Math.round(estWalkMeters / 80));
+      const { brng, dir16, idx: dirIdx, dirs } = calcBearing16(s1.lat, s1.lng, s2.lat, s2.lng);
       totalStraightMeters += legMeters;
-      console.log(`  Spot ${i + 1} → Spot ${i + 2}: 直線 ${legMeters}m (推定歩行 約${estWalkMeters}m / 徒歩約${estMinutes}分)`);
+      console.log(`  Spot ${i + 1} → Spot ${i + 2}: 直線 ${legMeters}m / 方位 ${brng.toFixed(1)}°(${dir16}) (推定歩行 約${estWalkMeters}m / 徒歩約${estMinutes}分)`);
+      if (legMeters < 25) {
+        warnings.push(
+          `処方箋74・83注意 [Spot ${i + 1} → Spot ${i + 2}]: スポット間の直線距離が ${legMeters}m（25m未満）です。同一駅舎・同一施設内の2スポット分割になっていないか確認してください。`
+        );
+      }
       const hookMinMatch = (s1.hook || '').match(/徒歩(\d+)分/);
       if (hookMinMatch) {
         const hookMin = parseInt(hookMinMatch[1], 10);
         if (Math.abs(hookMin - estMinutes) > 1) {
           errors.push(
             `処方箋56・80違反 [Spot ${i + 1} hook徒歩分数]: hookの「徒歩${hookMin}分」が座標実測値「徒歩${estMinutes}分（直線${legMeters}m×1.3÷80）」とずれています`
+          );
+        }
+      }
+      const dirRegex = /(北北東|東北東|東南東|南南東|南南西|西南西|西北西|北北西|北東|南東|南西|北西|北|東|南|西)(?:へ|に|の|すぐ|隣)/;
+      const hookDirMatch = (s1.hook || '').match(dirRegex);
+      const nextClueFirstSentence = (s2.clue || '').split('。')[0] || '';
+      const clueDirMatch = nextClueFirstSentence.match(dirRegex);
+      if (hookDirMatch) {
+        const hDir = hookDirMatch[1];
+        const hIdx = dirs.indexOf(hDir);
+        const diff = Math.min(Math.abs(hIdx - dirIdx), 16 - Math.abs(hIdx - dirIdx));
+        if (diff > 1) {
+          errors.push(
+            `処方箋64・83違反 [Spot ${i + 1} hook方位]: hookの方位「${hDir}」が座標実測方位「${dir16}（${brng.toFixed(1)}°）」とずれています`
+          );
+        }
+        if (clueDirMatch && clueDirMatch[1] !== hDir) {
+          errors.push(
+            `処方箋64・83違反 [Spot ${i + 1} hook ↔ Spot ${i + 2} clue方位不一致]: Spot ${i + 1} hookの方位「${hDir}」とSpot ${i + 2} clue冒頭の方位「${clueDirMatch[1]}」が一致していません`
           );
         }
       }

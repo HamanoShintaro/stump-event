@@ -2379,7 +2379,7 @@
       "line": "長崎電軌桜町支線",
       "prefecture": "長崎県",
       "iteration": 24,
-      "score": 3.9,
+      "score": 3.8,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2397,7 +2397,7 @@
       "line": "紀州鉄道",
       "prefecture": "和歌山県",
       "iteration": 24,
-      "score": 3.7,
+      "score": 3.55,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2415,7 +2415,7 @@
       "line": "JR関西本線",
       "prefecture": "愛知県",
       "iteration": 24,
-      "score": 3.45,
+      "score": 3.3,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.8,
@@ -2433,7 +2433,7 @@
       "line": "東武桐生線",
       "prefecture": "群馬県",
       "iteration": 24,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.4,
@@ -2451,7 +2451,7 @@
       "line": "JR只見線",
       "prefecture": "福島県",
       "iteration": 24,
-      "score": 2.65,
+      "score": 2.55,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2469,7 +2469,7 @@
       "line": "東武日光線",
       "prefecture": "栃木県",
       "iteration": 25,
-      "score": 3.95,
+      "score": 3.85,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2486,7 +2486,7 @@
       "line": "流鉄流山線",
       "prefecture": "千葉県",
       "iteration": 25,
-      "score": 3.75,
+      "score": 3.65,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2503,7 +2503,7 @@
       "line": "JR佐世保線",
       "prefecture": "佐賀県",
       "iteration": 25,
-      "score": 3.4,
+      "score": 3.25,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2520,7 +2520,7 @@
       "line": "富士急行線",
       "prefecture": "山梨県",
       "iteration": 25,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2537,7 +2537,7 @@
       "line": "JR山陰本線",
       "prefecture": "鳥取県",
       "iteration": 25,
-      "score": 2.65,
+      "score": 2.55,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2554,7 +2554,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 26,
-      "score": 4.15,
+      "score": 4.05,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.4,
@@ -2571,7 +2571,7 @@
       "line": "JR関西本線",
       "prefecture": "京都府",
       "iteration": 26,
-      "score": 4,
+      "score": 3.9,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2588,7 +2588,7 @@
       "line": "近鉄天理線",
       "prefecture": "奈良県",
       "iteration": 26,
-      "score": 3.6,
+      "score": 3.45,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.7,
@@ -2605,8 +2605,8 @@
       "line": "JR日豊本線",
       "prefecture": "福岡県",
       "iteration": 26,
-      "score": 3.45,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
         "flow": 3.4,
@@ -2614,7 +2614,7 @@
         "question": 3.4,
         "anti_template": 3.4
       },
-      "notes": "豊国造の祖・大原足尼命を祀る千七百年の大原八幡神社から、信号場起源の小波瀬西工大前駅、手打の味小泉苅田店、直火自家焙煎珈琲煎、パン工房小麦へと南から北へたどる堅実な構成。"
+      "notes": "大原八幡神社と手打の味小泉苅田店は良いが、Spot 2で小波瀬西工大前駅を通過し後半がうどん・珈琲・パン屋の郊外日常並びのため世代交代で淘汰（要入替枠）。"
     },
     {
       "slug": "aina",
@@ -2622,7 +2622,7 @@
       "line": "神戸電鉄粟生線",
       "prefecture": "兵庫県",
       "iteration": 26,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2632,11 +2632,96 @@
         "anti_template": 2.1
       },
       "notes": "処方箋78・81該当: 藍那天津彦根神社の茅葺き農村舞台や相談ヶ辻の歴史掘り起こしは丁寧だが、有人飲食・購買スポットがゼロ（古民家縁側を無料休憩カウント）かつ有料国営公園（あいな里山公園）の園内2スポット分割のため2.75（要入替枠）。"
+    },
+    {
+      "slug": "oyama_tokyo",
+      "station": "大山",
+      "line": "東武東上本線",
+      "prefecture": "東京都",
+      "iteration": 27,
+      "score": 4.1,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.2,
+        "flow": 4.2,
+        "rhythm": 4.1,
+        "question": 4,
+        "anti_template": 4
+      },
+      "notes": "一時閉店・移転した大山園や建替休業の寿美吉を的確に除外し、ハッピーロード大山の岡田屋（山菜おこわ・豆大福）・松屋甘味店（大学いも）・蕎麦大山庵から、旧川越街道の大山福地蔵尊（お福さん・お身洗い地蔵）・轡神社（名馬の口輪・百日咳平癒）へと2軸単調で抜ける白眉の構成。"
+    },
+    {
+      "slug": "mikata",
+      "station": "三方",
+      "line": "JR小浜線",
+      "prefecture": "福井県",
+      "iteration": 27,
+      "score": 3.95,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 4.1,
+        "flow": 4,
+        "rhythm": 3.9,
+        "question": 3.9,
+        "anti_template": 3.85
+      },
+      "notes": "昭和7年創業・源与門の関西風備長炭地焼きうなぎから、三方駅、和食店『竹の子』を孫世代が再生したcafe bamboo、延喜式内社・御方神社、弘法大師の片手観音と木製『御手足』倍返し奉納の三方石観世音へと緯度100%単調増加で登り詰める好ルート。"
+    },
+    {
+      "slug": "tsuji_tokushima",
+      "station": "辻",
+      "line": "JR徳島線",
+      "prefecture": "徳島県",
+      "iteration": 27,
+      "score": 3.75,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.9,
+        "flow": 3.8,
+        "rhythm": 3.7,
+        "question": 3.7,
+        "anti_template": 3.65
+      },
+      "notes": "吉野川舟運と阿波別街道の交差地・辻駅から、専用金型手焼き・自家製こし餡の『鮎焼き』の朝日屋、4棟国登録有形文化財の今宮神社、丸太組みログハウスのイスバ、大正2年創業の芳水酒造へと経度100%単調増加でたどる旧街道一筆書き。"
+    },
+    {
+      "slug": "takachaya",
+      "station": "高茶屋",
+      "line": "JR紀勢本線",
+      "prefecture": "三重県",
+      "iteration": 27,
+      "score": 3.15,
+      "needs_replacement": false,
+      "Breakdown": {
+        "discovery": 3.5,
+        "flow": 3.3,
+        "rhythm": 3.1,
+        "question": 3.2,
+        "anti_template": 2.65
+      },
+      "notes": "処方箋82該当: 正和堂の生引たまりみたらし団子・葛プリン、明治26年参宮鉄道開業の高茶屋駅、高茶屋神社（粟嶋さん）、津の炭火焼きうなぎ『うなぎ のぐち』は魅力的だが、Spot 4（休憩枠）に全国展開の大手外食チェーン『まいどおおきに食堂』を採用したため3.15。"
+    },
+    {
+      "slug": "jomo_kogen",
+      "station": "上毛高原",
+      "line": "上越新幹線",
+      "prefecture": "群馬県",
+      "iteration": 27,
+      "score": 2.85,
+      "needs_replacement": true,
+      "Breakdown": {
+        "discovery": 3.6,
+        "flow": 2.6,
+        "rhythm": 2.9,
+        "question": 3,
+        "anti_template": 2.15
+      },
+      "notes": "処方箋83該当: 日本百名月の嶽林寺（お駒堂・指月会）と国指定史跡・矢瀬遺跡の縄文四本柱は秀逸だが、Spot 2（イヌワシストア）とSpot 3（上毛高原そば）が同一駅舎内16mの2スポット分割であり、さらにSpot 3（駅そば）とSpot 4（手打ちそば天丸）で蕎麦店2連発となっているため2.85（要入替枠）。"
     }
   ],
-  "updated_at": "2026-11-05T04:09:36.823Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #21〜#24 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-05T05:25:33.731Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #23〜#26 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.35 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.33,
-  "last_updated_iteration": 26
+  "moving_window_average": 3.35,
+  "last_updated_iteration": 27
 }
