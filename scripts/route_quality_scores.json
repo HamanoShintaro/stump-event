@@ -2554,7 +2554,7 @@
       "line": "沖縄ゆいレール",
       "prefecture": "沖縄県",
       "iteration": 26,
-      "score": 3.95,
+      "score": 3.85,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.4,
@@ -2571,7 +2571,7 @@
       "line": "JR関西本線",
       "prefecture": "京都府",
       "iteration": 26,
-      "score": 3.8,
+      "score": 3.7,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2588,8 +2588,8 @@
       "line": "近鉄天理線",
       "prefecture": "奈良県",
       "iteration": 26,
-      "score": 3.3,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.7,
         "flow": 3.7,
@@ -2597,7 +2597,8 @@
         "question": 3.5,
         "anti_template": 3.5
       },
-      "notes": "大正4年の天理軽便鉄道に始まる前栽駅から、文政10年に大坂東横堀の石工・河内屋吉兵衛が刻んだ浪速狛犬が残る御霊神社、晴耕雨読にちなんだ珈琲雨読、気まぐれ家、パン工房OTOまで西から東へ綺麗に抜ける動線。"
+      "notes": "大正4年の天理軽便鉄道に始まる前栽駅から、文政10年に大坂東横堀の石工・河内屋吉兵衛が刻んだ浪速狛犬が残る御霊神社、晴耕雨読にちなんだ珈琲雨読、気まぐれ家、パン工房OTOまで西から東へ綺麗に抜ける動線。",
+      "weaknesses": "Spot 2→3の746m長距離移動に加え、後半Spot 3〜5が見どころ3連続で結びの甘味・茶屋を欠く構成が新基準下で3.0以下へ溶解"
     },
     {
       "slug": "obase_nishikodaimae",
@@ -2605,7 +2606,7 @@
       "line": "JR日豊本線",
       "prefecture": "福岡県",
       "iteration": 26,
-      "score": 2.85,
+      "score": 2.75,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2622,7 +2623,7 @@
       "line": "神戸電鉄粟生線",
       "prefecture": "兵庫県",
       "iteration": 26,
-      "score": 2.55,
+      "score": 2.45,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2639,7 +2640,7 @@
       "line": "東武東上本線",
       "prefecture": "東京都",
       "iteration": 27,
-      "score": 4,
+      "score": 3.95,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2656,7 +2657,7 @@
       "line": "JR小浜線",
       "prefecture": "福井県",
       "iteration": 27,
-      "score": 3.85,
+      "score": 3.75,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2673,7 +2674,7 @@
       "line": "JR徳島線",
       "prefecture": "徳島県",
       "iteration": 27,
-      "score": 3.6,
+      "score": 3.5,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 3.9,
@@ -2690,7 +2691,7 @@
       "line": "JR紀勢本線",
       "prefecture": "三重県",
       "iteration": 27,
-      "score": 2.95,
+      "score": 2.85,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.5,
@@ -2707,7 +2708,7 @@
       "line": "上越新幹線",
       "prefecture": "群馬県",
       "iteration": 27,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
@@ -2724,7 +2725,7 @@
       "line": "東北新幹線",
       "prefecture": "福島県",
       "iteration": 28,
-      "score": 4.05,
+      "score": 4,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.2,
@@ -2741,7 +2742,7 @@
       "line": "JR大和路線",
       "prefecture": "京都府",
       "iteration": 28,
-      "score": 3.95,
+      "score": 3.9,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.3,
@@ -2758,7 +2759,7 @@
       "line": "JR因美線",
       "prefecture": "鳥取県",
       "iteration": 28,
-      "score": 3.6,
+      "score": 3.5,
       "needs_replacement": false,
       "Breakdown": {
         "discovery": 4.1,
@@ -2775,8 +2776,8 @@
       "line": "つくばエクスプレス線",
       "prefecture": "茨城県",
       "iteration": 28,
-      "score": 3.3,
-      "needs_replacement": false,
+      "score": 2.95,
+      "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.6,
         "flow": 3.6,
@@ -2784,7 +2785,8 @@
         "question": 3.2,
         "anti_template": 2.9
       },
-      "notes": "陽光台の『CRAFT BAKERY』から掘割構造の『みらい平駅』、400年の国重文『小張松下流綱火』を伝える『小張愛宕神社』と小張城主・太田吉勝開基の『善空寺』を経て、つくばみらい産コシヒカリ粉カヌレの『Patisserie Lien』へ2軸完全単調で抜ける新旧対比ルート。"
+      "notes": "陽光台の『CRAFT BAKERY』から掘割構造の『みらい平駅』、400年の国重文『小張松下流綱火』を伝える『小張愛宕神社』と小張城主・太田吉勝開基の『善空寺』を経て、つくばみらい産コシヒカリ粉カヌレの『Patisserie Lien』へ2軸完全単調で抜ける新旧対比ルート。",
+      "weaknesses": "処方箋85（着席して飲食・休憩できる食事/休憩スポットの必須化）に照らし、Spot 1のテイクアウトパン屋以降が見どころ4連続となる構成が3.0以下へ溶解"
     },
     {
       "slug": "shin_minamata",
@@ -2792,7 +2794,7 @@
       "line": "九州新幹線",
       "prefecture": "熊本県",
       "iteration": 28,
-      "score": 2.75,
+      "score": 2.65,
       "needs_replacement": true,
       "Breakdown": {
         "discovery": 3.3,
@@ -2802,11 +2804,62 @@
         "anti_template": 2.25
       },
       "notes": "処方箋84・85該当: 初野貝塚近くの『新水俣駅（まつぼっくり）』から相良・島津・加藤清正ゆかりの『水俣城跡』と昭和8年創業『柳屋本舗 本店（美貴もなか）』へ抜ける骨格は良いが、Spot 1→2が直線1,016m（徒歩17分）離れ、その中継点に『水俣古城簡易郵便局（外観見学）』を挟んだため2.75（要入替枠）。"
+    },
+    {
+      "slug": "oku_okayama",
+      "station": "邑久駅",
+      "iteration": 29,
+      "score": 4.05,
+      "needs_replacement": false,
+      "strengths": "駅前の『ベーカリー さくら・さくら』から全国区ロースタリー『キノシタショウテン』の自家焙煎珈琲と厚焼き玉子サンド、備前焼の狛犬が待つ『百枝八幡宮』、竹久夢二らの郷土文学を伝える木造図書館『もみわ広場』、そして『竹久夢二本舗 敷島堂 邑久総本店』の銘菓へと東へ一筆書きで抜ける構成が秀逸。",
+      "weaknesses": "Spot 4（もみわ広場）→ Spot 5（敷島堂 邑久総本店）が直線806m（徒歩13分）とやや距離がある点。",
+      "prescription": "終盤に800m超の移動が入る場合は、途中の街道風景や水路の移ろいをclueに織り込んで歩行体感を軽くすること。"
+    },
+    {
+      "slug": "amori",
+      "station": "安茂里駅",
+      "iteration": 29,
+      "score": 3.9,
+      "needs_replacement": false,
+      "strengths": "『手打めん 天つる』の信州手打ち蕎麦と天ぷら、『さくらざか栄心堂』のカリッと甘辛い「そば揚げ団子」とおやきから始まり、県無形民俗文化財「杜煙火（仕掛け花火）」の『犀川神社』、文化12年奉納の「算額」が伝わる平安古刹『正覚院（窪寺観音）』へと山裾を北東へ登る構成（総距離1.22km）。",
+      "weaknesses": "後半のSpot 3・4・5が見どころ3連続となり、高台のゴール付近で一息つける茶屋がない点。",
+      "prescription": "山裾を登るルートでは、前半の甘味処で手に入れた包みを高台のゴール境内で景色とともに味わう導線をより鮮明に描くこと。"
+    },
+    {
+      "slug": "kurodahara",
+      "station": "黒田原駅",
+      "iteration": 29,
+      "score": 3.6,
+      "needs_replacement": false,
+      "strengths": "ハーフティンバー調の木造駅舎『黒田原駅』から北欧古民家調の『那須珈琲 Cafe La Detente』、那須ブランド認定の黒糖揚げ饅頭「だっぱら」の『なかむらや志水』、石工・菊地平二が彫った後ろ足逆立ちの火鎮め「逆さ狛犬（飛び狛犬）」と籠彫り・狛蛙が揃う『黒田原神社』、開拓期の開草庵に始まる『普門院』まで1.28kmで巡る密度の高い街歩き。",
+      "weaknesses": "Spot 4（黒田原神社）が事実上のクライマックスであり、そこから東南東へ徒歩11分（685m）折り返して向かうSpot 5（普門院）がややエピローグ的に感じられる点。",
+      "prescription": "強烈な造形物（逆さ狛犬・狛蛙）をもつ社寺の後に別寺院を置く場合は、視覚的な対比（石仏群や山門の額縁構図）を際立たせること。"
+    },
+    {
+      "slug": "mushigawa_osugi",
+      "station": "虫川大杉駅",
+      "iteration": 29,
+      "score": 3.25,
+      "needs_replacement": false,
+      "strengths": "難工事の歴史を刻む鍋立山トンネル東口の『虫川大杉駅』、昭和24年創業『東屋菓子店』の栗入り「大杉羊羹」、国指定天然記念物・樹齢1,200年超・幹囲10.6mの巨樹『白山神社（虫川の大スギ）』、隣接する中世山城『虫川城跡公園』の曲輪まで、千年杉と山城と銘菓が一つの物語として綺麗に結ばれている。",
+      "weaknesses": "周辺に飲食店・カフェが存在しない立地制約から、実店舗がテイクアウト菓子店1軒のみで、Spot 5の屋外公園ベンチを「休憩」枠として代替カウントしている点。",
+      "prescription": "処方箋87：着席飲食できる屋内店舗が0軒のまま屋外公園ベンチを「休憩」枠として代替する構成は極力避けること。"
+    },
+    {
+      "slug": "ainosato_kyoikudai",
+      "station": "あいの里教育大駅",
+      "iteration": 29,
+      "score": 2.85,
+      "needs_replacement": true,
+      "strengths": "徳島藩士・滝本五郎らの藍栽培に由来する「あいの里」の開拓史と、自然の三日月湖『トンネウス沼』、本社工場隣の『ロイズ あいの里公園店』の生チョコクロワッサンとバラ園を北東へ一直線に結んだテーマ性は明快。",
+      "weaknesses": "コース内で唯一の着席カフェであるSpot 2『Cafe hitode notes』が例年12月中旬〜春まで冬季長期休業に入る季節営業店であり、またSpot 3『あいの里開発記念之碑』が地区会館敷地内の石碑のみでニュータウン住宅街移動が3連続するため3.0未満（要差替）。",
+      "prescription": "処方箋87：積雪地・寒冷地ルートでは冬季長期休業に入る季節営業カフェへの単独依存を避け、通年営業の店舗を組み込むこと。"
     }
   ],
   "updated_at": "2026-11-05T06:46:00.000Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.34,
-  "last_updated_iteration": 28
+  "last_updated_iteration": 29,
+  "scoring_philosophy": "直近20ルート（移動窓：Iteration 26〜29 = Batch #25〜#28 の計20作品）を基準母集団とし、20作品の平均スコアを 3.2〜3.4（現在 3.35）に正規化する相対評価（共進化システム）。処方箋86（surprise文末の常体統一・バッジ説明の5スポット順列記載・area_name叙情化）および処方箋87（積雪地の冬季長期休業カフェ単独依存回避・屋外ベンチの疑似休憩枠回避・画像の単一構図と和紙余白徹底）を統合。"
 }

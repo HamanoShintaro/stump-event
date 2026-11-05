@@ -1333,7 +1333,7 @@
     {
       "batch_id": 28,
       "selection_method": "true_random_nationwide_via_heartrails_api",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
           "station": "邑久",
@@ -1375,7 +1375,56 @@
           "lat": 37.154897,
           "lng": 138.441409
         }
+      ],
+      "completed_at": "2026-11-05"
+    },
+    {
+      "batch_id": 29,
+      "status": "pending",
+      "selection_method": "heartrails_japan_all_stations_uniform_random",
+      "stations": [
+        {
+          "station": "餅原駅",
+          "line": "JR日豊本線",
+          "prefecture": "宮崎県",
+          "lat": 31.757094,
+          "lng": 131.132508,
+          "postal": "8891913"
+        },
+        {
+          "station": "越後田沢駅",
+          "line": "JR飯山線",
+          "prefecture": "新潟県",
+          "lat": 37.055387,
+          "lng": 138.694731,
+          "postal": "9498407"
+        },
+        {
+          "station": "会津田島駅",
+          "line": "会津鉄道会津線",
+          "prefecture": "福島県",
+          "lat": 37.203261,
+          "lng": 139.774279,
+          "postal": "9670004"
+        },
+        {
+          "station": "宇多津駅",
+          "line": "JR本四備讃線",
+          "prefecture": "香川県",
+          "lat": 34.306271,
+          "lng": 133.813686,
+          "postal": "7690205"
+        },
+        {
+          "station": "古島駅",
+          "line": "沖縄ゆいレール",
+          "prefecture": "沖縄県",
+          "lat": 26.230919,
+          "lng": 127.703079,
+          "postal": "9000004"
+        }
       ]
     }
-  ]
+  ],
+  "current_batch": 29
 }

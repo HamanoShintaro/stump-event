@@ -384,9 +384,18 @@ async function main() {
         }
       });
     }
+    if (area.completion_badge?.description && /5つのスポットを巡り歩いた証/.test(area.completion_badge.description)) {
+      errors.push(`処方箋51・86違反 [completion_badge.description]: 「5つのスポットを巡り歩いた証」という汎用文言は禁止です。Spot 1〜5の名称を順列記載してください`);
+    }
+    if (area.area_name && /（.+駅周辺）/.test(area.area_name)) {
+      errors.push(`処方箋86違反 [area_name]: 「〇〇（〇〇駅周辺）」という行政住所表記ではなく「駅名・象徴モチーフの道」の形式にしてください ("${area.area_name}")`);
+    }
     area.spots.forEach((s, idx) => {
-      if (/(?:のだ|ものだ|である)。/.test(s.clue || '')) {
-        errors.push(`処方箋72違反 [Spot ${idx + 1} clue語尾]: 解説調の語尾（のだ。/ものだ。/である。）が含まれています (${s.name})`);
+      if (/(?:のだ|ものだ|である)。/.test(`${s.clue || ''}${s.surprise || ''}`)) {
+        errors.push(`処方箋50・72・86違反 [Spot ${idx + 1} clue/surprise語尾]: 解説調の語尾（のだ。/ものだ。/である。）が含まれています (${s.name})`);
+      }
+      if (idx === 4 && s.hook !== '') {
+        errors.push(`処方箋73・86違反 [Spot 5 hook]: Spot 5のhookは空文字列 "" にしてください (現在: ${JSON.stringify(s.hook)})`);
       }
       if ((idx === 0 || idx === 4) && /旅の始まり|旅の出発点|旅のクライマックス|旅の結び/.test(s.clue || '')) {
         errors.push(`処方箋73違反 [Spot ${idx + 1} clue]: 禁止メタ表現（旅の始まり/旅の出発点/旅のクライマックス/旅の結び）が含まれています (${s.name})`);
