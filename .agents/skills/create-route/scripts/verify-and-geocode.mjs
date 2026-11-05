@@ -403,6 +403,12 @@ async function main() {
       if (/（[12]\d{3}年）|\([12]\d{3}年\)/.test(`${s.clue || ''}${s.surprise || ''}`)) {
         errors.push(`処方箋68・80違反 [Spot ${idx + 1} clue/surprise]: 西暦括弧書き（例: （1928年））が含まれています。和暦のみで記述してください (${s.name})`);
       }
+      if (s.spot_type === '買い物' && /(?:有限会社|株式会社).*(?:食品|製麺|工場|醸造|水産)/.test(s.name) && !/店頭販売|直売店|店舗営業/.test(s.description || '')) {
+        warnings.push(`処方箋88注意 [Spot ${idx + 1}]: 法人工場・卸売会社（${s.name}）を「買い物」にする場合は、一般客が予約なしで立ち寄れる常設の小売店舗が実在するか確認してください`);
+      }
+      if (s.spot_type === '休憩' && /佇まいを眺め|外観を眺め/.test(s.clue || '')) {
+        errors.push(`処方箋89違反 [Spot ${idx + 1} spot_type]: 外観を眺めるだけの通過スポットを「休憩」枠にすることは禁止です (${s.name})`);
+      }
     });
   }
 

@@ -1380,7 +1380,7 @@
     },
     {
       "batch_id": 29,
-      "status": "pending",
+      "status": "completed",
       "selection_method": "heartrails_japan_all_stations_uniform_random",
       "stations": [
         {
@@ -1423,8 +1423,56 @@
           "lng": 127.703079,
           "postal": "9000004"
         }
+      ],
+      "completed_at": "2026-11-05"
+    },
+    {
+      "batch_id": 30,
+      "status": "pending",
+      "selection_method": "heartrails_japan_all_stations_uniform_random",
+      "stations": [
+        {
+          "station": "北熊本駅",
+          "line": "熊本電鉄藤崎線",
+          "prefecture": "熊本県",
+          "lat": 32.827492,
+          "lng": 130.721981,
+          "postal": "8618072"
+        },
+        {
+          "station": "千葉駅",
+          "line": "JR総武本線",
+          "prefecture": "千葉県",
+          "lat": 35.613425,
+          "lng": 140.112837,
+          "postal": "2600031"
+        },
+        {
+          "station": "花巻駅",
+          "line": "JR東北本線",
+          "prefecture": "岩手県",
+          "lat": 39.393182,
+          "lng": 141.110458,
+          "postal": "0250092"
+        },
+        {
+          "station": "柚須駅",
+          "line": "JR篠栗線",
+          "prefecture": "福岡県",
+          "lat": 33.613206,
+          "lng": 130.445031,
+          "postal": "8112305"
+        },
+        {
+          "station": "日向大束駅",
+          "line": "JR日南線",
+          "prefecture": "宮崎県",
+          "lat": 31.510584,
+          "lng": 131.248745,
+          "postal": "8893531"
+        }
       ]
     }
   ],
-  "current_batch": 29
+  "current_batch": 30
 }

@@ -118,7 +118,7 @@ const EYECATCH_STYLE_PRESETS = [
 
 function buildEyecatchPrompt(area) {
   if (area.eyecatch_prompt) {
-    return `${area.eyecatch_prompt} Strict rule: NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
+    return `${area.eyecatch_prompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
   }
   // slug のハッシュとカテゴリから毎回異なるビジュアルスタイルを選択（和紙・朱色のワンパターン化を防止）
   const seed = [...String(area.slug || area.title)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -127,12 +127,15 @@ function buildEyecatchPrompt(area) {
     `An original, highly distinctive illustration of "${area.area_name}" (${area.prefecture}, Japan) capturing the theme: "${area.title}".`,
     `Scene & key motifs: ${area.description}`,
     `Artistic medium & palette (${preset.name}): ${preset.style}`,
-    `Composition: Dynamic camera angle tailored to the neighborhood's character (avoid generic flat isometric maps or repetitive red/gold frames).`,
+    `Composition: Single unified continuous scene rendered on cream Washi paper with visible unpainted white margins around all four edges (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage).`,
     `Strict rule: NO text, NO letters, NO Japanese/English characters, NO watermarks in the image.`,
   ].join(' ');
 }
 
 function buildSpotPrompt(area, spot, idx) {
+  if (spot.image_prompt) {
+    return `${spot.image_prompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: No people, no text, no signage letters, no characters, no watermarks.`;
+  }
   const moodMap = {
     見どころ: 'serene historical & scenic perspective, architectural detail and seasonal atmosphere',
     買い物: 'warm inviting storefront and artisanal craft or local specialty detail',
@@ -140,11 +143,11 @@ function buildSpotPrompt(area, spot, idx) {
     食事: 'appetizing local culinary specialty in a welcoming traditional or neighborhood setting',
   };
   const angleByIndex = [
-    'Morning clear light, approaching perspective at eye level, fresh watercolor and gouache editorial illustration.',
-    'Intimate close-up / macro-focused editorial illustration highlighting craftsmanship, texture, and warm ambient light.',
-    'Wide scenic composition with deep perspective or water/sky reflection, vibrant cinematic illustration style.',
-    'Dramatic afternoon sunlight filtering through trees (komorebi) with rich architectural shadows, expressive ink and wash illustration.',
-    'Golden hour / twilight serene atmosphere, looking up at a symbolic landmark, evocative painterly illustration.',
+    'Morning clear light, approaching perspective at eye level, fresh watercolor and gouache editorial illustration on cream Washi paper with visible unpainted white margins.',
+    'Intimate close-up / macro-focused editorial illustration highlighting craftsmanship, texture, and warm ambient light on cream Washi paper with visible unpainted white margins.',
+    'Wide scenic composition with deep perspective or water/sky reflection, vibrant cinematic illustration style on cream Washi paper with visible unpainted white margins.',
+    'Dramatic afternoon sunlight filtering through trees (komorebi) with rich architectural shadows, expressive ink and wash illustration on cream Washi paper with visible unpainted white margins.',
+    'Golden hour / twilight serene atmosphere, looking up at a symbolic landmark, evocative painterly illustration on cream Washi paper with visible unpainted white margins.',
   ];
   const mood = moodMap[spot.spot_type] || moodMap['見どころ'];
   const angleStyle = angleByIndex[(idx - 1) % angleByIndex.length];
@@ -153,7 +156,7 @@ function buildSpotPrompt(area, spot, idx) {
     `Scene description: ${spot.description}`,
     `Key visual discovery on site: ${spot.surprise || spot.clue}`,
     `Category mood: ${mood}.`,
-    `Camera angle, lighting & medium: ${angleStyle} Focus on partial framing, close-up textures, light, steam, or shadows rather than a full literal architectural photo spoiler, leaving room for the visitor's imagination.`,
+    `Camera angle, lighting & medium: ${angleStyle} Single unified continuous composition with unpainted Washi paper margins around the edges (NO inset frames, NO Picture-in-Picture boxes). Focus on partial framing, close-up textures, light, steam, or shadows rather than a full literal architectural photo spoiler, leaving room for the visitor's imagination.`,
     `Strict rule: No people, no text, no signage letters, no characters, no watermarks.`,
   ].join(' ');
 }
