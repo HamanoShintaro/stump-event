@@ -34190,5 +34190,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "4c321483-e0b9-473c-8ee3-02a829030c1f",
+    "title": "安達太良の風と宿場の湯気を歩く本宮",
+    "name": "安達太良の風と宿場の湯気を歩く本宮",
+    "description": "阿武隈川の流れと奥州街道・会津街道・相馬街道が交わる宿場町として栄えてきた福島県本宮市。旧街道の南口に佇む『太郎丸観音堂』から北へ向かって歩み出し、自家焙煎豆が香る『柳原珈琲豆店』で一服。創業百四十余年の『菓子処 ぬか茂』で名物かりんとうを手土産に選び、『柏屋食堂』の名代ソースカツ丼を味わったのち、高台の総鎮守『安達太良神社』から街を一望します。",
+    "region": "本宮駅・奥州街道の宿場と総鎮守の丘を歩く道",
+    "area_name": "本宮駅・奥州街道の宿場と総鎮守の丘を歩く道",
+    "cover_image_url": "/images/motomiya/route-eyecatch.png",
+    "imageUrl": "/images/motomiya/route-eyecatch.png",
+    "category": "宿場町・古社・老舗食堂",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って奥州街道の宿場町・本宮を歩くなら、あなたはどの景色から案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『柏屋食堂』の甘辛だれが染みた名代ソースカツ丼と、『菓子処 ぬか茂』の芳醇な紅茶かりんとう",
+          "description": "百年にわたり宿場町の胃袋を支える揚げたてロースカツの迫力と、アールグレイが香る老舗の銘菓を味わう時間",
+          "badge_code": "shuin_motomiya_kashiwaya_nukamo"
+        },
+        {
+          "key": "B",
+          "text": "急な石段を登りきった高台に鎮座する『安達太良神社』で、安達郡総鎮守の社叢から本宮の街並みを見渡す参拝",
+          "description": "安達太良山の恵みと街道の往来を見守ってきた高台の神域で、深い木立を抜ける風に深呼吸するひととき",
+          "badge_code": "shuin_motomiya_adatara_shrine"
+        },
+        {
+          "key": "C",
+          "text": "旧奥州街道沿いの『柳原珈琲豆店』に併設された喫茶メリービーンで、焙煎したての珈琲に憩う午後",
+          "description": "常時二十種ほど並ぶ珈琲豆の香ばしいアロマに包まれながら、丁寧に淹れられた一杯で歩みを緩める時間",
+          "badge_code": "shuin_motomiya_yanagihara_coffee"
+        },
+        {
+          "key": "D",
+          "text": "旧奥州街道の南口を守る『太郎丸観音堂』で、中世の年月を刻んだ石造供養塔群と静かなお堂に手を合わせる朝",
+          "description": "宿場町へ入る旅人たちを見守ってきた観音堂の境内で、苔むした板碑や石塔の静寂に耳を澄ますひととき",
+          "badge_code": "shuin_motomiya_taromaru_kannon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "59066aa4-30fc-4169-843a-3b0328acfc26",
+        "name": "太郎丸観音堂",
+        "description": "旧奥州街道沿いの太郎丸地区に佇む観音堂（境内参拝自由、無休）。鎌倉期の銘を持つ市指定文化財「太郎丸観音堂の石造供養塔」など中世の石塔群が伝わる。",
+        "address": "福島県本宮市本宮字太郎丸132",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.509871,
+        "lng": 140.399984,
+        "qr_token": "shuin-motomiya-1",
+        "cover_image_url": "/images/motomiya/spot1.png",
+        "f7_fragment": "旧街道の入り口に並ぶ古い石塔が、七百年の祈りを静かに伝える。",
+        "f7_full": "奥州街道を行き交う旅人を見守ってきた観音堂の境内に、苔むした中世の石造供養塔が静かに佇んでいる。",
+        "is_final": false,
+        "next_spot_id": "00f25b9d-34e3-41f2-850f-8a76880061aa",
+        "next_spot_name": "柳原珈琲豆店"
+      },
+      {
+        "id": "00f25b9d-34e3-41f2-850f-8a76880061aa",
+        "name": "柳原珈琲豆店",
+        "description": "旧奥州街道の中條地区に店を構える自家焙煎珈琲専門店（9:30〜17:30営業、月曜・第3火曜定休）。併設の喫茶室「メリービーン」で淹れたての珈琲を味わえる。",
+        "address": "福島県本宮市本宮字中條65",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.513584,
+        "lng": 140.402267,
+        "qr_token": "shuin-motomiya-2",
+        "cover_image_url": "/images/motomiya/spot2.png",
+        "f7_fragment": "旧街道の風に乗る深い焙煎香が、旅人の歩みを優しくほどく。",
+        "f7_full": "二十種もの珈琲豆が並ぶ店内の奥で、丁寧に抽出された一杯の芳醇な香りが旧街道の散策に温かな余白を添える。",
+        "is_final": false,
+        "next_spot_id": "9951f08c-29c3-4420-8e48-a7c800de9e67",
+        "next_spot_name": "菓子処 ぬか茂"
+      },
+      {
+        "id": "9951f08c-29c3-4420-8e48-a7c800de9e67",
+        "name": "菓子処 ぬか茂",
+        "description": "明治12年創業の老舗和洋菓子舗（8:00〜18:15営業・日曜は〜17:00、月曜定休）。アールグレイ茶葉が香る「紅茶かりんとう」や「わたぼうし」などの銘菓で知られる。",
+        "address": "福島県本宮市本宮字馬場98",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.51807,
+        "lng": 140.403459,
+        "qr_token": "shuin-motomiya-3",
+        "cover_image_url": "/images/motomiya/spot3.png",
+        "f7_fragment": "黒糖のコクと紅茶の華やかな香りが、百四十年の技のなかで溶け合う。",
+        "f7_full": "百四十余年の歴史を紡ぐ菓子舗のショーケースに、アールグレイが香る紅茶かりんとうと優しい甘みの和洋菓子が並ぶ。",
+        "is_final": false,
+        "next_spot_id": "275ff3ae-5c7b-488d-8acc-0a1956082929",
+        "next_spot_name": "柏屋食堂"
+      },
+      {
+        "id": "275ff3ae-5c7b-488d-8acc-0a1956082929",
+        "name": "柏屋食堂",
+        "description": "百余年の歴史を受け継ぐ本宮屈指の老舗食堂（11:00〜15:30・16:30〜20:00営業、火曜定休）。秘伝の甘辛ソースにくぐらせた厚切りの「名代ソースカツ丼」で知られる。",
+        "address": "福島県本宮市本宮字仲町33",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.518783,
+        "lng": 140.404911,
+        "qr_token": "shuin-motomiya-4",
+        "cover_image_url": "/images/motomiya/spot4.png",
+        "f7_fragment": "百年の秘伝ソースを纏った黄金のカツが、熱々の湯気を立ち上らせる。",
+        "f7_full": "継ぎ足し守られてきた甘辛ソースの香りが揚げたての厚切りロースカツから立ち上り、宿場町の活気を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "c089c379-d198-471c-8924-75c658a182ba",
+        "next_spot_name": "安達太良神社"
+      },
+      {
+        "id": "c089c379-d198-471c-8924-75c658a182ba",
+        "name": "安達太良神社",
+        "description": "本宮市街を見下ろす舘ノ越の丘上に鎮座する安達郡の総鎮守（参拝自由、社務所9:00〜16:30、無休）。安達太良山の恵みと水を司る古社として篤い信仰を集める。",
+        "address": "福島県本宮市本宮字舘ノ越232",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.521159,
+        "lng": 140.404531,
+        "qr_token": "shuin-motomiya-5",
+        "cover_image_url": "/images/motomiya/spot5.png",
+        "f7_fragment": "深い杜を擁する高台の社殿から、宿場町の屋根並みと山なみを望む。",
+        "f7_full": "安達郡の総鎮守として聳える高台の境内から、奥州街道が貫く本宮の街並みと豊かな森の緑が静かに広がっている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fc6af242-1308-4bff-8e50-6154ead8e9ee",
+    "title": "霞ヶ浦の水城と老舗の暖簾を巡る土浦",
+    "name": "霞ヶ浦の水城と老舗の暖簾を巡る土浦",
+    "description": "霞ヶ浦の入江と桜川が交わる水郷の要衝として発展し、旧水戸街道屈指の城下町・宿場町として栄えてきた茨城県土浦市。八百年前の銘を持つ銅鐘を伝える古刹『等覚寺』から歩き出し、水に浮かぶ『亀城公園（土浦城跡）』の櫓門へ。古民家を活かした『城藤茶店』で一服し、創業百五十余年の『吾妻庵総本店』で常陸秋そばを味わったのち、『創作和菓子 すぎやま』で蓮根銘菓を手土産に求めます。",
+    "region": "土浦駅・水城の櫓門と城下町の老舗を巡る道",
+    "area_name": "土浦駅・水城の櫓門と城下町の老舗を巡る道",
+    "cover_image_url": "/images/tsuchiura/route-eyecatch.png",
+    "imageUrl": "/images/tsuchiura/route-eyecatch.png",
+    "category": "城下町・古民家茶店・老舗蕎麦",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "常磐線の車窓に霞ヶ浦の光が遠ざかるとき、あなたの瞼に鮮やかに浮かぶのはどの情景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "水に浮かぶ亀の姿になぞらえられた『亀城公園（土浦城跡）』で、関東唯一の現存城郭建築・櫓門を仰ぐ時間",
+          "description": "幾重もの水堀に守られた本丸跡を歩き、白漆喰と黒瓦が水面に映える太鼓門の威容に見入るひととき",
+          "badge_code": "shuin_tsuchiura_kijo_park"
+        },
+        {
+          "key": "B",
+          "text": "重厚な瓦屋根の『吾妻庵総本店』で手繰る天ぷらそばと、『創作和菓子 すぎやま』の蓮根サブレ・生どら",
+          "description": "百五十余年続く城下町最古の蕎麦処で江戸前の粋を味わい、日本一の産地ならではの蓮根菓子を持ち帰る悦び",
+          "badge_code": "shuin_tsuchiura_azumaan_sugiyama"
+        },
+        {
+          "key": "C",
+          "text": "亀城公園のすぐ裏手に佇む古民家『城藤茶店』で、木の温もりに包まれながら珈琲と甘味に憩うひととき",
+          "description": "戦前に建てられた趣ある日本家屋の縁側や座敷で、丁寧に淹れられた珈琲を味わいながら城下町の風に寛ぐ時間",
+          "badge_code": "shuin_tsuchiura_shirofuji"
+        },
+        {
+          "key": "D",
+          "text": "土浦城主の庇護を受け徳川秀忠も立ち寄った『等覚寺』で、常陸三古鐘のひとつに数えられる銅鐘と本堂に手を合わせる朝",
+          "description": "八百年前の銘を刻む国の重要文化財の梵鐘が伝わる境内で、城下町の始まりの記憶に耳を澄ますひととき",
+          "badge_code": "shuin_tsuchiura_tokakuji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8acd7168-0a6d-4889-8f12-8a1653bfd1fb",
+        "name": "等覚寺",
+        "description": "土浦市大手町に佇む真宗大谷派の古刹（境内参拝自由、無休）。建永元年銘を持つ国の重要文化財「銅鐘（常陸三古鐘の一つ）」を伝え、土浦城主の庇護を受けた名刹として知られる。",
+        "address": "茨城県土浦市大手町4-16",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.081115,
+        "lng": 140.197291,
+        "qr_token": "shuin-tsuchiura-1",
+        "cover_image_url": "/images/tsuchiura/spot1.png",
+        "f7_fragment": "八百年の銘を刻む古鐘の記憶が、大手町の静かな境内に息づく。",
+        "f7_full": "土浦城主の庇護を受けてきた真宗大谷派の古刹に、八百年前の銘を伝える古鐘の静けさが満ちている。",
+        "is_final": false,
+        "next_spot_id": "91f96a0f-071c-4cc2-8ca9-2f4e77d33de0",
+        "next_spot_name": "亀城公園（土浦城跡）"
+      },
+      {
+        "id": "91f96a0f-071c-4cc2-8ca9-2f4e77d33de0",
+        "name": "亀城公園（土浦城跡）",
+        "description": "霞ヶ浦の低湿地に築かれ、水に浮かぶ亀の姿から「亀城」と呼ばれた土浦城の本丸跡（園内終日開放、無休）。関東地方で唯一現存する近世城郭建築「櫓門（太鼓門）」が残る。",
+        "address": "茨城県土浦市中央1-13-48",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.084431,
+        "lng": 140.198055,
+        "qr_token": "shuin-tsuchiura-2",
+        "cover_image_url": "/images/tsuchiura/spot2.png",
+        "f7_fragment": "穏やかな水堀の鏡面に、白漆喰の櫓門と老松の影が静かに揺れる。",
+        "f7_full": "水に浮かぶ亀城と呼ばれた土浦城の本丸で、関東唯一の現存櫓門が静かな水堀にその凛とした姿を映している。",
+        "is_final": false,
+        "next_spot_id": "3e96be52-30df-435f-83d9-43ec8090fdd2",
+        "next_spot_name": "城藤茶店"
+      },
+      {
+        "id": "3e96be52-30df-435f-83d9-43ec8090fdd2",
+        "name": "城藤茶店",
+        "description": "亀城公園の北東近くに佇む昭和初期築の古民家を再生したカフェ（8:00〜18:00営業、水曜定休）。木の温もりあふれる座敷やテーブル席で自家製スイーツや珈琲が楽しめる。",
+        "address": "茨城県土浦市中央2-15-8",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.08501,
+        "lng": 140.199456,
+        "qr_token": "shuin-tsuchiura-3",
+        "cover_image_url": "/images/tsuchiura/spot3.png",
+        "f7_fragment": "古い硝子戸を透かす柔らかな光が、木の卓上と珈琲の湯気を包む。",
+        "f7_full": "亀城公園のそばに佇む古民家茶店で、懐かしい木の柱と香り高い珈琲が城下町の散策に優しい余白を添える。",
+        "is_final": false,
+        "next_spot_id": "70c70f30-5ce3-4366-8b76-9e70907ac5dd",
+        "next_spot_name": "吾妻庵総本店"
+      },
+      {
+        "id": "70c70f30-5ce3-4366-8b76-9e70907ac5dd",
+        "name": "吾妻庵総本店",
+        "description": "明治6年創業、土浦で最も古い歴史を持つ老舗蕎麦処（11:00〜20:00営業、水曜定休）。重厚な切妻瓦屋根の店舗で常陸秋そばと江戸前のつゆが味わえる。",
+        "address": "茨城県土浦市中央1-6-11",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.082429,
+        "lng": 140.199686,
+        "qr_token": "shuin-tsuchiura-4",
+        "cover_image_url": "/images/tsuchiura/spot4.png",
+        "f7_fragment": "千本格子の奥から漂う本枯節の香りが、城下町の昼どきを告げる。",
+        "f7_full": "百五十余年の暖簾が揺れる木造店舗で、香り高い蕎麦と揚げたての海老天ぷらが江戸前の粋を伝える。",
+        "is_final": false,
+        "next_spot_id": "7bd2b0b4-1a44-445d-8d8a-6127aa1af7c9",
+        "next_spot_name": "創作和菓子 すぎやま"
+      },
+      {
+        "id": "7bd2b0b4-1a44-445d-8d8a-6127aa1af7c9",
+        "name": "創作和菓子 すぎやま",
+        "description": "土浦市川口に店を構える和菓子舗（9:00〜17:30営業、水曜定休）。日本一の産地・土浦の蓮根を使った「れんこんサブレ」「蓮根カレーパイ」や名物「生どら」で知られる。",
+        "address": "茨城県土浦市川口1-5-8",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.081236,
+        "lng": 140.206053,
+        "qr_token": "shuin-tsuchiura-5",
+        "cover_image_url": "/images/tsuchiura/spot5.png",
+        "f7_fragment": "霞ヶ浦の泥土が育んだ蓮根の恵みが、香ばしい焼き菓子へと姿を変える。",
+        "f7_full": "日本一の産地を誇る土浦れんこんの食感と風味を閉じ込めた創作和菓子が、水郷の城下町を巡った旅の記憶を結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b94717ce-b651-48f4-8756-1e80c49f3a02",
+    "title": "巨機の鼓動と出汁香る町家を訪ねる小松",
+    "name": "巨機の鼓動と出汁香る町家を訪ねる小松",
+    "description": "加賀藩三代藩主・前田利常公が隠居城を構えて町人文化と工芸を育み、近代には世界的建設機械メーカー発祥の地となった石川県小松市。駅東口の『こまつの杜』で世界最大級ダンプの迫力に触れたのち、西口の商家町へ。古本が並ぶ『こまつ町家文庫』、嘉永年間創業『すみげん』の削りたて本枯節が香る蕎麦、老舗『御菓子司 松葉屋』の栗蒸し羊羹を経て、神猿が鎮座する『本折日吉神社』までを訪ねます。",
+    "region": "小松駅・ものづくりの杜と加賀町家を訪ねる道",
+    "area_name": "小松駅・ものづくりの杜と加賀町家を訪ねる道",
+    "cover_image_url": "/images/komatsu/route-eyecatch.png",
+    "imageUrl": "/images/komatsu/route-eyecatch.png",
+    "category": "産業遺産・町家・老舗和菓子",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "見上げる超大型ダンプの迫力と、削りたて本枯節が香る町家の静けさ。今のあなたの心に深く響くのはどのひとときだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "コマツ発祥の地『こまつの杜』で、タイヤ直径三・八メートルの超大型ダンプと旧本社社屋を見上げる時間",
+          "description": "世界の鉱山で稼働する巨大建機のスケールと、ものづくりの原点となった洋風社屋の佇まいに圧倒されるひととき",
+          "badge_code": "shuin_komatsu_komatsunomori"
+        },
+        {
+          "key": "B",
+          "text": "築九十余年の町家を活かした『こまつ町家文庫』で、五千冊の古書に囲まれながらハンドドリップ珈琲に憩う午後",
+          "description": "格子戸を通る柔らかな光と紙の匂いに包まれ、城下町の時間がゆっくり流れる町家空間で心を休めるひととき",
+          "badge_code": "shuin_komatsu_machiya_bunko"
+        },
+        {
+          "key": "C",
+          "text": "老舗乾物舗『すみげん』の極薄削りたて本枯節が踊る十割蕎麦と、『御菓子司 松葉屋』の栗蒸し羊羹・月よみ山路",
+          "description": "0.01ミリに削られた指宿産本枯節の芳醇な出汁と、竹皮に包まれた大粒栗の蒸し羊羹で加賀の食文化を堪能する悦び",
+          "badge_code": "shuin_komatsu_sumigen_matsubaya"
+        },
+        {
+          "key": "D",
+          "text": "前田利常公が小松城の裏鬼門鎮護として整えた『本折日吉神社』で、愛らしい神猿像と苔むす境内を巡る参拝",
+          "description": "「魔が去る」に通じる神猿（まさる）の石像が境内の随所で見守る古社で、城下町の祈りに手を合わせる時間",
+          "badge_code": "shuin_komatsu_motoori_hiyoshi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a93ec740-ee6e-49d7-85a1-3de0164ad000",
+        "name": "こまつの杜",
+        "description": "小松駅東口すぐ、建設機械メーカー・コマツの創業地に整備された産業・里山施設（9:00〜16:30営業、日・月曜休館）。世界最大級ダンプトラック「930E」や復元された旧本社社屋が見学できる。",
+        "address": "石川県小松市こまつの杜1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.401497,
+        "lng": 136.45556,
+        "qr_token": "shuin-komatsu-1",
+        "cover_image_url": "/images/komatsu/spot1.png",
+        "f7_fragment": "空へ聳える鮮やかなイエローの巨機が、ものづくりの街の誇りを示す。",
+        "f7_full": "大人の背丈を遥かに超える超大型ダンプと旧本社社屋が、小松から世界へ広がった技術の歩みを伝えている。",
+        "is_final": false,
+        "next_spot_id": "0155e4cb-736d-490b-8529-91abf29c5c7c",
+        "next_spot_name": "こまつ町家文庫"
+      },
+      {
+        "id": "0155e4cb-736d-490b-8529-91abf29c5c7c",
+        "name": "こまつ町家文庫",
+        "description": "築90余年の伝統的な「こまつ町家」を改装した古本カフェ（11:00〜18:00営業、日・月・火曜定休）。約5,000冊の古書に囲まれた空間で自家製スイーツや珈琲が楽しめる。",
+        "address": "石川県小松市八日市町46",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.404096,
+        "lng": 136.449444,
+        "qr_token": "shuin-komatsu-2",
+        "cover_image_url": "/images/komatsu/spot2.png",
+        "f7_fragment": "格子戸を透かす柔らかな光が、五千冊の背表紙と珈琲の湯気を照らす。",
+        "f7_full": "築九十余年のこまつ町家に並ぶ古書の香りとハンドドリップ珈琲の温もりが、城下町の午後を静かに彩る。",
+        "is_final": false,
+        "next_spot_id": "cde137c5-6798-44ec-88c7-4fc9c551c295",
+        "next_spot_name": "すみげん"
+      },
+      {
+        "id": "cde137c5-6798-44ec-88c7-4fc9c551c295",
+        "name": "すみげん",
+        "description": "嘉永年間創業の老舗乾物舗（小売9:30〜18:00、蕎麦・飲食11:30〜14:00営業、水・木曜定休）。厚さ0.01ミリに削る指宿産本枯節の出汁と十割蕎麦が名物。",
+        "address": "石川県小松市三日市町9",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.401415,
+        "lng": 136.449321,
+        "qr_token": "shuin-komatsu-3",
+        "cover_image_url": "/images/komatsu/spot3.png",
+        "f7_fragment": "透けるほど薄く削られた本枯節が、熱々の蕎麦と白飯の上でふわりと踊る。",
+        "f7_full": "0.01ミリに削り出された指宿産本枯節の芳醇な香りが店内に満ち、澄んだ一番出汁の旨みが十割蕎麦を引き立てる。",
+        "is_final": false,
+        "next_spot_id": "bb05de43-f0d5-40b2-84fe-3b538a20de18",
+        "next_spot_name": "御菓子司 松葉屋"
+      },
+      {
+        "id": "bb05de43-f0d5-40b2-84fe-3b538a20de18",
+        "name": "御菓子司 松葉屋",
+        "description": "嘉永5年創業の老舗和菓子舗（9:00〜18:00・水日祝は〜16:00営業、無休）。竹皮に包んで蒸し上げた代表銘菓・栗蒸し羊羹「月よみ山路」で全国に知られる。",
+        "address": "石川県小松市大文字町69",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.400737,
+        "lng": 136.447999,
+        "qr_token": "shuin-komatsu-4",
+        "cover_image_url": "/images/komatsu/spot4.png",
+        "f7_fragment": "天然の竹皮を解いた瞬間、大粒の栗が輝く蒸し羊羹の甘い香りが広がる。",
+        "f7_full": "百七十余年の技で竹皮に包み蒸し上げられた栗蒸し羊羹が、茶の湯の文化が息づく小松の旅を豊かに彩る。",
+        "is_final": false,
+        "next_spot_id": "fa4d8ebb-4403-49e5-872a-1a405f2d6e11",
+        "next_spot_name": "本折日吉神社"
+      },
+      {
+        "id": "fa4d8ebb-4403-49e5-872a-1a405f2d6e11",
+        "name": "本折日吉神社",
+        "description": "加賀藩三代藩主・前田利常公が小松城の裏鬼門鎮護として社殿を造営した古社（参拝自由、社務所9:00〜16:00、無休）。「魔が去る」に通じる神猿（まさる）像や山王祭で知られる。",
+        "address": "石川県小松市本折町1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.398494,
+        "lng": 136.446958,
+        "qr_token": "shuin-komatsu-5",
+        "cover_image_url": "/images/komatsu/spot5.png",
+        "f7_fragment": "苔むした境内の木陰で、愛らしい神猿の石像が静かに参拝者を見守る。",
+        "f7_full": "小松城の裏鬼門を守ってきた山王さんの境内で、苔を纏った神猿の石像と深い木立が加賀の祈りを伝えている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "36e1ade7-77f4-4244-86b8-99bf6d2ef057",
+    "title": "高瀬川の柳影と名水の社を辿る京都河原町",
+    "name": "高瀬川の柳影と名水の社を辿る京都河原町",
+    "description": "三条から四条、そして高瀬川へと続く路地に、名水と町衆の信仰が息づく京都河原町。三百年の歴史を持つ蕎麦処『晦庵 河道屋』から南へ歩き出し、落語発祥の寺として知られる総本山『誓願寺』と、名水が湧く『錦天満宮』を参拝。百五十年続く『林万昌堂 四条本店』で煎りたての甘栗を求め、高瀬川畔の登録有形文化財『フランソア喫茶室』で旅を結びます。",
+    "region": "京都河原町駅・名水の社と高瀬川畔の洋館を辿る道",
+    "area_name": "京都河原町駅・名水の社と高瀬川畔の洋館を辿る道",
+    "cover_image_url": "/images/kyoto_kawaramachi/route-eyecatch.png",
+    "imageUrl": "/images/kyoto_kawaramachi/route-eyecatch.png",
+    "category": "老舗蕎麦・社寺・文化財喫茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "三条から高瀬川へと続く路地を巡り終えて日常へ戻るとき、鞄や記憶の中にそっと持ち帰りたいしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "錦市場の東端に鎮座する『錦天満宮』で、ビルを貫く石鳥居を見上げ地下三十メートルの名水・錦の水に触れる時間",
+          "description": "京の台所を支えてきた清冽な湧水と提灯の明かりに包まれ、町衆の暮らしに溶け込んだ天神さまを参拝するひととき",
+          "badge_code": "shuin_kyoto_kawaramachi_nishiki_tenmangu"
+        },
+        {
+          "key": "B",
+          "text": "数寄屋造りの町家が息づく『晦庵 河道屋』で、香り高い出汁の天ぷらそばと京の風情を味わう昼下がり",
+          "description": "三百年にわたり受け継がれる老舗の暖簾をくぐり、坪庭を眺めながら上品な出汁と手打ち蕎麦を堪能する時間",
+          "badge_code": "shuin_kyoto_kawaramachi_kawamichiya"
+        },
+        {
+          "key": "C",
+          "text": "清少納言や和泉式部が帰依し「落語発祥の寺」とも伝わる『誓願寺』で、芸道上達の扇塚に手を合わせる朝",
+          "description": "新京極の賑わいのなかで千三百年の法灯を守り続ける総本山の境内に立ち、物語と芸能の源流を辿るひととき",
+          "badge_code": "shuin_kyoto_kawaramachi_seiganji"
+        },
+        {
+          "key": "D",
+          "text": "『林万昌堂 四条本店』の焼きたて甘栗を手土産に、登録有形文化財『フランソア喫茶室』でレアチーズケーキと珈琲に憩う宵",
+          "description": "百五十年の歴史を持つ焼栗専門店で香ばしい甘栗を選び、豪華客船のキャビンを模した洋館サロンで旅を結ぶ贅沢",
+          "badge_code": "shuin_kyoto_kawaramachi_manshodo_francois"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4518248d-362e-450e-8bb5-fe8d21e0f5de",
+        "name": "晦庵 河道屋",
+        "description": "江戸期から三百年の歴史を紡ぐ京そばの老舗（11:00〜16:00営業、水・木曜定休）。趣ある数寄屋造りの母屋で、上品な出汁が香る天ぷらそばやにしんそばが味わえる。",
+        "address": "京都府京都市中京区姉小路通麩屋町西入姉大東町556-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.009766,
+        "lng": 135.765727,
+        "qr_token": "shuin-kyoto_kawaramachi-1",
+        "cover_image_url": "/images/kyoto_kawaramachi/spot1.png",
+        "f7_fragment": "数寄屋造りの暖簾の奥から、昆布と削り節の上品な出汁が香る。",
+        "f7_full": "京の軟水で丁寧に引かれた黄金色の出汁が、喉ごしのよい蕎麦と揚げたての天ぷらを優しく包み込む。",
+        "is_final": false,
+        "next_spot_id": "f8bf18ca-c746-432b-845f-701879aae1fb",
+        "next_spot_name": "誓願寺"
+      },
+      {
+        "id": "f8bf18ca-c746-432b-845f-701879aae1fb",
+        "name": "誓願寺",
+        "description": "浄土宗西山深草派の総本山（9:00〜17:00参拝自由、無休）。清少納言や和泉式部が帰依した女人往生の寺であり、安楽庵策伝上人ゆかりの「落語発祥の寺」・芸道上達の扇塚でも知られる。",
+        "address": "京都府京都市中京区新京極通三条下る桜之町453",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.007366,
+        "lng": 135.767502,
+        "qr_token": "shuin-kyoto_kawaramachi-2",
+        "cover_image_url": "/images/kyoto_kawaramachi/spot2.png",
+        "f7_fragment": "賑やかな通りのすぐ傍らで、芸道上達を祈る扇塚が静かに佇む。",
+        "f7_full": "笑話集『醒睡笑』を生んだ落語発祥の古刹に、千三百年の祈りと芸事への敬意を宿す扇塚が息づいている。",
+        "is_final": false,
+        "next_spot_id": "0dee3e29-a620-42e0-8c07-beec6615cc76",
+        "next_spot_name": "錦天満宮"
+      },
+      {
+        "id": "0dee3e29-a620-42e0-8c07-beec6615cc76",
+        "name": "錦天満宮",
+        "description": "錦小路通の東端に鎮座する菅原道真公ゆかりの古社（8:00〜20:00参拝自由、無休）。ビルの壁を貫通する石鳥居や、京の名水「錦の水」が湧き出る手水舎で知られる。",
+        "address": "京都府京都市中京区新京極通四条上る中之町537",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.005048,
+        "lng": 135.767298,
+        "qr_token": "shuin-kyoto_kawaramachi-3",
+        "cover_image_url": "/images/kyoto_kawaramachi/spot3.png",
+        "f7_fragment": "幾重もの提灯が揺れる社頭で、名水・錦の水が澄んだ音を立てて溢れる。",
+        "f7_full": "ビルの壁を貫く石鳥居の奥で、地下三十メートルから湧き出す錦の水が京の台所の祈りを今に伝えている。",
+        "is_final": false,
+        "next_spot_id": "4df6b3fd-4c9e-40fa-8940-559f664ddf9e",
+        "next_spot_name": "林万昌堂 四条本店"
+      },
+      {
+        "id": "4df6b3fd-4c9e-40fa-8940-559f664ddf9e",
+        "name": "林万昌堂 四条本店",
+        "description": "明治7年創業、四条寺町近くに本店を構える焼栗専門店（10:00〜20:00営業、無休）。店頭の大鉄釜で黒砂とともに一気に焼き上げる香ばしい甘栗で知られる。",
+        "address": "京都府京都市下京区四条通寺町東入御旅宮本町3",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.003839,
+        "lng": 135.767001,
+        "qr_token": "shuin-kyoto_kawaramachi-4",
+        "cover_image_url": "/images/kyoto_kawaramachi/spot4.png",
+        "f7_fragment": "大鉄釜から立ち上る香ばしい湯気のなかに、琥珀色の焼栗が艶めく。",
+        "f7_full": "百五十年にわたり四条通に甘い香りを漂わせる大鉄釜の焼栗が、京の街歩きの温かな手土産となる。",
+        "is_final": false,
+        "next_spot_id": "2b46c46c-e922-4370-8678-0154482e0351",
+        "next_spot_name": "フランソア喫茶室"
+      },
+      {
+        "id": "2b46c46c-e922-4370-8678-0154482e0351",
+        "name": "フランソア喫茶室",
+        "description": "昭和9年創業、高瀬川沿いの西木屋町通に佇む老舗喫茶室（11:00〜22:00営業、無休）。喫茶店として日本初の国登録有形文化財に指定された空間でレアチーズケーキや珈琲が味わえる。",
+        "address": "京都府京都市下京区西木屋町通四条下ル船頭町184",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.003292,
+        "lng": 135.770213,
+        "qr_token": "shuin-kyoto_kawaramachi-5",
+        "cover_image_url": "/images/kyoto_kawaramachi/spot5.png",
+        "f7_fragment": "ステンドグラスの柔らかな光が、深紅のビロード椅子と珈琲の湯気を包む。",
+        "f7_full": "高瀬川のせせらぎが聞こえる登録有形文化財のサロンで、白いレアチーズケーキと琥珀色の珈琲が優雅な余韻を残す。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "115d9907-1e5d-4fa5-844a-1e418f5e20c1",
+    "title": "廉太郎の調べと名水の城下町・豊後竹田",
+    "name": "廉太郎の調べと名水の城下町・豊後竹田",
+    "description": "阿蘇火砕流が造り出した切り立つ岩壁と清らかな湧水に囲まれ、岡藩七万石の城下町として独自の文人文化を育んだ大分県竹田市。駅の背後の絶壁から流れ落ちる国の登録記念物『落門の滝』から歩き出し、『竹田丸福 本店』で名物の若鶏からあげを味わい、旧藩迎賓館の『三日月珈琲焙煎所 月鐘楼』で一服。メロディが響く隧道を抜けて『瀧廉太郎記念館』を訪ね、文化元年創業『但馬屋老舗 本店』で銘菓を求めます。",
+    "region": "豊後竹田駅・岡藩の城下町と荒城の月の調べを巡る道",
+    "area_name": "豊後竹田駅・岡藩の城下町と荒城の月の調べを巡る道",
+    "cover_image_url": "/images/bungo_taketa/route-eyecatch.png",
+    "imageUrl": "/images/bungo_taketa/route-eyecatch.png",
+    "category": "城下町・音楽史跡・老舗和菓子",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "岩壁に囲まれた岡藩の城下町で守り継がれてきた調べと味わいの中で、あなたが間近に触れてみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "九州最古級の和菓子舗『但馬屋老舗 本店』の銘菓・荒城の月と、『竹田丸福 本店』の揚げたて若鶏からあげ",
+          "description": "文化元年創業の老舗が作る満月のような淡雪羹と、湧水の里が育んだ香ばしい骨付きぶつ切りからあげを味わう悦び",
+          "badge_code": "shuin_bungo_taketa_tajimaya_marufuku"
+        },
+        {
+          "key": "B",
+          "text": "少年期の瀧廉太郎が暮らした武家屋敷『瀧廉太郎記念館』で、廉太郎トンネルの調べと静かな庭園に耳を澄ます時間",
+          "description": "名曲『荒城の月』の着想を育んだ城下町の空気と、素掘り隧道に響く優しいメロディに触れるひととき",
+          "badge_code": "shuin_bungo_taketa_rentaro"
+        },
+        {
+          "key": "C",
+          "text": "旧岡藩の迎賓館だった築二百年の御客屋敷『三日月珈琲焙煎所 月鐘楼』で、名水で淹れる自家焙煎珈琲に憩う午後",
+          "description": "高い天井と白壁が残る歴史的空間の縁側で、竹田の湧水と深く煎られた豆が織りなす一杯に心を解きほぐす時間",
+          "badge_code": "shuin_bungo_taketa_gesshoro"
+        },
+        {
+          "key": "D",
+          "text": "駅の背後にそびえる凝灰岩の絶壁から白糸を引く国の登録記念物『落門の滝』で、水と岩壁の城下町ならではの景観を仰ぐ朝",
+          "description": "三百年にわたり城下町と田畑を潤してきた水路が岩壁を流れ落ちる豪快な水音に立ち会い、旅の始まりを刻むひととき",
+          "badge_code": "shuin_bungo_taketa_rakumon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8fe021b1-1499-4f62-8647-305888011d4f",
+        "name": "落門の滝",
+        "description": "豊後竹田駅のすぐ裏手にそびえる凝灰岩の絶壁を流れ落ちる高さ約40メートルの瀑布（見学自由、無休）。城下町の水利史を伝える景勝地として国の登録記念物に指定されている。",
+        "address": "大分県竹田市大字会々2327",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 32.971501,
+        "lng": 131.389705,
+        "qr_token": "shuin-bungo_taketa-1",
+        "cover_image_url": "/images/bungo_taketa/spot1.png",
+        "f7_fragment": "切り立つ凝灰岩の絶壁を、白い水しぶきが涼やかな音を立てて滑り落ちる。",
+        "f7_full": "岡藩の水利が育んだ高さ四十メートルの瀑布が、駅の背後の岩壁から城下町の旅人を涼やかに迎える。",
+        "is_final": false,
+        "next_spot_id": "991cd722-63c1-47e7-81a5-507c1427263d",
+        "next_spot_name": "竹田丸福 本店"
+      },
+      {
+        "id": "991cd722-63c1-47e7-81a5-507c1427263d",
+        "name": "竹田丸福 本店",
+        "description": "城下町の中心部に店を構える若鶏からあげ・とり天の名店（10:00〜21:00営業、第2・第4水曜定休）。自社農場で育てた若鶏を使った骨付き「ぶつ切りからあげ」や定食が地元客に愛される。",
+        "address": "大分県竹田市大字竹田町550-6",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 32.969395,
+        "lng": 131.392032,
+        "qr_token": "shuin-bungo_taketa-2",
+        "cover_image_url": "/images/bungo_taketa/spot2.png",
+        "f7_fragment": "カラッと揚がった薄衣の奥から、湧水育ちの若鶏の旨みが熱々に弾ける。",
+        "f7_full": "秘伝だれが香る揚げたてのぶつ切りからあげととり天が、名水の城下町ならではの力強い滋味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "dd5d2801-6273-472e-8836-51c90dcd518b",
+        "next_spot_name": "三日月珈琲焙煎所 月鐘楼"
+      },
+      {
+        "id": "dd5d2801-6273-472e-8836-51c90dcd518b",
+        "name": "三日月珈琲焙煎所 月鐘楼",
+        "description": "旧岡藩の迎賓館であった築200年の「御客屋敷」を活用した自家焙煎珈琲カフェ（11:00〜17:00営業、水・木曜定休）。竹田の名水で淹れるスペシャルティコーヒーや甘味が楽しめる。",
+        "address": "大分県竹田市大字竹田町486-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 32.96777,
+        "lng": 131.391959,
+        "qr_token": "shuin-bungo_taketa-3",
+        "cover_image_url": "/images/bungo_taketa/spot3.png",
+        "f7_fragment": "築二百年の御客屋敷の座敷に、名水で淹れた焙煎珈琲の香りが満ちる。",
+        "f7_full": "かつて藩の賓客を迎えた白壁の御客屋敷で、竹田の湧水と自家焙煎豆が織りなす澄んだ珈琲の余韻に浸る。",
+        "is_final": false,
+        "next_spot_id": "2dbb2d00-910f-4808-8397-77ceabeac4ec",
+        "next_spot_name": "瀧廉太郎記念館"
+      },
+      {
+        "id": "2dbb2d00-910f-4808-8397-77ceabeac4ec",
+        "name": "瀧廉太郎記念館",
+        "description": "作曲家・瀧廉太郎が少年時代を過ごした旧宅の武家屋敷を活用した記念館（9:00〜17:00営業、年末年始休）。すぐ近くにメロディが流れる素掘り隧道「廉太郎トンネル」がある。",
+        "address": "大分県竹田市大字竹田2120-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 32.966712,
+        "lng": 131.391306,
+        "qr_token": "shuin-bungo_taketa-4",
+        "cover_image_url": "/images/bungo_taketa/spot4.png",
+        "f7_fragment": "素掘りのトンネルを抜けた武家屋敷の庭に、荒城の月の調べが静かに響く。",
+        "f7_full": "少年時代の瀧廉太郎が過ごした武家屋敷の縁側と庭園に、名曲『荒城の月』を生んだ城下町の風情が息づく。",
+        "is_final": false,
+        "next_spot_id": "61697560-b0ef-4eea-89b6-874160abe3b8",
+        "next_spot_name": "但馬屋老舗 本店"
+      },
+      {
+        "id": "61697560-b0ef-4eea-89b6-874160abe3b8",
+        "name": "但馬屋老舗 本店",
+        "description": "文化元年創業、九州で最も古い歴史を持つ和菓子舗（9:00〜18:00営業、火曜定休）。黄身餡を淡雪羹で包んだ「荒城の月」と焼き皮でこし餡を巻いた「三笠野」が二大銘菓。",
+        "address": "大分県竹田市大字竹田町40",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 32.96647,
+        "lng": 131.393264,
+        "qr_token": "shuin-bungo_taketa-5",
+        "cover_image_url": "/images/bungo_taketa/spot5.png",
+        "f7_fragment": "雲間から出づる満月を映した純白の淡雪羹が、ほろりと優しい甘みを広げる。",
+        "f7_full": "二百二十余年の歴史を刻む老舗の暖簾の奥で、満月を模した『荒城の月』と伝統の『三笠野』が旅の記憶を包む。",
+        "is_final": true
+      }
+    ]
   }
 ];

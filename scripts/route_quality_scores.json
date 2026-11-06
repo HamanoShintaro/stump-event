@@ -3969,6 +3969,91 @@
       },
       "good_points": "旧東海道・四宮の『京菓子司 山科亀屋』と京都六地蔵の『徳林庵（山科地蔵）』から山科疏水を越えて天台宗五箇室門跡『毘沙門堂』へ至る街道と門跡の対比は良い。",
       "issues": "前半の旧東海道区間（Spot 1→2→3）に対してSpot 3→Spot 4（北山麓のcafe monogataru）が直線915m（徒歩15分）の上り坂空白区間となっており距離の疎密差が大きいため、20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "motomiya",
+      "station": "本宮",
+      "line": "JR東北本線",
+      "prefecture": "福島県",
+      "iteration": 44,
+      "score": 3.6,
+      "grade": "A- (太郎丸観音堂から旧奥州街道を北上し安達太良神社へ至る宿場町縦断)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.6,
+        "spot_allocation": 3.6,
+        "walkability": 3.4,
+        "story_emotion": 3.7,
+        "local_specificity": 3.7
+      }
+    },
+    {
+      "slug": "tsuchiura",
+      "station": "土浦",
+      "line": "JR常磐線",
+      "prefecture": "茨城県",
+      "iteration": 44,
+      "score": 2.75,
+      "grade": "C (水城土浦城と老舗蕎麦・蓮根菓子は魅力的だが駅から等覚寺まで863mアプローチ)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3,
+        "spot_allocation": 2.5,
+        "walkability": 2.5,
+        "story_emotion": 2.9,
+        "local_specificity": 3
+      }
+    },
+    {
+      "slug": "komatsu",
+      "station": "小松",
+      "line": "北陸新幹線",
+      "prefecture": "石川県",
+      "iteration": 44,
+      "score": 3.8,
+      "grade": "A (こまつの杜930Eから町家文庫・極薄本枯節蕎麦・栗蒸し羊羹・山王さん神猿へ抜ける一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.9,
+        "spot_allocation": 3.8,
+        "walkability": 3.7,
+        "story_emotion": 3.8,
+        "local_specificity": 3.8
+      }
+    },
+    {
+      "slug": "kyoto_kawaramachi",
+      "station": "京都河原町",
+      "line": "阪急京都本線",
+      "prefecture": "京都府",
+      "iteration": 44,
+      "score": 2.85,
+      "grade": "C+ (名店・古刹揃いだが駅から北上してSpot 1食事後に南下する素通りブーメラン動線)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.6,
+        "walkability": 2.4,
+        "story_emotion": 3.1,
+        "local_specificity": 3.2
+      }
+    },
+    {
+      "slug": "bungo_taketa",
+      "station": "豊後竹田",
+      "line": "JR豊肥本線",
+      "prefecture": "大分県",
+      "iteration": 44,
+      "score": 3.65,
+      "grade": "A- (駅裏の落門の滝から竹田丸福・御客屋敷月鐘楼・瀧廉太郎記念館・但馬屋老舗へ南下する城下町一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.5,
+        "walkability": 3.6,
+        "story_emotion": 3.7,
+        "local_specificity": 3.8
+      }
     }
   ],
   "updated_at": "2026-11-06T20:24:00.000Z",
@@ -4087,13 +4172,16 @@
     "shimobe_onsen",
     "obuke",
     "yamakita",
-    "shinomiya"
+    "shinomiya",
+    "tsuchiura",
+    "kyoto_kawaramachi"
   ],
   "current_window_iterations": [
-    40,
     41,
     42,
-    43
+    43,
+    44
   ],
-  "current_window_average": 3.33
+  "current_window_average": 3.33,
+  "total_routes": 225
 }

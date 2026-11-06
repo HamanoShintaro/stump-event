@@ -2083,7 +2083,45 @@
           "replaced_from": "高崎新田"
         }
       ]
+    },
+    {
+      "batch_number": 43,
+      "completed_at": "2026-11-06T21:55:00.000Z",
+      "stations": [
+        {
+          "name": "本宮",
+          "prefecture": "福島県",
+          "line": "JR東北本線",
+          "slug": "motomiya"
+        },
+        {
+          "name": "土浦",
+          "prefecture": "茨城県",
+          "line": "JR常磐線",
+          "slug": "tsuchiura",
+          "replaced_from": "常陸多賀"
+        },
+        {
+          "name": "小松",
+          "prefecture": "石川県",
+          "line": "北陸新幹線",
+          "slug": "komatsu",
+          "replaced_from": "加賀温泉"
+        },
+        {
+          "name": "京都河原町",
+          "prefecture": "京都府",
+          "line": "阪急京都本線",
+          "slug": "kyoto_kawaramachi"
+        },
+        {
+          "name": "豊後竹田",
+          "prefecture": "大分県",
+          "line": "JR豊肥本線",
+          "slug": "bungo_taketa"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 220
+  "total_completed_routes": 225
 }
