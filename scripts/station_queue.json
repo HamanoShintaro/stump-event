@@ -1969,7 +1969,45 @@
           "replaced_from": "雲泉寺"
         }
       ]
+    },
+    {
+      "batch_number": 40,
+      "completed_at": "2026-11-06T17:25:00.000Z",
+      "stations": [
+        {
+          "name": "磐城棚倉",
+          "prefecture": "福島県",
+          "line": "JR水郡線",
+          "slug": "iwaki_tanagura"
+        },
+        {
+          "name": "塔ノ沢",
+          "prefecture": "神奈川県",
+          "line": "箱根登山鉄道線",
+          "slug": "tonosawa"
+        },
+        {
+          "name": "大月",
+          "prefecture": "山梨県",
+          "line": "JR中央本線",
+          "slug": "otsuki"
+        },
+        {
+          "name": "東総社",
+          "prefecture": "岡山県",
+          "line": "JR吉備線",
+          "slug": "higashi_soja",
+          "replaced_from": "総社"
+        },
+        {
+          "name": "田川伊田",
+          "prefecture": "福岡県",
+          "line": "平成筑豊鉄道伊田線",
+          "slug": "tagawa_ita",
+          "replaced_from": "下伊田"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 205
+  "total_completed_routes": 210
 }

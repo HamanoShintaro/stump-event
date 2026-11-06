@@ -3684,6 +3684,101 @@
       "total": 2.7,
       "needs_replacement": true,
       "notes": "『つむぎの館』から『そば処 多むら』、『健田須賀神社』、『喫茶 カヂノキ』、『手作り和菓子処 真盛堂』のゆでまんじゅうを巡る。初回ドラフトのSpot 4番地誤記・Spot 3神輿奉納藩主世代誤り・近接折り返しにより2.70。"
+    },
+    {
+      "slug": "tonosawa",
+      "station": "塔ノ沢",
+      "line": "箱根登山鉄道線",
+      "prefecture": "神奈川県",
+      "iteration": 41,
+      "score": 3.75,
+      "grade": "B+ (渓谷下りの高低差と物語性が秀逸)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.76,
+        "walking_flow": 0.72,
+        "visual_tangibility": 0.78,
+        "anti_template": 0.74,
+        "spot_harmony": 0.75
+      },
+      "good_points": "秘境駅の塔之沢深沢銭洗弁財天から瓔珞の鯛ごはん、茶のちもとの湯もち、小田原北条五代の菩提寺・早雲寺、箱根湯本駅前の菊川商店へと早川渓谷沿いに下る一筆書き動線と物語性が秀逸。",
+      "issues": "特になし（spot5.pngの疑似漢字焼印も断面表現で解消済み）。"
+    },
+    {
+      "slug": "tagawa_ita",
+      "station": "田川伊田",
+      "line": "平成筑豊鉄道伊田線",
+      "prefecture": "福岡県",
+      "iteration": 41,
+      "score": 3.7,
+      "grade": "B+ (炭都の記憶と祭礼文化を立体化)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.76,
+        "walking_flow": 0.72,
+        "visual_tangibility": 0.76,
+        "anti_template": 0.72,
+        "spot_harmony": 0.74
+      },
+      "good_points": "風治八幡宮（川渡り神幸祭・封宮）から森食堂のちゃんぽん、団地リノベのバードコーヒー、二本煙突と伊田竪坑櫓がそびえる石炭記念公園、よもぎや本舗まで、炭都・田川の記憶をC字型動線で立体的に描けている。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "higashi_soja",
+      "station": "東総社",
+      "line": "JR吉備線",
+      "prefecture": "岡山県",
+      "iteration": 41,
+      "score": 3.55,
+      "grade": "B (擬洋風建築と70m木造回廊の門前散歩)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.72,
+        "walking_flow": 0.7,
+        "visual_tangibility": 0.72,
+        "anti_template": 0.7,
+        "spot_harmony": 0.71
+      },
+      "good_points": "明治擬洋風建築の旧総社警察署（まちかど郷土館）と備中国総社宮の全長約70mの木造回廊を核に、古民家焙煎所・老舗洋食店・手焼きどら焼きの和菓子舗まで東から西への一筆書きが整っている。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "otsuki",
+      "station": "大月",
+      "line": "JR中央本線",
+      "prefecture": "山梨県",
+      "iteration": 41,
+      "score": 2.85,
+      "grade": "C (後半3スポットの駅前ロータリー密集により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.58,
+        "walking_flow": 0.52,
+        "visual_tangibility": 0.6,
+        "anti_template": 0.58,
+        "spot_harmony": 0.57
+      },
+      "good_points": "駒橋宿の三嶋神社と大月空襲の記憶を伝える行願寺から西へ進む導入は堅実。",
+      "issues": "後半のSpot 3（正華）→Spot 4（桔梗屋東治郎：66m）→Spot 5（月カフェ：72m）が大月駅前ロータリー周辺に密集しており、20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "iwaki_tanagura",
+      "station": "磐城棚倉",
+      "line": "JR水郡線",
+      "prefecture": "福島県",
+      "iteration": 41,
+      "score": 2.75,
+      "grade": "C (Spot 1の日曜昼変則営業等により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.56,
+        "walking_flow": 0.5,
+        "visual_tangibility": 0.58,
+        "anti_template": 0.56,
+        "spot_harmony": 0.55
+      },
+      "good_points": "棚倉城跡（亀ケ城公園）の水堀・樹齢600年の大ケヤキと蓮家寺の銅鐘、甘盛堂の草餅いちご大福を繋ぐ城下町構成。",
+      "issues": "起点Spot 1（cafe 望希蔵）が日曜昼は第1・3日曜以外夜営業のみである変則性から、20ルート相対評価で下位差し替え候補。"
     }
   ],
   "updated_at": "2026-11-06T16:17:00.000Z",
@@ -3796,6 +3891,15 @@
     "mino_shirotori",
     "matsumaru",
     "usuki",
-    "yuki"
-  ]
+    "yuki",
+    "otsuki",
+    "iwaki_tanagura"
+  ],
+  "current_window_iterations": [
+    38,
+    39,
+    40,
+    41
+  ],
+  "current_window_average": 3.35
 }
