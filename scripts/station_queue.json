@@ -1573,57 +1573,104 @@
     {
       "batch_id": 33,
       "iteration": 34,
-      "status": "pending",
+      "status": "completed",
       "selection_method": "heartrails_japan_all_stations_uniform_random",
       "drawn_at": "2026-11-06T03:47:34.835Z",
       "stations": [
         {
           "station": "益田駅",
-          "line": "JR山口線",
+          "line": "JR山口線・山陰本線",
           "prefecture": "島根県",
-          "lat": 34.678311,
-          "lng": 131.838932,
-          "postal": "6980024",
-          "status": "pending"
+          "slug": "masuda",
+          "status": "completed"
         },
         {
           "station": "新大平下駅",
           "line": "東武日光線",
           "prefecture": "栃木県",
-          "lat": 36.339024,
-          "lng": 139.701886,
-          "postal": "3294404",
-          "status": "pending"
+          "slug": "shin_ohirashita",
+          "status": "completed"
         },
         {
-          "station": "神村学園前駅",
+          "station": "串木野駅",
+          "original_drawn": "神村学園前駅 (処方箋78により同路線の隣駅・串木野駅へ再抽選)",
           "line": "JR鹿児島本線",
           "prefecture": "鹿児島県",
-          "lat": 31.703731,
-          "lng": 130.284129,
-          "postal": "8960037",
-          "status": "pending"
+          "slug": "kushikino",
+          "status": "completed"
         },
         {
-          "station": "十二所駅",
+          "station": "東大館駅",
+          "original_drawn": "十二所駅 (処方箋78により同路線の東大館駅へ再抽選)",
           "line": "JR花輪線",
           "prefecture": "秋田県",
-          "lat": 40.21429,
-          "lng": 140.668211,
-          "postal": "0185601",
-          "status": "pending"
+          "slug": "higashi_odate",
+          "status": "completed"
         },
         {
           "station": "唐崎駅",
           "line": "JR湖西線",
           "prefecture": "滋賀県",
-          "lat": 35.049795,
-          "lng": 135.866969,
-          "postal": "5200106",
+          "slug": "karasaki",
+          "status": "completed"
+        }
+      ],
+      "completed_at": "2026-11-06"
+    },
+    {
+      "batch_id": 34,
+      "iteration": 35,
+      "status": "pending",
+      "selection_method": "heartrails_japan_all_stations_uniform_random",
+      "drawn_at": "2026-11-06T05:01:42.320Z",
+      "stations": [
+        {
+          "station": "波多浦駅",
+          "line": "JR三角線",
+          "prefecture": "熊本県",
+          "lat": 32.615524,
+          "lng": 130.488117,
+          "postal": "8693205",
+          "status": "pending"
+        },
+        {
+          "station": "森本駅",
+          "line": "IRいしかわ鉄道線",
+          "prefecture": "石川県",
+          "lat": 36.612144,
+          "lng": 136.689489,
+          "postal": "9203115",
+          "status": "pending"
+        },
+        {
+          "station": "笠岡駅",
+          "line": "JR山陽本線",
+          "prefecture": "岡山県",
+          "lat": 34.504913,
+          "lng": 133.504705,
+          "postal": "7140081",
+          "status": "pending"
+        },
+        {
+          "station": "姫川駅",
+          "line": "JR大糸線",
+          "prefecture": "新潟県",
+          "lat": 37.020339,
+          "lng": 137.860914,
+          "postal": "9410071",
+          "status": "pending"
+        },
+        {
+          "station": "為栗駅",
+          "line": "JR飯田線",
+          "prefecture": "長野県",
+          "lat": 35.311687,
+          "lng": 137.848503,
+          "postal": "3991201",
           "status": "pending"
         }
       ]
     }
   ],
-  "current_batch": 33
+  "current_batch": 34
 }

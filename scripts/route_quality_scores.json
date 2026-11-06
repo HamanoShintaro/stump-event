@@ -2962,7 +2962,7 @@
         "accuracy_and_flow": 4,
         "narrative_and_quiz": 3.8
       },
-      "total": 3.85,
+      "total": 3.75,
       "needs_replacement": false,
       "notes": "懸垂式モノレールと純喫茶ヨーロピアン・千葉虎屋・阿づ満庵本店・千葉神社を無理のない歩幅で結ぶ都市散策。"
     },
@@ -2988,7 +2988,7 @@
         "accuracy_and_flow": 4,
         "narrative_and_quiz": 3.9
       },
-      "total": 3.95,
+      "total": 3.85,
       "needs_replacement": false,
       "notes": "JR柚須駅から炭鉱鉄道の歴史・大藤の熊野神社・自家焙煎珈琲・古式だしうどんへ至る時間軸が鮮やか。"
     },
@@ -3016,7 +3016,7 @@
         "food_and_rest": 4.1,
         "visuals": 3.95
       },
-      "total": 4.05,
+      "total": 4,
       "needs_replacement": false,
       "notes": "信越国境の妙高高原駅（Spot 1）から、Myoko Coffee 高原駅前店（休憩）→お菓子のやまきん（買い物・短尺90字）→霧下そば やぶ（食事）→妙高温泉 共同浴場 大湯（見どころ）へと南西へ一筆書きで坂を上り、見どころ・休憩・買い物・食事の4要素と高原の風土が完璧に噛み合った白眉の出来栄え。"
     },
@@ -3031,7 +3031,7 @@
         "food_and_rest": 3.5,
         "visuals": 3.7
       },
-      "total": 3.7,
+      "total": 3.65,
       "needs_replacement": false,
       "notes": "JR北浦駅（Spot 1）から仙台・広瀬通のイチョウから彫られた道祖神社（短尺93字）→農家キッシュの禾食や→地場ネギ山盛りのラーメンショップ北浦店→126枚の絵天井を持つ興安寺へと100%東進で結ぶ好構成。禾食やが金・土曜のみの週2日営業である点のみ惜しい。"
     },
@@ -3046,8 +3046,8 @@
         "food_and_rest": 3.4,
         "visuals": 3.5
       },
-      "total": 3.45,
-      "needs_replacement": false,
+      "total": 3,
+      "needs_replacement": true,
       "notes": "清流・高津川と銅山街道の宿場町・日原を舞台に、日原駅→杵築神社→割烹 美加登家 本店の天然鮎→古民家かわべ（diningcafe いと）のそば粉ワッフル→春日神社へと北上する叙情豊かなルート。序盤の徒歩14分＋10分の川沿い移動と、美加登家の昼営業が12:00〜13:00の予約中心割烹である点で3.50。"
     },
     {
@@ -3121,7 +3121,7 @@
         "food_and_rest": 3.3,
         "visuals": 3.4
       },
-      "total": 3.5,
+      "total": 3.45,
       "needs_replacement": false,
       "notes": "鷹巣駅から手打ちそばと比内地鶏いな穂・レストラン葡萄の樹・寛政8年創業の晩梅（大太鼓まんじゅう・バター餅）・鷹巣神社へと100%南下する北秋田ルート。序盤に食事と喫茶が連続する点で3.50。"
     },
@@ -3154,13 +3154,88 @@
       "total": 2.85,
       "needs_replacement": true,
       "notes": "広電白島駅から登きや・BOULANGERIE HIRO・UNION・碇神社まで100%東進で結ぶが、全5スポットが直線合計418m（徒歩計7分）の極小圏内に密集しているため移動窓相対評価で差し替え候補。"
+    },
+    {
+      "slug": "higashi_odate",
+      "station": "東大館駅",
+      "iteration": 34,
+      "scores": {
+        "discovery": 4.1,
+        "flow": 4,
+        "narrative": 4,
+        "food_and_rest": 4.1,
+        "visuals": 4.05
+      },
+      "total": 4.05,
+      "needs_replacement": false,
+      "notes": "城下町に近い東大館駅から総鎮守・大館神明社、比内地鶏きりたんぽ鍋の元祖むらさき、明治5年創業斎作屋菓子舗の酒まんじゅう、秋田犬会館へと展開する構成・絵作りともに白眉。"
+    },
+    {
+      "slug": "masuda",
+      "station": "益田駅",
+      "iteration": 34,
+      "scores": {
+        "discovery": 3.9,
+        "flow": 3.9,
+        "narrative": 3.9,
+        "food_and_rest": 3.9,
+        "visuals": 3.9
+      },
+      "total": 3.9,
+      "needs_replacement": false,
+      "notes": "山口線起点の益田駅から石州瓦の辻之宮八幡宮、にちにち食堂（モンブランブリュレ）、SL C57を望む栗栗珈琲、鶏卵堂の鶏卵饅頭へと巡る完成度の高いルート。"
+    },
+    {
+      "slug": "shin_ohirashita",
+      "station": "新大平下駅",
+      "iteration": 34,
+      "scores": {
+        "discovery": 3.8,
+        "flow": 3.6,
+        "narrative": 3.7,
+        "food_and_rest": 3.7,
+        "visuals": 3.7
+      },
+      "total": 3.7,
+      "needs_replacement": false,
+      "notes": "東武日光線・新大平下駅と明治28年開業のJR両毛線・大平下駅の2つの近接駅を例幣使街道富田宿の歴史と団子・古民家蕎麦で結ぶ好ルート。"
+    },
+    {
+      "slug": "kushikino",
+      "station": "串木野駅",
+      "iteration": 34,
+      "scores": {
+        "discovery": 3.5,
+        "flow": 3.5,
+        "narrative": 2.6,
+        "food_and_rest": 3.2,
+        "visuals": 2.2
+      },
+      "total": 3,
+      "needs_replacement": true,
+      "notes": "勘場蒲鉾店の豆腐入りつけあげ・味工房みその本店の元祖まぐろラーメンと食文化の核は強力だが、初回生成時の開業年不一致・夜予約制表記・Spot 5画像のカード影枠により3.00（すべて修正済）。"
+    },
+    {
+      "slug": "karasaki",
+      "station": "唐崎駅",
+      "iteration": 34,
+      "scores": {
+        "discovery": 3.6,
+        "flow": 3.8,
+        "narrative": 3.5,
+        "food_and_rest": 3.4,
+        "visuals": 1.95
+      },
+      "total": 2.95,
+      "needs_replacement": true,
+      "notes": "唐崎駅から鶴喜そば・近江かぎやのみたらし団子・近江八景「唐崎の松」へと琵琶湖へ下る動線は美しいが、初回生成時のSpot 3・4・5画像の左右見切れにより2.95（画像は全て余白付きで再生成済）。"
     }
   ],
-  "updated_at": "2026-11-06T03:59:27.068Z",
+  "updated_at": "2026-11-06T05:01:39.859Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.38,
-  "last_updated_iteration": 33,
+  "moving_window_average": 3.35,
+  "last_updated_iteration": 34,
   "scoring_philosophy": "直近20ルート（移動窓：Iteration 26〜29 = Batch #25〜#28 の計20作品）を基準母集団とし、20作品の平均スコアを 3.2〜3.4（現在 3.35）に正規化する相対評価（共進化システム）。処方箋86（surprise文末の常体統一・バッジ説明の5スポット順列記載・area_name叙情化）および処方箋87（積雪地の冬季長期休業カフェ単独依存回避・屋外ベンチの疑似休憩枠回避・画像の単一構図と和紙余白徹底）を統合。",
-  "moving_window_20_average": 3.38
+  "moving_window_20_average": 3.35
 }
