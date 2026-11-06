@@ -32890,5 +32890,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "0cd27d89-1a94-43af-885f-c0b00442fbd9",
+    "title": "南部片富士の麓で湧水の蔵と煎餅を歩く大更",
+    "name": "南部片富士の麓で湧水の蔵と煎餅を歩く大更",
+    "description": "秀峰・岩手山（南部片富士）の北東麓に広がる八幡平市大更は、冷涼な伏流水と実り豊かな田園が息づく玄関口。駅前通りで香ばしく焼き上がる南部せんべいの匂いから始まり、鉄板が弾ける老舗の洋食喫茶、静かに時を刻む珈琲店へ。鎮守の杜と二百年の歴史を紡ぐ白壁の酒蔵を訪ねながら、山の恵みが育てた街を歩きます。",
+    "region": "大更駅・南部片富士の伏流水と酒蔵を辿る道",
+    "area_name": "大更駅・南部片富士の伏流水と酒蔵を辿る道",
+    "cover_image_url": "/images/obuke/route-eyecatch.png",
+    "imageUrl": "/images/obuke/route-eyecatch.png",
+    "category": "酒蔵・喫茶・甘味",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って南部片富士の麓・大更を歩くなら、手焼き煎餅の香ばしさと名水の酒蔵のどちらから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『樋口せんべい店』の焼きたて南部せんべいと、型の縁からはみ出た薄焼きの名物「岩手山のミミ」",
+          "description": "職人の火加減が生むパリパリとした端っこの食感と、黒胡麻や小麦の素朴な香ばしさを楽しむ時間",
+          "badge_code": "shuin_obuke_higuchi"
+        },
+        {
+          "key": "B",
+          "text": "親子三代に愛される『洋食喫茶 レオス』で味わう、熱々の鉄板ハンバーグと昔懐かしいナポリタン",
+          "description": "ジュウジュウと音を立てる鉄板から立ち上る湯気と自家製ソースの香りに包まれる昼食",
+          "badge_code": "shuin_obuke_reos"
+        },
+        {
+          "key": "C",
+          "text": "『珈琲メトロノーム』で一滴ずつ丁寧に淹れられるハンドドリップ珈琲と、心地よい午後のテンポ",
+          "description": "豆を挽く音と深い香りに耳を澄ませながら、慌ただしい日常の歩調をゆっくりと整えるひととき",
+          "badge_code": "shuin_obuke_metronome"
+        },
+        {
+          "key": "D",
+          "text": "「きゅうり天王さま」と親しまれる『大更八坂神社』の杜と、文政年間創業の酒蔵『わしの尾』の白壁",
+          "description": "夏の実りを供える古社に参拝し、岩手山の雪形から名付けられた老舗酒蔵の風格を仰ぎ見る散策の結び",
+          "badge_code": "shuin_obuke_yasaka_washinoo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c09d2879-287d-41fd-80e5-b1fa6b247f59",
+        "name": "樋口せんべい店",
+        "description": "保存料を使わず昔ながらの製法で南部せんべいや焼き菓子を手がける老舗煎餅店（9:00〜18:00営業、不定休）。焼成時に型からはみ出た薄い縁を集めた「岩手山のミミ」や「うずまきかりんとう」が人気を集める。",
+        "address": "岩手県八幡平市大更第25地割506-3",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.913035,
+        "lng": 141.097637,
+        "qr_token": "shuin-obuke-1",
+        "cover_image_url": "/images/obuke/spot1.png",
+        "f7_fragment": "鉄型から溢れた薄き縁に、北国の小麦の香ばしさが宿る。",
+        "f7_full": "丸い鉄型からわずかに溢れた薄い縁にこそ、職人の火加減と北国の小麦の香ばしさが凝縮されている。",
+        "is_final": false,
+        "next_spot_id": "d9bc0acc-2af2-4fe2-82a9-6a89e7b0ce6d",
+        "next_spot_name": "洋食喫茶 レオス"
+      },
+      {
+        "id": "d9bc0acc-2af2-4fe2-82a9-6a89e7b0ce6d",
+        "name": "洋食喫茶 レオス",
+        "description": "三角屋根と木の温もりある店内が特徴の老舗洋食喫茶（火〜土曜11:00〜19:30L.O.、日曜11:00〜15:00L.O.営業、月曜定休）。熱々の鉄板ハンバーグやナポリタン、パフェなど世代を超えて親しまれる洋食を提供する。",
+        "address": "岩手県八幡平市大更第25地割68-1",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.913741,
+        "lng": 141.096528,
+        "qr_token": "shuin-obuke-2",
+        "cover_image_url": "/images/obuke/spot2.png",
+        "f7_fragment": "熱き鉄板の湯気の向こうに、町の団欒の歳月が立ち上る。",
+        "f7_full": "熱々の鉄板から立ち上る湯気と香ばしいソースの匂いが、世代を超えて愛されてきた町の団欒を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "384dae57-7c58-4a9d-81ce-b09ccd51d0c2",
+        "next_spot_name": "珈琲メトロノーム"
+      },
+      {
+        "id": "384dae57-7c58-4a9d-81ce-b09ccd51d0c2",
+        "name": "珈琲メトロノーム",
+        "description": "大更ショッピングタウンの一角で営業する静かな喫茶店（10:00〜17:00営業、月曜・第2・4火曜定休）。丁寧にハンドドリップで淹れる香り高い珈琲や軽食、甘味で散策の足を休めることができる。",
+        "address": "岩手県八幡平市大更第23地割100-3",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.912055,
+        "lng": 141.09538,
+        "qr_token": "shuin-obuke-3",
+        "cover_image_url": "/images/obuke/spot3.png",
+        "f7_fragment": "滴る珈琲の静かな律動が、旅人の歩調を優しく整える。",
+        "f7_full": "一滴ずつ落ちる珈琲の静かな律動が、慌ただしい日常の針を緩め、旅人の歩調を優しく整えてゆく。",
+        "is_final": false,
+        "next_spot_id": "313636c2-ef63-4334-8c4d-a977a7c16dff",
+        "next_spot_name": "大更八坂神社"
+      },
+      {
+        "id": "313636c2-ef63-4334-8c4d-a977a7c16dff",
+        "name": "大更八坂神社",
+        "description": "大更地区の鎮守として信仰を集める古社（境内参拝自由、無休）。隣接する大更稲荷神社とともに親しまれ、「きゅうり天王さま」の愛称で毎年7月の例大祭には神輿渡御や郷土芸能で賑わう。",
+        "address": "岩手県八幡平市大更第19地割25",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.904889,
+        "lng": 141.098293,
+        "qr_token": "shuin-obuke-4",
+        "cover_image_url": "/images/obuke/spot4.png",
+        "f7_fragment": "夏の実りを供える天王の杜に、麓の暮らしの祈りが結ばれる。",
+        "f7_full": "初成りの実りを供えて無病息災を願う天王さまの杜に、南部片富士の麓に生きる人々の温かな祈りが結ばれている。",
+        "is_final": false,
+        "next_spot_id": "bf0170b0-ba5c-43a9-89ea-118e6cf35678",
+        "next_spot_name": "株式会社わしの尾（酒蔵通り）"
+      },
+      {
+        "id": "bf0170b0-ba5c-43a9-89ea-118e6cf35678",
+        "name": "株式会社わしの尾（酒蔵通り）",
+        "description": "文政12年創業の歴史を持つ八幡平市代表の老舗酒蔵（蔵外観は終日鑑賞自由、予約外の蔵内立ち入り不可）。岩手山の雪形「鷲」にちなむ銘酒「鷲の尾」を、清冽な伏流水と南部杜氏の技で醸し続ける。",
+        "address": "岩手県八幡平市大更第22地割158",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.904408,
+        "lng": 141.097748,
+        "qr_token": "shuin-obuke-5",
+        "cover_image_url": "/images/obuke/spot5.png",
+        "f7_fragment": "鷲の雪形を仰ぐ白壁の蔵に、伏流水の恵みが醸される。",
+        "f7_full": "春の岩手山に浮かぶ鷲の雪形を仰ぎながら、清冽な伏流水と杜氏の技が二百年の歳月を醸し続けている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a0232735-8996-4746-8f21-d6e520a4eeda",
+    "title": "五百余の微笑みと多古の古刹・茶香を巡る五百羅漢",
+    "name": "五百余の微笑みと多古の古刹・茶香を巡る五百羅漢",
+    "description": "伊豆箱根鉄道大雄山線の五百羅漢駅が佇む小田原市扇町は、旧多古村の歴史と職人の手仕事が息づく穏やかな街。五百余体の木彫羅漢像が豊かな表情で迎える古刹から、自然薯つなぎの老舗そば処、国産小麦のパン工房へ。五百五十余年の法灯を継ぐ寺院を参拝し、有機日本茶の一雫で心を整える道のりを巡ります。",
+    "region": "五百羅漢駅・多古の五百羅漢と茶香を巡る道",
+    "area_name": "五百羅漢駅・多古の五百羅漢と茶香を巡る道",
+    "cover_image_url": "/images/gohyakurakan/route-eyecatch.png",
+    "imageUrl": "/images/gohyakurakan/route-eyecatch.png",
+    "category": "古刹・日本茶・麺処",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "帰りの大雄山線に揺られるとき、五百余の羅漢の微笑みと香り高い煎茶の一滴のどちらが鮮やかに浮かぶだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『天桂山 玉宝寺（五百羅漢）』の本堂に並ぶ、笑う顔や語り合う顔など五百二十六体の木彫羅漢像",
+          "description": "二十七年の歳月をかけて一躯ずつ集められた、一体ごとに異なる人間味あふれる面差しと向き合う時間",
+          "badge_code": "shuin_gohyakurakan_gyokuhoji"
+        },
+        {
+          "key": "B",
+          "text": "『城下町 はつ花そば』で手繰る、自然薯と卵をつなぎに打った艶やかなせいろ蕎麦",
+          "description": "蕎麦の香りと滑らかな喉越しを両立させた伝統の技と、かつお節が香るつゆを堪能する昼食",
+          "badge_code": "shuin_gohyakurakan_hatsuhana"
+        },
+        {
+          "key": "C",
+          "text": "国産小麦100％・無添加生地の『255Bakery』と、室町時代創建の古刹『本融山 円妙寺』の静寂",
+          "description": "夫婦で毎朝焼き上げる香ばしいパンを手土産に選び、五百五十余年の法灯を継ぐお寺を参拝するひととき",
+          "badge_code": "shuin_gohyakurakan_255bakery_enmyoji"
+        },
+        {
+          "key": "D",
+          "text": "『日本茶カフェ 芯 Jin』で湯温を変えて一煎ずつ淹れる有機日本茶と、練りたての本わらび餅",
+          "description": "一煎目の甘みから二煎目の爽やかな香りへと移ろう茶葉の表情を、出来立ての和菓子とともに味わう結び",
+          "badge_code": "shuin_gohyakurakan_jin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "12ba9aa2-566a-4d6d-83e1-4aae9c1ee960",
+        "name": "天桂山 玉宝寺（五百羅漢）",
+        "description": "五百羅漢駅の駅名の由来となった曹洞宗の寺院（拝観8:30〜17:00、無休）。通称「多古の五百羅漢」と呼ばれ、享保年間から27年をかけて勧進された526体の木造五百羅漢像（市指定有形民俗文化財）を安置する。",
+        "address": "神奈川県小田原市扇町5-1-28",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.274335,
+        "lng": 139.155039,
+        "qr_token": "shuin-gohyakurakan-1",
+        "cover_image_url": "/images/gohyakurakan/spot1.png",
+        "f7_fragment": "五百余の木彫の面差しに、人の世の喜怒哀楽が優しく宿る。",
+        "f7_full": "二十七年の歳月をかけて集められた五百二十六体の面差しに、人の世の喜怒哀楽と慈しみが優しく宿っている。",
+        "is_final": false,
+        "next_spot_id": "95d5e73f-43b2-4fa8-8986-e49b408195d3",
+        "next_spot_name": "城下町 はつ花そば"
+      },
+      {
+        "id": "95d5e73f-43b2-4fa8-8986-e49b408195d3",
+        "name": "城下町 はつ花そば",
+        "description": "扇町4丁目の通り沿いに暖簾を掲げるそば処（11:00〜20:00L.O.営業、不定休）。そば粉に自然薯（山芋）と卵を合わせた滑らかな喉越しの蕎麦や、天ぷら・鴨せいろが地元客に親しまれている。",
+        "address": "神奈川県小田原市扇町4-8-12",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.271918,
+        "lng": 139.159766,
+        "qr_token": "shuin-gohyakurakan-2",
+        "cover_image_url": "/images/gohyakurakan/spot2.png",
+        "f7_fragment": "自然薯が結ぶ艶やかな蕎麦に、城下町の粋な技が息づく。",
+        "f7_full": "自然薯と蕎麦粉が結ぶ艶やかな一筋に、城下町・小田原で磨かれてきた職人の粋な技が息づいている。",
+        "is_final": false,
+        "next_spot_id": "8377d099-483b-4f94-8b1d-d5ad206d8e7b",
+        "next_spot_name": "255Bakery"
+      },
+      {
+        "id": "8377d099-483b-4f94-8b1d-d5ad206d8e7b",
+        "name": "255Bakery",
+        "description": "国道255号沿いに店を構える夫婦営みのベーカリー（10:00〜17:00営業・売切次第終了、日曜・月曜定休）。国産小麦100％・無添加生地にこだわった食パンや惣菜パン、菓子パンを毎日焼き上げる。",
+        "address": "神奈川県小田原市扇町2-16-6",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.267634,
+        "lng": 139.159414,
+        "qr_token": "shuin-gohyakurakan-3",
+        "cover_image_url": "/images/gohyakurakan/spot3.png",
+        "f7_fragment": "国道沿いの小さな窯から、無添加の小麦の甘い香りが満ちる。",
+        "f7_full": "往来を見守る国道沿いの小さな窯から、国産小麦を丁寧に焼き上げる無添加の優しい香りが街角へ満ちてゆく。",
+        "is_final": false,
+        "next_spot_id": "1874d5b3-7189-4312-8efd-389550a99938",
+        "next_spot_name": "本融山 円妙寺"
+      },
+      {
+        "id": "1874d5b3-7189-4312-8efd-389550a99938",
+        "name": "本融山 円妙寺",
+        "description": "文明7年に第3世・日進上人によって開かれたと伝わる日蓮宗の古刹（境内参拝自由、無休）。五百五十余年にわたり扇町・井細田周辺の暮らしを見守り、手入れされた静かな境内が参拝者を迎える。",
+        "address": "神奈川県小田原市扇町1-12-5",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.264369,
+        "lng": 139.159725,
+        "qr_token": "shuin-gohyakurakan-4",
+        "cover_image_url": "/images/gohyakurakan/spot4.png",
+        "f7_fragment": "室町の世より続く法灯が、扇町の穏やかな歳月を静かに照らす。",
+        "f7_full": "室町の世より絶えることなく続く古刹の法灯が、羅漢の微笑みと人々の暮らしが息づく扇町の歳月を静かに照らす。",
+        "is_final": false,
+        "next_spot_id": "19feb0dc-1f4f-40d5-8a60-e0989654b79d",
+        "next_spot_name": "日本茶カフェ 芯 Jin"
+      },
+      {
+        "id": "19feb0dc-1f4f-40d5-8a60-e0989654b79d",
+        "name": "日本茶カフェ 芯 Jin",
+        "description": "扇町1丁目のビル3階に佇む日本茶専門カフェ（11:00〜19:00営業、日曜定休・木曜不定休）。全国の有機日本茶を茶葉に合わせた湯温で一煎ずつ提供し、注文ごとに練り上げる本わらび餅や自家製和菓子が味わえる。",
+        "address": "神奈川県小田原市扇町1-25-21",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.263425,
+        "lng": 139.158592,
+        "qr_token": "shuin-gohyakurakan-5",
+        "cover_image_url": "/images/gohyakurakan/spot5.png",
+        "f7_fragment": "湯温とともに開く有機の茶葉が、一煎ごとに異なる表情を映す。",
+        "f7_full": "湯温とともにゆっくりと開く有機の茶葉が、一煎ごとに甘みから清々しい香りへと異なる表情を映し出す。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3d8acd35-c683-4977-8f68-2aae095b70ce",
+    "title": "武田の隠し湯と黄金の渓谷を訪ねる下部温泉",
+    "name": "武田の隠し湯と黄金の渓谷を訪ねる下部温泉",
+    "description": "武田信玄公の隠し湯として名高い下部温泉は、下部川の清流に沿って湯宿と歴史遺産が息づく山あいの温泉郷。駅前で九十年以上愛される最中と旧米配給所を改装したカフェから、砂金採りの記憶を伝える甲斐黄金村へ。湯治客の祈りが宿る古社と渓流を望む手打ちそば処までを訪ねます。",
+    "region": "下部温泉駅・信玄の隠し湯と黄金の渓谷を訪ねる道",
+    "area_name": "下部温泉駅・信玄の隠し湯と黄金の渓谷を訪ねる道",
+    "cover_image_url": "/images/shimobe_onsen/route-eyecatch.png",
+    "imageUrl": "/images/shimobe_onsen/route-eyecatch.png",
+    "category": "温泉街・歴史・麺処",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "渓谷の湯の街・下部温泉の旅を終えて日常へ戻るとき、鞄や記憶の中にそっと持ち帰りたいしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "創業九十余年の『和菓子処 ニュー梅月』で味わう、白あんに干しブドウを忍ばせた名物「かくし最中」",
+          "description": "「信玄公の隠し湯」にちなんで考案された、香ばしい最中種と甘酸っぱい果実の調和を楽しむ時間",
+          "badge_code": "shuin_shimobe_onsen_shinbaigetsu"
+        },
+        {
+          "key": "B",
+          "text": "昭和三年築の旧米配給所を改装した『カフェ＆鉄板レストラン 藤川』で過ごす、太い梁の下の珈琲時間",
+          "description": "黒板張りの落ち着いた古民家空間で、百年近く地域の食を支えてきた建物の温もりに包まれるひととき",
+          "badge_code": "shuin_shimobe_onsen_fujikawa"
+        },
+        {
+          "key": "C",
+          "text": "『甲斐黄金村（黄金の足湯・湯之奥金山体験館）』で辿る甲州金の歴史と、湯治客が松葉杖を奉納した『熊野神社』",
+          "description": "山中の金山集落を再現した精巧なジオラマを見学し、温泉街の奥に鎮座する湯権現の本殿を参拝する時間",
+          "badge_code": "shuin_shimobe_onsen_kinzan_kumano"
+        },
+        {
+          "key": "D",
+          "text": "下部川の清流を見下ろす『そば処 かど久』で味わう、石臼挽きの手打ちそばと甲州名物「ほうとう」",
+          "description": "窓の外に響く渓流のせせらぎを聴きながら、香り高い蕎麦や野菜たっぷりの味噌仕立てほうとうを囲む昼食",
+          "badge_code": "shuin_shimobe_onsen_kadokyu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "eca18680-b890-40f3-8dde-0127252a82a2",
+        "name": "和菓子処 ニュー梅月",
+        "description": "下部温泉駅前で創業90余年の歴史を持つ老舗和菓子店（8:00〜19:00営業、不定休）。「信玄公の隠し湯」にちなみ白あんに干しブドウを入れた名物「かくし最中」や「下部まんじゅう」を手作りする。",
+        "address": "山梨県南巨摩郡身延町常葉7023",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.425098,
+        "lng": 138.472665,
+        "qr_token": "shuin-shimobe_onsen-1",
+        "cover_image_url": "/images/shimobe_onsen/spot1.png",
+        "f7_fragment": "白あんに秘められた果実の甘みが、隠し湯の物語を語る。",
+        "f7_full": "香ばしい最中の奥に秘められた白あんと果実の甘みが、信玄の隠し湯の物語を優しく語りかけてくる。",
+        "is_final": false,
+        "next_spot_id": "0144162b-ffba-46bf-8bc1-149fa28c24d0",
+        "next_spot_name": "カフェ＆鉄板レストラン 藤川"
+      },
+      {
+        "id": "0144162b-ffba-46bf-8bc1-149fa28c24d0",
+        "name": "カフェ＆鉄板レストラン 藤川",
+        "description": "昭和3年築の旧米配給所を改装した下部温泉駅前の古民家カフェ＆レストラン（11:30〜17:00・17:00〜20:00入店、木曜定休）。重厚な梁が残る落ち着いた空間で珈琲や甘味、鉄板料理を楽しめる。",
+        "address": "山梨県南巨摩郡身延町常葉7052-14",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.425033,
+        "lng": 138.472194,
+        "qr_token": "shuin-shimobe_onsen-2",
+        "cover_image_url": "/images/shimobe_onsen/spot2.png",
+        "f7_fragment": "旧き米配給所の太き梁が、湯町の穏やかな時間を支える。",
+        "f7_full": "かつて町の食を支えた旧米配給所の太い梁が、今は旅人を温かく迎える憩いの時間を静かに支えている。",
+        "is_final": false,
+        "next_spot_id": "290423e7-ddef-4a35-849e-bc05f1f8b65a",
+        "next_spot_name": "甲斐黄金村（黄金の足湯・湯之奥金山体験館）"
+      },
+      {
+        "id": "290423e7-ddef-4a35-849e-bc05f1f8b65a",
+        "name": "甲斐黄金村（黄金の足湯・湯之奥金山体験館）",
+        "description": "武田氏の軍資金を支えた湯之奥金山の歴史と出土品を紹介する体験施設（9:00〜17:00開館・入館は16:30まで、水曜休館）。鉱山集落の精巧なジオラマ展示や砂金採り体験室、源泉かけ流しの足湯を備える。",
+        "address": "山梨県南巨摩郡身延町上之平1787",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.423693,
+        "lng": 138.47181,
+        "qr_token": "shuin-shimobe_onsen-3",
+        "cover_image_url": "/images/shimobe_onsen/spot3.png",
+        "f7_fragment": "揺り皿に煌めく砂金の一粒が、甲斐の山中の歳月を映す。",
+        "f7_full": "水流の中で揺り皿に煌めく砂金の一粒が、険しい甲斐の山中で黄金を追い求めた人々の歳月を映し出す。",
+        "is_final": false,
+        "next_spot_id": "4556889e-6728-427b-8270-7d042b2a7bb1",
+        "next_spot_name": "熊野神社（下部温泉 湯権現）"
+      },
+      {
+        "id": "4556889e-6728-427b-8270-7d042b2a7bb1",
+        "name": "熊野神社（下部温泉 湯権現）",
+        "description": "平安初期に甲斐国主・藤原正信公が創建したと伝わる下部温泉の守護神（境内参拝自由、無休）。「湯権現」として崇められ、町指定文化財の本殿には湯治で全快した人々が奉納した古い松葉杖が残る。",
+        "address": "山梨県南巨摩郡身延町下部45",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.422282,
+        "lng": 138.480887,
+        "qr_token": "shuin-shimobe_onsen-4",
+        "cover_image_url": "/images/shimobe_onsen/spot4.png",
+        "f7_fragment": "神前に納められた古き杖が、名湯の癒やしと歓びを伝える。",
+        "f7_full": "役目を終えて神前に納められた古い杖の数々が、下部温泉の湯がもたらした癒やしと再生の歓びを伝えている。",
+        "is_final": false,
+        "next_spot_id": "304d2a66-be69-4a69-8965-15a27ff3650a",
+        "next_spot_name": "そば処 かど久"
+      },
+      {
+        "id": "304d2a66-be69-4a69-8965-15a27ff3650a",
+        "name": "そば処 かど久",
+        "description": "下部川の清流に面した湯町通り沿いで営業する手打ちそば・食事処（11:00〜15:00L.O.営業、不定休）。渓谷のせせらぎを眺めながら、石臼挽きの手打ちそばや甲州名物の「ほうとう」を味わえる。",
+        "address": "山梨県南巨摩郡身延町下部82-1",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.421063,
+        "lng": 138.482114,
+        "qr_token": "shuin-shimobe_onsen-5",
+        "cover_image_url": "/images/shimobe_onsen/spot5.png",
+        "f7_fragment": "渓流の水音に包まれながら、甲州の素朴な滋味を噛みしめる。",
+        "f7_full": "透明な下部川の水音に包まれながら手繰る一筋の蕎麦に、甲州の深い山と水が育んだ素朴な滋味が宿る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6bc311f8-0fa3-4719-8f79-91840c093c70",
+    "title": "六古窯の登り窯と緋色の器・茶香を辿る信楽",
+    "name": "六古窯の登り窯と緋色の器・茶香を辿る信楽",
+    "description": "日本六古窯の一つに数えられる信楽は、山あいの斜面に登り窯の煙突と窯元が連なる焼き物の里。古信楽から現代までの名品を伝える会館から、信楽焼の大鉢で供される讃岐うどん店、本物の登り窯の内部で朝宮茶を喫するカフェへ。陶製の奉納物が残る古社と小壺を模した銘菓の茶寮までを辿ります。",
+    "region": "信楽駅・六古窯の登り窯と緋色の器を辿る道",
+    "area_name": "信楽駅・六古窯の登り窯と緋色の器を辿る道",
+    "cover_image_url": "/images/shigaraki/route-eyecatch.png",
+    "imageUrl": "/images/shigaraki/route-eyecatch.png",
+    "category": "窯元・寺社・茶寮",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "赤松の薪が焼いた登り窯の静寂と、信楽焼の器に立つ湯気の温もり。今のあなたの心に深く響くのはどのひとときだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『甲賀市信楽伝統産業会館』で見つめる、古琵琶湖層の土と炎が生んだ「緋色」と「ビードロ釉」の景色",
+          "description": "中世の種壺から茶陶、現代の器まで、時代ごとに姿を変えてきた信楽焼の歴史と技法に触れる時間",
+          "badge_code": "shuin_shigaraki_museum"
+        },
+        {
+          "key": "B",
+          "text": "陶器店併設の『自家製麺 本格讃岐うどん 亀楽屋』で、信楽焼の大鉢ごと味わうコシの強い自家製うどん",
+          "description": "掌にずっしりと馴染む焼き物の手触りを感じながら、揚げたての天ぷらと黄金色のだしを堪能する昼食",
+          "badge_code": "shuin_shigaraki_kirakuya"
+        },
+        {
+          "key": "C",
+          "text": "『信楽陶芸村（奥田忠左衛門窯）』の本物の登り窯の内部で、自然釉のレンガ壁に囲まれて喫する朝宮茶",
+          "description": "千三百度の炎をくぐり抜けた窯の胎内に座り、地元特産の朝宮茶スイーツで一息つく特別な体験",
+          "badge_code": "shuin_shigaraki_noborigama_cafe"
+        },
+        {
+          "key": "D",
+          "text": "陶製の扁額が掲げられた『紫香楽一乃宮 新宮神社』と、小壺を模した『うずくまる本舗』の朝宮茶銘菓",
+          "description": "窯元の信仰を集める古社を参拝し、茶人が愛でた小壺「蹲」の姿を写した和菓子を手土産に選ぶ結び",
+          "badge_code": "shuin_shigaraki_shingu_uzukumaru"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "380a59bc-9a70-4832-8562-dd45172dc21f",
+        "name": "甲賀市信楽伝統産業会館",
+        "description": "日本六古窯・信楽焼の歴史と名品を体系的に紹介する市立展示施設（9:00〜17:00開館、木曜休館・入館無料）。穴窯から登り窯への変遷や、緋色・ビードロ釉・焦げといった信楽焼特有の景色を学べる。",
+        "address": "滋賀県甲賀市信楽町長野1203",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.877702,
+        "lng": 136.059246,
+        "qr_token": "shuin-shigaraki-1",
+        "cover_image_url": "/images/shigaraki/spot1.png",
+        "f7_fragment": "古琵琶湖の土と炎が出会い、温かな緋色の景色を生む。",
+        "f7_full": "太古の湖底に眠っていた土と赤松の炎が出会い、二度と同じもののない緋色と自然釉の景色を生み出す。",
+        "is_final": false,
+        "next_spot_id": "57ba7773-6b0f-44fe-8f95-e10dc1cd589a",
+        "next_spot_name": "自家製麺 本格讃岐うどん 亀楽屋"
+      },
+      {
+        "id": "57ba7773-6b0f-44fe-8f95-e10dc1cd589a",
+        "name": "自家製麺 本格讃岐うどん 亀楽屋",
+        "description": "陶器店（コタニ陶器）の敷地内に併設された自家製麺の讃岐うどん店（平日11:00〜15:00、土日11:00〜17:00営業、火曜定休）。信楽焼の器で供されるコシの強い自家製うどんと揚げたての天ぷらが人気。",
+        "address": "滋賀県甲賀市信楽町長野1248-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.87884,
+        "lng": 136.058968,
+        "qr_token": "shuin-shigaraki-2",
+        "cover_image_url": "/images/shigaraki/spot2.png",
+        "f7_fragment": "掌に馴染む信楽の鉢が、湯気立つうどんの滋味を引き立てる。",
+        "f7_full": "掌にずっしりと馴染む信楽焼の鉢が、湯気立つうどんの黄金色のだしと揚げたての彩りを温かく包み込む。",
+        "is_final": false,
+        "next_spot_id": "8f894e0f-de04-4bac-8bbc-c905658fd680",
+        "next_spot_name": "信楽陶芸村（のぼり窯カフェ・奥田忠左衛門窯）"
+      },
+      {
+        "id": "8f894e0f-de04-4bac-8bbc-c905658fd680",
+        "name": "信楽陶芸村（のぼり窯カフェ・奥田忠左衛門窯）",
+        "description": "明治21年創業の窯元・奥田忠左衛門窯が営む陶芸拠点（9:00〜17:00営業、のぼり窯カフェは10:00〜16:00頃、不定休）。山の斜面に残る本物の連房式登り窯の内部を改装した「のぼり窯カフェ」で朝宮茶やロールケーキを味わえる。",
+        "address": "滋賀県甲賀市信楽町長野1131",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.879819,
+        "lng": 136.056946,
+        "qr_token": "shuin-shigaraki-3",
+        "cover_image_url": "/images/shigaraki/spot3.png",
+        "f7_fragment": "炎の記憶を宿す登り窯の奥で、香り高き朝宮の茶を喫する。",
+        "f7_full": "千三百度の炎の記憶をレンガ壁に宿す登り窯の胎内で、清らかな朝宮茶の香りに包まれる静かなひととき。",
+        "is_final": false,
+        "next_spot_id": "14dabc10-75f6-4fc4-8950-8bf1fbcc0397",
+        "next_spot_name": "紫香楽一乃宮 新宮神社"
+      },
+      {
+        "id": "14dabc10-75f6-4fc4-8950-8bf1fbcc0397",
+        "name": "紫香楽一乃宮 新宮神社",
+        "description": "霊亀元年の創祀と伝わる信楽町長野の総社（境内参拝自由、無休）。千三百年にわたり窯元や職人の信仰を集め、境内には信楽焼の陶製扁額や奉納物が点在する。",
+        "address": "滋賀県甲賀市信楽町長野1151-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.878847,
+        "lng": 136.054933,
+        "qr_token": "shuin-shigaraki-4",
+        "cover_image_url": "/images/shigaraki/spot4.png",
+        "f7_fragment": "陶の扁額を掲げる古社の杜が、窯元の火と祈りを見守る。",
+        "f7_full": "陶製の扁額を掲げる千三百年の古社の杜が、土と炎に向き合う窯元たちの切実な祈りを今も静かに見守る。",
+        "is_final": false,
+        "next_spot_id": "33775702-004d-488b-8cd6-e48453b7d0dd",
+        "next_spot_name": "紫香楽茶寮 うずくまる本舗"
+      },
+      {
+        "id": "33775702-004d-488b-8cd6-e48453b7d0dd",
+        "name": "紫香楽茶寮 うずくまる本舗",
+        "description": "信楽焼の茶壺「うずくまる」をモチーフにした銘菓で知られる老舗和菓子店・茶寮（9:00〜17:00営業・茶寮は16:30まで、不定休・水曜休の場合あり）。朝宮茶を用いた「うずくまる」や「狸の腹つつみ」を手作りする。",
+        "address": "滋賀県甲賀市信楽町長野584-2",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.874621,
+        "lng": 136.050723,
+        "qr_token": "shuin-shigaraki-5",
+        "cover_image_url": "/images/shigaraki/spot5.png",
+        "f7_fragment": "小壺を模した和菓子の一口に、茶人が愛でた侘びの心が宿る。",
+        "f7_full": "朝宮茶が香る小壺の形の和菓子に、素朴な種壺の中に侘びの美を見出した茶人たちの風雅な心が宿っている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "53a15635-128a-483a-89cb-e3306cfec7da",
+    "title": "防人の山城を仰ぐ街で地酒銘菓と古社を味わう基山",
+    "name": "防人の山城を仰ぐ街で地酒銘菓と古社を味わう基山",
+    "description": "日本最古級の朝鮮式山城・基肄城が築かれた基山（きざん）の麓に広がる基山町は、JR鹿児島本線と甘木鉄道が交わる佐賀県東端の要衝。駅前の実力派カレー店から、地酒カステラが香る商店街の老舗菓子処、創業三十余年の純喫茶へ。商店街裏手の氏神さまと千百年の杜が守る伊勢山神社をめぐります。",
+    "region": "基山駅・防人の山城の麓と商店街をめぐる道",
+    "area_name": "基山駅・防人の山城の麓と商店街をめぐる道",
+    "cover_image_url": "/images/kiyama/route-eyecatch.png",
+    "imageUrl": "/images/kiyama/route-eyecatch.png",
+    "category": "商店街・古社・甘味",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "防人の山城を仰ぐ基山で守り継がれてきた祈りと手仕事の中で、あなたが間近に味わってみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『Wスパイス』で味わう、果物の甘みと香辛料が重なる欧風カレーと限定「基山スープカレー」",
+          "description": "ミシュランのビブグルマンにも選出された名店で、幾重にも立ち上るスパイスの香りに包まれる昼食",
+          "badge_code": "shuin_kiyama_wspice"
+        },
+        {
+          "key": "B",
+          "text": "親子三代が守る『和洋菓子処 あびによん』の、佐賀の地酒シロップが染み込んだ名物「酒びたしカステラ」",
+          "description": "基山の伝統芸能や祭りの名を冠した郷土銘菓と、芳醇な地酒が香るしっとりとしたカステラを選ぶ時間",
+          "badge_code": "shuin_kiyama_avignon"
+        },
+        {
+          "key": "C",
+          "text": "三十余年愛される『喫茶 文雅』のブレンド珈琲と、商店街裏手に佇む『若宮八幡神社』の静寂",
+          "description": "街の応接間のような純喫茶で一息つき、旧木山口村の記憶を継ぐ氏神さまの社殿に手を合わせるひととき",
+          "badge_code": "shuin_kiyama_bunga_wakamiya"
+        },
+        {
+          "key": "D",
+          "text": "平安初期に伊勢神宮の御分霊を勧請して創建された、千百余年の緑深き古社『伊勢山神社』",
+          "description": "住宅街の中に鬱蒼とした鎮守の杜を守り抜く古社を訪ね、国境の町を見守ってきた長い歴史を仰ぐ結び",
+          "badge_code": "shuin_kiyama_iseyama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9377d071-45f9-44ea-8fc3-cf2dd379196a",
+        "name": "Wスパイス",
+        "description": "基山駅近くで営業するカレー専門店（11:30〜14:30・17:00〜21:00営業、日曜・祝日定休）。ミシュランガイド福岡・佐賀のビブグルマン掲載歴を持ち、フルーティーな欧風カレーと1日10食限定の「基山スープカレー」が名物。",
+        "address": "佐賀県三養基郡基山町宮浦222",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.421369,
+        "lng": 130.531502,
+        "qr_token": "shuin-kiyama-1",
+        "cover_image_url": "/images/kiyama/spot1.png",
+        "f7_fragment": "甘みと辛さが重なる香辛料の調べが、旅の幕開けを彩る。",
+        "f7_full": "果物の優しい甘みと鮮烈な香辛料が幾重にも重なる一皿が、国境の街を歩く旅の幕開けを鮮やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "6ccd724e-de82-479c-87dc-a4362d2ecda3",
+        "next_spot_name": "和洋菓子処 あびによん"
+      },
+      {
+        "id": "6ccd724e-de82-479c-87dc-a4362d2ecda3",
+        "name": "和洋菓子処 あびによん",
+        "description": "基山モール商店街の入り口で親子三代にわたり営業する老舗和洋菓子店（10:00〜19:30営業、水曜定休）。佐賀の地酒を染み込ませた「酒びたしカステラ」や郷土芸能にちなむ「しし舞」「どんきゃんきゃん」が評判。",
+        "address": "佐賀県三養基郡基山町宮浦186-9",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.420903,
+        "lng": 130.530511,
+        "qr_token": "shuin-kiyama-2",
+        "cover_image_url": "/images/kiyama/spot2.png",
+        "f7_fragment": "地酒が潤す黄金のカステラに、三代の郷土愛が染み渡る。",
+        "f7_full": "佐賀の地酒がしっとりと潤す黄金色のカステラに、町の祭りと記憶を菓子に託してきた三代の郷土愛が染み渡る。",
+        "is_final": false,
+        "next_spot_id": "e31d157a-ef50-4643-8981-0fd813f70a0a",
+        "next_spot_name": "喫茶 文雅"
+      },
+      {
+        "id": "e31d157a-ef50-4643-8981-0fd813f70a0a",
+        "name": "喫茶 文雅",
+        "description": "基山モール商店街の西側通り沿いで30年以上愛され続ける老舗純喫茶（10:00〜20:00営業、不定休）。丁寧に淹れるこだわりのブレンド珈琲と落ち着いた空間が地元客や旅人の憩いの場となっている。",
+        "address": "佐賀県三養基郡基山町宮浦318",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.421678,
+        "lng": 130.529611,
+        "qr_token": "shuin-kiyama-3",
+        "cover_image_url": "/images/kiyama/spot3.png",
+        "f7_fragment": "琥珀色の珈琲が薫る純喫茶に、街の穏やかな日常が宿る。",
+        "f7_full": "三十余年の時を重ねた琥珀色の珈琲の香りに、行き交う人々を優しく受け止める街の止まり木の温もりが宿る。",
+        "is_final": false,
+        "next_spot_id": "22d6c80f-9d60-4438-81d7-0ce3fb0c0eba",
+        "next_spot_name": "若宮八幡神社（木山口若宮八幡宮）"
+      },
+      {
+        "id": "22d6c80f-9d60-4438-81d7-0ce3fb0c0eba",
+        "name": "若宮八幡神社（木山口若宮八幡宮）",
+        "description": "基山モール商店街の北側裏手に鎮座する木山口地区の氏神（境内参拝自由、無休）。商店街のすぐそばにありながら静かな木立に守られ、春には桜が彩る地域の鎮守として親しまれている。",
+        "address": "佐賀県三養基郡基山町宮浦197",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.422491,
+        "lng": 130.531408,
+        "qr_token": "shuin-kiyama-4",
+        "cover_image_url": "/images/kiyama/spot4.png",
+        "f7_fragment": "商店街の裏手に佇む鎮守の杜が、旧き村の記憶を今に継ぐ。",
+        "f7_full": "賑わう商店街のすぐ裏手に佇む鎮守の杜が、旧木山口村から受け継がれてきた祈りと暮らしの記憶を今に継ぐ。",
+        "is_final": false,
+        "next_spot_id": "ba073cc5-eed6-4648-8632-16e5558e5ad7",
+        "next_spot_name": "伊勢山神社"
+      },
+      {
+        "id": "ba073cc5-eed6-4648-8632-16e5558e5ad7",
+        "name": "伊勢山神社",
+        "description": "平安時代初期に伊勢神宮の御分霊を勧請して創建されたと伝わる古社（境内参拝自由、無休）。千百余年の歴史を持ち、豊かな緑に包まれた境内に天照大神を祀る。",
+        "address": "佐賀県三養基郡基山町小倉732",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.42197,
+        "lng": 130.538801,
+        "qr_token": "shuin-kiyama-5",
+        "cover_image_url": "/images/kiyama/spot5.png",
+        "f7_fragment": "千百年の緑深き伊勢山の杜に、国境の町の旅路が結ばれる。",
+        "f7_full": "伊勢の御分霊を祀る千百年の緑深き杜に、古代山城の麓から歩み始めた国境の町の旅路が静かに結ばれる。",
+        "is_final": true
+      }
+    ]
   }
 ];

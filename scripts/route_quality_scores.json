@@ -3779,21 +3779,116 @@
       },
       "good_points": "棚倉城跡（亀ケ城公園）の水堀・樹齢600年の大ケヤキと蓮家寺の銅鐘、甘盛堂の草餅いちご大福を繋ぐ城下町構成。",
       "issues": "起点Spot 1（cafe 望希蔵）が日曜昼は第1・3日曜以外夜営業のみである変則性から、20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "shigaraki",
+      "station": "信楽",
+      "line": "信楽高原鐵道",
+      "prefecture": "滋賀県",
+      "iteration": 42,
+      "score": 3.85,
+      "grade": "A- (本物の登り窯胎内カフェと信楽焼大鉢うどん・C字動線の好構成)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.78,
+        "walking_flow": 0.76,
+        "visual_tangibility": 0.78,
+        "anti_template": 0.76,
+        "spot_harmony": 0.77
+      },
+      "good_points": "信楽伝統産業会館（緋色とビードロ釉）から信楽焼の大鉢で供される亀楽屋の讃岐うどん、本物の25m連房式登り窯の内部でお茶を喫する『のぼり窯カフェ』、陶製扁額の新宮神社、小壺を模した銘菓『うずくまる本舗』まで、最大折れ角61°の滑らかなC字動線（1,163m）と触覚的な器体験が秀逸。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "gohyakurakan",
+      "station": "五百羅漢",
+      "line": "伊豆箱根鉄道大雄山線",
+      "prefecture": "神奈川県",
+      "iteration": 42,
+      "score": 3.7,
+      "grade": "B+ (526体の羅漢像から自然薯そば・有機日本茶カフェへ南下する一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.75,
+        "walking_flow": 0.75,
+        "visual_tangibility": 0.74,
+        "anti_template": 0.73,
+        "spot_harmony": 0.73
+      },
+      "good_points": "駅名の由来となった玉宝寺の526体の木彫五百羅漢像を起点に、自然薯と卵つなぎの『城下町 はつ花そば』、国産小麦無添加の『255Bakery』、室町創建の『円妙寺』、湯温を変えて一煎ずつ淹れる『日本茶カフェ 芯 Jin』へと北から南へ一直線（最大折れ角62°）に下る構成が整っている。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "kiyama",
+      "station": "基山",
+      "line": "甘木鉄道甘木線",
+      "prefecture": "佐賀県",
+      "iteration": 42,
+      "score": 3.5,
+      "grade": "B (国境の街のスパイスカレー・地酒カステラと千百年の鎮守の杜)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.7,
+        "walking_flow": 0.68,
+        "visual_tangibility": 0.72,
+        "anti_template": 0.7,
+        "spot_harmony": 0.7
+      },
+      "good_points": "ビブグルマン選出歴を持つ『Wスパイス』から、基山モール商店街で佐賀の地酒シロップを染み込ませた『あびによん』の酒びたしカステラ、創業30余年の『喫茶 文雅』、商店街裏手の『若宮八幡神社』、平安初期創建の『伊勢山神社』へと東進する地域固有性が明確。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "shimobe_onsen",
+      "station": "下部温泉",
+      "line": "JR身延線",
+      "prefecture": "山梨県",
+      "iteration": 42,
+      "score": 2.85,
+      "grade": "C (Spot 1→2の43m超近接とSpot 3→4の837m空白の疎密二極化により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.6,
+        "walking_flow": 0.5,
+        "visual_tangibility": 0.6,
+        "anti_template": 0.58,
+        "spot_harmony": 0.57
+      },
+      "good_points": "隠し湯にちなんだレーズン入り『かくし最中（ニュー梅月）』、昭和3年築の旧米配給所カフェ『藤川』、全快した湯治客が松葉杖を奉納した『熊野神社』、渓流沿いの『かど久』など個々のスポットの物語性は高い。",
+      "issues": "駅前のSpot 1→Spot 2が43m（徒歩1分）の超近接である一方、Spot 3→Spot 4（熊野神社）が837m（徒歩14分）の長距離空白区間となっており、歩行リズムの疎密二極化が見られるため20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "obuke",
+      "station": "大更",
+      "line": "JR花輪線",
+      "prefecture": "岩手県",
+      "iteration": 42,
+      "score": 2.75,
+      "grade": "C (Spot 3→4の835m空白とSpot 4→5の71m連続見どころ・蔵内部非公開により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.56,
+        "walking_flow": 0.48,
+        "visual_tangibility": 0.58,
+        "anti_template": 0.56,
+        "spot_harmony": 0.57
+      },
+      "good_points": "南部せんべいの端材から生まれた名物『岩手山のミミ（樋口せんべい店）』や『洋食喫茶 レオス』の鉄板ハンバーグ、岩手山の雪形に由来する酒蔵『わしの尾』など地域の小ネタ発掘は丁寧。",
+      "issues": "Spot 3→Spot 4で835m（徒歩14分）歩いた直後にSpot 4→Spot 5が71m（徒歩1分）の超近接となっており、かつ終着のSpot 5『わしの尾』が予約外の蔵内立ち入り不可（外観鑑賞のみ）でSpot 4・5が『見どころ』2連続となるため、20ルート相対評価で下位差し替え候補。"
     }
   ],
-  "updated_at": "2026-11-06T16:17:00.000Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-06T18:55:00.000Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #39〜#42 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.35 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.31,
-  "last_updated_iteration": 40,
-  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #37-#40）の相対比較により20作品平均が 3.20〜3.40（現在 3.31）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
-  "moving_window_20_average": 3.31,
+  "moving_window_average": 3.35,
+  "last_updated_iteration": 42,
+  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #39-#42）の相対比較により20作品平均が 3.20〜3.40（現在 3.35）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
+  "moving_window_20_average": 3.35,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    37,
-    38,
     39,
-    40
+    40,
+    41,
+    42
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -3893,13 +3988,15 @@
     "usuki",
     "yuki",
     "otsuki",
-    "iwaki_tanagura"
+    "iwaki_tanagura",
+    "shimobe_onsen",
+    "obuke"
   ],
   "current_window_iterations": [
-    38,
     39,
     40,
-    41
+    41,
+    42
   ],
   "current_window_average": 3.35
 }
