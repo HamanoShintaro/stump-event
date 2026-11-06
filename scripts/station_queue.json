@@ -1520,7 +1520,61 @@
           "postal": "6995207"
         }
       ]
+    },
+    {
+      "batch": 32,
+      "iteration": 33,
+      "drawn_at": "2026-11-06T02:53:12.254Z",
+      "selection_method": "HeartRails Express Japan Station API — True Random Nationwide Draw (Batch #32)",
+      "status": "pending",
+      "stations": [
+        {
+          "station": "上村駅",
+          "line": "JR日田彦山線BRT",
+          "prefecture": "大分県",
+          "lat": 33.331825,
+          "lng": 130.872384,
+          "postal": "8771111",
+          "status": "pending"
+        },
+        {
+          "station": "近永駅",
+          "line": "JR予土線",
+          "prefecture": "愛媛県",
+          "lat": 33.255693,
+          "lng": 132.676335,
+          "postal": "7981341",
+          "status": "pending"
+        },
+        {
+          "station": "上熊本駅",
+          "line": "熊本市電上熊本線",
+          "prefecture": "熊本県",
+          "lat": 32.81716,
+          "lng": 130.699266,
+          "postal": "8600079",
+          "status": "pending"
+        },
+        {
+          "station": "白島駅",
+          "line": "広島電鉄白島線",
+          "prefecture": "広島県",
+          "lat": 34.404484,
+          "lng": 132.465506,
+          "postal": "7300004",
+          "status": "pending"
+        },
+        {
+          "station": "桂根駅",
+          "line": "JR羽越本線",
+          "prefecture": "秋田県",
+          "lat": 39.647566,
+          "lng": 140.066482,
+          "postal": "0101501",
+          "status": "pending"
+        }
+      ]
     }
   ],
-  "current_batch": 31
+  "current_batch": 32
 }
