@@ -3229,13 +3229,75 @@
       "total": 2.95,
       "needs_replacement": true,
       "notes": "唐崎駅から鶴喜そば・近江かぎやのみたらし団子・近江八景「唐崎の松」へと琵琶湖へ下る動線は美しいが、初回生成時のSpot 3・4・5画像の左右見切れにより2.95（画像は全て余白付きで再生成済）。"
+    },
+    {
+      "areaId": "misumi",
+      "routeId": "25879c00-ec5a-4ea8-8d19-4cbadbeebe8e",
+      "station": "三角駅",
+      "line": "JR三角線",
+      "prefecture": "熊本県",
+      "iteration": 35,
+      "overall": 3.9,
+      "needs_replacement": false,
+      "notes": "南蛮風駅舎の三角駅から巻貝建築『海のピラミッド』、『割烹 大番』の焼きコノシロ寿司、海辺の『ルボンヌ』、三角浦一番地の『宇波神社』へと展開する潮風の叙情豊かな良作（波多浦駅の処方箋78代替駅）。"
+    },
+    {
+      "areaId": "morimoto",
+      "routeId": "a804ce80-64b5-4235-8229-19edac63b56b",
+      "station": "森本駅",
+      "line": "IRいしかわ鉄道線",
+      "prefecture": "石川県",
+      "iteration": 35,
+      "overall": 2.9,
+      "needs_replacement": true,
+      "notes": "小坂れんこんの『むさしや』と金沢ジャジャメンの『おたふくや』は魅力的だが、初回脱字修正および5スポット中に食事2枠・休憩0枠の構成偏りにより2.90（処方箋99）。"
+    },
+    {
+      "areaId": "kasaoka",
+      "routeId": "7cd4b760-284d-41ea-8298-3710e245109d",
+      "station": "笠岡駅",
+      "line": "JR山陽本線",
+      "prefecture": "岡山県",
+      "iteration": 35,
+      "overall": 3.75,
+      "needs_replacement": false,
+      "notes": "笠岡駅から地名発祥の『笠神社』、かぶに通りの『Secondi Cafe』、寛政5年創業『玉利軒』のかぶとがにまんじゅう、現存最古参の笠岡ラーメン『中華そば 坂本』へと結ぶ充実の町歩き。"
+    },
+    {
+      "areaId": "itoigawa",
+      "routeId": "213bb3dc-4348-49dd-89de-4ce74fb3cd8b",
+      "station": "糸魚川駅",
+      "line": "JR大糸線",
+      "prefecture": "新潟県",
+      "iteration": 35,
+      "overall": 4,
+      "needs_replacement": false,
+      "notes": "キハ52が待つ糸魚川駅から2025年移転の『絲と糸』、大火から再建した文政8年創業『紅久』、発祥のブラック焼きそば『月徳飯店』、越後一の宮『天津神社・奴奈川神社』へと結ぶ白眉（姫川駅の処方箋78代替駅）。"
+    },
+    {
+      "areaId": "tenryukyo",
+      "routeId": "b4e8528b-3fca-48e5-8d82-db13f5b2fe83",
+      "station": "天竜峡駅",
+      "line": "JR飯田線",
+      "prefecture": "長野県",
+      "iteration": 35,
+      "overall": 2.95,
+      "needs_replacement": true,
+      "notes": "姑射橋・つつじ橋の渓谷美とわらじ五平餅の魅力は高いが、初回『テンリュウ堂』前身業態の誤記修正（処方箋98）およびSpot 2→3近接により2.95（為栗駅の処方箋78代替駅）。"
     }
   ],
   "updated_at": "2026-11-06T05:01:39.859Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.35,
-  "last_updated_iteration": 34,
+  "moving_window_average": 3.39,
+  "last_updated_iteration": 35,
   "scoring_philosophy": "直近20ルート（移動窓：Iteration 26〜29 = Batch #25〜#28 の計20作品）を基準母集団とし、20作品の平均スコアを 3.2〜3.4（現在 3.35）に正規化する相対評価（共進化システム）。処方箋86（surprise文末の常体統一・バッジ説明の5スポット順列記載・area_name叙情化）および処方箋87（積雪地の冬季長期休業カフェ単独依存回避・屋外ベンチの疑似休憩枠回避・画像の単一構図と和紙余白徹底）を統合。",
-  "moving_window_20_average": 3.35
+  "moving_window_20_average": 3.35,
+  "evaluation_system": "moving_window_20_routes_coevolution",
+  "moving_window_iterations": [
+    32,
+    33,
+    34,
+    35
+  ]
 }

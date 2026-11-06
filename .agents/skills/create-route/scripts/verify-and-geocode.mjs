@@ -458,9 +458,9 @@ async function main() {
     const gsi = await queryGSI(spot.address);
     const gmaps = await queryGoogleMapsRooftop(spot.name, spot.address, gsi);
 
-    // Google Maps が取得できない場合、または大字代表点のみ（!gsi.hasBlockNumber）の場合に Overpass で実在POI形状を検索
+    // Google Maps がPOI一致していない場合、かつ大字代表点のみ（!gsi.hasBlockNumber）の場合に Overpass で実在POI形状を検索
     let overpass = null;
-    if (!gsi || !gsi.hasBlockNumber) {
+    if ((!gsi || !gsi.hasBlockNumber) && !gmaps?.isPoiMatch) {
       overpass = await queryOverpassNear(
         spot.lat || gsi?.lat,
         spot.lng || gsi?.lng,
