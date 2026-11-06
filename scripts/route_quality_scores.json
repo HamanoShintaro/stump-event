@@ -3874,21 +3874,116 @@
       },
       "good_points": "南部せんべいの端材から生まれた名物『岩手山のミミ（樋口せんべい店）』や『洋食喫茶 レオス』の鉄板ハンバーグ、岩手山の雪形に由来する酒蔵『わしの尾』など地域の小ネタ発掘は丁寧。",
       "issues": "Spot 3→Spot 4で835m（徒歩14分）歩いた直後にSpot 4→Spot 5が71m（徒歩1分）の超近接となっており、かつ終着のSpot 5『わしの尾』が予約外の蔵内立ち入り不可（外観鑑賞のみ）でSpot 4・5が『見どころ』2連続となるため、20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "mikuni",
+      "station": "三国",
+      "line": "えちぜん鉄道三国芦原線",
+      "prefecture": "福井県",
+      "iteration": 43,
+      "score": 3.8,
+      "grade": "A (北前船の湊町・性海寺から樹齢300年のタブノキ・提灯店の土蔵・酒万寿・金鳳寺へ抜ける高密度一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.76,
+        "walking_flow": 0.75,
+        "visual_tangibility": 0.77,
+        "anti_template": 0.76,
+        "spot_harmony": 0.76
+      },
+      "good_points": "朝倉氏・松平家の祈願所『性海寺』から旧森田銀行前の『cafe tabunoki』、寛政三年創業の提灯店の土蔵『三國湊・食の蔵 灯』、伝統の『酒万寿処 にしさか』、日和山中腹の中国風山門『金鳳寺』まで、湊町の歴史と食がC字の一筆書きで有機的に結びついている。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "kobayashi",
+      "station": "小林",
+      "line": "JR吉都線",
+      "prefecture": "宮崎県",
+      "iteration": 43,
+      "score": 3.65,
+      "grade": "B+ (霧島連山の湧水育ちチョウザメの創作フレンチから杉香るKITTO小林と元祖チーズ饅頭へ)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.73,
+        "walking_flow": 0.72,
+        "visual_tangibility": 0.74,
+        "anti_template": 0.73,
+        "spot_harmony": 0.73
+      },
+      "good_points": "欧州の公邸料理人を務めたシェフが湧水育ちのチョウザメを仕立てる『Kokoya de kobayashi』から、県産スギが香る『KITTO小林』、旧歯科医院リノベの『cafe musumi』、細野の『光英寺』、そして昭和30年代誕生の元祖チーズ饅頭『御菓子の風月堂』まで地域固有性が際立つ。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "yuda_onsen",
+      "station": "湯田温泉",
+      "line": "JR山口線",
+      "prefecture": "山口県",
+      "iteration": 43,
+      "score": 3.55,
+      "grade": "B (白狐伝説と維新の庭園・天然色素のねりきり・わらび粉生外郎を辿る北上動線)",
+      "needs_replacement": false,
+      "breakdown": {
+        "story_originality": 0.72,
+        "walking_flow": 0.7,
+        "visual_tangibility": 0.72,
+        "anti_template": 0.7,
+        "spot_harmony": 0.71
+      },
+      "good_points": "山口線を望む『ひにけに珈琲』から築70年の古民家『LAWAKU』の天然色素ねりきり、七卿ゆかりの何遠亭と中也詩碑がある『井上公園』、わらび粉仕立ての『御堀堂 湯田支店』の生外郎、白狐伝説の舞台『熊野神社』へと北上する多層的な物語。",
+      "issues": "特になし。"
+    },
+    {
+      "slug": "yamakita",
+      "station": "山北",
+      "line": "JR御殿場線",
+      "prefecture": "神奈川県",
+      "iteration": 43,
+      "score": 2.85,
+      "grade": "C (山北駅→室生神社→駅前の秋月堂への700m往復ブーメラン動線により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.6,
+        "walking_flow": 0.48,
+        "visual_tangibility": 0.61,
+        "anti_template": 0.58,
+        "spot_harmony": 0.58
+      },
+      "good_points": "樹齢300年の菩提樹が聳える『室生神社』、SLの石炭を模したみかん風味の『石炭糖（秋月堂）』、圧縮空気で動く『D52 70号機』、古民家の足柄茶カフェ『茶ぁぼう』など鉄道の町・山北の題材選定は魅力的。",
+      "issues": "駅から東南東641mのSpot 1『室生神社』へ歩いた後、再び駅前のSpot 2『秋月堂』へ西北西716m引き返す往復ブーメラン動線になっているため、20ルート相対評価で下位差し替え候補。"
+    },
+    {
+      "slug": "shinomiya",
+      "station": "四宮",
+      "line": "京阪京津線",
+      "prefecture": "京都府",
+      "iteration": 43,
+      "score": 2.75,
+      "grade": "C (前半3スポット密集とSpot 3→4の915m長距離区間の疎密差により差し替え候補)",
+      "needs_replacement": true,
+      "breakdown": {
+        "story_originality": 0.58,
+        "walking_flow": 0.48,
+        "visual_tangibility": 0.58,
+        "anti_template": 0.55,
+        "spot_harmony": 0.56
+      },
+      "good_points": "旧東海道・四宮の『京菓子司 山科亀屋』と京都六地蔵の『徳林庵（山科地蔵）』から山科疏水を越えて天台宗五箇室門跡『毘沙門堂』へ至る街道と門跡の対比は良い。",
+      "issues": "前半の旧東海道区間（Spot 1→2→3）に対してSpot 3→Spot 4（北山麓のcafe monogataru）が直線915m（徒歩15分）の上り坂空白区間となっており距離の疎密差が大きいため、20ルート相対評価で下位差し替え候補。"
     }
   ],
-  "updated_at": "2026-11-06T18:55:00.000Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #39〜#42 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.35 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-06T20:24:00.000Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #40〜#43 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.35,
-  "last_updated_iteration": 42,
-  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #39-#42）の相対比較により20作品平均が 3.20〜3.40（現在 3.35）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
-  "moving_window_20_average": 3.35,
+  "moving_window_average": 3.33,
+  "last_updated_iteration": 43,
+  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #40-#43）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
+  "moving_window_20_average": 3.33,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    39,
     40,
     41,
-    42
+    42,
+    43
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -3990,13 +4085,15 @@
     "otsuki",
     "iwaki_tanagura",
     "shimobe_onsen",
-    "obuke"
+    "obuke",
+    "yamakita",
+    "shinomiya"
   ],
   "current_window_iterations": [
-    39,
     40,
     41,
-    42
+    42,
+    43
   ],
-  "current_window_average": 3.35
+  "current_window_average": 3.33
 }

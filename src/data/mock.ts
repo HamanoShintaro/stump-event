@@ -33540,5 +33540,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "69def6bc-822f-4d6e-8a26-71efcaad13a2",
+    "title": "箱根越えの汽笛と足柄茶の香りを歩く山北",
+    "name": "箱根越えの汽笛と足柄茶の香りを歩く山北",
+    "description": "かつて東海道本線の箱根越えを支える鉄道の要衝として栄えた山北駅。樹齢三百年の菩提樹が聳える室生神社から、機関車の石炭を模した老舗の銘菓、今も圧縮空気で動くD52形蒸気機関車、桜並木沿いの古民家カフェへ。最後は和風庭園を望む茶房で香り高い足柄茶を味わいます。",
+    "region": "山北駅・箱根越えの鉄道遺産と足柄茶の道",
+    "area_name": "山北駅・箱根越えの鉄道遺産と足柄茶の道",
+    "cover_image_url": "/images/yamakita/route-eyecatch.png",
+    "imageUrl": "/images/yamakita/route-eyecatch.png",
+    "category": "鉄道遺産・古社・茶房",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "もし大切な人を誘ってこの山北の町をもう一度歩けるとしたら、どの風景のそばへ案内したくなりますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『山北鉄道公園』で間近に見つめる、圧縮空気の力で今も動輪を動かす漆黒の蒸気機関車「D52 70号機」",
+          "description": "かつて箱根越えの急勾配を牽引した日本最大級の機関車の重厚な鉄の造形と歴史に触れる時間",
+          "badge_code": "shuin_yamakita_d52"
+        },
+        {
+          "key": "B",
+          "text": "八百年の流鏑馬神事を伝える『室生神社』で、樹齢三百年の菩提樹と大イチョウの木陰に佇むひととき",
+          "description": "河村郷の総鎮守として崇敬を集める古社の境内で、空を覆う巨木の葉擦れに耳を澄ます参拝",
+          "badge_code": "shuin_yamakita_murou"
+        },
+        {
+          "key": "C",
+          "text": "昭和二年創業の『秋月堂』の石炭糖と、御殿場線の桜並木を見下ろす『やまきたさくらカフェ』の和牛カレー",
+          "description": "機関車の石炭を模したみかん風味の黒糖銘菓を選び、古民家カフェで十時間煮込んだカレーを味わう昼下がり",
+          "badge_code": "shuin_yamakita_shimizudo_sakura"
+        },
+        {
+          "key": "D",
+          "text": "手入れされた和風庭園を望む『緑茶カフェ 茶ぁぼう』で、香り高い地元特産の足柄茶と抹茶しるこを喫する結び",
+          "description": "丹沢・箱根山麓の霧が育んだ足柄茶のまろやかな旨みと甘味に癒やされる穏やかな茶房時間",
+          "badge_code": "shuin_yamakita_chaabou"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9839669f-3a61-49e0-8699-035ceb4c0138",
+        "name": "室生神社",
+        "description": "河村郷の総鎮守として約800年の歴史を持つ古社（境内参拝自由、無休）。秋の例大祭で奉納される流鏑馬神事や、町指定天然記念物の「ぼだいじゅ」・県指定天然記念物の大イチョウで知られる。",
+        "address": "神奈川県足柄上郡山北町山北1200",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.358861,
+        "lng": 139.0872,
+        "qr_token": "shuin-yamakita-1",
+        "cover_image_url": "/images/yamakita/spot1.png",
+        "f7_fragment": "樹齢三百年の菩提樹が、八百年の祈りを見守る社に影を落とす。",
+        "f7_full": "樹齢三百年の菩提樹と大イチョウが、鎌倉の世から続く流鏑馬の祈りを宿す境内に深い木陰を落としている。",
+        "is_final": false,
+        "next_spot_id": "550528f4-9c21-4682-8be3-f8ddb985a54e",
+        "next_spot_name": "秋月堂"
+      },
+      {
+        "id": "550528f4-9c21-4682-8be3-f8ddb985a54e",
+        "name": "秋月堂",
+        "description": "昭和二年創業の駅前商店街の老舗和菓子店（7:00〜19:00営業、不定休）。蒸気機関車の石炭を模したみかん風味の黒糖銘菓「石炭糖」や自家製あんこの和菓子を手作りする。",
+        "address": "神奈川県足柄上郡山北町山北1920",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.361543,
+        "lng": 139.080025,
+        "qr_token": "shuin-yamakita-2",
+        "cover_image_url": "/images/yamakita/spot2.png",
+        "f7_fragment": "黒い石炭を模した砂糖菓子に、山北のみかんが爽やかに香る。",
+        "f7_full": "機関車の石炭を写した黒糖の塊を口に含めば、ホロリとほどけて山北のみかんの爽やかな香りが広がる。",
+        "is_final": false,
+        "next_spot_id": "a8d21f04-fef3-45a1-8d64-bfb6a4349d98",
+        "next_spot_name": "山北鉄道公園（D52 70号機）"
+      },
+      {
+        "id": "a8d21f04-fef3-45a1-8d64-bfb6a4349d98",
+        "name": "山北鉄道公園（D52 70号機）",
+        "description": "御殿場線沿いに整備された鉄道公園（入園自由、無休）。箱根越えの急勾配で活躍した日本最大級の蒸気機関車・D52形70号機が圧縮空気による動態保存で展示されている。",
+        "address": "神奈川県足柄上郡山北町山北1981",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.360307,
+        "lng": 139.078807,
+        "qr_token": "shuin-yamakita-3",
+        "cover_image_url": "/images/yamakita/spot3.png",
+        "f7_fragment": "漆黒のボイラーと動輪が、箱根の峠を越えた鉄路の記憶を語る。",
+        "f7_full": "重厚な漆黒のボイラーと連なる動輪が、険しい箱根越えの勾配を支え続けた鉄道の町の誇りを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "173f335e-16a5-4fc2-88ad-992adedbb845",
+        "next_spot_name": "やまきたさくらカフェ"
+      },
+      {
+        "id": "173f335e-16a5-4fc2-88ad-992adedbb845",
+        "name": "やまきたさくらカフェ",
+        "description": "御殿場線の桜並木を見下ろす道沿いの古民家カフェ（10:00〜16:30営業、水・木・金曜定休）。10時間以上煮込んだ和牛カレーや湯葉丼など手作りランチが味わえる。",
+        "address": "神奈川県足柄上郡山北町山北2597-10",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.360706,
+        "lng": 139.077847,
+        "qr_token": "shuin-yamakita-4",
+        "cover_image_url": "/images/yamakita/spot4.png",
+        "f7_fragment": "切通しの並木を望む窓辺で、じっくり煮込んだカレーを味わう。",
+        "f7_full": "列車が走る切通しの並木を望む古民家の窓辺で、十時間煮込んだ和牛カレーの深いコクがお腹を満たす。",
+        "is_final": false,
+        "next_spot_id": "ee7012d9-57ba-48d3-8342-4d6f5387ef20",
+        "next_spot_name": "緑茶カフェ 茶ぁぼう"
+      },
+      {
+        "id": "ee7012d9-57ba-48d3-8342-4d6f5387ef20",
+        "name": "緑茶カフェ 茶ぁぼう",
+        "description": "和風庭園を備えた古民家で地元特産の足柄茶や甘味を提供する日本茶カフェ（月・金曜11:00〜16:00L.O.、土日祝11:00〜17:00L.O.営業、火〜木曜定休）。",
+        "address": "神奈川県足柄上郡山北町山北2767",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.360452,
+        "lng": 139.073839,
+        "qr_token": "shuin-yamakita-5",
+        "cover_image_url": "/images/yamakita/spot5.png",
+        "f7_fragment": "苔むす庭を眺める座敷で、朝霧が育てた足柄茶の香りに浸る。",
+        "f7_full": "四季の和風庭園を望む静かな座敷で、山あいの朝霧が育てた足柄茶の清々しい香りと甘味が心を解きほぐす。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "814f1025-a86c-424a-8f13-977eb6c1ae67",
+    "title": "北前船の記憶と湊町の土蔵を巡る三国",
+    "name": "北前船の記憶と湊町の土蔵を巡る三国",
+    "description": "九頭竜川が日本海へ注ぐ河口に位置し、江戸から明治にかけて北前船の寄港地として繁栄した三國湊。朝倉氏や松平家の祈願所となった性海寺から、樹齢三百年のタブノキを見上げるカフェ、老舗提灯店の土蔵を活かした食事処へ。芳醇な酒万寿を手土産に、中国風の山門が立つ金鳳寺までを巡ります。",
+    "region": "三国駅・北前船の記憶と湊町の蔵を巡る道",
+    "area_name": "三国駅・北前船の記憶と湊町の蔵を巡る道",
+    "cover_image_url": "/images/mikuni/route-eyecatch.png",
+    "imageUrl": "/images/mikuni/route-eyecatch.png",
+    "category": "湊町・古刹・蔵カフェ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "三國湊の町を巡り終えて帰路につく今、あなたの胸の奥で静かに息づいているのはどの風景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "旧森田銀行本店の向かいに佇む『cafe tabunoki』で、樹齢三百年のタブノキを見上げながら味わう珈琲",
+          "description": "湊町の歴史を見守ってきた巨木と赤レンガ洋館を窓越しに眺め、二三味珈琲とケーキで寛ぐ時間",
+          "badge_code": "shuin_mikuni_tabunoki"
+        },
+        {
+          "key": "B",
+          "text": "寛政三年創業の提灯店の土蔵『三國湊・食の蔵 灯』の灯ランチと、『酒万寿処 にしさか』の芳醇な酒万寿",
+          "description": "二百年以上の歴史を持つ土蔵でお料理パンの昼食を楽しみ、米麹が香る伝統の酒万寿を手土産に選ぶ湊の粋",
+          "badge_code": "shuin_mikuni_akari_nishisaka"
+        },
+        {
+          "key": "C",
+          "text": "日和山の中腹に佇む『金鳳寺』で、白漆喰の中国風山門と松尾芭蕉の句碑を訪ねる潮風のひととき",
+          "description": "かつて船頭たちが天候を見定めた高台の禅寺で、十六羅漢が坐す竜宮門のような山門を見上げる参拝",
+          "badge_code": "shuin_mikuni_kinpoji"
+        },
+        {
+          "key": "D",
+          "text": "朝倉氏や福井藩主・松平家の祈願所として栄えた『性海寺』で、静謐な本堂と苔むす五輪塔に手を合わせる時間",
+          "description": "南北朝時代から湊町の信仰を支え続けた真言宗の古刹で、幾世代もの祈りの積み重なりに耳を澄ますひととき",
+          "badge_code": "shuin_mikuni_shokaiji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d224911b-d6ca-4df2-82a7-ea4390804556",
+        "name": "性海寺",
+        "description": "永徳元年に現在地へ移された真言宗智山派の古刹（境内参拝自由、無休）。越前の大名・朝倉氏や福井藩主・松平家の祈願所として栄え、境内に歴史ある五輪塔や石仏を伝える。",
+        "address": "福井県坂井市三国町南本町4-4-8",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.211804,
+        "lng": 136.15354,
+        "qr_token": "shuin-mikuni-1",
+        "cover_image_url": "/images/mikuni/spot1.png",
+        "f7_fragment": "歴代領主の祈りを宿す古刹が、湊町の静かな朝を見守る。",
+        "f7_full": "朝倉氏や松平家の祈りを今に伝える古刹の境内が、北前船で栄えた湊町の記憶を静かに見守っている。",
+        "is_final": false,
+        "next_spot_id": "214e849a-d657-4de5-8c5a-2439a34fdd80",
+        "next_spot_name": "cafe tabunoki"
+      },
+      {
+        "id": "214e849a-d657-4de5-8c5a-2439a34fdd80",
+        "name": "cafe tabunoki",
+        "description": "旧森田銀行本店のすぐ向かいに佇むカフェ（9:00〜18:00営業、水曜定休）。樹齢約300年のタブノキを望むアンティーク空間で奥能登の二三味珈琲や自家製ケーキが味わえる。",
+        "address": "福井県坂井市三国町南本町3-4-34",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.213515,
+        "lng": 136.149266,
+        "qr_token": "shuin-mikuni-2",
+        "cover_image_url": "/images/mikuni/spot2.png",
+        "f7_fragment": "樹齢三百年の椨の木陰で、深く煎られた珈琲の香りに憩う。",
+        "f7_full": "樹齢三百年のタブノキと赤レンガ洋館を望む窓辺で、深く煎られた二三味珈琲の香りに心がほどける。",
+        "is_final": false,
+        "next_spot_id": "3b98578d-36e6-4e2c-8673-62030ce805ef",
+        "next_spot_name": "三國湊・食の蔵 灯"
+      },
+      {
+        "id": "3b98578d-36e6-4e2c-8673-62030ce805ef",
+        "name": "三國湊・食の蔵 灯",
+        "description": "二百三十年以上の歴史を持つ老舗提灯店「いとや」の土蔵を改装した食事処（11:00〜17:00営業・ランチは11:00〜14:00頃、水曜・木曜定休）。地元食材を盛り込んだ灯ランチや名物のお料理パンが人気。",
+        "address": "福井県坂井市三国町北本町4-4-46",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.214273,
+        "lng": 136.149196,
+        "qr_token": "shuin-mikuni-3",
+        "cover_image_url": "/images/mikuni/spot3.png",
+        "f7_fragment": "二百年の時を刻む提灯店の土蔵に、温かな昼餉の灯がともる。",
+        "f7_full": "二百年の歴史を受け継ぐ提灯店の土蔵の奥で、湊町の旬を詰め込んだお料理パンと小鉢が温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c3d71529-31b8-444e-89b5-22a6717de8d9",
+        "next_spot_name": "酒万寿処 にしさか"
+      },
+      {
+        "id": "c3d71529-31b8-444e-89b5-22a6717de8d9",
+        "name": "酒万寿処 にしさか",
+        "description": "三国伝統の「酒万寿（さけまんじゅう）」を受け継ぐ老舗和菓子店（9:00〜18:00営業・売切次第終了、木曜定休）。米麹から仕込む酒種が香る薄皮の酒万寿が名物。",
+        "address": "福井県坂井市三国町北本町4-2-14",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.215093,
+        "lng": 136.148555,
+        "qr_token": "shuin-mikuni-4",
+        "cover_image_url": "/images/mikuni/spot4.png",
+        "f7_fragment": "湯気とともに立ち上る麹の甘い香りが、湊町の通りを包む。",
+        "f7_full": "米麹の酒種を発酵させて蒸し上げた酒万寿から、湊町の歴史を映す芳醇な香りと優しい甘みが広がる。",
+        "is_final": false,
+        "next_spot_id": "3a68f661-5044-436b-8c3a-505c14764568",
+        "next_spot_name": "金鳳寺"
+      },
+      {
+        "id": "3a68f661-5044-436b-8c3a-505c14764568",
+        "name": "金鳳寺",
+        "description": "九頭竜川河口を見渡す日和山の中腹に佇む曹洞宗の禅寺（境内参拝自由、無休）。十六羅漢を安置する白漆喰の中国風山門や松尾芭蕉の句碑で知られる。",
+        "address": "福井県坂井市三国町北本町3-3-17",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.215117,
+        "lng": 136.146593,
+        "qr_token": "shuin-mikuni-5",
+        "cover_image_url": "/images/mikuni/spot5.png",
+        "f7_fragment": "日和山の中腹に立つ白漆喰の山門が、潮風の湊を見渡す。",
+        "f7_full": "船頭たちが空を見上げた日和山の中腹で、白漆喰の中国風山門と芭蕉の句碑が日本海の潮風を受け止めている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d0d4dd32-ffea-40c9-8390-bc0ca2607ce1",
+    "title": "旧東海道の六地蔵と山科門跡を訪ねる四宮",
+    "name": "旧東海道の六地蔵と山科門跡を訪ねる四宮",
+    "description": "逢坂の関を越えて都へと入る旧東海道の要衝として栄えた京阪京津線・四宮駅。街道沿いに暖簾を掲げる老舗和菓子店から、都の入口を守る六地蔵のひとつ徳林庵、自家製パンと旬料理のビストロ、山科疏水近くの緑に包まれた一軒家カフェへ。最後は天台宗五箇室門跡の格式を伝える毘沙門堂を訪ねます。",
+    "region": "四宮駅・旧東海道の六地蔵と山科門跡を訪ねる道",
+    "area_name": "四宮駅・旧東海道の六地蔵と山科門跡を訪ねる道",
+    "cover_image_url": "/images/shinomiya/route-eyecatch.png",
+    "imageUrl": "/images/shinomiya/route-eyecatch.png",
+    "category": "旧街道・門跡寺院・ベーカリー",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "旧東海道から山科の門跡へと歩みを進めるなかで、あなたの五感に深く響いたのはどの一コマですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "旧東海道を行き交う旅人を見守り続けてきた『徳林庵』で、京都六地蔵のひとつ「山科地蔵」に手を合わせる時間",
+          "description": "逢坂山を越えて都へ入る東の入口で、今も地域と旅人の安全を守るお地蔵様の前に佇む参拝",
+          "badge_code": "shuin_shinomiya_tokurinan"
+        },
+        {
+          "key": "B",
+          "text": "旧街道の老舗『京菓子司 山科亀屋』のいちご大福と、自家製パンが香る『El sol』のビストロ昼食",
+          "description": "羽二重餅に大粒の苺と白餡を包んだ京菓子を選び、焼き立ての自家製パンと旬の料理を味わう街歩き",
+          "badge_code": "shuin_shinomiya_kameya_elsol"
+        },
+        {
+          "key": "C",
+          "text": "天台宗五箇室門跡の格式を伝える『毘沙門堂』で、勅使門へと続く石段と名庭「晩翠園」の静寂に浸る結び",
+          "description": "四季の彩りに包まれる参道石段を上がり、狩野益信筆の襖絵が伝わる宸殿と池泉庭園を訪ねるひととき",
+          "badge_code": "shuin_shinomiya_bishamondo"
+        },
+        {
+          "key": "D",
+          "text": "山科疏水近くの緑に囲まれた『cafe monogataru』で、木漏れ日を眺めながら味わう珈琲と自家製デザート",
+          "description": "北山麓の穏やかな空気に包まれた一軒家カフェで、門跡寺院へ向かう前に心を整える午後の休憩",
+          "badge_code": "shuin_shinomiya_monogataru"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "350b42d8-cd9b-44f5-8d2b-f171808d5641",
+        "name": "京菓子司 山科亀屋",
+        "description": "旧東海道・四宮に暖簾を掲げる老舗和菓子店（9:00〜19:00営業、火曜定休）。大粒の苺と白餡を羽二重餅で包んだ「いちご大福」や琵琶湖疏水に因む「四ノ宮饅頭」が名物。",
+        "address": "京都府京都市山科区四ノ宮大将軍町15",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.991518,
+        "lng": 135.824145,
+        "qr_token": "shuin-shinomiya-1",
+        "cover_image_url": "/images/shinomiya/spot1.png",
+        "f7_fragment": "旧東海道の暖簾の奥で、羽二重餅に包まれた苺が瑞々しく香る。",
+        "f7_full": "旧東海道に暖簾を掲げる老舗の店先で、柔らかな羽二重餅と白餡が瑞々しい苺の香りを優しく包み込む。",
+        "is_final": false,
+        "next_spot_id": "064ae344-687c-4cc7-89b3-ceda100c9c14",
+        "next_spot_name": "徳林庵（山科地蔵）"
+      },
+      {
+        "id": "064ae344-687c-4cc7-89b3-ceda100c9c14",
+        "name": "徳林庵（山科地蔵）",
+        "description": "旧東海道沿いに佇む臨済宗南禅寺派の寺院（境内参拝自由、無休）。人康親王の孫・良峯義方が創建し、都の入口を守る「京都六地蔵めぐり」の山科地蔵として信仰を集める。",
+        "address": "京都府京都市山科区四ノ宮泉水町16",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.991513,
+        "lng": 135.821954,
+        "qr_token": "shuin-shinomiya-2",
+        "cover_image_url": "/images/shinomiya/spot2.png",
+        "f7_fragment": "逢坂を越えた街道の入口で、山科地蔵が旅人の歩みを見守る。",
+        "f7_full": "逢坂山を越えて都へ入る旧東海道の入口で、山科地蔵の穏やかな眼差しが今も道行く人々を見守っている。",
+        "is_final": false,
+        "next_spot_id": "f0fa7179-1886-45e8-8292-14d13e8bcf77",
+        "next_spot_name": "El sol"
+      },
+      {
+        "id": "f0fa7179-1886-45e8-8292-14d13e8bcf77",
+        "name": "El sol",
+        "description": "安朱エリアで親しまれる自家製パンと旬料理のビストロ（ランチ11:30〜15:00・ディナー18:00〜22:00営業、水曜定休）。香ばしく焼き上げた自家製パンとともに味わうランチプレートやサンドが人気。",
+        "address": "京都府京都市山科区安朱南屋敷町25-4",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.991191,
+        "lng": 135.818533,
+        "qr_token": "shuin-shinomiya-3",
+        "cover_image_url": "/images/shinomiya/spot3.png",
+        "f7_fragment": "香ばしい自家製パンと旬野菜の彩りが、昼下がりの食卓を満たす。",
+        "f7_full": "香ばしく焼き上げられた自家製パンと旬野菜の一皿が、旧東海道から山麓へと向かう街歩きの昼餉を彩る。",
+        "is_final": false,
+        "next_spot_id": "be208be4-586f-4d8d-8709-8dec22648d66",
+        "next_spot_name": "cafe monogataru"
+      },
+      {
+        "id": "be208be4-586f-4d8d-8709-8dec22648d66",
+        "name": "cafe monogataru",
+        "description": "山科疏水近くの緑豊かな住宅街に佇む一軒家カフェ（11:30〜17:00営業・カフェL.O.16:30、月曜定休）。季節の自家製デザートやこだわりの珈琲が楽しめる。",
+        "address": "京都府京都市山科区御陵平林町11-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.999404,
+        "lng": 135.817938,
+        "qr_token": "shuin-shinomiya-4",
+        "cover_image_url": "/images/shinomiya/spot4.png",
+        "f7_fragment": "山科疏水を越えた緑の窓辺で、珈琲と甘味が坂道の歩みを癒やす。",
+        "f7_full": "山科疏水を越えた北山麓の静かな窓辺で、香り高い珈琲と自家製ケーキが坂道を歩いた身体を優しく癒やす。",
+        "is_final": false,
+        "next_spot_id": "05c70ab6-b58e-4590-8f7c-9d1ea25eabb4",
+        "next_spot_name": "毘沙門堂"
+      },
+      {
+        "id": "05c70ab6-b58e-4590-8f7c-9d1ea25eabb4",
+        "name": "毘沙門堂",
+        "description": "大宝三年に行基が創建したと伝わる天台宗五箇室門跡のひとつ（9:00〜17:00拝観・冬期16:30まで、無休）。勅使門へ続く参道石段や狩野益信筆の襖絵が残る宸殿、名庭「晩翠園」で知られる。",
+        "address": "京都府京都市山科区安朱稲荷山町18",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.001363,
+        "lng": 135.81926,
+        "qr_token": "shuin-shinomiya-5",
+        "cover_image_url": "/images/shinomiya/spot5.png",
+        "f7_fragment": "勅使門へ続く石段と谷川の水音が、門跡の静寂へと誘う。",
+        "f7_full": "四季の彩りを映す勅使門の石段と晩翠園に響く谷川の水音が、旧東海道から歩いた旅を静かに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "69e7badf-3d0d-42a9-80e8-76cd124099d3",
+    "title": "白狐の湯けむりと維新の庭園を辿る湯田温泉",
+    "name": "白狐の湯けむりと維新の庭園を辿る湯田温泉",
+    "description": "傷ついた白狐が毎晩足をつけに来た池から湯が湧き出たと伝わる山口市の湯田温泉。山口線の列車を望むカフェのランチから、築七十年の古民家で味わう天然色素の和菓子、井上馨の生家跡に広がる庭園と足湯へ。わらび粉仕立ての山口外郎を手土産に、白狐伝説ゆかりの熊野神社までを辿ります。",
+    "region": "湯田温泉駅・白狐の湯けむりと維新の庭を辿る道",
+    "area_name": "湯田温泉駅・白狐の湯けむりと維新の庭を辿る道",
+    "cover_image_url": "/images/yuda_onsen/route-eyecatch.png",
+    "imageUrl": "/images/yuda_onsen/route-eyecatch.png",
+    "category": "温泉街・維新庭園・和菓子",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "湯田温泉の湯けむりただよう街角から日常へひとつだけ記憶を持ち帰れるなら、どの場面を選ぶだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "権現山の緑に抱かれた『熊野神社』で、傷ついた白狐が湯を見つけた温泉街発祥の物語と社叢に触れる結び",
+          "description": "湯田温泉の守り神として崇敬を集める緑深い境内を歩き、幾百年も湧き続ける名湯の恵みに手を合わせる時間",
+          "badge_code": "shuin_yuda_onsen_kumano"
+        },
+        {
+          "key": "B",
+          "text": "築七十年の古民家『LAWAKU』で、山口県産の野菜や果物の天然色素で彩られた「ねりきり」と抹茶を喫する時間",
+          "description": "合成着色料を使わず自然素材の色合いで四季を表現した和菓子と抹茶に心和むひととき",
+          "badge_code": "shuin_yuda_onsen_lawaku"
+        },
+        {
+          "key": "C",
+          "text": "山口線の列車を望む『ひにけに珈琲』の自家製パンランチと、わらび粉が織りなす『御堀堂』の生外郎",
+          "description": "踏切そばのカフェで焼き立てパンと焙煎珈琲を味わい、ぷるりと弾む三種の生外郎を手土産に選ぶ街歩き",
+          "badge_code": "shuin_yuda_onsen_hinikeni_mihorido"
+        },
+        {
+          "key": "D",
+          "text": "明治の元勲・井上馨の生家跡『井上公園』で、七卿ゆかりの御座所「何遠亭」と中原中也の詩碑をめぐる風雅",
+          "description": "幕末の志士たちが集った日本庭園と復元された何遠亭、詩人の言葉と湯けむり立つ足湯が重なる時間を味わう",
+          "badge_code": "shuin_yuda_onsen_inoue_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "514661a1-d55e-405c-8724-8267e5fa1a40",
+        "name": "ひにけに珈琲",
+        "description": "湯田温泉駅近くの踏切そばに佇む自家焙煎珈琲カフェ（平日9:30〜17:00・土日祝9:30〜18:00営業、ランチ11:30〜14:00、月曜・火曜定休）。自家製パンのランチプレートと丁寧なハンドドリップ珈琲が人気。",
+        "address": "山口県山口市今井町5-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.159082,
+        "lng": 131.459103,
+        "qr_token": "shuin-yuda_onsen-1",
+        "cover_image_url": "/images/yuda_onsen/spot1.png",
+        "f7_fragment": "列車が通る窓辺の席で、焼き立てパンと焙煎珈琲が香る。",
+        "f7_full": "山口線の列車がすぐ窓の外を走る店内で、香ばしい自家製パンと丁寧に淹れられた珈琲が旅の始まりを温める。",
+        "is_final": false,
+        "next_spot_id": "d945116d-b389-4ae3-86c2-bf712869e5e0",
+        "next_spot_name": "LAWAKU"
+      },
+      {
+        "id": "d945116d-b389-4ae3-86c2-bf712869e5e0",
+        "name": "LAWAKU",
+        "description": "築70年の古民家を改装した創作和菓子カフェ（平日10:00〜16:00・土日祝10:00〜17:00営業、火曜・不定休）。山口県産の野菜や果物の天然色素で彩る無添加の「ナチュラル和菓子」と抹茶を提供する。",
+        "address": "山口県山口市下市町13-45",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.16183,
+        "lng": 131.458533,
+        "qr_token": "shuin-yuda_onsen-2",
+        "cover_image_url": "/images/yuda_onsen/spot2.png",
+        "f7_fragment": "山口の野菜と果物の色が、繊細なねりきりに四季を映す。",
+        "f7_full": "築七十年の古民家の座敷で、山口の大地が育てた野菜や果物の優しい色彩が宿るねりきりと抹茶を味わう。",
+        "is_final": false,
+        "next_spot_id": "1e7cdc1f-4cd4-427c-8de2-76b9fd6020fc",
+        "next_spot_name": "井上公園（高田公園・何遠亭）"
+      },
+      {
+        "id": "1e7cdc1f-4cd4-427c-8de2-76b9fd6020fc",
+        "name": "井上公園（高田公園・何遠亭）",
+        "description": "井上馨の生家跡に整備された歴史公園（入園自由、無休）。幕末に三条実美ら七卿が滞在した御座所「何遠亭」が復元され、中原中也の詩碑や無料の温泉足湯がある。",
+        "address": "山口県山口市湯田温泉2-5",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.163367,
+        "lng": 131.456722,
+        "qr_token": "shuin-yuda_onsen-3",
+        "cover_image_url": "/images/yuda_onsen/spot3.png",
+        "f7_fragment": "志士たちが語り合った何遠亭の庭に、今も湯けむりが揺れる。",
+        "f7_full": "幕末の志士たちが語り合った何遠亭の軒先と中也の詩碑のそばで、温泉街ならではの柔らかな湯けむりが立ち上る。",
+        "is_final": false,
+        "next_spot_id": "7b1b44e9-f6da-41df-8f24-e8b94140b4f6",
+        "next_spot_name": "御堀堂 湯田支店"
+      },
+      {
+        "id": "7b1b44e9-f6da-41df-8f24-e8b94140b4f6",
+        "name": "御堀堂 湯田支店",
+        "description": "昭和二年創業の山口外郎の代表的老舗・御堀堂の湯田支店（8:00〜18:00営業、元日休）。わらび粉を主原料に蒸し上げるぷるりとした弾力の「生外郎（白・黒・抹茶）」が名物。",
+        "address": "山口県山口市湯田温泉1-6-32",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.165824,
+        "lng": 131.459264,
+        "qr_token": "shuin-yuda_onsen-4",
+        "cover_image_url": "/images/yuda_onsen/spot4.png",
+        "f7_fragment": "わらび粉が織りなす生外郎の弾力に、大内文化の余韻が宿る。",
+        "f7_full": "わらび粉ならではのぷるりとした弾力と上品な小豆の甘みに、古くから受け継がれる山口の菓子の粋が息づく。",
+        "is_final": false,
+        "next_spot_id": "3c3e591f-2d32-487c-80b7-b766c5738604",
+        "next_spot_name": "熊野神社"
+      },
+      {
+        "id": "3c3e591f-2d32-487c-80b7-b766c5738604",
+        "name": "熊野神社",
+        "description": "湯田温泉の北に聳える権現山麓に鎮座する古社（境内参拝自由、無休）。傷ついた白狐が毎晩足をつけに来た権現山麓の池から温泉が湧き出たという湯田温泉発祥の伝説ゆかりの神社。",
+        "address": "山口県山口市熊野町2-12",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.170307,
+        "lng": 131.461357,
+        "qr_token": "shuin-yuda_onsen-5",
+        "cover_image_url": "/images/yuda_onsen/spot5.png",
+        "f7_fragment": "権現山の緑深い社叢が、白狐が見つけた名湯の源を見守る。",
+        "f7_full": "権現山の麓に広がる緑深い熊野神社の社叢が、傷ついた白狐が見つけた名湯の物語を今も静かに見守っている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ab405f2d-ba8b-405e-82f6-255d1fcfec4a",
+    "title": "霧島連山の湧水と細野の暮らしを味わう小林",
+    "name": "霧島連山の湧水と細野の暮らしを味わう小林",
+    "description": "霧島連山の北麓に広がり、街のいたるところに清らかな湧水が息づく宮崎県小林市。欧州の公邸料理人を務めたシェフが名水食材を仕立てるフレンチランチから、県産スギ材が香る交流拠点、旧歯科医院を改装した珈琲店へ。静かな本堂が佇む光英寺を参拝し、チーズ饅頭発祥の老舗までを辿ります。",
+    "region": "小林駅・霧島連山の湧水と細野を味わう道",
+    "area_name": "小林駅・霧島連山の湧水と細野を味わう道",
+    "cover_image_url": "/images/kobayashi/route-eyecatch.png",
+    "imageUrl": "/images/kobayashi/route-eyecatch.png",
+    "category": "名水美食・リノベカフェ・老舗銘菓",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "霧島連山の名水が育んだこの街の営みのなかで、あなたが間近に触れてみたいと感じたのはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『Kokoya de kobayashi』で、霧島の湧水が育んだチョウザメや旬野菜をお箸で味わう和テイストの創作フレンチ",
+          "description": "欧州の公邸料理人を務めたシェフが、故郷・小林の名水食材を一皿に昇華させたコースランチを堪能する時間",
+          "badge_code": "shuin_kobayashi_kokoya"
+        },
+        {
+          "key": "B",
+          "text": "旧歯科医院をセルフリノベーションした『cafe musumi』で、自家焙煎珈琲とグルテンフリーの焼き菓子に憩う時間",
+          "description": "レトロな診療所の面影を残す温かな空間で、ハンドドリップ珈琲の香りに包まれる午後のひととき",
+          "badge_code": "shuin_kobayashi_musumi"
+        },
+        {
+          "key": "C",
+          "text": "昭和三十年代から受け継がれる『御菓子の風月堂』で、しっとり柔らかなクッキー生地の元祖チーズ饅頭を選ぶ結び",
+          "description": "宮崎を代表する銘菓のルーツとなった老舗で、濃厚なチーズを包んだ伝統の味を手土産に持ち帰る喜び",
+          "badge_code": "shuin_kobayashi_fugetsudo"
+        },
+        {
+          "key": "D",
+          "text": "県産スギ材が香る『KITTO小林』から望む霧島連山の稜線と、細野の暮らしを見守る『光英寺』の静かな境内",
+          "description": "木の温もりあふれる交流拠点でジオパークの自然に触れ、市街地の古刹で穏やかに手を合わせる散策",
+          "badge_code": "shuin_kobayashi_kitto_koeiji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "229e6512-9773-4040-8d0b-8d52ed769f3e",
+        "name": "Kokoya de kobayashi",
+        "description": "小林駅の南側に佇む創作フレンチレストラン（ランチ11:30〜15:00・L.O.14:00、ディナー要予約、火曜・第3月曜定休）。欧州で公邸料理人を務めたシェフが湧水育ちのチョウザメや地元野菜をお箸で味わうフレンチに仕立てる。",
+        "address": "宮崎県小林市駅南267",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.989394,
+        "lng": 130.974191,
+        "qr_token": "shuin-kobayashi-1",
+        "cover_image_url": "/images/kobayashi/spot1.png",
+        "f7_fragment": "霧島の湧水が育てた旬の恵みが、お箸で味わう一皿に輝く。",
+        "f7_full": "霧島連山の清冽な湧水が育てたチョウザメと旬野菜が、和の心を添えたフレンチの一皿となって旅人を迎える。",
+        "is_final": false,
+        "next_spot_id": "cc4b1a13-418f-4916-8b7d-328dde1dd272",
+        "next_spot_name": "KITTO小林（小林市地域・観光交流センター）"
+      },
+      {
+        "id": "cc4b1a13-418f-4916-8b7d-328dde1dd272",
+        "name": "KITTO小林（小林市地域・観光交流センター）",
+        "description": "小林駅に隣接する地域・観光交流拠点（9:00〜19:00開館、年末年始休）。宮崎県産のスギ材をふんだんに使った木造空間から吉都線の線路と霧島連山の山並みを一望できる。",
+        "address": "宮崎県小林市細野1828-4",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.991205,
+        "lng": 130.975605,
+        "qr_token": "shuin-kobayashi-2",
+        "cover_image_url": "/images/kobayashi/spot2.png",
+        "f7_fragment": "スギが香る木の学び舎から、霧島連山の雄大な稜線を仰ぐ。",
+        "f7_full": "県産スギが香る開放的なテラスから、吉都線の鉄路の向こうに連なる霧島連山の雄大な稜線を仰ぎ見る。",
+        "is_final": false,
+        "next_spot_id": "c463b295-3145-4d5a-87f5-73a559e9a36b",
+        "next_spot_name": "cafe musumi"
+      },
+      {
+        "id": "c463b295-3145-4d5a-87f5-73a559e9a36b",
+        "name": "cafe musumi",
+        "description": "旧歯科医院の建物をセルフリノベーションした自家焙煎珈琲カフェ（11:30〜17:00・土日モーニング9:00〜11:00営業、月曜・火曜定休）。ハンドドリップ珈琲とグルテンフリーの焼き菓子が人気。",
+        "address": "宮崎県小林市細野145",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.993412,
+        "lng": 130.978215,
+        "qr_token": "shuin-kobayashi-3",
+        "cover_image_url": "/images/kobayashi/spot3.png",
+        "f7_fragment": "古い診療所の記憶を残す窓辺に、焙煎珈琲の香りが満ちる。",
+        "f7_full": "かつての診療所を温かく改装した窓辺で、自家焙煎珈琲の深い香りと優しい焼き菓子が午後の時を彩る。",
+        "is_final": false,
+        "next_spot_id": "18e1b42f-7ba1-4f0a-80f6-081bf6d5682d",
+        "next_spot_name": "光英寺"
+      },
+      {
+        "id": "18e1b42f-7ba1-4f0a-80f6-081bf6d5682d",
+        "name": "光英寺",
+        "description": "細野の市街地に静かな境内を構える浄土真宗本願寺派の寺院（境内参拝自由、無休）。端正な瓦屋根の本堂が地域の暮らしと歴史を見守る。",
+        "address": "宮崎県小林市細野240-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.995806,
+        "lng": 130.973548,
+        "qr_token": "shuin-kobayashi-4",
+        "cover_image_url": "/images/kobayashi/spot4.png",
+        "f7_fragment": "細野の街なかに佇む本堂が、盆地の穏やかな歳月を見守る。",
+        "f7_full": "細野の街並みのなかに凛と佇む本堂の大屋根が、霧島山麓の盆地に流れる穏やかな歳月を見守っている。",
+        "is_final": false,
+        "next_spot_id": "1d907a6b-632d-47b9-8d4e-3eae647c2460",
+        "next_spot_name": "御菓子の風月堂"
+      },
+      {
+        "id": "1d907a6b-632d-47b9-8d4e-3eae647c2460",
+        "name": "御菓子の風月堂",
+        "description": "昭和三十年代に誕生した宮崎銘菓「チーズ饅頭」発祥の老舗のひとつ（平日9:00〜18:00・土日祝9:00〜17:00営業、不定休）。しっとり柔らかなクッキー生地で濃厚なチーズを包んだ元祖の味わいを守り続ける。",
+        "address": "宮崎県小林市細野438-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.996204,
+        "lng": 130.972332,
+        "qr_token": "shuin-kobayashi-5",
+        "cover_image_url": "/images/kobayashi/spot5.png",
+        "f7_fragment": "しっとり甘い生地とチーズの塩気に、宮崎銘菓の原点が宿る。",
+        "f7_full": "しっとり柔らかなクッキー生地と濃厚なチーズが溶け合う元祖の味わいに、半世紀を超える職人の手仕事が宿る。",
+        "is_final": true
+      }
+    ]
   }
 ];

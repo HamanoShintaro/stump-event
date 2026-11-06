@@ -2043,7 +2043,47 @@
           "slug": "kiyama"
         }
       ]
+    },
+    {
+      "batch_number": 42,
+      "completed_at": "2026-11-06T20:15:00.000Z",
+      "stations": [
+        {
+          "name": "山北",
+          "prefecture": "神奈川県",
+          "line": "JR御殿場線",
+          "slug": "yamakita",
+          "replaced_from": "谷峨"
+        },
+        {
+          "name": "三国",
+          "prefecture": "福井県",
+          "line": "えちぜん鉄道三国芦原線",
+          "slug": "mikuni",
+          "replaced_from": "鷲塚針原"
+        },
+        {
+          "name": "四宮",
+          "prefecture": "京都府",
+          "line": "京阪京津線",
+          "slug": "shinomiya"
+        },
+        {
+          "name": "湯田温泉",
+          "prefecture": "山口県",
+          "line": "JR山口線",
+          "slug": "yuda_onsen",
+          "replaced_from": "名草"
+        },
+        {
+          "name": "小林",
+          "prefecture": "宮崎県",
+          "line": "JR吉都線",
+          "slug": "kobayashi",
+          "replaced_from": "高崎新田"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 215
+  "total_completed_routes": 220
 }

@@ -162,7 +162,7 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber
           ? (hasChome ? 350 : (isStationSpot ? 1500 : 800))
-          : (isPoiQuery ? 3500 : 8000);
+          : (isPoiQuery ? 5500 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)
             ? gsiRef.allCoords
