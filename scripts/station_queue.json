@@ -1718,6 +1718,46 @@
           "postal": "2720143"
         }
       ]
+    },
+    {
+      "batch_number": 44,
+      "completed_at": "2026-11-06T23:06:00.000Z",
+      "stations": [
+        {
+          "name": "新得",
+          "prefecture": "北海道",
+          "line": "JR石勝線",
+          "slug": "shintoku",
+          "replaced_from": "トマム"
+        },
+        {
+          "name": "腰越",
+          "prefecture": "神奈川県",
+          "line": "江ノ島電鉄線",
+          "slug": "koshigoe",
+          "replaced_from": "七里ヶ浜"
+        },
+        {
+          "name": "下吉田",
+          "prefecture": "山梨県",
+          "line": "富士急行線",
+          "slug": "shimoyoshida",
+          "replaced_from": "寿"
+        },
+        {
+          "name": "境港",
+          "prefecture": "鳥取県",
+          "line": "JR境線",
+          "slug": "sakaiminato",
+          "replaced_from": "米子空港"
+        },
+        {
+          "name": "宇多津",
+          "prefecture": "香川県",
+          "line": "JR本四備讃線",
+          "slug": "utazu"
+        }
+      ]
     }
   ],
   "current_batch": {
@@ -2123,5 +2163,5 @@
       ]
     }
   ],
-  "total_completed_routes": 225
+  "total_completed_routes": 230
 }

@@ -2886,17 +2886,20 @@
     },
     {
       "slug": "utazu",
-      "station": "宇多津駅",
+      "station": "宇多津",
       "line": "JR本四備讃線",
       "prefecture": "香川県",
-      "iteration": 30,
-      "score": 3.95,
+      "iteration": 45,
+      "score": 3.55,
+      "grade": "B+ (良質)",
       "needs_replacement": false,
-      "strengths": "塩田の歴史を秘めた『JR宇多津駅』から古街（こまち）へ入り、伊勢神宮別宮移築の本殿と古代巨石祭祀跡「磐境」をもつ『宇夫階神社』、真言宗と時宗を併せ持つ第78番札所『郷照寺』、大束川沿いに三角屋根の洋館とステンドグラスが映える登録有形文化財『倉の館 三角邸』、そして築100年超の老舗「料亭 公楽」の土蔵2階で味わう『蔵カフェ こうらく』まで、古代・中世・昭和初期・明治大正の4つの時代層が鮮やかに重なる。",
-      "weaknesses": "Spot 1（宇多津駅）→ Spot 2（宇夫階神社）が680m（徒歩11分）あり、かつSpot 1〜4まで見どころが4連続した後にSpot 5で初めて飲食（蔵カフェ）が登場する点。",
-      "prescription": "見どころが前半〜中盤に4連続する場合は、ゴール（Spot 5）の飲食・蔵カフェの空間描写と味覚の解像度を最大化して歩行の達成感を高めること。",
-      "total": 3.85,
-      "notes": "塩田と古街の町家・うぶしな・塩釜神社を潮風の距離感で巡る良作。"
+      "breakdown": {
+        "theme_diversity": 3.5,
+        "spot_allocation": 3.3,
+        "walkability": 3.7,
+        "story_emotion": 3.6,
+        "local_specificity": 3.7
+      }
     },
     {
       "slug": "furujima",
@@ -4054,21 +4057,89 @@
         "story_emotion": 3.7,
         "local_specificity": 3.8
       }
+    },
+    {
+      "slug": "shintoku",
+      "station": "新得",
+      "line": "JR石勝線",
+      "prefecture": "北海道",
+      "iteration": 45,
+      "score": 2.8,
+      "grade": "C (要改善・駅起点ブーメラン動線)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.8,
+        "walkability": 2.1,
+        "story_emotion": 3.1,
+        "local_specificity": 3.1
+      }
+    },
+    {
+      "slug": "koshigoe",
+      "station": "腰越",
+      "line": "江ノ島電鉄線",
+      "prefecture": "神奈川県",
+      "iteration": 45,
+      "score": 3.75,
+      "grade": "A (高品質)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.7,
+        "walkability": 3.6,
+        "story_emotion": 3.8,
+        "local_specificity": 3.8
+      }
+    },
+    {
+      "slug": "shimoyoshida",
+      "station": "下吉田",
+      "line": "富士急行線",
+      "prefecture": "山梨県",
+      "iteration": 45,
+      "score": 2.7,
+      "grade": "C (要改善・長距離素通り＆Spot 1食事スタート)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.4,
+        "walkability": 2,
+        "story_emotion": 3,
+        "local_specificity": 3.2
+      }
+    },
+    {
+      "slug": "sakaiminato",
+      "station": "境港",
+      "line": "JR境線",
+      "prefecture": "鳥取県",
+      "iteration": 45,
+      "score": 3.8,
+      "grade": "A (高品質)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.6,
+        "walkability": 3.9,
+        "story_emotion": 3.8,
+        "local_specificity": 3.9
+      }
     }
   ],
-  "updated_at": "2026-11-06T20:24:00.000Z",
+  "updated_at": "2026-11-06T23:06:00.000Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #40〜#43 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
-  "last_updated_iteration": 43,
+  "last_updated_iteration": 45,
   "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #40-#43）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
   "moving_window_20_average": 3.33,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    40,
-    41,
     42,
-    43
+    43,
+    44,
+    45
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -4174,14 +4245,16 @@
     "yamakita",
     "shinomiya",
     "tsuchiura",
-    "kyoto_kawaramachi"
+    "kyoto_kawaramachi",
+    "shintoku",
+    "shimoyoshida"
   ],
   "current_window_iterations": [
-    41,
     42,
     43,
-    44
+    44,
+    45
   ],
   "current_window_average": 3.33,
-  "total_routes": 225
+  "total_routes": 230
 }
