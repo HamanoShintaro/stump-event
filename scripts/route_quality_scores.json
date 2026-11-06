@@ -3534,21 +3534,96 @@
       "total": 2.65,
       "needs_replacement": true,
       "notes": "豊後街道・大津宿を見晴らす『大津日吉神社』から『豊後街道 大津宿（お姫様石）』、よもぎ麺と馬すじの名物『よも麺と居酒屋てんき』、湧水水車が回る『cafe KOTOBUKI』、安政年間創業『浪花屋本店』の銅銭糖を西進する。初回ドラフトの2022年12月閉店店舗差し替え（処方箋104）により2.65（滝水駅の処方箋78代替駅）。"
+    },
+    {
+      "route_id": "shishikui",
+      "station": "宍喰駅",
+      "prefecture": "徳島県",
+      "iteration": 39,
+      "scores": {
+        "story_immersion": 3.9,
+        "route_flow": 3.9,
+        "spot_authenticity": 3.8,
+        "visual_harmony": 3.8
+      },
+      "total": 3.85,
+      "needs_replacement": false,
+      "notes": "祇園祭の古社『宍喰八坂神社』から阿波水軍ゆかりの『圓頓山 願行寺』、太平洋を望む『ホテルリビエラししくい』、DMV発着の『道の駅 宍喰温泉』、海辺のカフェダイニング『Bahati』を巡る。万年筆水彩アイキャッチと海岸線動線が秀逸。"
+    },
+    {
+      "route_id": "takeo_onsen",
+      "station": "武雄温泉駅",
+      "prefecture": "佐賀県",
+      "iteration": 39,
+      "scores": {
+        "story_immersion": 3.8,
+        "route_flow": 3.7,
+        "spot_authenticity": 3.7,
+        "visual_harmony": 3.6
+      },
+      "total": 3.7,
+      "needs_replacement": false,
+      "notes": "柄崎宿の『明宗寺』から辰野金吾設計の『武雄温泉楼門・新館』、『佐嘉平川屋 武雄温泉本店』の温泉湯豆腐、『TKB AWARDS』、天保年間創業『山里屋菓子老舗』の太白百合羊羹を巡る。正面仰角の不透明ガッシュアイキャッチが力強い。"
+    },
+    {
+      "route_id": "kuji",
+      "station": "久慈駅",
+      "prefecture": "岩手県",
+      "iteration": 39,
+      "scores": {
+        "story_immersion": 3.7,
+        "route_flow": 3.7,
+        "spot_authenticity": 3.6,
+        "visual_harmony": 3.6
+      },
+      "total": 3.65,
+      "needs_replacement": false,
+      "notes": "高台の『巽山稲荷神社』から『道の駅くじ やませ土風館』の秋まつり山車、『らーめんの千草』の純鶏中華そば、昭和43年創業『喫茶モカ』、『シャトータカマツ』の朝焼きアップルパイを巡る北三陸の王道構成。"
+    },
+    {
+      "route_id": "mino_shirotori",
+      "station": "美濃白鳥駅",
+      "prefecture": "岐阜県",
+      "iteration": 39,
+      "scores": {
+        "story_immersion": 3.1,
+        "route_flow": 3.1,
+        "spot_authenticity": 3,
+        "visual_harmony": 2.6
+      },
+      "total": 2.95,
+      "needs_replacement": true,
+      "notes": "『白鳥神社』拝殿踊りの舞台から『聞法山 来通寺』、室蓋製法の『いづやこうじ店』、『cafe のどか』、『レストラン 日高』の奥美濃カレーへと一直線に南下する。初回生成時のSpot 4/5お盆・皿切れとアイキャッチ箱枠化（処方箋107）により2.95。"
+    },
+    {
+      "route_id": "matsumaru",
+      "station": "松丸駅",
+      "prefecture": "愛媛県",
+      "iteration": 39,
+      "scores": {
+        "story_immersion": 3.1,
+        "route_flow": 3.1,
+        "spot_authenticity": 2.8,
+        "visual_harmony": 2.8
+      },
+      "total": 2.95,
+      "needs_replacement": true,
+      "notes": "『芝不器男記念館』から『東光山 永昌寺』、駅舎2階の『森の国 ぽっぽ温泉』、『レストラン 遊鶴羽』、明治38年創業『正木正光酒造場』を巡る。初回アイキャッチの山城跡への天守閣描画（処方箋108）および酒蔵創業年修正により2.95。"
     }
   ],
-  "updated_at": "2026-11-06T09:08:37.836Z",
+  "updated_at": "2026-11-06T10:10:23.699Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.3,
-  "last_updated_iteration": 38,
+  "moving_window_average": 3.28,
+  "last_updated_iteration": 39,
   "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #33-#36）の相対比較により20作品平均が 3.20〜3.40（現在 3.38）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
-  "moving_window_20_average": 3.3,
+  "moving_window_20_average": 3.28,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    35,
     36,
     37,
-    38
+    38,
+    39
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -3642,6 +3717,8 @@
     "kami_morioka",
     "soeda",
     "tosu",
-    "higo_ozu"
+    "higo_ozu",
+    "mino_shirotori",
+    "matsumaru"
   ]
 }

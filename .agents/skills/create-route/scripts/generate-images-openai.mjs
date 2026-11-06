@@ -85,57 +85,68 @@ async function generateOpenAIImage(apiKey, prompt, model = 'gpt-image-1.5', size
 
 const EYECATCH_STYLE_PRESETS = [
   {
-    name: 'Architectural Sketch & Watercolor',
+    name: 'Kawase Hasui Shin-Hanga Woodblock (Twilight Indigo & Amber)',
     style:
-      'Clean architectural pen-and-ink linework with luminous transparent watercolor washes, sky blue and sunlit emerald greens, crisp white sketch paper background, Monocle / Casa Brutus magazine editorial illustration aesthetic.',
+      'Kawase Hasui and Hiroshi Yoshida inspired modern Shin-Hanga woodblock print aesthetic, rich bokashi color gradation, deep indigo twilight sky with warm amber lantern glow, crisp carved woodblock outlines and visible woodgrain pigment texture.',
   },
   {
-    name: 'Patisserie & Cafe Gouache',
+    name: 'Mid-Century Silkscreen & Risograph Poster (Teal, Terracotta & Mustard)',
     style:
-      'Warm artisanal food & lifestyle gouache painting, creamy pastel and amber coffee tones, soft morning window light, Popeye / Hanako / Paris patisserie guidebook illustration style, rich brushstrokes.',
+      'Stylish mid-century modern silkscreen and risograph travel poster art, bold graphic shapes, striking teal, terracotta vermilion, mustard gold, and cream palette, flat halftone grain texture, vintage railway poster composition.',
   },
   {
-    name: 'Mid-Century Modern Screenprint',
+    name: 'Architectural Fountain-Pen & Luminous Wash (Cobalt Sky & Emerald)',
     style:
-      'Stylish mid-century modern silkscreen / risograph poster art, bold geometric composition, teal, mustard yellow, terracotta, and cream palette, sophisticated urban culture magazine cover aesthetic.',
+      'Expressive architectural fountain-pen linework in sepia ink with luminous transparent watercolor washes, bright cobalt sky blue and sunlit emerald greens, dynamic diagonal street-level perspective, Monocle / Casa Brutus editorial illustration.',
   },
   {
-    name: 'Cinematic Botanical & Waterfront',
+    name: 'Impasto Opaque Gouache & Poster Color (Golden Hour Sunset)',
     style:
-      'Breezy plein-air botanical and waterside landscape painting, sparkling water reflections, lush dappled tree canopy (komorebi), Makoto Shinkai / Studio Ghibli inspired atmospheric background art.',
+      'Rich opaque gouache and poster-color landscape painting inspired by Kazuo Oga and Studio Ghibli background art, warm golden-hour sunset casting long dramatic shadows, tactile brush strokes, glowing clouds and rich foliage.',
   },
   {
-    name: 'Nostalgic Showa Retro & Twilight',
+    name: 'Chigiri-e Washi Collage & Stencil Art (Mineral Vermilion & Moss Green)',
     style:
-      'Nostalgic twilight / golden-hour townscape illustration, warm lantern and kissaten window glow against deep indigo and violet evening sky, expressive woodblock-inspired modern narrative illustration.',
+      'Traditional Japanese Chigiri-e torn mulberry paper collage combined with Katazome stencil dyeing art, layered textured hand-dyed paper fibers, bold mineral vermilion, moss green, and ochre palette, folk-art warmth.',
   },
   {
-    name: 'Nordic & Garden Suburb Pastel',
+    name: 'Aerial Isometric Bird-Eye Pictorial Map (Warm Sepia & Aquamarine)',
     style:
-      'Airy European garden-suburb editorial illustration, soft chalk pastel and colored pencil textures, tree-lined avenues, brick and stone textures, gentle afternoon sunlight.',
+      'Charming bird-eye isometric pictorial map illustration looking down at a 45-degree angle over the winding town streets, river, railway tracks, and tiled roofs, warm antique sepia ink with aquamarine and coral accents.',
+  },
+  {
+    name: 'Soft Pastel & Colored Pencil Sketchbook (Morning Mist & Lavender)',
+    style:
+      'Delicate chalk pastel and colored pencil travel sketchbook illustration, misty morning light with soft lavender, sage green, and warm rose-beige tones, gentle paper tooth texture.',
+  },
+  {
+    name: 'Sumi-e Ink Wash & Gold Leaf Nihonga (Dramatic Monochrome & Gold)',
+    style:
+      'Atmospheric sumi-e black ink wash combined with mineral Nihonga pigments (malachite green, azurite blue, and subtle gold leaf accents), dramatic mist and negative space.',
   },
 ];
 
 function buildEyecatchPrompt(area) {
+  const idx = Number.isFinite(Number(area.station_order))
+    ? Number(area.station_order)
+    : [...String(area.slug || area.title)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  const preset = EYECATCH_STYLE_PRESETS[idx % EYECATCH_STYLE_PRESETS.length];
   const customPrompt = area.eyecatch_prompt || area.image_prompt;
   if (customPrompt) {
-    return `${customPrompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: NO people, NO human figures, NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
+    return `${customPrompt} Artistic medium & color palette (${preset.name}): ${preset.style} Rendered on a single uniform cream Washi paper canvas (#F7F2E6) with wide 22-percent unpainted cream Washi paper margins around all four edges and soft organic vignette brush fades (strictly NO rectangular print block border, NO hard-edged square frame, NO matte framing box; the outer edges of the artwork must dissolve softly and organically into the surrounding unpainted cream Washi paper). Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage, NO row of floating food dishes lined up in front of buildings). Strict rule: NO people, NO human figures, NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
   }
-  // slug のハッシュとカテゴリから毎回異なるビジュアルスタイルを選択（和紙・朱色のワンパターン化を防止）
-  const seed = [...String(area.slug || area.title)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
-  const preset = EYECATCH_STYLE_PRESETS[seed % EYECATCH_STYLE_PRESETS.length];
   return [
     `An original, highly distinctive illustration of "${area.area_name}" (${area.prefecture}, Japan) capturing the theme: "${area.title}".`,
     `Scene & key motifs: ${area.description}`,
     `Artistic medium & palette (${preset.name}): ${preset.style}`,
-    `Composition: Single unified continuous scene rendered on cream Washi paper with visible unpainted white margins around all four edges (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage).`,
+    `Composition: Single unified continuous vignette scene rendered in the center of a single uniform cream Washi paper canvas (#F7F2E6) with wide 22-percent unpainted white/cream margins around all four edges (strictly NO rectangular print block border, NO hard-edged square frame, NO matte framing box, NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage, NO row of floating food dishes lined up in front of buildings; the outer edges must dissolve softly and organically into the bare Washi paper).`,
     `Strict rule: NO people, NO human figures, NO text, NO letters, NO Japanese/English characters, NO watermarks in the image.`,
   ].join(' ');
 }
 
 function buildSpotPrompt(area, spot, idx) {
   if (spot.image_prompt) {
-    return `${spot.image_prompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: No people, no text, no signage letters, no characters, no watermarks.`;
+    return `${spot.image_prompt} Rendered in the center of a single uniform cream Washi paper canvas (#F7F2E6) with wide 24-percent unpainted cream Washi paper margins around all four edges and soft organic vignette fades (strictly NO rectangular box border, NO hard straight cut edges, NO cropped plates, bowls, cup handles, or tray corners). Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: No people, no text, no signage letters, no characters, no watermarks.`;
   }
   const moodMap = {
     見どころ: 'serene historical & scenic perspective, architectural detail and seasonal atmosphere',
