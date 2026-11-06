@@ -409,6 +409,9 @@ async function main() {
       if (s.spot_type === '休憩' && /佇まいを眺め|外観を眺め/.test(s.clue || '')) {
         errors.push(`処方箋89違反 [Spot ${idx + 1} spot_type]: 外観を眺めるだけの通過スポットを「休憩」枠にすることは禁止です (${s.name})`);
       }
+      if (s.spot_type === '見どころ' && /集荷場|選果場|物流センター|配送センター/.test(s.name)) {
+        warnings.push(`処方箋91注意 [Spot ${idx + 1}]: 一般見学不可のJA集荷場・物流施設（${s.name}）を外観見学スポットとして数合わせに組み込むことは避けてください`);
+      }
     });
   }
 

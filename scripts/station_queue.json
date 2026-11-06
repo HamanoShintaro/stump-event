@@ -1428,7 +1428,7 @@
     },
     {
       "batch_id": 30,
-      "status": "pending",
+      "status": "completed",
       "selection_method": "heartrails_japan_all_stations_uniform_random",
       "stations": [
         {
@@ -1471,8 +1471,56 @@
           "lng": 131.248745,
           "postal": "8893531"
         }
+      ],
+      "completed_at": "2026-11-06"
+    },
+    {
+      "batch_id": 31,
+      "status": "pending",
+      "selection_method": "heartrails_japan_all_stations_uniform_random",
+      "stations": [
+        {
+          "station": "柘植駅",
+          "line": "JR草津線",
+          "prefecture": "三重県",
+          "lat": 34.846993,
+          "lng": 136.255704,
+          "postal": "5191402"
+        },
+        {
+          "station": "北浦駅",
+          "line": "JR陸羽東線",
+          "prefecture": "宮城県",
+          "lat": 38.55985,
+          "lng": 141.02305,
+          "postal": "9870005"
+        },
+        {
+          "station": "妙高高原駅",
+          "line": "北しなの線",
+          "prefecture": "新潟県",
+          "lat": 36.872175,
+          "lng": 138.211953,
+          "postal": "9492106"
+        },
+        {
+          "station": "滝尾駅",
+          "line": "JR豊肥本線",
+          "prefecture": "大分県",
+          "lat": 33.209495,
+          "lng": 131.62311,
+          "postal": "8700945"
+        },
+        {
+          "station": "日原駅",
+          "line": "JR山口線",
+          "prefecture": "島根県",
+          "lat": 34.532494,
+          "lng": 131.831892,
+          "postal": "6995207"
+        }
       ]
     }
   ],
-  "current_batch": 30
+  "current_batch": 31
 }
