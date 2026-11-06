@@ -3454,21 +3454,101 @@
       "total": 3.7,
       "needs_replacement": false,
       "notes": "南行徳駅から「欠真間のおししさま」を伝える『欠真間香取神社』、『麺屋 菖蒲』の濃厚魚介豚骨ラーメン、自家焙煎『Roastery Cafe Deal』、『ハワイアンマラサダ レイハナ』を結ぶ。"
+    },
+    {
+      "slug": "asamushi_onsen",
+      "station": "浅虫温泉駅",
+      "line": "青い森鉄道線",
+      "prefecture": "青森県",
+      "iteration": 38,
+      "scores": {
+        "route_setting": 4,
+        "text_engagement": 3.9,
+        "fact_accuracy": 3.9,
+        "image_quality": 3.8
+      },
+      "total": 3.9,
+      "needs_replacement": false,
+      "notes": "陸奥湾と湯の島を見渡す『浅虫八幡宮』から、棟方志功も愛した浅虫の木版画展示とカフェ『浅虫コリドー』、八角形の湯つぼに湯けむりが立ち昇る『浅虫温泉源泉公園』、『鶴亀屋食堂』の本マグロ丼、明治40年創業『永井久慈良餅店』の久慈良餅を一直線に北上する王道温泉郷ルート（狩場沢駅の処方箋78代替駅）。"
+    },
+    {
+      "slug": "tosu",
+      "station": "鳥栖駅",
+      "line": "JR長崎本線",
+      "prefecture": "佐賀県",
+      "iteration": 38,
+      "scores": {
+        "route_setting": 3.5,
+        "text_engagement": 3.4,
+        "fact_accuracy": 3.5,
+        "image_quality": 1
+      },
+      "total": 2.85,
+      "needs_replacement": true,
+      "notes": "明治36年築のJR鳥栖駅『中央軒 鳥栖駅店』のかしわうどんから、大正町商店街『ポアソン洋菓子店』のブッセ「と」、旧長崎街道の『本照寺』と『八坂神社』、『saburo36 cafe』を結ぶ。初回アイキャッチ画像の極小人物シルエット再生成（処方箋105）により2.85（新鳥栖駅の処方箋78代替駅）。"
+    },
+    {
+      "slug": "misasagi",
+      "station": "御陵駅",
+      "line": "京阪京津線",
+      "prefecture": "京都府",
+      "iteration": 38,
+      "scores": {
+        "route_setting": 3.6,
+        "text_engagement": 3.5,
+        "fact_accuracy": 3.5,
+        "image_quality": 3.4
+      },
+      "total": 3.5,
+      "needs_replacement": false,
+      "notes": "日蓮宗大本山『本圀寺』から琵琶湖疏水を渡る『天智天皇山科陵』、京野菜フレンチビストロ『レガーロ』、昭和43年創業『スイス菓子 ローヌ 本店』のマイスターチーズケーキ、『喫茶ブロンコ』を巡る山科疏水ルート。"
+    },
+    {
+      "slug": "kawawacho",
+      "station": "川和町駅",
+      "line": "グリーンライン",
+      "prefecture": "神奈川県",
+      "iteration": 38,
+      "scores": {
+        "route_setting": 3.7,
+        "text_engagement": 3.7,
+        "fact_accuracy": 3.6,
+        "image_quality": 3.6
+      },
+      "total": 3.65,
+      "needs_replacement": false,
+      "notes": "川和町駅から鶴見川近くの町中華『一陽軒』の味噌ラーメン、菜の花畑隣の『妙蓮寺』、地域コミュニティ喫茶『カプカプ川和』、永禄年間開創の曹洞宗古刹『瑞雲寺』、丘の上の『お菓子のアトリエミユキ』を北上する丘陵散策。"
+    },
+    {
+      "slug": "higo_ozu",
+      "station": "肥後大津駅",
+      "line": "JR豊肥本線",
+      "prefecture": "熊本県",
+      "iteration": 38,
+      "scores": {
+        "route_setting": 3.5,
+        "text_engagement": 3.4,
+        "fact_accuracy": 1,
+        "image_quality": 2.7
+      },
+      "total": 2.65,
+      "needs_replacement": true,
+      "notes": "豊後街道・大津宿を見晴らす『大津日吉神社』から『豊後街道 大津宿（お姫様石）』、よもぎ麺と馬すじの名物『よも麺と居酒屋てんき』、湧水水車が回る『cafe KOTOBUKI』、安政年間創業『浪花屋本店』の銅銭糖を西進する。初回ドラフトの2022年12月閉店店舗差し替え（処方箋104）により2.65（滝水駅の処方箋78代替駅）。"
     }
   ],
-  "updated_at": "2026-11-06T05:01:39.859Z",
+  "updated_at": "2026-11-06T09:08:37.836Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.35,
-  "last_updated_iteration": 37,
+  "moving_window_average": 3.3,
+  "last_updated_iteration": 38,
   "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #33-#36）の相対比較により20作品平均が 3.20〜3.40（現在 3.38）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
-  "moving_window_20_average": 3.35,
+  "moving_window_20_average": 3.3,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    32,
-    33,
-    34,
-    35
+    35,
+    36,
+    37,
+    38
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -3560,6 +3640,8 @@
     "shin_osaka",
     "kesennuma",
     "kami_morioka",
-    "soeda"
+    "soeda",
+    "tosu",
+    "higo_ozu"
   ]
 }

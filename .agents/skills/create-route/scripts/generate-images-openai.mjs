@@ -117,8 +117,9 @@ const EYECATCH_STYLE_PRESETS = [
 ];
 
 function buildEyecatchPrompt(area) {
-  if (area.eyecatch_prompt) {
-    return `${area.eyecatch_prompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
+  const customPrompt = area.eyecatch_prompt || area.image_prompt;
+  if (customPrompt) {
+    return `${customPrompt} Rendered on cream Washi paper with visible unpainted white margins around all four edges. Single unified continuous scene ONLY (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage). Strict rule: NO people, NO human figures, NO text, NO typography, NO letters, NO signage characters, NO watermarks in the image.`;
   }
   // slug のハッシュとカテゴリから毎回異なるビジュアルスタイルを選択（和紙・朱色のワンパターン化を防止）
   const seed = [...String(area.slug || area.title)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
@@ -128,7 +129,7 @@ function buildEyecatchPrompt(area) {
     `Scene & key motifs: ${area.description}`,
     `Artistic medium & palette (${preset.name}): ${preset.style}`,
     `Composition: Single unified continuous scene rendered on cream Washi paper with visible unpainted white margins around all four edges (NO floating inset vignettes, NO Picture-in-Picture boxes, NO split-screen collage).`,
-    `Strict rule: NO text, NO letters, NO Japanese/English characters, NO watermarks in the image.`,
+    `Strict rule: NO people, NO human figures, NO text, NO letters, NO Japanese/English characters, NO watermarks in the image.`,
   ].join(' ');
 }
 
