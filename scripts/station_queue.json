@@ -1720,7 +1720,52 @@
       ]
     }
   ],
-  "current_batch": 36,
+  "current_batch": {
+    "batch_number": 37,
+    "drawn_at": "2026-11-06T08:01:47.287Z",
+    "stations": [
+      {
+        "name": "狩場沢",
+        "prefecture": "青森県",
+        "line": "青い森鉄道線",
+        "lat": 40.900335,
+        "lng": 141.071274,
+        "postal": "0393343"
+      },
+      {
+        "name": "新鳥栖",
+        "prefecture": "佐賀県",
+        "line": "九州新幹線",
+        "lat": 33.370278,
+        "lng": 130.491111,
+        "postal": "8410071"
+      },
+      {
+        "name": "御陵",
+        "prefecture": "京都府",
+        "line": "京阪京津線",
+        "lat": 34.996158,
+        "lng": 135.801637,
+        "postal": "6078424"
+      },
+      {
+        "name": "川和町",
+        "prefecture": "神奈川県",
+        "line": "グリーンライン",
+        "lat": 35.52802,
+        "lng": 139.548745,
+        "postal": "2240057"
+      },
+      {
+        "name": "滝水",
+        "prefecture": "熊本県",
+        "line": "JR豊肥本線",
+        "lat": 32.933342,
+        "lng": 131.24263,
+        "postal": "8692804"
+      }
+    ]
+  },
   "completed_batches": [
     {
       "batch_id": 34,
@@ -1768,6 +1813,44 @@
           "line": "JR飯田線",
           "prefecture": "長野県",
           "status": "completed"
+        }
+      ]
+    },
+    {
+      "batch_number": 36,
+      "completed_at": "2026-11-06T08:01:46.982Z",
+      "stations": [
+        {
+          "name": "気仙沼",
+          "prefecture": "宮城県",
+          "line": "JR気仙沼線BRT",
+          "slug": "kesennuma",
+          "replaced_from": "陸前階上"
+        },
+        {
+          "name": "本吉原",
+          "prefecture": "静岡県",
+          "line": "岳南電車岳南線",
+          "slug": "hon_yoshiwara"
+        },
+        {
+          "name": "上盛岡",
+          "prefecture": "岩手県",
+          "line": "JR山田線",
+          "slug": "kami_morioka"
+        },
+        {
+          "name": "添田",
+          "prefecture": "福岡県",
+          "line": "JR日田彦山線BRT",
+          "slug": "soeda",
+          "replaced_from": "竹本"
+        },
+        {
+          "name": "南行徳",
+          "prefecture": "千葉県",
+          "line": "東京メトロ東西線",
+          "slug": "minami_gyotoku"
         }
       ]
     }
