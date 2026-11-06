@@ -506,8 +506,8 @@ async function main() {
     }
     if (dist > THRESHOLD_METERS || (shouldFix && dist > 3 && bestGeo.hasBlockNumber)) {
       if (shouldFix) {
-        const latRegex = new RegExp(`(lat:\\s*)${spot.lat}0*(?=[,\\s\\r\\n])`);
-        const lngRegex = new RegExp(`(lng:\\s*)${spot.lng}0*(?=[,\\s\\r\\n])`);
+        const latRegex = new RegExp(`("?lat"?\\s*:\\s*)${spot.lat}0*(?=[,\\s\\r\\n])`);
+        const lngRegex = new RegExp(`("?lng"?\\s*:\\s*)${spot.lng}0*(?=[,\\s\\r\\n])`);
         fileContent = fileContent.replace(latRegex, `$1${bestGeo.lat}`);
         fileContent = fileContent.replace(lngRegex, `$1${bestGeo.lng}`);
         spot.lat = bestGeo.lat;

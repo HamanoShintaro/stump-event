@@ -1476,7 +1476,7 @@
     },
     {
       "batch_id": 31,
-      "status": "pending",
+      "status": "completed",
       "selection_method": "heartrails_japan_all_stations_uniform_random",
       "stations": [
         {
@@ -1519,62 +1519,111 @@
           "lng": 131.831892,
           "postal": "6995207"
         }
-      ]
+      ],
+      "completed_at": "2026-11-06"
     },
     {
       "batch": 32,
       "iteration": 33,
       "drawn_at": "2026-11-06T02:53:12.254Z",
       "selection_method": "HeartRails Express Japan Station API — True Random Nationwide Draw (Batch #32)",
-      "status": "pending",
+      "status": "completed",
       "stations": [
         {
-          "station": "上村駅",
-          "line": "JR日田彦山線BRT",
-          "prefecture": "大分県",
-          "lat": 33.331825,
-          "lng": 130.872384,
-          "postal": "8771111",
-          "status": "pending"
-        },
-        {
-          "station": "近永駅",
-          "line": "JR予土線",
-          "prefecture": "愛媛県",
-          "lat": 33.255693,
-          "lng": 132.676335,
-          "postal": "7981341",
-          "status": "pending"
-        },
-        {
-          "station": "上熊本駅",
-          "line": "熊本市電上熊本線",
-          "prefecture": "熊本県",
-          "lat": 32.81716,
-          "lng": 130.699266,
-          "postal": "8600079",
-          "status": "pending"
+          "station": "鷹巣駅",
+          "original_drawn": "桂根駅 (処方箋78により同県内の鷹巣駅へ再抽選)",
+          "line": "秋田内陸縦貫鉄道・JR奥羽本線",
+          "prefecture": "秋田県",
+          "slug": "takanosu",
+          "status": "completed"
         },
         {
           "station": "白島駅",
           "line": "広島電鉄白島線",
           "prefecture": "広島県",
-          "lat": 34.404484,
-          "lng": 132.465506,
-          "postal": "7300004",
+          "slug": "hakushima",
+          "status": "completed"
+        },
+        {
+          "station": "近永駅",
+          "line": "JR予土線",
+          "prefecture": "愛媛県",
+          "slug": "chikanaga",
+          "status": "completed"
+        },
+        {
+          "station": "上熊本駅",
+          "line": "熊本市電上熊本線",
+          "prefecture": "熊本県",
+          "slug": "kami_kumamoto",
+          "status": "completed"
+        },
+        {
+          "station": "日田駅",
+          "original_drawn": "上村駅 (処方箋78により同路線の起点・日田駅へ再抽選)",
+          "line": "JR日田彦山線BRT・久大本線",
+          "prefecture": "大分県",
+          "slug": "hita",
+          "status": "completed"
+        }
+      ],
+      "batch_id": 32,
+      "completed_at": "2026-11-06"
+    },
+    {
+      "batch_id": 33,
+      "iteration": 34,
+      "status": "pending",
+      "selection_method": "heartrails_japan_all_stations_uniform_random",
+      "drawn_at": "2026-11-06T03:47:34.835Z",
+      "stations": [
+        {
+          "station": "益田駅",
+          "line": "JR山口線",
+          "prefecture": "島根県",
+          "lat": 34.678311,
+          "lng": 131.838932,
+          "postal": "6980024",
           "status": "pending"
         },
         {
-          "station": "桂根駅",
-          "line": "JR羽越本線",
+          "station": "新大平下駅",
+          "line": "東武日光線",
+          "prefecture": "栃木県",
+          "lat": 36.339024,
+          "lng": 139.701886,
+          "postal": "3294404",
+          "status": "pending"
+        },
+        {
+          "station": "神村学園前駅",
+          "line": "JR鹿児島本線",
+          "prefecture": "鹿児島県",
+          "lat": 31.703731,
+          "lng": 130.284129,
+          "postal": "8960037",
+          "status": "pending"
+        },
+        {
+          "station": "十二所駅",
+          "line": "JR花輪線",
           "prefecture": "秋田県",
-          "lat": 39.647566,
-          "lng": 140.066482,
-          "postal": "0101501",
+          "lat": 40.21429,
+          "lng": 140.668211,
+          "postal": "0185601",
+          "status": "pending"
+        },
+        {
+          "station": "唐崎駅",
+          "line": "JR湖西線",
+          "prefecture": "滋賀県",
+          "lat": 35.049795,
+          "lng": 135.866969,
+          "postal": "5200106",
           "status": "pending"
         }
       ]
     }
   ],
-  "current_batch": 32
+  "current_batch": 33
 }

@@ -2975,8 +2975,8 @@
         "accuracy_and_flow": 3.2,
         "narrative_and_quiz": 3.5
       },
-      "total": 3.4,
-      "needs_replacement": false,
+      "total": 3,
+      "needs_replacement": true,
       "notes": "賢治と花巻城下の名所を網羅するが、林風舎→マルカン大食堂→嘉司屋の連続飲食密度が高いため3.40。"
     },
     {
@@ -3046,7 +3046,7 @@
         "food_and_rest": 3.4,
         "visuals": 3.5
       },
-      "total": 3.5,
+      "total": 3.45,
       "needs_replacement": false,
       "notes": "清流・高津川と銅山街道の宿場町・日原を舞台に、日原駅→杵築神社→割烹 美加登家 本店の天然鮎→古民家かわべ（diningcafe いと）のそば粉ワッフル→春日神社へと北上する叙情豊かなルート。序盤の徒歩14分＋10分の川沿い移動と、美加登家の昼営業が12:00〜13:00の予約中心割烹である点で3.50。"
     },
@@ -3079,13 +3079,88 @@
       "total": 2.85,
       "needs_replacement": true,
       "notes": "三重最古の柘植駅と赤煉瓦危険品庫・喫茶中村屋・都美恵神社・徳永寺・柘植歴史民俗資料館の歴史文脈は重厚だが、5スポット中4つが見どころで食事（昼食）スポットがゼロであり、Spot 2→3に徒歩14分（878m）の空白区間があるため3.00以下。"
+    },
+    {
+      "slug": "hita",
+      "station": "日田駅",
+      "iteration": 33,
+      "scores": {
+        "discovery": 4,
+        "flow": 4,
+        "narrative": 3.9,
+        "food_and_rest": 4,
+        "visuals": 3.85
+      },
+      "total": 3.95,
+      "needs_replacement": false,
+      "notes": "JR日田駅から寶屋本店の日田ちゃんぽん・コーヒー財津・原次郎左衛門の味噌醤油蔵（鮎魚醤・虹色ラムネ）・隈八坂神社へと西進一筆書きで結ぶ王道ルート。"
+    },
+    {
+      "slug": "chikanaga",
+      "station": "近永駅",
+      "iteration": 33,
+      "scores": {
+        "discovery": 3.9,
+        "flow": 3.7,
+        "narrative": 3.8,
+        "food_and_rest": 3.8,
+        "visuals": 3.8
+      },
+      "total": 3.8,
+      "needs_replacement": false,
+      "notes": "JR予土線近永駅から築100年の古民家カフェ・サムコッペ、弓瀧神社、高田商店の鬼北ゆずポン酢、お食事処好屋へと結ぶ南予の鉄道町ルート。"
+    },
+    {
+      "slug": "takanosu",
+      "station": "鷹巣駅",
+      "iteration": 33,
+      "scores": {
+        "discovery": 3.7,
+        "flow": 3.6,
+        "narrative": 3.5,
+        "food_and_rest": 3.3,
+        "visuals": 3.4
+      },
+      "total": 3.5,
+      "needs_replacement": false,
+      "notes": "鷹巣駅から手打ちそばと比内地鶏いな穂・レストラン葡萄の樹・寛政8年創業の晩梅（大太鼓まんじゅう・バター餅）・鷹巣神社へと100%南下する北秋田ルート。序盤に食事と喫茶が連続する点で3.50。"
+    },
+    {
+      "slug": "kami_kumamoto",
+      "station": "上熊本駅",
+      "iteration": 33,
+      "scores": {
+        "discovery": 3.3,
+        "flow": 3.1,
+        "narrative": 2.7,
+        "food_and_rest": 2.8,
+        "visuals": 2.85
+      },
+      "total": 2.95,
+      "needs_replacement": true,
+      "notes": "上熊本駅から京町台地（正善寺・ENDELEA COFFEE・にのみや菓舗）へ上る構成だが、初回生成時にSpot 2『かつ丼 二葉』の代名詞「とじないかつ丼」を玉子とじと誤記したため3.00以下（本文・画像はとじないかつ丼へ修正済）。"
+    },
+    {
+      "slug": "hakushima",
+      "station": "白島駅",
+      "iteration": 33,
+      "scores": {
+        "discovery": 3.1,
+        "flow": 2.5,
+        "narrative": 3,
+        "food_and_rest": 2.8,
+        "visuals": 2.85
+      },
+      "total": 2.85,
+      "needs_replacement": true,
+      "notes": "広電白島駅から登きや・BOULANGERIE HIRO・UNION・碇神社まで100%東進で結ぶが、全5スポットが直線合計418m（徒歩計7分）の極小圏内に密集しているため移動窓相対評価で差し替え候補。"
     }
   ],
-  "updated_at": "2026-11-05T06:46:00.000Z",
+  "updated_at": "2026-11-06T03:59:27.068Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.36,
-  "last_updated_iteration": 32,
+  "moving_window_average": 3.38,
+  "last_updated_iteration": 33,
   "scoring_philosophy": "直近20ルート（移動窓：Iteration 26〜29 = Batch #25〜#28 の計20作品）を基準母集団とし、20作品の平均スコアを 3.2〜3.4（現在 3.35）に正規化する相対評価（共進化システム）。処方箋86（surprise文末の常体統一・バッジ説明の5スポット順列記載・area_name叙情化）および処方箋87（積雪地の冬季長期休業カフェ単独依存回避・屋外ベンチの疑似休憩枠回避・画像の単一構図と和紙余白徹底）を統合。",
-  "moving_window_20_average": 3.36
+  "moving_window_20_average": 3.38
 }
