@@ -3609,21 +3609,96 @@
       "total": 2.95,
       "needs_replacement": true,
       "notes": "『芝不器男記念館』から『東光山 永昌寺』、駅舎2階の『森の国 ぽっぽ温泉』、『レストラン 遊鶴羽』、明治38年創業『正木正光酒造場』を巡る。初回アイキャッチの山城跡への天守閣描画（処方箋108）および酒蔵創業年修正により2.95。"
+    },
+    {
+      "route_id": "shibata",
+      "station": "新発田駅",
+      "prefecture": "新潟県",
+      "iteration": 40,
+      "scores": {
+        "story_immersion": 3.9,
+        "route_flow": 3.8,
+        "spot_authenticity": 3.9,
+        "visual_harmony": 3.8
+      },
+      "total": 3.85,
+      "needs_replacement": false,
+      "notes": "『新発田総鎮守 諏訪神社』の御柱から酒蔵の『諏訪ノ森喫茶室』、国指定名勝『清水園』、『シンガポール食堂』の皿オッチャホイ、大正元年創業『翁屋』の求肥入り翁もなかへと西進する構成・画像ともに秀逸。"
+    },
+    {
+      "route_id": "aomori",
+      "station": "青森駅",
+      "prefecture": "青森県",
+      "iteration": 40,
+      "scores": {
+        "story_immersion": 3.8,
+        "route_flow": 3.8,
+        "spot_authenticity": 3.8,
+        "visual_harmony": 3.8
+      },
+      "total": 3.8,
+      "needs_replacement": false,
+      "notes": "『青函連絡船メモリアルシップ八甲田丸』の車両甲板から『お食事処 おさない』のほたて貝焼きみそ、昭和45年創業『珈琲店マロン』、棟方志功ゆかりの『善知鳥神社』、『赤い林檎 本店』の紅玉アップルパイを結ぶL字一筆書きの港町ルート。"
+    },
+    {
+      "route_id": "nakanosho",
+      "station": "中ノ庄駅",
+      "prefecture": "滋賀県",
+      "iteration": 40,
+      "scores": {
+        "story_immersion": 3.6,
+        "route_flow": 3.5,
+        "spot_authenticity": 3.6,
+        "visual_harmony": 3.5
+      },
+      "total": 3.55,
+      "needs_replacement": false,
+      "notes": "旧膳所城の2つの国重文移築城門（『篠津神社』の高麗門・『膳所神社』の薬医門）から『松田常盤堂』の大福、木骨洋館『ドイツレストラン ヴュルツブルク』、『たねや LAGO 大津』の焼きたてカステラへと単調増加で北上する好構成。"
+    },
+    {
+      "route_id": "usuki",
+      "station": "臼杵駅",
+      "prefecture": "大分県",
+      "iteration": 40,
+      "scores": {
+        "story_immersion": 3.2,
+        "route_flow": 2.8,
+        "spot_authenticity": 3,
+        "visual_harmony": 2.2
+      },
+      "total": 2.8,
+      "needs_replacement": true,
+      "notes": "『二王座歴史の道』から『ポルト蔵』の黄飯とかやく、『カニ醤油』の味噌ソフト、『後藤製菓 新町店』の臼杵煎餅、『臼杵城跡』畳櫓を巡る。初回アイキャッチの川・鉄道線路混入（処方箋109）とSpot 2→3の近接折り返しにより2.80。"
+    },
+    {
+      "route_id": "yuki",
+      "station": "結城駅",
+      "prefecture": "茨城県",
+      "iteration": 40,
+      "scores": {
+        "story_immersion": 3.1,
+        "route_flow": 2.7,
+        "spot_authenticity": 2.2,
+        "visual_harmony": 2.8
+      },
+      "total": 2.7,
+      "needs_replacement": true,
+      "notes": "『つむぎの館』から『そば処 多むら』、『健田須賀神社』、『喫茶 カヂノキ』、『手作り和菓子処 真盛堂』のゆでまんじゅうを巡る。初回ドラフトのSpot 4番地誤記・Spot 3神輿奉納藩主世代誤り・近接折り返しにより2.70。"
     }
   ],
-  "updated_at": "2026-11-06T10:10:23.699Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-06T16:17:00.000Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.31 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
-  "moving_window_average": 3.28,
-  "last_updated_iteration": 39,
-  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #33-#36）の相対比較により20作品平均が 3.20〜3.40（現在 3.38）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
-  "moving_window_20_average": 3.28,
+  "moving_window_average": 3.31,
+  "last_updated_iteration": 40,
+  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #37-#40）の相対比較により20作品平均が 3.20〜3.40（現在 3.31）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
+  "moving_window_20_average": 3.31,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    36,
     37,
     38,
-    39
+    39,
+    40
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -3719,6 +3794,8 @@
     "tosu",
     "higo_ozu",
     "mino_shirotori",
-    "matsumaru"
+    "matsumaru",
+    "usuki",
+    "yuki"
   ]
 }

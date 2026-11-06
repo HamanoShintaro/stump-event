@@ -1892,7 +1892,84 @@
           "replaced_from": "滝水"
         }
       ]
+    },
+    {
+      "batch_number": 38,
+      "completed_at": "2026-11-06T15:30:00.000Z",
+      "stations": [
+        {
+          "name": "土山",
+          "prefecture": "兵庫県",
+          "line": "JR山陽本線",
+          "slug": "tsuchiyama"
+        },
+        {
+          "name": "小浜",
+          "prefecture": "福井県",
+          "line": "JR小浜線",
+          "slug": "obama",
+          "replaced_from": "三方"
+        },
+        {
+          "name": "くりこま高原",
+          "prefecture": "宮城県",
+          "line": "東北新幹線",
+          "slug": "kurikoma_kogen"
+        },
+        {
+          "name": "下諏訪",
+          "prefecture": "長野県",
+          "line": "JR中央本線",
+          "slug": "shimosuwa",
+          "replaced_from": "木曽平沢"
+        },
+        {
+          "name": "宇治山田",
+          "prefecture": "三重県",
+          "line": "近鉄山田線",
+          "slug": "uji_yamada",
+          "replaced_from": "船津"
+        }
+      ]
+    },
+    {
+      "batch_number": 39,
+      "completed_at": "2026-11-06T16:04:00.000Z",
+      "stations": [
+        {
+          "name": "青森",
+          "prefecture": "青森県",
+          "line": "JR奥羽本線",
+          "slug": "aomori"
+        },
+        {
+          "name": "結城",
+          "prefecture": "茨城県",
+          "line": "JR水戸線",
+          "slug": "yuki",
+          "replaced_from": "笠間"
+        },
+        {
+          "name": "新発田",
+          "prefecture": "新潟県",
+          "line": "JR白新線",
+          "slug": "shibata"
+        },
+        {
+          "name": "中ノ庄",
+          "prefecture": "滋賀県",
+          "line": "京阪石山坂本線",
+          "slug": "nakanosho"
+        },
+        {
+          "name": "臼杵",
+          "prefecture": "大分県",
+          "line": "JR日豊本線",
+          "slug": "usuki",
+          "replaced_from": "雲泉寺"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 195
+  "total_completed_routes": 205
 }
