@@ -179,9 +179,19 @@ export default async function PrefectureHubPage({
           <section className={styles.areaTagsSection}>
             <h2 className={styles.sectionTitle}>
               <MapPin size={18} color="var(--primary-color)" />
-              <span>{prefecture}で巡れる街・駅エリア</span>
+              <span>{prefecture}で巡れる街・駅・沿線エリア</span>
             </h2>
             <div className={styles.tagCloud}>
+              {(hubInfo.lines || []).map((line) => (
+                <Link
+                  key={`line-${line}`}
+                  href={`/routes?q=${encodeURIComponent(line)}`}
+                  className={styles.areaTagChip}
+                >
+                  <Compass size={13} color="var(--primary-color)" />
+                  <span>{line}沿線の街歩き</span>
+                </Link>
+              ))}
               {hubInfo.areaNames.map((area) => (
                 <Link
                   key={area}

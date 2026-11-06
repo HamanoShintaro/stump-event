@@ -236,6 +236,128 @@ async function fetchSearchConsoleMetrics() {
   }
 }
 
+async function submitSitemapToSearchConsole() {
+  const sa = loadServiceAccount();
+  if (!sa) {
+    return {
+      status: "unconfigured",
+      message: "Google 認証情報が未設定のためサイトマップ送信をスキップしました。",
+    };
+  }
+
+  const sitemapUrl = `${PUBLIC_SITE_URL}/sitemap.xml`;
+  const siteUrlEnc = encodeURIComponent(SITE_URL);
+  const feedpathEnc = encodeURIComponent(sitemapUrl);
+  const putEndpoint = `https://www.googleapis.com/webmasters/v3/sites/${siteUrlEnc}/sitemaps/${feedpathEnc}`;
+  const listEndpoint = `https://www.googleapis.com/webmasters/v3/sites/${siteUrlEnc}/sitemaps`;
+
+  try {
+    let token = await getGoogleAccessToken(sa);
+    const quotaProject =
+      sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
+
+    // gcloud ADC (authorized_user) の場合、IAM Credentials API でサービスアカウントの webmasters (書き込み可) トークンを取得して送信を試行
+    if (sa.type === "authorized_user") {
+      const impersonateEmail =
+        process.env.GSC_IMPERSONATE_SERVICE_ACCOUNT ||
+        process.env.GA4_IMPERSONATE_SERVICE_ACCOUNT ||
+        "shuin-seo-bot@jba-system.iam.gserviceaccount.com";
+
+      const impRes = await fetch(
+        `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${encodeURIComponent(
+          impersonateEmail
+        )}:generateAccessToken`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "x-goog-user-project": quotaProject,
+          },
+          body: JSON.stringify({
+            scope: ["https://www.googleapis.com/auth/webmasters"],
+          }),
+        }
+      );
+
+      if (impRes.ok) {
+        const impData = await impRes.json();
+        if (impData.accessToken) {
+          const putRes = await fetch(putEndpoint, {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${impData.accessToken}`,
+            },
+          });
+
+          if (putRes.ok || putRes.status === 204) {
+            return {
+              status: "submitted",
+              sitemapUrl,
+              submittedAt: new Date().toISOString(),
+              via: impersonateEmail,
+            };
+          }
+        }
+      }
+    }
+
+    // 直接トークンでの PUT 試行（webmasters フルスコープがある場合）
+    const directHeaders = {
+      Authorization: `Bearer ${token}`,
+    };
+    if (sa.type === "authorized_user") {
+      directHeaders["x-goog-user-project"] = quotaProject;
+    }
+
+    const directPut = await fetch(putEndpoint, {
+      method: "PUT",
+      headers: directHeaders,
+    });
+
+    if (directPut.ok || directPut.status === 204) {
+      return {
+        status: "submitted",
+        sitemapUrl,
+        submittedAt: new Date().toISOString(),
+        via: "direct_token",
+      };
+    }
+
+    // 送信権限が不足している場合でも、現在の Search Console 登録済みサイトマップ状況を一覧取得して返す
+    const listRes = await fetch(listEndpoint, {
+      headers: directHeaders,
+    });
+    const listData = listRes.ok ? await listRes.json() : {};
+    const existingSitemaps = Array.isArray(listData.sitemap)
+      ? listData.sitemap.map((s) => ({
+          path: s.path,
+          lastSubmitted: s.lastSubmitted,
+          lastDownloaded: s.lastDownloaded,
+          isPending: s.isPending,
+          warnings: s.warnings,
+          errors: s.errors,
+        }))
+      : [];
+
+    const errText = await directPut.text();
+    return {
+      status: existingSitemaps.length > 0 ? "already_registered_readonly" : "needs_owner_grant",
+      sitemapUrl,
+      existingSitemaps,
+      message:
+        "Search Console の『設定 > ユーザーと権限』に shuin-seo-bot@jba-system.iam.gserviceaccount.com を『フル』権限で追加すると、毎朝8:00の自動PUT再送信が有効になります。",
+      apiDetail: errText.slice(0, 240),
+    };
+  } catch (err) {
+    return {
+      status: "error",
+      sitemapUrl,
+      message: err instanceof Error ? err.message : String(err),
+    };
+  }
+}
+
 async function fetchGa4Metrics() {
   const propertyId = (process.env.GA4_PROPERTY_ID || "562267296")
     .replace(/^properties\//, "")
@@ -866,8 +988,15 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       titleHook,
       subHook,
       topSearchKeywords: Array.from(
-        new Set([...gscTopQueries, ...filteredSuggestions, ...(info.tags || [])])
-      ).slice(0, 12),
+        new Set([
+          ...gscTopQueries,
+          ...filteredSuggestions,
+          ...(info.line
+            ? [`${info.line} 街歩き`, `${info.line} 観光`, `${info.line} 散歩`]
+            : []),
+          ...(info.tags || []),
+        ])
+      ).slice(0, 14),
       gscTopQueries,
       updatedAt: new Date().toISOString().split("T")[0],
     };
@@ -924,17 +1053,22 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       `${shortPref} 散歩コース`,
       `${shortPref} 日帰り 観光 電車`,
       `${shortPref} 穴場スポット`,
+      ...lineList.slice(0, 6).map((l) => `${l} 街歩き`),
       ...areaList.slice(0, 6).map((a) => `${a} 街歩き`),
     ];
 
     const topSearchKeywords = Array.from(
       new Set([...gscTopQueries, ...filteredPrefSuggestions, ...fallbackPrefKeywords])
-    ).slice(0, 14);
+    ).slice(0, 18);
 
     const areaPreview =
       areaList.length > 0
         ? `${areaList.slice(0, 6).join("・")}${areaList.length > 6 ? "など" : ""}`
         : pref;
+    const linePreview =
+      lineList.length > 0
+        ? `（${lineList.slice(0, 4).join("・")}${lineList.length > 4 ? "ほか" : ""}沿線）`
+        : "";
     const spotPreview =
       pInfo.spotNames.length > 0
         ? `${pInfo.spotNames.slice(0, 5).join("、")}${pInfo.spotNames.length > 5 ? "など" : ""}`
@@ -942,8 +1076,8 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 
     const leadSummary =
       routeCount >= 3
-        ? `${pref}では現在、${areaPreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
-        : `${pref}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
+        ? `${pref}では現在、${areaPreview}${linePreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
+        : `${pref}では現在、${areaPreview}${linePreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
 
     byPrefecture[pref] = {
       prefecture: pref,
@@ -983,9 +1117,10 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 }
 
 async function main() {
-  const [gscResult, ga4Result] = await Promise.all([
+  const [gscResult, ga4Result, sitemapSubmitResult] = await Promise.all([
     fetchSearchConsoleMetrics(),
     fetchGa4Metrics(),
+    submitSitemapToSearchConsole(),
   ]);
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -1215,10 +1350,12 @@ async function main() {
     gscStatus: gscResult.status,
     gscMessage: gscResult.message || null,
     gscPeriod: gscResult.period || null,
+    sitemapSubmission: sitemapSubmitResult,
     ga4Status: ga4Result.status,
     ga4Message: ga4Result.message || null,
     summary: {
       totalGscRows: (gscResult.rows || []).length,
+      sitemapStatus: sitemapSubmitResult.status,
       lowCtrOpportunityCount: lowCtrOpportunities.length,
       strikingDistanceQueryCount: strikingDistanceQueries.length,
       totalGa4Pages: (ga4Result.rows || []).length,

@@ -216,6 +216,7 @@ export interface RouteAreaSeoInfo {
   areaName: string;
   cityName: string | null;
   prefecture: string;
+  line: string | null;
   fullAreaLabel: string;
   titleHook: string;
   subHook: string;
@@ -266,9 +267,11 @@ export function extractRouteAreaInfo(
   const matchedEntry = matchedByRoute || byAreaNameMap[areaName];
 
   const resolvedCity = cityName || matchedEntry?.city || null;
+  const resolvedLine = matchedEntry?.line || null;
   const fullAreaLabel = [
     prefecture,
     resolvedCity && resolvedCity !== areaName ? resolvedCity : null,
+    resolvedLine || null,
     areaName && areaName !== prefecture && areaName !== resolvedCity
       ? `${areaName}エリア`
       : null,
@@ -307,6 +310,7 @@ export function extractRouteAreaInfo(
     areaName,
     cityName: resolvedCity,
     prefecture,
+    line: resolvedLine,
     fullAreaLabel: fullAreaLabel || areaName,
     titleHook,
     subHook,
@@ -345,6 +349,9 @@ export function buildRouteSeoMetadata(
     ...info.topSearchKeywords,
     ...(info.cityName
       ? [`${info.cityName} 観光`, `${info.cityName} 街歩き`]
+      : []),
+    ...(info.line
+      ? [`${info.line} 街歩き`, `${info.line} 観光`, `${info.line} 散歩`, `SHUIN ${info.line}`]
       : []),
     ...info.spotNames.slice(0, 5),
     "SHUIN",
