@@ -3091,7 +3091,7 @@
         "food_and_rest": 4,
         "visuals": 3.85
       },
-      "total": 3.95,
+      "total": 3.9,
       "needs_replacement": false,
       "notes": "JR日田駅から寶屋本店の日田ちゃんぽん・コーヒー財津・原次郎左衛門の味噌醤油蔵（鮎魚醤・虹色ラムネ）・隈八坂神社へと西進一筆書きで結ぶ王道ルート。"
     },
@@ -3106,7 +3106,7 @@
         "food_and_rest": 3.8,
         "visuals": 3.8
       },
-      "total": 3.8,
+      "total": 3.75,
       "needs_replacement": false,
       "notes": "JR予土線近永駅から築100年の古民家カフェ・サムコッペ、弓瀧神社、高田商店の鬼北ゆずポン酢、お食事処好屋へと結ぶ南予の鉄道町ルート。"
     },
@@ -3121,8 +3121,8 @@
         "food_and_rest": 3.3,
         "visuals": 3.4
       },
-      "total": 3.45,
-      "needs_replacement": false,
+      "total": 3,
+      "needs_replacement": true,
       "notes": "鷹巣駅から手打ちそばと比内地鶏いな穂・レストラン葡萄の樹・寛政8年創業の晩梅（大太鼓まんじゅう・バター餅）・鷹巣神社へと100%南下する北秋田ルート。序盤に食事と喫茶が連続する点で3.50。"
     },
     {
@@ -3196,7 +3196,7 @@
         "food_and_rest": 3.7,
         "visuals": 3.7
       },
-      "total": 3.7,
+      "total": 3.65,
       "needs_replacement": false,
       "notes": "東武日光線・新大平下駅と明治28年開業のJR両毛線・大平下駅の2つの近接駅を例幣使街道富田宿の歴史と団子・古民家蕎麦で結ぶ好ルート。"
     },
@@ -3239,7 +3239,9 @@
       "iteration": 35,
       "overall": 3.9,
       "needs_replacement": false,
-      "notes": "南蛮風駅舎の三角駅から巻貝建築『海のピラミッド』、『割烹 大番』の焼きコノシロ寿司、海辺の『ルボンヌ』、三角浦一番地の『宇波神社』へと展開する潮風の叙情豊かな良作（波多浦駅の処方箋78代替駅）。"
+      "notes": "南蛮風駅舎の三角駅から巻貝建築『海のピラミッド』、『割烹 大番』の焼きコノシロ寿司、海辺の『ルボンヌ』、三角浦一番地の『宇波神社』へと展開する潮風の叙情豊かな良作（波多浦駅の処方箋78代替駅）。",
+      "slug": "misumi",
+      "total": 3.9
     },
     {
       "areaId": "morimoto",
@@ -3250,7 +3252,9 @@
       "iteration": 35,
       "overall": 2.9,
       "needs_replacement": true,
-      "notes": "小坂れんこんの『むさしや』と金沢ジャジャメンの『おたふくや』は魅力的だが、初回脱字修正および5スポット中に食事2枠・休憩0枠の構成偏りにより2.90（処方箋99）。"
+      "notes": "小坂れんこんの『むさしや』と金沢ジャジャメンの『おたふくや』は魅力的だが、初回脱字修正および5スポット中に食事2枠・休憩0枠の構成偏りにより2.90（処方箋99）。",
+      "slug": "morimoto",
+      "total": 2.9
     },
     {
       "areaId": "kasaoka",
@@ -3261,7 +3265,9 @@
       "iteration": 35,
       "overall": 3.75,
       "needs_replacement": false,
-      "notes": "笠岡駅から地名発祥の『笠神社』、かぶに通りの『Secondi Cafe』、寛政5年創業『玉利軒』のかぶとがにまんじゅう、現存最古参の笠岡ラーメン『中華そば 坂本』へと結ぶ充実の町歩き。"
+      "notes": "笠岡駅から地名発祥の『笠神社』、かぶに通りの『Secondi Cafe』、寛政5年創業『玉利軒』のかぶとがにまんじゅう、現存最古参の笠岡ラーメン『中華そば 坂本』へと結ぶ充実の町歩き。",
+      "slug": "kasaoka",
+      "total": 3.75
     },
     {
       "areaId": "itoigawa",
@@ -3272,7 +3278,9 @@
       "iteration": 35,
       "overall": 4,
       "needs_replacement": false,
-      "notes": "キハ52が待つ糸魚川駅から2025年移転の『絲と糸』、大火から再建した文政8年創業『紅久』、発祥のブラック焼きそば『月徳飯店』、越後一の宮『天津神社・奴奈川神社』へと結ぶ白眉（姫川駅の処方箋78代替駅）。"
+      "notes": "キハ52が待つ糸魚川駅から2025年移転の『絲と糸』、大火から再建した文政8年創業『紅久』、発祥のブラック焼きそば『月徳飯店』、越後一の宮『天津神社・奴奈川神社』へと結ぶ白眉（姫川駅の処方箋78代替駅）。",
+      "slug": "itoigawa",
+      "total": 4
     },
     {
       "areaId": "tenryukyo",
@@ -3283,15 +3291,97 @@
       "iteration": 35,
       "overall": 2.95,
       "needs_replacement": true,
-      "notes": "姑射橋・つつじ橋の渓谷美とわらじ五平餅の魅力は高いが、初回『テンリュウ堂』前身業態の誤記修正（処方箋98）およびSpot 2→3近接により2.95（為栗駅の処方箋78代替駅）。"
+      "notes": "姑射橋・つつじ橋の渓谷美とわらじ五平餅の魅力は高いが、初回『テンリュウ堂』前身業態の誤記修正（処方箋98）およびSpot 2→3近接により2.95（為栗駅の処方箋78代替駅）。",
+      "slug": "tenryukyo",
+      "total": 2.95
+    },
+    {
+      "slug": "hoden",
+      "station": "宝殿駅",
+      "line": "JR神戸線",
+      "prefecture": "兵庫県",
+      "iteration": 36,
+      "scores": {
+        "route_setting": 2.8,
+        "text_engagement": 2.5,
+        "fact_accuracy": 2.5,
+        "image_quality": 2.8
+      },
+      "total": 2.65,
+      "needs_replacement": true,
+      "notes": "竜山石の積み出し駅と宮本伊織ゆかりの『米田天神社』、『六萬石 高砂店』、『ブックカフェ 本の香り』、『OBANZAI cafe & bar en』を結ぶ。初回支店名表記ゆれ修正（処方箋101）およびSpot 2→3飲食連続により2.65（曽根駅の処方箋78代替駅）。"
+    },
+    {
+      "slug": "shitte",
+      "station": "尻手駅",
+      "line": "JR南武支線",
+      "prefecture": "神奈川県",
+      "iteration": 36,
+      "scores": {
+        "route_setting": 3.7,
+        "text_engagement": 3.6,
+        "fact_accuracy": 3.7,
+        "image_quality": 3.6
+      },
+      "total": 3.65,
+      "needs_replacement": false,
+      "notes": "南武支線起点の尻手駅から『神明神社の大イチョウ』、川崎幸市場関連棟の定食処『水喜』、1977年創業『喫茶 じん』、昭和6年創業『新岩城菓子舗』を結ぶ市場メシ×下町商店街の好ルート。"
+    },
+    {
+      "slug": "shin_osaka",
+      "station": "新大阪駅",
+      "line": "山陽新幹線",
+      "prefecture": "大阪府",
+      "iteration": 36,
+      "scores": {
+        "route_setting": 2.5,
+        "text_engagement": 2.8,
+        "fact_accuracy": 2.8,
+        "image_quality": 2.7
+      },
+      "total": 2.7,
+      "needs_replacement": true,
+      "notes": "新大阪駅東口から『たかうち珈琲店』、『めん処 つやみ』、『ピュアフラワー 直営店』、足利義教公首塚・細川ガラシャ墓所を伝える『崇禅寺』へ。Spot 3の昼営業枠（〜13:30）とSpot 4の平日13:00開店・土日祝休の交差ウィンドウが狭い点から2.70（処方箋100）。"
+    },
+    {
+      "slug": "shibukawa",
+      "station": "渋川駅",
+      "line": "JR上越線",
+      "prefecture": "群馬県",
+      "iteration": 36,
+      "scores": {
+        "route_setting": 3.9,
+        "text_engagement": 3.8,
+        "fact_accuracy": 3.8,
+        "image_quality": 3.7
+      },
+      "total": 3.8,
+      "needs_replacement": false,
+      "notes": "JR渋川駅から昭和47年創業『純喫茶ルナ』、明治32年創業『錦光堂 本店』のこがねいも、昭和27年創業『林屋食堂』の中華そば、旧三国街道の『日本のまんなか へそ石・臍地蔵』を一筆書きで北上する王道宿場町ルート（八木原駅の処方箋78代替駅）。"
+    },
+    {
+      "slug": "shiraniwadai",
+      "station": "白庭台駅",
+      "line": "近鉄けいはんな線",
+      "prefecture": "奈良県",
+      "iteration": 36,
+      "scores": {
+        "route_setting": 3.2,
+        "text_engagement": 3.4,
+        "fact_accuracy": 3.4,
+        "image_quality": 3.2
+      },
+      "total": 3.3,
+      "needs_replacement": false,
+      "notes": "白庭台駅からケヤキ並木の『カフェ・ゼルコヴァ』、室町期築造の『白谷池と治水記念碑』、『コンディトライ・デティ』、築140年の古民家『そば処 山の神』を結ぶ静謐な丘陵散策。"
     }
   ],
   "updated_at": "2026-11-06T05:01:39.859Z",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Batch #24〜#27 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.34 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.39,
-  "last_updated_iteration": 35,
-  "scoring_philosophy": "直近20ルート（移動窓：Iteration 26〜29 = Batch #25〜#28 の計20作品）を基準母集団とし、20作品の平均スコアを 3.2〜3.4（現在 3.35）に正規化する相対評価（共進化システム）。処方箋86（surprise文末の常体統一・バッジ説明の5スポット順列記載・area_name叙情化）および処方箋87（積雪地の冬季長期休業カフェ単独依存回避・屋外ベンチの疑似休憩枠回避・画像の単一構図と和紙余白徹底）を統合。",
+  "last_updated_iteration": 36,
+  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #33-#36）の相対比較により20作品平均が 3.20〜3.40（現在 3.38）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
   "moving_window_20_average": 3.35,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [

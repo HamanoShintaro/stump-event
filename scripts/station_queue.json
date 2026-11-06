@@ -1670,65 +1670,57 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "batch_number": 36,
+      "iteration": 37,
+      "status": "pending",
+      "drawn_at": "2026-11-06T07:04:53.231Z",
+      "stations": [
+        {
+          "station": "陸前階上駅",
+          "line": "JR気仙沼BRT線",
+          "prefecture": "宮城県",
+          "lat": 38.837113,
+          "lng": 141.580339,
+          "postal": "9880233"
+        },
+        {
+          "station": "本吉原駅",
+          "line": "岳南鉄道",
+          "prefecture": "静岡県",
+          "lat": 35.161946,
+          "lng": 138.692716,
+          "postal": "4170001"
+        },
+        {
+          "station": "上盛岡駅",
+          "line": "JR山田線",
+          "prefecture": "岩手県",
+          "lat": 39.71146,
+          "lng": 141.147937,
+          "postal": "0200066"
+        },
+        {
+          "station": "竹本駅",
+          "line": "JR日田彦山線BRT",
+          "prefecture": "大分県",
+          "lat": 33.37341,
+          "lng": 130.885485,
+          "postal": "8770000"
+        },
+        {
+          "station": "南行徳駅",
+          "line": "東京メトロ東西線",
+          "prefecture": "千葉県",
+          "lat": 35.672687,
+          "lng": 139.902311,
+          "postal": "2720143"
+        }
+      ]
     }
   ],
-  "current_batch": {
-    "batch_id": 35,
-    "drawn_at": "2026-11-06T06:14:58.563Z",
-    "selection_method": "HeartRails Japan Station API random draw across all 47 prefectures",
-    "stations": [
-      {
-        "order": 181,
-        "slug": "sone",
-        "station": "曽根駅",
-        "line": "JR神戸線",
-        "prefecture": "兵庫県",
-        "lat": 34.793304,
-        "lng": 134.769838,
-        "status": "pending"
-      },
-      {
-        "order": 182,
-        "slug": "shitte",
-        "station": "尻手駅",
-        "line": "JR南武支線",
-        "prefecture": "神奈川県",
-        "lat": 35.530939,
-        "lng": 139.684233,
-        "status": "pending"
-      },
-      {
-        "order": 183,
-        "slug": "shin_osaka",
-        "station": "新大阪駅",
-        "line": "山陽新幹線",
-        "prefecture": "大阪府",
-        "lat": 34.734136,
-        "lng": 135.501852,
-        "status": "pending"
-      },
-      {
-        "order": 184,
-        "slug": "yagihara",
-        "station": "八木原駅",
-        "line": "JR上越線",
-        "prefecture": "群馬県",
-        "lat": 36.463738,
-        "lng": 139.019239,
-        "status": "pending"
-      },
-      {
-        "order": 185,
-        "slug": "shiraniwadai",
-        "station": "白庭台駅",
-        "line": "近鉄けいはんな線",
-        "prefecture": "奈良県",
-        "lat": 34.720345,
-        "lng": 135.716686,
-        "status": "pending"
-      }
-    ]
-  },
+  "current_batch": 36,
   "completed_batches": [
     {
       "batch_id": 34,
@@ -1779,5 +1771,6 @@
         }
       ]
     }
-  ]
+  ],
+  "total_completed_routes": 185
 }
