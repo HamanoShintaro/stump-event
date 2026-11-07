@@ -37180,5 +37180,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "d4b3fe80-1c27-42bc-894f-17443c3e1861",
+    "title": "なぜ飯豊の伏流水は漆と酒と麺を育てたのか",
+    "name": "なぜ飯豊の伏流水は漆と酒と麺を育てたのか",
+    "description": "万年雪をいただく飯豊連峰の雪解け水が湧き出す喜多方。桐の粉人形館から老舗の中華そば、三時代の仕込み蔵、路地のカフェ、音楽酒の蔵元へと南西から北東へ一筆書きで巡るルート。",
+    "region": "喜多方・蔵通り",
+    "area_name": "喜多方・蔵通り",
+    "cover_image_url": "/images/kitakata/route-eyecatch.png",
+    "imageUrl": "/images/kitakata/route-eyecatch.png",
+    "category": "蔵のまち・酒蔵・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "四千棟の蔵が連なる喜多方の通りを巡り、いま手元へ持ち帰りたいのは「世代を超えて磨かれた手仕事の品」ですか、それとも「毎朝の湯気と重なる飾らない日常の温もり」ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "桐の粉と漆が紡ぐ、手のひらの造形美",
+          "description": "端材のおがくずと糊から命を吹き込まれる人形や漆器の奥深さに心動かされた。",
+          "badge_code": "KITAKATA_A"
+        },
+        {
+          "key": "B",
+          "text": "朝の暖簾と琥珀色のスープが迎える日常",
+          "description": "澄んだ豚骨と煮干しの香りに包まれ、気取らない一杯が町の暮らしを支える風景に惹かれた。",
+          "badge_code": "KITAKATA_B"
+        },
+        {
+          "key": "C",
+          "text": "飯豊の雪解け水が醸す、酒蔵と音楽の記憶",
+          "description": "歴史ある仕込み蔵を巡り、軟らかな名水とモーツァルトの調べが育む酒造りの哲学に共鳴した。",
+          "badge_code": "KITAKATA_C"
+        },
+        {
+          "key": "D",
+          "text": "蔵通りの路地裏に流れる、穏やかな珈琲の時間",
+          "description": "歴史ある町並みのなかで、季節の甘味と珈琲を囲む静かな休息が心地よかった。",
+          "badge_code": "KITAKATA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4b7b2d17-bd14-4208-898d-6baf10b62851",
+        "name": "木之本漆器店",
+        "description": "喜多方駅から北へ徒歩3分の会津漆器と桐の粉人形の専門店（9:00〜18:00営業、無休・2階人形館は入場無料）。1階には蒔絵の器やガラス漆器が並び、2階の「桐の粉人形館」では会津桐のおがくずと糊を練り上げて作られた表情豊かな人形群を見学できる。",
+        "address": "福島県喜多方市字天満前8859",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.646886,
+        "lng": 139.867069,
+        "qr_token": "shuin-kitakata-1",
+        "cover_image_url": "/images/kitakata/spot1.png",
+        "f7_fragment": "会津桐のおがくずと糊から命を宿す、蔵座敷の小さな人形たち。",
+        "f7_full": "桐下駄の端材である桐の粉から生まれた人形が、喜多方の日常の喜怒哀楽を温かく映し出す。",
+        "is_final": false,
+        "next_spot_id": "961d5b33-7491-4f51-8b87-eb4278b2b262",
+        "next_spot_name": "大安食堂"
+      },
+      {
+        "id": "961d5b33-7491-4f51-8b87-eb4278b2b262",
+        "name": "大安食堂",
+        "description": "三丁目エリアで長く親しまれる喜多方ラーメンの老舗食堂（10:30〜18:30営業、スープなくなり次第終了、水曜定休）。豚骨と煮干しを合わせた香り高い醤油スープと、飯豊の伏流水で打った平打ち多加水ちぢれ麺の調和を味わえる。",
+        "address": "福島県喜多方市字三丁目4774",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.64831,
+        "lng": 139.871304,
+        "qr_token": "shuin-kitakata-2",
+        "cover_image_url": "/images/kitakata/spot2.png",
+        "f7_fragment": "豚骨と煮干しの澄んだ醤油スープに、多加水ちぢれ麺が躍る一杯。",
+        "f7_full": "飯豊の名水をたっぷり抱いた平打ち麺と香り高い琥珀色のスープが、歩く身体を芯から温める。",
+        "is_final": false,
+        "next_spot_id": "22796ee8-1171-4c9f-8f11-08d4fd96dda8",
+        "next_spot_name": "大和川酒造北方風土館"
+      },
+      {
+        "id": "22796ee8-1171-4c9f-8f11-08d4fd96dda8",
+        "name": "大和川酒造北方風土館",
+        "description": "二百三十余年の歴史を持つ老舗酒蔵が公開する酒造見学施設（9:00〜16:30開館、無休・入場無料）。三つの時代の土蔵が中庭を囲むように立ち並び、昔ながらの酒造道具の展示や飯豊連峰の伏流水の湧き水、代表銘柄「弥右衛門」の試飲が楽しめる。",
+        "address": "福島県喜多方市字寺町4761",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.652199,
+        "lng": 139.870478,
+        "qr_token": "shuin-kitakata-3",
+        "cover_image_url": "/images/kitakata/spot3.png",
+        "f7_fragment": "三つの時代の土蔵が中庭を囲み、飯豊連峰の雪解け水が湧き出す酒蔵。",
+        "f7_full": "二百三十余年受け継がれる仕込み蔵の梁の下で、冷たく澄んだ伏流水が酒造りの原点を物語る。",
+        "is_final": false,
+        "next_spot_id": "942ddaa0-c5f2-4d8c-8ed8-92432ab9cccf",
+        "next_spot_name": "カフェ嫡嫡"
+      },
+      {
+        "id": "942ddaa0-c5f2-4d8c-8ed8-92432ab9cccf",
+        "name": "カフェ嫡嫡",
+        "description": "一丁目エリアに佇む、木の温もりあふれるカフェ（11:30〜21:00営業、水曜・第3火曜定休）。地元食材を活かした手づくりの焼き菓子や季節のスイーツ、丁寧に淹れたコーヒーを味わいながら、蔵のまち歩きの合間にゆったりと羽を伸ばせる。",
+        "address": "福島県喜多方市字一丁目4538",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.653536,
+        "lng": 139.872842,
+        "qr_token": "shuin-kitakata-4",
+        "cover_image_url": "/images/kitakata/spot4.png",
+        "f7_fragment": "一丁目の路地に灯る、会津の快活な温もりを映した木のカフェ。",
+        "f7_full": "蔵が連なる通りのすぐ裏手で、手づくりの甘味と珈琲が旅人の歩幅を日常の速度へと戻してくれる。",
+        "is_final": false,
+        "next_spot_id": "515114da-b525-4a17-8500-2dcfb65c2948",
+        "next_spot_name": "小原酒造"
+      },
+      {
+        "id": "515114da-b525-4a17-8500-2dcfb65c2948",
+        "name": "小原酒造",
+        "description": "江戸享保年間の創業から三百年以上続き、発酵中のもろみにモーツァルトの交響曲を聴かせる独自の「音楽酒」で知られる酒蔵（9:00〜17:00営業、無休）。重厚な白壁の売店では、代表銘柄「蔵粋（くらしっく）」や季節の限定酒、酒粕スイーツなどを試飲・購入できる。",
+        "address": "福島県喜多方市字南町2846",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.653579,
+        "lng": 139.880253,
+        "qr_token": "shuin-kitakata-5",
+        "cover_image_url": "/images/kitakata/spot5.png",
+        "f7_fragment": "白壁の仕込み蔵にモーツァルトの弦楽が響く、三百年の酒蔵直売所。",
+        "f7_full": "クラシックの調べのなかで発酵を重ねた「蔵粋」のまろやかな滴が、蔵のまち歩きの余韻を華やかに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f9e6dd4b-078d-45a6-88a1-06e506e8f275",
+    "title": "鎌倉街道の板碑と地粉香る東村山の午後",
+    "name": "鎌倉街道の板碑と地粉香る東村山の午後",
+    "description": "狭山丘陵の東麓を南北に貫く鎌倉街道上道の記憶をたどり、下宅部遺跡の漆器から武蔵野うどん、元弘の板碑、豊島屋酒造、名物饅頭の総本店へと時計回りに巡るルート。",
+    "region": "東村山・鎌倉街道",
+    "area_name": "東村山・鎌倉街道",
+    "cover_image_url": "/images/higashimurayama/route-eyecatch.png",
+    "imageUrl": "/images/higashimurayama/route-eyecatch.png",
+    "category": "古道史跡・武蔵野うどん・酒蔵",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "古道の文化財と地粉の香り、新酒の気配が重なる東村山を巡り終えて、今日ここから自分の暮らしへひとつ持ち帰りたいと感じたのはどの感覚ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "幾千年の泥炭層と青石が守った、祈りと技の記憶",
+          "description": "下宅部遺跡の漆工技術や緑泥片岩の板碑に刻まれた、土地の深い時間軸に心を寄せた。",
+          "badge_code": "HIGASHIMURAYAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "褐色の地粉うどんと温かなつけ汁が満たす滋味",
+          "description": "武蔵野台地の畑作文化が育てた、無骨で力強い手打ちうどんの噛みごたえに魅了された。",
+          "badge_code": "HIGASHIMURAYAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "秩父山系の地下水が醸す、芳醇な地酒の華やぎ",
+          "description": "東京の郊外で受け継がれる酒蔵の挑戦と、フレッシュな地酒の香りに胸を躍らせた。",
+          "badge_code": "HIGASHIMURAYAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "街に愛される名物饅頭と、お茶に和む午後のひととき",
+          "description": "郷土の誇りが詰まった黒糖こし餡の和菓子を味わい、歩いた道のりを穏やかに振り返った。",
+          "badge_code": "HIGASHIMURAYAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b282e675-a554-415d-85a3-1c1c653e30a8",
+        "name": "東村山ふるさと歴史館",
+        "description": "東村山駅西口から北へ徒歩8分の市立郷土博物館（9:30〜17:00開館、月曜・火曜休館、祝日の場合は開館し翌平日休館・年末年始休館、入館無料）。国の重要文化財に指定された「下宅部遺跡」の出土品をはじめ、古道の歴史や中世の板碑、武蔵野台地の農家の暮らしを体系的に展示している。",
+        "address": "東京都東村山市諏訪町1-6-3",
+        "prefecture": "東京都",
+        "city": "",
+        "lat": 35.766475,
+        "lng": 139.466273,
+        "qr_token": "shuin-higashimurayama-1",
+        "cover_image_url": "/images/higashimurayama/spot1.png",
+        "f7_fragment": "泥炭層が数千年の時を超えて守り抜いた、赤漆の弓と古道の記憶。",
+        "f7_full": "下宅部遺跡の精巧な漆器と古道の資料が、東村山の土地に眠る深い時間を静かに語りかける。",
+        "is_final": false,
+        "next_spot_id": "ffe5f5e2-4794-4d9a-8d4c-4bede519491e",
+        "next_spot_name": "手打ちうどん こせがわ"
+      },
+      {
+        "id": "ffe5f5e2-4794-4d9a-8d4c-4bede519491e",
+        "name": "手打ちうどん こせがわ",
+        "description": "諏訪町の閑静な通りで暖簾を掲げる武蔵野手打ちうどんの実力店（11:00〜14:00営業、日曜・最終月曜定休）。小麦の風味が際立つ褐色の極太手打ち麺を、豚肉とネギの旨味が溶け込んだ温かな肉汁や、ご当地名物の「黒焼きそば」とともに味わえる。",
+        "address": "東京都東村山市諏訪町1-23-5",
+        "prefecture": "東京都",
+        "city": "",
+        "lat": 35.769203,
+        "lng": 139.466239,
+        "qr_token": "shuin-higashimurayama-2",
+        "cover_image_url": "/images/higashimurayama/spot2.png",
+        "f7_fragment": "褐色の地粉が香るねじれ太麺と、豚肉の旨味が溶けた温かな肉汁。",
+        "f7_full": "麦畑の風土が育てたコシの強い手打ちうどんが、噛みしめるたびに素朴な甘みを広げてくれる。",
+        "is_final": false,
+        "next_spot_id": "1fda4001-0ad3-4d04-881b-a7d0a0de0438",
+        "next_spot_name": "徳蔵寺"
+      },
+      {
+        "id": "1fda4001-0ad3-4d04-881b-a7d0a0de0438",
+        "name": "徳蔵寺",
+        "description": "新田義貞の軍勢ゆかりの古刹で、国の重要文化財「元弘の板碑」を含む約200基の石仏・板碑を収蔵する寺院（板碑保存館は9:00〜17:00開館・御朱印受付9:00〜16:00、無休）。青みがかった秩父青石（緑泥片岩）に刻まれた七百年前の供養塔を間近に見学できる。",
+        "address": "東京都東村山市諏訪町1-26-3",
+        "prefecture": "東京都",
+        "city": "",
+        "lat": 35.770714,
+        "lng": 139.468007,
+        "qr_token": "shuin-higashimurayama-3",
+        "cover_image_url": "/images/higashimurayama/spot3.png",
+        "f7_fragment": "青緑色の秩父青石に刻まれた、七百年前の合戦と武士の辞世の記憶。",
+        "f7_full": "古道のほとりで、緑泥片岩の板碑が七百年前の五月の風を静かに伝えている。",
+        "is_final": false,
+        "next_spot_id": "30bf3991-a4a0-4e25-8bd9-713e9fc2f75d",
+        "next_spot_name": "豊島屋酒造"
+      },
+      {
+        "id": "30bf3991-a4a0-4e25-8bd9-713e9fc2f75d",
+        "name": "豊島屋酒造",
+        "description": "四百年以上前に神田の河岸で創業した豊島屋をルーツに持ち、東村山の伏流水で酒を醸す蔵元（直売所は平日9:00〜17:00・土曜13:00〜17:00営業、日曜・祝日定休）。直売所「KAMOSInoBA」では代表銘柄「金婚」や人気の「屋守（おくのかみ）」、直売所限定酒を購入できる。",
+        "address": "東京都東村山市久米川町3-14-10",
+        "prefecture": "東京都",
+        "city": "",
+        "lat": 35.767187,
+        "lng": 139.473873,
+        "qr_token": "shuin-higashimurayama-4",
+        "cover_image_url": "/images/higashimurayama/spot4.png",
+        "f7_fragment": "秩父山系の地下150mの伏流水が醸す、「金婚」と「屋守」の酒蔵。",
+        "f7_full": "大谷石の蔵が立つ敷地で、果実のように澄んだ香りの限定酒を手に取る豊かな買い物時間。",
+        "is_final": false,
+        "next_spot_id": "b46b1fd1-da7d-46a3-8a70-3a93f2ab517f",
+        "next_spot_name": "和菓子処 餅萬 総本店"
+      },
+      {
+        "id": "b46b1fd1-da7d-46a3-8a70-3a93f2ab517f",
+        "name": "和菓子処 餅萬 総本店",
+        "description": "久米川町に本店を構える老舗和菓子店（10:00〜18:00営業、木曜定休）。北海道産小豆を使った名物「だいじょぶだァー饅頭」や季節の和菓子を商い、店内の休憩席でお茶とともにゆっくりと味わえる。",
+        "address": "東京都東村山市久米川町3-29-38",
+        "prefecture": "東京都",
+        "city": "",
+        "lat": 35.760714,
+        "lng": 139.478036,
+        "qr_token": "shuin-higashimurayama-5",
+        "cover_image_url": "/images/higashimurayama/spot5.png",
+        "f7_fragment": "職人が炊き上げる北海道産小豆のこし餡と、街に愛される名物饅頭。",
+        "f7_full": "郷土の笑顔を刻んだ黒糖饅頭と温かい緑茶が、古道と酒蔵を巡った一日の終わりに優しい甘みを添える。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4421523f-4713-496f-8213-7293d4777c65",
+    "title": "翡翠の黒部峡谷と湯けむりが鳴る宇奈月",
+    "name": "翡翠の黒部峡谷と湯けむりが鳴る宇奈月",
+    "description": "黒部峡谷鉄道・宇奈月駅から温泉街へと南東から北西へ一筆書きで歩くルート。新山彦橋を望む展望台から電源開発の記念館、富山のます寿し、淡雪のようなチーズケーキを経て、開湯以来の老舗和菓子舗へと巡る。",
+    "region": "宇奈月温泉・黒部峡谷口",
+    "area_name": "宇奈月温泉・黒部峡谷口",
+    "cover_image_url": "/images/unazuki/route-eyecatch.png",
+    "imageUrl": "/images/unazuki/route-eyecatch.png",
+    "category": "渓谷温泉街・電源開発史・富山味覚",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "切り立つ黒部峡谷の迫力と、引湯管が運ぶやわらかな湯の温もりが共存する宇奈月。この谷の街で、あなたの心がより強く惹きつけられたのはどちらの表情ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "深紅の新山彦橋と、断崖を切り拓いた電源開発の情熱",
+          "description": "翡翠色の急流に架かる鉄橋の美しさと、秘境へ分け入った技術者たちの歴史に胸が熱くなった。",
+          "badge_code": "UNAZUKI_A"
+        },
+        {
+          "key": "B",
+          "text": "青い笹の葉が香るます寿しと、黒部の名水が育んだ滋味",
+          "description": "扇状地の清らかな水で育ったお米と、富山湾の海の幸が重なる郷土の味に満たされた。",
+          "badge_code": "UNAZUKI_B"
+        },
+        {
+          "key": "C",
+          "text": "北アルプスの新雪のように溶ける、純白の甘味と珈琲",
+          "description": "湯の街の駅辺で味わった、ふんわりと消えるチーズケーキの優しい口どけが心に残った。",
+          "badge_code": "UNAZUKI_C"
+        },
+        {
+          "key": "D",
+          "text": "開湯百年を伝える和菓子「おもかげ」と、温泉街の情緒",
+          "description": "与謝野晶子も愛した渓谷の面影を映す銘菓と、湯けむり漂う通りの温もりに癒やされた。",
+          "badge_code": "UNAZUKI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1366d105-c910-4d2a-82f2-84b033493aab",
+        "name": "山びこ展望台",
+        "description": "黒部峡谷鉄道・宇奈月駅から黒部川沿いの「やまびこ遊歩道」を東へ歩いた先にある展望広場（4月中旬〜11月30日終日開放・期間中無休、冬季閉鎖）。エメラルドグリーンの黒部川に架かる深紅の「新山彦橋」を正面に見渡すことができ、峡谷へ出発するトロッコ電車の姿を間近に眺められる。",
+        "address": "富山県黒部市黒部峡谷口11",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.814529,
+        "lng": 137.58839,
+        "qr_token": "shuin-unazuki-1",
+        "cover_image_url": "/images/unazuki/spot1.png",
+        "f7_fragment": "翡翠色の黒部川に架かる、深紅のアーチ橋「新山彦橋」を望む高台。",
+        "f7_full": "切り立った渓谷にトロッコ電車の車輪の音が木霊し、秘境・黒部への玄関口ならではの壮大な景色が広がる。",
+        "is_final": false,
+        "next_spot_id": "f96d9bca-ed74-4c44-8497-c33558145ede",
+        "next_spot_name": "黒部川電気記念館"
+      },
+      {
+        "id": "f96d9bca-ed74-4c44-8497-c33558145ede",
+        "name": "黒部川電気記念館",
+        "description": "黒部峡谷鉄道・宇奈月駅のすぐ前に立つ、黒部川の電源開発と自然を紹介する記念館（4月18日〜11月30日は7:30〜18:00・無休、冬季は9:00〜16:00・火曜休館、入館無料）。屋外の大型ペルトン水車モニュメントや、黒部ダム・峡谷鉄道の歴史模型を見学できる。",
+        "address": "富山県黒部市黒部峡谷口11",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.814714,
+        "lng": 137.585471,
+        "qr_token": "shuin-unazuki-2",
+        "cover_image_url": "/images/unazuki/spot2.png",
+        "f7_fragment": "実物の水車モニュメントが迎える、黒部川電源開発の記憶庫。",
+        "f7_full": "急流・黒部川の水力開発と引湯によって誕生した宇奈月温泉の成り立ちが、数々の立体展示から鮮やかに浮かび上がる。",
+        "is_final": false,
+        "next_spot_id": "c3306581-1b92-41e0-8900-553c494e30d8",
+        "next_spot_name": "有磯きときと庵"
+      },
+      {
+        "id": "c3306581-1b92-41e0-8900-553c494e30d8",
+        "name": "有磯きときと庵",
+        "description": "富山地方鉄道・宇奈月温泉駅のすぐ近くに店を構える、ます寿しと富山郷土食の店（店舗9:00〜17:00・飲食コーナー11:30〜14:30営業、不定休）。県産コシヒカリと肉厚の鱒を使った自家製の「ますの寿し」や白えびの押寿し、温かなうどんを味わえる。",
+        "address": "富山県黒部市宇奈月温泉461-3",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.815303,
+        "lng": 137.584262,
+        "qr_token": "shuin-unazuki-3",
+        "cover_image_url": "/images/unazuki/spot3.png",
+        "f7_fragment": "青い笹の葉を開けば現れる、黒部の名水米と桜色のます寿し。",
+        "f7_full": "「きときと」の屋号そのままに、富山湾の白えびや鱒の押寿しと温かな出汁が旅の昼餉を彩る。",
+        "is_final": false,
+        "next_spot_id": "7a7d5af5-2935-402b-83a1-9461a6691d06",
+        "next_spot_name": "アルペンチーズケーキ"
+      },
+      {
+        "id": "7a7d5af5-2935-402b-83a1-9461a6691d06",
+        "name": "アルペンチーズケーキ",
+        "description": "富山地方鉄道・宇奈月温泉駅の1階に店を構えるチーズケーキ専門店・カフェ（10:00〜18:00営業、水曜・木曜定休）。北アルプスの雪解け水と地元産牛乳を使った純白の「アルペンチーズケーキ」や、イートイン限定の「幻のアルペンチーズケーキ」をコーヒーとともに味わえる。",
+        "address": "富山県黒部市宇奈月温泉260",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.815673,
+        "lng": 137.583541,
+        "qr_token": "shuin-unazuki-4",
+        "cover_image_url": "/images/unazuki/spot4.png",
+        "f7_fragment": "北アルプスの新雪と湯けむりを思わせる、純白のチーズケーキ。",
+        "f7_full": "スプーンを入れると淡雪のようにほどける看板ケーキと珈琲が、温泉街歩きのひとときを爽やかに潤す。",
+        "is_final": false,
+        "next_spot_id": "e964b785-3dc7-475c-8be9-056a04379542",
+        "next_spot_name": "福多屋菓子舗"
+      },
+      {
+        "id": "e964b785-3dc7-475c-8be9-056a04379542",
+        "name": "福多屋菓子舗",
+        "description": "大正12年の宇奈月温泉開湯と同時に創業した老舗和菓子店（8:30〜18:00営業、元日・不定休）。黒部渓谷の想影橋にちなんだ紅白求肥の代表銘菓「おもかげ」や、紫蘇の葉が香る「湯の花ごろも」など、手づくりの温泉銘菓をお土産に購入できる。",
+        "address": "富山県黒部市宇奈月温泉294-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.816299,
+        "lng": 137.582535,
+        "qr_token": "shuin-unazuki-5",
+        "cover_image_url": "/images/unazuki/spot5.png",
+        "f7_fragment": "開湯以来百年以上にわたり愛され続ける、紅白の求肥を巻いた銘菓「おもかげ」。",
+        "f7_full": "与謝野晶子も詠んだ渓谷の美しさを映す上品な和菓子を手に取り、百年続く湯の街の記憶をお土産に包んで旅を結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ddad8356-c39e-4b66-87bd-8001637f9557",
+    "title": "揖斐の川風と時雨の香りが満ちる水郷桑名",
+    "name": "揖斐の川風と時雨の香りが満ちる水郷桑名",
+    "description": "木曽三川が伊勢湾へ注ぐ河口の宿場町・桑名。宝暦治水の薩摩義士墓所から復活した桑名しろざけと本わらび餅、泉鏡花ゆかりの蛤うどん、しぐれ煮の総本店を経て、桑名城跡の堀割へと西から東へ歩くルート。",
+    "region": "桑名宿・九華公園",
+    "area_name": "桑名宿・九華公園",
+    "cover_image_url": "/images/kuwana/route-eyecatch.png",
+    "imageUrl": "/images/kuwana/route-eyecatch.png",
+    "category": "水郷城下町・宿場食文化・文学史跡",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "揖斐川と堀割の水面が煌めく桑名の城下を巡り、いまあなたの五感に響いているのはどの情景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大河を鎮めた薩摩義士の石塔と、静かな境内の風",
+          "description": "木曽三川の難工事に尽くした先人たちの誇りと、それを今に守り継ぐ桑名の人々の心に動かされた。",
+          "badge_code": "KUWANA_A"
+        },
+        {
+          "key": "B",
+          "text": "銅鍋で練り上げた本わらび餅と、芳醇なしろざけの甘み",
+          "description": "失われた名産「桑名しろざけ」の復活と、注文ごとに練り上げる和菓子の手仕事に心ほどけた。",
+          "badge_code": "KUWANA_B"
+        },
+        {
+          "key": "C",
+          "text": "白く濁った蛤の出汁と、溜まり醤油が香るしぐれ煮の滋味",
+          "description": "淡水と海水が混じり合う汽水域が育てた蛤や時雨煮の深い旨味を堪能した。",
+          "badge_code": "KUWANA_C"
+        },
+        {
+          "key": "D",
+          "text": "本多忠勝ゆかりの石垣と、水面に映る扇城の橋影",
+          "description": "城の周囲を幾重にも囲む豊かな水路と、揖斐川から吹く穏やかな川風に癒やされた。",
+          "badge_code": "KUWANA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b33abec0-f018-4b7f-86ab-a4ef50d42cb0",
+        "name": "海蔵寺",
+        "description": "桑名駅から東へ徒歩約9分、北寺町に佇む曹洞宗の寺院（8:00〜17:00参拝可能・無休）。木曽三川分流工事（宝暦治水）を指揮した薩摩藩家老・平田靭負をはじめ、難工事のなかで命を落とした薩摩義士24名の墓所が大切に守られている。",
+        "address": "三重県桑名市北寺町10",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 35.067025,
+        "lng": 136.691146,
+        "qr_token": "shuin-kuwana-1",
+        "cover_image_url": "/images/kuwana/spot1.png",
+        "f7_fragment": "木曽三川の激流を鎮めた薩摩義士たちが眠る、北寺町の静かな墓所。",
+        "f7_full": "遠い薩摩から赴き治水に命を懸けた武士たちの石塔が、水郷・桑名の礎となった歴史を無言のうちに語る。",
+        "is_final": false,
+        "next_spot_id": "a610a042-8506-4a11-8e63-0ae571dda8c4",
+        "next_spot_name": "しろざけや 茂三郎"
+      },
+      {
+        "id": "a610a042-8506-4a11-8e63-0ae571dda8c4",
+        "name": "しろざけや 茂三郎",
+        "description": "旧東海道に近い北魚町に店を構える、本わらび餅と「桑名しろざけ」の甘味処（10:00〜17:00営業、水曜定休）。注文を受けてから銅鍋で練り上げる希少な国産本わらび餅や、米と米麹をじっくり糖化させた白みりん仕立ての甘味を味わえる。",
+        "address": "三重県桑名市北魚町23",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 35.065747,
+        "lng": 136.694849,
+        "qr_token": "shuin-kuwana-2",
+        "cover_image_url": "/images/kuwana/spot2.png",
+        "f7_fragment": "銅鍋で練り上げる温かい本わらび餅と、復活した桑名しろざけの芳香。",
+        "f7_full": "かつて東海道の旅人が愛した白き銘酒の甘みと、とろける練りたてのわらび餅が散策の足を優しく癒やす。",
+        "is_final": false,
+        "next_spot_id": "ff7749e8-216e-4d50-834f-c7671eeb78cc",
+        "next_spot_name": "歌行燈 本店"
+      },
+      {
+        "id": "ff7749e8-216e-4d50-834f-c7671eeb78cc",
+        "name": "歌行燈 本店",
+        "description": "明治10年に「志満や」として創業した、うどんすきと蛤料理の老舗本店（11:00〜21:30営業、元日を除き無休）。泉鏡花の小説『歌行燈』の舞台となった歴史を持ち、名物の蛤うどんや志ぐれ茶漬、彩り豊かな和膳を味わえる。",
+        "address": "三重県桑名市江戸町10",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 35.066406,
+        "lng": 136.696125,
+        "qr_token": "shuin-kuwana-3",
+        "cover_image_url": "/images/kuwana/spot3.png",
+        "f7_fragment": "泉鏡花の小説から屋号を授かった老舗で味わう、乳白色の蛤出汁。",
+        "f7_full": "木曽三川の汽水域が育てた蛤の豊かな旨味とつるりとしたうどんが、文学の街・桑名の昼餉を彩る。",
+        "is_final": false,
+        "next_spot_id": "96511086-1113-4efd-858c-77d08b2d8fa3",
+        "next_spot_name": "柿安 本店"
+      },
+      {
+        "id": "96511086-1113-4efd-858c-77d08b2d8fa3",
+        "name": "柿安 本店",
+        "description": "桑名城跡のすぐ北側・吉之丸に構える老舗の総本店売店（9:00〜19:00営業、無休）。桑名伝統の「浮かし煮」製法で炊き上げた蛤・あさりのしぐれ煮や、看板商品の牛肉しぐれ煮などをお土産に購入できる。",
+        "address": "三重県桑名市吉之丸8",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 35.06586,
+        "lng": 136.698452,
+        "qr_token": "shuin-kuwana-4",
+        "cover_image_url": "/images/kuwana/spot4.png",
+        "f7_fragment": "桑名発祥の「浮かし煮」の技が光る、溜まり醤油香るしぐれ煮の総本店。",
+        "f7_full": "時雨蛤の伝統を受け継ぐ艶やかなしぐれ煮を手に取り、河口の街が磨いた保存食の知恵をお土産に包む。",
+        "is_final": false,
+        "next_spot_id": "190d733c-6bc6-4f88-8493-6d86ff325a11",
+        "next_spot_name": "九華公園"
+      },
+      {
+        "id": "190d733c-6bc6-4f88-8493-6d86ff325a11",
+        "name": "九華公園",
+        "description": "徳川四天王・本多忠勝が築いた桑名城の本丸と二の丸跡を整備した水郷公園（終日入園自由・無休）。敷地全体の約6割を揖斐川から水を引き込んだ広大な堀が占め、朱塗りの橋や蟠龍櫓を望む石垣の上から美しい水面の景色を楽しめる。",
+        "address": "三重県桑名市吉之丸5-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 35.064084,
+        "lng": 136.698647,
+        "qr_token": "shuin-kuwana-5",
+        "cover_image_url": "/images/kuwana/spot5.png",
+        "f7_fragment": "本多忠勝が築いた「扇城」の石垣と、敷地の大半を占める豊かな水堀。",
+        "f7_full": "揖斐川の潮入りと通じる広大な堀割の水面を見渡せば、「海道の名城」と謳われた水城の気品がよみがえる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6df6c7ad-3c77-431d-82f0-b406d9f56225",
+    "title": "白き石畳と赤瓦の登り窯をめぐる牧志壺屋",
+    "name": "白き石畳と赤瓦の登り窯をめぐる牧志壺屋",
+    "description": "ゆいレール牧志駅から国際通りを経て、市場の路地裏と石畳の「壺屋やちむん通り」へと緩やかに弧を描くルート。那覇の伝統工芸から黄金出汁の沖縄そば、市場裏の醸造所、赤瓦の登り窯「南窯」、老舗窯元の本店へと巡る。",
+    "region": "牧志・壺屋やちむん通り",
+    "area_name": "牧志・壺屋やちむん通り",
+    "cover_image_url": "/images/makishi/route-eyecatch.png",
+    "imageUrl": "/images/makishi/route-eyecatch.png",
+    "category": "やちむん窯場・市場文化・琉球工芸",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "市場の熱気と三百年の窯場が隣り合う牧志・壺屋を巡り、もし数年後にまたこの石畳を歩くとしたら、どんな時間を過ごしに戻ってきたいですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "紅型や首里織、ガラスに宿る王都の手仕事をじっくり眺める時間",
+          "description": "島々の自然の色を染め織り上げた、繊細で誇り高い伝統工芸の粋に心惹かれた。",
+          "badge_code": "MAKISHI_A"
+        },
+        {
+          "key": "B",
+          "text": "市場の路地で湯気を上げる、澄んだ鰹出汁の沖縄そばをすする昼下がり",
+          "description": "気取らない路地裏の席で、柔らかく煮込まれたお肉と滋味深いスープに癒やされた。",
+          "badge_code": "MAKISHI_B"
+        },
+        {
+          "key": "C",
+          "text": "市場裏の小さな醸造所で、島の果実と麦の香りに涼むひととき",
+          "description": "古き島名を冠した街角で、新しい醸造の試みと南国の風に喉を潤した。",
+          "badge_code": "MAKISHI_C"
+        },
+        {
+          "key": "D",
+          "text": "赤瓦の登り窯を見上げ、線彫りのやちむんを手のひらで選ぶ時間",
+          "description": "三百年にわたり煙を上げてきた窯場の歴史と、力強い唐草紋の器に魅了された。",
+          "badge_code": "MAKISHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fa841508-60ce-41d3-8520-fbb79c83ab50",
+        "name": "那覇市伝統工芸館",
+        "description": "国際通りの中央「てんぶす那覇」2階にある、那覇市の5つの伝統工芸を紹介する展示・体験施設（展示室9:00〜17:00開館・ショップ10:00〜20:00、水曜・12月31日〜1月2日休館）。壺屋焼・琉球紅型・首里織・琉球漆器・琉球ガラスの名作が一堂に並び、これから歩く壺屋の予備知識を深められる。",
+        "address": "沖縄県那覇市牧志3-2-10",
+        "prefecture": "沖縄県",
+        "city": "",
+        "lat": 26.216101,
+        "lng": 127.68933,
+        "qr_token": "shuin-makishi-1",
+        "cover_image_url": "/images/makishi/spot1.png",
+        "f7_fragment": "紅型と漆器、そして壺屋の魚紋が一堂に会する工芸の回廊。",
+        "f7_full": "海洋王国・琉球が交易のなかで磨き上げた五つの手仕事を知ることで、これから歩く石畳の景色が立体的に浮かび上がる。",
+        "is_final": false,
+        "next_spot_id": "94b2a830-1b8c-44ec-857c-2da1d0f5a600",
+        "next_spot_name": "牧志そば"
+      },
+      {
+        "id": "94b2a830-1b8c-44ec-857c-2da1d0f5a600",
+        "name": "牧志そば",
+        "description": "市場本通りから一本入った路地に店を構える沖縄そばの専門店（10:30〜17:00営業、売り切れ次第終了、不定休）。鰹節と豚骨から丁寧に引いた透明感のある黄金色の出汁に、とろとろに煮込まれた軟骨ソーキや三枚肉、ちぢれ太麺を合わせた一杯が人気。",
+        "address": "沖縄県那覇市松尾2-9-5",
+        "prefecture": "沖縄県",
+        "city": "",
+        "lat": 26.21491,
+        "lng": 127.687825,
+        "qr_token": "shuin-makishi-2",
+        "cover_image_url": "/images/makishi/spot2.png",
+        "f7_fragment": "市場の路地に漂う鰹出汁の湯気と、とろける軟骨ソーキの一杯。",
+        "f7_full": "木灰そばの伝統を受け継ぐ力強い縮れ麺と澄んだ黄金色のスープが、南国の昼下がりの空腹を優しく満たす。",
+        "is_final": false,
+        "next_spot_id": "79a93c58-2bad-49e3-8b3e-d0b72ded4b8c",
+        "next_spot_name": "浮島ブルーイング"
+      },
+      {
+        "id": "79a93c58-2bad-49e3-8b3e-d0b72ded4b8c",
+        "name": "浮島ブルーイング",
+        "description": "牧志公設市場のすぐ近くに構える、那覇のマイクロブルワリー兼タップルーム（タップルームは17:00〜23:00営業、水曜・木曜定休）。沖縄県産の大麦や黒糖、やんばるのスパイス、那覇の湧水などを活かしたクラフトビールや爽やかなドリンクを楽しめる。",
+        "address": "沖縄県那覇市牧志3-3-1",
+        "prefecture": "沖縄県",
+        "city": "",
+        "lat": 26.213614,
+        "lng": 127.688777,
+        "qr_token": "shuin-makishi-3",
+        "cover_image_url": "/images/makishi/spot3.png",
+        "f7_fragment": "古き那覇の島名を冠した醸造所で味わう、島の麦と果実の雫。",
+        "f7_full": "市場の熱気がすぐ外に息づくタップルームで、冷たいグラスを傾けながら壺屋の坂道へと向かう呼吸を整える。",
+        "is_final": false,
+        "next_spot_id": "1c9833e2-702c-46e3-8ec4-e7aad01ada55",
+        "next_spot_name": "南窯"
+      },
+      {
+        "id": "1c9833e2-702c-46e3-8ec4-e7aad01ada55",
+        "name": "南窯",
+        "description": "壺屋焼物博物館のすぐ隣、斜面を利用して築かれた沖縄県指定有形民俗文化財の登り窯（外観終日見学自由・併設のカフェは10:00〜18:00営業、不定休）。三百年前の壺屋開窯以来の歴史を持ち、荒焼（あらやち）を焼き続けてきた赤瓦屋根の連房式登り窯を間近に眺められる。",
+        "address": "沖縄県那覇市壺屋1-9-29",
+        "prefecture": "沖縄県",
+        "city": "",
+        "lat": 26.213367,
+        "lng": 127.69098,
+        "qr_token": "shuin-makishi-4",
+        "cover_image_url": "/images/makishi/spot4.png",
+        "f7_fragment": "緩やかな斜面を駆け上がる、波打つ赤瓦と黒煤の登り窯「南窯」。",
+        "f7_full": "三百年にわたり薪の炎を受け止めてきた連房式の窯が、やちむん通りの入口で圧倒的な存在感を放つ。",
+        "is_final": false,
+        "next_spot_id": "e32bf4b5-bad5-4171-84e9-6f49e6ff3351",
+        "next_spot_name": "育陶園 本店"
+      },
+      {
+        "id": "e32bf4b5-bad5-4171-84e9-6f49e6ff3351",
+        "name": "育陶園 本店",
+        "description": "壺屋やちむん通りの中ほどに構える、三百年前の壺屋統合当時から続く名門窯元の本店（10:00〜18:00営業、元日・1月2日休）。白化粧土を削り出して描く力強い「唐草線彫」や「魚紋」の皿・マカイ（碗）・カップ、守り神のシーサーなどを手に取って購入できる。",
+        "address": "沖縄県那覇市壺屋1-22-33",
+        "prefecture": "沖縄県",
+        "city": "",
+        "lat": 26.212529,
+        "lng": 127.692445,
+        "qr_token": "shuin-makishi-5",
+        "cover_image_url": "/images/makishi/spot5.png",
+        "f7_fragment": "生乾きの白化粧土を一気に彫り上げる、躍動感あふれる唐草線彫の器。",
+        "f7_full": "やちむん通りの石畳に佇む三百年の窯元で、職人の呼吸が刻まれた一客を手のひらに包んで旅を結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];

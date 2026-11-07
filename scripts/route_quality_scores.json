@@ -4407,21 +4407,111 @@
       },
       "needs_replacement": false,
       "notes": "特別史跡『隼人塚史跡公園』の五重石塔・四天王石像から、内山田の『一福食堂』、『坂田金時堂』の角まんじゅう、『カフェレストラン 東苑』を経て大隅国一宮『鹿児島神宮』の240枚の草花天井画へと至る物語性と民藝調イラストの調和が高水準。"
+    },
+    {
+      "station_order": 246,
+      "areaId": "kitakata",
+      "station": "喜多方",
+      "line": "JR磐越西線",
+      "prefecture": "福島県",
+      "iteration": 49,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.7,
+        "walkability": 3.6,
+        "story_emotion": 3.7,
+        "local_specificity": 3.8,
+        "total": 3.7
+      },
+      "needs_replacement": false,
+      "notes": "駅から北→東北東→北→北東→東へと距離が完全単調増加（227m→543m→874m→1096m→1521m）し、木之本漆器店（桐の粉人形館）・大安食堂・大和川酒造北方風土館・カフェ嫡嫡・小原酒造と『飯豊連峰の伏流水が育てた漆・麺・酒』が一貫した秀作。"
+    },
+    {
+      "station_order": 247,
+      "areaId": "higashimurayama",
+      "station": "東村山",
+      "line": "西武西武園線",
+      "prefecture": "東京都",
+      "iteration": 49,
+      "scores": {
+        "theme_diversity": 3.1,
+        "spot_allocation": 2.7,
+        "walkability": 2.4,
+        "story_emotion": 2.8,
+        "local_specificity": 2.8,
+        "total": 2.75
+      },
+      "needs_replacement": true,
+      "notes": "東村山ふるさと歴史館（月・火休）、手打ちうどん こせがわ（11:00〜14:00・日休）、豊島屋酒造（日祝休・土曜午後のみ）の共通営業ウィンドウが狭く、Spot 4で酒瓶を購入後にSpot 5まで直線812mの住宅街移動があるため差し替え候補。"
+    },
+    {
+      "station_order": 248,
+      "areaId": "unazuki",
+      "station": "宇奈月",
+      "line": "黒部峡谷鉄道",
+      "prefecture": "富山県",
+      "iteration": 49,
+      "scores": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.5,
+        "walkability": 2.4,
+        "story_emotion": 2.9,
+        "local_specificity": 3,
+        "total": 2.8
+      },
+      "needs_replacement": true,
+      "notes": "駅から東南東182mのSpot 1（山びこ展望台）へ歩いた直後に西北西へ175°折り返して駅前を通過しSpot 2（黒部川電気記念館）へ向かう往復動線およびSpot 1→2の『見どころ』2連続のため差し替え候補。"
+    },
+    {
+      "station_order": 249,
+      "areaId": "kuwana",
+      "station": "桑名",
+      "line": "養老鉄道",
+      "prefecture": "三重県",
+      "iteration": 49,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.7,
+        "walkability": 3.7,
+        "story_emotion": 3.7,
+        "local_specificity": 3.8,
+        "total": 3.75
+      },
+      "needs_replacement": false,
+      "notes": "桑名駅から東の揖斐川河口・九華公園へ向かって距離が単調増加（684m→1037m→1141m→1359m→1415m）し、海蔵寺・しろざけや茂三郎・歌行燈本店・柿安本店・九華公園と歴史・甘味・文学・水郷城郭が高次元で結晶した秀作。"
+    },
+    {
+      "station_order": 250,
+      "areaId": "makishi",
+      "station": "牧志",
+      "line": "沖縄ゆいレール",
+      "prefecture": "沖縄県",
+      "iteration": 49,
+      "scores": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.6,
+        "walkability": 3.5,
+        "story_emotion": 3.6,
+        "local_specificity": 3.7,
+        "total": 3.6
+      },
+      "needs_replacement": false,
+      "notes": "牧志駅から国際通りの那覇市伝統工芸館、市場路地の牧志そば・浮島ブルーイングを経て、壺屋やちむん通りの南窯・育陶園本店へと弧を描いて上る動線と業態配分が魅力的。"
     }
   ],
-  "updated_at": "2026-11-07T12:54:00+09:00",
+  "updated_at": "2026-11-07T14:40:00+09:00",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #43〜#46 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
-  "last_updated_iteration": 48,
+  "last_updated_iteration": 49,
   "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #43-#46）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
   "moving_window_20_average": 3.33,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    45,
     46,
     47,
-    48
+    48,
+    49
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -4516,10 +4606,10 @@
     "soeda",
     "tosu",
     "higo_ozu",
-    "mino_shirotori",
-    "matsumaru",
-    "usuki",
-    "yuki",
+    null,
+    null,
+    null,
+    null,
     "otsuki",
     "iwaki_tanagura",
     "shimobe_onsen",
@@ -4535,27 +4625,29 @@
     "uzen_yamabe",
     "sano",
     "motomachi_chukagai",
-    "kawanishi_noseguchi"
+    "kawanishi_noseguchi",
+    "higashimurayama",
+    "unazuki"
   ],
   "current_window_iterations": [
-    45,
     46,
     47,
-    48
+    48,
+    49
   ],
   "current_window_average": 3.33,
-  "total_routes": 245,
-  "latest_iteration": 48,
+  "total_routes": 250,
+  "latest_iteration": 49,
   "moving_window": {
     "iterations": [
-      45,
       46,
       47,
-      48
+      48,
+      49
     ],
     "station_order_range": [
-      226,
-      245
+      231,
+      250
     ],
     "route_count": 20,
     "sum_total": 66.55,
