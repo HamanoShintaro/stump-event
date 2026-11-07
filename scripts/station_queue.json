@@ -1798,6 +1798,46 @@
           "replaced_from": "石井"
         }
       ]
+    },
+    {
+      "batch_number": 47,
+      "completed_at": "2026-11-07T03:54:00.000Z",
+      "stations": [
+        {
+          "name": "岩沼",
+          "prefecture": "宮城県",
+          "line": "JR常磐線",
+          "slug": "iwanuma",
+          "replaced_from": "浜吉田"
+        },
+        {
+          "name": "元町・中華街",
+          "prefecture": "神奈川県",
+          "line": "横浜みなとみらい線",
+          "slug": "motomachi_chukagai"
+        },
+        {
+          "name": "須坂",
+          "prefecture": "長野県",
+          "line": "長野電鉄長野線",
+          "slug": "suzaka",
+          "replaced_from": "上条"
+        },
+        {
+          "name": "川西能勢口",
+          "prefecture": "兵庫県",
+          "line": "能勢電鉄妙見線",
+          "slug": "kawanishi_noseguchi",
+          "replaced_from": "多田"
+        },
+        {
+          "name": "隼人",
+          "prefecture": "鹿児島県",
+          "line": "JR肥薩線",
+          "slug": "hayato",
+          "replaced_from": "大隅横川"
+        }
+      ]
     }
   ],
   "current_batch": {
@@ -2322,5 +2362,5 @@
       ]
     }
   ],
-  "total_completed_routes": 240
+  "total_completed_routes": 245
 }

@@ -4317,21 +4317,111 @@
       },
       "needs_replacement": false,
       "notes": "旧永井家庄屋屋敷の二層うだつと鏝絵、古民家の半田そうめん膳、文化財商家・織本屋の茶房、真光寺、銘菓「金露梅」のあづまや製菓まで、阿波藍リソグラフの画風を含め高い完成度。"
+    },
+    {
+      "station_order": 241,
+      "areaId": "iwanuma",
+      "station": "岩沼",
+      "line": "JR常磐線",
+      "prefecture": "宮城県",
+      "iteration": 48,
+      "scores": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.5,
+        "walkability": 3.7,
+        "story_emotion": 3.6,
+        "local_specificity": 3.8,
+        "total": 3.65
+      },
+      "needs_replacement": false,
+      "notes": "芭蕉ゆかりの『二木の松史跡公園』から旧奥州街道の『ジャンプラーメン』『つつみ庵 岩沼店』を経て『竹駒の杜 CAFE 一粒万倍』『竹駒神社』へ至る参道動線。駅からの直線距離（580m→694m→756m→808m→821m）も単調増加し地域固有性が高い。"
+    },
+    {
+      "station_order": 242,
+      "areaId": "motomachi_chukagai",
+      "station": "元町・中華街",
+      "line": "横浜みなとみらい線",
+      "prefecture": "神奈川県",
+      "iteration": 48,
+      "scores": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.5,
+        "walkability": 2.4,
+        "story_emotion": 3,
+        "local_specificity": 3.1,
+        "total": 2.85
+      },
+      "needs_replacement": true,
+      "notes": "アメリカ山公園で駅直結エレベーターで山手の丘へ上がった直後に、元町通りのウチキパンへ坂を下りてパンを買い、再び急坂を上り直して山手十番館へ向かう高低差ヨーヨー動線のため差し替え候補。"
+    },
+    {
+      "station_order": 243,
+      "areaId": "suzaka",
+      "station": "須坂",
+      "line": "長野電鉄長野線",
+      "prefecture": "長野県",
+      "iteration": 48,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.6,
+        "walkability": 3.6,
+        "story_emotion": 3.8,
+        "local_specificity": 3.9,
+        "total": 3.75
+      },
+      "needs_replacement": false,
+      "notes": "須坂駅から東→南へ一方向に単調増加（537m→852m→912m→958m→1377m）し、笠鉾会館・松葉屋そば店・塩屋醸造・旧上高井郡役所・豪商の館 田中本家博物館（喫茶 龍潜）と蔵町文化・発酵・近代建築・豪商庭園が揃った秀作。"
+    },
+    {
+      "station_order": 244,
+      "areaId": "kawanishi_noseguchi",
+      "station": "川西能勢口",
+      "line": "能勢電鉄妙見線",
+      "prefecture": "兵庫県",
+      "iteration": 48,
+      "scores": {
+        "theme_diversity": 2.9,
+        "spot_allocation": 2.8,
+        "walkability": 2.4,
+        "story_emotion": 2.8,
+        "local_specificity": 2.9,
+        "total": 2.75
+      },
+      "needs_replacement": true,
+      "notes": "Spot 3でパンを購入した後、Spot 4（鴨神社）まで直線823m、さらにSpot 5（cafe gunnii）まで直線703mと郊外住宅街の長距離移動が続き、終点が起点駅から直線1,516mまで離れるため差し替え候補。"
+    },
+    {
+      "station_order": 245,
+      "areaId": "hayato",
+      "station": "隼人",
+      "line": "JR肥薩線",
+      "prefecture": "鹿児島県",
+      "iteration": 48,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.6,
+        "walkability": 3.2,
+        "story_emotion": 3.7,
+        "local_specificity": 3.9,
+        "total": 3.65
+      },
+      "needs_replacement": false,
+      "notes": "特別史跡『隼人塚史跡公園』の五重石塔・四天王石像から、内山田の『一福食堂』、『坂田金時堂』の角まんじゅう、『カフェレストラン 東苑』を経て大隅国一宮『鹿児島神宮』の240枚の草花天井画へと至る物語性と民藝調イラストの調和が高水準。"
     }
   ],
-  "updated_at": "2026-11-07T11:14:00+09:00",
+  "updated_at": "2026-11-07T12:54:00+09:00",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #43〜#46 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
-  "last_updated_iteration": 46,
+  "last_updated_iteration": 48,
   "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #43-#46）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
   "moving_window_20_average": 3.33,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    43,
-    44,
     45,
-    46
+    46,
+    47,
+    48
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -4441,27 +4531,31 @@
     "shintoku",
     "shimoyoshida",
     "sakado",
-    "nishi_iwakuni"
+    "nishi_iwakuni",
+    "uzen_yamabe",
+    "sano",
+    "motomachi_chukagai",
+    "kawanishi_noseguchi"
   ],
   "current_window_iterations": [
-    43,
-    44,
     45,
-    46
+    46,
+    47,
+    48
   ],
   "current_window_average": 3.33,
-  "total_routes": 235,
-  "latest_iteration": 47,
+  "total_routes": 245,
+  "latest_iteration": 48,
   "moving_window": {
     "iterations": [
-      44,
       45,
       46,
-      47
+      47,
+      48
     ],
     "station_order_range": [
-      221,
-      240
+      226,
+      245
     ],
     "route_count": 20,
     "sum_total": 66.55,

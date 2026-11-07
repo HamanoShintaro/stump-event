@@ -36530,5 +36530,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "34f82a50-7e1a-4ace-8a2e-364f1936a331",
+    "title": "二木の松と白狐の社をめぐる岩沼参道紀行",
+    "name": "二木の松と白狐の社をめぐる岩沼参道紀行",
+    "description": "常磐線と東北本線が交わる交通の要衝・岩沼駅を起点に、芭蕉が『奥の細道』で憧れた二木の松から旧奥州街道の味わいを経て、白狐が見守る竹駒神社へと南へ歩く参道ルート。",
+    "region": "岩沼・竹駒参道",
+    "area_name": "岩沼・竹駒参道",
+    "cover_image_url": "/images/iwanuma/route-eyecatch.png",
+    "imageUrl": "/images/iwanuma/route-eyecatch.png",
+    "category": "歌枕史跡・旧街道・神社参拝",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "歌枕の松から旧奥州街道の湯気、白狐の杜へと連なる岩沼で、今のあなたの心に深く響くのはどのひとときだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "芭蕉が恋い焦がれた、二本の幹が寄り添う名松の佇まい",
+          "description": "幾代にもわたり植え継がれてきた歌枕の生命力に心を動かされた。",
+          "badge_code": "IWANUMA_A"
+        },
+        {
+          "key": "B",
+          "text": "旧奥州街道の暖簾の奥で出会った、湯気立つ一杯と揚げまんじゅう",
+          "description": "宿場町の筋に今も息づく日常の温もりと香ばしさに惹かれた。",
+          "badge_code": "IWANUMA_B"
+        },
+        {
+          "key": "C",
+          "text": "門前の明るい窓辺で、木立を眺めながら過ごした珈琲のひととき",
+          "description": "参拝の途中に立ち寄る穏やかな休息の時間が心地よかった。",
+          "badge_code": "IWANUMA_C"
+        },
+        {
+          "key": "D",
+          "text": "杉木立の先に立つ随身門と、白狐が見守る静謐な社殿の空気",
+          "description": "東北の暮らしを見守り続けてきた古社の厳かな佇まいに背筋が伸びた。",
+          "badge_code": "IWANUMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d0338b0c-006b-45fa-8c8b-1fbfbc326337",
+        "name": "二木の松史跡公園",
+        "description": "根本から二本に分かれて伸びる姿から「二木の松」とも呼ばれる国指定名勝。松尾芭蕉が『奥の細道』で訪ねた歌枕の地として知られる。（終日散策自由、無休）",
+        "address": "宮城県岩沼市二木2丁目29-8",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.106728,
+        "lng": 140.862485,
+        "qr_token": "shuin-iwanuma-1",
+        "cover_image_url": "/images/iwanuma/spot1.png",
+        "f7_fragment": "寄り添う二本の幹が、みちのくの澄んだ青空へと静かに大きな枝を広げていく。",
+        "f7_full": "都の歌人たちが遥かに憧れ、松尾芭蕉が句を捧げた七代目の武隈の松が、今も静かな街の風を梢いっぱいに受け止めている。",
+        "is_final": false,
+        "next_spot_id": "426dd363-8e20-427c-8fdb-0218e5ee5d8d",
+        "next_spot_name": "ジャンプラーメン"
+      },
+      {
+        "id": "426dd363-8e20-427c-8fdb-0218e5ee5d8d",
+        "name": "ジャンプラーメン",
+        "description": "旧奥州街道沿いに店を構える地元密着のラーメン店。あっさりとした醤油スープに具材と自家製チャーシューがのる看板メニューが親しまれている。（火〜土曜11:30〜14:00・18:00〜翌2:00、日曜11:30〜14:00・18:00〜23:00、月曜18:00〜翌2:00営業、不定休）",
+        "address": "宮城県岩沼市中央1丁目5-31",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.105949,
+        "lng": 140.86633,
+        "qr_token": "shuin-iwanuma-2",
+        "cover_image_url": "/images/iwanuma/spot2.png",
+        "f7_fragment": "旧奥州街道の暖簾の奥から、澄んだ醤油出汁と香味野菜の湯気が立ち上る。",
+        "f7_full": "かつての宿場町の面影を残す通りで味わう熱々の中華そばが、歩き始めた旅人の心と体を芯から温めてくれる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "e596dad3-4c2a-4719-858c-974a97d154b4",
+        "next_spot_name": "つつみ庵 岩沼店"
+      },
+      {
+        "id": "e596dad3-4c2a-4719-858c-974a97d154b4",
+        "name": "つつみ庵 岩沼店",
+        "description": "香ばしく揚げた黒糖まんじゅう「つつみ揚」や大ぶりの串団子で知られる和菓子店。竹駒神社参拝の手土産としても人気が高い。（9:30〜17:00営業、火曜定休）",
+        "address": "宮城県岩沼市中央1丁目2-13",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.105324,
+        "lng": 140.866182,
+        "qr_token": "shuin-iwanuma-3",
+        "cover_image_url": "/images/iwanuma/spot3.png",
+        "f7_fragment": "店先に漂う胡麻油の香ばしい匂いと、カリッと揚がった黒糖まんじゅう。",
+        "f7_full": "外はサクッと香ばしく、中はしっとり甘い名物の揚げまんじゅうが、門前町の散策に優しい甘みを添えてくれる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "03619d6f-b004-4311-80ee-3f3a122c8c2d",
+        "next_spot_name": "竹駒の杜 CAFE 一粒万倍"
+      },
+      {
+        "id": "03619d6f-b004-4311-80ee-3f3a122c8c2d",
+        "name": "竹駒の杜 CAFE 一粒万倍",
+        "description": "竹駒神社の門前に位置する木造の明るいカフェ＆ショップ。境内の緑を眺めながら珈琲や甘味、縁起物の焼き菓子を楽しめる。（10:00〜17:00営業、無休）",
+        "address": "宮城県岩沼市稲荷町1-1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.104588,
+        "lng": 140.863407,
+        "qr_token": "shuin-iwanuma-4",
+        "cover_image_url": "/images/iwanuma/spot4.png",
+        "f7_fragment": "竹駒の杜の緑を望む大きな木の窓辺に、淹れたての珈琲の湯気が揺れる。",
+        "f7_full": "白狐の社に寄り添う「まちの縁側」のような明るい空間で、杉木立の木漏れ日を眺めながら参拝前の息を整える、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "5b3bc748-46af-4b95-85aa-10eb27a63304",
+        "next_spot_name": "竹駒神社"
+      },
+      {
+        "id": "5b3bc748-46af-4b95-85aa-10eb27a63304",
+        "name": "竹駒神社",
+        "description": "日本三稲荷の一つに数えられる古社。堂々たる二層の随身門や県指定文化財の唐門・向唐破風拝殿が並び、産業開発・五穀豊穣の守護神として信仰を集める。（6:00〜17:00開門、無休）",
+        "address": "宮城県岩沼市稲荷町1-1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.104628,
+        "lng": 140.861818,
+        "qr_token": "shuin-iwanuma-5",
+        "cover_image_url": "/images/iwanuma/spot5.png",
+        "f7_fragment": "深い杉木立の奥にそびえる二層の随身門と、白狐が見守る静謐な回廊。",
+        "f7_full": "千年の祈りを重ねてきた唐門と向唐破風拝殿の前で静かに手を合わせ、宿場町と門前町をめぐる岩沼の旅を清らかに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ff74cf4a-c101-4051-8e61-8ef72fe60c8d",
+    "title": "潮風の立体庭園から山手西洋館へ続く異人館の午後",
+    "name": "潮風の立体庭園から山手西洋館へ続く異人館の午後",
+    "description": "みなとみらい線の終点・元町・中華街駅から立体公園の丘へ上がり、元町ゆかりのイギリスパンの老舗を経て、山手本通りに並ぶ白壁の西洋館とティールームをめぐるルート。",
+    "region": "横浜元町・山手本通り",
+    "area_name": "横浜元町・山手本通り",
+    "cover_image_url": "/images/motomachi_chukagai/route-eyecatch.png",
+    "imageUrl": "/images/motomachi_chukagai/route-eyecatch.png",
+    "category": "立体庭園・ベーカリー・山手西洋館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って横浜・山手の丘を歩くなら、港を望む庭園や洋館の食卓、赤煙突の茶室のどこから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅舎の上からそのままつながる、潮風と緑に満ちた屋上庭園の開放感",
+          "description": "港町と山手の丘をひとつに結ぶ立体的な眺望に胸がすく思いがした。",
+          "badge_code": "MOTOMACHI_CHUKAGAI_A"
+        },
+        {
+          "key": "B",
+          "text": "白い下見板張りの洋館で味わった、香り高いパンと伝統の洋食の味わい",
+          "description": "居留地の歴史が育てたパンと洋食の深いコクに旅の喜びを感じた。",
+          "badge_code": "MOTOMACHI_CHUKAGAI_B"
+        },
+        {
+          "key": "C",
+          "text": "三連ポーチの共同住宅に残る、上げ下げ窓と木造階段の端正な意匠",
+          "description": "日本の大工技術と西洋の暮らしが融合した建築の細部に惹き込まれた。",
+          "badge_code": "MOTOMACHI_CHUKAGAI_C"
+        },
+        {
+          "key": "D",
+          "text": "榎の木が見守る赤い煙突の館で、紅茶と甘い菓子に包まれた午後",
+          "description": "アンティークの家具が並ぶ居間で過ごした穏やかな茶の時間が忘れられない。",
+          "badge_code": "MOTOMACHI_CHUKAGAI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c73e1ae9-f27a-4a0d-8e43-6c64f5335c6a",
+        "name": "アメリカ山公園",
+        "description": "元町・中華街駅の駅舎上部と山手の高台を一体的に結ぶ全国初の立体都市公園。芝生広場やバラが咲く庭園から横浜マリンタワー方面を望める。（6:00〜23:00開園、無休）",
+        "address": "神奈川県横浜市中区山手町97-1",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.441336,
+        "lng": 139.651566,
+        "qr_token": "shuin-motomachi_chukagai-1",
+        "cover_image_url": "/images/motomachi_chukagai/spot1.png",
+        "f7_fragment": "駅の真上から開ける芝生の展望園地に、港の爽やかな潮風とバラの香りが届く。",
+        "f7_full": "海辺の街と山手の丘をエレベーターで立体的に結ぶ緑のテラスから、光あふれる横浜の港と広い空を見渡す、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "e082d4c1-2409-4a6d-80bd-963e061d9bb0",
+        "next_spot_name": "ウチキパン"
+      },
+      {
+        "id": "e082d4c1-2409-4a6d-80bd-963e061d9bb0",
+        "name": "ウチキパン",
+        "description": "居留地のパンづくりの系譜を継ぐ元町の老舗ベーカリー。ホップ種を用いた発酵製法で焼き上げる山型食パン「イングランド」が代名詞。（9:00〜19:00営業、月曜定休）",
+        "address": "神奈川県横浜市中区元町1丁目50",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.440936,
+        "lng": 139.650639,
+        "qr_token": "shuin-motomachi_chukagai-2",
+        "cover_image_url": "/images/motomachi_chukagai/spot2.png",
+        "f7_fragment": "赤煉瓦の店先に満ちる、伝統のホップ種で焼き上げた山型食パンの香り。",
+        "f7_full": "開港期の外国人居留地から受け継がれてきたイギリスパンの香ばしさが、今も元町の通りを豊かに彩っている、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "0f198509-190e-409f-8c63-45524136331e",
+        "next_spot_name": "山手十番館"
+      },
+      {
+        "id": "0f198509-190e-409f-8c63-45524136331e",
+        "name": "山手十番館",
+        "description": "山手本通り沿いに佇む白壁の洋館レストラン＆カフェ。ステンドグラスが彩るクラシカルな空間で伝統のビーフシチューや洋食ランチを味わえる。（平日11:30〜15:00・17:00〜21:00、土日祝11:00〜15:30・18:00〜21:00営業、1Fカフェ11:30〜16:00、月・火曜定休）",
+        "address": "神奈川県横浜市中区山手町247",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.438848,
+        "lng": 139.652544,
+        "qr_token": "shuin-motomachi_chukagai-3",
+        "cover_image_url": "/images/motomachi_chukagai/spot3.png",
+        "f7_fragment": "ガス灯が立つ白壁の洋館で、ステンドグラスの柔らかな光と洋食を味わう。",
+        "f7_full": "山手本通りの豊かな緑に抱かれたクラシカルなダイニングで、長く受け継がれてきた横浜洋食の深い滋味に浸る、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "6195d384-c25a-41cd-8272-40e81f113f7e",
+        "next_spot_name": "山手234番館"
+      },
+      {
+        "id": "6195d384-c25a-41cd-8272-40e81f113f7e",
+        "name": "山手234番館",
+        "description": "日本人建築家・朝香吉蔵の設計により外国人向け共同住宅として建てられた西洋館。三連ポーチや上げ下げ窓など当時のアパートメント建築を無料で公開している。（9:30〜17:00開館、第4水曜休館）",
+        "address": "神奈川県横浜市中区山手町234-1",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.437777,
+        "lng": 139.652033,
+        "qr_token": "shuin-motomachi_chukagai-4",
+        "cover_image_url": "/images/motomachi_chukagai/spot4.png",
+        "f7_fragment": "三連のアーチポーチと縦長の上げ下げ窓が、左右対称の端正な美を奏でる。",
+        "f7_full": "地元横浜の大工棟梁が手がけた外国人向けアパートメントの明るい窓辺に、かつての山手のモダンな暮らしが息づく、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "ff5c74d9-fb12-4634-87ed-744abb078524",
+        "next_spot_name": "えの木てい 本店"
+      },
+      {
+        "id": "ff5c74d9-fb12-4634-87ed-744abb078524",
+        "name": "えの木てい 本店",
+        "description": "山手本通りに面した英国風の洋館ティールーム＆洋菓子店。1階のショップやアンティーク家具が並ぶ客席で、名物のチェリーサンドやシフォンケーキと紅茶を楽しめる。（平日12:00〜17:30・土日祝11:30〜18:00営業、無休）",
+        "address": "神奈川県横浜市中区山手町89-6",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.437545,
+        "lng": 139.652006,
+        "qr_token": "shuin-motomachi_chukagai-5",
+        "cover_image_url": "/images/motomachi_chukagai/spot5.png",
+        "f7_fragment": "赤い煉瓦煙突と大きな榎の木が見守る洋館で、香り高い紅茶の午後を過ごす。",
+        "f7_full": "暖炉辺の温かなもてなしから始まった白壁のティールームで、名物のチェリーサンドと紅茶の甘い余韻に身を委ねる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cb424f8f-8e73-41c8-86db-2eea4cf0d4f9",
+    "title": "極彩の笠鉾と二十連の土蔵を訪ねる須坂の町並み",
+    "name": "極彩の笠鉾と二十連の土蔵を訪ねる須坂の町並み",
+    "description": "長野電鉄の拠点・須坂駅から東へ、極彩色の笠鉾が並ぶ展示館や老舗の信州蕎麦、木桶仕込みの味噌蔵、洋風の旧郡役所を経て、二十連の土蔵が囲む豪商の庭園喫茶まで歩くルート。",
+    "region": "須坂・蔵の町並み",
+    "area_name": "須坂・蔵の町並み",
+    "cover_image_url": "/images/suzaka/route-eyecatch.png",
+    "imageUrl": "/images/suzaka/route-eyecatch.png",
+    "category": "蔵の町並み・発酵文化・豪商庭園",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "蔵の町・須坂で受け継がれてきた祭礼と発酵、豪商の美意識の中で、あなたが間近に味わってみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "吹き抜けの空間にそびえ立つ、極彩色の笠鉾と水引幕の迫力",
+          "description": "町人たちが競い合うように仕立てた祭礼文化の華やかさに圧倒された。",
+          "badge_code": "SUZAKA_A"
+        },
+        {
+          "key": "B",
+          "text": "老舗の暖簾の奥で味わった、独創的な信州蕎麦と木桶味噌の香り",
+          "description": "蔵の町の日常を支えてきた蕎麦と発酵文化の深い味わいに惹かれた。",
+          "badge_code": "SUZAKA_B"
+        },
+        {
+          "key": "C",
+          "text": "二十連の土蔵が囲む豪商の屋敷で、名園を眺めながら過ごした茶の時間",
+          "description": "二百五十年の歳月が息づく庭園と土蔵の静けさに心が澄み渡った。",
+          "badge_code": "SUZAKA_C"
+        },
+        {
+          "key": "D",
+          "text": "蔵造りの通りに軽やかなリズムを添える、淡い緑の旧郡役所の洋風意匠",
+          "description": "和の土蔵群と近代の木造洋館が隣り合う須坂の街並みの奥行きに惹かれた。",
+          "badge_code": "SUZAKA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "527ced9f-3b56-4d70-8294-347831259d1f",
+        "name": "笠鉾会館ドリームホール",
+        "description": "須坂の祇園祭で巡行する11基の笠鉾と4台の屋台を吹き抜け空間に常設展示する施設。京都ゆかりの豪華な水引幕や彫刻を間近に見学できる。（10:00〜16:00開館・入館15:30まで、月曜・祝日の翌日・年末年始休館）",
+        "address": "長野県須坂市大字須坂410-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.655141,
+        "lng": 138.311408,
+        "qr_token": "shuin-suzaka-1",
+        "cover_image_url": "/images/suzaka/spot1.png",
+        "f7_fragment": "吹き抜けの大空間にそびえ立つ、極彩色の笠鉾と豪華な水引幕の威容。",
+        "f7_full": "かつての旦那衆が京都の技を取り入れて競うように仕立てた十一基の笠鉾が、蔵の町の誇り高き祭礼文化を今に伝える、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "f7e1397d-9a37-4bb5-8d91-667385f63d08",
+        "next_spot_name": "松葉屋そば店"
+      },
+      {
+        "id": "f7e1397d-9a37-4bb5-8d91-667385f63d08",
+        "name": "松葉屋そば店",
+        "description": "須坂の蔵の町並み近くで暖簾を守る老舗蕎麦処。つゆの上に蕎麦と多彩な具材を重ねる「義仲そば」や、溶き卵で味わう「すき焼きそば」で知られる。（11:00〜14:00・17:00〜20:00営業、木曜定休）",
+        "address": "長野県須坂市常盤町702",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.655157,
+        "lng": 138.315039,
+        "qr_token": "shuin-suzaka-2",
+        "cover_image_url": "/images/suzaka/spot2.png",
+        "f7_fragment": "香り高い信州の細打ち蕎麦に、甘辛い割り下と彩り豊かな薬味が重なる。",
+        "f7_full": "初代から大切に受け継がれる独創的な義仲そばとすき焼きそばが、須坂ならではの粋でもてなし心あふれる食文化を物語る。",
+        "is_final": false,
+        "next_spot_id": "496f2945-72e4-4467-8b59-cd49a0169bfa",
+        "next_spot_name": "塩屋醸造"
+      },
+      {
+        "id": "496f2945-72e4-4467-8b59-cd49a0169bfa",
+        "name": "塩屋醸造",
+        "description": "9件の登録有形文化財の土蔵群を擁する老舗の味噌・醤油醸造元。杉桶でじっくり熟成させた天然醸造の信州味噌や醤油、甘酒を購入できる。（平日9:00〜17:15・土日祝10:00〜16:00営業、元日ほか不定休）",
+        "address": "長野県須坂市大字須坂537",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.65583,
+        "lng": 138.315839,
+        "qr_token": "shuin-suzaka-3",
+        "cover_image_url": "/images/suzaka/spot3.png",
+        "f7_fragment": "黒漆喰の土蔵が連なる仕込み蔵の奥で、杉の大桶に眠る信州味噌が熟す。",
+        "f7_full": "国の登録有形文化財に指定された土蔵群に満ちる芳醇な発酵の香りが、製糸業で栄えた蔵町の豊かな日常の記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "4d27b9fa-5807-4468-88ce-9bb843431869",
+        "next_spot_name": "旧上高井郡役所"
+      },
+      {
+        "id": "4d27b9fa-5807-4468-88ce-9bb843431869",
+        "name": "旧上高井郡役所",
+        "description": "三角破風の玄関ポーチと淡い緑の下見板張りが特徴の木造洋風庁舎建築。当時の階段室や展示室を無料で見学できる。（9:00〜17:00開館・貸館は22:00まで、土曜・日曜・祝日・年末年始休館）",
+        "address": "長野県須坂市大字須坂812-2",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.654658,
+        "lng": 138.316127,
+        "qr_token": "shuin-suzaka-4",
+        "cover_image_url": "/images/suzaka/spot4.png",
+        "f7_fragment": "白壁の蔵町に軽やかに佇む、三角破風と淡い緑の下見板張りの木造洋館。",
+        "f7_full": "西洋の意匠を積極的に取り入れた北信濃のモダンな気風が、旧郡役所の上げ下げ窓と階段室に差す光の中に今も静かに宿っている。",
+        "is_final": false,
+        "next_spot_id": "037b3b02-c50b-4391-8f61-238dbee3282d",
+        "next_spot_name": "豪商の館 田中本家博物館"
+      },
+      {
+        "id": "037b3b02-c50b-4391-8f61-238dbee3282d",
+        "name": "豪商の館 田中本家博物館",
+        "description": "周囲を20棟の土蔵に囲まれた北信濃屈指の豪商の旧邸。池泉庭園を望む敷地内の喫茶「龍潜」では、抹茶や珈琲、季節の甘味を味わえる。（平日11:00〜15:30・土日祝10:00〜16:00開館・冬季12〜2月は全日11:00〜15:30、火曜休館）",
+        "address": "長野県須坂市穀町476",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.648647,
+        "lng": 138.317535,
+        "qr_token": "shuin-suzaka-5",
+        "cover_image_url": "/images/suzaka/spot5.png",
+        "f7_fragment": "二十連の白壁土蔵がぐるりと取り囲む豪商の屋敷で、池泉庭園の緑と茶に憩う。",
+        "f7_full": "二百五十年の歴史を紡ぐ北信濃屈指の豪商の庭園を窓越しに眺めながら、静かな土蔵喫茶で須坂の旅の余韻をゆっくりと味わう。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c832732a-d0cc-47e0-8ab6-d839d503191f",
+    "title": "礎石の丘から古社の森と緑の茶房を辿る川西散歩",
+    "name": "礎石の丘から古社の森と緑の茶房を辿る川西散歩",
+    "description": "能勢電鉄妙見線の起点・川西能勢口駅から西へ、古代寺院の礎石が残る史跡公園や旬菜の和食処、人気のベーカリーを経て、環濠集落跡に鎮座する鴨神社と緑の一軒家カフェまで歩くルート。",
+    "region": "川西・花屋敷〜加茂",
+    "area_name": "川西・花屋敷〜加茂",
+    "cover_image_url": "/images/kawanishi_noseguchi/route-eyecatch.png",
+    "imageUrl": "/images/kawanishi_noseguchi/route-eyecatch.png",
+    "category": "古代史跡・和食・ボタニカルカフェ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千年の礎石と旬彩の膳、ユーカリ揺れる茶房をめぐる川西の旅を終えて、記憶の中にそっと持ち帰りたいしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "芝生の丘に静かに並ぶ、古代寺院の礎石と須弥壇の佇まい",
+          "description": "発掘によって蘇った千年前の伽藍の痕跡に歴史のロマンを感じた。",
+          "badge_code": "KAWANISHI_NOSEGUCHI_A"
+        },
+        {
+          "key": "B",
+          "text": "花屋敷の街角で出会った、旬の和食御膳と焼きたてパンの香り",
+          "description": "丁寧な出汁の料理と香ばしいあんぱんに、街の暮らしの豊かさを感じた。",
+          "badge_code": "KAWANISHI_NOSEGUCHI_B"
+        },
+        {
+          "key": "C",
+          "text": "太古の大集落跡に鎮座する、木立に包まれた古社の厳かな空気",
+          "description": "幾千年もの人々の営みの上に立つ社殿の静けさに背筋が伸びた。",
+          "badge_code": "KAWANISHI_NOSEGUCHI_C"
+        },
+        {
+          "key": "D",
+          "text": "ユーカリの葉が揺れる一軒家カフェで、自家焙煎珈琲に癒やされた午後",
+          "description": "植物と自然光に満ちた空間で過ごした穏やかな休息が心に残った。",
+          "badge_code": "KAWANISHI_NOSEGUCHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b13b64d1-3f46-4052-8584-ed984ccb6f51",
+        "name": "栄根寺廃寺遺跡史跡公園",
+        "description": "震災後の発掘調査で見つかった古代寺院跡を保存・復元した史跡公園。本堂の礎石や須弥壇が整備され、当時の伽藍配置をたどることができる。（終日散策自由、無休）",
+        "address": "兵庫県川西市寺畑2丁目9",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.827324,
+        "lng": 135.404365,
+        "qr_token": "shuin-kawanishi_noseguchi-1",
+        "cover_image_url": "/images/kawanishi_noseguchi/spot1.png",
+        "f7_fragment": "緑の芝生の丘に整然と並ぶ礎石が、千年前の伽藍の静かな記憶を語る。",
+        "f7_full": "地下の長い眠りから覚めた古代寺院の礎石と須弥壇の上に、穏やかな北摂の陽射しが静かに降り注いでいる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "99fa6660-8da8-4741-8fea-50e1d2d94104",
+        "next_spot_name": "食を楽しむお店 近吉"
+      },
+      {
+        "id": "99fa6660-8da8-4741-8fea-50e1d2d94104",
+        "name": "食を楽しむお店 近吉",
+        "description": "花屋敷の住宅街に佇む和食・割烹店。旬の鮮魚のお造りや天ぷら、季節の小鉢を盛り込んだランチ御膳が地元で親しまれている。（11:30〜15:00・17:30〜22:00営業、水曜定休）",
+        "address": "兵庫県川西市花屋敷2丁目4-17",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.828528,
+        "lng": 135.406417,
+        "qr_token": "shuin-kawanishi_noseguchi-2",
+        "cover_image_url": "/images/kawanishi_noseguchi/spot2.png",
+        "f7_fragment": "白い暖簾の奥の木の席で味わう、旬の鮮魚と出汁が香る彩り豊かな御膳。",
+        "f7_full": "花屋敷の静かな街角に佇む和食処で、四季の恵みを丁寧に仕立てた昼の御膳が旅人の心を温かく満たしてくれる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "c8015336-665e-41a6-8ff2-1cf24b7c7ae0",
+        "next_spot_name": "ブーランジェリー 餡"
+      },
+      {
+        "id": "c8015336-665e-41a6-8ff2-1cf24b7c7ae0",
+        "name": "ブーランジェリー 餡",
+        "description": "朝7時から焼き上がる多彩なパンが並ぶベーカリー。店名を冠したあんぱんや具だくさんのサンドイッチ、ハード系パンが人気を集める。（7:00〜19:00営業、木曜定休）",
+        "address": "兵庫県川西市花屋敷2丁目5-11",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.828274,
+        "lng": 135.406021,
+        "qr_token": "shuin-kawanishi_noseguchi-3",
+        "cover_image_url": "/images/kawanishi_noseguchi/spot3.png",
+        "f7_fragment": "赤い庇の店先にふんわり広がる、焼きたての小麦と自家製あんぱんの香り。",
+        "f7_full": "早朝から次々と焼き上がるあんぱんと香ばしいバゲットが、穏やかな坂の街の日常に温かな彩りを添えている、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "d02cc71d-ef38-4f26-847e-7f252807b5c8",
+        "next_spot_name": "鴨神社"
+      },
+      {
+        "id": "d02cc71d-ef38-4f26-847e-7f252807b5c8",
+        "name": "鴨神社",
+        "description": "国指定史跡「加茂遺跡」の台地中央に鎮座する延喜式内社。緑豊かな社叢に包まれ、北摂の古代史と信仰を今に伝える。（8:00〜17:00開門、無休）",
+        "address": "兵庫県川西市加茂1丁目4-2",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.821074,
+        "lng": 135.408092,
+        "qr_token": "shuin-kawanishi_noseguchi-4",
+        "cover_image_url": "/images/kawanishi_noseguchi/spot4.png",
+        "f7_fragment": "太古の環濠集落が眠る緑の台地に、式内社の深い鎮守の森が静かに茂る。",
+        "f7_full": "幾千年もの人々の営みを秘めた加茂の台地で、静謐な石鳥居と社殿を包む楠の木立の風の音に耳を澄ます、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "9c235278-fc0d-4407-8732-4ef855123a46",
+        "next_spot_name": "cafe gunnii"
+      },
+      {
+        "id": "9c235278-fc0d-4407-8732-4ef855123a46",
+        "name": "cafe gunnii",
+        "description": "フラワーショップの敷地内に佇むボタニカルな一軒家カフェ。草花に囲まれた空間で自家焙煎コーヒーや手作りのケーキを味わえる。（11:00〜18:00営業、不定休）",
+        "address": "兵庫県川西市加茂3丁目3-28-2",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.818493,
+        "lng": 135.401067,
+        "qr_token": "shuin-kawanishi_noseguchi-5",
+        "cover_image_url": "/images/kawanishi_noseguchi/spot5.png",
+        "f7_fragment": "銀緑色のユーカリが揺れる庭を抜けて、自家焙煎珈琲の香る明るい窓辺へ。",
+        "f7_full": "瑞々しい草花と柔らかな自然光に満たされた一軒家の茶房で、川西の古道を歩いた旅の終わりを穏やかに結ぶ、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6d2b2ad9-f0ac-4051-8c0e-762e18bc8e2e",
+    "title": "五重石塔の古塚と大隅一宮を歩く隼人神話の道",
+    "name": "五重石塔の古塚と大隅一宮を歩く隼人神話の道",
+    "description": "JR肥薩線の起点・隼人駅から、四天王石像が守る特別史跡・隼人塚を振り出しに、町のレトロ食堂と黒糖香る角まんじゅうの老舗、神宮前の喫茶を経て、大隅国一宮・鹿児島神宮まで北上するルート。",
+    "region": "隼人・大隅国一宮参道",
+    "area_name": "隼人・大隅国一宮参道",
+    "cover_image_url": "/images/hayato/route-eyecatch.png",
+    "imageUrl": "/images/hayato/route-eyecatch.png",
+    "category": "特別史跡・郷土菓子・大隅国一宮",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "五重石塔の古塚から大隅国一宮へと北上する隼人の風土の中で、あなたの五感を強く惹きつけるのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "芝生の塚の上にそびえる、三基の五重石塔と四天王石像の造形",
+          "description": "千年の風雪に耐えてきた南九州独自の石造文化の力強さに胸を打たれた。",
+          "badge_code": "HAYATO_A"
+        },
+        {
+          "key": "B",
+          "text": "路地裏の食堂の湯気と、黒糖と地酒が香る角まんじゅうの素朴な味わい",
+          "description": "大隅の暮らしの中で受け継がれてきた飾らない食と菓子の温もりに心が和んだ。",
+          "badge_code": "HAYATO_B"
+        },
+        {
+          "key": "C",
+          "text": "神宮前のレンガ調の喫茶室で、参拝前に過ごした穏やかな珈琲の時間",
+          "description": "木目調の落ち着いた空間でひと息つくひとときが旅の歩調を整えてくれた。",
+          "badge_code": "HAYATO_C"
+        },
+        {
+          "key": "D",
+          "text": "草花の天井画と龍の彫刻が彩る、朱塗りの大社殿の荘厳な佇まい",
+          "description": "島津家が築いた日本最大級の本殿と楠の杜の静けさに背筋が伸びた。",
+          "badge_code": "HAYATO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "761de228-fe8b-4343-8ca2-169e281d89c9",
+        "name": "隼人塚史跡公園",
+        "description": "塚の上に3基の五重石塔と四天王石像が立つ国の特別史跡（指定地番：隼人町内山田265-3）。古代大隅の仏教文化と石造技術を伝える貴重な遺跡公園として公開されている。（公園終日散策自由、併設史跡館は9:00〜17:00開館・月曜休館）",
+        "address": "鹿児島県霧島市隼人町内山田2丁目51-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.740306,
+        "lng": 130.736597,
+        "qr_token": "shuin-hayato-1",
+        "cover_image_url": "/images/hayato/spot1.png",
+        "f7_fragment": "南九州の明るい陽射しを浴びて立つ、三基の五重石塔と四天王像。",
+        "f7_full": "千年の風雪に耐えてきた凝灰岩の五重石塔と四天王石像が、古代大隅に生きた人々の誇りと信仰を静かに物語る、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "db99632e-ceae-49e9-81e5-f00ee7b31ad9",
+        "next_spot_name": "一福食堂"
+      },
+      {
+        "id": "db99632e-ceae-49e9-81e5-f00ee7b31ad9",
+        "name": "一福食堂",
+        "description": "内山田の住宅街で長年暖簾を守る老舗の大衆食堂。野菜たっぷりのちゃんぽんやカツ丼、うどんなど鹿児島の家庭的な味わいが親しまれている。（11:00〜15:00営業、日曜定休）",
+        "address": "鹿児島県霧島市隼人町内山田1丁目5-23",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.741398,
+        "lng": 130.737206,
+        "qr_token": "shuin-hayato-2",
+        "cover_image_url": "/images/hayato/spot2.png",
+        "f7_fragment": "藍色の暖簾の奥からふんわり立ち上る、野菜たっぷりのちゃんぽんの湯気。",
+        "f7_full": "半世紀以上愛され続ける町の食堂で、鹿児島ならではのほんのり甘口の出汁が染みた一杯が旅人の心とお腹を満たす、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "5acecb65-d28d-4f18-8859-a1aad5d2a30c",
+        "next_spot_name": "坂田金時堂"
+      },
+      {
+        "id": "5acecb65-d28d-4f18-8859-a1aad5d2a30c",
+        "name": "坂田金時堂",
+        "description": "隼人町で長年親しまれる老舗和菓子舗。黒糖と地酒を練り込んだ四角い蒸し饅頭「角まんじゅう」や初午祭にちなんだ「鈴かけ餅」が名物。（9:30〜19:00営業、水曜定休）",
+        "address": "鹿児島県霧島市隼人町内山田1丁目8-6",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.744703,
+        "lng": 130.739833,
+        "qr_token": "shuin-hayato-3",
+        "cover_image_url": "/images/hayato/spot3.png",
+        "f7_fragment": "大きなせいろから立ち上る黒糖と地酒の香り、四角い角まんじゅう。",
+        "f7_full": "ふっくらと蒸し上がった琥珀色の角まんじゅうに、大隅の豊かな風土が育てた素朴で懐かしい甘みが詰まっている、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "780fa3cc-a6d0-4c79-84fd-458541da518a",
+        "next_spot_name": "カフェレストラン 東苑"
+      },
+      {
+        "id": "780fa3cc-a6d0-4c79-84fd-458541da518a",
+        "name": "カフェレストラン 東苑",
+        "description": "鹿児島神宮近くに佇む老舗のカフェレストラン。落ち着いた木目調の客席で珈琲や甘味、軽食を味わいながら参拝前後のひとときを過ごせる。（10:00〜20:30営業、水曜・第1日曜定休）",
+        "address": "鹿児島県霧島市隼人町神宮3丁目1-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.750814,
+        "lng": 130.743121,
+        "qr_token": "shuin-hayato-4",
+        "cover_image_url": "/images/hayato/spot4.png",
+        "f7_fragment": "楠の緑を望むレンガ調の明るい窓辺で、香り高い珈琲とパフェに憩う。",
+        "f7_full": "大隅国一宮の参道近くに佇むレトロな喫茶室で、柔らかな午後の光に包まれながら参拝前の息を静かに整える、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": false,
+        "next_spot_id": "c14ada72-ccc1-48a7-8b20-9b83b5292e52",
+        "next_spot_name": "鹿児島神宮"
+      },
+      {
+        "id": "c14ada72-ccc1-48a7-8b20-9b83b5292e52",
+        "name": "鹿児島神宮",
+        "description": "海幸彦・山幸彦神話ゆかりの大隅国一宮。国の重要文化財に指定された朱塗りの大社殿と、拝殿を彩る240枚の草花天井画が見どころ。（境内終日参拝自由、授与所8:30〜17:00、無休）",
+        "address": "鹿児島県霧島市隼人町内2496-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.753732,
+        "lng": 130.737882,
+        "qr_token": "shuin-hayato-5",
+        "cover_image_url": "/images/hayato/spot5.png",
+        "f7_fragment": "深い楠の杜に鮮やかに映える朱塗りの大社殿と、拝殿を彩る草花の天井画。",
+        "f7_full": "精緻な龍の彫刻と極彩色の天井画が迎える大隅国一宮の壮麗な社殿で、神話の里をめぐる旅を厳かに締めくくる、心に残る豊かなひとときが静かに刻まれていく。",
+        "is_final": true
+      }
+    ]
   }
 ];
