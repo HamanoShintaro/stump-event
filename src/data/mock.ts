@@ -39130,5 +39130,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "b20dfa02-6144-4422-8481-9da6d1cc9a2c",
+    "title": "湯けむりの城下と武家屋敷の茅葺きを辿る",
+    "name": "湯けむりの城下と武家屋敷の茅葺きを辿る",
+    "description": "蔵王連峰を望む羽州の名城・上山城と温泉街が重なり合う城下町。搗きたてのぬた団子から路地裏の手打ち蕎麦、老舗の中條饅頭、白亜の上山城天守、そして四軒の茅葺きが連なる鶴脛町の武家屋敷までを巡るルート。",
+    "region": "上山城・武家屋敷通り",
+    "area_name": "上山城・武家屋敷通り",
+    "cover_image_url": "/images/kaminoyama_onsen/route-eyecatch.png",
+    "imageUrl": "/images/kaminoyama_onsen/route-eyecatch.png",
+    "category": "城下町・温泉街・武家屋敷",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って上山の城下を歩くなら、蔵王を望む白亜の天守や茅葺きの武家屋敷、路地裏の蕎麦や甘味のどれから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「羽州の名城」と称えられた上山城の天守から、蔵王連峰と湯けむりの街並みを見渡した爽快感",
+          "description": "温泉街を見守るようにそびえる白亜の天守と、蔵王の雄大な山並みに心を奪われた。",
+          "badge_code": "KAMINOYAMA_ONSEN_A"
+        },
+        {
+          "key": "B",
+          "text": "黒板塀と生垣が続く鶴脛町で、唐破風玄関を備えた茅葺きの「武家屋敷 三輪家」に佇んだ静寂",
+          "description": "四軒の武家屋敷が連なる通りで、約三百年前の藩士の暮らしと庭園の風情に浸った。",
+          "badge_code": "KAMINOYAMA_ONSEN_B"
+        },
+        {
+          "key": "C",
+          "text": "前川沿いの路地裏に暖簾を掲げる「川芳そばや」で、香り高い手打ち蕎麦と出汁の旨味を味わった昼時",
+          "description": "温泉街の日常に溶け込む老舗の麺処で、山形ならではの蕎麦の喉ごしを堪能した。",
+          "badge_code": "KAMINOYAMA_ONSEN_C"
+        },
+        {
+          "key": "D",
+          "text": "枝豆香る「ぬた団子」と、創業百八十余年の黒糖皮「中條饅頭」に感じた城下町の温かな甘み",
+          "description": "だんご本舗たかはしの串団子と中條屋の温泉饅頭に、湯治場の甘い記憶を重ねた。",
+          "badge_code": "KAMINOYAMA_ONSEN_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "368f0966-f156-41a5-8fd0-3c8a01c18483",
+        "name": "だんご本舗たかはし",
+        "description": "JRかみのやま温泉駅近くにある老舗の団子・餅菓子店（月〜土曜8:30〜18:00・日祝8:30〜17:30営業、無休）。山形産はえぬき米を使った搗きたての団子に、枝豆餡の「ぬた」や胡麻・くるみをたっぷり塗った串団子が名物。",
+        "address": "山形県上山市矢来2丁目2-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.152301,
+        "lng": 140.276881,
+        "qr_token": "shuin-kaminoyama_onsen-1",
+        "cover_image_url": "/images/kaminoyama_onsen/spot1.png",
+        "f7_fragment": "山形産はえぬき米の柔らかな団子に鮮やかな緑の「ぬた」が乗る串団子。",
+        "f7_full": "毎朝せいろで蒸し上げて搗く柔らかな団子に香り高い枝豆餡のぬたや黒ごまが贅沢に絡み、城下町歩きの始まりを優しく彩る。",
+        "is_final": false,
+        "next_spot_id": "45164db0-720c-4a48-8ee8-1002988c5451",
+        "next_spot_name": "川芳そばや"
+      },
+      {
+        "id": "45164db0-720c-4a48-8ee8-1002988c5451",
+        "name": "川芳そばや",
+        "description": "前川近くの細い路地に佇む、地元客や湯治客に愛される老舗蕎麦店（11:00〜18:00営業、不定休）。風味豊かな蕎麦や、出汁の効いた昔ながらの中華そば・丼ものを味わえる。",
+        "address": "山形県上山市二日町7-10",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.153899,
+        "lng": 140.275753,
+        "qr_token": "shuin-kaminoyama_onsen-2",
+        "cover_image_url": "/images/kaminoyama_onsen/spot2.png",
+        "f7_fragment": "温泉街の路地裏で手繰る、喉ごし鮮やかな山形蕎麦と澄んだ出汁。",
+        "f7_full": "前川沿いの静かな路地に暖簾を掲げる老舗の麺処で、香り高い手打ち蕎麦と滋味深い出汁の旨味が旅人の身体を芯から温めてくれる。",
+        "is_final": false,
+        "next_spot_id": "d92a94f1-4cf7-44f4-85da-29b73b4660fe",
+        "next_spot_name": "中條屋"
+      },
+      {
+        "id": "d92a94f1-4cf7-44f4-85da-29b73b4660fe",
+        "name": "中條屋",
+        "description": "百八十余年の歴史を誇る老舗和菓子店（7:00〜17:00営業、水曜定休）。沖縄産黒糖を練り込んだ艶やかな薄皮で北海道産小豆のこし餡を包んだ上山名物「中條饅頭」を購入できる。",
+        "address": "山形県上山市沢丁6-7",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.156031,
+        "lng": 140.274461,
+        "qr_token": "shuin-kaminoyama_onsen-3",
+        "cover_image_url": "/images/kaminoyama_onsen/spot3.png",
+        "f7_fragment": "百八十余年にわたり湯治客に愛される、黒糖香る艶やかな「中條饅頭」。",
+        "f7_full": "沖縄産黒糖の深いコクが香る薄皮と口溶けなめらかな北海道産小豆のこし餡が調和し、湯町の歴史を甘い記憶として結ぶ。",
+        "is_final": false,
+        "next_spot_id": "ef46ff89-bcd3-488b-8809-fea4c68b4c2b",
+        "next_spot_name": "上山城（月岡城）"
+      },
+      {
+        "id": "ef46ff89-bcd3-488b-8809-fea4c68b4c2b",
+        "name": "上山城（月岡城）",
+        "description": "かつて「羽州の名城」と称えられた平山城の模擬天守・郷土資料館（9:00〜17:15開館、最終入館16:45、木曜定休）。最上階の展望台からは蔵王連峰と上山城下町を一望できる。",
+        "address": "山形県上山市元城内3-7",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.157671,
+        "lng": 140.276193,
+        "qr_token": "shuin-kaminoyama_onsen-4",
+        "cover_image_url": "/images/kaminoyama_onsen/spot4.png",
+        "f7_fragment": "蔵王連峰を背に月岡の丘へそびえ立つ、白亜の「羽州の名城」天守。",
+        "f7_full": "温泉が湧く丘の上に築かれた白漆喰の天守から見渡せば、蔵王の雄大な稜線と城下町の瓦屋根が一枚の絵のように広がる。",
+        "is_final": false,
+        "next_spot_id": "47b34a1e-2110-4d98-8be7-79e295f8853f",
+        "next_spot_name": "武家屋敷 三輪家"
+      },
+      {
+        "id": "47b34a1e-2110-4d98-8be7-79e295f8853f",
+        "name": "武家屋敷 三輪家",
+        "description": "鶴脛町の武家屋敷通りに4軒連なる茅葺き武家住宅のひとつ（9:00〜16:45開館、水曜定休）。上山藩の上級武士だった三輪家の曲り屋造りの主屋や唐破風玄関、庭園を見学できる。",
+        "address": "山形県上山市鶴脛町1丁目6-25",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.15924,
+        "lng": 140.273596,
+        "qr_token": "shuin-kaminoyama_onsen-5",
+        "cover_image_url": "/images/kaminoyama_onsen/spot5.png",
+        "f7_fragment": "黒板塀と生垣の奥に静かに佇む、唐破風玄関を備えた茅葺きの曲り屋。",
+        "f7_full": "四軒の武家屋敷が軒を連ねる鶴脛町の静かな通りで、重厚な茅葺き屋根と苔むす庭園が上山藩士の誇りを今に伝えている。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1b2ae93f-7fea-4ff3-85f6-a56d7fd2907a",
+    "title": "護摩の香る参道に息づく門前の記憶",
+    "name": "護摩の香る参道に息づく門前の記憶",
+    "description": "千年以上の歴史を刻む成田山新勝寺と、旅人が踏みしめた成田山表参道。銅板で焼く甘太郎焼から栗羊羹発祥の老舗、登録有形文化財の日本家屋で味わう鰻重、祭礼文化を伝える観光館、極彩色の三重塔がそびえる新勝寺までを巡るルート。",
+    "region": "成田山表参道・新勝寺門前",
+    "area_name": "成田山表参道・新勝寺門前",
+    "cover_image_url": "/images/narita/route-eyecatch.png",
+    "imageUrl": "/images/narita/route-eyecatch.png",
+    "category": "門前町・参道グルメ・社寺建築",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "護摩の太鼓が響く三重塔から香ばしい炭火の鰻、銅板の甘太郎焼や栗羊羹まで、門前の風土を色濃く映すのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "総欅造りの総門をくぐり、極彩色の三重塔と御護摩の太鼓が響く「成田山新勝寺」に立った瞬間",
+          "description": "千年以上続くお不動様への祈りと、歴史ある堂宇が織りなす荘厳な境内に圧倒された。",
+          "badge_code": "NARITA_A"
+        },
+        {
+          "key": "B",
+          "text": "登録有形文化財の木造店舗「川豊本店」で、店先で捌かれ炭火で焼き上げられた鰻重を味わった贅沢",
+          "description": "表参道に漂う秘伝のたれの香りと、職人の手仕事が生むふっくらとした蒲焼に魅了された。",
+          "badge_code": "NARITA_B"
+        },
+        {
+          "key": "C",
+          "text": "「成田観光館」で辿った成田参りの歴史と、歌舞伎「成田屋」や祇園祭の華やかな山車文化",
+          "description": "庶民の憧れだった門前町の物語と、参道を彩る祭礼の粋に深い歴史の厚みを感じた。",
+          "badge_code": "NARITA_C"
+        },
+        {
+          "key": "D",
+          "text": "銅板で焼く熱々の「甘太郎焼」と、精進料理の栗羹から生まれた「なごみの米屋」の栗羊羹の甘み",
+          "description": "参道の入口で頬張った焼きたての餡と、門前発祥の栗羊羹に旅の幸せを見出した。",
+          "badge_code": "NARITA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "98697cd4-6d2c-4670-8e53-0d7be58985ba",
+        "name": "金時の甘太郎焼",
+        "description": "成田山表参道の入り口近くにある大判焼き（甘太郎焼）の名店（9:00〜売り切れ次第終了、無休）。銅板で一つずつ手焼きする「あずきあん」と白いんげん豆の「しろあん」の2種類のみを販売している。",
+        "address": "千葉県成田市花崎町527",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.779737,
+        "lng": 140.31642,
+        "qr_token": "shuin-narita-1",
+        "cover_image_url": "/images/narita/spot1.png",
+        "f7_fragment": "分厚い銅板の上で香ばしく焼き上がる、自家製餡たっぷりの甘太郎焼。",
+        "f7_full": "パリッとした薄皮を割ると湯気とともに瑞々しい小豆餡と白餡があふれ出し、参道歩きの第一歩を温かな甘みで満たしてくれる。",
+        "is_final": false,
+        "next_spot_id": "5646d80c-0848-4f17-8d9b-36716d098948",
+        "next_spot_name": "なごみの米屋 總本店"
+      },
+      {
+        "id": "5646d80c-0848-4f17-8d9b-36716d098948",
+        "name": "なごみの米屋 總本店",
+        "description": "成田山表参道の上町に暖簾を掲げる、明治期創業の老舗和菓子店（8:00〜18:00営業、無休）。成田山新勝寺の精進料理「栗羹」に由来する元祖「栗羊羹」や千葉銘菓「ぴーなっつ最中」を購入できる。",
+        "address": "千葉県成田市上町500",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.78176,
+        "lng": 140.315835,
+        "qr_token": "shuin-narita-2",
+        "cover_image_url": "/images/narita/spot2.png",
+        "f7_fragment": "成田山新勝寺の精進料理「栗羹」から生まれた、艶やかな元祖栗羊羹。",
+        "f7_full": "煉羊羹の中にほくほくとした栗を閉じ込めた門前発祥の銘菓が、百余年にわたり成田参りの旅人の手土産として受け継がれている。",
+        "is_final": false,
+        "next_spot_id": "b4f923bd-6546-41f8-88af-ce1e371abf1e",
+        "next_spot_name": "川豊本店"
+      },
+      {
+        "id": "b4f923bd-6546-41f8-88af-ce1e371abf1e",
+        "name": "川豊本店",
+        "description": "国の登録有形文化財に指定された純日本家屋で営業する百余年続く鰻料理専門店（10:00〜17:00営業、無休）。店先で職人が鰻を捌き、炭火と創業以来継ぎ足しのたれで焼き上げるうな重を味わえる。",
+        "address": "千葉県成田市仲町386",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.783388,
+        "lng": 140.316726,
+        "qr_token": "shuin-narita-3",
+        "cover_image_url": "/images/narita/spot3.png",
+        "f7_fragment": "職人が店先で捌き、創業以来継ぎ足しのたれと炭火で焼き上げる鰻重。",
+        "f7_full": "歴史の風格を残す木造二階建ての座敷で、井戸水で締めた新鮮な鰻と薄甘口の秘伝だれが織りなす極上の蒲焼を堪能する。",
+        "is_final": false,
+        "next_spot_id": "0a5eb01d-a4d4-4217-8d5b-4e065de348ba",
+        "next_spot_name": "成田観光館"
+      },
+      {
+        "id": "0a5eb01d-a4d4-4217-8d5b-4e065de348ba",
+        "name": "成田観光館",
+        "description": "成田山表参道の仲町にある蔵造り風の文化・観光拠点施設（9:00〜17:00開館、展示は16:30まで、月曜定休・祝日の場合は翌火曜休館）。成田祇園祭の山車展示や成田参りの歴史資料を見学できる。",
+        "address": "千葉県成田市仲町383-1",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.78356,
+        "lng": 140.316456,
+        "qr_token": "shuin-narita-4",
+        "cover_image_url": "/images/narita/spot4.png",
+        "f7_fragment": "黒漆喰の蔵造り建築に並ぶ、成田祇園祭の山車と門前参詣の記憶。",
+        "f7_full": "初代市川團十郎ゆかりの歌舞伎「成田屋」の物語や絢爛な山車の彫刻が、多くの旅人が憧れた門前町の熱気を鮮やかに蘇らせる。",
+        "is_final": false,
+        "next_spot_id": "110dd688-5b05-42a9-8770-718ef6f96639",
+        "next_spot_name": "成田山新勝寺"
+      },
+      {
+        "id": "110dd688-5b05-42a9-8770-718ef6f96639",
+        "name": "成田山新勝寺",
+        "description": "開山以来、千年以上にわたり御護摩の火を絶やさず守り続ける真言宗智山派の大本山（境内常時開放、諸堂8:00〜16:00、無休）。国重要文化財の仁王門・三重塔・釈迦堂や荘厳な大本堂がそびえる。",
+        "address": "千葉県成田市成田1",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.786051,
+        "lng": 140.318249,
+        "qr_token": "shuin-narita-5",
+        "cover_image_url": "/images/narita/spot5.png",
+        "f7_fragment": "極彩色の三重塔が青空に輝き、千年続く御護摩の太鼓が響く大本山。",
+        "f7_full": "弘法大師開眼の不動明王を祀る大本堂と精巧な彫刻が輝く三重塔を仰ぎ、表参道から続いた門前町の旅を清らかな祈りで結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1888582f-c885-4f72-86d4-6b9ae5fd81e1",
+    "title": "白亜の木造天守から深蒸し茶の城下へ",
+    "name": "白亜の木造天守から深蒸し茶の城下へ",
+    "description": "東海の名城・掛川城と東海道掛川宿が交差する遠州の城下町。本葛の銘菓「丁葛」から近代和風建築の竹の丸、国重要文化財の二の丸御殿と木造復元天守、深蒸し茶のパスタ「茶ノベーゼ」、連雀通りのカフェまでを巡るルート。",
+    "region": "掛川城・二の丸・城下町",
+    "area_name": "掛川城・二の丸・城下町",
+    "cover_image_url": "/images/kakegawa/route-eyecatch.png",
+    "imageUrl": "/images/kakegawa/route-eyecatch.png",
+    "category": "城下町・茶文化・近代建築",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "凛とそびえる木造天守と豪商の邸宅、そして深蒸し茶のパスタや本葛の銘菓、掛川の奥行きをより鮮やかに語るのはどちらだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "本格木造復元された「掛川城天守閣」と、現存する国重要文化財「二の丸御殿」が並び立つ威容",
+          "description": "山内一豊が築いた東海の名城の天守と、書院建築が伝える武家の格式に胸を打たれた。",
+          "badge_code": "KAKEGAWA_A"
+        },
+        {
+          "key": "B",
+          "text": "葛布問屋の豪商が築いた「竹の丸」で、ゆらぎのある硝子窓越しに庭園と天守を眺めた静かなひととき",
+          "description": "往時の粋が溶け合う近代和風建築に、遠州の商人が育んだ美意識を感じ取った。",
+          "badge_code": "KAKEGAWA_B"
+        },
+        {
+          "key": "C",
+          "text": "姉妹都市イタリアの風と世界農業遺産の掛川深蒸し茶が出会った、緑鮮やかなパスタ「茶ノベーゼ」",
+          "description": "お城を望むペーザロで味わった、深蒸し茶のほろ苦さとバジルが香る独創的な一皿に驚いた。",
+          "badge_code": "KAKEGAWA_C"
+        },
+        {
+          "key": "D",
+          "text": "和紙に包まれた本葛の銘菓「丁葛」と、連雀通りのカフェで味わった芳醇な珈琲と洋食文化の温もり",
+          "description": "東海道掛川宿の伝統を守る桂花園の葛菓子と、街角のカフェが紡ぐ新旧の物語に心和んだ。",
+          "badge_code": "KAKEGAWA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9aea646e-4233-45b4-8528-c19dc765f6ce",
+        "name": "桂花園",
+        "description": "旧東海道掛川宿の仁藤町に暖簾を掲げる、百三十余年続く葛菓子専門店（9:00〜18:00営業、水曜定休）。特産の本葛粉と砂糖で型打ちし、お湯を注ぐと葛湯になる伝統銘菓「丁葛」を購入できる。",
+        "address": "静岡県掛川市仁藤町10-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.773242,
+        "lng": 138.019506,
+        "qr_token": "shuin-kakegawa-1",
+        "cover_image_url": "/images/kakegawa/spot1.png",
+        "f7_fragment": "一粒ずつ丁寧に和紙へ包まれた、お湯でとろける本葛の銘菓「丁葛」。",
+        "f7_full": "遠州の山野が育んだ良質な葛粉を職人が丁寧に型打ちした白い丁葛が、東海道掛川宿の優しいおもてなしの心を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "04c8a21b-6849-477c-80ed-094bac048bbf",
+        "next_spot_name": "掛川市 竹の丸"
+      },
+      {
+        "id": "04c8a21b-6849-477c-80ed-094bac048bbf",
+        "name": "掛川市 竹の丸",
+        "description": "掛川城の北側に位置する、葛布問屋の豪商・松本家の旧本邸（9:00〜17:00開館、11〜12月は16:30まで、無休）。百余年前の主屋と二階建て離れが調和した近代和風建築と日本庭園を見学できる。",
+        "address": "静岡県掛川市掛川1200-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.776566,
+        "lng": 138.014629,
+        "qr_token": "shuin-kakegawa-2",
+        "cover_image_url": "/images/kakegawa/spot2.png",
+        "f7_fragment": "ゆらぎのある硝子窓越しに庭園と天守を望む、葛布問屋の旧本邸。",
+        "f7_full": "元家老屋敷の地に築かれた銘木づくしの書院座敷と二階離れが、遠州掛川の商人が誇った近代和風建築の粋を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "1f3ada2e-fd99-463b-841c-20c06574577a",
+        "next_spot_name": "掛川城御殿・天守閣"
+      },
+      {
+        "id": "1f3ada2e-fd99-463b-841c-20c06574577a",
+        "name": "掛川城御殿・天守閣",
+        "description": "山内一豊ゆかりの「東海の名城」として知られる平山城（9:00〜17:00開城、11〜12月は16:30まで、無休）。日本初の本格木造復元天守閣と、現存する国重要文化財の二の丸御殿を見学できる。",
+        "address": "静岡県掛川市掛川1138-24",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.775255,
+        "lng": 138.014508,
+        "qr_token": "shuin-kakegawa-3",
+        "cover_image_url": "/images/kakegawa/spot3.png",
+        "f7_fragment": "現存する二の丸御殿の先にそびえる、白漆喰と黒廻縁の木造天守。",
+        "f7_full": "国重要文化財の書院座敷と国産材で蘇った三層四階の天守閣が並び立ち、高欄から遠州の茶畑と城下町の絶景を見晴らす。",
+        "is_final": false,
+        "next_spot_id": "31762ee0-29cd-46e4-8469-1149697fa06d",
+        "next_spot_name": "イタリアン ペーザロ（こだわりっぱ）"
+      },
+      {
+        "id": "31762ee0-29cd-46e4-8469-1149697fa06d",
+        "name": "イタリアン ペーザロ（こだわりっぱ）",
+        "description": "掛川城の南麓・観光物産センター「こだわりっぱ」2階にあるイタリアンレストラン（ランチ11:30〜15:00・1階物産館10:00〜17:00営業、月曜定休）。掛川深蒸し茶を使った名物パスタ「茶ノベーゼ」や掛川牛料理を味わえる。",
+        "address": "静岡県掛川市城下6-12",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.774064,
+        "lng": 138.015568,
+        "qr_token": "shuin-kakegawa-4",
+        "cover_image_url": "/images/kakegawa/spot4.png",
+        "f7_fragment": "掛川城を仰ぎ見ながら味わう、深蒸し茶とバジルが香る「茶ノベーゼ」。",
+        "f7_full": "世界農業遺産の茶草場農法が育んだ深蒸し茶のほろ苦さとオリーブオイルが溶け合い、茶処ならではの鮮やかな昼食を演出する。",
+        "is_final": false,
+        "next_spot_id": "8893dd9f-6c71-4c37-8e36-86bb6d4882a7",
+        "next_spot_name": "CAFE OF CORNER"
+      },
+      {
+        "id": "8893dd9f-6c71-4c37-8e36-86bb6d4882a7",
+        "name": "CAFE OF CORNER",
+        "description": "大手門前の連雀通り角にあるカフェ＆ダイニング（月・木曜11:00〜15:00、金〜日曜11:00〜23:00営業、火・水曜定休）。郷土の偉人・松本亀次郎ゆかりの「掛川ハヤシライス」やこだわりの珈琲、デザートを楽しめる。",
+        "address": "静岡県掛川市連雀1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.772675,
+        "lng": 138.016415,
+        "qr_token": "shuin-kakegawa-5",
+        "cover_image_url": "/images/kakegawa/spot5.png",
+        "f7_fragment": "連雀通りの街角に香る、偉人ゆかりの洋食文化と淹れたての珈琲。",
+        "f7_full": "城下町の目抜き通りで芳醇な珈琲と甘味を味わいながら、白亜の天守から深蒸し茶まで巡った掛川の旅を穏やかに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cdf62504-62c0-4110-82a3-34231f664f78",
+    "title": "禅庭の白砂と紺屋川の風が結ぶ山城の麓",
+    "name": "禅庭の白砂と紺屋川の風が結ぶ山城の麓",
+    "description": "備中松山城の麓に広がる、大名茶人・小堀遠州ゆかりの城下町。懐かしい面影を残す純喫茶から柚子香る伝統の「ゆべし」、擬洋風校舎の高梁市郷土資料館、国指定名勝の頼久寺庭園、本町通りの薪窯ピッツァまでを巡るルート。",
+    "region": "石火矢町ふるさと村・頼久寺・紺屋川",
+    "area_name": "石火矢町ふるさと村・頼久寺・紺屋川",
+    "cover_image_url": "/images/bitchu_takahashi/route-eyecatch.png",
+    "imageUrl": "/images/bitchu_takahashi/route-eyecatch.png",
+    "category": "城下町・日本庭園・近代建築",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "青海波の枯山水や白壁の洋風学舎、薪窯のピッツァに柚子香るゆべし、高梁の旅の記憶として持ち帰りたいのはどの情景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大名茶人・小堀遠州が作庭した「頼久寺庭園」で、白砂とサツキの青海波を見つめた静寂のとき",
+          "description": "愛宕山を借景にした鶴亀の枯山水庭園に、四百年変わらぬ禅と茶の美意識を感じ取った。",
+          "badge_code": "BITCHU_TAKAHASHI_A"
+        },
+        {
+          "key": "B",
+          "text": "アーチ窓と白壁が美しい旧尋常高等小学校「高梁市郷土資料館」に息づく近代教育の誇り",
+          "description": "和と洋の大工技術が溶け合う擬洋風校舎の佇まいに、学都・高梁の歴史の深さを知った。",
+          "badge_code": "BITCHU_TAKAHASHI_B"
+        },
+        {
+          "key": "C",
+          "text": "商家が連なる本町通りの「PIZZERIA 澪」で、薪窯で焼き上げた熱々のナポリピッツァを頬張った昼時",
+          "description": "高瀬舟交易で栄えた古い町並みの中で、香ばしい薪の香りと焼きたての生地に満たされた。",
+          "badge_code": "BITCHU_TAKAHASHI_C"
+        },
+        {
+          "key": "D",
+          "text": "純喫茶「シャロン」の琥珀色の珈琲と、小堀遠州も愛したと伝わる柚子香る「ゆべし」の優しい甘み",
+          "description": "懐かしい喫茶店の穏やかな時間と、植田菓子舗が守る城下町銘菓の香りに旅の情緒を重ねた。",
+          "badge_code": "BITCHU_TAKAHASHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f60ddaf9-08c7-426c-8b3b-6283daef6a1a",
+        "name": "シャロン",
+        "description": "JR備中高梁駅近くの栄町で長年親しまれている老舗の純喫茶（9:00〜18:00営業、不定休）。香り高い珈琲や自家製小豆を使ったかき氷、軽食メニューを落ち着いたレトロな空間で楽しめる。",
+        "address": "岡山県高梁市栄町1941",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.789843,
+        "lng": 133.615499,
+        "qr_token": "shuin-bitchu_takahashi-1",
+        "cover_image_url": "/images/bitchu_takahashi/spot1.png",
+        "f7_fragment": "懐かしい面影を残す純喫茶で味わう、琥珀色の珈琲とふんわり氷。",
+        "f7_full": "城下町の玄関口で常連客に愛され続ける純喫茶の柔らかな灯りが、高梁を訪れた旅人を温かく迎え入れ散策の始まりを彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "d83ae75a-7fcd-4b79-832a-2781b3d4ca33",
+        "next_spot_name": "植田菓子舗"
+      },
+      {
+        "id": "d83ae75a-7fcd-4b79-832a-2781b3d4ca33",
+        "name": "植田菓子舗",
+        "description": "東町の旧街道沿いに店を構える老舗和菓子店（9:00〜18:00営業、木曜定休）。備中松山藩の茶の湯文化とともに受け継がれてきた柚子香る伝統銘菓「ゆべし」やカステラを購入できる。",
+        "address": "岡山県高梁市東町1889",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.792042,
+        "lng": 133.615622,
+        "qr_token": "shuin-bitchu_takahashi-2",
+        "cover_image_url": "/images/bitchu_takahashi/spot2.png",
+        "f7_fragment": "小堀遠州ゆかりの茶の湯文化が息づく、爽やかな柚子香る「ゆべし」。",
+        "f7_full": "地元産の香り高い柚子ともち米を丁寧に練り上げて蒸した伝統のゆべしが、城下町・高梁の風雅な茶席の記憶を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "9158fe74-d1e5-4202-8edf-38df774a4cdf",
+        "next_spot_name": "高梁市郷土資料館"
+      },
+      {
+        "id": "9158fe74-d1e5-4202-8edf-38df774a4cdf",
+        "name": "高梁市郷土資料館",
+        "description": "明治後期に旧高梁尋常高等小学校本館として建てられた市重要文化財の擬洋風建築（9:00〜17:00開館、12/29〜1/3休館）。白塗りの下見板張りとアーチ窓が美しく、備中松山藩や城下町の歴史民俗資料を展示している。",
+        "address": "岡山県高梁市向町21",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.794691,
+        "lng": 133.617809,
+        "qr_token": "shuin-bitchu_takahashi-3",
+        "cover_image_url": "/images/bitchu_takahashi/spot3.png",
+        "f7_fragment": "白塗りの下見板張りとアーチ窓が映える、擬洋風の小学校旧本館。",
+        "f7_full": "二階バルコニーを備えた玄関ポーチと和洋折衷の美しい意匠が、学問と文化を尊んだ高梁の近代の歩みを凛として物語る。",
+        "is_final": false,
+        "next_spot_id": "659c5dae-6640-49d1-8489-40553083801b",
+        "next_spot_name": "頼久寺庭園"
+      },
+      {
+        "id": "659c5dae-6640-49d1-8489-40553083801b",
+        "name": "頼久寺庭園",
+        "description": "備中国奉行・小堀遠州が作庭した国指定名勝の禅院枯山水庭園（9:00〜17:00拝観、無休）。愛宕山を借景に、白砂とサツキの大刈込みで青海波を表現した「鶴亀の庭」を書院から鑑賞できる。",
+        "address": "岡山県高梁市頼久寺町18",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.797229,
+        "lng": 133.619234,
+        "qr_token": "shuin-bitchu_takahashi-4",
+        "cover_image_url": "/images/bitchu_takahashi/spot4.png",
+        "f7_fragment": "愛宕山を借景に白砂とサツキの大刈込みが波打つ、小堀遠州作庭の禅庭。",
+        "f7_full": "四百年前の作庭当時の姿をそのまま留める鶴島・亀島の石組と青海波の刈込みが、書院に座す旅人の心を静かに澄み渡らせる。",
+        "is_final": false,
+        "next_spot_id": "ce0d1a7a-2778-4d54-8807-a7173b65ac29",
+        "next_spot_name": "PIZZERIA 澪"
+      },
+      {
+        "id": "ce0d1a7a-2778-4d54-8807-a7173b65ac29",
+        "name": "PIZZERIA 澪",
+        "description": "古い商家が並ぶ本町通りにあるナポリピッツァ専門店（平日12:00〜21:00・土日祝11:00〜21:00営業、生地完売次第終了、月曜定休）。イタリア直輸入の薪窯で焼き上げる香ばしいピッツァを味わえる。",
+        "address": "岡山県高梁市本町33",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.797302,
+        "lng": 133.615407,
+        "qr_token": "shuin-bitchu_takahashi-5",
+        "cover_image_url": "/images/bitchu_takahashi/spot5.png",
+        "f7_fragment": "古い商家が連なる本町通りで、イタリア直輸入の薪窯が焼き上げる一枚。",
+        "f7_full": "高瀬舟交易の記憶が宿る歴史ある町家の中で、薪の炎が焼き上げた香ばしいナポリピッツァを味わい山城の麓の旅を豊かに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4c48387e-d3f4-4f46-8375-305486de218f",
+    "title": "遠賀川の川風と石炭の記憶が薫る街角",
+    "name": "遠賀川の川風と石炭の記憶が薫る街角",
+    "description": "遠賀川の豊かな流れと筑豊炭田の歴史が息づく直方。炭鉱王・堀三太郎が築いた近代和風建築「直方歳時館」から洋館と蒸気機関車が残る石炭記念館、商店街の自家焙煎珈琲、名物「焼きスパ」、老舗の「成金饅頭」までを巡るルート。",
+    "region": "旧堀三太郎邸・石炭記念館・古町",
+    "area_name": "旧堀三太郎邸・石炭記念館・古町",
+    "cover_image_url": "/images/nogata/route-eyecatch.png",
+    "imageUrl": "/images/nogata/route-eyecatch.png",
+    "category": "近代化産業遺産・商店街・ご当地グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "炭鉱王の書院や黒い蒸気機関車、鉄板の焼きスパに白餡の成金饅頭、直方の街に息づく情熱を感じるのはどの瞬間でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "歴史ある会議所建築と黒い蒸気機関車が並ぶ「直方市石炭記念館」で触れた、炭都の熱き歴史",
+          "description": "日本の近代化を支えた筑豊炭田の記憶と、救護練習所の坑道や鉄の機関車に圧倒された。",
+          "badge_code": "NOGATA_A"
+        },
+        {
+          "key": "B",
+          "text": "天然秋田杉の書院と日本庭園が美しい「直方歳時館（旧堀三太郎邸）」に息づく炭鉱王の美意識",
+          "description": "近代化産業遺産に認定された和風邸宅で、静謐な庭園と銘木建築の粋に浸った。",
+          "badge_code": "NOGATA_B"
+        },
+        {
+          "key": "C",
+          "text": "熱々の鉄板で麺を香ばしく焼き上げる、甘酸っぱいトマトケチャップソースの「直方焼きスパ」",
+          "description": "街の人々が守り抜いた元祖の味わいと、カリッと焼けたスパゲッティの香ばしさに魅了された。",
+          "badge_code": "NOGATA_C"
+        },
+        {
+          "key": "D",
+          "text": "商店街に香る「このみ珈琲」の一杯と、白いんげん豆の餡が詰まった黄金色の「成金饅頭」",
+          "description": "ふるまち通りの自家焙煎珈琲と、大石本家が百余年焼き続ける銘菓の優しい甘みに心和んだ。",
+          "badge_code": "NOGATA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e4285475-3f8a-41be-8551-5a5934f767b5",
+        "name": "直方歳時館（旧堀三太郎邸）",
+        "description": "筑豊の炭鉱王・堀三太郎の本邸として明治後期に建てられた近代和風建築（館内見学9:00〜17:00、月曜定休・祝日の場合は開館）。経済産業省の近代化産業遺産に認定されており、銘木の座敷と日本庭園を見学できる。",
+        "address": "福岡県直方市新町1-1-18",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.741234,
+        "lng": 130.726736,
+        "qr_token": "shuin-nogata-1",
+        "cover_image_url": "/images/nogata/spot1.png",
+        "f7_fragment": "天然秋田杉の書院と庭園が調和する、炭鉱王・堀三太郎の旧本邸。",
+        "f7_full": "日本の近代化を支えた筑豊炭田の繁栄を今に伝える銘木づくしの書院座敷と日本庭園が、旅人を静謐な歴史空間へと誘う。",
+        "is_final": false,
+        "next_spot_id": "ad475b12-6568-4cf4-8dd4-4627a0100206",
+        "next_spot_name": "直方市石炭記念館"
+      },
+      {
+        "id": "ad475b12-6568-4cf4-8dd4-4627a0100206",
+        "name": "直方市石炭記念館",
+        "description": "多賀神社に隣接する丘の上に建つ石炭産業の歴史博物館（9:00〜17:00開館、入館16:30まで、月曜定休・祝日の場合は開館）。旧筑豊石炭鉱業組合直方会議所や救護練習所の模擬坑道、蒸気機関車が保存されている。",
+        "address": "福岡県直方市直方692-4",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.743053,
+        "lng": 130.725872,
+        "qr_token": "shuin-nogata-2",
+        "cover_image_url": "/images/nogata/spot2.png",
+        "f7_fragment": "重厚な会議所建築と黒い蒸気機関車が並ぶ、筑豊炭田の記憶の丘。",
+        "f7_full": "炭山を力強く駆け抜けた黒い蒸気機関車と救護隊の訓練坑道が、地底の黒ダイヤに情熱を注いだ人々の誇りを今に物語る。",
+        "is_final": false,
+        "next_spot_id": "37538271-e5e3-49eb-8e3c-a70f89c53fe0",
+        "next_spot_name": "このみ珈琲"
+      },
+      {
+        "id": "37538271-e5e3-49eb-8e3c-a70f89c53fe0",
+        "name": "このみ珈琲",
+        "description": "殿町のふるまち通り商店街にある自家焙煎スペシャルティコーヒー専門店（10:00〜19:00・日曜10:00〜18:00営業、木曜定休）。厳選した豆を店内で焙煎し、一杯ずつ丁寧にハンドドリップした珈琲を味わえる。",
+        "address": "福岡県直方市殿町2-9",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.745749,
+        "lng": 130.728021,
+        "qr_token": "shuin-nogata-3",
+        "cover_image_url": "/images/nogata/spot3.png",
+        "f7_fragment": "ふるまち通りに豊かな香りを漂わせる、自家焙煎のハンドドリップ珈琲。",
+        "f7_full": "銅ポットから一杯ずつ丁寧に注がれる澄んだ珈琲の香りと深いコクが、歴史ある商店街を歩く旅人の足を優しく癒やしてくれる。",
+        "is_final": false,
+        "next_spot_id": "1925c95f-13f5-4e4d-8fa2-14b41047f238",
+        "next_spot_name": "お好み焼き もすけ"
+      },
+      {
+        "id": "1925c95f-13f5-4e4d-8fa2-14b41047f238",
+        "name": "お好み焼き もすけ",
+        "description": "古町商店街近くにあるお好み焼き・鉄板焼きの名店（平日11:00〜14:30・17:00〜20:00、土日祝11:00〜20:00営業、不定休）。キャベツと豚肉、太麺をトマトケチャップベースのソースで香ばしく焼く直方名物「焼きスパ」を味わえる。",
+        "address": "福岡県直方市古町7-14",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.746702,
+        "lng": 130.727442,
+        "qr_token": "shuin-nogata-4",
+        "cover_image_url": "/images/nogata/spot4.png",
+        "f7_fragment": "熱々の鉄板でカリッと焼き上げる、甘酸っぱいソースの「直方焼きスパ」。",
+        "f7_full": "かつての駅前喫茶の味を受け継いだ太麺のスパゲッティが鉄板の上で香ばしく跳ね、直方ならではの温かな昼食を彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "1e555146-7384-4c73-87b6-65d89e6252d2",
+        "next_spot_name": "成金饅頭 大石本家"
+      },
+      {
+        "id": "1e555146-7384-4c73-87b6-65d89e6252d2",
+        "name": "成金饅頭 大石本家",
+        "description": "古町のアーケード内に店を構える明治後期創業の老舗和菓子店（8:30〜17:00営業、水曜定休）。北海道産白いんげん豆（うずら豆）の白餡をふんわりとした皮で挟んだ直方銘菓「成金饅頭」を購入できる。",
+        "address": "福岡県直方市古町17-8",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.748393,
+        "lng": 130.726085,
+        "qr_token": "shuin-nogata-5",
+        "cover_image_url": "/images/nogata/spot5.png",
+        "f7_fragment": "うずら豆の白餡がぎっしり詰まった、炭都が誇る黄金色の「成金饅頭」。",
+        "f7_full": "百余年にわたり直方の街で愛され続ける白餡の優しい甘みとふんわり焼かれた皮を手に取り、筑豊の旅の温かな結びに添える。",
+        "is_final": true
+      }
+    ]
   }
 ];
