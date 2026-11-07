@@ -4207,8 +4207,8 @@
         "theme_diversity": 3.2,
         "spot_allocation": 2.8,
         "walkability": 2.3,
-        "story_emotion": 3.0,
-        "local_specificity": 3.0
+        "story_emotion": 3,
+        "local_specificity": 3
       }
     },
     {
@@ -4227,9 +4227,99 @@
         "story_emotion": 3.7,
         "local_specificity": 3.7
       }
+    },
+    {
+      "station_order": 236,
+      "areaId": "uzen_yamabe",
+      "station": "羽前山辺",
+      "line": "JR左沢線",
+      "prefecture": "山形県",
+      "iteration": 47,
+      "scores": {
+        "theme_diversity": 3.4,
+        "spot_allocation": 2.5,
+        "walkability": 2.2,
+        "story_emotion": 3.1,
+        "local_specificity": 3.2,
+        "total": 2.8
+      },
+      "needs_replacement": true,
+      "notes": "紅花商人の旧佐藤家土蔵群と極太田舎そば・すだまり氷の固有性は高いが、Spot1→2の見どころ連続、Spot3北端からSpot1隣のSpot5（49m）へ戻る往復ループ動線、および月祝休（資料館）×土日休（浪花亭）×木休（十の藏cafe）による営業ウィンドウの狭さで減点。"
+    },
+    {
+      "station_order": 237,
+      "areaId": "sano",
+      "station": "佐野",
+      "line": "東武佐野線",
+      "prefecture": "栃木県",
+      "iteration": 47,
+      "scores": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.3,
+        "walkability": 2.3,
+        "story_emotion": 3,
+        "local_specificity": 3.2,
+        "total": 2.75
+      },
+      "needs_replacement": true,
+      "notes": "春日岡山城の空堀・佐野ラーメン・大谷石の和紙カフェ・天明鋳物の金銅大梵鐘は魅力的だが、買い物スポットが0件（見どころ×3・Spot1→2見どころ連続）であり、駅北側から南端へ線路を跨いで折り返す動線のため減点。"
+    },
+    {
+      "station_order": 238,
+      "areaId": "naoetsu",
+      "station": "直江津",
+      "line": "えちごトキめき鉄道妙高はねうまライン",
+      "prefecture": "新潟県",
+      "iteration": 47,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.8,
+        "walkability": 3.9,
+        "story_emotion": 3.8,
+        "local_specificity": 3.7,
+        "total": 3.8
+      },
+      "needs_replacement": false,
+      "notes": "直江津駅北口から船見公園手前まで駅からの距離（320m→494m→688m→1075m→1139m）と緯度が100%単調増加する模範的な一筆書き動線。4カテゴリの業態リズム・雁木通りの物語性・ガッシュ画の空気感ともに最高水準。"
+    },
+    {
+      "station_order": 239,
+      "areaId": "yokaichi",
+      "station": "八日市",
+      "line": "近江鉄道八日市線",
+      "prefecture": "滋賀県",
+      "iteration": 47,
+      "scores": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.7,
+        "walkability": 3.4,
+        "story_emotion": 3.7,
+        "local_specificity": 3.8,
+        "total": 3.65
+      },
+      "needs_replacement": false,
+      "notes": "地名由来の市神神社から金屋通りの萬善食堂、野々宮神社、町家奥の器カフェ、幻の政所茶を扱うますきち本店まで、市場町・近江商人の文化とちぎり絵・型染の画風が見事に調和。"
+    },
+    {
+      "station_order": 240,
+      "areaId": "sadamitsu",
+      "station": "貞光",
+      "line": "JR徳島線",
+      "prefecture": "徳島県",
+      "iteration": 47,
+      "scores": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.5,
+        "walkability": 3.4,
+        "story_emotion": 3.6,
+        "local_specificity": 3.8,
+        "total": 3.6
+      },
+      "needs_replacement": false,
+      "notes": "旧永井家庄屋屋敷の二層うだつと鏝絵、古民家の半田そうめん膳、文化財商家・織本屋の茶房、真光寺、銘菓「金露梅」のあづまや製菓まで、阿波藍リソグラフの画風を含め高い完成度。"
     }
   ],
-  "updated_at": "2026-11-07T09:50:00.000Z",
+  "updated_at": "2026-11-07T11:14:00+09:00",
   "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #43〜#46 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
@@ -4360,5 +4450,25 @@
     46
   ],
   "current_window_average": 3.33,
-  "total_routes": 235
+  "total_routes": 235,
+  "latest_iteration": 47,
+  "moving_window": {
+    "iterations": [
+      44,
+      45,
+      46,
+      47
+    ],
+    "station_order_range": [
+      221,
+      240
+    ],
+    "route_count": 20,
+    "sum_total": 66.55,
+    "average_total": 3.33,
+    "target_range": [
+      3.2,
+      3.4
+    ]
+  }
 }

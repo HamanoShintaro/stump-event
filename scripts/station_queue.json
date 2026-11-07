@@ -1758,6 +1758,46 @@
           "slug": "utazu"
         }
       ]
+    },
+    {
+      "batch_number": 46,
+      "completed_at": "2026-11-07T11:15:00.000Z",
+      "stations": [
+        {
+          "name": "羽前山辺",
+          "prefecture": "山形県",
+          "line": "JR左沢線",
+          "slug": "uzen_yamabe"
+        },
+        {
+          "name": "佐野",
+          "prefecture": "栃木県",
+          "line": "東武佐野線",
+          "slug": "sano",
+          "replaced_from": "堀米"
+        },
+        {
+          "name": "直江津",
+          "prefecture": "新潟県",
+          "line": "えちごトキめき鉄道妙高はねうまライン",
+          "slug": "naoetsu",
+          "replaced_from": "南高田"
+        },
+        {
+          "name": "八日市",
+          "prefecture": "滋賀県",
+          "line": "近江鉄道八日市線",
+          "slug": "yokaichi",
+          "replaced_from": "太郎坊宮前"
+        },
+        {
+          "name": "貞光",
+          "prefecture": "徳島県",
+          "line": "JR徳島線",
+          "slug": "sadamitsu",
+          "replaced_from": "石井"
+        }
+      ]
     }
   ],
   "current_batch": {
@@ -2240,7 +2280,47 @@
           "replaced_from": "桟橋通五丁目"
         }
       ]
+    },
+    {
+      "batch_number": 46,
+      "completed_at": "2026-11-07T11:15:00.000Z",
+      "stations": [
+        {
+          "name": "羽前山辺",
+          "prefecture": "山形県",
+          "line": "JR左沢線",
+          "slug": "uzen_yamabe"
+        },
+        {
+          "name": "佐野",
+          "prefecture": "栃木県",
+          "line": "東武佐野線",
+          "slug": "sano",
+          "replaced_from": "堀米"
+        },
+        {
+          "name": "直江津",
+          "prefecture": "新潟県",
+          "line": "えちごトキめき鉄道妙高はねうまライン",
+          "slug": "naoetsu",
+          "replaced_from": "南高田"
+        },
+        {
+          "name": "八日市",
+          "prefecture": "滋賀県",
+          "line": "近江鉄道八日市線",
+          "slug": "yokaichi",
+          "replaced_from": "太郎坊宮前"
+        },
+        {
+          "name": "貞光",
+          "prefecture": "徳島県",
+          "line": "JR徳島線",
+          "slug": "sadamitsu",
+          "replaced_from": "石井"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 235
+  "total_completed_routes": 240
 }

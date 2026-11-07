@@ -35880,5 +35880,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ea0dff34-9104-48f2-8ab0-ca0fdaf32139",
+    "title": "紅花商人の土蔵と手打ち蕎麦を辿る山辺",
+    "name": "紅花商人の土蔵と手打ち蕎麦を辿る山辺",
+    "description": "フルーツライン左沢線の羽前山辺駅から、最上川舟運と紅花・青苧交易で栄えた豪商の白壁土蔵群、最上義光ゆかりの山辺城跡の高台を巡り、三代続く極太手打ちの田舎蕎麦や築百余年の蔵カフェのすだまり氷、駅前通りの老舗菓子舗を訪ねるルートです。",
+    "region": "羽前山辺駅・紅花土蔵と城跡を巡る道",
+    "area_name": "羽前山辺駅・紅花土蔵と城跡を巡る道",
+    "cover_image_url": "/images/uzen_yamabe/route-eyecatch.png",
+    "imageUrl": "/images/uzen_yamabe/route-eyecatch.png",
+    "category": "紅花土蔵・城跡・手打ち蕎麦",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って山辺の町を歩くなら、漆喰蔵の重厚な意匠と手仕事の温もりのどちらから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "紅花交易の繁栄を今に伝える『山辺町ふるさと資料館』の三つの土蔵と『山辺城跡』の高台を巡る時間",
+          "description": "最上川舟運がもたらした上方の雛人形や掛子塗りの重厚な蔵扉、城下町の骨格を見渡すひととき",
+          "badge_code": "shuin_uzen_yamabe_kura"
+        },
+        {
+          "key": "B",
+          "text": "三代続く『浪花亭』で、噛むほどに玄蕎麦の甘みが広がる極太手打ちの田舎そばとかき揚げを味わう食事",
+          "description": "せいろに盛られた力強い太打ち蕎麦と、紅花の彩りを添えた揚げたての野菜かき揚げを堪能する体験",
+          "badge_code": "shuin_uzen_yamabe_soba"
+        },
+        {
+          "key": "C",
+          "text": "築百余年の土蔵を改装した『十の藏cafe』で、伝統の酢醤油をかけて味わう「すだまり氷」と珈琲に憩う時間",
+          "description": "分厚い土壁と太い梁に守られた涼やかな蔵座敷で、山辺ならではの甘酸っぱい氷菓子を愉しむひととき",
+          "badge_code": "shuin_uzen_yamabe_cafe"
+        },
+        {
+          "key": "D",
+          "text": "駅前通りの老舗『菓子処 菊屋』で、なめらかな「やまべプリン」と黄金色のスイートポテトを選ぶ時間",
+          "description": "和菓子の餡炊きから洋菓子のカスタード作りまで実直な手仕事を重ねる町の菓子舗を訪ねる体験",
+          "badge_code": "shuin_uzen_yamabe_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "768d294e-880a-472e-80ee-b9a1aefca43e",
+        "name": "山辺町ふるさと資料館",
+        "description": "紅花や青苧の交易で栄えた豪商・旧佐藤家の母屋と三棟の土蔵を活かした資料館（4〜10月9:30〜16:30・11〜3月10:00〜16:30開館、月曜・祝日休館※こどもの日・文化の日を除く）。",
+        "address": "山形県東村山郡山辺町大字山辺208-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.293545,
+        "lng": 140.268747,
+        "qr_token": "shuin-uzen_yamabe-1",
+        "cover_image_url": "/images/uzen_yamabe/spot1.png",
+        "f7_fragment": "黒漆喰の分厚い観音扉が開き、紅花交易の華やかな記憶を宿す白壁の土蔵が並ぶ。",
+        "f7_full": "最上川舟運で上方の文化を運んだ豪商の三つの土蔵が、山辺の町歩きの重厚な幕開けを告げている。",
+        "is_final": false,
+        "next_spot_id": "d1c34ad1-a1d1-421a-8a28-1842fc1f8245",
+        "next_spot_name": "山辺城跡"
+      },
+      {
+        "id": "d1c34ad1-a1d1-421a-8a28-1842fc1f8245",
+        "name": "山辺城跡",
+        "description": "最上義光の四男・山辺義忠が築いた居城の跡で、高台から町の屋根並みを見渡せる史跡（終日散策自由、無休）。周囲の水路や段差に往時の堀の痕跡を残す。",
+        "address": "山形県東村山郡山辺町大字山辺39-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.296352,
+        "lng": 140.265485,
+        "qr_token": "shuin-uzen_yamabe-2",
+        "cover_image_url": "/images/uzen_yamabe/spot2.png",
+        "f7_fragment": "ケヤキの大樹が揺れる段丘の縁から、山形盆地の屋根並みと青い山脈が遠く広がる。",
+        "f7_full": "最上義光の時代から町の変遷を見守ってきた山辺城跡の高台が、在郷町の歴史の奥行きを静かに物語っている。",
+        "is_final": false,
+        "next_spot_id": "c50dda45-1bae-4e15-8bee-76120b8b0d3b",
+        "next_spot_name": "浪花亭"
+      },
+      {
+        "id": "c50dda45-1bae-4e15-8bee-76120b8b0d3b",
+        "name": "浪花亭",
+        "description": "三代にわたり受け継がれる極太手打ちの田舎そばとサクサクのかき揚げ天ぷらが名物の老舗蕎麦処（11:30〜14:00営業・売り切れ次第終了、土曜・日曜定休）。",
+        "address": "山形県東村山郡山辺町大字山辺1090-3",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.30013,
+        "lng": 140.269235,
+        "qr_token": "shuin-uzen_yamabe-3",
+        "cover_image_url": "/images/uzen_yamabe/spot3.png",
+        "f7_fragment": "せいろの上に艶やかな極太の田舎蕎麦が盛られ、黄金色のかき揚げが香ばしく湯気を立てる。",
+        "f7_full": "三代にわたり打ち継がれる極太蕎麦の力強い噛みごたえが、雪国・山形の豊かな大地と職人の気骨を伝えている。",
+        "is_final": false,
+        "next_spot_id": "917238c2-70ef-4694-87d5-605b1f6914f1",
+        "next_spot_name": "十の藏cafe"
+      },
+      {
+        "id": "917238c2-70ef-4694-87d5-605b1f6914f1",
+        "name": "十の藏cafe",
+        "description": "築百余年の土蔵を改装したカフェ（11:00〜17:00営業、木曜定休）。山辺名物の酢醤油をかけた「すだまり氷」や自家製スイーツ、ハンドドリップ珈琲が味わえる。",
+        "address": "山形県東村山郡山辺町大字山辺427-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.299077,
+        "lng": 140.269678,
+        "qr_token": "shuin-uzen_yamabe-4",
+        "cover_image_url": "/images/uzen_yamabe/spot4.png",
+        "f7_fragment": "重厚な土蔵の梁の下で、真っ赤ないちご氷に琥珀色の酢醤油がきらりと滴る。",
+        "f7_full": "百余年の土蔵の涼気とともに味わう「すだまり氷」と珈琲が、山辺の町ならではの遊び心ある食文化を物語っている。",
+        "is_final": false,
+        "next_spot_id": "e6513caa-2636-4bb5-80eb-b7728cd62e8d",
+        "next_spot_name": "菓子処 菊屋"
+      },
+      {
+        "id": "e6513caa-2636-4bb5-80eb-b7728cd62e8d",
+        "name": "菓子処 菊屋",
+        "description": "羽前山辺駅前通りで明治期から続く老舗和洋菓子店（9:30〜19:00営業、火曜定休）。なめらかな「やまべプリン」やスイートポテト、季節の和菓子が揃う。",
+        "address": "山形県東村山郡山辺町大字山辺220-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.293481,
+        "lng": 140.269297,
+        "qr_token": "shuin-uzen_yamabe-5",
+        "cover_image_url": "/images/uzen_yamabe/spot5.png",
+        "f7_fragment": "ガラス瓶に入った琥珀色のカラメルプリンと、黄金色に焼き上がったスイートポテトが並ぶ。",
+        "f7_full": "紅花商人の土蔵から始まり、手打ち蕎麦や蔵カフェを経て駅前通りの菓子舗へと至る山辺の旅が、優しい甘みとともに結ばれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "46245135-5bf1-40b8-897b-ef514637301c",
+    "title": "天明鋳物の杜から青竹手打ちの湯気へ歩む",
+    "name": "天明鋳物の杜から青竹手打ちの湯気へ歩む",
+    "description": "東武佐野線とJR両毛線が交わる佐野駅から、春日岡山城の深い空堀が残る城山公園、梅と石鳥居の朝日森天満宮を巡り、老舗食堂で澄んだスープの佐野ラーメンを味わい、大谷石と手漉き和紙の蔵カフェを経て天明鋳物の金銅大梵鐘が輝く惣宗寺（佐野厄除け大師）へ至るルートです。",
+    "region": "佐野駅・城山と天明宿を巡る道",
+    "area_name": "佐野駅・城山と天明宿を巡る道",
+    "cover_image_url": "/images/sano/route-eyecatch.png",
+    "imageUrl": "/images/sano/route-eyecatch.png",
+    "category": "城跡・佐野ラーメン・天明鋳物",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名水と手仕事が息づく佐野の街で、あなたの五感を深く惹きつけるのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『城山公園（佐野城跡）』の深い空堀から『朝日森天満宮』の参道へと続く、静かな木立と石畳を歩く時間",
+          "description": "尾根を断ち切る山城の遺構と、菅原道真公を祀る梅の杜・萩原朔太郎の詩碑を巡るひととき",
+          "badge_code": "shuin_sano_shiroyama"
+        },
+        {
+          "key": "B",
+          "text": "『惣宗寺（佐野厄除け大師）』で、天明鋳物の黄金色に輝く金銅大梵鐘と東照宮唐門の精緻な彫刻を仰ぐ時間",
+          "description": "茶の湯の釜でも名高い天明鋳物師の技と、徳川家康公ゆかりの華麗な建築美に触れる体験",
+          "badge_code": "shuin_sano_tenmyo"
+        },
+        {
+          "key": "C",
+          "text": "星宮神社隣の老舗『みやのした食堂』で、澄んだ琥珀色のスープに縮れ麺が泳ぐ佐野ラーメンと餃子を味わう食事",
+          "description": "雑味のない醤油スープに平打ちちぢれ麺が絡む一杯と、野菜たっぷりの手作り餃子を堪能する体験",
+          "badge_code": "shuin_sano_ramen"
+        },
+        {
+          "key": "D",
+          "text": "大谷石の蔵を改装した『蔵和紙カフェ カクニ』で、手漉き和紙の柔らかな灯りに包まれながら珈琲を味わう時間",
+          "description": "石蔵の肌合いと手漉き和紙の照明が織りなす静かな空間で、香り高い珈琲と甘味に憩うひととき",
+          "badge_code": "shuin_sano_washi_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ebeddc48-034b-4c6b-8d16-2a25e38b9936",
+        "name": "城山公園（佐野城跡）",
+        "description": "佐野信吉が築いた春日岡山城の跡地を整備した公園（終日散策自由、無休）。本丸や二の丸を隔てる深い空堀や土塁、石垣の痕跡が良好に残る。",
+        "address": "栃木県佐野市若松町504",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.318877,
+        "lng": 139.579023,
+        "qr_token": "shuin-sano-1",
+        "cover_image_url": "/images/sano/spot1.png",
+        "f7_fragment": "深い空堀に架かる木橋の上を風が抜け、かつての本丸へと続く土塁の稜線が木漏れ日に浮かぶ。",
+        "f7_full": "駅のすぐ北側に残された春日岡山城の雄大な空堀が、佐野の街歩きの力強いプロローグを飾っている。",
+        "is_final": false,
+        "next_spot_id": "1b888f5e-7eea-41dd-8a43-523971e43d98",
+        "next_spot_name": "朝日森天満宮"
+      },
+      {
+        "id": "1b888f5e-7eea-41dd-8a43-523971e43d98",
+        "name": "朝日森天満宮",
+        "description": "藤原秀郷公ゆかりの足利家綱公が勧請したと伝わる菅原道真公を祀る古社（境内終日参拝自由、社務所9:00〜17:00、無休）。梅苑や撫で牛、萩原朔太郎の詩碑がある。",
+        "address": "栃木県佐野市天神町807",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.321095,
+        "lng": 139.573791,
+        "qr_token": "shuin-sano-2",
+        "cover_image_url": "/images/sano/spot2.png",
+        "f7_fragment": "梅の枝が張り出す参道の奥に、撫で牛の石像と朱塗りの社殿が静かに佇む。",
+        "f7_full": "幾多の風雪を越えてきた石鳥居と朔太郎の詩碑が、佐野の街に息づく学問と文化の香りを伝えている。",
+        "is_final": false,
+        "next_spot_id": "dc96b7e0-f969-4b57-8497-5e381870b6d3",
+        "next_spot_name": "みやのした食堂"
+      },
+      {
+        "id": "dc96b7e0-f969-4b57-8497-5e381870b6d3",
+        "name": "みやのした食堂",
+        "description": "星宮神社の隣で長年親しまれる老舗食堂（11:00〜19:00営業、木曜定休）。澄んだ琥珀色のスープに縮れ麺が絡む佐野ラーメンと野菜たっぷりの手作り餃子が味わえる。",
+        "address": "栃木県佐野市大蔵町2927",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.315151,
+        "lng": 139.573732,
+        "qr_token": "shuin-sano-3",
+        "cover_image_url": "/images/sano/spot3.png",
+        "f7_fragment": "澄み切った琥珀色のスープの中で平打ちのちぢれ麺が艶めき、焼き立ての餃子が香ばしい湯気を上げる。",
+        "f7_full": "名水の街・佐野が育んだ清らかなスープと手打ち麺の味わいが、宿場町歩きの心と身体をじんわりと温めてくれる。",
+        "is_final": false,
+        "next_spot_id": "1ca29308-9fd6-48e6-8b0a-2b0b570aad74",
+        "next_spot_name": "蔵和紙カフェ カクニ"
+      },
+      {
+        "id": "1ca29308-9fd6-48e6-8b0a-2b0b570aad74",
+        "name": "蔵和紙カフェ カクニ",
+        "description": "大谷石の蔵を改装し、自家製の手漉き和紙照明が彩るカフェ＆ギャラリー（11:00〜18:30営業、木曜・第1・第3水曜定休）。珈琲や抹茶、季節の甘味が楽しめる。",
+        "address": "栃木県佐野市本町2763",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.313366,
+        "lng": 139.574521,
+        "qr_token": "shuin-sano-4",
+        "cover_image_url": "/images/sano/spot4.png",
+        "f7_fragment": "大谷石の壁を手漉き和紙のランプが優しく照らし、珈琲の芳醇な香りが静かに漂う。",
+        "f7_full": "石蔵の重厚さと和紙の温もりが調和した隠れ家カフェが、天明宿の路地に穏やかな休息の時間を灯している。",
+        "is_final": false,
+        "next_spot_id": "303b5fc1-6708-4f39-8eaa-f69ae7474723",
+        "next_spot_name": "惣宗寺（佐野厄除け大師）"
+      },
+      {
+        "id": "303b5fc1-6708-4f39-8eaa-f69ae7474723",
+        "name": "惣宗寺（佐野厄除け大師）",
+        "description": "元三大師を祀る天台宗の名刹（境内自由、祈願受付8:20〜16:40、無休）。天明鋳物の金銅大梵鐘や、精緻な彫刻の佐野東照宮唐門・拝殿など見どころが多い。",
+        "address": "栃木県佐野市金井上町2233",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.310883,
+        "lng": 139.571361,
+        "qr_token": "shuin-sano-5",
+        "cover_image_url": "/images/sano/spot5.png",
+        "f7_fragment": "純金箔押しの金銅大梵鐘が陽光に輝き、その奥に極彩色の彫刻を纏った東照宮唐門がそびえる。",
+        "f7_full": "城山の空堀から始まり天明宿の食と手仕事を辿った旅が、天明鋳物の大梵鐘と東照宮の壮麗な建築美の前で結ばれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4964c455-fe7d-41f9-88bd-3495037aa698",
+    "title": "雁木通りの潮風と湊町の社寺をめぐる",
+    "name": "雁木通りの潮風と湊町の社寺をめぐる",
+    "description": "日本海の潮風が吹く直江津駅から、北前船の湊町を守ってきた八坂神社、昔ながらの洋食ランチと珈琲が味わえる喫茶店、雁木通りと大屋根の勝蓮寺を抜け、三・八の朝市が立つ通りの老舗菓子舗と船見公園近くの土蔵カフェまでを北へ一直線に巡るルートです。",
+    "region": "直江津駅・雁木通りと湊町を巡る道",
+    "area_name": "直江津駅・雁木通りと湊町を巡る道",
+    "cover_image_url": "/images/naoetsu/route-eyecatch.png",
+    "imageUrl": "/images/naoetsu/route-eyecatch.png",
+    "category": "湊町社寺・雁木通り・土蔵カフェ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "潮風渡る湊町の社寺の静けさと、雁木通りに漂う珈琲や焼き菓子の香り。今のあなたの心に深く響くのはどのひとときだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "祇園祭の熱気と北前船の記憶を宿す『八坂神社』と、雪国の大屋根がそびえる『勝蓮寺』を巡る時間",
+          "description": "三社合祀の湊町の総鎮守と、寺町の歴史を伝える重厚な木造本堂・鐘楼を辿るひととき",
+          "badge_code": "shuin_naoetsu_shrines"
+        },
+        {
+          "key": "B",
+          "text": "駅前通りで長年愛される『Coffee Now』で、香ばしいナポリタンや洋食ランチと珈琲を味わう食事",
+          "description": "鉄道の要衝・直江津の街角で時を刻んできた喫茶室で、懐かしい洋食と香り高い一杯を堪能する体験",
+          "badge_code": "shuin_naoetsu_coffee"
+        },
+        {
+          "key": "C",
+          "text": "雪国の暮らしを支えてきた雁木通りを抜け、歴史ある土蔵を活かした『蔵Cafe 沙羅』で抹茶と甘味に憩う時間",
+          "description": "日本海を望む船見公園の手前に佇む白壁の土蔵空間で、白玉あんみつや抹茶を愉しむひととき",
+          "badge_code": "shuin_naoetsu_gangi_kura"
+        },
+        {
+          "key": "D",
+          "text": "三・八の朝市が立つ通りの老舗『山川製菓店』で、上越産米粉のバウムクーヘンと和洋菓子を選ぶ時間",
+          "description": "コシヒカリ米粉ならではのしっとりとした焼き菓子と、湊町の人情を持ち帰る体験",
+          "badge_code": "shuin_naoetsu_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "50521673-99e1-4b2a-8787-d4a4321abde9",
+        "name": "八坂神社",
+        "description": "直江津祇園祭の舞台となる湊町の総鎮守（境内終日参拝自由、社務所9:00〜17:00、無休）。八坂・諏訪・日吉の三社を合祀し、北前船の記憶を伝える。",
+        "address": "新潟県上越市西本町4丁目2-25",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.173205,
+        "lng": 138.241444,
+        "qr_token": "shuin-naoetsu-1",
+        "cover_image_url": "/images/naoetsu/spot1.png",
+        "f7_fragment": "潮風が吹き抜ける境内に石灯籠が並び、三社を祀る拝殿の扁額が凛と輝く。",
+        "f7_full": "北前船の船主や町衆が祈りを捧げてきた八坂神社が、海へ向かって伸びる直江津の旅の起点を飾っている。",
+        "is_final": false,
+        "next_spot_id": "d5c55b94-7812-4091-8d72-57acc14e682b",
+        "next_spot_name": "Coffee Now"
+      },
+      {
+        "id": "d5c55b94-7812-4091-8d72-57acc14e682b",
+        "name": "Coffee Now",
+        "description": "直江津駅前通りで長年愛される喫茶店（10:00〜18:00営業、ランチ10:00〜14:00、不定休）。ナポリタンや日替わり洋食ランチと香り高い珈琲が味わえる。",
+        "address": "新潟県上越市中央1丁目24-2",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.173898,
+        "lng": 138.245806,
+        "qr_token": "shuin-naoetsu-2",
+        "cover_image_url": "/images/naoetsu/spot2.png",
+        "f7_fragment": "飴色のテーブルの上に湯気を立てるナポリタンと、白いカップに注がれた深煎り珈琲が並ぶ。",
+        "f7_full": "鉄道と港の街・直江津の日常を見守ってきた喫茶店の温かな洋食が、旅の歩みに穏やかな活力を与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b1aa15d0-1622-424e-8409-4970ba5e09bc",
+        "next_spot_name": "勝蓮寺"
+      },
+      {
+        "id": "b1aa15d0-1622-424e-8409-4970ba5e09bc",
+        "name": "勝蓮寺",
+        "description": "直江津の町並みに大屋根を構える浄土真宗本願寺派の古刹（境内終日参拝自由、無休）。雪国ならではの重厚な木造本堂と鐘楼がある。",
+        "address": "新潟県上越市中央2丁目4-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.176519,
+        "lng": 138.243678,
+        "qr_token": "shuin-naoetsu-3",
+        "cover_image_url": "/images/naoetsu/spot3.png",
+        "f7_fragment": "日本海の季節風を受け止める大屋根の瓦が連なり、重厚な欅造りの本堂と鐘楼が静かにそびえる。",
+        "f7_full": "雁木の町並みの奥に佇む勝蓮寺の堂々たる構えが、雪国・越後の湊町に根づいた信仰の深さを物語っている。",
+        "is_final": false,
+        "next_spot_id": "e1ac1692-fb74-43e0-80ec-d751beea6356",
+        "next_spot_name": "山川製菓店"
+      },
+      {
+        "id": "e1ac1692-fb74-43e0-80ec-d751beea6356",
+        "name": "山川製菓店",
+        "description": "三・八市通りで大正期から続く老舗和洋菓子店（8:30〜18:00営業、火曜・第3日曜定休）。上越産米粉のバウムクーヘンや季節の和菓子が揃う。",
+        "address": "新潟県上越市中央3丁目14-19",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.179736,
+        "lng": 138.245592,
+        "qr_token": "shuin-naoetsu-4",
+        "cover_image_url": "/images/naoetsu/spot4.png",
+        "f7_fragment": "幾重にも年輪を重ねた黄金色の米粉バウムクーヘンと、彩り豊かな季節の和菓子がガラスケースに並ぶ。",
+        "f7_full": "三・八の朝市通りで三代続く山川製菓店の優しい甘みが、雁木の下を行き交う人々の暮らしの温もりを伝えている。",
+        "is_final": false,
+        "next_spot_id": "d06a3cc5-9ac2-41cc-868e-de253d2f3b49",
+        "next_spot_name": "蔵Cafe 沙羅"
+      },
+      {
+        "id": "d06a3cc5-9ac2-41cc-868e-de253d2f3b49",
+        "name": "蔵Cafe 沙羅",
+        "description": "船見公園近くの歴史ある土蔵を改装した和カフェ（10:00〜17:00営業、水曜・木曜定休）。落ち着いた蔵の空間で抹茶や自家製あんみつ、珈琲が楽しめる。",
+        "address": "新潟県上越市中央3丁目6-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.180419,
+        "lng": 138.245156,
+        "qr_token": "shuin-naoetsu-5",
+        "cover_image_url": "/images/naoetsu/spot5.png",
+        "f7_fragment": "白壁の土蔵の奥で、翡翠色の抹茶と艶やかな白玉あんみつがアンティークの器に映える。",
+        "f7_full": "直江津駅から北へ一直線に社寺と雁木通りを辿った旅が、日本海すぐそばの土蔵カフェの穏やかな甘味とともに結ばれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "030676bb-7b26-4907-8f6e-c461d66527da",
+    "title": "市場町のエビス様と政所茶の香りを訪ねる",
+    "name": "市場町のエビス様と政所茶の香りを訪ねる",
+    "description": "近江鉄道の八日市駅から、聖徳太子ゆかりの市場町の守護神・市神神社、金屋通りで出汁香るうどんを供する老舗大衆食堂、深い社叢の野々宮神社、町家の奥の中庭を望む器カフェを経て、鈴鹿山系の希少な政所茶を扱う老舗茶舗までを巡るルートです。",
+    "region": "八日市駅・市場町と古社寺を巡る道",
+    "area_name": "八日市駅・市場町と古社寺を巡る道",
+    "cover_image_url": "/images/yokaichi/route-eyecatch.png",
+    "imageUrl": "/images/yokaichi/route-eyecatch.png",
+    "category": "市場町古社・うどん食堂・近江政所茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "旅を終えて日常へ戻るとき、鞄や記憶の中にそっと持ち帰りたい八日市のしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「八」のつく日の市を見守ってきた『市神神社』と、深い杜に包まれた『野々宮神社』を詣でる時間",
+          "description": "八日市の地名の起源となったエビス様と、金屋の町衆が守り継いできた鎮守の杜を歩くひととき",
+          "badge_code": "shuin_yokaichi_shrines"
+        },
+        {
+          "key": "B",
+          "text": "金屋通りの老舗『萬善食堂』で、削り節と昆布の芳醇な出汁が香るうどんと丼ものを味わう食事",
+          "description": "市場町で働く人々や買い物客の日常を何十年も支えてきた、関西風の黄金色の出汁に温まる体験",
+          "badge_code": "shuin_yokaichi_manzen"
+        },
+        {
+          "key": "C",
+          "text": "商店の奥に広がる『こだわり かふぇ』で、中庭の緑を眺めながら自分で選んだ器で珈琲を味わう時間",
+          "description": "約30種の陶器カップから気に入りの一客を選び、挽きたてのハンドドリップ珈琲とケーキで寛ぐひととき",
+          "badge_code": "shuin_yokaichi_cafe"
+        },
+        {
+          "key": "D",
+          "text": "駅近くの老舗『銘茶 ますきち 本店』で、鈴鹿山系の清流と霧が育てた幻の銘茶「政所茶」を求める時間",
+          "description": "「宇治は茶所、茶は政所」と謳われた樹齢百年超の在来種チャノキが生む、凛とした香気に出会う体験",
+          "badge_code": "shuin_yokaichi_mandokoro_tea"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "77179b82-2d33-4a6b-8550-03872ad38d18",
+        "name": "市神神社",
+        "description": "「八日市」の地名の由来となった市場の守護神・事代主命を祀る古社（境内終日参拝自由、無休）。本町商店街の傍らで商売繁盛の信仰を集める。",
+        "address": "滋賀県東近江市八日市本町15-4",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.112453,
+        "lng": 136.197291,
+        "qr_token": "shuin-yokaichi-1",
+        "cover_image_url": "/images/yokaichi/spot1.png",
+        "f7_fragment": "商店街のアーケードのすぐ傍らに石の玉垣が巡らされ、「市宮ゑびす」の社殿が静かに鎮座する。",
+        "f7_full": "毎月八のつく日の市を見守ってきた市神神社が、商業都市・八日市の歴史を辿る旅の起点を飾っている。",
+        "is_final": false,
+        "next_spot_id": "ca547092-ba6a-46e0-82f6-aff78656f30c",
+        "next_spot_name": "萬善食堂"
+      },
+      {
+        "id": "ca547092-ba6a-46e0-82f6-aff78656f30c",
+        "name": "萬善食堂",
+        "description": "金屋通りで長年親しまれる老舗大衆食堂（11:30〜15:00・17:00〜19:00営業※木曜は昼のみ、日曜・祝日定休）。香り高い関西風出汁のうどんや丼ものが揃う。",
+        "address": "滋賀県東近江市八日市金屋1丁目3-21",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.111485,
+        "lng": 136.19646,
+        "qr_token": "shuin-yokaichi-2",
+        "cover_image_url": "/images/yokaichi/spot2.png",
+        "f7_fragment": "黄金色に澄んだ関西風の出汁から湯気が立ち昇り、削り節と昆布の豊かな香りが広がる。",
+        "f7_full": "金屋通りで暖簾を守り続ける萬善食堂の一杯が、市場町に暮らす人々の飾らない日常の温もりを伝えている。",
+        "is_final": false,
+        "next_spot_id": "06759390-b693-4f20-8b81-1fb7b07f2153",
+        "next_spot_name": "野々宮神社"
+      },
+      {
+        "id": "06759390-b693-4f20-8b81-1fb7b07f2153",
+        "name": "野々宮神社",
+        "description": "倭姫命の巡幸伝説を伝える金屋地区の古社（境内終日参拝自由、無休）。豊かな社叢と精緻な彫刻の社殿、豪商が寄進した石灯籠が並ぶ。",
+        "address": "滋賀県東近江市八日市金屋1丁目5-12",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.110121,
+        "lng": 136.196639,
+        "qr_token": "shuin-yokaichi-3",
+        "cover_image_url": "/images/yokaichi/spot3.png",
+        "f7_fragment": "巨木が枝を広げる深い社叢の下、苔むした石灯籠がまっすぐな参道を縁取っている。",
+        "f7_full": "豪商たちの寄進による石造物と豊かな鎮守の森が、八日市・金屋の町が培ってきた歴史の厚みを静かに語っている。",
+        "is_final": false,
+        "next_spot_id": "6a91c546-d6d3-4322-87db-23dc50f781a8",
+        "next_spot_name": "こだわり かふぇ"
+      },
+      {
+        "id": "6a91c546-d6d3-4322-87db-23dc50f781a8",
+        "name": "こだわり かふぇ",
+        "description": "商店の奥の中庭に面した隠れ家カフェ（8:00〜19:00営業、水曜定休）。約30種の器から好みのカップを選んでハンドドリップ珈琲や自家製ケーキを味わえる。",
+        "address": "滋賀県東近江市八日市町13-17",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.111515,
+        "lng": 136.200286,
+        "qr_token": "shuin-yokaichi-4",
+        "cover_image_url": "/images/yokaichi/spot4.png",
+        "f7_fragment": "中庭の緑が映り込む窓辺で、手づくりの陶器カップに注がれた珈琲が芳醇な香りを放つ。",
+        "f7_full": "町家の奥に隠された中庭と温かみのある器のカフェが、八日市の街歩きに穏やかな余白の時間を添えている。",
+        "is_final": false,
+        "next_spot_id": "c9949e2d-9c8e-4016-85ea-5ce324e473ed",
+        "next_spot_name": "銘茶 ますきち 本店"
+      },
+      {
+        "id": "c9949e2d-9c8e-4016-85ea-5ce324e473ed",
+        "name": "銘茶 ますきち 本店",
+        "description": "鈴鹿山系の「政所茶」や「朝宮茶」など、近江の銘茶を専門に扱う八日市駅近くの老舗茶舗（9:00〜19:00営業、火曜定休）。",
+        "address": "滋賀県東近江市八日市浜野町2-19",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.114468,
+        "lng": 136.196719,
+        "qr_token": "shuin-yokaichi-5",
+        "cover_image_url": "/images/yokaichi/spot5.png",
+        "f7_fragment": "急須から注がれた政所茶が山吹色に澄み渡り、鈴鹿の渓谷を思わせる清らかな香気が立ち昇る。",
+        "f7_full": "市場町のエビス様から始まり、出汁の温もりと町家の器を経て幻の政所茶へと至る八日市の旅が、清々しい茶香とともに結ばれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3546d2fc-4c0b-40d6-80f5-99d964678bde",
+    "title": "二層うだつの白壁と阿波の手仕事を歩く",
+    "name": "二層うだつの白壁と阿波の手仕事を歩く",
+    "description": "吉野川と貞光川が合流するJR徳島線の貞光駅から、漆喰の鏝絵が輝く二層うだつの町並みへ。旧永井家庄屋屋敷、太口手延べの半田そうめん膳、登録有形文化財の茶房、阿波西国霊場の真光寺、そして銘菓「金露梅」の老舗までを一筆書きで巡るルートです。",
+    "region": "貞光駅・二層うだつと商家町を巡る道",
+    "area_name": "貞光駅・二層うだつと商家町を巡る道",
+    "cover_image_url": "/images/sadamitsu/route-eyecatch.png",
+    "imageUrl": "/images/sadamitsu/route-eyecatch.png",
+    "category": "二層うだつ・半田そうめん・商家茶房",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白壁の商家町で守り継がれてきた祈りと手仕事の中で、あなたが間近に味わってみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『旧永井家庄屋屋敷』で、大屋根の上に二段重ねでそびえる「二層うだつ」と極彩色の漆喰鏝絵を仰ぐ時間",
+          "description": "舟運と交易の富を物語る全国でも希少な二層うだつと、四国青石を配した枯山水庭園を巡るひととき",
+          "badge_code": "shuin_sadamitsu_udatsu"
+        },
+        {
+          "key": "B",
+          "text": "古民家を活かした『半田そうめん食堂（折目邸 遊懐）』で、コシの強い太口の半田そうめん膳を味わう食事",
+          "description": "吉野川の冷風と職人の手延べ技が生んだ艶やかな太口麺を、旬の小鉢と出汁で堪能する体験",
+          "badge_code": "shuin_sadamitsu_somen"
+        },
+        {
+          "key": "C",
+          "text": "登録有形文化財の茶房『織本屋 菜野』で中庭を眺め、古刹『真光寺』の静寂に触れる時間",
+          "description": "歴史ある酒造商家の座敷で季節の甘味と薬膳茶を味わい、阿波西国霊場の観音様に手を合わせるひととき",
+          "badge_code": "shuin_sadamitsu_orimotoya"
+        },
+        {
+          "key": "D",
+          "text": "うだつの町筋の老舗『あづまや製菓』で、剣山の花にちなんだ上品な白あん銘菓「金露梅」を選ぶ時間",
+          "description": "手亡豆の白あんに卵黄とバターの風味を添えてしっとりと焼き上げた、貞光随一の銘菓を求める体験",
+          "badge_code": "shuin_sadamitsu_kinrobai"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f490a331-0511-44f3-89ba-d954ad1bd877",
+        "name": "旧永井家庄屋屋敷",
+        "description": "二層うだつと精緻な漆喰鏝絵、枯山水庭園を備える旧庄屋屋敷（10:00〜17:00開館、第3水曜・年末年始休館）。貞光の町並みの象徴的な公開施設。",
+        "address": "徳島県美馬郡つるぎ町貞光字西浦37",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.035673,
+        "lng": 134.062015,
+        "qr_token": "shuin-sadamitsu-1",
+        "cover_image_url": "/images/sadamitsu/spot1.png",
+        "f7_fragment": "白漆喰の壁の上に二段重ねのうだつがそびえ、鶴亀の鏝絵が陽光を浴びて立体的に浮かび上がる。",
+        "f7_full": "吉野川舟運の富が結晶した旧永井家庄屋屋敷の二層うだつが、阿波の商家町を巡る旅の華やかな幕を開ける。",
+        "is_final": false,
+        "next_spot_id": "ee034848-aab6-4178-8364-a9d02fcd3b19",
+        "next_spot_name": "半田そうめん食堂（折目邸 遊懐）"
+      },
+      {
+        "id": "ee034848-aab6-4178-8364-a9d02fcd3b19",
+        "name": "半田そうめん食堂（折目邸 遊懐）",
+        "description": "古民家「折目邸 遊懐」内で、つるぎ町名物の太口手延べ麺「半田そうめん」と旬の小鉢が味わえる食堂（水・土・日11:00〜14:00営業、月・火・木・金定休※ランチは事前予約推奨）。",
+        "address": "徳島県美馬郡つるぎ町貞光字東浦68-1",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.034554,
+        "lng": 134.063701,
+        "qr_token": "shuin-sadamitsu-2",
+        "cover_image_url": "/images/sadamitsu/spot2.png",
+        "f7_fragment": "器の中で白く艶めく太口の半田そうめんに、彩り豊かな里山の小鉢と香り高い出汁が添えられる。",
+        "f7_full": "吉野川の川風と職人の技が育てた半田そうめんの力強いコシが、つるぎ町の豊かな食の伝統を物語っている。",
+        "is_final": false,
+        "next_spot_id": "f0133c34-befa-44d9-8146-0ed498eda343",
+        "next_spot_name": "織本屋 菜野"
+      },
+      {
+        "id": "f0133c34-befa-44d9-8146-0ed498eda343",
+        "name": "織本屋 菜野",
+        "description": "国登録有形文化財「織本屋（旧折目家住宅）」内の茶房（11:00〜17:00営業、火曜定休）。歴史ある商家の座敷で中庭を眺めながら季節の甘味や薬膳茶が楽しめる。",
+        "address": "徳島県美馬郡つるぎ町貞光字町83-2",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.033501,
+        "lng": 134.062632,
+        "qr_token": "shuin-sadamitsu-3",
+        "cover_image_url": "/images/sadamitsu/spot3.png",
+        "f7_fragment": "中庭の青石と緑を映す縁側のそばで、琥珀色の薬膳茶と季節の甘味が静かに香る。",
+        "f7_full": "登録有形文化財の大商家・織本屋の奥座敷で過ごすひとときが、うだつの町歩きの時間を優雅に深めてくれる。",
+        "is_final": false,
+        "next_spot_id": "6456ffb9-e685-46ef-8322-fe383b32248a",
+        "next_spot_name": "真光寺"
+      },
+      {
+        "id": "6456ffb9-e685-46ef-8322-fe383b32248a",
+        "name": "真光寺",
+        "description": "阿波西国三十三観音霊場第7番札所となる真言宗御室派の古刹（境内終日参拝自由、無休）。剣山信仰と商家町の祈りを伝える。",
+        "address": "徳島県美馬郡つるぎ町貞光字野口58",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.035185,
+        "lng": 134.060182,
+        "qr_token": "shuin-sadamitsu-4",
+        "cover_image_url": "/images/sadamitsu/spot4.png",
+        "f7_fragment": "四国青石の石段と手入れされた松の枝越しに、端正な山門と本堂の瓦屋根が静かに佇む。",
+        "f7_full": "剣山への登拝者と町衆の祈りを受け止めてきた真光寺が、商家町の歴史に穏やかな精神の奥行きを添えている。",
+        "is_final": false,
+        "next_spot_id": "06d6fc86-f706-486c-885b-d0b00d31ef66",
+        "next_spot_name": "あづまや製菓"
+      },
+      {
+        "id": "06d6fc86-f706-486c-885b-d0b00d31ef66",
+        "name": "あづまや製菓",
+        "description": "うだつの町並みに店を構える老舗和菓子店（9:00〜17:00営業、火曜・土曜定休）。剣山の高山植物にちなんだ白あん銘菓「金露梅」が名物。",
+        "address": "徳島県美馬郡つるぎ町貞光字町40",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.036676,
+        "lng": 134.06288,
+        "qr_token": "shuin-sadamitsu-5",
+        "cover_image_url": "/images/sadamitsu/spot5.png",
+        "f7_fragment": "剣山の可憐な花を映した黄金色のひと口銘菓「金露梅」が、白磁の皿の上に愛らしく並ぶ。",
+        "f7_full": "二層うだつの庄屋屋敷から半田そうめん、文化財の茶房と古刹を巡った貞光の旅が、銘菓「金露梅」の優しい甘みとともに結ばれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
