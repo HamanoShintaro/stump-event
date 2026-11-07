@@ -2161,7 +2161,86 @@
           "slug": "bungo_taketa"
         }
       ]
+    },
+    {
+      "batch_number": 44,
+      "completed_at": "2026-11-06T23:06:00.000Z",
+      "stations": [
+        {
+          "name": "新得",
+          "prefecture": "北海道",
+          "line": "JR石勝線",
+          "slug": "shintoku",
+          "replaced_from": "トマム"
+        },
+        {
+          "name": "腰越",
+          "prefecture": "神奈川県",
+          "line": "江ノ島電鉄線",
+          "slug": "koshigoe"
+        },
+        {
+          "name": "下吉田",
+          "prefecture": "山梨県",
+          "line": "富士急行線",
+          "slug": "shimoyoshida",
+          "replaced_from": "月江寺"
+        },
+        {
+          "name": "境港",
+          "prefecture": "鳥取県",
+          "line": "JR境線",
+          "slug": "sakaiminato"
+        },
+        {
+          "name": "宇多津",
+          "prefecture": "香川県",
+          "line": "JR予讃線",
+          "slug": "utazu"
+        }
+      ]
+    },
+    {
+      "batch_number": 45,
+      "completed_at": "2026-11-07T09:50:00.000Z",
+      "stations": [
+        {
+          "name": "青森",
+          "prefecture": "青森県",
+          "line": "JR津軽線",
+          "slug": "aomori",
+          "replaced_from": "青函トンネル記念館"
+        },
+        {
+          "name": "坂戸",
+          "prefecture": "埼玉県",
+          "line": "東武越生線",
+          "slug": "sakado",
+          "replaced_from": "越生"
+        },
+        {
+          "name": "氷見",
+          "prefecture": "富山県",
+          "line": "JR氷見線",
+          "slug": "himi",
+          "replaced_from": "能町"
+        },
+        {
+          "name": "西岩国",
+          "prefecture": "山口県",
+          "line": "JR岩徳線",
+          "slug": "nishi_iwakuni",
+          "replaced_from": "櫛ヶ浜"
+        },
+        {
+          "name": "はりまや橋",
+          "prefecture": "高知県",
+          "line": "土佐電桟橋線",
+          "slug": "harimayabashi",
+          "replaced_from": "桟橋通五丁目"
+        }
+      ]
     }
   ],
-  "total_completed_routes": 230
+  "total_completed_routes": 235
 }

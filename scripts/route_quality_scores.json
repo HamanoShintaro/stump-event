@@ -4125,21 +4125,123 @@
         "story_emotion": 3.8,
         "local_specificity": 3.9
       }
+    },
+    {
+      "slug": "utazu",
+      "station": "宇多津",
+      "line": "JR予讃線",
+      "prefecture": "香川県",
+      "iteration": 45,
+      "score": 3.55,
+      "grade": "B+ (塩田港町から古街の寺院・町家カフェ・うぶしなへ抜ける一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.5,
+        "spot_allocation": 3.6,
+        "walkability": 3.5,
+        "story_emotion": 3.6,
+        "local_specificity": 3.6
+      }
+    },
+    {
+      "slug": "aomori",
+      "station": "青森",
+      "line": "JR津軽線",
+      "prefecture": "青森県",
+      "iteration": 46,
+      "score": 3.6,
+      "grade": "A- (ワ・ラッセから新町通り・喫茶マロン・善知鳥神社・上ボシ武内製飴所へ東進する一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.6,
+        "walkability": 3.5,
+        "story_emotion": 3.6,
+        "local_specificity": 3.6
+      }
+    },
+    {
+      "slug": "sakado",
+      "station": "坂戸",
+      "line": "東武越生線",
+      "prefecture": "埼玉県",
+      "iteration": 46,
+      "score": 2.75,
+      "grade": "C (要改善・日光街道坂戸宿の往復折り返し動線)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3.1,
+        "spot_allocation": 2.8,
+        "walkability": 2.1,
+        "story_emotion": 2.9,
+        "local_specificity": 2.9
+      }
+    },
+    {
+      "slug": "himi",
+      "station": "氷見",
+      "line": "JR氷見線",
+      "prefecture": "富山県",
+      "iteration": 46,
+      "score": 3.8,
+      "grade": "A (伊勢玉神社から湊川・まんがロード・光禅寺・マイケルへ北上する港町一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.8,
+        "spot_allocation": 3.7,
+        "walkability": 3.8,
+        "story_emotion": 3.8,
+        "local_specificity": 3.9
+      }
+    },
+    {
+      "slug": "nishi_iwakuni",
+      "station": "西岩国",
+      "line": "JR岩徳線",
+      "prefecture": "山口県",
+      "iteration": 46,
+      "score": 2.85,
+      "grade": "C (要改善・錦帯橋渡橋までの長距離歩行と城下町配置)",
+      "needs_replacement": true,
+      "breakdown": {
+        "theme_diversity": 3.2,
+        "spot_allocation": 2.8,
+        "walkability": 2.3,
+        "story_emotion": 3.0,
+        "local_specificity": 3.0
+      }
+    },
+    {
+      "slug": "harimayabashi",
+      "station": "はりまや橋",
+      "line": "土佐電桟橋線",
+      "prefecture": "高知県",
+      "iteration": 46,
+      "score": 3.7,
+      "grade": "A- (播磨屋橋から帯屋町アーケード・大橋通り・高知城へ西進する城下町一筆書き)",
+      "needs_replacement": false,
+      "breakdown": {
+        "theme_diversity": 3.7,
+        "spot_allocation": 3.7,
+        "walkability": 3.7,
+        "story_emotion": 3.7,
+        "local_specificity": 3.7
+      }
     }
   ],
-  "updated_at": "2026-11-06T23:06:00.000Z",
-  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #40〜#43 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
+  "updated_at": "2026-11-07T09:50:00.000Z",
+  "evaluation_policy": "固定された採点基準を持たず、直近作成した20ルート（Moving Window: Iterations #43〜#46 = 20作品）を母集団として相対評価を行う。直近20作品の平均点が常に 3.2〜3.4 点（現在 3.33 点）になるよう基準を絶えず更新・溶解（メルトダウン）させ、過去の『優等生パターン』は 3.0 点以下（差し替え候補）へ落としてさらなるユニーク化・高度化を促す。",
   "moving_window_size": 20,
   "moving_window_average": 3.33,
-  "last_updated_iteration": 45,
-  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #40-#43）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
+  "last_updated_iteration": 46,
+  "scoring_philosophy": "直近20作品（4イテレーション移動ウィンドウ: Iterations #43-#46）の相対比較により20作品平均が 3.20〜3.40（現在 3.33）に収まるよう自動正規化。3.0以下は needs_replacement: true として改善・差し替え対象に指定。",
   "moving_window_20_average": 3.33,
   "evaluation_system": "moving_window_20_routes_coevolution",
   "moving_window_iterations": [
-    42,
     43,
     44,
-    45
+    45,
+    46
   ],
   "replacement_candidates": [
     "chiba_newtown_chuo",
@@ -4247,14 +4349,16 @@
     "tsuchiura",
     "kyoto_kawaramachi",
     "shintoku",
-    "shimoyoshida"
+    "shimoyoshida",
+    "sakado",
+    "nishi_iwakuni"
   ],
   "current_window_iterations": [
-    42,
     43,
     44,
-    45
+    45,
+    46
   ],
   "current_window_average": 3.33,
-  "total_routes": 230
+  "total_routes": 235
 }
