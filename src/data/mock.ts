@@ -37830,5 +37830,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "e10ca112-167e-414f-802d-f71dffcc606a",
+    "title": "二百六十の島影と伊達の美意識が映る湾",
+    "name": "二百六十の島影と伊達の美意識が映る湾",
+    "description": "黒松をいただく二百六十余の島々が浮かぶ松島海岸。伊達家ゆかりの観瀾亭から赤い透かし橋の五大堂、カキ料理の茶屋、笹かまぼこの手焼き体験、魚市場まで海辺の文化をたどるルート。",
+    "region": "松島海岸・五大堂",
+    "area_name": "松島海岸・五大堂",
+    "cover_image_url": "/images/matsushima_kaigan/route-eyecatch.png",
+    "imageUrl": "/images/matsushima_kaigan/route-eyecatch.png",
+    "category": "日本三景・桃山建築・海辺の食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って松島海岸をめぐるなら、黄金の御座の間や赤橋の御堂、海辺の味わいのどれから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "金箔の障壁画が輝く御座の間から、穏やかな波と島影を見渡した時間",
+          "description": "観瀾亭の床の間と海景が溶け合う、伊達家の風雅なもてなしの心に惹かれた。",
+          "badge_code": "MATSUSHIMA_KAIGAN_A"
+        },
+        {
+          "key": "B",
+          "text": "足元に海が透ける赤い橋を一歩ずつ渡り、小島の御堂で十二支彫刻を見上げた瞬間",
+          "description": "五大堂の透かし橋が演出する緊張感と、桃山建築の力強い意匠に心動かされた。",
+          "badge_code": "MATSUSHIMA_KAIGAN_B"
+        },
+        {
+          "key": "C",
+          "text": "炭火の上でぷっくり膨らむ笹かまぼこを返し、焼き目の香ばしさを頬張ったひと休み",
+          "description": "松島蒲鉾本舗の炉端で、自分の手で焼き上げる魚の旨みと温もりを味わった。",
+          "badge_code": "MATSUSHIMA_KAIGAN_C"
+        },
+        {
+          "key": "D",
+          "text": "潮風が届く茶屋と魚市場で、松島のカキや三陸の海の幸が持つ滋養に触れた場面",
+          "description": "さんとり茶屋のカキ料理や松島さかな市場の活気ある港の恵みに満たされた。",
+          "badge_code": "MATSUSHIMA_KAIGAN_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "867604eb-73ff-4fc9-8f6c-34a221fee4df",
+        "name": "観瀾亭",
+        "description": "伊達政宗が豊臣秀吉から拝領した伏見桃山城の茶室を移築したと伝わる納涼亭（8:30〜17:00開館、無休）。国の重要文化財に指定された御座の間の金碧障壁画と松島湾の眺望を楽しめる。",
+        "address": "宮城県宮城郡松島町松島字町内56",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.369316,
+        "lng": 141.061684,
+        "qr_token": "shuin-matsushima_kaigan-1",
+        "cover_image_url": "/images/matsushima_kaigan/spot1.png",
+        "f7_fragment": "海面の光を映す金碧障壁画と、松島湾を一望する伊達家の御座の間。",
+        "f7_full": "伏見桃山城から移築された茶室の金箔が潮風に揺れる光を受け止め、内海の島々をひとつの庭へと変える。",
+        "is_final": false,
+        "next_spot_id": "387adb8d-c99c-4517-865b-54453c843345",
+        "next_spot_name": "五大堂"
+      },
+      {
+        "id": "387adb8d-c99c-4517-865b-54453c843345",
+        "name": "五大堂",
+        "description": "伊達政宗が再建した東北最古級の桃山建築の仏堂（8:00〜日没開門、拝観自由）。松島湾の小島に架かる朱塗りの透かし橋を渡り、軒下の蟇股に彫られた十二支の彫刻を間近に見学できる。",
+        "address": "宮城県宮城郡松島町松島字町内111",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.369718,
+        "lng": 141.064207,
+        "qr_token": "shuin-matsushima_kaigan-2",
+        "cover_image_url": "/images/matsushima_kaigan/spot2.png",
+        "f7_fragment": "足元に青い海が透ける朱塗りの橋と、岩島に建つ桃山期の御堂。",
+        "f7_full": "透かし橋を一歩ずつ渡り、蟇股に刻まれた十二支の彫刻を見上げると、海と祈りが交差する静けさに包まれる。",
+        "is_final": false,
+        "next_spot_id": "e8f28958-c688-43ab-8739-c81c3a61127b",
+        "next_spot_name": "さんとり茶屋"
+      },
+      {
+        "id": "e8f28958-c688-43ab-8739-c81c3a61127b",
+        "name": "さんとり茶屋",
+        "description": "五大堂近くの海岸通り沿いに佇む海鮮和食処（11:00〜15:00・17:00〜21:00営業、水曜定休）。松島湾産のカキを使ったカキ丼やカキ焼き、三陸の魚介とアカモクを盛り込んだ定食を味わえる。",
+        "address": "宮城県宮城郡松島町松島字仙随24-4-1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.370387,
+        "lng": 141.065566,
+        "qr_token": "shuin-matsushima_kaigan-3",
+        "cover_image_url": "/images/matsushima_kaigan/spot3.png",
+        "f7_fragment": "二百六十余の島々が守る内海で育った、旨味あふれるカキ料理。",
+        "f7_full": "森の湧水と穏やかな潮流が育てた松島のカキと海藻が、海辺の茶屋で豊かな香りを立ち上らせる。",
+        "is_final": false,
+        "next_spot_id": "7dc10843-2905-435f-87ae-0f5218ce7086",
+        "next_spot_name": "松島蒲鉾本舗 総本店"
+      },
+      {
+        "id": "7dc10843-2905-435f-87ae-0f5218ce7086",
+        "name": "松島蒲鉾本舗 総本店",
+        "description": "五大堂の参道正面に構える笹かまぼこの老舗総本店（9:30〜17:00営業、無休）。店内の炭火コンロで串付きの笹かまぼこを自分で炙って食べる「笹かま手焼き体験」が楽しめる。",
+        "address": "宮城県宮城郡松島町松島字町内120",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.370402,
+        "lng": 141.063477,
+        "qr_token": "shuin-matsushima_kaigan-4",
+        "cover_image_url": "/images/matsushima_kaigan/spot4.png",
+        "f7_fragment": "炭火の上できつね色に膨らむ、焼きたての笹かまぼこの香ばしさ。",
+        "f7_full": "伊達家の家紋にちなむ笹の葉形のかまぼこを炉端で炙れば、白身魚の甘い香りとプリッとした弾力が広がる。",
+        "is_final": false,
+        "next_spot_id": "9d823736-72ef-4c0c-82f8-54d9e3872f0f",
+        "next_spot_name": "松島さかな市場"
+      },
+      {
+        "id": "9d823736-72ef-4c0c-82f8-54d9e3872f0f",
+        "name": "松島さかな市場",
+        "description": "気仙沼の遠洋まぐろ船団が運営する大型海産物市場（9:00〜16:00営業、無休）。松島湾産の焼き海苔やカキの燻製・オイル漬け、三陸の水産加工品や乾物など多彩な海産土産が揃う。",
+        "address": "宮城県宮城郡松島町松島字普賢堂4-10",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.371949,
+        "lng": 141.06517,
+        "qr_token": "shuin-matsushima_kaigan-5",
+        "cover_image_url": "/images/matsushima_kaigan/spot5.png",
+        "f7_fragment": "内海の焼き海苔から三陸の海産珍味までが一堂に揃う港の市場。",
+        "f7_full": "松島湾の穏やかな恵みと三陸沖の力強い魚食文化を手に取り、潮風の記憶をそのまま持ち帰る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4d32c25c-1ded-487a-8ec5-bd5de51af865",
+    "title": "なぜ武家の館跡に学び舎と銘仙が息づくのか",
+    "name": "なぜ武家の館跡に学び舎と銘仙が息づくのか",
+    "description": "水堀の武家館跡・鑁阿寺と日本最古の学び舎・足利学校が隣り合う足利。茅葺きの方丈から石臼挽き蕎麦、大門通の本わらび餅、国宝本堂、足利銘仙と古印最中の物産処まで石畳の通りをめぐるルート。",
+    "region": "足利学校・鑁阿寺石畳通り",
+    "area_name": "足利学校・鑁阿寺石畳通り",
+    "cover_image_url": "/images/ashikaga/route-eyecatch.png",
+    "imageUrl": "/images/ashikaga/route-eyecatch.png",
+    "category": "武家館跡・日本最古の学校・織物文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水堀に囲まれた武家の古刹と茅葺きの学び舎、石畳通りの味わい。今のあなたの心に深く響くのはどの情景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "白砂の庭園を前に茅葺きの学校門と方丈が静まり返る、学び舎の空気",
+          "description": "全国から学徒が集い、古典をひもといた史跡足利学校の凛とした知の空間に惹かれた。",
+          "badge_code": "ASHIKAGA_A"
+        },
+        {
+          "key": "B",
+          "text": "四方を水堀と土塁に守られた武家の館跡で、大銀杏と国宝本堂が重なる佇まい",
+          "description": "足利氏の居館から大寺院へと受け継がれた鑁阿寺の力強い骨格に心動かされた。",
+          "badge_code": "ASHIKAGA_B"
+        },
+        {
+          "key": "C",
+          "text": "石畳の参道近くで味わう、香り高い手打ち蕎麦と練りたての本わらび餅の余韻",
+          "description": "めん割烹 なか川の端正なせいろ蕎麦と、甘味処 鎌倉のやさしい甘みに癒やされた。",
+          "badge_code": "ASHIKAGA_C"
+        },
+        {
+          "key": "D",
+          "text": "大胆な色彩の足利銘仙の絹小物と、古印をかたどった四角い最中を手にするよろこび",
+          "description": "太平記館に並ぶ織物の意匠と、古印最中が伝える足利の美意識に惹かれた。",
+          "badge_code": "ASHIKAGA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "022c5ca5-0a5b-47ef-81af-4edd7bcb87ac",
+        "name": "史跡足利学校",
+        "description": "「日本最古の学校」として知られる国指定史跡（9:00〜16:30開館、第3水曜休館）。江戸初期創建の学校門や復元された茅葺き屋根の方丈、白砂と松が織りなす築山泉水庭園を見学できる。",
+        "address": "栃木県足利市昌平町2338",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.335702,
+        "lng": 139.453219,
+        "qr_token": "shuin-ashikaga-1",
+        "cover_image_url": "/images/ashikaga/spot1.png",
+        "f7_fragment": "茅葺き屋根の方丈と白砂の南庭園が静まり返る、日本最古の学び舎。",
+        "f7_full": "三つの門をくぐり抜けた先に広がる方丈と築山泉水庭園が、乱世に知の灯を守り抜いた学徒たちの歳月を映し出す。",
+        "is_final": false,
+        "next_spot_id": "9483cec5-edf5-4b24-8638-4515ea40fb5e",
+        "next_spot_name": "めん割烹 なか川"
+      },
+      {
+        "id": "9483cec5-edf5-4b24-8638-4515ea40fb5e",
+        "name": "めん割烹 なか川",
+        "description": "足利学校と鑁阿寺を結ぶ石畳エリアに佇む老舗蕎麦割烹（11:00〜15:00営業、火曜定休）。店内の石臼で自家製粉した二八・十割せいろ蕎麦や名物の「天ぬき御膳」を味わえる。",
+        "address": "栃木県足利市通2-2659",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.335248,
+        "lng": 139.451908,
+        "qr_token": "shuin-ashikaga-2",
+        "cover_image_url": "/images/ashikaga/spot2.png",
+        "f7_fragment": "店内の石臼で丁寧に挽き上げる、香り高い手打ちせいろ蕎麦。",
+        "f7_full": "北関東の玄蕎麦を端正に切り揃えた二八せいろと温かな天ぬきが、石畳を歩く旅人の昼どきを豊かに満たす。",
+        "is_final": false,
+        "next_spot_id": "5db182fb-1951-4c83-83dd-7d05acce4998",
+        "next_spot_name": "甘味処 鎌倉 足利店"
+      },
+      {
+        "id": "5db182fb-1951-4c83-83dd-7d05acce4998",
+        "name": "甘味処 鎌倉 足利店",
+        "description": "鑁阿寺門前の石畳通り「大門通」にあるわらび餅・甘味処（10:00〜17:00営業、無休）。希少な本わらび粉を毎朝職人が手練りする「鎌倉わらびもち」や抹茶ドリンクを楽しめる。",
+        "address": "栃木県足利市大門通2371-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.336129,
+        "lng": 139.452181,
+        "qr_token": "shuin-ashikaga-3",
+        "cover_image_url": "/images/ashikaga/spot3.png",
+        "f7_fragment": "大門通の石畳で味わう、きな粉と黒蜜が香る手練りの本わらび餅。",
+        "f7_full": "毎朝銅鍋で練り上げるもっちりとした本わらび餅とほろ苦い抹茶が、門前歩きの足取りをやさしく癒やす。",
+        "is_final": false,
+        "next_spot_id": "1f07b9c1-1721-4450-877a-ebc50fef7aac",
+        "next_spot_name": "鑁阿寺"
+      },
+      {
+        "id": "1f07b9c1-1721-4450-877a-ebc50fef7aac",
+        "name": "鑁阿寺",
+        "description": "足利義兼が居館内に創建した真言宗の大寺院（境内自由、9:00〜16:00、無休）。四方を水堀と土塁に囲まれた中世武家館の遺構の中に、国宝の本堂（大御堂）や大銀杏がそびえる。",
+        "address": "栃木県足利市家富町2220",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.33738,
+        "lng": 139.452244,
+        "qr_token": "shuin-ashikaga-4",
+        "cover_image_url": "/images/ashikaga/spot4.png",
+        "f7_fragment": "水堀と土塁に守られた武家の館跡にそびえる、国宝の大御堂と大銀杏。",
+        "f7_full": "太鼓橋を渡った先に広がる四万平方メートルの館跡と禅宗様の国宝本堂が、足利一族の揺るぎない歴史を物語る。",
+        "is_final": false,
+        "next_spot_id": "ac8cff66-ff12-4925-885d-bb51df101c08",
+        "next_spot_name": "太平記館"
+      },
+      {
+        "id": "ac8cff66-ff12-4925-885d-bb51df101c08",
+        "name": "太平記館",
+        "description": "史跡足利学校の向かいに位置する足利観光の物産処（9:00〜17:00営業、年末12/29〜31以外無休）。伝統工芸「足利銘仙」の絹小物や老舗の「古印最中」「元祖芋ようかん」など足利の名産土産が一堂に揃う。",
+        "address": "栃木県足利市伊勢町3-6-4",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.335023,
+        "lng": 139.454181,
+        "qr_token": "shuin-ashikaga-5",
+        "cover_image_url": "/images/ashikaga/spot5.png",
+        "f7_fragment": "鮮やかな足利銘仙の染織品と古印最中が一堂に揃う、石畳通りの物産館。",
+        "f7_full": "大胆な幾何学文様の絹小物と重厚な粒あんの最中を手に取り、学都と織物の街の記憶を旅の土産に結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "55eca5ba-ea97-411f-8ef1-a4b7ffd9d533",
+    "title": "断崖の国宝天守から木曽川の城下町を歩く",
+    "name": "断崖の国宝天守から木曽川の城下町を歩く",
+    "description": "木曽川の断崖に立つ国宝・犬山城から黒塗りの町家が連なる本町通りへ。天守の眺望から守口漬の発酵料理、坪庭の町家茶寮、三層の車山が並ぶどんでん館、老舗のげんこつ飴まで城下町を縦断するルート。",
+    "region": "犬山城・本町通り",
+    "area_name": "犬山城・本町通り",
+    "cover_image_url": "/images/inuyama/route-eyecatch.png",
+    "imageUrl": "/images/inuyama/route-eyecatch.png",
+    "category": "国宝天守・城下町・からくり文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "断崖の国宝天守から古い町家の発酵料理、祭りの三層車山まで、あなたの五感を強く惹きつけるのはどの体験だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "急な木階段を登り切った国宝天守の廻縁から、眼下の木曽川と本町通りを見渡した瞬間",
+          "description": "現存最古級の天守・犬山城が持つ実戦的な構造と、圧倒的な眺望に心を奪われた。",
+          "badge_code": "INUYAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "築百年を超える町家の座敷で、酒粕が香る守口漬や彩り豊かな七種田楽を味わった時間",
+          "description": "壽俵屋 犬山井上邸や本町茶寮で、尾張の醸造・発酵文化の奥深さに触れた。",
+          "badge_code": "INUYAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "黒漆と金箔が輝く高さ八メートルの三層車山と、精巧なからくり人形の技を見上げた場面",
+          "description": "どんでん館で、町人たちが誇りを懸けて磨き上げた犬山祭の造形美に惹かれた。",
+          "badge_code": "INUYAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "きな粉と黒糖を練り上げた素朴な「げんこつ飴」を手に、城下町の老舗の伝統に触れたとき",
+          "description": "藤澤製菓が守り続ける陣中食ゆかりの銘菓に、素朴で温かな城下町の記憶を重ねた。",
+          "badge_code": "INUYAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7c4b8a21-33fc-4431-83d8-34e4c1859344",
+        "name": "犬山城",
+        "description": "木曽川南岸の断崖にそびえる現存最古級の国宝天守（9:00〜17:00開城、最終入場16:30、12/29〜31休館）。三層四階地下二階の望楼型天守の最上階廻縁から、木曽川と城下町を一望できる。",
+        "address": "愛知県犬山市犬山北古券65-2",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.38836,
+        "lng": 136.939177,
+        "qr_token": "shuin-inuyama-1",
+        "cover_image_url": "/images/inuyama/spot1.png",
+        "f7_fragment": "木曽川の断崖に白漆喰の破風を重ねる、現存最古級の国宝天守。",
+        "f7_full": "最上階の廻縁を吹き抜ける川風のなかで、城山の足元から真っ直ぐ南へ延びる城下町の骨格が浮かび上がる。",
+        "is_final": false,
+        "next_spot_id": "70cb0d8f-acf7-4ea8-8a64-8503b9a1fc79",
+        "next_spot_name": "香味茶寮 壽俵屋 犬山井上邸"
+      },
+      {
+        "id": "70cb0d8f-acf7-4ea8-8a64-8503b9a1fc79",
+        "name": "香味茶寮 壽俵屋 犬山井上邸",
+        "description": "守口漬・奈良漬の老舗「壽俵屋」が築百四十余年の古民家で営むお食事処（10:00〜16:30営業、無休）。熟成酒粕に漬けた魚の粕漬け御膳や、炭火で焼く名物「醤油おこげ串」を味わえる。",
+        "address": "愛知県犬山市犬山西古券6",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.383617,
+        "lng": 136.939371,
+        "qr_token": "shuin-inuyama-2",
+        "cover_image_url": "/images/inuyama/spot2.png",
+        "f7_fragment": "築百四十余年の商家に漂う、熟成酒粕と焦がし醤油おこげの香り。",
+        "f7_full": "二年半以上熟成させた守口漬と香ばしい粕漬けの魚が、木曽川流域の豊かな醸造文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0e9805a8-c2bd-4825-889e-8fc9bb221032",
+        "next_spot_name": "本町茶寮"
+      },
+      {
+        "id": "0e9805a8-c2bd-4825-889e-8fc9bb221032",
+        "name": "本町茶寮",
+        "description": "本町通りの中央に佇む築百年の古民家茶寮（11:00〜17:00営業、木曜定休）。奥行きのある町家の座敷から苔むした坪庭を眺めつつ、七種の味噌だれで彩られた豆腐田楽や和甘味を楽しめる。",
+        "address": "愛知県犬山市犬山東古券673",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.383088,
+        "lng": 136.939473,
+        "qr_token": "shuin-inuyama-3",
+        "cover_image_url": "/images/inuyama/spot3.png",
+        "f7_fragment": "青竹と石灯籠の坪庭を望む座敷で味わう、七色の彩り豆腐田楽。",
+        "f7_full": "うなぎの寝床の奥座敷に座り、色とりどりの味噌田楽と温かなお茶で城下町歩きの足を休める。",
+        "is_final": false,
+        "next_spot_id": "b555d39a-c6c3-41c6-81a0-38d9d2f51659",
+        "next_spot_name": "どんでん館"
+      },
+      {
+        "id": "b555d39a-c6c3-41c6-81a0-38d9d2f51659",
+        "name": "どんでん館",
+        "description": "国の重要無形民俗文化財「犬山祭」で曳かれる高さ約8mの三層車山（やま）4基を常設展示する施設（9:00〜17:00開館、水曜定休）。金箔と黒漆の豪華な装飾や精巧なからくり人形を間近に見学できる。",
+        "address": "愛知県犬山市犬山東古券62",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.381141,
+        "lng": 136.939559,
+        "qr_token": "shuin-inuyama-4",
+        "cover_image_url": "/images/inuyama/spot4.png",
+        "f7_fragment": "吹き抜けの空間にそびえる、黒漆と金箔が輝く高さ八メートルの三層車山。",
+        "f7_full": "城下町の町人たちが誇りを懸けた車山の彫金とからくり人形の技が、祭りの熱気を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "bc8549d6-82be-441e-8ec3-ce947c5510aa",
+        "next_spot_name": "藤澤製菓"
+      },
+      {
+        "id": "bc8549d6-82be-441e-8ec3-ce947c5510aa",
+        "name": "藤澤製菓",
+        "description": "明治期から犬山銘菓「げんこつ飴」を手作りで製造・直売する老舗和菓子店（9:00〜18:00営業、不定休）。黒砂糖と水あめに香ばしいきな粉やニッキを練り込んだ伝統のげんこつ飴をお土産に購入できる。",
+        "address": "愛知県犬山市犬山東古券161",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.38152,
+        "lng": 136.940609,
+        "qr_token": "shuin-inuyama-5",
+        "cover_image_url": "/images/inuyama/spot5.png",
+        "f7_fragment": "きな粉と黒糖、ニッキの香りが広がる、明治期創業のげんこつ飴本店。",
+        "f7_full": "初代城主の陣中食に由来する素朴な飴菓子を箱詰めで手に取り、城下町を歩いた温かな記憶を持ち帰る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "978744ea-7730-48a6-84c8-87e748525b4e",
+    "title": "下り参道と大注連縄が結ぶ神話の門前町",
+    "name": "下り参道と大注連縄が結ぶ神話の門前町",
+    "description": "松並木の下り参道が続く出雲大社と門前の神門通り。大注連縄の社殿から巨大宇豆柱を展示する古代出雲歴史博物館、勢溜前の三段割子そば、出雲発祥のぜんざい、勾玉の土産処まで北から南へ駅へとたどるルート。",
+    "region": "出雲大社・神門通り",
+    "area_name": "出雲大社・神門通り",
+    "cover_image_url": "/images/izumo_taishamae/route-eyecatch.png",
+    "imageUrl": "/images/izumo_taishamae/route-eyecatch.png",
+    "category": "大社造・古代史・門前食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "松並木の下り参道や古代の巨大柱、割子そばや勾玉の祈りのなかで、旅の終わりにそっと持ち帰りたいしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "松並木の下り参道を進み、大注連縄と高い千木をいただく社殿の前で四拍手を打った瞬間",
+          "description": "天へそびえる大社造の威容と、出雲大社ならではの厳かな参拝作法に心洗われた。",
+          "badge_code": "IZUMO_TAISHAMAE_A"
+        },
+        {
+          "key": "B",
+          "text": "三本の巨木を束ねた古代の「宇豆柱」と数百本の青銅剣を前に、神話のスケールを体感した時間",
+          "description": "島根県立古代出雲歴史博物館で、伝承を裏付ける圧倒的な出土品に胸を打たれた。",
+          "badge_code": "IZUMO_TAISHAMAE_B"
+        },
+        {
+          "key": "C",
+          "text": "朱塗りの丸い三段割子に薬味とだしを注ぎ、黒みがかった出雲そばの香りを味わった昼食",
+          "description": "そば処 田中屋で、そばの実を殻ごと挽き込む出雲の食文化の力強さに触れた。",
+          "badge_code": "IZUMO_TAISHAMAE_C"
+        },
+        {
+          "key": "D",
+          "text": "紅白の白玉が浮かぶ温かな出雲ぜんざいと、深い碧色の勾玉に込められた縁結びの祈り",
+          "description": "日本ぜんざい学会 壱号店といずも縁結び本舗で、門前町の温かなもてなしに触れた。",
+          "badge_code": "IZUMO_TAISHAMAE_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b2def762-4354-4e6f-89f8-569fa7a6e9f0",
+        "name": "出雲大社",
+        "description": "大国主大神を祀る縁結びの総本宮（6:00〜18:00開門、無休）。勢溜の大鳥居から松並木の下り参道を進み、大注連縄を掲げた拝殿・神楽殿や高さ約24mの国宝本殿（八足門前）に参拝できる。",
+        "address": "島根県出雲市大社町杵築東195",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.401869,
+        "lng": 132.685469,
+        "qr_token": "shuin-izumo_taishamae-1",
+        "cover_image_url": "/images/izumo_taishamae/spot1.png",
+        "f7_fragment": "松並木の下り参道の先にそびえる、大注連縄と高さ二十四メートルの大社造。",
+        "f7_full": "身を低くして下る松の参道を抜け、澄んだ空気のなかで響かせる四拍手が神話の杜に静かに木霊する。",
+        "is_final": false,
+        "next_spot_id": "211f6c44-e5e0-4980-89f6-cfdc3f4df93f",
+        "next_spot_name": "島根県立古代出雲歴史博物館"
+      },
+      {
+        "id": "211f6c44-e5e0-4980-89f6-cfdc3f4df93f",
+        "name": "島根県立古代出雲歴史博物館",
+        "description": "出雲大社の東隣に位置する歴史博物館（9:00〜17:00開館、第3火曜休館）。出雲大社境内から出土した鎌倉期の巨大な「宇豆柱」（重要文化財）や、荒神谷遺跡出土の国宝銅剣358本を展示する。",
+        "address": "島根県出雲市大社町杵築東99-4",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.398809,
+        "lng": 132.688737,
+        "qr_token": "shuin-izumo_taishamae-2",
+        "cover_image_url": "/images/izumo_taishamae/spot2.png",
+        "f7_fragment": "巨木三本を束ねた出土「宇豆柱」と、三百五十八本の青銅剣が放つ威光。",
+        "f7_full": "本殿前から掘り出された実物の巨大杉柱が、雲に届く高層神殿の伝承を揺るぎない現実として語りかけてくる。",
+        "is_final": false,
+        "next_spot_id": "d81919b2-8b7b-4bde-8a1b-6ad88bd5a03e",
+        "next_spot_name": "そば処 田中屋"
+      },
+      {
+        "id": "d81919b2-8b7b-4bde-8a1b-6ad88bd5a03e",
+        "name": "そば処 田中屋",
+        "description": "出雲大社・勢溜の大鳥居前に店を構える出雲そばの人気店（11:00〜16:00営業、売り切れ次第終了、木曜定休）。殻ごと挽いた香り高い蕎麦を朱塗りの丸い器に盛った「三段割子そば」を味わえる。",
+        "address": "島根県出雲市大社町杵築東364",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.396586,
+        "lng": 132.685769,
+        "qr_token": "shuin-izumo_taishamae-3",
+        "cover_image_url": "/images/izumo_taishamae/spot3.png",
+        "f7_fragment": "朱塗りの丸い三段割子に薬味を添えて味わう、黒みがかった挽きぐるみ蕎麦。",
+        "f7_full": "殻ごと石臼で挽いた力強い蕎麦の香りと有田焼の徳利から注ぐ濃いめのだしが、参拝後の身体を満たす。",
+        "is_final": false,
+        "next_spot_id": "d8768b9c-64e9-468d-829d-c37bba6f9cb2",
+        "next_spot_name": "日本ぜんざい学会 壱号店"
+      },
+      {
+        "id": "d8768b9c-64e9-468d-829d-c37bba6f9cb2",
+        "name": "日本ぜんざい学会 壱号店",
+        "description": "神門通りの中ほどに暖簾を掲げる出雲ぜんざいの専門店（10:00〜17:00営業、不定休）。神在月の「神在餅」に由来する大粒小豆のぜんざいに紅白の白玉団子を浮かべた定番甘味を楽しめる。",
+        "address": "島根県出雲市大社町杵築南836-2",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.395343,
+        "lng": 132.686535,
+        "qr_token": "shuin-izumo_taishamae-4",
+        "cover_image_url": "/images/izumo_taishamae/spot4.png",
+        "f7_fragment": "大粒の出雲大納言小豆に紅白の白玉が浮かぶ、神在月ゆかりの出雲ぜんざい。",
+        "f7_full": "神在餅から名が生まれた温かい小豆汁と塩昆布の取り合わせが、神門通りを歩く足取りをやさしく和ませる。",
+        "is_final": false,
+        "next_spot_id": "4fe1c360-3a34-4c0c-8ef5-0075e4641b29",
+        "next_spot_name": "いずも縁結び本舗 神門通り北店"
+      },
+      {
+        "id": "4fe1c360-3a34-4c0c-8ef5-0075e4641b29",
+        "name": "いずも縁結び本舗 神門通り北店",
+        "description": "一畑電車・出雲大社前駅のすぐ北側に位置する土産処（9:00〜17:00営業、無休）。出雲めのうの勾玉細工や因幡の白うさぎモチーフの和雑貨、出雲そばや地元銘菓など縁結び土産が揃う。",
+        "address": "島根県出雲市大社町杵築南775-1",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.394892,
+        "lng": 132.686712,
+        "qr_token": "shuin-izumo_taishamae-5",
+        "cover_image_url": "/images/izumo_taishamae/spot5.png",
+        "f7_fragment": "深い翠色の出雲めのうの勾玉と白うさぎの工芸品が並ぶ、駅前の土産処。",
+        "f7_full": "古墳時代から受け継がれる碧玉の勾玉や縁結びの和菓子を手に取り、神話の門前町をめぐった記憶を持ち帰る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "db26c95c-7866-43be-89d5-855a8cc418b3",
+    "title": "苔むす石垣と飫肥杉が語る五万石の城下",
+    "name": "苔むす石垣と飫肥杉が語る五万石の城下",
+    "description": "伊東氏五万一千石の城下町・飫肥。小村寿太郎記念館から明治の石蔵で味わうおび天、飫肥杉の旧藩主邸・豫章館、武家屋敷 伊東邸の茶寮、本町通りの泰平せんべいまで南国の城下町を北から南へたどるルート。",
+    "region": "飫肥城下町・横馬場通り",
+    "area_name": "飫肥城下町・横馬場通り",
+    "cover_image_url": "/images/obi/route-eyecatch.png",
+    "imageUrl": "/images/obi/route-eyecatch.png",
+    "category": "城下町・武家屋敷・郷土食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "国際外交の軌跡や飫肥杉の枯山水、揚げたてのおび天や手焼き煎餅のうち、あなたが間近に味わってみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "山あいの小藩から世界へ羽ばたいた小村寿太郎の遺品と、人材を育てた教育の精神",
+          "description": "小村寿太郎記念館で、明治日本の針路を切り拓いた外交官の気概に胸を打たれた。",
+          "badge_code": "OBI_A"
+        },
+        {
+          "key": "B",
+          "text": "近海魚と豆腐、黒砂糖を合わせて香ばしく揚げた「おび天」の甘く滋味深い味わい",
+          "description": "おび天蔵の重厚な石蔵で、城下町が育んだ独自の郷土料理の温もりに満たされた。",
+          "badge_code": "OBI_B"
+        },
+        {
+          "key": "C",
+          "text": "樹齢百年の飫肥杉で組まれた数寄屋造の座敷から、城山の借景と枯山水を見渡した時間",
+          "description": "豫章館や武家屋敷 伊東邸の静寂のなかで、伊東家の格式と風雅な庭の美しさに惹かれた。",
+          "badge_code": "OBI_C"
+        },
+        {
+          "key": "D",
+          "text": "香ばしく焼かれた四角い「泰平せんべい」に込められた、平和な世を願う城下町の思い",
+          "description": "泰平せんべい本舗の手焼きの香りに、飫肥の人々の穏やかな暮らしを感じ取った。",
+          "badge_code": "OBI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f7f266ce-1e2b-49ea-85cd-915cf8ee332a",
+        "name": "小村寿太郎記念館",
+        "description": "飫肥藩出身でポーツマス講和会議の全権代表などを務めた明治の外交官・小村寿太郎侯の記念館（9:00〜16:30開館、無休）。遺品や外交史料、映像展示を通じてその生涯と飫肥の教育文化を学べる。",
+        "address": "宮崎県日南市飫肥4-2-20-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.627244,
+        "lng": 131.352465,
+        "qr_token": "shuin-obi-1",
+        "cover_image_url": "/images/obi/spot1.png",
+        "f7_fragment": "山あいの城下町から世界へ向き合った、明治の外交官の遺品と軌跡。",
+        "f7_full": "藩校・振徳堂の学びから育った小村寿太郎侯の書簡と懐中時計が、近代日本の針路を切り拓いた情熱を伝える。",
+        "is_final": false,
+        "next_spot_id": "f3bc5e46-bc4c-4551-8e8b-44f37da238ae",
+        "next_spot_name": "おび天蔵"
+      },
+      {
+        "id": "f3bc5e46-bc4c-4551-8e8b-44f37da238ae",
+        "name": "おび天蔵",
+        "description": "飫肥城大手門前に佇む、明治期の石蔵を改装した郷土料理処（10:00〜17:00営業、無休）。近海魚のすり身に豆腐と黒砂糖を練り込んで揚げた名物「おび天」や厚焼き玉子の定食を味わえる。",
+        "address": "宮崎県日南市飫肥9-1-8",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.626836,
+        "lng": 131.351973,
+        "qr_token": "shuin-obi-2",
+        "cover_image_url": "/images/obi/spot2.png",
+        "f7_fragment": "百余年前の石蔵に香る、黒砂糖と豆腐を練り込んだ揚げたてのおび天。",
+        "f7_full": "日南の近海魚と自家製豆腐が織りなすふんわり甘いおび天と厚焼き玉子が、城下町の昼食を温かく彩る。",
+        "is_final": false,
+        "next_spot_id": "010e52ac-aea4-4474-8ab8-57a9f22db045",
+        "next_spot_name": "豫章館"
+      },
+      {
+        "id": "010e52ac-aea4-4474-8ab8-57a9f22db045",
+        "name": "豫章館",
+        "description": "最後の飫肥藩主・伊東祐帰公が城内から移り住んだ明治初期の屋敷（9:00〜16:30開館、無休）。樹齢百年以上の飫肥杉を用いた主屋の広縁から、愛宕山を借景にした枯山水式の名園を観賞できる。",
+        "address": "宮崎県日南市飫肥9-1-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.62712,
+        "lng": 131.351241,
+        "qr_token": "shuin-obi-3",
+        "cover_image_url": "/images/obi/spot3.png",
+        "f7_fragment": "樹齢百年の飫肥杉の広縁から望む、愛宕山を借景にした枯山水庭園。",
+        "f7_full": "鶴と亀を模した石組と刈り込みが背後の山並みと重なり、旧藩主邸ならではの静謐な時間を描き出す。",
+        "is_final": false,
+        "next_spot_id": "c7300a79-c314-4947-835a-6fd99d0c27f5",
+        "next_spot_name": "武家屋敷 伊東邸"
+      },
+      {
+        "id": "c7300a79-c314-4947-835a-6fd99d0c27f5",
+        "name": "武家屋敷 伊東邸",
+        "description": "横馬場通りの玉石垣と生垣に囲まれた武家屋敷の茶寮（9:30〜16:30営業、無休）。修復された古民家の畳座敷で、日向夏を使った甘味やぜんざい、日本茶を味わいながら休息できる。",
+        "address": "宮崎県日南市飫肥8-6-10",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.625725,
+        "lng": 131.35125,
+        "qr_token": "shuin-obi-4",
+        "cover_image_url": "/images/obi/spot4.png",
+        "f7_fragment": "玉石積みの石垣と生垣の奥で味わう、爽やかな日向夏の甘味とお茶。",
+        "f7_full": "柔らかな自然光が差し込む武家屋敷の畳座敷で、柑橘の香りと温かなお茶が街歩きの歩幅を緩めてくれる。",
+        "is_final": false,
+        "next_spot_id": "7486bea5-18be-4438-895a-2874aa085847",
+        "next_spot_name": "泰平せんべい本舗"
+      },
+      {
+        "id": "7486bea5-18be-4438-895a-2874aa085847",
+        "name": "泰平せんべい本舗",
+        "description": "本町通り近くで飫肥銘菓「泰平せんべい」を製造・販売する老舗和菓子店（9:00〜17:00営業、日曜・不定休）。九州産の小麦粉と卵、砂糖を使い四角い焼き型で香ばしく焼き上げた伝統煎餅をお土産に購入できる。",
+        "address": "宮崎県日南市飫肥8-1-11",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.624771,
+        "lng": 131.351443,
+        "qr_token": "shuin-obi-5",
+        "cover_image_url": "/images/obi/spot5.png",
+        "f7_fragment": "平和な世を願う泰平踊にちなみ、四角い焼き型で一枚ずつ焼く伝統銘菓。",
+        "f7_full": "小村寿太郎侯も故郷の味として携えたサクッと優しい甘みの手焼き煎餅を包み、五万石の城下町歩きを結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];
