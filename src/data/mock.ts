@@ -39780,5 +39780,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "099afe1d-8763-4cb7-88e9-687a78d1b987",
+    "title": "薪焚きの羊羹と提灯祭りの社が結ぶ霞ヶ城下",
+    "name": "薪焚きの羊羹と提灯祭りの社が結ぶ霞ヶ城下",
+    "description": "安達太良山の東麓に広がる丹羽家十万石の城下町・二本松。百十余年続く老舗のソースカツ丼から楢の薪で練り上げる「玉羊羹」、二本松神社、久保丁坂の迎賓洋館カフェ、そして霞ヶ城の麓に建つ城報館までを巡るルート。",
+    "region": "本町通り・久保丁坂・霞ヶ城下",
+    "area_name": "本町通り・久保丁坂・霞ヶ城下",
+    "cover_image_url": "/images/nihonmatsu/route-eyecatch.png",
+    "imageUrl": "/images/nihonmatsu/route-eyecatch.png",
+    "category": "城下町・老舗和菓子・近代建築",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って二本松の城下を歩くなら、薪で炊く玉羊羹や久保丁坂の洋館カフェ、老舗のカツ丼や神社のどれから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "楢の薪と伏流水で小豆を練り上げる「玉嶋屋」で出会った、ぷるんと弾ける伝統の「玉羊羹」",
+          "description": "二本松藩御用達の老舗が守り抜く竈焚きの技と、瑞々しい羊羹の口溶けに感動した。",
+          "badge_code": "NIHONMATSU_A"
+        },
+        {
+          "key": "B",
+          "text": "久保丁坂の途中に佇む迎賓洋館「8月カフェ」で、古い硝子窓から木漏れ日を眺めた珈琲の時間",
+          "description": "大理石の暖炉やシャンデリアが残る約百年前のサロンで、静かな午後の余韻に浸った。",
+          "badge_code": "NIHONMATSU_B"
+        },
+        {
+          "key": "C",
+          "text": "提灯祭りの熱気を秘めた「二本松神社」と、丹羽家十万石の誇りを伝える「にほんまつ城報館」",
+          "description": "総鎮守の厳かな社殿と霞ヶ城の麓に並ぶ太鼓台に、城下町二本松の精神を感じ取った。",
+          "badge_code": "NIHONMATSU_C"
+        },
+        {
+          "key": "D",
+          "text": "旧奥州街道の老舗「やなぎや食堂」で味わった、甘辛い秘伝ダレが香る揚げたての「ソースカツ丼」",
+          "description": "百十余年愛される城下町の食堂で、心もお腹も温まる伝統の丼と自家製麺を堪能した。",
+          "badge_code": "NIHONMATSU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7ab422d4-75a1-4934-8e9a-a8a58b165f20",
+        "name": "やなぎや食堂",
+        "description": "JR二本松駅近くの本町通りで百十余年続く老舗大衆食堂（11:00〜14:00営業、火・水曜定休）。秘伝の甘辛ダレが染みた名物のソースカツ丼や、自家製麺の蕎麦・うどんを味わえる。",
+        "address": "福島県二本松市本町2-76",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.590662,
+        "lng": 140.436825,
+        "qr_token": "shuin-nihonmatsu-1",
+        "cover_image_url": "/images/nihonmatsu/spot1.png",
+        "f7_fragment": "百十余年続く本町通りの食堂で味わう、秘伝ダレの「ソースカツ丼」。",
+        "f7_full": "旧奥州街道の面影を残す老舗食堂で、揚げたての豚カツに甘辛いソースが絡む伝統のソースカツ丼が旅人の歩みを力強く支える。",
+        "is_final": false,
+        "next_spot_id": "3ae44eca-8655-437e-81a9-0818919757df",
+        "next_spot_name": "玉嶋屋"
+      },
+      {
+        "id": "3ae44eca-8655-437e-81a9-0818919757df",
+        "name": "玉嶋屋",
+        "description": "二百三十余年前に創業した二本松藩御用達の老舗和菓子舗（7:45〜18:00営業、不定休）。楢の薪で小豆を炊き上げる伝統製法の「玉羊羹」や「本煉羊羹」を購入できる。",
+        "address": "福島県二本松市本町1-88",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.591356,
+        "lng": 140.436089,
+        "qr_token": "shuin-nihonmatsu-2",
+        "cover_image_url": "/images/nihonmatsu/spot2.png",
+        "f7_fragment": "阿武隈の楢薪で炊き上げた、楊枝でぷるんと弾ける名物「玉羊羹」。",
+        "f7_full": "二百余年にわたり楢の薪と伏流水だけで小豆を練り上げる老舗の技が、丸く艶やかな玉羊羹の瑞々しい甘みに結晶している。",
+        "is_final": false,
+        "next_spot_id": "22dd3e58-0763-4a82-84fe-67280bc9168c",
+        "next_spot_name": "二本松神社"
+      },
+      {
+        "id": "22dd3e58-0763-4a82-84fe-67280bc9168c",
+        "name": "二本松神社",
+        "description": "二本松藩主・丹羽家の総鎮守として崇敬を集める古社（境内参拝自由、授与所9:00〜17:00）。日本三大提灯祭りのひとつ「二本松の提灯祭り」の例大祭が行われる神社として知られる。",
+        "address": "福島県二本松市本町1-61",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.592256,
+        "lng": 140.434789,
+        "qr_token": "shuin-nihonmatsu-3",
+        "cover_image_url": "/images/nihonmatsu/spot3.png",
+        "f7_fragment": "日本三大提灯祭りの御神火が灯る、二本松藩総鎮守の厳かな社殿。",
+        "f7_full": "熊野宮と八幡宮を祀る由緒ある拝殿が静かな鎮守の杜に佇み、城下町二本松の人々が受け継いできた祭礼の誇りを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "15f296b9-b7a0-400a-8110-144e802c51d7",
+        "next_spot_name": "8月カフェ"
+      },
+      {
+        "id": "15f296b9-b7a0-400a-8110-144e802c51d7",
+        "name": "8月カフェ",
+        "description": "久保丁坂の途中に建つ、約百年前の旧二本松銀行頭取の迎賓館を活用した洋館カフェ（平日11:00〜16:00・土日祝11:00〜17:00営業、水・木曜ほか不定休）。アンティークな室内で珈琲や手作りスイーツを楽しめる。",
+        "address": "福島県二本松市本町1-127",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.594097,
+        "lng": 140.434995,
+        "qr_token": "shuin-nihonmatsu-4",
+        "cover_image_url": "/images/nihonmatsu/spot4.png",
+        "f7_fragment": "久保丁坂の木立に佇む、約百年前の迎賓洋館を活かした隠れ家カフェ。",
+        "f7_full": "大理石の暖炉と古い硝子窓が残る擬洋風のサロンで、香り高い珈琲と手作りケーキを味わいながら坂の街の静寂に身を委ねる。",
+        "is_final": false,
+        "next_spot_id": "4ae0afc5-7ec3-4428-8c1e-e97fec030f8f",
+        "next_spot_name": "にほんまつ城報館"
+      },
+      {
+        "id": "4ae0afc5-7ec3-4428-8c1e-e97fec030f8f",
+        "name": "にほんまつ城報館",
+        "description": "霞ヶ城公園（二本松城跡）の麓に位置する歴史観光施設（9:00〜17:00開館、入館16:30まで、月曜定休・祝日の場合は翌日休）。二本松藩の歴史資料や城郭模型、提灯祭りの太鼓台を展示している。",
+        "address": "福島県二本松市郭内3-303-5",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.597092,
+        "lng": 140.433358,
+        "qr_token": "shuin-nihonmatsu-5",
+        "cover_image_url": "/images/nihonmatsu/spot5.png",
+        "f7_fragment": "霞ヶ城の石垣の麓で、丹羽家十万石の歴史と太鼓台に出会う学び舎。",
+        "f7_full": "二本松城の縄張り模型や華麗な太鼓台の展示を通して城下町の歩みを深く辿り、緑豊かな霞ヶ城の威容を仰ぎ見て旅を結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "233a7c4b-acde-4fea-87f3-0b8d3b63098f",
+    "title": "なぜ水の館林で鬼ひも川と白壁が愛されるのか",
+    "name": "なぜ水の館林で鬼ひも川と白壁が愛されるのか",
+    "description": "城沼の水辺に築かれた「浮城」館林城の面影と、豊かな小麦文化が息づく街。名物の幅広麺「鬼ひも川」から茶釜型の「分福最中」、茅葺きの武家屋敷「武鷹館」、百年小麦のパンケーキ、そして旧秋元別邸までを巡るルート。",
+    "region": "鷹匠町武家屋敷・三の丸・旧秋元別邸",
+    "area_name": "鷹匠町武家屋敷・三の丸・旧秋元別邸",
+    "cover_image_url": "/images/tatebayashi/route-eyecatch.png",
+    "imageUrl": "/images/tatebayashi/route-eyecatch.png",
+    "category": "城下町・うどん文化・近代建築",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "小麦が香る水の城下町・館林で、あなたの五感をみずみずしく満たしてくれるのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「五代目 花山うどん 本店」の狸の器に艶やかに盛られた、幅約五センチの名物「鬼ひも川」",
+          "description": "向こうが透けるほど薄く幅広でありながら、もちもちとした強いコシと小麦の香りに驚嘆した。",
+          "badge_code": "TATEBAYASHI_A"
+        },
+        {
+          "key": "B",
+          "text": "白漆喰の土蔵門と茅葺きの主屋が連なる「鷹匠町武家屋敷 武鷹館」に漂う藩政期の気配",
+          "description": "かつて鷹匠たちが暮らした武家町の佇まいと、端正な式台玄関の建築美に心を惹かれた。",
+          "badge_code": "TATEBAYASHI_B"
+        },
+        {
+          "key": "C",
+          "text": "和の書院と洋館が調和する「旧秋元別邸」で、城沼の風を感じながら眺めた四季の庭園",
+          "description": "最後の館林藩主・秋元家ゆかりの別邸と、水辺の城下町ならではの開放的な景色に癒やされた。",
+          "badge_code": "TATEBAYASHI_C"
+        },
+        {
+          "key": "D",
+          "text": "茶釜の形の「分福最中」と、地元産の百年小麦でふんわり焼き上げた「城町食堂」のパンケーキ",
+          "description": "田月堂が守る伝説の和菓子と、三の丸跡のカフェで味わった小麦の優しい甘みに心和んだ。",
+          "badge_code": "TATEBAYASHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c3a86d50-83d4-4513-8b27-4f5b0e2a9f8d",
+        "name": "五代目 花山うどん 本店",
+        "description": "館林駅東口近くにある百三十余年続くうどんの老舗本店（お食事処11:00〜15:00・麺なくなり次第終了、日曜定休／直売所9:30〜19:00営業）。幅約5cmの幅広麺「鬼ひも川」を味わえる。",
+        "address": "群馬県館林市本町2-3-48",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.245945,
+        "lng": 139.529083,
+        "qr_token": "shuin-tatebayashi-1",
+        "cover_image_url": "/images/tatebayashi/spot1.png",
+        "f7_fragment": "狸の器に艶やかに盛られた、幅約五センチの名物うどん「鬼ひも川」。",
+        "f7_full": "百三十余年受け継がれる製麺の技が生み出した幅広の鬼ひも川が、小麦の街・館林ならではの豊かな香りと喉ごしを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "7a2df414-b4a1-497b-8916-2fed251b20ea",
+        "next_spot_name": "和菓子処 田月堂"
+      },
+      {
+        "id": "7a2df414-b4a1-497b-8916-2fed251b20ea",
+        "name": "和菓子処 田月堂",
+        "description": "仲町の旧城下町エリアに店を構える百十余年続く老舗和菓子店（9:00〜18:00営業、水曜定休）。分福茶釜の伝説にちなんだ「分福最中」や百年小麦を使った焼き菓子を購入できる。",
+        "address": "群馬県館林市仲町12-32",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.248634,
+        "lng": 139.53168,
+        "qr_token": "shuin-tatebayashi-2",
+        "cover_image_url": "/images/tatebayashi/spot2.png",
+        "f7_fragment": "茶釜の形に香ばしく焼き上げた、粒餡たっぷりの銘菓「分福最中」。",
+        "f7_full": "茂林寺の分福茶釜伝説を映した愛らしい最中と館林産小麦の焼き菓子が、城下町を歩く旅人の鞄に温かな物語を添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "adba0ce6-ceba-405f-84c1-bf908c5ab6b7",
+        "next_spot_name": "鷹匠町武家屋敷 武鷹館"
+      },
+      {
+        "id": "adba0ce6-ceba-405f-84c1-bf908c5ab6b7",
+        "name": "鷹匠町武家屋敷 武鷹館",
+        "description": "旧館林藩士の住宅を復元・整備した武家屋敷資料館（土日祝10:00〜17:00・11〜2月は16:00まで内部公開、平日は門・庭園外観散策自由）。白壁の土蔵門と茅葺き寄棟造りの主屋が残る。",
+        "address": "群馬県館林市大手町5-10",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.246404,
+        "lng": 139.538209,
+        "qr_token": "shuin-tatebayashi-3",
+        "cover_image_url": "/images/tatebayashi/spot3.png",
+        "f7_fragment": "白壁の土蔵門と黒板塀の奥に佇む、茅葺き寄棟造りの旧館林藩士住宅。",
+        "f7_full": "かつて藩主の鷹匠たちが屋敷を連ねた通りで、重厚な茅葺き屋根と式台玄関が近世武家町の端正な暮らしぶりを今に伝えている。",
+        "is_final": false,
+        "next_spot_id": "845e8a34-d83e-4042-8063-455d1314a38f",
+        "next_spot_name": "城町食堂"
+      },
+      {
+        "id": "845e8a34-d83e-4042-8063-455d1314a38f",
+        "name": "城町食堂",
+        "description": "館林城三の丸跡の緑地に面したカフェ＆ダイニング（11:00〜17:30営業、年末年始休）。地元ブランド「百年小麦」を使ったパンケーキや自家製スイーツ、ハンドドリップ珈琲を楽しめる。",
+        "address": "群馬県館林市城町1-1",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.244389,
+        "lng": 139.541802,
+        "qr_token": "shuin-tatebayashi-4",
+        "cover_image_url": "/images/tatebayashi/spot4.png",
+        "f7_fragment": "三の丸跡の緑を望むカフェで味わう、香り豊かな「百年パンケーキ」。",
+        "f7_full": "館林の大地が育んだ百年小麦をふんわりと焼き上げたパンケーキと淹れたての珈琲が、城跡を巡る午後のひとときを優しく彩る。",
+        "is_final": false,
+        "next_spot_id": "58b98127-92ea-4eb0-8287-244a1bd12660",
+        "next_spot_name": "旧秋元別邸"
+      },
+      {
+        "id": "58b98127-92ea-4eb0-8287-244a1bd12660",
+        "name": "旧秋元別邸",
+        "description": "最後の館林藩主・秋元家の別邸として建てられた近代和風建築（庭園・敷地は9:00〜17:00見学自由）。数寄屋風の書院と洋館が連なり、四季折々の庭園と花菖蒲園を散策できる。",
+        "address": "群馬県館林市尾曳町8-1",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.243484,
+        "lng": 139.546042,
+        "qr_token": "shuin-tatebayashi-5",
+        "cover_image_url": "/images/tatebayashi/spot5.png",
+        "f7_fragment": "城沼のほとりの緑に映える、和の書院と洋館が調和した旧藩主別邸。",
+        "f7_full": "最後の館林藩主・秋元家ゆかりの数寄屋座敷と洋風応接室が四季の庭園に寄り添い、水の城下町の雅な記憶を静かに結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cba8d8a6-7e88-4ddb-8f73-5c3c3f5c9be6",
+    "title": "黒塀の町家に塩引鮭の旨味と北限の茶を訪ねて",
+    "name": "黒塀の町家に塩引鮭の旨味と北限の茶を訪ねて",
+    "description": "臥牛山の麓に町家と黒塀が連なる越後村上の城下町。雪国が育てた「北限の村上茶」の老舗から町家茶寮での一服、白壁土蔵造りの淨念寺、名物の塩引鮭とはらこ丼、そして豪華な山車が並ぶおしゃぎり会館までを巡るルート。",
+    "region": "肴町・寺町・大町・おしゃぎり会館",
+    "area_name": "肴町・寺町・大町・おしゃぎり会館",
+    "cover_image_url": "/images/murakami/route-eyecatch.png",
+    "imageUrl": "/images/murakami/route-eyecatch.png",
+    "category": "城下町・鮭文化・北限の茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "芳醇な塩引鮭とはらこ丼、雪国育ちの村上茶、そして白壁の本堂と絢爛なおしゃぎり、村上の風土を深く映すのはどちらだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "寒風が旨味を凝縮させた「塩引鮭」と、宝石のように輝くイクラを味わった「海鮮一鰭」の昼食",
+          "description": "二百余年続く魚屋の食事処で、百種の鮭料理を受け継ぐ城下町・村上の真髄に触れた。",
+          "badge_code": "MURAKAMI_A"
+        },
+        {
+          "key": "B",
+          "text": "村上堆朱と金箔が輝く屋台山車「おしゃぎり」と、日本最大級の白壁土蔵本堂をもつ「淨念寺」",
+          "description": "城下の大火を耐え抜いた白い土蔵の本堂と、町人文化の粋を集めた山車の彫刻美に圧倒された。",
+          "badge_code": "MURAKAMI_B"
+        },
+        {
+          "key": "C",
+          "text": "雪の下で甘みを蓄えた北限の茶処・村上の煎茶を、町家の奥座敷「九兵衛庵」で味わった静寂",
+          "description": "中庭を望む老舗の茶寮で、渋みが少なくまろやかな村上茶の香りと和菓子に心癒やされた。",
+          "badge_code": "MURAKAMI_C"
+        },
+        {
+          "key": "D",
+          "text": "肴町の老舗「お茶の常盤園」で出会った、自園栽培・自家製茶で守り継がれる村上茶の香り",
+          "description": "百八十余年続く町家の茶舗で、雪国の風土が育んだ香り高い煎茶や棒茶を旅の土産に選んだ。",
+          "badge_code": "MURAKAMI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b8b78ea8-547e-47c6-8837-290f9e87c4b5",
+        "name": "お茶の常盤園",
+        "description": "肴町の旧町人町通りにある百八十余年続く村上茶の老舗（9:00〜18:00営業、9〜4月は第2日曜定休・元日休）。自園で栽培し自家製茶したまろやかな甘みの煎茶や棒茶を購入できる。",
+        "address": "新潟県村上市肴町3-30",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 38.223897,
+        "lng": 139.469214,
+        "qr_token": "shuin-murakami-1",
+        "cover_image_url": "/images/murakami/spot1.png",
+        "f7_fragment": "北限の茶処・村上で百八十余年続く、自園栽培の老舗日本茶専門店。",
+        "f7_full": "厳しい冬の雪の下で甘みを蓄えた茶葉を丹念に仕上げる町家の茶舗で、香り高い村上茶を最初のしるしとして手に入れる。",
+        "is_final": false,
+        "next_spot_id": "d4e154cd-cab0-4368-842d-be49308356f7",
+        "next_spot_name": "町屋Cafe 九兵衛庵（九重園）"
+      },
+      {
+        "id": "d4e154cd-cab0-4368-842d-be49308356f7",
+        "name": "町屋Cafe 九兵衛庵（九重園）",
+        "description": "小国町の老舗茶舗「九重園」の町家座敷を活用した日本茶カフェ（9:30〜16:30L.O.、店舗は17:00まで営業、元日休）。中庭を眺めながら村上茶の煎茶や抹茶、和菓子を楽しめる。",
+        "address": "新潟県村上市小国町3-16",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 38.223838,
+        "lng": 139.474017,
+        "qr_token": "shuin-murakami-2",
+        "cover_image_url": "/images/murakami/spot2.png",
+        "f7_fragment": "二百数十年続く茶舗の奥座敷で、中庭を眺めながら味わう村上茶と和菓子。",
+        "f7_full": "障子越しの柔らかな光が満ちる町家の座敷で、茶師が選び抜いたまろやかな村上茶と季節の上生菓子が穏やかな余韻を広げる。",
+        "is_final": false,
+        "next_spot_id": "4ea74209-5adc-4d79-8b78-784946afe3b8",
+        "next_spot_name": "淨念寺"
+      },
+      {
+        "id": "4ea74209-5adc-4d79-8b78-784946afe3b8",
+        "name": "淨念寺",
+        "description": "寺町に位置する浄土宗の古刹で、本堂は国指定重要文化財（境内参拝自由、9:00〜17:00頃）。大火に備えて建てられた日本最大級の「白壁土蔵造り」の寺院本堂と松尾芭蕉の句碑を見学できる。",
+        "address": "新潟県村上市寺町3-13",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 38.224892,
+        "lng": 139.476443,
+        "qr_token": "shuin-murakami-3",
+        "cover_image_url": "/images/murakami/spot3.png",
+        "f7_fragment": "城下の大火から本尊を守り抜いた、日本最大級の白壁土蔵造りの本堂。",
+        "f7_full": "分厚い白漆喰の壁と重厚な観音開きの土蔵扉を備えた国重要文化財の本堂が、北国の城下町が重ねてきた祈りと知恵を物語る。",
+        "is_final": false,
+        "next_spot_id": "5827d00e-e7b5-4f9c-821f-fef5c46728c2",
+        "next_spot_name": "越後村上うおや 海鮮一鰭"
+      },
+      {
+        "id": "5827d00e-e7b5-4f9c-821f-fef5c46728c2",
+        "name": "越後村上うおや 海鮮一鰭",
+        "description": "創業二百余年の老舗鮮魚店「越後村上うおや」直営の食事処（11:00〜14:00L.O.営業、木曜定休）。伝統の「塩引鮭」と特製醤油ダレのイクラ「はらこ丼」が揃う御膳を味わえる。",
+        "address": "新潟県村上市大町4-5",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 38.224794,
+        "lng": 139.47876,
+        "qr_token": "shuin-murakami-4",
+        "cover_image_url": "/images/murakami/spot4.png",
+        "f7_fragment": "寒風熟成の香ばしい「塩引鮭」と、醤油ダレが輝く「はらこ丼」の御膳。",
+        "f7_full": "二百余年続く魚屋が目利きした塩引鮭の深い旨味と宝石のように弾けるはらこ丼が、鮭の街・村上の豊かな食文化を堪能させる。",
+        "is_final": false,
+        "next_spot_id": "d6725b25-f697-4fb5-8e1e-d05b47de4b74",
+        "next_spot_name": "おしゃぎり会館（村上市郷土資料館）"
+      },
+      {
+        "id": "d6725b25-f697-4fb5-8e1e-d05b47de4b74",
+        "name": "おしゃぎり会館（村上市郷土資料館）",
+        "description": "村上城跡の麓にある郷土資料館（3〜12月9:00〜16:30・1〜2月10:00〜16:00開館、水曜定休・祝日の場合は翌日休）。村上大祭の絢爛な屋台山車「おしゃぎり」や村上藩の武具・刀剣を展示している。",
+        "address": "新潟県村上市三之町7-9",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 38.22559,
+        "lng": 139.481138,
+        "qr_token": "shuin-murakami-5",
+        "cover_image_url": "/images/murakami/spot5.png",
+        "f7_fragment": "村上堆朱と金箔の彫刻が輝く、村上大祭の二層山車「おしゃぎり」。",
+        "f7_full": "城山の麓で町人文化の粋を集めた豪華な屋台山車と村上藩の甲冑を見学し、武家と町人が織りなした城下町の歴史を締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f029d248-6c32-4579-8dfe-de867a0a8254",
+    "title": "朱塗りの天神楼門から千年の金堂が立つ周防国府へ",
+    "name": "朱塗りの天神楼門から千年の金堂が立つ周防国府へ",
+    "description": "周防国の国府が置かれ、日本最初の天満宮と国分寺が並び立つ歴史都市・防府。駅前のカフェから参道の手焼き「叶えきんつば」、古民家で手繰る石臼挽きの二八蕎麦、朱塗りの防府天満宮、そして周防国分寺の金堂までを巡るルート。",
+    "region": "天神商店街・防府天満宮・周防国分寺",
+    "area_name": "天神商店街・防府天満宮・周防国分寺",
+    "cover_image_url": "/images/hofu/route-eyecatch.png",
+    "imageUrl": "/images/hofu/route-eyecatch.png",
+    "category": "門前町・古社寺・手打ち蕎麦",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "朱塗りの防府天満宮や周防国分寺の金堂、石臼挽きの蕎麦に手焼きのきんつば、防府の旅の記憶として持ち帰りたいのはどの情景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大石段の上に鮮やかな朱塗りの楼門がそびえる「日本最初の天満宮」防府天満宮の威容",
+          "description": "菅原道真公が風光を愛でた地に立つ社殿と、高台から見渡す周防の街並みに胸がすく思いがした。",
+          "badge_code": "HOFU_A"
+        },
+        {
+          "key": "B",
+          "text": "創建当時の境内に法灯を守り続ける「周防国分寺」で、重厚な金堂と諸仏に対峙した静寂",
+          "description": "大内氏・毛利氏が庇護した二層入母屋造りの国重要文化財・金堂の荘厳な空気に圧倒された。",
+          "badge_code": "HOFU_B"
+        },
+        {
+          "key": "C",
+          "text": "宮市町の古民家「宮の蕎麦 兎屋」で味わった、石臼挽きの香り高い二八蕎麦と鰹出汁の旨味",
+          "description": "門前町の静かな路地裏で、職人が毎朝打つ端正なせいろ蕎麦と揚げたての天ぷらに満たされた。",
+          "badge_code": "HOFU_C"
+        },
+        {
+          "key": "D",
+          "text": "参道で八十余年愛される「叶えきんつば」の優しい甘みと、「cafe STAND+」の芳醇な珈琲",
+          "description": "めいじやが六面を一枚ずつ手焼きするきんつばと、駅前カフェの穏やかな時間に心和んだ。",
+          "badge_code": "HOFU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2043ba08-86c6-4f7e-8292-a4098854f626",
+        "name": "cafe STAND+",
+        "description": "JR防府駅近くのルルサス防府1階にあるカフェ（11:00〜16:00営業、火・日曜定休）。こだわりのブレンド珈琲や自家製スイーツを明るい木調の空間で楽しめる。",
+        "address": "山口県防府市栄町1-5-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.053562,
+        "lng": 131.571425,
+        "qr_token": "shuin-hofu-1",
+        "cover_image_url": "/images/hofu/spot1.png",
+        "f7_fragment": "防府駅前の並木道を望む明るいカフェで味わう、芳醇な珈琲と甘味。",
+        "f7_full": "山陽道と萩往還が交わる古都の玄関口で、丁寧に淹れた珈琲と自家製スイーツが門前町歩きの第一歩を優しく彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "597b880d-d6da-4eec-8d38-303c7b8584c5",
+        "next_spot_name": "菓子処 めいじや"
+      },
+      {
+        "id": "597b880d-d6da-4eec-8d38-303c7b8584c5",
+        "name": "菓子処 めいじや",
+        "description": "防府天満宮の参道・天神商店街にある創業八十余年の老舗和菓子舗（10:00〜18:00営業、日曜定休）。北海道産小豆の餡を薄い衣で包み手焼きした名物「叶えきんつば」を購入できる。",
+        "address": "山口県防府市上天神町2-5",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.058886,
+        "lng": 131.573941,
+        "qr_token": "shuin-hofu-2",
+        "cover_image_url": "/images/hofu/spot2.png",
+        "f7_fragment": "職人が六面を一枚ずつ手焼きする、天満宮参道名物の「叶えきんつば」。",
+        "f7_full": "八十余年にわたり参拝客を見守ってきた老舗菓子舗で、小豆の粒感と胡麻の香りが広がる叶えきんつばをお土産に手に入れる。",
+        "is_final": false,
+        "next_spot_id": "579daa58-1d3d-437b-82a1-f2d0d41904b3",
+        "next_spot_name": "宮の蕎麦 兎屋"
+      },
+      {
+        "id": "579daa58-1d3d-437b-82a1-f2d0d41904b3",
+        "name": "宮の蕎麦 兎屋",
+        "description": "防府天満宮近くの宮市町にある古民家蕎麦店（11:00〜14:30営業、火曜定休・祝日の場合は営業）。石臼挽きの国産そば粉を毎朝手打ちする二八蕎麦や天せいろを味わえる。",
+        "address": "山口県防府市宮市町8-22",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.06131,
+        "lng": 131.572253,
+        "qr_token": "shuin-hofu-3",
+        "cover_image_url": "/images/hofu/spot3.png",
+        "f7_fragment": "門前町の趣ある古民家で手繰る、石臼挽きの香り高い手打ち二八蕎麦。",
+        "f7_full": "落ち着いた和の座敷で味わう細打ちの二八蕎麦と揚げたての天ぷらが、天満宮の門前町を巡る昼時に豊かな満足をもたらす。",
+        "is_final": false,
+        "next_spot_id": "e154e91c-5e74-497b-8b33-d327b398ac95",
+        "next_spot_name": "防府天満宮"
+      },
+      {
+        "id": "e154e91c-5e74-497b-8b33-d327b398ac95",
+        "name": "防府天満宮",
+        "description": "菅原道真公を祀る「日本最初の天満宮」であり、日本三天神のひとつ（6:00〜20:00開門、無休）。大石段の上にそびえる朱塗りの楼門や本殿、茶室「芳松庵」などを参拝できる。",
+        "address": "山口県防府市松崎町14-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.063244,
+        "lng": 131.574137,
+        "qr_token": "shuin-hofu-4",
+        "cover_image_url": "/images/hofu/spot4.png",
+        "f7_fragment": "天神山の緑を背に大石段の上へそびえる、朱塗りの「防府天満宮」楼門。",
+        "f7_full": "菅原道真公が風光を愛でた地に千百年以上鎮座する朱塗りの社殿が、学問と至誠を尊ぶ周防の精神を鮮やかに今へ伝えている。",
+        "is_final": false,
+        "next_spot_id": "b4c04184-eb59-43a0-8069-65ca988dc92a",
+        "next_spot_name": "周防国分寺"
+      },
+      {
+        "id": "b4c04184-eb59-43a0-8069-65ca988dc92a",
+        "name": "周防国分寺",
+        "description": "奈良時代に聖武天皇の詔で創建され、創建当時の境内に伽藍を残す古刹（金堂拝観9:00〜16:00、月曜定休・祝日の場合は翌平日休）。国重要文化財の金堂と多数の仏像を拝観できる。",
+        "address": "山口県防府市国分寺町2-67",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.061847,
+        "lng": 131.579486,
+        "qr_token": "shuin-hofu-5",
+        "cover_image_url": "/images/hofu/spot5.png",
+        "f7_fragment": "創建当時の境内に千二百八十余年の法灯を伝える、国重要文化財の金堂。",
+        "f7_full": "大内氏や毛利氏の庇護のもと創建地のまま守り抜かれた二層入母屋造りの金堂が、周防の古都を巡る旅を荘厳な静けさで結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "11302b68-63f6-4243-8c24-a8a2fb67bc9b",
+    "title": "楽焼うなぎの湯気と二連の石橋が映す高城の杜",
+    "name": "楽焼うなぎの湯気と二連の石橋が映す高城の杜",
+    "description": "本明川の清流と城山のクスノキ群に抱かれた城下町・諫早。街角のカフェから二百三十余年続く「諫早おこし」、朱色の陶器でふっくら蒸す「楽焼うなぎ」、諫早市美術・歴史館、そして高城神社と眼鏡橋の杜までを巡るルート。",
+    "region": "八坂町・本明川・高城回廊",
+    "area_name": "八坂町・本明川・高城回廊",
+    "cover_image_url": "/images/hon_isahaya/route-eyecatch.png",
+    "imageUrl": "/images/hon_isahaya/route-eyecatch.png",
+    "category": "城下町・うなぎ文化・石橋遺産",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "朱色の器に湯気立つ楽焼うなぎや黒糖の諫早おこし、高城の社と眼鏡橋、諫早の街に宿る誇りを感じるのはどの瞬間でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "百四十余年続く老舗「北御門」で味わった、朱色の陶器でふっくら蒸し上げる名物「楽焼うなぎ」",
+          "description": "炭火の香ばしさと楽焼の湯気が織りなす、とろけるように柔らかな蒲焼の旨味に感動した。",
+          "badge_code": "HON_ISAHAYA_A"
+        },
+        {
+          "key": "B",
+          "text": "初代領主を祀る「高城神社」の杜と、その隣で水面に美しい弧を描く国重要文化財「眼鏡橋」",
+          "description": "城山のクスノキ群に守られた静かな境内と、日本の石橋として初めて重文となった二連アーチに見惚れた。",
+          "badge_code": "HON_ISAHAYA_B"
+        },
+        {
+          "key": "C",
+          "text": "「諫早市美術・歴史館」で辿った、佐賀藩諫早領の歴史資料と有明海を拓いた先人の物語",
+          "description": "旧屋敷跡に近い高城回廊で、城下町の絵図や干拓の歴史から諫早の奥深い風土を知った。",
+          "badge_code": "HON_ISAHAYA_C"
+        },
+        {
+          "key": "D",
+          "text": "二百三十余年続く森長の香ばしい「諫早おこし」と、「BASE cafe」で過ごした穏やかな珈琲時間",
+          "description": "沖縄産黒糖と炒り米が織りなす伝統銘菓の甘みと、街角カフェの香り高い一杯に心和んだ。",
+          "badge_code": "HON_ISAHAYA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0173e2fa-ab73-411b-878f-0bc79673d467",
+        "name": "BASE cafe",
+        "description": "本諫早駅近くの栄町にあるカフェ（10:00〜20:00営業、不定休）。丁寧に淹れたハンドドリップ珈琲やフレンチトースト、自家製ドリンクを落ち着いた空間で楽しめる。",
+        "address": "長崎県諫早市栄町2-15",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.843533,
+        "lng": 130.05546,
+        "qr_token": "shuin-hon_isahaya-1",
+        "cover_image_url": "/images/hon_isahaya/spot1.png",
+        "f7_fragment": "本諫早駅近くの栄町で、香り高い珈琲とフレンチトーストを味わうカフェ。",
+        "f7_full": "木の温もりに満ちた穏やかな店内で味わう淹れたての珈琲が、本明川と城山の街・諫早を巡る最初の一歩を心地よく整えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f9e6fa6f-0734-42f5-8b44-2df0496edba8",
+        "next_spot_name": "菓秀苑 森長 八坂町本店"
+      },
+      {
+        "id": "f9e6fa6f-0734-42f5-8b44-2df0496edba8",
+        "name": "菓秀苑 森長 八坂町本店",
+        "description": "二百三十余年前に創業した諫早の老舗菓子舗（9:00〜17:30営業、元日休）。黒糖と炒り米の香ばしさが広がる伝統銘菓「諫早おこし」やカステラを購入できる。",
+        "address": "長崎県諫早市八坂町3-10",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.84336,
+        "lng": 130.056512,
+        "qr_token": "shuin-hon_isahaya-2",
+        "cover_image_url": "/images/hon_isahaya/spot2.png",
+        "f7_fragment": "二百三十余年にわたり受け継がれる、黒糖香る伝統銘菓「諫早おこし」。",
+        "f7_full": "諫早平野の良質な米と沖縄産黒糖を職人の火加減で絡めた黒おこしが、城下町で愛され続けてきた素朴で力強い甘みを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "3bd786b7-c926-40a2-8e28-c68382f18aa7",
+        "next_spot_name": "うなぎ・割烹 北御門"
+      },
+      {
+        "id": "3bd786b7-c926-40a2-8e28-c68382f18aa7",
+        "name": "うなぎ・割烹 北御門",
+        "description": "本明川近くの八天町で百四十余年続くうなぎ・割烹の老舗（平日11:00〜15:00・16:30〜20:30、土日祝11:00〜20:30営業、月曜定休・祝日の場合は営業）。朱色の二重陶器で蒸す名物「楽焼うなぎ」を味わえる。",
+        "address": "長崎県諫早市八天町4-3",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.846235,
+        "lng": 130.054249,
+        "qr_token": "shuin-hon_isahaya-3",
+        "cover_image_url": "/images/hon_isahaya/spot3.png",
+        "f7_fragment": "朱色の二重陶器「楽焼」の湯気でふっくらと蒸し上げた、秘伝ダレの蒲焼。",
+        "f7_full": "百四十余年続く老舗割烹で味わう熱々の楽焼うなぎが、炭火の香ばしさととろけるような身の甘みで旅人の心とお腹を満たしてくれる。",
+        "is_final": false,
+        "next_spot_id": "ecf3f40e-fc81-4029-8c49-0eabb10dd3e9",
+        "next_spot_name": "諫早市美術・歴史館"
+      },
+      {
+        "id": "ecf3f40e-fc81-4029-8c49-0eabb10dd3e9",
+        "name": "諫早市美術・歴史館",
+        "description": "高城回廊の中心に位置する歴史・美術博物館（10:00〜18:00開館、入館17:30まで、火曜定休・祝日の場合は翌日休）。佐賀藩諫早領の歴史資料や城下町絵図、郷土ゆかりの美術品を展示している。",
+        "address": "長崎県諫早市東小路町2-33",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.843781,
+        "lng": 130.049698,
+        "qr_token": "shuin-hon_isahaya-4",
+        "cover_image_url": "/images/hon_isahaya/spot4.png",
+        "f7_fragment": "旧諫早家屋敷跡に近い高城回廊で、城下町と干拓の歴史を紐解く博物館。",
+        "f7_full": "佐賀藩諫早領に伝わる甲冑や古絵図の展示を通して、本明川と有明海に寄り添いながら豊かな城下町を築いた先人の足跡を辿る。",
+        "is_final": false,
+        "next_spot_id": "498eb882-2d6c-43fd-8d31-b1b2ffff2017",
+        "next_spot_name": "高城神社"
+      },
+      {
+        "id": "498eb882-2d6c-43fd-8d31-b1b2ffff2017",
+        "name": "高城神社",
+        "description": "諫早公園（諫早城跡）に隣接し、初代領主・龍造寺家晴公を祀る神社（境内参拝自由、社務所9:00〜16:00）。すぐ隣の公園内にある国重要文化財「諫早眼鏡橋」とともに城山の緑に包まれている。",
+        "address": "長崎県諫早市高城町1-5",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.844411,
+        "lng": 130.048872,
+        "qr_token": "shuin-hon_isahaya-5",
+        "cover_image_url": "/images/hon_isahaya/spot5.png",
+        "f7_fragment": "城山のクスノキ群と二連アーチの眼鏡橋に寄り添う、初代領主ゆかりの社。",
+        "f7_full": "天然記念物の暖地性植物が茂る城山の麓で高城神社と美しい二連の石橋・眼鏡橋を巡り、水と緑の城下町の旅を穏やかに締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
