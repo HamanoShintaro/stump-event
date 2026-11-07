@@ -38480,5 +38480,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "2d54154f-4354-46c4-8c9b-26a18ccc6e44",
+    "title": "片倉家の三階櫓と白石温麺が紡ぐ城下町",
+    "name": "片倉家の三階櫓と白石温麺が紡ぐ城下町",
+    "description": "伊達家の重臣・片倉小十郎が治めた白石城下。沢端川沿いの茅葺き武家屋敷からくるみだれで味わう白石温麺、木造復元の白石城三階櫓、豪商の店蔵・壽丸屋敷、老舗のずんだ餅まで城下町を一周するルート。",
+    "region": "白石城・沢端川武家屋敷",
+    "area_name": "白石城・沢端川武家屋敷",
+    "cover_image_url": "/images/shiroishi/route-eyecatch.png",
+    "imageUrl": "/images/shiroishi/route-eyecatch.png",
+    "category": "城下町・武家屋敷・麺食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って白石の城下町を歩くなら、木造復元の三階櫓や茅葺きの武家屋敷、白石温麺や豪商の店蔵のどれから案内しますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "国産ヒノキで木造復元された白石城の三階櫓から、蔵王連峰と城下町を見渡す眺望",
+          "description": "一国一城令の例外として存続した片倉小十郎の居城の威容と歴史に心惹かれた。",
+          "badge_code": "SHIROISHI_A"
+        },
+        {
+          "key": "B",
+          "text": "沢端川の清流と柳並木に面した、享保十五年築の茅葺き武家屋敷の静かな佇まい",
+          "description": "旧小関家の水路のせせらぎと書院座敷に、江戸時代の家臣の暮らしを感じ取った。",
+          "badge_code": "SHIROISHI_B"
+        },
+        {
+          "key": "C",
+          "text": "油を使わず打った短い「白石温麺」を、くるみだれや胡麻だれの三味で食べ比べる昼食",
+          "description": "うーめん番所で味わった孝行話ゆかりの優しい麺と濃厚なつゆに満たされた。",
+          "badge_code": "SHIROISHI_C"
+        },
+        {
+          "key": "D",
+          "text": "豪商が築いた白漆喰の「壽丸屋敷」の帳場と、つきたての鮮やかな「ずんだ餅」の甘み",
+          "description": "壽丸屋敷の重厚な店蔵建築と、くさかもちやの郷土の餅菓子に旅の温もりを感じた。",
+          "badge_code": "SHIROISHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4afae590-9b14-4430-893a-1440e9f84253",
+        "name": "白石市武家屋敷（旧小関家）",
+        "description": "白石城の北側を流れる沢端川沿いに佇む、享保十五年建築の中級武家屋敷（9:00〜17:00開館、11〜3月は16:00まで、12/28〜31休館）。茅葺き寄棟造りの主屋と水路を引き込んだ庭園を見学できる。",
+        "address": "宮城県白石市西益岡町6-52",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.004785,
+        "lng": 140.615077,
+        "qr_token": "shuin-shiroishi-1",
+        "cover_image_url": "/images/shiroishi/spot1.png",
+        "f7_fragment": "沢端川の清流と丸石垣に抱かれた、享保十五年築の茅葺き武家屋敷。",
+        "f7_full": "外堀を兼ねた沢端川のせせらぎが響く書院座敷に、片倉家中の中級武士が営んだ端正な暮らしと水路の知恵が静かに息づいている。",
+        "is_final": false,
+        "next_spot_id": "752fea99-8b18-4d6b-8ee8-35903136f779",
+        "next_spot_name": "奥州街道 うーめん番所"
+      },
+      {
+        "id": "752fea99-8b18-4d6b-8ee8-35903136f779",
+        "name": "奥州街道 うーめん番所",
+        "description": "白石城の北麓に店を構える白石温麺（うーめん）の食事処（11:00〜16:30営業、売店は9:00〜17:00、第2・4木曜定休）。油を使わずに製麺する伝統の白石温麺を、ごま・くるみ・醤油の「三味うーめん」などで味わえる。",
+        "address": "宮城県白石市西益岡町2-3",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.006301,
+        "lng": 140.614359,
+        "qr_token": "shuin-shiroishi-2",
+        "cover_image_url": "/images/shiroishi/spot2.png",
+        "f7_fragment": "くるみ・ごま・醤油の三種のつゆで味わう、長さ九センチの白石温麺。",
+        "f7_full": "油を使わず小麦と塩水だけで打つ優しい喉ごしの短い白麺に、香ばしいくるみだれと胡麻だれが豊かに絡み合い旅の昼を彩る。",
+        "is_final": false,
+        "next_spot_id": "c961b87c-9743-4d80-8056-556b705e588f",
+        "next_spot_name": "白石城"
+      },
+      {
+        "id": "c961b87c-9743-4d80-8056-556b705e588f",
+        "name": "白石城",
+        "description": "伊達家の重臣・片倉小十郎が明治維新まで居城とした平山城（9:00〜17:00開城、11〜3月は16:00まで、12/28〜31休館）。史実に忠実に木造復元された三階櫓（天守）の最上階から蔵王連峰と城下町を一望できる。",
+        "address": "宮城県白石市益岡町1-16",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.002739,
+        "lng": 140.617493,
+        "qr_token": "shuin-shiroishi-3",
+        "cover_image_url": "/images/shiroishi/spot3.png",
+        "f7_fragment": "白漆喰の壁と黒瓦が青空に映える、片倉小十郎ゆかりの木造復元三階櫓。",
+        "f7_full": "ヒノキの香る急階段を登り切った三階櫓の高欄から、伊達政宗公の右目として南の境を守り抜いた城下と蔵王連峰の眺望が広がる。",
+        "is_final": false,
+        "next_spot_id": "bf8f7483-b875-401d-87a5-144491b31907",
+        "next_spot_name": "壽丸屋敷"
+      },
+      {
+        "id": "bf8f7483-b875-401d-87a5-144491b31907",
+        "name": "壽丸屋敷",
+        "description": "奥州街道の宿場町・中町通りに残る明治〜大正期の豪商建築（10:00〜16:00開館、火曜定休、入館無料）。重厚な白漆喰の店蔵やケヤキ造りの座敷、季節の展示を眺めながら散策の足を休められる。",
+        "address": "宮城県白石市中町48-5",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.003805,
+        "lng": 140.622874,
+        "qr_token": "shuin-shiroishi-4",
+        "cover_image_url": "/images/shiroishi/spot4.png",
+        "f7_fragment": "重厚な土蔵扉とケヤキの帳場格子が残る、明治の豪商の店蔵。",
+        "f7_full": "防火用の厚い漆喰壁とケヤキの梁が渡る和洋折衷の座敷が、奥州街道の商都として賑わった白石の華やかな面影を静かに伝える。",
+        "is_final": false,
+        "next_spot_id": "76fceef1-d807-49db-808b-05626fff55ac",
+        "next_spot_name": "甘味堂 くさかもちや"
+      },
+      {
+        "id": "76fceef1-d807-49db-808b-05626fff55ac",
+        "name": "甘味堂 くさかもちや",
+        "description": "JR白石駅近くの清水小路にある老舗の餅・和菓子店（和菓子販売9:00〜16:00、月曜定休）。宮城伝統の「ずんだ餅」やくるみ餅、季節の和菓子をお土産に購入できる。",
+        "address": "宮城県白石市清水小路48-4",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.004123,
+        "lng": 140.624005,
+        "qr_token": "shuin-shiroishi-5",
+        "cover_image_url": "/images/shiroishi/spot5.png",
+        "f7_fragment": "鮮やかな緑の枝豆餡が香る、毎朝杵つきで仕上げる老舗のずんだ餅。",
+        "f7_full": "蔵王山麓の伏流水と宮城のもち米で毎朝つき上げる柔らかなずんだ餅やくるみ餅を手に取り、城下町歩きの温かな土産に結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6c29b4af-3558-42c4-8481-f684250ac35b",
+    "title": "なぜ番場通りに極彩色の祭と銘菓が息づくのか",
+    "name": "なぜ番場通りに極彩色の祭と銘菓が息づくのか",
+    "description": "知知夫国の総鎮守・秩父神社と石畳の番場通り。秩父夜祭の笠鉾・屋台が並ぶ秩父まつり会館から左甚五郎の彫刻が光る本殿、名物のくるみ汁そば、昭和初期の登録有形文化財カフェ、明治創業のちちぶ餅までたどるルート。",
+    "region": "秩父神社・番場通り",
+    "area_name": "秩父神社・番場通り",
+    "cover_image_url": "/images/chichibu/route-eyecatch.png",
+    "imageUrl": "/images/chichibu/route-eyecatch.png",
+    "category": "古社彫刻・曳山祭・レトロ参道",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "秩父夜祭の屋台と名工の社殿彫刻、石畳通りのくるみ汁そばと老舗の甘味。今のあなたの心に深く響くのはどの情景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "金箔と幕刺繍が輝く笠鉾・屋台を見上げ、冬の夜祭の鼓動を間近に感じた瞬間",
+          "description": "秩父まつり会館で、三百余年の歴史を誇る屋台建築と町衆の情熱に圧倒された。",
+          "badge_code": "CHICHIBU_A"
+        },
+        {
+          "key": "B",
+          "text": "徳川家康公ゆかりの権現造り本殿で、左甚五郎の「つなぎの龍」と「お元気三猿」に出会った時間",
+          "description": "秩父神社の豊かな杜と、江戸初期の名工が魂を込めた極彩色彫刻に魅了された。",
+          "badge_code": "CHICHIBU_B"
+        },
+        {
+          "key": "C",
+          "text": "石臼挽きの手打ち蕎麦を、香ばしく甘い「くるみ汁」に絡めて味わった昼どき",
+          "description": "手打そば 武蔵屋で、山の恵みを活かした秩父ならではの蕎麦文化を堪能した。",
+          "badge_code": "CHICHIBU_C"
+        },
+        {
+          "key": "D",
+          "text": "昭和初期のレトロな煙草店カフェで過ごす珈琲時間と、驚くほど柔らかな「ちちぶ餅」",
+          "description": "小池カフェの登録有形文化財建築と、水戸屋本店の老舗の和菓子に心和んだ。",
+          "badge_code": "CHICHIBU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "82f80ac9-21ea-4601-81ce-34cde99bec8b",
+        "name": "秩父まつり会館",
+        "description": "日本三大曳山祭のひとつ「秩父夜祭」の笠鉾・屋台や祭礼資料を常設展示する施設（9:00〜17:00開館、12〜3月は10:00〜、第4・5火曜休館）。豪華な金箔彫刻や幕刺繍を間近に見学できる。",
+        "address": "埼玉県秩父市番場町2-8",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.997317,
+        "lng": 139.085144,
+        "qr_token": "shuin-chichibu-1",
+        "cover_image_url": "/images/chichibu/spot1.png",
+        "f7_fragment": "極彩色の金箔彫刻と幕刺繍が輝く、秩父夜祭の笠鉾と屋台。",
+        "f7_full": "釘を使わず組み上げられる巨大な屋台と無数の提灯が、冬の秩父の夜空を揺らす三百年の祭りの熱気を鮮やかに映し出す。",
+        "is_final": false,
+        "next_spot_id": "ea7552d1-e6ad-4859-8d9d-f1bfb221e79b",
+        "next_spot_name": "秩父神社"
+      },
+      {
+        "id": "ea7552d1-e6ad-4859-8d9d-f1bfb221e79b",
+        "name": "秩父神社",
+        "description": "創建二千百年を超える知知夫国の総鎮守（6:00〜20:00開門、無休）。徳川家康公が寄進した権現造りの本殿・幣殿・拝殿（県指定文化財）には、左甚五郎作「つなぎの龍」や「お元気三猿」の彫刻が施されている。",
+        "address": "埼玉県秩父市番場町1-3",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.997619,
+        "lng": 139.084139,
+        "qr_token": "shuin-chichibu-2",
+        "cover_image_url": "/images/chichibu/spot2.png",
+        "f7_fragment": "権現造りの社殿を彩る、左甚五郎の「つなぎの龍」と「お元気三猿」。",
+        "f7_full": "豊かな柞の杜の静寂のなかで、鎖に繋がれた蒼い龍と闊達な三猿の極彩色彫刻が名工の技と古社の祈りを今に語りかける。",
+        "is_final": false,
+        "next_spot_id": "3a6d2d09-16d4-4d17-8cfa-c54020ce5853",
+        "next_spot_name": "手打そば 武蔵屋 番場店"
+      },
+      {
+        "id": "3a6d2d09-16d4-4d17-8cfa-c54020ce5853",
+        "name": "手打そば 武蔵屋 番場店",
+        "description": "秩父神社の参道・番場通りに暖簾を掲げる手打ち蕎麦店（11:00〜15:00営業、平日は16:00まで、火曜定休）。自社製粉の石臼挽き蕎麦を香ばしいクルミだれで味わう秩父名物「くるみ汁そば」を楽しめる。",
+        "address": "埼玉県秩父市番場町4-11",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.996566,
+        "lng": 139.084857,
+        "qr_token": "shuin-chichibu-3",
+        "cover_image_url": "/images/chichibu/spot3.png",
+        "f7_fragment": "石臼挽きの手打ち蕎麦に絡む、香ばしく濃厚な秩父名物くるみ汁。",
+        "f7_full": "すり潰したクルミの豊かなコクとほのかな甘みがそばつゆに溶け合い、山々に抱かれた盆地ならではの滋味深い昼食を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "5e73b46b-45d5-4a30-8990-6cc1b8e6b04e",
+        "next_spot_name": "小池カフェ"
+      },
+      {
+        "id": "5e73b46b-45d5-4a30-8990-6cc1b8e6b04e",
+        "name": "小池カフェ",
+        "description": "国登録有形文化財「旧小池煙草店」の1階を活用したレトロカフェ（11:00〜17:30営業、火曜定休）。曲面ガラスの窓口や当時の意匠が残る空間で、こだわりの珈琲や自家製スイーツを味わえる。",
+        "address": "埼玉県秩父市番場町17-10",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.994268,
+        "lng": 139.083829,
+        "qr_token": "shuin-chichibu-4",
+        "cover_image_url": "/images/chichibu/spot4.png",
+        "f7_fragment": "旧小池煙草店の優美な曲面ガラスが光る、登録有形文化財カフェ。",
+        "f7_full": "秩父銘仙で賑わった往時のモダンな看板建築のなかで、香り高いハンドドリップ珈琲とケーキが参道歩きの足を優しく癒やす。",
+        "is_final": false,
+        "next_spot_id": "3ccf88a3-5620-4813-81d6-d9d97098831c",
+        "next_spot_name": "水戸屋本店"
+      },
+      {
+        "id": "3ccf88a3-5620-4813-81d6-d9d97098831c",
+        "name": "水戸屋本店",
+        "description": "明治八年創業、百五十年続く秩父を代表する老舗和洋菓子店（9:00〜18:30営業、火曜定休）。つきたてのように柔らかな餅生地で北海道産小豆のつぶし餡を包んだ看板銘菓「ちちぶ餅」をお土産に購入できる。",
+        "address": "埼玉県秩父市本町1-22",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.996619,
+        "lng": 139.082671,
+        "qr_token": "shuin-chichibu-5",
+        "cover_image_url": "/images/chichibu/spot5.png",
+        "f7_fragment": "指で持つとたわむほど柔らかな餅につぶし餡を包んだ、老舗のちちぶ餅。",
+        "f7_full": "百五十年にわたり受け継がれるとろける食感のちちぶ餅を旅の土産に手に取り、石畳の番場通りをめぐった記憶をそっと包む。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "350ba3e4-a50c-4e53-87d8-04a38f69886b",
+    "title": "瀬戸川の白壁土蔵街から飛騨の匠と酒蔵を歩く",
+    "name": "瀬戸川の白壁土蔵街から飛騨の匠と酒蔵を歩く",
+    "description": "鯉が泳ぐ瀬戸川と白壁土蔵が連なる飛騨古川。起し太鼓と屋台を展示する飛騨古川まつり会館から飛騨牛の朴葉味噌、水呼びの亀が守る円光寺、築百年の壱之町珈琲店、三百二十年続く蒲酒造場までめぐるルート。",
+    "region": "瀬戸川と白壁土蔵街・壱之町",
+    "area_name": "瀬戸川と白壁土蔵街・壱之町",
+    "cover_image_url": "/images/hida_furukawa/route-eyecatch.png",
+    "imageUrl": "/images/hida_furukawa/route-eyecatch.png",
+    "category": "白壁土蔵・飛騨の匠・酒蔵文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "起し太鼓の熱気や飛騨牛の朴葉味噌、瀬戸川沿いの白壁酒蔵や古民家珈琲まで、あなたの五感を強く惹きつけるのはどの体験だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大太鼓を乗せた巨大な櫓「起し太鼓」と、飛騨の匠が彫り上げた祭屋台を見上げた瞬間",
+          "description": "飛騨古川まつり会館で、動と静が交差する古川祭の伝統と木工技術に胸が熱くなった。",
+          "badge_code": "HIDA_FURUKAWA_A"
+        },
+        {
+          "key": "B",
+          "text": "朴の葉の上で自家製味噌と飛騨牛が香ばしく焼き上がる、囲炉裏文化ゆかりの昼食",
+          "description": "味処古川で、雪国の知恵が生んだ朴葉味噌の芳醇な香りと旨味に満たされた。",
+          "badge_code": "HIDA_FURUKAWA_B"
+        },
+        {
+          "key": "C",
+          "text": "大火から本堂を守った円光寺の「水呼びの亀」と、築百年の町家で味わう湧水珈琲の静寂",
+          "description": "円光寺の軒下彫刻と壱之町珈琲店の黒光りする梁に、飛騨の建築美を感じ取った。",
+          "badge_code": "HIDA_FURUKAWA_C"
+        },
+        {
+          "key": "D",
+          "text": "瀬戸川の白壁土蔵を連ねる老舗酒蔵で、杉玉の下をくぐり端麗な地酒を選んだ時間",
+          "description": "宝永元年創業の蒲酒造場で、北アルプスの伏流水が醸す飛騨の酒文化に触れた。",
+          "badge_code": "HIDA_FURUKAWA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c99f6477-e170-4c9d-8a15-feca03130f0e",
+        "name": "飛騨古川まつり会館",
+        "description": "ユネスコ無形文化遺産「古川祭」の起し太鼓（実物櫓）と本物の祭屋台3台を常設展示する施設（9:00〜17:00開館、12〜2月は16:30まで、年末年始休館）。からくり人形の実演や起し太鼓の体験展示を楽しめる。",
+        "address": "岐阜県飛騨市古川町壱之町14-5",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.23697,
+        "lng": 137.185854,
+        "qr_token": "shuin-hida_furukawa-1",
+        "cover_image_url": "/images/hida_furukawa/spot1.png",
+        "f7_fragment": "巨大な櫓の上に乗る「起し太鼓」と、飛騨の匠が彫り上げた祭屋台。",
+        "f7_full": "さらし姿の男衆が担ぎ上げる起し太鼓の巨大な櫓と精緻なからくり屋台が、静と動が交差する古川祭の誇りを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "867151d3-6ac3-4457-815c-c1a2256497cb",
+        "next_spot_name": "味処古川"
+      },
+      {
+        "id": "867151d3-6ac3-4457-815c-c1a2256497cb",
+        "name": "味処古川",
+        "description": "壱之町通りに面した出格子の町家食事処・土産処（ランチ10:00〜14:30、売店・喫茶8:30〜17:00、不定休）。飛騨牛と自家製味噌を朴の葉の上で焼く「飛騨牛朴葉味噌定食」などの郷土料理を味わえる。",
+        "address": "岐阜県飛騨市古川町壱之町11-3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.235753,
+        "lng": 137.185215,
+        "qr_token": "shuin-hida_furukawa-2",
+        "cover_image_url": "/images/hida_furukawa/spot2.png",
+        "f7_fragment": "乾かした朴の葉の上で自家製味噌と飛騨牛が香ばしく焼ける郷土膳。",
+        "f7_full": "卓上コンロから立ち上る朴葉と焦がし味噌の芳醇な香りが、雪国・飛騨の囲炉裏文化が育んだ温かなもてなしを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e8329bd4-4491-4320-8e6b-960c60aa3fe2",
+        "next_spot_name": "円光寺"
+      },
+      {
+        "id": "e8329bd4-4491-4320-8e6b-960c60aa3fe2",
+        "name": "円光寺",
+        "description": "瀬戸川と白壁土蔵街に隣接する浄土真宗本願寺派の寺院（境内自由、無休）。大火から本堂を守ったと伝わる軒下の「水呼びの亀」の彫刻や、二尊堂・鐘楼門など飛騨の匠の建築美を見学できる。",
+        "address": "岐阜県飛騨市古川町殿町11-11",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.235915,
+        "lng": 137.186331,
+        "qr_token": "shuin-hida_furukawa-3",
+        "cover_image_url": "/images/hida_furukawa/spot3.png",
+        "f7_fragment": "瀬戸川のほとりに大屋根を広げ、大火から町を守った「水呼びの亀」の古刹。",
+        "f7_full": "重厚な本堂の軒下に刻まれた一対の亀の彫刻が、清らかな瀬戸川の流れとともに白壁の町並みを静かに見守り続けている。",
+        "is_final": false,
+        "next_spot_id": "115f7ba9-a328-4696-8850-031d25c9c88a",
+        "next_spot_name": "壱之町珈琲店"
+      },
+      {
+        "id": "115f7ba9-a328-4696-8850-031d25c9c88a",
+        "name": "壱之町珈琲店",
+        "description": "壱之町通りにある築百年の古民家を改装した喫茶店（10:00〜17:00営業、火曜定休）。太い梁が渡る吹き抜けの落ち着いた空間で、飛騨の湧水を使ったハンドドリップ珈琲やシフォンケーキを楽しめる。",
+        "address": "岐阜県飛騨市古川町壱之町1-12",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.234055,
+        "lng": 137.18853,
+        "qr_token": "shuin-hida_furukawa-4",
+        "cover_image_url": "/images/hida_furukawa/spot4.png",
+        "f7_fragment": "黒光りする太い梁の下で味わう、飛騨の湧水珈琲とシフォンケーキ。",
+        "f7_full": "雪国の暮らしを支えてきた重厚な町家の吹き抜け空間で、湧水で淹れた香り高い一杯が街歩きの歩幅を心地よく緩めてくれる。",
+        "is_final": false,
+        "next_spot_id": "63dc7b09-faeb-4c55-8d42-383e11bc9474",
+        "next_spot_name": "蒲酒造場"
+      },
+      {
+        "id": "63dc7b09-faeb-4c55-8d42-383e11bc9474",
+        "name": "蒲酒造場",
+        "description": "宝永元年創業、三百二十余年にわたり瀬戸川の白壁土蔵景観を形づくる老舗酒蔵（9:00〜17:00営業、平日は8:00〜、年末年始休）。国登録有形文化財の店舗で銘酒「白真弓」の試飲や地酒・酒粕土産を購入できる。",
+        "address": "岐阜県飛騨市古川町壱之町6-6",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.234868,
+        "lng": 137.187035,
+        "qr_token": "shuin-hida_furukawa-5",
+        "cover_image_url": "/images/hida_furukawa/spot5.png",
+        "f7_fragment": "大きな杉玉が揺れる登録有形文化財の店先で選ぶ、三百二十年の銘酒「白真弓」。",
+        "f7_full": "瀬戸川沿いの文庫蔵で北アルプスの伏流水と厳冬の寒気が育てた地酒を手に取り、白壁の町を歩いた豊かな記憶を持ち帰る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6a081e49-a62f-4de3-88e9-0d5f6151dfef",
+    "title": "潮風と吟醸香が漂う安芸の小京都・町並み保存地区",
+    "name": "潮風と吟醸香が漂う安芸の小京都・町並み保存地区",
+    "description": "製塩と酒造りで栄えた「安芸の小京都」たけはら町並み保存地区。町並みを一望する西方寺・普明閣の舞台から唐破風の旧松阪家住宅、純米吟醸の酒粕を練り込んだ竹原焼、土蔵のCafé 青、三蔵の地酒が揃う道の駅までたどるルート。",
+    "region": "たけはら町並み保存地区",
+    "area_name": "たけはら町並み保存地区",
+    "cover_image_url": "/images/takehara/route-eyecatch.png",
+    "imageUrl": "/images/takehara/route-eyecatch.png",
+    "category": "重伝建町並み・豪商建築・醸造文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "舞台造りの観音堂や豪商の格子窓、酒粕香る竹原焼や吟醸蔵のなかで、旅の終わりにそっと持ち帰りたいしるしはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "石段の上の舞台造り「普明閣」から、赤茶色の州浜瓦が連なる保存地区を一望した瞬間",
+          "description": "西方寺・普明閣の懸造りの廻縁から見渡した、江戸期の町並みの骨格に心を奪われた。",
+          "badge_code": "TAKEHARA_A"
+        },
+        {
+          "key": "B",
+          "text": "曲線を描く唐破風の庇と精緻な菱格子に、塩田と醸造で栄えた豪商の美意識を感じた時間",
+          "description": "旧松阪家住宅の竹原格子と数寄屋風の座敷に、豊かな町人文化の粋を見いだした。",
+          "badge_code": "TAKEHARA_B"
+        },
+        {
+          "key": "C",
+          "text": "大正期の醤油蔵で味わう、純米吟醸の酒粕を生地に練り込んだ「竹原焼」と土蔵の珈琲",
+          "description": "お好み焼 ほり川の芳醇な竹原焼と、Café 青の静かな蔵空間に満たされた。",
+          "badge_code": "TAKEHARA_C"
+        },
+        {
+          "key": "D",
+          "text": "三つの歴史ある酒蔵が醸す竹原の地酒と、しなやかな竹細工を旅の土産に選んだよろこび",
+          "description": "道の駅たけはらに並ぶ三蔵の銘酒と竹工芸に、竹原の風土の豊かさを感じ取った。",
+          "badge_code": "TAKEHARA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b1ebcc0b-e2a7-43d9-831b-fd5f43bc24c0",
+        "name": "西方寺・普明閣",
+        "description": "たけはら町並み保存地区の東側高台に建つ浄土宗の寺院と舞台造りの観音堂（境内自由、8:00〜18:00、無休）。京都・清水寺を模して宝暦八年に建立された普明閣の舞台から保存地区の瓦屋根を一望できる。",
+        "address": "広島県竹原市本町3-10-44",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.346549,
+        "lng": 132.911366,
+        "qr_token": "shuin-takehara-1",
+        "cover_image_url": "/images/takehara/spot1.png",
+        "f7_fragment": "高台の懸造りの舞台から、赤茶色の瓦屋根が連なる保存地区を一望する観音堂。",
+        "f7_full": "京都への憧れを込めて築かれた普明閣の廻縁に立つと、製塩と酒造りで栄えた町並みと瀬戸内の穏やかな空が眼下に広がる。",
+        "is_final": false,
+        "next_spot_id": "0c97570f-7a8e-44ff-85be-334e58dbc91f",
+        "next_spot_name": "旧松阪家住宅"
+      },
+      {
+        "id": "0c97570f-7a8e-44ff-85be-334e58dbc91f",
+        "name": "旧松阪家住宅",
+        "description": "製塩業や醸造業を営んだ豪商の屋敷（10:00〜16:00開館、入館15:30まで、水曜定休、国指定重要文化財）。優美な唐破風の屋根や菱格子の出窓、数寄屋風の座敷と庭園を見学できる。",
+        "address": "広島県竹原市本町3-9-22",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.346019,
+        "lng": 132.910899,
+        "qr_token": "shuin-takehara-2",
+        "cover_image_url": "/images/takehara/spot2.png",
+        "f7_fragment": "優美な唐破風の庇と精緻な菱格子が彩る、製塩豪商の重要文化財屋敷。",
+        "f7_full": "竹原格子の奥の座敷から石畳の通りを眺めれば、塩田の富が育んだ格調高い意匠と職人の繊細な手仕事が静かに浮かび上がる。",
+        "is_final": false,
+        "next_spot_id": "ab535da4-c502-4367-87ef-b73403c49414",
+        "next_spot_name": "お好み焼 ほり川"
+      },
+      {
+        "id": "ab535da4-c502-4367-87ef-b73403c49414",
+        "name": "お好み焼 ほり川",
+        "description": "百余年前の老舗醤油蔵を改装したお好み焼き店（ランチ11:00〜14:00、L.O.13:30、水曜定休）。地元酒蔵の純米吟醸の酒粕を生地に練り込んで焼き上げるご当地グルメ「竹原焼」を味わえる。",
+        "address": "広島県竹原市本町3-8-21",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.346495,
+        "lng": 132.910574,
+        "qr_token": "shuin-takehara-3",
+        "cover_image_url": "/images/takehara/spot3.png",
+        "f7_fragment": "歴史ある醤油蔵の鉄板で焼き上げる、純米吟醸の酒粕が香る「竹原焼」。",
+        "f7_full": "ほんのり甘い吟醸酒粕を練り込んだふっくらした生地と香ばしいソースが、酒どころ竹原ならではの豊かな昼食を彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "0ff94bc2-c2ae-4b47-88f6-2dfcafcfe4ea",
+        "next_spot_name": "Café 青"
+      },
+      {
+        "id": "0ff94bc2-c2ae-4b47-88f6-2dfcafcfe4ea",
+        "name": "Café 青",
+        "description": "町並み保存地区の中心にある伝統的な土蔵を改装したギャラリーカフェ（10:00〜17:00営業、月・火曜定休）。書や篆刻の作品が飾られた静かな空間で、手作りケーキやハンドドリップ珈琲を楽しめる。",
+        "address": "広島県竹原市本町3-9-28",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.345702,
+        "lng": 132.910968,
+        "qr_token": "shuin-takehara-4",
+        "cover_image_url": "/images/takehara/spot4.png",
+        "f7_fragment": "書と篆刻が彩る静かな土蔵で味わう、手作りケーキと香り高い珈琲。",
+        "f7_full": "厚い土壁に包まれた蔵の静寂のなかで、文人墨客が愛した安芸の小京都の余韻にゆったりと浸りながら街歩きの足を休める。",
+        "is_final": false,
+        "next_spot_id": "e69b9bd1-77f7-44b3-8ed4-fa8943450d70",
+        "next_spot_name": "道の駅たけはら"
+      },
+      {
+        "id": "e69b9bd1-77f7-44b3-8ed4-fa8943450d70",
+        "name": "道の駅たけはら",
+        "description": "たけはら町並み保存地区の南西入口に位置する観光・物産拠点（9:00〜17:00営業、第3水曜定休）。竹原三蔵（竹鶴・藤井・中尾）の地酒や伝統の竹細工、地元特産ぶどうの加工品などのお土産が揃う。",
+        "address": "広島県竹原市本町1-1-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.343865,
+        "lng": 132.912181,
+        "qr_token": "shuin-takehara-5",
+        "cover_image_url": "/images/takehara/spot5.png",
+        "f7_fragment": "竹原三蔵の吟醸酒と職人の竹かご細工が一堂に揃う、保存地区入口の物産処。",
+        "f7_full": "清らかな地下水が醸した三蔵の地酒としなやかな竹工芸品を手に取り、潮風と吟醸香の街をめぐったしるしを旅の鞄に収める。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "264f10bf-5bb6-4aef-88dd-d459cea42df3",
+    "title": "辰野式赤煉瓦と唐津くんちの曳山をめぐる城下",
+    "name": "辰野式赤煉瓦と唐津くんちの曳山をめぐる城下",
+    "description": "唐津湾の潮風が吹く城下町・唐津。十四台の巨大な漆芸曳山が並ぶ曳山展示場から辰野金吾監修の旧唐津銀行、大正建築の老舗「うなぎ 竹屋」、唐津焼の器で寛ぐKARAE TABLE、名工の器が揃う一番館までたどるルート。",
+    "region": "旧唐津銀行・中町・呉服町",
+    "area_name": "旧唐津銀行・中町・呉服町",
+    "cover_image_url": "/images/karatsu/route-eyecatch.png",
+    "imageUrl": "/images/karatsu/route-eyecatch.png",
+    "category": "近代建築・曳山祭・唐津焼文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "十四台の巨大な曳山や赤煉瓦の辰野建築、炭火焼の鰻や素朴な唐津焼の器のうち、あなたが間近に味わってみたいものはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "和紙と漆を幾重にも塗り重ねた「赤獅子」や「鯛」など、十四台の巨大な曳山が並ぶ威容",
+          "description": "曳山展示場で、世界最大級の乾漆工芸品と唐津くんちの情熱に圧倒された。",
+          "badge_code": "KARATSU_A"
+        },
+        {
+          "key": "B",
+          "text": "辰野金吾が故郷に遺した、赤煉瓦と白御影石の「旧唐津銀行」の螺旋階段と塔屋",
+          "description": "東京駅にも通じる辰野式建築の気品と、近代唐津の歴史に心惹かれた。",
+          "badge_code": "KARATSU_B"
+        },
+        {
+          "key": "C",
+          "text": "大正期の木造三階建て座敷で味わう、備長炭で香ばしく地焼きした老舗の「うなぎ丼」",
+          "description": "うなぎ 竹屋の登録有形文化財の空間と、明治十年から受け継がれるタレの味に満たされた。",
+          "badge_code": "KARATSU_C"
+        },
+        {
+          "key": "D",
+          "text": "土の温もりが伝わる唐津焼の器で珈琲を味わい、一生もののぐい呑みや茶碗を選ぶ時間",
+          "description": "KARAE TABLEと一番館で、「使ってこそ完成する」唐津焼の奥深さに触れた。",
+          "badge_code": "KARATSU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ac207118-d208-4271-8229-066b7a930dfd",
+        "name": "曳山展示場",
+        "description": "ユネスコ無形文化遺産「唐津くんち」で巡行する14台の曳山（県指定重要有形民俗文化財）を常設展示する施設（9:00〜17:00開館、11/3・4および12/29〜31休館）。和紙と漆を重ねた巨大な乾漆造の造形を間近に見学できる。",
+        "address": "佐賀県唐津市新興町2881-1",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.445946,
+        "lng": 129.969922,
+        "qr_token": "shuin-karatsu-1",
+        "cover_image_url": "/images/karatsu/spot1.png",
+        "f7_fragment": "和紙と漆を幾重にも塗り重ねた、世界最大級の乾漆工芸「十四台の曳山」。",
+        "f7_full": "一番曳山の赤獅子から鮮やかな鯛山まで、二百年近く城下町を駆け抜けてきた漆と金箔の豪壮な造形美が目の前に迫ってくる。",
+        "is_final": false,
+        "next_spot_id": "654b410d-723d-423f-8007-be5de07ebc8f",
+        "next_spot_name": "旧唐津銀行"
+      },
+      {
+        "id": "654b410d-723d-423f-8007-be5de07ebc8f",
+        "name": "旧唐津銀行",
+        "description": "唐津出身の建築家・辰野金吾が監修し明治四十五年に竣工した洋風建築（9:00〜18:00開館、12/29〜31休館、県指定重要文化財）。赤煉瓦と白御影石の「辰野式」外観や吹き抜けの営業室、螺旋階段を見学できる。",
+        "address": "佐賀県唐津市本町1513-15",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.448746,
+        "lng": 129.971117,
+        "qr_token": "shuin-karatsu-2",
+        "cover_image_url": "/images/karatsu/spot2.png",
+        "f7_fragment": "赤煉瓦に白御影石の帯が映える、辰野金吾が故郷に遺した洋風建築。",
+        "f7_full": "小さな塔屋を冠した辰野式のファサードと優美な木製カウンターが、石炭積み出し港として栄えた近代唐津の繁栄を今に物語る。",
+        "is_final": false,
+        "next_spot_id": "2744c2ce-acbc-47b9-83eb-1b9117e7b714",
+        "next_spot_name": "うなぎ 竹屋"
+      },
+      {
+        "id": "2744c2ce-acbc-47b9-83eb-1b9117e7b714",
+        "name": "うなぎ 竹屋",
+        "description": "創業百四十年余、木造三階建ての数寄屋風建築（国登録有形文化財）で営業する鰻料理の老舗（11:30〜19:00営業、日祝は18:30まで、水・木曜定休）。備長炭で香ばしく地焼きしたうなぎ丼を味わえる。",
+        "address": "佐賀県唐津市中町1884-2",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.448582,
+        "lng": 129.970325,
+        "qr_token": "shuin-karatsu-3",
+        "cover_image_url": "/images/karatsu/spot3.png",
+        "f7_fragment": "木造三階建ての座敷に香る、備長炭で焼き上げた秘伝ダレのうなぎ丼。",
+        "f7_full": "蒸さずに強火の備長炭でパリッと香ばしく焼き上げた鰻と甘辛い秘伝ダレが、百四十年続く老舗の確かな貫禄を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "6bb0e0be-2ee7-42f0-8e5d-c4d91af2c2af",
+        "next_spot_name": "KARAE TABLE"
+      },
+      {
+        "id": "6bb0e0be-2ee7-42f0-8e5d-c4d91af2c2af",
+        "name": "KARAE TABLE",
+        "description": "京町商店街の複合文化施設「KARAE」1階にあるカフェ＆ダイニング（7:30〜18:00営業、不定休）。唐津焼の陶板アートが彩る店内で、地元窯元の器に淹れた珈琲や季節のスイーツを楽しめる。",
+        "address": "佐賀県唐津市京町1783",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.447312,
+        "lng": 129.96902,
+        "qr_token": "shuin-karatsu-4",
+        "cover_image_url": "/images/karatsu/spot4.png",
+        "f7_fragment": "地元窯元が焼いた唐津焼のマグカップで味わう、香り高い珈琲とスイーツ。",
+        "f7_full": "掌にしっくりと馴染む土の器の温もりを確かめながら、賑わう商店街歩きの合間に穏やかなカフェ時間をゆったりと過ごす。",
+        "is_final": false,
+        "next_spot_id": "f329fb9f-279b-4a06-8e35-8c05b88969e4",
+        "next_spot_name": "一番館"
+      },
+      {
+        "id": "f329fb9f-279b-4a06-8e35-8c05b88969e4",
+        "name": "一番館",
+        "description": "呉服町商店街（五福の縁結び通り）に店を構える唐津焼専門ギャラリー・陶磁器店（10:00〜18:00営業、元旦のみ休）。人間国宝や十四代中里太郎右衛門などの名工作品から普段使いの唐津焼まで幅広く揃う。",
+        "address": "佐賀県唐津市呉服町1807",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.448018,
+        "lng": 129.968845,
+        "qr_token": "shuin-karatsu-5",
+        "cover_image_url": "/images/karatsu/spot5.png",
+        "f7_fragment": "素朴な鉄絵の「絵唐津」から白濁釉の「斑唐津」まで並ぶ、唐津焼の専門店。",
+        "f7_full": "使い込むほどに味わいを増す「唐津の七化け」の茶碗やぐい呑みを手に取り、潮風薫る城下町をめぐった記憶を持ち帰る。",
+        "is_final": true
+      }
+    ]
   }
 ];
