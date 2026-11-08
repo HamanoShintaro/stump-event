@@ -42380,5 +42380,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "532a8393-eb59-4ebc-8b98-97d9acad35f5",
+    "title": "千賀の浦の潮香と神釜から一宮の石段を巡る",
+    "name": "千賀の浦の潮香と神釜から一宮の石段を巡る",
+    "description": "千賀の浦の潮風が吹き抜ける宮城県塩竈市は、古代の製塩神話と東北鎮護の祈りが息づく門前町だ。神秘的な四口の神釜を祀る古社や二百二段の表坂石段がそびえる一森山の社叢を仰ぎ、手打ちの二八蕎麦や味噌蔵の氷菓、茶の湯の伝統銘菓を味わいながら潮香の街を歩く。",
+    "region": "本塩釜駅・一宮の社叢・千賀の浦門前の道",
+    "area_name": "本塩釜駅・一宮の社叢・千賀の浦門前の道",
+    "cover_image_url": "/images/hon_shiogama/route-eyecatch.png",
+    "imageUrl": "/images/hon_shiogama/route-eyecatch.png",
+    "category": "陸奥国一宮・製塩神事・門前蕎麦と醸造甘味",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って本塩釜の門前町を巡るなら、神釜や手打ち蕎麦、一宮の石段、味噌氷菓、銘菓のどれから案内したいですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「御釜神社」の四口の神釜が伝える藻塩の記憶と、二百二段の石段の上に立つ「鹽竈神社」の社殿",
+          "description": "塩竈の地名の起源となった神秘的な神釜と、陸奥国一宮の荘厳な杉木立と朱塗りの社殿に圧倒された。",
+          "badge_code": "HON_SHIOGAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "門前町の「しおがま庵」で手繰った、香り高い極細の二八蕎麦と季節を映す変わりそば",
+          "description": "参拝前の静かな和空間で、繊細な細切り蕎麦の瑞々しい喉ごしと旬の香りを心ゆくまで堪能した。",
+          "badge_code": "HON_SHIOGAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "百八十年続く「太田與八郎商店」で味わった、甘じょっぱいコクが広がる仙台みそジェラート",
+          "description": "杉桶仕込みの熟成仙台みそとミルクが溶け合う氷菓で、石段歩きの疲れを心地よく癒やした。",
+          "badge_code": "HON_SHIOGAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "「菓匠 榮太楼 塩釜本店」で選んだ、ふんわり優しい「なまどら焼き」と伝統落雁「志ほがま」",
+          "description": "紫蘇と藻塩が香る伝統菓と生クリーム入りのどら焼きに、港町・塩竈ならではの菓子文化を感じた。",
+          "badge_code": "HON_SHIOGAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "93b7246f-e508-4d91-8676-8db95991f189",
+        "name": "御釜神社",
+        "description": "鹽竈神社の境外末社（9:00〜17:00参拝可、無休）。塩土老翁神が製塩法を伝えたとされる「四口の神釜」を祀り、古代の製塩を再現する藻塩焼神事で知られる。",
+        "address": "宮城県塩竈市本町6-1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.316291,
+        "lng": 141.017896,
+        "qr_token": "shuin-hon_shiogama-1",
+        "cover_image_url": "/images/hon_shiogama/spot1.png",
+        "f7_fragment": "塩竈の地名の起こりとなった「四口の神釜」を祀る、製塩伝説の古社。",
+        "f7_full": "本町通りの一角で神秘的な水を湛える四口の神釜が、海とともに歩んできた千賀の浦・塩竈の物語の始まりを静かに告げる。",
+        "is_final": false,
+        "next_spot_id": "5684fe50-1888-4bdd-8251-52cacb366cf3",
+        "next_spot_name": "しおがま庵"
+      },
+      {
+        "id": "5684fe50-1888-4bdd-8251-52cacb366cf3",
+        "name": "しおがま庵",
+        "description": "鹽竈神社の門前町・西町にある手打ち蕎麦店（11:30〜15:00営業、そばがなくなり次第終了、水曜中心に不定休）。極細の二八蕎麦や季節の変わりそばを提供している。",
+        "address": "宮城県塩竈市西町2-10",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.316829,
+        "lng": 141.013519,
+        "qr_token": "shuin-hon_shiogama-2",
+        "cover_image_url": "/images/hon_shiogama/spot2.png",
+        "f7_fragment": "一森山の麓の門前町で手繰る、極細の二八蕎麦と四季の変わりそば。",
+        "f7_full": "国産玄そばの香りを閉じ込めた繊細な細切り蕎麦と季節の変わりそばが、一宮参拝へと向かう門前町の昼下がりを涼やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "9d82d92b-b256-4529-8057-c249769e28d4",
+        "next_spot_name": "鹽竈神社"
+      },
+      {
+        "id": "9d82d92b-b256-4529-8057-c249769e28d4",
+        "name": "鹽竈神社",
+        "description": "一森山に鎮座する陸奥国一宮（5:00〜18:00開門・季節により変動あり、無休）。二百二段の表坂石段や国の重要文化財に指定された三本殿二拝殿の社殿、天然記念物「鹽竈桜」で知られる。",
+        "address": "宮城県塩竈市一森山1-1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.319146,
+        "lng": 141.012752,
+        "qr_token": "shuin-hon_shiogama-3",
+        "cover_image_url": "/images/hon_shiogama/spot3.png",
+        "f7_fragment": "二百二段の石段の先に国の重要文化財の社殿が鎮座する、陸奥国一宮の杜。",
+        "f7_full": "老杉の木立を抜けた山頂に広がる朱塗りの社殿と千賀の浦を望む景色が、東北鎮護の一宮として紡がれてきた悠久の歳月を映し出す。",
+        "is_final": false,
+        "next_spot_id": "29ea54b6-8b13-4a51-8ef3-2f14353e51e8",
+        "next_spot_name": "太田與八郎商店"
+      },
+      {
+        "id": "29ea54b6-8b13-4a51-8ef3-2f14353e51e8",
+        "name": "太田與八郎商店",
+        "description": "宮町で百八十年近く続く味噌・醤油の老舗醸造元（9:00〜17:00営業、日曜・祝日定休）。自社醸造の仙台みそを使った「仙台みそジェラート」や味噌スコーンを味わえる。",
+        "address": "宮城県塩竈市宮町2-42",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.317829,
+        "lng": 141.019566,
+        "qr_token": "shuin-hon_shiogama-4",
+        "cover_image_url": "/images/hon_shiogama/spot4.png",
+        "f7_fragment": "百八十年続く味噌醤油蔵で味わう、芳醇なコクの「仙台みそジェラート」。",
+        "f7_full": "杉桶で熟成された仙台みその香りとミルクの甘みが溶け合うジェラートが、一森山の石段を巡った後の体に優しく染み渡る。",
+        "is_final": false,
+        "next_spot_id": "0fcf7673-361d-43b3-8497-e4995d86f849",
+        "next_spot_name": "菓匠 榮太楼 塩釜本店"
+      },
+      {
+        "id": "0fcf7673-361d-43b3-8497-e4995d86f849",
+        "name": "菓匠 榮太楼 塩釜本店",
+        "description": "本町通りにある老舗和菓子舗の本店（9:00〜18:00営業、無休）。粒あんと生クリームを包んだ名物「なまどら焼き」や、紫蘇と藻塩が香る伝統銘菓「志ほがま」が揃う。",
+        "address": "宮城県塩竈市本町4-5",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.316289,
+        "lng": 141.020047,
+        "qr_token": "shuin-hon_shiogama-5",
+        "cover_image_url": "/images/hon_shiogama/spot5.png",
+        "f7_fragment": "ふんわりとした「なまどら焼き」と伝統落雁「志ほがま」を商う老舗菓子舗。",
+        "f7_full": "茶の湯の伝統を映す「志ほがま」と優しい甘さの「なまどら焼き」が、潮風薫る本塩釜の歩き旅を温かな余韻とともに結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fd7f6bd9-e19f-459a-8f37-399d0e61f036",
+    "title": "白亜の小田原城と東海道宿場の商家が紡ぐ記憶",
+    "name": "白亜の小田原城と東海道宿場の商家が紡ぐ記憶",
+    "description": "相模湾の潮風と箱根の山並みに抱かれた神奈川県小田原市には、戦国北条五代の城郭と東海道屈指の宿場町の記憶が重なり合う。白亜の天守閣を仰いだのち、旧街道筋に息づく唐破風の料理店や出桁造りの町家、八棟造りの老舗、杜のカフェへと歩みを進めよう。",
+    "region": "小田原駅・白亜の天守・東海道小田原宿の道",
+    "area_name": "小田原駅・白亜の天守・東海道小田原宿の道",
+    "cover_image_url": "/images/odawara/route-eyecatch.png",
+    "imageUrl": "/images/odawara/route-eyecatch.png",
+    "category": "北条五代城郭・東海道宿場建築・地魚天丼と伝統ういろう",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白亜の天守と旧東海道の商家建築、地魚天丼や伝統ういろうの味わいの中で、今のあなたの心に深く響くのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "五百年超の歴史を誇る「ういろう」と、出桁造りの「小田原宿なりわい交流館」が伝える宿場の面影",
+          "description": "五百年を超えて受け継がれるお菓子のういろうの風味と、旧東海道の商家建築の意匠に深く心惹かれた。",
+          "badge_code": "ODAWARA_A"
+        },
+        {
+          "key": "B",
+          "text": "唐破風屋根の登録有形文化財「だるま料理店」で味わった、ごま油香る天丼と相模湾の地魚",
+          "description": "風格ある近代和風建築の座敷で、小田原漁港の海の幸と伝統の天丼の味わいを堪能した。",
+          "badge_code": "ODAWARA_B"
+        },
+        {
+          "key": "C",
+          "text": "青空に映える「小田原城」の三重四階天守と、巨石を積んだ常盤木門が物語る名城の威容",
+          "description": "北条五代が関東支配の拠点とした城郭のスケールと、天守から見渡す相模湾の眺望に圧倒された。",
+          "badge_code": "ODAWARA_C"
+        },
+        {
+          "key": "D",
+          "text": "報徳二宮神社の杜に佇む「きんじろうカフェ」で過ごした、滋味深い呉汁と珈琲のひととき",
+          "description": "木漏れ日が揺れるオープンテラスで、二宮金次郎ゆかりの味わいと穏やかな森林の空気に癒やされた。",
+          "badge_code": "ODAWARA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7b20adc9-476b-4313-8b10-04d315d560a5",
+        "name": "小田原城",
+        "description": "北条氏五代の居城として栄えた名城（天守閣9:00〜17:00開館・入館16:30まで、12月31日〜1月1日休、12月第2水曜休）。常盤木門や銅門、相模湾を一望する三重四階の天守閣がそびえる。",
+        "address": "神奈川県小田原市城内6-1",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.250844,
+        "lng": 139.154212,
+        "qr_token": "shuin-odawara-1",
+        "cover_image_url": "/images/odawara/spot1.png",
+        "f7_fragment": "お堀と松の緑の上に三重四階の白亜の天守がそびえる、北条五代の名城。",
+        "f7_full": "常盤木門の巨石を抜けた先にそびえ立つ小田原城の白亜の天守閣が、相模湾の潮風とともに城下町を巡る旅の幕開けを凛と飾る。",
+        "is_final": false,
+        "next_spot_id": "5e8b98f5-0b42-477c-8413-9a90029e5db9",
+        "next_spot_name": "だるま料理店"
+      },
+      {
+        "id": "5e8b98f5-0b42-477c-8413-9a90029e5db9",
+        "name": "だるま料理店",
+        "description": "国の登録有形文化財に指定された唐破風建築の本館を持つ老舗日本料理店（11:00〜21:00営業・L.O.20:00、水曜定休）。相模湾の地魚刺身やごま油で揚げる名物天丼を味わえる。",
+        "address": "神奈川県小田原市本町2-1-30",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.251337,
+        "lng": 139.159527,
+        "qr_token": "shuin-odawara-2",
+        "cover_image_url": "/images/odawara/spot2.png",
+        "f7_fragment": "国登録有形文化財の重厚な唐破風建築で味わう、ごま油香る天丼と相模湾の地魚。",
+        "f7_full": "総桧造りの風格ある座敷で堪能する揚げたての天丼と新鮮な地魚が、湊町・宿場町として栄えた小田原の豊かな食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8ed9d776-7fcd-4d74-88c1-ca54805957c8",
+        "next_spot_name": "小田原宿なりわい交流館"
+      },
+      {
+        "id": "8ed9d776-7fcd-4d74-88c1-ca54805957c8",
+        "name": "小田原宿なりわい交流館",
+        "description": "旧網問屋の出桁造り建築を再整備した歴史交流施設（10:00〜17:00開館、12月29日〜1月1日休、入館無料）。東海道小田原宿の歴史展示や伝統工芸を見学できる。",
+        "address": "神奈川県小田原市本町3-6-23",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.248311,
+        "lng": 139.159982,
+        "qr_token": "shuin-odawara-3",
+        "cover_image_url": "/images/odawara/spot3.png",
+        "f7_fragment": "太い腕木が軒を支える「出桁造り」が美しい、旧網問屋の町家建築。",
+        "f7_full": "旧東海道に面して佇む出桁造りの「小田原宿なりわい交流館」が、箱根越えの旅人で賑わった宿場町の面影を今に映し出す。",
+        "is_final": false,
+        "next_spot_id": "c976eeec-3c75-4c81-8429-1f477e145d15",
+        "next_spot_name": "ういろう"
+      },
+      {
+        "id": "c976eeec-3c75-4c81-8429-1f477e145d15",
+        "name": "ういろう",
+        "description": "室町期から続く老舗で、城郭のような八棟造りの店舗で知られる（10:00〜17:00営業、水曜・第3木曜定休）。米粉を蒸し上げた伝統銘菓「お菓子のういろう」を商う。",
+        "address": "神奈川県小田原市本町1-13-17",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.247458,
+        "lng": 139.156018,
+        "qr_token": "shuin-odawara-4",
+        "cover_image_url": "/images/odawara/spot4.png",
+        "f7_fragment": "幾重もの破風屋根が重なる八棟造りの店舗で商う、伝統の「お菓子のういろう」。",
+        "f7_full": "五百年を超えて外郎家が大切に守り継ぐ「お菓子のういろう」の素朴で上品な甘みが、東海道小田原宿の深い歴史を物語る。",
+        "is_final": false,
+        "next_spot_id": "1cfcb895-cfb1-4630-8707-6beba896d055",
+        "next_spot_name": "きんじろうカフェ"
+      },
+      {
+        "id": "1cfcb895-cfb1-4630-8707-6beba896d055",
+        "name": "きんじろうカフェ",
+        "description": "報徳二宮神社の境内に佇むオープンカフェ（10:00〜17:00営業・L.O.16:30、不定休）。二宮尊徳公ゆかりの「呉汁」やキャラメルマキアートを杜の木漏れ日の中で楽しめる。",
+        "address": "神奈川県小田原市城内8-10",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.249489,
+        "lng": 139.153396,
+        "qr_token": "shuin-odawara-5",
+        "cover_image_url": "/images/odawara/spot5.png",
+        "f7_fragment": "報徳二宮神社の杜の木漏れ日の中で味わう、滋味深い「呉汁」と香り高いラテ。",
+        "f7_full": "緑豊かな境内のテラスで味わう温かい呉汁とキャラメルマキアートが、小田原の城と宿場町を巡った歩き旅を清々しく締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0b8b4a2f-b267-45b9-8427-345d2077f82d",
+    "title": "なぜ伊賀上野には高石垣と蕉風の雅が息づくのか",
+    "name": "なぜ伊賀上野には高石垣と蕉風の雅が息づくのか",
+    "description": "築城の名手・藤堂高虎公が整えた碁盤目の城下町に、俳聖・松尾芭蕉が育んだ蕉風俳諧の美意識が静かに息づく三重県伊賀市。日本屈指の高石垣と白亜の天守、天神祭を伝える古社、希少な伊賀牛の洋食や城麓の珈琲、芭蕉ゆかりの銘菓が織りなす奥深い風土を訪ねる。",
+    "region": "上野市駅・白鳳城の高石垣・蕉風城下の道",
+    "area_name": "上野市駅・白鳳城の高石垣・蕉風城下の道",
+    "cover_image_url": "/images/uenoshi/route-eyecatch.png",
+    "imageUrl": "/images/uenoshi/route-eyecatch.png",
+    "category": "高石垣城郭・天神祭の古社・伊賀牛洋食と蕉風銘菓",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "高石垣の城と天神さま、伊賀牛の洋食や城麓の珈琲、蕉風銘菓の中で、あなたが間近に味わってみたい魅力はどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "約三十メートルの高石垣がそびえる「伊賀上野城」と、県指定文化財の楼門を構える「菅原神社」",
+          "description": "藤堂高虎公が築いた圧巻の石垣と白鳳城の美しさ、そして町衆の祭礼を守り継ぐ古社の風格に胸を打たれた。",
+          "badge_code": "UENOSHI_A"
+        },
+        {
+          "key": "B",
+          "text": "老舗洋食店「グリル・ストーク」で味わった、秘伝のデミグラスソースが絡む伊賀牛の料理",
+          "description": "半世紀以上継ぎ足された芳醇なソースと、希少な伊賀牛の柔らかな旨みが織りなす一皿に魅了された。",
+          "badge_code": "UENOSHI_B"
+        },
+        {
+          "key": "C",
+          "text": "四百年続く「桔梗屋織居」で求めた、松尾芭蕉の句庵にちなむ代表銘菓「釣月」",
+          "description": "四百年以上暖簾を守る御用菓子司の技と、蕉風の雅を映した香ばしい焼き皮と粒餡の味わいに感銘を受けた。",
+          "badge_code": "UENOSHI_C"
+        },
+        {
+          "key": "D",
+          "text": "上野城の麓に佇む「cafe huone」で過ごした、岩塩添えのチーズケーキとハンドドリップ珈琲の時間",
+          "description": "城址公園の緑を望む穏やかな空間で、丁寧な手仕事のデザートと香り高い珈琲に心解きほぐされた。",
+          "badge_code": "UENOSHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e2a790ef-d96a-4825-8933-b7b85d6cde32",
+        "name": "菅原神社",
+        "description": "「上野天神宮」として親しまれる城下町の古社（境内参拝自由・社務所受付9:00〜16:00、無休）。県指定有形文化財の楼門・鐘楼と、ユネスコ無形文化遺産の「上野天神祭」で知られる。",
+        "address": "三重県伊賀市上野東町2929",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.766387,
+        "lng": 136.132938,
+        "qr_token": "shuin-uenoshi-1",
+        "cover_image_url": "/images/uenoshi/spot1.png",
+        "f7_fragment": "県指定文化財の楼門が東町の通りに威容を見せる、上野天神祭の古社。",
+        "f7_full": "芭蕉も句集を奉納した「菅原神社」の端正な楼門と神牛が、城下町・伊賀上野を巡る歩き旅の始まりを穏やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "66a548b1-d616-4090-839c-d60ad09dd5ea",
+        "next_spot_name": "グリル・ストーク"
+      },
+      {
+        "id": "66a548b1-d616-4090-839c-d60ad09dd5ea",
+        "name": "グリル・ストーク",
+        "description": "小玉町にある老舗欧風料理店（11:30〜14:00・17:00〜20:30営業、毎月8日・18日・28日定休・土日祝の場合は前後振替あり）。継ぎ足しのデミグラスソースで仕上げる伊賀牛ビーフシチューやカツサンドが名物。",
+        "address": "三重県伊賀市上野小玉町3076",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.765095,
+        "lng": 136.128853,
+        "qr_token": "shuin-uenoshi-2",
+        "cover_image_url": "/images/uenoshi/spot2.png",
+        "f7_fragment": "創業以来継ぎ足すデミグラスソースで味わう、芳醇な伊賀牛の洋食。",
+        "f7_full": "クラシックな店内で堪能する伊賀牛ビーフシチューとカツレツサンドイッチが、伊賀盆地の豊かな恵みと老舗の誇りを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c1d91331-ae49-4cc9-8827-4a564a688351",
+        "next_spot_name": "伊賀上野城"
+      },
+      {
+        "id": "c1d91331-ae49-4cc9-8827-4a564a688351",
+        "name": "伊賀上野城",
+        "description": "藤堂高虎公が築いた高さ約三十メートルの高石垣と、木造三層の天守閣「白鳳城」で知られる名城（9:00〜17:00開館・入館16:45まで、12月29日〜12月31日休）。",
+        "address": "三重県伊賀市上野丸之内106",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.770162,
+        "lng": 136.127064,
+        "qr_token": "shuin-uenoshi-3",
+        "cover_image_url": "/images/uenoshi/spot3.png",
+        "f7_fragment": "日本屈指の高石垣の上に優美な白漆喰の三層天守がそびえる「白鳳城」。",
+        "f7_full": "内堀の深い水面から垂直に立ち上がる高石垣と白亜の天守閣が、築城の名手・藤堂高虎公の気迫と城下町の誇りを鮮やかに映し出す。",
+        "is_final": false,
+        "next_spot_id": "99bc9b29-aab5-41da-86f6-1cf1298d6925",
+        "next_spot_name": "cafe huone"
+      },
+      {
+        "id": "99bc9b29-aab5-41da-86f6-1cf1298d6925",
+        "name": "cafe huone",
+        "description": "上野城公園の東側にある北欧風カフェ（11:00〜18:00営業、火曜・第1第3月曜定休）。ハンドドリップの自家焙煎オーガニック珈琲や、岩塩添えのチーズケーキ・固めプリンが人気。",
+        "address": "三重県伊賀市上野丸之内126-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.769155,
+        "lng": 136.130707,
+        "qr_token": "shuin-uenoshi-4",
+        "cover_image_url": "/images/uenoshi/spot4.png",
+        "f7_fragment": "城址公園の緑を望む北欧風の空間で味わう、チーズケーキとハンドドリップ珈琲。",
+        "f7_full": "柔らかな自然光が差し込む「cafe huone」の窓辺で味わう濃厚なチーズケーキと珈琲が、高石垣を巡った後のひとときを優しく彩る。",
+        "is_final": false,
+        "next_spot_id": "93e87e78-ce06-43ee-83e1-5d69510f7f8a",
+        "next_spot_name": "桔梗屋織居"
+      },
+      {
+        "id": "93e87e78-ce06-43ee-83e1-5d69510f7f8a",
+        "name": "桔梗屋織居",
+        "description": "四百年以上続く老舗和菓子舗（9:00〜18:30営業、火曜定休）。松尾芭蕉の小庵にちなむ代表銘菓「釣月」や「おかめ最中」を商う。",
+        "address": "三重県伊賀市上野東町2949",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.766258,
+        "lng": 136.130737,
+        "qr_token": "shuin-uenoshi-5",
+        "cover_image_url": "/images/uenoshi/spot5.png",
+        "f7_fragment": "十八代続く老舗菓子司が焼き上げる、芭蕉ゆかりの銘菓「釣月」。",
+        "f7_full": "香ばしい焼き皮で上品な粒餡を挟んだ「桔梗屋織居」の釣月が、俳聖・松尾芭蕉の故郷をめぐった旅の結びを風雅に締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7ed0722d-cab7-415e-8776-beaceebbdea2",
+    "title": "福山城の黒鉄の天守と洋館に映る備後の面影",
+    "name": "福山城の黒鉄の天守と洋館に映る備後の面影",
+    "description": "駅のホームのすぐ目の前に、北面を黒鉄で覆った五層天守がそびえる備後十万石の城下町・広島県福山市。城山の緑に抱かれた石窯ピッツァの店や井伏鱒二ゆかりの文学館、天守を借景とする豪商別邸の洋館カフェ、そして宝町の老舗が伝える柚餅の香りを辿る。",
+    "region": "福山駅・黒鉄の天守・文化の森と別邸の道",
+    "area_name": "福山駅・黒鉄の天守・文化の森と別邸の道",
+    "cover_image_url": "/images/fukuyama/route-eyecatch.png",
+    "imageUrl": "/images/fukuyama/route-eyecatch.png",
+    "category": "黒鉄天守の名城・文豪の記憶・文化財洋館カフェと伝統柚餅",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "黒鉄の天守と文豪の書斎、借景の洋館カフェや石窯ピッツァ、老舗の柚餅の中で、旅の記憶として持ち帰りたいのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天守の北側一面を黒い鉄板で覆った「福山城」と、伏見城から移築された国重要文化財の伏見櫓",
+          "description": "白漆喰の南面と漆黒の北面が織りなす唯一無二の造形と、藩政初期から現存する櫓の重厚さに圧倒された。",
+          "badge_code": "FUKUYAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "国登録有形文化財「福寿会館」の洋館カフェから眺めた、日本庭園と福山城天守の優美な借景",
+          "description": "豪商別邸に設えられた丸窓の洋館で、手入れされた庭園の松越しに天守を見上げる贅沢な時間を過ごした。",
+          "badge_code": "FUKUYAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "「ふくやま文学館」で触れた井伏鱒二の言葉と、文化ゾーンの緑に寄り添う「ゾーナイタリア福山」の昼食",
+          "description": "郷土を愛した文豪の原稿や書斎に向き合い、焼きたての石窯ピッツァとともに文化の薫る午後を満喫した。",
+          "badge_code": "FUKUYAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "宝町の老舗「大和屋本店」で求めた、福山藩の茶席から伝わる清々しい香りの銘菓「柚餅」",
+          "description": "百五十年以上続く宝町の老舗で、茶の湯の伝統を受け継ぐ柚餅と手焼きかすていらの味わいに心和んだ。",
+          "badge_code": "FUKUYAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "39670856-097f-4110-83ba-843cee7b6b1d",
+        "name": "福山城",
+        "description": "水野勝成公が築いた備後十万石の名城（天守閣9:00〜17:00開館・入館16:30まで、月曜休・祝日の場合は翌日休、12月28日〜12月31日休）。全国唯一の天守北側鉄板張りと、国重要文化財の伏見櫓・筋鉄御門を擁する。",
+        "address": "広島県福山市丸之内1-8",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.490658,
+        "lng": 133.361205,
+        "qr_token": "shuin-fukuyama-1",
+        "cover_image_url": "/images/fukuyama/spot1.png",
+        "f7_fragment": "白漆喰の南面と黒鉄張りの北面を併せ持つ、備後十万石の五層天守。",
+        "f7_full": "駅前の城山にそびえる福山城の黒鉄と白壁の鮮やかな対比が、備後福山藩の歴史と文化を辿る歩き旅の幕開けを力強く告げる。",
+        "is_final": false,
+        "next_spot_id": "7b3d406e-4a0c-4f26-8fcd-4a7929b5e403",
+        "next_spot_name": "ゾーナイタリア福山"
+      },
+      {
+        "id": "7b3d406e-4a0c-4f26-8fcd-4a7929b5e403",
+        "name": "ゾーナイタリア福山",
+        "description": "文化ゾーンの西側にあるイタリアンレストラン（11:00〜15:00・L.O.14:30、17:00〜22:00・L.O.21:00営業、火曜定休・祝日の場合は営業）。高温の石窯で焼き上げるナポリピッツァや旬のパスタが人気。",
+        "address": "広島県福山市西町2-7-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.490691,
+        "lng": 133.357313,
+        "qr_token": "shuin-fukuyama-2",
+        "cover_image_url": "/images/fukuyama/spot2.png",
+        "f7_fragment": "文化の森の緑を望む開放的な空間で味わう、焼きたての石窯ピッツァ。",
+        "f7_full": "香ばしく焼き上がった石窯ピッツァと瀬戸内の恵みを活かしたパスタが、城下町の文化エリアを巡る昼下がりを華やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "45811a64-2cf9-46fe-826b-fc5bc4dfd59c",
+        "next_spot_name": "ふくやま文学館"
+      },
+      {
+        "id": "45811a64-2cf9-46fe-826b-fc5bc4dfd59c",
+        "name": "ふくやま文学館",
+        "description": "福山出身の文豪・井伏鱒二を中心に郷土ゆかりの文学者を顕彰する文学館（9:30〜17:00開館・入館16:30まで、月曜休・祝休日の場合は翌日休、年末年始休）。再現された書斎や直筆原稿を展示する。",
+        "address": "広島県福山市丸之内1-9-9",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.492476,
+        "lng": 133.358418,
+        "qr_token": "shuin-fukuyama-3",
+        "cover_image_url": "/images/fukuyama/spot3.png",
+        "f7_fragment": "加茂地方の民家を模した白壁と瓦屋根の館に息づく、井伏鱒二の文学世界。",
+        "f7_full": "城山の緑に寄り添う「ふくやま文学館」の書斎展示と原稿資料が、備後の風土を温かく見つめた作家たちのまなざしを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cac95cf2-e07d-4601-8980-41bdd694d42f",
+        "next_spot_name": "福寿会館"
+      },
+      {
+        "id": "cac95cf2-e07d-4601-8980-41bdd694d42f",
+        "name": "福寿会館",
+        "description": "豪商・安部和助の別邸として建てられた国登録有形文化財（本館9:00〜17:00開館・月曜休、洋館テラスカフェは平日11:00〜16:00・土日祝10:00〜16:30営業・月曜火曜定休）。池泉庭園と福山城天守を望む洋館カフェを備える。",
+        "address": "広島県福山市丸之内1-8-9",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.492029,
+        "lng": 133.361464,
+        "qr_token": "shuin-fukuyama-4",
+        "cover_image_url": "/images/fukuyama/spot4.png",
+        "f7_fragment": "福山城天守を借景とする池泉庭園と、緑瓦が映える登録有形文化財の洋館。",
+        "f7_full": "昭和初期の面影をとどめる「福寿会館」の洋館カフェで庭園と天守を眺めながら味わうお茶が、城下町散策に優雅な余白をもたらす。",
+        "is_final": false,
+        "next_spot_id": "e4d00a00-66ca-4e29-866c-92ccd2a5e739",
+        "next_spot_name": "大和屋本店"
+      },
+      {
+        "id": "e4d00a00-66ca-4e29-866c-92ccd2a5e739",
+        "name": "大和屋本店",
+        "description": "宝町で百五十年以上続く老舗和菓子店（9:00〜17:00営業、日曜定休）。福山伝統の銘菓「柚餅」や、職人が手焼きで仕上げるザラメ香る「かすていら」を商う。",
+        "address": "広島県福山市宝町6-8",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.489606,
+        "lng": 133.366902,
+        "qr_token": "shuin-fukuyama-5",
+        "cover_image_url": "/images/fukuyama/spot5.png",
+        "f7_fragment": "清々しい柚子の香りが広がる伝統銘菓「柚餅」と手焼き「かすていら」の老舗。",
+        "f7_full": "宝町の老舗「大和屋本店」が守り継ぐ柚餅と手焼きかすていらが、備後福山の歴史と文化を辿った旅を香り高く締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "aca90be5-f23e-4f29-8002-8011be31cef8",
+    "title": "水堀に映る府内城の白櫓と石畳に漂う銘茶の香り",
+    "name": "水堀に映る府内城の白櫓と石畳に漂う銘茶の香り",
+    "description": "お堀の水面に白漆喰の隅櫓と屋根付きの廊下橋が優美な影を落とす、豊後府内の城下町・大分市。蒸気機関車が眠る緑の広場から歩き出し、麦味噌香るだんご汁やりゅうきゅうの郷土膳、水城の面影、路地裏のスペシャルティ珈琲、石畳の街に佇む老舗茶舗の香りに出会う。",
+    "region": "大分駅・府内城の水堀・府内五番街の道",
+    "area_name": "大分駅・府内城の水堀・府内五番街の道",
+    "cover_image_url": "/images/oita/route-eyecatch.png",
+    "imageUrl": "/images/oita/route-eyecatch.png",
+    "category": "水城の現存櫓・豊後郷土料理・路地カフェと老舗茶舗",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水堀に映る府内城の白櫓やだんご汁の郷土膳、路地カフェの珈琲、石畳の老舗茶舗の中で、あなたの五感を惹きつけるのはどれだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "内堀の水面に白亜の現存櫓と屋根付きの「廊下橋」が映り込む、「府内城跡」の優美な水城風景",
+          "description": "人質櫓や円形の宗門櫓、総桧造りで復元された廊下橋が織りなす府内藩の城郭景観に心を奪われた。",
+          "badge_code": "OITA_A"
+        },
+        {
+          "key": "B",
+          "text": "「こつこつ庵」で味わった、麦味噌香る手延べの「だんご汁」と豊後水道の「りゅうきゅう」・とり天",
+          "description": "民芸調の温かな店内で、豊後の粉食文化と海の幸が一堂に会する郷土の味覚を心ゆくまで堪能した。",
+          "badge_code": "OITA_B"
+        },
+        {
+          "key": "C",
+          "text": "中央町の「10 COFFEE BREWERS」で味わった珈琲と、「若草公園」で出会ったC55形蒸気機関車",
+          "description": "鉄道の記憶をとどめる緑の広場と、アートが彩る路地カフェの香り高い珈琲に心癒やされた。",
+          "badge_code": "OITA_C"
+        },
+        {
+          "key": "D",
+          "text": "百四十年続く「ばらえTea 若竹園 府内五番街本店」で選んだ、大分・九州の厳選銘茶と抹茶の甘味",
+          "description": "老舗茶舗の本店に漂う清々しい茶の香りと、濃厚な抹茶ソフトクリームや深蒸し煎茶の味わいに魅了された。",
+          "badge_code": "OITA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1afe4ba9-23be-4fef-8dfe-6fd47edf3098",
+        "name": "若草公園",
+        "description": "中心市街地の中央町にある都市公園（散策自由、無休）。九州の鉄道網を支えた蒸気機関車「C55形53号機」が静態保存され、噴水や緑の木立が市民の憩いの場となっている。",
+        "address": "大分県大分市中央町2-4",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.236624,
+        "lng": 131.605506,
+        "qr_token": "shuin-oita-1",
+        "cover_image_url": "/images/oita/spot1.png",
+        "f7_fragment": "スポーク動輪のC55形蒸気機関車が静態保存される、中心街の緑豊かな公園。",
+        "f7_full": "木立と噴水に彩られた若草公園の広場とC55形蒸気機関車が、豊後府内の城下町を巡る歩き旅の幕開けを伸びやかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9abcaede-7282-4035-8c52-3d2380b46fdd",
+        "next_spot_name": "こつこつ庵"
+      },
+      {
+        "id": "9abcaede-7282-4035-8c52-3d2380b46fdd",
+        "name": "こつこつ庵",
+        "description": "府内町にある大分郷土料理の名店（11:30〜14:30・L.O.14:00、17:00〜22:30・L.O.21:30営業、日曜定休）。手延べの「だんご汁」や新鮮な魚介の「りゅうきゅう」、「とり天」を味わえる。",
+        "address": "大分県大分市府内町3-8-19",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.237949,
+        "lng": 131.610876,
+        "qr_token": "shuin-oita-2",
+        "cover_image_url": "/images/oita/spot2.png",
+        "f7_fragment": "麦味噌仕立ての「だんご汁」と漁師伝来の「りゅうきゅう」が並ぶ豊後の郷土膳。",
+        "f7_full": "手延べの平打ちだんご汁と胡麻香るりゅうきゅう・揚げたてのとり天が、豊後の海と大地が育んだ豊かな食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "7bac161e-cbc7-465a-8368-71daf6c52321",
+        "next_spot_name": "府内城跡"
+      },
+      {
+        "id": "7bac161e-cbc7-465a-8368-71daf6c52321",
+        "name": "府内城跡",
+        "description": "府内藩の居城跡（散策自由・廊下橋通行は8:00〜18:00頃、無休）。県指定有形文化財の現存遺構「人質櫓」「宗門櫓」と、内堀をまたぐ木造復元の屋根付き「廊下橋」が見どころ。",
+        "address": "大分県大分市荷揚町4",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.240193,
+        "lng": 131.611341,
+        "qr_token": "shuin-oita-3",
+        "cover_image_url": "/images/oita/spot3.png",
+        "f7_fragment": "広い内堀の水面に現存の白櫓と屋根付きの「廊下橋」が映える水城跡。",
+        "f7_full": "お堀を渡る総桧造りの廊下橋と江戸期から残る白漆喰の隅櫓が、水城として栄えた豊後府内の城下町の誇りを静かに映し出す。",
+        "is_final": false,
+        "next_spot_id": "a59e5d2f-ee15-4c5a-8d4e-739e47cb1bf8",
+        "next_spot_name": "10 COFFEE BREWERS"
+      },
+      {
+        "id": "a59e5d2f-ee15-4c5a-8d4e-739e47cb1bf8",
+        "name": "10 COFFEE BREWERS",
+        "description": "中央町の路地にあるカフェ（11:30〜21:30・火〜土は23:00まで営業、不定休）。アトリエのような空間でスペシャルティコーヒーやラテ、焼き菓子を楽しめる。",
+        "address": "大分県大分市中央町3-6-13",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.238066,
+        "lng": 131.603696,
+        "qr_token": "shuin-oita-4",
+        "cover_image_url": "/images/oita/spot4.png",
+        "f7_fragment": "アトリエのような空間で味わう、香り高いスペシャルティ珈琲と焼き菓子。",
+        "f7_full": "中央町の路地に佇む「10 COFFEE BREWERS」の香り高い珈琲とカヌレが、城跡を巡った午後のひとときを軽やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "17b6674b-7a2f-4d41-8c2d-025e1049d310",
+        "next_spot_name": "ばらえTea 若竹園 府内五番街本店"
+      },
+      {
+        "id": "17b6674b-7a2f-4d41-8c2d-025e1049d310",
+        "name": "ばらえTea 若竹園 府内五番街本店",
+        "description": "百四十年以上続く老舗茶舗の本店（10:00〜18:00営業、不定休）。大分・九州の厳選銘茶や茶菓子のほか、濃厚な抹茶ソフトクリームや自家製葛餅も人気。",
+        "address": "大分県大分市府内町2-4-5",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.236928,
+        "lng": 131.607676,
+        "qr_token": "shuin-oita-5",
+        "cover_image_url": "/images/oita/spot5.png",
+        "f7_fragment": "百四十年続く老舗茶舗の本店で選ぶ、九州の厳選銘茶と濃厚な抹茶甘味。",
+        "f7_full": "府内五番街の石畳に佇む「ばらえTea 若竹園」の清々しい煎茶と抹茶の風味が、大分の城下町を巡った旅を爽やかに結んでくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
