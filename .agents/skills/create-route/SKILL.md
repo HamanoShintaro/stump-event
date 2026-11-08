@@ -222,3 +222,98 @@ node .agents/skills/create-route/scripts/deploy-route.mjs scripts/areas/<slug>.m
 4. **画像の本番反映（Gitコミット＆プッシュ）**:
    - Supabase DBには即座に反映されますが、`public/images/<slug>/` の画像ファイルと `src/data/mock.ts` はGitへプッシュされない限り本番サイト（Vercel）で画像が表示されません。
    - 必ず [AGENTS.md](../../AGENTS.md) の「AIリリース・品質保証規定（Step 1〜4）」に従い、ローカルコミット → サブエージェントQAレビュー → `git push origin main` → 画像がアクセス可能であることの確認まで完了させてからユーザーに報告してください。
+
+---
+
+## Step 5: 5駅バッチ連続実行・和紙ビネット変換・Gitプッシュ定型プロトコル（セッション引き継ぎ用）
+
+複数駅（1バッチ＝5駅）を連続して作成・リリースする際は、以下の自動化手順を使うことでセッションを跨いでも100%同一品質で再現できます。
+
+### 1. 次の `station_order` と未作成駅の特定ワンライナー
+```bash
+node -e '
+const fs = require("fs");
+const files = fs.readdirSync("scripts/areas").filter(f => f.endsWith(".mjs"));
+let maxOrder = 0;
+for (const f of files) {
+  const c = fs.readFileSync("scripts/areas/" + f, "utf8");
+  const m = c.match(/station_order:\s*(\d+)/);
+  if (m) maxOrder = Math.max(maxOrder, Number(m[1]));
+}
+console.log("Total area scripts:", files.length, "Max station_order:", maxOrder, "Next station_order:", maxOrder + 1);
+'
+```
+- 1バッチ5駅は必ず地域が偏らないよう全国5エリア（東北・関東・中部/北陸・中国/四国・九州など）から未作成の城下町・宿場町・門前町・港町駅を選定する。
+
+### 2. 画像生成サブエージェント（`image-generator`）と和紙ビネット（`#F7F2E6`）一括変換
+- `image-generator` サブエージェントで生成した JPEG/PNG を目視検収（`read_file` で文字混入ゼロ・余白良好を確認）した後、以下の `sharp` スムースステップ処理で外周を `#F7F2E6`（和紙色）へ滑らかにフェードさせ、`public/images/<slug>/route-eyecatch.png`（`800x450`）および `spot1.png〜spot5.png`（`560x560`）へ出力する。
+```bash
+node -e '
+const sharp = require("sharp");
+const fs = require("fs");
+const path = require("path");
+
+function smoothstep(edge0, edge1, x) {
+  const t = Math.max(0, Math.min(1, (x - edge0) / (edge1 - edge0)));
+  return t * t * (3 - 2 * t);
+}
+
+async function processImage(srcPath, destPath, width, height) {
+  const { data } = await sharp(srcPath)
+    .resize(width, height, { fit: "cover" })
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+
+  const bgR = 0xF7, bgG = 0xF2, bgB = 0xE6;
+  const cx = width / 2, cy = height / 2;
+  const rx = width * 0.45, ry = height * 0.45;
+
+  for (let y = 0; y < height; y++) {
+    const dy = (y - cy) / ry;
+    const edgeDistY = Math.min(y, height - 1 - y) / (height * 0.14);
+    for (let x = 0; x < width; x++) {
+      const dx = (x - cx) / rx;
+      const r = Math.sqrt(dx * dx + dy * dy);
+      const radialFade = 1 - smoothstep(0.68, 1.0, r);
+      const edgeDistX = Math.min(x, width - 1 - x) / (width * 0.14);
+      const rectFade = smoothstep(0.0, 1.0, Math.min(edgeDistX, edgeDistY));
+      const alpha = Math.min(radialFade, rectFade);
+      const idx = (y * width + x) * 4;
+      data[idx]     = Math.round(data[idx] * alpha + bgR * (1 - alpha));
+      data[idx + 1] = Math.round(data[idx + 1] * alpha + bgG * (1 - alpha));
+      data[idx + 2] = Math.round(data[idx + 2] * alpha + bgB * (1 - alpha));
+      data[idx + 3] = 255;
+    }
+  }
+
+  await sharp(data, { raw: { width, height, channels: 4 } })
+    .png({ compressionLevel: 9 })
+    .toFile(destPath);
+}
+'
+```
+- **クォータ上限（`429 RESOURCE_EXHAUSTED`）到達時の自動待機**:
+  - `image-generator` がクォータ上限に達した場合は、エラーメッセージ内のリセット時刻（UTC）を確認し、`schedule` ツール（`DurationSeconds`）でリセット時刻＋10秒後までタイマー待機し、起床後に残りの画像生成を自動再開すること（`sleep` コマンドやポーリングは使用しない）。
+
+### 3. 一括検証・非破壊デプロイ・GitHub CLI 認証プッシュ
+```bash
+# 1. 5駅の自動検証（エラー0件・警告0件を確認）
+for slug in <slug1> <slug2> <slug3> <slug4> <slug5>; do
+  node .agents/skills/create-route/scripts/verify-and-geocode.mjs --fix scripts/areas/$slug.mjs || exit 1
+done
+
+# 2. Supabase 非破壊UPSERT + src/data/mock.ts 反映（画像は生成済みのため --skip-images）
+for slug in <slug1> <slug2> <slug3> <slug4> <slug5>; do
+  node .agents/skills/create-route/scripts/deploy-route.mjs scripts/areas/$slug.mjs --skip-images || exit 1
+done
+
+# 3. 型チェック & 分離ステージング・ローカルコミット
+npx tsc --noEmit
+git add .agents/skills/create-route/SKILL.md src/data/mock.ts scripts/areas/{<slug1>,<slug2>,<slug3>,<slug4>,<slug5>}.mjs public/images/{<slug1>,<slug2>,<slug3>,<slug4>,<slug5>}
+git commit -m "feat: 〇〇・〇〇・〇〇・〇〇・〇〇の5ルートおよびイラストを追加"
+
+# 4. Step 2 サブエージェント（research）による独立QAレビュー & Step 3 ローカル配信確認（http://localhost:3000）完了後、GitHub CLI 認証ヘルパー経由で push
+git -c credential.helper="!gh auth git-credential" -c url."https://github.com/".insteadOf="git@github.com:" push origin main
+```
+
