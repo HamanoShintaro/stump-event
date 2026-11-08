@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import { PREMIUM_MONTHLY_PRICE_JPY, FREE_PHOTO_LIMIT } from "@/hooks/useSubscription";
+import { getSiteUrl } from "@/utils/seo";
+
+const siteUrl = getSiteUrl();
+
+export const metadata: Metadata = {
+  title: "特定商取引法に基づく表記",
+  description:
+    "SHUIN（まちのしるし）における販売事業者、運営責任者、サービス料金、支払方法、中途解約およびキャンセルに関する特定商取引法に基づく表記です。",
+  alternates: {
+    canonical: `${siteUrl}/tokushoho`,
+  },
+};
 
 interface LegalItem {
   label: string;

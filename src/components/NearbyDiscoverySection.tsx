@@ -124,9 +124,10 @@ export default function NearbyDiscoverySection({
             aria-labelledby="walk-oracle-title"
             onClick={closeOracleModal}
             className={styles.oracleBackdrop}
+            data-nosnippet
           >
             {oraclePhase === "drawing" ? (
-              /* Phase 1: みくじ筒を振り、御札を手繰り寄せる所作（約1秒の溜め） */
+              /* Phase 1: 今日の街歩きルートを選定する所作（約1秒の溜め） */
               <div
                 onClick={(e) => e.stopPropagation()}
                 className={styles.ritualDrawingCard}
@@ -141,11 +142,11 @@ export default function NearbyDiscoverySection({
                   <div className={styles.ritualPulseRing} />
                   <div className={styles.ritualCylinderUnit}>
                     <div className={styles.ritualStickSlip}>
-                      <span className={styles.ritualStickText}>御籤</span>
+                      <span className={styles.ritualStickText}>栞</span>
                     </div>
                     <div className={styles.ritualCylinderBox}>
                       <span className={styles.ritualCylinderPlaque}>
-                        街歩縁結
+                        街歩案内
                       </span>
                     </div>
                   </div>
@@ -155,14 +156,14 @@ export default function NearbyDiscoverySection({
                   id="walk-oracle-title"
                   className={styles.ritualStatusTitle}
                 >
-                  街の縁を手繰り寄せています…
+                  街の物語を紐解いています…
                 </div>
                 <p className={styles.ritualStatusSub}>
-                  今日あなたと響き合う物語を占っています
+                  今の気分や時間帯に合う街歩きルートを選んでいます
                 </p>
               </div>
             ) : (
-              /* Phase 2 & 3: 和紙（御札）が縦に開帳し、朱印が刻まれる結果表示 */
+              /* Phase 2 & 3: 和紙（案内状）が縦に開き、朱印が刻まれる結果表示 */
               <div
                 onClick={(e) => e.stopPropagation()}
                 className={styles.oraclePaperModal}
@@ -182,11 +183,11 @@ export default function NearbyDiscoverySection({
                   <div className={styles.cornerOrnamentBL} />
                   <div className={styles.cornerOrnamentBR} />
 
-                  {/* おみくじ朱印ヘッダー（落款印アニメーション＋縁結び運勢） */}
+                  {/* 朱印ヘッダー（落款印アニメーション＋散策テーマ） */}
                   <div className={styles.oracleHeaderSection}>
                     <div className={styles.oracleEyebrowPill}>
-                      <IconOmikuji size={13} color="var(--primary-color)" />
-                      <span>本日の街歩き縁結び</span>
+                      <IconCompass size={13} color="var(--primary-color)" />
+                      <span>本日のおすすめ街歩きルート</span>
                     </div>
 
                     <div className={styles.fortuneStampRow}>
@@ -475,7 +476,7 @@ export default function NearbyDiscoverySection({
                         className={`btn-secondary ${styles.modalRedrawBtn}`}
                       >
                         <IconRefresh size={14} color="var(--primary-color)" />
-                        <span>もういちど引く（引き直す）</span>
+                        <span>別のルートを見る</span>
                       </button>
                       <button
                         type="button"
@@ -515,9 +516,9 @@ export default function NearbyDiscoverySection({
         }}
       >
         {/* ============================================================
-            街歩きみくじ・縁結びの御札匣（トップページ専用意匠）
+            今日のおすすめ街歩き案内（トップページ専用意匠）
            ============================================================ */}
-        <div className={styles.omikujiSanctuaryCard}>
+        <div className={styles.omikujiSanctuaryCard} data-nosnippet>
           <div className={styles.omikujiSanctuaryInner}>
             {/* 四隅の組子・角飾り罫 */}
             <div className={styles.cornerOrnamentTL} />
@@ -525,18 +526,18 @@ export default function NearbyDiscoverySection({
             <div className={styles.cornerOrnamentBL} />
             <div className={styles.cornerOrnamentBR} />
 
-            {/* 左端の縦書き添え札「街歩きみくじ」 */}
+            {/* 左端の縦書き添え札「今日の街歩き」 */}
             <div className={styles.verticalTitleStrip} aria-hidden="true">
-              <span className={styles.verticalTitleSeal}>縁</span>
-              <span className={styles.verticalTitleText}>街歩きみくじ</span>
+              <span className={styles.verticalTitleSeal}>栞</span>
+              <span className={styles.verticalTitleText}>今日の街歩き</span>
             </div>
 
             {/* 背景の透かし落款 */}
             <div className={styles.watermarkSeal} aria-hidden="true">
-              結
+              歩
             </div>
 
-            {/* メイン情報＋みくじ筒アクション */}
+            {/* メイン情報＋おすすめルート選定アクション */}
             <div className={styles.sanctuaryBody}>
               <div className={styles.sceneIntroColumn}>
                 <div className={styles.sceneEyebrowRow}>
@@ -545,16 +546,16 @@ export default function NearbyDiscoverySection({
                     <span>{timeScene.title}</span>
                   </span>
                   <span className={styles.sceneSubtitleTag}>
-                    一振りで出会う、今日の物語
+                    今の気分で出会う、街の物語
                   </span>
                 </div>
                 <h3 className={styles.sceneHeadline}>
-                  どこを歩こうか迷ったら、今日のご縁を占ってみませんか
+                  どこを歩こうか迷ったら、今日の街歩きルートを選んでみませんか
                 </h3>
                 <p className={styles.sceneLead}>{timeScene.subtitle}</p>
               </div>
 
-              {/* みくじ筒モチーフ ＆ 街歩きみくじを引くボタン */}
+              {/* 案内モチーフ ＆ 今日のおすすめルートを見るボタン */}
               <div className={styles.drawActionColumn}>
                 <div
                   className={styles.miniCylinderWrap}
@@ -562,11 +563,11 @@ export default function NearbyDiscoverySection({
                     oracleResult ? redrawWalkOracle : drawWalkOracle
                   }
                   role="presentation"
-                  title="みくじ筒を振って今日の縁を結ぶ"
+                  title="今日のおすすめルートを見る"
                 >
                   <div className={styles.miniStickPeek} />
                   <div className={styles.miniCylinderBody}>
-                    <span className={styles.miniCylinderLabel}>御籤</span>
+                    <span className={styles.miniCylinderLabel}>案内</span>
                   </div>
                 </div>
 
@@ -575,17 +576,17 @@ export default function NearbyDiscoverySection({
                   onClick={drawWalkOracle}
                   className={`btn-primary ${styles.drawPrimaryBtn}`}
                 >
-                  <IconOmikuji size={16} color="currentColor" />
+                  <IconCompass size={16} color="currentColor" />
                   <span>
                     {oracleResult
-                      ? "みくじ筒を振って占う"
-                      : "今日の街歩きみくじを引く"}
+                      ? "別のルートを見る"
+                      : "今日のおすすめルートを見る"}
                   </span>
                 </button>
               </div>
             </div>
 
-            {/* 今日すでにおみくじを引いている場合：トップページ上に「本日の結び（控え札）」を表示 */}
+            {/* 今日すでにルートを選んでいる場合：トップページ上に「本日の街歩き案内」を表示 */}
             {oracleResult && (
               <div className={styles.savedSlipWrapper}>
                 <div className={styles.savedSlipCard}>
@@ -597,7 +598,7 @@ export default function NearbyDiscoverySection({
                   <div className={styles.savedSlipInfo}>
                     <div className={styles.savedSlipMetaRow}>
                       <span className={styles.savedSlipBadge}>
-                        本日の結び：【{oracleResult.fortuneLabel}】
+                        本日の街歩き：【{oracleResult.fortuneLabel}】
                       </span>
                     </div>
                     <div className={styles.savedSlipRouteTitle}>
@@ -616,7 +617,7 @@ export default function NearbyDiscoverySection({
                     className={`btn-secondary ${styles.savedSlipOpenBtn}`}
                   >
                     <IconScroll size={14} color="var(--primary-color)" />
-                    <span>本日の御札をひらく</span>
+                    <span>案内詳細をひらく</span>
                   </button>
                   <button
                     type="button"
@@ -624,7 +625,7 @@ export default function NearbyDiscoverySection({
                     className={`btn-secondary ${styles.savedSlipRedrawBtn}`}
                   >
                     <IconRefresh size={13} color="var(--primary-color)" />
-                    <span>引き直す</span>
+                    <span>別のルート</span>
                   </button>
                 </div>
               </div>

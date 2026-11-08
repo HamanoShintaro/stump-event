@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
+import { getSiteUrl } from "@/utils/seo";
+
+const siteUrl = getSiteUrl();
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー",
+  description:
+    "SHUIN（まちのしるし）における個人情報・位置情報・写真データ等の取得、利用目的、安全管理措置に関するプライバシーポリシーです。",
+  alternates: {
+    canonical: `${siteUrl}/privacy`,
+  },
+};
 
 export default function PrivacyPolicyPage() {
   const sectionTitleStyle: React.CSSProperties = {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { supabase } from "../lib/supabase";
@@ -7,6 +8,7 @@ import ClientSearchButton from "@/components/ClientSearchButton";
 import NearbyDiscoverySection from "@/components/NearbyDiscoverySection";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
+import { getSiteUrl } from "@/utils/seo";
 import { Star, Map } from "lucide-react";
 import {
   IconCoin,
@@ -22,6 +24,17 @@ import {
 
 // Next.js App Router: サーバーコンポーネントとしてSupabaseから直接データを取得
 export const revalidate = 0; // 最新のデータを常に取得
+
+const siteUrl = getSiteUrl();
+
+export const metadata: Metadata = {
+  title: "SHUIN まちのしるし｜全国の観光モデルコース・街歩き・散歩ルートをめぐる物語",
+  description:
+    "街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。全国47都道府県の駅や街を徒歩（車なし）でめぐる観光モデルコース・半日街歩き・散歩ルートガイド。5つのスポットを訪れて現地で「SHUIN（まちのしるし）」を押印できます。",
+  alternates: {
+    canonical: siteUrl,
+  },
+};
 
 const FEATURED_ROUTES_LIMIT = 6;
 
@@ -59,6 +72,7 @@ export default async function Home() {
     <main>
       <header
         className="container"
+        data-nosnippet
         style={{
           justifyContent: "flex-end",
           position: "absolute",
@@ -88,7 +102,7 @@ export default async function Home() {
       </div>
 
       {/* スティッキーになるアクションボタンバー */}
-      <div className={styles.stickyActionBar}>
+      <div className={styles.stickyActionBar} data-nosnippet>
         <Link href="/map" className={styles.heroActionBtnWrapper}>
           <div className={styles.heroActionBtn}>
             <Map size={56} strokeWidth={1.5} />
@@ -101,9 +115,45 @@ export default async function Home() {
 
       {/* コンテンツ部分 (通常スクロール) */}
       <div className={styles.contentSection}>
+        {/* サイトコンセプト・リード文（SEOスニペットおよび初回訪問者向け案内） */}
+        <section
+          className="container"
+          style={{
+            padding: "4px 20px 12px",
+            maxWidth: "1200px",
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          <h1
+            style={{
+              fontSize: "0.95rem",
+              fontWeight: 800,
+              color: "var(--primary-color)",
+              margin: "0 0 6px 0",
+              letterSpacing: "0.04em",
+            }}
+          >
+            街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。
+          </h1>
+          <p
+            style={{
+              fontSize: "var(--font-size-small)",
+              color: "var(--text-color)",
+              opacity: 0.82,
+              margin: "0 auto",
+              maxWidth: "760px",
+              lineHeight: 1.65,
+            }}
+          >
+            SHUIN（まちのしるし）は、全国47都道府県の駅や街を徒歩（車なし）でめぐる観光モデルコース・街歩きルートガイドです。5つのスポットをめぐって街の物語を紐解き、現地で「SHUIN」を押印して集めることができます。
+          </p>
+        </section>
+
         {/* はじめての方へ・街歩きの手引きバナー（コンパクト2行構成） */}
         <div
           className="container"
+          data-nosnippet
           style={{
             padding: "0 20px 10px",
             maxWidth: "1200px",

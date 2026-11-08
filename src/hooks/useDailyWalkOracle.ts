@@ -32,7 +32,7 @@ export const MOOD_FILTER_OPTIONS: MoodFilterOption[] = [
   { value: "culture_art", label: "文化・建築・街並み" },
 ];
 
-export type FortuneLabel = "大吉縁" | "吉縁" | "風流縁" | "発見縁";
+export type FortuneLabel = "名所探訪" | "路地裏散策" | "風流逍遥" | "街角発見";
 
 export type OracleRitualPhase = "idle" | "drawing" | "unfolding" | "revealed";
 
@@ -68,27 +68,27 @@ export interface OracleResult {
 
 const FORTUNE_META_LIST: FortuneMeta[] = [
   {
-    label: "大吉縁",
-    reading: "だいきちえん",
-    subtitle: "思いがけない街の輝きと巡り会う、最良の散歩日和",
-    sealChar: "結",
+    label: "名所探訪",
+    reading: "めいしょたんぼう",
+    subtitle: "歴史と物語が息づく街の名所をめぐる、充実の散歩道",
+    sealChar: "探",
   },
   {
-    label: "吉縁",
-    reading: "きちえん",
-    subtitle: "穏やかな風とともに、心地よい歩みを刻める吉日",
-    sealChar: "福",
+    label: "路地裏散策",
+    reading: "ろじうらさんさく",
+    subtitle: "穏やかな風とともに、心地よい歩みを刻める散策ルート",
+    sealChar: "歩",
   },
   {
-    label: "風流縁",
-    reading: "ふうりゅうえん",
-    subtitle: "路地裏の陰影や季節の移ろいに、心が澄みわたる日",
+    label: "風流逍遥",
+    reading: "ふうりゅうしょうよう",
+    subtitle: "路地裏の陰影や季節の移ろいに、心が澄みわたる散歩道",
     sealChar: "雅",
   },
   {
-    label: "発見縁",
-    reading: "はっけんえん",
-    subtitle: "見慣れたはずの街角に、新しい物語が顔を出す日",
+    label: "街角発見",
+    reading: "まちかどはっけん",
+    subtitle: "見慣れたはずの街角に、新しい物語が顔を出すルート",
     sealChar: "発",
   },
 ];

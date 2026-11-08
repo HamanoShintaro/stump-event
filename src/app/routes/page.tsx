@@ -1,11 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
 import { getRouteStatsMap } from "@/utils/routeStats";
+import { getSiteUrl } from "@/utils/seo";
 import RoutesClientView from "./RoutesClientView";
 
 export const revalidate = 0; // 常に最新データを取得
+
+const siteUrl = getSiteUrl();
+
+export const metadata: Metadata = {
+  title: "ルートを探す｜全国の街歩き・散歩・観光モデルコース一覧",
+  description:
+    "全国47都道府県の駅や街を徒歩でめぐる街歩き・散歩ルートを検索。エリア（都道府県・街名）、テーマ（歴史・グルメ・自然・文化）、所要時間・予算から、今の気分にぴったりの観光モデルコースを探せます。",
+  alternates: {
+    canonical: `${siteUrl}/routes`,
+  },
+};
 
 export default async function RoutesPage({
   searchParams,

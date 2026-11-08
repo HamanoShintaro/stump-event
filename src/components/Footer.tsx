@@ -2,7 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer
+      data-nosnippet
+      style={{
       background: "var(--card-bg)",
       backdropFilter: "blur(16px)",
       WebkitBackdropFilter: "blur(16px)",

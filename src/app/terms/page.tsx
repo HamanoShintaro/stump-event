@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import {
   PREMIUM_MONTHLY_PRICE_JPY,
   FREE_PHOTO_LIMIT,
 } from "@/hooks/useSubscription";
+import { getSiteUrl } from "@/utils/seo";
+
+const siteUrl = getSiteUrl();
+
+export const metadata: Metadata = {
+  title: "利用規約",
+  description:
+    "SHUIN（まちのしるし）のサービスご利用条件、アカウント管理、SHUINプレミアム、禁止事項、免責事項などを定めた利用規約です。",
+  alternates: {
+    canonical: `${siteUrl}/terms`,
+  },
+};
 
 export default function TermsPage() {
   const sectionTitleStyle: React.CSSProperties = {

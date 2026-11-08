@@ -169,15 +169,50 @@ async function fetchSearchConsoleMetrics() {
       message:
         "Google Search Console サービスアカウント未設定のため、Googleサジェスト（実検索トレンド）＋Supabaseルート監査モードで実行しました。",
       rows: [],
+      pageRows: [],
     };
   }
 
   try {
-    const token = await getGoogleAccessToken(sa);
+    let token = await getGoogleAccessToken(sa);
+    const quotaProject =
+      sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
+
+    // gcloud ADC (authorized_user) の場合、Search Console プロパティ権限を持つサービスアカウントへ impersonate
+    if (sa.type === "authorized_user") {
+      const impersonateEmail =
+        process.env.GSC_IMPERSONATE_SERVICE_ACCOUNT ||
+        process.env.GA4_IMPERSONATE_SERVICE_ACCOUNT ||
+        "shuin-seo-bot@jba-system.iam.gserviceaccount.com";
+
+      const impRes = await fetch(
+        `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${encodeURIComponent(
+          impersonateEmail
+        )}:generateAccessToken`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            "x-goog-user-project": quotaProject,
+          },
+          body: JSON.stringify({
+            scope: ["https://www.googleapis.com/auth/webmasters.readonly"],
+          }),
+        }
+      );
+
+      if (impRes.ok) {
+        const impData = await impRes.json();
+        if (impData.accessToken) {
+          token = impData.accessToken;
+        }
+      }
+    }
+
     const endDate = new Date();
-    endDate.setDate(endDate.getDate() - 2);
     const startDate = new Date(endDate);
-    startDate.setDate(startDate.getDate() - 28);
+    startDate.setDate(startDate.getDate() - 30);
 
     const apiEndpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
       SITE_URL
@@ -187,21 +222,31 @@ async function fetchSearchConsoleMetrics() {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
-    if (sa.type === "authorized_user") {
-      headers["x-goog-user-project"] =
-        sa.quota_project_id || process.env.GOOGLE_CLOUD_PROJECT || "jba-system";
-    }
 
-    const res = await fetch(apiEndpoint, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        startDate: formatDate(startDate),
-        endDate: formatDate(endDate),
-        dimensions: ["query", "page"],
-        rowLimit: 500,
+    const [res, pageRes] = await Promise.all([
+      fetch(apiEndpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          startDate: formatDate(startDate),
+          endDate: formatDate(endDate),
+          dimensions: ["query", "page"],
+          rowLimit: 500,
+          dataState: "all",
+        }),
       }),
-    });
+      fetch(apiEndpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          startDate: formatDate(startDate),
+          endDate: formatDate(endDate),
+          dimensions: ["page"],
+          rowLimit: 200,
+          dataState: "all",
+        }),
+      }),
+    ]);
 
     if (!res.ok) {
       const errText = await res.text();
@@ -209,6 +254,7 @@ async function fetchSearchConsoleMetrics() {
         status: "error",
         message: `Search Console API 応答エラー (${res.status}): ${errText}`,
         rows: [],
+        pageRows: [],
       };
     }
 
@@ -219,19 +265,30 @@ async function fetchSearchConsoleMetrics() {
       clicks: r.clicks || 0,
       impressions: r.impressions || 0,
       ctr: r.ctr || 0,
-      position: r.position || 0,
+      position: Number((r.position || 0).toFixed(1)),
+    }));
+
+    const pageData = pageRes.ok ? await pageRes.json() : {};
+    const pageRows = (pageData.rows || []).map((r) => ({
+      page: r.keys?.[0] || "",
+      clicks: r.clicks || 0,
+      impressions: r.impressions || 0,
+      ctr: r.ctr || 0,
+      position: Number((r.position || 0).toFixed(1)),
     }));
 
     return {
       status: "ok",
       period: { startDate: formatDate(startDate), endDate: formatDate(endDate) },
       rows,
+      pageRows,
     };
   } catch (err) {
     return {
       status: "error",
       message: err instanceof Error ? err.message : String(err),
       rows: [],
+      pageRows: [],
     };
   }
 }
@@ -1295,13 +1352,17 @@ async function main() {
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 30);
 
+  const topGscPages = [...(gscResult.pageRows || [])]
+    .sort((a, b) => b.impressions - a.impressions)
+    .slice(0, 30);
+
   const lowCtrOpportunities = (gscResult.rows || [])
     .filter((r) => r.impressions >= 15 && r.ctr < 0.03)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15);
 
   const strikingDistanceQueries = (gscResult.rows || [])
-    .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 5)
+    .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 1)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15);
 
@@ -1355,6 +1416,7 @@ async function main() {
     ga4Message: ga4Result.message || null,
     summary: {
       totalGscRows: (gscResult.rows || []).length,
+      totalGscPages: (gscResult.pageRows || []).length,
       sitemapStatus: sitemapSubmitResult.status,
       lowCtrOpportunityCount: lowCtrOpportunities.length,
       strikingDistanceQueryCount: strikingDistanceQueries.length,
@@ -1377,6 +1439,7 @@ async function main() {
     prefectureHubAudit,
     llmsAudit,
     topGscQueriesByImpressions,
+    topGscPages,
     lowCtrOpportunities,
     strikingDistanceQueries,
     topGa4Pages: (ga4Result.rows || []).slice(0, 20),

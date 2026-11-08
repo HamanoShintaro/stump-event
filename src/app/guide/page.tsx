@@ -366,15 +366,15 @@ export default function GuidePage() {
                 </div>
               </div>
 
-              {/* 街歩きみくじボタン */}
+              {/* 別のルート例を見るボタン */}
               <div className={styles.oracleActionRow}>
                 <button
                   type="button"
                   onClick={handleDrawSampleOracle}
                   className={styles.oracleDrawBtn}
                 >
-                  <IconOmikuji size={16} color="var(--primary-color)" />
-                  <span>街歩きみくじを引く（別の物語へ）</span>
+                  <IconCompass size={16} color="var(--primary-color)" />
+                  <span>別のルート例を見る（物語を切り替える）</span>
                 </button>
               </div>
 
