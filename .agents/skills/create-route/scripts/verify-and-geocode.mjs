@@ -69,12 +69,15 @@ async function queryGSI(query) {
     if (!res.ok) return null;
     const data = await res.json();
     if (Array.isArray(data) && data.length > 0 && data[0].geometry?.coordinates) {
-      // query に含まれない別大字（例: 「大そね/大埇」検索時に「大改野」が data[0] に来るケース）を避けるため、title の文字が query に含まれる候補を優先
-      const best = data.find((d) => {
-        const t = d.properties?.title || '';
+      // query に含まれない別大字（例: 「大そね/大埇」検索時に「大改野」が data[0] に来るケースや「中津市諸町」検索時に「中津市諸田」が返るケース）を避けるため、title の大字・町名が query に含まれる候補のみを採用
+      const cleanQueryForMatch = query.replace(/大字|字/g, '');
+      const matched = data.find((d) => {
+        const t = (d.properties?.title || '').replace(/大字|字/g, '');
         const base = t.replace(/[0-9０-９一二三四五六七八九十]+(番地?|丁目|号).*$/, '');
-        return base && query.includes(base);
-      }) || data[0];
+        return base && cleanQueryForMatch.includes(base);
+      });
+      if (!matched) return null;
+      const best = matched;
       const [lng, lat] = best.geometry.coordinates;
       const title = best.properties?.title || query;
       const toHalf = (s) => s.replace(/[０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));
