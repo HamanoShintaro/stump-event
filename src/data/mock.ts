@@ -43030,5 +43030,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "5cf5f6ce-b885-4387-82a1-3622f62869a8",
+    "title": "土蔵が連なる七日町で炭火田楽と会津塗に出逢う",
+    "name": "土蔵が連なる七日町で炭火田楽と会津塗に出逢う",
+    "description": "重厚な土蔵とレトロな洋風建築が軒を連ねる会津若松の七日町・大町エリア。鶴ヶ城の遺構を伝える古刹から歩き出し、炭火が香る味噌蔵の田楽、吹き抜けの木造酒蔵、野口英世ゆかりの蔵喫茶、そして三百年続く会津塗の漆器店へと城下町の手仕事を辿る。",
+    "region": "七日町駅・蔵造りの街並み・味噌と漆器の道",
+    "area_name": "七日町駅・蔵造りの街並み・味噌と漆器の道",
+    "cover_image_url": "/images/nanukamachi/route-eyecatch.png",
+    "imageUrl": "/images/nanukamachi/route-eyecatch.png",
+    "category": "城下町の土蔵建築・炭火みそ田楽・老舗酒蔵と会津塗",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って七日町通りを歩くなら、御三階や炭火のみそ田楽、酒蔵、蔵喫茶、会津塗のどれから案内したいですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「満田屋」の味噌蔵で囲炉裏を囲み、炭火で香ばしく焼き上げた会津伝統の「みそ田楽」",
+          "description": "歴史ある味噌蔵の囲炉裏端で、甘口の赤味噌やじゅうねん味噌が焦げる芳ばしい香りと温もりを堪能した。",
+          "badge_code": "NANUKAMACHI_A"
+        },
+        {
+          "key": "B",
+          "text": "鶴ヶ城の遺構「御三階」が立つ「阿弥陀寺」と、登録有形文化財の「末廣酒造 嘉永蔵」",
+          "description": "戊辰の記憶をとどめる古刹の城郭遺構と、ケヤキの大黒柱が支える吹き抜けの仕込み蔵の迫力に圧倒された。",
+          "badge_code": "NANUKAMACHI_B"
+        },
+        {
+          "key": "C",
+          "text": "野口英世ゆかりの洋風土蔵「會津壹番館」で味わった、会津ハチミツ珈琲と酒粕プリン",
+          "description": "若き日の野口英世が暮らした旧医院のクラシカルな空間で、香り高い珈琲とともに静かな時間を過ごした。",
+          "badge_code": "NANUKAMACHI_C"
+        },
+        {
+          "key": "D",
+          "text": "三百年続く「白木屋漆器店」の洋風土蔵で選んだ、艶やかな本漆の器と伝統の「会津絵」",
+          "description": "アーチ窓が印象的な登録有形文化財の店舗で、職人の技が宿る会津塗の美しい器に心を奪われた。",
+          "badge_code": "NANUKAMACHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9f5d663f-4613-475e-824c-89eece33515e",
+        "name": "阿弥陀寺",
+        "description": "七日町駅前にある浄土宗の寺院（境内参拝自由・9:00〜16:30頃、無休）。鶴ヶ城から移築された現存建築「御三階」や、戊辰戦争の東軍墓地・新選組三番隊組長「斎藤一」の墓所がある。",
+        "address": "福島県会津若松市七日町4-20",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.500586,
+        "lng": 139.91907,
+        "qr_token": "shuin-nanukamachi-1",
+        "cover_image_url": "/images/nanukamachi/spot1.png",
+        "f7_fragment": "鶴ヶ城から移築された「御三階」と斎藤一の墓所がある駅前の古刹。",
+        "f7_full": "七日町駅のすぐそばに佇む「阿弥陀寺」の御三階が、幕末の記憶と手仕事が息づく会津の城下町歩きの幕開けを静かに告げる。",
+        "is_final": false,
+        "next_spot_id": "4a64d76c-908e-4992-8b78-be89300a1726",
+        "next_spot_name": "満田屋"
+      },
+      {
+        "id": "4a64d76c-908e-4992-8b78-be89300a1726",
+        "name": "満田屋",
+        "description": "百九十年近く続く老舗味噌専門店（売店10:00〜17:00、食事処10:30〜16:30・L.O.16:20営業、水曜定休・祝日の場合は営業）。味噌蔵を改装した店内で、囲炉裏の炭火で焼き上げる会津郷土料理「みそ田楽」を味わえる。",
+        "address": "福島県会津若松市大町1-1-25",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.498896,
+        "lng": 139.925147,
+        "qr_token": "shuin-nanukamachi-2",
+        "cover_image_url": "/images/nanukamachi/spot2.png",
+        "f7_fragment": "歴史ある味噌蔵の囲炉裏で炭火焼きにする、香ばしい会津の「みそ田楽」。",
+        "f7_full": "囲炉裏の炭火でじっくりと炙られた自家製味噌の田楽としんごろうが、会津の醸造文化と温かな郷土の味わいを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "2b9bd77c-9bab-4103-8220-fd17840467c6",
+        "next_spot_name": "末廣酒造 嘉永蔵"
+      },
+      {
+        "id": "2b9bd77c-9bab-4103-8220-fd17840467c6",
+        "name": "末廣酒造 嘉永蔵",
+        "description": "百七十余年続く会津屈指の老舗酒蔵（9:30〜16:30営業・酒蔵見学は10:00〜16:00受付、第2水曜・大晦日・元日休、見学無料）。国登録有形文化財の吹き抜けの仕込み蔵や野口英世ゆかりの資料を見学できる。",
+        "address": "福島県会津若松市日新町12-38",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.497944,
+        "lng": 139.923166,
+        "qr_token": "shuin-nanukamachi-3",
+        "cover_image_url": "/images/nanukamachi/spot3.png",
+        "f7_fragment": "三階吹き抜けの重厚な木造仕込み蔵が登録有形文化財に指定された老舗酒蔵。",
+        "f7_full": "太いケヤキの柱と梁が組み上がる「末廣酒造 嘉永蔵」の仕込み蔵が、名水と寒気が育む会津の酒造りの誇りを今に映し出す。",
+        "is_final": false,
+        "next_spot_id": "21937465-e569-4016-81df-cd773cff7658",
+        "next_spot_name": "會津壹番館"
+      },
+      {
+        "id": "21937465-e569-4016-81df-cd773cff7658",
+        "name": "會津壹番館",
+        "description": "青年期の野口英世が暮らした旧会陽医院の洋風土蔵1階にある自家焙煎珈琲喫茶（8:00〜20:00営業・L.O.19:30、元日休）。会津ハチミツ入りの珈琲や酒粕プリンを味わえる。",
+        "address": "福島県会津若松市中町4-18",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.497653,
+        "lng": 139.927245,
+        "qr_token": "shuin-nanukamachi-4",
+        "cover_image_url": "/images/nanukamachi/spot4.png",
+        "f7_fragment": "野口英世ゆかりの洋風土蔵で味わう、自家焙煎珈琲と酒粕プリン。",
+        "f7_full": "レトロなステンドグラスの光が揺れる「會津壹番館」の香り高い珈琲とプリンが、蔵の街を歩いた午後に穏やかな余韻を添える。",
+        "is_final": false,
+        "next_spot_id": "4e91ec4a-5d23-4a7b-859b-e62d87936438",
+        "next_spot_name": "白木屋漆器店"
+      },
+      {
+        "id": "4e91ec4a-5d23-4a7b-859b-e62d87936438",
+        "name": "白木屋漆器店",
+        "description": "三百年以上続く会津塗の老舗（9:30〜17:30営業、水曜・年末年始休）。国登録有形文化財の洋風土蔵造りの店舗で、伝統の本漆塗り器や会津絵の漆器を商い、歴史資料館も併設している。",
+        "address": "福島県会津若松市大町1-2-10",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.49903,
+        "lng": 139.926528,
+        "qr_token": "shuin-nanukamachi-5",
+        "cover_image_url": "/images/nanukamachi/spot5.png",
+        "f7_fragment": "アーチ窓が映える登録有形文化財の洋風土蔵で選ぶ、伝統の「会津塗」。",
+        "f7_full": "三百年続く「白木屋漆器店」の艶やかな会津塗の器が、七日町の蔵並みと手仕事を巡った旅を格調高く締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "416b2d1a-bb2b-4776-80b1-06a31d7e440a",
+    "title": "なぜ鎌倉の若宮大路には武家の祈りが息づくのか",
+    "name": "なぜ鎌倉の若宮大路には武家の祈りが息づくのか",
+    "description": "三方を山に囲まれ、相模湾へとまっすぐに若宮大路が伸びる古都・鎌倉。源頼朝公が整えた武家の都の象徴である鶴岡八幡宮から段葛の参道を辿り、古民家の手打ち蕎麦や東身延の古刹、文豪が愛した純喫茶のホットケーキ、百三十年続く老舗の鳩サブレーに出会う。",
+    "region": "鎌倉駅・鶴岡八幡宮の段葛・若宮大路の道",
+    "area_name": "鎌倉駅・鶴岡八幡宮の段葛・若宮大路の道",
+    "cover_image_url": "/images/kamakura/route-eyecatch.png",
+    "imageUrl": "/images/kamakura/route-eyecatch.png",
+    "category": "武家古都の総鎮守・段葛の古民家蕎麦・老舗純喫茶と鳩サブレー",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鶴岡八幡宮の朱の社殿と古刹の静寂、段葛の手打ち蕎麦や純喫茶のホットケーキの中で、あなたの心に深く響くのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大石段の上に朱塗りの本宮がそびえる「鶴岡八幡宮」と、頼朝公ゆかりの夷堂を継ぐ「本覚寺」",
+          "description": "武家の都の中心として築かれた八幡宮の壮麗な社殿と、東身延の古刹に流れる穏やかな静寂に心洗われた。",
+          "badge_code": "KAMAKURA_A"
+        },
+        {
+          "key": "B",
+          "text": "段葛の脇に佇む古民家「段葛 こ寿々」で味わった、石臼挽きの手打ち蕎麦と本わらび粉のわらび餅",
+          "description": "風情ある古民家の座敷で、香り高い細打ちのせいろ蕎麦と銅鍋練りのとろけるわらび餅を心ゆくまで堪能した。",
+          "badge_code": "KAMAKURA_B"
+        },
+        {
+          "key": "C",
+          "text": "鎌倉最古参の純喫茶「イワタコーヒー店」で出会った、銅板焼きの分厚い二枚重ねホットケーキ",
+          "description": "多くの文豪に愛された赤いソファの喫茶室で、黄金色に焼き上がった懐かしく贅沢なホットケーキに魅了された。",
+          "badge_code": "KAMAKURA_C"
+        },
+        {
+          "key": "D",
+          "text": "若宮大路の「豊島屋 本店」で選んだ、バター香る伝統の「鳩サブレー」と可憐な「小鳩豆楽」",
+          "description": "八幡宮の鳩にちなんで生まれた鎌倉銘菓の優しい甘みと、白壁の本店ならではの華やかな空気を楽しんだ。",
+          "badge_code": "KAMAKURA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ef2fb666-a05d-4c5c-87e7-963bdb734f2f",
+        "name": "鶴岡八幡宮",
+        "description": "源頼朝公が鎌倉の都市計画の中心に据えた武家の守護神（6:00〜20:00開門・授与所8:30〜19:30頃、無休）。若宮大路の段葛や舞殿、国指定重要文化財の本宮がそびえる。",
+        "address": "神奈川県鎌倉市雪ノ下2-1-31",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.325986,
+        "lng": 139.556346,
+        "qr_token": "shuin-kamakura-1",
+        "cover_image_url": "/images/kamakura/spot1.png",
+        "f7_fragment": "大石段の上に重要文化財の朱塗り本宮がそびえる、古都鎌倉の象徴。",
+        "f7_full": "緑の丘を背に鮮やかに映える「鶴岡八幡宮」の本宮と舞殿が、武家の都・鎌倉の参道を辿る歩き旅の幕開けを荘厳に告げる。",
+        "is_final": false,
+        "next_spot_id": "c81766ca-2f8f-4251-8202-8f487fc6c555",
+        "next_spot_name": "段葛 こ寿々"
+      },
+      {
+        "id": "c81766ca-2f8f-4251-8202-8f487fc6c555",
+        "name": "段葛 こ寿々",
+        "description": "若宮大路の段葛脇に佇む古民家蕎麦・甘味処（11:30〜17:30営業・わらび餅売店は10:00〜17:00、月曜・第1第3火曜定休・祝日の場合は営業）。石臼挽きの手打ち蕎麦と本わらび粉の「わらび餅」が名物。",
+        "address": "神奈川県鎌倉市小町2-13-4",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.321582,
+        "lng": 139.553882,
+        "qr_token": "shuin-kamakura-2",
+        "cover_image_url": "/images/kamakura/spot2.png",
+        "f7_fragment": "段葛脇の風情ある古民家で味わう、石臼挽きの手打ち蕎麦と本わらび餅。",
+        "f7_full": "数寄屋造りの古民家で手繰る香り高い細打ち蕎麦と銅鍋練りのわらび餅が、若宮大路の参道歩きに滋味深い彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cce09746-1eb6-454f-80b6-97e9327fc783",
+        "next_spot_name": "本覚寺"
+      },
+      {
+        "id": "cce09746-1eb6-454f-80b6-97e9327fc783",
+        "name": "本覚寺",
+        "description": "「東身延」「日朝さま」として親しまれる日蓮宗の本山（境内参拝自由・寺務所9:00〜16:00、無休）。源頼朝公ゆかりの夷堂（鎌倉江ノ島七福神）や重厚な仁王門で知られる。",
+        "address": "神奈川県鎌倉市小町1-12-12",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.317237,
+        "lng": 139.552592,
+        "qr_token": "shuin-kamakura-3",
+        "cover_image_url": "/images/kamakura/spot3.png",
+        "f7_fragment": "「東身延」と称される堂々たる本堂と仁王門が鎮座する、小町の古刹。",
+        "f7_full": "四季の花木に彩られた「本覚寺」の重厚な山門と夷堂が、街なかの賑わいのすぐ隣に息づく古都鎌倉の静謐な祈りを映し出す。",
+        "is_final": false,
+        "next_spot_id": "ab9cdc7e-2366-42a8-8628-3d1953a774d7",
+        "next_spot_name": "イワタコーヒー店"
+      },
+      {
+        "id": "ab9cdc7e-2366-42a8-8628-3d1953a774d7",
+        "name": "イワタコーヒー店",
+        "description": "小町通り入口にある老舗純喫茶（9:30〜18:00営業・L.O.17:30・ホットケーキL.O.17:00、火曜・第2水曜定休）。銅板でじっくり焼き上げる厚さ約3cmの二枚重ね「特製ホットケーキ」で知られる。",
+        "address": "神奈川県鎌倉市小町1-5-7",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.319493,
+        "lng": 139.551538,
+        "qr_token": "shuin-kamakura-4",
+        "cover_image_url": "/images/kamakura/spot4.png",
+        "f7_fragment": "文豪にも愛された老舗純喫茶で味わう、銅板焼きの分厚い二枚重ねホットケーキ。",
+        "f7_full": "庭の緑を望む「イワタコーヒー店」の香ばしい特製ホットケーキと珈琲が、鎌倉の社寺を巡った午後に懐かしく甘い休息をもたらす。",
+        "is_final": false,
+        "next_spot_id": "7a19ea30-2dc9-4ffa-84ec-d02e7b65419d",
+        "next_spot_name": "豊島屋 本店"
+      },
+      {
+        "id": "7a19ea30-2dc9-4ffa-84ec-d02e7b65419d",
+        "name": "豊島屋 本店",
+        "description": "明治期創業の老舗菓子舗の総本店（9:00〜19:00営業、水曜不定休・祝日は営業）。フレッシュバター香る鎌倉銘菓「鳩サブレー」や「小鳩豆楽」、本店限定グッズが揃う。",
+        "address": "神奈川県鎌倉市小町2-11-19",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.320351,
+        "lng": 139.552612,
+        "qr_token": "shuin-kamakura-5",
+        "cover_image_url": "/images/kamakura/spot5.png",
+        "f7_fragment": "若宮大路の白壁本店で求める、バター香る鎌倉銘菓「鳩サブレー」。",
+        "f7_full": "鶴岡八幡宮の鳩にちなんだ「豊島屋 本店」の鳩サブレーと伝統菓が、古都の参道を辿った旅の記憶を温かく結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "32963104-edac-4218-817b-8e3e57a18334",
+    "title": "名水湧く伏見桃山の白壁酒蔵と幕末の船宿を歩く",
+    "name": "名水湧く伏見桃山の白壁酒蔵と幕末の船宿を歩く",
+    "description": "名水百選の「御香水」が湧き出で、濠川沿いに白壁の酒蔵が連なる京都・伏見桃山。桃山建築の粋を集めた御香宮神社の表門から、酒蔵を改装した「鳥せい 本店」の鶏料理、坂本龍馬ゆかりの船宿「寺田屋」、宇治茶の茶寮、五百六十年続く老舗の羊羹までを辿る。",
+    "region": "伏見桃山駅・名水の社・白壁酒蔵と船宿の道",
+    "area_name": "伏見桃山駅・名水の社・白壁酒蔵と船宿の道",
+    "cover_image_url": "/images/fushimi_momoyama/route-eyecatch.png",
+    "imageUrl": "/images/fushimi_momoyama/route-eyecatch.png",
+    "category": "名水百選の古社・酒蔵の鶏料理・龍馬ゆかりの船宿と老舗羊羹",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "御香宮の名水と白壁の酒蔵、三十石船の船宿や宇治茶の茶寮、老舗の羊羹の中で、あなたが間近に触れてみたい伏見の粋はどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "伏見城の大手門を移築した「御香宮神社」の表門と、坂本龍馬の記憶を伝える船宿「寺田屋」",
+          "description": "極彩色の彫刻が輝く桃山建築と清らかな御香水、そして維新の志士が駆け抜けた船宿の空気に胸が熱くなった。",
+          "badge_code": "FUSHIMI_MOMOYAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "老舗酒蔵を改装した「鳥せい 本店」で味わった、炭火焼きの鶏料理と清らかな仕込み水",
+          "description": "高い天井に梁が走る白壁の酒蔵空間で、香ばしい焼き鳥やとりめしを味わう伏見ならではの昼食を満喫した。",
+          "badge_code": "FUSHIMI_MOMOYAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "五百六十年の歴史を誇る「総本家 駿河屋 伏見本舗」で求めた、伝統の「本煉羊羹」",
+          "description": "旧京町通の風雅な町家店舗で、室町期から受け継がれる羊羹の艶やかな輝きと上品な甘みに感銘を受けた。",
+          "badge_code": "FUSHIMI_MOMOYAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "大手筋の老舗「油長茶舗」の茶寮で過ごした、石臼挽き宇治抹茶パフェと煎茶のひととき",
+          "description": "茶舗ならではの芳醇な宇治茶の香りに包まれながら、濃厚な抹茶スイーツで旅の疲れを心地よく癒やした。",
+          "badge_code": "FUSHIMI_MOMOYAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8b2fc05a-1d44-4e44-8cf6-4a256779ee99",
+        "name": "御香宮神社",
+        "description": "名水百選「御香水」が湧く伏見の産土神（境内参拝自由・授与所9:00〜16:00、無休）。伏見城の大手門を移築した国指定重要文化財の表門や、極彩色の彫刻が施された拝殿で知られる。",
+        "address": "京都府京都市伏見区御香宮門前町174",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.933886,
+        "lng": 135.767527,
+        "qr_token": "shuin-fushimi_momoyama-1",
+        "cover_image_url": "/images/fushimi_momoyama/spot1.png",
+        "f7_fragment": "伏見城の大手門を移築した重要文化財の表門と、名水「御香水」の古社。",
+        "f7_full": "桃山文化の華麗な彫刻を伝える「御香宮神社」の表門と清らかな御香水が、名水と酒蔵の街・伏見桃山の歩き旅を瑞々しく開く。",
+        "is_final": false,
+        "next_spot_id": "ba28e096-46ff-47fd-89b9-7b87fe018604",
+        "next_spot_name": "鳥せい 本店"
+      },
+      {
+        "id": "ba28e096-46ff-47fd-89b9-7b87fe018604",
+        "name": "鳥せい 本店",
+        "description": "老舗蔵元「山本本家」の白壁酒蔵を改装した鶏料理専門店（11:00〜22:00営業・L.O.21:30、月曜定休・祝日の場合は営業、年末年始休）。銘柄鶏の焼き鳥やとりめし、親子丼を蔵出しの酒や仕込み水とともに味わえる。",
+        "address": "京都府京都市伏見区上油掛町186",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.931086,
+        "lng": 135.762015,
+        "qr_token": "shuin-fushimi_momoyama-2",
+        "cover_image_url": "/images/fushimi_momoyama/spot2.png",
+        "f7_fragment": "老舗蔵元の白壁酒蔵を改装した空間で味わう、炭火焼き鳥と「とりめし」。",
+        "f7_full": "高い梁が渡る白壁の酒蔵で味わう「鳥せい 本店」の炭火焼き鳥ととりめしが、酒処・伏見ならではの豊かな食の時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "83bbf518-d614-41a8-830a-27e2244c41f5",
+        "next_spot_name": "寺田屋"
+      },
+      {
+        "id": "83bbf518-d614-41a8-830a-27e2244c41f5",
+        "name": "寺田屋",
+        "description": "坂本龍馬ゆかりの歴史ある船宿（10:00〜16:00開館・最終受付15:40、月曜不定休・1月1日〜1月3日休）。三十石船の船宿として栄えた風情ある木造建築と、龍馬や志士に関する資料を見学できる。",
+        "address": "京都府京都市伏見区南浜町263",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.930297,
+        "lng": 135.759561,
+        "qr_token": "shuin-fushimi_momoyama-3",
+        "cover_image_url": "/images/fushimi_momoyama/spot3.png",
+        "f7_fragment": "三十石船の船着き場近くに佇む、坂本龍馬ゆかりの歴史ある船宿建築。",
+        "f7_full": "白壁と京格子の佇まいを残す「寺田屋」の室内と庭園が、舟運で栄えた伏見の港町と幕末の熱い記憶を鮮やかに浮かび上がらせる。",
+        "is_final": false,
+        "next_spot_id": "3592c86e-a670-4304-8a2f-680f8d6576ac",
+        "next_spot_name": "油長茶舗"
+      },
+      {
+        "id": "3592c86e-a670-4304-8a2f-680f8d6576ac",
+        "name": "油長茶舗",
+        "description": "大手筋商店街にある宇治茶の老舗茶舗（店舗9:00〜19:00、茶寮10:00〜18:00営業、火曜定休）。奥の「茶寮 油長」で石臼挽きの宇治抹茶パフェや抹茶ぜんざい、利き茶セットを楽しめる。",
+        "address": "京都府京都市伏見区東大手町779",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.932933,
+        "lng": 135.761413,
+        "qr_token": "shuin-fushimi_momoyama-4",
+        "cover_image_url": "/images/fushimi_momoyama/spot4.png",
+        "f7_fragment": "老舗茶舗の奥に佇む茶寮で味わう、石臼挽き宇治抹茶のパフェと煎茶。",
+        "f7_full": "清々しい茶香が漂う「油長茶舗」の茶寮で味わう濃厚な抹茶パフェと急須の煎茶が、酒蔵街を巡った午後に涼やかな潤いをもたらす。",
+        "is_final": false,
+        "next_spot_id": "ca8c3759-3b35-4f7c-869a-d15f6c602e15",
+        "next_spot_name": "総本家 駿河屋 伏見本舗"
+      },
+      {
+        "id": "ca8c3759-3b35-4f7c-869a-d15f6c602e15",
+        "name": "総本家 駿河屋 伏見本舗",
+        "description": "室町中期創業の老舗和菓子舗の伏見本舗（9:00〜18:00営業、水曜定休）。旧京町通の趣ある町家店舗で、伝統の「極上本煉羊羹」や「夜の梅」、季節の京菓子を商う。",
+        "address": "京都府京都市伏見区京町3-190",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.932337,
+        "lng": 135.7649,
+        "qr_token": "shuin-fushimi_momoyama-5",
+        "cover_image_url": "/images/fushimi_momoyama/spot5.png",
+        "f7_fragment": "五百六十年続く老舗の町家店舗で選ぶ、艶やかな伝統の「本煉羊羹」。",
+        "f7_full": "旧伏見宿の面影を残す「総本家 駿河屋 伏見本舗」の羊羹が、名水と白壁の街・伏見桃山を巡った旅を格調高く結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2706a20b-1dc5-48d3-853f-8042c80dc60d",
+    "title": "五重塔がそびえる善通寺の門前と白亜の洋館の道",
+    "name": "五重塔がそびえる善通寺の門前と白亜の洋館の道",
+    "description": "弘法大師・空海御誕生の聖地であり、明治期には陸軍第十一師団の街としても栄えた香川県善通寺市。国の重要文化財「旧善通寺偕行社」の白亜の洋館から、いりこ出汁香る讃岐うどん、五重塔がそびえる総本山善通寺、門前の「熊岡菓子店」の石パン、古民家茶屋の甘味へと巡る。",
+    "region": "善通寺駅・白亜の偕行社・五重塔と石パンの道",
+    "area_name": "善通寺駅・白亜の偕行社・五重塔と石パンの道",
+    "cover_image_url": "/images/zentsuji/route-eyecatch.png",
+    "imageUrl": "/images/zentsuji/route-eyecatch.png",
+    "category": "弘法大師御誕生所・重要文化財洋館・讃岐うどんと門前石パン",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白亜の偕行社と善通寺の五重塔、讃岐うどんや門前の石パン、古民家茶屋の甘味の中で、旅の記憶として持ち帰りたいのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大楠の樹冠の上に五重塔がそびえる「総本山善通寺」と、白亜の重要文化財「旧善通寺偕行社」",
+          "description": "千二百年の信仰が息づく弘法大師御誕生所の伽藍と、優美なルネサンス様式の洋風建築の対比に心を打たれた。",
+          "badge_code": "ZENTSUJI_A"
+        },
+        {
+          "key": "B",
+          "text": "門前への道すがら「麺賊」で味わった、黄金色のいりこ出汁と強いコシが自慢の讃岐うどん",
+          "description": "打ちたての太麺と揚げたての天ぷらに熱々の出汁を注ぎ、本場・讃岐ならではのうどん文化を満喫した。",
+          "badge_code": "ZENTSUJI_B"
+        },
+        {
+          "key": "C",
+          "text": "旧造り酒屋の古民家「甘味茶屋 Sari Sari」で過ごした、自家製あんこのぜんざいと和パフェの時間",
+          "description": "太い梁が渡るノスタルジックな空間で、優しい甘さの小豆スイーツとともに門前歩きの余韻に浸った。",
+          "badge_code": "ZENTSUJI_C"
+        },
+        {
+          "key": "D",
+          "text": "門前の木造老舗「熊岡菓子店」で求めた、噛むほどに生姜と小麦の甘みが広がる名物「石パン」",
+          "description": "木箱とガラスケースが並ぶ昔ながらの店先で、百二十年以上受け継がれる日本一堅いパン菓子の滋味に触れた。",
+          "badge_code": "ZENTSUJI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0a7ab353-a592-4d07-890a-6f65a16669c5",
+        "name": "旧善通寺偕行社",
+        "description": "旧陸軍第十一師団の将校社交場として建てられた国指定重要文化財の木造洋風建築（10:00〜16:00開館、水曜・年末年始休、入館無料）。ルネサンス様式の車寄せや約百畳の大広間を見学できる。",
+        "address": "香川県善通寺市文京町2-1-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.227627,
+        "lng": 133.787743,
+        "qr_token": "shuin-zentsuji-1",
+        "cover_image_url": "/images/zentsuji/spot1.png",
+        "f7_fragment": "ルネサンス様式の白亜の外観が優美な、国指定重要文化財の木造洋館。",
+        "f7_full": "緑の庭園に映える「旧善通寺偕行社」の白亜の車寄せとシャンデリアが、善通寺の街を巡る歩き旅の幕開けを華やかに飾る。",
+        "is_final": false,
+        "next_spot_id": "43b42723-9f39-4676-8041-0e67518c94f0",
+        "next_spot_name": "麺賊"
+      },
+      {
+        "id": "43b42723-9f39-4676-8041-0e67518c94f0",
+        "name": "麺賊",
+        "description": "上吉田町にある本格手打ちのセルフ讃岐うどん店（6:30〜15:00営業・麺がなくなり次第終了、金曜定休）。いりこ出汁が香るかけうどんや肉ぶっかけうどん、揚げたての天ぷらが人気。",
+        "address": "香川県善通寺市上吉田町3-3-24",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.227377,
+        "lng": 133.782311,
+        "qr_token": "shuin-zentsuji-2",
+        "cover_image_url": "/images/zentsuji/spot2.png",
+        "f7_fragment": "澄んだ黄金色のいりこ出汁と強いコシの太麺を味わうセルフ讃岐うどん店。",
+        "f7_full": "打ちたての太麺にいりこ出汁が絡む「麺賊」の讃岐うどんと揚げたての天ぷらが、門前町へ向かう昼下がりに活力を与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "78197182-7004-4027-84c7-f7d27c94e08a",
+        "next_spot_name": "総本山善通寺"
+      },
+      {
+        "id": "78197182-7004-4027-84c7-f7d27c94e08a",
+        "name": "総本山善通寺",
+        "description": "弘法大師・空海御誕生の聖地であり、四国八十八ヶ所霊場の第七十五番札所（境内参拝自由・宝物館等は8:00〜17:00、無休）。高さ約43mの国指定重要文化財・五重塔や大楠、御影堂で知られる。",
+        "address": "香川県善通寺市善通寺町3-3-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.225908,
+        "lng": 133.776108,
+        "qr_token": "shuin-zentsuji-3",
+        "cover_image_url": "/images/zentsuji/spot3.png",
+        "f7_fragment": "樹齢千数百年の大楠と重要文化財の五重塔がそびえる、弘法大師御誕生所。",
+        "f7_full": "青空にそびえる「総本山善通寺」の総欅造りの五重塔と大楠の深い緑が、千二百年受け継がれてきた遍路の祈りを静かに伝える。",
+        "is_final": false,
+        "next_spot_id": "a1879c45-3106-4006-8fcf-39905dcfcd45",
+        "next_spot_name": "熊岡菓子店"
+      },
+      {
+        "id": "a1879c45-3106-4006-8fcf-39905dcfcd45",
+        "name": "熊岡菓子店",
+        "description": "総本山善通寺の門前に佇む明治期創業の老舗菓子舗（9:00〜16:00営業・売切れ次第終了、火曜・第3水曜定休）。日本一堅いパンとも称される伝統銘菓「石パン」「堅パン」を商う。",
+        "address": "香川県善通寺市善通寺町3-4-11",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.225811,
+        "lng": 133.77475,
+        "qr_token": "shuin-zentsuji-4",
+        "cover_image_url": "/images/zentsuji/spot4.png",
+        "f7_fragment": "善通寺門前の木造老舗で量り売りされる、生姜香る伝統銘菓「石パン」。",
+        "f7_full": "昔ながらの木箱が並ぶ「熊岡菓子店」の石パンと堅パンが、善通寺の門前町で育まれた素朴で力強い食の記憶を今に届ける。",
+        "is_final": false,
+        "next_spot_id": "f22c9501-544f-4903-8c3c-7457c0a65eb7",
+        "next_spot_name": "甘味茶屋 Sari Sari"
+      },
+      {
+        "id": "f22c9501-544f-4903-8c3c-7457c0a65eb7",
+        "name": "甘味茶屋 Sari Sari",
+        "description": "築百余年の旧造り酒屋を改装した古民家甘味処（11:30〜18:00頃営業、不定休）。梁や土間を活かした空間で、自家製あんこのぜんざいや和パフェ、抹茶スイーツを楽しめる。",
+        "address": "香川県善通寺市善通寺町5-5-22",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.227145,
+        "lng": 133.773933,
+        "qr_token": "shuin-zentsuji-5",
+        "cover_image_url": "/images/zentsuji/spot5.png",
+        "f7_fragment": "旧造り酒屋の古民家を活かした空間で味わう、自家製あんこのぜんざいと甘味。",
+        "f7_full": "太い梁が見守る「甘味茶屋 Sari Sari」の温かいぜんざいと抹茶スイーツが、善通寺の門前を巡った旅を穏やかに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "89e88a3c-ecd9-4c0b-8d39-f2530f3f0d8e",
+    "title": "城山の緑を仰ぐ天文館で黒豚と白熊の甘味を巡る",
+    "name": "城山の緑を仰ぐ天文館で黒豚と白熊の甘味を巡る",
+    "description": "かつて薩摩藩の暦学・天文学の研究施設「明時館（別名・天文館）」が置かれたことに由来する南九州随一の繁華街・鹿児島市天文館。島津斉彬公を祀る照國神社から、老舗「熊襲亭」のさつま料理、城山を背に立つ西郷隆盛銅像、元祖「明石屋」の軽羹、「天文館むじゃき」の白熊までを巡る。",
+    "region": "天文館通停留場・城山の杜・黒豚と白熊の道",
+    "area_name": "天文館通停留場・城山の杜・黒豚と白熊の道",
+    "cover_image_url": "/images/tenmonkandori/route-eyecatch.png",
+    "imageUrl": "/images/tenmonkandori/route-eyecatch.png",
+    "category": "薩摩藩の総氏神・正調さつま料理・元祖軽羹と名物白熊",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "照國神社と西郷像が立つ城山の麓で、さつま料理や元祖かるかん、名物の白熊を味わい、あなたの五感を惹きつけるのはどれだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「天文館むじゃき 本店」で味わった、自家製ミルク蜜と彩り豊かな果実が輝く元祖の氷菓「白熊」",
+          "description": "ふわふわに削られた純白の氷に優しい甘みのミルク蜜が染み渡り、発祥の店ならではの爽やかな口どけに魅了された。",
+          "badge_code": "TENMONKANDORI_A"
+        },
+        {
+          "key": "B",
+          "text": "島津斉彬公を祀る「照國神社」の白木造りの社殿と、城山の緑を背に仁王立ちする「西郷隆盛銅像」",
+          "description": "近代日本の夜明けを切り拓いた薩摩の先人たちの気概と、城山の豊かな自然が織りなす景観に胸を打たれた。",
+          "badge_code": "TENMONKANDORI_B"
+        },
+        {
+          "key": "C",
+          "text": "老舗「正調さつま料理 熊襲亭」で堪能した、とろける黒豚とんこつと銀色に輝くきびなご刺身",
+          "description": "黒砂糖と味噌でじっくり煮込まれた黒豚の旨みと、錦江湾の海の幸が並ぶ伝統のさつま料理を心ゆくまで味わった。",
+          "badge_code": "TENMONKANDORI_C"
+        },
+        {
+          "key": "D",
+          "text": "安政年間創業の「かるかん元祖 明石屋 本店」で選んだ、自然薯が香る純白の「軽羹」と「軽羹饅頭」",
+          "description": "島津斉彬公の命により生まれた薩摩銘菓の気品ある白さと、ふっくらとした自然薯の風味に感銘を受けた。",
+          "badge_code": "TENMONKANDORI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4f9d0984-cd57-4a2a-87a4-6f84c13a6bba",
+        "name": "照國神社",
+        "description": "薩摩藩第十一代藩主・島津斉彬公を祀る鹿児島県の総氏神（境内参拝自由・授与所8:30〜17:00、無休）。城山の緑を背にした白木造りの社殿や大鳥居、ソテツの巨木が見どころ。",
+        "address": "鹿児島県鹿児島市照国町19-35",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.59463,
+        "lng": 130.550406,
+        "qr_token": "shuin-tenmonkandori-1",
+        "cover_image_url": "/images/tenmonkandori/spot1.png",
+        "f7_fragment": "城山の緑を背に白木造りの社殿と大鳥居が立つ、島津斉彬公ゆかりの総氏神。",
+        "f7_full": "南国の陽光を浴びて輝く「照國神社」の大鳥居と社殿が、近代日本の礎を築いた薩摩の歴史と食文化を辿る歩き旅を凛と開く。",
+        "is_final": false,
+        "next_spot_id": "71c8c99e-0baa-44db-830a-baf2808c977d",
+        "next_spot_name": "正調さつま料理 熊襲亭"
+      },
+      {
+        "id": "71c8c99e-0baa-44db-830a-baf2808c977d",
+        "name": "正調さつま料理 熊襲亭",
+        "description": "東千石町にある薩摩郷土料理の老舗（11:30〜14:00・L.O.13:30、17:30〜22:00・L.O.21:00営業、大晦日・元日休）。黒豚のとんこつ煮やきびなごの刺身、さつま揚げ、酒ずしなどを味わえる。",
+        "address": "鹿児島県鹿児島市東千石町6-10",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.591963,
+        "lng": 130.553457,
+        "qr_token": "shuin-tenmonkandori-2",
+        "cover_image_url": "/images/tenmonkandori/spot2.png",
+        "f7_fragment": "とろける「黒豚とんこつ」と銀色の「きびなご刺身」が並ぶ正調さつま料理。",
+        "f7_full": "じっくり煮込まれた黒豚とんこつと新鮮なきびなご、揚げたてのさつま揚げが、南国・鹿児島の滋味あふれる食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cca8ee43-325f-411d-8e00-3fe797047313",
+        "next_spot_name": "西郷隆盛銅像"
+      },
+      {
+        "id": "cca8ee43-325f-411d-8e00-3fe797047313",
+        "name": "西郷隆盛銅像",
+        "description": "城山の麓に立つ高さ約8mの西郷隆盛の銅像（見学自由、無休）。鹿児島出身の彫刻家・安藤照が8年の歳月をかけて制作した、陸軍大将の正装姿の代表作として知られる。",
+        "address": "鹿児島県鹿児島市城山町4-36",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.595268,
+        "lng": 130.553522,
+        "qr_token": "shuin-tenmonkandori-3",
+        "cover_image_url": "/images/tenmonkandori/spot3.png",
+        "f7_fragment": "城山の深い緑を背に堂々と立ち上がる、安藤照作の「西郷隆盛銅像」。",
+        "f7_full": "城山の楠の木立を背景に凛と立つ「西郷隆盛銅像」の力強い佇まいが、明治維新を牽引した薩摩の情熱を今に映し出している。",
+        "is_final": false,
+        "next_spot_id": "cbd15cb6-0f24-4351-8804-a8787ca77739",
+        "next_spot_name": "かるかん元祖 明石屋 本店"
+      },
+      {
+        "id": "cbd15cb6-0f24-4351-8804-a8787ca77739",
+        "name": "かるかん元祖 明石屋 本店",
+        "description": "安政年間創業、薩摩銘菓「軽羹」発祥の総本店（9:00〜18:00営業、元日休）。天然の自然薯と米粉、砂糖のみで蒸し上げる純白の「軽羹」と自家製こし餡入りの「軽羹饅頭」を商う。",
+        "address": "鹿児島県鹿児島市金生町4-16",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.59349,
+        "lng": 130.556905,
+        "qr_token": "shuin-tenmonkandori-4",
+        "cover_image_url": "/images/tenmonkandori/spot4.png",
+        "f7_fragment": "天然の自然薯と米粉でふっくらと蒸し上げる、純白の元祖「軽羹」。",
+        "f7_full": "島津斉彬公の時代から受け継がれる「かるかん元祖 明石屋 本店」の純白の軽羹が、薩摩の茶席と菓子文化の気品を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "bfacd7e0-f006-466e-86b5-0cf8d3cd2165",
+        "next_spot_name": "天文館むじゃき 本店"
+      },
+      {
+        "id": "bfacd7e0-f006-466e-86b5-0cf8d3cd2165",
+        "name": "天文館むじゃき 本店",
+        "description": "鹿児島名物のかき氷「白熊」発祥の総本店（11:00〜19:00営業・L.O.18:30、不定休）。ふわふわの氷に秘伝の自家製ミルクと蜜をかけ、フルーツや豆を彩りよく盛り付けた元祖「白熊」を味わえる。",
+        "address": "鹿児島県鹿児島市千日町5-8",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.589238,
+        "lng": 130.555969,
+        "qr_token": "shuin-tenmonkandori-5",
+        "cover_image_url": "/images/tenmonkandori/spot5.png",
+        "f7_fragment": "自家製ミルク蜜と色とりどりの果実が彩る、鹿児島名物「白熊」発祥の本店。",
+        "f7_full": "雪のように削られた氷に自家製ミルク蜜が溶け合う「天文館むじゃき 本店」の白熊が、南国・天文館の歩き旅を爽やかに締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
