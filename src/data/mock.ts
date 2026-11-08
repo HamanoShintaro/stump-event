@@ -43680,5 +43680,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ecf01cb7-ec2c-4abf-8172-e0a6987d3fd5",
+    "title": "なぜ庄内の鶴岡には擬洋風建築と古鏡が息づくのか",
+    "name": "なぜ庄内の鶴岡には擬洋風建築と古鏡が息づくのか",
+    "description": "出羽三山の麓に広がり、庄内藩・酒井家の城下町として独自の学問と建築文化を育んだ山形県鶴岡市。重要文化財の擬洋風建築が並ぶ致道博物館から、庄内浜の地魚料理、石置屋根の豪商屋敷「丙申堂」、馬場町のカフェ、老舗「木村屋」の銘菓・古鏡までを辿る。",
+    "region": "鶴岡駅・致道博物館の擬洋風建築・丙申堂と古鏡の道",
+    "area_name": "鶴岡駅・致道博物館の擬洋風建築・丙申堂と古鏡の道",
+    "cover_image_url": "/images/tsuruoka/route-eyecatch.png",
+    "imageUrl": "/images/tsuruoka/route-eyecatch.png",
+    "category": "庄内藩の擬洋風建築・庄内浜の地魚・豪商丙申堂と銘菓古鏡",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って庄内・鶴岡を歩くなら、擬洋風建築や地魚料理、石置屋根の商家、銘菓・古鏡のどれから案内したいですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "擬洋風建築と名勝庭園が並ぶ「致道博物館」と、約四万個の石を載せた重要文化財「丙申堂」",
+          "description": "大工棟梁の技が光る水色の旧郡役所と、豪商・風間家の石置屋根が伝える庄内の建築美に深く感銘を受けた。",
+          "badge_code": "TSURUOKA_A"
+        },
+        {
+          "key": "B",
+          "text": "本町通りの「庄内ざっこ」で味わった、庄内浜の朝獲れ地魚と艶やかな庄内米の昼御膳",
+          "description": "日本海の荒波が育てた旬の刺身や焼き魚と、粒立ちの良い庄内米が織りなす豊かな海の幸・里の幸を堪能した。",
+          "badge_code": "TSURUOKA_B"
+        },
+        {
+          "key": "C",
+          "text": "山王町の「つるおか菓子処 木村屋 本店」で選んだ、求肥と粒餡が調和する代表銘菓「古鏡」",
+          "description": "羽黒山の銅鏡を模した格調高い焼き菓子の香ばしさと、百三十年続く老舗本店の温かな空気に心が和んだ。",
+          "badge_code": "TSURUOKA_C"
+        },
+        {
+          "key": "D",
+          "text": "内川近くの「カフェスタジオ サンク」で過ごした、自家焙煎の珈琲と手作りケーキの午後",
+          "description": "城下町を歩いた後に、自然光が差し込む心地よいカフェで香り高いハンドドリップ珈琲と甘いケーキに癒やされた。",
+          "badge_code": "TSURUOKA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3abb78e9-5ab8-4993-8924-9b3dfbbb085b",
+        "name": "致道博物館",
+        "description": "庄内藩主・酒井家の御用屋敷跡に開かれた博物館（3〜11月は9:00〜17:00、12〜2月は9:00〜16:30、水曜・年末年始休）。重要文化財の旧西田川郡役所や旧渋谷家住宅、名勝・酒井氏庭園が並ぶ。",
+        "address": "山形県鶴岡市家中新町10-18",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.728401,
+        "lng": 139.821421,
+        "qr_token": "shuin-tsuruoka-1",
+        "cover_image_url": "/images/tsuruoka/spot1.png",
+        "f7_fragment": "時計塔を戴く重要文化財の擬洋風建築と名勝庭園が並ぶ歴史空間。",
+        "f7_full": "水色の旧西田川郡役所と名勝庭園が美しい「致道博物館」の佇まいが、庄内藩の城下町・鶴岡を巡る歩き旅を気品高く開く。",
+        "is_final": false,
+        "next_spot_id": "ba413f07-e803-47bc-8573-11230b06c151",
+        "next_spot_name": "庄内ざっこ"
+      },
+      {
+        "id": "ba413f07-e803-47bc-8573-11230b06c151",
+        "name": "庄内ざっこ",
+        "description": "本町通りにある庄内浜の地魚と郷土料理の食事処（11:30〜13:30、17:00〜22:00営業、日曜または月曜定休）。日本海の新鮮な魚介を使った刺身定食や焼き魚御膳を味わえる。",
+        "address": "山形県鶴岡市本町1-8-41",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.725898,
+        "lng": 139.83098,
+        "qr_token": "shuin-tsuruoka-2",
+        "cover_image_url": "/images/tsuruoka/spot2.png",
+        "f7_fragment": "庄内浜で水揚げされた新鮮な地魚の刺身と庄内米を味わう和食処。",
+        "f7_full": "日本海の旬魚と艶やかな白米が並ぶ「庄内ざっこ」の昼御膳が、食の都・庄内ならではの滋味あふれる昼食の時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "98f720fa-6ad4-4f58-8a59-9c0bcde52a55",
+        "next_spot_name": "旧風間家住宅 丙申堂"
+      },
+      {
+        "id": "98f720fa-6ad4-4f58-8a59-9c0bcde52a55",
+        "name": "旧風間家住宅 丙申堂",
+        "description": "庄内藩の御用商人・風間家の本宅として建てられた国指定重要文化財の商家建築（9:30〜16:30開館・最終入館16:00、7月13日休・冬期休館あり、休館中も薬医門と外観見学可能）。約四万個の石を載せた石置屋根で知られる。",
+        "address": "山形県鶴岡市馬場町1-17",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.728499,
+        "lng": 139.829335,
+        "qr_token": "shuin-tsuruoka-3",
+        "cover_image_url": "/images/tsuruoka/spot3.png",
+        "f7_fragment": "約四万個の丸石を敷き詰めた「石置屋根」と薬医門が残る豪商の邸宅。",
+        "f7_full": "重厚な薬医門と石置屋根が連なる「旧風間家住宅 丙申堂」の佇まいが、城下町・鶴岡を支えた豪商の誇りと建築の知恵を物語る。",
+        "is_final": false,
+        "next_spot_id": "c9aca97f-3d8e-4794-8c56-01f2dc1c3594",
+        "next_spot_name": "カフェスタジオ サンク"
+      },
+      {
+        "id": "c9aca97f-3d8e-4794-8c56-01f2dc1c3594",
+        "name": "カフェスタジオ サンク",
+        "description": "鶴岡公園の北東・馬場町にあるカフェ（11:00〜18:00営業・L.O.17:30、不定休）。自家焙煎のスペシャルティコーヒーや手作りの季節ケーキでひと休みできる。",
+        "address": "山形県鶴岡市馬場町8-13",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.726122,
+        "lng": 139.828531,
+        "qr_token": "shuin-tsuruoka-4",
+        "cover_image_url": "/images/tsuruoka/spot4.png",
+        "f7_fragment": "馬場町の明るい空間で味わう、自家焙煎のハンドドリップ珈琲とケーキ。",
+        "f7_full": "柔らかな光が満ちる「カフェスタジオ サンク」の自家焙煎珈琲と手作りケーキが、歴史建築を巡った午後に穏やかな休息をもたらす。",
+        "is_final": false,
+        "next_spot_id": "5a2e409c-e4d4-4ced-8e1e-ba733a16414b",
+        "next_spot_name": "つるおか菓子処 木村屋 本店"
+      },
+      {
+        "id": "5a2e409c-e4d4-4ced-8e1e-ba733a16414b",
+        "name": "つるおか菓子処 木村屋 本店",
+        "description": "百三十余年の歴史を持つ鶴岡の老舗和洋菓子舗の総本店（9:00〜18:30営業・日曜は18:00まで、木曜定休）。羽黒山の銅鏡を模した代表銘菓「古鏡」や酒種あんぱんを商う。",
+        "address": "山形県鶴岡市山王町9-25",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.733381,
+        "lng": 139.834801,
+        "qr_token": "shuin-tsuruoka-5",
+        "cover_image_url": "/images/tsuruoka/spot5.png",
+        "f7_fragment": "羽黒山の鏡池の銅鏡を模した、粒餡と求肥が調和する鶴岡銘菓「古鏡」。",
+        "f7_full": "山王町に暖簾を掲げる「つるおか菓子処 木村屋 本店」の銘菓・古鏡が、出羽三山の信仰と城下町の歴史を巡った旅を温かく結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5e8a7731-0a78-46eb-8457-bcd0d4b9d8d2",
+    "title": "特別史跡の弘道館から水戸の梅と納豆料理を辿る",
+    "name": "特別史跡の弘道館から水戸の梅と納豆料理を辿る",
+    "description": "水戸徳川家の学問と梅の文化が息づく茨城県水戸市。日本最大規模の藩校である特別史跡・弘道館から歩き出し、粘りと旨みが際立つ水戸納豆の郷土御膳、徳川頼房公創建の水戸東照宮、三の丸の自家焙煎カフェ、百六十年続く「木村屋本店」の銘菓・水戸の梅までを巡る。",
+    "region": "水戸駅・特別史跡弘道館・東照宮と水戸の梅の道",
+    "area_name": "水戸駅・特別史跡弘道館・東照宮と水戸の梅の道",
+    "cover_image_url": "/images/mito/route-eyecatch.png",
+    "imageUrl": "/images/mito/route-eyecatch.png",
+    "category": "特別史跡の藩校・水戸納豆御膳・東照宮と元祖水戸の梅",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "弘道館の梅の香りと東照宮の社殿、水戸の納豆料理や老舗珈琲、元祖の銘菓の中で、あなたの心に深く響くのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "梅樹が彩る特別史跡の藩校「弘道館」と、水戸徳川家の歴史を伝える「水戸東照宮」",
+          "description": "重要文化財の正庁に凛と張り詰める学問の気風と、黒漆と金が輝く権現造りの社殿に水戸藩の誇りを感じた。",
+          "badge_code": "MITO_A"
+        },
+        {
+          "key": "B",
+          "text": "「喰処・飲処 てんまさ」で味わった、小粒大豆の旨みあふれる「水戸納豆御膳」と常陸秋そば",
+          "description": "納豆天ぷらやねばり丼など、本場・水戸ならではの多彩な納豆料理の香ばしさと奥深い滋味を心ゆくまで堪能した。",
+          "badge_code": "MITO_B"
+        },
+        {
+          "key": "C",
+          "text": "南町の老舗「木村屋本店」で選んだ、蜜漬けの赤紫蘇が香る元祖の銘菓「水戸の梅」",
+          "description": "白餡と求肥を艶やかな赤紫蘇の葉で包んだ伝統菓の爽やかな甘酸っぱさに、梅の都・水戸の風雅を感じた。",
+          "badge_code": "MITO_C"
+        },
+        {
+          "key": "D",
+          "text": "三の丸の老舗「プロカフェ」で過ごした、香り高い自家焙煎珈琲と手作りケーキのひととき",
+          "description": "レンガ調の落ち着いた喫茶空間で、丁寧に淹れられた珈琲と濃厚なケーキを味わいながら旅の余韻を楽しんだ。",
+          "badge_code": "MITO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "50f6bcac-7f30-4f1d-8f2c-a4b0400cd040",
+        "name": "弘道館",
+        "description": "水戸藩第九代藩主・徳川斉昭公が創設した日本最大規模の藩校（9:00〜17:00・冬季は16:30まで、12月29日〜31日休）。国の特別史跡であり、正門・正庁・至善堂は国指定重要文化財。",
+        "address": "茨城県水戸市三の丸1-6-29",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.375145,
+        "lng": 140.477631,
+        "qr_token": "shuin-mito-1",
+        "cover_image_url": "/images/mito/spot1.png",
+        "f7_fragment": "重要文化財の正庁と約八百本の梅樹が彩る、日本最大規模の旧藩校。",
+        "f7_full": "凛とした空気が満ちる特別史跡「弘道館」の正庁と梅の庭が、学問と歴史の街・水戸を辿る歩き旅の幕開けを格調高く告げる。",
+        "is_final": false,
+        "next_spot_id": "8eb4c6d9-afa4-4c87-853a-2a6ecee76705",
+        "next_spot_name": "喰処・飲処 てんまさ"
+      },
+      {
+        "id": "8eb4c6d9-afa4-4c87-853a-2a6ecee76705",
+        "name": "喰処・飲処 てんまさ",
+        "description": "宮町にある茨城郷土料理の食事処（月〜金11:00〜14:00・土日11:00〜15:00、夜16:00〜21:00営業、無休）。水戸名物の納豆御膳や納豆ねばり丼、常陸秋そば、あんこう料理を味わえる。",
+        "address": "茨城県水戸市宮町2-2-31",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.372207,
+        "lng": 140.475056,
+        "qr_token": "shuin-mito-2",
+        "cover_image_url": "/images/mito/spot2.png",
+        "f7_fragment": "小粒大豆の旨みが際立つ「水戸納豆御膳」と茨城の郷土料理を味わう店。",
+        "f7_full": "納豆天ぷらやねばり鉢が並ぶ「喰処・飲処 てんまさ」の納豆御膳が、本場・水戸ならではの滋味深く楽しい昼食の時間を届ける。",
+        "is_final": false,
+        "next_spot_id": "abd95bbc-4688-4746-82e0-f67f480aaf44",
+        "next_spot_name": "水戸東照宮"
+      },
+      {
+        "id": "abd95bbc-4688-4746-82e0-f67f480aaf44",
+        "name": "水戸東照宮",
+        "description": "水戸藩初代藩主・徳川頼房公が徳川家康公を祀り創建した古社（6:00〜17:00参拝・授与所8:30〜17:00、無休）。権現造りの社殿や徳川斉昭公ゆかりの「安神車」、銅造燈籠で知られる。",
+        "address": "茨城県水戸市宮町2-5-13",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.372471,
+        "lng": 140.473536,
+        "qr_token": "shuin-mito-3",
+        "cover_image_url": "/images/mito/spot3.png",
+        "f7_fragment": "「権現さん」と慕われる、黒漆と金箔が鮮やかな水戸徳川家ゆかりの社。",
+        "f7_full": "緑深い霊松山に鎮座する「水戸東照宮」の黒漆と金の社殿が、水戸藩の始まりと先人たちの足跡を静かに映し出してくれる。",
+        "is_final": false,
+        "next_spot_id": "c5e1d44d-2abb-41de-8e14-e3d874354c6a",
+        "next_spot_name": "プロカフェ"
+      },
+      {
+        "id": "c5e1d44d-2abb-41de-8e14-e3d874354c6a",
+        "name": "プロカフェ",
+        "description": "三の丸・銀杏坂近くにある自家焙煎珈琲と手作りケーキの老舗カフェ（平日7:00〜21:00、土日祝8:00〜20:00営業、無休）。落ち着いたレンガ調の店内で香り高い珈琲を楽しめる。",
+        "address": "茨城県水戸市三の丸1-4-2",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.372994,
+        "lng": 140.475042,
+        "qr_token": "shuin-mito-4",
+        "cover_image_url": "/images/mito/spot4.png",
+        "f7_fragment": "三の丸のレンガ調の喫茶空間で味わう、香り高い自家焙煎珈琲とケーキ。",
+        "f7_full": "芳醇な珈琲の香りに包まれる「プロカフェ」の自家製ケーキと一杯が、三の丸の史跡を巡った午後に心地よい安らぎを添える。",
+        "is_final": false,
+        "next_spot_id": "cc6db5ec-7447-401b-8699-c9d3fe2fd1ba",
+        "next_spot_name": "木村屋本店"
+      },
+      {
+        "id": "cc6db5ec-7447-401b-8699-c9d3fe2fd1ba",
+        "name": "木村屋本店",
+        "description": "万延年間創業の老舗和菓子舗の総本店（平日9:30〜17:45、土曜・祝日9:30〜17:30営業、日曜定休）。白餡と求肥を蜜漬けの赤紫蘇で包んだ元祖「水戸の梅」を商う。",
+        "address": "茨城県水戸市南町1-2-21",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.374963,
+        "lng": 140.472522,
+        "qr_token": "shuin-mito-5",
+        "cover_image_url": "/images/mito/spot5.png",
+        "f7_fragment": "白餡と求肥を蜜漬けの赤紫蘇の葉で包んだ、元祖の銘菓「水戸の梅」。",
+        "f7_full": "百六十余年続く「木村屋本店」の銘菓・水戸の梅が、爽やかな紫蘇の香りとともに梅の都・水戸を巡った旅を風雅に結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2835586d-ec68-4669-8c2a-7c1ebcf69ade",
+    "title": "槙の生垣が続く松阪で豪商の邸宅と老伴を訪ねる",
+    "name": "槙の生垣が続く松阪で豪商の邸宅と老伴を訪ねる",
+    "description": "蒲生氏郷公が築いた松坂城の麓に、武家長屋と伊勢商人の大店が連なる三重県松阪市。重要文化財「御城番屋敷」の槙の生垣から、老舗「牛銀」の松阪牛料理、うだつが上がる豪商「旧長谷川治郎兵衛家」、深蒸し伊勢茶の茶舗、四百五十年続く「柳屋奉善」の老伴までを辿る。",
+    "region": "松阪駅・御城番屋敷の生垣・豪商の邸宅と老伴の道",
+    "area_name": "松阪駅・御城番屋敷の生垣・豪商の邸宅と老伴の道",
+    "cover_image_url": "/images/matsusaka/route-eyecatch.png",
+    "imageUrl": "/images/matsusaka/route-eyecatch.png",
+    "category": "重要文化財の武家長屋・松阪牛料理・伊勢商人邸宅と銘菓老伴",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "御城番屋敷の生垣と豪商の邸宅、松阪牛のすき焼きや町家カフェ、老伴の中で、旅の記憶として持ち帰りたいのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "槙の生垣と石畳が美しい「御城番屋敷」と、うだつが上がる豪商の本宅「旧長谷川治郎兵衛家」",
+          "description": "今も暮らしが息づく武家長屋の凛とした景観と、伊勢商人の木綿問屋が築いた大邸宅の格式に心を打たれた。",
+          "badge_code": "MATSUSAKA_A"
+        },
+        {
+          "key": "B",
+          "text": "魚町通りの老舗「牛銀本店」で味わった、たまり醤油と砂糖が香る極上の松阪牛料理",
+          "description": "数寄屋造りの風情ある空間で、きめ細かな霜降りの松阪肉がとろける至福の昼食を心ゆくまで堪能した。",
+          "badge_code": "MATSUSAKA_B"
+        },
+        {
+          "key": "C",
+          "text": "四百五十年の歴史を誇る「柳屋奉善」で求めた、最中種と茜色の羊羹が調和する代表銘菓「老伴」",
+          "description": "蒲生氏郷公の時代から続く老舗で、勾玉や鈴の文様が浮かぶ伝統菓のシャリッとした口どけに感銘を受けた。",
+          "badge_code": "MATSUSAKA_C"
+        },
+        {
+          "key": "D",
+          "text": "新町通りの老舗「茶遊膳 茶重」で過ごした、芳醇な深蒸し伊勢茶と和甘味のひととき",
+          "description": "茶処・三重ならではの濃厚な伊勢茶の旨みと香りに包まれながら、城下町歩きの足を心地よく休めた。",
+          "badge_code": "MATSUSAKA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d9e0ea00-0ead-4693-8607-681861841399",
+        "name": "御城番屋敷",
+        "description": "松坂城の警護にあたった紀州藩士の住居として建てられた国指定重要文化財の武家長屋（通りは散策自由、内部公開10:00〜16:00、月曜・年末年始休、無料）。槙の生垣と石畳の美しい通りで知られる。",
+        "address": "三重県松阪市殿町1385",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.574481,
+        "lng": 136.527059,
+        "qr_token": "shuin-matsusaka-1",
+        "cover_image_url": "/images/matsusaka/spot1.png",
+        "f7_fragment": "刈り込まれた槙の生垣と石畳が真っ直ぐに続く、重要文化財の武家長屋。",
+        "f7_full": "青々とした槙の生垣と石畳が伸びる「御城番屋敷」の静謐な通りが、松坂城下の歴史と商人の街を辿る歩き旅を凛と開く。",
+        "is_final": false,
+        "next_spot_id": "b714dd14-a4f5-4bb0-8133-28ae92bc8346",
+        "next_spot_name": "牛銀本店"
+      },
+      {
+        "id": "b714dd14-a4f5-4bb0-8133-28ae92bc8346",
+        "name": "牛銀本店",
+        "description": "魚町通りに木造三階建ての構えを見せる松阪肉料理の老舗（本店11:00〜20:00、併設の洋食屋牛銀11:00〜16:00・17:00〜19:30営業、不定休）。伝統の松阪牛すき焼きやあみ焼き、牛鍋を味わえる。",
+        "address": "三重県松阪市魚町1618",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.579168,
+        "lng": 136.528495,
+        "qr_token": "shuin-matsusaka-2",
+        "cover_image_url": "/images/matsusaka/spot2.png",
+        "f7_fragment": "風情ある木造建築で味わう、たまり醤油が香る本場の松阪牛すき焼き。",
+        "f7_full": "きめ細かな霜降りの松阪肉を焼き上げる「牛銀本店」のすき焼きと牛鍋が、本場・松阪ならではの格別な昼食の記憶を刻んでくれる。",
+        "is_final": false,
+        "next_spot_id": "a1850ba2-f57f-477e-85e9-ff574ec9557d",
+        "next_spot_name": "旧長谷川治郎兵衛家"
+      },
+      {
+        "id": "a1850ba2-f57f-477e-85e9-ff574ec9557d",
+        "name": "旧長谷川治郎兵衛家",
+        "description": "江戸の大伝馬町に木綿店を構えた伊勢商人・長谷川家の本宅で国指定重要文化財（9:00〜17:00開館・最終受付16:30、水曜・年末年始休）。うだつが上がる主屋や五つの土蔵、庭園が見どころ。",
+        "address": "三重県松阪市魚町1653",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.578316,
+        "lng": 136.528878,
+        "qr_token": "shuin-matsusaka-3",
+        "cover_image_url": "/images/matsusaka/spot3.png",
+        "f7_fragment": "立派なうだつと黒格子が連なる、国指定重要文化財の伊勢商人本宅。",
+        "f7_full": "重厚なうだつと白壁の土蔵群が並ぶ「旧長谷川治郎兵衛家」の佇まいが、江戸の経済を動かした松阪商人の繁栄と美意識を伝える。",
+        "is_final": false,
+        "next_spot_id": "d1950a6b-1728-4f92-8208-a97b3fa42339",
+        "next_spot_name": "茶遊膳 茶重"
+      },
+      {
+        "id": "d1950a6b-1728-4f92-8208-a97b3fa42339",
+        "name": "茶遊膳 茶重",
+        "description": "新町通りにある老舗の日本茶専門店・茶房（月〜金10:00〜19:00、土祝10:00〜18:00営業、日曜・第3月曜定休）。三重県産の深蒸し伊勢茶や抹茶スイーツを味わえる。",
+        "address": "三重県松阪市新町819",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.573436,
+        "lng": 136.530821,
+        "qr_token": "shuin-matsusaka-4",
+        "cover_image_url": "/images/matsusaka/spot4.png",
+        "f7_fragment": "老舗茶舗の落ち着いた空間で味わう、まろやかな深蒸し伊勢茶と甘味。",
+        "f7_full": "香り高い三重の深蒸し茶を淹れる「茶遊膳 茶重」の一服と和スイーツが、豪商の屋敷を巡った午後に爽やかな潤いをもたらす。",
+        "is_final": false,
+        "next_spot_id": "8e1df14c-c6f0-49eb-8213-52d8fde4e835",
+        "next_spot_name": "柳屋奉善"
+      },
+      {
+        "id": "8e1df14c-c6f0-49eb-8213-52d8fde4e835",
+        "name": "柳屋奉善",
+        "description": "天正年間創業、四百五十年の歴史を誇る松阪随一の老舗和菓子司（9:00〜18:00営業、火曜・水曜定休）。最中の皮に茜色の羊羹を流し込んだ代表銘菓「老伴」や鈴最中を商う。",
+        "address": "三重県松阪市中町1877",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.576997,
+        "lng": 136.531096,
+        "qr_token": "shuin-matsusaka-5",
+        "cover_image_url": "/images/matsusaka/spot5.png",
+        "f7_fragment": "四百五十年続く老舗で求める、最中種と茜色の羊羹が調和する「老伴」。",
+        "f7_full": "蒲生氏郷公の時代から暖簾を守る「柳屋奉善」の伝統銘菓・老伴が、武家と豪商の街・松阪を巡った旅を格調高く締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f7585c27-2e55-4d2e-84f1-512b5bc8aaf6",
+    "title": "千本鳥居の津和野に流れる掘割の鯉と源氏巻の道",
+    "name": "千本鳥居の津和野に流れる掘割の鯉と源氏巻の道",
+    "description": "青野山の麓に白壁の武家屋敷が連なり、掘割に色鮮やかな鯉が泳ぐ「山陰の小京都」島根県津和野町。約千本の朱の鳥居が続く太皷谷稲成神社から、殿町通りの「うずめ飯」、ステンドグラスが輝く畳敷きの津和野カトリック教会、伝統銘菓「源氏巻」、香ばしい「ざら茶」の茶舗までを辿る。",
+    "region": "津和野駅・太皷谷稲成の千本鳥居・殿町通りと源氏巻の道",
+    "area_name": "津和野駅・太皷谷稲成の千本鳥居・殿町通りと源氏巻の道",
+    "cover_image_url": "/images/tsuwano/route-eyecatch.png",
+    "imageUrl": "/images/tsuwano/route-eyecatch.png",
+    "category": "日本五大稲荷の千本鳥居・伝統うずめ飯・畳敷き教会と源氏巻",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "太皷谷稲成の千本鳥居と畳敷きの教会、うずめ飯や香ばしいざら茶、源氏巻の中で、あなたが間近に触れてみたいのはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "約千本の朱の鳥居が連なる「太皷谷稲成神社」と、殿町通りに佇む畳敷きの「津和野カトリック教会」",
+          "description": "城下町を見晴らす朱塗りの社殿の壮麗さと、ステンドグラスの光が青畳に落ちる教会の静謐な調和に心洗われた。",
+          "badge_code": "TSUWANO_A"
+        },
+        {
+          "key": "B",
+          "text": "殿町通りの「沙羅の木 松韻亭」で味わった、熱々の出汁と山菜の旨みが広がる郷土料理「うずめ飯」",
+          "description": "日本庭園を望む落ち着いた座敷で、白いご飯の下から彩り豊かな具材が現れる津和野伝統の名飯を堪能した。",
+          "badge_code": "TSUWANO_B"
+        },
+        {
+          "key": "C",
+          "text": "本町通りの町家「香味園 上領茶舗」で過ごした、琥珀色に輝く香ばしい「ざら茶」のひととき",
+          "description": "丁寧に焙煎されたカワラケツメイの優しい甘みと香ばしい湯気に包まれ、小京都の穏やかな時間を楽しんだ。",
+          "badge_code": "TSUWANO_C"
+        },
+        {
+          "key": "D",
+          "text": "本町通りの「三松堂 菓心庵」で求めた、きめ細やかなカステラ生地でこし餡を巻いた津和野銘菓「源氏巻」",
+          "description": "しっとりと焼き上げた黄金色の生地と滑らかなこし餡の調和に、城下町で愛され続ける伝統菓の気品を感じた。",
+          "badge_code": "TSUWANO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2e2d250c-55ed-460d-8e27-f095333c6d24",
+        "name": "太皷谷稲成神社",
+        "description": "津和野藩主・亀井矩貞公が創建した日本五大稲荷の一つ（境内参拝自由・授与所8:30〜16:30、無休）。参道に連なる約千本の朱塗りの鳥居と、津和野城下を一望する社殿で知られる。",
+        "address": "島根県鹿足郡津和野町後田409",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 34.465314,
+        "lng": 131.769114,
+        "qr_token": "shuin-tsuwano-1",
+        "cover_image_url": "/images/tsuwano/spot1.png",
+        "f7_fragment": "約千本の朱塗りの鳥居が山腹を彩る、願望成就の「太皷谷稲成神社」。",
+        "f7_full": "緑の山腹に鮮やかな朱の回廊を描く「太皷谷稲成神社」の千本鳥居が、山陰の小京都・津和野を辿る歩き旅を華やかに開く。",
+        "is_final": false,
+        "next_spot_id": "8f5dff4a-d6e8-4b4c-8aa6-9ab3825b76fa",
+        "next_spot_name": "沙羅の木 松韻亭"
+      },
+      {
+        "id": "8f5dff4a-d6e8-4b4c-8aa6-9ab3825b76fa",
+        "name": "沙羅の木 松韻亭",
+        "description": "殿町通り沿いにある郷土料理処（9:00〜17:00営業、無休）。日本庭園を眺めながら、ご飯の下に具材を隠して出汁とわさびで味わう津和野伝統の「うずめ飯」を堪能できる。",
+        "address": "島根県鹿足郡津和野町後田ロ70",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 34.467674,
+        "lng": 131.773722,
+        "qr_token": "shuin-tsuwano-2",
+        "cover_image_url": "/images/tsuwano/spot2.png",
+        "f7_fragment": "殿町通りの庭園を望みながら味わう、日本五大名飯の「うずめ飯」。",
+        "f7_full": "香り高い出汁とわさびで味わう「沙羅の木 松韻亭」のうずめ飯が、掘割の街・津和野ならではの粋な食文化を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b10e1343-08c3-47fd-800d-dfcf5fc2299f",
+        "next_spot_name": "津和野カトリック教会"
+      },
+      {
+        "id": "b10e1343-08c3-47fd-800d-dfcf5fc2299f",
+        "name": "津和野カトリック教会",
+        "description": "殿町通りに立つゴシック様式の教会と国登録有形文化財の神父館（8:00〜17:00開堂、無休）。鮮やかなステンドグラスと畳敷きの礼拝堂が調和する和洋折衷の空間が見どころ。",
+        "address": "島根県鹿足郡津和野町後田ロ66-7",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 34.467449,
+        "lng": 131.774071,
+        "qr_token": "shuin-tsuwano-3",
+        "cover_image_url": "/images/tsuwano/spot3.png",
+        "f7_fragment": "ステンドグラスの柔らかな光が青畳を照らす、殿町通りのゴシック聖堂。",
+        "f7_full": "白壁と鯉の掘割に臨む「津和野カトリック教会」の畳敷きの礼拝堂が、和と洋が静かに溶け合う津和野の歴史景観を映し出す。",
+        "is_final": false,
+        "next_spot_id": "1efd5f29-a892-415d-80db-09d678c5916d",
+        "next_spot_name": "三松堂 菓心庵"
+      },
+      {
+        "id": "1efd5f29-a892-415d-80db-09d678c5916d",
+        "name": "三松堂 菓心庵",
+        "description": "本町通りにある津和野の老舗和菓子処（9:00〜17:00営業、無休）。きめ細やかなカステラ生地でしっとりとした自家製こし餡を細長く巻き上げた津和野銘菓「源氏巻」や季節の和菓子を商う。",
+        "address": "島根県鹿足郡津和野町後田ロ197",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 34.465475,
+        "lng": 131.772981,
+        "qr_token": "shuin-tsuwano-4",
+        "cover_image_url": "/images/tsuwano/spot4.png",
+        "f7_fragment": "黄金色のカステラ生地で滑らかなこし餡を巻き上げた津和野銘菓「源氏巻」。",
+        "f7_full": "本町通りに暖簾を掲げる「三松堂 菓心庵」のしっとりとした源氏巻が、城下町・津和野で受け継がれてきた伝統の甘みを伝える。",
+        "is_final": false,
+        "next_spot_id": "8e545de8-db4b-4e49-8121-e8ae9d342874",
+        "next_spot_name": "香味園 上領茶舗"
+      },
+      {
+        "id": "8e545de8-db4b-4e49-8121-e8ae9d342874",
+        "name": "香味園 上領茶舗",
+        "description": "本町通りの町家に店を構える「ざら茶」の老舗茶舗・カフェ（10:00〜17:00営業、日曜・月曜・祝日定休）。香ばしく焙煎した津和野伝統の健康茶「ざら茶」や季節のブレンド茶を味わえる。",
+        "address": "島根県鹿足郡津和野町後田ロ263",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 34.470104,
+        "lng": 131.775312,
+        "qr_token": "shuin-tsuwano-5",
+        "cover_image_url": "/images/tsuwano/spot5.png",
+        "f7_fragment": "本町通りの町家茶舗で味わう、琥珀色に輝く香ばしい伝統茶「ざら茶」。",
+        "f7_full": "芳ばしい香りと優しい甘みが広がる「香味園 上領茶舗」のざら茶が、千本鳥居と殿町通りを歩いた旅を温かく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cb63d81b-a261-4cb1-86fd-8a399149b400",
+    "title": "掘割が巡る水郷柳川でせいろ蒸しと名勝庭園を歩く",
+    "name": "掘割が巡る水郷柳川でせいろ蒸しと名勝庭園を歩く",
+    "description": "城下を縦横に巡る掘割に柳の緑が映え、どんこ舟がゆったりと行き交う水郷・福岡県柳川市。国指定名勝の池泉庭園「柳川藩主立花邸 御花」から、沖端の老舗「若松屋」で味わう熱々のうなぎのせいろ蒸し、水辺の総鎮守・日吉神社、掘割沿いの古民家茶房、伝統銘菓「越山もち」までを辿る。",
+    "region": "西鉄柳川駅・名勝立花氏庭園・うなぎせいろ蒸しと掘割の道",
+    "area_name": "西鉄柳川駅・名勝立花氏庭園・うなぎせいろ蒸しと掘割の道",
+    "cover_image_url": "/images/nishitetsu_yanagawa/route-eyecatch.png",
+    "imageUrl": "/images/nishitetsu_yanagawa/route-eyecatch.png",
+    "category": "国指定名勝の大名庭園・うなぎせいろ蒸し・水辺の古社と越山もち",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名勝の松濤園と掘割の水辺で、うなぎのせいろ蒸しや古民家茶房、越山もちを味わい、あなたの五感を惹きつけるのはどれだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "沖端の老舗「若松屋」で味わった、炭火焼きの蒲焼きと錦糸卵を熱々に蒸し上げた「うなぎのせいろ蒸し」",
+          "description": "せいろの蓋を開けた瞬間に立ち上る秘伝タレの香ばしい湯気と、ふっくら柔らかな鰻の旨みに心ゆくまで満たされた。",
+          "badge_code": "NISHITETSU_YANAGAWA_A"
+        },
+        {
+          "key": "B",
+          "text": "黒松と池泉が美しい名勝「柳川藩主立花邸 御花」と、掘割の柳並木に佇む総鎮守「日吉神社」",
+          "description": "旧大名家の気品を伝える西洋館と松濤園の造形美、そして水辺の社に流れる穏やかな風に水郷の歴史を感じた。",
+          "badge_code": "NISHITETSU_YANAGAWA_B"
+        },
+        {
+          "key": "C",
+          "text": "掘割沿いの古民家「茶餐 無垢」で過ごした、香り高い台湾烏龍茶と自家製豆花のひととき",
+          "description": "築百余年の梁が渡る静かな空間で、水辺の緑を眺めながら清らかな茶香と優しい甘さの豆花に癒やされた。",
+          "badge_code": "NISHITETSU_YANAGAWA_C"
+        },
+        {
+          "key": "D",
+          "text": "立花家御用達の「梅花堂越山 本店」で選んだ、和三盆糖と白餡が溶け合う代表銘菓「越山もち」",
+          "description": "百六十年受け継がれる柔らかな求肥と上品な白餡の口どけに、城下町・柳川の洗練された菓子文化を感じた。",
+          "badge_code": "NISHITETSU_YANAGAWA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f4d9a7e2-6dab-494f-8c9e-0949ae69bf50",
+        "name": "柳川藩主立花邸 御花",
+        "description": "柳川藩主・立花家の屋敷であり、敷地全体が「立花氏庭園」として国指定名勝となっている文化財空間（10:00〜16:00見学、不定休）。明治期の西洋館や大広間、池泉庭園「松濤園」が見どころ。",
+        "address": "福岡県柳川市新外町1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.158256,
+        "lng": 130.398272,
+        "qr_token": "shuin-nishitetsu_yanagawa-1",
+        "cover_image_url": "/images/nishitetsu_yanagawa/spot1.png",
+        "f7_fragment": "黒松と庭石が水面に映る池泉庭園「松濤園」と白亜の西洋館が並ぶ名勝。",
+        "f7_full": "掘割の水を引き入れた「柳川藩主立花邸 御花」の名勝・松濤園と西洋館が、水郷・柳川を巡る歩き旅の幕開けを優雅に飾る。",
+        "is_final": false,
+        "next_spot_id": "78cbab94-7f10-42ed-8134-b2262af7374b",
+        "next_spot_name": "若松屋"
+      },
+      {
+        "id": "78cbab94-7f10-42ed-8134-b2262af7374b",
+        "name": "若松屋",
+        "description": "沖端の掘割沿いに店を構える安政年間創業のうなぎ料理店（11:00〜15:30・L.O.14:30、17:00〜19:45・L.O.19:00営業、水曜・第1第3火曜定休）。柳川名物の「うなぎのせいろ蒸し」で知られる。",
+        "address": "福岡県柳川市沖端町26",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.158446,
+        "lng": 130.396061,
+        "qr_token": "shuin-nishitetsu_yanagawa-2",
+        "cover_image_url": "/images/nishitetsu_yanagawa/spot2.png",
+        "f7_fragment": "タレが染みたご飯と香ばしい蒲焼き、錦糸卵を蒸し上げた「せいろ蒸し」。",
+        "f7_full": "熱々の湯気とともに香ばしい香りが広がる「若松屋」のうなぎのせいろ蒸しが、水郷・沖端ならではの贅沢な昼食を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d482dbc3-fa20-45c4-8f56-19b02d635bee",
+        "next_spot_name": "日吉神社"
+      },
+      {
+        "id": "d482dbc3-fa20-45c4-8f56-19b02d635bee",
+        "name": "日吉神社",
+        "description": "鎌倉期の創建と伝わる柳川の総鎮守（境内参拝自由、無休）。歴代柳川藩主の崇敬を集め、掘割に架かる朱塗りの橋や伝統つり飾り「さげもん」ゆかりの神社として親しまれる。",
+        "address": "福岡県柳川市坂本町7",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.163223,
+        "lng": 130.403248,
+        "qr_token": "shuin-nishitetsu_yanagawa-3",
+        "cover_image_url": "/images/nishitetsu_yanagawa/spot3.png",
+        "f7_fragment": "柳が揺れる掘割のほとりに鎮座し、「山王さん」と慕われる柳川の総鎮守。",
+        "f7_full": "掘割の水辺に朱塗りの欄干が映える「日吉神社」の穏やかな境内が、七百余年にわたり水郷の暮らしを見守ってきた祈りを伝える。",
+        "is_final": false,
+        "next_spot_id": "eaf85980-b0e2-4dfc-8fed-3318e9fde454",
+        "next_spot_name": "梅花堂越山 本店"
+      },
+      {
+        "id": "eaf85980-b0e2-4dfc-8fed-3318e9fde454",
+        "name": "梅花堂越山 本店",
+        "description": "文久年間創業、旧柳川藩主・立花家御用達の老舗和菓子司の本店（8:30〜19:00営業、元日休）。なめらかな白餡を求肥で包み和三盆糖をまぶした代表銘菓「越山もち」を商う。",
+        "address": "福岡県柳川市京町12",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.167068,
+        "lng": 130.407668,
+        "qr_token": "shuin-nishitetsu_yanagawa-4",
+        "cover_image_url": "/images/nishitetsu_yanagawa/spot4.png",
+        "f7_fragment": "柔らかな求肥で白餡を包み和三盆糖をまぶした、柳川銘菓「越山もち」。",
+        "f7_full": "旧藩主御用達の伝統を守る「梅花堂越山 本店」の越山もちが、水郷・柳川の掘割を辿った旅の記憶を上品な甘みで結んでくれる。",
+        "is_final": false,
+        "next_spot_id": "48c113b4-9ae3-45ce-8754-f110a3da2d06",
+        "next_spot_name": "茶餐 無垢"
+      },
+      {
+        "id": "48c113b4-9ae3-45ce-8754-f110a3da2d06",
+        "name": "茶餐 無垢",
+        "description": "椿原町の掘割沿いにある築百余年の古民家を再生した茶房カフェ（11:30〜18:00営業・L.O.17:00、水曜・木曜定休）。香り高い台湾茶・中国茶や自家製豆花を味わえる。",
+        "address": "福岡県柳川市椿原町6-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.164201,
+        "lng": 130.412113,
+        "qr_token": "shuin-nishitetsu_yanagawa-5",
+        "cover_image_url": "/images/nishitetsu_yanagawa/spot5.png",
+        "f7_fragment": "掘割に面した築百余年の古民家茶房で味わう、台湾烏龍茶と自家製豆花。",
+        "f7_full": "水辺の風が通る「茶餐 無垢」の芳醇な台湾茶となめらかな豆花が、柳並木の掘割を歩いた旅を涼やかな安らぎで締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
