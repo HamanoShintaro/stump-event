@@ -306,6 +306,9 @@ async function processImage(srcPath, destPath, width, height) {
   - `image-generator` がクォータ上限に達した場合は、エラーメッセージ内のリセット時刻（UTC）を確認し、`schedule` ツール（`DurationSeconds`）でリセット時刻＋10秒後までタイマー待機し、起床後に残りの画像生成を自動再開すること（`sleep` コマンドやポーリングは使用しない）。
 
 ### 3. 一括検証・非破壊デプロイ・GitHub CLI 認証プッシュ
+- **【処方箋134：全30枚の画像生成・検品・`public/images/` 配置完了前の先行 `deploy-route.mjs` 実行禁止】**:
+  - バッチ内の全5駅・計30枚の画像生成および `public/images/<slug>/` への配置が完了する前に `deploy-route.mjs` を先行実行してはならない。途中の画像生成でクォータ上限（`429 RESOURCE_EXHAUSTED`）によるタイマー待機や途中変更が入ると、本番・ローカルが参照するSupabaseの `routes` テーブルに未配置画像のパス（`thumbnail_url`）や仮レコードが露出し、一覧画面で画像切れ（リンク切れ）を引き起こすため、必ず「①スクリプト作成・検証 → ②全30枚の画像生成・検品・配置 → ③ `deploy-route.mjs` によるSupabase & `mock.ts` 一括反映 → ④ QA & `git push`」の順序を厳守すること。
+
 ```bash
 # 1. 5駅の自動検証（エラー0件・警告0件を確認）
 for slug in <slug1> <slug2> <slug3> <slug4> <slug5>; do

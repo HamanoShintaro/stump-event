@@ -48230,5 +48230,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ddadc790-ee17-42f5-8b95-9f609801695a",
+    "title": "明智光秀の城と栗の香り漂う丹波福知山を歩く",
+    "name": "明智光秀の城と栗の香り漂う丹波福知山を歩く",
+    "description": "明智光秀公が由良川を治めて築いた城下町であり、丹波栗や鴨すきの食文化が息づく京都府福知山市。転用石の石垣が残る福知山城から、文化財邸宅の足立音衛門、明治町家の柳町、光秀公を祀る福知山御霊神社、明智茶屋までを歩く。",
+    "region": "福知山駅・福知山城と明智光秀ゆかりの城下町を歩く道",
+    "area_name": "福知山駅・福知山城と明智光秀ゆかりの城下町を歩く道",
+    "cover_image_url": "/images/fukuchiyama/route-eyecatch.png",
+    "imageUrl": "/images/fukuchiyama/route-eyecatch.png",
+    "category": "福知山城・足立音衛門・明治町家の柳町・御霊神社と明智茶屋",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "明智光秀公ゆかりの城下町・福知山を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "転用石の石垣がそびえる「福知山城」と、名君・光秀公を祀る「福知山御霊神社」",
+          "description": "五輪塔などを組み込んだ野面積みの石垣の迫力と、由良川を治めた光秀公を慕う城下町の歴史に胸を打たれた。",
+          "badge_code": "FUKUCHIYAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "文化財の洋館「足立音衛門 京都本店」で出会った、栗がぎっしり詰まった「栗のテリーヌ」",
+          "description": "大正期の趣ある邸宅空間で、発酵バターと和三盆が丹波栗の風味を引き立てる贅沢な焼菓子に魅了された。",
+          "badge_code": "FUKUCHIYAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "明治期の豪商町家「柳町」で味わった、福知山伝統の鴨と九条ねぎが香る昼御膳",
+          "description": "百余年の歴史を刻む町家の座敷で、鴨の出汁と丹波地鶏の旨味が広がる滋味深い味わいに満たされた。",
+          "badge_code": "FUKUCHIYAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "「明智茶屋」でひと息つきながら味わった、濃厚な丹波栗プリンと香り高い珈琲",
+          "description": "和モダンの落ち着いた店内で、霧深い丹波の風土が育てた和栗の甘みと珈琲の香りに癒やされた。",
+          "badge_code": "FUKUCHIYAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c77aa9e3-78cd-4444-82a6-4299d5c90af0",
+        "name": "福知山城（福知山城天守閣）",
+        "description": "明智光秀公が天正七年に築いた平山城（9:00〜17:00開館・最終入館16:30、火曜定休・年末年始休、城址公園や石垣は常時散策自由）。転用石を多数含む野面積みの石垣と深井戸「豊磐の井」、望楼からの眺望が見どころ。",
+        "address": "京都府福知山市字内記5",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.29686,
+        "lng": 135.129815,
+        "qr_token": "shuin-fukuchiyama-1",
+        "cover_image_url": "/images/fukuchiyama/spot1.png",
+        "f7_fragment": "転用石が積まれた野面積みの石垣の上にそびえる、明智光秀公ゆかりの三層天守。",
+        "f7_full": "明智光秀公が築いた「福知山城」の転用石の石垣と天守からの眺めが、丹波の要衝として栄えた城下町の物語を力強く幕開ける。",
+        "is_final": false,
+        "next_spot_id": "4c122cae-40b0-4ec5-8e34-1f56dbc8e77b",
+        "next_spot_name": "仏蘭西焼菓子調進所 足立音衛門 京都本店"
+      },
+      {
+        "id": "4c122cae-40b0-4ec5-8e34-1f56dbc8e77b",
+        "name": "仏蘭西焼菓子調進所 足立音衛門 京都本店",
+        "description": "京都府指定有形文化財「旧松村家住宅」を活用した焼菓子専門店（9:00〜18:00営業、元日休）。栗を贅沢に使った「栗のテリーヌ」やパウンドケーキ、シュークリームなどを販売する。",
+        "address": "京都府福知山市内記44-18",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.298733,
+        "lng": 135.128883,
+        "qr_token": "shuin-fukuchiyama-2",
+        "cover_image_url": "/images/fukuchiyama/spot2.png",
+        "f7_fragment": "大正期の文化財邸宅で仕立てられる、栗がぎっしり詰まった贅沢な「栗のテリーヌ」。",
+        "f7_full": "文化財の洋館と和館が並ぶ「仏蘭西焼菓子調進所 足立音衛門 京都本店」の栗のテリーヌが、栗の里・丹波福知山の華やかな香りを届ける。",
+        "is_final": false,
+        "next_spot_id": "cf3b1abd-8b9e-4e80-8542-382b5c22eb19",
+        "next_spot_name": "柳町"
+      },
+      {
+        "id": "cf3b1abd-8b9e-4e80-8542-382b5c22eb19",
+        "name": "柳町",
+        "description": "明治期の町家「旧片岡家住宅」をリノベーションした食事処・カフェ（ランチ11:30〜14:30・L.O.14:00、カフェ11:00〜、年末年始休）。福知山名物の鴨すきや鴨南蛮、丹波地鶏の親子丼を味わえる。",
+        "address": "京都府福知山市下柳町21",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.302993,
+        "lng": 135.126004,
+        "qr_token": "shuin-fukuchiyama-3",
+        "cover_image_url": "/images/fukuchiyama/spot3.png",
+        "f7_fragment": "明治の豪商町家の座敷で味わう、香り高い鴨南蛮と黄金色の丹波地鶏親子丼。",
+        "f7_full": "明治期の町家を活かした「柳町」でいただく鴨と九条ねぎの滋味深い料理が、城下町に受け継がれてきたもてなしの味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9a7a1f69-be66-488c-8b95-1169de3b1c4d",
+        "next_spot_name": "福知山御霊神社"
+      },
+      {
+        "id": "9a7a1f69-be66-488c-8b95-1169de3b1c4d",
+        "name": "福知山御霊神社",
+        "description": "御霊公園内に鎮座し、明智光秀公の御霊を合祀する神社（参拝自由、無休）。由良川の治水と善政を敷いた光秀公の遺徳を今に伝える。",
+        "address": "京都府福知山市字中ノ238",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.301352,
+        "lng": 135.121731,
+        "qr_token": "shuin-fukuchiyama-4",
+        "cover_image_url": "/images/fukuchiyama/spot4.png",
+        "f7_fragment": "由良川を治め城下を育てた明智光秀公の遺徳を偲び、市民が守り継ぐ社。",
+        "f7_full": "緑豊かな境内に佇む「福知山御霊神社」の静かな拝殿が、名君として明智光秀公を慕い続けてきた福知山の人々の温かな記憶を映し出す。",
+        "is_final": false,
+        "next_spot_id": "e4d4a0d8-dc0c-4eee-83a4-f4cc373efffb",
+        "next_spot_name": "明智茶屋"
+      },
+      {
+        "id": "e4d4a0d8-dc0c-4eee-83a4-f4cc373efffb",
+        "name": "明智茶屋",
+        "description": "福知山駅近くにある丹波素材のスイーツ＆カフェ（10:00〜18:00営業、月曜・火曜定休）。丹波栗や丹波黒豆、宇治抹茶を使った濃厚なプリンや焼菓子、珈琲を楽しめる。",
+        "address": "京都府福知山市篠尾新町1-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.298309,
+        "lng": 135.114836,
+        "qr_token": "shuin-fukuchiyama-5",
+        "cover_image_url": "/images/fukuchiyama/spot5.png",
+        "f7_fragment": "丹波栗の芳醇なペーストを重ねたなめらかなプリンと、香り高い珈琲の一服。",
+        "f7_full": "駅近くの「明智茶屋」で味わう濃厚な丹波栗プリンと珈琲の香ばしい余韻が、明智光秀公の城下町・福知山を歩く旅を心地よく結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "041f7169-860b-44ac-847a-e1e1715af857",
+    "title": "赤煉瓦と繭の記憶はなぜ上州富岡を彩ったのか",
+    "name": "赤煉瓦と繭の記憶はなぜ上州富岡を彩ったのか",
+    "description": "明治の近代化を牽引した世界遺産・富岡製糸場と絹文化が息づく群馬県富岡市。旧富岡倉庫を活かしたおかって市場から、みの助茶屋の上州名物おきりこみ、木骨煉瓦造の富岡製糸場、明治の古民家カフェ・ドローム、田島屋のまゆこもりまでを歩く。",
+    "region": "上州富岡駅・富岡製糸場の赤煉瓦と絹の記憶を巡る道",
+    "area_name": "上州富岡駅・富岡製糸場の赤煉瓦と絹の記憶を巡る道",
+    "cover_image_url": "/images/joshu-tomioka/route-eyecatch.png",
+    "imageUrl": "/images/joshu-tomioka/route-eyecatch.png",
+    "category": "おかって市場・みの助茶屋・富岡製糸場・カフェドロームと田島屋",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "上州富岡に刻まれた絹の物語のなかで、あなたが誰かに語り継ぎたくなる風景や味わいはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治期の富岡倉庫を活かした「おかって市場」と、木骨煉瓦造の「富岡製糸場」",
+          "description": "フランス積みの赤煉瓦と和瓦が調和する壮麗な東置繭所の建築美に深く感銘を受けた。",
+          "badge_code": "JOSHU_TOMIOKA_A"
+        },
+        {
+          "key": "B",
+          "text": "「みの助茶屋」の鉄鍋で供される、幅広麺に野菜の旨味が溶け込んだおきりこみ",
+          "description": "養蚕農家の暮らしから生まれた幅広の煮込みうどんの温もりと深いコクに心惹かれた。",
+          "badge_code": "JOSHU_TOMIOKA_B"
+        },
+        {
+          "key": "C",
+          "text": "明治八年築の古民家「カフェ・ドローム」の、太い梁が渡る空間と香る珈琲",
+          "description": "製糸場創設期から街を見守ってきた町家の空間で過ごす穏やかな喫茶時間に癒やされた。",
+          "badge_code": "JOSHU_TOMIOKA_C"
+        },
+        {
+          "key": "D",
+          "text": "「まゆ菓優 田島屋」の、繭の姿を愛らしく写した伝統銘菓「まゆこもり」",
+          "description": "お湯を注いで葛湯としても楽しめる、繭玉を模した繊細な和菓子の工夫に魅了された。",
+          "badge_code": "JOSHU_TOMIOKA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4a421873-4865-4fae-8fca-06904925fb58",
+        "name": "おかって市場",
+        "description": "上州富岡駅近くの旧富岡倉庫（明治期の繭乾燥場）を活用した直売所・交流拠点（月〜土曜9:00〜19:00・日曜9:00〜17:00営業、年始休）。歴史的な倉庫建築と地場産品を見学できる。",
+        "address": "群馬県富岡市富岡1450",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.260099,
+        "lng": 138.890783,
+        "qr_token": "shuin-joshu-tomioka-1",
+        "cover_image_url": "/images/joshu-tomioka/spot1.png",
+        "f7_fragment": "明治期の繭乾燥場の高い木造トラス屋根の下に、上州の旬の恵みが並ぶ市場空間。",
+        "f7_full": "明治期の旧富岡倉庫を活かした「おかって市場」の重厚な木造トラス梁と地域の賑わいが、絹の街・上州富岡の物語を温かく幕開ける。",
+        "is_final": false,
+        "next_spot_id": "fe0a44ff-2143-4b18-874f-485452670b52",
+        "next_spot_name": "みの助茶屋"
+      },
+      {
+        "id": "fe0a44ff-2143-4b18-874f-485452670b52",
+        "name": "みの助茶屋",
+        "description": "富岡の街中にある郷土料理・食事処（11:30〜15:00営業、水曜定休）。幅広の生麺を季節の野菜と煮込む上州名物「おきりこみ」を提供する。",
+        "address": "群馬県富岡市富岡1038",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.256096,
+        "lng": 138.891256,
+        "qr_token": "shuin-joshu-tomioka-2",
+        "cover_image_url": "/images/joshu-tomioka/spot2.png",
+        "f7_fragment": "鉄鍋の味噌仕立ての汁に、幅広の手打ち麺と根菜がたっぷり入った上州のおきりこみ。",
+        "f7_full": "銀座通りの「みの助茶屋」で味わう鉄鍋の熱々のおきりこみが、小麦と養蚕の里・上州富岡の暮らしを支えてきた深い滋味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "008cf227-026e-42e3-8f8a-ff23e9ef700b",
+        "next_spot_name": "富岡製糸場"
+      },
+      {
+        "id": "008cf227-026e-42e3-8f8a-ff23e9ef700b",
+        "name": "富岡製糸場",
+        "description": "明治五年に創建された官営模範器械製糸場・世界文化遺産（9:00〜17:00開場、水曜・年末休）。国宝の東置繭所・西置繭所・繰糸所など木骨煉瓦造の建築群が現存する。",
+        "address": "群馬県富岡市富岡1-1",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.255192,
+        "lng": 138.88758,
+        "qr_token": "shuin-joshu-tomioka-3",
+        "cover_image_url": "/images/joshu-tomioka/spot3.png",
+        "f7_fragment": "フランス積みの赤煉瓦と杉材の柱、日本瓦の屋根が百メートル以上にわたって連なる東置繭所。",
+        "f7_full": "世界遺産「富岡製糸場」のフランス積み赤煉瓦と和瓦が調和した木骨煉瓦造の建築群が、近代日本の絹産業を動かした情熱を今に刻む。",
+        "is_final": false,
+        "next_spot_id": "57bea056-c29f-48e7-8aab-a12b2da2310b",
+        "next_spot_name": "カフェ・ドローム"
+      },
+      {
+        "id": "57bea056-c29f-48e7-8aab-a12b2da2310b",
+        "name": "カフェ・ドローム",
+        "description": "富岡製糸場近くにある明治八年建築の古民家カフェ（平日11:00〜16:00・土日祝11:00〜17:00営業、木曜定休）。当時の梁や建具を活かした店内で珈琲やスイーツを楽しめる。",
+        "address": "群馬県富岡市富岡51-4",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.255608,
+        "lng": 138.889552,
+        "qr_token": "shuin-joshu-tomioka-4",
+        "cover_image_url": "/images/joshu-tomioka/spot4.png",
+        "f7_fragment": "明治八年築の古民家の太い黒梁の下で味わう、香り高い珈琲と桑の葉スイーツ。",
+        "f7_full": "製糸場門前の古民家「カフェ・ドローム」で過ごす穏やかな喫茶のひとときが、明治八年築の町家に流れる静かな空気を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ee646adc-cd31-4f02-8df7-f6eb1602ed41",
+        "next_spot_name": "まゆ菓優 田島屋 製糸場前店"
+      },
+      {
+        "id": "ee646adc-cd31-4f02-8df7-f6eb1602ed41",
+        "name": "まゆ菓優 田島屋 製糸場前店",
+        "description": "明治二十五年創業の老舗和菓子店・田島屋の製糸場前店舗（9:30〜17:00営業、不定休）。繭の形をした銘菓「まゆこもり」や「シルク・ド・らやき」を販売する。",
+        "address": "群馬県富岡市富岡34-1",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.255804,
+        "lng": 138.889011,
+        "qr_token": "shuin-joshu-tomioka-5",
+        "cover_image_url": "/images/joshu-tomioka/spot5.png",
+        "f7_fragment": "純白の繭玉の姿を模した繊細な葛菓子「まゆこもり」と、絹の街ならではの和菓子。",
+        "f7_full": "明治二十五年創業の「まゆ菓優 田島屋 製糸場前店」で選んだ銘菓まゆこもりが、赤煉瓦と絹の記憶を巡る上州富岡の旅を優美に結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "df33c9ac-7cb9-4812-809c-b7cb6d4c1017",
+    "title": "赤穂義士の誇りと塩の技が息づく播州赤穂を辿る",
+    "name": "赤穂義士の誇りと塩の技が息づく播州赤穂を辿る",
+    "description": "瀬戸内の入浜式塩田で栄え、浅野家五万三千石と赤穂義士の物語を今に伝える兵庫県赤穂市。坂越湾の海の幸を味わうお食事処 かましまから、赤穂大石神社、大手門前の巴屋本舗、赤穂市立歴史博物館、蔵風ベーカリーのあこうぱんまでを巡る。",
+    "region": "播州赤穂駅・赤穂城跡と義士の社・塩の文化を巡る道",
+    "area_name": "播州赤穂駅・赤穂城跡と義士の社・塩の文化を巡る道",
+    "cover_image_url": "/images/banshu-ako/route-eyecatch.png",
+    "imageUrl": "/images/banshu-ako/route-eyecatch.png",
+    "category": "かましまの海鮮・赤穂大石神社・巴屋本舗の塩味饅頭・歴史博物館とあこうぱん",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "義士の歴史と塩の文化が息づく播州赤穂を訪ねて、旅の記憶として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "四十七士の石像が並ぶ「赤穂大石神社」と、大石内蔵助ゆかりの長屋門",
+          "description": "威風堂々たる石像の参道と、城明け渡しまでの日々を伝える旧宅長屋門の佇まいに背筋が伸びる思いがした。",
+          "badge_code": "BANSHU_AKO_A"
+        },
+        {
+          "key": "B",
+          "text": "白壁の「赤穂市立歴史博物館」で触れた、日本遺産「赤穂の塩」と城下町の歴史",
+          "description": "瀬戸内の潮風と太陽が育んだ入浜式塩田の知恵と、城下町を支えた製塩の歴史の奥深さに感銘を受けた。",
+          "badge_code": "BANSHU_AKO_B"
+        },
+        {
+          "key": "C",
+          "text": "水産直営の「お食事処 かましま」で堪能した、坂越湾の牡蠣と播磨灘の海の幸",
+          "description": "千種川の清流が注ぐ豊かな海で育った大粒の牡蠣と、新鮮な地魚の旨味に瀬戸内の恵みを実感した。",
+          "badge_code": "BANSHU_AKO_C"
+        },
+        {
+          "key": "D",
+          "text": "大手門前「巴屋本舗」で味わった伝統の塩味饅頭と、「あこうぱん」の焼きたてパン",
+          "description": "さらりとしたこし餡に塩気が調和する献上銘菓の一服と、赤穂の塩が小麦の甘みを引き立てるパンに心和んだ。",
+          "badge_code": "BANSHU_AKO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9d6ac91c-dd95-4f65-8297-a0e07def8ecd",
+        "name": "お食事処 かましま",
+        "description": "お城通りにある水産会社直営の海鮮料理店（11:00〜16:00・L.O.15:30営業、火曜定休）。赤穂・坂越湾産の牡蠣料理や、播磨灘の地魚を使った海鮮丼・定食を味わえる。",
+        "address": "兵庫県赤穂市加里屋89-5",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.754314,
+        "lng": 134.390554,
+        "qr_token": "shuin-banshu-ako-1",
+        "cover_image_url": "/images/banshu-ako/spot1.png",
+        "f7_fragment": "水産直営ならではの鮮度で味わう、坂越湾の大粒牡蠣と瀬戸内の海鮮御膳。",
+        "f7_full": "お城通りの「お食事処 かましま」で堪能する坂越湾の牡蠣と播磨灘の旬魚が、塩と義士の城下町・播州赤穂を巡る旅を豊かに幕開ける。",
+        "is_final": false,
+        "next_spot_id": "d8c928eb-1a7f-457b-8a28-11c9f023bd86",
+        "next_spot_name": "赤穂大石神社"
+      },
+      {
+        "id": "d8c928eb-1a7f-457b-8a28-11c9f023bd86",
+        "name": "赤穂大石神社",
+        "description": "赤穂城跡三之丸に鎮座し、大石内蔵助をはじめ赤穂浪士四十七士を祀る神社（参拝自由、宝物殿等は8:30〜17:00開館、無休）。四十七士の石像が並ぶ参道や国指定史跡の大石良雄宅跡長屋門が見どころ。",
+        "address": "兵庫県赤穂市上仮屋131-7",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.749398,
+        "lng": 134.388655,
+        "qr_token": "shuin-banshu-ako-2",
+        "cover_image_url": "/images/banshu-ako/spot2.png",
+        "f7_fragment": "四十七士の石像が参道を見守り、大石内蔵助旧宅の長屋門が残る義士の社。",
+        "f7_full": "赤穂城三之丸に鎮座する「赤穂大石神社」の石像参道と旧宅長屋門が、三百年を超えて語り継がれる赤穂義士の誇りを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "99c18e82-34eb-4860-81ab-16b10885692c",
+        "next_spot_name": "巴屋本舗 大手門前店"
+      },
+      {
+        "id": "99c18e82-34eb-4860-81ab-16b10885692c",
+        "name": "巴屋本舗 大手門前店",
+        "description": "赤穂城大手門前に店を構える和菓子の老舗本店（8:00〜17:00営業、無休）。赤穂銘菓「塩味饅頭」の製造販売のほか、店内の茶席で抹茶と饅頭の一服を楽しめる。",
+        "address": "兵庫県赤穂市上仮屋南2-13",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.748841,
+        "lng": 134.389487,
+        "qr_token": "shuin-banshu-ako-3",
+        "cover_image_url": "/images/banshu-ako/spot3.png",
+        "f7_fragment": "赤穂城大手門と隅櫓を望む茶席で味わう、真っ白な伝統銘菓「塩味饅頭」と抹茶。",
+        "f7_full": "赤穂城大手門前の「巴屋本舗 大手門前店」で抹茶とともにいただく塩味饅頭の気品ある甘みが、城下町歩きの午後に風雅な余韻を添える。",
+        "is_final": false,
+        "next_spot_id": "5c26e586-df69-48a2-8288-c45eb0496562",
+        "next_spot_name": "赤穂市立歴史博物館"
+      },
+      {
+        "id": "5c26e586-df69-48a2-8288-c45eb0496562",
+        "name": "赤穂市立歴史博物館",
+        "description": "赤穂城跡東側の米蔵跡に建つ白壁土蔵造り風の博物館（9:00〜17:00開館・最終入館16:30、水曜定休・祝日の場合は翌日休）。「塩と義士の館」として赤穂の製塩や赤穂城、赤穂義士の歴史を展示する。",
+        "address": "兵庫県赤穂市上仮屋916-1",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.747509,
+        "lng": 134.390412,
+        "qr_token": "shuin-banshu-ako-4",
+        "cover_image_url": "/images/banshu-ako/spot4.png",
+        "f7_fragment": "旧米蔵跡に白壁の蔵並みが連なり、赤穂の塩田と城下の歴史を伝える博物館。",
+        "f7_full": "白壁が美しい「赤穂市立歴史博物館」に並ぶ塩田の模型と史料が、瀬戸内の潮風とともに栄えた塩の都・赤穂の奥深い歴史を解き明かす。",
+        "is_final": false,
+        "next_spot_id": "360c959e-e13c-40e0-8967-5b76562da667",
+        "next_spot_name": "あこうぱん"
+      },
+      {
+        "id": "360c959e-e13c-40e0-8967-5b76562da667",
+        "name": "あこうぱん",
+        "description": "城下町・加里屋中洲にある老舗ベーカリー（水〜金曜6:00〜18:00、土日祝7:00〜18:00営業、月曜・火曜定休・祝日の場合は営業）。赤穂の塩を活かしたパンやクリームパンなど多彩な焼きたてパンが並ぶ。",
+        "address": "兵庫県赤穂市加里屋中洲6-24",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.748601,
+        "lng": 134.391502,
+        "qr_token": "shuin-banshu-ako-5",
+        "cover_image_url": "/images/banshu-ako/spot5.png",
+        "f7_fragment": "赤煉瓦と白壁の蔵風店舗に焼き上がる、赤穂の塩が香る香ばしいパン。",
+        "f7_full": "蔵風の店先に焼きたての香りが広がる「あこうぱん」で選んだ塩パンと菓子パンが、播州赤穂の城下町を巡る旅を香ばしく結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5be97db9-e511-4379-8f7b-bcb179e6672a",
+    "title": "白壁の酒蔵通りと茅葺きが息づく肥前浜宿を巡る",
+    "name": "白壁の酒蔵通りと茅葺きが息づく肥前浜宿を巡る",
+    "description": "多良岳の伏流水が育んだ白壁土蔵の「酒蔵通り」と、茅葺きクド造りの町並みが2つの重伝建地区として残る佐賀県鹿島市・肥前浜宿。旧乗田家住宅から宿場の継場、CAFE BREW、明治町家のそばダイニング 龍庵、観光酒蔵 肥前屋までを歩く。",
+    "region": "肥前浜駅・茅葺きクド造りと白壁の酒蔵通りを歩く道",
+    "area_name": "肥前浜駅・茅葺きクド造りと白壁の酒蔵通りを歩く道",
+    "cover_image_url": "/images/hizen-hama/route-eyecatch.png",
+    "imageUrl": "/images/hizen-hama/route-eyecatch.png",
+    "category": "旧乗田家住宅・肥前浜宿の継場・町家カフェ・龍庵の蕎麦と観光酒蔵肥前屋",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白壁の酒蔵通りと茅葺きの町並みが残る肥前浜宿を訪ねて、心惹かれた風景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "佐賀特有のコの字型屋根をもつ茅葺きの武家屋敷「旧乗田家住宅」",
+          "description": "強風に耐える知恵から生まれた「クド造り」の重厚な茅葺き屋根と、静かな武家屋敷の佇まいに見入った。",
+          "badge_code": "HIZEN_HAMA_A"
+        },
+        {
+          "key": "B",
+          "text": "長崎街道・多良海道の宿場役所を今に伝える「継場」と白壁の町並み",
+          "description": "人馬の継立てで賑わった江戸時代の宿場遺構と、白漆喰の居蔵造りが連なる通りの美しさに感銘を受けた。",
+          "badge_code": "HIZEN_HAMA_B"
+        },
+        {
+          "key": "C",
+          "text": "明治三十四年築の町家「そばダイニング 龍庵」で味わった、名水仕込みの二八蕎麦",
+          "description": "百二十年を超える町家の吹き抜け空間で、多良岳の伏流水が育んだ香り高い蕎麦と天ぷらに心満たされた。",
+          "badge_code": "HIZEN_HAMA_C"
+        },
+        {
+          "key": "D",
+          "text": "町家カフェ「CAFE BREW」の珈琲と、「観光酒蔵 肥前屋」で選んだ鹿島の地酒・甘酒",
+          "description": "洗練された古民家カフェでのひとときと、杉玉が揺れる白壁の酒蔵で出会った芳醇な醸造文化に魅了された。",
+          "badge_code": "HIZEN_HAMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4bc55a00-f59c-47aa-8621-a4403c08eb4b",
+        "name": "旧乗田家住宅",
+        "description": "浜庄屋町・古枝地区に残る鹿島藩士の武家屋敷（10:00〜17:00開館、火曜定休・年末年始休）。屋根がコの字型に折れ曲がる佐賀特有の「クド造り」の茅葺き屋根を持つ市指定重要文化財。",
+        "address": "佐賀県鹿島市古枝甲115",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.09198,
+        "lng": 130.11365,
+        "qr_token": "shuin-hizen-hama-1",
+        "cover_image_url": "/images/hizen-hama/spot1.png",
+        "f7_fragment": "生垣の奥に重厚なコの字型の茅葺き屋根が佇む、佐賀特有の「クド造り」武家屋敷。",
+        "f7_full": "茅葺きクド造りの「旧乗田家住宅」の静かな座敷と庭園が、二つの重伝建地区が息づく肥前浜宿の物語を穏やかに幕開ける。",
+        "is_final": false,
+        "next_spot_id": "f7086621-8acc-4c46-8ea3-538c7b678bf2",
+        "next_spot_name": "継場"
+      },
+      {
+        "id": "f7086621-8acc-4c46-8ea3-538c7b678bf2",
+        "name": "継場",
+        "description": "肥前浜宿の酒蔵通りにある江戸時代の宿場役所跡・観光案内拠点（9:00〜17:00開館、火曜定休・年末年始休）。人馬の継立てを行った町家建築の土間や太い梁、宿場町の歴史展示を見学できる。",
+        "address": "佐賀県鹿島市浜町乙2696",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.092495,
+        "lng": 130.11461,
+        "qr_token": "shuin-hizen-hama-2",
+        "cover_image_url": "/images/hizen-hama/spot2.png",
+        "f7_fragment": "白壁の酒蔵通りに面し、江戸時代の宿場役所の土間と太い梁を今に伝える町家。",
+        "f7_full": "多良海道の宿場役所だった「継場」の重厚な梁と白壁の町並みが、舟運と街道の要衝として栄えた肥前浜宿の往時を映し出す。",
+        "is_final": false,
+        "next_spot_id": "e651631e-5940-4229-8548-3374faaae9c3",
+        "next_spot_name": "CAFE BREW"
+      },
+      {
+        "id": "e651631e-5940-4229-8548-3374faaae9c3",
+        "name": "CAFE BREW",
+        "description": "酒蔵通りの古民家をリノベーションした酒蔵直営カフェ（11:00〜16:00営業、月曜・火曜定休）。歴史ある町家の空間で、ハンドドリップ珈琲や自家製スイーツを楽しめる。",
+        "address": "佐賀県鹿島市浜町乙2688",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.092557,
+        "lng": 130.115175,
+        "qr_token": "shuin-hizen-hama-3",
+        "cover_image_url": "/images/hizen-hama/spot3.png",
+        "f7_fragment": "酒蔵通りの静かな町家空間で味わう、香り高い珈琲と濃厚なチーズケーキ。",
+        "f7_full": "古民家を洗練された空間に再生した「CAFE BREW」の珈琲と甘味が、白壁の土蔵が続く通りを歩いた午後に心地よい休息を届ける。",
+        "is_final": false,
+        "next_spot_id": "cdd63489-f1d7-4dec-83b7-7573ee6a810c",
+        "next_spot_name": "そばダイニング 龍庵"
+      },
+      {
+        "id": "cdd63489-f1d7-4dec-83b7-7573ee6a810c",
+        "name": "そばダイニング 龍庵",
+        "description": "酒蔵通りの明治三十四年築の町家を改装した蕎麦処（11:00〜15:00営業・売り切れ次第終了、火曜・水曜定休）。多良岳の伏流水で打つ二八蕎麦と季節の天ぷらを味わえる。",
+        "address": "佐賀県鹿島市浜町乙2680",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.092477,
+        "lng": 130.115566,
+        "qr_token": "shuin-hizen-hama-4",
+        "cover_image_url": "/images/hizen-hama/spot4.png",
+        "f7_fragment": "築百二十年を超える居蔵造りの町家で手繰る、多良岳の名水で打った二八蕎麦。",
+        "f7_full": "明治の町家を活かした「そばダイニング 龍庵」の香り高い名水蕎麦と天ぷらが、白壁の酒蔵通りを歩く昼時に豊かな彩りを添える。",
+        "is_final": false,
+        "next_spot_id": "6c9c5a89-a572-4b72-89f4-fc6697410b8d",
+        "next_spot_name": "観光酒蔵 肥前屋（峰松酒造場）"
+      },
+      {
+        "id": "6c9c5a89-a572-4b72-89f4-fc6697410b8d",
+        "name": "観光酒蔵 肥前屋（峰松酒造場）",
+        "description": "大正五年創業の峰松酒造場が運営する観光酒蔵（9:30〜17:00営業、不定休）。歴史ある仕込み蔵の見学や、多良岳の伏流水で醸した日本酒・甘酒・酒粕スイーツの買い物を楽しめる。",
+        "address": "佐賀県鹿島市浜町乙2761-2",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.09205,
+        "lng": 130.118285,
+        "qr_token": "shuin-hizen-hama-5",
+        "cover_image_url": "/images/hizen-hama/spot5.png",
+        "f7_fragment": "杉玉が揺れる白漆喰の酒蔵に並ぶ、多良岳の名水が醸した純米酒と麹甘酒。",
+        "f7_full": "白壁が美しい「観光酒蔵 肥前屋」で選んだ芳醇な地酒と麹甘酒が、名水と醸造の里・肥前浜宿を歩く旅を香り高く締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f9b08cdf-0536-4eff-8bf6-ad415d9469ac",
+    "title": "石垣と飫肥杉が息づく九州の小京都・飫肥を訪ねる",
+    "name": "石垣と飫肥杉が息づく九州の小京都・飫肥を訪ねる",
+    "description": "伊東氏五万一千石の城下町として栄え、苔むす石垣と武家屋敷が続く宮崎県日南市飫肥。飫肥杉で復元された飫肥城大手門から、武家屋敷の飫肥服部亭、明治の商家・旧山本猪平家、石倉喫茶 こだま、元祖おび天本舗までを訪ねる。",
+    "region": "飫肥駅・飫肥杉の大手門と苔むす石垣の城下町を歩く道",
+    "area_name": "飫肥駅・飫肥杉の大手門と苔むす石垣の城下町を歩く道",
+    "cover_image_url": "/images/obi-otemon/route-eyecatch.png",
+    "imageUrl": "/images/obi-otemon/route-eyecatch.png",
+    "category": "飫肥城大手門・飫肥服部亭・旧山本猪平家・石倉喫茶こだまと元祖おび天本舗",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "石垣と飫肥杉の城下町・飫肥を訪ねて、旅の記憶として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "樹齢百年の飫肥杉で組まれた「飫肥城大手門」と、苔むす城壁の石垣",
+          "description": "釘を一本も使わず木組みで復元された櫓門と、深い緑に包まれた石垣の迫力に圧倒された。",
+          "badge_code": "OBI_OTEMON_A"
+        },
+        {
+          "key": "B",
+          "text": "武家屋敷「飫肥服部亭」の座敷で味わった、名物の甘い厚焼卵と郷土の味",
+          "description": "借景庭園を望む歴史あるお屋敷で、菓子のように滑らかな厚焼卵と郷土料理に心満たされた。",
+          "badge_code": "OBI_OTEMON_B"
+        },
+        {
+          "key": "C",
+          "text": "豪商の意匠が光る「旧山本猪平家」の座敷と、向かいの「石倉喫茶 こだま」",
+          "description": "飫肥杉を贅沢に用いた近代商家の建築美と、飫肥石の石倉で過ごす静かな時間に惹かれた。",
+          "badge_code": "OBI_OTEMON_C"
+        },
+        {
+          "key": "D",
+          "text": "「元祖おび天本舗 本店」で手に入れた、豆腐と黒砂糖が香る揚げたての「おび天」",
+          "description": "地魚のすり身に豆腐と黒糖を合わせた、ふんわり甘く香ばしい江戸伝来の味に魅了された。",
+          "badge_code": "OBI_OTEMON_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5c949bb3-8a00-4985-8aa4-975b6245842e",
+        "name": "飫肥城大手門",
+        "description": "伊東氏五万一千石の居城・飫肥城の表門（城内散策自由、歴史資料館等は9:30〜16:30開館、年末休）。樹齢百年以上の飫肥杉を用いて伝統工法で復元された渡櫓門。",
+        "address": "宮崎県日南市飫肥10-1-2",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.627691,
+        "lng": 131.351803,
+        "qr_token": "shuin-obi-otemon-1",
+        "cover_image_url": "/images/obi-otemon/spot1.png",
+        "f7_fragment": "苔むす石垣の上に、樹齢百年の飫肥杉を用いて木組みで復元された重厚な渡櫓門。",
+        "f7_full": "樹齢百年の飫肥杉で木組み復元された「飫肥城大手門」と苔むす石垣が、伊東氏五万一千石の城下町・飫肥の物語を格調高く幕開ける。",
+        "is_final": false,
+        "next_spot_id": "93b5bae3-28af-4f8a-8ea2-af65c30ab863",
+        "next_spot_name": "飫肥服部亭"
+      },
+      {
+        "id": "93b5bae3-28af-4f8a-8ea2-af65c30ab863",
+        "name": "飫肥服部亭",
+        "description": "上級武家屋敷を活かしたお食事処（11:00〜14:00営業、不定休）。江戸時代からの庭園を眺めながら、おび天や厚焼卵など飫肥の郷土料理を盛り込んだ御膳を味わえる。",
+        "address": "宮崎県日南市飫肥4-3-19",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.628052,
+        "lng": 131.354027,
+        "qr_token": "shuin-obi-otemon-2",
+        "cover_image_url": "/images/obi-otemon/spot2.png",
+        "f7_fragment": "武家屋敷の庭園を望む座敷で味わう、黄金色の甘い厚焼卵とおび天の郷土御膳。",
+        "f7_full": "上級武家屋敷「飫肥服部亭」の借景庭園を望む座敷でいただく甘い厚焼卵と郷土膳が、城下町に受け継がれてきたもてなしの味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ee2b9eb8-2e42-48b5-8f03-050c0eba4d40",
+        "next_spot_name": "旧山本猪平家"
+      },
+      {
+        "id": "ee2b9eb8-2e42-48b5-8f03-050c0eba4d40",
+        "name": "旧山本猪平家",
+        "description": "本町通りに残る明治四十年建築の豪商の屋敷（9:30〜16:30開館、年末休）。飫肥杉を用いた主屋や離れ、土蔵、庭園が当時の商家の暮らしを今に伝える。",
+        "address": "宮崎県日南市飫肥5-2-23",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.625382,
+        "lng": 131.352721,
+        "qr_token": "shuin-obi-otemon-3",
+        "cover_image_url": "/images/obi-otemon/spot3.png",
+        "f7_fragment": "飫肥杉を贅沢に用いた明治の商家建築と、精巧な欄間や磨き込まれた縁側。",
+        "f7_full": "本町通りに佇む豪商の邸宅「旧山本猪平家」の磨き込まれた縁側と庭園が、明治の飫肥を支えた商家の活気と粋な美意識を映し出す。",
+        "is_final": false,
+        "next_spot_id": "3b4b0564-171c-4a6a-8cd8-b258d7ea3a13",
+        "next_spot_name": "石倉喫茶 こだま"
+      },
+      {
+        "id": "3b4b0564-171c-4a6a-8cd8-b258d7ea3a13",
+        "name": "石倉喫茶 こだま",
+        "description": "飫肥石で造られた明治期の石倉を改装した工芸展示＆カフェ（10:00〜17:00営業、火曜定休）。日南の工芸品展示と、珈琲やぜんざいなどの喫茶が楽しめる。",
+        "address": "宮崎県日南市飫肥8-1-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.624932,
+        "lng": 131.352522,
+        "qr_token": "shuin-obi-otemon-4",
+        "cover_image_url": "/images/obi-otemon/spot4.png",
+        "f7_fragment": "温かみのある飫肥石の石倉のなかで味わう、香り高い珈琲と甘味のひととき。",
+        "f7_full": "飫肥石の石倉を活かした「石倉喫茶 こだま」で珈琲と甘味を味わうひとときが、石垣の城下町を歩いた午後に心地よい余韻を添える。",
+        "is_final": false,
+        "next_spot_id": "511a2ab8-684a-4f5b-8dab-559247f8d580",
+        "next_spot_name": "元祖おび天本舗 本店"
+      },
+      {
+        "id": "511a2ab8-684a-4f5b-8dab-559247f8d580",
+        "name": "元祖おび天本舗 本店",
+        "description": "大手門通りと横馬場通りの角にあるおび天の専門店（8:30〜17:30営業、不定休）。日南近海の魚のすり身に自家製豆腐と黒砂糖を合わせた伝統の「おび天」を実演販売する。",
+        "address": "宮崎県日南市飫肥4-1-20",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.627081,
+        "lng": 131.353626,
+        "qr_token": "shuin-obi-otemon-5",
+        "cover_image_url": "/images/obi-otemon/spot5.png",
+        "f7_fragment": "魚のすり身に自家製豆腐と黒糖を練り込み、きつね色にふっくら揚げた名物「おび天」。",
+        "f7_full": "大手門通り角の「元祖おび天本舗 本店」で選んだ豆腐と黒糖香る揚げたてのおび天が、九州の小京都・飫肥を訪ねる旅を香ばしく結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];
