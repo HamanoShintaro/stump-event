@@ -48880,5 +48880,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "3e944978-bf4b-44aa-81d9-b03c7acc62e1",
+    "title": "なぜ鹿沼には彫刻屋台とニラそばが息づくのか",
+    "name": "なぜ鹿沼には彫刻屋台とニラそばが息づくのか",
+    "description": "日光例幣使街道の宿場町として栄え、日光東照宮ゆかりの彫物師が手がけた彫刻屋台とそば文化が息づく栃木県鹿沼市。名物ニラそばのみっちゃん蕎麦から、屋台のまち中央公園、御和菓子司 松月、鹿沼総鎮守の今宮神社、まちの駅 新・鹿沼宿までを歩く。",
+    "region": "新鹿沼駅・彫刻屋台と日光例幣使街道の宿場を歩く道",
+    "area_name": "新鹿沼駅・彫刻屋台と日光例幣使街道の宿場を歩く道",
+    "cover_image_url": "/images/shin-kanuma/route-eyecatch.png",
+    "imageUrl": "/images/shin-kanuma/route-eyecatch.png",
+    "category": "みっちゃん蕎麦・屋台のまち中央公園・松月の屋台最中・今宮神社と新・鹿沼宿",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "彫刻屋台の技と例幣使街道の食文化が息づく鹿沼を訪ねて、旅の記憶として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「屋台のまち中央公園」の精緻な彫刻屋台と、総鎮守「今宮神社」の社殿",
+          "description": "日光東照宮ゆかりの彫物師が魂を込めた彫刻屋台の迫力と、祭りの舞台となる古社の厳かな佇まいに圧倒された。",
+          "badge_code": "SHIN_KANUMA_A"
+        },
+        {
+          "key": "B",
+          "text": "「みっちゃん蕎麦」で味わった、香り高い手打ち蕎麦と瑞々しい緑の「ニラそば」",
+          "description": "シャキシャキと甘み豊かな鹿沼特産のニラと、清らかな伏流水で打った二八蕎麦の爽やかな調和に心満たされた。",
+          "badge_code": "SHIN_KANUMA_B"
+        },
+        {
+          "key": "C",
+          "text": "「御和菓子司 松月」で選んだ、彫刻屋台の意匠を写した香ばしい「屋台最中」",
+          "description": "繊細な最中皮のなかに風味豊かな小豆餡と求肥餅が詰まった、祭りの街ならではの銘菓に心和んだ。",
+          "badge_code": "SHIN_KANUMA_C"
+        },
+        {
+          "key": "D",
+          "text": "旧日光例幣使街道の「まちの駅 新・鹿沼宿」で楽しんだ、甘酸っぱい苺スイーツと休憩",
+          "description": "宿場町の風情が漂う交流拠点で、鹿沼の大地が育てた苺の甘みと穏やかなひとときに癒やされた。",
+          "badge_code": "SHIN_KANUMA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "47545bae-a8c8-4ad9-88d1-9fce36466a95",
+        "name": "みっちゃん蕎麦",
+        "description": "新鹿沼駅近くにある手打ち蕎麦の店（11:30〜14:00・16:00〜19:00営業、月曜定休・火曜不定休）。鹿沼名物の「ニラそば」や天ぷらそばを味わえる。",
+        "address": "栃木県鹿沼市鳥居跡町1416-11",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.557717,
+        "lng": 139.745746,
+        "qr_token": "shuin-shin-kanuma-1",
+        "cover_image_url": "/images/shin-kanuma/spot1.png",
+        "f7_fragment": "香り高い手打ちの二八蕎麦に、シャキシャキと鮮やかな緑の茹でニラを重ねた名物「ニラそば」。",
+        "f7_full": "新鹿沼駅近くの「みっちゃん蕎麦」で手繰る爽やかなニラそばが、日光例幣使街道の宿場町・鹿沼を歩く旅を風味豊かに幕開ける。",
+        "is_final": false,
+        "next_spot_id": "3804008e-5a37-4c07-8d00-f8d1409e0396",
+        "next_spot_name": "屋台のまち中央公園（彫刻屋台展示館・掬翠園）"
+      },
+      {
+        "id": "3804008e-5a37-4c07-8d00-f8d1409e0396",
+        "name": "屋台のまち中央公園（彫刻屋台展示館・掬翠園）",
+        "description": "ユネスコ無形文化遺産「鹿沼今宮神社祭の屋台行事」の彫刻屋台展示館と日本庭園「掬翠園」を併設する公園（9:00〜17:00開園・入館16:30まで、月曜・祝日の翌日・年末年始休）。",
+        "address": "栃木県鹿沼市銀座1-1870-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.565941,
+        "lng": 139.748049,
+        "qr_token": "shuin-shin-kanuma-2",
+        "cover_image_url": "/images/shin-kanuma/spot2.png",
+        "f7_fragment": "日光東照宮ゆかりの彫物師の技を受け継ぐ豪華な彫刻屋台と、三つの茶室を配した池泉庭園。",
+        "f7_full": "「屋台のまち中央公園」の精緻な彫刻屋台と日本庭園・掬翠園が、江戸の匠の技を受け継いできた鹿沼宿の華やかな誇りを映し出す。",
+        "is_final": false,
+        "next_spot_id": "fa4d6b47-f880-4c99-8269-0848f948e1c7",
+        "next_spot_name": "御和菓子司 松月"
+      },
+      {
+        "id": "fa4d6b47-f880-4c99-8269-0848f948e1c7",
+        "name": "御和菓子司 松月",
+        "description": "麻苧町にある老舗和菓子店（9:00〜18:00営業、木曜定休）。彫刻屋台をモチーフに粒餡と求肥を詰めた「屋台最中」や季節の和菓子を製造販売する。",
+        "address": "栃木県鹿沼市麻苧町1550",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.563311,
+        "lng": 139.74558,
+        "qr_token": "shuin-shin-kanuma-3",
+        "cover_image_url": "/images/shin-kanuma/spot3.png",
+        "f7_fragment": "彫刻屋台の意匠を香ばしい最中皮に写し、北海道産小豆の粒餡と求肥餅を包んだ「屋台最中」。",
+        "f7_full": "「御和菓子司 松月」で選ぶ香ばしい屋台最中と季節の上生菓子が、秋まつりの情熱が息づく城下・宿場町の手仕事を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "53b32fa1-f335-42f8-8665-18a815088054",
+        "next_spot_name": "今宮神社"
+      },
+      {
+        "id": "53b32fa1-f335-42f8-8665-18a815088054",
+        "name": "今宮神社",
+        "description": "鹿沼の総鎮守として崇敬を集める古社（参拝自由、社務所8:30〜16:30、無休）。ユネスコ無形文化遺産「鹿沼今宮神社祭の屋台行事」の舞台であり、重厚な唐門や本殿が残る。",
+        "address": "栃木県鹿沼市今宮町1692",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.566718,
+        "lng": 139.745967,
+        "qr_token": "shuin-shin-kanuma-4",
+        "cover_image_url": "/images/shin-kanuma/spot4.png",
+        "f7_fragment": "杉木立の参道奥に銅葺きの社殿と彫刻鮮やかな唐門が鎮座する、鹿沼秋まつりの舞台。",
+        "f7_full": "深い杜に抱かれた総鎮守「今宮神社」の荘厳な唐門と拝殿が、五百年近くにわたって街の暮らしと祭礼を見守ってきた歴史の重みを伝える。",
+        "is_final": false,
+        "next_spot_id": "3f6e80ab-f02a-4f54-8205-f7b48eaafa34",
+        "next_spot_name": "まちの駅 新・鹿沼宿"
+      },
+      {
+        "id": "3f6e80ab-f02a-4f54-8205-f7b48eaafa34",
+        "name": "まちの駅 新・鹿沼宿",
+        "description": "旧日光例幣使街道沿いにある宿場町風の観光・物産交流拠点（本館9:00〜18:00・物産館9:00〜17:30・軽喫茶10:30〜16:00営業、第2水曜定休）。地元産苺のスイーツや特産品を楽しめる。",
+        "address": "栃木県鹿沼市仲町1604-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.563919,
+        "lng": 139.746415,
+        "qr_token": "shuin-shin-kanuma-5",
+        "cover_image_url": "/images/shin-kanuma/spot5.png",
+        "f7_fragment": "例幣使街道の宿場処で味わう、鹿沼産の完熟苺を使ったソフトクリームと珈琲の一服。",
+        "f7_full": "旧街道沿いの「まちの駅 新・鹿沼宿」で味わう甘酸っぱい苺ソフトクリームと珈琲が、彫刻と名水の街・鹿沼を歩いた旅を爽やかに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "343e37b9-2b58-4eaa-8d24-09cee50d3dc0",
+    "title": "北前船の豪商屋敷と畳の天主堂が息づく宮津を歩く",
+    "name": "北前船の豪商屋敷と畳の天主堂が息づく宮津を歩く",
+    "description": "細川氏・本庄松平氏の城下町であり、北前船の寄港地として栄えた京都府宮津市。宮津湾の地魚を味わう富田屋から、京数寄屋造りの白藤屋菓子舗、明治二十九年築のカトリック宮津教会、国重文の旧三上家住宅、道の駅 海の京都 宮津までを歩く。",
+    "region": "宮津駅・北前船の豪商屋敷と和洋折衷の天主堂を歩く道",
+    "area_name": "宮津駅・北前船の豪商屋敷と和洋折衷の天主堂を歩く道",
+    "cover_image_url": "/images/miyazu/route-eyecatch.png",
+    "imageUrl": "/images/miyazu/route-eyecatch.png",
+    "category": "富田屋の海鮮・白藤屋菓子舗・カトリック宮津教会・旧三上家住宅と海の京都宮津",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "城下町と湊町の歴史が重なる宮津を訪ねて、旅の余韻として持ち帰りたい風景や味わいはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "白漆喰の塗込造りと庭園が美しい、北前船の豪商邸宅「旧三上家住宅」",
+          "description": "江戸時代の酒造・廻船問屋の繁栄を今に伝える広大な座敷と白壁の土蔵群の迫力に感銘を受けた。",
+          "badge_code": "MIYAZU_A"
+        },
+        {
+          "key": "B",
+          "text": "ロマネスク様式の外観と畳敷きの堂内が調和する「カトリック宮津教会」",
+          "description": "明治二十九年から祈りの場として守り継がれてきた、ステンドグラスと和の畳が融合する木造天主堂の美しさに魅了された。",
+          "badge_code": "MIYAZU_B"
+        },
+        {
+          "key": "C",
+          "text": "駅前の「富田屋」で味わった、宮津湾と丹後の海が育んだ旬の刺身御膳",
+          "description": "天然の良港・宮津湾ならではの瑞々しい地魚の盛り合わせと、港町の食堂の温かな活気に満たされた。",
+          "badge_code": "MIYAZU_C"
+        },
+        {
+          "key": "D",
+          "text": "京数寄屋造りの「白藤屋菓子舗」の和菓子と、「道の駅 海の京都 宮津」の海辺のカフェ時間",
+          "description": "城下町の茶の湯文化を映す繊細な和菓子と、潮風を感じる海辺での濃厚ソフトクリームと珈琲に心和んだ。",
+          "badge_code": "MIYAZU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "43f06b32-9ce1-45e9-8bfb-afdc8d0c5086",
+        "name": "富田屋",
+        "description": "宮津駅前にある老舗の海鮮大衆食堂（火〜土曜11:00〜22:00・日曜11:00〜21:00営業、月曜定休・月末火曜不定休）。宮津湾や丹後沖で獲れた新鮮な刺身定食や海鮮料理を味わえる。",
+        "address": "京都府宮津市字鶴賀2066-56",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.534784,
+        "lng": 135.199274,
+        "qr_token": "shuin-miyazu-1",
+        "cover_image_url": "/images/miyazu/spot1.png",
+        "f7_fragment": "宮津駅前の老舗食堂に並ぶ、丹後の海で水揚げされたばかりの旬魚の刺身御膳。",
+        "f7_full": "宮津駅前の「富田屋」で味わう新鮮な地魚の刺身定食が、城下町と湊町の歴史が交差する宮津を歩く旅を威勢よく幕開ける。",
+        "is_final": false,
+        "next_spot_id": "780ab680-e043-4661-891f-3d3d69eb9145",
+        "next_spot_name": "白藤屋菓子舗"
+      },
+      {
+        "id": "780ab680-e043-4661-891f-3d3d69eb9145",
+        "name": "白藤屋菓子舗",
+        "description": "明治三十五年創業の老舗和菓子店（9:00〜17:00営業、木曜・日曜定休）。表千家一茶菴の宗匠設計による京数寄屋造りの店舗で、季節の上生菓子や伝統銘菓を製造販売する。",
+        "address": "京都府宮津市字鶴賀2074",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.534762,
+        "lng": 135.198357,
+        "qr_token": "shuin-miyazu-2",
+        "cover_image_url": "/images/miyazu/spot2.png",
+        "f7_fragment": "表千家一茶菴ゆかりの京数寄屋造りの店先に並ぶ、城下の茶文化を映した季節の和菓子。",
+        "f7_full": "京数寄屋造りの「白藤屋菓子舗」で選ぶ端正な季節の上生菓子と銘菓が、細川家・松平家の城下町に息づく茶の湯の雅を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ace19195-1412-4aa0-85b3-989c6c528cde",
+        "next_spot_name": "カトリック宮津教会（聖ヨハネ天主堂）"
+      },
+      {
+        "id": "ace19195-1412-4aa0-85b3-989c6c528cde",
+        "name": "カトリック宮津教会（聖ヨハネ天主堂）",
+        "description": "明治二十九年に建てられた京都府指定有形文化財の木造教会（外観常時見学可、堂内は月・水・金曜午後等の指定時間）。ロマネスク様式の外観と畳敷きの堂内が融合した和洋折衷建築。",
+        "address": "京都府宮津市宮本500",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.535237,
+        "lng": 135.194761,
+        "qr_token": "shuin-miyazu-3",
+        "cover_image_url": "/images/miyazu/spot3.png",
+        "f7_fragment": "明治二十九年築のフランス・ロマネスク様式の外観に、ステンドグラスと畳敷きが調和する木造天主堂。",
+        "f7_full": "赤い尖塔が印象的な「カトリック宮津教会」の和洋折衷の木造建築が、明治の宮津に花開いた国際色豊かな文化の記憶を鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "4fd86ae8-de5c-43ec-8bc7-07dd954438d6",
+        "next_spot_name": "旧三上家住宅"
+      },
+      {
+        "id": "4fd86ae8-de5c-43ec-8bc7-07dd954438d6",
+        "name": "旧三上家住宅",
+        "description": "江戸時代に酒造業・廻船業を営んだ豪商の邸宅で国指定重要文化財（9:00〜17:00開館・入館16:30まで、水曜・年末年始休）。白漆喰塗込造りの主屋や土蔵群、庭園を見学できる。",
+        "address": "京都府宮津市字河原1850",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.538112,
+        "lng": 135.191058,
+        "qr_token": "shuin-miyazu-4",
+        "cover_image_url": "/images/miyazu/spot4.png",
+        "f7_fragment": "白漆喰の虫籠窓が連なる主屋と三十三間の敷地に、北前船時代の豪商の格式を伝える重文邸宅。",
+        "f7_full": "国指定重要文化財「旧三上家住宅」の白壁の主屋と庭園が、日本海を行き交う北前船とともに繁栄した宮津商人の誇りを今に映し出す。",
+        "is_final": false,
+        "next_spot_id": "9e4c5321-e12a-4a34-8503-483ce41dc3a3",
+        "next_spot_name": "道の駅 海の京都 宮津"
+      },
+      {
+        "id": "9e4c5321-e12a-4a34-8503-483ce41dc3a3",
+        "name": "道の駅 海の京都 宮津",
+        "description": "宮津湾の海辺に面した道の駅・カフェ拠点（直売所・案内所9:00〜17:00、HAMAKAZE Cafe 10:00〜23:00・火曜17:00まで営業）。丹後素材のジェラートやソフトクリーム、珈琲を楽しめる。",
+        "address": "京都府宮津市字浜町3007",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.53817,
+        "lng": 135.194027,
+        "qr_token": "shuin-miyazu-5",
+        "cover_image_url": "/images/miyazu/spot5.png",
+        "f7_fragment": "穏やかな宮津湾の潮風を感じながら味わう、丹後ジャージー牛乳のソフトクリームと珈琲。",
+        "f7_full": "海辺の「道の駅 海の京都 宮津」でいただく濃厚なミルクソフトクリームと珈琲の一服が、海の京都・宮津を巡る旅を爽やかに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a33886f6-4476-4575-81d0-907ede580b9c",
+    "title": "旧加茂川の白壁土蔵と商都の記憶が息づく米子へ",
+    "name": "旧加茂川の白壁土蔵と商都の記憶が息づく米子へ",
+    "description": "中海の水運と廻船交易で「山陰の商都」として栄えた鳥取県米子市。挽きぐるみの手打ち蕎麦を味わうそば処 上代から、レトロ建築の米子市立山陰歴史館、旧加茂川畔の後藤家住宅と白壁土蔵、老舗茶舗のNAGACHA Café 1801、岡本一銭屋までを訪ねる。",
+    "region": "米子駅・旧加茂川の白壁土蔵と商都の町並みを歩く道",
+    "area_name": "米子駅・旧加茂川の白壁土蔵と商都の町並みを歩く道",
+    "cover_image_url": "/images/yonago/route-eyecatch.png",
+    "imageUrl": "/images/yonago/route-eyecatch.png",
+    "category": "上代の蕎麦・山陰歴史館・後藤家住宅と旧加茂川・長田茶店と岡本一銭屋",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "旧加茂川の水辺と商都の歴史が息づく米子を訪ねて、心惹かれた出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "旧加茂川の水面に映る白壁土蔵群と、廻船問屋の重文「後藤家住宅」",
+          "description": "中海の水運で栄えた川沿いの白壁と、江戸時代の豪商・後藤家の重厚な町家建築に商都の風格を感じた。",
+          "badge_code": "YONAGO_A"
+        },
+        {
+          "key": "B",
+          "text": "昭和初期の赤煉瓦タイル建築「米子市立山陰歴史館」で辿った米子城と商都の歩み",
+          "description": "旧米子市庁舎のモダンな建築美と、城下町から近代商都へと発展した米子の歴史資料に感銘を受けた。",
+          "badge_code": "YONAGO_B"
+        },
+        {
+          "key": "C",
+          "text": "「そば処 上代」で手繰った、大山の名水と挽きぐるみ粉が香る手打ち蕎麦",
+          "description": "黒みを帯びた力強い蕎麦の香りと喉ごしに、山陰ならではの豊かな蕎麦文化を実感した。",
+          "badge_code": "YONAGO_C"
+        },
+        {
+          "key": "D",
+          "text": "老舗茶舗「NAGACHA Café 1801」の抹茶甘味と、明治町家「岡本一銭屋」の駄菓子選び",
+          "description": "二百年続く茶舗の挽きたて抹茶スイーツと、昔懐かしいガラス瓶が並ぶ一銭屋の温かな空気に癒やされた。",
+          "badge_code": "YONAGO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0b789a3c-9188-41b8-8fe8-1bf556e312fb",
+        "name": "そば処 上代",
+        "description": "加茂町にある手打ち蕎麦の名店（11:30〜14:00営業、月曜・日曜定休・祝日不定休）。挽きぐるみのそば粉を使った風味豊かな出雲流の手打ち蕎麦や天ぷらそばを味わえる。",
+        "address": "鳥取県米子市加茂町1-10",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.429106,
+        "lng": 133.328603,
+        "qr_token": "shuin-yonago-1",
+        "cover_image_url": "/images/yonago/spot1.png",
+        "f7_fragment": "甘皮ごと挽き込んだそば粉を大山の伏流水で打ち上げた、力強い香りの手打ち蕎麦。",
+        "f7_full": "加茂町の「そば処 上代」で手繰る挽きぐるみの手打ち蕎麦が、水運と商いの街・米子を訪ねる旅を滋味深く幕開ける。",
+        "is_final": false,
+        "next_spot_id": "3ef0bf09-b0ac-4482-831b-2b378f754b7e",
+        "next_spot_name": "米子市立山陰歴史館"
+      },
+      {
+        "id": "3ef0bf09-b0ac-4482-831b-2b378f754b7e",
+        "name": "米子市立山陰歴史館",
+        "description": "昭和五年に旧米子市庁舎として建てられた市指定有形文化財の歴史博物館（9:30〜18:00開館・入館17:30まで、火曜・祝日の翌日・年末年始休）。米子城や城下町の歴史資料を展示する。",
+        "address": "鳥取県米子市中町20",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.429241,
+        "lng": 133.330342,
+        "qr_token": "shuin-yonago-2",
+        "cover_image_url": "/images/yonago/spot2.png",
+        "f7_fragment": "昭和初期のスクラッチタイルが美しい旧市庁舎建築で紐解く、米子城と商都の歴史。",
+        "f7_full": "赤煉瓦タイルのレトロ建築「米子市立山陰歴史館」が、城下町から山陰随一の商都へと歩んだ米子の誇り高い記憶を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0f2d26ca-ce74-44e5-8027-f88204b18db8",
+        "next_spot_name": "後藤家住宅（旧加茂川・白壁土蔵群）"
+      },
+      {
+        "id": "0f2d26ca-ce74-44e5-8027-f88204b18db8",
+        "name": "後藤家住宅（旧加茂川・白壁土蔵群）",
+        "description": "旧加茂川の京橋たもとに建つ国指定重要文化財の豪商屋敷と白壁土蔵の町並み（外観常時見学自由）。江戸時代に廻船問屋として栄えた商家建築と水辺の景観が残る。",
+        "address": "鳥取県米子市内町72",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.432753,
+        "lng": 133.324538,
+        "qr_token": "shuin-yonago-3",
+        "cover_image_url": "/images/yonago/spot3.png",
+        "f7_fragment": "柳が揺れる旧加茂川のほとりに佇む、江戸時代の廻船問屋・後藤家の重厚な町家と白壁土蔵。",
+        "f7_full": "旧加茂川に映る白壁土蔵群と国指定重要文化財「後藤家住宅」の佇まいが、中海と日本海を結んだ廻船問屋の華やかな時代を映し出す。",
+        "is_final": false,
+        "next_spot_id": "91789098-fa1e-4fe3-80e9-0694667b9865",
+        "next_spot_name": "NAGACHA Café 1801（ながた茶店）"
+      },
+      {
+        "id": "91789098-fa1e-4fe3-80e9-0694667b9865",
+        "name": "NAGACHA Café 1801（ながた茶店）",
+        "description": "享和元年創業の老舗「長田茶店」が営む日本茶カフェ（カフェ11:00〜17:00・火水休、茶舗本店9:00〜17:00・水曜休）。有機抹茶や白バラ牛乳を使ったパフェ・団子・日本茶を楽しめる。",
+        "address": "鳥取県米子市岩倉町76-2",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.432417,
+        "lng": 133.327593,
+        "qr_token": "shuin-yonago-4",
+        "cover_image_url": "/images/yonago/spot4.png",
+        "f7_fragment": "享和元年創業の茶舗が淹れる芳醇な日本茶と、白バラ牛乳・有機抹茶の和パフェ。",
+        "f7_full": "老舗茶舗が手がける「NAGACHA Café 1801」で味わう挽きたて抹茶と白バラ牛乳の甘味が、旧街道を歩いた午後に香り高い休息を届ける。",
+        "is_final": false,
+        "next_spot_id": "83db527d-b1cd-4a89-8da6-f6b343192173",
+        "next_spot_name": "岡本一銭屋"
+      },
+      {
+        "id": "83db527d-b1cd-4a89-8da6-f6b343192173",
+        "name": "岡本一銭屋",
+        "description": "立町の旧街道沿いに建つ明治期の町家を活かした駄菓子・玩具店（9:00〜17:00営業、不定休）。昔ながらのガラス瓶に入った飴菓子や駄菓子、郷土玩具が並ぶ。",
+        "address": "鳥取県米子市立町1-4",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.432823,
+        "lng": 133.326898,
+        "qr_token": "shuin-yonago-5",
+        "cover_image_url": "/images/yonago/spot5.png",
+        "f7_fragment": "築百余年の町家の木棚とガラス瓶に並ぶ、色とりどりの飴玉と昔懐かしい駄菓子。",
+        "f7_full": "立町の「岡本一銭屋」で選ぶ懐かしい飴菓子と駄菓子のお土産が、下町情緒あふれる商都・米子を巡った旅を温かな笑顔で締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0813e4a7-ac6a-46a2-89ac-fa37b7a73fc1",
+    "title": "四万十の清流と一條氏の雅が息づく土佐の中村を辿る",
+    "name": "四万十の清流と一條氏の雅が息づく土佐の中村を辿る",
+    "description": "前関白・一條教房公が京を模して開いた「土佐の小京都」であり、清流・四万十川が流れる高知県四万十市中村。四万十の川の幸を味わう郷土料理 花ぜんから、御所山の一條神社、Le boisの焼菓子、喫っカフェ まほら、四万十市郷土博物館までを辿る。",
+    "region": "中村駅・土佐の小京都と四万十川を望む城下を歩く道",
+    "area_name": "中村駅・土佐の小京都と四万十川を望む城下を歩く道",
+    "cover_image_url": "/images/nakamura-shimanto/route-eyecatch.png",
+    "imageUrl": "/images/nakamura-shimanto/route-eyecatch.png",
+    "category": "花ぜんの川の幸・一條神社・ルボワの焼菓子・喫っカフェまほらと郷土博物館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "土佐一條氏の雅と四万十川の恵みが重なる中村を訪ねて、旅の象徴として残したい記憶はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "小京都の礎を築いた「一條神社」と、四万十川を一望する「四万十市郷土博物館」",
+          "description": "京の都を模した碁盤目の街を見守る一條神社と、天守風展望台から望む四万十川と赤鉄橋の大パノラマに胸が躍った。",
+          "badge_code": "NAKAMURA_SHIMANTO_A"
+        },
+        {
+          "key": "B",
+          "text": "「郷土料理 花ぜん」で堪能した、香ばしい鰻と川海老・青さのりの四万十御膳",
+          "description": "最後の清流・四万十川が育んだ鰻の蒲焼と、カリッと香ばしい川海老や青さのりの風味に自然の豊かさを実感した。",
+          "badge_code": "NAKAMURA_SHIMANTO_B"
+        },
+        {
+          "key": "C",
+          "text": "祖母の純喫茶を受け継ぐ「喫っカフェ まほら」で過ごした、温もりある珈琲時間",
+          "description": "懐かしい記憶と新しい感性が調和する穏やかな店内で、香り高い珈琲と手作りスイーツに心癒やされた。",
+          "badge_code": "NAKAMURA_SHIMANTO_C"
+        },
+        {
+          "key": "D",
+          "text": "天神橋の「Le bois（ル・ボワ）」で選んだ、焼きたてのマフィンと愛らしい焼菓子",
+          "description": "京ゆかりの町名が並ぶ小京都の通りで出会った、バターと季節の素材が香る手作りの焼菓子に心和んだ。",
+          "badge_code": "NAKAMURA_SHIMANTO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6f1b25af-173e-4a71-8f96-8705db15aaff",
+        "name": "郷土料理 花ぜん",
+        "description": "四万十市中村東町にある郷土料理・うなぎ料理の老舗（11:30〜13:00・17:00〜20:30営業、日曜定休）。四万十のうなぎ料理や川海老の唐揚げ、青さのりの天ぷらなどを味わえる。",
+        "address": "高知県四万十市中村東町1-8-19",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 32.994284,
+        "lng": 132.939471,
+        "qr_token": "shuin-nakamura-shimanto-1",
+        "cover_image_url": "/images/nakamura-shimanto/spot1.png",
+        "f7_fragment": "香ばしく焼き上げた鰻の蒲焼に、カリッと揚げた川海老と青さのりが彩りを添える四万十の味。",
+        "f7_full": "「郷土料理 花ぜん」で味わう鰻と川海老・青さのりの郷土料理が、清流に抱かれた土佐の小京都・中村の旅を贅沢に幕開ける。",
+        "is_final": false,
+        "next_spot_id": "52488ba0-dc83-4b09-8d2f-4c4cf4aa22a1",
+        "next_spot_name": "一條神社"
+      },
+      {
+        "id": "52488ba0-dc83-4b09-8d2f-4c4cf4aa22a1",
+        "name": "一條神社",
+        "description": "土佐一條氏の御所跡（御所山）に鎮座する神社（参拝自由、社務所9:00〜16:30、無休）。「土佐の小京都」中村の礎を築いた前関白・一條教房公ら一族を祀る。",
+        "address": "高知県四万十市中村本町1-11",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 32.993625,
+        "lng": 132.93424,
+        "qr_token": "shuin-nakamura-shimanto-2",
+        "cover_image_url": "/images/nakamura-shimanto/spot2.png",
+        "f7_fragment": "土佐一條氏の御所跡の石段上に鎮座し、京の都の雅を伝えた名君の遺徳を今に伝える社。",
+        "f7_full": "街の中心・御所山に鎮座する「一條神社」の静かな社殿と藤棚が、応仁の乱の世に京の文化を花開かせた土佐一條氏の物語を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "3d9eb6a1-8102-4b36-8ccd-dc5c96018cdd",
+        "next_spot_name": "Le bois（ル・ボワ）"
+      },
+      {
+        "id": "3d9eb6a1-8102-4b36-8ccd-dc5c96018cdd",
+        "name": "Le bois（ル・ボワ）",
+        "description": "天神橋商店街近くにある洋菓子・焼き菓子店（10:00〜18:00頃営業、不定休）。毎朝焼き上げるマフィンやケーキ、アイシングクッキーなどを販売する。",
+        "address": "高知県四万十市中村天神橋32",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 32.992872,
+        "lng": 132.932924,
+        "qr_token": "shuin-nakamura-shimanto-3",
+        "cover_image_url": "/images/nakamura-shimanto/spot3.png",
+        "f7_fragment": "天神橋の街角に甘い香りを広げる、朝焼きの黄金色マフィンと彩り豊かな焼き菓子。",
+        "f7_full": "中心街の「Le bois」で選ぶ焼きたてのマフィンとクッキーが、京ゆかりの町名が息づく小京都の散策に華やかな甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "22e03672-c4f0-4bdb-8eb9-c72cdf8e11dd",
+        "next_spot_name": "喫っカフェ まほら"
+      },
+      {
+        "id": "22e03672-c4f0-4bdb-8eb9-c72cdf8e11dd",
+        "name": "喫っカフェ まほら",
+        "description": "百笑町にあるリノベーションカフェ（7:30〜17:00営業、火曜定休）。祖母が営んでいた純喫茶を改装した温かみある店内で、自家製スイーツや軽食、珈琲を楽しめる。",
+        "address": "高知県四万十市中村百笑町4-6",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 32.993271,
+        "lng": 132.928059,
+        "qr_token": "shuin-nakamura-shimanto-4",
+        "cover_image_url": "/images/nakamura-shimanto/spot4.png",
+        "f7_fragment": "昭和の純喫茶の記憶を受け継ぐ木の温もりの空間で味わう、ハンドドリップ珈琲と自家製ケーキ。",
+        "f7_full": "百笑町の「喫っカフェ まほら」で過ごす香り高い珈琲と甘味のひとときが、四万十の穏やかな街並み歩きに優しい彩りを添える。",
+        "is_final": false,
+        "next_spot_id": "9c269ad5-99e3-4d90-8ae1-926be1813f08",
+        "next_spot_name": "四万十市郷土博物館"
+      },
+      {
+        "id": "9c269ad5-99e3-4d90-8ae1-926be1813f08",
+        "name": "四万十市郷土博物館",
+        "description": "中村城跡（為松公園）に建つ天守閣風の歴史博物館（9:00〜17:00開館・入館16:30まで、水曜定休）。土佐一條氏の歴史や四万十川の文化を展示し、最上階から四万十川と市街を一望できる。",
+        "address": "高知県四万十市中村2356",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 32.996848,
+        "lng": 132.930667,
+        "qr_token": "shuin-nakamura-shimanto-5",
+        "cover_image_url": "/images/nakamura-shimanto/spot5.png",
+        "f7_fragment": "為松公園の高台にそびえる白亜の天守風博物館と、最上階から望む四万十川と赤鉄橋の大パノラマ。",
+        "f7_full": "中村城跡に立つ「四万十市郷土博物館」の展望台から見渡す悠々たる四万十川と碁盤目の街並みが、土佐の中村を辿る旅を雄大に締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "21bb5595-cd68-4b46-89ab-f19d9119f36f",
+    "title": "居蔵造りの白壁と名水が潤す筑後吉井を巡る",
+    "name": "居蔵造りの白壁と名水が潤す筑後吉井を巡る",
+    "description": "耳納連山の伏流水と筑後川の疏水に潤され、重厚な白漆喰の「居蔵造り」の町並みが残る福岡県うきは市吉井町。水路に囲まれた鏡田屋敷から、お食事処 白花綜の旬御膳、豪商建築の居蔵の館、築百四十年の蛭子町珈琲店、ぱんのもっかまでを巡る。",
+    "region": "筑後吉井駅・居蔵造りの白壁通りと名水の街を歩く道",
+    "area_name": "筑後吉井駅・居蔵造りの白壁通りと名水の街を歩く道",
+    "cover_image_url": "/images/chikugo-yoshii/route-eyecatch.png",
+    "imageUrl": "/images/chikugo-yoshii/route-eyecatch.png",
+    "category": "鏡田屋敷・お食事処白花綜・居蔵の館・蛭子町珈琲店とぱんのもっか",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白漆喰の居蔵造りが連なる筑後吉井を巡って、旅のしるしとして手元に残したい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "水路に囲まれた「鏡田屋敷」と、明治の豪商の粋を集めた「居蔵の館」",
+          "description": "大火を乗り越えて築かれた分厚い白漆喰の居蔵造りと、精巧な組子細工や吹き抜け空間の美しさに感銘を受けた。",
+          "badge_code": "CHIKUGO_YOSHII_A"
+        },
+        {
+          "key": "B",
+          "text": "昭和初期の商家「お食事処 白花綜」で味わった、うきはの旬野菜と彩り御膳",
+          "description": "中庭を望む歴史ある商家の座敷で、耳納連山の名水と大地が育てた旬の恵みに心満たされた。",
+          "badge_code": "CHIKUGO_YOSHII_B"
+        },
+        {
+          "key": "C",
+          "text": "築百四十年の町家「蛭子町珈琲店」で楽しんだ、名水仕立ての自家焙煎珈琲",
+          "description": "明治初期の居蔵造りの静かな空間に漂う焙煎豆の香りと、うきはの地下水で淹れた深い味わいに癒やされた。",
+          "badge_code": "CHIKUGO_YOSHII_C"
+        },
+        {
+          "key": "D",
+          "text": "白壁の町家ベーカリー「ぱんのもっか」で選んだ、香ばしい焼きたてパンのお土産",
+          "description": "歴史ある白壁の町並みに溶け込む温かな店先で、国産小麦と季節の果実が香るパンを選ぶひとときに心弾んだ。",
+          "badge_code": "CHIKUGO_YOSHII_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e2999e2e-2278-470d-82fb-6488cb30a722",
+        "name": "鏡田屋敷",
+        "description": "幕末から明治初期に建てられた郡役人の居宅で市指定有形文化財（10:30〜16:00開館、月曜・祝日の翌日・年末年始休）。周囲を清らかな水路と白壁が囲む筑後吉井唯一の屋敷型建造物。",
+        "address": "福岡県うきは市吉井町若宮113-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.344189,
+        "lng": 130.762223,
+        "qr_token": "shuin-chikugo-yoshii-1",
+        "cover_image_url": "/images/chikugo-yoshii/spot1.png",
+        "f7_fragment": "耳納連山の伏流水が流れる水路と白漆喰の塀に囲まれた、端正な屋敷型建築。",
+        "f7_full": "清らかな水路に囲まれた「鏡田屋敷」の白壁と庭園が、水の恵みとともに栄えた筑後吉井の物語を涼やかに幕開ける。",
+        "is_final": false,
+        "next_spot_id": "354e52ad-2a83-4cba-8fac-a8f1d3ebaca8",
+        "next_spot_name": "お食事処 白花綜"
+      },
+      {
+        "id": "354e52ad-2a83-4cba-8fac-a8f1d3ebaca8",
+        "name": "お食事処 白花綜",
+        "description": "白壁通りの昭和三年築の商家を活用した和食処（ランチ11:00〜15:00・L.O.14:30、カフェ15:00〜17:00営業、月曜定休・祝日の場合は翌日休）。うきはの旬食材を使った御膳や定食を味わえる。",
+        "address": "福岡県うきは市吉井町1153-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.342148,
+        "lng": 130.759033,
+        "qr_token": "shuin-chikugo-yoshii-2",
+        "cover_image_url": "/images/chikugo-yoshii/spot2.png",
+        "f7_fragment": "昭和初期の白壁商家の座敷で味わう、うきはの旬野菜と季節の小鉢が並ぶ彩り御膳。",
+        "f7_full": "歴史ある商家を活かした「お食事処 白花綜」の彩り豊かな昼御膳が、フルーツと名水の里・うきはの豊かな食の恵みを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "abe0d934-ebcd-4cc0-8cdc-3b760555cebe",
+        "next_spot_name": "居蔵の館"
+      },
+      {
+        "id": "abe0d934-ebcd-4cc0-8cdc-3b760555cebe",
+        "name": "居蔵の館",
+        "description": "明治末期に精蝋業等で栄えた旧松田家住宅を公開する伝統的建造物（9:00〜16:30開館、月曜・祝日の翌日・年末年始休）。分厚い白漆喰の居蔵造りや丸窓、組子細工を見学できる。",
+        "address": "福岡県うきは市吉井町1103-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.34413,
+        "lng": 130.759497,
+        "qr_token": "shuin-chikugo-yoshii-3",
+        "cover_image_url": "/images/chikugo-yoshii/spot3.png",
+        "f7_fragment": "入母屋妻入りの分厚い白漆喰壁と、丸窓や組子細工の意匠が光る豪商の居蔵造り。",
+        "f7_full": "堂々たる白漆喰の妻壁がそびえる「居蔵の館」の精緻な建具と大広間が、明治の吉井商人が築いた富と美意識の結晶を今に映し出す。",
+        "is_final": false,
+        "next_spot_id": "39b09fb5-4cb6-45be-8d20-ead32376b1b2",
+        "next_spot_name": "蛭子町珈琲店"
+      },
+      {
+        "id": "39b09fb5-4cb6-45be-8d20-ead32376b1b2",
+        "name": "蛭子町珈琲店",
+        "description": "白壁通りにある築百四十年の居蔵造り古民家を活かした自家焙煎珈琲店（10:00〜18:00営業、月曜・火曜定休）。うきはの地下水で淹れるハンドドリップ珈琲と自家製菓子を楽しめる。",
+        "address": "福岡県うきは市吉井町1116",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.343929,
+        "lng": 130.758953,
+        "qr_token": "shuin-chikugo-yoshii-4",
+        "cover_image_url": "/images/chikugo-yoshii/spot4.png",
+        "f7_fragment": "築百四十年の居蔵造りの梁の下で味わう、うきはの名水で淹れた自家焙煎珈琲。",
+        "f7_full": "明治初期の町家を再生した「蛭子町珈琲店」の香り高い自家焙煎珈琲が、白壁の町並みを歩いた午後に静謐な寛ぎを添える。",
+        "is_final": false,
+        "next_spot_id": "bc3acc26-59c8-4f79-8d44-a34273defdad",
+        "next_spot_name": "ぱんのもっか"
+      },
+      {
+        "id": "bc3acc26-59c8-4f79-8d44-a34273defdad",
+        "name": "ぱんのもっか",
+        "description": "白壁の町並みにある町家ベーカリー（9:00〜18:00営業・売り切れ次第終了、月曜・木曜定休）。自家製酵母のハード系パンや季節のフルーツデニッシュ、菓子パンが並ぶ。",
+        "address": "福岡県うきは市吉井町1127-5",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.343528,
+        "lng": 130.758586,
+        "qr_token": "shuin-chikugo-yoshii-5",
+        "cover_image_url": "/images/chikugo-yoshii/spot5.png",
+        "f7_fragment": "白壁の町家店舗と緑のテラスに焼き上がる、国産小麦と季節の果実が香るパン。",
+        "f7_full": "白壁通りの「ぱんのもっか」で選んだ香ばしい焼きたてパンが、名水と居蔵造りの街・筑後吉井を巡る旅を温かく締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
