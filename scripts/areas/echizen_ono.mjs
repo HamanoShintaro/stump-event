@@ -52,7 +52,7 @@ export const area = {
   duration_min: 80,
   tags: ['御清水', '越前おろしそば', '武家屋敷旧内山家', '七間通り', '伊藤順和堂'],
   eyecatch_prompt:
-    'Atmospheric watercolor and ink illustration of the crystal-clear natural spring basin of Oshozu surrounded by mossy stone walls and cedar trees alongside historic samurai residence roofs in Echizen-Ono under misty mountains, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'Dramatic dawn watercolor and ink illustration in lavender-purple, misty silver-white, and sunrise-gold: the hilltop keep of Echizen-Ono Castle atop forested Mount Kameyama floating like a sky island above a swirling sea of morning clouds with distant blue-violet Hakusan peaks on the horizon, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'ECHIZEN_ONO_CORE',
     name_ja: '殿様清水と名水城下のしるし',

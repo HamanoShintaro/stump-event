@@ -52,7 +52,7 @@ export const area = {
   duration_min: 65,
   tags: ['鉄道歴史パーク', 'めん処かめや', '西条郷土博物館', 'マリアージュ', '菓舗栄光堂'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the white-walled Otemon gate reflected in the clear water moat of Saijo Jinya and crystal-clear Uchinuki artesian spring water overflowing from a stone basin in Saijo, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'Crisp azure-blue and ivory watercolor and ink illustration with a dynamic low-angle composition: the iconic rounded nose and circular headlights of a classic blue-and-white Series 0 Shinkansen bullet train beside a crystal-clear artesian spring fountain, with the towering blue-violet peaks of Mount Ishizuchi rising in the background in Saijo, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'SAIJO_CORE',
     name_ja: '名水百選のうちぬきと三万石の陣屋水堀・伊予西条のしるし',

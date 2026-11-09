@@ -52,7 +52,7 @@ export const area = {
   duration_min: 95,
   tags: ['龍野城', 'クラテラスたつの', 'うすくち龍野醤油資料館', '吾妻堂', '菓子と珈琲朔'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the white-plastered corner turret and stone walls of Tatsuno Castle at the foot of green Mount Keiro alongside the traditional dark wooden lattice and white plaster walls of the Usukuchi Tatsuno Soy Sauce Museum streetscape, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'High-angle autumn panorama watercolor and ink illustration in vivid crimson-red, burnt orange, and clear jade-green water: vibrant crimson autumn maple canopies reflecting in the calm mirror-like pond surrounding the thatched Ukido teahouse pavilion at Shuentei Garden on the hillside of Tatsuno, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'TATSUNO_CORE',
     name_ja: '播磨の小京都・龍野と淡口醤油のしるし',

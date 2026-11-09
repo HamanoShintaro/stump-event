@@ -52,7 +52,7 @@ export const area = {
   duration_min: 55,
   tags: ['小丸山城址公園', '中央茶屋', '高澤ろうそく店', '古民家カフェろく', '鳥居醤油店'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the historic dark-timbered merchant townhouses with wooden lattice facades along Ipponsugi-dori street and the vermilion Sentai Bridge over Misogigawa River in Nanao, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'Rich decorative watercolor and ink close-up illustration in vibrant vermilion red, coral pink, and warm gold leaf tones: an ornate crimson silk Hanayome Noren bridal curtain dyed with auspicious white cranes and plum blossoms gently swaying beside two tall hand-dipped Japanese warosoku candles glowing with warm orange flames in Nanao, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'NANAO_CORE',
     name_ja: '一本杉通りの登録文化財商家と湊町・七尾のしるし',

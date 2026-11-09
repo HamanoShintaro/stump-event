@@ -52,7 +52,7 @@ export const area = {
   duration_min: 65,
   tags: ['旧堀田邸', 'おかやま食堂', '佐倉市立美術館', '旧平井家住宅', '蔵六餅本舗木村屋'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the traditional tiled-roof samurai villa and expansive green garden of the Former Hotta Residence and historic merchant townhouses in Sakura, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'High-angle panoramic spring watercolor and ink illustration in vivid emerald green, soft cherry-blossom pink, and clear sky blue: sweeping sculpted green lawn, curved topiary hedges, and blooming pink cherry trees on a high bluff overlooking the shimmering blue waters of Lake Inbanuma in Sakura, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'SAKURA_CORE',
     name_ja: '十一万石の大名庭園と新町通りの商家・佐倉のしるし',

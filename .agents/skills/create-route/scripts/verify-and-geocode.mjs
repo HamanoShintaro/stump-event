@@ -353,7 +353,57 @@ async function main() {
     errors.push(`回遊ルール違反: 買い物/休憩/食事 のスポットを最低1つ入れてください`);
   }
 
-  // 3.5. 処方箋72・73・77機械的チェック（title規定・spot_type規定・question禁止構文・Spot 1/5メタ枕詞・clue文字数と語尾）
+  // 3.5. 処方箋72・73・77・132・133機械的チェック（既存駅・既存スポット重複防止・title規定・eyecatch多様性・spot_type規定・question禁止構文・Spot 1/5メタ枕詞・clue文字数と語尾）
+  const areasDir = path.dirname(absPath);
+  if (fs.existsSync(areasDir)) {
+    const myFile = path.basename(absPath);
+    const myNormSlug = String(area.slug || '').replace(/-/g, '_');
+    const mySpotNames = new Set((area.spots || []).map((s) => String(s.name || '').replace(/（.+?）/g, '').trim()).filter(Boolean));
+    const peerFiles = fs.readdirSync(areasDir).filter((f) => f.endsWith('.mjs') && !f.startsWith('_') && f !== myFile);
+    for (const pf of peerFiles) {
+      try {
+        const peerRaw = fs.readFileSync(path.join(areasDir, pf), 'utf-8');
+        const peerSlugMatch = peerRaw.match(/slug:\s*['"]([^'"]+)['"]/);
+        const peerStationMatch = peerRaw.match(/station:\s*['"]([^'"]+)['"]/);
+        const peerPrefMatch = peerRaw.match(/prefecture:\s*['"]([^'"]+)['"]/);
+        const peerNormSlug = (peerSlugMatch ? peerSlugMatch[1] : pf.replace(/\.mjs$/, '')).replace(/-/g, '_');
+        if (myNormSlug && peerNormSlug === myNormSlug) {
+          errors.push(
+            `処方箋133違反 [slug重複]: 正規化slug "${myNormSlug}" が既存ファイル scripts/areas/${pf} と重複しています（ハイフン/アンダースコア表記揺れによる重複作成禁止）`
+          );
+        }
+        if (
+          peerStationMatch &&
+          peerStationMatch[1] === area.station &&
+          (!peerPrefMatch || !area.prefecture || peerPrefMatch[1] === area.prefecture)
+        ) {
+          const peerSpotNames = new Set(
+            [...peerRaw.matchAll(/^\s*name:\s*['"]([^'"]+)['"]/gm)]
+              .map((m) => m[1].replace(/（.+?）/g, '').trim())
+              .filter(Boolean)
+          );
+          const overlappingSpots = [];
+          for (const spName of mySpotNames) {
+            if (spName.length >= 2 && peerSpotNames.has(spName)) {
+              overlappingSpots.push(spName);
+            }
+          }
+          if (overlappingSpots.length > 0) {
+            errors.push(
+              `処方箋133違反 [既存駅スポット重複]: 同一駅（${area.station}）の既存ルート scripts/areas/${pf} とスポットが重複しています（重複: ${overlappingSpots.join(' / ')}）`
+            );
+          }
+        }
+      } catch (e) {
+        // ignore read error
+      }
+    }
+  }
+  if (area.eyecatch_prompt && /^Clear daylight architectural watercolor/i.test(area.eyecatch_prompt)) {
+    errors.push(
+      `処方箋132違反 [eyecatch_prompt]: 定型文頭 "Clear daylight architectural watercolor..." は一覧画面での構図・色味の同質化を招くため使用禁止です。5つの視覚アーキタイプ（雪景・俯瞰パノラマ・工芸クローズアップ・乗り物/巨杉ローアングル・夕景/月夜/雲海シルエット）と明確な支配色を指定してください`
+    );
+  }
   if (area.title) {
     if (area.title.includes('、') || area.title.length < 15 || area.title.length > 24 || /をたどる道$/.test(area.title)) {
       errors.push(

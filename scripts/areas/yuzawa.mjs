@@ -52,7 +52,7 @@ export const area = {
   duration_min: 60,
   tags: ['両関酒造', '長寿軒', '力水', '高市青果店', 'お菓子のくらた'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the white-walled and red-brick sake brewery storehouses of Yuzawa with a green cedar sugidama ball and a stone spring-water basin at the foot of a wooded hill, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'Serene winter twilight watercolor and ink illustration in cool indigo-blue, pure snow-white, and warm amber lantern glow: heavy white snow blanketing a traditional black-and-white lattice namako-wall sake storehouse in snow country Yuzawa, with a single round green cedar sugidama ball under the snow-laden eaves and a warm golden interior light reflecting on fresh snow, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'YUZAWA_CORE',
     name_ja: '名水百選の力水と内蔵の酒蔵・湯沢のしるし',

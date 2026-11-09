@@ -52,7 +52,7 @@ export const area = {
   duration_min: 50,
   tags: ['瀧廉太郎記念館', '友修', '由学館', 'スロービート', '但馬屋老舗'],
   eyecatch_prompt:
-    'Clear daylight architectural watercolor and ink illustration of the dark volcanic tuff-stone samurai walls, the curved woven-bamboo eaves of Yugakukan museum, and the thatched gate of Rentaro Taki Memorial Museum in Bungo-Taketa, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
+    'Dramatic golden-sunset and twilight-purple watercolor and ink low-angle landscape illustration: towering monumental dark volcanic stone walls of Oka Castle perched high on a sheer cliff edge against a glowing amber-and-violet evening sky with a luminous full moon rising above distant mountain ridges in Bungo-Taketa, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'TAKETA_CORE',
     name_ja: '溶結凝灰岩の石垣と荒城の月の城下町・豊後竹田のしるし',

@@ -52,7 +52,7 @@ export const area = {
   duration_min: 85,
   tags: ['上山城', '武家屋敷', 'かみのやま温泉', '中條饅頭', '山形蕎麦'],
   eyecatch_prompt:
-    'Panoramic view of Kaminoyama Castle (Tsukioka Castle) with its white plaster walls and tiled multi-tiered keep rising above persimmon trees and the thatched-roof samurai residences of Kaminoyama Onsen, with the distant Zao mountain range under a warm autumn sky, seamless cream Washi paper (#F7F2E6). No people, no text, no borders.',
+    'Serene winter-evening watercolor and ink illustration in deep indigo-blue sky, snow-white peaks, and warm amber lantern glow: the illuminated white-plastered multi-tiered keep of Kaminoyama Castle rising above snow-dusted thatched samurai roofs and rising golden hot-spring steam against the snowy Zao mountain range at dusk, painted in the center of a single uniform cream Washi paper canvas (#F7F2E6) occupying only the central 52% of the image with all outer edges dissolving softly and organically into wide 24-percent unpainted cream-white Washi paper margins around all four edges, strictly NO text, NO kanji, NO letters, NO numbers, NO signage, NO rectangular border frame, no people.',
   completion_badge: {
     code: 'KAMINOYAMA_ONSEN_CORE',
     name_ja: '月岡の白城と湯町のしるし',
