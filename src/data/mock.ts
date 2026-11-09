@@ -51480,5 +51480,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "6676c547-9cbb-412d-8a15-bcf415701750",
+    "title": "誠照寺の門前と眼鏡の技・鯖江を歩く",
+    "name": "誠照寺の門前と眼鏡の技・鯖江を歩く",
+    "description": "眼鏡フレームの産地であり真宗誠照寺派本山の門前町として栄えた福井県鯖江市。鯖江駅の観光案内所・売店から、老舗和菓子処の大黒屋、彫刻が息づく誠照寺、越前おろしそばの道の駅 西山公園、藩主ゆかりの西山公園までを歩く。",
+    "region": "鯖江駅・誠照寺の四足門と西山公園の渓流庭園を歩く道",
+    "area_name": "鯖江駅・誠照寺の四足門と西山公園の渓流庭園を歩く道",
+    "cover_image_url": "/images/sabae/route-eyecatch.png",
+    "imageUrl": "/images/sabae/route-eyecatch.png",
+    "category": "鯖江駅・大黒屋・誠照寺・道の駅西山公園と西山公園",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "ものづくりの技と本山門前の歴史、藩主ゆかりの庭園が重なる鯖江を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「誠照寺」の四足門に刻まれた龍の彫刻と、北陸最大級の御影堂が放つ荘厳な佇まい",
+          "description": "越前四本山のひとつに数えられる名刹の門をくぐり、精緻な宮大工の技と大屋根の威容に深く心を動かされた。",
+          "badge_code": "SABAE_A"
+        },
+        {
+          "key": "B",
+          "text": "「鯖江駅」で触れた眼鏡フレーム産地の意匠と、門前町の老舗「大黒屋」の和菓子",
+          "description": "世界に誇る眼鏡づくりの町の遊び心と、本町通りで受け継がれてきた優しい甘味の味わいに温かな気持ちになった。",
+          "badge_code": "SABAE_B"
+        },
+        {
+          "key": "C",
+          "text": "「道の駅 西山公園」で味わう、辛味大根が爽やかに香る名物・越前おろしそば",
+          "description": "冷水で締めた香り高い越前そばに大根おろしと削り節を合わせた、福井ならではの滋味に満たされた。",
+          "badge_code": "SABAE_C"
+        },
+        {
+          "key": "D",
+          "text": "旧鯖江藩主が領民のために拓いた「西山公園」の嚮陽渓と、市街地を望む高台の眺望",
+          "description": "四季の花木と渓流が織りなす日本庭園を歩き、藩主が領民へ贈った憩いの空間の歴史に思いを馳せた。",
+          "badge_code": "SABAE_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "76f52a68-5716-4a5f-8462-2b337c633bfc",
+        "name": "鯖江駅",
+        "description": "眼鏡フレームのまち鯖江の玄関口であり、駅舎内に観光案内所と売店を併設する駅（8:30〜19:00営業）。眼鏡関連の雑貨や地域特産品の買い物を楽しめる。",
+        "address": "福井県鯖江市日の出町1-2",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.943297,
+        "lng": 136.188702,
+        "qr_token": "shuin-sabae-1",
+        "cover_image_url": "/images/sabae/spot1.png",
+        "f7_fragment": "国内屈指の眼鏡産地・鯖江の玄関口で、職人の技が光る眼鏡雑貨と出会う駅の交流空間。",
+        "f7_full": "「鯖江駅」の温かな木の空間に並ぶ眼鏡モチーフの品々が、ものづくりの町をめぐる旅の始まりを軽やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "0950db47-2ba8-4fde-8c74-1adb384b0eb1",
+        "next_spot_name": "大黒屋"
+      },
+      {
+        "id": "0950db47-2ba8-4fde-8c74-1adb384b0eb1",
+        "name": "大黒屋",
+        "description": "誠照寺の門前・本町通りに暖簾を掲げる老舗和菓子処（9:00〜18:00営業、火曜定休）。香ばしい味噌餡を包んだ門前銘菓や季節の和菓子で散策のひと休みをとれる。",
+        "address": "福井県鯖江市本町2丁目1-14",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.946242,
+        "lng": 136.185618,
+        "qr_token": "shuin-sabae-2",
+        "cover_image_url": "/images/sabae/spot2.png",
+        "f7_fragment": "旧北陸道の面影を残す門前町で、香ばしい味噌まんじゅうと季節の和菓子を味わう老舗。",
+        "f7_full": "「大黒屋」の優しい甘みの和菓子が、本山誠照寺へと続く歴史ある門前町の空気を穏やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a85219ae-23c8-4bdd-8246-4b365b5ab397",
+        "next_spot_name": "誠照寺"
+      },
+      {
+        "id": "a85219ae-23c8-4bdd-8246-4b365b5ab397",
+        "name": "誠照寺",
+        "description": "真宗誠照寺派の本山であり越前四本山のひとつに数えられる名刹（6:00〜17:00開門）。左甚五郎の作と伝わる龍の彫刻を備えた四足門と、北陸最大級の木造御影堂が見どころ。",
+        "address": "福井県鯖江市本町3丁目2-38",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.947005,
+        "lng": 136.184502,
+        "qr_token": "shuin-sabae-3",
+        "cover_image_url": "/images/sabae/spot3.png",
+        "f7_fragment": "左甚五郎作と伝わる「駆け出しの龍」が息づく四足門と、堂々たる大屋根を構える本山御影堂。",
+        "f7_full": "「誠照寺」の重厚な四足門と広大な伽藍が、鯖江が真宗本山の門前町として歩んできた深い歴史を物語る。",
+        "is_final": false,
+        "next_spot_id": "aef2e984-eebd-4c57-8936-c40bca9e09d4",
+        "next_spot_name": "道の駅 西山公園"
+      },
+      {
+        "id": "aef2e984-eebd-4c57-8936-c40bca9e09d4",
+        "name": "道の駅 西山公園",
+        "description": "西山公園の南側に位置する地域拠点（9:00〜18:00営業）。福井名物の越前おろしそばやソースカツ巻きおにぎりのサバエドッグなど郷土の味覚を味わえる。",
+        "address": "福井県鯖江市桜町3丁目950",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.948765,
+        "lng": 136.180423,
+        "qr_token": "shuin-sabae-4",
+        "cover_image_url": "/images/sabae/spot4.png",
+        "f7_fragment": "辛味大根のおろし出汁で味わう越前おろしそばと、ご当地名物サバエドッグが揃う憩いの拠点。",
+        "f7_full": "「道の駅 西山公園」で味わう瑞々しい越前おろしそばが、越前路の散策に心地よい活力を与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "97c0a585-d32b-4215-80f3-024c12c92de2",
+        "next_spot_name": "西山公園"
+      },
+      {
+        "id": "97c0a585-d32b-4215-80f3-024c12c92de2",
+        "name": "西山公園",
+        "description": "幕末の鯖江藩主・間部詮勝が領民の行楽のために整備した「嚮陽渓」を起源とする公園（終日開放、入園無料）。日本海側随一の約五万株のつつじと日本庭園の滝や池泉が美しい。",
+        "address": "福井県鯖江市桜町3丁目7-20",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.952157,
+        "lng": 136.181317,
+        "qr_token": "shuin-sabae-5",
+        "cover_image_url": "/images/sabae/spot5.png",
+        "f7_fragment": "旧鯖江藩主が領民の憩いのために拓いた「嚮陽渓」の滝と、丘陵を彩る五万株のつつじ庭園。",
+        "f7_full": "「西山公園」の清らかな渓流庭園と高台から見渡す鯖江の街並みが、門前町と庭園をめぐる旅を晴れやかに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "55b2798e-e88d-4a85-8044-f156d181f5e5",
+    "title": "鬼ヶ城の潮騒と太古の磐座・熊野市へ",
+    "name": "鬼ヶ城の潮騒と太古の磐座・熊野市へ",
+    "description": "熊野古道伊勢路と七里御浜の浜街道が交わる三重県熊野市。木本名物の焼餅を商う端無から、町家を活かした熊野古道おもてなし館、大海原に吠える獅子岩、巨岩を御神体とする花の窟神社、古代米料理のお綱茶屋までを歩く。",
+    "region": "熊野市駅・七里御浜の獅子岩と太古の磐座・花の窟神社へ歩く道",
+    "area_name": "熊野市駅・七里御浜の獅子岩と太古の磐座・花の窟神社へ歩く道",
+    "cover_image_url": "/images/kumano-shi/route-eyecatch.png",
+    "imageUrl": "/images/kumano-shi/route-eyecatch.png",
+    "category": "端無・熊野古道おもてなし館・獅子岩・花の窟神社とお綱茶屋",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "熊野古道伊勢路の宿場町と神話の磐座、黒潮が寄せる七里御浜を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "木本町の老舗「端無」の香ばしい焼餅と、「熊野古道おもてなし館」の町家空間",
+          "description": "峠を越えた古道の旅人が親しんだ素朴な焼餅の味わいと、熊野材が香る明治期の商家の佇まいに心が和んだ。",
+          "badge_code": "KUMANO_SHI_A"
+        },
+        {
+          "key": "B",
+          "text": "高さ四十五メートルの巨岩を御神体と仰ぎ、大綱が天へ伸びる「花の窟神社」の神秘",
+          "description": "社殿を持たず太古の磐座そのものに祈りを捧げる境内に立ち、日本書紀から続く原初の信仰の力強さに圧倒された。",
+          "badge_code": "KUMANO_SHI_B"
+        },
+        {
+          "key": "C",
+          "text": "七里御浜の那智黒石の浜辺から、紺碧の熊野灘へ向かって咆哮する天然記念物「獅子岩」",
+          "description": "波と風が幾年月をかけて彫り上げた巨大な獅子の横顔と、打ち寄せる黒潮の雄大な海景に目を奪われた。",
+          "badge_code": "KUMANO_SHI_C"
+        },
+        {
+          "key": "D",
+          "text": "門前の「お綱茶屋」で味わう、古代米・いざなみ米のうどんと香ばしいみたらし団子",
+          "description": "神話の里で育まれた古代米のもちもちとしたうどんと焼きたての団子を味わい、潮風の吹く茶屋で旅の余韻を楽しんだ。",
+          "badge_code": "KUMANO_SHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "01cc1496-d492-45f2-8d15-3ae70e63cdce",
+        "name": "端無",
+        "description": "熊野古道伊勢路の宿場町・木本町に店を構える老舗和菓子舗（8:30〜18:00営業、不定休）。さらりとしたこし餡を薄い餅皮で包んで香ばしく焼き上げた木本名物「焼餅」が評判。",
+        "address": "三重県熊野市木本町528",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 33.892819,
+        "lng": 136.105888,
+        "qr_token": "shuin-kumano-shi-1",
+        "cover_image_url": "/images/kumano-shi/spot1.png",
+        "f7_fragment": "熊野古道伊勢路の旅人たちに親しまれてきた、香ばしい焼き目の木本名物・焼餅の老舗。",
+        "f7_full": "「端無」の素朴で上品な焼餅が、峠越えの旅人を迎えてきた木本の宿場町の温もりを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "e8e06c6c-c1a3-459a-80a5-c7d8e6ba878a",
+        "next_spot_name": "熊野古道おもてなし館"
+      },
+      {
+        "id": "e8e06c6c-c1a3-459a-80a5-c7d8e6ba878a",
+        "name": "熊野古道おもてなし館",
+        "description": "木本本町通りの明治期の旧家を改修した無料休憩・交流施設（9:00〜17:00開館）。熊野材の梁が渡る座敷でくつろぎながら、特産柑橘「新姫」のドリンクや地域情報を楽しめる。",
+        "address": "三重県熊野市木本町574",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 33.890287,
+        "lng": 136.103939,
+        "qr_token": "shuin-kumano-shi-2",
+        "cover_image_url": "/images/kumano-shi/spot2.png",
+        "f7_fragment": "明治期の商家の吹き抜け座敷で、熊野の木の香りと爽やかな柑橘・新姫に癒やされる休憩処。",
+        "f7_full": "「熊野古道おもてなし館」の落ち着いた町家座敷が、伊勢路から浜街道へと歩く旅人に穏やかな安らぎを届ける。",
+        "is_final": false,
+        "next_spot_id": "8ee78921-da6c-4791-8845-b3e8425986dd",
+        "next_spot_name": "獅子岩"
+      },
+      {
+        "id": "8ee78921-da6c-4791-8845-b3e8425986dd",
+        "name": "獅子岩",
+        "description": "七里御浜の海岸に屹立する高さ約二十五メートルの奇岩で、国の天然記念物および世界遺産構成資産（終日見学自由）。大海原に向かって咆哮する獅子の姿に見える。",
+        "address": "三重県熊野市井戸町373",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 33.884087,
+        "lng": 136.098097,
+        "qr_token": "shuin-kumano-shi-3",
+        "cover_image_url": "/images/kumano-shi/spot3.png",
+        "f7_fragment": "七里御浜の玉砂利の海岸から、紺碧の熊野灘に向かって大きく口を開け咆哮する巨岩。",
+        "f7_full": "波と風が彫り上げた天然記念物「獅子岩」の雄姿と黒潮の潮騒が、熊野の海岸線のダイナミックな自然美を刻みつける。",
+        "is_final": false,
+        "next_spot_id": "95df3766-e359-472b-8e5e-6ba9129169fa",
+        "next_spot_name": "花の窟神社"
+      },
+      {
+        "id": "95df3766-e359-472b-8e5e-6ba9129169fa",
+        "name": "花の窟神社",
+        "description": "日本書紀にも記される日本最古級の神社であり世界遺産構成資産（参拝自由、社務所8:30〜17:00）。社殿を持たず、高さ約四十五メートルの大岩壁そのものを御神体として祀る。",
+        "address": "三重県熊野市有馬町130",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 33.879985,
+        "lng": 136.093541,
+        "qr_token": "shuin-kumano-shi-4",
+        "cover_image_url": "/images/kumano-shi/spot4.png",
+        "f7_fragment": "社殿を持たず高さ四十五メートルの大岩壁を御神体と仰ぎ、頂から大綱が渡される太古の聖地。",
+        "f7_full": "「花の窟神社」にそびえる巨大な磐座と那智黒石の玉砂利が、神話の時代から変わらぬ熊野の祈りの原風景を映し出す。",
+        "is_final": false,
+        "next_spot_id": "eaedbbc6-beb5-4afe-8739-7682ba664c6f",
+        "next_spot_name": "お綱茶屋"
+      },
+      {
+        "id": "eaedbbc6-beb5-4afe-8739-7682ba664c6f",
+        "name": "お綱茶屋",
+        "description": "花の窟神社の門前に佇む地域交流・飲食処（9:00〜17:00営業、飲食10:00〜16:00）。地元の古代米「いざなみ米」を練り込んだうどんや香ばしいみたらし団子、めはり寿司を味わえる。",
+        "address": "三重県熊野市有馬町137",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 33.879058,
+        "lng": 136.09229,
+        "qr_token": "shuin-kumano-shi-5",
+        "cover_image_url": "/images/kumano-shi/spot5.png",
+        "f7_fragment": "花の窟神社の門前で、桜色の古代米「いざなみ米うどん」と焼きたての団子を味わう茶屋。",
+        "f7_full": "「お綱茶屋」で味わう古代米のうどんと素朴な甘味が、太古の磐座と七里御浜をめぐった旅を温かく締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bb2cfb65-8213-4ca2-8935-b5e71d3de284",
+    "title": "鎮守府の赤れんが倉庫と港町の記憶・東舞鶴を辿る",
+    "name": "鎮守府の赤れんが倉庫と港町の記憶・東舞鶴を辿る",
+    "description": "日本海側唯一の旧海軍鎮守府が置かれ、国の重要文化財の赤れんが倉庫群が立ち並ぶ京都府舞鶴市。東舞鶴駅から、明治創業の洋食処・松栄館、港を一望する夕潮台公園、赤れんが博物館、カフェを併設する舞鶴市政記念館までを辿る。",
+    "region": "東舞鶴駅・旧海軍ゆかりの洋館と重要文化財の赤れんが倉庫群を辿る道",
+    "area_name": "東舞鶴駅・旧海軍ゆかりの洋館と重要文化財の赤れんが倉庫群を辿る道",
+    "cover_image_url": "/images/higashi-maizuru/route-eyecatch.png",
+    "imageUrl": "/images/higashi-maizuru/route-eyecatch.png",
+    "category": "東舞鶴駅・松栄館・夕潮台公園・赤れんが博物館と舞鶴市政記念館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "明治の赤れんが倉庫群と旧海軍ゆかりの洋食文化が息づく東舞鶴を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「東舞鶴駅」から始まる碁盤目の港町と、「松栄館」で味わう伝統の海軍カレイライス",
+          "description": "旧海軍将校たちも集ったレトロな木造洋館で、明治の海軍割烹術を受け継ぐ芳醇な洋食の味わいに感動した。",
+          "badge_code": "HIGASHI_MAIZURU_A"
+        },
+        {
+          "key": "B",
+          "text": "「夕潮台公園」の高台から見渡す、赤れんが倉庫群と天然の良港・舞鶴湾のパノラマ",
+          "description": "緑の丘から見下ろす穏やかな入江と赤いれんが屋根のコントラストに、港町ならではのロマンを感じた。",
+          "badge_code": "HIGASHI_MAIZURU_B"
+        },
+        {
+          "key": "C",
+          "text": "日本最古級の鉄骨れんが建築「赤れんが博物館」が放つ、百余年の重厚な造形美",
+          "description": "国の重要文化財に指定された一号棟の精巧な煉瓦積みと鉄骨構造を見上げ、近代建築の技術と美しさに魅了された。",
+          "badge_code": "HIGASHI_MAIZURU_C"
+        },
+        {
+          "key": "D",
+          "text": "「舞鶴市政記念館」の赤れんが壁に囲まれたカフェで味わう、珈琲と肉じゃがパイ",
+          "description": "ジャズが流れる重要文化財の二号棟の中で、高い天井とれんがの温もりに包まれながら優雅な喫茶時間を過ごした。",
+          "badge_code": "HIGASHI_MAIZURU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "230006e4-b691-41e3-818f-25ae5aab5700",
+        "name": "東舞鶴駅",
+        "description": "旧海軍鎮守府の街・東舞鶴の玄関口となるJR舞鶴線の駅（案内所・売店9:00〜17:30）。肉じゃがや海軍カレーなど港町舞鶴ならではの土産品が揃う。",
+        "address": "京都府舞鶴市浜2006",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.468545,
+        "lng": 135.394886,
+        "qr_token": "shuin-higashi-maizuru-1",
+        "cover_image_url": "/images/higashi-maizuru/spot1.png",
+        "f7_fragment": "軍艦の名を冠した通りが碁盤目状に広がる、赤れんがと旧鎮守府の港町の玄関口。",
+        "f7_full": "「東舞鶴駅」で手にする港町の地図と名物土産が、明治の近代遺産をめぐる東舞鶴の旅へと誘う。",
+        "is_final": false,
+        "next_spot_id": "4c3036f3-45f5-4eb1-83e5-2888336f3de9",
+        "next_spot_name": "松栄館"
+      },
+      {
+        "id": "4c3036f3-45f5-4eb1-83e5-2888336f3de9",
+        "name": "松栄館",
+        "description": "明治後期創業の海軍御用達旅館をルーツに持つ洋食レストラン（11:30〜14:30・17:30〜21:00営業、月曜・火曜定休）。当時の木造洋館の空間で「海軍カレイライス」やシチューを味わえる。",
+        "address": "京都府舞鶴市浜229",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.47619,
+        "lng": 135.392973,
+        "qr_token": "shuin-higashi-maizuru-2",
+        "cover_image_url": "/images/higashi-maizuru/spot2.png",
+        "f7_fragment": "旧海軍の将校たちが集った明治の木造洋館で、海軍割烹術のレシピを受け継ぐカレイライスを堪能。",
+        "f7_full": "レトロな照明が灯る「松栄館」のダイニングで味わう海軍カレイライスが、明治の港町のハイカラな記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "750ca22a-f454-44ab-8922-4714f0b12dcc",
+        "next_spot_name": "夕潮台公園"
+      },
+      {
+        "id": "750ca22a-f454-44ab-8922-4714f0b12dcc",
+        "name": "夕潮台公園",
+        "description": "舞鶴東港と赤れんがパークを見下ろす高台の公園（終日開放、入園無料）。穏やかな舞鶴湾の海面と重要文化財の赤れんが倉庫群の屋根並みを一望できる。",
+        "address": "京都府舞鶴市浜117",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.47509,
+        "lng": 135.388217,
+        "qr_token": "shuin-higashi-maizuru-3",
+        "cover_image_url": "/images/higashi-maizuru/spot3.png",
+        "f7_fragment": "四方を緑の山に囲まれた舞鶴湾の入江と、海辺に連なる赤れんが倉庫群を一望する高台の展望地。",
+        "f7_full": "「夕潮台公園」から見渡す穏やかな海面と赤いれんが屋根の風景が、天然の良港・舞鶴の成り立ちを雄弁に物語る。",
+        "is_final": false,
+        "next_spot_id": "f2b99ec9-efc4-4950-8c81-457379614260",
+        "next_spot_name": "赤れんが博物館"
+      },
+      {
+        "id": "f2b99ec9-efc4-4950-8c81-457379614260",
+        "name": "赤れんが博物館",
+        "description": "明治三十六年竣工の旧舞鶴海軍兵器廠魚形水雷庫を活用した博物館で、国の重要文化財（9:00〜17:00開館）。現存最古級の鉄骨れんが建築の内部で世界の煉瓦文化を学べる。",
+        "address": "京都府舞鶴市北吸1039-2",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.475379,
+        "lng": 135.386213,
+        "qr_token": "shuin-higashi-maizuru-4",
+        "cover_image_url": "/images/higashi-maizuru/spot4.png",
+        "f7_fragment": "現存最古級の鉄骨構造れんが建築として国の重要文化財に指定される、茜色の旧海軍倉庫。",
+        "f7_full": "百余年の歳月を刻む「赤れんが博物館」の重厚なれんが壁と鉄骨の架構が、近代日本の建築技術の粋を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "77f1c5b4-bdd9-4776-880e-99e03797d52a",
+        "next_spot_name": "舞鶴市政記念館"
+      },
+      {
+        "id": "77f1c5b4-bdd9-4776-880e-99e03797d52a",
+        "name": "舞鶴市政記念館",
+        "description": "舞鶴赤れんがパークの二号棟（国の重要文化財）を活用した記念館・カフェ（9:00〜17:00開館）。重厚な赤れんが壁の喫茶空間で珈琲や名物の肉じゃがパイを味わえる。",
+        "address": "京都府舞鶴市北吸1039-2",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.474751,
+        "lng": 135.385471,
+        "qr_token": "shuin-higashi-maizuru-5",
+        "cover_image_url": "/images/higashi-maizuru/spot5.png",
+        "f7_fragment": "重要文化財の赤れんが二号棟の重厚な壁と高い天井に包まれ、珈琲と肉じゃがパイで寛ぐ喫茶空間。",
+        "f7_full": "「舞鶴市政記念館」の赤れんがの陰影の中で味わう香り高い珈琲が、港町・東舞鶴を辿った旅に深い余韻を残す。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bc7fbb0c-93c2-4b37-83d0-75b36a96396a",
+    "title": "たたら製鉄の湊と十神山の潮風・安来を巡る",
+    "name": "たたら製鉄の湊と十神山の潮風・安来を巡る",
+    "description": "奥出雲のたたら製鉄で生まれた鉄の積み出し港として栄えた島根県安来市。総ヒノキ造りのJR安来駅から、明治創業の料亭 ひさご家、登録有形文化財の並河家住宅、玉鋼の歴史を伝える和鋼博物館、十神山なぎさ公園までを巡る。",
+    "region": "安来駅・たたら製鉄の記憶を伝える和鋼博物館と安来港の町並みを巡る道",
+    "area_name": "安来駅・たたら製鉄の記憶を伝える和鋼博物館と安来港の町並みを巡る道",
+    "cover_image_url": "/images/yasugi/route-eyecatch.png",
+    "imageUrl": "/images/yasugi/route-eyecatch.png",
+    "category": "JR安来駅・料亭ひさご家・並河家住宅・和鋼博物館と十神山なぎさ公園",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "たたら製鉄の積み出し港として栄えた商家街と中海の穏やかな海景が重なる安来を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ヒノキ香る「JR安来駅」で出会った、民謡・安来節ゆかりの銘菓と鉄のまちの工芸",
+          "description": "美しい木造風の駅舎に並ぶどじょう掬いモチーフの銘菓や刃物工芸に触れ、愛嬌と技が共存する町の気風に惹かれた。",
+          "badge_code": "YASUGI_A"
+        },
+        {
+          "key": "B",
+          "text": "明治創業の「料亭 ひさご家」で味わう、北前船の湊町が育んだ旬の和食御膳",
+          "description": "数寄屋造りの落ち着いた空間で中海と日本海の海の幸を味わい、湊町の奥深いもてなしの文化に満たされた。",
+          "badge_code": "YASUGI_B"
+        },
+        {
+          "key": "C",
+          "text": "「並河家住宅」の白漆喰と格子戸の町並みと、安来港の向こうに浮かぶ「十神山」の海景",
+          "description": "鉄や米の商いで栄えた江戸後期の商家の面影と、北前船の目印となった十神山を望む穏やかな水辺の風景に癒やされた。",
+          "badge_code": "YASUGI_C"
+        },
+        {
+          "key": "D",
+          "text": "砂鉄と炎から日本刀の魂「玉鋼」を生み出した、千年の技を伝える「和鋼博物館」",
+          "description": "たたら製鉄の高殿の構造と銀色に輝く玉鋼、そして鍛え上げられた名刀の美しさに、出雲の鉄文化の真髄を見た。",
+          "badge_code": "YASUGI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "722b5bda-1c89-4a57-814b-b775fca0a99d",
+        "name": "JR安来駅",
+        "description": "島根県産のヒノキをふんだんに用いた木造風駅舎と観光交流プラザを備える駅（売店9:00〜18:00）。安来節ゆかりの銘菓や地酒、安来鋼の刃物などの買い物を楽しめる。",
+        "address": "島根県安来市安来町2093-3",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.428212,
+        "lng": 133.259238,
+        "qr_token": "shuin-yasugi-1",
+        "cover_image_url": "/images/yasugi/spot1.png",
+        "f7_fragment": "島根県産ヒノキの架構が香る木造風駅舎に、どじょう掬い銘菓と鉄のまちの工芸品が揃う玄関口。",
+        "f7_full": "「JR安来駅」の温かな木の空間で手にする銘菓と工芸品が、たたらの湊町・安来をめぐる旅の幕を開ける。",
+        "is_final": false,
+        "next_spot_id": "5b36c940-e67a-4358-88fc-d0a874d9f56c",
+        "next_spot_name": "料亭 ひさご家"
+      },
+      {
+        "id": "5b36c940-e67a-4358-88fc-d0a874d9f56c",
+        "name": "料亭 ひさご家",
+        "description": "明治三十二年創業の歴史を誇る安来の老舗料亭（11:30〜14:00・17:00〜21:00営業、不定休）。中海と日本海の海の幸を活かした季節の和食御膳や鰻料理を味わえる。",
+        "address": "島根県安来市安来町1891",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.429106,
+        "lng": 133.259478,
+        "qr_token": "shuin-yasugi-2",
+        "cover_image_url": "/images/yasugi/spot2.png",
+        "f7_fragment": "明治創業の数寄屋造りの老舗で味わう、中海と日本海の恵みを盛り込んだ彩り豊かな和食御膳。",
+        "f7_full": "「料亭 ひさご家」の繊細な包丁技と滋味深い料理が、北前船の寄港地として栄えた安来の粋を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "97367616-1846-4f3f-878f-5ed5f59099d2",
+        "next_spot_name": "並河家住宅"
+      },
+      {
+        "id": "97367616-1846-4f3f-878f-5ed5f59099d2",
+        "name": "並河家住宅",
+        "description": "旧街道・本町通りに面して建つ江戸後期の商家建築で、国の登録有形文化財（10:00〜16:00、外観見学自由）。白漆喰の虫籠窓や格子戸が湊町の豪商の面影を伝える。",
+        "address": "島根県安来市安来町1955",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.429017,
+        "lng": 133.255109,
+        "qr_token": "shuin-yasugi-3",
+        "cover_image_url": "/images/yasugi/spot3.png",
+        "f7_fragment": "鉄と米の舟運で栄えた本町通りに佇む、白漆喰の虫籠窓と格子戸が美しい江戸後期の商家建築。",
+        "f7_full": "国の登録有形文化財「並河家住宅」の端正な切妻屋根と格子構えが、千石船で賑わった湊町の記憶を静かに映し出す。",
+        "is_final": false,
+        "next_spot_id": "1e4e5d0d-61af-4f38-80c9-83ad41fa46b1",
+        "next_spot_name": "和鋼博物館"
+      },
+      {
+        "id": "1e4e5d0d-61af-4f38-80c9-83ad41fa46b1",
+        "name": "和鋼博物館",
+        "description": "日本独自の製鉄法「たたら」と日本刀の原料「玉鋼」の歴史・科学を体系的に紹介する博物館（9:00〜17:00開館、水曜休館）。高殿の地下構造再現や重要文化財の刀剣展示が見どころ。",
+        "address": "島根県安来市安来町1058",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.435353,
+        "lng": 133.253619,
+        "qr_token": "shuin-yasugi-4",
+        "cover_image_url": "/images/yasugi/spot4.png",
+        "f7_fragment": "砂鉄と木炭から日本刀の魂「玉鋼」を生み出した、たたら製鉄の技と名刀の輝きに迫る博物館。",
+        "f7_full": "「和鋼博物館」に展示される銀色の玉鋼と名刀の澄んだ刃文が、鉄のまち・安来が誇る千年のものづくり精神を物語る。",
+        "is_final": false,
+        "next_spot_id": "95aaef23-f8ab-4bc8-8ea5-1c442f3bfeb1",
+        "next_spot_name": "十神山なぎさ公園"
+      },
+      {
+        "id": "95aaef23-f8ab-4bc8-8ea5-1c442f3bfeb1",
+        "name": "十神山なぎさ公園",
+        "description": "安来港の入り江と中海に面した緑豊かな海浜公園（終日開放、入園無料）。北前船の目印であった十神山と穏やかな水面を眺めながら水辺のベンチや東屋で休憩できる。",
+        "address": "島根県安来市安来町895-1",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.434742,
+        "lng": 133.262228,
+        "qr_token": "shuin-yasugi-5",
+        "cover_image_url": "/images/yasugi/spot5.png",
+        "f7_fragment": "北前船が帆を休めた安来港の入り江越しに、緑の十神山と亀島を望む穏やかな水辺の公園。",
+        "f7_full": "「十神山なぎさ公園」の潮風に吹かれながら眺める中海の夕凪が、鉄と湊の歴史を巡った安来の旅を静かに結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "233e1a0f-cf8c-4fd6-8eb5-7b621ca1ca73",
+    "title": "なぜ甘草屋敷の塩山に禅と湯が息づくのか",
+    "name": "なぜ甘草屋敷の塩山に禅と湯が息づくのか",
+    "description": "甲府盆地東端の扇状地に広がり、武田家ゆかりの社寺と薬草・温泉の文化が息づく山梨県甲州市塩山。重要文化財の甘草屋敷（旧高野家住宅）から、甲州ほうとうの夢乃家、国宝ゆかりの菅田天神社、塩山温泉 宏池荘、臨済宗大本山の向嶽寺までを歩く。",
+    "region": "塩山駅・重要文化財の甘草屋敷と武田家ゆかりの名刹・向嶽寺を歩く道",
+    "area_name": "塩山駅・重要文化財の甘草屋敷と武田家ゆかりの名刹・向嶽寺を歩く道",
+    "cover_image_url": "/images/enzan/route-eyecatch.png",
+    "imageUrl": "/images/enzan/route-eyecatch.png",
+    "category": "甘草屋敷・夢乃家・菅田天神社・塩山温泉宏池荘と向嶽寺",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "幕府御用の薬草屋敷と武田家ゆかりの古社寺、名僧が見いだした湯治場が重なる塩山を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「甘草屋敷（旧高野家住宅）」の豪壮な突き上げ屋根と、幕府へ薬草を納めた歴史",
+          "description": "塩山駅前にそびえる重要文化財の大民家を見上げ、甲州特有の屋根造形と甘草栽培の物語に深く感銘を受けた。",
+          "badge_code": "ENZAN_A"
+        },
+        {
+          "key": "B",
+          "text": "「夢乃家」で味わう、かぼちゃと季節の野菜が溶け込んだ熱々の甲州ほうとう",
+          "description": "鉄鍋でぐつぐつと煮込まれた味噌仕立てのほうとうを頬張り、甲州の畑作文化が育んだ滋味に心まで温まった。",
+          "badge_code": "ENZAN_B"
+        },
+        {
+          "key": "C",
+          "text": "武田家の氏神「菅田天神社」の欅並木と、「塩山温泉 宏池荘」の滑らかな名湯",
+          "description": "甲斐源氏ゆかりの古社の厳かな森を歩いたあと、禅僧が開いた湯治場の柔らかな湯と甲州ぶどうの雫に癒やされた。",
+          "badge_code": "ENZAN_C"
+        },
+        {
+          "key": "D",
+          "text": "臨済宗大本山「向嶽寺」の参道に続く、瓦と白漆喰が織りなす重要文化財の中門と築地塀",
+          "description": "巨木が影を落とす静寂の境内で、幾何学模様の築地塀と古刹の山門が放つ凛とした禅の美意識に心を洗われた。",
+          "badge_code": "ENZAN_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5fbbded9-a450-441d-830b-ff0c56d9e202",
+        "name": "甘草屋敷",
+        "description": "江戸幕府へ薬用の甘草を納めた旧高野家住宅で、国の重要文化財に指定される屋敷（9:00〜16:30開館、火曜休館）。甲州民家特有の突き上げ屋根の見学と特産品の買い物を楽しめる。",
+        "address": "山梨県甲州市塩山上於曽1655",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.707085,
+        "lng": 138.73561,
+        "qr_token": "shuin-enzan-1",
+        "cover_image_url": "/images/enzan/spot1.png",
+        "f7_fragment": "幕府御用の薬草・甘草を栽培した歴史を伝える、豪壮な突き上げ屋根の重要文化財民家。",
+        "f7_full": "塩山駅前にそびえる「甘草屋敷（旧高野家住宅）」の威容と薬草園の緑が、甲州の豊かな農と商いの物語を語りかける。",
+        "is_final": false,
+        "next_spot_id": "a5d02425-9a74-4220-813e-e02c4c97016e",
+        "next_spot_name": "夢乃家"
+      },
+      {
+        "id": "a5d02425-9a74-4220-813e-e02c4c97016e",
+        "name": "夢乃家",
+        "description": "塩山駅近くで甲州の郷土料理を供する食事処（11:30〜14:00・17:30〜21:00営業、水曜定休）。かぼちゃや季節の野菜と幅広麺を味噌仕立てで煮込んだ名物「ほうとう」が評判。",
+        "address": "山梨県甲州市塩山上於曽1720",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.704894,
+        "lng": 138.734428,
+        "qr_token": "shuin-enzan-2",
+        "cover_image_url": "/images/enzan/spot2.png",
+        "f7_fragment": "かぼちゃと山の幸が溶け込んだ味噌仕立ての鉄鍋で、打ちたての幅広麺を味わう甲州ほうとう。",
+        "f7_full": "「夢乃家」の熱々の鉄鍋で供される甲州ほうとうが、盆地の風土が育んだ素朴で力強い食の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9126e408-6118-4f58-8511-336e58668ef1",
+        "next_spot_name": "菅田天神社"
+      },
+      {
+        "id": "9126e408-6118-4f58-8511-336e58668ef1",
+        "name": "菅田天神社",
+        "description": "甲斐源氏・武田家の氏神として篤く崇敬された古社（境内参拝自由）。武田家重代の家宝である国宝「小桜韋威鎧（楯無鎧）」を伝え、樹齢を重ねた欅並木の参道が荘厳。",
+        "address": "山梨県甲州市塩山上於曽1054",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.705047,
+        "lng": 138.728019,
+        "qr_token": "shuin-enzan-3",
+        "cover_image_url": "/images/enzan/spot3.png",
+        "f7_fragment": "武田家重代の国宝「楯無鎧」を伝え、鬱蒼とした欅並木が千年の格式を守る甲斐の古社。",
+        "f7_full": "「菅田天神社」の深い杜と静まり返った拝殿が、武田信玄をはじめ甲斐の武将たちが寄せた篤い祈りを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "eeaad59d-434e-4c8f-8bea-d99ad59b4895",
+        "next_spot_name": "塩山温泉 宏池荘"
+      },
+      {
+        "id": "eeaad59d-434e-4c8f-8bea-d99ad59b4895",
+        "name": "塩山温泉 宏池荘",
+        "description": "開湯六百年余の歴史を持つ塩山温泉の温泉宿（日帰り入浴・休憩10:00〜16:00、不定休）。高アルカリ性の滑らかな美肌の湯と湯上がりの甲州ぶどうジュースでくつろげる。",
+        "address": "山梨県甲州市塩山上於曽1994",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.709015,
+        "lng": 138.729079,
+        "qr_token": "shuin-enzan-4",
+        "cover_image_url": "/images/enzan/spot4.png",
+        "f7_fragment": "向嶽寺の開山禅師が見いだしたと伝わる湯治場で、滑らかな美肌の湯とぶどうの雫に癒やされるひととき。",
+        "f7_full": "「塩山温泉 宏池荘」の柔らかな鉱泉と穏やかな和の空間が、歴史歩きの途中に心地よい安らぎをもたらす。",
+        "is_final": false,
+        "next_spot_id": "da6659d8-a01e-4dd0-8bdf-27ff9f788d4f",
+        "next_spot_name": "向嶽寺"
+      },
+      {
+        "id": "da6659d8-a01e-4dd0-8bdf-27ff9f788d4f",
+        "name": "向嶽寺",
+        "description": "南北朝時代に抜隊得勝禅師が開いた臨済宗向嶽寺派の大本山（境内参拝自由）。国の重要文化財の中門や、瓦と漆喰を交互に塗り込めた美しい築地塀が禅寺の格式を伝える。",
+        "address": "山梨県甲州市塩山上於曽2026",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.710898,
+        "lng": 138.72242,
+        "qr_token": "shuin-enzan-5",
+        "cover_image_url": "/images/enzan/spot5.png",
+        "f7_fragment": "白漆喰に瓦を幾重にも重ねた美しい築地塀と重要文化財の中門が連なる、臨済宗向嶽寺派の大本山。",
+        "f7_full": "「向嶽寺」の凛とした築地塀と古木の参道が、塩山に息づく禅の精神と甲州の歴史の奥深さを静かに結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];
