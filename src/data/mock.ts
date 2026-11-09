@@ -50180,5 +50180,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "205229dc-8868-4c5f-8c46-eed3eef78037",
+    "title": "氣比の杜と湊の記憶が息づく敦賀を歩く",
+    "name": "氣比の杜と湊の記憶が息づく敦賀を歩く",
+    "description": "北陸道総鎮守の氣比神宮と北前船・国際港の歴史が息づく福井県敦賀市。老舗洋食店の敦賀ヨーロッパ軒 駅前店から、中道源蔵茶舗、氣比神宮の大鳥居、天清酒万寿店、旧大和田銀行本店の敦賀市立博物館までを歩く。",
+    "region": "敦賀駅・越前一之宮の門前と国際港の記憶を歩く道",
+    "area_name": "敦賀駅・越前一之宮の門前と国際港の記憶を歩く道",
+    "cover_image_url": "/images/tsuruga/route-eyecatch.png",
+    "imageUrl": "/images/tsuruga/route-eyecatch.png",
+    "category": "敦賀ヨーロッパ軒・中道源蔵茶舗・氣比神宮・天清酒万寿店と敦賀市立博物館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "門前町と国際港の歴史が重なる敦賀を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「氣比神宮」の朱塗りの大鳥居と、古より湧き出る霊水「長命水」の清らかさ",
+          "description": "日本三大木造大鳥居の威容を仰ぎ、松尾芭蕉も訪れた北陸道総鎮守の杜で静かな祈りの空気に包まれた。",
+          "badge_code": "TSURUGA_A"
+        },
+        {
+          "key": "B",
+          "text": "「敦賀ヨーロッパ軒」のソースカツ丼に宿る、湊町の活気と芳醇なソースの香り",
+          "description": "きめ細かなパン粉の薄切りカツに秘伝のウスターソースが染みた、港町伝統の洋食の味わいに心満たされた。",
+          "badge_code": "TSURUGA_B"
+        },
+        {
+          "key": "C",
+          "text": "「敦賀市立博物館」の旧大和田銀行本店が伝える、近代港湾都市の重厚な建築美",
+          "description": "石造りの列柱や吹き抜けの営業室、大金庫室を見学し、北前船から国際港へと躍動した敦賀の歴史に感銘を受けた。",
+          "badge_code": "TSURUGA_C"
+        },
+        {
+          "key": "D",
+          "text": "「中道源蔵茶舗」の挽きたて抹茶甘味と、「天清酒万寿店」の湯気立つ酒万寿",
+          "description": "参道に漂う日本茶の清らかな香りと、糀と地酒で発酵させた酒万寿の素朴な甘みに癒やされた。",
+          "badge_code": "TSURUGA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fdc9216a-f0cd-400b-8ac1-a9fd028da453",
+        "name": "敦賀ヨーロッパ軒 駅前店",
+        "description": "敦賀名物のソースカツ丼を供する老舗洋食店（11:00〜14:00・16:30〜19:30営業、月曜・火曜定休）。きめ細かなパン粉と秘伝のウスターソースで仕上げるカツ丼が名物。",
+        "address": "福井県敦賀市清水町2丁目19-1",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.648017,
+        "lng": 136.074244,
+        "qr_token": "shuin-tsuruga-1",
+        "cover_image_url": "/images/tsuruga/spot1.png",
+        "f7_fragment": "きめ細かなパン粉で揚げた薄切りカツに、秘伝のウスターソースを絡めた敦賀名物「ソースカツ丼」。",
+        "f7_full": "「敦賀ヨーロッパ軒 駅前店」の蓋が閉まらないほど盛られたソースカツ丼が、港町の活気ある旅の始まりを力強く彩る。",
+        "is_final": false,
+        "next_spot_id": "cae34da2-d291-4919-8641-9175729c5705",
+        "next_spot_name": "中道源蔵茶舗"
+      },
+      {
+        "id": "cae34da2-d291-4919-8641-9175729c5705",
+        "name": "中道源蔵茶舗",
+        "description": "氣比神宮の表参道・神楽町通りに店を構える日本茶専門店・甘味処（10:00〜18:00営業、水曜定休）。挽きたて抹茶のパフェや煎茶・棒ほうじ茶を味わえる。",
+        "address": "福井県敦賀市神楽町1丁目1-8",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.654352,
+        "lng": 136.072479,
+        "qr_token": "shuin-tsuruga-2",
+        "cover_image_url": "/images/tsuruga/spot2.png",
+        "f7_fragment": "氣比神宮の門前通りで、注文ごとに点てる濃厚な抹茶スイーツと香り高い日本茶を味わう老舗茶舗。",
+        "f7_full": "「中道源蔵茶舗」の静かな茶房でいただく鮮やかな緑の抹茶パフェと煎茶が、参拝前のひとときに清らかな安らぎをもたらす。",
+        "is_final": false,
+        "next_spot_id": "f7d0f0f8-a458-4ce6-8cdc-5405be47d125",
+        "next_spot_name": "氣比神宮"
+      },
+      {
+        "id": "f7d0f0f8-a458-4ce6-8cdc-5405be47d125",
+        "name": "氣比神宮",
+        "description": "北陸道総鎮守として崇敬される越前国一之宮（参拝自由、6:00〜17:00）。重要文化財の朱塗りの木造大鳥居や霊水「長命水」、松尾芭蕉の句碑が伝わる。",
+        "address": "福井県敦賀市曙町11-68",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.65478,
+        "lng": 136.074722,
+        "qr_token": "shuin-tsuruga-3",
+        "cover_image_url": "/images/tsuruga/spot3.png",
+        "f7_fragment": "日本三大木造大鳥居の一つに数えられる朱塗りの両部鳥居と、古より湧き出る霊泉「長命水」。",
+        "f7_full": "「氣比神宮」の壮麗な大鳥居と松尾芭蕉が月影を愛でた清らかな境内が、二千年を超える越前一之宮の風格を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "4daae6ec-ac8a-48d3-89f4-c41f69bbfbd1",
+        "next_spot_name": "天清酒万寿店"
+      },
+      {
+        "id": "4daae6ec-ac8a-48d3-89f4-c41f69bbfbd1",
+        "name": "天清酒万寿店",
+        "description": "文政年間創業の酒万寿専門店（8:30〜18:00営業、火曜定休）。米糀と地酒による自然発酵の薄皮で北海道産小豆のこし餡を包んだ蒸したての酒万寿を商う。",
+        "address": "福井県敦賀市神楽町1丁目4-9",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.654199,
+        "lng": 136.071367,
+        "qr_token": "shuin-tsuruga-4",
+        "cover_image_url": "/images/tsuruga/spot4.png",
+        "f7_fragment": "文政年間の創業より、米糀と地酒の自然発酵でふっくらと蒸し上げる門前名物「酒万寿」。",
+        "f7_full": "神楽町通りに白い湯気を上げる「天清酒万寿店」のほのかな酒香と上品なこし餡が、門前歩きの優しい記憶を刻む。",
+        "is_final": false,
+        "next_spot_id": "b7a20b4d-78db-4546-86b6-7118ec8575e6",
+        "next_spot_name": "敦賀市立博物館"
+      },
+      {
+        "id": "b7a20b4d-78db-4546-86b6-7118ec8575e6",
+        "name": "敦賀市立博物館",
+        "description": "旧大和田銀行本店を活用した重要文化財の博物館（9:00〜17:00開館、月曜休館）。石造りの列柱や吹き抜けの旧営業室、大金庫室とともに敦賀の港湾史を展示する。",
+        "address": "福井県敦賀市相生町7-8",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 35.656541,
+        "lng": 136.068785,
+        "qr_token": "shuin-tsuruga-5",
+        "cover_image_url": "/images/tsuruga/spot5.png",
+        "f7_fragment": "北前船の廻船問屋から発展した旧大和田銀行本店の、重厚なイオニア式石柱と吹き抜けホール。",
+        "f7_full": "重要文化財「敦賀市立博物館」の威風堂々たる洋風建築が、日本海と世界を結んだ湊町・敦賀の誇り高き歴史を物語る。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fb3e03fd-7ea3-47a9-8f68-2ec942ff95f5",
+    "title": "風の盆と手漉き和紙の里・越中八尾へ",
+    "name": "風の盆と手漉き和紙の里・越中八尾へ",
+    "description": "哀切な胡弓が響く「おわら風の盆」と強靭な手漉き和紙、名水の酒蔵が息づく富山県富山市八尾町。八尾開町の聞名寺から、老舗蔵元の福鶴酒造、おわら資料館、桂樹舎 和紙文庫、上新町の蕎麦屋 少兵衛までを歩く。",
+    "region": "越中八尾駅・胡弓の調べと和紙が息づく坂の町を歩く道",
+    "area_name": "越中八尾駅・胡弓の調べと和紙が息づく坂の町を歩く道",
+    "cover_image_url": "/images/etchu-yatsuo/route-eyecatch.png",
+    "imageUrl": "/images/etchu-yatsuo/route-eyecatch.png",
+    "category": "聞名寺・福鶴酒造・おわら資料館・桂樹舎和紙文庫と蕎麦屋少兵衛",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "風の盆と和紙の伝統が息づく坂の町・越中八尾を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「おわら資料館」で触れた胡弓の哀切な調べと、「聞名寺」が伝えるおわら起源の物語",
+          "description": "町建ちの喜びから始まり、文人や町衆が三百年かけて磨き上げた風の盆の美意識に深く心を動かされた。",
+          "badge_code": "ETCHU_YATSUO_A"
+        },
+        {
+          "key": "B",
+          "text": "「福鶴酒造」の白壁の蔵に揺れる杉玉と、飛騨山系の伏流水が醸す銘酒「風の盆」",
+          "description": "井田川の清らかな伏流水と富山の米で仕込む、嘉永年間創業の酒蔵の芳醇な地酒に親しんだ。",
+          "badge_code": "ETCHU_YATSUO_B"
+        },
+        {
+          "key": "C",
+          "text": "「蕎麦屋 少兵衛」の上新町の町家で味わった、山の名水と石臼挽きそば粉の手打ち蕎麦",
+          "description": "石畳と格子戸が連なる坂の町の町家で、香り高い細打ちの蕎麦を手繰る贅沢な昼餉に心満たされた。",
+          "badge_code": "ETCHU_YATSUO_C"
+        },
+        {
+          "key": "D",
+          "text": "「桂樹舎 和紙文庫」の白壁の蔵に息づく、強靭な八尾手漉き和紙と鮮やかな型染め工芸",
+          "description": "富山の売薬を支えた強靭な楮和紙と、民藝の精神を受け継ぐ色鮮やかな型染めの手仕事に感銘を受けた。",
+          "badge_code": "ETCHU_YATSUO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "101a5f56-d28b-46ff-8343-d115c30c296c",
+        "name": "聞名寺",
+        "description": "越中八尾の開町の礎となった浄土真宗の古刹（境内参拝自由）。壮大な本堂や山門が並び、おわら風の盆の起源伝承の舞台としても知られる。",
+        "address": "富山県富山市八尾町今町1662",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.580179,
+        "lng": 137.13879,
+        "qr_token": "shuin-etchu-yatsuo-1",
+        "cover_image_url": "/images/etchu-yatsuo/spot1.png",
+        "f7_fragment": "越中八尾の門前町の中心にそびえ、おわら風の盆の起源伝承を今に伝える大伽藍。",
+        "f7_full": "高台の旧町エリアに大屋根を構える「聞名寺」の静かな境内が、坂の町の成り立ちと町衆の誇りを静かに語りかける。",
+        "is_final": false,
+        "next_spot_id": "1b14dd91-c404-4aa4-8c88-e81642e737b0",
+        "next_spot_name": "福鶴酒造"
+      },
+      {
+        "id": "1b14dd91-c404-4aa4-8c88-e81642e737b0",
+        "name": "福鶴酒造",
+        "description": "嘉永年間創業の老舗酒蔵（9:00〜17:00営業、不定休）。飛騨山系の伏流水で銘酒「風の盆」などを醸し、歴史ある白壁と土間の店舗で直売する。",
+        "address": "富山県富山市八尾町西町2352",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.578669,
+        "lng": 137.136142,
+        "qr_token": "shuin-etchu-yatsuo-2",
+        "cover_image_url": "/images/etchu-yatsuo/spot2.png",
+        "f7_fragment": "嘉永年間の創業より、井田川の清冽な伏流水で銘酒「風の盆」を醸し続ける西町の酒蔵。",
+        "f7_full": "杉玉が揺れる「福鶴酒造」の白壁と重厚な梁組が、名水の里・越中八尾の豊かな醸造文化を物語る。",
+        "is_final": false,
+        "next_spot_id": "a3642ec6-2f4c-48ec-839e-e58e98e21600",
+        "next_spot_name": "おわら資料館"
+      },
+      {
+        "id": "a3642ec6-2f4c-48ec-839e-e58e98e21600",
+        "name": "おわら資料館",
+        "description": "おわら風の盆の歴史と芸態を伝える土蔵造りの資料館（9:00〜17:00開館、年末年始休館）。胡弓や各町の衣装、文人墨客ゆかりの書画や映像を展示する。",
+        "address": "富山県富山市八尾町東町2105-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.577021,
+        "lng": 137.13584,
+        "qr_token": "shuin-etchu-yatsuo-3",
+        "cover_image_url": "/images/etchu-yatsuo/spot3.png",
+        "f7_fragment": "哀切な音色を奏でる胡弓と十一の町の衣装、三百年の美意識を伝える土蔵造りの伝承館。",
+        "f7_full": "「おわら資料館」に並ぶ胡弓や編笠、文人たちの書画が、坂の町を彩るおわら風の盆の幻想的な世界を鮮やかに映し出す。",
+        "is_final": false,
+        "next_spot_id": "20774441-b947-432c-8531-c4f6897ac6f8",
+        "next_spot_name": "桂樹舎 和紙文庫"
+      },
+      {
+        "id": "20774441-b947-432c-8531-c4f6897ac6f8",
+        "name": "桂樹舎 和紙文庫",
+        "description": "八尾の手漉き和紙と型染め工芸を展示・販売する白壁蔵の工芸館（9:00〜17:00開館、水曜休館）。民藝運動ゆかりの型染め作品や世界の紙コレクションを公開する。",
+        "address": "富山県富山市八尾町鏡町668-4",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.57871,
+        "lng": 137.131409,
+        "qr_token": "shuin-etchu-yatsuo-4",
+        "cover_image_url": "/images/etchu-yatsuo/spot4.png",
+        "f7_fragment": "富山の売薬を支えた強靭な手漉き和紙に、鮮やかな民藝の型染めを施す白壁の工芸文庫。",
+        "f7_full": "鏡町に佇む「桂樹舎 和紙文庫」の色鮮やかな型染め和紙が、清流・井田川とともに歩んできた紙漉きの里の誇りを伝える。",
+        "is_final": false,
+        "next_spot_id": "3222fd0a-1b51-46a9-8613-b95ac78694d4",
+        "next_spot_name": "蕎麦屋 少兵衛"
+      },
+      {
+        "id": "3222fd0a-1b51-46a9-8613-b95ac78694d4",
+        "name": "蕎麦屋 少兵衛",
+        "description": "上新町の町家通りに暖簾を掲げる手打ち蕎麦処（11:00〜15:00営業、火曜定休）。八尾の名水と石臼挽きそば粉で打つ香り高い蕎麦を味わえる。",
+        "address": "富山県富山市八尾町上新町2744",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.575607,
+        "lng": 137.130761,
+        "qr_token": "shuin-etchu-yatsuo-5",
+        "cover_image_url": "/images/etchu-yatsuo/spot5.png",
+        "f7_fragment": "石畳と木格子が続く上新町の町家で味わう、飛騨山系の名水と石臼挽きそば粉の手打ち蕎麦。",
+        "f7_full": "「蕎麦屋 少兵衛」の落ち着いた町家座敷で手繰る香り高い蕎麦が、坂の町・越中八尾を巡った旅を清々しく結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6f5aa0e9-342c-47af-83fe-cffe14a9476f",
+    "title": "登り窯と藍甕が息づく民藝の里・益子を辿る",
+    "name": "登り窯と藍甕が息づく民藝の里・益子を辿る",
+    "description": "人間国宝・濱田庄司ゆかりの民藝運動と益子焼、江戸期からの藍染が息づく栃木県芳賀郡益子町。古民家カフェのヒジノワから、日下田藍染工房、益子焼窯元共販センター、陶芸メッセ・益子、手打ち蕎麦のそば明水までを辿る。",
+    "region": "益子駅・民藝の器と茅葺き藍染工房が息づく坂を歩く道",
+    "area_name": "益子駅・民藝の器と茅葺き藍染工房が息づく坂を歩く道",
+    "cover_image_url": "/images/mashiko/route-eyecatch.png",
+    "imageUrl": "/images/mashiko/route-eyecatch.png",
+    "category": "ヒジノワ・日下田藍染工房・益子焼窯元共販センター・陶芸メッセ益子とそば明水",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "民藝の精神と手仕事が息づく益子を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「日下田藍染工房」の茅葺き屋根の土間に埋まる藍甕と、江戸から続くジャパン・ブルー",
+          "description": "薄暗い土間の床下に並ぶ数十の藍甕と、天然発酵の藍で染め上げられた深い青の美しさに強く心を奪われた。",
+          "badge_code": "MASHIKO_A"
+        },
+        {
+          "key": "B",
+          "text": "「陶芸メッセ・益子」の旧濱田庄司邸と登り窯が伝える、暮らしに寄り添う「用の美」",
+          "description": "緑の丘に佇む茅葺きの旧邸と登り窯を巡り、益子焼を世界の民藝へと導いた先人の美意識に触れた。",
+          "badge_code": "MASHIKO_B"
+        },
+        {
+          "key": "C",
+          "text": "「そば明水」で益子焼の器とともに味わった、香り高い手打ち蕎麦と天ぷらの昼餉",
+          "description": "ぽってりとした温かみのある益子焼の皿や猪口で、打ちたての蕎麦を手繰る陶の里ならではの食体験に満たされた。",
+          "badge_code": "MASHIKO_C"
+        },
+        {
+          "key": "D",
+          "text": "「ヒジノワ」の築百年古民家カフェと、「益子焼窯元共販センター」での器選び",
+          "description": "作り手たちが集う古民家の穏やかな珈琲時間と、城内坂で普段使いの器を探す楽しさに癒やされた。",
+          "badge_code": "MASHIKO_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bb105012-f7fd-4f97-8d4b-077bcd9e6d6d",
+        "name": "ヒジノワ",
+        "description": "築百年の古民家を地元の作り手たちが再生させたカフェ＆ギャラリー（11:00〜17:00営業、不定休）。益子焼の器で珈琲や地元食材のスイーツを楽しめる。",
+        "address": "栃木県芳賀郡益子町益子1665",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.463102,
+        "lng": 140.09302,
+        "qr_token": "shuin-mashiko-1",
+        "cover_image_url": "/images/mashiko/spot1.png",
+        "f7_fragment": "太い梁が渡る築百年の古民家で、益子焼の器に注がれた珈琲と焼き菓子を味わう地域交流カフェ。",
+        "f7_full": "益子駅近くの「ヒジノワ」に流れる温かな空気と手仕事の器が、民藝の里・益子を巡る旅を心地よく幕開ける。",
+        "is_final": false,
+        "next_spot_id": "575c1632-6232-4c2f-8be2-c13a8e067cb8",
+        "next_spot_name": "日下田藍染工房"
+      },
+      {
+        "id": "575c1632-6232-4c2f-8be2-c13a8e067cb8",
+        "name": "日下田藍染工房",
+        "description": "寛政年間創業の茅葺き屋根の藍染工房（9:00〜17:00開館、月曜休館）。土間に埋め込まれた藍甕で天然発酵の藍染を続けている。",
+        "address": "栃木県芳賀郡益子町城内坂1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.463919,
+        "lng": 140.100236,
+        "qr_token": "shuin-mashiko-2",
+        "cover_image_url": "/images/mashiko/spot2.png",
+        "f7_fragment": "重厚な茅葺き屋根の土間に数十の藍甕が並び、江戸期からの天然発酵で染め上げる紺屋。",
+        "f7_full": "城内坂の入口に佇む「日下田藍染工房」の深いジャパン・ブルーが、濱田庄司や芹沢銈介も愛した民藝の手仕事を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "bb0900a5-267d-49ac-86db-e0e4799922c2",
+        "next_spot_name": "益子焼窯元共販センター"
+      },
+      {
+        "id": "bb0900a5-267d-49ac-86db-e0e4799922c2",
+        "name": "益子焼窯元共販センター",
+        "description": "巨大なたぬき像が目印の益子焼の販売拠点（10:00〜17:00営業、無休）。日用の飯碗や皿から作家作品まで多彩な益子焼が揃う。",
+        "address": "栃木県芳賀郡益子町城内坂70-3",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.464512,
+        "lng": 140.10327,
+        "qr_token": "shuin-mashiko-3",
+        "cover_image_url": "/images/mashiko/spot3.png",
+        "f7_fragment": "愛嬌ある大たぬき像が出迎え、柿釉や黒釉など温かみある益子焼の器が一堂に並ぶ市場。",
+        "f7_full": "城内坂の中腹に広がる「益子焼窯元共販センター」で手に取る素朴で力強い器が、日常の食卓を彩る益子焼の魅力を伝える。",
+        "is_final": false,
+        "next_spot_id": "d819eb73-b248-4bcd-85ee-f271dffc410c",
+        "next_spot_name": "陶芸メッセ・益子"
+      },
+      {
+        "id": "d819eb73-b248-4bcd-85ee-f271dffc410c",
+        "name": "陶芸メッセ・益子",
+        "description": "益子陶芸美術館や旧濱田庄司邸、復元登り窯を備える文化公園（9:30〜17:00開館、月曜休館）。益子の近代陶芸と民藝の歴史を体感できる。",
+        "address": "栃木県芳賀郡益子町益子3021",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.465651,
+        "lng": 140.104268,
+        "qr_token": "shuin-mashiko-4",
+        "cover_image_url": "/images/mashiko/spot4.png",
+        "f7_fragment": "緑の丘に移築された茅葺きの「旧濱田庄司邸」と、赤松の薪で器を焼いた「登り窯」。",
+        "f7_full": "「陶芸メッセ・益子」の静かな丘に佇む古民家と登り窯が、益子焼を世界へ羽ばたかせた民藝運動の熱量を物語る。",
+        "is_final": false,
+        "next_spot_id": "fbede8f3-9bb2-4363-80e7-05315bd9e3c5",
+        "next_spot_name": "そば明水"
+      },
+      {
+        "id": "fbede8f3-9bb2-4363-80e7-05315bd9e3c5",
+        "name": "そば明水",
+        "description": "益子焼の器で自家製粉の手打ち蕎麦を供する蕎麦処（11:00〜14:30営業、木曜定休）。栃木県産玄蕎麦の香りと季節の天ぷらを味わえる。",
+        "address": "栃木県芳賀郡益子町益子3356-2",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.468798,
+        "lng": 140.108996,
+        "qr_token": "shuin-mashiko-5",
+        "cover_image_url": "/images/mashiko/spot5.png",
+        "f7_fragment": "味わい深い益子焼の皿とそば猪口でいただく、八溝山系の水が育んだ香り高い手打ち蕎麦。",
+        "f7_full": "「そば明水」で手繰るみずみずしい蕎麦と温もりある益子焼の器が、陶の里・益子を辿った旅を滋味深く結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "971cd071-fcd6-43f6-8148-cab86527a5aa",
+    "title": "蒸気機関車と白き木綿の蔵町・真岡を巡る",
+    "name": "蒸気機関車と白き木綿の蔵町・真岡を巡る",
+    "description": "蒸気機関車が走る真岡鐵道と江戸の粋人に愛された真岡木綿、歴史ある酒蔵や石蔵が息づく栃木県真岡市。駅隣のSLキューロク館から、辻善兵衛商店、古民家カフェのGOURD+m、石蔵のトラットリア ココロ、真岡木綿会館までを巡る。",
+    "region": "真岡駅・黒鉄の蒸気機関車と真岡木綿の蔵町を巡る道",
+    "area_name": "真岡駅・黒鉄の蒸気機関車と真岡木綿の蔵町を巡る道",
+    "cover_image_url": "/images/moka/route-eyecatch.png",
+    "imageUrl": "/images/moka/route-eyecatch.png",
+    "category": "SLキューロク館・辻善兵衛商店・GOURD+m・トラットリアココロと真岡木綿会館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鉄路の記憶と木綿・石蔵の文化が重なる真岡を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「SLキューロク館」で間近に見上げた、黒光りする9600形・D51形蒸気機関車の威容",
+          "description": "巨大な鋼の動輪とボイラーが放つ力強い存在感に触れ、近代の鉄路を駆け抜けた名機の鼓動を感じた。",
+          "badge_code": "MOKA_A"
+        },
+        {
+          "key": "B",
+          "text": "「真岡木綿会館」に響く高機の音色と、江戸の町人を魅了した白き手織り木綿の技",
+          "description": "手で紡いだ糸を一反ずつ織り上げる職人の手仕事を眺め、三百年の伝統を誇る真岡木綿の気品に感銘を受けた。",
+          "badge_code": "MOKA_B"
+        },
+        {
+          "key": "C",
+          "text": "「トラットリア ココロ」の大谷石の旧米蔵で味わった、芳賀の旬野菜のイタリアン",
+          "description": "久保記念観光文化交流館の歴史ある石蔵空間で、地元農家の瑞々しい野菜を活かした昼餉に心満たされた。",
+          "badge_code": "MOKA_C"
+        },
+        {
+          "key": "D",
+          "text": "「辻善兵衛商店」の銘酒「桜川」と、「GOURD+m」で過ごした門前通りの古民家珈琲時間",
+          "description": "宝暦年間創業の酒蔵が醸す芳醇な地酒と、古い木造建築を再生したカフェの穏やかな空気に癒やされた。",
+          "badge_code": "MOKA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a42fa9b9-e5e1-40c1-81f7-5d8a898b06a5",
+        "name": "SLキューロク館",
+        "description": "真岡駅の隣に立つ蒸気機関車の展示館（10:00〜18:00開館、火曜休館）。動態保存されている9600形（キューロク）やD51形蒸気機関車、旧型客車を間近で見学できる。",
+        "address": "栃木県真岡市台町2474-6",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.438909,
+        "lng": 140.002905,
+        "qr_token": "shuin-moka-1",
+        "cover_image_url": "/images/moka/spot1.png",
+        "f7_fragment": "大正生まれの9600形とD51形蒸気機関車が黒光りする動輪を並べる、鉄路の記憶の展示館。",
+        "f7_full": "真岡駅隣の「SLキューロク館」で対面する重厚な蒸気機関車の威容が、SLが走る街・真岡の旅を力強く幕開ける。",
+        "is_final": false,
+        "next_spot_id": "52a821d9-1412-4839-8988-fae2105b35dd",
+        "next_spot_name": "辻善兵衛商店"
+      },
+      {
+        "id": "52a821d9-1412-4839-8988-fae2105b35dd",
+        "name": "辻善兵衛商店",
+        "description": "宝暦年間創業の老舗酒蔵（9:00〜17:00営業、不定休）。鬼怒川水系の伏流水で銘酒「桜川」や「辻善兵衛」を醸し、直売処で季節の限定酒や純米吟醸酒を販売する。",
+        "address": "栃木県真岡市田町1041",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.442399,
+        "lng": 140.009561,
+        "qr_token": "shuin-moka-2",
+        "cover_image_url": "/images/moka/spot2.png",
+        "f7_fragment": "宝暦年間の創業より、鬼怒川水系の清らかな軟水で銘酒「桜川」を醸し続ける田町の老舗酒蔵。",
+        "f7_full": "大谷石の塀と木造店舗が連なる「辻善兵衛商店」の佇まいが、二百七十年近くにわたり磨かれてきた下野杜氏の技を伝える。",
+        "is_final": false,
+        "next_spot_id": "bdda0b57-8fd4-43e7-8b6b-bdbab5d44ae6",
+        "next_spot_name": "GOURD+m"
+      },
+      {
+        "id": "bdda0b57-8fd4-43e7-8b6b-bdbab5d44ae6",
+        "name": "GOURD+m",
+        "description": "荒町の門前通りに佇む古民家カフェ＆ライフスタイルショップ（11:00〜17:00営業、月曜・火曜定休）。ハンドドリップ珈琲や季節の焼き菓子、暮らしの雑貨を楽しめる。",
+        "address": "栃木県真岡市荒町1040-5",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.442238,
+        "lng": 140.010395,
+        "qr_token": "shuin-moka-3",
+        "cover_image_url": "/images/moka/spot3.png",
+        "f7_fragment": "門前通りの古い木造建築を再生した空間で味わう、ハンドドリップ珈琲と季節の焼き菓子。",
+        "f7_full": "「GOURD+m」の木の温もりあふれる店内に漂う珈琲の香りが、城下町の門前通りを歩く旅人に穏やかな休息をもたらす。",
+        "is_final": false,
+        "next_spot_id": "a4fa4140-8592-44b4-8180-feaf52457d26",
+        "next_spot_name": "トラットリア ココロ"
+      },
+      {
+        "id": "a4fa4140-8592-44b4-8180-feaf52457d26",
+        "name": "トラットリア ココロ",
+        "description": "久保記念観光文化交流館内の旧米蔵を改装したイタリアンレストラン（11:00〜14:30営業、火曜定休）。大谷石の蔵空間で真岡・芳賀産の旬野菜を使ったパスタや料理を味わえる。",
+        "address": "栃木県真岡市荒町1105-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.443065,
+        "lng": 140.011467,
+        "qr_token": "shuin-moka-4",
+        "cover_image_url": "/images/moka/spot4.png",
+        "f7_fragment": "久保家の歴史ある大谷石の米蔵を改装した空間で味わう、芳賀の大地が育てた旬野菜のイタリアン。",
+        "f7_full": "重厚な石壁と梁組に囲まれた「トラットリア ココロ」の彩り豊かな一皿が、蔵の街・真岡の昼餉を華やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "1715eb9b-f1f0-496e-859d-255b12a38f7e",
+        "next_spot_name": "真岡木綿会館"
+      },
+      {
+        "id": "1715eb9b-f1f0-496e-859d-255b12a38f7e",
+        "name": "真岡木綿会館",
+        "description": "江戸期から続く伝統工芸・真岡木綿の工房兼展示館（9:00〜17:00開館、火曜休館）。糸紡ぎや高機による手織り実演を見学でき、木綿製品の展示販売も行う。",
+        "address": "栃木県真岡市荒町2162-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.4424,
+        "lng": 140.011938,
+        "qr_token": "shuin-moka-5",
+        "cover_image_url": "/images/moka/spot5.png",
+        "f7_fragment": "トントンと高機の音が響き、江戸の粋人に愛された白き「真岡木綿」の手織りを伝える工房。",
+        "f7_full": "「真岡木綿会館」で出会う素朴で気品ある手織り木綿の風合いが、芳賀の蔵町・真岡を巡った旅を温かく結ぶ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0b30329d-5e16-43bf-8148-e83cf2d9f47b",
+    "title": "なぜ五條新町に江戸初期の町家が連なるのか",
+    "name": "なぜ五條新町に江戸初期の町家が連なるのか",
+    "description": "日本最古級の町家群が連なる重要伝統的建造物群保存地区と柿の葉すし、幕末の天誅組の歴史が息づく奈良県五條市。享保創業の山本本家から、築二百五十年の五條 源兵衛、柿の葉すし本舗たなか 五條本店、古民家カフェのチョコトラ、五條市民俗資料館までを歩く。",
+    "region": "五条駅・江戸初期の町家群と柿の葉すしが息づく新町通りを歩く道",
+    "area_name": "五条駅・江戸初期の町家群と柿の葉すしが息づく新町通りを歩く道",
+    "cover_image_url": "/images/gojo-shinmachi/route-eyecatch.png",
+    "imageUrl": "/images/gojo-shinmachi/route-eyecatch.png",
+    "category": "山本本家・五條源兵衛・柿の葉すし本舗たなか・チョコトラと五條市民俗資料館",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "江戸初期からの町家群が連なる五條新町を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「五條 源兵衛」の築二百五十年の町家で味わった、大和の旬野菜が彩る昼餉",
+          "description": "本瓦葺きと出格子を残す江戸町家の静謐な空間で、五條・吉野の里山の恵みを丁寧に仕立てた料理に心満たされた。",
+          "badge_code": "GOJO_SHINMACHI_A"
+        },
+        {
+          "key": "B",
+          "text": "「柿の葉すし本舗たなか」の柿の葉すしと、「山本本家」の銘酒「松の友」が伝える街道の恵み",
+          "description": "新町を拓いた松倉公ゆかりの地酒と、吉野川流域で受け継がれてきた柿の葉すしの爽やかな香りに親しんだ。",
+          "badge_code": "GOJO_SHINMACHI_B"
+        },
+        {
+          "key": "C",
+          "text": "「五條市民俗資料館」の旧長屋門が物語る、明治維新の魁となった幕末「天誅組」の歴史",
+          "description": "白壁と武者窓が残る旧代官所長屋門の前に立ち、五條新町の重厚な町並みと幕末の志士たちの足跡に感銘を受けた。",
+          "badge_code": "GOJO_SHINMACHI_C"
+        },
+        {
+          "key": "D",
+          "text": "「チョコトラ」の江戸町家に漂うカカオの香りと、新町通りの穏やかな喫茶時間",
+          "description": "重要伝統的建造物群保存地区の古い町家で、手作りのクラフトショコラと温かい飲み物に癒やされた。",
+          "badge_code": "GOJO_SHINMACHI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "23c9bbb0-79cb-4eb7-8ece-2009bd8103c9",
+        "name": "山本本家",
+        "description": "享保年間創業の老舗酒蔵（9:00〜17:00営業、不定休）。金剛山系の伏流水で醸す代表銘柄「松の友」や五條特産の柿を使った柿ワインなどを直売する。",
+        "address": "奈良県五條市五條1丁目2-19",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.350031,
+        "lng": 135.694908,
+        "qr_token": "shuin-gojo-shinmachi-1",
+        "cover_image_url": "/images/gojo-shinmachi/spot1.png",
+        "f7_fragment": "五條新町を拓いた領主・松倉重政公にちなむ銘酒「松の友」を享保年間より醸す老舗酒蔵。",
+        "f7_full": "新町通りの東端に白壁の蔵を連ねる「山本本家」の芳醇な酒香が、江戸初期から続く城下町の散策を格調高く幕開ける。",
+        "is_final": false,
+        "next_spot_id": "638460be-1a33-4f53-8fc2-43921576b850",
+        "next_spot_name": "五條 源兵衛"
+      },
+      {
+        "id": "638460be-1a33-4f53-8fc2-43921576b850",
+        "name": "五條 源兵衛",
+        "description": "新町通りの築二百五十年の町家を活かした日本料理店（11:30〜14:30営業、水曜定休）。五條や大和の旬野菜を丁寧に仕立てた昼のコース料理を味わえる。",
+        "address": "奈良県五條市本町2丁目5-17",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.349099,
+        "lng": 135.693542,
+        "qr_token": "shuin-gojo-shinmachi-2",
+        "cover_image_url": "/images/gojo-shinmachi/spot2.png",
+        "f7_fragment": "本瓦葺きと出格子を残す築二百五十年の商家で味わう、五條と大和の瑞々しい旬菜料理。",
+        "f7_full": "坪庭の光が差し込む「五條 源兵衛」の静謐な座敷でいただく大和野菜の皿が、江戸町家に息づく豊かな時間を伝える。",
+        "is_final": false,
+        "next_spot_id": "2d968a1f-e464-4b4a-8c5d-2e4c7eeee38d",
+        "next_spot_name": "柿の葉すし本舗たなか 五條本店"
+      },
+      {
+        "id": "2d968a1f-e464-4b4a-8c5d-2e4c7eeee38d",
+        "name": "柿の葉すし本舗たなか 五條本店",
+        "description": "吉野川流域の伝統食・柿の葉すしの老舗本店（9:00〜18:00営業、無休）。香り高い柿の葉で鯖や鮭のすしを包んだ名物の柿の葉すしを販売する。",
+        "address": "奈良県五條市新町1丁目1-15",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.349883,
+        "lng": 135.691959,
+        "qr_token": "shuin-gojo-shinmachi-3",
+        "cover_image_url": "/images/gojo-shinmachi/spot3.png",
+        "f7_fragment": "紀州の海の幸と吉野川流域の柿の葉が出会い、先人の知恵が育んだ大和の郷土食「柿の葉すし」。",
+        "f7_full": "「柿の葉すし本舗たなか 五條本店」で求める爽やかな柿の葉の香りとすし飯の旨みが、街道を行き交った旅人の記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "dd14734e-4778-4779-84f6-1d9be2505929",
+        "next_spot_name": "チョコトラ"
+      },
+      {
+        "id": "dd14734e-4778-4779-84f6-1d9be2505929",
+        "name": "チョコトラ",
+        "description": "五條新町通りの古民家を活かしたチョコレート専門店＆カフェ（11:00〜17:00営業、月曜〜水曜定休）。手作りショコラや濃厚なショコラドリンクを味わえる。",
+        "address": "奈良県五條市新町2丁目5-12",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.348589,
+        "lng": 135.691121,
+        "qr_token": "shuin-gojo-shinmachi-4",
+        "cover_image_url": "/images/gojo-shinmachi/spot4.png",
+        "f7_fragment": "江戸の面影を残す木格子の町家で味わう、芳醇なカカオの手作りショコラと温かいドリンク。",
+        "f7_full": "重要伝統的建造物群保存地区に佇む「チョコトラ」の甘いカカオの香りが、歴史ある街道歩きに優しい彩りを添える。",
+        "is_final": false,
+        "next_spot_id": "9934a76f-6826-4d53-81f9-49b0f350acb9",
+        "next_spot_name": "五條市民俗資料館"
+      },
+      {
+        "id": "9934a76f-6826-4d53-81f9-49b0f350acb9",
+        "name": "五條市民俗資料館",
+        "description": "幕末の天誅組ゆかりの旧五條代官所長屋門を活用した資料館（9:00〜17:00開館、月曜休館）。明治維新の魁となった天誅組の歴史資料や五條の民俗資料を展示する。",
+        "address": "奈良県五條市新町3丁目3-1",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.350149,
+        "lng": 135.690657,
+        "qr_token": "shuin-gojo-shinmachi-5",
+        "cover_image_url": "/images/gojo-shinmachi/spot5.png",
+        "f7_fragment": "明治維新の魁となった幕末「天誅組の変」の舞台を今に伝える、白壁と武者窓の旧代官所長屋門。",
+        "f7_full": "新町通りの西端に威容を示す「五條市民俗資料館」の長屋門が、江戸初期の町家群と幕末の熱い歴史を見届けた旅を力強く結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];
