@@ -50830,5 +50830,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "9ccab901-1405-4c75-880d-977f0ff5861d",
+    "title": "うだつの町並みと和紙の灯り・美濃を歩く",
+    "name": "うだつの町並みと和紙の灯り・美濃を歩く",
+    "description": "江戸期の防火壁「うだつ」と美濃手漉き和紙の伝統が息づく岐阜県美濃市。重要文化財の小坂酒造場から、和紙の複合空間・紙遊、水琴窟が響く旧今井家住宅・美濃史料館、美濃和紙あかりアート館、蕎麦茶屋 まきぼうまでを歩く。",
+    "region": "美濃市駅・うだつの上がる町並みと和紙の灯りを歩く道",
+    "area_name": "美濃市駅・うだつの上がる町並みと和紙の灯りを歩く道",
+    "cover_image_url": "/images/mino-udatsu/route-eyecatch.png",
+    "imageUrl": "/images/mino-udatsu/route-eyecatch.png",
+    "category": "小坂酒造場・紙遊・旧今井家住宅・美濃和紙あかりアート館と蕎麦茶屋まきぼう",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "うだつの上がる町並みと手漉き和紙の伝統が息づく美濃を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「小坂酒造場」の反り立つ白漆喰のうだつ屋根と、長良川の伏流水が醸す銘酒",
+          "description": "国の重要文化財の主屋を見上げ、防火と商家の誇りを兼ねたうだつの造形と清冽な地酒の味わいに感銘を受けた。",
+          "badge_code": "MINO_UDATSU_A"
+        },
+        {
+          "key": "B",
+          "text": "「紙遊」の手漉き和紙の彩りと、和紙照明に包まれる茶房の穏やかなひととき",
+          "description": "千三百年の歴史を受け継ぐ美濃和紙の繊細な手触りに触れ、柔らかな光の中で心安らぐ時間を過ごした。",
+          "badge_code": "MINO_UDATSU_B"
+        },
+        {
+          "key": "C",
+          "text": "「旧今井家住宅」の吹き抜け土間と中庭の「水琴窟」、そして「蕎麦茶屋 まきぼう」の十割蕎麦",
+          "description": "江戸期の和紙問屋の佇まいと地底から響く水琴窟の澄んだ音色、石臼挽きの十割蕎麦の香りに癒やされた。",
+          "badge_code": "MINO_UDATSU_C"
+        },
+        {
+          "key": "D",
+          "text": "「美濃和紙あかりアート館」に浮かび上がる、楮の繊維と光が織りなす幻想の回廊",
+          "description": "ほの暗い空間に灯る無数のあかりアート作品を見つめ、和紙が光を優しく包み込む唯一無二の美しさに魅了された。",
+          "badge_code": "MINO_UDATSU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "01971a58-c9cd-4649-8ce4-02d8a166fcef",
+        "name": "小坂酒造場",
+        "description": "江戸後期建築の主屋が国の重要文化財に指定されている老舗酒蔵（9:00〜17:00営業）。見事なうだつ屋根の下で長良川の伏流水を用いた銘酒「百春」などを商う。",
+        "address": "岐阜県美濃市相生町2267",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.54557,
+        "lng": 136.913582,
+        "qr_token": "shuin-mino-udatsu-1",
+        "cover_image_url": "/images/mino-udatsu/spot1.png",
+        "f7_fragment": "国の重要文化財に指定された豪壮なうだつ屋根の下、長良川の伏流水で銘酒を醸す老舗蔵元。",
+        "f7_full": "白漆喰のうだつが空へ反り立つ「小坂酒造場」の重厚な主屋と芳醇な地酒が、美濃の町並み歩きの幕開けを格調高く彩る。",
+        "is_final": false,
+        "next_spot_id": "ffad8dfc-c595-4a67-8b33-88d45754db7b",
+        "next_spot_name": "紙遊"
+      },
+      {
+        "id": "ffad8dfc-c595-4a67-8b33-88d45754db7b",
+        "name": "紙遊",
+        "description": "うだつの上がる町並みに佇む美濃和紙の専門店兼カフェ（10:00〜17:00営業、木曜定休）。多彩な和紙雑貨の買い物と、和紙照明が灯る茶房での喫茶を楽しめる。",
+        "address": "岐阜県美濃市常盤町2296",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.546286,
+        "lng": 136.914425,
+        "qr_token": "shuin-mino-udatsu-2",
+        "cover_image_url": "/images/mino-udatsu/spot2.png",
+        "f7_fragment": "千三百年の歴史を誇る美濃和紙の彩りに触れ、和紙の灯りが揺れる町家茶房で寛ぐひととき。",
+        "f7_full": "「紙遊」の温かな和紙照明に包まれて味わう珈琲と甘味が、手漉き和紙の里ならではの穏やかな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "667d9273-b309-4580-8043-2746001bfe53",
+        "next_spot_name": "旧今井家住宅・美濃史料館"
+      },
+      {
+        "id": "667d9273-b309-4580-8043-2746001bfe53",
+        "name": "旧今井家住宅・美濃史料館",
+        "description": "江戸中期の和紙問屋の屋敷を公開する史料館（9:00〜16:30開館、火曜休館）。町並み最古級のうだつや吹き抜け土間、中庭に澄んだ音を響かせる水琴窟が見どころ。",
+        "address": "岐阜県美濃市泉町1883",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.546814,
+        "lng": 136.913244,
+        "qr_token": "shuin-mino-udatsu-3",
+        "cover_image_url": "/images/mino-udatsu/spot3.png",
+        "f7_fragment": "美濃最古級のうだつを上げる旧和紙問屋の邸宅と、中庭の地中から澄んだ琴の音を響かせる水琴窟。",
+        "f7_full": "「旧今井家住宅・美濃史料館」の吹き抜け土間と水琴窟の清らかな余韻が、往時の和紙問屋街の暮らしを鮮やかに蘇らせる。",
+        "is_final": false,
+        "next_spot_id": "2b5b087d-9d21-454b-8ac4-42c39d25530f",
+        "next_spot_name": "美濃和紙あかりアート館"
+      },
+      {
+        "id": "2b5b087d-9d21-454b-8ac4-42c39d25530f",
+        "name": "美濃和紙あかりアート館",
+        "description": "美濃和紙あかりアート展の歴代入賞作品を展示する文化施設（9:00〜16:30開館、火曜休館）。昭和初期風のレトロな館内で幻想的な和紙照明の造形美を鑑賞できる。",
+        "address": "岐阜県美濃市本住町1901-3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.547173,
+        "lng": 136.912479,
+        "qr_token": "shuin-mino-udatsu-4",
+        "cover_image_url": "/images/mino-udatsu/spot4.png",
+        "f7_fragment": "昭和初期風の連子格子建築の中で、美濃和紙を通した温かな光が浮かび上がる灯りの美術館。",
+        "f7_full": "「美濃和紙あかりアート館」に並ぶ独創的な和紙の灯り彫刻が、楮の繊維と光が織りなす幻想の世界へと旅人を誘う。",
+        "is_final": false,
+        "next_spot_id": "c97225aa-3c4a-45e5-893e-89251b435847",
+        "next_spot_name": "蕎麦茶屋 まきぼう"
+      },
+      {
+        "id": "c97225aa-3c4a-45e5-893e-89251b435847",
+        "name": "蕎麦茶屋 まきぼう",
+        "description": "長良川近くの曽代に店を構える手打ち蕎麦処（11:30〜14:30営業、火曜・水曜定休）。石臼自家製粉の蕎麦粉と清冽な水で打つ十割蕎麦やくるみだれ蕎麦が評判。",
+        "address": "岐阜県美濃市曽代2023",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.553545,
+        "lng": 136.913646,
+        "qr_token": "shuin-mino-udatsu-5",
+        "cover_image_url": "/images/mino-udatsu/spot5.png",
+        "f7_fragment": "石臼で挽いた蕎麦粉と清らかな水だけで打ち上げる、瑞々しい十割蕎麦と香ばしいくるみだれ。",
+        "f7_full": "「蕎麦茶屋 まきぼう」の香り高い十割蕎麦が、長良川の清流と手仕事の町・美濃を歩いた旅を滋味豊かに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6b1de3bf-d911-4fca-87e6-4a750f7ad55b",
+    "title": "神秘の蒼き光と北前船の記憶が宿る滑川へ",
+    "name": "神秘の蒼き光と北前船の記憶が宿る滑川へ",
+    "description": "ほたるいか群遊海面の富山湾と旧北陸街道の町並みが息づく富山県滑川市。海辺のパノラマレストラン光彩から、ほたるいかミュージアム、古刹・徳城寺、登録有形文化財の旧宮崎酒造、cafe うみいろ ぼんぼこさまでを歩く。",
+    "region": "滑川駅・富山湾の蒼き光と旧北陸街道の酒蔵を歩く道",
+    "area_name": "滑川駅・富山湾の蒼き光と旧北陸街道の酒蔵を歩く道",
+    "cover_image_url": "/images/namerikawa/route-eyecatch.png",
+    "imageUrl": "/images/namerikawa/route-eyecatch.png",
+    "category": "パノラマレストラン光彩・ほたるいかミュージアム・徳城寺・旧宮崎酒造とぼんぼこさ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "深海の神秘と旧北陸街道の町並みが交差する滑川を訪ねて、旅の余韻として持ち帰りたい体験はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ほたるいかミュージアム」で出会った、漆黒の海に浮かぶコバルトブルーの発光",
+          "description": "特別天然記念物の群遊海面が育む深海の神秘と、暗闇に輝く青白い光の美しさに深く感動した。",
+          "badge_code": "NAMERIKAWA_A"
+        },
+        {
+          "key": "B",
+          "text": "「パノラマレストラン光彩」から望む富山湾の水平線と、旬のほたるいか料理",
+          "description": "天然の生け簀と称される富山湾を一望しながら、港町ならではの多彩な海の幸を存分に堪能した。",
+          "badge_code": "NAMERIKAWA_B"
+        },
+        {
+          "key": "C",
+          "text": "「徳城寺」の大屋根と「旧宮崎酒造」の梁組みが語る、北陸街道・滑川宿の歴史",
+          "description": "古刹の静寂と国の登録有形文化財の巨大酒蔵をめぐり、北前船と宿場町が培った建築美に感銘を受けた。",
+          "badge_code": "NAMERIKAWA_C"
+        },
+        {
+          "key": "D",
+          "text": "「cafe うみいろ ぼんぼこさ」の古材空間で味わう、酒造り唄ゆかりの珈琲と甘味",
+          "description": "明治期の酒蔵を再生した温かな茶房で、かつて蔵人たちの唄が響いた空間の穏やかな時の流れに癒やされた。",
+          "badge_code": "NAMERIKAWA_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "22478dbc-4ad3-4b7a-85f0-ba4a46acc713",
+        "name": "パノラマレストラン光彩",
+        "description": "富山湾を一望する海辺の展望レストラン（11:00〜15:00営業、火曜定休）。滑川名産のほたるいかの刺身・天ぷら・釜飯や白えびなど富山の海の幸を供する。",
+        "address": "富山県滑川市中川原410",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.774413,
+        "lng": 137.344471,
+        "qr_token": "shuin-namerikawa-1",
+        "cover_image_url": "/images/namerikawa/spot1.png",
+        "f7_fragment": "富山湾の水平線を一望する海辺のダイニングで味わう、滑川名産のほたるいか御膳。",
+        "f7_full": "「パノラマレストラン光彩」の窓いっぱいに広がる蒼い海原と旬のほたるいか料理が、港町・滑川の旅を鮮やかに切り開く。",
+        "is_final": false,
+        "next_spot_id": "6b9a6ca6-af64-4f72-8b01-67e91372a528",
+        "next_spot_name": "ほたるいかミュージアム"
+      },
+      {
+        "id": "6b9a6ca6-af64-4f72-8b01-67e91372a528",
+        "name": "ほたるいかミュージアム",
+        "description": "特別天然記念物「ホタルイカ群遊海面」に面した体験型博物館（9:00〜17:00開館、火曜休館）。青白い発光ショーや富山湾の深海生物の展示が見どころ。",
+        "address": "富山県滑川市中川原410",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.774084,
+        "lng": 137.344494,
+        "qr_token": "shuin-namerikawa-2",
+        "cover_image_url": "/images/namerikawa/spot2.png",
+        "f7_fragment": "暗闇の中でコバルトブルーに輝く発光現象と、富山湾の深海生態系を体感する博物館。",
+        "f7_full": "「ほたるいかミュージアム」で目にする幻想的な青白い光のきらめきが、深海と雪解け水が出会う滑川の海の奇跡を物語る。",
+        "is_final": false,
+        "next_spot_id": "b088784f-ad62-4a2f-820e-205f6c465e2b",
+        "next_spot_name": "徳城寺"
+      },
+      {
+        "id": "b088784f-ad62-4a2f-820e-205f6c465e2b",
+        "name": "徳城寺",
+        "description": "旧宿場町の四間町に大屋根を構える浄土真宗の古刹（境内参拝自由）。室町期の創建と伝わり、精緻な木彫欄間や重厚な山門が湊町の信仰の歴史を伝える。",
+        "address": "富山県滑川市四間町598",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.765747,
+        "lng": 137.341485,
+        "qr_token": "shuin-namerikawa-3",
+        "cover_image_url": "/images/namerikawa/spot3.png",
+        "f7_fragment": "旧宿場町の静かな路地に大屋根を広げる、室町期創建の歴史を伝える浄土真宗の古刹。",
+        "f7_full": "「徳城寺」の風格ある山門と本堂の瓦屋根が、北陸街道を行き交う旅人と港町の暮らしを見守ってきた歳月を静かに伝える。",
+        "is_final": false,
+        "next_spot_id": "98ce0cb6-a28e-4923-8964-b44bee90253c",
+        "next_spot_name": "旧宮崎酒造"
+      },
+      {
+        "id": "98ce0cb6-a28e-4923-8964-b44bee90253c",
+        "name": "旧宮崎酒造",
+        "description": "旧北陸街道・瀬羽町に建つ国の登録有形文化財の旧酒蔵（10:00〜17:00公開、火曜・水曜定休）。明治期の広大な主屋と土蔵、赤煉瓦煙突が残り、雑貨販売や展示が行われる。",
+        "address": "富山県滑川市瀬羽町1860",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.763089,
+        "lng": 137.334872,
+        "qr_token": "shuin-namerikawa-4",
+        "cover_image_url": "/images/namerikawa/spot4.png",
+        "f7_fragment": "切妻屋根が連なる瀬羽町の旧北陸街道で、明治期の主屋と赤煉瓦煙突を残す登録有形文化財の酒蔵。",
+        "f7_full": "北前船の交易と酒造りで栄えた「旧宮崎酒造」の吹き抜け土間と太い梁が、滑川宿の旦那衆の誇りを今に留める。",
+        "is_final": false,
+        "next_spot_id": "85d0d3c5-3316-4c6a-8f1c-133e874a23b9",
+        "next_spot_name": "cafe うみいろ ぼんぼこさ"
+      },
+      {
+        "id": "85d0d3c5-3316-4c6a-8f1c-133e874a23b9",
+        "name": "cafe うみいろ ぼんぼこさ",
+        "description": "旧宮崎酒造の一角で営業する古民家カフェ（11:00〜17:00営業、火曜・水曜定休）。酒造り唄「ぼんぼこさ」の名を受け継ぐ空間でハンドドリップ珈琲や自家製スイーツを味わえる。",
+        "address": "富山県滑川市瀬羽町1860",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.763199,
+        "lng": 137.334625,
+        "qr_token": "shuin-namerikawa-5",
+        "cover_image_url": "/images/namerikawa/spot5.png",
+        "f7_fragment": "登録有形文化財の酒蔵の一角で、酒造り唄の名を受け継ぐ古民家茶房の珈琲と自家製ケーキ。",
+        "f7_full": "「cafe うみいろ ぼんぼこさ」の古材の柱に囲まれて味わう香り高い珈琲が、海と街道の町・滑川を巡った旅を優しく締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3464f113-2fcc-4d6f-8a3a-fb91d3c71d4a",
+    "title": "織部の美意識と美濃焼の蔵が連なる多治見を辿る",
+    "name": "織部の美意識と美濃焼の蔵が連なる多治見を辿る",
+    "description": "千三百年の美濃焼の伝統と陶器問屋の蔵が息づく岐阜県多治見市。ヒラクビルのカフェ温土から、器の店・山の花、本町オリベストリートの陶都創造館、黒漆喰の土蔵ギャラリー・智結蔵、明治創業の鰻処・澤千までを辿る。",
+    "region": "多治見駅・本町オリベストリートの美濃焼と商い蔵を辿る道",
+    "area_name": "多治見駅・本町オリベストリートの美濃焼と商い蔵を辿る道",
+    "cover_image_url": "/images/tajimi/route-eyecatch.png",
+    "imageUrl": "/images/tajimi/route-eyecatch.png",
+    "category": "カフェ温土・山の花・陶都創造館・智結蔵と澤千",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "美濃焼の商い蔵と現代の器文化が交差する多治見を辿って、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「カフェ温土」と「山の花」で触れた、現代の暮らしに寄り添う手仕事の美濃焼",
+          "description": "リノベーション空間で器の手触りを確かめ、一つひとつ表情の異なる作家ものの器を選ぶ時間を楽しんだ。",
+          "badge_code": "TAJIMI_A"
+        },
+        {
+          "key": "B",
+          "text": "「陶都創造館」で出会った、古田織部の自由奔放な造形美と緑釉の輝き",
+          "description": "桃山時代に花開いた織部や志野、黄瀬戸の伝統を見つめ、美濃焼が培ってきた革新の精神に感銘を受けた。",
+          "badge_code": "TAJIMI_B"
+        },
+        {
+          "key": "C",
+          "text": "「智結蔵」の分厚い黒漆喰壁と太鼓梁が伝える、明治の商都・多治見の建築美",
+          "description": "大火を生き抜いた旧造り酒屋の米蔵ギャラリーで、百年を超える土蔵の陰影と器の調和に心打たれた。",
+          "badge_code": "TAJIMI_C"
+        },
+        {
+          "key": "D",
+          "text": "「澤千」の備長炭でパリッと焼き上げた鰻に宿る、窯場の職人たちを支えた食文化",
+          "description": "高温の窯と向き合う職人たちの活力を支えてきた、香ばしい炭火焼きのうな丼の滋味に満たされた。",
+          "badge_code": "TAJIMI_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "34aa4485-db73-479e-8d9a-57d21b49c39f",
+        "name": "カフェ温土",
+        "description": "本町通りのリノベーション複合施設・ヒラクビル1階のカフェ＆ギャラリー（10:00〜18:00営業、水曜・木曜定休）。地元作家の美濃焼の器で珈琲や焼き菓子を楽しめる。",
+        "address": "岐阜県多治見市本町3丁目25-25",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.334944,
+        "lng": 137.125186,
+        "qr_token": "shuin-tajimi-1",
+        "cover_image_url": "/images/tajimi/spot1.png",
+        "f7_fragment": "本屋と隣り合うリノベーション空間で、東濃の作家が手がけた美濃焼の器で味わう珈琲。",
+        "f7_full": "「カフェ温土」の掌に馴染む陶器のカップと香り高い一杯が、やきものの街・多治見を巡る旅を心地よく幕開ける。",
+        "is_final": false,
+        "next_spot_id": "5786616f-0848-412d-8cc6-100ed2357bde",
+        "next_spot_name": "山の花"
+      },
+      {
+        "id": "5786616f-0848-412d-8cc6-100ed2357bde",
+        "name": "山の花",
+        "description": "レトロな新町ビル2階に佇む器と暮らしの道具のセレクトショップ（11:00〜18:00営業、水曜定休）。美濃の陶芸家をはじめとする手仕事の皿や鉢、急須を扱う。",
+        "address": "岐阜県多治見市新町1丁目2-8",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.333812,
+        "lng": 137.129468,
+        "qr_token": "shuin-tajimi-2",
+        "cover_image_url": "/images/tajimi/spot2.png",
+        "f7_fragment": "昭和の趣を残す新町ビルの2階に並ぶ、土と釉薬の表情豊かな手仕事の器たち。",
+        "f7_full": "「山の花」の静謐な空間で出会う一つひとつ異なるろくろ跡や灰被りの器が、日々の食卓に豊かな彩りをもたらす。",
+        "is_final": false,
+        "next_spot_id": "43ac7627-d22a-4e2b-8438-fe079ae645ad",
+        "next_spot_name": "陶都創造館"
+      },
+      {
+        "id": "43ac7627-d22a-4e2b-8438-fe079ae645ad",
+        "name": "陶都創造館",
+        "description": "本町オリベストリートの中核をなす三階建ての文化・商業施設（10:00〜18:00開館、無休）。美濃焼の直営ショップや古田織部の美意識を伝える展示が集まる。",
+        "address": "岐阜県多治見市本町5丁目9-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.334569,
+        "lng": 137.130995,
+        "qr_token": "shuin-tajimi-3",
+        "cover_image_url": "/images/tajimi/spot3.png",
+        "f7_fragment": "本町オリベストリートの中心で、桃山陶芸・織部焼の自由な美意識と美濃焼の粋を発信する拠点。",
+        "f7_full": "「陶都創造館」に並ぶ深い緑釉の織部や乳白色の志野の器が、千三百年続く美濃焼の革新の物語を鮮やかに伝える。",
+        "is_final": false,
+        "next_spot_id": "ae87842e-9b3e-4b38-8ab0-bfd09ec1c149",
+        "next_spot_name": "智結蔵"
+      },
+      {
+        "id": "ae87842e-9b3e-4b38-8ab0-bfd09ec1c149",
+        "name": "智結蔵",
+        "description": "明治期の造り酒屋の米蔵を再生した黒漆喰の土蔵ギャラリー（10:00〜17:00開館、入館無料）。分厚い土壁と太鼓梁が残る空間で陶磁器展示や歴史資料を鑑賞できる。",
+        "address": "岐阜県多治見市本町5丁目9-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.333898,
+        "lng": 137.131316,
+        "qr_token": "shuin-tajimi-4",
+        "cover_image_url": "/images/tajimi/spot4.png",
+        "f7_fragment": "明治の火事をも凌いだ旧造り酒屋の分厚い黒漆喰壁と、頑丈な太鼓梁が残る土蔵ギャラリー。",
+        "f7_full": "「智結蔵」の落ち着いた蔵の陰影と立派な梁組みが、陶器商や酒蔵で賑わった近代多治見の風格を今に物語る。",
+        "is_final": false,
+        "next_spot_id": "7376ef5d-82a8-43b3-8529-e45334cf2b19",
+        "next_spot_name": "澤千"
+      },
+      {
+        "id": "7376ef5d-82a8-43b3-8529-e45334cf2b19",
+        "name": "澤千",
+        "description": "明治34年創業の鰻料理の老舗（11:00〜14:00・17:00〜20:00営業、水曜定休）。備長炭の強火で皮目をパリッと、身をふっくら焼き上げるうな丼やひつまぶしが名物。",
+        "address": "岐阜県多治見市本町5丁目5-24",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.334169,
+        "lng": 137.131682,
+        "qr_token": "shuin-tajimi-5",
+        "cover_image_url": "/images/tajimi/spot5.png",
+        "f7_fragment": "高温の窯場で働く職人たちの活力を支えてきた、備長炭で香ばしく焼き上げる明治創業の鰻料理。",
+        "f7_full": "「澤千」の秘伝のタレが絡む香ばしいうな丼が、土と炎の街・多治見を辿った旅を力強く豊かな余韻で結びあげる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "816ba94f-0b16-4d1a-8242-82055d8e644a",
+    "title": "熊野古道の分岐点と博学の森・紀伊田辺を巡る",
+    "name": "熊野古道の分岐点と博学の森・紀伊田辺を巡る",
+    "description": "熊野古道の中辺路と大辺路が分かれる口熊野の要衝・和歌山県田辺市。世界遺産の闘鶏神社から、博物学者・南方熊楠顕彰館、城下町の路地角に佇む辻の餅、ひょうたん巻の宝来寿司、駅前のtanabe en+までを巡る。",
+    "region": "紀伊田辺駅・熊野古道の分岐点と博学の庭を巡る道",
+    "area_name": "紀伊田辺駅・熊野古道の分岐点と博学の庭を巡る道",
+    "cover_image_url": "/images/kii-tanabe/route-eyecatch.png",
+    "imageUrl": "/images/kii-tanabe/route-eyecatch.png",
+    "category": "闘鶏神社・南方熊楠顕彰館・辻の餅・宝来寿司とtanabe en+",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "熊野古道の分岐点であり知の巨人が暮らした紀伊田辺を巡って、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「闘鶏神社」の白砂の境内に息づく、紅白の鶏合わせと熊野別当の伝説",
+          "description": "源平の命運を占った世界遺産の古社を参拝し、口熊野の深い祈りと歴史の舞台に胸が熱くなった。",
+          "badge_code": "KII_TANABE_A"
+        },
+        {
+          "key": "B",
+          "text": "「辻の餅」の香ばしいおけし餅と、「tanabe en+」に揃う紀州南高梅の恵み",
+          "description": "城下町の路地角で味わうケシの実の焼き餅と、太陽を浴びて育った紀州の特産品の豊かさに癒やされた。",
+          "badge_code": "KII_TANABE_B"
+        },
+        {
+          "key": "C",
+          "text": "「南方熊楠顕彰館」の楠茂る庭と、粘菌から森羅万象を見つめた知の巨人の情熱",
+          "description": "緻密な菌類図譜や旧邸の書斎を見学し、小さな生命と鎮守の森を守り抜いた博物学者の眼差しに深く感銘を受けた。",
+          "badge_code": "KII_TANABE_C"
+        },
+        {
+          "key": "D",
+          "text": "「宝来寿司」の職人が巻く縁起の良い「ひょうたん巻」と、黒潮が育む紀州の寿司",
+          "description": "断面に愛らしい瓢箪が浮かび上がる巻き寿司や地魚の握りを味わい、港町・田辺の粋な食文化を堪能した。",
+          "badge_code": "KII_TANABE_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5239ab9f-d8d2-4520-8746-39424988e0ae",
+        "name": "闘鶏神社",
+        "description": "世界遺産「紀伊山地の霊場と参詣道」の構成資産である古社（境内参拝自由）。源平合戦の折に熊野別当・湛増が紅白の鶏を闘わせて神意を占った故事で知られる。",
+        "address": "和歌山県田辺市東陽1-1",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.729676,
+        "lng": 135.38402,
+        "qr_token": "shuin-kii-tanabe-1",
+        "cover_image_url": "/images/kii-tanabe/spot1.png",
+        "f7_fragment": "源平の行く末を紅白の鶏で占った伝承が息づく、緑深い杜と白砂の世界遺産の古社。",
+        "f7_full": "熊野三山の別宮としての風格を湛える「闘鶏神社」の社殿が、口熊野・紀伊田辺を巡る旅を厳かに幕開ける。",
+        "is_final": false,
+        "next_spot_id": "0ee8f0c2-383c-42bf-8bbb-95ee94944cd2",
+        "next_spot_name": "南方熊楠顕彰館"
+      },
+      {
+        "id": "0ee8f0c2-383c-42bf-8bbb-95ee94944cd2",
+        "name": "南方熊楠顕彰館",
+        "description": "世界的博物学者・南方熊楠の旧邸隣に建つ学術文化施設（10:00〜17:00開館、月曜休館）。粘菌標本や菌類図譜、民俗学資料とともに熊楠が愛した庭を公開している。",
+        "address": "和歌山県田辺市中屋敷町36",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.731,
+        "lng": 135.377769,
+        "qr_token": "shuin-kii-tanabe-2",
+        "cover_image_url": "/images/kii-tanabe/spot2.png",
+        "f7_fragment": "粘菌研究と神社合祀反対運動に生涯を捧げた「知の巨人」の旧邸の庭と緻密な菌類図譜。",
+        "f7_full": "「南方熊楠顕彰館」の楠が茂る庭と膨大な研究記録が、森羅万象への尽きない好奇心とエコロジーの先駆精神を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "e3026d44-d576-4afc-8d18-0b8f42f73cd3",
+        "next_spot_name": "辻の餅"
+      },
+      {
+        "id": "e3026d44-d576-4afc-8d18-0b8f42f73cd3",
+        "name": "辻の餅",
+        "description": "旧城下町の北新町の路地角に店を構える老舗餅菓子店（9:00〜18:00営業、木曜定休）。こし餡を包んだ餅にケシの実をまぶして焼き目をつけた「おけし餅」が名物。",
+        "address": "和歌山県田辺市北新町1",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.733511,
+        "lng": 135.378925,
+        "qr_token": "shuin-kii-tanabe-3",
+        "cover_image_url": "/images/kii-tanabe/spot3.png",
+        "f7_fragment": "城下町の路地が交差する角で、ケシの実をまぶして香ばしく焼き上げる素朴な「おけし餅」。",
+        "f7_full": "「辻の餅」の香ばしい焦げ目とさらりとしたこし餡の優しい甘みが、田辺の路地歩きのひとときに温かな安らぎを添える。",
+        "is_final": false,
+        "next_spot_id": "d4105eb8-377e-4b4c-8181-24bd395c45f2",
+        "next_spot_name": "宝来寿司"
+      },
+      {
+        "id": "d4105eb8-377e-4b4c-8181-24bd395c45f2",
+        "name": "宝来寿司",
+        "description": "紀伊田辺駅近くの湊に暖簾を掲げる老舗寿司店（11:00〜19:30営業、火曜定休）。切り口が瓢箪の形をした名物「ひょうたん巻」や黒潮の地魚握り、さんま寿司を供する。",
+        "address": "和歌山県田辺市湊18-12",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.73263,
+        "lng": 135.381616,
+        "qr_token": "shuin-kii-tanabe-4",
+        "cover_image_url": "/images/kii-tanabe/spot4.png",
+        "f7_fragment": "かんぴょうと玉子焼きを巧みに巻いて断面に縁起の良い瓢箪を浮かび上がらせた名物「ひょうたん巻」。",
+        "f7_full": "「宝来寿司」の職人の技が光るひょうたん巻と黒潮の海の幸が、口熊野の港町・田辺ならではの豊かな食の記憶を刻む。",
+        "is_final": false,
+        "next_spot_id": "9c416d8b-ee68-4118-83f6-a79da8386601",
+        "next_spot_name": "tanabe en+"
+      },
+      {
+        "id": "9c416d8b-ee68-4118-83f6-a79da8386601",
+        "name": "tanabe en+",
+        "description": "紀伊田辺駅前に位置する地域交流拠点・ショップ＆カフェ（10:00〜19:00営業、無休）。紀州材を用いた空間に紀州南高梅や柑橘加工品、地酒・クラフトビールなどが揃う。",
+        "address": "和歌山県田辺市湊41-1",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.732479,
+        "lng": 135.383745,
+        "qr_token": "shuin-kii-tanabe-5",
+        "cover_image_url": "/images/kii-tanabe/spot5.png",
+        "f7_fragment": "紀州材の温もりあふれる駅前拠点に並ぶ、紀州南高梅や柑橘、クラフトビールなど紀南の恵み。",
+        "f7_full": "「tanabe en+」で手に取る太陽の恵みが詰まった特産品が、熊野古道の分岐点・紀伊田辺と旅人とを温かな縁で結んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "afee0e60-0c21-45ad-88cd-94aca7287796",
+    "title": "なぜ新宮に徐福の伝承と熊野の記憶が息づくのか",
+    "name": "なぜ新宮に徐福の伝承と熊野の記憶が息づくのか",
+    "description": "熊野川の河口に広がる城下町・和歌山県新宮市。不老不死の霊薬を求めた徐福公園から、詩人・佐藤春夫記念館の洋館、純氷かき氷の仲氷店、和三盆糖が香る鈴焼の香梅堂、総本家めはりや 新宮本店までを歩く。",
+    "region": "新宮駅・徐福の伝承と熊野河口の文学・郷土食を辿る道",
+    "area_name": "新宮駅・徐福の伝承と熊野河口の文学・郷土食を辿る道",
+    "cover_image_url": "/images/shingu/route-eyecatch.png",
+    "imageUrl": "/images/shingu/route-eyecatch.png",
+    "category": "徐福公園・佐藤春夫記念館・仲氷店・香梅堂と総本家めはりや",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "古代の渡来伝承と近代文学、熊野の食文化が重なる新宮を訪ねて、旅の余韻として持ち帰りたい出会いはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「徐福公園」の朱塗りの楼門と、海を越えて伝わった不老不死の霊薬「天台烏薬」のロマン",
+          "description": "秦の始皇帝の命を受けて熊野へ上陸した徐福の墓碑を訪ね、二千二百年続く壮大な渡来伝承に胸を躍らせた。",
+          "badge_code": "SHINGU_A"
+        },
+        {
+          "key": "B",
+          "text": "「新宮市立 佐藤春夫記念館」の八角形の塔屋と、望郷の詩人が綴った熊野への想い",
+          "description": "東京から移築された赤瓦の洋館と書斎をめぐり、『秋刀魚の歌』を生んだ文豪の詩情に浸った。",
+          "badge_code": "SHINGU_B"
+        },
+        {
+          "key": "C",
+          "text": "「仲氷店」の淡雪のような純氷かき氷と、「香梅堂」の和三盆糖が香る銘菓「鈴焼」",
+          "description": "口の中でふわっと溶ける氷専門店の技と、熊野の神楽鈴を象った鈴焼の上品な甘みに心和んだ。",
+          "badge_code": "SHINGU_C"
+        },
+        {
+          "key": "D",
+          "text": "「総本家めはりや」の塩漬け高菜で包んだ「めはり寿司」に宿る、熊野の山河の記憶",
+          "description": "温かいご飯を高菜の葉でくるりと包んだ握りたてのめはり寿司を頬張り、筏師や山人の活力を支えた郷土の味に感動した。",
+          "badge_code": "SHINGU_D"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3b6d863a-ca0b-425b-830a-4aabb5e8837d",
+        "name": "徐福公園",
+        "description": "秦の始皇帝の命で不老不死の霊薬を求めて熊野へ渡来した徐福の墓を祀る公園（終日開放）。鮮やかな中国風の楼門や七塚の碑、霊薬と伝わる天台烏薬の木が見どころ。",
+        "address": "和歌山県新宮市徐福1丁目4-24",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.725945,
+        "lng": 135.995504,
+        "qr_token": "shuin-shingu-1",
+        "cover_image_url": "/images/shingu/spot1.png",
+        "f7_fragment": "朱塗りの中国風楼門の奥、不老不死の霊薬「天台烏薬」を求めて渡来した徐福の墓が佇む公園。",
+        "f7_full": "「徐福公園」の極彩色の楼門と楠の木陰の古墓が、海を越えて新宮に根づいた二千二百年の渡来ロマンを鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "2ff7c746-1d13-4342-8def-a852e97ef4c8",
+        "next_spot_name": "新宮市立 佐藤春夫記念館"
+      },
+      {
+        "id": "2ff7c746-1d13-4342-8def-a852e97ef4c8",
+        "name": "新宮市立 佐藤春夫記念館",
+        "description": "新宮出身の詩人・小説家である佐藤春夫の旧東京邸を移築した文学館（9:00〜17:00開館、月曜休館）。八角形の塔屋と赤瓦の洋館内で自筆原稿や書斎を見学できる。",
+        "address": "和歌山県新宮市伊佐田町1丁目2-50",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.728455,
+        "lng": 135.993118,
+        "qr_token": "shuin-shingu-2",
+        "cover_image_url": "/images/shingu/spot2.png",
+        "f7_fragment": "『秋刀魚の歌』で知られる望郷の詩人が暮らした、八角形の塔屋と赤瓦が美しい移築洋館。",
+        "f7_full": "「新宮市立 佐藤春夫記念館」の瀟洒な洋館とステンドグラスの書斎が、故郷・熊野の海と山を愛し続けた文豪の息遣いを伝える。",
+        "is_final": false,
+        "next_spot_id": "6f5c1518-b38f-4d80-82f9-a894eb2eab3b",
+        "next_spot_name": "仲氷店"
+      },
+      {
+        "id": "6f5c1518-b38f-4d80-82f9-a894eb2eab3b",
+        "name": "仲氷店",
+        "description": "新宮市街で製氷業を営む老舗のかき氷店（10:00〜17:30頃営業、不定休）。熊野の水からじっくり凍らせた純氷を淡雪のようにふんわり削り出すかき氷が名物。",
+        "address": "和歌山県新宮市新宮551-12",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.727138,
+        "lng": 135.98562,
+        "qr_token": "shuin-shingu-3",
+        "cover_image_url": "/images/shingu/spot3.png",
+        "f7_fragment": "氷専門店ならではの透き通る純氷を、綿菓子のようにふんわりと削り出す名物のかき氷。",
+        "f7_full": "「仲氷店」の口に入れた瞬間に溶ける淡雪のような宇治金時氷が、城下町を歩いてきた身体に清涼な熊野の水の恵みを届ける。",
+        "is_final": false,
+        "next_spot_id": "9c2dd917-1a31-44b0-8ec3-54e4d1a5ff86",
+        "next_spot_name": "香梅堂"
+      },
+      {
+        "id": "9c2dd917-1a31-44b0-8ec3-54e4d1a5ff86",
+        "name": "香梅堂",
+        "description": "明治元年創業の老舗和菓子店（8:30〜21:00営業、水曜定休）。四国産の和三盆糖を用いて熊野の神楽鈴の形に焼き上げる一口サイズのカステラ菓子「鈴焼」で知られる。",
+        "address": "和歌山県新宮市大橋通3丁目3-4",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.729386,
+        "lng": 135.986844,
+        "qr_token": "shuin-shingu-4",
+        "cover_image_url": "/images/shingu/spot4.png",
+        "f7_fragment": "明治元年の創業より、和三盆糖の上品な甘みで熊野の神楽鈴を象って焼き上げる銘菓「鈴焼」。",
+        "f7_full": "大橋通に甘い香りを漂わせる「香梅堂」の黄金色の鈴焼が、しっとりときめ細かな口どけで新宮の旅の記憶を優しく彩る。",
+        "is_final": false,
+        "next_spot_id": "67eba90f-f823-4d2d-8858-35b0b96b8edd",
+        "next_spot_name": "総本家めはりや 新宮本店"
+      },
+      {
+        "id": "67eba90f-f823-4d2d-8858-35b0b96b8edd",
+        "name": "総本家めはりや 新宮本店",
+        "description": "熊野地方の郷土料理「めはり寿司」の専門店（11:00〜21:00営業、水曜定休）。秘伝の醤油ダレを潜らせた温かいご飯を塩漬けした大ぶりな高菜の葉で包んで供する。",
+        "address": "和歌山県新宮市薬師町5-6",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.729854,
+        "lng": 135.985728,
+        "qr_token": "shuin-shingu-5",
+        "cover_image_url": "/images/shingu/spot5.png",
+        "f7_fragment": "温かい白飯を塩漬けした大ぶりな高菜の葉でくるりと包む、熊野の山河が育んだ「めはり寿司」。",
+        "f7_full": "「総本家めはりや 新宮本店」の握りたてのめはり寿司が、木こりや筏師の活力を支えてきた熊野の滋味で新宮の旅を結ぶ。",
+        "is_final": true
+      }
+    ]
   }
 ];
