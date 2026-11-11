@@ -66430,5 +66430,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "70e24932-551b-4c5c-801b-fa97fbe4bb6f",
+    "title": "日本三大えんま市と黒羊羹の街・柏崎を巡る",
+    "name": "日本三大えんま市と黒羊羹の街・柏崎を巡る",
+    "description": "日本海の潮風と霊峰・米山に抱かれ、二百年続く「えんま市」と北国街道の文化が息づく新潟県柏崎市。JR柏崎駅から、くろ羊かんと網代焼の老舗・菓子道楽 新野屋、柏崎市市民プラザ、文化拠点のソフィアセンター、えんま市の舞台・閻魔堂までを巡る。",
+    "region": "柏崎（柏崎市）",
+    "area_name": "柏崎（柏崎市）",
+    "cover_image_url": "/images/kashiwazaki/route-eyecatch.png",
+    "imageUrl": "/images/kashiwazaki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "老舗のくろ羊かんとえんま市の舞台、海辺の文化が息づく柏崎で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "二百年の伝統を誇る「日本三大えんま市」の中心舞台、本町通りの「閻魔堂」",
+          "description": "毎年六月に五百もの露店が連なる大市の歴史と、街を見守る閻魔大王の威厳に深い感銘を受けた。",
+          "badge_code": "kashiwazaki_enmado_market"
+        },
+        {
+          "key": "B",
+          "text": "大正十年創業の老舗「菓子道楽 新野屋」で味わう、名物「くろ羊かん」と「網代焼」",
+          "description": "黒糖の深いコクが生きる蒸し羊羹と香ばしい網代焼の味わいに、柏崎が育んだ菓子の伝統を堪能した。",
+          "badge_code": "kashiwazaki_aranoya_kuroyokan"
+        },
+        {
+          "key": "C",
+          "text": "日本海と米山を望む「柏崎駅」と、中心市街地の交流拠点「柏崎市市民プラザ」",
+          "description": "信越本線と越後線が交わる海辺の駅から歩き出し、陣屋町・港町として栄えた街の空気に触れた。",
+          "badge_code": "kashiwazaki_station_plaza"
+        },
+        {
+          "key": "D",
+          "text": "北国街道と北前船、近代石油産業の郷土史を伝える知の殿堂「ソフィアセンター」",
+          "description": "緑豊かな広場に佇む美しい図書館で、柏崎が歩んできた多彩な歴史と学問の気風に心が満たされた。",
+          "badge_code": "kashiwazaki_sophia_center_history"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cd2d7c5a-4831-483b-84c2-8714f0b0e651",
+        "name": "柏崎駅",
+        "description": "JR信越本線と越後線が交わる柏崎市の玄関口（待合室は始発〜終電）。明治三十年に北越鉄道の駅として開業した歴史を持ち、日本海の海岸エリアや中心市街地の閻魔堂・商家町への散策起点となっている。",
+        "address": "新潟県柏崎市駅前1-1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.363681,
+        "lng": 138.556301,
+        "qr_token": "shuin-kashiwazaki-1",
+        "cover_image_url": "/images/kashiwazaki/spot1.png",
+        "f7_fragment": "信越本線と越後線が交わり、日本海と米山を望む海辺の街・越後柏崎へと誘う玄関口。",
+        "f7_full": "「柏崎駅」の爽やかな潮風が吹く駅前広場が、日本三大えんま市と老舗銘菓が息づく街を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f43ff783-f108-4b78-8359-e83861334d5c",
+        "next_spot_name": "菓子道楽 新野屋"
+      },
+      {
+        "id": "f43ff783-f108-4b78-8359-e83861334d5c",
+        "name": "菓子道楽 新野屋",
+        "description": "大正十年創業の柏崎を代表する老舗和菓子店（9:00〜17:30営業、金・土曜は18:00まで、日曜不定休）。黒糖風味のもっちりとした蒸し羊羹「くろ羊かん」や、香ばしい煎餅「網代焼」などの銘菓を販売している。",
+        "address": "新潟県柏崎市駅前1-5-14",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.365834,
+        "lng": 138.554974,
+        "qr_token": "shuin-kashiwazaki-2",
+        "cover_image_url": "/images/kashiwazaki/spot2.png",
+        "f7_fragment": "大正十年の創業以来、柏崎名物「くろ羊かん」と「網代焼」の伝統を守る老舗和菓子処。",
+        "f7_full": "「菓子道楽 新野屋」の黒糖が香るくろ羊かんと香ばしい網代焼が、百年にわたり柏崎の人々に愛されてきた伝統の甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e904be15-47b7-424b-8f78-b932aeb879a7",
+        "next_spot_name": "柏崎市市民プラザ"
+      },
+      {
+        "id": "e904be15-47b7-424b-8f78-b932aeb879a7",
+        "name": "柏崎市市民プラザ",
+        "description": "駅前通りと本町通りの結節点に位置する生涯学習・市民交流施設（9:00〜21:00開館、年末年始休）。展示スペースや休憩ロビーを備え、まちなか散策のひと休みに利用できる。",
+        "address": "新潟県柏崎市東本町1-3-24",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.369797,
+        "lng": 138.553687,
+        "qr_token": "shuin-kashiwazaki-3",
+        "cover_image_url": "/images/kashiwazaki/spot3.png",
+        "f7_fragment": "駅前通りと本町通りの結節点に建ち、街歩きの休息と情報収集ができる市民交流拠点。",
+        "f7_full": "「柏崎市市民プラザ」の穏やかなロビー空間が、これから足を踏み入れる本町通りと閻魔堂の歴史散策へ向けた心地よい休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b49ec9b2-5850-450c-8fc3-654ee2e7717f",
+        "next_spot_name": "ソフィアセンター"
+      },
+      {
+        "id": "b49ec9b2-5850-450c-8fc3-654ee2e7717f",
+        "name": "ソフィアセンター",
+        "description": "柏崎市立図書館を中心とする複合文化施設（9:30〜19:00開館、土日祝は17:00まで、第3日曜・年末年始休）。北国街道や桑名藩柏崎陣屋、近代石油産業の歴史など、柏崎の郷土資料を幅広く収蔵・公開している。",
+        "address": "新潟県柏崎市学校町2-47",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.371149,
+        "lng": 138.555867,
+        "qr_token": "shuin-kashiwazaki-4",
+        "cover_image_url": "/images/kashiwazaki/spot4.png",
+        "f7_fragment": "緑豊かな広場に佇み、北国街道や柏崎の貴重な郷土史資料を伝える市立図書館。",
+        "f7_full": "「ソフィアセンター」のレンガ調の美しい建築と穏やかな緑が、北国街道の要衝として歩んできた柏崎の豊かな歴史と文化を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "95ed3072-69a2-488b-8a10-e5a01a39911e",
+        "next_spot_name": "閻魔堂"
+      },
+      {
+        "id": "95ed3072-69a2-488b-8a10-e5a01a39911e",
+        "name": "閻魔堂",
+        "description": "東本町の通りに面して建つ円光寺の閻魔堂（境内参拝自由）。江戸時代後期の文政年間から続く「日本三大えんま市（柏崎えんま市）」の中心舞台であり、毎年6月14日〜16日の例大祭では約500軒の露店で賑わう。",
+        "address": "新潟県柏崎市東本町2-7-40",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.37044,
+        "lng": 138.559553,
+        "qr_token": "shuin-kashiwazaki-5",
+        "cover_image_url": "/images/kashiwazaki/spot5.png",
+        "f7_fragment": "江戸時代から続く「日本三大えんま市」の中心舞台となる、東本町の閻魔堂。",
+        "f7_full": "「閻魔堂」の落ち着いた堂宇と門前の通りが、二百年以上にわたり初夏の柏崎を熱気で包み込んできた大市の記憶で旅を力強く締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d52f5808-4a47-4e86-8a95-c68898adb32b",
+    "title": "世界を駆けた製糸の記憶と炭火の鰻・信州岡谷へ",
+    "name": "世界を駆けた製糸の記憶と炭火の鰻・信州岡谷へ",
+    "description": "諏訪湖のほとりで近代日本の製糸業を牽引した「シルクの都」長野県岡谷市。JR中央本線の岡谷駅から、武井武雄の芸術を伝えるイルフ童画館、大正創業の老舗・御うな小松屋、国登録有形文化財の旧岡谷市役所庁舎、製糸工場が稼働する市立岡谷蚕糸博物館までを歩く。",
+    "region": "岡谷（岡谷市）",
+    "area_name": "岡谷（岡谷市）",
+    "cover_image_url": "/images/okaya/route-eyecatch.png",
+    "imageUrl": "/images/okaya/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "武井武雄の童画と炭火焼きのうなぎ、近代製糸の遺産が息づく岡谷で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "実際の製糸工場が館内で稼働する、世界でも珍しい「市立岡谷蚕糸博物館」",
+          "description": "湯気の中で繭から輝く生糸が紡ぎ出される生きた職人の技と、近代日本を支えたシルクの歴史に感動した。",
+          "badge_code": "okaya_silk_museum_factory"
+        },
+        {
+          "key": "B",
+          "text": "製糸家・尾澤福太郎が寄贈した、スクラッチタイルが映える「旧岡谷市役所庁舎」",
+          "description": "昭和十一年の市制施行を祝して建てられた重厚な近代建築に、世界を駆けた「糸都・岡谷」の誇りを見た。",
+          "badge_code": "okaya_former_city_hall_modernism"
+        },
+        {
+          "key": "C",
+          "text": "大正五年創業の「御うな 小松屋」で味わう、香ばしい炭火焼きの「岡谷のうなぎ」",
+          "description": "蒸さずに備長炭でパリッと焼き上げ、濃厚な秘伝ダレを絡めた「うなぎの街・岡谷」の伝統の味に満たされた。",
+          "badge_code": "okaya_komatsuya_charcoal_unagi"
+        },
+        {
+          "key": "D",
+          "text": "シルクの都の玄関口「岡谷駅」と、武井武雄の独創世界に出会う「イルフ童画館」",
+          "description": "「古い」を逆さにした「イルフ（新しい）」の精神と、時代を超えて輝く童画と造本芸術に心が弾んだ。",
+          "badge_code": "okaya_ilf_douga_museum"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a6b5d0aa-a384-49f9-896d-8b849e8c1e43",
+        "name": "岡谷駅",
+        "description": "諏訪湖の西岸に位置し、中央本線と飯田線（直通列車）が発着する岡谷市の玄関口（待合室は始発〜終電）。明治三十八年の開業以来、世界有数の生糸生産地「シルク岡谷」の輸送と経済を支えてきた歴史ある駅。",
+        "address": "長野県岡谷市本町1-1-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.056741,
+        "lng": 138.044611,
+        "qr_token": "shuin-okaya-1",
+        "cover_image_url": "/images/okaya/spot1.png",
+        "f7_fragment": "諏訪湖の西岸に位置し、近代日本の製糸業を牽引した「シルク岡谷」へと誘う玄関口。",
+        "f7_full": "「岡谷駅」のホームに吹く諏訪湖からの爽やかな風が、世界を駆けたシルクの記憶と豊かな食文化が息づく街への旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "b3a51a7b-b461-41ca-86dd-219f97f7cf16",
+        "next_spot_name": "イルフ童画館"
+      },
+      {
+        "id": "b3a51a7b-b461-41ca-86dd-219f97f7cf16",
+        "name": "イルフ童画館",
+        "description": "岡谷出身の芸術家・武井武雄の童画・版画・刊本作品などを収蔵・展示する美術館（9:00〜18:00開館、水曜・年末年始休）。1階にはミュージアムショップや絵本の図書室・カフェも併設され、街歩きの休憩にも最適。",
+        "address": "長野県岡谷市中央町2-2-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.059709,
+        "lng": 138.048671,
+        "qr_token": "shuin-okaya-2",
+        "cover_image_url": "/images/okaya/spot2.png",
+        "f7_fragment": "「童画」を生んだ岡谷出身の芸術家・武井武雄の独創的な作品を伝える美術館。",
+        "f7_full": "「イルフ童画館」の色彩豊かな童画と愛らしい造本芸術が、子どもの頃のような瑞々しい感性と「新しい（イルフ）」驚きを呼び覚ましてくれる。",
+        "is_final": false,
+        "next_spot_id": "b5dd4639-6a87-482c-829e-30a9007640f3",
+        "next_spot_name": "御うな 小松屋"
+      },
+      {
+        "id": "b5dd4639-6a87-482c-829e-30a9007640f3",
+        "name": "御うな 小松屋",
+        "description": "大正五年創業の老舗うなぎ料理店（11:00〜14:00・17:00〜20:00頃営業、火曜休）。蒸さずに備長炭の直火で香ばしく焼き上げ、甘辛い濃厚なタレを絡める「岡谷のうなぎ」の伝統の味を堪能できる。",
+        "address": "長野県岡谷市本町3-10-10",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.062779,
+        "lng": 138.046184,
+        "qr_token": "shuin-okaya-3",
+        "cover_image_url": "/images/okaya/spot3.png",
+        "f7_fragment": "大正五年の創業以来、備長炭の直火で焼き上げる「岡谷のうなぎ」を守る老舗。",
+        "f7_full": "「御うな 小松屋」の香ばしい炭火の香りと濃厚なタレが絡むうな重が、シルクの街の活気を支えてきた岡谷ならではの贅沢な食文化を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "86a8e6db-af94-4262-8b3a-3bd9e8e16499",
+        "next_spot_name": "旧岡谷市役所庁舎"
+      },
+      {
+        "id": "86a8e6db-af94-4262-8b3a-3bd9e8e16499",
+        "name": "旧岡谷市役所庁舎",
+        "description": "昭和十一年の市制施行時に製糸家・尾澤福太郎の寄付により建設された国登録有形文化財の近代建築（外観見学自由）。スクラッチタイル貼りの外壁と赤瓦屋根が、製糸業で栄えた「糸都・岡谷」の歴史を今に伝える。",
+        "address": "長野県岡谷市幸町8-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.066715,
+        "lng": 138.050745,
+        "qr_token": "shuin-okaya-4",
+        "cover_image_url": "/images/okaya/spot4.png",
+        "f7_fragment": "製糸家・尾澤福太郎の寄付で昭和十一年に建てられた、国登録有形文化財の旧市庁舎。",
+        "f7_full": "「旧岡谷市役所庁舎」のスクラッチタイルと赤瓦が織りなす重厚な佇まいが、世界の生糸市場を動かした近代岡谷の繁栄を静かに物語っている。",
+        "is_final": false,
+        "next_spot_id": "6c54bdbd-32f3-4668-824f-223ef829ab3a",
+        "next_spot_name": "市立岡谷蚕糸博物館"
+      },
+      {
+        "id": "6c54bdbd-32f3-4668-824f-223ef829ab3a",
+        "name": "市立岡谷蚕糸博物館",
+        "description": "館内に実際の製糸工場（宮坂製糸所）を併設する世界でも希少な蚕糸専門博物館（9:00〜17:00開館、水曜・年末年始休）。貴重な繰糸機の展示とともに、職人が生糸を繰り上げる生きた工場の稼働風景を見学できる。",
+        "address": "長野県岡谷市郷田1-4-8",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.069983,
+        "lng": 138.04948,
+        "qr_token": "shuin-okaya-5",
+        "cover_image_url": "/images/okaya/spot5.png",
+        "f7_fragment": "館内で実際の製糸工場が稼働し、近代製糸の歴史と技を伝える世界有数の博物館。",
+        "f7_full": "「市立岡谷蚕糸博物館」に響く繰糸機の軽やかな音と白く輝く生糸の束が、ものづくりの街・信州岡谷を歩いた旅を誇り高い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9c0c47b8-ab70-4d6b-8a82-0c6f17954756",
+    "title": "大火復興のりんご並木と人形劇の街・飯田を歩く",
+    "name": "大火復興のりんご並木と人形劇の街・飯田を歩く",
+    "description": "南アルプスを望む伊那谷の中心であり、「南信州の小京都」「人形劇のまち」として知られる長野県飯田市。リンゴの宝珠を戴くJR飯田駅から、中学生が育てるりんご並木、大火を生き延びた三連蔵、飯田市川本喜八郎人形美術館、飯田城跡の飯田市美術博物館までを歩く。",
+    "region": "飯田（飯田市）",
+    "area_name": "飯田（飯田市）",
+    "cover_image_url": "/images/iida/route-eyecatch.png",
+    "imageUrl": "/images/iida/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "中学生が育てるりんご並木と精巧な人形美術、飯田城跡が息づく飯田で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大火からの復興の象徴として中学生たちが七十年守り育てる「りんご並木」",
+          "description": "街の中心を貫く緑道に実る赤いリンゴと、世代を超えて受け継がれる市民の優しさに胸が温まった。",
+          "badge_code": "iida_ringo_namiki_boulevard"
+        },
+        {
+          "key": "B",
+          "text": "『三国志』『平家物語』の精巧な人形たちに命が宿る「飯田市川本喜八郎人形美術館」",
+          "description": "衣装の細部から指先、眼差しに至るまで魂が込められた人形美術の圧倒的な表現力に息をのんだ。",
+          "badge_code": "iida_kawamoto_puppet_art"
+        },
+        {
+          "key": "C",
+          "text": "飯田城跡から南アルプスを望み、菱田春草の美と伊那谷を識る「飯田市美術博物館」",
+          "description": "山並みを映す独創的な建築と、城跡に残る赤門や安富桜が織りなす歴史と芸術の調和に魅了された。",
+          "badge_code": "iida_city_art_museum_shunso"
+        },
+        {
+          "key": "D",
+          "text": "リンゴの宝珠を載せた「飯田駅」と、大火を奇跡的に生き延びた白壁の「三連蔵」",
+          "description": "復興の象徴である駅舎から裏通りの土蔵群へと歩き、飯田城下町が刻んできた不屈の記憶に触れた。",
+          "badge_code": "iida_station_sanrengura"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "20791161-ce0e-45d4-8486-3615dcf4d608",
+        "name": "飯田駅",
+        "description": "南信州・伊那谷の中心駅となるJR飯田線の主要駅（待合室は始発〜終電）。屋根の上に特産のリンゴを模した赤い擬宝珠（宝珠）を戴く特徴的な駅舎であり、丘の上の城下町エリアへの散策起点となっている。",
+        "address": "長野県飯田市上飯田5356",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.519568,
+        "lng": 137.821236,
+        "qr_token": "shuin-iida-1",
+        "cover_image_url": "/images/iida/spot1.png",
+        "f7_fragment": "屋根に赤いリンゴの宝珠を戴き、南信州の小京都・飯田の城下町へと誘う玄関口。",
+        "f7_full": "「飯田駅」の愛らしいリンゴの宝珠と南アルプスを望む空が、大火からの復興と文化が息づく丘の上の城下町を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d4600fe5-bbf5-417f-85d3-ad25fc9f388e",
+        "next_spot_name": "りんご並木"
+      },
+      {
+        "id": "d4600fe5-bbf5-417f-85d3-ad25fc9f388e",
+        "name": "りんご並木",
+        "description": "飯田大火からの復興のシンボルとして昭和二十八年に飯田東中学校の生徒たちが植樹した約400mの並木道（終日散策自由）。日本の道百選に選定されており、現在も中学生の手によってリンゴの栽培・管理が受け継がれている。",
+        "address": "長野県飯田市本町1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.516596,
+        "lng": 137.821587,
+        "qr_token": "shuin-iida-2",
+        "cover_image_url": "/images/iida/spot2.png",
+        "f7_fragment": "大火復興の象徴として、七十年以上にわたり中学生たちが守り育てる並木道。",
+        "f7_full": "「りんご並木」を彩る可憐な花や真っ赤な実りと木漏れ日が、街を愛し育てる飯田の人々の温かな誇りを歩く人の心に届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "0fe0371d-aad7-4578-8c85-1cef3a92d3a1",
+        "next_spot_name": "三連蔵"
+      },
+      {
+        "id": "0fe0371d-aad7-4578-8c85-1cef3a92d3a1",
+        "name": "三連蔵",
+        "description": "昭和二十二年の飯田大火を奇跡的に免れた3棟並びの白壁の土蔵（9:00〜17:00頃見学自由）。江戸末期〜明治期の城下町の面影を伝える貴重な建築であり、内部は飯田の復興史や市民の創作展示室・休憩所として公開されている。",
+        "address": "長野県飯田市通り町2-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.515811,
+        "lng": 137.825233,
+        "qr_token": "shuin-iida-3",
+        "cover_image_url": "/images/iida/spot3.png",
+        "f7_fragment": "昭和二十二年の飯田大火を奇跡的に生き延びた、三棟連なる白壁の美しい土蔵。",
+        "f7_full": "「三連蔵」の重厚な白壁と裏通りの静かなたたずまいが、大火を乗り越えて美しい防火都市へと再生した飯田の記憶を静かに語りかけてくる。",
+        "is_final": false,
+        "next_spot_id": "1bab81d2-bd44-44d6-864c-6ee920b5fd54",
+        "next_spot_name": "飯田市川本喜八郎人形美術館"
+      },
+      {
+        "id": "1bab81d2-bd44-44d6-864c-6ee920b5fd54",
+        "name": "飯田市川本喜八郎人形美術館",
+        "description": "「人形劇のまち・飯田」の拠点となる公立美術館（9:30〜18:30開館、水曜・年末年始休）。世界的アニメーション・人形美術家の川本喜八郎氏が手掛けた『三国志』『平家物語』などの精巧な人形約200体を収蔵・展示している。",
+        "address": "長野県飯田市本町1-2",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.514943,
+        "lng": 137.825714,
+        "qr_token": "shuin-iida-4",
+        "cover_image_url": "/images/iida/spot4.png",
+        "f7_fragment": "川本喜八郎氏が手掛けた『三国志』『平家物語』の精巧な人形と出会う美術館。",
+        "f7_full": "「飯田市川本喜八郎人形美術館」の照明に浮かび上がる精緻な人形たちの眼差しが、人形劇の街・飯田に息づく舞台芸術の奥深さを体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "11ef793e-e9b5-46aa-85ea-b1cabd54aed7",
+        "next_spot_name": "飯田市美術博物館"
+      },
+      {
+        "id": "11ef793e-e9b5-46aa-85ea-b1cabd54aed7",
+        "name": "飯田市美術博物館",
+        "description": "飯田城の二の丸跡に建つ美術・自然・人文の総合博物館（9:30〜17:00開館、月曜・祝翌日・年末年始休）。近代日本画の巨匠・菱田春草の作品群や伊那谷の自然史展示のほか、前庭の銘木「安富桜」や隣接する飯田城赤門が見どころ。",
+        "address": "長野県飯田市追手町2-655-7",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.511981,
+        "lng": 137.830515,
+        "qr_token": "shuin-iida-5",
+        "cover_image_url": "/images/iida/spot5.png",
+        "f7_fragment": "飯田城跡から南アルプスを望み、菱田春草の作品と伊那谷の自然を伝える博物館。",
+        "f7_full": "「飯田市美術博物館」の雄大な南アルプスを映す建築と城跡の緑が、南信州の小京都・飯田を巡り歩いた旅を清々しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b6b045f7-7ba6-44c0-8138-06b3aa086b7f",
+    "title": "大あんまきと多宝塔の社・東海道池鯉鮒宿の旅",
+    "name": "大あんまきと多宝塔の社・東海道池鯉鮒宿の旅",
+    "description": "東海道五十三次の「池鯉鮒宿」として栄え、名物のあんまきとユネスコ遺産の知立まつりが息づく愛知県知立市。名鉄の知立駅から、池鯉鮒宿本陣跡、明治三十六年創業の手焼きあんまき・小松屋本家、お万の方ゆかりの総持寺、国重文の多宝塔が立つ知立神社までを巡る。",
+    "region": "知立（知立市）",
+    "area_name": "知立（知立市）",
+    "cover_image_url": "/images/chiryu/route-eyecatch.png",
+    "imageUrl": "/images/chiryu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名物のあんまきと東海道池鯉鮒宿の史跡、国重文の多宝塔が息づく知立で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "室町時代の国重文「多宝塔」が聳え、ユネスコ遺産の祭りを伝える「知立神社」",
+          "description": "桧皮葺の優美な多宝塔と神池の佇まいに、「池鯉鮒大明神」として崇敬されてきた千九百年の格式を感じた。",
+          "badge_code": "chiryu_shrine_tahoto_pagoda"
+        },
+        {
+          "key": "B",
+          "text": "旧東海道の老舗「小松屋本家」で味わう、明治三十六年創業の「手焼きあんまき」",
+          "description": "銅板で一枚ずつ焼き上げるモチモチの皮と、たっぷり詰まった自家製粒あんの優しい甘さに笑顔になった。",
+          "badge_code": "chiryu_komatsuya_teyaki_anmaki"
+        },
+        {
+          "key": "C",
+          "text": "慈覚大師創建の由緒とお万の方生誕の碑が残り、知立神社の別当寺の歴史を伝える「総持寺」",
+          "description": "かつて知立神社の神宮寺として栄えた静かな境内で、徳川家ゆかりのお万の方の伝承と神仏習合の歴史に触れた。",
+          "badge_code": "chiryu_sojiji_okajisui_temple"
+        },
+        {
+          "key": "D",
+          "text": "三河の要衝「知立駅」から旧東海道を歩き、大名行列の記憶を辿る「池鯉鮒宿本陣跡」",
+          "description": "鍵の手の道筋が残る旧街道に立ち、馬市や参勤交代で賑わった東海道三十九番目の宿場町の風情を味わった。",
+          "badge_code": "chiryu_tokaido_honjin_crossroads"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8b1e9e41-0fff-4b98-8ab6-266770aa7e16",
+        "name": "知立駅",
+        "description": "名鉄名古屋本線と三河線が交わる西三河の主要ジャンクション駅（待合室は始発〜終電）。旧東海道「池鯉鮒宿」や知立神社への玄関口であり、構内や駅前でも知立名物の「大あんまき」が親しまれている。",
+        "address": "愛知県知立市栄2-60",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.005874,
+        "lng": 137.039717,
+        "qr_token": "shuin-chiryu-1",
+        "cover_image_url": "/images/chiryu/spot1.png",
+        "f7_fragment": "名鉄二路線が交わり、東海道池鯉鮒宿と三河国二宮・知立神社へと誘う要衝駅。",
+        "f7_full": "「知立駅」の活気あるホームと駅前の街並みが、名物のあんまきと千九百年の古社が待つ東海道池鯉鮒宿の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "dea7ad23-8a47-4ccb-81a2-478e28e93820",
+        "next_spot_name": "池鯉鮒宿本陣跡"
+      },
+      {
+        "id": "dea7ad23-8a47-4ccb-81a2-478e28e93820",
+        "name": "池鯉鮒宿本陣跡",
+        "description": "江戸時代の東海道三十九番目の宿場「池鯉鮒宿」において、大名や公家が宿泊した峯家本陣の跡地（終日見学自由）。旧東海道に面して本陣跡の石碑や明治天皇行在所記念碑、解説板が整備されている。",
+        "address": "愛知県知立市西町西81",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.00817,
+        "lng": 137.041109,
+        "qr_token": "shuin-chiryu-2",
+        "cover_image_url": "/images/chiryu/spot2.png",
+        "f7_fragment": "東海道三十九番目の宿場「池鯉鮒宿」の大名宿・峯家本陣の歴史を伝える史跡。",
+        "f7_full": "「池鯉鮒宿本陣跡」の石碑が立つ旧東海道の道筋が、かつて大名行列や馬市で賑わった宿場町の華やかな往時の記憶を呼び覚ましてくれる。",
+        "is_final": false,
+        "next_spot_id": "868cac6a-c45f-4fe0-8f2d-c3a2d20d7832",
+        "next_spot_name": "小松屋本家"
+      },
+      {
+        "id": "868cac6a-c45f-4fe0-8f2d-c3a2d20d7832",
+        "name": "小松屋本家",
+        "description": "旧東海道沿いに店を構える明治三十六年創業の老舗和菓子店（8:00〜19:00頃営業、火曜・第3水曜休）。知立名物「あんまき」の伝統を受け継ぎ、職人が一枚ずつ手焼きする香ばしい生地と自家製粒あんの「大あんまき」で知られる。",
+        "address": "愛知県知立市西町西83",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.010138,
+        "lng": 137.040556,
+        "qr_token": "shuin-chiryu-3",
+        "cover_image_url": "/images/chiryu/spot3.png",
+        "f7_fragment": "明治三十六年の創業以来、旧東海道で伝統の「手焼きあんまき」を守る老舗。",
+        "f7_full": "「小松屋本家」の香ばしい手焼きの皮と粒あんが詰まったあんまきが、東海道を行き交う旅人を癒やしてきた宿場町の甘い記憶を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "7362d27b-32c8-479a-8ca1-a56b936a47e4",
+        "next_spot_name": "総持寺"
+      },
+      {
+        "id": "7362d27b-32c8-479a-8ca1-a56b936a47e4",
+        "name": "総持寺",
+        "description": "平安時代の嘉祥三年に慈覚大師（円仁）が創建したと伝わる天台寺門宗の寺院（境内参拝自由）。かつて知立神社の別当寺（神宮寺）を務め、徳川家康の側室・お万の方（長勝院）の生誕地としても知られる。",
+        "address": "愛知県知立市西町新川48",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.01266,
+        "lng": 137.038693,
+        "qr_token": "shuin-chiryu-4",
+        "cover_image_url": "/images/chiryu/spot4.png",
+        "f7_fragment": "知立神社の別当寺の歴史を継ぎ、徳川家ゆかりのお万の方の記憶を伝える古刹。",
+        "f7_full": "「総持寺」の静謐な本堂と境内の石碑が、神と仏が共に池鯉鮒の街と旅人を見守ってきた千百年の信仰の深さを静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "942e1487-874a-4d67-8943-bad5dade5f33",
+        "next_spot_name": "知立神社"
+      },
+      {
+        "id": "942e1487-874a-4d67-8943-bad5dade5f33",
+        "name": "知立神社",
+        "description": "三河国二宮として崇敬される延喜式内社（境内参拝自由）。室町時代再建の国指定重要文化財「多宝塔」や尾張造の社殿、初夏に咲き誇る花菖蒲・カキツバタ園、ユネスコ無形文化遺産の「知立まつり」で名高い。",
+        "address": "愛知県知立市西町神田12",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.013129,
+        "lng": 137.041098,
+        "qr_token": "shuin-chiryu-5",
+        "cover_image_url": "/images/chiryu/spot5.png",
+        "f7_fragment": "国指定重要文化財の室町期の「多宝塔」が聳える、三河国二宮の由緒ある古社。",
+        "f7_full": "「知立神社」の優美な桧皮葺の多宝塔と神池に架かる石橋が、東海道池鯉鮒宿の歴史と銘菓を巡り歩いた旅を格調高い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6f815b1d-9371-45cf-8cf7-595ef51edc14",
+    "title": "抹茶香る三河の小京都と六万石の城・西尾を辿る",
+    "name": "抹茶香る三河の小京都と六万石の城・西尾を辿る",
+    "description": "日本有数の抹茶産地「西尾の抹茶」と、六万石の城下町「三河の小京都」の風情が息づく愛知県西尾市。名鉄西尾線の西尾駅から、京風庭園の尚古荘、本丸丑寅櫓と旧近衛邸が立つ西尾市歴史公園、明治創業の御菓子司穂積堂、古書の博物館・西尾市岩瀬文庫までを辿る。",
+    "region": "西尾（西尾市）",
+    "area_name": "西尾（西尾市）",
+    "cover_image_url": "/images/nishio/route-eyecatch.png",
+    "imageUrl": "/images/nishio/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "香り高い西尾の抹茶と古書の博物館、本丸丑寅櫓が聳える西尾で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "白壁の「本丸丑寅櫓」が水堀に映え、旧近衛邸で一服を味わう「西尾市歴史公園」",
+          "description": "六万石の城の風格を伝える櫓と鍮石門を仰ぎ、公家屋敷の書院でいただく西尾の抹茶の香りに癒やされた。",
+          "badge_code": "nishio_castle_ushitora_turret"
+        },
+        {
+          "key": "B",
+          "text": "明治四十五年創業の老舗「御菓子司 穂積堂」で味わう、翠色の西尾抹茶スイーツ",
+          "description": "矢作川の恵みが育てた一番茶の深い緑と旨みを活かした、老舗和菓子処の抹茶菓子に心がときめいた。",
+          "badge_code": "nishio_hozumido_matcha_sweets"
+        },
+        {
+          "key": "C",
+          "text": "茶処の玄関口「西尾駅」と、東の丸の遺構を活かした京風庭園「尚古荘」",
+          "description": "かつての土塁や井戸を巧みに取り込んだ枯山水と茶室の佇まいに、三河の小京都の雅な美意識を感じた。",
+          "badge_code": "nishio_shokoso_kyoto_garden"
+        },
+        {
+          "key": "D",
+          "text": "八万冊の古典籍と大正の赤煉瓦書庫を伝える、日本初の古書の博物館「西尾市岩瀬文庫」",
+          "description": "私財を投じて知の宝庫を築いた岩瀬弥助の志と、美しい絵巻や赤煉瓦建築の佇まいに知的好奇心が満たされた。",
+          "badge_code": "nishio_iwase_bunko_library"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c22dab17-e376-41e8-8e4f-05d9a729d277",
+        "name": "西尾駅",
+        "description": "「抹茶の里」「三河の小京都」として知られる西尾市の玄関口となる名鉄西尾線の主要駅（待合室は始発〜終電）。駅前から西に向かって歴史ある商店街と西尾城跡（歴史公園）への散策路が続いている。",
+        "address": "愛知県西尾市住吉町4-18",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.863822,
+        "lng": 137.057908,
+        "qr_token": "shuin-nishio-1",
+        "cover_image_url": "/images/nishio/spot1.png",
+        "f7_fragment": "日本有数の抹茶産地と六万石の城下町「三河の小京都」西尾へと誘う玄関口。",
+        "f7_full": "「西尾駅」の爽やかな駅前広場が、鎌倉時代から続く茶の文化と西尾城の歴史が息づく城下町を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "73515239-28d4-446d-8572-b1cd3bf5d6a1",
+        "next_spot_name": "尚古荘"
+      },
+      {
+        "id": "73515239-28d4-446d-8572-b1cd3bf5d6a1",
+        "name": "尚古荘",
+        "description": "西尾城東の丸跡の遺構を活かして昭和初期に造営された約1,300坪の池泉・枯山水式の京風庭園（9:00〜17:00開園、月曜・年末年始休、入園無料）。茶室「不言庵」や高台の東屋から四季折々の庭園美を楽しめる。",
+        "address": "愛知県西尾市錦城町176-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.865864,
+        "lng": 137.050697,
+        "qr_token": "shuin-nishio-2",
+        "cover_image_url": "/images/nishio/spot2.png",
+        "f7_fragment": "西尾城東の丸の土塁や井戸を活かし、昭和初期に造営された優美な京風庭園。",
+        "f7_full": "「尚古荘」の苔むした庭石と木々を渡る穏やかな風が、これから巡る西尾城跡の散策へ向けた風雅なひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "977548d2-1fdd-45ef-8928-66f8bed80db1",
+        "next_spot_name": "西尾市歴史公園"
+      },
+      {
+        "id": "977548d2-1fdd-45ef-8928-66f8bed80db1",
+        "name": "西尾市歴史公園",
+        "description": "西尾藩六万石の居城であった西尾城の本丸・二の丸跡を整備した歴史公園（終日入園自由、施設は9:00〜17:00・月曜休）。再建された三層の「本丸丑寅櫓」や「鍮石門」、抹茶を一服できる「旧近衛邸」が立ち並ぶ。",
+        "address": "愛知県西尾市錦城町231-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.866627,
+        "lng": 137.048035,
+        "qr_token": "shuin-nishio-3",
+        "cover_image_url": "/images/nishio/spot3.png",
+        "f7_fragment": "白壁の「本丸丑寅櫓」と「鍮石門」が聳え、旧近衛邸で抹茶を味わえる城趾公園。",
+        "f7_full": "「西尾市歴史公園」の水堀に映る白壁の本丸丑寅櫓と旧近衛邸の茶席が、三河の小京都・西尾ならではの雅やかな城下町情緒を体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "d21a0f62-e929-4800-8d6f-2736f4b58d6f",
+        "next_spot_name": "御菓子司 穂積堂"
+      },
+      {
+        "id": "d21a0f62-e929-4800-8d6f-2736f4b58d6f",
+        "name": "御菓子司 穂積堂",
+        "description": "明治四十五年創業の老舗和菓子処（9:00〜18:00営業、火曜休）。特産の「西尾の抹茶」をふんだんに使用した抹茶ぷりん「茶々っと」や琥珀糖「抹濃（まっこい）」、四季の上生菓子など茶処ならではの銘菓が揃う。",
+        "address": "愛知県西尾市鶴舞町54-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.868965,
+        "lng": 137.046815,
+        "qr_token": "shuin-nishio-4",
+        "cover_image_url": "/images/nishio/spot4.png",
+        "f7_fragment": "明治四十五年の創業以来、香り高い「西尾の抹茶」を活かした銘菓を作る老舗。",
+        "f7_full": "「御菓子司 穂積堂」に並ぶ鮮やかな翠色の抹茶菓子と豊かな香りが、茶処・西尾が育んできた百十年の職人の技と誇りを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "cd86ab72-b0c2-43da-89a4-3e2f22dab0d1",
+        "next_spot_name": "西尾市岩瀬文庫"
+      },
+      {
+        "id": "cd86ab72-b0c2-43da-89a4-3e2f22dab0d1",
+        "name": "西尾市岩瀬文庫",
+        "description": "明治四十一年創設の私立図書館を前身とする日本初の「古書の博物館」（9:00〜17:00開館、月曜・年末年始休、入館無料）。重要文化財を含む約8万冊の蔵書を誇り、大正期の赤煉瓦造「旧書庫（国登録有形文化財）」が残る。",
+        "address": "愛知県西尾市亀沢町480",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.874271,
+        "lng": 137.053985,
+        "qr_token": "shuin-nishio-5",
+        "cover_image_url": "/images/nishio/spot5.png",
+        "f7_fragment": "約八万冊の古典籍と大正期の赤煉瓦旧書庫を伝える、日本初の古書の博物館。",
+        "f7_full": "「西尾市岩瀬文庫」の重厚な赤煉瓦の旧書庫と千年の知恵を宿す古典籍が、抹茶と歴史の街・西尾を辿った旅を知的な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
