@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "description": "SHUIN ジャンル別ビジュアル生成＆自己改善レジストリ。各ジャンルは独立した画材・色彩・構図ルールとマルチモーダル採点基準（rubric）、および学習済みブースター（self_improvement）を持ち、他ジャンルと干渉せずに進化する。",
+  "permutation_by_order_mod_10": [
+    "ghibli_impasto_gouache",
+    "pictorial_isometric_map",
+    "cinematic_golden_hour",
+    "risograph_vintage_poster",
+    "fountain_pen_sketchbook",
+    "shin_hanga_twilight",
+    "katazome_chigirie_folk",
+    "nihonga_mineral_gold",
+    "pastel_chalk_morning",
+    "oil_palette_impasto"
+  ],
+  "genres": {
+    "shin_hanga_twilight": {
+      "id": "shin_hanga_twilight",
+      "label_ja": "新版画（川瀬巴水・吉田博風の宵景木版画）",
+      "framing_mode": "full_bleed",
+      "style_directive": "Authentic early-20th-century Japanese Shin-Hanga woodblock print in the master tradition of Kawase Hasui and Hiroshi Yoshida. Deep saturated Prussian-blue and indigo twilight sky with hand-rubbed bokashi ink gradation, glowing warm amber paper lanterns and shoji window light, crisp carved sumi-black keyblock outlines, subtle visible cherry-wood grain texture in the flat pigment layers, poetic reflections on stone or water.",
+      "eyecatch_composition": "Atmospheric early-evening dusk perspective with rich foreground-to-midground depth, glowing warm interior/lantern lights contrasting against a deep indigo twilight sky filling the entire horizontal frame edge-to-edge.",
+      "rubric": {
+        "must_have": "Authentic woodblock print aesthetic (carved keyblock lines, bokashi sky/water color gradation, deep indigo/Prussian blue twilight contrasted with warm amber glow, full edge-to-edge bleed).",
+        "anti_patterns": "Pale daytime brown-pen watercolor sketch, blank white margins around edges, photographic realism, fake kanji/text on lanterns or signs."
+      },
+      "self_improvement": {
+        "version": 2,
+        "runs": 6,
+        "avg_score": 9.42,
+        "learned_boosters": [
+          "Emphasize rich multi-block woodcut ink saturation and luminous amber lantern light against deep indigo dusk",
+          "Zoom tightly inside the woodblock image area itself edge-to-edge without any uncut collector washi margin or corner artist seal"
+        ],
+        "learned_avoid": [
+          "pale washed-out beige background",
+          "any pseudo-kanji strokes on lanterns or noren curtains",
+          "outer uncut ukiyo-e washi paper border or black rectangular keyblock frame",
+          "woodblock artist signature or hanko seal in bottom corners"
+        ],
+        "history": [
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "route-eyecatch.png",
+            "score": 9.7,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "川瀬巴水調の深い藍の夜空ぼかし、濡れた石畳の琥珀灯反射と朱漆器の覗き見が白眉"
+          },
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "spot1.png",
+            "score": 9.4,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "無文字の暖簾と連子格子から漏れる灯りを広角アプローチ構図で表現"
+          },
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "spot2.png",
+            "score": 9.5,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "磨き込まれた縁側床への坪庭灯籠の映り込みと奥座敷の朱塗膳の空間演出"
+          },
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "spot3.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "畳上の根来塗・黒江塗の朱と黒を真上90度フラットレイで木版調に構成"
+          },
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "spot4.png",
+            "score": 9.4,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "竹樋から湧く黒牛の名水と吊り灯籠のローアングル構図。版画外周余白の自動トリム則を追加"
+          },
+          {
+            "at": "2026-11-11T10:07:53",
+            "slug": "kuroe",
+            "target": "spot5.png",
+            "score": 9.1,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 9,
+            "retake_improved": false,
+            "note": "浄国寺石段から黒江の瓦屋根と湾を望む黄昏ぼかし。隅の落款防止ガードをv2に追加"
+          }
+        ]
+      }
+    },
+    "risograph_vintage_poster": {
+      "id": "risograph_vintage_poster",
+      "label_ja": "ミッドセンチュリー・リソグラフ＆ヴィンテージ鉄道ポスター",
+      "framing_mode": "full_bleed",
+      "style_directive": "Bold mid-century modern silkscreen and Risograph travel poster illustration inspired by 1950s Japanese National Railways posters and Swiss graphic art. Flat, high-impact screenprinted color planes using a curated palette of deep teal, burnt terracotta vermilion, mustard gold, midnight navy, and warm cream, with tactile soy-ink halftone grain texture and crisp graphic silhouettes, strictly artwork-only with zero typography.",
+      "eyecatch_composition": "Striking graphic poster composition with bold foreground silhouette shapes leading toward iconic architecture or landscape planes, full edge-to-edge color bleed with strong geometric contrast.",
+      "rubric": {
+        "must_have": "Flat graphic screenprint/risograph color planes, bold retro palette (teal, terracotta, mustard, navy), tactile halftone print grain, strong poster-like shape hierarchy.",
+        "anti_patterns": "Fussy thin pen cross-hatching, pale watercolor washes, blank white vignette borders, ANY poster title text or typography."
+      },
+      "self_improvement": {
+        "version": 2,
+        "runs": 6,
+        "avg_score": 9.37,
+        "learned_boosters": [
+          "Use bold unoutlined flat screenprint color shapes with subtle risograph grain texture rather than fine ink linework",
+          "Bleed ink colors completely off all four canvas edges with zero outer poster trim, and simplify complex timber ceilings into flat screenprint shadow blocks"
+        ],
+        "learned_avoid": [
+          "poster headline text or typography banners",
+          "thin brown pen-and-watercolor outlines",
+          "thin outer cream poster sheet border",
+          "dense comic-style woodgrain ink hatching on beams"
+        ],
+        "history": [
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "route-eyecatch.png",
+            "score": 9.4,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "ティール×テラコッタ×マスタードのシルクスクリーン色面と網点粒子が完璧"
+          },
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "spot1.png",
+            "score": 9.2,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "線路沿いの登り窯モチーフ建築を広角導入構図で表現、外周1.5%フチを自動除去"
+          },
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "spot2.png",
+            "score": 9.6,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "吹き抜け梁と斜光の幾何学コントラスト、遠景台座の備前水指の距離感が秀逸"
+          },
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "spot3.png",
+            "score": 9.5,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "厳密な真上90度フラットレイで従来45度器アップとの差別化に成功"
+          },
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "spot4.png",
+            "score": 9,
+            "genre_fidelity": 8,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "古民家の大梁を見上げるダイナミック仰角。梁の線密度を抑える学習則をv2に追加"
+          },
+          {
+            "at": "2026-11-11T10:06:22",
+            "slug": "inbe",
+            "target": "spot5.png",
+            "score": 9.5,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "備前焼瓦の神門と狛犬を黄金色の夕景逆光で捉えたフィナーレ構図"
+          }
+        ]
+      }
+    },
+    "ghibli_impasto_gouache": {
+      "id": "ghibli_impasto_gouache",
+      "label_ja": "厚塗りポスターカラー＆ガッシュ風景美術（男鹿和雄風）",
+      "framing_mode": "full_bleed",
+      "style_directive": "Lush, opaque Japanese animation background painting in Nicker poster color and thick gouache, inspired by Kazuo Oga. Expressive visible brushwork without ink outlines, luminous towering white cumulus clouds against a vibrant cerulean sky, rich layered foliage in emerald, viridian, and sunlit chartreuse, warm dappled sunlight and cool cobalt shadows.",
+      "eyecatch_composition": "Expansive cinematic landscape framing where lush nature, sky, clouds, and traditional architecture breathe together edge-to-edge across the entire canvas.",
+      "rubric": {
+        "must_have": "Opaque thick gouache/poster-color brushstrokes, zero ink outlines, rich saturated greens/blues and sunlit warmth, full edge-to-edge painted background.",
+        "anti_patterns": "Thin pen-and-ink outlines, transparent pale washes leaving white paper margins, flat dull lighting."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Paint entirely with opaque gouache brushstrokes and rich sunlit-to-shadow color temperature shifts, zero pen outlines"
+        ],
+        "learned_avoid": [
+          "black or brown ink contour lines",
+          "unpainted white border fade"
+        ],
+        "history": []
+      }
+    },
+    "katazome_chigirie_folk": {
+      "id": "katazome_chigirie_folk",
+      "label_ja": "型染・和紙ちぎり絵フォークアート（民藝・芹沢銈介風）",
+      "framing_mode": "full_bleed",
+      "style_directive": "Traditional Japanese Mingei folk-art combining Katazome stencil dyeing and layered Chigiri-e hand-torn mulberry paper collage, inspired by Keisuke Serizawa. Tactile deckle-edged dyed paper fibers layered across the entire frame in rich mineral indigo, madder crimson, persimmon ochre, moss green, and warm dyed kozo paper tones, charmingly stylized decorative forms.",
+      "eyecatch_composition": "Decorative, rhythmic folk-art composition with bold stylized motifs and layered dyed-paper textures extending completely to all four edges.",
+      "rubric": {
+        "must_have": "Tactile torn-paper collage edges and bold Katazome stencil folk-art stylization in rich Mingei mineral colors filling the frame.",
+        "anti_patterns": "Photorealistic perspective rendering, generic watercolor sketch, white empty border margins, text characters."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Highlight visible fibrous torn mulberry paper edges and bold stencil-cut folk patterns across colored dyed paper backgrounds"
+        ],
+        "learned_avoid": [
+          "standard architectural perspective pen drawing",
+          "kanji characters inside crests or banners"
+        ],
+        "history": []
+      }
+    },
+    "cinematic_golden_hour": {
+      "id": "cinematic_golden_hour",
+      "label_ja": "シネマティック逆光・マジックアワー背景美術",
+      "framing_mode": "full_bleed",
+      "style_directive": "Breathtaking modern Japanese theatrical animation background art with dramatic golden-hour sunset backlighting. Radiant amber-gold and rose-violet sky gradients, long atmospheric violet-blue shadows, warm rim-lighting catching roof tiles, foliage, steam, or water ripples, crisp specular reflections and emotional sense of place.",
+      "eyecatch_composition": "Dramatic low-sun backlit composition with glowing horizon sky, silhouetted architectural contours, and luminous reflections filling 100% of the wide canvas.",
+      "rubric": {
+        "must_have": "Strong golden-hour/sunset backlighting, glowing amber-violet color harmony, long dramatic shadows and rim light, full edge-to-edge bleed.",
+        "anti_patterns": "Flat midday lighting, pale washed-out colors, sepia ink outlines, white margins."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Maximize dramatic sunset rim-lighting and glowing violet-to-amber sky reflections across the full frame"
+        ],
+        "learned_avoid": [
+          "flat overhead noon lighting",
+          "white oval vignette fade"
+        ],
+        "history": []
+      }
+    },
+    "pictorial_isometric_map": {
+      "id": "pictorial_isometric_map",
+      "label_ja": "鳥瞰アイソメトリック絵地図・箱庭イラスト",
+      "framing_mode": "natural_paper",
+      "style_directive": "Charming 45-degree elevated bird's-eye isometric pictorial map and diorama illustration on warm antique buff-tinted cotton paper. Playful, finely detailed miniature overview of winding streets, rivers, bridges, trees, and signature buildings in warm sepia dip-pen lines with vibrant aquamarine, coral-vermilion, olive, and ochre washes extending organically across the textured paper sheet.",
+      "eyecatch_composition": "True elevated 45-degree bird's-eye miniature panorama looking down from above onto the interconnected townscape, waterways, and landmarks spanning widely across warm antique paper (NO cramped small central oval, NO street-level view, ZERO map labels or text).",
+      "rubric": {
+        "must_have": "Genuine 45-degree elevated bird's-eye / isometric miniature panorama on warm buff paper spanning broadly across the canvas, zero text labels.",
+        "anti_patterns": "Eye-level street perspective, cramped tiny central vignette with huge empty white sides, map text/kanji labels or compass lettering."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Keep camera high at a 45-degree bird's-eye miniature diorama angle spanning broadly across warm antique buff paper with zero text labels"
+        ],
+        "learned_avoid": [
+          "map legend boxes, compass letters, or place-name text",
+          "eye-level street perspective"
+        ],
+        "history": []
+      }
+    },
+    "nihonga_mineral_gold": {
+      "id": "nihonga_mineral_gold",
+      "label_ja": "近代日本画（東山魁夷風・岩絵具と金泥の静謐）",
+      "framing_mode": "full_bleed",
+      "style_directive": "Serene modern Nihonga mineral-pigment painting inspired by Kaii Higashiyama. Richly ground natural mineral pigments (deep azurite gunjo blue, malachite rokusho green, turquoise, cinnabar, and oyster-shell gofun white) with bands of drifting morning mist accented by subtle gold-dust (kinpun) shimmer, tranquil poetic stillness without pen outlines.",
+      "eyecatch_composition": "Poetic, balanced horizontal composition with layered mist, tranquil reflections, or quiet architectural silhouettes immersed in deep mineral blues and greens edge-to-edge.",
+      "rubric": {
+        "must_have": "Matte mineral pigment texture (azurite blue, malachite green, subtle gold mist), serene Nihonga composition without ink outlines, full edge-to-edge bleed.",
+        "anti_patterns": "Sketchy brown pen lines, busy cluttered cartoon details, stark white vignette borders."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Use rich matte mineral azurite-blue and malachite-green planes with drifting golden mist and zero ink outlines"
+        ],
+        "learned_avoid": [
+          "sketchbook pen outlines",
+          "red artist hanko seal stamps or calligraphy"
+        ],
+        "history": []
+      }
+    },
+    "fountain_pen_sketchbook": {
+      "id": "fountain_pen_sketchbook",
+      "label_ja": "建築家の万年筆＆透明水彩フィールドスケッチ",
+      "framing_mode": "natural_paper",
+      "style_directive": "Energetic architect's travel sketchbook illustration in Prussian-blue fountain-pen ink and expressive, spontaneous transparent watercolor splashes on tactile cold-press cotton paper (#F6F1E7). Lively gestural linework, dynamic cobalt-blue shadows and cadmium-orange/emerald color accents sweeping across the sketchbook sheet with authentic artist spontaneity.",
+      "eyecatch_composition": "Dynamic off-center diagonal or upward architectural perspective sweeping generously across 85%+ of the warm textured cotton paper with organic watercolor wash splashes (NOT a stiff symmetrical central oval).",
+      "rubric": {
+        "must_have": "Expressive Prussian-blue fountain-pen strokes and lively transparent watercolor splashes across warm cotton paper texture with dynamic composition.",
+        "anti_patterns": "Stiff tiny centered oval vignette with blank 25% margins, dull brown-grey monochrome, handwritten notes or captions."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Use Prussian-blue fountain-pen ink with bold cobalt shadows and vibrant watercolor splashes reaching generously across the cotton paper"
+        ],
+        "learned_avoid": [
+          "handwritten cursive notes or date signatures",
+          "tight oval vignette centered in empty white space"
+        ],
+        "history": []
+      }
+    },
+    "oil_palette_impasto": {
+      "id": "oil_palette_impasto",
+      "label_ja": "油彩インパスト・パレットナイフ風景画",
+      "framing_mode": "full_bleed",
+      "style_directive": "Expressive contemporary plein-air oil painting on canvas executed with bold palette-knife and bristle-brush impasto strokes. Rich tactile paint ridges, vibrant coloristic interplay of ultramarine, burnt sienna, cadmium yellow-ochre, crimson, and turquoise, dramatic light sculpting stone walls, tiled roofs, water, and sky.",
+      "eyecatch_composition": "Bold painterly plein-air composition with sculpted impasto texture and strong light-and-shadow masses extending edge-to-edge across the entire canvas.",
+      "rubric": {
+        "must_have": "Visible thick impasto oil paint ridges and palette-knife brushwork covering 100% of the canvas with rich coloristic contrast.",
+        "anti_patterns": "Thin watercolor washes, pen outlines, flat vector smoothness, white paper borders."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Emphasize tactile palette-knife oil paint ridges and bold warm-versus-cool color impasto from edge to edge"
+        ],
+        "learned_avoid": [
+          "pen linework or watery washes",
+          "picture frame mouldings around canvas"
+        ],
+        "history": []
+      }
+    },
+    "pastel_chalk_morning": {
+      "id": "pastel_chalk_morning",
+      "label_ja": "朝霧のソフトパステル＆色鉛筆ポエティック画",
+      "framing_mode": "natural_paper",
+      "style_directive": "Luminous soft chalk-pastel and colored-pencil poetic illustration on warm oatmeal-tinted Ingres paper, inspired by fine European picture books. Velvety powdery gradients, gentle misty morning sunlight, harmonious palette of sage green, dusty coral-rose, lavender-blue, buttercream, and warm umber with tactile pastel grain.",
+      "eyecatch_composition": "Soft-focus atmospheric morning composition extending broadly across the warm tinted paper texture with gentle light diffusion and rich layered pastel strokes.",
+      "rubric": {
+        "must_have": "Velvety chalk-pastel and colored-pencil tooth texture on warm tinted paper, soft morning light harmony, zero hard ink outlines.",
+        "anti_patterns": "Hard black/brown ink outlines, stark white background cutout, glossy digital airbrush look."
+      },
+      "self_improvement": {
+        "version": 1,
+        "runs": 0,
+        "avg_score": null,
+        "learned_boosters": [
+          "Render with velvety chalk-pastel grain and soft colored-pencil layering on warm tinted paper without hard ink outlines"
+        ],
+        "learned_avoid": [
+          "hard pen-and-ink outlines",
+          "stark white oval border"
+        ],
+        "history": []
+      }
+    }
+  }
+}
