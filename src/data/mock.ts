@@ -61230,5 +61230,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "9ebeade3-912a-4c7a-8290-12cc2573e828",
+    "title": "島津義弘公の屋形跡と湯気立つ饅頭・加治木を辿る",
+    "name": "島津義弘公の屋形跡と湯気立つ饅頭・加治木を辿る",
+    "description": "名将・島津義弘公が晩年を過ごした居館の町であり、蒸したての加治木まんじゅうと千年古社が息づく鹿児島県姶良市加治木町。加治木駅から老舗の新道屋、石垣が残る加治木島津家屋形跡、大隅五社の春日神社、義弘公夫人ゆかりの隈媛神社までを歩く。",
+    "region": "加治木（姶良市）",
+    "area_name": "加治木（姶良市）",
+    "cover_image_url": "/images/kajiki/route-eyecatch.png",
+    "imageUrl": "/images/kajiki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "島津義弘公夫妻のゆかりの地と蒸したて饅頭、千年の古社が息づく加治木で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "義弘公が晩年の十二年間を過ごした居館の記憶を伝える「加治木島津家屋形跡」の石垣",
+          "description": "城山の麓に残る切石積みの石垣と水路に、戦国の世を生き抜いた名将の穏やかな晩年を偲んだ。",
+          "badge_code": "kajiki_shimazu_residence_ruins"
+        },
+        {
+          "key": "B",
+          "text": "平安時代の寛弘三年に創建され、鳥居脇に石造仁王像が立つ大隅五社「春日神社」",
+          "description": "島津義久公や加治木島津家が再興した古社の杜と、神仏習合を伝える仁王像に千年の歴史を感じた。",
+          "badge_code": "kajiki_kasuga_shrine_nio"
+        },
+        {
+          "key": "C",
+          "text": "島津義弘公の継室・実窓夫人を祀り、参道で「木田の田の神」が微笑む「隈媛神社」",
+          "description": "戦国の世に深い絆で結ばれた義弘公夫妻の物語と、薩摩ならではの田の神さあの表情に心和んだ。",
+          "badge_code": "kajiki_kumahime_shrine_tanokami"
+        },
+        {
+          "key": "D",
+          "text": "加治木駅から歩いて味わう、せいろの湯気と甘酒が香る「新道屋」の加治木まんじゅう",
+          "description": "義弘公の時代から受け継がれる、蒸したて熱々のまんじゅうの優しい甘さに癒やされた。",
+          "badge_code": "kajiki_manju_steamed_bun"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "44d08a05-8e5f-46c1-84b6-18cf0d9ccfac",
+        "name": "加治木駅",
+        "description": "島津義弘公ゆかりの史跡と加治木まんじゅうの町への玄関口となるJR日豊本線の駅（待合室は始発〜終電）。明治34年の開業以来、加治木の町と旅人をつなぐ拠点として親しまれている。",
+        "address": "鹿児島県姶良市加治木町反土903",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.739255,
+        "lng": 130.670516,
+        "qr_token": "shuin-kajiki-1",
+        "cover_image_url": "/images/kajiki/spot1.png",
+        "f7_fragment": "明治三十四年の開業以来、島津義弘公ゆかりの加治木の町を見守る玄関口の駅。",
+        "f7_full": "「加治木駅」の穏やかなホームと南国の空気が、戦国の名将の足跡と名物饅頭を訪ねる加治木の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "af59a829-5b1f-46a6-804f-fe8c1adf7bf0",
+        "next_spot_name": "新道屋"
+      },
+      {
+        "id": "af59a829-5b1f-46a6-804f-fe8c1adf7bf0",
+        "name": "新道屋",
+        "description": "加治木駅近くにある「加治木まんじゅう」の老舗専門店（8:30頃〜売切次第終了、日曜休）。甘酒を使ったふかふかの皮と上品なこし餡の蒸したて饅頭を味わえる。",
+        "address": "鹿児島県姶良市加治木町新富町24",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.739827,
+        "lng": 130.667583,
+        "qr_token": "shuin-kajiki-2",
+        "cover_image_url": "/images/kajiki/spot2.png",
+        "f7_fragment": "せいろから湯気が立ち上る、ふかふかの皮とこし餡が自慢の加治木まんじゅう店。",
+        "f7_full": "「新道屋」の蒸したて熱々の加治木まんじゅうとほのかな甘酒の香りが、四百年続く加治木の銘菓の温もりを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a3ff2664-4f0e-4778-83d8-890e3e7f5c59",
+        "next_spot_name": "加治木島津家屋形跡"
+      },
+      {
+        "id": "a3ff2664-4f0e-4778-83d8-890e3e7f5c59",
+        "name": "加治木島津家屋形跡",
+        "description": "戦国の名将・島津義弘公が慶長12年から晩年の12年間を過ごし、後に加治木島津家の居館となった屋形跡（外周石垣は終日見学自由）。柁城小学校や加治木高校の周囲に往時の切石積みの石垣が残る。",
+        "address": "鹿児島県姶良市加治木町仮屋町248",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.74097,
+        "lng": 130.664893,
+        "qr_token": "shuin-kajiki-3",
+        "cover_image_url": "/images/kajiki/spot3.png",
+        "f7_fragment": "島津義弘公が晩年を過ごし、加治木島津家の居館となった屋形跡の美しい石垣。",
+        "f7_full": "「加治木島津家屋形跡」に残る重厚な切石積みの石垣と水路が、戦国の世を駆け抜けた島津義弘公の穏やかな晩年の記憶を物語る。",
+        "is_final": false,
+        "next_spot_id": "6f9445af-b847-4064-89e7-e903c3c8c837",
+        "next_spot_name": "春日神社"
+      },
+      {
+        "id": "6f9445af-b847-4064-89e7-e903c3c8c837",
+        "name": "春日神社",
+        "description": "平安時代の寛弘3年に藤原経平卿が創建したと伝わる旧大隅国五社の一つ（境内参拝自由）。島津義久公や加治木島津家により再興され、鳥居脇には神仏習合の名残を伝える珍しい石造仁王像が立つ。",
+        "address": "鹿児島県姶良市加治木町木田4675",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.748409,
+        "lng": 130.661963,
+        "qr_token": "shuin-kajiki-4",
+        "cover_image_url": "/images/kajiki/spot4.png",
+        "f7_fragment": "平安時代の創建と伝わり、鳥居の脇に珍しい石造仁王像が立つ加治木の総社。",
+        "f7_full": "「春日神社」の鳥居を守る石造仁王像と静かな鎮守の森が、平安の昔から島津家の時代まで受け継がれた加治木の歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "206d6b44-4364-4cad-8813-e65934d6da66",
+        "next_spot_name": "隈媛神社"
+      },
+      {
+        "id": "206d6b44-4364-4cad-8813-e65934d6da66",
+        "name": "隈媛神社",
+        "description": "島津義弘公の継室・実窓夫人（隈媛）を祀る神社（境内参拝自由）。明治2年に夫人の菩提寺・宝現寺跡に創建され、参道入口には鹿児島県指定有形民俗文化財「木田の田の神」が鎮座する。",
+        "address": "鹿児島県姶良市加治木町木田5088-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.753413,
+        "lng": 130.654471,
+        "qr_token": "shuin-kajiki-5",
+        "cover_image_url": "/images/kajiki/spot5.png",
+        "f7_fragment": "島津義弘公の継室・隈媛を祀り、県指定文化財「木田の田の神」が佇む古社。",
+        "f7_full": "「隈媛神社」の静かな社殿と微笑む田の神さあの石像が、義弘公夫妻の絆と城下町の歴史を辿った加治木の旅を温かく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f5f04af0-4bb1-40d0-8dd2-11a923ce334a",
+    "title": "丹後ちりめんの記憶と狛猫が守る社・峰山を巡る",
+    "name": "丹後ちりめんの記憶と狛猫が守る社・峰山を巡る",
+    "description": "日本の絹織物を代表する「丹後ちりめん」発祥の地であり、機屋を守る石造の「狛猫」が鎮座する京都府京丹後市峰山町。峰山駅から米粉パンのブーランジェリータカタ、昭和レトロな御旅市場、明治創業の御菓子司 大道、金刀比羅神社までを歩く。",
+    "region": "峰山（京丹後市）",
+    "area_name": "峰山（京丹後市）",
+    "cover_image_url": "/images/mineyama/route-eyecatch.png",
+    "imageUrl": "/images/mineyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "丹後ちりめんの歴史と機屋を守る「狛猫」が息づく峰山で、あなたの心に刻むしるしをどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "養蚕とちりめん機屋をネズミから守る、日本で唯一の石造狛猫が待つ「金刀比羅神社」",
+          "description": "子猫を抱く母猫と玉を押さえる父猫の優しい表情に、絹の町ならではの温かな信仰を感じた。",
+          "badge_code": "mineyama_konpira_komaneko_shrine"
+        },
+        {
+          "key": "B",
+          "text": "昭和三十年代の木造アーケードと高窓から光が差す、ノスタルジックな「御旅市場」",
+          "description": "ちりめん景気に沸いた時代の息遣いが残る木組みの市場通りに、深い郷愁を覚えた。",
+          "badge_code": "mineyama_otabi_retro_market"
+        },
+        {
+          "key": "C",
+          "text": "明治三十三年創業の老舗「御菓子司 大道」で出会う、愛らしい銘菓「狛猫もなか」",
+          "description": "百二十年続く城下町の菓子司が焼き上げる、親子の狛猫を象った最中の優しい甘さに心が和んだ。",
+          "badge_code": "mineyama_omichi_komaneko_monaka"
+        },
+        {
+          "key": "D",
+          "text": "丹後半島の中心「峰山駅」と、京丹後産コシヒカリの米粉パンが香る「ブーランジェリータカタ」",
+          "description": "天女伝説とちりめんの里の玄関口から歩き出し、地元米のもっちりとした焼きたてパンを楽しめた。",
+          "badge_code": "mineyama_rice_bread_and_station"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "53f59847-a765-4d34-89b1-9a9d0a451d14",
+        "name": "峰山駅",
+        "description": "丹後ちりめん発祥の地・京丹後市峰山町の玄関口となる京都丹後鉄道宮豊線の駅（待合室は始発〜終電）。観光案内所を併設し、城下町や狛猫巡りの出発点として親しまれている。",
+        "address": "京都府京丹後市峰山町杉谷992-2",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.625843,
+        "lng": 135.072158,
+        "qr_token": "shuin-mineyama-1",
+        "cover_image_url": "/images/mineyama/spot1.png",
+        "f7_fragment": "丹後ちりめん発祥の地であり、狛猫が守る城下町・峰山への玄関口となる駅。",
+        "f7_full": "「峰山駅」の落ち着いた駅舎と丹後の穏やかな空気が、絹織物の歴史と狛猫を訪ねる町歩きの始まりを優しく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "35da7e8a-072a-47e1-855c-73f47bd18042",
+        "next_spot_name": "ブーランジェリータカタ"
+      },
+      {
+        "id": "35da7e8a-072a-47e1-855c-73f47bd18042",
+        "name": "ブーランジェリータカタ",
+        "description": "峰山町杉谷にある人気のベーカリー（7:30〜19:30営業、日曜・祝日休）。地元・京丹後産コシヒカリを使用したもっちり食感の米粉パンや多彩な焼きたてパンが揃う。",
+        "address": "京都府京丹後市峰山町杉谷924",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.623619,
+        "lng": 135.060613,
+        "qr_token": "shuin-mineyama-2",
+        "cover_image_url": "/images/mineyama/spot2.png",
+        "f7_fragment": "京丹後産コシヒカリの米粉を使った、もっちり食感の焼きたてパンが並ぶパン屋。",
+        "f7_full": "「ブーランジェリータカタ」に並ぶ香ばしい米粉パンの香りと温もりが、丹後の豊かな実りを感じる散策のひとときを彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "b48ed278-522d-4c96-82f7-eec2d72249be",
+        "next_spot_name": "御旅市場"
+      },
+      {
+        "id": "b48ed278-522d-4c96-82f7-eec2d72249be",
+        "name": "御旅市場",
+        "description": "峰山町の中心部に残る昭和レトロな木造アーケード市場（通りは終日見学自由）。高い木組みの天井と採光窓が当時の面影を伝え、週末のマルシェや地域イベントの舞台にもなっている。",
+        "address": "京都府京丹後市峰山町御旅51",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.623162,
+        "lng": 135.057969,
+        "qr_token": "shuin-mineyama-3",
+        "cover_image_url": "/images/mineyama/spot3.png",
+        "f7_fragment": "高い木組みの天井と採光窓から柔らかな光が差す、昭和レトロな木造アーケード街。",
+        "f7_full": "「御旅市場」の木造アーケードに差し込む光とノスタルジックな佇まいが、丹後ちりめんで栄えた昭和の町の記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "2b772993-546a-4da8-8b6f-db0a7586c6aa",
+        "next_spot_name": "御菓子司 大道"
+      },
+      {
+        "id": "2b772993-546a-4da8-8b6f-db0a7586c6aa",
+        "name": "御菓子司 大道",
+        "description": "明治33年創業の老舗和洋菓子店（10:00〜19:00営業、水曜休）。金刀比羅神社の狛猫を象った名物「狛猫もなか」をはじめ、伝統の和菓子や手作りケーキを販売している。",
+        "address": "京都府京丹後市峰山町泉65",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.620848,
+        "lng": 135.059858,
+        "qr_token": "shuin-mineyama-4",
+        "cover_image_url": "/images/mineyama/spot4.png",
+        "f7_fragment": "明治三十三年の創業以来、峰山名物の「狛猫もなか」や季節の和菓子を作る老舗。",
+        "f7_full": "「御菓子司 大道」の愛らしい狛猫もなかと職人の丁寧な手仕事が、百二十年続く城下町の甘い伝統を優しく届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "39ca66ae-a06a-4de4-8276-9bf90526ec7e",
+        "next_spot_name": "金刀比羅神社"
+      },
+      {
+        "id": "39ca66ae-a06a-4de4-8276-9bf90526ec7e",
+        "name": "金刀比羅神社",
+        "description": "文化8年に峰山藩主・京極高備公が創建した神社（境内参拝自由）。養蚕と丹後ちりめんの守り神として、境内社の木島神社前に全国でも珍しい江戸時代の石造「狛猫」が鎮座する。",
+        "address": "京都府京丹後市峰山町泉1165-2",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.6211,
+        "lng": 135.060084,
+        "qr_token": "shuin-mineyama-5",
+        "cover_image_url": "/images/mineyama/spot5.png",
+        "f7_fragment": "丹後ちりめんと養蚕の守り神として、日本で唯一の石造「狛猫」が鎮座する古社。",
+        "f7_full": "「金刀比羅神社」の石段の先に佇む親子の狛猫の優しい眼差しが、絹織物の町・峰山を巡り歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "85c08e99-e959-4c7e-85ea-baed3b546533",
+    "title": "星降る松の伝説と黄金の牛骨スープ・下松を歩く",
+    "name": "星降る松の伝説と黄金の牛骨スープ・下松を歩く",
+    "description": "松の巨木に大星が降りてきた「降松伝説」と、独自の「牛骨ラーメン」文化が息づく山口県下松市。下松駅から鼎の松がそびえる金輪神社、昭和二十七年創業の中華そば 紅蘭、大内氏ゆかりの妙見宮鷲頭寺、下松藩毛利家菩提寺の周慶寺までを歩く。",
+    "region": "下松（下松市）",
+    "area_name": "下松（下松市）",
+    "cover_image_url": "/images/kudamatsu/route-eyecatch.png",
+    "imageUrl": "/images/kudamatsu/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千四百年前の星降る伝説と独自の牛骨ラーメン文化が交差する下松で、あなたが深く心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「下松」の地名の起こりとなった星降る伝説と、六代目「鼎の松」が立つ「金輪神社」",
+          "description": "飛鳥時代に松の梢へ大星が舞い降りたというロマンあふれる開基伝説に心がときめいた。",
+          "badge_code": "kudamatsu_kanawa_star_pine"
+        },
+        {
+          "key": "B",
+          "text": "昭和二十七年創業の「中華そば 紅蘭」で味わう、甘みとコクの「下松牛骨ラーメン」",
+          "description": "牛骨ならではの芳醇な香りと香ばしい醤油スープの旨みに、下松のソウルフードの底力を知った。",
+          "badge_code": "kudamatsu_koran_gyukotsu_ramen"
+        },
+        {
+          "key": "C",
+          "text": "大内氏ゆかりの道場を前身とし、下松藩祖・毛利就隆公が生母を弔った古刹「周慶寺」",
+          "description": "毛利家の家紋が刻まれた山門と静かな境内に、中市エリアが歩んだ大内・毛利の歴史を感じた。",
+          "badge_code": "kudamatsu_shukeiji_mori_temple"
+        },
+        {
+          "key": "D",
+          "text": "百済の琳聖太子が創建したと伝わる、神仏習合の北辰妙見信仰の本宮「妙見宮鷲頭寺」",
+          "description": "大内氏や毛利氏が篤く敬った歴史ある社寺の佇まいに、千四百年続く星への祈りを感じた。",
+          "badge_code": "kudamatsu_myokengu_jutoji_temple"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f5f38e05-0665-4300-8763-2fa6bf7bcbd4",
+        "name": "下松駅",
+        "description": "「星降るまち」の伝説と鉄道車両製造で知られる下松市の玄関口となるJR山陽本線の駅（待合室は始発〜終電）。北口と南口を結ぶ自由通路を備え、市街地散策の起点となっている。",
+        "address": "山口県下松市西豊井800-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.008728,
+        "lng": 131.868056,
+        "qr_token": "shuin-kudamatsu-1",
+        "cover_image_url": "/images/kudamatsu/spot1.png",
+        "f7_fragment": "星降る「降松伝説」と鉄道車両ものづくりの街・下松への玄関口となるJR駅。",
+        "f7_full": "「下松駅」の北口広場に輝く星のモニュメントと瀬戸内の風が、千四百年前の伝説とご当地グルメを巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "868b6067-5b4f-46c7-87c4-04a8786721ed",
+        "next_spot_name": "金輪神社"
+      },
+      {
+        "id": "868b6067-5b4f-46c7-87c4-04a8786721ed",
+        "name": "金輪神社",
+        "description": "下松駅北口のすぐ近くに鎮座し、「下松（降松）」の地名の由来となった星降る伝説を伝える神社（境内参拝自由）。推古天皇の時代に大星が降りた故事を受け継ぐ六代目「鼎の松」が立つ。",
+        "address": "山口県下松市北斗町11",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.00931,
+        "lng": 131.869139,
+        "qr_token": "shuin-kudamatsu-2",
+        "cover_image_url": "/images/kudamatsu/spot2.png",
+        "f7_fragment": "松の木に大星が降りた「下松」の地名発祥の伝説と、六代目「鼎の松」が立つ社。",
+        "f7_full": "「金輪神社」の境内に枝を広げる鼎の松と小さな祠が、飛鳥時代に百済の琳聖太子を導いた星降る夜のロマンを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e1ff003c-d71d-49c8-896f-4b75af7e5ca9",
+        "next_spot_name": "中華そば 紅蘭"
+      },
+      {
+        "id": "e1ff003c-d71d-49c8-896f-4b75af7e5ca9",
+        "name": "中華そば 紅蘭",
+        "description": "昭和27年創業の「下松牛骨ラーメン」を代表する老舗専門店（10:30〜15:00営業、水曜・第3木曜休）。牛骨の旨みと甘みが溶け込んだ香ばしい醤油スープの中華そばやいなり寿司が名物。",
+        "address": "山口県下松市駅南1-5-10",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.009884,
+        "lng": 131.865529,
+        "qr_token": "shuin-kudamatsu-3",
+        "cover_image_url": "/images/kudamatsu/spot3.png",
+        "f7_fragment": "昭和二十七年の創業以来、甘みとコクの牛骨醤油スープを守り続けるラーメン店。",
+        "f7_full": "「中華そば 紅蘭」の熱々の牛骨スープと香ばしいチャーシューが、下松の人々が誇りとする唯一無二のご当地ラーメンの魅力を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f7d3b3bc-b532-429b-8e98-ba7ed1cad349",
+        "next_spot_name": "妙見宮鷲頭寺"
+      },
+      {
+        "id": "f7d3b3bc-b532-429b-8e98-ba7ed1cad349",
+        "name": "妙見宮鷲頭寺",
+        "description": "推古天皇3年に百済の琳聖太子が創建したと伝わる北辰妙見信仰の古刹（境内参拝自由）。大内氏の氏神として崇敬され、鳥居と寺院建築が共存する神仏習合の歴史を今に伝えている。",
+        "address": "山口県下松市中市1-10-15",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.011284,
+        "lng": 131.864634,
+        "qr_token": "shuin-kudamatsu-4",
+        "cover_image_url": "/images/kudamatsu/spot4.png",
+        "f7_fragment": "百済の琳聖太子ゆかりの降松伝説の本宮であり、神仏習合の歴史を残す名刹。",
+        "f7_full": "「妙見宮鷲頭寺」の重厚な木造社殿と鳥居が並ぶ境内が、大内氏が篤く敬った北辰妙見信仰の千四百年の歴史を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "44ef98ad-ba0e-4765-88c1-8990ca93727e",
+        "next_spot_name": "周慶寺"
+      },
+      {
+        "id": "44ef98ad-ba0e-4765-88c1-8990ca93727e",
+        "name": "周慶寺",
+        "description": "室町時代に大内氏の庇護で建立された西福寺を前身とし、下松藩初代藩主・毛利就隆公が生母「二の丸様（周慶大姉）」の菩提寺として整えた浄土宗の寺院（境内参拝自由）。閻魔堂などを備える。",
+        "address": "山口県下松市中市1-9-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.011811,
+        "lng": 131.863634,
+        "qr_token": "shuin-kudamatsu-5",
+        "cover_image_url": "/images/kudamatsu/spot5.png",
+        "f7_fragment": "大内氏ゆかりの道場を前身とし、下松藩祖・毛利就隆公が生母を弔った菩提寺。",
+        "f7_full": "「周慶寺」の毛利家の家紋が刻まれた山門と静かな境内が、星降る伝説と名物ラーメンを巡った下松の旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a53a2e71-eaec-475e-84d1-15e71c93a214",
+    "title": "なぜ行橋に辰野式の赤レンガ銀行と古社が残るのか",
+    "name": "なぜ行橋に辰野式の赤レンガ銀行と古社が残るのか",
+    "description": "古代から豊前国の要衝として栄え、大正期の近代建築が息づく福岡県行橋市。ゆくはしマルシェを備える行橋駅から、勝運の正八幡宮、いちじく銘菓の大村大月堂、辰野金吾監修の旧百三十銀行行橋支店（行橋赤レンガ館）、コスメイト行橋までを歩く。",
+    "region": "行橋（行橋市）",
+    "area_name": "行橋（行橋市）",
+    "cover_image_url": "/images/yukuhashi/route-eyecatch.png",
+    "imageUrl": "/images/yukuhashi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大正ロマンの赤レンガ銀行と勝運の古社、いちじく銘菓が息づく行橋で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "辰野金吾監修の赤レンガと白い花崗岩が優美な、大正三年築「旧百三十銀行行橋支店」",
+          "description": "福岡県最古の銀行建築が放つ辰野式フリークラシックの気品と、大正時代の繁栄に魅了された。",
+          "badge_code": "yukuhashi_former_130_bank_red_brick"
+        },
+        {
+          "key": "B",
+          "text": "古代の御所ヶ谷神籠石から近代の歩みまでを紐解く、「コスメイト行橋」の歴史資料館",
+          "description": "古墳と古代官道が交差する京都平野の豊かな古代史と、郷土の偉人たちの足跡に知的好奇心が満たされた。",
+          "badge_code": "yukuhashi_cosmate_history_museum"
+        },
+        {
+          "key": "C",
+          "text": "老舗「大村大月堂」で出会う、伝統の「行橋饅頭」と特産いちじくの銘菓「妃の菓」",
+          "description": "素朴な白あんの行橋饅頭と、ブランドいちじく「とよみつひめ」の芳醇な甘みに心が和んだ。",
+          "badge_code": "yukuhashi_otsukido_fig_sweets"
+        },
+        {
+          "key": "D",
+          "text": "ゆくはしマルシェが迎える「行橋駅」と、楠の杜に鎮座する勝運の古社「正八幡宮」",
+          "description": "賑やかな駅からすぐの場所で、静かな樟の緑と花手水に包まれたお宮の清々しさに癒やされた。",
+          "badge_code": "yukuhashi_shohachimangu_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3523e76c-524c-4e7b-8311-6cc0cad3004b",
+        "name": "行橋駅",
+        "description": "京築地域の交通の要衝であるJR日豊本線・平成筑豊鉄道の駅（待合室は始発〜終電）。構内1階の観光物産情報コーナー「ゆくはしマルシェ」（9:00〜18:00）で地元の銘菓や特産品を購入できる。",
+        "address": "福岡県行橋市西宮市2-1-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.728627,
+        "lng": 130.970152,
+        "qr_token": "shuin-yukuhashi-1",
+        "cover_image_url": "/images/yukuhashi/spot1.png",
+        "f7_fragment": "観光物産コーナー「ゆくはしマルシェ」を備える、京築エリアの玄関口となる駅。",
+        "f7_full": "「行橋駅」の開放的なコンコースと特産品が並ぶマルシェが、古代史と大正ロマンが交差する行橋の町歩きの始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a40ba7b6-c8e9-4d1d-8045-e6b82fc7d063",
+        "next_spot_name": "正八幡宮"
+      },
+      {
+        "id": "a40ba7b6-c8e9-4d1d-8045-e6b82fc7d063",
+        "name": "正八幡宮",
+        "description": "行橋駅東口近くに鎮座する歴史ある神社（境内参拝自由、祈願受付は10:00〜16:00）。勝運や厄除けの神として豊前一円から崇敬を集め、大きな楠が茂る静かな境内が広がる。",
+        "address": "福岡県行橋市神田町8-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.725178,
+        "lng": 130.972636,
+        "qr_token": "shuin-yukuhashi-2",
+        "cover_image_url": "/images/yukuhashi/spot2.png",
+        "f7_fragment": "大きな楠の杜に包まれ、勝運・開運の神として豊前一円から崇敬を集める古社。",
+        "f7_full": "「正八幡宮」の青々とした楠の木立と清らかな境内の空気が、駅前の賑わいを忘れさせる穏やかな祈りの時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6c9faa95-3321-4917-836b-c53e8d6a727c",
+        "next_spot_name": "大村大月堂"
+      },
+      {
+        "id": "6c9faa95-3321-4917-836b-c53e8d6a727c",
+        "name": "大村大月堂",
+        "description": "大橋地区にある老舗和菓子店（9:00〜18:00営業、日曜休）。伝統の白あん入り「行橋饅頭」や黒糖饅頭、行橋産のブランドいちじく「とよみつひめ」を使った「妃の菓」などが人気。",
+        "address": "福岡県行橋市大橋3-11-20",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.731278,
+        "lng": 130.975169,
+        "qr_token": "shuin-yukuhashi-3",
+        "cover_image_url": "/images/yukuhashi/spot3.png",
+        "f7_fragment": "白あんの「行橋饅頭」や特産いちじくの銘菓「妃の菓」を手掛ける老舗和菓子店。",
+        "f7_full": "「大村大月堂」の優しい甘さの行橋饅頭と芳醇ないちじく菓子が、行橋の豊かな実りと職人が受け継ぐ伝統の技を温かく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ef9975c3-a706-41f2-8265-d9c627cf8dc4",
+        "next_spot_name": "旧百三十銀行行橋支店"
+      },
+      {
+        "id": "ef9975c3-a706-41f2-8265-d9c627cf8dc4",
+        "name": "旧百三十銀行行橋支店",
+        "description": "大正3年に建設された福岡県内に現存する最古の銀行建築で、県指定有形文化財（10:00〜18:00開館、火曜休、入館無料）。辰野金吾が監修した赤レンガと白い花崗岩の美しい外観を見学できる。",
+        "address": "福岡県行橋市大橋3-7-14",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.731805,
+        "lng": 130.97391,
+        "qr_token": "shuin-yukuhashi-4",
+        "cover_image_url": "/images/yukuhashi/spot4.png",
+        "f7_fragment": "辰野金吾が監修し、大正三年に建てられた福岡県現存最古の赤レンガ銀行建築。",
+        "f7_full": "「旧百三十銀行行橋支店」の赤レンガに白い花崗岩が映える辰野式の外観が、大正時代の行橋の華やかな繁栄を今に物語る。",
+        "is_final": false,
+        "next_spot_id": "46473e91-e04c-420e-8928-5002c611b7c8",
+        "next_spot_name": "コスメイト行橋"
+      },
+      {
+        "id": "46473e91-e04c-420e-8928-5002c611b7c8",
+        "name": "コスメイト行橋",
+        "description": "今川のほとりに建つ複合文化施設（9:00〜19:00開館、火曜休、歴史資料館は入館無料）。館内の「行橋市歴史資料館」では、国指定史跡・御所ヶ谷神籠石や古墳群の出土品など郷土の歴史を学べる。",
+        "address": "福岡県行橋市中央1-9-3",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.727437,
+        "lng": 130.980941,
+        "qr_token": "shuin-yukuhashi-5",
+        "cover_image_url": "/images/yukuhashi/spot5.png",
+        "f7_fragment": "館内の行橋市歴史資料館で、古代の御所ヶ谷神籠石や古墳文化を学べる文化拠点。",
+        "f7_full": "「コスメイト行橋」のレンガ調の回廊と歴史資料館の展示が、古代から近代まで続く豊前・行橋の旅を知的な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cf26f520-9f93-4bdc-8f80-0c5121b1a598",
+    "title": "木の香る迎賓駅と旅する丸干しの港町・阿久根へ",
+    "name": "木の香る迎賓駅と旅する丸干しの港町・阿久根へ",
+    "description": "東シナ海の豊かな海の幸と黒瀬杜氏の芋焼酎、そして水戸岡鋭治氏デザインの木造駅舎が魅力の鹿児島県阿久根市。にぎわい交流館 阿久根駅から、さざえ最中の三春堂菓子舗、鹿児島酒造、丸干し革新のイワシビル、伝統神舞の諏訪神社までを歩く。",
+    "region": "阿久根（阿久根市）",
+    "area_name": "阿久根（阿久根市）",
+    "cover_image_url": "/images/akune/route-eyecatch.png",
+    "imageUrl": "/images/akune/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水戸岡デザインの木の駅舎と焼酎蔵、イワシビルが彩る阿久根で、あなたが強く心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "水戸岡鋭治氏のデザインで生まれ変わった、木の温もりあふれる「にぎわい交流館 阿久根駅」",
+          "description": "杉や桧の香りに包まれた図書空間やカフェが並ぶ駅舎に、まちの迎賓館としての誇りを感じた。",
+          "badge_code": "akune_station_wooden_lounge"
+        },
+        {
+          "key": "B",
+          "text": "伝統のウルメイワシ丸干しを「旅する丸干し」へと進化させた再生拠点「イワシビル」",
+          "description": "港町の伝統食材を新しいデザインとカフェ文化で発信する、若い感性と情熱に胸が躍った。",
+          "badge_code": "akune_iwashi_building_maruboshi"
+        },
+        {
+          "key": "C",
+          "text": "名工・黒瀬杜氏の技と「やきいも黒瀬」の芳醇な香りを伝える老舗蔵元「鹿児島酒造」",
+          "description": "百年の歴史を刻む焼酎蔵の佇まいから、薩摩の芋焼酎文化を支えてきた杜氏たちの魂が伝わってきた。",
+          "badge_code": "akune_kagoshima_shuzo_shochu"
+        },
+        {
+          "key": "D",
+          "text": "栄町の「三春堂菓子舗」のさざえ最中と、二百年の神舞を受け継ぐ「諏訪神社」",
+          "description": "サザエの形をした愛らしい最中の甘みと、港町の安寧を祈るお諏訪さまの静かな杜に心が和んだ。",
+          "badge_code": "akune_sazae_monaka_and_suwa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6b71e7a7-04ca-4eae-88bb-aabb9f859fd5",
+        "name": "阿久根駅",
+        "description": "水戸岡鋭治氏のデザインにより「にぎわい交流館 阿久根駅」として再生された肥薩おれんじ鉄道の駅（7:00〜21:00開館、売店・カフェは10:00〜17:00頃、無休）。木の温もりあふれる図書空間や食堂を備える。",
+        "address": "鹿児島県阿久根市栄町1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 32.022937,
+        "lng": 130.196209,
+        "qr_token": "shuin-akune-1",
+        "cover_image_url": "/images/akune/spot1.png",
+        "f7_fragment": "水戸岡鋭治氏がデザインを手掛けた、木の温もりあふれる「まちの迎賓館」の駅舎。",
+        "f7_full": "「阿久根駅」の杉や桧が香る美しい木造空間が、東シナ海の潮風と豊かな食文化に出会う港町の旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "445d633d-931a-4f4d-8e69-3a4e6e42e703",
+        "next_spot_name": "三春堂菓子舗"
+      },
+      {
+        "id": "445d633d-931a-4f4d-8e69-3a4e6e42e703",
+        "name": "三春堂菓子舗",
+        "description": "阿久根駅近くの栄町にある老舗和洋菓子店（8:00〜19:00営業、無休）。サザエの貝殻を模した皮に粒あんと求肥を詰めた阿久根銘菓「さざえ最中」や手作りシュークリームが人気。",
+        "address": "鹿児島県阿久根市栄町87",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 32.020267,
+        "lng": 130.195838,
+        "qr_token": "shuin-akune-2",
+        "cover_image_url": "/images/akune/spot2.png",
+        "f7_fragment": "サザエの貝殻を模した求肥入りの「さざえ最中」で親しまれる駅前の老舗菓子舗。",
+        "f7_full": "「三春堂菓子舗」の愛らしいさざえ最中と優しい甘みが、東シナ海の海の幸に恵まれた阿久根ならではの旅情を楽しく彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "b0fc2799-4c87-4668-8e98-88855303f24c",
+        "next_spot_name": "鹿児島酒造"
+      },
+      {
+        "id": "b0fc2799-4c87-4668-8e98-88855303f24c",
+        "name": "鹿児島酒造",
+        "description": "「黒瀬杜氏伝承蔵」として知られる本格芋焼酎の老舗蔵元（8:00〜17:00営業、土曜・日曜休）。焼き芋焼酎のパイオニア「やきいも黒瀬」や「阿久根」など伝統の技で仕込む銘酒を醸す。",
+        "address": "鹿児島県阿久根市栄町130",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 32.022635,
+        "lng": 130.197205,
+        "qr_token": "shuin-akune-3",
+        "cover_image_url": "/images/akune/spot3.png",
+        "f7_fragment": "名工・黒瀬杜氏の技を受け継ぎ、「やきいも黒瀬」などの本格芋焼酎を醸す老舗蔵。",
+        "f7_full": "「鹿児島酒造」の風格ある蔵構えと漂う甘い芋の香りが、薩摩の焼酎造りを牽引してきた黒瀬杜氏の情熱と誇りを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3ce02867-0693-4b27-8ba9-ec002ead60d0",
+        "next_spot_name": "イワシビル"
+      },
+      {
+        "id": "3ce02867-0693-4b27-8ba9-ec002ead60d0",
+        "name": "イワシビル",
+        "description": "昭和14年創業の下園薩男商店が古いビルをリノベーションした複合拠点（平日11:00〜17:00・土日祝18:00まで営業、不定休）。1階のカフェ＆ショップで名物「旅する丸干し」や軽食を楽しめる。",
+        "address": "鹿児島県阿久根市鶴見町76",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 32.014021,
+        "lng": 130.197264,
+        "qr_token": "shuin-akune-4",
+        "cover_image_url": "/images/akune/spot4.png",
+        "f7_fragment": "ウルメイワシの丸干し商社がビルを再生し、「旅する丸干し」やカフェを発信する拠点。",
+        "f7_full": "「イワシビル」のレトロなタイル壁とおしゃれなカフェ空間が、伝統の丸干しを世界へ届ける阿久根の新しいものづくりの息吹を物語る。",
+        "is_final": false,
+        "next_spot_id": "e70a6330-756a-41ea-8785-b7b3a99d71f5",
+        "next_spot_name": "諏訪神社"
+      },
+      {
+        "id": "e70a6330-756a-41ea-8785-b7b3a99d71f5",
+        "name": "諏訪神社",
+        "description": "「お諏訪さま」と慕われる阿久根の総鎮守・南方神社（境内参拝自由）。江戸時代から200年以上続く鹿児島県指定無形民俗文化財「阿久根神舞（かんめ）」が奉納される歴史ある古社。",
+        "address": "鹿児島県阿久根市波留3096",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 32.009823,
+        "lng": 130.206805,
+        "qr_token": "shuin-akune-5",
+        "cover_image_url": "/images/akune/spot5.png",
+        "f7_fragment": "二百年以上続く県指定無形民俗文化財「阿久根神舞」を伝える港町の総鎮守。",
+        "f7_full": "「諏訪神社」の静かな鎮守の森と風格ある社殿が、木の香る駅と港町の食文化を巡った阿久根の旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
