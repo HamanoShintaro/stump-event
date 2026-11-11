@@ -63180,5 +63180,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ead26877-147c-450b-86a3-ad2c8087a01c",
+    "title": "うだつの上がる町並みと和紙の灯り・美濃を巡る",
+    "name": "うだつの上がる町並みと和紙の灯り・美濃を巡る",
+    "description": "千三百年の歴史を誇る本美濃紙と、江戸期の豪商が築いた防火壁「うだつ」が連なる岐阜県美濃市。長良川鉄道の美濃市駅から、旧名鉄美濃駅、国重文の小坂酒造場、茶房とみや、美濃和紙あかりアート館までを巡る。",
+    "region": "美濃（美濃市）",
+    "area_name": "美濃（美濃市）",
+    "cover_image_url": "/images/mino-shi/route-eyecatch.png",
+    "imageUrl": "/images/mino-shi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "うだつの上がる商家と千三百年の美濃和紙、レトロ鉄道が息づく美濃で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "千三百年の美濃和紙が幻想的な光を放つ「美濃和紙あかりアート館」",
+          "description": "昭和初期の洋風建築の中で、和紙を透して広がる柔らかく温かな灯りの造形美に深く魅了された。",
+          "badge_code": "mino_washi_akari_art_museum"
+        },
+        {
+          "key": "B",
+          "text": "立派なうだつが上がる国指定重要文化財の商家で地酒を醸す「小坂酒造場」",
+          "description": "安永元年創業の重厚な主屋と杉玉を仰ぎ、長良川の伏流水が育む銘酒「百春」の歴史を肌で感じた。",
+          "badge_code": "mino_kosaka_sake_brewery_udatsu"
+        },
+        {
+          "key": "C",
+          "text": "大正期の木造駅舎が並ぶ「美濃市駅」と、丸窓電車が眠る「旧名鉄美濃駅」",
+          "description": "二つの登録有形文化財の駅舎と赤いレトロ電車に、美濃の街と人々を結んできた鉄道の記憶を辿った。",
+          "badge_code": "mino_retro_station_tram_heritage"
+        },
+        {
+          "key": "D",
+          "text": "うだつの上がる町並みの甘味処「茶房とみや」で味わう、出来立ての本わらび餅",
+          "description": "江戸時代の面影が残る通りを眺めながら、香ばしいきな粉と柔らかなわらび餅で心和むひとときを過ごした。",
+          "badge_code": "mino_sabo_tomiya_warabimochi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b6609c6e-4a4d-48d8-888b-e54a0cb9aa20",
+        "name": "美濃市駅",
+        "description": "長良川鉄道越美南線の主要駅（待合室は始発〜終電）。大正十二年の開業当時の姿をとどめる木造駅舎とプラットホームが国の登録有形文化財に指定されており、うだつの上がる町並み散策の起点となっている。",
+        "address": "岐阜県美濃市広岡町2959-4",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.539497,
+        "lng": 136.915043,
+        "qr_token": "shuin-mino-shi-1",
+        "cover_image_url": "/images/mino-shi/spot1.png",
+        "f7_fragment": "大正十二年開業の木造駅舎とホームが国登録有形文化財に指定されている駅。",
+        "f7_full": "「美濃市駅」の歴史を刻んだ木造駅舎の佇まいが、千三百年の本美濃紙とうだつの上がる町並みを巡る旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9a52d9ac-ccbb-4678-8eea-b11406fa4e29",
+        "next_spot_name": "旧名鉄美濃駅"
+      },
+      {
+        "id": "9a52d9ac-ccbb-4678-8eea-b11406fa4e29",
+        "name": "旧名鉄美濃駅",
+        "description": "大正十二年に開業し平成十一年に廃線となった旧名鉄美濃町線の終着駅跡（9:00〜17:00見学自由、火曜休）。国登録有形文化財の駅舎とホームに、「丸窓電車」として親しまれたモ五一〇形などの車両が保存されている。",
+        "address": "岐阜県美濃市広岡町2926-3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.541403,
+        "lng": 136.913372,
+        "qr_token": "shuin-mino-shi-2",
+        "cover_image_url": "/images/mino-shi/spot2.png",
+        "f7_fragment": "大正期の木造駅舎と名車「丸窓電車」など四両のレトロ電車を保存する旧駅跡。",
+        "f7_full": "「旧名鉄美濃駅」のホームに並ぶ紅白の丸窓電車とレトロな改札口が、かつて岐阜と美濃を結んで走った路面電車の懐かしい記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "01814858-e75c-4d13-8ba7-5516dbad22db",
+        "next_spot_name": "小坂酒造場"
+      },
+      {
+        "id": "01814858-e75c-4d13-8ba7-5516dbad22db",
+        "name": "小坂酒造場",
+        "description": "安永元年創業の老舗酒蔵（9:00〜17:00営業、無休）。立派なうだつが上がる江戸後期の主屋は国の重要文化財に指定されており、長良川の伏流水で仕込む代表銘柄「百春」や季節限定酒の試飲・購入が楽しめる。",
+        "address": "岐阜県美濃市相生町2267",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.54557,
+        "lng": 136.913582,
+        "qr_token": "shuin-mino-shi-3",
+        "cover_image_url": "/images/mino-shi/spot3.png",
+        "f7_fragment": "立派なうだつを上げた国指定重要文化財の主屋で銘酒「百春」を醸す老舗酒蔵。",
+        "f7_full": "「小坂酒造場」の重厚なうだつ屋根と杉玉が揺れる店先が、江戸の商家建築の美しさと長良川の伏流水が育む美濃の酒文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "101dc665-2404-47f8-87b3-c50dd51b2e6b",
+        "next_spot_name": "茶房とみや"
+      },
+      {
+        "id": "101dc665-2404-47f8-87b3-c50dd51b2e6b",
+        "name": "茶房とみや",
+        "description": "うだつの上がる町並みにある町家甘味処（9:30〜17:00営業、火曜休）。注文ごとに練り上げる出来立ての本わらび餅や抹茶、季節のパフェを落ち着いた和の空間で味わえる。",
+        "address": "岐阜県美濃市常盤町2300",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.546629,
+        "lng": 136.913261,
+        "qr_token": "shuin-mino-shi-4",
+        "cover_image_url": "/images/mino-shi/spot4.png",
+        "f7_fragment": "うだつの上がる町並みの町家で、練りたての本わらび餅や抹茶を味わえる甘味処。",
+        "f7_full": "「茶房とみや」の香ばしいきな粉をまとった温かい本わらび餅と抹茶の香りが、江戸の町並みを歩いた旅人の足を優しく癒やしてくれる。",
+        "is_final": false,
+        "next_spot_id": "4ab95a8f-e988-42a7-8d33-9a27048add94",
+        "next_spot_name": "美濃和紙あかりアート館"
+      },
+      {
+        "id": "4ab95a8f-e988-42a7-8d33-9a27048add94",
+        "name": "美濃和紙あかりアート館",
+        "description": "昭和十六年築の旧美濃町産業会館（国登録有形文化財）を活用した展示館（9:00〜16:30開館、火曜休）。「美濃和紙あかりアート展」の歴代優秀作品を常設展示し、美濃和紙が織りなす幻想的な光の世界を体感できる。",
+        "address": "岐阜県美濃市本住町1901-3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.547173,
+        "lng": 136.912479,
+        "qr_token": "shuin-mino-shi-5",
+        "cover_image_url": "/images/mino-shi/spot5.png",
+        "f7_fragment": "美濃和紙あかりアート展の優秀作品を展示し、和紙の幻想的な光を体感できる館。",
+        "f7_full": "「美濃和紙あかりアート館」に浮かび上がる繊細な和紙の造形と温かな灯りが、千三百年の伝統が息づく美濃の旅を幻想的な余韻で締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7ed28064-9f25-43bd-8255-0a84ef362d8c",
+    "title": "明智光秀公の丹波亀山城と醸造の街・亀岡を辿る",
+    "name": "明智光秀公の丹波亀山城と醸造の街・亀岡を辿る",
+    "description": "明智光秀公が築いた丹波亀山城の城下町であり、豊かな伏流水による醤油・酒造りが息づく京都府亀岡市。JR山陰本線の亀岡駅から、亀岡市文化資料館、難波醤油醸造、丹山酒造、丹波亀山城跡までを辿る。",
+    "region": "亀岡（亀岡市）",
+    "area_name": "亀岡（亀岡市）",
+    "cover_image_url": "/images/kameoka/route-eyecatch.png",
+    "imageUrl": "/images/kameoka/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "明智光秀公が築いた丹波亀山城の石垣と、城下町で百年以上続く醤油蔵・酒蔵が息づく亀岡で、心を動かされたのはどの瞬間でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "光秀公の銅像が立つ「亀岡駅」と、城下町の歴史を伝える「亀岡市文化資料館」",
+          "description": "駅前の光秀公像から歩き出し、丹波亀山城の築城と城下町の町割りが今も息づいていることを知った。",
+          "badge_code": "kameoka_cultural_museum_history"
+        },
+        {
+          "key": "B",
+          "text": "本能寺への出陣の地であり、壮大な石垣と内堀が残る「丹波亀山城跡」",
+          "description": "天下普請と江戸期の改修を経た見事な高石垣を仰ぎ、戦国最大の転換点となった名城の歴史に胸が震えた。",
+          "badge_code": "kameoka_tanba_kameyama_castle"
+        },
+        {
+          "key": "C",
+          "text": "白壁の蔵が並ぶ「難波醤油醸造」で触れる、杉桶仕込みの天然醸造醤油",
+          "description": "明治二十一年から受け継がれる杉の大桶ともろみの芳醇な香りに、丹波の豊かな水と大豆の恵みを感じた。",
+          "badge_code": "kameoka_nanba_soy_sauce_brewery"
+        },
+        {
+          "key": "D",
+          "text": "城下町の横町通りに佇む、明治十五年創業の地酒蔵「丹山酒造」",
+          "description": "古い町並みが残る通りで、丹波の伏流水と米が醸し出す気品ある日本酒の伝統に触れた。",
+          "badge_code": "kameoka_tanzan_sake_brewery"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "45604ecf-9f3c-4270-8d8a-885645dcb5e0",
+        "name": "亀岡駅",
+        "description": "丹波亀山城下町と保津川下りの玄関口となるJR山陰本線（嵯峨野線）の主要駅（みどりの窓口・待合室は始発〜終電）。南口駅前広場には城下町の礎を築いた明智光秀公の銅像が立ち、歴史散策の起点となっている。",
+        "address": "京都府亀岡市追分町谷筋25-44",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.016689,
+        "lng": 135.582466,
+        "qr_token": "shuin-kameoka-1",
+        "cover_image_url": "/images/kameoka/spot1.png",
+        "f7_fragment": "駅前に明智光秀公の銅像が立ち、丹波亀山城下町へと誘う嵯峨野線の主要駅。",
+        "f7_full": "「亀岡駅」の明智光秀公像と亀岡盆地の爽やかな風が、戦国の名城・丹波亀山城と城下町の老舗蔵元を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "358dfe00-86ff-487e-8d75-4f9b04d93e50",
+        "next_spot_name": "亀岡市文化資料館"
+      },
+      {
+        "id": "358dfe00-86ff-487e-8d75-4f9b04d93e50",
+        "name": "亀岡市文化資料館",
+        "description": "亀岡盆地の歴史と文化を紹介する公立博物館（9:00〜17:00開館、月曜休）。明智光秀公による丹波亀山城の築城や城下町のジオラマ、亀岡祭の山鉾、保津川水運に関する貴重な資料を常設展示している。",
+        "address": "京都府亀岡市古世町中内坪1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.013533,
+        "lng": 135.585466,
+        "qr_token": "shuin-kameoka-2",
+        "cover_image_url": "/images/kameoka/spot2.png",
+        "f7_fragment": "丹波亀山城の築城史や城下町のジオラマ、亀岡祭の華やかな文化を伝える資料館。",
+        "f7_full": "「亀岡市文化資料館」の精巧な城下町模型と歴史資料が、光秀公が築いた町割りと亀岡の豊かな文化の成り立ちを分かりやすく教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e4427c10-ca37-476f-8033-8eff8534b415",
+        "next_spot_name": "難波醤油醸造"
+      },
+      {
+        "id": "e4427c10-ca37-476f-8033-8eff8534b415",
+        "name": "難波醤油醸造",
+        "description": "城下町の紺屋町にある明治二十一年創業の老舗醤油蔵（9:00〜17:00営業、日曜・祝日休）。白壁の土蔵が並ぶ醸造所で、丹波の大豆と名水を使い杉桶で天然醸造した醤油やぽん酢、醤油菓子を直売している。",
+        "address": "京都府亀岡市紺屋町51",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.009284,
+        "lng": 135.585269,
+        "qr_token": "shuin-kameoka-3",
+        "cover_image_url": "/images/kameoka/spot3.png",
+        "f7_fragment": "明治二十一年創業、白壁の土蔵で杉桶仕込みの天然醸造醤油を造る老舗蔵元。",
+        "f7_full": "「難波醤油醸造」の白壁の蔵に漂う香ばしいもろみの香りが、亀岡盆地の清らかな水と職人の技が育んできた城下町の食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f3357cec-8522-4b5d-8fce-498db6c9ff4c",
+        "next_spot_name": "丹山酒造"
+      },
+      {
+        "id": "f3357cec-8522-4b5d-8fce-498db6c9ff4c",
+        "name": "丹山酒造",
+        "description": "城下町の横町にある明治十五年創業の酒蔵（9:00〜17:00営業、無休）。丹波の伏流水と契約栽培米を用いて醸す純米酒や吟醸酒、甘酒などが並び、歴史ある木造の店構えが城下町の風情を今に伝えている。",
+        "address": "京都府亀岡市横町7",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.009144,
+        "lng": 135.583557,
+        "qr_token": "shuin-kameoka-4",
+        "cover_image_url": "/images/kameoka/spot4.png",
+        "f7_fragment": "城下町の横町通りに佇み、丹波の伏流水で銘酒を醸す明治十五年創業の酒蔵。",
+        "f7_full": "「丹山酒造」の杉玉が揺れる重厚な町家の店先が、良質な米と霧の盆地の名水に恵まれた丹波亀岡の酒造りの誇りを静かに物語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "8ba6671b-3dd2-4662-856e-957a549e98c3",
+        "next_spot_name": "丹波亀山城跡"
+      },
+      {
+        "id": "8ba6671b-3dd2-4662-856e-957a549e98c3",
+        "name": "丹波亀山城跡",
+        "description": "天正五年に明智光秀公が築城した丹波亀山藩の居城跡（9:00〜16:00見学受付・有料、年末年始休）。本能寺の変への出陣の地としても知られ、現在は宗教法人大本の敷地内に壮大な天守台石垣と内堀が保存されている。",
+        "address": "京都府亀岡市荒塚町内丸1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.013275,
+        "lng": 135.581468,
+        "qr_token": "shuin-kameoka-5",
+        "cover_image_url": "/images/kameoka/spot5.png",
+        "f7_fragment": "明智光秀公が築き、本能寺への出陣の舞台となった名城の壮大な石垣と内堀。",
+        "f7_full": "「丹波亀山城跡」の内堀に映る堂々たる高石垣が、戦国の転換点を見つめた光秀公の城下町を辿る旅を深い歴史の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f05d25ac-b86a-4aab-8118-a164a83a3156",
+    "title": "日本一の豊岡鞄と柳の宮のルーツ・豊岡を歩く",
+    "name": "日本一の豊岡鞄と柳の宮のルーツ・豊岡を歩く",
+    "description": "千二百年の柳細工をルーツとする日本一の鞄産地「豊岡鞄」と、昭和初期の復興建築が息づく兵庫県豊岡市。JR山陰本線の豊岡駅から、ヒグラシ珈琲、神武山公園（豊岡城跡）、Artisan Atelier、小田井縣神社までを歩く。",
+    "region": "豊岡（豊岡市）",
+    "area_name": "豊岡（豊岡市）",
+    "cover_image_url": "/images/toyooka/route-eyecatch.png",
+    "imageUrl": "/images/toyooka/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和レトロな復興建築とカバンストリートの職人技、柳の宮の信仰が息づく豊岡で、印象的だったのはどの記憶だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "豊岡城の石垣と京極氏陣屋の歴史を伝え、盆地を見渡す「神武山公園」",
+          "description": "緑深い丘の上から円山川と市街地を見渡し、城下町から近代都市へと歩んだ豊岡の歴史を感じた。",
+          "badge_code": "toyooka_jinmusan_park_castle"
+        },
+        {
+          "key": "B",
+          "text": "復興建築の街への玄関口「豊岡駅」と、香り高い「ヒグラシ珈琲」のひととき",
+          "description": "山陰本線と丹後鉄道が交わる駅から歩き出し、丁寧に焙煎された珈琲の香りに包まれて心がほどけた。",
+          "badge_code": "toyooka_higurashi_coffee_roaster"
+        },
+        {
+          "key": "C",
+          "text": "カバンストリートの「Artisan Atelier」で出会う、日本一の「豊岡鞄」の職人技",
+          "description": "柳行李から千二百年受け継がれてきたものづくりの精神が、精緻な縫製と美しい革鞄に息づいていた。",
+          "badge_code": "toyooka_kaban_street_artisan"
+        },
+        {
+          "key": "D",
+          "text": "鞄づくりの礎となった柳細工の守護神「柳の宮」が鎮座する「小田井縣神社」",
+          "description": "円山川のほとりに佇む古社の境内で、豊岡の手仕事を支え続けてきた篤い信仰のルーツに触れた。",
+          "badge_code": "toyooka_odai_agata_yanagi_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4269f7fb-4573-40ad-8b49-c6beac878d49",
+        "name": "豊岡駅",
+        "description": "JR山陰本線と京都丹後鉄道が乗り入れる但馬地域の中心駅（みどりの窓口・待合室は始発〜終電）。日本一の鞄産地「豊岡鞄」とコウノトリの郷の玄関口であり、東口から昭和初期の復興建築が並ぶ大開通りが伸びている。",
+        "address": "兵庫県豊岡市大手町3-2",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.543805,
+        "lng": 134.813889,
+        "qr_token": "shuin-toyooka-1",
+        "cover_image_url": "/images/toyooka/spot1.png",
+        "f7_fragment": "日本一の鞄産地「豊岡鞄」と復興建築の街並みへと誘う但馬地域の中心となる駅。",
+        "f7_full": "「豊岡駅」の活気あるホームと大開通りのレトロな街並みが、千二百年の柳細工から発展した鞄の街を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "71cd53b8-497b-455a-8709-bfa9d3e49089",
+        "next_spot_name": "ヒグラシ珈琲"
+      },
+      {
+        "id": "71cd53b8-497b-455a-8709-bfa9d3e49089",
+        "name": "ヒグラシ珈琲",
+        "description": "豊岡市街にある自家焙煎珈琲カフェ（9:00〜18:00営業、木曜休）。厳選した豆を丁寧に焙煎・ハンドドリップした香り高いコーヒーと自家製スイーツを落ち着いた空間で味わえる。",
+        "address": "兵庫県豊岡市千代田町10-12",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.540706,
+        "lng": 134.813965,
+        "qr_token": "shuin-toyooka-2",
+        "cover_image_url": "/images/toyooka/spot2.png",
+        "f7_fragment": "丁寧な自家焙煎のスペシャルティコーヒーと焼き菓子を味わえる街角カフェ。",
+        "f7_full": "「ヒグラシ珈琲」に満ちる焙煎豆の芳醇な香りと温かな木の空間が、豊岡の街歩きを楽しむ旅人に心地よい安らぎのひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "322a7f81-c645-4963-8bdb-69b17b9f30d3",
+        "next_spot_name": "神武山公園"
+      },
+      {
+        "id": "322a7f81-c645-4963-8bdb-69b17b9f30d3",
+        "name": "神武山公園",
+        "description": "豊岡市街の中央に位置する豊岡城跡・豊岡陣屋跡の公園（終日開放・入園自由）。室町期の山城と江戸期の京極氏陣屋の遺構や石垣が残り、丘の上から豊岡盆地と市街地を一望できる。",
+        "address": "兵庫県豊岡市京町12",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.539769,
+        "lng": 134.821101,
+        "qr_token": "shuin-toyooka-3",
+        "cover_image_url": "/images/toyooka/spot3.png",
+        "f7_fragment": "豊岡城と京極氏陣屋の石垣が残り、豊岡盆地の街並みを一望できる城跡の公園。",
+        "f7_full": "「神武山公園」の苔むした石垣と木漏れ日の遊歩道が、城下町から近代の鞄産地へと歩んできた豊岡の歴史の積み重なりを静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "f231bc02-b5d1-4b8f-8d92-5ab0fa58cb9e",
+        "next_spot_name": "Artisan Atelier"
+      },
+      {
+        "id": "f231bc02-b5d1-4b8f-8d92-5ab0fa58cb9e",
+        "name": "Artisan Atelier",
+        "description": "カバンストリートにある豊岡鞄と革小物のセレクトショップ（11:00〜18:00営業、水曜休）。地域ブランド「豊岡鞄」の認定製品や地元職人のオリジナルバッグが並び、日本一の鞄産地の技を体感できる。",
+        "address": "兵庫県豊岡市中央町18-10",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.542757,
+        "lng": 134.823961,
+        "qr_token": "shuin-toyooka-4",
+        "cover_image_url": "/images/toyooka/spot4.png",
+        "f7_fragment": "カバンストリートの中心で、認定ブランド「豊岡鞄」や職人の革製品が揃う店。",
+        "f7_full": "「Artisan Atelier」に並ぶ端正な革鞄と丁寧なステッチの輝きが、柳行李から千二百年受け継がれる日本一の鞄の街の誇りを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "fb7b9260-c955-414f-8f1a-ff8a7868a2c8",
+        "next_spot_name": "小田井縣神社"
+      },
+      {
+        "id": "fb7b9260-c955-414f-8f1a-ff8a7868a2c8",
+        "name": "小田井縣神社",
+        "description": "円山川近くに鎮座する延喜式内社の古社（境内参拝自由）。境内に柳細工と鞄産業の守護神「柳の宮神社」を祀り、毎年八月には豊岡最大の夏祭り「柳まつり」の舞台となる。",
+        "address": "兵庫県豊岡市小田井町15-6",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.550212,
+        "lng": 134.824042,
+        "qr_token": "shuin-toyooka-5",
+        "cover_image_url": "/images/toyooka/spot5.png",
+        "f7_fragment": "豊岡鞄のルーツである柳細工の守護神「柳の宮」を境内に祀る延喜式内社の古社。",
+        "f7_full": "「小田井縣神社」の緑深い境内と柳の宮の社殿が、川辺の柳から始まった千二百年のものづくりの旅を清らかな祈りの余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "39245737-8751-4392-8ee4-4e66724d1b15",
+    "title": "なぜ伊予の小京都・大洲の城と山荘は美しいのか",
+    "name": "なぜ伊予の小京都・大洲の城と山荘は美しいのか",
+    "description": "清流・肱川のほとりに栄えた伊予の小京都・愛媛県大洲市。JR予讃線の伊予大洲駅から、四層四階の木造復元天守・大洲城、大洲炉端 油屋、明治の銀行建築・おおず赤煉瓦館、国重文の名建築・臥龍山荘までを巡る。",
+    "region": "大洲（大洲市）",
+    "area_name": "大洲（大洲市）",
+    "cover_image_url": "/images/iyo-ozu/route-eyecatch.png",
+    "imageUrl": "/images/iyo-ozu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "木造復元天守の大洲城と明治の赤煉瓦、数寄屋の粋を集めた臥龍山荘が息づく伊予大洲で、心奪われたのはどの場面でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "戦後初の四層四階木造復元を成し遂げ、重文の櫓と連なる名城「大洲城」",
+          "description": "伝統工法で組まれた迫力ある木組みの天守に登り、肱川と城下町を見渡す壮快な眺めに胸が高鳴った。",
+          "badge_code": "iyo_ozu_castle_wooden_keep"
+        },
+        {
+          "key": "B",
+          "text": "「大洲炉端 油屋」で味わう、炭火焼きの豚肉と甘い和栗の「とんくりまぶし」",
+          "description": "古民家の温もりの中で、香ばしい豚肉とホクホクの大洲栗が織りなす唯一無二の味わいを堪能した。",
+          "badge_code": "iyo_ozu_aburaya_tonkurimabushi"
+        },
+        {
+          "key": "C",
+          "text": "肱川流域の玄関口「伊予大洲駅」と、明治の銀行建築「おおず赤煉瓦館」",
+          "description": "イギリス積みの赤煉瓦と和瓦が調和する洋館で、木蝋と生糸で栄えた商都・大洲の繁栄の記憶に触れた。",
+          "badge_code": "iyo_ozu_red_brick_bank_hall"
+        },
+        {
+          "key": "D",
+          "text": "臥龍淵の断崖にせり出し、数寄屋建築の美の極致を見せる「臥龍山荘」",
+          "description": "川面からの月光を映す不老庵の舟底天井と苔庭の静寂に、日本建築の奥深い精神性を見た。",
+          "badge_code": "iyo_ozu_garyu_sanso_villa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "778783d1-e06e-490f-8096-3ffa310b60b6",
+        "name": "伊予大洲駅",
+        "description": "「伊予の小京都」と呼ばれる大洲市の玄関口となるJR予讃線の主要駅（待合室は始発〜終電）。観光列車「伊予灘ものがたり」の発着駅としても知られ、肱川流域の城下町散策の起点となっている。",
+        "address": "愛媛県大洲市中村617-2",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.518422,
+        "lng": 132.544874,
+        "qr_token": "shuin-iyo-ozu-1",
+        "cover_image_url": "/images/iyo-ozu/spot1.png",
+        "f7_fragment": "観光列車も発着し、伊予の小京都・大洲の城下町へと誘うJR予讃線の主要駅。",
+        "f7_full": "「伊予大洲駅」の穏やかなホームと肱川から吹く風が、木造天守の大洲城と明治の名建築・臥龍山荘を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c6779688-a648-4f65-8fec-fdd6e42c12ad",
+        "next_spot_name": "大洲城"
+      },
+      {
+        "id": "c6779688-a648-4f65-8fec-fdd6e42c12ad",
+        "name": "大洲城",
+        "description": "肱川河畔の城山にそびえる大洲藩六万石の居城（9:00〜17:00開館、無休）。江戸期から現存する国指定重要文化財の台所櫓・高欄櫓と、平成十六年に伝統木造工法で完全復元された四層四階の天守が連結する名城。",
+        "address": "愛媛県大洲市大洲903",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.50955,
+        "lng": 132.541312,
+        "qr_token": "shuin-iyo-ozu-2",
+        "cover_image_url": "/images/iyo-ozu/spot2.png",
+        "f7_fragment": "国重文の現存櫓と戦後初の四層四階木造復元天守がそびえる大洲藩六万石の名城。",
+        "f7_full": "「大洲城」の白漆喰と下見板張りの天守と力強い木組みが、肱川を見下ろして栄えた六万石の城下町の誇りを今に鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0d259ba3-75d0-48e5-8f99-d8b85388ec1f",
+        "next_spot_name": "油屋"
+      },
+      {
+        "id": "0d259ba3-75d0-48e5-8f99-d8b85388ec1f",
+        "name": "油屋",
+        "description": "江戸時代の旅籠の屋号を受け継ぐ古民家炉端料理店（11:30〜14:00・18:00〜22:00営業、月曜休）。炭火で炙った豚肉と大洲産の甘い栗をご飯にのせた名物「とんくりまぶし」や鯛めしを味わえる。",
+        "address": "愛媛県大洲市大洲42",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.507975,
+        "lng": 132.546496,
+        "qr_token": "shuin-iyo-ozu-3",
+        "cover_image_url": "/images/iyo-ozu/spot3.png",
+        "f7_fragment": "炭火焼きの豚肉と大洲産の和栗をのせた名物「とんくりまぶし」の古民家料理店。",
+        "f7_full": "「油屋」の香ばしい炭火焼き豚とホクホクとした大洲栗が調和するとんくりまぶしが、肱川流域の豊かな実りと城下町の食の楽しみを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "3a43a5cc-6b50-40a4-84ed-34b33a2379bf",
+        "next_spot_name": "おおず赤煉瓦館"
+      },
+      {
+        "id": "3a43a5cc-6b50-40a4-84ed-34b33a2379bf",
+        "name": "おおず赤煉瓦館",
+        "description": "明治三十四年に旧大洲商業銀行本店として建てられた赤煉瓦の洋風建築（9:00〜17:00開館、無休）。和瓦とイギリス積みの煉瓦が調和する館内で、大洲和紙や銘菓「志ぐれ」などの特産品購入や休憩ができる。",
+        "address": "愛媛県大洲市大洲60",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.507816,
+        "lng": 132.546936,
+        "qr_token": "shuin-iyo-ozu-4",
+        "cover_image_url": "/images/iyo-ozu/spot4.png",
+        "f7_fragment": "明治三十四年築の旧大洲商業銀行本店を活かした、赤煉瓦と和瓦の文化施設。",
+        "f7_full": "「おおず赤煉瓦館」の重厚な赤煉瓦の壁と和洋折衷の佇まいが、明治期に木蝋と生糸で栄えた商都・大洲の華やかな近代史を物語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "2e40764d-9b2b-4843-8d06-7ab32e4278a0",
+        "next_spot_name": "臥龍山荘"
+      },
+      {
+        "id": "2e40764d-9b2b-4843-8d06-7ab32e4278a0",
+        "name": "臥龍山荘",
+        "description": "肱川の景勝地・臥龍淵に臨む明治の名建築（9:00〜17:00開館、無休）。明治四十年に完成した数寄屋造りの「臥龍院」「知止庵」と、断崖上にせり出す「不老庵」の三棟が国の重要文化財に指定されている。",
+        "address": "愛媛県大洲市大洲411-2",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.506315,
+        "lng": 132.550079,
+        "qr_token": "shuin-iyo-ozu-5",
+        "cover_image_url": "/images/iyo-ozu/spot5.png",
+        "f7_fragment": "肱川の臥龍淵に臨み、臥龍院・不老庵など三棟が国重文に指定された名山荘。",
+        "f7_full": "「臥龍山荘」の苔むす庭園と断崖の上に浮かぶ不老庵の佇まいが、伊予の小京都・大洲を巡った旅を格調高い静寂と美の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b514c67c-41ee-4b72-8ccc-0a08d89be28e",
+    "title": "千二百年の青海神社と雪椿の杜・加茂へ",
+    "name": "千二百年の青海神社と雪椿の杜・加茂へ",
+    "description": "京都の賀茂社ゆかりの古社・青海神社と雪椿の群生地から「越後の小京都」と呼ばれる新潟県加茂市。JR信越本線の加茂駅から、昭和初期創業の千代田ベーカリー、椿の家、青海神社、加茂山公園までを歩く。",
+    "region": "加茂（加茂市）",
+    "area_name": "加茂（加茂市）",
+    "cover_image_url": "/images/kamo/route-eyecatch.png",
+    "imageUrl": "/images/kamo/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千二百年の歴史を刻む青海神社と雪椿の加茂山公園、昭和初期創業のパン店が息づく加茂で、あなたの心をとらえたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "神亀三年の創建と伝わり、「加茂」の地名の起こりとなった古社「青海神社」",
+          "description": "巨杉に包まれた参道と神池、寛政年間再建の拝殿の佇まいに、越後の小京都の千二百年の歴史を感じた。",
+          "badge_code": "kamo_aomi_shrine_ancient_forest"
+        },
+        {
+          "key": "B",
+          "text": "日本有数のユキツバキ群生地と彫刻の森が広がる「加茂山公園」",
+          "description": "深い緑と池の水面、豪雪を耐え抜いて咲く雪椿の生命力に、雪国・越後の美しい自然の息吹を覚えた。",
+          "badge_code": "kamo_kamoyama_park_yukitsubaki"
+        },
+        {
+          "key": "C",
+          "text": "昭和初期創業の「千代田ベーカリー」で出会う、懐かしい名物バターパン",
+          "description": "門前商店街で三代続くまちのパン屋を訪ね、世代を超えて愛される素朴で優しい味わいに心が温まった。",
+          "badge_code": "kamo_chiyoda_bakery_retro_bread"
+        },
+        {
+          "key": "D",
+          "text": "桐箪笥の街の玄関口「加茂駅」と、公園入口で旅人を迎える茶屋「椿の家」",
+          "description": "駅前の商店街から公園の入口へと歩き、雪椿のまちならではの穏やかなおもてなしに心が和んだ。",
+          "badge_code": "kamo_tsubaki_no_ie_teahouse"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "52a4cfd3-309a-47fe-8ea6-f16358c52de6",
+        "name": "加茂駅",
+        "description": "「越後の小京都」と呼ばれる加茂市の玄関口となるJR信越本線の主要駅（待合室は始発〜終電）。全国一の生産量を誇る伝統的工芸品「加茂桐箪笥」の街であり、東口から青海神社へと門前商店街が伸びている。",
+        "address": "新潟県加茂市駅前1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.659421,
+        "lng": 139.050051,
+        "qr_token": "shuin-kamo-1",
+        "cover_image_url": "/images/kamo/spot1.png",
+        "f7_fragment": "伝統的工芸品・加茂桐箪笥の街であり、越後の小京都へと誘うJR信越本線の駅。",
+        "f7_full": "「加茂駅」の東口から伸びる商店街と加茂山の深い緑が、千二百年の歴史を持つ青海神社と雪椿の杜を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4fa6dac5-a576-414c-8b7d-8652bb22fd2e",
+        "next_spot_name": "千代田ベーカリー"
+      },
+      {
+        "id": "4fa6dac5-a576-414c-8b7d-8652bb22fd2e",
+        "name": "千代田ベーカリー",
+        "description": "加茂駅東口近くの商店街にある昭和初期創業の老舗パン店（9:30〜17:30営業、日曜・祝日休）。濃厚なバタークリームを挟んだ名物の「バターパン」をはじめ、世代を超えて加茂市民に愛される懐かしいパンが揃う。",
+        "address": "新潟県加茂市駅前3-5",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.658788,
+        "lng": 139.051247,
+        "qr_token": "shuin-kamo-2",
+        "cover_image_url": "/images/kamo/spot2.png",
+        "f7_fragment": "昭和初期創業、名物のバターパンなど懐かしい味で愛される老舗ベーカリー。",
+        "f7_full": "「千代田ベーカリー」のふんわりと焼き上がったコッペパンと甘い香りが、加茂の門前通りで三代にわたり親しまれてきた温かい味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b245288c-0291-422b-841d-cef6c0fed38f",
+        "next_spot_name": "椿の家"
+      },
+      {
+        "id": "b245288c-0291-422b-841d-cef6c0fed38f",
+        "name": "椿の家",
+        "description": "加茂山公園の入口にある茶屋・売店（9:30〜16:30営業、火曜休）。ソフトクリームなどの甘味や軽食を味わえるほか、加茂の特産品や土産物も揃う散策の休憩拠点。",
+        "address": "新潟県加茂市加茂228",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.657175,
+        "lng": 139.052664,
+        "qr_token": "shuin-kamo-3",
+        "cover_image_url": "/images/kamo/spot3.png",
+        "f7_fragment": "加茂山公園の入口に佇み、甘味や軽食、地元の特産品を楽しめる憩いの茶屋。",
+        "f7_full": "「椿の家」の穏やかな佇まいと優しい甘味が、これから足を踏み入れる青海神社と加茂山公園の深い杜への期待を心地よく高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "a4a44547-d2fc-4485-816c-809c8fe630b2",
+        "next_spot_name": "青海神社"
+      },
+      {
+        "id": "a4a44547-d2fc-4485-816c-809c8fe630b2",
+        "name": "青海神社",
+        "description": "奈良時代の神亀三年創建と伝わる延喜式内社（境内参拝自由）。京都の賀茂社の御分霊を祀り、「加茂」の地名の由来となった古社で、鬱蒼とした杉の杜と神池の奥に寛政年間再建の荘厳な社殿が鎮座する。",
+        "address": "新潟県加茂市加茂229",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.65666,
+        "lng": 139.053786,
+        "qr_token": "shuin-kamo-4",
+        "cover_image_url": "/images/kamo/spot4.png",
+        "f7_fragment": "奈良時代の神亀三年創建と伝わり、「加茂」の地名の由来となった北越の古社。",
+        "f7_full": "「青海神社」の神池に架かる朱の橋と巨杉に囲まれた拝殿が、千二百年以上にわたり越後の人々の祈りを受け止めてきた神域の尊さを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d2e86117-a6ac-4a72-8987-e6b991142944",
+        "next_spot_name": "加茂山公園"
+      },
+      {
+        "id": "d2e86117-a6ac-4a72-8987-e6b991142944",
+        "name": "加茂山公園",
+        "description": "青海神社の社叢を活かした自然豊かな都市公園（終日開放・入園自由）。新潟県の木「ユキツバキ（雪椿）」の日本有数の群生地として知られ、池を巡る散策路や彫刻の森、展望台から四季の景観を楽しめる。",
+        "address": "新潟県加茂市加茂228",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.655475,
+        "lng": 139.053174,
+        "qr_token": "shuin-kamo-5",
+        "cover_image_url": "/images/kamo/spot5.png",
+        "f7_fragment": "新潟県の木「ユキツバキ」が群生し、彫刻の森と池の散策路が広がる自然公園。",
+        "f7_full": "「加茂山公園」の杉木立を揺らす涼風と雪椿が彩る小径が、越後の小京都・加茂の歴史と自然を巡った旅を清々しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
