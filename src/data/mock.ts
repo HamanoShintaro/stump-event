@@ -61880,5 +61880,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "f8001819-ff0d-4f91-816e-c3316bd4ab5c",
+    "title": "吟醸酒の父の故郷と瀬戸内の酒蔵・安芸津を巡る",
+    "name": "吟醸酒の父の故郷と瀬戸内の酒蔵・安芸津を巡る",
+    "description": "「広島吟醸酒の父」三浦仙三郎翁が軟水醸造法を確立した港町・広島県東広島市安芸津町。JR呉線の安芸津駅から、老舗の谷本日進堂、女性杜氏が率いる今田酒造本店、嘉永元年創業の柄酒造、三浦仙三郎翁の銅像が立つ榊山八幡神社までを歩く。",
+    "region": "安芸津（東広島市）",
+    "area_name": "安芸津（東広島市）",
+    "cover_image_url": "/images/akitsu/route-eyecatch.png",
+    "imageUrl": "/images/akitsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "吟醸酒の父の情熱と二つの名醸蔵が息づく安芸津で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "幻の酒米「八反草」や白麹で瀬戸内の食に寄り添う酒を醸す「今田酒造本店」",
+          "description": "伝統を守りながら革新的な銘酒「富久長」を生み出す、歴史ある蔵構えと技に感銘を受けた。",
+          "badge_code": "akitsu_imada_shuzo_fukucho"
+        },
+        {
+          "key": "B",
+          "text": "県重要文化財の社殿と「吟醸酒の父」三浦仙三郎翁の銅像が立つ「榊山八幡神社」",
+          "description": "「百試千改」の精神で軟水醸造法を編み出した先人の志と、千年続く古社の厳かな空気に背筋が伸びた。",
+          "badge_code": "akitsu_sakakiyama_ginjo_father"
+        },
+        {
+          "key": "C",
+          "text": "なまこ壁と赤レンガ煙突が港町の歴史を物語る、嘉永元年創業の「柄酒造」",
+          "description": "三津の軟水で醸される「於多福」の伝統と、危機を乗り越えて復活した若い蔵元の情熱に心打たれた。",
+          "badge_code": "akitsu_tsuka_shuzo_otafuku"
+        },
+        {
+          "key": "D",
+          "text": "潮風薫る「安芸津駅」から歩いて立ち寄る、三津商店街の老舗「谷本日進堂」",
+          "description": "穏やかな三津湾の海辺に近い商店街で、地元の人々に愛される素朴なお菓子の温もりに癒やされた。",
+          "badge_code": "akitsu_tanimoto_nisshindo_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "87061474-6761-404c-84a6-e1bd7a6ab497",
+        "name": "安芸津駅",
+        "description": "瀬戸内海の三津湾に面した酒処・安芸津町の玄関口となるJR呉線の駅（待合室は始発〜終電）。「広島吟醸酒の父」三浦仙三郎翁ゆかりの酒蔵通りや港町散策の起点となっている。",
+        "address": "広島県東広島市安芸津町三津4106",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.3181,
+        "lng": 132.817587,
+        "qr_token": "shuin-akitsu-1",
+        "cover_image_url": "/images/akitsu/spot1.png",
+        "f7_fragment": "穏やかな三津湾のすぐそばに立ち、吟醸酒発祥の港町へと誘うJR呉線の駅。",
+        "f7_full": "「安芸津駅」に吹く瀬戸内の潮風が、近代吟醸酒の歴史を切り拓いた三津の酒蔵通りを訪ねる旅の始まりを爽やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9d6e63bf-c6c2-4a6d-8337-aeaccf03beb0",
+        "next_spot_name": "谷本日進堂"
+      },
+      {
+        "id": "9d6e63bf-c6c2-4a6d-8337-aeaccf03beb0",
+        "name": "谷本日進堂",
+        "description": "安芸津駅近くの三津商店街に店を構える老舗和洋菓子店（9:00〜18:30頃営業、不定休）。季節の和菓子や安芸津ならではの焼き菓子など、地元で長く愛される銘菓を製造・販売している。",
+        "address": "広島県東広島市安芸津町三津4127",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.318202,
+        "lng": 132.819949,
+        "qr_token": "shuin-akitsu-2",
+        "cover_image_url": "/images/akitsu/spot2.png",
+        "f7_fragment": "三津の商店街で長年暖簾を守り、手作りの和洋菓子で親しまれる老舗菓子店。",
+        "f7_full": "「谷本日進堂」の素朴で優しい甘さの和洋菓子が、酒蔵と港の歴史が息づく安芸津の町歩きにほっとする温もりを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "472c6886-da39-47aa-889d-fec5e682501b",
+        "next_spot_name": "今田酒造本店"
+      },
+      {
+        "id": "472c6886-da39-47aa-889d-fec5e682501b",
+        "name": "今田酒造本店",
+        "description": "明治元年創業の「富久長」蔵元（直売所は9:00〜17:00営業、土曜・日曜・祝日休）。女性杜氏・今田美穂氏が率い、幻の酒米「八反草」や白麹を用いた独創的な純米吟醸酒で国内外から高く評価されている。",
+        "address": "広島県東広島市安芸津町三津3734",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.319762,
+        "lng": 132.819751,
+        "qr_token": "shuin-akitsu-3",
+        "cover_image_url": "/images/akitsu/spot3.png",
+        "f7_fragment": "幻の酒米「八反草」を甦らせ、銘酒「富久長」を醸す明治元年創業の老舗蔵元。",
+        "f7_full": "「今田酒造本店」の杉玉が揺れる風格ある木造蔵が、瀬戸内の海と大地に寄り添う安芸津の酒造りの奥深さを静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "6bfcc662-8454-45ab-845e-590d2612b6fd",
+        "next_spot_name": "柄酒造"
+      },
+      {
+        "id": "6bfcc662-8454-45ab-845e-590d2612b6fd",
+        "name": "柄酒造",
+        "description": "江戸末期の嘉永元年創業の老舗酒蔵（9:00〜17:00営業、日曜・祝日休）。代表銘柄「於多福」「関西一」で知られ、三津の軟水と県産米を用いた伝統と革新の酒造りを行っている。",
+        "address": "広島県東広島市安芸津町三津4228",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.318961,
+        "lng": 132.816529,
+        "qr_token": "shuin-akitsu-4",
+        "cover_image_url": "/images/akitsu/spot4.png",
+        "f7_fragment": "嘉永元年の創業以来、なまこ壁の蔵で「於多福」などの銘酒を醸す老舗酒蔵。",
+        "f7_full": "「柄酒造」の白壁と赤レンガ煙突が連なる風景が、瀬戸内の港町・三津で受け継がれてきた軟水酒造りの誇りを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a652fa9c-4cc0-427f-8953-2f6197fa21f5",
+        "next_spot_name": "榊山八幡神社"
+      },
+      {
+        "id": "a652fa9c-4cc0-427f-8953-2f6197fa21f5",
+        "name": "榊山八幡神社",
+        "description": "平安時代の貞観年間創建と伝わる安芸津の総鎮守（境内参拝自由）。広島県重要文化財の本殿・拝殿が並び、境内には酒造りの神を祀る松尾神社と「吟醸酒の父」三浦仙三郎翁の銅像が立つ。",
+        "address": "広島県東広島市安芸津町三津5513",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.318317,
+        "lng": 132.811436,
+        "qr_token": "shuin-akitsu-5",
+        "cover_image_url": "/images/akitsu/spot5.png",
+        "f7_fragment": "県重要文化財の社殿と「吟醸酒の父」三浦仙三郎翁の銅像が立つ安芸津の総鎮守。",
+        "f7_full": "「榊山八幡神社」の厳かな社殿と三浦仙三郎翁の銅像が、百試千改の情熱が息づく吟醸酒のふるさとの旅を清々しく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0faf5a96-b764-44d0-8eae-844d0e2d924f",
+    "title": "奥久慈しゃもの里ともみじ寺・常陸大子を辿る",
+    "name": "奥久慈しゃもの里ともみじ寺・常陸大子を辿る",
+    "description": "久慈川の清流と山々に抱かれ、奥久慈しゃもや奥久慈りんごの恵みが息づく茨城県大子町。SLが展示された常陸大子駅から、奥久慈しゃも親子丼の弥満喜、大正の商家を再生したdaigo cafe、百段階段の十二所神社、もみじ寺・永源寺までを歩く。",
+    "region": "常陸大子（大子町）",
+    "area_name": "常陸大子（大子町）",
+    "cover_image_url": "/images/hitachi-daigo/route-eyecatch.png",
+    "imageUrl": "/images/hitachi-daigo/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大正の古民家カフェと奥久慈しゃも、もみじ寺が彩る常陸大子で、あなたが心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "無数のカエデが境内を彩り、高台から大子の街を一望するもみじ寺「永源寺」",
+          "description": "四季折々に表情を変えるもみじの梢と、久慈川が流れる山あいの町並みのパノラマに心洗われた。",
+          "badge_code": "hitachi_daigo_eigenji_maple"
+        },
+        {
+          "key": "B",
+          "text": "老舗「弥満喜」で味わう、濃厚な旨みと奥久慈卵が絡み合う「奥久慈しゃも親子丼」",
+          "description": "噛むほどに広がる奥久慈しゃもの力強い旨みと秘伝の割り下に、大子が誇る食の底力を実感した。",
+          "badge_code": "hitachi_daigo_yamaki_shamo_oyakodon"
+        },
+        {
+          "key": "C",
+          "text": "商店街から伸びる急勾配の「百段階段」と、千三百年の歴史を伝える「十二所神社」",
+          "description": "徳川光圀公も参拝した古社の厳かな空気と、百段階段から見下ろすレトロな通りの風景が印象的だった。",
+          "badge_code": "hitachi_daigo_junisho_hundred_steps"
+        },
+        {
+          "key": "D",
+          "text": "SLが迎える「常陸大子駅」と、大正時代の商家を再生した「daigo cafe」のりんご菓子",
+          "description": "百年の時を経た木造空間で味わう奥久慈りんごの甘い香りと、穏やかな時間が心地よかった。",
+          "badge_code": "hitachi_daigo_cafe_merchant_house"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3c9bd37e-107d-444f-819d-cbf0cc6308b8",
+        "name": "常陸大子駅",
+        "description": "奥久慈観光の拠点となるJR水郡線の主要駅（待合室は始発〜終電）。駅前広場にはかつて水郡線を走った蒸気機関車「C12 187」が展示され、レトロな商店街への起点となっている。",
+        "address": "茨城県久慈郡大子町大子702-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.769732,
+        "lng": 140.355036,
+        "qr_token": "shuin-hitachi-daigo-1",
+        "cover_image_url": "/images/hitachi-daigo/spot1.png",
+        "f7_fragment": "駅前広場に蒸気機関車「C12 187」が佇む、奥久慈への玄関口となるJR水郡線の駅。",
+        "f7_full": "「常陸大子駅」の駅前に輝く黒い蒸気機関車と澄んだ山の空気が、奥久慈の美食と古社寺を訪ねる旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a880ac62-aa6e-4c8c-824a-3969db7ac3f5",
+        "next_spot_name": "弥満喜"
+      },
+      {
+        "id": "a880ac62-aa6e-4c8c-824a-3969db7ac3f5",
+        "name": "弥満喜",
+        "description": "常陸大子駅近くにある奥久慈しゃも料理の老舗食事処（11:00〜15:00・17:00〜20:00営業、水曜休）。引き締まった肉質と深い旨みを持つ奥久慈しゃもと奥久慈卵を使った「奥久慈しゃも親子丼」が名物。",
+        "address": "茨城県久慈郡大子町大子741-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.770427,
+        "lng": 140.355076,
+        "qr_token": "shuin-hitachi-daigo-2",
+        "cover_image_url": "/images/hitachi-daigo/spot2.png",
+        "f7_fragment": "地鶏の旨みと濃厚な奥久慈卵が溶け合う「奥久慈しゃも親子丼」の老舗食事処。",
+        "f7_full": "「弥満喜」の熱々の奥久慈しゃも親子丼と秘伝の割り下の香りが、豊かな自然が育てた大子ならではの食の贅を堪能させてくれる。",
+        "is_final": false,
+        "next_spot_id": "1b82dc9a-165d-4166-8213-381f9aa971a6",
+        "next_spot_name": "daigo cafe"
+      },
+      {
+        "id": "1b82dc9a-165d-4166-8213-381f9aa971a6",
+        "name": "daigo cafe",
+        "description": "大正時代の旧商家をリノベーションした古民家カフェ（11:00〜18:00営業、水曜休）。アンティーク家具が並ぶ空間で、特産の奥久慈りんごを使ったスイーツやランチ、自家焙煎珈琲を楽しめる。",
+        "address": "茨城県久慈郡大子町大子688",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.771364,
+        "lng": 140.353836,
+        "qr_token": "shuin-hitachi-daigo-3",
+        "cover_image_url": "/images/hitachi-daigo/spot3.png",
+        "f7_fragment": "大正時代の重厚な旧商家を再生し、奥久慈りんごのスイーツが味わえる古民家カフェ。",
+        "f7_full": "「daigo cafe」の百年の時を刻んだ木の梁と甘酸っぱいりんごの香りが、大子の商店街に流れる穏やかな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "97d2e812-7888-4117-87be-eaed3b2e9278",
+        "next_spot_name": "十二所神社の百段階段"
+      },
+      {
+        "id": "97d2e812-7888-4117-87be-eaed3b2e9278",
+        "name": "十二所神社の百段階段",
+        "description": "奈良時代の養老元年創建と伝わる大子の総鎮守・十二所神社の表参道（境内参拝自由）。商店街からまっすぐに伸びる急勾配の「百段階段」で知られ、高台の境内から大子の町並みを一望できる。",
+        "address": "茨城県久慈郡大子町大子426-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.773695,
+        "lng": 140.35261,
+        "qr_token": "shuin-hitachi-daigo-4",
+        "cover_image_url": "/images/hitachi-daigo/spot4.png",
+        "f7_fragment": "奈良時代の創建と伝わり、商店街から「百段階段」がまっすぐ伸びる大子の総鎮守。",
+        "f7_full": "「十二所神社の百段階段」の急勾配の石段と杉木立に包まれた社殿が、城下と宿場の歴史が交差する大子の誇りを静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "39951a30-4590-4216-8192-696ace6bcc51",
+        "next_spot_name": "永源寺"
+      },
+      {
+        "id": "39951a30-4590-4216-8192-696ace6bcc51",
+        "name": "永源寺",
+        "description": "室町時代の応永33年に創建された曹洞宗の寺院（境内参拝自由）。境内一帯をカエデが彩ることから「もみじ寺」の通称で親しまれ、高台から大子市街と久慈川を一望できる。",
+        "address": "茨城県久慈郡大子町大子1571",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.772942,
+        "lng": 140.344673,
+        "qr_token": "shuin-hitachi-daigo-5",
+        "cover_image_url": "/images/hitachi-daigo/spot5.png",
+        "f7_fragment": "無数のカエデが境内を鮮やかに彩る「もみじ寺」として親しまれる室町創建の古刹。",
+        "f7_full": "「永源寺」の美しいカエデの枝葉と高台から見渡す大子の山河が、奥久慈の自然と美食を巡った旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7abc2dd7-3051-4f45-891d-3d166a7110b8",
+    "title": "元禄創業の酒蔵と大江氏の古社・寒河江を歩く",
+    "name": "元禄創業の酒蔵と大江氏の古社・寒河江を歩く",
+    "description": "鎌倉御家人・大江氏の城下町としての歴史と、三百年続く酒蔵や独自の麺文化が息づく山形県寒河江市。フルーツライン左沢線の寒河江駅から、元禄九年創業の千代寿虎屋、寒河江百貨店 カフェ、老舗の皿谷食堂、総鎮守の寒河江八幡宮までを歩く。",
+    "region": "寒河江（寒河江市）",
+    "area_name": "寒河江（寒河江市）",
+    "cover_image_url": "/images/sagae/route-eyecatch.png",
+    "imageUrl": "/images/sagae/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "元禄創業の酒蔵と老舗の麺文化、大江氏ゆかりの古社が息づく寒河江で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "元禄九年の創業以来、全量山形県産米と伏流水で銘酒を醸す「千代寿虎屋」",
+          "description": "三百年を超える歴史を刻む酒蔵の佇まいと、幻の酒米「豊国」を受け継ぐ情熱に感銘を受けた。",
+          "badge_code": "sagae_chiyokotobuki_sake_brewery"
+        },
+        {
+          "key": "B",
+          "text": "本町通りの老舗「皿谷食堂」で味わう、出汁の旨みが澄み渡る中華そばと冷たい肉そば",
+          "description": "世代を超えて愛される黄金色のスープと親鶏の旨みに、寒河江に根付く麺文化の奥深さを堪能した。",
+          "badge_code": "sagae_saraya_shokudo_noodles"
+        },
+        {
+          "key": "C",
+          "text": "鎌倉幕府の重臣・大江広元公ゆかりの寒河江大江氏が勧請した総鎮守「寒河江八幡宮」",
+          "description": "杉の巨木が連なる参道と流鏑馬の伝統を受け継ぐ社殿に、八百年続く武家の城下町の歴史を偲んだ。",
+          "badge_code": "sagae_hachimangu_oe_samurai"
+        },
+        {
+          "key": "D",
+          "text": "フルーツラインの「寒河江駅」と、地元の恵みが集まる「寒河江百貨店 カフェ」",
+          "description": "さくらんぼの里らしい爽やかな駅の風景と、街なかのカフェで味わう甘いひとときに心が弾んだ。",
+          "badge_code": "sagae_station_cherry_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0a9250f3-8873-4630-89ec-3c7f2b29b290",
+        "name": "寒河江駅",
+        "description": "「フルーツライン左沢線」の中心駅であり、日本一のさくらんぼの里・寒河江市の玄関口（待合室は始発〜終電）。さくらんぼをモチーフにした駅舎から酒蔵や古社巡りへと出発できる。",
+        "address": "山形県寒河江市本町1-1-1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.372057,
+        "lng": 140.274633,
+        "qr_token": "shuin-sagae-1",
+        "cover_image_url": "/images/sagae/spot1.png",
+        "f7_fragment": "フルーツライン左沢線の中核を担う、日本一のさくらんぼの里・寒河江の玄関口。",
+        "f7_full": "「寒河江駅」の愛らしい駅舎と月山を望む澄んだ空気が、元禄創業の酒蔵と大江氏の歴史を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "508a59f2-bb14-4ec9-8bb5-40d58d85563d",
+        "next_spot_name": "千代寿虎屋"
+      },
+      {
+        "id": "508a59f2-bb14-4ec9-8bb5-40d58d85563d",
+        "name": "千代寿虎屋",
+        "description": "江戸中期の元禄9年創業の老舗酒蔵（試飲・直売は平日9:00〜16:00営業、土曜・日曜・祝日休）。月山・朝日連峰の伏流水と山形県産米を全量使用し、代表銘柄「千代寿」を醸している。",
+        "address": "山形県寒河江市南町2-1-16",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.374241,
+        "lng": 140.278325,
+        "qr_token": "shuin-sagae-2",
+        "cover_image_url": "/images/sagae/spot2.png",
+        "f7_fragment": "元禄九年の創業以来、全量山形県産米と伏流水で銘酒「千代寿」を醸す酒蔵。",
+        "f7_full": "「千代寿虎屋」の風格ある蔵構えと大きな杉玉が、三百年以上にわたり寒河江の風土とともに歩んできた銘酒造りの誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "f1f0fb58-7a7f-4cf5-8f4b-b9aae25f5614",
+        "next_spot_name": "寒河江百貨店 カフェ"
+      },
+      {
+        "id": "f1f0fb58-7a7f-4cf5-8f4b-b9aae25f5614",
+        "name": "寒河江百貨店 カフェ",
+        "description": "中心市街地の複合施設「フローラ・SAGAE」内にあるカフェ＆ショップ（11:00〜17:00営業、水曜休）。寒河江の果物や食材を活かしたスイーツやドリンク、地域の特産品を楽しめる。",
+        "address": "山形県寒河江市本町2-8-3",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.374551,
+        "lng": 140.274812,
+        "qr_token": "shuin-sagae-3",
+        "cover_image_url": "/images/sagae/spot3.png",
+        "f7_fragment": "寒河江の果実スイーツや特産品が揃う、中心市街地の開放的で温かなカフェ空間。",
+        "f7_full": "「寒河江百貨店 カフェ」の爽やかなフルーツの香りと温かな空間が、フルーツ王国・寒河江ならではの豊かな恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "3ce4785c-297a-4424-82ae-a65b4dd4e98d",
+        "next_spot_name": "皿谷食堂"
+      },
+      {
+        "id": "3ce4785c-297a-4424-82ae-a65b4dd4e98d",
+        "name": "皿谷食堂",
+        "description": "本町通りで長年親しまれる老舗大衆食堂（11:00〜18:00頃営業・水曜は14:30まで、木曜休）。牛骨ベースの澄んだスープの「中華そば」や山形名物の「冷たい肉そば」が地元客から旅人まで人気を集める。",
+        "address": "山形県寒河江市本町2-6-54",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.375811,
+        "lng": 140.277139,
+        "qr_token": "shuin-sagae-4",
+        "cover_image_url": "/images/sagae/spot4.png",
+        "f7_fragment": "本町通りで暖簾を守り、黄金色の中華そばと冷たい肉そばで愛される老舗食堂。",
+        "f7_full": "「皿谷食堂」の香り高い出汁と親鶏の旨みが詰まった一杯が、寒河江の人々の日常を支えてきた温かい麺文化の魅力を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8c0a4ef7-4352-426f-8cdd-d3c7c6d01505",
+        "next_spot_name": "寒河江八幡宮"
+      },
+      {
+        "id": "8c0a4ef7-4352-426f-8cdd-d3c7c6d01505",
+        "name": "寒河江八幡宮",
+        "description": "鎌倉幕府の重臣・大江広元公ゆかりの寒河江大江氏が鶴岡八幡宮を勧請して創建した古社（境内参拝自由、授与所9:00〜17:00）。杉の巨木が茂る境内で、秋の流鏑馬神事など武家の伝統を今に伝える。",
+        "address": "山形県寒河江市八幡町5-70",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.37818,
+        "lng": 140.270767,
+        "qr_token": "shuin-sagae-5",
+        "cover_image_url": "/images/sagae/spot5.png",
+        "f7_fragment": "鎌倉御家人・寒河江大江氏が鶴岡八幡宮を勧請して創建した八百年の総鎮守。",
+        "f7_full": "「寒河江八幡宮」の杉木立に包まれた厳かな社殿が、元禄酒蔵と老舗の麺処を巡った寒河江の旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "dde923ce-c19f-4d7a-85b9-4bcee76283ec",
+    "title": "なぜ五所川原の立佞武多は天を突く高さなのか",
+    "name": "なぜ五所川原の立佞武多は天を突く高さなのか",
+    "description": "高さ約二十三メートルの巨大山車「立佞武多」と津軽鉄道の旅情が息づく青森県五所川原市。JR五能線の五所川原駅から、レトロな珈琲詩人、老舗のお菓子 竹屋、のへ丼で賑わう生鮮市場 マルコーセンター、迫力の立佞武多の館までを歩く。",
+    "region": "五所川原（五所川原市）",
+    "area_name": "五所川原（五所川原市）",
+    "cover_image_url": "/images/goshogawara/route-eyecatch.png",
+    "imageUrl": "/images/goshogawara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "天を突く立佞武多の迫力と市場の海鮮丼、老舗の甘味が息づく五所川原で、あなたが強く心惹かれたのはどの風景でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "高さ約二十三メートルの極彩色の巨大山車を間近に見上げる「立佞武多の館」",
+          "description": "八十年ぶりに復活した巨大ねぷたの圧倒的なスケールと、津軽の職人たちの情熱に胸が熱くなった。",
+          "badge_code": "goshogawara_tachineputa_giant_float"
+        },
+        {
+          "key": "B",
+          "text": "「マルコーセンター」で新鮮な海の幸を好みで盛り付ける名物「のへ丼」",
+          "description": "威勢のいい津軽弁が飛び交う市場で、自分だけの海鮮丼を作る楽しさと魚介の旨みを満喫した。",
+          "badge_code": "goshogawara_maruko_nohedon_market"
+        },
+        {
+          "key": "C",
+          "text": "寺町の老舗「お菓子 竹屋」で出会う、津軽の四季と人情が詰まった手づくり和洋菓子",
+          "description": "世代を超えて街の人々に愛される素朴で優しい甘みに、雪国・奥津軽の温もりを感じた。",
+          "badge_code": "goshogawara_takeya_tsugaru_sweets"
+        },
+        {
+          "key": "D",
+          "text": "ストーブ列車の旅情漂う「五所川原駅」と、大町通りのレトロ喫茶「珈琲詩人」",
+          "description": "二つの鉄道が並ぶノスタルジックな駅前から歩き出し、香り高い珈琲に包まれる時間に癒やされた。",
+          "badge_code": "goshogawara_coffee_shijin_station"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "057badd5-2a6d-434d-8eb9-947813865c6b",
+        "name": "五所川原駅",
+        "description": "奥津軽観光の拠点となるJR五能線の駅（待合室は始発〜終電）。すぐ隣には「ストーブ列車」や太宰治の故郷・金木へと向かう津軽鉄道「津軽五所川原駅」が並び、旅情あふれる風景が広がる。",
+        "address": "青森県五所川原市大町38",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.808915,
+        "lng": 140.447774,
+        "qr_token": "shuin-goshogawara-1",
+        "cover_image_url": "/images/goshogawara/spot1.png",
+        "f7_fragment": "JR五能線と津軽鉄道の駅が並び、奥津軽と立佞武多の街へと誘う玄関口の駅。",
+        "f7_full": "「五所川原駅」のノスタルジックな跨線橋と津軽の風が、巨大山車と市場の活気に出会う街歩きの始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d1b4bf88-2a45-40e9-8340-b322a80a8a8a",
+        "next_spot_name": "珈琲詩人"
+      },
+      {
+        "id": "d1b4bf88-2a45-40e9-8340-b322a80a8a8a",
+        "name": "珈琲詩人",
+        "description": "五所川原駅近くの大町通りにある老舗喫茶店（9:00〜20:00・木曜は15:00まで営業、不定休）。落ち着いた木目調の店内で、香り高い珈琲やパフェ、ボリュームある洋食メニューを楽しめる。",
+        "address": "青森県五所川原市大町4-18",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.80956,
+        "lng": 140.445301,
+        "qr_token": "shuin-goshogawara-2",
+        "cover_image_url": "/images/goshogawara/spot2.png",
+        "f7_fragment": "大町通りで長年親しまれ、香り高い珈琲と洋食で旅人を迎えるレトロな喫茶店。",
+        "f7_full": "「珈琲詩人」の琥珀色のブレンド珈琲と温かな照明が、北国の列車旅の合間にほっと心がほどける穏やかな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b59c3e21-d789-4483-869b-acd9bf891169",
+        "next_spot_name": "お菓子 竹屋"
+      },
+      {
+        "id": "b59c3e21-d789-4483-869b-acd9bf891169",
+        "name": "お菓子 竹屋",
+        "description": "寺町にある地元密着の老舗和洋菓子店（8:30〜18:30営業、不定休）。季節の上生菓子や焼き菓子、津軽の素材を活かした郷土銘菓を手づくりし、街歩きのおやつやお土産として親しまれている。",
+        "address": "青森県五所川原市寺町2",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.810144,
+        "lng": 140.441331,
+        "qr_token": "shuin-goshogawara-3",
+        "cover_image_url": "/images/goshogawara/spot3.png",
+        "f7_fragment": "寺町で長年愛され、津軽の四季を映した和洋菓子を手づくりする老舗菓子店。",
+        "f7_full": "「お菓子 竹屋」の丁寧に作られた和菓子と優しい甘みが、熱気あふれる立佞武多の街歩きにほっとする安らぎを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "72a62bf9-92e9-4694-85d1-3e41a401b07c",
+        "next_spot_name": "生鮮市場 マルコーセンター"
+      },
+      {
+        "id": "72a62bf9-92e9-4694-85d1-3e41a401b07c",
+        "name": "生鮮市場 マルコーセンター",
+        "description": "五所川原市民の台所として賑わう屋内生鮮市場（8:00〜17:30営業・市場中食堂は11:00〜15:00、日曜休）。白飯を購入して場内の鮮魚店で好みの刺身を盛り付けてもらう名物「のへ丼」が人気。",
+        "address": "青森県五所川原市大町20-1",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.810591,
+        "lng": 140.44291,
+        "qr_token": "shuin-goshogawara-4",
+        "cover_image_url": "/images/goshogawara/spot4.png",
+        "f7_fragment": "場内の鮮魚店で好みの刺身を盛り付ける名物「のへ丼」で知られる生鮮市場。",
+        "f7_full": "「生鮮市場 マルコーセンター」に飛び交う元気な津軽弁と新鮮な魚介の輝きが、五所川原の豊かな食の活気を体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "7b9c8ee3-6a82-4ae7-86fc-9afc60b1d0fb",
+        "next_spot_name": "立佞武多の館"
+      },
+      {
+        "id": "7b9c8ee3-6a82-4ae7-86fc-9afc60b1d0fb",
+        "name": "立佞武多の館",
+        "description": "高さ約23m・重さ約19トンの大型立佞武多3台を常時展示する観光文化施設（9:00〜17:00・夏期19:00まで開館、元日休）。吹き抜けの展示室をスロープで下りながら巨大山車を全方位から見学できる。",
+        "address": "青森県五所川原市大町506-10",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.81095,
+        "lng": 140.443335,
+        "qr_token": "shuin-goshogawara-5",
+        "cover_image_url": "/images/goshogawara/spot5.png",
+        "f7_fragment": "高さ約二十三メートルの巨大な山車三台が吹き抜け空間にそびえる文化拠点。",
+        "f7_full": "「立佞武多の館」の天井まで届く極彩色の武者人形と灯りの迫力が、やってまれの掛け声に沸く奥津軽の旅を熱く締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f526ac3e-b909-4297-83e7-c776b23265ec",
+    "title": "将軍宿館の碧水城と東海道・水口宿へ",
+    "name": "将軍宿館の碧水城と東海道・水口宿へ",
+    "description": "徳川三代将軍・家光公の宿館として築かれた水口城と、東海道五十番目の宿場町・水口宿の歴史が息づく滋賀県甲賀市水口町。近江鉄道の水口城南駅から、水堀が美しい水口城資料館、水口曳山祭の水口神社、御菓子司 長田屋、芭蕉ゆかりの大岡寺までを歩く。",
+    "region": "水口（甲賀市）",
+    "area_name": "水口（甲賀市）",
+    "cover_image_url": "/images/minakuchi-jonan/route-eyecatch.png",
+    "imageUrl": "/images/minakuchi-jonan/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水堀に映える碧水城と東海道水口宿の老舗銘菓、曳山祭の古社が並ぶ水口で、あなたが心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "徳川家光公の宿館として小堀遠州が作事を手掛けた、碧水城「水口城資料館」",
+          "description": "青い水堀に映る白壁の出丸矢倉と石垣に、将軍家御用の城ならではの気品と歴史を感じた。",
+          "badge_code": "minakuchi_castle_hekisui_turret"
+        },
+        {
+          "key": "B",
+          "text": "「水口」の地名発祥の延喜式内社であり、ユネスコ無形文化遺産の舞台「水口神社」",
+          "description": "石造の太鼓橋と厳かな社殿に、江戸の町人文化が花開いた「水口曳山祭」の熱気と伝統を偲んだ。",
+          "badge_code": "minakuchi_shrine_hikiyama_heritage"
+        },
+        {
+          "key": "C",
+          "text": "三筋の町並みが残る水口宿の「御菓子司 長田屋」で出会う銘菓「水口 五万石」",
+          "description": "旧東海道の風情ある通りで長年愛される和菓子に、宿場町ならではの華やかな歴史を味わった。",
+          "badge_code": "minakuchi_nagataya_gomangoku_sweets"
+        },
+        {
+          "key": "D",
+          "text": "ガチャコン電車の「水口城南駅」と、松尾芭蕉の句碑が佇む岡観音「大岡寺」",
+          "description": "行基菩薩開基と伝わる古刹の静けさと、水口宿で再会を喜んだ芭蕉の桜の句に心が温まった。",
+          "badge_code": "minakuchi_daikoji_basho_temple"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9e18b5a3-2c87-4af9-8939-1356fa0d166b",
+        "name": "水口城南駅",
+        "description": "水口城跡や旧東海道水口宿への最寄り駅となる近江鉄道本線の駅（待合室は始発〜終電）。「ガチャコン電車」の愛称で親しまれ、城下町・宿場町散策の便利な起点となっている。",
+        "address": "滋賀県甲賀市水口町水口5695-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.96809,
+        "lng": 136.165547,
+        "qr_token": "shuin-minakuchi-jonan-1",
+        "cover_image_url": "/images/minakuchi-jonan/spot1.png",
+        "f7_fragment": "水口城跡のすぐ南に位置し、城下町・水口宿の散策拠点となる近江鉄道の駅。",
+        "f7_full": "「水口城南駅」のローカル線ならではの穏やかなホームが、将軍宿館の城と東海道五十番目の宿場町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c1f2c77f-5e9c-43aa-88b1-2871b6a1d308",
+        "next_spot_name": "水口城資料館"
+      },
+      {
+        "id": "c1f2c77f-5e9c-43aa-88b1-2871b6a1d308",
+        "name": "水口城資料館",
+        "description": "寛永11年に三代将軍・徳川家光公の宿館として築かれた水口城（碧水城）の本丸・出丸跡に建つ資料館（10:00〜17:00開館、月曜・火曜休）。水堀に面した模擬矢倉の中で城の復元模型や歴史資料を展示する。",
+        "address": "滋賀県甲賀市水口町本丸4-80",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.970113,
+        "lng": 136.165588,
+        "qr_token": "shuin-minakuchi-jonan-2",
+        "cover_image_url": "/images/minakuchi-jonan/spot2.png",
+        "f7_fragment": "徳川家光公の宿館として築かれた「碧水城」の水堀に白い矢倉が映える資料館。",
+        "f7_full": "「水口城資料館」の美しい水堀と白壁の出丸矢倉が、小堀遠州が手掛けた天下の将軍家宿館の気品と歴史を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e457670b-e7df-4a55-857d-74865d9a1e54",
+        "next_spot_name": "水口神社"
+      },
+      {
+        "id": "e457670b-e7df-4a55-857d-74865d9a1e54",
+        "name": "水口神社",
+        "description": "「水口」の地名発祥となった延喜式内社（境内参拝自由）。大水口宿禰命を祀り、春の例大祭「水口曳山祭」はユネスコ無形文化遺産に登録されている宿場町・城下町の総鎮守。",
+        "address": "滋賀県甲賀市水口町宮の前3-14",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.967687,
+        "lng": 136.16735,
+        "qr_token": "shuin-minakuchi-jonan-3",
+        "cover_image_url": "/images/minakuchi-jonan/spot3.png",
+        "f7_fragment": "地名発祥の延喜式内社であり、ユネスコ無形文化遺産「水口曳山祭」の古社。",
+        "f7_full": "「水口神社」の美しい石造の太鼓橋と緑深い社殿が、江戸の町人文化が花開いた東海道水口宿の誇りと賑わいを静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "bdce3a0a-417f-42d1-804b-470e44e231f5",
+        "next_spot_name": "御菓子司 長田屋"
+      },
+      {
+        "id": "bdce3a0a-417f-42d1-804b-470e44e231f5",
+        "name": "御菓子司 長田屋",
+        "description": "水口宿の本町通り（大岡寺門前）に店を構える老舗和菓子店（9:00〜19:00営業、月曜休）。欧風和菓子「水口 五万石」や季節の上生菓子、最中など宿場町の風情を映した銘菓を取り揃える。",
+        "address": "滋賀県甲賀市水口町本町1-7-7",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.967926,
+        "lng": 136.177633,
+        "qr_token": "shuin-minakuchi-jonan-4",
+        "cover_image_url": "/images/minakuchi-jonan/spot4.png",
+        "f7_fragment": "大岡寺門前の本町通りで暖簾を守り、銘菓「水口 五万石」を手掛ける老舗。",
+        "f7_full": "「御菓子司 長田屋」の上品な甘さの和菓子と季節の上生菓子が、三筋の町並みが残る東海道水口宿の散策に彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e51b2e00-afb2-4f83-8188-a9a3b1f58698",
+        "next_spot_name": "大岡寺"
+      },
+      {
+        "id": "e51b2e00-afb2-4f83-8188-a9a3b1f58698",
+        "name": "大岡寺",
+        "description": "奈良時代に行基菩薩が開基したと伝わる「岡観音」こと天台宗の古刹（境内参拝自由）。朝鮮通信使の宿館となった歴史を持ち、境内には松尾芭蕉が水口で詠んだ「命二つ」の句碑が残る。",
+        "address": "滋賀県甲賀市水口町京町1-30",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.969189,
+        "lng": 136.178972,
+        "qr_token": "shuin-minakuchi-jonan-5",
+        "cover_image_url": "/images/minakuchi-jonan/spot5.png",
+        "f7_fragment": "奈良時代の行基菩薩開基と伝わり、松尾芭蕉の桜の句碑が佇む「岡観音」の名刹。",
+        "f7_full": "「大岡寺」の静かな山門と松尾芭蕉の句碑が、将軍の宿館と東海道水口宿を巡り歩いた旅を風雅な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
