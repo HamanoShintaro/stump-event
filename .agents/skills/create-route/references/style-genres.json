@@ -779,13 +779,15 @@
         "anti_patterns": "Eye-level street perspective, cramped tiny central vignette with huge empty white sides, map text/kanji labels or compass lettering."
       },
       "self_improvement": {
-        "version": 3,
-        "runs": 6,
-        "avg_score": 8.42,
+        "version": 7,
+        "runs": 12,
+        "avg_score": 8.55,
         "learned_boosters": [
-          "Keep camera high at a 45-degree bird's-eye miniature diorama angle spanning broadly across warm antique buff paper with zero text labels",
-          "Extend miniature architecture and landscaping toward canvas edges while preserving clear rooflines and tactile material contrasts",
-          "Use enclosing walls, layered rooftops, and miniature garden paths to establish a coherent elevated dollhouse panorama"
+          "Use enclosing walls, layered rooftops, and miniature garden paths to establish a coherent elevated dollhouse panorama",
+          "Use consistent elevated roof views and connected waterways to unify landmarks into a miniature townscape",
+          "Use cutaway architecture to reveal layered interiors while preserving elevated isometric geometry and richly landscaped surroundings",
+          "Connect miniature architecture, winding paths, water, and vegetation into one richly colored, edge-spanning panorama",
+          "Use winding paths, miniature bridges, and layered roofs to connect foreground gardens with a luminous distant horizon"
         ],
         "learned_avoid": [
           "map legend boxes, compass letters, or place-name text",
@@ -857,6 +859,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "高い俯瞰から屋敷と庭園を画面いっぱいに描く箱庭構成と鮮やかな夕陽が秀逸で、厳密なアイソメトリックより遠近感は強いものの、旅の締めくくりにふさわしい余韻がある。"
+          },
+          {
+            "at": "2026-11-11T12:18:18",
+            "slug": "chofu",
+            "target": "spot1.png",
+            "score": 8.9,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "豊かな彩色と俯瞰の箱庭構成で社殿・庭園・街路を余白なく魅力的に描けていますが、指定の近めのアプローチ視点より高く遠い眺めです。"
+          },
+          {
+            "at": "2026-11-11T12:18:20",
+            "slug": "chofu",
+            "target": "route-eyecatch.png",
+            "score": 9,
+            "genre_fidelity": 8.5,
+            "framing_and_shot": 8.7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱紅葉と青緑の水路が広がる緻密な箱庭景観は魅力的で文字も皆無だが、遠景の地平線と強い遠近感が45度俯瞰の絵地図らしさをやや弱めている。"
+          },
+          {
+            "at": "2026-11-11T12:19:38",
+            "slug": "chofu",
+            "target": "spot2.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "俯瞰の蔵を断面状に開いた箱庭構成と鮮やかな紅葉、格子越しの長い影が魅力的で、光芒の空気感を強めれば空間の奥行きがさらに際立つ。"
+          },
+          {
+            "at": "2026-11-11T12:21:04",
+            "slug": "chofu",
+            "target": "spot3.png",
+            "score": 7.2,
+            "genre_fidelity": 8,
+            "framing_and_shot": 3,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "鮮やかな紅葉と庭園の箱庭感、茶器や菓子の質感は魅力的ですが、斜俯瞰で器や建物の側面が見え、必須の真上90度の構図を満たしていません。"
+          },
+          {
+            "at": "2026-11-11T12:21:06",
+            "slug": "chofu",
+            "target": "spot4.png",
+            "score": 8.2,
+            "genre_fidelity": 7,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱紅葉と重厚な軒、石垣が画面いっぱいに暖かな奥行きを生む一方、手前と遠景で視点が混在し、45度俯瞰の箱庭感と指定の低位置カメラはいずれもやや曖昧です。"
+          },
+          {
+            "at": "2026-11-11T12:22:50",
+            "slug": "chofu",
+            "target": "spot5.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "画面いっぱいに広がる精緻な箱庭俯瞰と朱葉・池の反射・黄金の夕景が旅の余韻を豊かに伝えますが、遠景の水平線ではアイソメトリックの統一感がやや弱まっています。"
           }
         ]
       }

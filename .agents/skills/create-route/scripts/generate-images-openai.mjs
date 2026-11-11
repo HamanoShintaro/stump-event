@@ -417,7 +417,20 @@ function runCodexExec(codexCli, args, timeoutMs = 240000) {
       settled = true;
       clearTimeout(timer);
       if (code !== 0) {
-        reject(new Error(`Codex CLI exited ${code}: ${(stderr || stdout).slice(0, 300)}`));
+        let jsonErr = '';
+        for (const line of stdout.split(/\r?\n/)) {
+          if (line.includes('"error"')) {
+            try {
+              const ev = JSON.parse(line.trim());
+              if (ev.message) jsonErr = ev.message;
+              else if (ev.error?.message) jsonErr = ev.error.message;
+            } catch {
+              // ignore
+            }
+          }
+        }
+        const detail = jsonErr || (stdout.trim() ? stdout.trim() : stderr.trim());
+        reject(new Error(`Codex CLI exited ${code}: ${detail.slice(0, 300)}`));
       } else {
         resolve({ stdout, stderr });
       }
@@ -437,7 +450,7 @@ async function generateWithCodexCli(codexCli, prompt, size = '1536x1024') {
   ].join('\n');
 
   let lastErr = null;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     let threadId = null;
     try {
       const { stdout } = await runCodexExec(
@@ -520,9 +533,12 @@ async function generateWithCodexCli(codexCli, prompt, size = '1536x1024') {
           // ignore cleanup failure
         }
       }
-      if (attempt < 1) {
-        console.warn(`    ⏳ Codex image_gen 再試行します (${err.message.slice(0, 100)})...`);
-        await sleep(3000);
+      if (err.message.includes('usage limit') || err.message.includes('purchase more credits')) {
+        throw err;
+      }
+      if (attempt < 3) {
+        console.warn(`    ⏳ Codex image_gen 再試行します (${attempt + 1}/3: ${err.message.slice(0, 100)})...`);
+        await sleep(4000 * (attempt + 1));
       }
     }
   }
@@ -1404,6 +1420,7 @@ async function main() {
     '--spot-model',
     '--max-retries',
     '--concurrency',
+    '--import-raw',
   ]);
   const targetArg = args.find((a, idx) => {
     if (a.startsWith('--')) return false;
@@ -1526,6 +1543,47 @@ async function main() {
         2
       )
     );
+    return;
+  }
+
+  const importRawDir = getFlagVal('--import-raw', null);
+  if (importRawDir) {
+    const absRawDir = path.resolve(importRawDir);
+    if (!fs.existsSync(absRawDir)) {
+      throw new Error(`--import-raw ディレクトリが見つかりません: ${absRawDir}`);
+    }
+    const rawFiles = fs.readdirSync(absRawDir);
+    for (const task of tasks) {
+      const stem = task.filename.replace(/\.png$/i, '');
+      const slugNorm = area.slug.toLowerCase().replace(/-/g, '_');
+      const stemNorm = stem.toLowerCase().replace(/-/g, '_');
+      const candidates = rawFiles
+        .filter((f) => {
+          if (!/\.(png|jpg|jpeg|webp)$/i.test(f)) return false;
+          const fn = f.toLowerCase().replace(/-/g, '_');
+          return (
+            fn.startsWith(`${slugNorm}_${stemNorm}_`) ||
+            fn.startsWith(`${slugNorm}_${stemNorm}.`) ||
+            fn === `${stemNorm}.png` ||
+            fn === `${stemNorm}.jpg`
+          );
+        })
+        .map((f) => {
+          const full = path.join(absRawDir, f);
+          return { full, f, mtime: fs.statSync(full).mtimeMs };
+        })
+        .sort((a, b) => b.mtime - a.mtime);
+      if (candidates.length === 0) {
+        throw new Error(`--import-raw 内に ${task.filename} に対応する画像ファイルが見つかりません (${absRawDir})`);
+      }
+      const rawBuffer = fs.readFileSync(candidates[0].full);
+      await resizeAndOptimizePng(rawBuffer, task.outPath, task.targetWidth, task.targetHeight, genre.framing_mode);
+      const sizeKb = Math.round(fs.statSync(task.outPath).size / 1024);
+      console.log(
+        `  ✅ インポート・最適化完了: public/images/${area.slug}/${task.filename} (${task.targetWidth}x${task.targetHeight}, ${sizeKb}KB, framing=${genre.framing_mode} <- ${candidates[0].f})`
+      );
+    }
+    console.log(`🎉 [${area.slug}] 全 ${tasks.length} 枚の画像インポート・最適化が完了しました！\n`);
     return;
   }
 
