@@ -65780,5 +65780,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "0e0af9fc-7994-4b39-8b8e-e4f75972c735",
+    "title": "二千年前の埋没林と蜃気楼の海・魚津を巡る",
+    "name": "二千年前の埋没林と蜃気楼の海・魚津を巡る",
+    "description": "立山連峰の伏流水と富山湾の深海が出会い、「埋没林」と「蜃気楼」の神秘が息づく富山県魚津市。富山地方鉄道の電鉄魚津駅から、魚津城跡近くの魚津神社、ユネスコ遺産たてもん祭りの諏訪神社、国特別天然記念物の魚津埋没林博物館、海の駅蜃気楼までを巡る。",
+    "region": "魚津（魚津市）",
+    "area_name": "魚津（魚津市）",
+    "cover_image_url": "/images/uozu/route-eyecatch.png",
+    "imageUrl": "/images/uozu/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "二千年前の埋没林と蜃気楼の海、ユネスコ遺産のたてもん祭りが息づく魚津で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "二千年前の巨大杉の根が水中に眠る、国特別天然記念物「魚津埋没林博物館」",
+          "description": "澄み切った地下水の中で太古の姿をとどめる杉の巨木と、富山湾の蜃気楼の不思議に圧倒された。",
+          "badge_code": "uozu_buried_forest_mirage"
+        },
+        {
+          "key": "B",
+          "text": "「天然の生け簀」富山湾の海の幸とバイ飯を味わう「海の駅 蜃気楼」",
+          "description": "立山連峰の雪解け水が育んだ魚津港の新鮮な魚介と、目の前に広がる富山湾の絶景を満喫した。",
+          "badge_code": "uozu_uminoeki_shinkiro_seafood"
+        },
+        {
+          "key": "C",
+          "text": "ユネスコ無形文化遺産「たてもん祭り」の舞台、海辺に鎮座する「諏訪神社」",
+          "description": "九十余りの提灯を三角形に掲げる巨大な「たてもん」の勇壮な伝統と、漁師町の熱い信仰に触れた。",
+          "badge_code": "uozu_suwa_shrine_tatemon"
+        },
+        {
+          "key": "D",
+          "text": "レトロな高架駅「電鉄魚津駅」と、旧魚津城下を見守る「魚津神社」",
+          "description": "地方鉄道の高架駅から旧城下町の商店街を歩き、戦国合戦の記憶が眠る街の歴史に触れた。",
+          "badge_code": "uozu_dentetsu_station_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3f9403a6-9ca5-4061-82c3-740f53c4f78e",
+        "name": "電鉄魚津駅",
+        "description": "富山地方鉄道本線の高架駅（待合室は始発〜終電）。昭和11年開業、昭和42年に高架化されたレトロな駅舎であり、旧魚津城下町の中心街や海岸エリアへの散策の起点となっている。",
+        "address": "富山県魚津市文化町7-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.815352,
+        "lng": 137.400434,
+        "qr_token": "shuin-uozu-1",
+        "cover_image_url": "/images/uozu/spot1.png",
+        "f7_fragment": "富山地方鉄道の電車が走り、旧魚津城下町の中心街へと誘うレトロな高架駅舎。",
+        "f7_full": "「電鉄魚津駅」のどこか懐かしい高架ホームと街並みが、二千年前の埋没林と蜃気楼が待つ富山湾岸への旅の始まりを穏やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cea8db56-0114-4e4a-8168-b3af1b9c300b",
+        "next_spot_name": "魚津神社"
+      },
+      {
+        "id": "cea8db56-0114-4e4a-8168-b3af1b9c300b",
+        "name": "魚津神社",
+        "description": "中央通り商店街に鎮座する中心市街地の氏神（境内参拝自由）。戦国時代の激戦地として知られる「魚津城跡（現・大町小学校）」のすぐ南に位置し、城下町の歴史と市民の信仰を今に伝えている。",
+        "address": "富山県魚津市中央通り1-3-28",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.81833,
+        "lng": 137.397607,
+        "qr_token": "shuin-uozu-2",
+        "cover_image_url": "/images/uozu/spot2.png",
+        "f7_fragment": "旧魚津城跡のすぐ南に鎮座し、中央通り商店街の暮らしを見守り続ける古社。",
+        "f7_full": "「魚津神社」の静かな境内と隣接する魚津城跡の記憶が、北陸道の要衝として歩んできた魚津の歴史の奥深さを静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "acae576f-76e0-48fa-8c68-511d78b1bb0b",
+        "next_spot_name": "諏訪神社"
+      },
+      {
+        "id": "acae576f-76e0-48fa-8c68-511d78b1bb0b",
+        "name": "諏訪神社",
+        "description": "大宝2年創建と伝わる魚津の海辺の古社（境内参拝自由）。ユネスコ無形文化遺産に登録された「魚津のタテモン行事（たてもん祭り）」の舞台であり、境内に大船形万燈「たてもん」の収蔵庫が並ぶ。",
+        "address": "富山県魚津市諏訪町1-16",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.817714,
+        "lng": 137.393649,
+        "qr_token": "shuin-uozu-3",
+        "cover_image_url": "/images/uozu/spot3.png",
+        "f7_fragment": "ユネスコ無形文化遺産「たてもん祭り」の舞台となる、大宝二年創建の古社。",
+        "f7_full": "「諏訪神社」の潮風薫る境内とたてもんの記憶が、富山湾の荒波とともに生きてきた魚津の漁師たちの誇りと祈りを力強く届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "f7774133-6bab-4282-8ea8-87e4464eae39",
+        "next_spot_name": "魚津埋没林博物館"
+      },
+      {
+        "id": "f7774133-6bab-4282-8ea8-87e4464eae39",
+        "name": "魚津埋没林博物館",
+        "description": "国の特別天然記念物「魚津埋没林」を保存・公開する博物館（9:00〜17:00開館、木曜休・4〜11月は無休）。約2,000年前の巨大な杉の樹根を地下水プールの中で水中展示するほか、富山湾の蜃気楼の仕組みを紹介している。",
+        "address": "富山県魚津市釈迦堂814",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.822579,
+        "lng": 137.394659,
+        "qr_token": "shuin-uozu-4",
+        "cover_image_url": "/images/uozu/spot4.png",
+        "f7_fragment": "二千年前の巨木が眠る国特別天然記念物の埋没林と、蜃気楼の科学を学ぶ博物館。",
+        "f7_full": "「魚津埋没林博物館」の澄んだ水中プールに横たわる太古の杉の巨根が、二千年の時を超えた自然の神秘と地球の記憶を静かに語りかけてくる。",
+        "is_final": false,
+        "next_spot_id": "3c18c99d-c8f5-4aff-8b3e-4983136bc6e8",
+        "next_spot_name": "海の駅 蜃気楼"
+      },
+      {
+        "id": "3c18c99d-c8f5-4aff-8b3e-4983136bc6e8",
+        "name": "海の駅 蜃気楼",
+        "description": "魚津港の海岸沿いに位置する観光・海鮮グルメ拠点（9:00〜18:00営業、第2水曜休）。富山湾で水揚げされた鮮魚や海産物の直売所、名物の「魚津バイ飯」や海鮮丼を味わえるレストランを備え、蜃気楼の展望スポットでもある。",
+        "address": "富山県魚津市村木定坊割2500-2",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.824481,
+        "lng": 137.393154,
+        "qr_token": "shuin-uozu-5",
+        "cover_image_url": "/images/uozu/spot5.png",
+        "f7_fragment": "魚津港の岸壁に面し、富山湾の旬の海鮮丼や名物バイ飯を味わえる海辺の拠点。",
+        "f7_full": "「海の駅 蜃気楼」で味わう新鮮な富山湾の海の幸と穏やかな潮風が、太古の埋没林と蜃気楼の海・魚津を巡った旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c549e765-63bb-4bd1-85ed-3152084ce623",
+    "title": "散居村の風土と四季に咲く花の殿堂・砺波へ",
+    "name": "散居村の風土と四季に咲く花の殿堂・砺波へ",
+    "description": "庄川扇状地の「散居村」と球根出荷量日本一のチューリップで知られる富山県砺波市。JR城端線の砺波駅から、大門素麺や特産品が揃う道の駅砺波、五連水車とタワーが立つ砺波チューリップ公園、緑に佇む砺波市美術館、一年中花が咲くチューリップ四季彩館までを歩く。",
+    "region": "砺波（砺波市）",
+    "area_name": "砺波（砺波市）",
+    "cover_image_url": "/images/tonami/route-eyecatch.png",
+    "imageUrl": "/images/tonami/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "一年中チューリップが咲く花の殿堂と、散居村の食文化・アートが息づく砺波で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "万華鏡のような花の宮殿で一年中チューリップに出会う「チューリップ四季彩館」",
+          "description": "季節を問わず五千本のチューリップが咲き誇る技術と、三百六十度に広がる花の輝きに心がときめいた。",
+          "badge_code": "tonami_shikisaikan_tulip_palace"
+        },
+        {
+          "key": "B",
+          "text": "ツインタワーと五連水車、アズマダチの古民家が並ぶ「砺波チューリップ公園」",
+          "description": "庄川の清流を引き込んだ水車の音と、屋敷林に囲まれた伝統家屋に砺波平野の原風景を感じた。",
+          "badge_code": "tonami_tulip_park_watermill"
+        },
+        {
+          "key": "C",
+          "text": "「砺波駅」から歩き出し、伝統の「大門素麺」を味わう「道の駅 砺波」",
+          "description": "丸く束ねられた島田掛けの手延べ素麺の強いコシと、庄川扇状地が育てた豊かな食の恵みを堪能した。",
+          "badge_code": "tonami_michinoeki_okado_somen"
+        },
+        {
+          "key": "D",
+          "text": "公園の緑と明治の洋館に隣接し、郷土の美を伝える「砺波市美術館」",
+          "description": "大きな窓から公園の緑を望む静かな展示室で、砺波の風土が育んだ彫刻や絵画の美しさに浸った。",
+          "badge_code": "tonami_art_museum_green_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c34e0591-240f-4ac9-80cf-ccad8feed0fb",
+        "name": "砺波駅",
+        "description": "散居村とチューリップの街・砺波市の玄関口となるJR城端線の主要駅（待合室は始発〜終電）。明治30年に中越鉄道「出町駅」として開業した歴史を持ち、構内や駅前広場にチューリップの装飾が施されている。",
+        "address": "富山県砺波市表町1-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.636555,
+        "lng": 136.953693,
+        "qr_token": "shuin-tonami-1",
+        "cover_image_url": "/images/tonami/spot1.png",
+        "f7_fragment": "JR城端線が走り、チューリップの意匠が旅人を迎える散居村の里の玄関口。",
+        "f7_full": "「砺波駅」の明るい橋上駅舎と花をモチーフにした街並みが、球根出荷量日本一を誇る花の都・砺波を歩く旅の始まりを軽やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7effef7-8292-4267-80c9-22fde30155a3",
+        "next_spot_name": "道の駅 砺波"
+      },
+      {
+        "id": "c7effef7-8292-4267-80c9-22fde30155a3",
+        "name": "道の駅 砺波",
+        "description": "チューリップ公園に隣接する道の駅「となみ野の郷」（9:00〜18:00営業、年末年始休）。伝統の手延べ「大門素麺」や砺波産玉ねぎを使った料理、チューリップソフト、地元農産物や地酒の買い物を満喫できる。",
+        "address": "富山県砺波市宮沢町3-9",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.641373,
+        "lng": 136.959936,
+        "qr_token": "shuin-tonami-2",
+        "cover_image_url": "/images/tonami/spot2.png",
+        "f7_fragment": "砺波伝統の手延べ「大門素麺」や特産玉ねぎグルメ、土産物が揃う人気の道の駅。",
+        "f7_full": "「道の駅 砺波」で味わうコシの強い大門素麺と庄川扇状地の実りが、散居村の豊かな水と大地が育んだ食文化の奥深さを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "835e4efe-3f1e-454a-89f7-a96e432b0842",
+        "next_spot_name": "砺波チューリップ公園"
+      },
+      {
+        "id": "835e4efe-3f1e-454a-89f7-a96e432b0842",
+        "name": "砺波チューリップ公園",
+        "description": "日本の都市公園100選に選ばれている砺波市の象徴的な公園（終日入園自由）。新旧2基のチューリップタワーや五連揚水水車、伝統家屋「旧中嶋家住宅」などが配され、四季の花々と水辺の散策を楽しめる。",
+        "address": "富山県砺波市花園町1-32",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.640287,
+        "lng": 136.962018,
+        "qr_token": "shuin-tonami-3",
+        "cover_image_url": "/images/tonami/spot3.png",
+        "f7_fragment": "双子のチューリップタワーと五連揚水水車、古民家が調和する花と水の公園。",
+        "f7_full": "「砺波チューリップ公園」に響く五連水車の水音と色とりどりの花壇が、庄川の清流とともに暮らしてきた砺波の風景の中で心地よい休息をくれる。",
+        "is_final": false,
+        "next_spot_id": "c60a4f73-0bef-4c64-8543-66edbdc15410",
+        "next_spot_name": "砺波市美術館"
+      },
+      {
+        "id": "c60a4f73-0bef-4c64-8543-66edbdc15410",
+        "name": "砺波市美術館",
+        "description": "チューリップ公園の東側に隣接する市立美術館（10:00〜18:00開館、臨時休館日・年末年始休）。郷土ゆかりの作家による彫刻・絵画・工芸作品の展示のほか、隣接地には明治42年築の旧中越銀行本店（郷土資料館）も移築されている。",
+        "address": "富山県砺波市高道145-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.640022,
+        "lng": 136.963628,
+        "qr_token": "shuin-tonami-4",
+        "cover_image_url": "/images/tonami/spot4.png",
+        "f7_fragment": "チューリップ公園の豊かな緑に溶け込み、郷土ゆかりの美術作品を伝える美術館。",
+        "f7_full": "「砺波市美術館」の光あふれる展示空間と窓外の公園の緑が、砺波野の穏やかな自然が育んだ美意識と創造の世界へと誘ってくれる。",
+        "is_final": false,
+        "next_spot_id": "17ef3c9e-67e8-4aa8-8af9-580c9bd14e95",
+        "next_spot_name": "チューリップ四季彩館"
+      },
+      {
+        "id": "17ef3c9e-67e8-4aa8-8af9-580c9bd14e95",
+        "name": "チューリップ四季彩館",
+        "description": "独自の栽培技術により一年中チューリップの花を観賞できる世界唯一の施設（9:00〜18:00開館、臨時休館日・年末年始休）。360度を花に囲まれる「チューリップパレス」や季節のガーデン、チューリップの歴史・科学展示を楽しめる。",
+        "address": "富山県砺波市中村100-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.641123,
+        "lng": 136.965037,
+        "qr_token": "shuin-tonami-5",
+        "cover_image_url": "/images/tonami/spot5.png",
+        "f7_fragment": "独自の技術で一年中五千本のチューリップが咲き誇る、世界唯一の花のミュージアム。",
+        "f7_full": "「チューリップ四季彩館」のガラスドームに咲き誇る色鮮やかなチューリップの輝きが、花の街・砺波を歩いた旅を華やかな感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8eb18095-e596-438a-84da-7f26d0346901",
+    "title": "日本一の五泉ニットと花手水の社・五泉を辿る",
+    "name": "日本一の五泉ニットと花手水の社・五泉を辿る",
+    "description": "菅名岳の清らかな伏流水と、絹織物の伝統から発展した「ニット生産量日本一」を誇る新潟県五泉市。JR磐越西線の五泉駅から、五泉ニットの複合拠点・LOOP&LOOP、名物コーヒーパンの栄軒ベーカリー、花手水が彩る五泉八幡宮、明治創業の渡六菓子店までを辿る。",
+    "region": "五泉（五泉市）",
+    "area_name": "五泉（五泉市）",
+    "cover_image_url": "/images/gosen/route-eyecatch.png",
+    "imageUrl": "/images/gosen/route-eyecatch.png",
+    "category": "買い物・工芸",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本一の五泉ニットと花手水の八幡宮、老舗のパンと菓子処が息づく五泉で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "一本の糸から極上の肌触りを編み上げる「LOOP&LOOP」と「五泉駅」",
+          "description": "江戸期の絹織物「五泉平」から受け継がれる職人の技と、五泉ニットの温かな風合いに感動した。",
+          "badge_code": "gosen_loop_and_loop_knit"
+        },
+        {
+          "key": "B",
+          "text": "清らかな伏流水の花手水と風鈴が参拝者を迎える総鎮守「五泉八幡宮」",
+          "description": "平安期から続く古社の杜に響く風鈴の音色と、水面を彩る鮮やかな花手水の美しさに心が洗われた。",
+          "badge_code": "gosen_hachimangu_hanachozu"
+        },
+        {
+          "key": "C",
+          "text": "昭和初期から市民に愛される「栄軒ベーカリー」の看板名物「コーヒーパン」",
+          "description": "ふんわりとしたコッペパンとほろ苦いコーヒークリームの組み合わせに、街で愛され続ける理由を知った。",
+          "badge_code": "gosen_sakaeken_coffee_bread"
+        },
+        {
+          "key": "D",
+          "text": "特産の里芋「帛乙女」をスイーツに仕立てる明治創業の「渡六菓子店」",
+          "description": "名水が育てた里芋や果実を活かした「さといもシュー」の優しい甘みに、五泉の豊かな農の恵みを感じた。",
+          "badge_code": "gosen_wataroku_satoimo_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d9d22175-b243-4e24-8bb7-4b074944738d",
+        "name": "五泉駅",
+        "description": "ニットと名水、牡丹の街・五泉市の玄関口となるJR磐越西線の主要駅（待合室は始発〜終電）。SLばんえつ物語の停車駅でもあり、ここから中心街のニット施設や老舗商店街へと散策路が続いている。",
+        "address": "新潟県五泉市駅前1-1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.734406,
+        "lng": 139.179786,
+        "qr_token": "shuin-gosen-1",
+        "cover_image_url": "/images/gosen/spot1.png",
+        "f7_fragment": "JR磐越西線が走り、ニット生産量日本一の街と名水の里へと誘う玄関口。",
+        "f7_full": "「五泉駅」のホームに吹く菅名岳からの清らかな風が、「五つの泉」の名を持つ名水と繊維の街・五泉を辿る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "683e8174-4cd4-4b01-8c5c-f55ea2dd4a16",
+        "next_spot_name": "LOOP&LOOP"
+      },
+      {
+        "id": "683e8174-4cd4-4b01-8c5c-f55ea2dd4a16",
+        "name": "LOOP&LOOP",
+        "description": "五泉ニット工業協同組合が運営する五泉ニットの複合施設（10:00〜17:00営業、火曜・水曜・年末年始休）。旧工場を改装した空間に市内ニットメーカー各社のファクトリーショップや歴史展示、カフェが揃う。",
+        "address": "新潟県五泉市吉沢1-1-10",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.737409,
+        "lng": 139.178326,
+        "qr_token": "shuin-gosen-2",
+        "cover_image_url": "/images/gosen/spot2.png",
+        "f7_fragment": "旧工場を改装し、日本一の産地・五泉ニットの製品や歴史に触れられる拠点。",
+        "f7_full": "「LOOP&LOOP」に並ぶ色とりどりの五泉ニットと丁寧な編み目が、雪国の名水と職人の技が紡ぎ出す極上の温もりを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "483dd8cc-b21e-4be7-8fe1-baee42220047",
+        "next_spot_name": "栄軒ベーカリー"
+      },
+      {
+        "id": "483dd8cc-b21e-4be7-8fe1-baee42220047",
+        "name": "栄軒ベーカリー",
+        "description": "本町通りにある昭和2年創業の老舗ベーカリー（7:00〜19:30頃営業、日曜休）。ふわふわのコッペパンに特製コーヒークリームを挟んだ看板商品「コーヒーパン」は、五泉のソウルフードとして長年親しまれている。",
+        "address": "新潟県五泉市本町3-4-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.741161,
+        "lng": 139.176103,
+        "qr_token": "shuin-gosen-3",
+        "cover_image_url": "/images/gosen/spot3.png",
+        "f7_fragment": "昭和二年の創業以来、名物「コーヒーパン」が世代を超えて愛される老舗パン店。",
+        "f7_full": "「栄軒ベーカリー」の懐かしい包み紙に包まれたコーヒーパンのほろ苦い甘みが、五泉のまちなか歩きに温かなひと休みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "7c1f4a77-3a4c-461e-8931-be17dd684901",
+        "next_spot_name": "五泉八幡宮"
+      },
+      {
+        "id": "7c1f4a77-3a4c-461e-8931-be17dd684901",
+        "name": "五泉八幡宮",
+        "description": "平安時代の貞観年間創建と伝わる五泉の総鎮守（境内参拝自由）。源頼義・義家ゆかりの古社であり、菅名岳の伏流水を満たした色鮮やかな「花手水」や季節の風鈴回廊・アンブレラスカイで知られる。",
+        "address": "新潟県五泉市宮町5-45",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.741771,
+        "lng": 139.173909,
+        "qr_token": "shuin-gosen-4",
+        "cover_image_url": "/images/gosen/spot4.png",
+        "f7_fragment": "平安期の創建と伝わり、名水を彩る鮮やかな花手水と風鈴で親しまれる古社。",
+        "f7_full": "「五泉八幡宮」の手水舎を彩る四季折々の花々と涼やかな水音が、名水の街・五泉を歩む旅人の心を清らかに潤してくれる。",
+        "is_final": false,
+        "next_spot_id": "e58259ee-c586-4dc5-8afc-26590502040e",
+        "next_spot_name": "渡六菓子店"
+      },
+      {
+        "id": "e58259ee-c586-4dc5-8afc-26590502040e",
+        "name": "渡六菓子店",
+        "description": "明治26年創業の老舗和洋菓子店・カフェ（9:00〜18:30営業、月曜・第3火曜休）。五泉特産の里芋「帛乙女」を使った「さといもシュー」をはじめ、地元農産物を活かした創作スイーツや季節のパフェを味わえる。",
+        "address": "新潟県五泉市伊勢の川962-2",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.747489,
+        "lng": 139.17501,
+        "qr_token": "shuin-gosen-5",
+        "cover_image_url": "/images/gosen/spot5.png",
+        "f7_fragment": "明治二十六年創業、五泉特産の里芋「帛乙女」を使った創作菓子が人気の老舗。",
+        "f7_full": "「渡六菓子店」の香ばしいさといもシューと優しい甘みが、日本一のニットと名水の街・五泉を辿った旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "48001108-f2cf-4aae-885c-936f30f4aeac",
+    "title": "百年食堂のあんかけかつ丼と酒蔵・美濃瑞浪の旅",
+    "name": "百年食堂のあんかけかつ丼と酒蔵・美濃瑞浪の旅",
+    "description": "美濃焼と化石の里であり、美濃源氏・土岐氏発祥の歴史が息づく岐阜県瑞浪市。常盤座跡の地域交流センターときわから、瑞浪駅、大正十年創業・元祖あんかけかつ丼の加登屋食堂、土岐氏ゆかりの一日市場八幡神社、元禄十五年創業の中島醸造までを巡る。",
+    "region": "瑞浪（瑞浪市）",
+    "area_name": "瑞浪（瑞浪市）",
+    "cover_image_url": "/images/mizunami/route-eyecatch.png",
+    "imageUrl": "/images/mizunami/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大正創業のあんかけかつ丼と土岐氏発祥の社、元禄創業の酒蔵が息づく瑞浪で、あなたの心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正十年創業の「加登屋食堂」で味わう、出汁香る元祖「あんかけかつ丼」",
+          "description": "サクサクのとんかつに優しいとろみの溶き卵餡が絡む、百年の歴史が生んだ瑞浪の味に心まで温まった。",
+          "badge_code": "mizunami_kadoya_ankake_katsudon"
+        },
+        {
+          "key": "B",
+          "text": "元禄十五年の創業から三百二十年、銘酒「始禄」「小左衛門」を醸す「中島醸造」",
+          "description": "白壁の土蔵とレンガ煙突が並ぶ美しい酒蔵の佇まいと、屏風山の伏流水が育む美酒の奥行きの深さに魅了された。",
+          "badge_code": "mizunami_nakashima_kozaemon_sake"
+        },
+        {
+          "key": "C",
+          "text": "美濃源氏・土岐氏発祥の館跡に鎮座する古社「一日市場八幡神社」",
+          "description": "土岐川の清流のほとりで、鎌倉時代から八百年の歴史を刻む巨木の杜の静けさに背筋が伸びた。",
+          "badge_code": "mizunami_hitoichiba_toki_shrine"
+        },
+        {
+          "key": "D",
+          "text": "芝居小屋・常盤座の記憶を継ぐ「ときわ」と、美濃焼・化石の街の「瑞浪駅」",
+          "description": "東濃の地歌舞伎の伝統と、千七百万年前の化石と陶磁器が織りなす瑞浪ならではの文化に触れられた。",
+          "badge_code": "mizunami_station_ceramic_fossil"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d0c5ca49-f5f8-431d-838c-54474f78fbd9",
+        "name": "瑞浪市地域交流センター ときわ",
+        "description": "かつての芝居小屋「常盤座」の跡地に建つ市民交流施設（9:00〜21:00開館、年末年始休、入館無料）。東濃地方に根付く地歌舞伎の記憶を受け継ぎ、駅前散策の休憩や地域情報の収集に利用できる。",
+        "address": "岐阜県瑞浪市寺河戸町1131-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.36775,
+        "lng": 137.253678,
+        "qr_token": "shuin-mizunami-1",
+        "cover_image_url": "/images/mizunami/spot1.png",
+        "f7_fragment": "かつての芝居小屋「常盤座」跡に建ち、街歩きの休息ができる地域交流拠点。",
+        "f7_full": "「瑞浪市地域交流センター ときわ」の穏やかな空間と芝居小屋の記憶が、美濃焼と歴史が息づく瑞浪を巡る旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "046cf770-18bf-4b72-8260-02c501de4f6b",
+        "next_spot_name": "瑞浪駅"
+      },
+      {
+        "id": "046cf770-18bf-4b72-8260-02c501de4f6b",
+        "name": "瑞浪駅",
+        "description": "美濃焼と化石のまち・瑞浪市の玄関口となるJR中央本線の主要駅（待合室は始発〜終電）。明治35年の開業以来、陶磁器産業とともに歩み、駅前には美濃焼のモニュメントや化石にちなんだ装飾が見られる。",
+        "address": "岐阜県瑞浪市寺河戸町1132",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.369003,
+        "lng": 137.252042,
+        "qr_token": "shuin-mizunami-2",
+        "cover_image_url": "/images/mizunami/spot2.png",
+        "f7_fragment": "明治三十五年開業、美濃焼と化石のまち・瑞浪の歴史を伝える中央本線の駅。",
+        "f7_full": "「瑞浪駅」の広場を彩る美濃焼の意匠と東濃の山並みが、千七百万年の大地の記憶と職人の技が息づく街の旅情を高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "903c912a-6ce6-4b30-8913-a37bdb19cb43",
+        "next_spot_name": "加登屋食堂"
+      },
+      {
+        "id": "903c912a-6ce6-4b30-8913-a37bdb19cb43",
+        "name": "加登屋食堂",
+        "description": "瑞浪駅前にある大正10年創業の老舗大衆食堂（11:00〜14:30頃営業、木曜休）。揚げたてのとんかつに醤油とかつお出汁ベースの溶き卵餡をかけた瑞浪名物「あんかけかつ丼」の元祖として広く親しまれている。",
+        "address": "岐阜県瑞浪市寺河戸町1144-6",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.368558,
+        "lng": 137.253444,
+        "qr_token": "shuin-mizunami-3",
+        "cover_image_url": "/images/mizunami/spot3.png",
+        "f7_fragment": "大正十年の創業以来、出汁香る名物「あんかけかつ丼」を守り続ける百年食堂。",
+        "f7_full": "「加登屋食堂」の艶やかな溶き卵餡に包まれたあんかけかつ丼が、窯業の街で働く人々を支えてきた百年食堂の温かな味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "4f3dfbd7-b0c9-4c39-8bdb-11791009171b",
+        "next_spot_name": "一日市場八幡神社"
+      },
+      {
+        "id": "4f3dfbd7-b0c9-4c39-8bdb-11791009171b",
+        "name": "一日市場八幡神社",
+        "description": "美濃源氏・土岐氏の初代である土岐光衡公が居館（一日市場館）を構えた地に鎮座する古社（境内参拝自由）。鎌倉初期に鶴岡八幡宮を勧請したと伝わり、土岐氏発祥の聖地として荘厳な杉木立に囲まれている。",
+        "address": "岐阜県瑞浪市土岐町7126",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.369862,
+        "lng": 137.256965,
+        "qr_token": "shuin-mizunami-4",
+        "cover_image_url": "/images/mizunami/spot4.png",
+        "f7_fragment": "美濃源氏・土岐氏発祥の館跡に鎮座し、鎌倉初期からの歴史を刻む八幡神社。",
+        "f7_full": "「一日市場八幡神社」の巨木が聳える参道と清らかな空気が、東濃の地から美濃一国へと飛躍した土岐氏八百年の歴史ロマンを呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "0c0721b6-ca1e-4912-88d4-cc8a6bb0cd70",
+        "next_spot_name": "中島醸造"
+      },
+      {
+        "id": "0c0721b6-ca1e-4912-88d4-cc8a6bb0cd70",
+        "name": "中島醸造",
+        "description": "江戸時代中期の元禄十五年創業、三百二十年以上の歴史を誇る老舗酒蔵（9:00〜17:00営業、土日祝休）。白壁の土蔵と赤レンガ煙突が残る蔵元で、代表銘柄「始禄」や「小左衛門」などの地酒を購入できる。",
+        "address": "岐阜県瑞浪市土岐町7181-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.365005,
+        "lng": 137.259954,
+        "qr_token": "shuin-mizunami-5",
+        "cover_image_url": "/images/mizunami/spot5.png",
+        "f7_fragment": "元禄十五年の創業以来、三百二十年にわたり銘酒「始禄」「小左衛門」を醸す蔵元。",
+        "f7_full": "「中島醸造」の白壁の酒蔵と赤レンガ煙突の佇まいが、瑞浪の食と歴史を巡り歩いた旅を芳醇な美酒の香りとともに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e39ecd98-9f11-47f2-8ac7-2f98d2872aba",
+    "title": "家康生母ゆかりの亀城と万燈の記憶・刈谷を歩く",
+    "name": "家康生母ゆかりの亀城と万燈の記憶・刈谷を歩く",
+    "description": "徳川家康公の生母・於大の方ゆかりの「刈谷城（亀城）」と、巨大な武者人形が舞う「刈谷万燈祭」が息づく愛知県刈谷市。名鉄三河線の刈谷市駅から、明治創業の御菓子司常川屋、城下町の中心・札の辻趾、迫力の万燈を展示する刈谷市歴史博物館、亀城公園までを歩く。",
+    "region": "刈谷（刈谷市）",
+    "area_name": "刈谷（刈谷市）",
+    "cover_image_url": "/images/kariya/route-eyecatch.png",
+    "imageUrl": "/images/kariya/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "家康公の生母ゆかりの亀城と、万燈が輝く歴史博物館、老舗和菓子が息づく刈谷で、心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "高さ五メートルの巨大張子「万燈」と城下町の歴史に出会う「刈谷市歴史博物館」",
+          "description": "竹と和紙で作られた武者人形の圧倒的な迫力と、刈谷城の復元模型が伝える歴史の深さに感動した。",
+          "badge_code": "kariya_history_museum_mando"
+        },
+        {
+          "key": "B",
+          "text": "水堀に白壁の隅櫓が映える、徳川家康公の生母・於大の方ゆかりの「亀城公園」",
+          "description": "天文二年の築城から受け継がれる刈谷城の本丸跡を歩き、乱世を生き抜いた於大の方の物語に思いを馳せた。",
+          "badge_code": "kariya_kijo_park_castle_turret"
+        },
+        {
+          "key": "C",
+          "text": "明治四十三年の創業以来、城下町の茶席を彩る老舗「御菓子司 常川屋」",
+          "description": "季節を映す繊細な和菓子と上品な餡の甘みに、三河の城下町に息づく茶の湯の文化を味わった。",
+          "badge_code": "kariya_tsunekawaya_wagashi"
+        },
+        {
+          "key": "D",
+          "text": "旧城下町の玄関口「刈谷市駅」と、江戸期の街道が交差した要衝「札の辻趾」",
+          "description": "高札場が置かれた城下町の中心交差点を歩き、二万三千石の城下町の道筋を肌で感じられた。",
+          "badge_code": "kariya_fudanotsuji_castle_town"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c1b0cdf7-5f99-4682-8ad7-af4f53e28d5d",
+        "name": "刈谷市駅",
+        "description": "旧刈谷城下町エリアの玄関口となる名鉄三河線の駅（待合室は始発〜終電）。大正3年に「刈谷町駅」として開業した歴史を持ち、亀城公園や歴史博物館、老舗が並ぶ広小路通りへの散策起点となっている。",
+        "address": "愛知県刈谷市広小路3-505",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.984865,
+        "lng": 136.993849,
+        "qr_token": "shuin-kariya-1",
+        "cover_image_url": "/images/kariya/spot1.png",
+        "f7_fragment": "大正三年の開業以来、旧刈谷城下町と亀城公園への玄関口となる名鉄三河線の駅。",
+        "f7_full": "「刈谷市駅」から伸びる落ち着いた広小路通りが、徳川家康公の生母・於大の方ゆかりの城下町を歩く旅の始まりを穏やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "6a9be0a7-c7d2-42f2-8a7a-ad1e9c2e48d5",
+        "next_spot_name": "御菓子司 常川屋"
+      },
+      {
+        "id": "6a9be0a7-c7d2-42f2-8a7a-ad1e9c2e48d5",
+        "name": "御菓子司 常川屋",
+        "description": "広小路通りにある明治43年創業の老舗和菓子処（8:30〜18:00営業、無休）。百十年以上にわたり刈谷の茶席や暮らしを彩り、城下町にちなんだ銘菓や季節の上生菓子、どら焼きなどを販売している。",
+        "address": "愛知県刈谷市広小路3-12",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.985899,
+        "lng": 136.992855,
+        "qr_token": "shuin-kariya-2",
+        "cover_image_url": "/images/kariya/spot2.png",
+        "f7_fragment": "明治四十三年の創業以来、百十年にわたり城下町の茶席を彩る老舗和菓子処。",
+        "f7_full": "「御菓子司 常川屋」の職人が仕立てる繊細な和菓子と上品な餡の甘みが、三河の城下町・刈谷が育んできた風雅な茶の湯の文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "65289dee-c282-4572-8837-afe9a3aee440",
+        "next_spot_name": "札の辻趾"
+      },
+      {
+        "id": "65289dee-c282-4572-8837-afe9a3aee440",
+        "name": "札の辻趾",
+        "description": "江戸時代の刈谷城下町において、藩の法令を伝える高札場が置かれていた中心交差点の史跡（終日見学自由）。城の大手門へ続く道と主要街道が交差した要衝であり、城下町の町割りの記憶を今に伝える。",
+        "address": "愛知県刈谷市広小路4",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.988256,
+        "lng": 136.990762,
+        "qr_token": "shuin-kariya-3",
+        "cover_image_url": "/images/kariya/spot3.png",
+        "f7_fragment": "江戸時代の刈谷城下町で高札場が置かれ、主要街道が交差した中心地の史跡。",
+        "f7_full": "「札の辻趾」の石碑が立つ静かな街角が、かつて大名行列や商人が行き交った刈谷藩二万三千石の城下町の賑わいを今に呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "e5e6f82d-d3bf-48e8-8adf-ac569996c895",
+        "next_spot_name": "刈谷市歴史博物館"
+      },
+      {
+        "id": "e5e6f82d-d3bf-48e8-8adf-ac569996c895",
+        "name": "刈谷市歴史博物館",
+        "description": "亀城公園に隣接する市立博物館（9:00〜17:00開館、月曜・祝翌日休）。天下の奇祭「刈谷万燈祭」の巨大な張子人形（万燈）や山車の実物展示のほか、刈谷城の復元模型や於大の方・天誅組に関する貴重な資料を公開している。",
+        "address": "愛知県刈谷市逢妻町4-25-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.989938,
+        "lng": 136.98575,
+        "qr_token": "shuin-kariya-4",
+        "cover_image_url": "/images/kariya/spot4.png",
+        "f7_fragment": "高さ五メートルの万燈や山車の実物展示と、刈谷城下の歴史を伝える博物館。",
+        "f7_full": "「刈谷市歴史博物館」に聳える極彩色の巨大な万燈と精巧な城郭模型が、城下町・刈谷が受け継いできた祭りの熱気と歴史の奥深さを体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "5f9c6f0a-4cd6-41e6-83bd-b7aedbda3a10",
+        "next_spot_name": "亀城公園"
+      },
+      {
+        "id": "5f9c6f0a-4cd6-41e6-83bd-b7aedbda3a10",
+        "name": "亀城公園",
+        "description": "天文2年に水野忠政が築いた刈谷城（亀城）の本丸・二の丸跡を整備した公園（終日入園自由）。徳川家康の生母・於大の方ゆかりの名城であり、内堀の水面に映える白壁の「隅櫓」や築城当時の石垣が見どころ。",
+        "address": "愛知県刈谷市城町1-25-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.98924,
+        "lng": 136.985258,
+        "qr_token": "shuin-kariya-5",
+        "cover_image_url": "/images/kariya/spot5.png",
+        "f7_fragment": "徳川家康の生母・於大の方ゆかりの刈谷城跡に、白壁の隅櫓と水堀が残る公園。",
+        "f7_full": "「亀城公園」の穏やかな水堀に映る白壁の隅櫓が、於大の方の物語と城下町の歴史を辿った刈谷の旅を清々しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
