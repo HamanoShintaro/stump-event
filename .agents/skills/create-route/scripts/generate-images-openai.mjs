@@ -3,21 +3,25 @@
  * SHUIN ジャンル別ビジュアル生成 ＆ マルチモーダル自己改善エンジン
  *
  * 特徴:
- * 1. 止まらない一括生成: 内蔵サブエージェントを使わず、アイキャッチ＋スポット5枚（計6枚）を
- *    マルチモデル（gpt-image-1.5 -> gpt-image-1 -> gpt-image-1-mini）＋レート制限リトライ＋
- *    Gemini画像生成フォールバック（GEMINI_API_KEY設定時）で安定完走。
+ * 1. API課金ゼロ対応 ＆ 止まらない一括生成:
+ *    - ローカルの Codex CLI（ChatGPT.app 同梱 / ChatGPTサブスク認証）を自動検出し、API従量課金ゼロで内蔵 `image_gen`（gpt-image-2）を実行
+ *    - OpenAI API（gpt-image-1.5 -> gpt-image-1 -> gpt-image-1-mini）や Gemini API（GEMINI_API_KEY設定時）とのマルチプロバイダ自動切替にも対応
+ *    - Codex 生成時の一時ファイル（~/.codex/generated_images/<thread_id>）も最適化保存直後に自動クリーンアップしディスク圧迫を防止
  * 2. 脱・金太郎飴（画風×構図×時間帯の機械的分離）:
  *    - ルートごとに `style-genres.json` の10ジャンルを衝突なしで自動割当（または --genre 指定）
  *    - 既存 .mjs 内の "Daylight watercolor and ink..." や "24% Washi margin" 定型句を自動クレンジング
  *    - 同一ルート内の Spot 1〜5 に「5つの排他的なカメラ距離・アングル・時間帯」を強制ロック
  * 3. ジャンル別の自己改善ループ（Genre-Segmented Self-Improvement）:
- *    - 生成画像を Vision AI が「そのジャンル固有の採点基準（rubric）」で10点満点採点
+ *    - 生成画像を Vision AI（Codex CLI `-i` / OpenAI / Gemini）が「そのジャンル固有の採点基準（rubric）」で10点満点採点
  *    - 基準未満（水彩への退化・白い楕円余白・偽文字・構図かぶり）はその場で自動リテイク
  *    - 得られた改善知見（learned_boosters / learned_avoid）を該当ジャンル枠のみに蓄積・更新
  *
  * 使い方:
- *   # 標準実行（アイキャッチ＋スポット5枚を一括生成＆Vision採点・自己改善）
+ *   # 標準実行（Codex CLI サブスク枠または有効なAPIキーでアイキャッチ＋スポット5枚を一括生成＆自己改善）
  *   node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--force]
+ *
+ *   # プロバイダ明示指定（codex | openai | gemini | auto）
+ *   node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs --provider codex --force
  *
  *   # ジャンル明示指定 / アイキャッチのみ / 採点スキップ
  *   node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs --genre shin_hanga_twilight --force
@@ -27,14 +31,14 @@
  *   # ジャンル一覧・自己改善スコア確認
  *   node .agents/skills/create-route/scripts/generate-images-openai.mjs --list-genres
  *
- *   # 人間のフィードバックで特定ジャンルだけを進化させる
+ *   # 人間のフィードバックで特定ジャンルだけを進化させる（Codex サブスク枠でもAPI課金ゼロで実行可）
  *   node .agents/skills/create-route/scripts/generate-images-openai.mjs --evolve-genre risograph_vintage_poster --feedback "網点の粒状感とティール×朱色のコントラストをもっと強く"
  */
 
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-import { execSync } from 'child_process';
+import { execSync, spawn, spawnSync } from 'child_process';
 import { fileURLToPath, pathToFileURL } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -43,6 +47,52 @@ const GENRES_FILE = path.resolve(__dirname, '../references/style-genres.json');
 
 const OPENAI_IMAGE_MODEL_CHAIN = ['gpt-image-1.5', 'gpt-image-1', 'gpt-image-1-mini'];
 const OPENAI_VISION_MODELS = ['gpt-4o-mini', 'gpt-4.1-mini'];
+
+// OpenAI APIキーが残高切れ(insufficient_quota)だった場合、後続タスクで無駄な通信を繰り返さないサーキットブレーカー
+let openaiKeyExhausted = false;
+
+function buildCodexEnv() {
+  const env = { ...process.env };
+  // 残高切れの OPENAI_API_KEY が環境にあると Codex の ChatGPT サブスク認証に干渉するため必ず除外する
+  delete env.OPENAI_API_KEY;
+  return env;
+}
+
+function detectCodexCli() {
+  const candidates = [
+    process.env.CODEX_BIN,
+    '/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex',
+    '/Applications/Codex.app/Contents/Resources/codex-cli/bin/codex',
+  ].filter(Boolean);
+
+  try {
+    const whichOut = execSync('which codex', { env: buildCodexEnv(), stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString()
+      .trim();
+    if (whichOut) candidates.push(whichOut);
+  } catch {
+    // ignore if not in PATH
+  }
+
+  for (const bin of candidates) {
+    if (!bin || !fs.existsSync(bin)) continue;
+    try {
+      const res = spawnSync(bin, ['login', 'status'], {
+        env: buildCodexEnv(),
+        encoding: 'utf-8',
+        timeout: 8000,
+      });
+      const statusOut = `${res.stdout || ''}\n${res.stderr || ''}`.trim();
+      if (res.status === 0 && /logged in/i.test(statusOut)) {
+        const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), '.codex');
+        return { available: true, binPath: bin, status: statusOut, codexHome };
+      }
+    } catch {
+      // try next candidate
+    }
+  }
+  return { available: false, binPath: null, status: '', codexHome: path.join(os.homedir(), '.codex') };
+}
 
 // 同一ルート内の5スポットで「器のアップ4連発」等を防ぐ5段階カメラ＆ライティング設計
 const SPOT_SHOT_DIRECTIVES = [
@@ -293,8 +343,9 @@ async function generateWithOpenAI(apiKey, prompt, preferredModel, size = '1536x1
         const errText = await res.text();
         lastErr = new Error(`OpenAI (${model}) HTTP ${res.status}: ${errText.slice(0, 300)}`);
 
-        // クレジット枯渇は別プロバイダへ即フォールバック
+        // クレジット枯渇はサーキットブレーカーをONにして別プロバイダ（Codex CLI等）へ即フォールバック
         if (errText.includes('credit_balance_exhausted') || errText.includes('insufficient_quota')) {
+          openaiKeyExhausted = true;
           throw lastErr;
         }
 
@@ -313,6 +364,7 @@ async function generateWithOpenAI(apiKey, prompt, preferredModel, size = '1536x1
       } catch (err) {
         lastErr = err;
         if (String(err.message).includes('credit_balance_exhausted') || String(err.message).includes('insufficient_quota')) {
+          openaiKeyExhausted = true;
           throw err;
         }
         if (attempt < 2 && /fetch failed|ECONNRESET|ETIMEDOUT/i.test(String(err.message))) {
@@ -324,6 +376,153 @@ async function generateWithOpenAI(apiKey, prompt, preferredModel, size = '1536x1
     }
   }
   throw lastErr || new Error('OpenAI全モデルでの画像生成に失敗しました');
+}
+
+function runCodexExec(codexCli, args, timeoutMs = 240000) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(codexCli.binPath, args, {
+      env: buildCodexEnv(),
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+
+    let stdout = '';
+    let stderr = '';
+    let settled = false;
+
+    const timer = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      child.kill('SIGTERM');
+      reject(new Error(`Codex CLI タイムアウト (${Math.round(timeoutMs / 1000)}秒)`));
+    }, timeoutMs);
+
+    child.stdout.on('data', (chunk) => {
+      stdout += chunk.toString();
+    });
+    child.stderr.on('data', (chunk) => {
+      stderr += chunk.toString();
+    });
+    child.on('error', (err) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(err);
+    });
+    child.on('close', (code) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      if (code !== 0) {
+        reject(new Error(`Codex CLI exited ${code}: ${(stderr || stdout).slice(0, 300)}`));
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+}
+
+/**
+ * ローカル Codex CLI（ChatGPTサブスク枠 / API課金ゼロ）の内蔵 `image_gen`（gpt-image-2）で生成し、
+ * 読み取り直後に `~/.codex/generated_images/<thread_id>` の生PNG一時ディレクトリを自動削除する。
+ */
+async function generateWithCodexCli(codexCli, prompt, size = '1536x1024') {
+  const instruction = [
+    `Call the built-in image_gen tool exactly once (do NOT run shell scripts or fallback CLI) to generate a ${size} (3:2 horizontal landscape) raster illustration following the exact specification below, then reply ONLY with the saved file path and nothing else.`,
+    '',
+    prompt,
+  ].join('\n');
+
+  let lastErr = null;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    let threadId = null;
+    try {
+      const { stdout } = await runCodexExec(
+        codexCli,
+        [
+          'exec',
+          '--json',
+          '--ephemeral',
+          '--skip-git-repo-check',
+          '-s',
+          'read-only',
+          '-c',
+          'model_reasoning_effort="low"',
+          instruction,
+        ],
+        240000
+      );
+
+      let mentionedPath = null;
+      for (const rawLine of stdout.split(/\r?\n/)) {
+        const line = rawLine.trim();
+        if (!line.startsWith('{')) continue;
+        try {
+          const ev = JSON.parse(line);
+          if (ev.type === 'thread.started' && ev.thread_id) {
+            threadId = ev.thread_id;
+          }
+          const txt = ev.item?.text || '';
+          const m = txt.match(/(\/[^\s"'`]+\.png)/i);
+          if (m && fs.existsSync(m[1])) {
+            mentionedPath = m[1];
+          }
+        } catch {
+          // ignore non-JSON lines
+        }
+      }
+
+      let resolvedPngPath = mentionedPath;
+      if (!resolvedPngPath && threadId) {
+        const threadDir = path.join(codexCli.codexHome, 'generated_images', threadId);
+        if (fs.existsSync(threadDir)) {
+          const pngs = fs
+            .readdirSync(threadDir)
+            .filter((f) => f.toLowerCase().endsWith('.png'))
+            .map((f) => {
+              const full = path.join(threadDir, f);
+              return { full, mtime: fs.statSync(full).mtimeMs };
+            })
+            .sort((a, b) => b.mtime - a.mtime);
+          if (pngs.length > 0) resolvedPngPath = pngs[0].full;
+        }
+      }
+
+      if (!resolvedPngPath || !fs.existsSync(resolvedPngPath)) {
+        throw new Error('Codex CLI が画像ファイルを出力しませんでした（プラン制限またはツール未呼出）');
+      }
+
+      const buffer = fs.readFileSync(resolvedPngPath);
+
+      // ディスク圧迫防止：このスレッド専用の一時ディレクトリ（約3MB/枚）を即座にクリーンアップ
+      if (threadId && /^[0-9a-f-]{20,}$/i.test(threadId)) {
+        const threadDir = path.join(codexCli.codexHome, 'generated_images', threadId);
+        try {
+          if (fs.existsSync(threadDir)) {
+            fs.rmSync(threadDir, { recursive: true, force: true });
+          }
+        } catch {
+          // ignore cleanup failure
+        }
+      }
+
+      return { buffer, provider: 'codex-sub:gpt-image-2' };
+    } catch (err) {
+      lastErr = err;
+      if (threadId && /^[0-9a-f-]{20,}$/i.test(threadId)) {
+        const threadDir = path.join(codexCli.codexHome, 'generated_images', threadId);
+        try {
+          if (fs.existsSync(threadDir)) fs.rmSync(threadDir, { recursive: true, force: true });
+        } catch {
+          // ignore cleanup failure
+        }
+      }
+      if (attempt < 1) {
+        console.warn(`    ⏳ Codex image_gen 再試行します (${err.message.slice(0, 100)})...`);
+        await sleep(3000);
+      }
+    }
+  }
+  throw lastErr || new Error('Codex CLI での画像生成に失敗しました');
 }
 
 function extractDeepBase64Image(obj) {
@@ -411,11 +610,37 @@ async function generateWithGeminiFallback(geminiKey, prompt) {
   throw lastErr || new Error('Gemini画像生成フォールバックに失敗しました');
 }
 
-async function generateResilientImage({ openaiKey, geminiKey, prompt, preferredModel, size }) {
-  if (openaiKey) {
+async function generateResilientImage({
+  providerMode = 'auto',
+  codexCli,
+  openaiKey,
+  geminiKey,
+  prompt,
+  preferredModel,
+  size,
+}) {
+  if (providerMode === 'codex') {
+    if (!codexCli?.available) throw new Error('Codex CLI が未検出または ChatGPT 未ログインです');
+    return await generateWithCodexCli(codexCli, prompt, size);
+  }
+  if (providerMode === 'openai') {
+    if (!openaiKey) throw new Error('OPENAI_API_KEY が設定されていません');
+    return await generateWithOpenAI(openaiKey, prompt, preferredModel, size);
+  }
+  if (providerMode === 'gemini') {
+    if (!geminiKey) throw new Error('GEMINI_API_KEY が設定されていません');
+    return await generateWithGeminiFallback(geminiKey, prompt);
+  }
+
+  // auto モード: 有効な OpenAI API -> ローカル Codex CLI (ChatGPTサブスク枠) -> Gemini API の順で自動リレー
+  if (openaiKey && !openaiKeyExhausted) {
     try {
       return await generateWithOpenAI(openaiKey, prompt, preferredModel, size);
     } catch (err) {
+      if (codexCli?.available) {
+        console.warn(`    🔄 OpenAI API 未使用/残高切れ -> ローカル Codex (ChatGPTサブスク枠) へ自動切替します...`);
+        return await generateWithCodexCli(codexCli, prompt, size);
+      }
       if (geminiKey) {
         console.warn(`    🔄 OpenAI失敗 (${err.message.slice(0, 120)}) -> Gemini API へ自動フォールバックします...`);
         return await generateWithGeminiFallback(geminiKey, prompt);
@@ -423,10 +648,26 @@ async function generateResilientImage({ openaiKey, geminiKey, prompt, preferredM
       throw err;
     }
   }
+
+  if (codexCli?.available) {
+    try {
+      return await generateWithCodexCli(codexCli, prompt, size);
+    } catch (err) {
+      if (geminiKey) {
+        console.warn(`    🔄 Codex失敗 (${err.message.slice(0, 120)}) -> Gemini API へ自動フォールバックします...`);
+        return await generateWithGeminiFallback(geminiKey, prompt);
+      }
+      throw err;
+    }
+  }
+
   if (geminiKey) {
     return await generateWithGeminiFallback(geminiKey, prompt);
   }
-  throw new Error('OPENAI_API_KEY または GEMINI_API_KEY が .env.local / ~/.env に設定されていません。');
+
+  throw new Error(
+    '利用可能な画像生成プロバイダがありません（ChatGPT/Codex アプリでのログイン、または OPENAI_API_KEY / GEMINI_API_KEY を確認してください）。'
+  );
 }
 
 async function resizeAndOptimizePng(rawBuffer, outPath, targetWidth, targetHeight, framingMode = 'full_bleed') {
@@ -583,13 +824,111 @@ async function makeCriticThumbnailBase64(rawBuffer) {
   }
 }
 
+const CRITIC_JSON_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: [
+    'genre_fidelity',
+    'framing_and_shot',
+    'cleanliness',
+    'visual_impact',
+    'overall_score',
+    'critique_ja',
+    'retake_prompt_fix',
+    'reusable_genre_booster',
+    'reusable_genre_avoid',
+  ],
+  properties: {
+    genre_fidelity: { type: 'number' },
+    framing_and_shot: { type: 'number' },
+    cleanliness: { type: 'number' },
+    visual_impact: { type: 'number' },
+    overall_score: { type: 'number' },
+    critique_ja: { type: 'string' },
+    retake_prompt_fix: { type: 'string' },
+    reusable_genre_booster: { type: 'string' },
+    reusable_genre_avoid: { type: 'string' },
+  },
+};
+
+const EVOLVE_JSON_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['new_booster', 'new_avoid', 'summary_ja'],
+  properties: {
+    new_booster: { type: 'string' },
+    new_avoid: { type: 'string' },
+    summary_ja: { type: 'string' },
+  },
+};
+
+async function evaluateImageWithCodexCli(codexCli, thumb, systemPrompt, userText) {
+  const uid = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const ext = thumb.mime === 'image/png' ? 'png' : 'jpg';
+  const imgFile = path.join(os.tmpdir(), `shuin-critic-${uid}.${ext}`);
+  const schemaFile = path.join(os.tmpdir(), `shuin-critic-schema-${uid}.json`);
+  const outFile = path.join(os.tmpdir(), `shuin-critic-out-${uid}.json`);
+
+  try {
+    fs.writeFileSync(imgFile, Buffer.from(thumb.b64, 'base64'));
+    fs.writeFileSync(schemaFile, JSON.stringify(CRITIC_JSON_SCHEMA));
+    await runCodexExec(
+      codexCli,
+      [
+        'exec',
+        '--ephemeral',
+        '--skip-git-repo-check',
+        '-s',
+        'read-only',
+        '-c',
+        'model_reasoning_effort="low"',
+        '-i',
+        imgFile,
+        '--output-schema',
+        schemaFile,
+        '-o',
+        outFile,
+        `${systemPrompt}\n\n${userText}\n\nInspect the attached image directly (do NOT invoke shell commands) and output the evaluation JSON.`,
+      ],
+      120000
+    );
+    if (fs.existsSync(outFile)) {
+      const text = fs.readFileSync(outFile, 'utf-8').trim();
+      if (text) return JSON.parse(text);
+    }
+    return null;
+  } catch {
+    return null;
+  } finally {
+    for (const f of [imgFile, schemaFile, outFile]) {
+      try {
+        if (fs.existsSync(f)) fs.unlinkSync(f);
+      } catch {
+        // ignore cleanup failure
+      }
+    }
+  }
+}
+
 /**
  * マルチモーダル Vision 審査員:
  * そのジャンル固有のルーブリック（must_have / anti_patterns）＋カメラ距離要件で 1〜10 採点し、
  * 改善点と「そのジャンル全体に再利用できる学習ブースター」を JSON で返す。
  */
-async function evaluateImageForGenre({ openaiKey, geminiKey, imageBuffer, genre, roleDescription }) {
-  if (!openaiKey && !geminiKey) return null;
+async function evaluateImageForGenre({
+  providerMode = 'auto',
+  codexCli,
+  openaiKey,
+  geminiKey,
+  imageBuffer,
+  genre,
+  roleDescription,
+}) {
+  const hasOpenai = Boolean(openaiKey && !openaiKeyExhausted && providerMode !== 'codex' && providerMode !== 'gemini');
+  const hasCodex = Boolean(codexCli?.available && providerMode !== 'openai' && providerMode !== 'gemini');
+  const hasGemini = Boolean(geminiKey && providerMode !== 'codex' && providerMode !== 'openai');
+  if (!hasOpenai && !hasCodex && !hasGemini) return null;
+
   const thumb = await makeCriticThumbnailBase64(imageBuffer);
 
   const systemPrompt = `You are the Art Director & Genre Quality Critic for SHUIN, a Japanese cultural walking guide.
@@ -607,7 +946,7 @@ Return JSON ONLY with these keys:
 
   const userText = `Genre: ${genre.id} (${genre.label_ja})\nFraming mode: ${genre.framing_mode}\nRequired role & shot: ${roleDescription}`;
 
-  if (openaiKey) {
+  if (hasOpenai) {
     for (const visionModel of OPENAI_VISION_MODELS) {
       try {
         const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -635,7 +974,14 @@ Return JSON ONLY with these keys:
             ],
           }),
         });
-        if (!res.ok) continue;
+        if (!res.ok) {
+          const errTxt = await res.text();
+          if (errTxt.includes('insufficient_quota') || errTxt.includes('credit_balance_exhausted')) {
+            openaiKeyExhausted = true;
+            break;
+          }
+          continue;
+        }
         const json = await res.json();
         const content = json.choices?.[0]?.message?.content;
         if (!content) continue;
@@ -646,7 +992,12 @@ Return JSON ONLY with these keys:
     }
   }
 
-  if (geminiKey) {
+  if (hasCodex) {
+    const codexEval = await evaluateImageWithCodexCli(codexCli, thumb, systemPrompt, userText);
+    if (codexEval) return codexEval;
+  }
+
+  if (hasGemini) {
     try {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`,
@@ -742,15 +1093,15 @@ function recordGenreSelfImprovement(registry, genreId, slug, targetName, evaluat
   return mutatedRules;
 }
 
-async function evolveGenreFromHumanFeedback({ openaiKey, geminiKey }, genreId, feedbackJa) {
+async function evolveGenreFromHumanFeedback({ codexCli, openaiKey, geminiKey }, genreId, feedbackJa) {
   const registry = loadGenresRegistry();
   const genre = registry.genres[genreId];
   if (!genre) {
     console.error(`❌ ジャンル "${genreId}" が見つかりません。--list-genres で確認してください。`);
     process.exit(1);
   }
-  if (!openaiKey && !geminiKey) {
-    console.error('❌ OPENAI_API_KEY または GEMINI_API_KEY が未設定です。');
+  if (!codexCli?.available && !openaiKey && !geminiKey) {
+    console.error('❌ 利用可能なプロバイダがありません（ChatGPT/Codex ログイン、OPENAI_API_KEY、または GEMINI_API_KEY）。');
     process.exit(1);
   }
 
@@ -762,7 +1113,7 @@ async function evolveGenreFromHumanFeedback({ openaiKey, geminiKey }, genreId, f
   let parsed = null;
   let lastErr = null;
 
-  if (openaiKey) {
+  if (openaiKey && !openaiKeyExhausted) {
     try {
       const res = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -783,10 +1134,54 @@ async function evolveGenreFromHumanFeedback({ openaiKey, geminiKey }, genreId, f
       if (res.ok) {
         parsed = JSON.parse((await res.json()).choices[0].message.content);
       } else {
-        lastErr = new Error(`OpenAI HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+        const errTxt = await res.text();
+        if (errTxt.includes('insufficient_quota') || errTxt.includes('credit_balance_exhausted')) {
+          openaiKeyExhausted = true;
+        }
+        lastErr = new Error(`OpenAI HTTP ${res.status}: ${errTxt.slice(0, 200)}`);
       }
     } catch (e) {
       lastErr = e;
+    }
+  }
+
+  if (!parsed && codexCli?.available) {
+    const uid = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const schemaFile = path.join(os.tmpdir(), `shuin-evolve-schema-${uid}.json`);
+    const outFile = path.join(os.tmpdir(), `shuin-evolve-out-${uid}.json`);
+    try {
+      fs.writeFileSync(schemaFile, JSON.stringify(EVOLVE_JSON_SCHEMA));
+      await runCodexExec(
+        codexCli,
+        [
+          'exec',
+          '--ephemeral',
+          '--skip-git-repo-check',
+          '-s',
+          'read-only',
+          '-c',
+          'model_reasoning_effort="low"',
+          '--output-schema',
+          schemaFile,
+          '-o',
+          outFile,
+          `${sysText}\n\n${usrText}`,
+        ],
+        90000
+      );
+      if (fs.existsSync(outFile)) {
+        parsed = JSON.parse(fs.readFileSync(outFile, 'utf-8').trim());
+      }
+    } catch (e) {
+      lastErr = e;
+    } finally {
+      for (const f of [schemaFile, outFile]) {
+        try {
+          if (fs.existsSync(f)) fs.unlinkSync(f);
+        } catch {
+          // ignore cleanup failure
+        }
+      }
     }
   }
 
@@ -859,6 +1254,8 @@ function printGenresSummary() {
 
 async function processSingleTask({
   task,
+  providerMode,
+  codexCli,
   openaiKey,
   geminiKey,
   genre,
@@ -877,6 +1274,8 @@ async function processSingleTask({
     console.log(`  ${labelPrefix}: ${task.filename} [${task.shotLabel}] ...`);
 
     const { buffer, provider } = await generateResilientImage({
+      providerMode,
+      codexCli,
       openaiKey,
       geminiKey,
       prompt,
@@ -884,12 +1283,14 @@ async function processSingleTask({
       size: '1536x1024',
     });
 
-    if (!enableCritic || (!openaiKey && !geminiKey)) {
+    if (!enableCritic || (!codexCli?.available && !openaiKey && !geminiKey)) {
       bestCandidate = { buffer, provider, evalResult: null, score: 0 };
       break;
     }
 
     const evalResult = await evaluateImageForGenre({
+      providerMode,
+      codexCli,
       openaiKey,
       geminiKey,
       imageBuffer: buffer,
@@ -898,7 +1299,7 @@ async function processSingleTask({
     });
 
     if (!evalResult) {
-      console.log(`    ⚠️ Vision審査スキップ（API応答なし）: ${task.filename}`);
+      console.log(`    ⚠️ Vision審査スキップ（審査応答なし）: ${task.filename}`);
       if (!bestCandidate) {
         bestCandidate = { buffer, provider, evalResult: null, score: 0 };
       }
@@ -977,6 +1378,7 @@ async function main() {
 
   const openaiKey = loadEnvKey('OPENAI_API_KEY');
   const geminiKey = loadEnvKey('GEMINI_API_KEY') || loadEnvKey('GOOGLE_API_KEY');
+  const codexCli = detectCodexCli();
 
   const evolveIdx = args.indexOf('--evolve-genre');
   if (evolveIdx !== -1) {
@@ -987,11 +1389,18 @@ async function main() {
       console.error('使い方: --evolve-genre <genre_id> --feedback "<日本語の改善指示>"');
       process.exit(1);
     }
-    await evolveGenreFromHumanFeedback({ openaiKey, geminiKey }, genreId, feedback);
+    await evolveGenreFromHumanFeedback({ codexCli, openaiKey, geminiKey }, genreId, feedback);
     return;
   }
 
-  const flagArgsWithValues = new Set(['--genre', '--model', '--spot-model', '--max-retries', '--concurrency']);
+  const flagArgsWithValues = new Set([
+    '--provider',
+    '--genre',
+    '--model',
+    '--spot-model',
+    '--max-retries',
+    '--concurrency',
+  ]);
   const targetArg = args.find((a, idx) => {
     if (a.startsWith('--')) return false;
     if (idx > 0 && flagArgsWithValues.has(args[idx - 1])) return false;
@@ -1000,7 +1409,7 @@ async function main() {
 
   if (!targetArg) {
     console.error(
-      '使い方: node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--force] [--genre <id>] [--eyecatch-only] [--no-critic]'
+      '使い方: node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs [--force] [--provider auto|codex|openai|gemini] [--genre <id>] [--eyecatch-only] [--no-critic]'
     );
     process.exit(1);
   }
@@ -1014,6 +1423,10 @@ async function main() {
     return i !== -1 && args[i + 1] ? args[i + 1] : fallback;
   };
 
+  const providerMode = getFlagVal('--provider', 'auto');
+  if (!['auto', 'codex', 'openai', 'gemini'].includes(providerMode)) {
+    throw new Error(`不正な --provider 指定です: ${providerMode} (auto | codex | openai | gemini)`);
+  }
   const explicitGenre = getFlagVal('--genre', null);
   const preferredEyecatchModel = getFlagVal('--model', 'gpt-image-1.5');
   const preferredSpotModelOverride = getFlagVal('--spot-model', null);
@@ -1036,6 +1449,11 @@ async function main() {
 
   console.log(`\n🎨 ルート [${area.slug}]（${area.title || area.slug}）`);
   console.log(`   割当ジャンル: ${genre.id} — ${genre.label_ja} [枠:${genre.framing_mode} / 辞書v${si.version}]`);
+  console.log(
+    `   プロバイダ構成: mode=${providerMode} | Codexサブスク=${codexCli.available ? '有効 (gpt-image-2)' : '未検出'} | OpenAI_KEY=${
+      openaiKey ? '設定あり' : 'なし'
+    } | Gemini_KEY=${geminiKey ? '設定あり' : 'なし'}`
+  );
 
   const tasks = [];
 
@@ -1115,6 +1533,8 @@ async function main() {
   await runWithConcurrency(tasks, concurrency, async (task) => {
     await processSingleTask({
       task,
+      providerMode,
+      codexCli,
       openaiKey,
       geminiKey,
       genre,

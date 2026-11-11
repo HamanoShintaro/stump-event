@@ -112,10 +112,13 @@ node .agents/skills/create-route/scripts/verify-and-geocode.mjs scripts/areas/<s
   - Spot 4: ローアングル仰角／対角線奥行き構図（午後の陰影）
   - Spot 5: 夕景・マジックアワーの象徴的フィナーレ
 
-### 3-2. 一括画像生成＆ジャンル別自己改善の実行
+### 3-2. 一括画像生成＆ジャンル別自己改善の実行（Codex サブスク枠・API課金ゼロ対応）
 ```bash
-# 標準実行（アイキャッチ1枚＋スポット5枚の計6枚を並列生成 ＋ Vision採点・自動リテイク・ジャンル学習）
+# 標準実行（ローカル Codex CLI / ChatGPTサブスク認証を自動検出し、アイキャッチ1枚＋スポット5枚を生成＆Vision採点・ジャンル学習）
 node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs --force
+
+# プロバイダを明示固定する場合（codex | openai | gemini | auto）
+node .agents/skills/create-route/scripts/generate-images-openai.mjs scripts/areas/<slug>.mjs --provider codex --force
 
 # ジャンル一覧と各ジャンルの自己改善スコア・バージョンを確認
 node .agents/skills/create-route/scripts/generate-images-openai.mjs --list-genres
@@ -123,7 +126,7 @@ node .agents/skills/create-route/scripts/generate-images-openai.mjs --list-genre
 # 特定ジャンルに対して人間のフィードバックを反映し、そのジャンルだけを進化させる場合
 node .agents/skills/create-route/scripts/generate-images-openai.mjs --evolve-genre <genre_id> --feedback "色面のコントラストをさらに強く"
 ```
-- マルチモデル自動フォールバック（`gpt-image-1.5 -> gpt-image-1 -> gpt-image-1-mini` ＋ 429指数バックオフ ＋ `GEMINI_API_KEY` 設定時は Gemini 画像生成へ自動切替）により、途中で止まらずに完走します。
+- **API課金ゼロで完走**: `ChatGPT.app` 同梱の公式 `codex exec`（`Logged in using ChatGPT`）を自動検出し、`OPENAI_API_KEY` が未設定または残高切れでも内蔵 `image_gen`（`gpt-image-2`）＋ Vision 審査（`codex exec -i`）へ自動切替して完走します（`OPENAI_API_KEY` / `GEMINI_API_KEY` がある場合もマルチプロバイダで連携）。また Codex 生成時の一時ファイル（`~/.codex/generated_images/<thread_id>`）も最適化直後に自動削除してディスク容量を保護します。
 - 生成画像はすべてカードUIに最適な 3:2 横長比率（アイキャッチ `1200x800`、スポット `900x600`）へ `sharp` で高圧縮リサイズされます（基本ジャンルは端まで色が入るフルブリード、絵地図・スケッチ・パステル系のみ自然な紙肌全面表現）。
 - Vision 審査が各ジャンルの `rubric` で採点し、基準未満の場合は改善指示を注入して自動リテイクした上で、有効な知見を該当ジャンルの `self_improvement` 枠のみに蓄積します（称号バッジ用の `completion_badge` / `choices[].badge` のみ従来通り和紙余白のある紋章表現を維持）。
 

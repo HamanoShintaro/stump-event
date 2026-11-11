@@ -119,12 +119,13 @@
         "anti_patterns": "Fussy thin pen cross-hatching, pale watercolor washes, blank white vignette borders, ANY poster title text or typography."
       },
       "self_improvement": {
-        "version": 2,
-        "runs": 6,
-        "avg_score": 9.37,
+        "version": 3,
+        "runs": 7,
+        "avg_score": 9.4,
         "learned_boosters": [
           "Use bold unoutlined flat screenprint color shapes with subtle risograph grain texture rather than fine ink linework",
-          "Bleed ink colors completely off all four canvas edges with zero outer poster trim, and simplify complex timber ceilings into flat screenprint shadow blocks"
+          "Bleed ink colors completely off all four canvas edges with zero outer poster trim, and simplify complex timber ceilings into flat screenprint shadow blocks",
+          "Use oversized foreground silhouettes and a receding path to anchor bold architectural color planes"
         ],
         "learned_avoid": [
           "poster headline text or typography banners",
@@ -198,6 +199,17 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "備前焼瓦の神門と狛犬を黄金色の夕景逆光で捉えたフィナーレ構図"
+          },
+          {
+            "at": "2026-11-11T10:45:35",
+            "slug": "inbe",
+            "target": "route-eyecatch.png",
+            "score": 9.6,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱色の陶器と煙突、青緑の空、黄土色の植生が版画的な色面と紙の粒子感で鮮やかにまとまり、四辺まで余白なく伸びる構図も力強い一方、屋根瓦の細部はやや密です。"
           }
         ]
       }
