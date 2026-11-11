@@ -161,10 +161,10 @@ async function queryGoogleMapsRooftop(spotName, address, gsiRef = null) {
         lat = Number(parseFloat(mLngLat[2]).toFixed(6));
       }
       if (typeof lat === 'number' && typeof lng === 'number') {
-        // 都市部の「丁目」街区一致時は350m、地方の大字＋番地（丁目なし）は650m、大字代表点のみ（hasBlockNumber === false）はPOI検索時1800m・住所検索時8000mまで許容
+        // 都市部の「丁目」街区一致時は350m、地方の大字＋番地（丁目なし）はGSIが大字代表点と同一座標を返すケースがあるため1800m、大字代表点のみ（hasBlockNumber === false）はPOI検索時5500m・住所検索時8000mまで許容
         const hasChome = /[0-9０-９一二三四五六七八九十]+丁目/.test(gsiRef?.matchedTitle || '');
         const maxAllowedFromGsi = gsiRef?.hasBlockNumber
-          ? (hasChome ? 350 : (isStationSpot ? 1500 : 800))
+          ? (hasChome ? 350 : 1800)
           : (isPoiQuery ? 5500 : 8000);
         if (gsiRef) {
           const refList = (!gsiRef.hasBlockNumber && Array.isArray(gsiRef.allCoords) && gsiRef.allCoords.length > 0)

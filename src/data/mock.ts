@@ -57330,5 +57330,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ba17458e-b344-424c-8c5f-9917a47831c6",
+    "title": "なぜ玉川の白壁土蔵に赤瓦の街並みが映えるのか",
+    "name": "なぜ玉川の白壁土蔵に赤瓦の街並みが映えるのか",
+    "description": "打吹山の清らかな水を引き込んだ玉川沿いに、江戸・明治からの白壁土蔵と赤い石州瓦の町家が連なる鳥取県倉吉市。里見忠義と八賢士が眠る大岳院から、十二単もちしゃぶの町屋清水庵、石橋が架かる赤瓦一号館、天保創業の高田酒造、登録有形文化財の豊田家住宅までを歩く。",
+    "region": "倉吉（倉吉市）",
+    "area_name": "倉吉（倉吉市）",
+    "cover_image_url": "/images/kurayoshi/route-eyecatch.png",
+    "imageUrl": "/images/kurayoshi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "玉川に架かる石橋と白壁土蔵、赤瓦の町家が連なる倉吉で、あなたが強く心惹かれたのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "玉川の石橋と柳並木に、白い漆喰壁と赤い石州瓦が映える「赤瓦一号館」周辺の白壁土蔵群",
+          "description": "水路を泳ぐ鯉と白壁・黒板塀・赤瓦の鮮やかなコントラストに、山陰の小京都の美意識を感じた。",
+          "badge_code": "kurayoshi_tamagawa_shirakabe_akagawara"
+        },
+        {
+          "key": "B",
+          "text": "『南総里見八犬伝』ゆかりの里見忠義と八賢士の墓所が静かに佇む古刹「大岳院」",
+          "description": "遠く安房国から倉吉へ移り住んだ主従の絆と、八つの墓石に刻まれた物語の深さに胸を打たれた。",
+          "badge_code": "kurayoshi_daigakuin_satomi_eight_retainers"
+        },
+        {
+          "key": "C",
+          "text": "登録有形文化財の「町屋清水庵」で楽しむ、十二色の丸餅をだしにくぐらせる「もちしゃぶ」",
+          "description": "ゆずや抹茶、黒ごまなど彩り豊かな十二単の餅が熱々のだしでとろける、倉吉ならではの美味に驚いた。",
+          "badge_code": "kurayoshi_seimizuan_mochi_shabu"
+        },
+        {
+          "key": "D",
+          "text": "うなぎの寝床の商家「豊田家住宅」と、天保創業の酒蔵「高田酒造」が並ぶ本町通りの町家群",
+          "description": "格子戸の奥に中庭が広がる明治の呉服商の屋敷と、銘酒「此君」の酒蔵が伝える商都の粋に惹かれた。",
+          "badge_code": "kurayoshi_toyodake_and_takada_shuzo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d554755c-19f7-4400-8ca9-3a43a3673ca3",
+        "name": "大岳院",
+        "description": "慶長年間に創建された曹洞宗の古刹（境内参拝自由）。『南総里見八犬伝』のモデルとも伝わる安房国館山藩主・里見忠義と、殉死した八人の家臣（八賢士）の墓所がある。",
+        "address": "鳥取県倉吉市東町437-1",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.432068,
+        "lng": 133.827613,
+        "qr_token": "shuin-kurayoshi-1",
+        "cover_image_url": "/images/kurayoshi/spot1.png",
+        "f7_fragment": "『南総里見八犬伝』ゆかりの里見忠義と八賢士の墓所が静かに佇む曹洞宗の古刹。",
+        "f7_full": "「大岳院」の境内に並ぶ里見忠義と八賢士の墓所が、白壁と赤瓦の城下町・倉吉に息づく深い歴史物語への扉を開いてくれる。",
+        "is_final": false,
+        "next_spot_id": "7375a22d-3f53-4950-8c25-a19b7e7f4d26",
+        "next_spot_name": "町屋清水庵"
+      },
+      {
+        "id": "7375a22d-3f53-4950-8c25-a19b7e7f4d26",
+        "name": "町屋清水庵",
+        "description": "築100年を超える国登録有形文化財の町家を活かした餅料理専門店（11:00〜14:00・17:30〜21:00営業、月曜休）。ゆずやよもぎ、黒ごまなど十二種類の丸餅をだしにくぐらせて味わう「十二単もちしゃぶ」が名物。",
+        "address": "鳥取県倉吉市堺町1丁目876",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.431627,
+        "lng": 133.826737,
+        "qr_token": "shuin-kurayoshi-2",
+        "cover_image_url": "/images/kurayoshi/spot2.png",
+        "f7_fragment": "築百年超の登録有形文化財の町家で、十二色の餅をだしにくぐらせる「もちしゃぶ」を供する名店。",
+        "f7_full": "「町屋清水庵」の明治の趣あふれる座敷で味わう彩り豊かな十二単もちしゃぶが、倉吉の街歩きに華やかで温かな記憶を刻んでくれる。",
+        "is_final": false,
+        "next_spot_id": "89889865-26f5-43f1-8186-c6e5d3c68f5f",
+        "next_spot_name": "赤瓦一号館"
+      },
+      {
+        "id": "89889865-26f5-43f1-8186-c6e5d3c68f5f",
+        "name": "赤瓦一号館",
+        "description": "玉川沿いの白壁土蔵群（重要伝統的建造物群保存地区）の中心に建つ、大正期の醤油仕込み蔵を改装した物産館（9:00〜17:00営業、年末年始休）。白い漆喰壁と黒い焼き杉板、赤い石州瓦の景観を楽しめ、地元の工芸品や特産品が揃う。",
+        "address": "鳥取県倉吉市新町1丁目2441",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.432467,
+        "lng": 133.824167,
+        "qr_token": "shuin-kurayoshi-3",
+        "cover_image_url": "/images/kurayoshi/spot3.png",
+        "f7_fragment": "玉川沿いの白壁土蔵群の中心に建ち、大正期の醤油蔵を活かした赤瓦のランドマーク。",
+        "f7_full": "「赤瓦一号館」の白漆喰と黒い焼き杉板、赤い石州瓦が玉川の水面に映り込む風景が、山陰の商都・倉吉ならではの風情を鮮やかに映し出す。",
+        "is_final": false,
+        "next_spot_id": "96632b7d-ec97-4da5-83e2-74d78233b228",
+        "next_spot_name": "高田酒造"
+      },
+      {
+        "id": "96632b7d-ec97-4da5-83e2-74d78233b228",
+        "name": "高田酒造",
+        "description": "天保十四年創業、主屋や土蔵が国の登録有形文化財に指定されている老舗酒蔵（9:00〜17:00営業、水・木曜休）。打吹山の伏流水で仕込む代表銘柄「此君（しくん）」などの地酒を購入できる。",
+        "address": "鳥取県倉吉市西仲町2633",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.431903,
+        "lng": 133.822776,
+        "qr_token": "shuin-kurayoshi-4",
+        "cover_image_url": "/images/kurayoshi/spot4.png",
+        "f7_fragment": "天保十四年創業、国登録有形文化財の主屋と土蔵で銘酒「此君」を醸し続ける老舗酒蔵。",
+        "f7_full": "「高田酒造」の重厚な格子戸と杉玉が揺れる店構えに触れれば、打吹山の名水が育んだ倉吉の酒造りの伝統を肌で感じることができる。",
+        "is_final": false,
+        "next_spot_id": "62b79e8d-2fe6-4ed6-8793-5f64c5ed2a58",
+        "next_spot_name": "豊田家住宅"
+      },
+      {
+        "id": "62b79e8d-2fe6-4ed6-8793-5f64c5ed2a58",
+        "name": "豊田家住宅",
+        "description": "明治三十三年に建てられた呉服商の町家で、主屋や離れ、土蔵が国の登録有形文化財に指定されている（10:00〜16:00開館、木曜休）。間口が狭く奥行きが深い「うなぎの寝床」の敷地と美しい中庭を見学できる。",
+        "address": "鳥取県倉吉市西町2701",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.431954,
+        "lng": 133.820406,
+        "qr_token": "shuin-kurayoshi-5",
+        "cover_image_url": "/images/kurayoshi/spot5.png",
+        "f7_fragment": "明治三十三年建築、うなぎの寝床の敷地に主屋と中庭・土蔵が連なる国登録有形文化財の商家。",
+        "f7_full": "「豊田家住宅」の格子戸を抜けて奥へと続く座敷と坪庭の静寂が、白壁と赤瓦の街・倉吉を歩いた旅を穏やかな余韻とともに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4bd02f7c-ec6f-4aa3-8aa5-7977b1327e3b",
+    "title": "千本格子に木曽路の旅情が宿る・奈良井宿へ",
+    "name": "千本格子に木曽路の旅情が宿る・奈良井宿へ",
+    "description": "難所の鳥居峠を控え「奈良井千軒」と謳われた日本最長の中山道宿場町・長野県塩尻市奈良井宿。総檜造りの木曽の大橋から、江戸期の旅籠建築で五平餅と蕎麦を味わう徳利屋、国指定重要文化財の上問屋史料館、千本格子と出梁造の中村邸、鳥居峠の登り口に鎮座する鎮神社までを歩く。",
+    "region": "奈良井宿（塩尻市）",
+    "area_name": "奈良井宿（塩尻市）",
+    "cover_image_url": "/images/narai/route-eyecatch.png",
+    "imageUrl": "/images/narai/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "約一キロにわたり千本格子の町家が連なる中山道・奈良井宿で、あなたが深く心動かされたのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "樹齢三百年超の木曽檜が優美なアーチを描く「木曽の大橋」と奈良井川の清流",
+          "description": "橋脚を使わず木組みだけで川をまたぐ総檜造りの太鼓橋に立ち、木曽谷の豊かな森林文化に圧倒された。",
+          "badge_code": "narai_kiso_no_ohashi_cypress"
+        },
+        {
+          "key": "B",
+          "text": "出梁造と千本格子が美しい「中村邸」と、問屋場の歴史を伝える重要文化財「上問屋史料館」",
+          "description": "二階がせり出した奈良井宿特有の町家建築と吹き抜けの梁組に、「奈良井千軒」の往時の繁栄を感じた。",
+          "badge_code": "narai_senbongoshi_machiya"
+        },
+        {
+          "key": "C",
+          "text": "江戸後期の旅籠建築「徳利屋」の囲炉裏端で味わう、香ばしい胡麻クルミだれの「五平餅」と蕎麦",
+          "description": "箱階段や太い梁が残る古民家で、濃厚な胡麻とクルミの甘辛だれが絡む五平餅の味わいに癒やされた。",
+          "badge_code": "narai_tokkuriya_goheimochi"
+        },
+        {
+          "key": "D",
+          "text": "鳥居峠の登り口で杉木立に包まれ、宿場町の安寧を守り続けてきた「鎮神社」",
+          "description": "宿場の南端に佇む県宝の本殿に手を合わせ、これから鳥居峠へと向かった江戸の旅人たちに思いを馳せた。",
+          "badge_code": "narai_shizume_shrine_torii_pass"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "28738981-6a6f-455d-86b4-697eaddbf364",
+        "name": "木曽の大橋",
+        "description": "奈良井川に架かる樹齢300年以上の木曽檜を用いた総檜造りの太鼓橋（終日散策自由）。橋脚を持たない木造橋としては日本有数の大きさを誇り、精巧な木組みと奈良井川の渓谷美を眺められる。",
+        "address": "長野県塩尻市奈良井1199-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.966074,
+        "lng": 137.814051,
+        "qr_token": "shuin-narai-1",
+        "cover_image_url": "/images/narai/spot1.png",
+        "f7_fragment": "樹齢三百年超の木曽檜を用い、橋脚を使わず奈良井川に優美な弧を描く総檜造りの太鼓橋。",
+        "f7_full": "「木曽の大橋」の香り立つ木曽檜のアーチと奈良井川の清らかなせせらぎが、日本最長の宿場町・奈良井宿への旅を清々しく切り開いてくれる。",
+        "is_final": false,
+        "next_spot_id": "dcc0c32b-a4dc-4050-8253-87d2866ac08d",
+        "next_spot_name": "徳利屋"
+      },
+      {
+        "id": "dcc0c32b-a4dc-4050-8253-87d2866ac08d",
+        "name": "徳利屋",
+        "description": "江戸時代後期の旅籠建築を活かした奈良井宿中町の郷土料理処（10:00〜16:00頃営業、不定休）。囲炉裏のある情緒豊かな店内で、胡麻やクルミの特製だれで焼き上げる五平餅や手打ちそばを味わえる。",
+        "address": "長野県塩尻市奈良井516",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.965402,
+        "lng": 137.811425,
+        "qr_token": "shuin-narai-2",
+        "cover_image_url": "/images/narai/spot2.png",
+        "f7_fragment": "江戸後期の旅籠建築の囲炉裏端で、胡麻とクルミが香る五平餅や蕎麦を供する郷土料理処。",
+        "f7_full": "「徳利屋」の香ばしく焼き上がった胡麻クルミだれの五平餅と手打ちそばが、千本格子の続く中山道の街歩きに温かな活力を与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c87e5300-d1b3-49c2-8941-4e6b473e5f29",
+        "next_spot_name": "上問屋史料館"
+      },
+      {
+        "id": "c87e5300-d1b3-49c2-8941-4e6b473e5f29",
+        "name": "上問屋史料館",
+        "description": "慶長年間の宿場開設から明治維新まで奈良井宿の問屋と庄屋を務めた手塚家の住宅で、国の重要文化財（9:00〜17:00開館・冬期変動あり、水曜休）。出梁造の重厚な主屋と問屋場の歴史資料を見学できる。",
+        "address": "長野県塩尻市奈良井370",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.964692,
+        "lng": 137.810452,
+        "qr_token": "shuin-narai-3",
+        "cover_image_url": "/images/narai/spot3.png",
+        "f7_fragment": "代々奈良井宿の問屋・庄屋を務めた手塚家の住宅であり、出梁造を伝える国指定重要文化財。",
+        "f7_full": "「上問屋史料館」の太い梁が交差する土間と出梁造の佇まいが、四百年にわたり中山道の往来を支えた宿場町の誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "9340a3f4-0072-49bd-8e0f-a75fe28d7272",
+        "next_spot_name": "中村邸"
+      },
+      {
+        "id": "9340a3f4-0072-49bd-8e0f-a75fe28d7272",
+        "name": "中村邸",
+        "description": "天保年間に建てられた櫛問屋の屋敷で、奈良井宿の典型的な塗師屋建築を伝える国の重要文化財（9:00〜17:00開館、4〜11月無休・冬期月曜休）。千本格子や出梁造、二階座敷からの街道の眺めや坪庭を見学できる。",
+        "address": "長野県塩尻市奈良井553",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.96336,
+        "lng": 137.808836,
+        "qr_token": "shuin-narai-4",
+        "cover_image_url": "/images/narai/spot4.png",
+        "f7_fragment": "天保年間の櫛問屋の屋敷をそのまま残し、出梁造と千本格子の美を伝える国指定重要文化財。",
+        "f7_full": "「中村邸」の二階座敷から千本格子越しに見下ろす街道の風景と静かな坪庭が、「奈良井千軒」と謳われた木曽路の宿場情緒を深く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e1363939-8f95-4528-8663-a18474d40b8e",
+        "next_spot_name": "鎮神社"
+      },
+      {
+        "id": "e1363939-8f95-4528-8663-a18474d40b8e",
+        "name": "鎮神社",
+        "description": "奈良井宿の南端・鳥居峠の登り口に鎮座する宿場の鎮守（境内参拝自由）。疫病を鎮めるため香取神宮より勧請された歴史を持ち、寛文四年建立の本殿は長野県宝に指定されている。",
+        "address": "長野県塩尻市奈良井822",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.961919,
+        "lng": 137.80776,
+        "qr_token": "shuin-narai-5",
+        "cover_image_url": "/images/narai/spot5.png",
+        "f7_fragment": "鳥居峠の登り口で杉木立に囲まれ、長野県宝の本殿を擁する奈良井宿の鎮守。",
+        "f7_full": "「鎮神社」の深い杉木立と精緻な彫刻の本殿が、千本格子の町並みを歩いた奈良井宿の旅を厳かな祈りとともに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "84d8cdf1-6091-42eb-8e28-3272bdb5256e",
+    "title": "半田運河の黒板塀と醸造の蔵・半田を巡る",
+    "name": "半田運河の黒板塀と醸造の蔵・半田を巡る",
+    "description": "江戸の寿司文化を支えた粕酢と知多の酒造り、弁才船の海運で栄えた愛知県半田市。明治のカブトビール工場を伝える重要文化財・半田赤レンガ建物から、國盛 酒の文化館、魚太郎 蔵のまちカフェ、半田運河沿いのMIZKAN MUSEUM、寛政二年創業の和菓子処・松華堂までを歩く。",
+    "region": "半田（半田市）",
+    "area_name": "半田（半田市）",
+    "cover_image_url": "/images/handa/route-eyecatch.png",
+    "imageUrl": "/images/handa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "黒板塀が連なる半田運河と二百年の醸造蔵、明治の赤レンガ建物が息づく半田で、あなたが心惹かれたのはどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治のカブトビール工場の威容を今に伝える、国指定重要文化財「半田赤レンガ建物」",
+          "description": "妻木頼黄が設計した壮麗な赤レンガ建築とアーチ窓の空間に、明治の産業近代化の情熱を見た。",
+          "badge_code": "handa_red_brick_kabuto_brewery"
+        },
+        {
+          "key": "B",
+          "text": "二百年前の木造酒蔵で知多の酒造りに触れる「國盛 酒の文化館」の佇まい",
+          "description": "太い梁が渡る仕込み蔵で大桶や酒造道具を見学し、知多半島が育んだ芳醇な銘酒の文化を味わった。",
+          "badge_code": "handa_kunizakari_sake_museum"
+        },
+        {
+          "key": "C",
+          "text": "半田運河の黒板塀と、江戸の寿司文化を支えた粕酢の歴史を伝える「MIZKAN MUSEUM」",
+          "description": "運河の水面に映る黒い蔵の連なりと巨大な弁才船の展示に、江戸と知多を結んだ醸造の物語を感じた。",
+          "badge_code": "handa_canal_mizkan_museum"
+        },
+        {
+          "key": "D",
+          "text": "蔵のまちで味わう「魚太郎」の海鮮ランチと、寛政二年創業の老舗「松華堂」の繊細な和菓子",
+          "description": "知多の海の幸と、茶の湯文化が育てた老舗の羊羹・上生菓子に港町の旦那衆の粋を感じた。",
+          "badge_code": "handa_kura_seafood_and_shokado"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "935e9a58-2aeb-48aa-87c7-b065d799b8c5",
+        "name": "半田赤レンガ建物",
+        "description": "明治三十一年に妻木頼黄の設計で「カブトビール」の醸造工場として建てられた国の重要文化財（9:00〜17:00開館、年末年始休）。国内有数の規模を持つ煉瓦建造物で、歴史展示や復刻カブトビール、カフェを楽しめる。",
+        "address": "愛知県半田市榎下町8",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.901428,
+        "lng": 136.928667,
+        "qr_token": "shuin-handa-1",
+        "cover_image_url": "/images/handa/spot1.png",
+        "f7_fragment": "明治三十一年にカブトビールの工場として建てられた、妻木頼黄設計の国指定重要文化財。",
+        "f7_full": "「半田赤レンガ建物」の幾重にも積まれた煉瓦壁とアーチ窓の威容が、醸造の街・半田が育んだ明治の近代産業の情熱を力強く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0d378ef2-a4a5-4b8c-8905-5f0c474bd7cb",
+        "next_spot_name": "國盛 酒の文化館"
+      },
+      {
+        "id": "0d378ef2-a4a5-4b8c-8905-5f0c474bd7cb",
+        "name": "國盛 酒の文化館",
+        "description": "弘化元年創業の中埜酒造が、約200年前の実際の木造酒蔵を活かして公開する日本酒ミュージアム（10:00〜16:00開館、木曜休※祝日の場合は翌日・年末年始休、入館無料）。大桶や伝統の酒造道具の見学と、銘酒「國盛」の試飲・購入ができる。",
+        "address": "愛知県半田市東本町2-24",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.895345,
+        "lng": 136.934995,
+        "qr_token": "shuin-handa-2",
+        "cover_image_url": "/images/handa/spot2.png",
+        "f7_fragment": "約二百年前の黒板塀の木造酒蔵をそのまま活かし、知多の酒造りの歴史と銘酒を伝える文化館。",
+        "f7_full": "「國盛 酒の文化館」の太い梁が交差する仕込み蔵と大きな杉桶の迫力が、江戸時代から海運とともに栄えた知多の酒造りの伝統を物語る。",
+        "is_final": false,
+        "next_spot_id": "621aa0cc-1377-46c4-8f8f-46eb15236c83",
+        "next_spot_name": "魚太郎 蔵のまちカフェ"
+      },
+      {
+        "id": "621aa0cc-1377-46c4-8f8f-46eb15236c83",
+        "name": "魚太郎 蔵のまちカフェ",
+        "description": "半田運河のほとりにある、知多半島の鮮魚市場・魚太郎が手がけるカフェ＆レストラン（7:30〜17:30営業、木曜定休）。知多の漁港直送の魚介を使った海鮮ランチやスイーツを味わえる。",
+        "address": "愛知県半田市中村町1-33-2",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.893898,
+        "lng": 136.934196,
+        "qr_token": "shuin-handa-3",
+        "cover_image_url": "/images/handa/spot3.png",
+        "f7_fragment": "黒板塀が連なる半田運河のほとりで、知多の漁港直送の海鮮ランチや甘味を楽しめるカフェ。",
+        "f7_full": "「魚太郎 蔵のまちカフェ」で味わう知多半島の新鮮な海の幸が、黒板塀の醸造蔵を巡る街歩きに豊かな彩りと活力を添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "43375720-e7fe-4b17-805b-82b7c60d0f16",
+        "next_spot_name": "MIZKAN MUSEUM"
+      },
+      {
+        "id": "43375720-e7fe-4b17-805b-82b7c60d0f16",
+        "name": "MIZKAN MUSEUM",
+        "description": "半田運河沿いに建つ、創業220年超のミツカンの酢づくりと食文化を学べる体験型博物館（9:30〜17:00開館・展示見学は要事前予約、木曜休）。江戸時代の醸造工程や全長約20メートルの「弁才船」の再現展示を見学できる。",
+        "address": "愛知県半田市中村町2-6",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.893035,
+        "lng": 136.934496,
+        "qr_token": "shuin-handa-4",
+        "cover_image_url": "/images/handa/spot4.png",
+        "f7_fragment": "半田運河の黒板塀に囲まれ、江戸の寿司文化を支えた粕酢の歴史と弁才船を伝える博物館。",
+        "f7_full": "「MIZKAN MUSEUM」に沿って続く黒板塀と穏やかな半田運河の水面が、知多から江戸へと食文化を運んだ醸造の街の誇りを映し出している。",
+        "is_final": false,
+        "next_spot_id": "3626b813-11c0-4c59-887b-54b93a2fac18",
+        "next_spot_name": "松華堂"
+      },
+      {
+        "id": "3626b813-11c0-4c59-887b-54b93a2fac18",
+        "name": "松華堂",
+        "description": "寛政二年創業、230年以上にわたり半田の茶の湯文化を支えてきた老舗和菓子店（8:30〜18:00営業、水曜定休）。伝統の「松華堂ようかん」や、四季折々の風物を映した繊細な上生菓子・棹菓子を購入できる。",
+        "address": "愛知県半田市御幸町103",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.89328,
+        "lng": 136.932487,
+        "qr_token": "shuin-handa-5",
+        "cover_image_url": "/images/handa/spot5.png",
+        "f7_fragment": "寛政二年の創業以来、艶やかな羊羹や四季の上生菓子で半田の茶の湯文化を彩る老舗和菓子処。",
+        "f7_full": "「松華堂」の凛とした美しさを湛える羊羹と季節の上生菓子が、黒板塀と運河の街・半田を歩いた一日の終わりに上品な余韻を添えてくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bc3e1bce-d72c-496b-829e-d10f621f89a6",
+    "title": "千年の「せともの」と窯垣の小径・尾張瀬戸",
+    "name": "千年の「せともの」と窯垣の小径・尾張瀬戸",
+    "description": "日本六古窯の一つとして千年以上の歴史を刻み、「せともの」の語源となった愛知県瀬戸市。昭和の陶房と窯を再現した瀬戸蔵ミュージアムから、醤油煮汁の瀬戸焼そばを味わうぱんだ屋、陶祖ゆかりの深川神社、磁器製招き猫の招き猫ミュージアム、窯道具を積んだ窯垣の小径までを歩く。",
+    "region": "瀬戸（瀬戸市）",
+    "area_name": "瀬戸（瀬戸市）",
+    "cover_image_url": "/images/owari-seto/route-eyecatch.png",
+    "imageUrl": "/images/owari-seto/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "窯道具の塀が連なる坂道から千年のやきもの展示、瀬戸焼そばまでが揃う陶都・瀬戸で、あなたが心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ぱんだ屋」で瀬戸焼の器とともに味わう、豚の醤油煮汁が香ばしい名物「瀬戸焼そば」",
+          "description": "せいろ蒸し麺に豚の旨みが染み込んだ醤油だれの焼そばと、手になじむ瀬戸焼の器の温もりを堪能した。",
+          "badge_code": "owariseto_pandaya_seto_yakisoba"
+        },
+        {
+          "key": "B",
+          "text": "原寸大の石炭窯と陶房が並ぶ「瀬戸蔵ミュージアム」と、陶祖ゆかりの「深川神社」",
+          "description": "「せともの」千年の技の変遷と、陶工たちが祈りを捧げてきた古社の歴史の深さに感銘を受けた。",
+          "badge_code": "owariseto_setogura_and_fukagawa"
+        },
+        {
+          "key": "C",
+          "text": "磁器製のスマートな瀬戸型招き猫から全国の郷土玩具までが集う「招き猫ミュージアム」",
+          "description": "明治から続く白磁の招き猫産地ならではの愛らしいコレクションに囲まれ、温かな福をもらった。",
+          "badge_code": "owariseto_manekineko_museum"
+        },
+        {
+          "key": "D",
+          "text": "役目を終えた窯道具「エンゴロ」が幾何学模様を描く、瀬戸ならではの坂道「窯垣の小径」",
+          "description": "無数の円筒や円盤の窯道具が積み上げられた赤茶色の塀を歩き、千年の陶都の美意識に圧倒された。",
+          "badge_code": "owariseto_kamagaki_kiln_wall"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "efac781c-5265-4d48-8656-a46a23832343",
+        "name": "瀬戸蔵ミュージアム",
+        "description": "「せともの」千年以上の歴史と文化を紹介する博物館（9:00〜17:00開館・入館16:30まで、月1回程度休・年末年始休）。昭和30年代の陶房（モロ）や石炭窯、旧尾張瀬戸駅を原寸大で再現した空間と歴代の名品を見学できる。",
+        "address": "愛知県瀬戸市蔵所町1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.225392,
+        "lng": 137.100568,
+        "qr_token": "shuin-owari-seto-1",
+        "cover_image_url": "/images/owari-seto/spot1.png",
+        "f7_fragment": "昭和の陶房や石炭窯を原寸大で再現し、「せともの」千年の歴史を体感できる博物館。",
+        "f7_full": "「瀬戸蔵ミュージアム」にそびえる煙突と原寸大の陶房が、日本中の食卓を彩ってきた陶都・瀬戸の千年の熱量を生き生きと伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ed420d88-0955-41dd-8649-26f2f150c0ae",
+        "next_spot_name": "ぱんだ屋"
+      },
+      {
+        "id": "ed420d88-0955-41dd-8649-26f2f150c0ae",
+        "name": "ぱんだ屋",
+        "description": "深川神社参道近くに店を構えるご当地グルメ「瀬戸焼そば」の専門店（11:00〜15:00頃営業・売切れ次第終了、火曜・水曜定休）。豚の醤油煮汁で蒸し麺とキャベツを香ばしく炒めた瀬戸焼そばを瀬戸焼の器で味わえる。",
+        "address": "愛知県瀬戸市深川町13",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.22691,
+        "lng": 137.102664,
+        "qr_token": "shuin-owari-seto-2",
+        "cover_image_url": "/images/owari-seto/spot2.png",
+        "f7_fragment": "豚の旨みが詰まった醤油煮汁と蒸し麺で作る名物「瀬戸焼そば」を、瀬戸焼の器で供する名店。",
+        "f7_full": "「ぱんだ屋」で瀬戸焼の皿に盛られた香ばしい醤油だれの瀬戸焼そばを味わえば、焼き物の街の日常に息づく器と食の温もりが伝わってくる。",
+        "is_final": false,
+        "next_spot_id": "3726c66e-551b-4709-83de-a37e37f89acb",
+        "next_spot_name": "深川神社"
+      },
+      {
+        "id": "3726c66e-551b-4709-83de-a37e37f89acb",
+        "name": "深川神社",
+        "description": "宝亀二年創建と伝わる瀬戸の総鎮守（境内参拝自由）。鎌倉時代に瀬戸焼の礎を築いた陶祖・加藤四郎左衛門景正（藤四郎）ゆかりの古社であり、重要文化財の「陶製狛犬」が伝わるほか、隣には陶祖を祀る陶彦神社が鎮座する。",
+        "address": "愛知県瀬戸市深川町11",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.228027,
+        "lng": 137.10278,
+        "qr_token": "shuin-owari-seto-3",
+        "cover_image_url": "/images/owari-seto/spot3.png",
+        "f7_fragment": "宝亀二年創建、瀬戸焼の陶祖・藤四郎ゆかりの重要文化財「陶製狛犬」を伝える瀬戸の総鎮守。",
+        "f7_full": "「深川神社」の荘厳な社殿と陶製の奉納物が並ぶ境内が、良質な陶土と炎の恵みに感謝を捧げてきた陶工たちの篤い信仰を今に伝えている。",
+        "is_final": false,
+        "next_spot_id": "89cf7a83-6253-4495-8c4f-7d90888306f5",
+        "next_spot_name": "招き猫ミュージアム"
+      },
+      {
+        "id": "89cf7a83-6253-4495-8c4f-7d90888306f5",
+        "name": "招き猫ミュージアム",
+        "description": "明治時代から磁器製招き猫の一大産地として栄えた瀬戸ならではの専門博物館（10:00〜17:00開館、火曜休）。大正期の洋館風の建物内に全国の招き猫数千点が展示され、絵付け体験やミュージアムショップも楽しめる。",
+        "address": "愛知県瀬戸市薬師町2",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.22627,
+        "lng": 137.103357,
+        "qr_token": "shuin-owari-seto-4",
+        "cover_image_url": "/images/owari-seto/spot4.png",
+        "f7_fragment": "磁器製招き猫の産地・瀬戸で、全国の郷土玩具から創作招き猫まで数千点を展示する博物館。",
+        "f7_full": "「招き猫ミュージアム」のレトロな洋館に並ぶ白磁の瀬戸型招き猫たちが、陶都の職人技が生み出した愛らしくて縁起の良い文化を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "ecd7e414-0154-46ae-869e-bb33ff936d5f",
+        "next_spot_name": "窯垣の小径"
+      },
+      {
+        "id": "ecd7e414-0154-46ae-869e-bb33ff936d5f",
+        "name": "窯垣の小径",
+        "description": "洞地区の細道に約400メートル続く、エンゴロやエブタなどの窯道具を積み上げて作った塀・石垣の散歩道（散策自由、資料館は11:00〜15:00開館、月〜水曜休※祝日は開館）。全国で瀬戸にしかない幾何学模様の陶壁景観を楽しめる。",
+        "address": "愛知県瀬戸市仲洞町39",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.225467,
+        "lng": 137.111568,
+        "qr_token": "shuin-owari-seto-5",
+        "cover_image_url": "/images/owari-seto/spot5.png",
+        "f7_fragment": "役目を終えた窯道具「エンゴロ」を幾何学模様に積み上げた塀が続く、瀬戸固有の散歩道。",
+        "f7_full": "「窯垣の小径」の赤茶色に焼き締まった無数の窯道具が連なる坂道が、千年の陶都・尾張瀬戸を歩いた旅の終わりに唯一無二の風景を刻んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e7152025-9e53-419d-85a0-1b176737604a",
+    "title": "国宝の八角塔と湯けむりの里・別所温泉を辿る",
+    "name": "国宝の八角塔と湯けむりの里・別所温泉を辿る",
+    "description": "塩田北条氏が育んだ鎌倉文化の文化財が集まり「信州の鎌倉」と称えられる信州最古の温泉地・長野県上田市別所温泉。木曽義仲ゆかりの外湯・大湯から、現世利益の北向観音、馬肉うどんと信州そばの日野出食堂、日本唯一の国宝・八角三重塔を擁する安楽寺、石造多宝塔の常楽寺までを巡る。",
+    "region": "別所温泉（上田市）",
+    "area_name": "別所温泉（上田市）",
+    "cover_image_url": "/images/bessho-onsen/route-eyecatch.png",
+    "imageUrl": "/images/bessho-onsen/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鎌倉時代の仏塔と古刹、名湯の湯けむりが溶け合う別所温泉で、あなたが深く心惹かれたのはどの風景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "杉木立の中に日本唯一の木造八角塔がそびえる、信州最古の禅寺「安楽寺」の国宝八角三重塔",
+          "description": "裳階を備えた八角形の優美な反り屋根を見上げ、鎌倉時代の禅宗文化の結晶に息を呑んだ。",
+          "badge_code": "bessho_anrakuji_octagonal_pagoda"
+        },
+        {
+          "key": "B",
+          "text": "源泉の手水で清めて参拝する「北向観音」と、苔むす石造多宝塔が佇む本坊「常楽寺」",
+          "description": "善光寺と対をなす現世利益の観音堂と茅葺き本堂の静寂に、千二百年の信仰の深さを感じた。",
+          "badge_code": "bessho_kitamuki_kannon_and_jorakuji"
+        },
+        {
+          "key": "C",
+          "text": "木曽義仲ゆかりの共同浴場「大湯」と、湯けむり漂う温泉街の小路歩き",
+          "description": "入母屋造りの屋根が印象的な外湯と湯けむり立つ小路を巡り、信州最古のいで湯の温もりに癒やされた。",
+          "badge_code": "bessho_oyu_kiso_onsen"
+        },
+        {
+          "key": "D",
+          "text": "温泉街の「日野出食堂」で味わう、甘辛く煮込んだ名物「馬肉うどん」と信州の「ざるそば」",
+          "description": "馬肉の旨みが溶け出した温かなつゆと香り高い信州そばに、湯の里に受け継がれる食文化を感じた。",
+          "badge_code": "bessho_hinode_baniku_udon_soba"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "debf579b-73df-41ac-8012-0e91e5dfd511",
+        "name": "大湯",
+        "description": "木曽義仲（源義仲）と葵御前ゆかりの湯と伝えられる別所温泉の共同浴場（6:00〜22:00営業、第1・第3水曜休）。重厚な木造建築と大湯薬師堂が温泉街の情緒を醸し出し、玄関脇には足湯や飲泉所も設けられている。",
+        "address": "長野県上田市別所温泉169-2",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.349152,
+        "lng": 138.159825,
+        "qr_token": "shuin-bessho-onsen-1",
+        "cover_image_url": "/images/bessho-onsen/spot1.png",
+        "f7_fragment": "木曽義仲ゆかりの湯と伝わり、入母屋造りの木造屋根と薬師堂が湯の里の情緒を醸し出す外湯。",
+        "f7_full": "「大湯」の堂々たる木造屋根と立ち上る湯けむりが、「信州の鎌倉」と呼ばれる別所温泉の旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a21eb7d7-3ee4-463c-83a7-2c4ba323621f",
+        "next_spot_name": "北向観音"
+      },
+      {
+        "id": "a21eb7d7-3ee4-463c-83a7-2c4ba323621f",
+        "name": "北向観音",
+        "description": "天長二年に慈覚大師円仁が開創した、本堂が北を向く観音霊場（境内参拝自由）。南向きの善光寺と合わせて参拝すると現世・来世の利益が結ばれるとされ、境内には重要文化財の石造多宝塔や樹齢千二百年の愛染カツラ、源泉の手水舎がある。",
+        "address": "長野県上田市別所温泉1656",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.349879,
+        "lng": 138.156546,
+        "qr_token": "shuin-bessho-onsen-2",
+        "cover_image_url": "/images/bessho-onsen/spot2.png",
+        "f7_fragment": "南向きの善光寺と対をなして北を向き、源泉の手水と重要文化財の石造多宝塔を擁する霊場。",
+        "f7_full": "「北向観音」の手水舎から立ち上る温かい湯気と荘厳な本堂が、別所温泉に息づく千二百年の祈りの深さを温かく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0eabd294-db95-4b04-85df-0b17c45d4b71",
+        "next_spot_name": "日野出食堂"
+      },
+      {
+        "id": "0eabd294-db95-4b04-85df-0b17c45d4b71",
+        "name": "日野出食堂",
+        "description": "北向観音近くの温泉街にある老舗の蕎麦・食事処（11:00〜15:00頃営業、木曜休）。別所温泉の郷土食である甘辛い「馬肉うどん」や、信州産のそば粉で打つ「ざるそば」を味わえる。",
+        "address": "長野県上田市別所温泉212",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.349874,
+        "lng": 138.154723,
+        "qr_token": "shuin-bessho-onsen-3",
+        "cover_image_url": "/images/bessho-onsen/spot3.png",
+        "f7_fragment": "別所温泉の街なかで、伝統の甘辛い「馬肉うどん」や香り高い信州そばを供する老舗食堂。",
+        "f7_full": "「日野出食堂」の旨みあふれる馬肉うどんと手打ちの信州そばが、湯けむり漂う別所温泉の街歩きに豊かな滋味を添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1eaf034b-e175-4ef2-8590-a428fb93a92c",
+        "next_spot_name": "安楽寺"
+      },
+      {
+        "id": "1eaf034b-e175-4ef2-8590-a428fb93a92c",
+        "name": "安楽寺",
+        "description": "鎌倉時代に創建された信州最古の禅寺（8:00〜17:00・冬期16:00まで拝観）。杉木立の中に立つ鎌倉時代末期建立の「八角三重塔」は日本に現存する唯一の木造八角塔であり、国宝に指定されている。",
+        "address": "長野県上田市別所温泉2361",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.352179,
+        "lng": 138.153141,
+        "qr_token": "shuin-bessho-onsen-4",
+        "cover_image_url": "/images/bessho-onsen/spot4.png",
+        "f7_fragment": "日本に現存する唯一の木造八角塔である国宝「八角三重塔」を杉木立の奥に擁する信州最古の禅寺。",
+        "f7_full": "「安楽寺」の杉木立にそびえる国宝・八角三重塔の幾何学的な反り屋根が、塩田北条氏が花開かせた「信州の鎌倉」の精神文化を象徴している。",
+        "is_final": false,
+        "next_spot_id": "7abf1fbe-294b-450e-8b4e-93597732d10e",
+        "next_spot_name": "常楽寺"
+      },
+      {
+        "id": "7abf1fbe-294b-450e-8b4e-93597732d10e",
+        "name": "常楽寺",
+        "description": "北向観音の本坊である天台宗の古刹（8:00〜17:00・冬期16:00まで拝観）。茅葺き屋根の本堂と樹齢数百年の「御船の松」、本堂裏の杉木立に立つ弘長二年建立の国指定重要文化財「石造多宝塔」を見学できる。",
+        "address": "長野県上田市別所温泉2347",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.353521,
+        "lng": 138.154433,
+        "qr_token": "shuin-bessho-onsen-5",
+        "cover_image_url": "/images/bessho-onsen/spot5.png",
+        "f7_fragment": "茅葺き屋根の本堂と、弘長二年に建立された国指定重要文化財「石造多宝塔」を伝える北向観音の本坊。",
+        "f7_full": "「常楽寺」の重厚な茅葺き本堂と杉木立に佇む苔むした石造多宝塔が、湯けむりと古刹を巡った別所温泉の旅を静謐な余韻で包んでくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];

@@ -25,15 +25,15 @@
         "anti_patterns": "Pale daytime brown-pen watercolor sketch, blank white margins around edges, photographic realism, fake kanji/text on lanterns or signs."
       },
       "self_improvement": {
-        "version": 6,
-        "runs": 12,
-        "avg_score": 9.29,
+        "version": 7,
+        "runs": 13,
+        "avg_score": 9.3,
         "learned_boosters": [
-          "Zoom tightly inside the woodblock image area itself edge-to-edge without any uncut collector washi margin or corner artist seal",
           "Pair crisp carved keyblock contours with broad bokashi gradients and simplified, layered shadow shapes",
           "Use crisp carved keyblock contours and broad bokashi gradients to distinguish woodblock printing from painterly texture",
           "Balance crisp carved contours with broad ink planes and restrained bokashi gradients; reserve grain for subtle accents",
-          "Use carved architectural contours and restrained bokashi gradients to balance amber illumination against deep Prussian blue"
+          "Use carved architectural contours and restrained bokashi gradients to balance amber illumination against deep Prussian blue",
+          "Emphasize carved keyblock contours and broad bokashi gradients while simplifying granular textures into distinct printed color planes"
         ],
         "learned_avoid": [
           "pale washed-out beige background",
@@ -173,6 +173,17 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "藍色の宵空と琥珀色の灯り、石段を見上げる余白のない構図が旅の余韻を美しく伝える一方、細部の質感はやや絵画的で木版の彫線と色面を強める余地があります。"
+          },
+          {
+            "at": "2026-11-11T14:17:33",
+            "slug": "bessho-onsen",
+            "target": "spot5.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍の宵空と琥珀色の灯り、全面に広がる寺院と石畳が旅の余韻を美しく伝えますが、細部の質感をやや整理すると木版画らしい彫線と色面がさらに際立ちます。"
           }
         ]
       }

@@ -1557,6 +1557,7 @@ async function main() {
       const stem = task.filename.replace(/\.png$/i, '');
       const slugNorm = area.slug.toLowerCase().replace(/-/g, '_');
       const stemNorm = stem.toLowerCase().replace(/-/g, '_');
+      const altStemNorm = stemNorm === 'route_eyecatch' ? 'eyecatch' : stemNorm;
       const candidates = rawFiles
         .filter((f) => {
           if (!/\.(png|jpg|jpeg|webp)$/i.test(f)) return false;
@@ -1564,6 +1565,8 @@ async function main() {
           return (
             fn.startsWith(`${slugNorm}_${stemNorm}_`) ||
             fn.startsWith(`${slugNorm}_${stemNorm}.`) ||
+            fn.startsWith(`${slugNorm}_${altStemNorm}_`) ||
+            fn.startsWith(`${slugNorm}_${altStemNorm}.`) ||
             fn === `${stemNorm}.png` ||
             fn === `${stemNorm}.jpg`
           );
@@ -1574,7 +1577,8 @@ async function main() {
         })
         .sort((a, b) => b.mtime - a.mtime);
       if (candidates.length === 0) {
-        throw new Error(`--import-raw 内に ${task.filename} に対応する画像ファイルが見つかりません (${absRawDir})`);
+        console.warn(`  ⚠️ --import-raw 内に ${task.filename} の画像が見つからないためスキップします`);
+        continue;
       }
       const rawBuffer = fs.readFileSync(candidates[0].full);
       await resizeAndOptimizePng(rawBuffer, task.outPath, task.targetWidth, task.targetHeight, genre.framing_mode);
