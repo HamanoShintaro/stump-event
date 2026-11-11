@@ -62530,5 +62530,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "ce037cc7-cc59-453c-8506-9b23ee25d3bd",
+    "title": "生まぐろの港町と温泉の恵み・紀伊勝浦を巡る",
+    "name": "生まぐろの港町と温泉の恵み・紀伊勝浦を巡る",
+    "description": "延縄漁による生まぐろ水揚げ日本一を誇り、熊野信仰と勝浦温泉が息づく和歌山県那智勝浦町。JR紀勢本線の紀伊勝浦駅から、活気あふれる勝浦漁港にぎわい市場、名店の竹原、めはり寿司 二代目、港を見守る勝浦八幡神社までを歩く。",
+    "region": "紀伊勝浦（那智勝浦町）",
+    "area_name": "紀伊勝浦（那智勝浦町）",
+    "cover_image_url": "/images/kii-katsuura/route-eyecatch.png",
+    "imageUrl": "/images/kii-katsuura/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "生まぐろの活気と熊野の郷土料理、漁師町の鎮守が息づく紀伊勝浦で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "延縄漁の漁船が並ぶ勝浦湾に面した、活気あふれる「勝浦漁港にぎわい市場」",
+          "description": "潮風と温泉の香りが混じり合う岸壁で、生まぐろ日本一の港町の熱気を肌で感じた。",
+          "badge_code": "kii_katsuura_nigiwai_market_harbor"
+        },
+        {
+          "key": "B",
+          "text": "まぐろ料理の名店「竹原」で味わう、もっちりと濃厚な勝浦産「生まぐろ」のお造り",
+          "description": "一度も冷凍されない生まぐろならではの吸い付くような食感と、深い赤身の旨みに感動した。",
+          "badge_code": "kii_katsuura_takehara_fresh_tuna"
+        },
+        {
+          "key": "C",
+          "text": "「めはり寿司 二代目」で頬張る、高菜の香り豊かな熊野の郷土食「めはり寿司」",
+          "description": "熊野の山と海で働く人々を支えてきた、素朴で力強い高菜漬けおむすびの味わいに心温まった。",
+          "badge_code": "kii_katsuura_mehari_zushi_heritage"
+        },
+        {
+          "key": "D",
+          "text": "足湯の湯けむり漂う「紀伊勝浦駅」と、漁師町の安全を見守る「勝浦八幡神社」",
+          "description": "熊野那智大社への玄関口としての賑わいと、大漁を祈る古社の静かな佇まいに旅情を覚えた。",
+          "badge_code": "kii_katsuura_hachiman_shrine_port"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fbdfbdeb-6ece-4526-8ef1-bdc88f9b6703",
+        "name": "紀伊勝浦駅",
+        "description": "熊野那智大社や勝浦温泉への玄関口となるJR紀勢本線の主要駅（待合室は始発〜終電）。駅前広場には無料の足湯「滝乃湯」が設けられ、温泉と生まぐろの港町散策の起点となっている。",
+        "address": "和歌山県東牟婁郡那智勝浦町築地6-1-1",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.625714,
+        "lng": 135.942599,
+        "qr_token": "shuin-kii-katsuura-1",
+        "cover_image_url": "/images/kii-katsuura/spot1.png",
+        "f7_fragment": "駅前に足湯の湯けむりが立ちのぼり、熊野古道と勝浦温泉へと誘う玄関口の駅。",
+        "f7_full": "「紀伊勝浦駅」の爽やかな潮風と温泉の香りが、日本一の生まぐろと熊野の郷土食を訪ねる港町歩きの始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "6c9c936f-c415-4573-8051-370890a51f5f",
+        "next_spot_name": "勝浦漁港にぎわい市場"
+      },
+      {
+        "id": "6c9c936f-c415-4573-8051-370890a51f5f",
+        "name": "勝浦漁港にぎわい市場",
+        "description": "勝浦漁港の岸壁に位置する観光市場（8:00〜16:00営業、火曜休）。延縄漁による生まぐろの直売や飲食ブースが並び、海辺のテラスから穏やかな勝浦湾と紀の松島の風景を望める。",
+        "address": "和歌山県東牟婁郡那智勝浦町築地7-12",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.626477,
+        "lng": 135.94409,
+        "qr_token": "shuin-kii-katsuura-2",
+        "cover_image_url": "/images/kii-katsuura/spot2.png",
+        "f7_fragment": "勝浦漁港の岸壁に面し、水揚げされたばかりの生まぐろや海産物が並ぶ観光市場。",
+        "f7_full": "「勝浦漁港にぎわい市場」に並ぶつややかな生まぐろと港の潮風が、延縄漁日本一を誇る漁師町の力強い活気を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "87829aee-0d7b-40e5-8db6-a721f3e7120e",
+        "next_spot_name": "竹原"
+      },
+      {
+        "id": "87829aee-0d7b-40e5-8db6-a721f3e7120e",
+        "name": "竹原",
+        "description": "紀伊勝浦駅近くにあるまぐろ料理専門店（11:00〜14:00・17:00〜21:00営業、不定休）。一度も冷凍されない勝浦産の生まぐろを使ったお造り定食や希少部位の一品料理が人気を集める。",
+        "address": "和歌山県東牟婁郡那智勝浦町築地4-3-23",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.627554,
+        "lng": 135.943447,
+        "qr_token": "shuin-kii-katsuura-3",
+        "cover_image_url": "/images/kii-katsuura/spot3.png",
+        "f7_fragment": "延縄漁で水揚げされた勝浦産の生まぐろ定食や希少部位を味わえる老舗専門店。",
+        "f7_full": "「竹原」の分厚く切り分けられた生まぐろの輝きともっちりとした旨みが、港町・勝浦でしか出会えない食の感動を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "36bbae5b-d26c-4c24-83cc-f20da0aa71d4",
+        "next_spot_name": "めはり寿司 二代目"
+      },
+      {
+        "id": "36bbae5b-d26c-4c24-83cc-f20da0aa71d4",
+        "name": "めはり寿司 二代目",
+        "description": "熊野地方の郷土料理「めはり寿司」の専門店（11:00〜20:00営業、水曜休）。高菜の浅漬けで温かいご飯を包んだ握りたてのめはり寿司や、まぐろ・串カツなどの一品料理を楽しめる。",
+        "address": "和歌山県東牟婁郡那智勝浦町築地2-2-6",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.628999,
+        "lng": 135.942833,
+        "qr_token": "shuin-kii-katsuura-4",
+        "cover_image_url": "/images/kii-katsuura/spot4.png",
+        "f7_fragment": "高菜の浅漬けで温かいご飯を包んだ熊野伝統の「めはり寿司」を味わえる人気店。",
+        "f7_full": "「めはり寿司 二代目」の香り高い高菜の葉と秘伝のタレが染みた温かいご飯が、熊野の風土が育んだ素朴な滋味を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9bdd117c-fb9d-436c-8096-00b16876fe06",
+        "next_spot_name": "勝浦八幡神社"
+      },
+      {
+        "id": "9bdd117c-fb9d-436c-8096-00b16876fe06",
+        "name": "勝浦八幡神社",
+        "description": "鎌倉時代の創建と伝わり、勝浦の港町と漁業の安全を見守る総鎮守（境内参拝自由）。緑豊かな境内に荘厳な社殿が鎮座し、秋の例大祭では漁師町ならではの勇壮な祭礼が執り行われる。",
+        "address": "和歌山県東牟婁郡那智勝浦町勝浦859",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 33.630039,
+        "lng": 135.948642,
+        "qr_token": "shuin-kii-katsuura-5",
+        "cover_image_url": "/images/kii-katsuura/spot5.png",
+        "f7_fragment": "鎌倉時代の創建と伝わり、勝浦の港町と漁師たちの航海安全を見守る総鎮守の古社。",
+        "f7_full": "「勝浦八幡神社」の潮風が渡る静かな杜と社殿が、生まぐろと熊野の郷土食を巡った港町の旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "218f3a4d-df8e-4519-8ced-188086d6bea0",
+    "title": "棟方志功が愛した鯉雨画斎と銘菓・福光を辿る",
+    "name": "棟方志功が愛した鯉雨画斎と銘菓・福光を辿る",
+    "description": "板画家・棟方志功が疎開し「日本のふるさと」と愛した富山県南砺市福光。JR城端線の福光駅から、小矢部川河畔の茶舎 野うさぎ、銘菓・蜀紅羹の松村松聲堂、前田藩の米蔵を改装した春乃色食堂、棟方志功記念館 愛染苑までを歩く。",
+    "region": "福光（南砺市）",
+    "area_name": "福光（南砺市）",
+    "cover_image_url": "/images/fukumitsu/route-eyecatch.png",
+    "imageUrl": "/images/fukumitsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "棟方志功の情熱が宿る記念館と米蔵の老舗食堂、薄紅色の銘菓が息づく福光で、あなたが心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「松村松聲堂」で出会う、紅花で染めた透き通るような薄紅色の羊羹「蜀紅羹」",
+          "description": "蜀の国の錦にたとえられた優美な色彩と上品な甘みに、福光に受け継がれる茶菓の粋を感じた。",
+          "badge_code": "fukumitsu_matsumura_shokkokan_yokan"
+        },
+        {
+          "key": "B",
+          "text": "加賀藩の旧米蔵を活かした「春乃色食堂」で味わう、出汁の染みたおでんと中華そば",
+          "description": "太い梁が残る米蔵のレトロな空間で、とろろ昆布を添えた富山らしいおでんの温もりに癒やされた。",
+          "badge_code": "fukumitsu_harunoiro_granary_shokudo"
+        },
+        {
+          "key": "C",
+          "text": "棟方志功の魂が宿る「棟方志功記念館 愛染苑」と、旧居アトリエ「鯉雨画斎」",
+          "description": "板画の力強い彫り線と、住まいの板戸や天井にまで描かれた肉筆画の圧倒的なエネルギーに胸を打たれた。",
+          "badge_code": "fukumitsu_munakata_shiko_aizenen"
+        },
+        {
+          "key": "D",
+          "text": "医王山を望む「福光駅」と、小矢部川河畔の古民家喫茶「茶舎 野うさぎ」",
+          "description": "清流のせせらぎを聴きながら木の温もりあふれる空間で味わう珈琲とワッフルが心地よかった。",
+          "badge_code": "fukumitsu_nousagi_riverside_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "de8e8280-f529-4bb0-8371-52423f485d93",
+        "name": "福光駅",
+        "description": "棟方志功ゆかりの地・南砺市福光エリアの玄関口となるJR城端線の駅（待合室は始発〜終電）。医王山の山並みを望み、小矢部川河畔の商店街や美術館巡りの起点として親しまれている。",
+        "address": "富山県南砺市荒木1551",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.558504,
+        "lng": 136.87858,
+        "qr_token": "shuin-fukumitsu-1",
+        "cover_image_url": "/images/fukumitsu/spot1.png",
+        "f7_fragment": "棟方志功が愛した芸術と民藝のまち・南砺市福光への玄関口となるJR城端線の駅。",
+        "f7_full": "「福光駅」の穏やかなホームと医王山から吹く風が、世界的板画家・棟方志功の足跡と老舗の味を訪ねる旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e2f7d468-f097-460a-8ec9-36d938fcedf2",
+        "next_spot_name": "茶舎 野うさぎ"
+      },
+      {
+        "id": "e2f7d468-f097-460a-8ec9-36d938fcedf2",
+        "name": "茶舎 野うさぎ",
+        "description": "小矢部川河畔の古民家を改装した喫茶店（11:00〜17:00営業、月曜休）。落ち着いた和モダンの空間で、焼きたてのワッフルや季節のスイーツ、丁寧に淹れた珈琲を楽しめる。",
+        "address": "富山県南砺市福光6605-3",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.558586,
+        "lng": 136.874351,
+        "qr_token": "shuin-fukumitsu-2",
+        "cover_image_url": "/images/fukumitsu/spot2.png",
+        "f7_fragment": "小矢部川のほとりに佇む古民家を改装し、焼きたてワッフルと珈琲が人気の喫茶店。",
+        "f7_full": "「茶舎 野うさぎ」の木の温もりと小矢部川のせせらぎが、福光の街歩きの途中にほっと心が和む穏やかな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "f12c5895-2d59-493a-8c29-8b625ca1634b",
+        "next_spot_name": "松村松聲堂"
+      },
+      {
+        "id": "f12c5895-2d59-493a-8c29-8b625ca1634b",
+        "name": "松村松聲堂",
+        "description": "福光の町並みに店を構える老舗和菓子店（9:00〜19:30営業、月曜休）。紅花の色素で淡い紅色に染め上げた代表銘菓「蜀紅羹（しょっこうかん）」や季節の上生菓子が長年愛されている。",
+        "address": "富山県南砺市福光7396",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.559425,
+        "lng": 136.873643,
+        "qr_token": "shuin-fukumitsu-3",
+        "cover_image_url": "/images/fukumitsu/spot3.png",
+        "f7_fragment": "紅花で染めた優美な薄紅色の伝統羊羹「蜀紅羹」を受け継ぐ福光の老舗和菓子店。",
+        "f7_full": "「松村松聲堂」の透き通るような薄紅色の羊羹と上品な甘みが、福光に息づく豊かな茶の湯と菓子文化の奥深さを物語る。",
+        "is_final": false,
+        "next_spot_id": "15447914-0cfa-4d48-82ea-8b0d58af5c16",
+        "next_spot_name": "春乃色食堂"
+      },
+      {
+        "id": "15447914-0cfa-4d48-82ea-8b0d58af5c16",
+        "name": "春乃色食堂",
+        "description": "加賀藩・前田家の旧米蔵を改装した老舗大衆食堂（11:00〜18:00・木曜は17:00まで営業、日曜休）。歴史ある蔵の空間で、とろろ昆布を添えた名物のおでんや昔ながらの中華そばを味わえる。",
+        "address": "富山県南砺市福光6808-2",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.557168,
+        "lng": 136.871503,
+        "qr_token": "shuin-fukumitsu-4",
+        "cover_image_url": "/images/fukumitsu/spot4.png",
+        "f7_fragment": "前田藩の旧米蔵の建物を活かし、出汁の染みたおでんと中華そばで愛される老舗食堂。",
+        "f7_full": "「春乃色食堂」の太い梁が残る米蔵の空間と温かい出汁の香りが、世代を超えて福光の人々に親しまれてきた日常の味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "20ae6b55-4b99-499b-89d9-d4b4a0881941",
+        "next_spot_name": "棟方志功記念館 愛染苑"
+      },
+      {
+        "id": "20ae6b55-4b99-499b-89d9-d4b4a0881941",
+        "name": "棟方志功記念館 愛染苑",
+        "description": "昭和20年から約7年間、福光に疎開した世界的板画家・棟方志功の作品や資料を展示する記念館（9:00〜17:00開館、火曜休）。向かいには旧住居兼アトリエ「鯉雨画斎」も保存公開されている。",
+        "address": "富山県南砺市福光1026-4",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.556754,
+        "lng": 136.868761,
+        "qr_token": "shuin-fukumitsu-5",
+        "cover_image_url": "/images/fukumitsu/spot5.png",
+        "f7_fragment": "板画家・棟方志功の福光時代の傑作を伝え、旧居「鯉雨画斎」が隣接する記念館。",
+        "f7_full": "「棟方志功記念館 愛染苑」と旧居・鯉雨画斎にみなぎる創作の情熱が、巨匠が「日本のふるさと」と愛した福光の旅を深く締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "aaef44d6-808d-4583-87cb-88c6828c9738",
+    "title": "西国三番の粉河寺と門前町の記憶・粉河を歩く",
+    "name": "西国三番の粉河寺と門前町の記憶・粉河を歩く",
+    "description": "西国三十三所第三番札所・粉河寺と大正期の近代和風建築が息づく和歌山県紀の川市粉河。JR和歌山線の粉河駅から、登録有形文化財の創-HAJIME-cafe（山崎邸）、元割烹旅館のMIKASAKAN、名刹・粉河寺、徳川治宝公ゆかりの十禅律院までを歩く。",
+    "region": "粉河（紀の川市）",
+    "area_name": "粉河（紀の川市）",
+    "cover_image_url": "/images/kokawa/route-eyecatch.png",
+    "imageUrl": "/images/kokawa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "西国最大の威容を誇る粉河寺と名勝庭園、大正建築のカフェが並ぶ粉河で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "西国三十三所最大級の本堂と、桃山時代の豪快な石組みが迫る「粉河寺」",
+          "description": "千二百年の観音信仰を伝える大伽藍と、国指定名勝・粉河寺庭園の力強い造形美に圧倒された。",
+          "badge_code": "kokawa_kokawadera_temple_garden"
+        },
+        {
+          "key": "B",
+          "text": "紀州藩主・徳川治宝公が再興した竜宮造の門と、枯山水「洗心庭」の「十禅律院」",
+          "description": "和泉山脈を借景にした静謐な洗心庭を前に、心がすっと澄み渡るような穏やかな時間を過ごした。",
+          "badge_code": "kokawa_juzenritsuin_senshintei"
+        },
+        {
+          "key": "C",
+          "text": "大正創業の旧割烹旅館をリノベーションした門前町カフェ「MIKASAKAN」",
+          "description": "百年の歴史を刻んだ元旅館のモダンな空間で味わう、冷たいヌガーグラッセと珈琲が格別だった。",
+          "badge_code": "kokawa_mikasakan_ryokan_cafe"
+        },
+        {
+          "key": "D",
+          "text": "西国巡礼の玄関口「粉河駅」と、国登録有形文化財・山崎邸の「創-HAJIME-cafe」",
+          "description": "綿織物商の栄華を伝える大正の数寄屋建築と庭園の美しさに、粉河の近代史の豊かさを知った。",
+          "badge_code": "kokawa_yamazakitei_hajime_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f84c2434-cea1-4a8c-8b55-fa4b9245d3d5",
+        "name": "粉河駅",
+        "description": "西国三十三所第三番札所・粉河寺への玄関口となるJR和歌山線の駅（待合室は始発〜終電）。明治33年の開業以来、巡礼者や旅人を迎え、駅前から粉河寺大門へと続く「とんまか通り」の起点となっている。",
+        "address": "和歌山県紀の川市粉河844",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.270897,
+        "lng": 135.404332,
+        "qr_token": "shuin-kokawa-1",
+        "cover_image_url": "/images/kokawa/spot1.png",
+        "f7_fragment": "明治の開業以来、西国第三番札所・粉河寺への参拝客を迎えるJR和歌山線の駅。",
+        "f7_full": "「粉河駅」から伸びる参道・とんまか通りの穏やかな空気が、千二百年の観音霊場と大正建築を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1021877f-85a0-4738-81b0-3930d0364f5f",
+        "next_spot_name": "創-HAJIME-cafe"
+      },
+      {
+        "id": "1021877f-85a0-4738-81b0-3930d0364f5f",
+        "name": "創-HAJIME-cafe",
+        "description": "大正6年に建てられた国登録有形文化財「旧山﨑家住宅（山崎邸）」を活用した古民家カフェ（木・金・土曜の11:00〜15:00営業、日〜水曜休）。数寄屋造りの座敷と日本庭園を眺めながら珈琲やランチを楽しめる。",
+        "address": "和歌山県紀の川市粉河853-3",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.271364,
+        "lng": 135.405084,
+        "qr_token": "shuin-kokawa-2",
+        "cover_image_url": "/images/kokawa/spot2.png",
+        "f7_fragment": "国登録有形文化財の大正建築「山崎邸」を活かし、庭園を望む古民家カフェ。",
+        "f7_full": "「創-HAJIME-cafe」の数寄屋造りの意匠と美しい日本庭園が、綿織物で栄えた大正期の粉河の気品と豊かな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a4a8c6e5-1c42-46ca-8984-e3a0adf3fb7d",
+        "next_spot_name": "MIKASAKAN"
+      },
+      {
+        "id": "a4a8c6e5-1c42-46ca-8984-e3a0adf3fb7d",
+        "name": "MIKASAKAN",
+        "description": "粉河寺門前で大正6年に創業した旧高級割烹旅館「三笠館」をリノベーションしたカフェ・複合施設（カフェは11:00〜17:00営業、水曜休）。歴史ある建物の趣の中で名物のヌガーグラッセや珈琲を味わえる。",
+        "address": "和歌山県紀の川市粉河2086",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.278332,
+        "lng": 135.403879,
+        "qr_token": "shuin-kokawa-3",
+        "cover_image_url": "/images/kokawa/spot3.png",
+        "f7_fragment": "大正創業の旧割烹旅館「三笠館」を再生し、ヌガーグラッセが人気の門前カフェ。",
+        "f7_full": "「MIKASAKAN」の百年の歴史を刻んだ旅館建築と冷たいスイーツが、門前町・とんまか通りの散策に心地よい彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b2566aab-d71d-408c-88b8-310fa729a66d",
+        "next_spot_name": "粉河寺"
+      },
+      {
+        "id": "b2566aab-d71d-408c-88b8-310fa729a66d",
+        "name": "粉河寺",
+        "description": "宝亀元年創建と伝わる西国三十三所第三番札所・粉河観音宗の総本山（8:00〜17:00拝観、無休）。西国最大級の本堂や大門など多くの国指定重要文化財と、桃山時代の国指定名勝「粉河寺庭園」を擁する。",
+        "address": "和歌山県紀の川市粉河2787",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.280936,
+        "lng": 135.405983,
+        "qr_token": "shuin-kokawa-4",
+        "cover_image_url": "/images/kokawa/spot4.png",
+        "f7_fragment": "西国三十三所最大級の本堂と、桃山時代の石庭「粉河寺庭園」を擁する名刹。",
+        "f7_full": "「粉河寺」の威容を誇る二重屋根の本堂と巨石を組んだ名勝庭園が、千二百年受け継がれてきた観音霊場の荘厳な歴史を物語る。",
+        "is_final": false,
+        "next_spot_id": "84c7df8f-cab6-4d89-833a-6eff570d22ce",
+        "next_spot_name": "十禅律院"
+      },
+      {
+        "id": "84c7df8f-cab6-4d89-833a-6eff570d22ce",
+        "name": "十禅律院",
+        "description": "平安時代の正暦元年に粉河寺の塔頭として創建され、江戸後期に紀州藩主・徳川治宝公が再興した寺院（8:00〜17:00拝観、無休）。竜宮造の塗上門や、和泉山脈を借景とする枯山水庭園「洗心庭」で知られる。",
+        "address": "和歌山県紀の川市粉河2787",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.281778,
+        "lng": 135.406569,
+        "qr_token": "shuin-kokawa-5",
+        "cover_image_url": "/images/kokawa/spot5.png",
+        "f7_fragment": "紀州藩主・徳川治宝公が再興し、竜宮造の塗上門と名勝「洗心庭」が佇む古刹。",
+        "f7_full": "「十禅律院」の優美な塗上門と和泉山脈を映す枯山水・洗心庭が、西国三番の門前町を巡った旅を静謐な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5ce68984-5e5e-4d92-8b66-6eb7ae669ae3",
+    "title": "なぜ仙崎の海とみすゞの詩は心を揺さぶるのか",
+    "name": "なぜ仙崎の海とみすゞの詩は心を揺さぶるのか",
+    "description": "童謡詩人・金子みすゞの故郷であり、焼き抜き蒲鉾と古式捕鯨の歴史が息づく山口県長門市仙崎。JR山陰本線の仙崎駅から、詩に詠まれた八坂神社、仙崎かまぼこの大和蒲鉾 本店、復元書店の金子みすゞ記念館、菩提寺の遍照寺までを歩く。",
+    "region": "仙崎（長門市）",
+    "area_name": "仙崎（長門市）",
+    "cover_image_url": "/images/senzaki/route-eyecatch.png",
+    "imageUrl": "/images/senzaki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "金子みすゞの優しい詩の世界と焼き抜き蒲鉾の技、潮風の古社寺が息づく仙崎で、あなたが心惹かれたのはどの風景でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "みすゞが『祇園社』の詩に詠み、江戸時代の石造灯籠が残る「八坂神社」",
+          "description": "少女時代のみすゞが遊んだ境内の静けさと、港町の航海を見守ってきた歴史に心が和んだ。",
+          "badge_code": "senzaki_yasaka_gion_shrine"
+        },
+        {
+          "key": "B",
+          "text": "「大和蒲鉾 本店」で受け継がれる、生鮮エソの旨み際立つ伝統の「仙崎かまぼこ」",
+          "description": "板の下からじっくり焼き上げる「焼き抜き製法」ならではの純白の輝きと弾力に、港町の誇りを感じた。",
+          "badge_code": "senzaki_yamato_yakinuki_kamaboko"
+        },
+        {
+          "key": "C",
+          "text": "金子みすゞが静かに眠り、港町の慈悲の歴史を今に伝える菩提寺「遍照寺」",
+          "description": "花が手向けられた墓前と潮風が渡る境内で、小さな命すべてを見つめた詩人の優しさに胸が熱くなった。",
+          "badge_code": "senzaki_henjoji_misuzu_memorial"
+        },
+        {
+          "key": "D",
+          "text": "モザイク画が彩る「仙崎駅」と、書店・金子文英堂を復元した「金子みすゞ記念館」",
+          "description": "「みんなちがって、みんないい。」の言葉と直筆の遺稿手帳に触れ、時代を超える詩の輝きに感動した。",
+          "badge_code": "senzaki_kaneko_misuzu_museum"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "692498c5-c4ad-4071-82e5-77132381e553",
+        "name": "仙崎駅",
+        "description": "JR山陰本線（仙崎支線）の終着駅であり、金子みすゞの故郷・仙崎の玄関口（待合室は始発〜終電）。かまぼこ板を用いた駅名標やみすゞのモザイク壁画が旅人を迎え、みすゞ通り散策の起点となっている。",
+        "address": "山口県長門市仙崎1115",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.387994,
+        "lng": 131.198891,
+        "qr_token": "shuin-senzaki-1",
+        "cover_image_url": "/images/senzaki/spot1.png",
+        "f7_fragment": "かまぼこ板の装飾とみすゞの壁画が迎える、JR山陰本線仙崎支線の終着駅。",
+        "f7_full": "「仙崎駅」の温もりある駅舎と日本海の潮風が、童謡詩人・金子みすゞが愛した港町と詩の風景を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a2281e24-f3b6-40d2-810b-3f4059a33100",
+        "next_spot_name": "八坂神社"
+      },
+      {
+        "id": "a2281e24-f3b6-40d2-810b-3f4059a33100",
+        "name": "八坂神社",
+        "description": "「祇園さま」の愛称で親しまれる仙崎の古社（境内参拝自由）。金子みすゞの詩『祇園社』の舞台であり、境内には詩碑や江戸時代の元禄年間に航海の安全を祈って建てられた石造灯籠が残る。",
+        "address": "山口県長門市仙崎1342",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.390023,
+        "lng": 131.199611,
+        "qr_token": "shuin-senzaki-2",
+        "cover_image_url": "/images/senzaki/spot2.png",
+        "f7_fragment": "金子みすゞの詩『祇園社』に詠まれ、江戸期の石造灯籠が残る港町・仙崎の古社。",
+        "f7_full": "「八坂神社」の静かな境内に佇む詩碑と古い石灯籠が、少女時代のみすゞが見つめた優しい風景と港町の歴史を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1475d596-96b6-48c3-889d-2f78b76a1993",
+        "next_spot_name": "大和蒲鉾 本店"
+      },
+      {
+        "id": "1475d596-96b6-48c3-889d-2f78b76a1993",
+        "name": "大和蒲鉾 本店",
+        "description": "伝統の「仙崎かまぼこ」を手掛ける老舗蒲鉾店の本店（8:00〜17:00営業、年末年始休）。近海で水揚げされた生鮮魚（エソ）のみを使用し、板の下から焼き上げる「焼き抜き蒲鉾」を受け継いでいる。",
+        "address": "山口県長門市仙崎1267",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.390615,
+        "lng": 131.197463,
+        "qr_token": "shuin-senzaki-3",
+        "cover_image_url": "/images/senzaki/spot3.png",
+        "f7_fragment": "生鮮エソのみを使い、板の下から焼き上げる「仙崎かまぼこ」を守る老舗本店。",
+        "f7_full": "「大和蒲鉾 本店」の純白でつややかな焼き抜き蒲鉾が、日本海の豊かな漁場・仙崎が育んできた伝統の技と食の誇りを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "adf50c75-b1b4-4317-8cce-053f7ea8b0df",
+        "next_spot_name": "金子みすゞ記念館"
+      },
+      {
+        "id": "adf50c75-b1b4-4317-8cce-053f7ea8b0df",
+        "name": "金子みすゞ記念館",
+        "description": "童謡詩人・金子みすゞが二十歳まで過ごした書店「金子文英堂」跡地に建つ記念館（9:00〜17:00開館、無休）。大正期の書店と住居を復元した建物と、遺稿手帳や詩の世界を紹介する本館からなる。",
+        "address": "山口県長門市仙崎1308",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.391494,
+        "lng": 131.198719,
+        "qr_token": "shuin-senzaki-4",
+        "cover_image_url": "/images/senzaki/spot4.png",
+        "f7_fragment": "書店「金子文英堂」を復元し、童謡詩人・金子みすゞの遺稿と生涯を伝える記念館。",
+        "f7_full": "「金子みすゞ記念館」の復元された本屋の佇まいと直筆の詩の手帳が、すべての命に温かいまなざしを注いだ詩人の心を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "047550ee-ec71-4356-8730-ac7bab17c3dd",
+        "next_spot_name": "遍照寺"
+      },
+      {
+        "id": "047550ee-ec71-4356-8730-ac7bab17c3dd",
+        "name": "遍照寺",
+        "description": "金子みすゞが眠る金子家の菩提寺・浄土宗の寺院（境内参拝自由）。みすゞの詩にも詠まれたゆかりの寺であり、境内にはみすゞの墓所や詩碑が佇み、寺宝として県指定文化財「捕鯨図屏風」を伝える。",
+        "address": "山口県長門市仙崎1776-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.396156,
+        "lng": 131.198137,
+        "qr_token": "shuin-senzaki-5",
+        "cover_image_url": "/images/senzaki/spot5.png",
+        "f7_fragment": "金子みすゞが静かに眠り、古式捕鯨の歴史を物語る屏風を伝える金子家の菩提寺。",
+        "f7_full": "「遍照寺」の潮風が吹き抜ける静かな本堂とみすゞの墓所が、詩と祈りが息づく仙崎の旅を清らかで優しい余韻とともに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "63fb0c35-e280-4837-8191-ea928da8a290",
+    "title": "妙円寺詣りの徳重神社と銘菓の街・伊集院へ",
+    "name": "妙円寺詣りの徳重神社と銘菓の街・伊集院へ",
+    "description": "名将・島津義弘公を偲ぶ「妙円寺詣り」の伝統と、ザビエルが島津貴久公と会見した一宇治城の歴史が息づく鹿児島県日置市伊集院町。JR伊集院駅から、伊集院まんじゅうの丸十生菓子本舗、徳重神社、菩提寺の妙円寺、展望広がる城山公園までを歩く。",
+    "region": "伊集院（日置市）",
+    "area_name": "伊集院（日置市）",
+    "cover_image_url": "/images/ijuin/route-eyecatch.png",
+    "imageUrl": "/images/ijuin/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "島津義弘公を祀る徳重神社と菩提寺の妙円寺、丸に十の字の銘菓が息づく伊集院で、あなたが心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "四百年続く「妙円寺詣り」の参拝者が目指す、島津義弘公を祀る「徳重神社」",
+          "description": "関ヶ原の敵中突破を成し遂げた名将を慕い、今も甲冑姿で歩き抜く薩摩の心意気に胸が熱くなった。",
+          "badge_code": "ijuin_tokushige_shrine_shimazu"
+        },
+        {
+          "key": "B",
+          "text": "廃仏毀釈の嵐から義弘公の木像と位牌を守り抜いた菩提寺「法智山 妙円寺」",
+          "description": "神社と寺院が隣り合って一人の名将を大切に祀り続ける、伊集院の人々の深い敬愛の念に感銘を受けた。",
+          "badge_code": "ijuin_myoenji_bodaiji_temple"
+        },
+        {
+          "key": "C",
+          "text": "島津貴久公とザビエルが会見した三州統一の礎「城山公園（一宇治城跡）」",
+          "description": "フランシスコ・ザビエルに日本初の布教許可を与えた山城の頂から見渡す、日置の大地の眺望が爽快だった。",
+          "badge_code": "ijuin_shiroyama_ichiuji_castle"
+        },
+        {
+          "key": "D",
+          "text": "義弘公の騎馬像が立つ「伊集院駅」と、「丸十生菓子本舗」の「伊集院まんじゅう」",
+          "description": "丸に十の字の刻印が入った真っ白でもっちりとした皮と、上品な白あんの優しい甘さに癒やされた。",
+          "badge_code": "ijuin_maruju_manju_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8ee279b8-f938-44ff-8965-73f1eb1c2c66",
+        "name": "伊集院駅",
+        "description": "日置市の中心駅であり、妙円寺詣りの玄関口となるJR鹿児島本線の駅（待合室は始発〜終電）。南口広場には戦国の名将・島津義弘公の勇壮な騎馬像が立ち、歴史散策の起点となっている。",
+        "address": "鹿児島県日置市伊集院町徳重290",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.630235,
+        "lng": 130.395793,
+        "qr_token": "shuin-ijuin-1",
+        "cover_image_url": "/images/ijuin/spot1.png",
+        "f7_fragment": "駅前に島津義弘公の騎馬像がそびえ、妙円寺詣りの里へと誘う日置市の玄関口。",
+        "f7_full": "「伊集院駅」の勇壮な島津義弘公騎馬像と澄んだ空気が、四百年続く妙円寺詣りと一宇治城の歴史を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8b6b5153-5283-4726-89f0-888c8339e8c8",
+        "next_spot_name": "丸十生菓子本舗"
+      },
+      {
+        "id": "8b6b5153-5283-4726-89f0-888c8339e8c8",
+        "name": "丸十生菓子本舗",
+        "description": "伊集院駅近くにある「伊集院まんじゅう」の老舗製造本舗（9:00〜17:00営業、日曜・祝日休）。米粉を使ったもっちりとした白い皮で白あんを包み、島津家の家紋「丸に十の字」を刻印した伝統銘菓を手掛ける。",
+        "address": "鹿児島県日置市伊集院町徳重401-9",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.629226,
+        "lng": 130.396721,
+        "qr_token": "shuin-ijuin-2",
+        "cover_image_url": "/images/ijuin/spot2.png",
+        "f7_fragment": "島津家の家紋を刻んだ白い餅皮と白あんの銘菓「伊集院まんじゅう」の老舗。",
+        "f7_full": "「丸十生菓子本舗」のもっちりとした白いお饅頭と優しい甘みが、明治から妙円寺詣りの参拝客に愛されてきた伊集院の味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "cbda42e6-6f46-4ebe-8666-b88128121652",
+        "next_spot_name": "徳重神社"
+      },
+      {
+        "id": "cbda42e6-6f46-4ebe-8666-b88128121652",
+        "name": "徳重神社",
+        "description": "島津義弘公の菩提寺・旧妙円寺の跡地に創建され、義弘公を主祭神として祀る神社（境内参拝自由）。鹿児島三大行事「妙円寺詣り」の目的地であり、秋の例大祭には武者行列や伝統芸能が奉納される。",
+        "address": "鹿児島県日置市伊集院町徳重1786",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.631733,
+        "lng": 130.394587,
+        "qr_token": "shuin-ijuin-3",
+        "cover_image_url": "/images/ijuin/spot3.png",
+        "f7_fragment": "島津義弘公を御祭神として祀り、鹿児島三大行事「妙円寺詣り」の舞台となる神社。",
+        "f7_full": "「徳重神社」の緑深い参道と荘厳な社殿が、関ヶ原の苦難を突破した島津義弘公への敬慕と薩摩の尚武の精神を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "67769aaf-7aa6-4769-8cba-61bccc835033",
+        "next_spot_name": "法智山 妙円寺"
+      },
+      {
+        "id": "67769aaf-7aa6-4769-8cba-61bccc835033",
+        "name": "法智山 妙円寺",
+        "description": "島津義弘公が建立した曹洞宗の菩提寺（8:30〜17:00拝観、無休）。明治の廃仏毀釈から地域の人々が守り抜いた義弘公の木像や位牌を安置し、隣接する宝物館で貴重なゆかりの品々を公開している。",
+        "address": "鹿児島県日置市伊集院町徳重521",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.632193,
+        "lng": 130.393739,
+        "qr_token": "shuin-ijuin-4",
+        "cover_image_url": "/images/ijuin/spot4.png",
+        "f7_fragment": "廃仏毀釈の危機から守り抜かれた島津義弘公の木像と位牌を安置する菩提寺。",
+        "f7_full": "「法智山 妙円寺」の静謐な本堂と受け継がれた宝物が、四百年にわたり名将の遺徳を慕い続けてきた伊集院の人々の篤い信仰を物語る。",
+        "is_final": false,
+        "next_spot_id": "6771cf7e-844f-4b38-8b4f-6aa7ac4e3580",
+        "next_spot_name": "城山公園"
+      },
+      {
+        "id": "6771cf7e-844f-4b38-8b4f-6aa7ac4e3580",
+        "name": "城山公園",
+        "description": "島津貴久公が本拠を置き三州統一の礎を築いた「一宇治城跡」を整備した公園（終日開放）。天文18年にフランシスコ・ザビエルが貴久公と会見し布教許可を得た歴史の地であり、高台から市街を一望できる。",
+        "address": "鹿児島県日置市伊集院町大田700",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.629576,
+        "lng": 130.389367,
+        "qr_token": "shuin-ijuin-5",
+        "cover_image_url": "/images/ijuin/spot5.png",
+        "f7_fragment": "島津貴久公とザビエルが会見した「一宇治城跡」に広がり、市街を一望する公園。",
+        "f7_full": "「城山公園」の高台から見渡す伊集院の街並みとザビエル会見の記念碑が、戦国と世界史が交差した薩摩の旅を雄大な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
