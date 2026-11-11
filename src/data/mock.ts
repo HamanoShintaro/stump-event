@@ -64480,5 +64480,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "07dbbedf-3fce-41fb-8cc7-0e70ae2153d9",
+    "title": "日本一の雁木通りと明治の銀幕・越後高田を巡る",
+    "name": "日本一の雁木通りと明治の銀幕・越後高田を巡る",
+    "description": "総延長十六キロメートルに及ぶ日本一の「雁木通り」と高田城下町の文化が息づく新潟県上越市高田。江戸末期の町家・旧今井染物屋から、明治四十四年開業の映画館・高田世界館、高田駅、国登録文化財の百年料亭宇喜世、文禄元年創業の大杉屋惣兵衛までを巡る。",
+    "region": "高田（上越市）",
+    "area_name": "高田（上越市）",
+    "cover_image_url": "/images/takada/route-eyecatch.png",
+    "imageUrl": "/images/takada/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本一の雁木通りと明治の映画館、百年料亭の粋が息づく越後高田で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治四十四年の開業から銀幕の灯を守り続ける現役映画館「高田世界館」",
+          "description": "擬洋風のモダンな外観とアーチ天井のホールに、大正浪漫の映画文化が今も生きていることに感動した。",
+          "badge_code": "takada_sekaikan_retro_cinema"
+        },
+        {
+          "key": "B",
+          "text": "数寄屋造りの粋と組子細工の美を今に伝える国登録有形文化財「百年料亭 宇喜世」",
+          "description": "三百年の赤松の梁と精緻な建具が織りなす空間に、城下町・高田の豊かな迎賓文化を感じた。",
+          "badge_code": "takada_ukiyo_century_ryotei"
+        },
+        {
+          "key": "C",
+          "text": "日本一の雁木通りと、うなぎの寝床の町家を伝える「旧今井染物屋」と「高田駅」",
+          "description": "豪雪の暮らしを支えてきた雁木の連なりと、江戸末期の紺屋の吹き抜け空間に雪国の知恵を見た。",
+          "badge_code": "takada_imai_dyehouse_gangi"
+        },
+        {
+          "key": "D",
+          "text": "文禄元年創業の老舗「大杉屋惣兵衛」で出会う、琥珀色の伝統銘菓「翁飴」",
+          "description": "四百三十年受け継がれる麦芽水飴の優しい甘みに、城下町の長い歴史の重みを感じた。",
+          "badge_code": "takada_osugiya_okina_ame"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f02e1587-6597-4a1b-8ec8-13844bf5737f",
+        "name": "旧今井染物屋",
+        "description": "江戸時代末期の嘉永年間築とされる上越市指定文化財の町家（10:00〜17:00開館、月曜・祝翌日休、入館無料）。雁木通りに面した伝統的な「うなぎの寝床」の構造と染物屋の仕事場を見学できる。",
+        "address": "新潟県上越市大町5-5-7",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.117473,
+        "lng": 138.246781,
+        "qr_token": "shuin-takada-1",
+        "cover_image_url": "/images/takada/spot1.png",
+        "f7_fragment": "江戸末期の嘉永年間築、雁木と吹き抜けの梁組が残る市指定文化財の染物屋。",
+        "f7_full": "「旧今井染物屋」の豪雪に耐える太い梁組と雁木の軒先が、日本一の雁木通りを誇る城下町・越後高田を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "65cd10da-1c74-496d-8eed-573744aab4f9",
+        "next_spot_name": "高田世界館"
+      },
+      {
+        "id": "65cd10da-1c74-496d-8eed-573744aab4f9",
+        "name": "高田世界館",
+        "description": "明治44年に芝居小屋として開業し、大正5年から映画館として営業を続ける日本最古級の現役映画館（10:00〜18:00頃営業、火曜休）。国の登録有形文化財・近代化産業遺産に指定されている。",
+        "address": "新潟県上越市本町6-4-21",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.117455,
+        "lng": 138.244988,
+        "qr_token": "shuin-takada-2",
+        "cover_image_url": "/images/takada/spot2.png",
+        "f7_fragment": "明治四十四年の開業以来、百十年超の歴史を刻む日本屈指の現役レトロ映画館。",
+        "f7_full": "「高田世界館」のモダンな擬洋風建築と赤い座席が並ぶホールが、明治・大正から銀幕の夢を映し続けてきた映画の街の記憶を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "69358df0-c50f-4f66-8366-7c679c9184b4",
+        "next_spot_name": "高田駅"
+      },
+      {
+        "id": "69358df0-c50f-4f66-8366-7c679c9184b4",
+        "name": "高田駅",
+        "description": "明治19年開業の歴史を持つ、えちごトキめき鉄道妙高はねうまラインの主要駅（待合室は始発〜終電）。城下町らしい雁木風の意匠を備えた駅舎と駅前広場が町歩きの中心となっている。",
+        "address": "新潟県上越市仲町4-1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.114507,
+        "lng": 138.243141,
+        "qr_token": "shuin-takada-3",
+        "cover_image_url": "/images/takada/spot3.png",
+        "f7_fragment": "明治十九年開業の歴史を持ち、雁木風の意匠が旅人を迎える越後高田の玄関口。",
+        "f7_full": "「高田駅」の落ち着いた雁木デザインの駅舎と駅前広場が、北国の城下町を歩く旅の途中に穏やかなひと休みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "07e2a380-27bd-4e52-886b-4100623cc584",
+        "next_spot_name": "百年料亭 宇喜世"
+      },
+      {
+        "id": "07e2a380-27bd-4e52-886b-4100623cc584",
+        "name": "百年料亭 宇喜世",
+        "description": "慶応元年頃の創業以来、百五十年以上の歴史を刻む老舗料亭（昼席11:30〜14:00営業、不定休・見学のみも可）。主屋など5件が国の登録有形文化財に指定されており、精緻な数寄屋建築と郷土料理を堪能できる。",
+        "address": "新潟県上越市仲町3-5-4",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.111872,
+        "lng": 138.242787,
+        "qr_token": "shuin-takada-4",
+        "cover_image_url": "/images/takada/spot4.png",
+        "f7_fragment": "慶応元年頃の創業、主屋など五件が国登録有形文化財に指定された老舗料亭。",
+        "f7_full": "「百年料亭 宇喜世」の粋を凝らした組子細工の座敷と彩り豊かな料理が、城下町・高田が育んできたもてなしの伝統を優雅に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9234e426-5b07-4a62-8c98-d906cd5ca1c5",
+        "next_spot_name": "大杉屋惣兵衛 お馬出し店"
+      },
+      {
+        "id": "9234e426-5b07-4a62-8c98-d906cd5ca1c5",
+        "name": "大杉屋惣兵衛 お馬出し店",
+        "description": "文禄元年創業、四百三十年以上の歴史を持つ老舗和菓子処（10:00〜18:00営業、水曜休）。もち米の水飴を寒天で固めた代表銘菓「翁飴」や羊羹「第一義」など越後高田の伝統銘菓が揃う。",
+        "address": "新潟県上越市本町3-3-7",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.111884,
+        "lng": 138.244634,
+        "qr_token": "shuin-takada-5",
+        "cover_image_url": "/images/takada/spot5.png",
+        "f7_fragment": "文禄元年の創業以来、四百三十年受け継がれる銘菓「翁飴」の老舗和菓子処。",
+        "f7_full": "「大杉屋惣兵衛 お馬出し店」の琥珀色に透き通る翁飴と雁木通りの佇まいが、越後高田の歴史を巡り歩いた旅を上品な甘みの余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4f2d6834-9aa0-4da2-81d4-1c1b7652213d",
+    "title": "国宝の火焔型土器と大地の芸術・十日町へ",
+    "name": "国宝の火焔型土器と大地の芸術・十日町へ",
+    "description": "縄文時代の国宝「火焔型土器」と伝統の十日町きもの、そして現代アートの祭典「大地の芸術祭」が息づく新潟県十日町市。市民交流拠点の分じろうから、十日町駅、道の駅クロステン十日町、越後妻有里山現代美術館MonET、十日町市博物館までを歩く。",
+    "region": "十日町（十日町市）",
+    "area_name": "十日町（十日町市）",
+    "cover_image_url": "/images/tokamachi/route-eyecatch.png",
+    "imageUrl": "/images/tokamachi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "五千年前の国宝・火焔型土器と現代アートの美術館、きものと蕎麦の文化が交差する十日町で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "五千年前の縄文の情熱が燃え上がる、国宝「火焔型土器」に出会う「十日町市博物館」",
+          "description": "笹山遺跡から出土した本物の国宝土器が放つ、渦巻く炎のような造形美と生命力に圧倒された。",
+          "badge_code": "tokamachi_museum_flame_pottery"
+        },
+        {
+          "key": "B",
+          "text": "水盤と空が溶け合う現代アートの拠点「越後妻有里山現代美術館 MonET」",
+          "description": "回廊建築の中央に広がる『空の池』の不思議な視覚体験と、里山を彩る現代アートの力に魅了された。",
+          "badge_code": "tokamachi_monet_art_museum"
+        },
+        {
+          "key": "C",
+          "text": "一万個の傘つるし雛と名物の十日町そばが待つ「道の駅 クロステン十日町」",
+          "description": "天井から降り注ぐ鮮やかなちりめん細工の雛飾りと、布海苔つなぎの蕎麦の美味しさに心が躍った。",
+          "badge_code": "tokamachi_crossten_tsurushibina"
+        },
+        {
+          "key": "D",
+          "text": "三国街道の宿場町の記憶を継ぐ「分じろう」と、二路線が交わる「十日町駅」",
+          "description": "十のつく日の市から始まったまちなかの温もりと、雪国の鉄路が交差する駅の旅情に心が和んだ。",
+          "badge_code": "tokamachi_station_and_bunjiro"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c49d0bae-8b9b-483c-8874-f79175df046d",
+        "name": "分じろう",
+        "description": "本町通りの商店街にある十日町市市民交流センター（9:00〜21:00開館、火曜・年末年始休、入館無料）。木の温もりあふれる開放的なラウンジを備え、まちなか散策の休憩や情報収集に利用できる。",
+        "address": "新潟県十日町市本町2-226-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.131959,
+        "lng": 138.760573,
+        "qr_token": "shuin-tokamachi-1",
+        "cover_image_url": "/images/tokamachi/spot1.png",
+        "f7_fragment": "本町通りに面し、木の温もりあふれるラウンジで散策の休息ができる交流拠点。",
+        "f7_full": "「分じろう」の明るい木造ラウンジと雪国の商店街の空気が、縄文の美と現代アートが息づく十日町を歩く旅の始まりを穏やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "636243a4-7d26-434d-8cc8-a05c249c9a65",
+        "next_spot_name": "十日町駅"
+      },
+      {
+        "id": "636243a4-7d26-434d-8cc8-a05c249c9a65",
+        "name": "十日町駅",
+        "description": "JR飯山線と北越急行ほくほく線が乗り入れる越後妻有エリアの玄関口（待合室は始発〜終電）。構内には十日町きものや火焔型土器、大地の芸術祭にちなんだ展示が彩りを添えている。",
+        "address": "新潟県十日町市丑752",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.1349,
+        "lng": 138.75671,
+        "qr_token": "shuin-tokamachi-2",
+        "cover_image_url": "/images/tokamachi/spot2.png",
+        "f7_fragment": "JR飯山線と北越急行ほくほく線が交わり、きものとアートが迎える玄関口。",
+        "f7_full": "「十日町駅」の東西を結ぶ通路を彩る織物とアートの展示が、豪雪の大地が育んだ独自の文化圏へと旅人を誘ってくれる。",
+        "is_final": false,
+        "next_spot_id": "ecd1ec86-53f2-425c-86e6-403b449da251",
+        "next_spot_name": "道の駅 クロステン十日町"
+      },
+      {
+        "id": "ecd1ec86-53f2-425c-86e6-403b449da251",
+        "name": "道の駅 クロステン十日町",
+        "description": "十日町の特産品とグルメが集まる道の駅（9:00〜18:00頃営業、水曜休）。天井から吊るされた圧巻の「幸せを呼ぶ傘つるし雛」の見学や、布海苔つなぎの十日町そば・妻有ポークの食事、土産物購入を楽しめる。",
+        "address": "新潟県十日町市本町6-1-71-2",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.138563,
+        "lng": 138.761122,
+        "qr_token": "shuin-tokamachi-3",
+        "cover_image_url": "/images/tokamachi/spot3.png",
+        "f7_fragment": "巨大な「傘つるし雛」が彩り、名物の十日町そばや地酒・織物が揃う道の駅。",
+        "f7_full": "「道の駅 クロステン十日町」の頭上に降り注ぐ一万個のつるし雛と喉ごし豊かな十日町そばが、きものの街の華やぎと食の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c448a2b2-ebcd-4aa5-8392-8cc72b4193bc",
+        "next_spot_name": "越後妻有里山現代美術館 MonET"
+      },
+      {
+        "id": "c448a2b2-ebcd-4aa5-8392-8cc72b4193bc",
+        "name": "越後妻有里山現代美術館 MonET",
+        "description": "「大地の芸術祭」の拠点となる現代美術館（10:00〜17:00開館、火・水曜休）。原広司氏設計の回廊建築と中央の水盤を舞台に、レアンドロ・エルリッヒの『空の池』など多彩な現代アート作品を体験できる。",
+        "address": "新潟県十日町市本町6-1-71-2",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.138939,
+        "lng": 138.759895,
+        "qr_token": "shuin-tokamachi-4",
+        "cover_image_url": "/images/tokamachi/spot4.png",
+        "f7_fragment": "大地の芸術祭の拠点であり、水盤のアート『空の池』で知られる現代美術館。",
+        "f7_full": "「越後妻有里山現代美術館 MonET」の水盤に映る空と回廊の造形が、日常の感覚を揺さぶる現代アートの不思議な世界へと引き込んでくれる。",
+        "is_final": false,
+        "next_spot_id": "5d54baad-4e6f-4cd0-835e-4a92f6e1f928",
+        "next_spot_name": "十日町市博物館"
+      },
+      {
+        "id": "5d54baad-4e6f-4cd0-835e-4a92f6e1f928",
+        "name": "十日町市博物館",
+        "description": "笹山遺跡出土の国宝「火焔型土器」を実物展示する歴史博物館（9:00〜17:00開館、月曜休）。縄文期の造形美から豪雪との共生、十日町織物の歴史までを体系的に紹介している。",
+        "address": "新潟県十日町市西本町1-448-9",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.140788,
+        "lng": 138.756977,
+        "qr_token": "shuin-tokamachi-5",
+        "cover_image_url": "/images/tokamachi/spot5.png",
+        "f7_fragment": "笹山遺跡から出土した縄文時代の国宝「火焔型土器」を常設展示する博物館。",
+        "f7_full": "「十日町市博物館」に鎮座する国宝・火焔型土器の躍動する炎の文様が、五千年の時を超えて息づく越後妻有の旅を力強い感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3f1f3c7d-21c2-4199-8256-51fed4d6c6ef",
+    "title": "木曽川の太田の渡しと脇本陣・美濃太田を辿る",
+    "name": "木曽川の太田の渡しと脇本陣・美濃太田を辿る",
+    "description": "中山道三大難所の一つ「太田の渡し」で栄えた岐阜県美濃加茂市の太田宿。三路線が交わる美濃太田駅から、旧郵便局舎のコクウ珈琲、北原白秋・坪内逍遥ゆかりの祐泉寺、明治創業の御代櫻醸造、国指定重要文化財の旧太田脇本陣林家住宅までを歩く。",
+    "region": "美濃太田（美濃加茂市）",
+    "area_name": "美濃太田（美濃加茂市）",
+    "cover_image_url": "/images/mino-ota/route-eyecatch.png",
+    "imageUrl": "/images/mino-ota/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "中山道の難所・太田の渡しと国重文の脇本陣、レトロな旧郵便局建築が息づく美濃太田で、あなたが強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明和六年の主屋とうだつ、表門が宿場町の格式を伝える国重文「旧太田脇本陣 林家住宅」",
+          "description": "皇女和宮の降嫁行列も迎えた江戸中期の脇本陣建築と、堂々たるうだつ屋根の佇まいに感銘を受けた。",
+          "badge_code": "minoota_hayashi_wakihonjin"
+        },
+        {
+          "key": "B",
+          "text": "昭和元年の旧太田郵便局舎を活かした「コクウ珈琲」で味わう自家焙煎珈琲",
+          "description": "レトロな洋風局舎の木の温もりに包まれ、丁寧に入れられた一杯の深煎り珈琲に心がほどけた。",
+          "badge_code": "minoota_koku_coffee_kiso_view"
+        },
+        {
+          "key": "C",
+          "text": "木曽川の伏流水で銘酒「御代櫻」「津島屋」を醸す、明治二十六年創業の「御代櫻醸造」",
+          "description": "旧中山道の宿場町で百三十年受け継がれる屋号「津島屋」の誇りと、清らかな美酒の味わいに触れた。",
+          "badge_code": "minoota_miyozakura_sake_brewery"
+        },
+        {
+          "key": "D",
+          "text": "三路線が交わる「美濃太田駅」と、太田の渡し跡・文人の歌碑が残る古刹「祐泉寺」",
+          "description": "中山道三大難所の川湊の記憶と、北原白秋や坪内逍遥が愛した木曽川のせせらぎに旅情が深まった。",
+          "badge_code": "minoota_yusenji_kiso_ferry"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d6f2a81d-2c9b-492c-86e6-27ab4310d0d3",
+        "name": "美濃太田駅",
+        "description": "JR高山本線・太多線と長良川鉄道が乗り入れる中濃地域の交通拠点（待合室は始発〜終電）。近代文学の父・坪内逍遥ゆかりの街の玄関口であり、南口から木曽川畔の中山道太田宿へと道が続く。",
+        "address": "岐阜県美濃加茂市太田町2564",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.445588,
+        "lng": 137.019416,
+        "qr_token": "shuin-mino-ota-1",
+        "cover_image_url": "/images/mino-ota/spot1.png",
+        "f7_fragment": "JR二路線と長良川鉄道が交わる、中山道太田宿と坪内逍遥ゆかりの街の玄関口。",
+        "f7_full": "「美濃太田駅」の活気あるホームと南口から伸びる通りが、かつて「太田の渡し」で賑わった中山道の宿場町を辿る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "5b710b7b-558d-4a9e-8937-e7a6a2cba174",
+        "next_spot_name": "コクウ珈琲"
+      },
+      {
+        "id": "5b710b7b-558d-4a9e-8937-e7a6a2cba174",
+        "name": "コクウ珈琲",
+        "description": "旧中山道沿いに建つ昭和元年築の「旧太田郵便局」の局舎を活かした自家焙煎珈琲カフェ（11:00〜19:00営業、木曜・第2第4水曜休）。レトロな洋風建築の空間で、丁寧に淹れられた珈琲と焼き菓子を楽しめる。",
+        "address": "岐阜県美濃加茂市太田本町1-7-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.438409,
+        "lng": 137.017393,
+        "qr_token": "shuin-mino-ota-2",
+        "cover_image_url": "/images/mino-ota/spot2.png",
+        "f7_fragment": "昭和元年築の旧太田郵便局舎で、香り高い自家焙煎珈琲と焼き菓子を味わう店。",
+        "f7_full": "「コクウ珈琲」の昭和初期の面影を残す旧郵便局舎の温もりと深い珈琲の香りが、宿場町を歩く旅人に静かで贅沢な休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "5161f83e-9578-44f3-81c3-71dc5eab08ef",
+        "next_spot_name": "祐泉寺"
+      },
+      {
+        "id": "5161f83e-9578-44f3-81c3-71dc5eab08ef",
+        "name": "祐泉寺",
+        "description": "木曽川河畔に佇む臨済宗妙心寺派の古刹（境内参拝自由）。境内に北原白秋や坪内逍遥の歌碑、松尾芭蕉の句碑が並び、すぐ裏手には中山道三大難所「太田の渡し」の跡と石畳が残る。",
+        "address": "岐阜県美濃加茂市太田本町2-3-14",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.438056,
+        "lng": 137.016389,
+        "qr_token": "shuin-mino-ota-3",
+        "cover_image_url": "/images/mino-ota/spot3.png",
+        "f7_fragment": "北原白秋や坪内逍遥の歌碑が立ち、裏手に「太田の渡し」跡が残る木曽川畔の寺。",
+        "f7_full": "「祐泉寺」の静かな境内に佇む文人たちの歌碑と木曽川の川音が、江戸の旅人が舟を待った「太田の渡し」の往時の情景を今に呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "38443850-f5d1-4f4b-849b-c5cffb017089",
+        "next_spot_name": "御代櫻醸造"
+      },
+      {
+        "id": "38443850-f5d1-4f4b-849b-c5cffb017089",
+        "name": "御代櫻醸造",
+        "description": "旧中山道太田宿にある明治26年創業の老舗酒蔵（9:00〜17:00営業、土日祝休）。木曽川の伏流水と美濃の酒米で醸す代表銘柄「御代櫻」や「津島屋」などの地酒を購入できる。",
+        "address": "岐阜県美濃加茂市太田本町3-2-9",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.438626,
+        "lng": 137.014206,
+        "qr_token": "shuin-mino-ota-4",
+        "cover_image_url": "/images/mino-ota/spot4.png",
+        "f7_fragment": "明治二十六年の創業以来、太田宿で木曽川の伏流水から美酒を醸す老舗酒蔵。",
+        "f7_full": "「御代櫻醸造」の黒板塀と杉玉が映える店先が、中山道の宿場町で百三十年以上にわたり受け継がれてきた実直な酒造りの技を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8b003514-8b48-47df-8594-a4b817e0309b",
+        "next_spot_name": "旧太田脇本陣林家住宅"
+      },
+      {
+        "id": "8b003514-8b48-47df-8594-a4b817e0309b",
+        "name": "旧太田脇本陣林家住宅",
+        "description": "中山道太田宿の脇本陣を務めた林家の屋敷で、国の重要文化財（9:00〜16:00開館、月曜休、入館無料）。明和6年築の主屋や重厚なうだつ、皇女和宮ゆかりの表門が江戸期の姿を今にとどめる。",
+        "address": "岐阜県美濃加茂市太田本町3-3-26",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.438139,
+        "lng": 137.013671,
+        "qr_token": "shuin-mino-ota-5",
+        "cover_image_url": "/images/mino-ota/spot5.png",
+        "f7_fragment": "明和六年の主屋とうだつ、表門が当時の姿を残す国指定重要文化財の脇本陣。",
+        "f7_full": "「旧太田脇本陣林家住宅」の風格ある表門と立派なうだつ屋根が、中山道太田宿の歴史を辿った旅を江戸の宿場町の深い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d65dab0b-5342-4886-859f-1924d79c73f4",
+    "title": "築二百四十年の旅籠亀丸屋と名水・中山道垂井宿",
+    "name": "築二百四十年の旅籠亀丸屋と名水・中山道垂井宿",
+    "description": "中山道と美濃路が交わる追分の宿場町・岐阜県垂井町。石窯パンの森・グルマンヴィタル垂井本店から、軍師・竹中半兵衛公の像が立つ垂井駅、安永六年築の旅籠亀丸屋、地名の由来となった名水・垂井の泉、松尾芭蕉ゆかりの本龍寺までを歩く。",
+    "region": "垂井（垂井町）",
+    "area_name": "垂井（垂井町）",
+    "cover_image_url": "/images/tarui/route-eyecatch.png",
+    "imageUrl": "/images/tarui/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "安永六年築の江戸の旅籠と千年の名水・垂井の泉、石窯パンの森が息づく垂井で、あなたの心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "安永六年築、連子格子と鉄砲窓が宿場町の格式を伝える「垂井宿 旅籠亀丸屋」",
+          "description": "二百四十年にわたり旧中山道を見守り続けてきた本物の旅籠建築の佇まいに、江戸の旅人の息遣いを感じた。",
+          "badge_code": "tarui_kamemaruya_edo_hatago"
+        },
+        {
+          "key": "B",
+          "text": "樹齢八百年の大ケヤキの根元から湧き、町名の由来となった霊泉「垂井の泉」",
+          "description": "古来の歌人や松尾芭蕉も立ち寄った澄み切った湧水に、千年の宿場町を潤してきた命の恵みを感じた。",
+          "badge_code": "tarui_izumi_sacred_spring"
+        },
+        {
+          "key": "C",
+          "text": "緑豊かな「パンの森」の石窯で焼き上げる「グルマンヴィタル 垂井本店」",
+          "description": "薪の石窯から立ち上る香ばしい小麦の香りと、花々に囲まれた中庭テラスの開放感に心が弾んだ。",
+          "badge_code": "tarui_guruman_vital_bread_forest"
+        },
+        {
+          "key": "D",
+          "text": "軍師・竹中半兵衛の像が迎える「垂井駅」と、松尾芭蕉ゆかりの古刹「本龍寺」",
+          "description": "天下の名軍師を生んだ誇りと、元禄の冬に芭蕉が時雨の句を詠んだ宿場寺の風雅な空気を感じた。",
+          "badge_code": "tarui_honryuji_and_hanbei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e152c555-5e40-4853-8a08-69d7e7b94280",
+        "name": "パンの店 グルマンヴィタル 垂井本店",
+        "description": "約2,000坪の敷地「パンの森」を構えるベーカリー本店（8:00〜19:00営業、火曜休）。100種類以上のパンが並ぶショップや薪の石窯パン工房、緑豊かな中庭のカフェテラスを備える人気スポット。",
+        "address": "岐阜県不破郡垂井町宮代441",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.366718,
+        "lng": 136.529711,
+        "qr_token": "shuin-tarui-1",
+        "cover_image_url": "/images/tarui/spot1.png",
+        "f7_fragment": "緑豊かな「パンの森」で、石窯焼きのパンをはじめ百種類以上が揃う人気本店。",
+        "f7_full": "「パンの店 グルマンヴィタル 垂井本店」の石窯から漂う香ばしい小麦の香りと緑の庭が、垂井を巡る旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7464428-8d03-415e-86fe-9d2ad25a31e2",
+        "next_spot_name": "垂井駅"
+      },
+      {
+        "id": "c7464428-8d03-415e-86fe-9d2ad25a31e2",
+        "name": "垂井駅",
+        "description": "中山道垂井宿と美濃国一宮・南宮大社への玄関口となるJR東海道本線の駅（待合室は始発〜終電）。北口広場には垂井ゆかりの戦国の名軍師・竹中半兵衛公の銅像が立ち、宿場町散策の起点となっている。",
+        "address": "岐阜県不破郡垂井町1812",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.369723,
+        "lng": 136.531393,
+        "qr_token": "shuin-tarui-2",
+        "cover_image_url": "/images/tarui/spot2.png",
+        "f7_fragment": "北口広場に戦国の名軍師・竹中半兵衛公の銅像が立つ、中山道垂井宿への玄関口。",
+        "f7_full": "「垂井駅」の北口に凛と立つ竹中半兵衛公の像と伊吹山を望む風景が、これから足を踏み入れる中山道垂井宿の歴史への期待を高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "de3e0c50-8503-45b0-86e7-39f90aca44c6",
+        "next_spot_name": "垂井宿 旅籠亀丸屋"
+      },
+      {
+        "id": "de3e0c50-8503-45b0-86e7-39f90aca44c6",
+        "name": "垂井宿 旅籠亀丸屋",
+        "description": "旧中山道垂井宿に残る安永6年築・築240年以上の江戸時代の旅籠建築（外観見学自由）。連子格子や鉄砲窓など当時の面影を色濃く残し、中山道と美濃路の追分として栄えた宿場町の風情を今に伝える。",
+        "address": "岐阜県不破郡垂井町1199",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.371699,
+        "lng": 136.527279,
+        "qr_token": "shuin-tarui-3",
+        "cover_image_url": "/images/tarui/spot3.png",
+        "f7_fragment": "安永六年の建築以来、二百四十年にわたり旧中山道の歴史を伝える江戸の旅籠。",
+        "f7_full": "「垂井宿 旅籠亀丸屋」の連子格子と鉄砲窓が残る重厚な佇まいが、二百四十年にわたり中山道の旅人を見守ってきた宿場町の歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c850fde4-c3f7-4c81-8ac2-9dcba8d0598d",
+        "next_spot_name": "垂井の泉"
+      },
+      {
+        "id": "c850fde4-c3f7-4c81-8ac2-9dcba8d0598d",
+        "name": "垂井の泉",
+        "description": "「垂井」の地名の由来となった岐阜県指定史跡の名水（終日見学自由）。樹齢約800年の大ケヤキの根元から清らかな湧水が絶え間なく溢れ出し、古くから多くの歌人や松尾芭蕉の句に詠まれてきた。",
+        "address": "岐阜県不破郡垂井町1351",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.370436,
+        "lng": 136.525246,
+        "qr_token": "shuin-tarui-4",
+        "cover_image_url": "/images/tarui/spot4.png",
+        "f7_fragment": "樹齢八百年の大ケヤキの根元から湧き出し、「垂井」の地名の由来となった名水。",
+        "f7_full": "「垂井の泉」の大ケヤキの木陰に響く清らかな水音と透き通る水面が、奈良・平安の世から旅人の喉を潤してきた千年の名水の恵みを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f792eded-fadd-4176-8df8-422132bc98a6",
+        "next_spot_name": "本龍寺"
+      },
+      {
+        "id": "f792eded-fadd-4176-8df8-422132bc98a6",
+        "name": "本龍寺",
+        "description": "垂井宿の西端に佇む真宗大谷派の寺院（境内参拝自由）。元禄4年の冬に松尾芭蕉が滞在して「作り木の庭をいさめる時雨かな」の句を詠んだことで知られ、「八重葎の寺」として親しまれている。",
+        "address": "岐阜県不破郡垂井町1234",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.371934,
+        "lng": 136.523333,
+        "qr_token": "shuin-tarui-5",
+        "cover_image_url": "/images/tarui/spot5.png",
+        "f7_fragment": "元禄四年の冬に松尾芭蕉が逗留し、時雨の句を詠んだ「八重葎の寺」の古刹。",
+        "f7_full": "「本龍寺」の静寂に包まれた山門と芭蕉の句碑が、名水と江戸の旅籠を巡った中山道垂井宿の旅を風雅な俳諧の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "62672bc0-3e8c-4a72-8f2a-cd71f9dc0fa4",
+    "title": "栗きんとん二大老舗とうだつの宿場・中津川を巡る",
+    "name": "栗きんとん二大老舗とうだつの宿場・中津川を巡る",
+    "description": "霊峰・恵那山の麓に広がる中山道中津川宿であり、「栗きんとん発祥の地」として知られる岐阜県中津川市。駅前の特産品拠点・にぎわい特産館から、中津川駅、元禄創業のすや本店、中津川市中山道歴史資料館、元治元年創業の川上屋本店までを巡る。",
+    "region": "中津川（中津川市）",
+    "area_name": "中津川（中津川市）",
+    "cover_image_url": "/images/nakatsugawa/route-eyecatch.png",
+    "imageUrl": "/images/nakatsugawa/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "栗きんとんの二大老舗と幕末の歴史を刻む中山道の宿場町・中津川で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "元禄年間の創業から三百年、栗本来の風味を極める老舗「すや 本店」",
+          "description": "凛とした白暖簾の向こうで、栗と砂糖だけで仕立てられる引き算の美学と素朴な旨みに感動した。",
+          "badge_code": "nakatsugawa_suya_kurikinton"
+        },
+        {
+          "key": "B",
+          "text": "うだつの町並みに立つ元治元年創業「川上屋 本店」の栗きんとんと柿の美きんとん",
+          "description": "旧中山道の情緒あふれる本町通りで、百六十年続く老舗の滑らかな栗きんとんの味わいに心が満たされた。",
+          "badge_code": "nakatsugawa_kawakamiya_honten"
+        },
+        {
+          "key": "C",
+          "text": "皇女和宮の降嫁や『夜明け前』の幕末史を紐解く「中津川市中山道歴史資料館」",
+          "description": "精密な宿場ジオラマと古文書から、明治維新の隠れた舞台となった中津川宿の熱い歴史を知った。",
+          "badge_code": "nakatsugawa_nakasendo_history_museum"
+        },
+        {
+          "key": "D",
+          "text": "十四店舗の栗きんとんが集う「にぎわい特産館」と木曽路の入口「中津川駅」",
+          "description": "駅前の特産館にずらりと並ぶ各店の栗きんとんの個性に驚き、栗の街ならではの華やかな賑わいを楽しめた。",
+          "badge_code": "nakatsugawa_nigiwai_chestnut_plaza"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ddf31344-5c40-4ad1-8047-a8310caf6d4a",
+        "name": "にぎわい特産館",
+        "description": "中津川駅前にある特産品ショップ・観光案内拠点（8:30〜18:00営業、年末年始休）。秋〜冬には市内14店舗の栗きんとんを1個から買い比べできる「栗きんとんめぐり」が人気を集めるほか、地酒や五平餅も揃う。",
+        "address": "岐阜県中津川市栄町1-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.501167,
+        "lng": 137.503784,
+        "qr_token": "shuin-nakatsugawa-1",
+        "cover_image_url": "/images/nakatsugawa/spot1.png",
+        "f7_fragment": "中津川市内十四店舗の栗きんとんや東濃の地酒・特産品が一堂に揃う駅前の拠点。",
+        "f7_full": "「にぎわい特産館」に並ぶ多彩な老舗の栗きんとんと甘い栗の香りが、栗きんとん発祥の地・中津川を巡る旅の始まりを華やかに彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "e7681f8f-9fdd-4f03-862c-7c762a309eac",
+        "next_spot_name": "中津川駅"
+      },
+      {
+        "id": "e7681f8f-9fdd-4f03-862c-7c762a309eac",
+        "name": "中津川駅",
+        "description": "中山道中津川宿と木曽路への玄関口となるJR中央本線の主要駅（待合室は始発〜終電）。明治35年の開業以来、東濃地方と信州を結ぶ交通の要衝として多くの旅人を迎えている。",
+        "address": "岐阜県中津川市太田町2-1-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.500494,
+        "lng": 137.503135,
+        "qr_token": "shuin-nakatsugawa-2",
+        "cover_image_url": "/images/nakatsugawa/spot2.png",
+        "f7_fragment": "明治三十五年開業、中山道中津川宿と木曽路への入口となる中央本線の要衝。",
+        "f7_full": "「中津川駅」の駅前広場を吹き抜ける恵那山からの涼風が、これから向かう旧中山道の老舗和菓子処と宿場町歩きへの期待を高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "aae8757e-ae23-403a-8ec9-457c723467ed",
+        "next_spot_name": "すや 本店"
+      },
+      {
+        "id": "aae8757e-ae23-403a-8ec9-457c723467ed",
+        "name": "すや 本店",
+        "description": "江戸初期の元禄年間創業、三百年以上の歴史を誇る栗きんとんの老舗（9:00〜19:00営業、水曜休・秋冬は無休）。栗と砂糖のみで炊き上げる伝統の栗きんとんや栗こごりの販売のほか、隣接の甘味処「榧」で季節の甘味も味わえる。",
+        "address": "岐阜県中津川市新町2-40",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.498279,
+        "lng": 137.505753,
+        "qr_token": "shuin-nakatsugawa-3",
+        "cover_image_url": "/images/nakatsugawa/spot3.png",
+        "f7_fragment": "元禄年間の創業以来、三百年にわたり栗本来の風味を生かした菓子を作る老舗。",
+        "f7_full": "「すや 本店」の凛とした白暖簾と黒光りする木の佇まいが、栗の粒感と自然な甘みを極めた三百年の和菓子づくりの哲学を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "28a5f447-84f3-4568-8e07-f2b60be5692f",
+        "next_spot_name": "中津川市中山道歴史資料館"
+      },
+      {
+        "id": "28a5f447-84f3-4568-8e07-f2b60be5692f",
+        "name": "中津川市中山道歴史資料館",
+        "description": "旧中山道中津川宿の本陣・庄屋跡に建つ歴史資料館（9:30〜17:00開館、月曜休）。天保9年の宿場町ジオラマや皇女和宮降嫁の古文書、島崎藤村『夜明け前』ゆかりの幕末史料を展示している。",
+        "address": "岐阜県中津川市本町2-2-21",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.495556,
+        "lng": 137.502298,
+        "qr_token": "shuin-nakatsugawa-4",
+        "cover_image_url": "/images/nakatsugawa/spot4.png",
+        "f7_fragment": "天保年間の宿場ジオラマや皇女和宮・幕末の貴重な古文書を伝える歴史資料館。",
+        "f7_full": "「中津川市中山道歴史資料館」の精巧な町並み模型と幕末の史料が、江戸と京を結ぶ街道の要衝として栄えた中津川宿の記憶を鮮やかに蘇らせる。",
+        "is_final": false,
+        "next_spot_id": "0bae1f52-9854-4b71-81bc-43319752c0da",
+        "next_spot_name": "川上屋 本店"
+      },
+      {
+        "id": "0bae1f52-9854-4b71-81bc-43319752c0da",
+        "name": "川上屋 本店",
+        "description": "旧中山道・本町通りに店を構える元治元年創業の老舗和菓子処（8:00〜18:30営業、水曜不定休）。うだつの上がる歴史的な町並みの中で、伝統の「栗きんとん」や「柿の美きんとん」を購入できる。",
+        "address": "岐阜県中津川市本町3-1-8",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.494552,
+        "lng": 137.500754,
+        "qr_token": "shuin-nakatsugawa-5",
+        "cover_image_url": "/images/nakatsugawa/spot5.png",
+        "f7_fragment": "元治元年の創業以来、うだつの残る旧中山道で伝統の栗きんとんを守る名店。",
+        "f7_full": "「川上屋 本店」の風格ある町家と茶巾絞りの栗きんとんの優しい甘みが、中山道中津川宿の歴史と味覚を巡った旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
