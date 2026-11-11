@@ -25,15 +25,15 @@
         "anti_patterns": "Pale daytime brown-pen watercolor sketch, blank white margins around edges, photographic realism, fake kanji/text on lanterns or signs."
       },
       "self_improvement": {
-        "version": 7,
-        "runs": 13,
-        "avg_score": 9.3,
+        "version": 11,
+        "runs": 19,
+        "avg_score": 9.18,
         "learned_boosters": [
-          "Pair crisp carved keyblock contours with broad bokashi gradients and simplified, layered shadow shapes",
-          "Use crisp carved keyblock contours and broad bokashi gradients to distinguish woodblock printing from painterly texture",
-          "Balance crisp carved contours with broad ink planes and restrained bokashi gradients; reserve grain for subtle accents",
-          "Use carved architectural contours and restrained bokashi gradients to balance amber illumination against deep Prussian blue",
-          "Emphasize carved keyblock contours and broad bokashi gradients while simplifying granular textures into distinct printed color planes"
+          "Emphasize carved keyblock contours and broad bokashi gradients while simplifying granular textures into distinct printed color planes",
+          "Simplify stone and pavement textures into carved shapes; preserve bokashi gradients and visible woodblock color separations",
+          "Use carved keyblock contours and layered bokashi gradients to unite indigo twilight with amber architectural light",
+          "Use carved contour lines and layered bokashi reflections to sharpen indigo–amber twilight contrast",
+          "Pair crisp carved keyblock contours and flat color planes with broad bokashi twilight gradients"
         ],
         "learned_avoid": [
           "pale washed-out beige background",
@@ -42,50 +42,6 @@
           "woodblock artist signature or hanko seal in bottom corners"
         ],
         "history": [
-          {
-            "at": "2026-11-11T10:07:53",
-            "slug": "kuroe",
-            "target": "route-eyecatch.png",
-            "score": 9.7,
-            "genre_fidelity": 10,
-            "framing_and_shot": 10,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "川瀬巴水調の深い藍の夜空ぼかし、濡れた石畳の琥珀灯反射と朱漆器の覗き見が白眉"
-          },
-          {
-            "at": "2026-11-11T10:07:53",
-            "slug": "kuroe",
-            "target": "spot1.png",
-            "score": 9.4,
-            "genre_fidelity": 10,
-            "framing_and_shot": 9,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "無文字の暖簾と連子格子から漏れる灯りを広角アプローチ構図で表現"
-          },
-          {
-            "at": "2026-11-11T10:07:53",
-            "slug": "kuroe",
-            "target": "spot2.png",
-            "score": 9.5,
-            "genre_fidelity": 10,
-            "framing_and_shot": 10,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "磨き込まれた縁側床への坪庭灯籠の映り込みと奥座敷の朱塗膳の空間演出"
-          },
-          {
-            "at": "2026-11-11T10:07:53",
-            "slug": "kuroe",
-            "target": "spot3.png",
-            "score": 9.4,
-            "genre_fidelity": 9,
-            "framing_and_shot": 10,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "畳上の根来塗・黒江塗の朱と黒を真上90度フラットレイで木版調に構成"
-          },
           {
             "at": "2026-11-11T10:07:53",
             "slug": "kuroe",
@@ -184,6 +140,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "藍の宵空と琥珀色の灯り、全面に広がる寺院と石畳が旅の余韻を美しく伝えますが、細部の質感をやや整理すると木版画らしい彫線と色面がさらに際立ちます。"
+          },
+          {
+            "at": "2026-11-11T15:06:56",
+            "slug": "nahari",
+            "target": "route-eyecatch.png",
+            "score": 9.3,
+            "genre_fidelity": 8.7,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "深い藍の宵空と琥珀色の灯り、海へ抜ける坂道の奥行きが新版画らしく映える一方、石垣と路面の細密な質感はややデジタル絵画寄りです。"
+          },
+          {
+            "at": "2026-11-11T15:07:06",
+            "slug": "nahari",
+            "target": "spot1.png",
+            "score": 8.5,
+            "genre_fidelity": 8,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "濃藍の宵空と琥珀色の灯り、雨の路面反射が新版画らしく映え、余白も文字もない一方、彫線の切れ味が弱く、建物への距離もやや近めです。"
+          },
+          {
+            "at": "2026-11-11T15:08:29",
+            "slug": "nahari",
+            "target": "spot2.png",
+            "score": 8.4,
+            "genre_fidelity": 8,
+            "framing_and_shot": 7.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍の宵空と琥珀色の灯り、余白のない建築空間の奥行きは魅力的ですが、木版の彫線とぼかしがやや弱く、指定の自然光による劇的な光芒が不足しています。"
+          },
+          {
+            "at": "2026-11-11T15:09:44",
+            "slug": "nahari",
+            "target": "spot4.png",
+            "score": 9.1,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "濃藍の空と琥珀色の灯り、木版画的な輪郭、低位置から奥へ導く石畳と重厚な軒が鮮やかだが、指定の暖かな午後光より夜景に寄っている。"
+          },
+          {
+            "at": "2026-11-11T15:09:55",
+            "slug": "nahari",
+            "target": "spot3.png",
+            "score": 8.8,
+            "genre_fidelity": 8.7,
+            "framing_and_shot": 8.1,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "藍色と琥珀色の対比、木版調の質感、余白のない俯瞰構図が魅力的だが、器や灯籠の側面が見えすぎて厳密な真上視点がやや弱い。"
+          },
+          {
+            "at": "2026-11-11T15:10:58",
+            "slug": "nahari",
+            "target": "spot5.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "深い藍の空と琥珀色の夕照、端まで広がる建築と石畳が旅の余韻を鮮やかに伝え、木版の輪郭線と平面的な色面をさらに強めると新版画らしさが増します。"
           }
         ]
       }
@@ -199,15 +221,15 @@
         "anti_patterns": "Fussy thin pen cross-hatching, pale watercolor washes, blank white vignette borders, ANY poster title text or typography."
       },
       "self_improvement": {
-        "version": 7,
-        "runs": 13,
-        "avg_score": 9.46,
+        "version": 11,
+        "runs": 19,
+        "avg_score": 9.35,
         "learned_boosters": [
-          "Use oversized foreground silhouettes and a receding path to anchor bold architectural color planes",
-          "Use bold foreground silhouettes and converging architectural diagonals to lead toward a simplified iconic landscape",
-          "Use overlapping architectural silhouettes and diagonal light shafts to build depth within flat, limited-color print planes",
-          "Layer tactile ink grain over bold, limited-color planes while preserving strong silhouette hierarchy",
-          "Use converging architectural shapes and long graphic shadows to organize saturated sunset color planes"
+          "Use converging architectural shapes and long graphic shadows to organize saturated sunset color planes",
+          "Use dark architectural silhouettes against saturated skies, with restrained ink grain unifying broad, flat color planes",
+          "Group intricate architecture into bold shadow masses to preserve poster hierarchy at thumbnail scale",
+          "Use deep navy structural silhouettes against saturated warm color planes, unified by tactile print grain",
+          "Use deep navy architectural silhouettes against mustard sunset planes, unified by restrained tactile print grain"
         ],
         "learned_avoid": [
           "poster headline text or typography banners",
@@ -216,50 +238,6 @@
           "dense comic-style woodgrain ink hatching on beams"
         ],
         "history": [
-          {
-            "at": "2026-11-11T10:06:22",
-            "slug": "inbe",
-            "target": "route-eyecatch.png",
-            "score": 9.4,
-            "genre_fidelity": 10,
-            "framing_and_shot": 9,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "ティール×テラコッタ×マスタードのシルクスクリーン色面と網点粒子が完璧"
-          },
-          {
-            "at": "2026-11-11T10:06:22",
-            "slug": "inbe",
-            "target": "spot1.png",
-            "score": 9.2,
-            "genre_fidelity": 10,
-            "framing_and_shot": 9,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "線路沿いの登り窯モチーフ建築を広角導入構図で表現、外周1.5%フチを自動除去"
-          },
-          {
-            "at": "2026-11-11T10:06:22",
-            "slug": "inbe",
-            "target": "spot2.png",
-            "score": 9.6,
-            "genre_fidelity": 10,
-            "framing_and_shot": 10,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "吹き抜け梁と斜光の幾何学コントラスト、遠景台座の備前水指の距離感が秀逸"
-          },
-          {
-            "at": "2026-11-11T10:06:22",
-            "slug": "inbe",
-            "target": "spot3.png",
-            "score": 9.5,
-            "genre_fidelity": 10,
-            "framing_and_shot": 10,
-            "cleanliness": 10,
-            "retake_improved": false,
-            "note": "厳密な真上90度フラットレイで従来45度器アップとの差別化に成功"
-          },
           {
             "at": "2026-11-11T10:06:22",
             "slug": "inbe",
@@ -358,6 +336,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "大胆な朱・黄金・青緑の色面と紙の粒状感がヴィンテージ鉄道ポスターらしさを鮮明に伝え、余白のない橋の遠近構図と夕映えが旅の余韻を美しく演出している。"
+          },
+          {
+            "at": "2026-11-11T14:55:44",
+            "slug": "shido",
+            "target": "spot1.png",
+            "score": 9.6,
+            "genre_fidelity": 9.7,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱赤の空と濃紺・青緑・辛子色の大胆な面構成、版画調の粒子が鮮烈で、白縁も文字もなく街路と旧邸を広く捉えているが、右上の屋根がやや窮屈に切れている。"
+          },
+          {
+            "at": "2026-11-11T14:56:05",
+            "slug": "shido",
+            "target": "route-eyecatch.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱・黄・青緑の大胆な色面と版画的な粒子、前景から寺院へ導く全面構図が鮮烈だが、前景の器物と建築細部はやや密で小さなカードでは競合する。"
+          },
+          {
+            "at": "2026-11-11T14:56:56",
+            "slug": "shido",
+            "target": "spot2.png",
+            "score": 9.3,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 8.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱橙と青緑の大胆な色面、版画調の粒子、梁と格子がつくる奥行きと長い影が鮮烈で、全面裁ち落としも良好だが、空間を貫く光芒はやや弱い。"
+          },
+          {
+            "at": "2026-11-11T14:58:09",
+            "slug": "shido",
+            "target": "spot4.png",
+            "score": 9.2,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱・黄・濃紺の大胆な色面と印刷粒子、軒や欄干の対角線が鮮烈で余白や文字もない一方、料理を見下ろす視点が強く、指定のローアングル感はやや弱い。"
+          },
+          {
+            "at": "2026-11-11T14:58:31",
+            "slug": "shido",
+            "target": "spot3.png",
+            "score": 7.7,
+            "genre_fidelity": 9,
+            "framing_and_shot": 4,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "鮮烈な朱・青緑・黄の色面と印刷粒子、余白のない構成は秀逸ですが、装置や木枠が正面向きに描かれ、必須の真上90度の俯瞰視点が成立していません。"
+          },
+          {
+            "at": "2026-11-11T14:59:17",
+            "slug": "shido",
+            "target": "spot5.png",
+            "score": 9.6,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱橙・黄金・深い青緑の大胆な色面と印刷粒子がヴィンテージポスターらしさを際立たせ、余白のない夕景と堂々たる伽藍が旅の終幕を美しく演出している。"
           }
         ]
       }
@@ -761,15 +805,15 @@
         "anti_patterns": "Flat midday lighting, pale washed-out colors, sepia ink outlines, white margins."
       },
       "self_improvement": {
-        "version": 6,
-        "runs": 6,
-        "avg_score": 9.6,
+        "version": 11,
+        "runs": 12,
+        "avg_score": 9.57,
         "learned_boosters": [
-          "Carry low sunset light across foreground paving, linking violet shadows with amber foliage rim light",
-          "Use architectural lattices to cast long directional shadows across reflective floors, balancing amber sunlight with violet shade",
-          "Cast long botanical shadows across tactile surfaces, balancing amber sunlight with violet shade and rim-lit steam",
-          "Align architectural leading lines with low sunlight to unite depth, elongated shadows, and glowing reflections",
-          "Carry low sunset backlight through architectural latticework to cast long shadows across a foreground path"
+          "Carry low-sun reflections across foreground surfaces to connect silhouetted landmarks with the glowing horizon",
+          "Carry amber backlight across foreground surfaces with long shadows, balanced by violet sky and cool shaded architecture",
+          "Project low sunset through latticework for long patterned shadows, balancing amber highlights with violet ambient shadows",
+          "Carry warm backlight across foreground shadows, architectural rims, and distant reflections to unify cinematic depth",
+          "Cast long architectural shadows toward the viewer, balancing amber rim light with violet dusk skies"
         ],
         "learned_avoid": [
           "flat overhead noon lighting",
@@ -841,6 +885,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "朱金の夕日と紫の空、格子越しの長い影が旅の余韻を鮮烈に描き、余白も文字もない全面構図が美しい一方、室内の暖色光はやや強めです。"
+          },
+          {
+            "at": "2026-11-11T14:51:54",
+            "slug": "wakasa",
+            "target": "route-eyecatch.png",
+            "score": 9.7,
+            "genre_fidelity": 9.7,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "低い夕日の逆光と朱金・紫の豊かな色調、建築や蒸気機関車の輪郭光、水面と石畳の反射が余白なく広がる印象的な構図で、暗部を少し整理すると主役がさらに際立ちます。"
+          },
+          {
+            "at": "2026-11-11T14:52:01",
+            "slug": "wakasa",
+            "target": "spot1.png",
+            "score": 9.7,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "琥珀と紫の夕空、鮮烈な逆光と長い影が余白のない広角構図に映えますが、駅への街路的なアプローチより機関車と鉄道設備の存在感がやや強めです。"
+          },
+          {
+            "at": "2026-11-11T14:53:12",
+            "slug": "wakasa",
+            "target": "spot2.png",
+            "score": 9.5,
+            "genre_fidelity": 9.6,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "琥珀色と紫の夕景、格子越しの長い影、梁と庭園の奥行きが鮮烈で、余白なく指定構図を満たす一方、空中の光芒はやや控えめです。"
+          },
+          {
+            "at": "2026-11-11T14:53:32",
+            "slug": "wakasa",
+            "target": "spot3.png",
+            "score": 8.9,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "琥珀色と紫の光、長い格子影、余白のない俯瞰構図が鮮烈ですが、左の棚には正面視が混ざり、厳密な真上視点がやや曖昧です。"
+          },
+          {
+            "at": "2026-11-11T14:54:40",
+            "slug": "wakasa",
+            "target": "spot4.png",
+            "score": 9.5,
+            "genre_fidelity": 9.6,
+            "framing_and_shot": 9.3,
+            "cleanliness": 9.8,
+            "retake_improved": false,
+            "note": "琥珀と紫の夕景、長い斜影、重厚な軒と石畳の対角線が低い視点と全面構図に映える一方、昭和おもちゃ館らしい展示の存在感はやや弱い。"
+          },
+          {
+            "at": "2026-11-11T14:54:43",
+            "slug": "wakasa",
+            "target": "spot5.png",
+            "score": 9.9,
+            "genre_fidelity": 10,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱金と紫の夕空、山門を抜ける逆光と石畳の長い影が旅の余韻を鮮やかに描き、余白や文字もなく、やや強い彩度を含めてジャンルの魅力が際立っています。"
           }
         ]
       }
@@ -1245,14 +1355,15 @@
         "anti_patterns": "Stiff tiny centered oval vignette with blank 25% margins, dull brown-grey monochrome, handwritten notes or captions."
       },
       "self_improvement": {
-        "version": 4,
-        "runs": 6,
-        "avg_score": 9.23,
+        "version": 6,
+        "runs": 12,
+        "avg_score": 9.18,
         "learned_boosters": [
-          "Use Prussian-blue fountain-pen ink with bold cobalt shadows and vibrant watercolor splashes reaching generously across the cotton paper",
           "Vary Prussian-blue pen pressure and leave energetic construction strokes visible beneath transparent washes",
           "Use Prussian-blue structural strokes and cast shadows to anchor luminous amber washes and exposed warm paper",
-          "Vary Prussian-blue line weight and let transparent sunset washes cross architectural contours for lively field-sketch energy"
+          "Vary Prussian-blue line weight and let transparent sunset washes cross architectural contours for lively field-sketch energy",
+          "Keep expressive Prussian-blue pen contours visible through transparent washes, especially around vessels and structural edges",
+          "Pair assertive Prussian-blue structural strokes with luminous transparent washes and broken paper edges"
         ],
         "learned_avoid": [
           "handwritten cursive notes or date signatures",
@@ -1324,6 +1435,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "プルシアンブルーの躍動的な線と鮮やかな透明水彩が紙面いっぱいに広がり、門と石畳を染める夕光が旅の余韻を美しく伝える一方、細部はやや描き込みが密です。"
+          },
+          {
+            "at": "2026-11-11T15:00:21",
+            "slug": "nagato-yumoto",
+            "target": "spot1.png",
+            "score": 8.8,
+            "genre_fidelity": 9,
+            "framing_and_shot": 7.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "紺青の奔放な線と鮮烈な透明水彩が建築と夕空を魅力的に描いている一方、手前の料理と卓が大きく、指定の距離感より建物に寄った構図です。"
+          },
+          {
+            "at": "2026-11-11T15:00:35",
+            "slug": "nagato-yumoto",
+            "target": "route-eyecatch.png",
+            "score": 9.2,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍色の勢いあるペン線と鮮やかな透明水彩が紙面いっぱいに広がり、飛び石から右側の建築へ導く斜め構図も魅力的ですが、建築の線にさらに強弱と省略があると現場スケッチらしさが増します。"
+          },
+          {
+            "at": "2026-11-11T15:01:29",
+            "slug": "nagato-yumoto",
+            "target": "spot2.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "躍動的な紺青の筆線と鮮やかな透明水彩が木組みの奥行き、斜光と長い影を見事に描き、自然な紙端も適切だが、カフェ内部より川沿いの開放テラスの印象がやや強い。"
+          },
+          {
+            "at": "2026-11-11T15:02:55",
+            "slug": "nagato-yumoto",
+            "target": "spot4.png",
+            "score": 9.1,
+            "genre_fidelity": 8.5,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "軒と石畳の大胆な対角線、暖かな店内光と鮮やかな透明水彩が魅力的で、万年筆のプルシアンブルーの線にさらに強弱があればジャンル性が際立ちます。"
+          },
+          {
+            "at": "2026-11-11T15:03:02",
+            "slug": "nagato-yumoto",
+            "target": "spot3.png",
+            "score": 8.8,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "真上からの茶器と水鉢を鮮やかな透明水彩と大胆な構図で描き、紙端まで広がる自然な余白も良好だが、万年筆のプルシアンブルーの線描はやや埋もれている。"
+          },
+          {
+            "at": "2026-11-11T15:05:43",
+            "slug": "nagato-yumoto",
+            "target": "spot5.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "紺青の躍動的なペン線と鮮やかな透明水彩が紙面いっぱいに広がり、夕映えの寺院と水面が旅の余韻を美しく伝える一方、建築の細部はやや密です。"
           }
         ]
       }

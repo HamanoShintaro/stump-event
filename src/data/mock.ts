@@ -58630,5 +58630,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "d327954e-b209-44e4-8e4d-d97678189da7",
+    "title": "なぜ山陽道の矢掛宿に本陣と脇本陣が並び残るのか",
+    "name": "なぜ山陽道の矢掛宿に本陣と脇本陣が並び残るのか",
+    "description": "本陣と脇本陣の両方が国の重要文化財として現存する全国唯一の宿場町・岡山県矢掛町。なまこ壁の旧矢掛脇本陣高草家住宅から、名物だんご行列の古民家カフェ・t2Lab.、やかげ町家交流館、篤姫も泊まった旧矢掛本陣石井家住宅、水見櫓から宿場町を一望するやかげ郷土美術館までを歩く。",
+    "region": "矢掛（矢掛町）",
+    "area_name": "矢掛（矢掛町）",
+    "cover_image_url": "/images/yakage/route-eyecatch.png",
+    "imageUrl": "/images/yakage/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "本陣と脇本陣が揃って残る旧山陽道の宿場町・矢掛を歩き、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天璋院篤姫も宿泊した上段の間と酒造蔵が残る、国指定重要文化財「旧矢掛本陣石井家住宅」",
+          "description": "奥行百メートルにおよぶ広大な屋敷と御成門の威容に、西国大名を迎えた本陣の格式を肌で感じた。",
+          "badge_code": "yakage_ishii_honjin_residence"
+        },
+        {
+          "key": "B",
+          "text": "なまこ壁の表門と白漆喰の土蔵群が美しい、国指定重要文化財「旧矢掛脇本陣高草家住宅」",
+          "description": "本陣と脇本陣の両方が重要文化財として並び残る、全国唯一の宿場町の奇跡に感銘を受けた。",
+          "badge_code": "yakage_takakusa_wakihonjin"
+        },
+        {
+          "key": "C",
+          "text": "古民家カフェ「t2Lab.」の彩り豊かな「だんご行列」と、「やかげ町家交流館」の宿場町グルメ",
+          "description": "大名行列にちなんだ華やかなお団子と、宿場町の歴史ある町家で出会う温かなおもてなしに癒やされた。",
+          "badge_code": "yakage_kominka_dango_and_machiya"
+        },
+        {
+          "key": "D",
+          "text": "高さ十六メートルの水見櫓から矢掛宿の瓦屋根を一望する「やかげ郷土美術館」",
+          "description": "郷土ゆかりの美術品に触れたあと、櫓の上から見渡した旧山陽道の町並みが心に焼きついた。",
+          "badge_code": "yakage_art_museum_watchtower"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4488978f-1a17-4795-84b8-93462d1cab75",
+        "name": "旧矢掛脇本陣高草家住宅",
+        "description": "旧山陽道矢掛宿の脇本陣を務めた商家建築で、国の重要文化財（土・日曜の10:00〜15:00内部公開、平日は外観見学自由）。なまこ壁の表門や主屋、3棟の土蔵が往時の威容を伝える。",
+        "address": "岡山県小田郡矢掛町矢掛1981",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.624354,
+        "lng": 133.592187,
+        "qr_token": "shuin-yakage-1",
+        "cover_image_url": "/images/yakage/spot1.png",
+        "f7_fragment": "なまこ壁の表門と白漆喰の土蔵群が並ぶ、国指定重要文化財の旧矢掛脇本陣。",
+        "f7_full": "「旧矢掛脇本陣高草家住宅」の美しいなまこ壁と重厚な構えが、旧山陽道の宿場町・矢掛を歩く旅の始まりを格調高く迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3d23e015-ee51-490a-8e27-5d77d6e239c5",
+        "next_spot_name": "t2Lab."
+      },
+      {
+        "id": "3d23e015-ee51-490a-8e27-5d77d6e239c5",
+        "name": "t2Lab.",
+        "description": "矢掛宿の古民家を改装した和カフェ（11:00〜16:00営業、不定休）。色とりどりの餡をのせた名物「だんご行列」や「抹茶の小さなティラ枡」、やかげ柚子バーガーなどのランチを味わえる。",
+        "address": "岡山県小田郡矢掛町矢掛2584",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.624233,
+        "lng": 133.59108,
+        "qr_token": "shuin-yakage-2",
+        "cover_image_url": "/images/yakage/spot2.png",
+        "f7_fragment": "古民家を改装した空間で、彩り豊かな名物「だんご行列」や甘味を楽しめる和カフェ。",
+        "f7_full": "「t2Lab.」の華やかなだんご行列と古民家の落ち着いた空間が、宿場町の街道歩きに甘く心弾むひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "06a8538c-7935-4a78-86ad-83b96a0f716a",
+        "next_spot_name": "やかげ町家交流館"
+      },
+      {
+        "id": "06a8538c-7935-4a78-86ad-83b96a0f716a",
+        "name": "やかげ町家交流館",
+        "description": "旧山陽道沿いに建つ町家造りの観光交流施設（10:00〜18:00開館、年末年始休）。特産のゆべしや地酒などの土産品販売のほか、軽食処「やかげ茶屋」やイベントホールを備える。",
+        "address": "岡山県小田郡矢掛町矢掛2639",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.623917,
+        "lng": 133.589266,
+        "qr_token": "shuin-yakage-3",
+        "cover_image_url": "/images/yakage/spot3.png",
+        "f7_fragment": "矢掛伝統のゆべしや地酒、軽食が揃う、旧山陽道沿いの町家造りの交流拠点。",
+        "f7_full": "「やかげ町家交流館」の格子戸と賑やかな物産コーナーが、江戸の面影を残す宿場町の温かなもてなしを感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "fc786b63-1ffb-4d72-87c5-a8693ae898bd",
+        "next_spot_name": "旧矢掛本陣石井家住宅"
+      },
+      {
+        "id": "fc786b63-1ffb-4d72-87c5-a8693ae898bd",
+        "name": "旧矢掛本陣石井家住宅",
+        "description": "参勤交代の西国大名が宿泊した矢掛宿の本陣で、国の重要文化財（9:00〜17:00開館・冬期16:00まで、月曜休）。御成門や上段の間、庭園、酒造蔵までが現存する壮大な屋敷構えを見学できる。",
+        "address": "岡山県小田郡矢掛町矢掛3079",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.623841,
+        "lng": 133.588258,
+        "qr_token": "shuin-yakage-4",
+        "cover_image_url": "/images/yakage/spot4.png",
+        "f7_fragment": "西国大名や篤姫も宿泊した御成門と上段の間を今に伝える、国指定重要文化財の本陣。",
+        "f7_full": "「旧矢掛本陣石井家住宅」の堂々たる御成門と格式高い座敷の連なりが、参勤交代の時代から続く宿場町の誇りを鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "1feaec6d-ee86-43fc-8f98-a795c074ffb1",
+        "next_spot_name": "やかげ郷土美術館"
+      },
+      {
+        "id": "1feaec6d-ee86-43fc-8f98-a795c074ffb1",
+        "name": "やかげ郷土美術館",
+        "description": "水見櫓を備えた町家造りの美術館（9:00〜17:00開館、月曜休）。郷土出身の書家・田中塊堂や洋画家・佐藤一章らの作品を展示し、水見櫓の展望室からは矢掛宿の町並みを一望できる。",
+        "address": "岡山県小田郡矢掛町矢掛3118-1",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.624975,
+        "lng": 133.587549,
+        "qr_token": "shuin-yakage-5",
+        "cover_image_url": "/images/yakage/spot5.png",
+        "f7_fragment": "郷土ゆかりの書画を展示し、高さ十六メートルの水見櫓から宿場町を一望する美術館。",
+        "f7_full": "「やかげ郷土美術館」の白壁の水見櫓から見渡す夕暮れの瓦屋根が、旧山陽道の宿場町を歩いた旅を穏やかな余韻で包んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7c52e2fd-731b-4597-8692-65fa628fe4a5",
+    "title": "SLが眠る終着駅と「カリヤ」の宿場町・若桜へ",
+    "name": "SLが眠る終着駅と「カリヤ」の宿場町・若桜へ",
+    "description": "昭和初期の木造駅舎と手動転車台が残る若桜鉄道の終着駅と、雪よけの庇「カリヤ」が連なる鳥取県若桜町の若桜宿。登録有形文化財の若桜駅から、名物・吉川豚のとんかつ新、大正古民家の若桜民工芸館、レトロな昭和おもちゃ館、城主ゆかりの龍徳寺までを歩く。",
+    "region": "若桜（若桜町）",
+    "area_name": "若桜（若桜町）",
+    "cover_image_url": "/images/wakasa/route-eyecatch.png",
+    "imageUrl": "/images/wakasa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "蒸気機関車の転車台が残る終着駅と、雪国の知恵「カリヤ」の宿場町・若桜で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和五年の木造駅舎と手動転車台、蒸気機関車C12が現役で残る終着駅「若桜駅」",
+          "description": "映画のワンシーンのようなレトロな木造駅舎と、人の手で回る転車台の迫力に胸が熱くなった。",
+          "badge_code": "wakasa_station_steam_turntable"
+        },
+        {
+          "key": "B",
+          "text": "深い庇が連なる仮屋通りの「昭和おもちゃ館」と、手仕事の温もりを伝える「若桜民工芸館」",
+          "description": "雪国ならではのカリヤの下を歩き、懐かしいブリキのおもちゃと因幡の民芸品に心和んだ。",
+          "badge_code": "wakasa_kariya_toys_and_folkcraft"
+        },
+        {
+          "key": "C",
+          "text": "氷ノ山の伏流水で育ったブランド豚「吉川豚」を味わう「とんかつ新」の厚切りとんかつ",
+          "description": "きめ細かく柔らかな肉質と、噛むほどに広がる脂身のほのかな甘みに旅の活力を得た。",
+          "badge_code": "wakasa_yoshikawa_pork_tonkatsu"
+        },
+        {
+          "key": "D",
+          "text": "大火を免れた江戸時代の堂宇と若桜鬼ヶ城主の歴史を伝える古刹「龍徳寺」",
+          "description": "白壁土蔵の通りを抜けた先に佇む静謐な禅寺で、山あいの城下町の深い歴史に触れた。",
+          "badge_code": "wakasa_ryutokuji_zen_temple"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4b0febe2-c201-42a2-8b48-92ec6cd259e2",
+        "name": "若桜駅",
+        "description": "昭和五年の開業当時の木造駅舎や手動転車台、給水塔などが国の登録有形文化財に指定されている若桜鉄道の終着駅（構内見学300円、駅カフェ9:00〜17:00）。蒸気機関車C12 167号機が動態保存されている。",
+        "address": "鳥取県八頭郡若桜町若桜345-2",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.345182,
+        "lng": 134.398314,
+        "qr_token": "shuin-wakasa-1",
+        "cover_image_url": "/images/wakasa/spot1.png",
+        "f7_fragment": "昭和五年の木造駅舎と手動転車台、蒸気機関車C12が残る国登録有形文化財の終着駅。",
+        "f7_full": "「若桜駅」のレトロな木造駅舎と重厚な蒸気機関車の佇まいが、山あいの宿場町・若桜を歩く旅の始まりをノスタルジックに彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "2c1cf06c-ae23-40e0-8dc0-5f63be9594a2",
+        "next_spot_name": "とんかつ新"
+      },
+      {
+        "id": "2c1cf06c-ae23-40e0-8dc0-5f63be9594a2",
+        "name": "とんかつ新",
+        "description": "若桜宿の交流処「かりや」内にある食事処（平日11:00〜14:00・土日祝11:00〜15:00営業、月曜・第3日曜休）。地元・若桜町のブランド豚「吉川豚」を使ったジューシーなとんかつを味わえる。",
+        "address": "鳥取県八頭郡若桜町若桜298",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.343463,
+        "lng": 134.398005,
+        "qr_token": "shuin-wakasa-2",
+        "cover_image_url": "/images/wakasa/spot2.png",
+        "f7_fragment": "氷ノ山の伏流水で育った若桜のブランド豚「吉川豚」のとんかつを味わえる人気店。",
+        "f7_full": "「とんかつ新」のサクッと揚がった吉川豚のロースカツと上品な脂の甘みが、宿場町歩きのひとときに豊かな満足感を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c9d0664f-e2e5-4167-824c-bba72e602ce1",
+        "next_spot_name": "若桜民工芸館"
+      },
+      {
+        "id": "c9d0664f-e2e5-4167-824c-bba72e602ce1",
+        "name": "若桜民工芸館",
+        "description": "大正八年築の伝統的町家「旧中尾邸」を活用した展示館（10:00〜17:00開館・冬期16:00まで、年末年始休、入館無料）。全国約2000点の土鈴コレクションや若桜の民工芸品、枯山水の中庭と土蔵を見学できる。",
+        "address": "鳥取県八頭郡若桜町若桜268",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.343019,
+        "lng": 134.398131,
+        "qr_token": "shuin-wakasa-3",
+        "cover_image_url": "/images/wakasa/spot3.png",
+        "f7_fragment": "大正八年築の古民家「旧中尾邸」に、全国約二千点の土鈴と民工芸品を展示する館。",
+        "f7_full": "「若桜民工芸館」の趣ある通り土間と壁一面に並ぶ素朴な土鈴たちが、雪深い因幡の里に受け継がれてきた手仕事の温もりを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "970236c5-2a20-4945-86f7-65410117f30a",
+        "next_spot_name": "昭和おもちゃ館"
+      },
+      {
+        "id": "970236c5-2a20-4945-86f7-65410117f30a",
+        "name": "昭和おもちゃ館",
+        "description": "仮屋通りの築130年の古民家を活用した展示・駄菓子店（10:30〜17:30開館・平日12:00〜13:00休、火・水曜休）。昭和のブリキ玩具やレトロ看板が並び、懐かしい駄菓子の買い物も楽しめる。",
+        "address": "鳥取県八頭郡若桜町若桜430",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.343631,
+        "lng": 134.397503,
+        "qr_token": "shuin-wakasa-4",
+        "cover_image_url": "/images/wakasa/spot4.png",
+        "f7_fragment": "深い庇「カリヤ」が連なる築百三十年の古民家に、昭和のブリキ玩具と駄菓子が並ぶ館。",
+        "f7_full": "「昭和おもちゃ館」のカリヤが張り出す古民家と色とりどりの駄菓子・ブリキ玩具が、若桜宿の散策に心弾む懐かしさを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c91c8770-7bd3-4bc5-8748-c96a826229e7",
+        "next_spot_name": "龍徳寺"
+      },
+      {
+        "id": "c91c8770-7bd3-4bc5-8748-c96a826229e7",
+        "name": "龍徳寺",
+        "description": "若桜鬼ヶ城の歴代城主・山崎氏の菩提寺として知られる曹洞宗の寺院（境内参拝自由）。明治の大火を免れた江戸時代の堂宇が残り、尊良親王ゆかりの「百々御所」の伝承を今に伝える。",
+        "address": "鳥取県八頭郡若桜町若桜665",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.343647,
+        "lng": 134.394181,
+        "qr_token": "shuin-wakasa-5",
+        "cover_image_url": "/images/wakasa/spot5.png",
+        "f7_fragment": "若桜鬼ヶ城主・山崎氏の菩提寺であり、大火を免れた江戸時代の堂宇を残す曹洞宗の古刹。",
+        "f7_full": "「龍徳寺」の静寂に包まれた山門と歴史ある本堂の佇まいが、SLとカリヤの宿場町・若桜を歩いた旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "369fd09a-e80e-4d18-8c99-e37d93b15258",
+    "title": "平賀源内のエレキテルと海女の古刹・志度を巡る",
+    "name": "平賀源内のエレキテルと海女の古刹・志度を巡る",
+    "description": "江戸の奇才・平賀源内が生まれ育ち、四国八十八箇所第八十六番札所・志度寺の門前町として栄えた香川県さぬき市志度。平賀源内先生旧邸から、湊を見守る多和神社、エレキテルを展示する平賀源内記念館、老舗菓子のさぬき志度 風月堂、玉取伝説の志度寺までを歩く。",
+    "region": "志度（さぬき市）",
+    "area_name": "志度（さぬき市）",
+    "cover_image_url": "/images/shido/route-eyecatch.png",
+    "imageUrl": "/images/shido/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "平賀源内の独創的な発明と海女の玉取伝説が息づく志度で、あなたが心惹かれたのはどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "エレキテルの放電と極彩色の源内焼に出会う「平賀源内記念館」と「平賀源内先生旧邸」",
+          "description": "本草学から科学、文芸、陶芸まで時代を駆け抜けた江戸の天才の飽くなき好奇心に圧倒された。",
+          "badge_code": "shido_hiraga_gennai_erekitel"
+        },
+        {
+          "key": "B",
+          "text": "海女の玉取伝説を映す枯山水「無染庭」と、国重文の本堂・仁王門が立つ「志度寺」",
+          "description": "重森三玲の白砂の庭園と運慶作と伝わる仁王像、五重塔が織りなす海辺の霊場の厳かさに心打たれた。",
+          "badge_code": "shido_shidoji_pearl_diver_temple"
+        },
+        {
+          "key": "C",
+          "text": "昭和五年創業の老舗「さぬき志度 風月堂」で味わう、銘菓「源内焼」と季節の大福",
+          "description": "門前町の歴史を受け継ぐ菓子舗で、讃岐ならではの優しい甘みとおもてなしに心が和んだ。",
+          "badge_code": "shido_fugetsudo_sweets"
+        },
+        {
+          "key": "D",
+          "text": "志度湾を見渡す高台に鎮座し、湊町の暮らしと航海を守り続けてきた「多和神社」",
+          "description": "源内の生家から門前町へと続く旧街道の途上で、穏やかな瀬戸内の海風と氏神の静けさに包まれた。",
+          "badge_code": "shido_tawa_shrine_bay_view"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0d4e6d67-df95-4162-80ba-48f3a559bbc8",
+        "name": "平賀源内先生旧邸",
+        "description": "江戸時代の博物学者・発明家である平賀源内の生家跡（10:00〜16:00開館、月曜休、入館無料）。国の登録有形文化財の建物や薬草園、源内焼の窯跡、平賀源内銅像を見学できる。",
+        "address": "香川県さぬき市志度46-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.32412,
+        "lng": 134.168724,
+        "qr_token": "shuin-shido-1",
+        "cover_image_url": "/images/shido/spot1.png",
+        "f7_fragment": "江戸の奇才・平賀源内が生まれ育った生家跡であり、薬草園や窯跡が残る登録有形文化財。",
+        "f7_full": "「平賀源内先生旧邸」の静かな薬草園と銅像の佇まいが、稀代の発明家を生んだ港町・志度を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "dcb29782-ac36-40a9-8968-a332d9231f4c",
+        "next_spot_name": "多和神社"
+      },
+      {
+        "id": "dcb29782-ac36-40a9-8968-a332d9231f4c",
+        "name": "多和神社",
+        "description": "志度湾を望む高台に鎮座する志度の総氏神（境内参拝自由）。古くから海上安全と町の繁栄の守護神として信仰され、秋祭りでは勇壮な太鼓台（ちょうさ）や獅子舞が奉納される。",
+        "address": "香川県さぬき市志度632",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.323766,
+        "lng": 134.173411,
+        "qr_token": "shuin-shido-2",
+        "cover_image_url": "/images/shido/spot2.png",
+        "f7_fragment": "志度湾を見渡す高台に鎮座し、湊町の航海安全と繁栄を見守ってきた総氏神。",
+        "f7_full": "「多和神社」の石段と穏やかな志度湾を望む高台の境内が、旧街道を歩む旅の途中に爽やかな潮風と安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e6c8e31b-7b1b-4f2f-827f-f51b2f3d1bfd",
+        "next_spot_name": "平賀源内記念館"
+      },
+      {
+        "id": "e6c8e31b-7b1b-4f2f-827f-f51b2f3d1bfd",
+        "name": "平賀源内記念館",
+        "description": "平賀源内の業績と遺品を展示する記念館（9:00〜17:00開館、月曜休）。復元された摩擦起電機「エレキテル」や華やかな「源内焼」、本草学・戯作・蘭学の貴重な資料を見学できる。",
+        "address": "香川県さぬき市志度587-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.323482,
+        "lng": 134.174729,
+        "qr_token": "shuin-shido-3",
+        "cover_image_url": "/images/shido/spot3.png",
+        "f7_fragment": "復元されたエレキテルや源内焼、蘭学資料など、平賀源内の多彩な業績を伝える記念館。",
+        "f7_full": "「平賀源内記念館」に並ぶエレキテルと極彩色の源内焼が、時代を先取りした江戸の博物学者の情熱を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3b52e450-5d70-4ba4-860b-022a46d7d5dc",
+        "next_spot_name": "さぬき志度 風月堂"
+      },
+      {
+        "id": "3b52e450-5d70-4ba4-860b-022a46d7d5dc",
+        "name": "さぬき志度 風月堂",
+        "description": "昭和五年創業の老舗和洋菓子店（8:30〜19:00営業、水曜休）。平賀源内にちなんだ銘菓「源内焼」や季節のフルーツ大福、さぬき市産ブドウを使ったワインロールなどを販売している。",
+        "address": "香川県さぬき市志度593",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.323405,
+        "lng": 134.175108,
+        "qr_token": "shuin-shido-4",
+        "cover_image_url": "/images/shido/spot4.png",
+        "f7_fragment": "銘菓「源内焼」や季節のフルーツ大福が評判の、昭和五年創業の老舗和洋菓子店。",
+        "f7_full": "「さぬき志度 風月堂」の香ばしい源内焼と瑞々しい季節の大福が、門前町の散策に讃岐ならではの優しい甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "7c7cda3d-e931-49bf-8ffc-6f0c5195b63c",
+        "next_spot_name": "志度寺"
+      },
+      {
+        "id": "7c7cda3d-e931-49bf-8ffc-6f0c5195b63c",
+        "name": "志度寺",
+        "description": "四国八十八箇所霊場の第86番札所（境内参拝自由、納経8:00〜17:00）。国の重要文化財である本堂・仁王門や五重塔、「海女の玉取伝説」を表現した重森三玲作庭の枯山水「無染庭」が見どころ。",
+        "address": "香川県さぬき市志度1102",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.323964,
+        "lng": 134.179368,
+        "qr_token": "shuin-shido-5",
+        "cover_image_url": "/images/shido/spot5.png",
+        "f7_fragment": "国指定重要文化財の本堂・仁王門と、海女の玉取伝説を映す名園「無染庭」を有する古刹。",
+        "f7_full": "「志度寺」の荘厳な五重塔と白砂の枯山水庭園が、異才と伝説の湊町・志度を歩いた旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "81247cef-b0c7-4be9-8119-1ac001e7a65d",
+    "title": "音信川のせせらぎと六百年の神授の湯・長門湯本",
+    "name": "音信川のせせらぎと六百年の神授の湯・長門湯本",
+    "description": "室町時代に大寧寺の禅師が発見した山口県最古の温泉郷・長門市深川湯本（長門湯本温泉）。築七十年の長屋で味わう瓦そば 柳屋から、川辺のあけぼのカフェ、岩盤から湧く外湯・恩湯、老舗和菓子の吉冨幸進堂、大内義隆終焉の古刹・大寧寺までを巡る。",
+    "region": "長門湯本（長門市）",
+    "area_name": "長門湯本（長門市）",
+    "cover_image_url": "/images/nagato-yumoto/route-eyecatch.png",
+    "imageUrl": "/images/nagato-yumoto/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "音信川のせせらぎと岩盤から湧く恩湯、大寧寺の歴史が息づく長門湯本で、あなたが心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "六百年の歴史を誇り、足元の岩盤から生まれたての源泉が湧き出る神授の湯「恩湯」",
+          "description": "大寧寺の禅師が発見した伝承と、音信川の風景に溶け込む美しい木造湯屋の佇まいに心洗われた。",
+          "badge_code": "nagato_yumoto_onto_sacred_spring"
+        },
+        {
+          "key": "B",
+          "text": "築七十年の長屋「瓦そば 柳屋」で味わう、熱々の日本瓦にのった香ばしい「瓦そば」",
+          "description": "宇治抹茶が香る茶そばのパリッとした焦げ目と、甘辛い牛肉・錦糸卵が絡み合う山口の味に感激した。",
+          "badge_code": "nagato_yumoto_yanagiya_kawarazoba"
+        },
+        {
+          "key": "C",
+          "text": "温泉発見の禅師と戦国大名・大内義隆の最期を伝える、盤石橋の古刹「大寧寺」",
+          "description": "清流に架かる石橋を渡り、西国の栄華と悲劇を見つめてきた曹洞宗の名刹の静寂に深く魅了された。",
+          "badge_code": "nagato_yumoto_taineiji_zen_temple"
+        },
+        {
+          "key": "D",
+          "text": "音信川沿いの「あけぼのカフェ」の夏みかんどらやきと、老舗「吉冨幸進堂」のわっふる",
+          "description": "飛び石と川床が並ぶ清流のほとりで、長門ならではの柑橘どらやきと懐かしい和菓子に癒やされた。",
+          "badge_code": "nagato_yumoto_riverside_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c570afaf-f428-4143-8329-77fbd5a30269",
+        "name": "瓦そば 柳屋",
+        "description": "築70年の木造長屋をリノベーションした「だいご長屋」1階にある瓦そば専門店（11:00〜19:00営業、火曜・第3水曜休）。熱々の日本瓦にのせた茶そばと牛肉、錦糸卵を特製つゆで味わえる。",
+        "address": "山口県長門市深川湯本1325-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.326571,
+        "lng": 131.172745,
+        "qr_token": "shuin-nagato-yumoto-1",
+        "cover_image_url": "/images/nagato-yumoto/spot1.png",
+        "f7_fragment": "築七十年の長屋を再生した空間で、熱々の瓦にのった名物「瓦そば」を味わえる専門店。",
+        "f7_full": "「瓦そば 柳屋」の香ばしく焼けた茶そばとレトロな長屋の風情が、長門湯本温泉を歩く旅の始まりを華やかに彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "e8c94b8e-5525-49bf-8fa0-7a0d05d3a86d",
+        "next_spot_name": "あけぼのカフェ"
+      },
+      {
+        "id": "e8c94b8e-5525-49bf-8fa0-7a0d05d3a86d",
+        "name": "あけぼのカフェ",
+        "description": "音信川沿いの「星野リゾート 界 長門」に併設された、立ち寄り利用可能なカフェスタンド（11:00〜16:00営業、不定休）。夏みかんやゆずきちなど山口県産の素材を使った自家製どらやきが人気。",
+        "address": "山口県長門市深川湯本2229-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.327513,
+        "lng": 131.172929,
+        "qr_token": "shuin-nagato-yumoto-2",
+        "cover_image_url": "/images/nagato-yumoto/spot2.png",
+        "f7_fragment": "音信川のせせらぎのそばで、夏みかんやゆずきちの自家製どらやきを楽しめるカフェ。",
+        "f7_full": "「あけぼのカフェ」のふんわり焼き上がった柑橘どらやきが、音信川の川風が吹く温泉街のそぞろ歩きに爽やかな甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "95f3a186-5bf0-4688-8cc6-5345443cb728",
+        "next_spot_name": "恩湯"
+      },
+      {
+        "id": "95f3a186-5bf0-4688-8cc6-5345443cb728",
+        "name": "恩湯",
+        "description": "室町時代の応永三十四年に発見されたと伝わる、長門湯本温泉の象徴的な立ち寄り湯（10:00〜22:00営業、不定休）。全国でも珍しい「岩盤からの自然湧出」の湯船で、生まれたての源泉を堪能できる。",
+        "address": "山口県長門市深川湯本2265",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.328659,
+        "lng": 131.172087,
+        "qr_token": "shuin-nagato-yumoto-3",
+        "cover_image_url": "/images/nagato-yumoto/spot3.png",
+        "f7_fragment": "六百年の歴史を誇り、足元の岩盤から湧き出る源泉をそのまま湛える長門湯本の象徴的な外湯。",
+        "f7_full": "「恩湯」の美しい切妻屋根の木造湯屋と岩盤から湧き上がる清らかな源泉が、六百年続く「神授の湯」の物語を肌で感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "a0230e67-a8bb-4c8e-86f0-a916d872f91b",
+        "next_spot_name": "吉冨幸進堂"
+      },
+      {
+        "id": "a0230e67-a8bb-4c8e-86f0-a916d872f91b",
+        "name": "吉冨幸進堂",
+        "description": "温泉街の川沿いに店を構える老舗和菓子店（7:30〜17:30頃営業、火曜休）。ふんわりとした生地でクリームやあんを包んだ名物「わっふる」や「黒糖ろーる」、温泉まんじゅうが評判。",
+        "address": "山口県長門市深川湯本1031-2",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.330635,
+        "lng": 131.170233,
+        "qr_token": "shuin-nagato-yumoto-4",
+        "cover_image_url": "/images/nagato-yumoto/spot4.png",
+        "f7_fragment": "ふんわり生地の名物「わっふる」や黒糖ろーるで親しまれる、温泉街の老舗和菓子舗。",
+        "f7_full": "「吉冨幸進堂」の手づくりのわっふると温かな店構えが、音信川河川公園のほとりを歩くひとときに懐かしい彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b754e5f8-c8a5-4296-818f-24454b2b16cc",
+        "next_spot_name": "大寧寺"
+      },
+      {
+        "id": "b754e5f8-c8a5-4296-818f-24454b2b16cc",
+        "name": "大寧寺",
+        "description": "応永十七年創建の曹洞宗の名刹（境内参拝自由）。長門湯本温泉を発見した定庵禅師ゆかりの寺であり、戦国大名・大内義隆公の終焉の地としても知られる。防長三奇橋の「盤石橋」や紅葉が見事。",
+        "address": "山口県長門市深川湯本1074",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 34.32818,
+        "lng": 131.162924,
+        "qr_token": "shuin-nagato-yumoto-5",
+        "cover_image_url": "/images/nagato-yumoto/spot5.png",
+        "f7_fragment": "長門湯本温泉発見の定庵禅師と大内義隆公の歴史を伝え、名橋「盤石橋」が架かる禅寺。",
+        "f7_full": "「大寧寺」の石橋・盤石橋と山あいの静寂に包まれた本堂が、せせらぎと名湯の里・長門湯本を歩いた旅を厳かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "29cc68fb-184c-4be2-8c0f-acfc2e414355",
+    "title": "サンゴ石垣と水切り瓦の商家町・奈半利を辿る",
+    "name": "サンゴ石垣と水切り瓦の商家町・奈半利を辿る",
+    "description": "野根山街道の宿場町および魚梁瀬杉・生糸の集散地として栄え、サンゴ石や浜石の石塀と水切り瓦の商家が残る高知県奈半利町。奈半利駅物産館いちじくから、旧高田屋の竹崎家住宅、山内一豊ゆかりの正覚寺、旧野村茂久馬邸の森家住宅、藤村製絲記念館までを歩く。",
+    "region": "奈半利（奈半利町）",
+    "area_name": "奈半利（奈半利町）",
+    "cover_image_url": "/images/nahari/route-eyecatch.png",
+    "imageUrl": "/images/nahari/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水切り瓦の豪商屋敷とサンゴ石垣の路地、近代産業の記憶が残る奈半利で、あなたが深く心惹かれたのはどの風景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "土佐伝統の「水切り瓦」と土蔵が残り、喫茶も楽しめる国登録有形文化財「竹崎家住宅（旧高田屋）」",
+          "description": "台風と潮風から白壁を守る水切り瓦の造形美と、明治の豪商座敷で味わう珈琲の時間に心和んだ。",
+          "badge_code": "nahari_takezaki_mizukiri_gawara"
+        },
+        {
+          "key": "B",
+          "text": "初代土佐藩主・山内一豊が宿をとった「正覚寺」と、浜石・サンゴ石が連なる石垣の路地",
+          "description": "野根山街道を越えてお国入りした藩主の歴史と、南国の港町らしい丸石積みの塀の風情に惹かれた。",
+          "badge_code": "nahari_shogakuji_coral_stone_wall"
+        },
+        {
+          "key": "C",
+          "text": "終着駅の「奈半利駅物産館いちじく」で出会う、特産イチジクの甘味と「なはり味噌」",
+          "description": "黒潮の海を望むごめん・なはり線の終着駅で、太陽の恵みを浴びたイチジクと地元の味覚を楽しんだ。",
+          "badge_code": "nahari_station_fig_and_miso"
+        },
+        {
+          "key": "D",
+          "text": "「土佐の交通王」ゆかりの「森家住宅」と、生糸と林業の繁栄を伝える「藤村製絲記念館」",
+          "description": "桂浜の龍馬像建立を支えた野村茂久馬の旧邸と、近代奈半利を支えた製糸業の歩みに胸が熱くなった。",
+          "badge_code": "nahari_morike_and_fujimura_silk"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d7e17ad9-d161-4ecc-8f59-65b6f8f684ae",
+        "name": "奈半利駅物産館いちじく",
+        "description": "土佐くろしお鉄道ごめん・なはり線の終着・奈半利駅1階にある直売所（8:00〜17:00営業、年末年始休）。特産のイチジクを使ったジャムや菓子、無添加のなはり味噌、地元の弁当や野菜を販売している。",
+        "address": "高知県安芸郡奈半利町乙1305-6",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.424771,
+        "lng": 134.018143,
+        "qr_token": "shuin-nahari-1",
+        "cover_image_url": "/images/nahari/spot1.png",
+        "f7_fragment": "ごめん・なはり線の終着駅にあり、特産のイチジク製品やなはり味噌が揃う物産館。",
+        "f7_full": "「奈半利駅物産館いちじく」に並ぶ特産イチジクの品々と潮風の香りが、黒潮の港町・奈半利を歩く旅の始まりを明るく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8594044c-0ad3-400d-8b6c-2298d373c9ab",
+        "next_spot_name": "竹崎家住宅"
+      },
+      {
+        "id": "8594044c-0ad3-400d-8b6c-2298d373c9ab",
+        "name": "竹崎家住宅",
+        "description": "明治三十五年に建てられた豪商「旧高田屋」の屋敷で、国の登録有形文化財（9:00〜17:00開館、金曜休）。土佐特有の水切り瓦を備えた土蔵や庭園が見事で、主屋では喫茶や展示空間を楽しめる。",
+        "address": "高知県安芸郡奈半利町乙1699",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.424739,
+        "lng": 134.021801,
+        "qr_token": "shuin-nahari-2",
+        "cover_image_url": "/images/nahari/spot2.png",
+        "f7_fragment": "土佐伝統の「水切り瓦」と庭園が美しい、明治三十五年築の国登録有形文化財の旧商家。",
+        "f7_full": "「竹崎家住宅」の白壁に映える水切り瓦と落ち着いた座敷の喫茶空間が、海辺の商家町歩きに穏やかな寛ぎをもたらしてくれる。",
+        "is_final": false,
+        "next_spot_id": "bd7cd194-01ad-4e37-8342-de780fa12677",
+        "next_spot_name": "正覚寺"
+      },
+      {
+        "id": "bd7cd194-01ad-4e37-8342-de780fa12677",
+        "name": "正覚寺",
+        "description": "初代土佐藩主・山内一豊がお国入りの際に宿泊した歴史を持つ真宗大谷派の寺院（境内参拝自由）。本堂と周囲を囲む玉石積みの石垣が国の登録有形文化財に指定されている。",
+        "address": "高知県安芸郡奈半利町乙1718-1",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.424206,
+        "lng": 134.022252,
+        "qr_token": "shuin-nahari-3",
+        "cover_image_url": "/images/nahari/spot3.png",
+        "f7_fragment": "初代土佐藩主・山内一豊ゆかりの歴史を持ち、本堂と玉石垣が国登録有形文化財の古刹。",
+        "f7_full": "「正覚寺」の丸い浜石を積み上げた石垣と歴史ある本堂の佇まいが、野根山街道の宿場町として栄えた奈半利の記憶を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d1ed5967-8481-4d04-8e4d-dc953e1294a7",
+        "next_spot_name": "森家住宅"
+      },
+      {
+        "id": "d1ed5967-8481-4d04-8e4d-dc953e1294a7",
+        "name": "森家住宅",
+        "description": "「土佐の交通王」と呼ばれ桂浜の坂本龍馬像建立にも尽力した実業家・野村茂久馬の旧邸で、国の登録有形文化財（外観見学自由）。石塀と近代和風建築が織りなす美しい町並みを見学できる。",
+        "address": "高知県安芸郡奈半利町乙2595",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.427076,
+        "lng": 134.02378,
+        "qr_token": "shuin-nahari-4",
+        "cover_image_url": "/images/nahari/spot4.png",
+        "f7_fragment": "近代土佐の交通網と桂浜の龍馬像建立を支えた野村茂久馬ゆかりの国登録有形文化財の邸宅。",
+        "f7_full": "「森家住宅」の通りに沿って続く石塀と格調高い和風建築の佇まいが、近代高知の発展を牽引した港町の底力を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "ccce5ad5-7925-48be-89aa-df94bc8ee794",
+        "next_spot_name": "藤村製絲記念館"
+      },
+      {
+        "id": "ccce5ad5-7925-48be-89aa-df94bc8ee794",
+        "name": "藤村製絲記念館",
+        "description": "明治から昭和にかけて奈半利の産業を支えた旧藤村製絲の歩みを伝える記念館（8:30〜16:30開館、土・日曜・祝日休、休館日は外観見学自由）。日本遺産の構成文化財として町の近代化の歴史を今に伝える。",
+        "address": "高知県安芸郡奈半利町乙2630",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.428371,
+        "lng": 134.025178,
+        "qr_token": "shuin-nahari-5",
+        "cover_image_url": "/images/nahari/spot5.png",
+        "f7_fragment": "生糸生産と魚梁瀬杉の集散で栄えた奈半利の近代産業史を伝える、日本遺産の構成施設。",
+        "f7_full": "「藤村製絲記念館」のレトロな建物と緑豊かな佇まいが、サンゴ石垣と水切り瓦の町・奈半利を歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
