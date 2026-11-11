@@ -65130,5 +65130,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "5fd0aeed-ae33-4552-8fa6-0c617b152755",
+    "title": "四百年の鍛冶の技とスパイスの香る街・三条を巡る",
+    "name": "四百年の鍛冶の技とスパイスの香る街・三条を巡る",
+    "description": "江戸初期の和釘づくりから発展した金属加工・刃物のまち、新潟県三条市。職人の鎚音が響く三条鍛冶道場から、地元野菜とスパイスが融合する三条スパイス研究所、北三条駅、国登録文化財の三条市歴史民俗産業資料館、威容を誇る真宗大谷派三条別院までを巡る。",
+    "region": "三条（三条市）",
+    "area_name": "三条（三条市）",
+    "cover_image_url": "/images/sanjo/route-eyecatch.png",
+    "imageUrl": "/images/sanjo/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "四百年の鍛冶の技とスパイスの香り、大寺院の門前文化が息づく三条で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "赤く燃える火床と職人の鎚音にものづくりの魂を感じる「三条鍛冶道場」",
+          "description": "江戸時代の和釘から受け継がれる鍛冶職人の手仕事と、鉄を鍛える熱気に心が震えた。",
+          "badge_code": "sanjo_kaji_dojo_blacksmith"
+        },
+        {
+          "key": "B",
+          "text": "三条の旬野菜とスパイス、燕三条の器が出会う「三条スパイス研究所」",
+          "description": "木の温もりあふれる「ステージえんがわ」で味わう、色彩豊かなスパイス定食の奥深い風味に魅了された。",
+          "badge_code": "sanjo_spice_lab_thali"
+        },
+        {
+          "key": "C",
+          "text": "昭和十年の旧武徳殿建築と「北三条駅」で辿る「三条市歴史民俗産業資料館」",
+          "description": "唐破風の堂々たる木造建築と、石川雲蝶ゆかりの碑が残る敷地で三条の産業史を深く知った。",
+          "badge_code": "sanjo_folk_industry_museum"
+        },
+        {
+          "key": "D",
+          "text": "「お東さん」と慕われる元禄創建の大伽藍「真宗大谷派 三条別院」",
+          "description": "精緻な彫刻が施された山門と広大な本堂の佇まいに、職人の街を支えてきた深い信仰の力を感じた。",
+          "badge_code": "sanjo_betsuin_grand_temple"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "38497960-3284-4b92-8740-e17039a12c65",
+        "name": "三条鍛冶道場",
+        "description": "越後三条の鍛冶技術を体験・見学できる施設（9:00〜17:00開館、月曜・年末年始休、入館無料）。炭火を使う本格的な火床（ほど）が並び、三条金物の歴史展示や和釘づくりなどの体験講座が行われている。",
+        "address": "新潟県三条市元町11-53",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.632824,
+        "lng": 138.953476,
+        "qr_token": "shuin-sanjo-1",
+        "cover_image_url": "/images/sanjo/spot1.png",
+        "f7_fragment": "炭火の火床を備え、四百年の三条鍛冶の歴史と技を間近に体感できる拠点施設。",
+        "f7_full": "「三条鍛冶道場」に響く鎚音と赤く燃える火床の熱気が、江戸の和釘づくりから始まったものづくりの街・三条を巡る旅の幕を開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "691bca52-5f6f-45c6-8ded-9ce1c0eb28f6",
+        "next_spot_name": "三条スパイス研究所"
+      },
+      {
+        "id": "691bca52-5f6f-45c6-8ded-9ce1c0eb28f6",
+        "name": "三条スパイス研究所",
+        "description": "まちなか交流広場「ステージえんがわ」内にあるスパイス料理レストラン・カフェ（10:00〜19:00頃営業、水曜休）。三条の旬の伝統野菜と多彩なスパイスを組み合わせたターリー（定食）などを燕三条の器で楽しめる。",
+        "address": "新潟県三条市元町11-63",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.632509,
+        "lng": 138.954725,
+        "qr_token": "shuin-sanjo-2",
+        "cover_image_url": "/images/sanjo/spot2.png",
+        "f7_fragment": "三条の旬野菜とスパイスを掛け合わせた料理を、燕三条の器で味わえる食堂。",
+        "f7_full": "「三条スパイス研究所」の木の温もりあふれる空間と香り立つスパイス料理が、金物の街の豊かな風土と現代の創造力を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1876c674-de33-478b-8658-05194f9bfcca",
+        "next_spot_name": "北三条駅"
+      },
+      {
+        "id": "1876c674-de33-478b-8658-05194f9bfcca",
+        "name": "北三条駅",
+        "description": "三条市の中心市街地・本町エリアへの玄関口となるJR弥彦線の高架駅（待合室は始発〜終電）。駅前の交流広場「ステージえんがわ」や鍛冶道場に隣接し、まちなか散策の拠点として親しまれている。",
+        "address": "新潟県三条市元町10-21",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.632745,
+        "lng": 138.955754,
+        "qr_token": "shuin-sanjo-3",
+        "cover_image_url": "/images/sanjo/spot3.png",
+        "f7_fragment": "まちなか交流広場に隣接し、三条の中心街と鍛冶の里を結ぶ弥彦線の高架駅。",
+        "f7_full": "「北三条駅」のすっきりとした高架駅舎と駅前の木造回廊が、職人の工房と門前町が隣り合う三条の街歩きに心地よいリズムを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "fa30288b-0027-4488-84ec-0ff9d9f20405",
+        "next_spot_name": "三条市歴史民俗産業資料館"
+      },
+      {
+        "id": "fa30288b-0027-4488-84ec-0ff9d9f20405",
+        "name": "三条市歴史民俗産業資料館",
+        "description": "昭和10年築の旧武徳殿を活用した資料館で、国の登録有形文化財（9:00〜17:00開館、月曜・祝翌日休、入館無料）。入母屋造りの格調高い木造建築の中で、三条の金物産業の発展史や民俗資料を学べる。",
+        "address": "新潟県三条市本町3-1-4",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.632021,
+        "lng": 138.95674,
+        "qr_token": "shuin-sanjo-4",
+        "cover_image_url": "/images/sanjo/spot4.png",
+        "f7_fragment": "昭和十年の旧武徳殿を活かした国登録文化財で、三条金物の歴史を学ぶ資料館。",
+        "f7_full": "「三条市歴史民俗産業資料館」の威風堂々たる唐破風屋根と歴史展示が、和釘から世界的な刃物産地へと歩んだ三条の誇りを静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "dd089faf-1c76-4219-86bc-44be2fd1819c",
+        "next_spot_name": "真宗大谷派 三条別院"
+      },
+      {
+        "id": "dd089faf-1c76-4219-86bc-44be2fd1819c",
+        "name": "真宗大谷派 三条別院",
+        "description": "元禄3年創建、「お東さん」と親しまれる越後屈指の真宗大谷派寺院（境内参拝自由）。壮大な木造本堂や精緻な彫刻が施された山門・鐘楼が並び、門前町として栄えた三条の歴史を今に伝える。",
+        "address": "新潟県三条市本町2-1-57",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.631715,
+        "lng": 138.958114,
+        "qr_token": "shuin-sanjo-5",
+        "cover_image_url": "/images/sanjo/spot5.png",
+        "f7_fragment": "元禄三年の創建以来、「お東さん」と慕われる大本堂と名彫刻の山門が残る別院。",
+        "f7_full": "「真宗大谷派 三条別院」の堂々たる山門と静寂に包まれた大本堂が、鍛冶の技と歴史を辿った三条の旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e0f9a422-a6e5-4139-8b49-b6da3ec5697b",
+    "title": "三路線が交わる鉄道の街と名物駅弁・新津へ",
+    "name": "三路線が交わる鉄道の街と名物駅弁・新津へ",
+    "description": "三つの鉄道路線が交差し、SLばんえつ物語の起点としても知られる「鉄道の街」新潟市秋葉区新津。鉄道モニュメントが彩る新津駅から、明治三十年創業の駅弁屋・神尾弁当部、三色だんごの御菓子司羽入、まちの駅ぽっぽ、総鎮守・堀出神社までを歩く。",
+    "region": "新津（新潟市秋葉区）",
+    "area_name": "新津（新潟市秋葉区）",
+    "cover_image_url": "/images/niitsu/route-eyecatch.png",
+    "imageUrl": "/images/niitsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鉄道の要衝・新津駅と明治創業の駅弁、大正創業の三色だんごが息づく新津で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "三路線が交差し、鉄道商店街へと続く「新津駅」と「まちの駅 ぽっぽ」",
+          "description": "駅舎から商店街の歩道に至るまでSLや鉄道の意匠があふれる、本物の「鉄道の街」の誇りに胸が躍った。",
+          "badge_code": "niitsu_railway_town_station"
+        },
+        {
+          "key": "B",
+          "text": "明治三十年の駅開業から旅人を支える「神尾弁当部」の名物駅弁「えび千両ちらし」",
+          "description": "厚焼き玉子の下に海の幸が隠された粋な仕掛けと、百二十五年受け継がれる駅弁の味に感動した。",
+          "badge_code": "niitsu_kamio_ekiben_chirashi"
+        },
+        {
+          "key": "C",
+          "text": "列車旅の甘味として生まれた「御菓子司 羽入」の看板銘菓「三色だんご」",
+          "description": "こし餡・白餡・すりごまが彩る折箱入りの一口団子に、鉄道の街ならではの優しい工夫と歴史を感じた。",
+          "badge_code": "niitsu_hanyu_sanshoku_dango"
+        },
+        {
+          "key": "D",
+          "text": "元和二年の創建以来、新津の街と祭りを見守り続ける総鎮守「堀出神社」",
+          "description": "ご神体が掘り出された奇瑞に由来する「堀出さま」の杜で、四百年の街の歩みに静かに手を合わせた。",
+          "badge_code": "niitsu_horidashi_shrine_guardian"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1dda5f73-f1c9-4fb5-8dd3-2013e7dbd9eb",
+        "name": "新津駅",
+        "description": "JR信越本線・羽越本線・磐越西線の3路線が交わる「鉄道の街・にいつ」の拠点駅（待合室は始発〜終電）。SLばんえつ物語の発着駅としても知られ、駅前や構内に蒸気機関車の動輪など鉄道モニュメントが並ぶ。",
+        "address": "新潟県新潟市秋葉区新津本町1-1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.800232,
+        "lng": 139.121177,
+        "qr_token": "shuin-niitsu-1",
+        "cover_image_url": "/images/niitsu/spot1.png",
+        "f7_fragment": "三路線が交差し、SLばんえつ物語の起点となる「鉄道の街・にいつ」の玄関口。",
+        "f7_full": "「新津駅」の広場に鎮座する蒸気機関車の動輪と鉄道の意匠が、百二十五年以上にわたり鉄路とともに歩んできた街の旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "9e367026-4457-4b20-81a4-09faa099cdb5",
+        "next_spot_name": "神尾弁当部"
+      },
+      {
+        "id": "9e367026-4457-4b20-81a4-09faa099cdb5",
+        "name": "神尾弁当部",
+        "description": "明治30年創業の老舗駅弁店・神尾商事の駅前直売所（8:30〜16:00頃営業、無休）。厚焼き玉子の下に4種の海鮮が隠れた名物「えび千両ちらし」や「えんがわ押し寿司」「雪だるま弁当」を購入できる。",
+        "address": "新潟県新潟市秋葉区新津本町1-2-40",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.800352,
+        "lng": 139.122018,
+        "qr_token": "shuin-niitsu-2",
+        "cover_image_url": "/images/niitsu/spot2.png",
+        "f7_fragment": "明治三十年の創業以来、名物「えび千両ちらし」で鉄道旅を彩る老舗駅弁店。",
+        "f7_full": "「神尾弁当部」の黄金色の玉子焼きに包まれたえび千両ちらしが、鉄道の要衝・新津ならではの旅情と新潟の米・海の幸の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "87f2ffd2-f71b-41e6-81f5-f8b00a552d72",
+        "next_spot_name": "御菓子司 羽入"
+      },
+      {
+        "id": "87f2ffd2-f71b-41e6-81f5-f8b00a552d72",
+        "name": "御菓子司 羽入",
+        "description": "新津本町通りにある大正5年創業の老舗和菓子処（9:00〜18:00営業、日曜休）。列車内でも食べやすいよう折箱に詰めたこし餡・白餡・すりごまの名物「三色だんご」やSLモチーフの菓子が揃う。",
+        "address": "新潟県新潟市秋葉区新津本町2-6-36",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.798812,
+        "lng": 139.122581,
+        "qr_token": "shuin-niitsu-3",
+        "cover_image_url": "/images/niitsu/spot3.png",
+        "f7_fragment": "大正五年の創業以来、折箱入りの名物「三色だんご」で親しまれる老舗菓子処。",
+        "f7_full": "「御菓子司 羽入」のこし餡・白餡・すりごまが並ぶ「三色だんご」が、鉄道の要衝・新津で旅人に愛されてきた甘味の伝統を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9aa00ef3-c849-4b94-8b51-fe0815363680",
+        "next_spot_name": "まちの駅 ぽっぽ"
+      },
+      {
+        "id": "9aa00ef3-c849-4b94-8b51-fe0815363680",
+        "name": "まちの駅 ぽっぽ",
+        "description": "にいつ鉄道商店街にある市民と旅人の休憩・交流施設（9:30〜17:00開館、月曜・年末年始休、入館無料）。鉄道写真の展示や観光パンフレットが揃い、商店街散策の合間に気軽にひと休みできる。",
+        "address": "新潟県新潟市秋葉区新津本町2-4-17",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.797754,
+        "lng": 139.124284,
+        "qr_token": "shuin-niitsu-4",
+        "cover_image_url": "/images/niitsu/spot4.png",
+        "f7_fragment": "にいつ鉄道商店街の中心にあり、鉄道展示を眺めながら休息できる交流拠点。",
+        "f7_full": "「まちの駅 ぽっぽ」の温かな休憩空間と商店街を彩る鉄道モチーフが、鉄路の記憶を辿るまちなか散策に穏やかなひと息を添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d65a845d-f3d5-4683-89ba-b37f3689c331",
+        "next_spot_name": "堀出神社"
+      },
+      {
+        "id": "d65a845d-f3d5-4683-89ba-b37f3689c331",
+        "name": "堀出神社",
+        "description": "元和2年創建の新津の総鎮守（境内参拝自由）。洪水で土砂からご神体が掘り出された伝承から「堀出さま」と親しまれ、毎年8月の新津まつりでは豪華な屋台が繰り出す舞台となる。",
+        "address": "新潟県新潟市秋葉区新津本町3-14-31",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.794659,
+        "lng": 139.123314,
+        "qr_token": "shuin-niitsu-5",
+        "cover_image_url": "/images/niitsu/spot5.png",
+        "f7_fragment": "元和二年の創建以来、「堀出さま」と篤く慕われ新津の街を見守る総鎮守の杜。",
+        "f7_full": "「堀出神社」の緑深い参道と風格ある社殿が、鉄道と駅弁、老舗の団子を巡り歩いた新津の旅を静かで清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f4be3a7f-5d2a-4f03-8755-568b64490c19",
+    "title": "雪国の小京都の寺町と創作人形・飯山を辿る",
+    "name": "雪国の小京都の寺町と創作人形・飯山を辿る",
+    "description": "千曲川のほとりに二十以上の寺院と仏壇通りが連なる「雪国の小京都」長野県飯山市。伝統工芸が彩る飯山駅から、飯山城の歴史と内山紙・仏壇を伝える飯山市ふるさと館、人気のパティスリーヒラノ、苔庭と雁木の古刹・称念寺、心温まる高橋まゆみ人形館までを辿る。",
+    "region": "飯山（飯山市）",
+    "area_name": "飯山（飯山市）",
+    "cover_image_url": "/images/iiyama/route-eyecatch.png",
+    "imageUrl": "/images/iiyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "雪国の小京都と呼ばれる寺町と伝統の飯山仏壇、心温まる人形館が息づく飯山で、あなたが強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "里山に生きる人々の笑顔と温もりを映し出す「飯山市高橋まゆみ人形館」",
+          "description": "今にも語りかけてきそうな創作人形の優しい眼差しに、信州の原風景と人の温かさを感じた。",
+          "badge_code": "iiyama_takahashi_mayumi_doll_museum"
+        },
+        {
+          "key": "B",
+          "text": "茅葺きの山門と雁木回廊、緑の苔庭が静寂を紡ぐ寺町の古刹「称念寺」",
+          "description": "雪国ならではの屋根付き参道と瑞々しい苔庭の美しさに、「雪国の小京都」の風情を実感した。",
+          "badge_code": "iiyama_shonenji_moss_temple"
+        },
+        {
+          "key": "C",
+          "text": "伝統工芸が輝く「飯山駅」と、飯山仏壇・内山紙の歴史を紐解く「飯山市ふるさと館」",
+          "description": "豪雪の冬の手仕事から生まれた金箔の飯山仏壇と、強靭な内山紙の技の結晶に感銘を受けた。",
+          "badge_code": "iiyama_furusatokan_craft_heritage"
+        },
+        {
+          "key": "D",
+          "text": "仏壇通りの散策途中に信州フルーツの洋菓子を味わう「パティスリーヒラノ」",
+          "description": "寺町と茶の湯の文化が育てた「スイーツの街・飯山」で、彩り豊かなケーキと珈琲に癒やされた。",
+          "badge_code": "iiyama_patisserie_hirano_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "397ad65e-b6b9-429a-8f67-ae4b8238b08e",
+        "name": "飯山駅",
+        "description": "北陸新幹線とJR飯山線が乗り入れる奥信濃・北信州の玄関口（待合室は始発〜終電）。信州産カラマツ材を用いた駅舎内に飯山仏壇の金具や内山紙の装飾が施され、1階に観光案内所やアウトドア拠点が揃う。",
+        "address": "長野県飯山市大字飯山771-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.845557,
+        "lng": 138.358661,
+        "qr_token": "shuin-iiyama-1",
+        "cover_image_url": "/images/iiyama/spot1.png",
+        "f7_fragment": "北陸新幹線と飯山線が交わり、飯山仏壇と内山紙の伝統意匠が迎える玄関口。",
+        "f7_full": "「飯山駅」のカラマツ材が香る構内と伝統工芸の装飾が、「雪国の小京都」と呼ばれる城下町・寺町を辿る旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d216245f-3bb8-47bd-8431-344afe853368",
+        "next_spot_name": "飯山市ふるさと館"
+      },
+      {
+        "id": "d216245f-3bb8-47bd-8431-344afe853368",
+        "name": "飯山市ふるさと館",
+        "description": "飯山城址公園の麓にある歴史・民俗博物館（9:00〜17:00開館、月曜・祝翌日休）。上杉謙信公ゆかりの飯山城の歴史や、豪雪地帯の暮らし、伝統工芸「飯山仏壇」「内山紙」の歩みを詳しく紹介している。",
+        "address": "長野県飯山市大字飯山1436-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.850358,
+        "lng": 138.358868,
+        "qr_token": "shuin-iiyama-2",
+        "cover_image_url": "/images/iiyama/spot2.png",
+        "f7_fragment": "飯山城址の麓に建ち、城下町の歴史と飯山仏壇・内山紙の技を伝える博物館。",
+        "f7_full": "「飯山市ふるさと館」に並ぶ黄金の仏壇金具と雪国の生活道具が、深い雪を豊かな文化へと昇華させてきた飯山の人々の知恵を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "609c3fa0-ddc2-4162-8cdb-d42b41cdf102",
+        "next_spot_name": "パティスリーヒラノ"
+      },
+      {
+        "id": "609c3fa0-ddc2-4162-8cdb-d42b41cdf102",
+        "name": "パティスリーヒラノ",
+        "description": "仏壇通り近くに店を構える飯山を代表する人気洋菓子店・カフェ（9:30〜18:30頃営業、水・木曜不定休）。信州産の旬の果物を使ったケーキや焼き菓子が並び、併設のカフェでゆったりと味わえる。",
+        "address": "長野県飯山市南町13-17",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.85355,
+        "lng": 138.364112,
+        "qr_token": "shuin-iiyama-3",
+        "cover_image_url": "/images/iiyama/spot3.png",
+        "f7_fragment": "「スイーツの街・飯山」で親しまれる、旬の信州果実を使った人気洋菓子店。",
+        "f7_full": "「パティスリーヒラノ」のショーケースを彩る瑞々しいケーキと甘い香りが、城下町から寺町へと歩く旅の途中に華やかな休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "f0c71780-ae59-486d-8455-5f09a264253d",
+        "next_spot_name": "称念寺"
+      },
+      {
+        "id": "f0c71780-ae59-486d-8455-5f09a264253d",
+        "name": "称念寺",
+        "description": "戦国時代の永禄年間創建と伝わる飯山寺町の代表的な古刹（境内参拝自由）。茅葺き屋根の山門から本堂へと続く石畳と、雪よけの屋根「雁木」を備えた参道、美しい苔庭が雪国の小京都の風情を漂わせる。",
+        "address": "長野県飯山市大字奈良沢2045",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.8546,
+        "lng": 138.360491,
+        "qr_token": "shuin-iiyama-4",
+        "cover_image_url": "/images/iiyama/spot4.png",
+        "f7_fragment": "茅葺きの山門と雁木回廊、緑鮮やかな苔庭が「雪国の小京都」を象徴する古刹。",
+        "f7_full": "「称念寺」の静寂に包まれた杉木立と緑の絨毯のような苔庭が、五百年の祈りを重ねてきた飯山寺町の凛とした美しさを心に刻んでくれる。",
+        "is_final": false,
+        "next_spot_id": "9e86428a-086a-48d3-8c58-644f1b871944",
+        "next_spot_name": "高橋まゆみ人形館"
+      },
+      {
+        "id": "9e86428a-086a-48d3-8c58-644f1b871944",
+        "name": "高橋まゆみ人形館",
+        "description": "飯山市在住の人形作家・高橋まゆみ氏の創作人形を展示する美術館（9:00〜17:00開館、水曜休）。信州の里山に暮らす人々の温かい表情や家族の絆を表現した作品が並び、雁木造りの外観も街並みに調和している。",
+        "address": "長野県飯山市大字飯山2941-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.856149,
+        "lng": 138.362672,
+        "qr_token": "shuin-iiyama-5",
+        "cover_image_url": "/images/iiyama/spot5.png",
+        "f7_fragment": "信州の里山に生きる人々の温かい表情や絆を映し出す、創作人形の専門美術館。",
+        "f7_full": "「高橋まゆみ人形館」の雁木造りの館内に広がる優しい里山の情景が、雪国の小京都・飯山を辿った旅を心温まる余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "16e1ec54-66c3-4696-8c25-e5e292160c20",
+    "title": "広重の浮世絵と六つの枡形が残る・中山道大井宿",
+    "name": "広重の浮世絵と六つの枡形が残る・中山道大井宿",
+    "description": "江戸時代の「六つの枡形」と商家建築が今も残る岐阜県恵那市の中山道大井宿。二路線が交わる恵那駅から、特産品が揃う「えなてらす」、栗菓子の老舗・菊水堂、『木曽海道六拾九次』を収蔵する中山道広重美術館、庄屋屋敷の中山道ひし屋資料館までを歩く。",
+    "region": "恵那（恵那市）",
+    "area_name": "恵那（恵那市）",
+    "cover_image_url": "/images/ena/route-eyecatch.png",
+    "imageUrl": "/images/ena/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "歌川広重が描いた浮世絵の世界と、六つの枡形・栗菓子が息づく中山道大井宿で、あなたの心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "『木曽海道六拾九次』の色彩と重ね摺り体験に出会う「中山道広重美術館」",
+          "description": "広重が描いた雪の大井宿の叙情と、版を重ねるごとに浮かび上がる浮世絵の技に感動した。",
+          "badge_code": "ena_hiroshige_ukiyoe_museum"
+        },
+        {
+          "key": "B",
+          "text": "六つの枡形が続く旧中山道で、庄屋建築の粋を伝える「中山道ひし屋資料館」",
+          "description": "鍵の手に折れ曲がる江戸の道筋と、うだつや格子戸が残る商家の佇まいに宿場町の格式を感じた。",
+          "badge_code": "ena_hishiya_oijuku_machiya"
+        },
+        {
+          "key": "C",
+          "text": "大井橋のたもとで味わう、「菊水堂」の伝統の栗きんとんと栗菓子",
+          "description": "大井宿の西の入口で受け継がれる、地元産の栗の風味が詰まった優しい甘みに心が和んだ。",
+          "badge_code": "ena_kikusuido_chestnut_sweets"
+        },
+        {
+          "key": "D",
+          "text": "明知鉄道とJRが交わる「恵那駅」と、東濃の恵みが集まる「えなてらす」",
+          "description": "恵那山を望む鉄道の玄関口と、多彩な栗きんとんや五平餅が並ぶ物産館の賑わいに旅情が高まった。",
+          "badge_code": "ena_station_and_enaterrace"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "34416eb2-67a9-4cec-8303-85a324dcc501",
+        "name": "恵那駅",
+        "description": "JR中央本線とローカル線・明知鉄道が接続する恵那市の玄関口（待合室は始発〜終電）。明治35年に「大井駅」として開業した歴史を持ち、南側に広がる旧中山道大井宿や恵那峡への起点となっている。",
+        "address": "岐阜県恵那市大井町295-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.455096,
+        "lng": 137.408164,
+        "qr_token": "shuin-ena-1",
+        "cover_image_url": "/images/ena/spot1.png",
+        "f7_fragment": "JR中央本線と明知鉄道が交わる、中山道大井宿と恵那峡への歴史ある玄関口。",
+        "f7_full": "「恵那駅」の落ち着いた木目調の駅舎と明知鉄道のホームが、江戸時代の宿場町の記憶を残す中山道大井宿を巡る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "c79a7400-c144-44ed-81a9-5cf1220957f5",
+        "next_spot_name": "えなてらす"
+      },
+      {
+        "id": "c79a7400-c144-44ed-81a9-5cf1220957f5",
+        "name": "えなてらす",
+        "description": "恵那駅前にある観光物産館・アンテナショップ（9:00〜18:00営業、年末年始休）。秋〜冬には市内各店の栗きんとんを1個から購入できるほか、五平餅や地酒、大井宿の散策マップが揃う。",
+        "address": "岐阜県恵那市大井町295-19",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.455335,
+        "lng": 137.408653,
+        "qr_token": "shuin-ena-2",
+        "cover_image_url": "/images/ena/spot2.png",
+        "f7_fragment": "恵那駅前にあり、市内各店の栗きんとんや東濃の特産品・散策情報が揃う拠点。",
+        "f7_full": "「えなてらす」に並ぶ恵那ならではの栗菓子と温かなおもてなしが、これから歩く旧中山道大井宿の町並み散策への期待を膨らませてくれる。",
+        "is_final": false,
+        "next_spot_id": "cdcb93db-df9e-4bbd-849f-7ac17a9b2304",
+        "next_spot_name": "菊水堂"
+      },
+      {
+        "id": "cdcb93db-df9e-4bbd-849f-7ac17a9b2304",
+        "name": "菊水堂",
+        "description": "大井宿の西口・阿木川近くに店を構える大正期創業の老舗和菓子処（9:30〜18:30営業、火曜休）。素材の味を生かした伝統の「栗きんとん」や「栗きんとん大福」「栗どらやき」など四季の銘菓を販売している。",
+        "address": "岐阜県恵那市大井町219",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.453627,
+        "lng": 137.408917,
+        "qr_token": "shuin-ena-3",
+        "cover_image_url": "/images/ena/spot3.png",
+        "f7_fragment": "大井宿の入口近くで、伝統の栗きんとんや栗きんとん大福を作る老舗菓子舗。",
+        "f7_full": "「菊水堂」の丁寧な手仕事で絞られた栗きんとんの素朴な甘みが、中山道大井宿の鍵の手の道筋を歩く旅人に豊かな季節の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "526acdd8-acde-4267-8685-9bfa112c4bad",
+        "next_spot_name": "中山道広重美術館"
+      },
+      {
+        "id": "526acdd8-acde-4267-8685-9bfa112c4bad",
+        "name": "中山道広重美術館",
+        "description": "歌川広重の浮世絵版画を中心に約1,500点を収蔵する美術館（9:30〜17:00開館、月曜・祝翌日休）。名作『木曽海道六拾九次之内』の企画展示のほか、誰でも無料で体験できる「重ね摺り体験」コーナーが人気。",
+        "address": "岐阜県恵那市大井町176-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.452865,
+        "lng": 137.41012,
+        "qr_token": "shuin-ena-4",
+        "cover_image_url": "/images/ena/spot4.png",
+        "f7_fragment": "歌川広重『木曽海道六拾九次』をはじめ約千五百点を収蔵する浮世絵美術館。",
+        "f7_full": "「中山道広重美術館」に展示された鮮やかな藍と朱の浮世絵版画が、二百年前の旅人が見た大井宿と木曽路の風景を鮮烈に呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "ad9aeb53-3b74-4257-85a6-bfe462942ddf",
+        "next_spot_name": "中山道ひし屋資料館"
+      },
+      {
+        "id": "ad9aeb53-3b74-4257-85a6-bfe462942ddf",
+        "name": "中山道ひし屋資料館",
+        "description": "大井宿の庄屋を務めた古山家の明治初期の主屋を復元した資料館（9:00〜17:00開館、月曜・祝翌日休）。うだつの上がる屋根や格子戸、茶室、文庫蔵が残り、大井宿の商家建築と俳諧文化を今に伝えている。",
+        "address": "岐阜県恵那市大井町60-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.455183,
+        "lng": 137.414558,
+        "qr_token": "shuin-ena-5",
+        "cover_image_url": "/images/ena/spot5.png",
+        "f7_fragment": "うだつと格子戸が美しい庄屋屋敷を復元し、大井宿の商家文化を伝える資料館。",
+        "f7_full": "「中山道ひし屋資料館」の重厚なうだつ屋根と静かな中庭が、六つの枡形が残る中山道大井宿を歩いた旅を江戸の宿場町の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "237c2e5c-e2a7-4f1d-8214-a9437784504c",
+    "title": "全国天王総本社の門前と厄除け銘菓・尾張津島を歩く",
+    "name": "全国天王総本社の門前と厄除け銘菓・尾張津島を歩く",
+    "description": "ユネスコ無形文化遺産「尾張津島天王祭」と三英傑ゆかりの歴史が息づく愛知県津島市。名鉄津島駅から、旧銀行建築の津島市観光交流センター、全国天王総本社の津島神社、伝統の神社菓子・あかだ屋清七、国指定重要文化財の旧堀田家住宅までを歩く。",
+    "region": "津島（津島市）",
+    "area_name": "津島（津島市）",
+    "cover_image_url": "/images/tsushima/route-eyecatch.png",
+    "imageUrl": "/images/tsushima/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "三英傑が崇敬した津島神社と千年の厄除け菓子、豪商の町家が息づく尾張津島で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "豊臣秀吉公寄進の楼門と国重文の本殿が鎮座する、全国天王総本社「津島神社」",
+          "description": "三英傑が篤く崇敬した「津島のお天王さま」の荘厳な社殿と、千四百年の祈りの歴史に圧倒された。",
+          "badge_code": "tsushima_shrine_tenno_headquarters"
+        },
+        {
+          "key": "B",
+          "text": "弘法大師ゆかりの厄除け神社菓子「あかだ・くつわ」を守る「あかだ屋清七」",
+          "description": "二重の輪の「くつわ」と丸い「あかだ」の堅い歯ごたえと香ばしさに、門前町の生きた伝統を味わった。",
+          "badge_code": "tsushima_akadaya_sacred_confection"
+        },
+        {
+          "key": "C",
+          "text": "正徳年間の豪商の暮らしと町家建築を伝える、国指定重要文化財「旧堀田家住宅」",
+          "description": "津島神社の門前町で栄えた両替商の広大な屋敷構えと土蔵群に、江戸期の商業都市の繁栄を見た。",
+          "badge_code": "tsushima_hotta_merchant_residence"
+        },
+        {
+          "key": "D",
+          "text": "西尾張の玄関口「津島駅」と、昭和四年の旧銀行建築「津島市観光交流センター」",
+          "description": "古典主義様式のレトロな旧銀行ホールで、尾張津島天王祭の華やかな巻藁船の伝統に触れられた。",
+          "badge_code": "tsushima_matsuriba_retro_bank"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "eb529334-2ccf-47c6-84d6-412b2bb1a758",
+        "name": "津島駅",
+        "description": "名鉄津島線と尾西線が乗り入れる津島市の玄関口（待合室は始発〜終電）。明治31年開業の歴史を持ち、全国天王総本社の津島神社や尾張津島天王祭・藤まつりの舞台となる天王川公園への起点となっている。",
+        "address": "愛知県津島市藤浪町2-8",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.177619,
+        "lng": 136.730825,
+        "qr_token": "shuin-tsushima-1",
+        "cover_image_url": "/images/tsushima/spot1.png",
+        "f7_fragment": "名鉄二路線が交わる、お天王さまの門前町と尾張津島天王祭の街への玄関口。",
+        "f7_full": "「津島駅」から西へと伸びる天王通りが、織田信長公も重視した商業都市・門前町の歴史を巡る旅の始まりを穏やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7459b6d-b8e4-4a0b-8ff6-3eca3ad06654",
+        "next_spot_name": "津島市観光交流センター"
+      },
+      {
+        "id": "c7459b6d-b8e4-4a0b-8ff6-3eca3ad06654",
+        "name": "津島市観光交流センター",
+        "description": "昭和4年築の「旧名古屋銀行津島支店」を活用した観光交流拠点（9:00〜17:00開館、月曜・年末年始休、入館無料）。国の登録有形文化財のモダンな銀行建築の中で、尾張津島天王祭の展示見学や休憩ができる。",
+        "address": "愛知県津島市本町1-52-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.17875,
+        "lng": 136.723478,
+        "qr_token": "shuin-tsushima-2",
+        "cover_image_url": "/images/tsushima/spot2.png",
+        "f7_fragment": "昭和四年築の旧名古屋銀行の建築を活かした、国登録有形文化財の交流拠点。",
+        "f7_full": "「津島市観光交流センター」の吹き抜け天井が美しい旧銀行ホールと祭礼展示が、門前町散策の途中にレトロで落ち着いた休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "604ddf0a-ee0c-474b-8c4c-7fe4a55e03ed",
+        "next_spot_name": "津島神社"
+      },
+      {
+        "id": "604ddf0a-ee0c-474b-8c4c-7fe4a55e03ed",
+        "name": "津島神社",
+        "description": "欽明天皇元年鎮座と伝わる、全国約3,000社の天王信仰の総本社（境内参拝自由）。豊臣秀吉寄進の「楼門」や徳川ゆかりの「本殿」が国の重要文化財に指定されており、夏の尾張津島天王祭でも名高い。",
+        "address": "愛知県津島市神明町1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.178621,
+        "lng": 136.721337,
+        "qr_token": "shuin-tsushima-3",
+        "cover_image_url": "/images/tsushima/spot3.png",
+        "f7_fragment": "千四百年の歴史を誇り、豊臣秀吉寄進の楼門と本殿が国重文の天王信仰総本社。",
+        "f7_full": "「津島神社」の朱塗りの楼門と檜皮葺きの壮麗な本殿が、三英傑が崇敬した「津島のお天王さま」の格調高い祈りの歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b1b2e43e-05d2-48b7-82b3-8bb326629137",
+        "next_spot_name": "あかだ屋清七"
+      },
+      {
+        "id": "b1b2e43e-05d2-48b7-82b3-8bb326629137",
+        "name": "あかだ屋清七",
+        "description": "津島神社の門前に店を構える伝統銘菓の老舗（9:00〜18:00営業、水曜休）。弘法大師ゆかりの日本最古級の神社菓子と伝わる、米粉を揚げた厄除け菓子「あかだ」と二重の輪の「くつわ」を購入できる。",
+        "address": "愛知県津島市馬場町51",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.178099,
+        "lng": 136.719703,
+        "qr_token": "shuin-tsushima-4",
+        "cover_image_url": "/images/tsushima/spot4.png",
+        "f7_fragment": "弘法大師ゆかりの厄除け神社菓子「あかだ」と「くつわ」を守る門前の老舗。",
+        "f7_full": "「あかだ屋清七」の香ばしく揚がったあかだとくつわの素朴な味わいが、千年にわたり参拝者の無病息災を願ってきた門前町の伝統を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8bb06912-94eb-420b-8a59-c097de143f27",
+        "next_spot_name": "重要文化財 堀田家住宅"
+      },
+      {
+        "id": "8bb06912-94eb-420b-8a59-c097de143f27",
+        "name": "重要文化財 堀田家住宅",
+        "description": "江戸時代中期（正徳年間頃）に建てられた豪商・堀田家の屋敷で、国の重要文化財（土日祝10:00〜15:00公開、外観は随時見学可）。主屋や座敷、土蔵群が当時の姿で残り、門前町の繁栄を今に伝える。",
+        "address": "愛知県津島市南門前町1-2-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.176559,
+        "lng": 136.719786,
+        "qr_token": "shuin-tsushima-5",
+        "cover_image_url": "/images/tsushima/spot5.png",
+        "f7_fragment": "正徳年間の主屋や土蔵群が江戸期の尾張豪商の格式を伝える国指定重要文化財。",
+        "f7_full": "「重要文化財 堀田家住宅」の重厚な格子と白壁の土蔵が、お天王さまの門前町として栄えた尾張津島の旅を深い歴史の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
