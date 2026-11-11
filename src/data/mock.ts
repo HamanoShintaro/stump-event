@@ -60580,5 +60580,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "7148edef-0978-488d-8787-2534858bc2a3",
+    "title": "千年続く土佐和紙の技と大国さまの門前・伊野を辿る",
+    "name": "千年続く土佐和紙の技と大国さまの門前・伊野を辿る",
+    "description": "清流・仁淀川の恵みが育んだ国の伝統的工芸品「土佐和紙」の里・高知県いの町。路面電車も並ぶ伊野駅から、円筒形のギャラリー・コパ、流し漉きの技を伝えるいの町紙の博物館、元黒板工場を再生したKOKUBAN Office&Cafe、いの大国さまとして親しまれる椙本神社までを歩く。",
+    "region": "伊野（いの町）",
+    "area_name": "伊野（いの町）",
+    "cover_image_url": "/images/ino/route-eyecatch.png",
+    "imageUrl": "/images/ino/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千年の歴史を誇る土佐和紙の技と古い紙問屋の町並みが残る伊野で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "世界の文化財修復を支える極薄の和紙と、手漉きの技に出会う「いの町紙の博物館」",
+          "description": "大英博物館でも使われる土佐典具帖紙の繊細さと、職人の流し漉きの技に深く感動した。",
+          "badge_code": "ino_washi_paper_museum"
+        },
+        {
+          "key": "B",
+          "text": "かつての黒板工場をリノベーションした「KOKUBAN Office&Cafe」で味わう珈琲",
+          "description": "黒板の深い緑と木の温もりが調和した空間で、ものづくりの町の新しい感性に触れられた。",
+          "badge_code": "ino_kokuban_factory_cafe"
+        },
+        {
+          "key": "C",
+          "text": "水切り瓦の町並みへの入口「ギャラリー・コパ」と、路面電車が交差する「伊野駅」",
+          "description": "レトロな円筒形の展示空間に並ぶ和紙小物と、路面電車が佇む駅前の旅情に心が和んだ。",
+          "badge_code": "ino_copa_washi_gallery"
+        },
+        {
+          "key": "D",
+          "text": "平安の世から「いの大国さま」と慕われる、門前町の総鎮守「椙本神社」",
+          "description": "千年の歴史を刻む鎮守の森と風格ある社殿に、清流と和紙の町を守り続けてきた祈りを感じた。",
+          "badge_code": "ino_sugimoto_daikoku_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "19dd98bb-9856-4ff0-844f-45000c15d54d",
+        "name": "伊野駅",
+        "description": "土佐和紙の里・いの町の玄関口となるJR土讃線の駅（終日見学自由）。駅前にはとさでん交通の伊野停留場も隣接し、路面電車とJRが並ぶ風情ある風景から町歩きを始められる。",
+        "address": "高知県吾川郡いの町駅前町14",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.548434,
+        "lng": 133.431489,
+        "qr_token": "shuin-ino-1",
+        "cover_image_url": "/images/ino/spot1.png",
+        "f7_fragment": "路面電車の停留場が隣り合う、千年の土佐和紙の里・いの町への玄関口となる駅。",
+        "f7_full": "「伊野駅」の穏やかなホームと路面電車が並ぶ風景が、仁淀川の清流が育んだ土佐和紙の町を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "de394e60-6253-4064-8bf0-80f84bcd9553",
+        "next_spot_name": "ギャラリー・コパ"
+      },
+      {
+        "id": "de394e60-6253-4064-8bf0-80f84bcd9553",
+        "name": "ギャラリー・コパ",
+        "description": "大国町通りの入口に建つ円筒形の外観が特徴的な観光・文化拠点（9:00〜17:00開館、月曜休、入館無料）。1階のいの町観光協会で土佐和紙製品や特産品を購入でき、2階では展示を楽しめる。",
+        "address": "高知県吾川郡いの町大国町145",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.550123,
+        "lng": 133.421074,
+        "qr_token": "shuin-ino-2",
+        "cover_image_url": "/images/ino/spot2.png",
+        "f7_fragment": "大国町通りの入口に立ち、土佐和紙の小物や展示を楽しめるレトロな観光拠点。",
+        "f7_full": "「ギャラリー・コパ」の丸いレトロな外観と色とりどりの土佐和紙雑貨が、古い紙問屋の町並みへと続く散策を楽しく彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "ce542c4e-16f1-4964-8f47-85cdfbc96826",
+        "next_spot_name": "いの町紙の博物館"
+      },
+      {
+        "id": "ce542c4e-16f1-4964-8f47-85cdfbc96826",
+        "name": "いの町紙の博物館",
+        "description": "国の伝統的工芸品「土佐和紙」の歴史と製造工程を紹介する専門博物館（9:00〜17:00開館、月曜休）。職人による流し漉きの実演見学や手漉き体験、豊富な和紙製品の買い物を楽しめる。",
+        "address": "高知県吾川郡いの町幸町110-1",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.547677,
+        "lng": 133.423185,
+        "qr_token": "shuin-ino-3",
+        "cover_image_url": "/images/ino/spot3.png",
+        "f7_fragment": "平安時代から続く土佐和紙の歴史と、職人の「流し漉き」の技を伝える専門博物館。",
+        "f7_full": "「いの町紙の博物館」に響く水音と透き通るような手漉き和紙の美しさが、世界が認める土佐和紙の伝統と誇りを肌で感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "8e33d8b1-be19-4d38-810b-4f293239f0e6",
+        "next_spot_name": "KOKUBAN Office&Cafe"
+      },
+      {
+        "id": "8e33d8b1-be19-4d38-810b-4f293239f0e6",
+        "name": "KOKUBAN Office&Cafe",
+        "description": "元・黒板工場をリノベーションしたカフェ＆コワーキングスペース（9:00〜16:00営業、日曜休）。黒板の緑や木の温もりが残る開放的な空間で、こだわりの珈琲やランチ、焼き菓子を味わえる。",
+        "address": "高知県吾川郡いの町3175",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.549532,
+        "lng": 133.422366,
+        "qr_token": "shuin-ino-4",
+        "cover_image_url": "/images/ino/spot4.png",
+        "f7_fragment": "かつての黒板工場を再生し、緑の黒板と木の温もりに包まれて珈琲を味わうカフェ。",
+        "f7_full": "「KOKUBAN Office&Cafe」の黒板が彩る温かな空間と香り高い珈琲が、ものづくりの町・いの町の散策に心地よい休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9b46b32c-c478-4bc3-878d-ac7070404768",
+        "next_spot_name": "椙本神社"
+      },
+      {
+        "id": "9b46b32c-c478-4bc3-878d-ac7070404768",
+        "name": "椙本神社",
+        "description": "平安時代の延喜年間の創建と伝わり、「いの大国さま」として親しまれる古社（境内参拝自由）。福徳開運・商売繁盛の神として四国各地から参拝者が訪れ、門前町・伊野の中心となってきた。",
+        "address": "高知県吾川郡いの町大国町3093",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.550637,
+        "lng": 133.421004,
+        "qr_token": "shuin-ino-5",
+        "cover_image_url": "/images/ino/spot5.png",
+        "f7_fragment": "平安時代の創建と伝わり、「いの大国さま」として四国中から信仰を集める古社。",
+        "f7_full": "「椙本神社」の緑深い境内に佇む社殿の風格が、土佐和紙と門前町の千年の歴史を辿った旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "39b58ab3-9d2e-4676-8c0c-19285a61dda1",
+    "title": "秋月家の舞鶴城と二大老舗の焼き餃子・高鍋を巡る",
+    "name": "秋月家の舞鶴城と二大老舗の焼き餃子・高鍋を巡る",
+    "description": "名君・上杉鷹山を生んだ高鍋藩秋月家の城下町であり、全国屈指の「餃子のまち」として知られる宮崎県高鍋町。高鍋町美術館から、水堀と石垣が残る高鍋城跡（舞鶴公園）、高鍋町歴史総合資料館、二大老舗のたかなべギョーザと餃子の馬渡までを歩く。",
+    "region": "高鍋（高鍋町）",
+    "area_name": "高鍋（高鍋町）",
+    "cover_image_url": "/images/takanabe/route-eyecatch.png",
+    "imageUrl": "/images/takanabe/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "教育の藩・秋月家の城跡と二大老舗の餃子が息づく高鍋で、あなたの心に刻むしるしをどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "鶴が舞う姿に例えられた水堀と石垣、藩政時代の門が残る「高鍋城跡（舞鶴公園）」",
+          "description": "秋月家十代が治めた城跡の美しい水堀と、静かに佇む萬歳亭の門に城下町の風格を感じた。",
+          "badge_code": "takanabe_maizuru_castle_park"
+        },
+        {
+          "key": "B",
+          "text": "もっちり皮の「餃子の馬渡」と極薄皮の「たかなべギョーザ」、二大老舗の食べ比べ",
+          "description": "個性あふれる二つの老舗の焼きたて餃子を巡り、餃子のまち・高鍋の底力と情熱に感動した。",
+          "badge_code": "takanabe_twin_gyoza_masters"
+        },
+        {
+          "key": "C",
+          "text": "上杉鷹山や藩校・明倫堂の精神を今に伝える「高鍋町歴史総合資料館」",
+          "description": "小藩ながら数々の偉人を世に送り出した「教育の藩・高鍋」の深い学問の伝統に触れられた。",
+          "badge_code": "takanabe_history_museum_meirindo"
+        },
+        {
+          "key": "D",
+          "text": "城跡の緑と水盤に映える三角屋根の文化拠点「高鍋町美術館」",
+          "description": "舞鶴公園のすぐ隣で、光と水に彩られた開放的な建築と郷土ゆかりの芸術に心が潤った。",
+          "badge_code": "takanabe_art_museum_triangles"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7083f650-9b81-4ed7-86f8-f6a614f83a7d",
+        "name": "高鍋町美術館",
+        "description": "高鍋城跡（舞鶴公園）の東側に隣接する町立美術館（10:00〜17:00開館、月曜休）。水盤に映える連続三角屋根の美しい建築が特徴で、郷土ゆかりの美術作品や多彩な企画展を鑑賞できる。",
+        "address": "宮崎県児湯郡高鍋町大字南高鍋6916-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 32.120946,
+        "lng": 131.503966,
+        "qr_token": "shuin-takanabe-1",
+        "cover_image_url": "/images/takanabe/spot1.png",
+        "f7_fragment": "高鍋城跡の隣に佇み、水盤に映える連続三角屋根が美しい文教の町の芸術拠点。",
+        "f7_full": "「高鍋町美術館」の開放的な三角屋根と水盤のきらめきが、教育と文化を尊んできた高鍋の町を歩く旅の始まりを爽やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "39ce4a47-2957-47a1-8d49-694e7f41f856",
+        "next_spot_name": "高鍋城跡"
+      },
+      {
+        "id": "39ce4a47-2957-47a1-8d49-694e7f41f856",
+        "name": "高鍋城跡",
+        "description": "高鍋藩秋月家二万七千石の居城であった舞鶴城の跡地を整備した公園（終日散策自由）。美しい水堀や石垣、藩政時代の武家屋敷門「萬歳亭の門」が残り、桜の名所としても親しまれている。",
+        "address": "宮崎県児湯郡高鍋町大字上江8345",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 32.123737,
+        "lng": 131.501957,
+        "qr_token": "shuin-takanabe-2",
+        "cover_image_url": "/images/takanabe/spot2.png",
+        "f7_fragment": "秋月家十代の居城「舞鶴城」の水堀と石垣、藩政時代の武家門が残る城址公園。",
+        "f7_full": "「高鍋城跡」の穏やかな水堀と苔むした石垣が、名君・上杉鷹山ら多くの偉人を育んだ秋月家の城下町の誇りを静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "ce0f6e11-8c7c-411e-8e98-2b6ff537a9f6",
+        "next_spot_name": "高鍋町歴史総合資料館"
+      },
+      {
+        "id": "ce0f6e11-8c7c-411e-8e98-2b6ff537a9f6",
+        "name": "高鍋町歴史総合資料館",
+        "description": "舞鶴公園内に建つ歴史博物館（9:00〜16:30開館、月曜休、入館無料）。高鍋藩秋月家ゆかりの甲冑や武具、藩校「明倫堂」の資料、持田古墳群の出土品などを展示している。",
+        "address": "宮崎県児湯郡高鍋町大字上江8345",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 32.122321,
+        "lng": 131.502436,
+        "qr_token": "shuin-takanabe-3",
+        "cover_image_url": "/images/takanabe/spot3.png",
+        "f7_fragment": "高鍋藩秋月家ゆかりの武具や藩校「明倫堂」の貴重な歴史資料を伝える博物館。",
+        "f7_full": "「高鍋町歴史総合資料館」に並ぶ秋月家の遺品と明倫堂の記録が、小藩ながら天下に知られた教育立藩の精神を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "606b9b34-229a-4f73-8f34-8a037ed120cd",
+        "next_spot_name": "たかなべギョーザ"
+      },
+      {
+        "id": "606b9b34-229a-4f73-8f34-8a037ed120cd",
+        "name": "たかなべギョーザ",
+        "description": "昭和三十年創業の高鍋ぎょうざの老舗専門店（11:00〜20:30頃営業、水曜休）。国産キャベツと玉ねぎの甘みを繊細な薄皮で包んでパリッと焼き上げた伝統の焼き餃子を味わえる。",
+        "address": "宮崎県児湯郡高鍋町北高鍋1397-2",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 32.126525,
+        "lng": 131.507403,
+        "qr_token": "shuin-takanabe-4",
+        "cover_image_url": "/images/takanabe/spot4.png",
+        "f7_fragment": "昭和三十年の創業以来、パリッと香ばしい薄皮の焼き餃子を守り続ける老舗。",
+        "f7_full": "「たかなべギョーザ」のきつね色に焼き上がった薄皮餃子と野菜の優しい甘みが、戦後から続く高鍋の餃子文化の原点を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4dad64ce-1a8c-4241-8d92-a1a11e2b5635",
+        "next_spot_name": "餃子の馬渡"
+      },
+      {
+        "id": "4dad64ce-1a8c-4241-8d92-a1a11e2b5635",
+        "name": "餃子の馬渡",
+        "description": "昭和四十二年創業の餃子専門店（11:00〜21:00頃営業、月曜休）。毎朝自社で練り上げるもっちりとした皮と牛豚合いびき肉の餡をラードでカリッと焼き上げた焼き餃子や手羽餃子が名物。",
+        "address": "宮崎県児湯郡高鍋町北高鍋4661",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 32.128737,
+        "lng": 131.506194,
+        "qr_token": "shuin-takanabe-5",
+        "cover_image_url": "/images/takanabe/spot5.png",
+        "f7_fragment": "朝練りのもっちり皮と合いびき肉の旨みが光る、昭和四十二年創業の餃子専門店。",
+        "f7_full": "「餃子の馬渡」のカリッともちもちに焼き上がった餃子と熱々の湯気が、城下町・高鍋を巡り歩いた旅を最高の満腹感と余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d66172f7-fb3e-4af6-88ec-429117ee0241",
+    "title": "なぜ油津に飫肥杉の運河と赤レンガ館が残るのか",
+    "name": "なぜ油津に飫肥杉の運河と赤レンガ館が残るのか",
+    "description": "江戸時代に飫肥杉を積み出す外港として開削された堀川運河と、近代の豪商建築が残る宮崎県日南市油津。カープレッドに彩られた油津駅から、商店街再生の拠点・油津Yotten、国登録有形文化財の杉村金物本店と油津赤レンガ館、重要文化的景観の堀川運河までを歩く。",
+    "region": "油津（日南市）",
+    "area_name": "油津（日南市）",
+    "cover_image_url": "/images/aburatsu/route-eyecatch.png",
+    "imageUrl": "/images/aburatsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "飫肥杉を運んだ運河と大正の赤レンガ、真っ赤な駅舎が彩る油津で、あなたが深く心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "江戸時代に岩盤を掘り抜いた「堀川運河」と、石造アーチの「堀川橋」が映える水辺",
+          "description": "弁甲材として名を馳せた飫肥杉を海へと送り出した、先人たちの壮大な土木技術に心打たれた。",
+          "badge_code": "aburatsu_horikawa_canal_bridge"
+        },
+        {
+          "key": "B",
+          "text": "飫肥杉の美が息づく木造三階建ての豪商建築、国登録有形文化財「杉村金物本店」",
+          "description": "港町・油津が黄金期を迎えた昭和初期の旦那衆の気概と、見事な木造建築の意匠に魅了された。",
+          "badge_code": "aburatsu_sugimura_hardware_house"
+        },
+        {
+          "key": "C",
+          "text": "二十二万個のレンガと市民の誇りが詰まった、大正十一年築「油津赤レンガ館」",
+          "description": "一階が倉庫・二階が養蚕場という独自の歴史と、市民が買い取って守り抜いた物語に胸が熱くなった。",
+          "badge_code": "aburatsu_red_brick_warehouse"
+        },
+        {
+          "key": "D",
+          "text": "鮮やかなカープレッドの「油津駅」と、商店街再生のシンボル「油津Yotten」",
+          "description": "半世紀を超えるキャンプ地の絆と、自分たちの手で街を元気にする日南の人々の熱気に元気をもらった。",
+          "badge_code": "aburatsu_red_station_and_yotten"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "abbd93f4-1ac4-4fd5-8d6d-6382c296f6b3",
+        "name": "油津駅",
+        "description": "広島東洋カープのキャンプ地として知られる日南市油津の玄関口（待合室は始発〜終電）。市民とファンの手で鮮やかな「カープレッド」に塗装された駅舎が旅人を出迎える。",
+        "address": "宮崎県日南市岩崎3-10-6",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.587201,
+        "lng": 131.395928,
+        "qr_token": "shuin-aburatsu-1",
+        "cover_image_url": "/images/aburatsu/spot1.png",
+        "f7_fragment": "半世紀続くキャンプ地の絆から、駅舎全体が鮮やかな赤に彩られたJR日南線の駅。",
+        "f7_full": "「油津駅」の南国の青空に映える真っ赤な駅舎が、飫肥杉の運河と赤レンガの歴史が息づく港町を歩く旅の始まりを明るく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7c81d8f-bdc4-4a4d-8dc6-5ff12b1ffb21",
+        "next_spot_name": "油津Yotten"
+      },
+      {
+        "id": "c7c81d8f-bdc4-4a4d-8dc6-5ff12b1ffb21",
+        "name": "油津Yotten",
+        "description": "全国的な地方創生の成功事例として知られる油津商店街の多世代交流拠点（9:00〜18:00頃開館、無休）。誰でも気軽に立ち寄れる休憩・コミュニティスペースを備えている。",
+        "address": "宮崎県日南市岩崎3-7-26",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.587578,
+        "lng": 131.398713,
+        "qr_token": "shuin-aburatsu-2",
+        "cover_image_url": "/images/aburatsu/spot2.png",
+        "f7_fragment": "全国の地方創生のモデルとなった、油津商店街の中心にある温かな交流・休憩拠点。",
+        "f7_full": "「油津Yotten」の明るく開かれた空間が、人々の知恵と情熱でよみがえった油津商店街の新しい息吹を肌で感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "5c1170b2-596a-4a00-873e-7e40791d42a9",
+        "next_spot_name": "杉村金物本店"
+      },
+      {
+        "id": "5c1170b2-596a-4a00-873e-7e40791d42a9",
+        "name": "杉村金物本店",
+        "description": "昭和7年に豪商・河野宗四郎家の店舗兼住宅として建てられた木造3階建て建築で、国の登録有形文化財（外観見学自由）。特産の飫肥杉を贅沢に用いた堂々たる構えが港町の繁栄を伝える。",
+        "address": "宮崎県日南市油津1-9-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.583758,
+        "lng": 131.403241,
+        "qr_token": "shuin-aburatsu-3",
+        "cover_image_url": "/images/aburatsu/spot3.png",
+        "f7_fragment": "特産の飫肥杉を贅沢に用いた、昭和初期の国登録有形文化財の木造三階建て商家。",
+        "f7_full": "「杉村金物本店」の重厚な木造三階建ての瓦屋根と石蔵が、マグロ漁と木材貿易で沸いた港町・油津の黄金期を鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "b88ab3ef-82c0-4f7c-89e2-6817802f1281",
+        "next_spot_name": "油津赤レンガ館"
+      },
+      {
+        "id": "b88ab3ef-82c0-4f7c-89e2-6817802f1281",
+        "name": "油津赤レンガ館",
+        "description": "大正11年に約22万個の赤レンガで建てられた国の登録有形文化財の倉庫建築（9:00〜17:00開館、年末年始休、入館無料）。1階が倉庫、2階が養蚕室として使われた珍しい構造を見学できる。",
+        "address": "宮崎県日南市油津1-9-3",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.583567,
+        "lng": 131.402965,
+        "qr_token": "shuin-aburatsu-4",
+        "cover_image_url": "/images/aburatsu/spot4.png",
+        "f7_fragment": "二十二万個のレンガで築かれ、市民の手で守り抜かれた大正十一年築の登録有形文化財。",
+        "f7_full": "「油津赤レンガ館」のイギリス積みの赤い壁面と重厚な鉄扉が、大正ロマンの気風と街を愛する市民たちの誇りを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3261f7fb-1e67-494f-89be-6cf197c86bff",
+        "next_spot_name": "堀川運河"
+      },
+      {
+        "id": "3261f7fb-1e67-494f-89be-6cf197c86bff",
+        "name": "堀川運河",
+        "description": "江戸時代の貞享3年に飫肥藩が開削した人工運河（終日散策自由）。飫肥杉を油津港へ運ぶために造られた石積みの水路と明治36年架橋の石橋「堀川橋」が国の重要文化的景観を形づくる。",
+        "address": "宮崎県日南市油津2-1-22",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.584695,
+        "lng": 131.401961,
+        "qr_token": "shuin-aburatsu-5",
+        "cover_image_url": "/images/aburatsu/spot5.png",
+        "f7_fragment": "江戸時代に飫肥杉を運ぶため開削された石積み水路と石橋が残る重要文化的景観。",
+        "f7_full": "「堀川運河」の穏やかな水面に映る石積みの護岸とアーチ橋のシルエットが、港町・油津を巡り歩いた旅をノスタルジックな余韻で包んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "07e6128d-2047-4c11-800d-4fa4afc56e36",
+    "title": "米蔵のロマン蔵と一店一宝の商店街・豊後高田へ",
+    "name": "米蔵のロマン蔵と一店一宝の商店街・豊後高田へ",
+    "description": "昭和三十年代の活気あふれる商店街を今に伝える大分県豊後高田市の「昭和の町」。国登録有形文化財の米蔵を活かした昭和ロマン蔵から、揚げたてコロッケの肉のかなおか、レトロな伯剌西爾珈琲舎、木製菓子型が残る高田菓舗、町を潤す桂川の水辺までを歩く。",
+    "region": "豊後高田・昭和の町（豊後高田市）",
+    "area_name": "豊後高田・昭和の町（豊後高田市）",
+    "cover_image_url": "/images/bungo-takada/route-eyecatch.png",
+    "imageUrl": "/images/bungo-takada/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和三十年代の看板建築と一店一宝の物語が息づく豊後高田で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和十年築の巨大な米蔵とボンネットバスが迎える、国登録有形文化財「昭和ロマン蔵」",
+          "description": "かつての米どころの繁栄を伝える白壁の大倉庫と、懐かしの昭和の展示に心が躍った。",
+          "badge_code": "bungo_takada_showa_roman_gura"
+        },
+        {
+          "key": "B",
+          "text": "昭和三十年代創業の「肉のかなおか」で頬張る、サクサク揚げたての「昭和の町コロッケ」",
+          "description": "レトロな商店街を歩きながら味わう熱々コロッケの香ばしさに、昔ながらの商店街の温もりを感じた。",
+          "badge_code": "bungo_takada_kanaoka_croquette"
+        },
+        {
+          "key": "C",
+          "text": "漢字看板が粋な「伯剌西爾珈琲舎」の自家焙煎珈琲と、穏やかに流れる「桂川」の夕景",
+          "description": "丁寧に淹れられた珈琲の芳醇な香りと、二つの商店街を結ぶ川辺のノスタルジックな風景に癒やされた。",
+          "badge_code": "bungo_takada_brazil_coffee_and_river"
+        },
+        {
+          "key": "D",
+          "text": "職人の手彫り菓子型「一店一宝」と伝統の和菓子に出会う、新町通りの老舗「高田菓舗」",
+          "description": "一つひとつの店が家宝と看板商品を守り継ぐ「一店一宝・一店一品」の精神に深く感銘を受けた。",
+          "badge_code": "bungo_takada_itten_ippo_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6c916b26-ddca-4b74-806e-8ca5a9d9b2e7",
+        "name": "昭和ロマン蔵",
+        "description": "昭和10年に建てられた旧高田農業倉庫を活用した「昭和の町」の拠点施設で、国の登録有形文化財（9:00〜17:00開館、無休）。駄菓子屋の夢博物館や昭和の暮らし展示、旬彩南蔵などを備える。",
+        "address": "大分県豊後高田市新町989-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.557757,
+        "lng": 131.438754,
+        "qr_token": "shuin-bungo-takada-1",
+        "cover_image_url": "/images/bungo-takada/spot1.png",
+        "f7_fragment": "昭和十年築の国登録有形文化財の米蔵を活用し、昭和三十年代の世界を再現した拠点。",
+        "f7_full": "「昭和ロマン蔵」の白壁の米蔵とレトロなボンネットバスが、心温まる昭和三十年代の商店街を歩く時間旅行の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5c328e82-194b-4aad-8cd8-00a5fd93b1b9",
+        "next_spot_name": "肉のかなおか"
+      },
+      {
+        "id": "5c328e82-194b-4aad-8cd8-00a5fd93b1b9",
+        "name": "肉のかなおか",
+        "description": "駅通り商店街にある昭和30年代創業の精肉店（9:00〜18:30営業、不定休）。注文ごとに揚げるサクサクの「昭和の町コロッケ」が名物で、食べ歩きスポットとして人気を集める。",
+        "address": "大分県豊後高田市新町964-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.559059,
+        "lng": 131.439207,
+        "qr_token": "shuin-bungo-takada-2",
+        "cover_image_url": "/images/bungo-takada/spot2.png",
+        "f7_fragment": "昭和三十年代の創業以来、ラードでカラッと揚げる名物コロッケが人気の精肉店。",
+        "f7_full": "「肉のかなおか」の揚げたて熱々のコロッケと香ばしい薫りが、昭和の町ならではの食べ歩きの楽しさと人情を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "0197459e-e247-4453-8ac5-86cd2942d10d",
+        "next_spot_name": "伯剌西爾珈琲舎"
+      },
+      {
+        "id": "0197459e-e247-4453-8ac5-86cd2942d10d",
+        "name": "伯剌西爾珈琲舎",
+        "description": "新町通りに佇む自家焙煎珈琲専門店（10:00〜17:00営業、水曜休）。レトロな木造空間で、世界中から厳選した豆を丁寧にハンドドリップした珈琲や自家製スイーツを味わえる。",
+        "address": "大分県豊後高田市新町967-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.559077,
+        "lng": 131.440162,
+        "qr_token": "shuin-bungo-takada-3",
+        "cover_image_url": "/images/bungo-takada/spot3.png",
+        "f7_fragment": "昭和レトロな木造空間で、香り高い自家焙煎のハンドドリップ珈琲を味わう喫茶店。",
+        "f7_full": "「伯剌西爾珈琲舎」の琥珀色の珈琲とクラシカルなランプの灯りが、昭和の町歩きの途中に穏やかで贅沢なひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "10e61de0-8f8c-4b44-8122-34b306460dd7",
+        "next_spot_name": "高田菓舗"
+      },
+      {
+        "id": "10e61de0-8f8c-4b44-8122-34b306460dd7",
+        "name": "高田菓舗",
+        "description": "中央通り商店街にある老舗和洋菓子店（9:30〜18:00営業、木曜休）。「一店一宝」として昭和初期の精巧な木製菓子型を展示し、地元ゆかりの手づくり和菓子や焼き菓子を販売している。",
+        "address": "大分県豊後高田市金谷町633-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.558774,
+        "lng": 131.440707,
+        "qr_token": "shuin-bungo-takada-4",
+        "cover_image_url": "/images/bungo-takada/spot4.png",
+        "f7_fragment": "昭和初期の木製菓子型を「一店一宝」として伝え、手づくり銘菓を商う老舗菓子舗。",
+        "f7_full": "「高田菓舗」に伝わる手彫りの木型と優しい甘さの和菓子が、商都・豊後高田が大切に守り継いできた「一店一宝」の誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "295a3a7d-d698-453f-815f-842fe1200e91",
+        "next_spot_name": "桂川"
+      },
+      {
+        "id": "295a3a7d-d698-453f-815f-842fe1200e91",
+        "name": "桂川",
+        "description": "豊後高田の中心市街地を流れる二級河川（終日散策自由）。江戸時代から水運で栄えた新町と宮町の両岸を結び、昭和の町のノスタルジックな水辺景観を形づくっている。",
+        "address": "大分県豊後高田市新町992-2",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.558036,
+        "lng": 131.438268,
+        "qr_token": "shuin-bungo-takada-5",
+        "cover_image_url": "/images/bungo-takada/spot5.png",
+        "f7_fragment": "江戸時代からの商都・豊後高田の二つの商店街を結び、穏やかに流れる象徴的な川。",
+        "f7_full": "「桂川」の穏やかな水面に映る橋と夕暮れの空が、昭和三十年代の温もりと笑顔に出会った豊後高田の旅を優しく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "12f16840-a4aa-456d-88f8-dbd8ad30bea9",
+    "title": "孤高の岳人の記憶と日本海の松葉ガニ・浜坂",
+    "name": "孤高の岳人の記憶と日本海の松葉ガニ・浜坂",
+    "description": "山陰海岸ジオパークの海と浜坂温泉、そして伝説の登山家・加藤文太郎を生んだ兵庫県新温泉町浜坂。足湯のある浜坂駅から、国登録有形文化財の数寄屋建築・松籟庵、加藤文太郎記念図書館、明治の酒蔵屋敷・浜坂先人記念館 以命亭、明治創業の渡辺水産までを歩く。",
+    "region": "浜坂（新温泉町）",
+    "area_name": "浜坂（新温泉町）",
+    "cover_image_url": "/images/hamasaka/route-eyecatch.png",
+    "imageUrl": "/images/hamasaka/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "孤高の登山家の足跡と酒造家の名園、日本海の海の幸が揃う浜坂で、あなたが心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "文化元年の土蔵と明治の主屋が浜坂の歴史を語る「浜坂先人記念館 以命亭」",
+          "description": "明治の大火を生き抜いた酒造家の重厚な屋敷と、郷土のために尽くした先人たちの志に感動した。",
+          "badge_code": "hamasaka_imeitei_heritage_house"
+        },
+        {
+          "key": "B",
+          "text": "小説『孤高の人』のモデル、不屈の登山家の生涯に触れる「加藤文太郎記念図書館」",
+          "description": "愛用ピッケルや直筆の山行日記から、冬のアルプスを単独で歩いた岳人の純粋な魂が伝わってきた。",
+          "badge_code": "hamasaka_kato_buntaro_alpinist"
+        },
+        {
+          "key": "C",
+          "text": "松風の音に包まれる国登録有形文化財の数寄屋座敷と庭園「松籟庵」",
+          "description": "旧森家住宅の風雅な離れ座敷から枯山水庭園を眺め、港町の豊かな旦那文化に心洗われた。",
+          "badge_code": "hamasaka_shoraian_sukiya_garden"
+        },
+        {
+          "key": "D",
+          "text": "足湯が迎える「浜坂駅」と、松葉ガニ・ホタルイカの本場「渡辺水産」の海の幸",
+          "description": "駅前の源泉かけ流し足湯の温もりと、日本海屈指の漁港が誇る新鮮な海の幸に旅情が深まった。",
+          "badge_code": "hamasaka_port_seafood_and_onsen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f5531837-af7f-403c-81ad-74a30969be1f",
+        "name": "浜坂駅",
+        "description": "山陰海岸ジオパークと浜坂温泉郷の玄関口となるJR山陰本線の駅（待合室は始発〜終電）。駅前に無料の源泉かけ流し足湯を備え、構内には鉄道資料展示室「鉄子の部屋」がある。",
+        "address": "兵庫県美方郡新温泉町浜坂2541-2",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.615496,
+        "lng": 134.454367,
+        "qr_token": "shuin-hamasaka-1",
+        "cover_image_url": "/images/hamasaka/spot1.png",
+        "f7_fragment": "無料の源泉かけ流し足湯と鉄道展示室「鉄子の部屋」を備える浜坂の玄関口。",
+        "f7_full": "「浜坂駅」の駅前に立ち上る足湯の湯けむりと潮風が、温泉と日本海の幸に恵まれた港町を歩く旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "405ee430-0b6c-47c8-8130-764e48f1673f",
+        "next_spot_name": "松籟庵"
+      },
+      {
+        "id": "405ee430-0b6c-47c8-8130-764e48f1673f",
+        "name": "松籟庵",
+        "description": "国の登録有形文化財に指定されている旧森家住宅の離れと庭園を公開した文化施設（9:00〜16:30開館、火曜休、入館無料・呈茶有料）。松風が響く数寄屋造りの座敷で庭園を眺めながら抹茶を楽しめる。",
+        "address": "兵庫県美方郡新温泉町芦屋550",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.62124,
+        "lng": 134.452371,
+        "qr_token": "shuin-hamasaka-2",
+        "cover_image_url": "/images/hamasaka/spot2.png",
+        "f7_fragment": "浜辺の松風が心地よい、国登録有形文化財の数寄屋造りの離れ座敷と日本庭園。",
+        "f7_full": "「松籟庵」の磨き込まれた縁側と緑深い枯山水庭園が、酒造家が育んだ風雅な数寄屋文化とともに穏やかな休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "afafdc1e-b16a-4ccb-8e92-96769c788c85",
+        "next_spot_name": "加藤文太郎記念図書館"
+      },
+      {
+        "id": "afafdc1e-b16a-4ccb-8e92-96769c788c85",
+        "name": "加藤文太郎記念図書館",
+        "description": "新田次郎の小説『孤高の人』のモデルとなった浜坂出身の登山家・加藤文太郎の記念室を併設する町立図書館（10:00〜18:00・土日17:00まで開館、月曜・第3木曜休、入館無料）。愛用のピッケルや山行記録を見学できる。",
+        "address": "兵庫県美方郡新温泉町浜坂842-2",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.624595,
+        "lng": 134.454419,
+        "qr_token": "shuin-hamasaka-3",
+        "cover_image_url": "/images/hamasaka/spot3.png",
+        "f7_fragment": "小説『孤高の人』で知られる伝説の登山家・加藤文太郎の遺品と生涯を伝える館。",
+        "f7_full": "「加藤文太郎記念図書館」に展示された愛用のピッケルと山行日記が、厳冬期のアルプスに足跡を刻んだ孤高の岳人の情熱を呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "080337cd-8d8a-402c-87d1-c0f78d7c77a8",
+        "next_spot_name": "浜坂先人記念館 以命亭"
+      },
+      {
+        "id": "080337cd-8d8a-402c-87d1-c0f78d7c77a8",
+        "name": "浜坂先人記念館 以命亭",
+        "description": "旧森梅酒造の明治42年築の主屋と江戸後期の土蔵3棟を活用した歴史資料館（9:00〜17:00開館、木曜休）。明治の大火を免れた貴重な町家空間で、浜坂ゆかりの先人たちの業績を紹介している。",
+        "address": "兵庫県美方郡新温泉町浜坂1208",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.624914,
+        "lng": 134.453589,
+        "qr_token": "shuin-hamasaka-4",
+        "cover_image_url": "/images/hamasaka/spot4.png",
+        "f7_fragment": "江戸後期の土蔵と明治の酒蔵主屋を活かし、郷土の先人を顕彰する町家記念館。",
+        "f7_full": "「浜坂先人記念館 以命亭」の重厚な梁組と白壁の土蔵が、明治の大火を超えて受け継がれた港町の歴史と先人の志を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "845a3e7a-73ec-48df-8018-1293192ef455",
+        "next_spot_name": "渡辺水産"
+      },
+      {
+        "id": "845a3e7a-73ec-48df-8018-1293192ef455",
+        "name": "渡辺水産",
+        "description": "浜坂漁港近くにある明治41年創業の老舗海産物直売所（8:30〜17:00営業、元日休）。日本有数の水揚げを誇る松葉ガニやホタルイカ、自家製の干物・練り物など日本海の旬の味覚が揃う。",
+        "address": "兵庫県美方郡新温泉町芦屋853",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.627679,
+        "lng": 134.444804,
+        "qr_token": "shuin-hamasaka-5",
+        "cover_image_url": "/images/hamasaka/spot5.png",
+        "f7_fragment": "明治四十一年の創業以来、浜坂港の松葉ガニやホタルイカを届ける老舗水産直売所。",
+        "f7_full": "「渡辺水産」に並ぶ日本海の豊かな海の幸と港町の活気が、先人の記憶と名園を巡った浜坂の旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
