@@ -63830,5 +63830,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "8ade8087-cb80-48c5-850a-a50793f7fb6a",
+    "title": "機織りの記憶と傘天井の花月楼・越前勝山を巡る",
+    "name": "機織りの記憶と傘天井の花月楼・越前勝山を巡る",
+    "description": "白山連峰の伏流水と河岸段丘の地形、そして近代日本の絹織物産業を支えた歴史が息づく福井県勝山市。銘酒を醸す一本義久保本店から、傘天井の旧料亭花月楼、名水・大清水、左義長まつりの神明神社、旧機業場のゆめおーれ勝山までを巡る。",
+    "region": "勝山（勝山市）",
+    "area_name": "勝山（勝山市）",
+    "cover_image_url": "/images/katsuyama/route-eyecatch.png",
+    "imageUrl": "/images/katsuyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "機織りの近代化遺産と明治の傘天井建築、左義長まつりの伝統が息づく勝山で、あなたの心をとらえたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "優美な曲線を描く「傘天井」と数寄屋建築の粋を伝える「旧料亭 花月楼」",
+          "description": "明治の名工が手掛けた傘天井の造形美と、大正ガラス越しに眺める城下町の風情に魅了された。",
+          "badge_code": "katsuyama_kagetsuro_umbrella_ceiling"
+        },
+        {
+          "key": "B",
+          "text": "動く力織機の音色が近代日本の羽二重産業を物語る「ゆめおーれ勝山」",
+          "description": "明治三十八年創業の機業場跡で、今も力強く布を織り上げる機械の迫力と職人の歴史に感動した。",
+          "badge_code": "katsuyama_yumeole_silk_heritage"
+        },
+        {
+          "key": "C",
+          "text": "白山の伏流水で端麗辛口の銘酒を醸す「一本義久保本店」と名水「大清水」",
+          "description": "河岸段丘の崖下から湧く清らかな名水と、百二十年続く酒蔵の真摯な酒造りの技に心が澄んだ。",
+          "badge_code": "katsuyama_ippongi_sake_spring"
+        },
+        {
+          "key": "D",
+          "text": "三百年続く春を呼ぶ奇祭「勝山左義長まつり」の舞台となる古社「神明神社」",
+          "description": "赤い長襦袢で浮き太鼓を打ち鳴らす祭りの伝統と、城下町を守り続ける鎮守の杜に心打たれた。",
+          "badge_code": "katsuyama_shinmei_sagicho_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8e741a8e-e22e-4fe1-89ef-3fc7806ed55d",
+        "name": "一本義久保本店",
+        "description": "明治35年創業の勝山を代表する老舗酒造（9:00〜17:00営業、土日祝休）。白山連峰の伏流水と奥越前産の酒米で醸す代表銘柄「一本義」や「伝心」などの地酒・季節限定酒を購入できる。",
+        "address": "福井県勝山市沢町1-3-1",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.063161,
+        "lng": 136.500203,
+        "qr_token": "shuin-katsuyama-1",
+        "cover_image_url": "/images/katsuyama/spot1.png",
+        "f7_fragment": "明治三十五年の創業以来、白山の伏流水で銘酒「一本義」「伝心」を醸す酒蔵。",
+        "f7_full": "「一本義久保本店」の白壁と杉玉が揺れる風格ある店先が、霊峰白山の雪解け水と奥越前の大地が育んだ城下町の旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "90b12709-9cf9-4fba-880a-16d70da1fa9b",
+        "next_spot_name": "花月楼"
+      },
+      {
+        "id": "90b12709-9cf9-4fba-880a-16d70da1fa9b",
+        "name": "花月楼",
+        "description": "明治30年築の旧料亭を再生した国登録有形文化財の複合施設（9:00〜17:00開館、水曜休）。2階の希少な「傘天井」の見学や、1階での郷土料理ランチ・カフェタイムを楽しめる。",
+        "address": "福井県勝山市本町2-6-21",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.060542,
+        "lng": 136.497284,
+        "qr_token": "shuin-katsuyama-2",
+        "cover_image_url": "/images/katsuyama/spot2.png",
+        "f7_fragment": "明治三十年築の数寄屋建築と二階の優美な「傘天井」で知られる国登録文化財。",
+        "f7_full": "「花月楼」の傘を開いたように広がる天井の造形美と温かな木の空間が、機業で栄えた勝山の華やかな花街の記憶を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "7528e5c6-a39e-4221-87f1-34f8760533ca",
+        "next_spot_name": "大清水"
+      },
+      {
+        "id": "7528e5c6-a39e-4221-87f1-34f8760533ca",
+        "name": "大清水",
+        "description": "河岸段丘の崖（七里壁）の石垣下から湧き出る勝山城下町の名水（終日見学自由）。白山系の清冽な伏流水が今も豊かに湧き出し、散策途中に涼やかな水音を楽しめる。",
+        "address": "福井県勝山市本町2-8-24",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.060217,
+        "lng": 136.497547,
+        "qr_token": "shuin-katsuyama-3",
+        "cover_image_url": "/images/katsuyama/spot3.png",
+        "f7_fragment": "河岸段丘の石垣の麓からこんこんと湧き出る、勝山城下町の暮らしを潤した名水。",
+        "f7_full": "「大清水」の石垣から絶え間なく溢れ出る透明な湧水と涼やかな水音が、段丘のまち・勝山ならではの自然の恵みと安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c45feb0c-ebf5-4d6c-855c-3b04cf2ca3c5",
+        "next_spot_name": "神明神社"
+      },
+      {
+        "id": "c45feb0c-ebf5-4d6c-855c-3b04cf2ca3c5",
+        "name": "神明神社",
+        "description": "勝山城下町の総鎮守として崇敬される古社（境内参拝自由）。毎年2月最終土日に開催される県指定無形民俗文化財「勝山左義長まつり」の中心舞台となり、緑豊かな境内に歴史が息づく。",
+        "address": "福井県勝山市元町1-19-24",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.05851,
+        "lng": 136.50036,
+        "qr_token": "shuin-katsuyama-4",
+        "cover_image_url": "/images/katsuyama/spot4.png",
+        "f7_fragment": "勝山城下町の総鎮守であり、奇祭「勝山左義長まつり」の中心舞台となる古社。",
+        "f7_full": "「神明神社」の凛とした社殿と鎮守の杜が、小笠原家の城下町を見守り続けてきた深い祈りと春を呼ぶ左義長の熱気を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9061d593-b1a0-4e44-834f-2c37d5416119",
+        "next_spot_name": "ゆめおーれ勝山"
+      },
+      {
+        "id": "9061d593-b1a0-4e44-834f-2c37d5416119",
+        "name": "ゆめおーれ勝山",
+        "description": "明治38年から操業した旧機業場を保存・公開する織物ミュージアム（9:00〜17:00開館、水曜休、1階入館無料）。国の登録有形文化財・近代化産業遺産で、力織機の稼働実演や手織り体験、土産物購入が楽しめる。",
+        "address": "福井県勝山市昭和町1-7-40",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.06183,
+        "lng": 136.503073,
+        "qr_token": "shuin-katsuyama-5",
+        "cover_image_url": "/images/katsuyama/spot5.png",
+        "f7_fragment": "明治三十八年創業の旧機業場を活かし、力織機の稼働実演を伝える織物記念館。",
+        "f7_full": "「ゆめおーれ勝山」の木造ノコギリ屋根に響く力織機の躍動音が、近代日本の絹織物を支えた越前勝山の旅を力強い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0580a56d-4a1f-469a-80f8-8137fe1f49af",
+    "title": "阿波藍のうだつ町家と芝居小屋・美馬脇町を歩く",
+    "name": "阿波藍のうだつ町家と芝居小屋・美馬脇町を歩く",
+    "description": "吉野川の舟運と阿波藍の商いで栄え、重厚な「うだつ」が連なる徳島県美馬市脇町。道の駅藍ランドうだつから、美馬市観光交流センター、脇町随一の藍商屋敷・吉田家住宅、古民家複合施設のうだつ上がる、昭和九年築の芝居小屋・脇町劇場オデオン座までを歩く。",
+    "region": "脇町（美馬市）",
+    "area_name": "脇町（美馬市）",
+    "cover_image_url": "/images/anabuki/route-eyecatch.png",
+    "imageUrl": "/images/anabuki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "阿波藍の豪商が築いたうだつの町並みと昭和の芝居小屋が残る脇町で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "六百坪の敷地に五棟の蔵と主屋が連なる、藍商の豪邸「藍商佐直 吉田家住宅」",
+          "description": "堂々たる本瓦のうだつと当時の帳場、二階から見渡す甍の波に阿波藍の黄金期の繁栄を感じた。",
+          "badge_code": "anabuki_yoshida_residence_indigo"
+        },
+        {
+          "key": "B",
+          "text": "回り舞台と花道が昭和の映画と芝居の記憶を伝える「脇町劇場 オデオン座」",
+          "description": "映画のロケ地として奇跡の復活を遂げた木造劇場の桟敷席と奈落に、大衆文化の温もりを感じた。",
+          "badge_code": "anabuki_odeonza_wooden_theater"
+        },
+        {
+          "key": "C",
+          "text": "築百五十年のうだつ町家を再生した「うだつ上がる」で味わうカフェランチと珈琲",
+          "description": "歴史ある商家の梁組と格子窓の光に包まれながら、美馬の食材と香り高い珈琲を楽しむ贅沢な時間を過ごせた。",
+          "badge_code": "anabuki_udatsu_machiya_gourmet"
+        },
+        {
+          "key": "D",
+          "text": "重伝建の入口「道の駅 藍ランドうだつ」と「美馬市観光交流センター」",
+          "description": "藍染め雑貨が並ぶ拠点から四百三十メートルの歴史通りへと踏み出し、商都・脇町の旅情に包まれた。",
+          "badge_code": "anabuki_ailand_udatsu_gateway"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fe6f2d04-3dcf-44b0-8a04-c334cafa445b",
+        "name": "道の駅 藍ランドうだつ",
+        "description": "重要伝統的建造物群保存地区「脇町うだつの町並み」の西端に位置する道の駅（売店は9:00〜17:00頃営業、無休）。阿波藍の染め物製品や美馬の特産品ショップが集まる町歩きの起点。",
+        "address": "徳島県美馬市脇町大字脇町55",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.067065,
+        "lng": 134.146658,
+        "qr_token": "shuin-anabuki-1",
+        "cover_image_url": "/images/anabuki/spot1.png",
+        "f7_fragment": "重伝建「脇町うだつの町並み」の入口に立ち、藍染め製品や特産品が揃う拠点。",
+        "f7_full": "「道の駅 藍ランドうだつ」から続く石畳と重厚なうだつ屋根の連なりが、阿波藍で栄えた商都・脇町を巡る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "04f7b851-965a-4915-84b9-ae389f35294d",
+        "next_spot_name": "美馬市観光交流センター"
+      },
+      {
+        "id": "04f7b851-965a-4915-84b9-ae389f35294d",
+        "name": "美馬市観光交流センター",
+        "description": "うだつの町並みの西口に立つ観光案内・休憩施設（9:00〜17:00開館、無休）。伝統的な町家建築の空間で散策マップを入手できるほか、無料の休憩スペースで旅の足を休められる。",
+        "address": "徳島県美馬市脇町大字脇町45-1",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.067552,
+        "lng": 134.146717,
+        "qr_token": "shuin-anabuki-2",
+        "cover_image_url": "/images/anabuki/spot2.png",
+        "f7_fragment": "うだつの町並みの入口に佇み、散策案内と無料休憩スペースを備える町家拠点。",
+        "f7_full": "「美馬市観光交流センター」の落ち着いた木の空間が、これから始まる江戸・明治のうだつ商家巡りへの期待を穏やかに高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "f7afe304-5846-4a8a-8edf-d0373b428091",
+        "next_spot_name": "藍商佐直 吉田家住宅"
+      },
+      {
+        "id": "f7afe304-5846-4a8a-8edf-d0373b428091",
+        "name": "藍商佐直 吉田家住宅",
+        "description": "寛政4年創業の脇町随一の藍商「佐直」の屋敷を公開した美馬市指定文化財（9:00〜17:00開館、無休）。約600坪の敷地に主屋や藍蔵など5棟が並び、立派なうだつと藍商の暮らしを見学できる。",
+        "address": "徳島県美馬市脇町大字脇町53",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.067913,
+        "lng": 134.146677,
+        "qr_token": "shuin-anabuki-3",
+        "cover_image_url": "/images/anabuki/spot3.png",
+        "f7_fragment": "寛政四年創業、六百坪の敷地に五棟の蔵と主屋が並ぶ脇町随一の藍商の豪邸。",
+        "f7_full": "「藍商佐直 吉田家住宅」の壮麗な本瓦のうだつと帳場の佇まいが、吉野川の舟運とともに全国へ阿波藍を届けた豪商の誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "f026cdea-9b08-4e47-8fbe-24249a6247a8",
+        "next_spot_name": "うだつ上がる"
+      },
+      {
+        "id": "f026cdea-9b08-4e47-8fbe-24249a6247a8",
+        "name": "うだつ上がる",
+        "description": "うだつの町並みの築約150年の古民家を改装した複合文化施設（11:00〜17:00営業、火・水曜休）。重厚な商家の空間にカフェや書店、雑貨店が集まり、地元食材のランチや焼き菓子、珈琲を味わえる。",
+        "address": "徳島県美馬市脇町大字脇町156",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.068015,
+        "lng": 134.148476,
+        "qr_token": "shuin-anabuki-4",
+        "cover_image_url": "/images/anabuki/spot4.png",
+        "f7_fragment": "うだつの町並みの築百五十年の商家で、ランチや焼き菓子、珈琲を味わえる店。",
+        "f7_full": "「うだつ上がる」の格子窓から柔らかな光が差し込む古民家空間と香り高い珈琲が、歴史あるうだつの町並みに心地よい彩りと休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "26e51bed-b9c3-4577-8f66-de3a46119bd1",
+        "next_spot_name": "脇町劇場 オデオン座"
+      },
+      {
+        "id": "26e51bed-b9c3-4577-8f66-de3a46119bd1",
+        "name": "脇町劇場 オデオン座",
+        "description": "昭和9年に建てられた木造2階建ての芝居小屋（9:00〜17:00開館、火曜休）。映画『虹をつかむ男』のロケ地としても知られ、回り舞台や花道、桟敷席、奈落を見学できる市指定有形文化財。",
+        "address": "徳島県美馬市脇町大字猪尻西分140-1",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.068186,
+        "lng": 134.149595,
+        "qr_token": "shuin-anabuki-5",
+        "cover_image_url": "/images/anabuki/spot5.png",
+        "f7_fragment": "昭和九年築、回り舞台や花道、奈落の底まで見学できるレトロな木造芝居小屋。",
+        "f7_full": "「脇町劇場 オデオン座」の木の温もりあふれる桟敷席と花道が、阿波藍の商都と昭和の銀幕の記憶を辿った旅を温かい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5c34eccb-c9e3-4c02-884b-e7ed04eecb26",
+    "title": "泳ぐ宝石・錦鯉と布海苔のへぎそば・小千谷を辿る",
+    "name": "泳ぐ宝石・錦鯉と布海苔のへぎそば・小千谷を辿る",
+    "description": "観賞魚「錦鯉」発祥の地であり、ユネスコ無形文化遺産の麻織物「小千谷縮」と名物「へぎそば」が息づく新潟県小千谷市。錦鯉の里から、織之座、大正十年創業のわたや本店、国登録文化財の東忠、信濃川を望む船岡公園までを歩く。",
+    "region": "小千谷（小千谷市）",
+    "area_name": "小千谷（小千谷市）",
+    "cover_image_url": "/images/ojiya/route-eyecatch.png",
+    "imageUrl": "/images/ojiya/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "泳ぐ宝石・錦鯉と千年の麻織物、布海苔つなぎのへぎそばが揃う小千谷で、あなたが強く心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "世界の「NISHIKIGOI」発祥の地で、百尾を超える名鯉が舞う「錦鯉の里」",
+          "description": "雪国の棚田から生まれ世界に羽ばたいた錦鯉の、水中で輝く紅白や三色の美しさに目を奪われた。",
+          "badge_code": "ojiya_nishikigoi_village_jewel"
+        },
+        {
+          "key": "B",
+          "text": "大正十年創業の「わたや 本店」で味わう、布海苔つなぎの伝統「へぎそば」",
+          "description": "織物の糸束のように美しく盛り付けられた蕎麦の、滑らかな喉ごしと強いコシに感動した。",
+          "badge_code": "ojiya_wataya_hegisoba_master"
+        },
+        {
+          "key": "C",
+          "text": "雪さらしの技が生きる重要無形文化財「小千谷縮」に触れる「織之座」",
+          "description": "雪原の光で漂白される麻布の清涼感と、千年以上受け継がれてきた雪国の織物文化の奥深さを知った。",
+          "badge_code": "ojiya_orinoza_chijimi_weaving"
+        },
+        {
+          "key": "D",
+          "text": "戊辰戦争の歴史を伝える名建築「東忠」の茶房と、信濃川を一望する「船岡公園」",
+          "description": "中庭の錦鯉を眺める登録有形文化財の座敷と、高台から見渡す信濃川と越後三山の絶景に心洗われた。",
+          "badge_code": "ojiya_tochu_and_funaoka_view"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "146b637d-3ec7-4c06-8c5f-0c1266531e08",
+        "name": "錦鯉の里",
+        "description": "錦鯉発祥の地・小千谷にある世界で唯一の錦鯉専門展示施設（9:00〜17:00開館、年末年始休）。錦鯉の誕生と改良の歴史を学べるほか、庭園の池や屋内水槽を泳ぐ多彩な品種の名鯉を間近に鑑賞できる。",
+        "address": "新潟県小千谷市城内1-8-22",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.311111,
+        "lng": 138.795278,
+        "qr_token": "shuin-ojiya-1",
+        "cover_image_url": "/images/ojiya/spot1.png",
+        "f7_fragment": "錦鯉発祥の地・小千谷で、百尾を超える「泳ぐ宝石」を間近に鑑賞できる会館。",
+        "f7_full": "「錦鯉の里」の澄んだ水面を優雅に舞う紅白や三色の錦鯉が、雪国の美意識が世界に送り出した生きた芸術の旅の始まりを華やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "2fca6d13-0fc3-4865-84e0-5cc8db91588b",
+        "next_spot_name": "織之座"
+      },
+      {
+        "id": "2fca6d13-0fc3-4865-84e0-5cc8db91588b",
+        "name": "織之座",
+        "description": "小千谷サンプラザ内にある織物展示・販売施設（9:00〜17:00開館、水曜休、入館無料）。ユネスコ無形文化遺産・重要無形文化財の「小千谷縮」や「小千谷紬」の歴史展示と工芸品の買い物を楽しめる。",
+        "address": "新潟県小千谷市城内1-8-25",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.310833,
+        "lng": 138.796247,
+        "qr_token": "shuin-ojiya-2",
+        "cover_image_url": "/images/ojiya/spot2.png",
+        "f7_fragment": "重要無形文化財「小千谷縮」の歴史と雪さらしの技を伝え、小物も揃う展示館。",
+        "f7_full": "「織之座」に並ぶ涼やかな小千谷縮の反物と機織り道具が、雪原の光と職人の手仕事が紡いできた千年の麻織物の誇りを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e5889c7e-cbe5-42fb-8a9b-ba066c1e7ef6",
+        "next_spot_name": "わたや 本店"
+      },
+      {
+        "id": "e5889c7e-cbe5-42fb-8a9b-ba066c1e7ef6",
+        "name": "わたや 本店",
+        "description": "大正10年創業の小千谷へぎそばの老舗（10:45〜20:00頃営業、無休）。海藻の布海苔をつなぎに使ったコシの強い蕎麦を、四角い木の器「へぎ」に一口ずつ束ねて盛り付けた名物へぎそばを味わえる。",
+        "address": "新潟県小千谷市本町2-3-34",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.308759,
+        "lng": 138.797744,
+        "qr_token": "shuin-ojiya-3",
+        "cover_image_url": "/images/ojiya/spot3.png",
+        "f7_fragment": "大正十年創業、海藻の布海苔をつなぎにした名物「へぎそば」を受け継ぐ老舗。",
+        "f7_full": "「わたや 本店」の木のへぎに美しく波打つように盛られた蕎麦と爽やかな喉ごしが、織物の街ならではの食文化の粋を存分に堪能させてくれる。",
+        "is_final": false,
+        "next_spot_id": "4e42fabb-5543-4a2f-836c-02dda1c98110",
+        "next_spot_name": "東忠"
+      },
+      {
+        "id": "4e42fabb-5543-4a2f-836c-02dda1c98110",
+        "name": "東忠",
+        "description": "江戸時代創業の老舗割烹で、主屋などが国の登録有形文化財に指定されている名建築（東忠カフェは11:00〜16:00頃営業、水・木曜休）。錦鯉が泳ぐ中庭を望む座敷で、甘味や珈琲を楽しめる。",
+        "address": "新潟県小千谷市元町11-11",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.308358,
+        "lng": 138.798605,
+        "qr_token": "shuin-ojiya-4",
+        "cover_image_url": "/images/ojiya/spot4.png",
+        "f7_fragment": "江戸期創業の国登録有形文化財の座敷で、錦鯉の庭を眺めながら憩える茶房。",
+        "f7_full": "「東忠」の磨かれた廊下と錦鯉が泳ぐ中庭の風景が、戊辰戦争の歴史を見つめてきた老舗座敷ならではの格別な安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e21ef11c-6a22-4acf-8f4c-ff00a9de9e3c",
+        "next_spot_name": "船岡公園"
+      },
+      {
+        "id": "e21ef11c-6a22-4acf-8f4c-ff00a9de9e3c",
+        "name": "船岡公園",
+        "description": "小千谷市街地と大河・信濃川、越後三山を一望できる高台の公園（終日開放・入園自由）。桜の名所として親しまれるほか、戊辰戦争ゆかりの史跡や文学碑が点在している。",
+        "address": "新潟県小千谷市西小千谷849",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.304355,
+        "lng": 138.795197,
+        "qr_token": "shuin-ojiya-5",
+        "cover_image_url": "/images/ojiya/spot5.png",
+        "f7_fragment": "悠々と流れる信濃川と小千谷の街並み、越後三山を一望できる高台の史跡公園。",
+        "f7_full": "「船岡公園」の展望台から見渡す信濃川の雄大な流れと山並みが、錦鯉と織物、へぎそばの里を巡った小千谷の旅を爽やかな余韻で締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9997e096-9c7e-4363-8800-d1cebf2cbb0a",
+    "title": "七百年の関鍛冶の魂と炭火焼きの鰻・刀都関",
+    "name": "七百年の関鍛冶の魂と炭火焼きの鰻・刀都関",
+    "description": "「折れず、曲がらず、よく切れる」名刀の里として七百年の歴史を誇る世界三大刃物産地・岐阜県関市。刃物最中の虎屋から、慶応年間創業の鰻の名店・辻屋、フェザーミュージアム、せきてらす、日本刀の美を伝える関鍛冶伝承館までを巡る。",
+    "region": "関（関市）",
+    "area_name": "関（関市）",
+    "cover_image_url": "/images/seki/route-eyecatch.png",
+    "imageUrl": "/images/seki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "七百年の日本刀の伝統と現代の精密刃物、刀匠の力を支えた鰻文化が息づく関で、あなたの胸に深く残ったのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「折れず、曲がらず、よく切れる」関伝の名刀と鍛錬場を伝える「関鍛冶伝承館」",
+          "description": "関の孫六や和泉守兼定を生んだ七百年の歴史と、澄み切った刃文の美しさに背筋が伸びる思いがした。",
+          "badge_code": "seki_sword_tradition_museum"
+        },
+        {
+          "key": "B",
+          "text": "慶応年間創業の老舗「辻屋」で味わう、炭火でパリッと焼き上げた関西風うな丼",
+          "description": "熱い炉に向かう刀匠たちの活力を支えてきた、秘伝ダレの香ばしい地焼き鰻の旨みに圧倒された。",
+          "badge_code": "seki_tsujiya_charcoal_unagi"
+        },
+        {
+          "key": "C",
+          "text": "日本刀から医療用メス・安全カミソリへの進化を辿る「フェザーミュージアム」",
+          "description": "伝統の刀鍛冶の技がミクロン単位の現代精密刃物へと受け継がれている物語に知的好奇心が刺激された。",
+          "badge_code": "seki_feather_precision_blade"
+        },
+        {
+          "key": "D",
+          "text": "二千点の刃物が揃う「せきてらす」と、日本刀を模した銘菓の老舗「虎屋」",
+          "description": "暮らしを彩る一生ものの包丁やハサミに出会い、刀都ならではの刃物最中の粋な遊び心に心が和んだ。",
+          "badge_code": "seki_terrace_and_toraya_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "80825f8f-eafb-4609-8040-63ce7320180b",
+        "name": "虎屋",
+        "description": "本町通りに店を構える昭和10年創業の老舗和菓子処（9:00〜18:00営業、火曜休）。日本刀の形を模した名物「関の刃物最中」や、小瀬鵜飼にちなんだ「小瀬の若鮎」など関ならではの銘菓が揃う。",
+        "address": "岐阜県関市本町7-25",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.486717,
+        "lng": 136.913834,
+        "qr_token": "shuin-seki-1",
+        "cover_image_url": "/images/seki/spot1.png",
+        "f7_fragment": "昭和十年創業、日本刀を模した名物「関の刃物最中」で親しまれる和菓子処。",
+        "f7_full": "「虎屋」の職人が焼き上げる日本刀形の最中と上品な粒あんの甘みが、七百年の歴史を持つ刃物のまち・関を巡る旅の始まりを楽しく彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "e6a77372-b789-4f26-852b-33f8ffb25620",
+        "next_spot_name": "辻屋"
+      },
+      {
+        "id": "e6a77372-b789-4f26-852b-33f8ffb25620",
+        "name": "辻屋",
+        "description": "幕末の慶応年間創業の老舗鰻料理店（11:00〜14:30・17:00〜20:00営業、月曜休）。刀匠や刃物職人のスタミナ源として愛されてきた、炭火でパリッと香ばしく焼き上げる関西風の地焼きうな丼を味わえる。",
+        "address": "岐阜県関市本町5-14",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.486128,
+        "lng": 136.915486,
+        "qr_token": "shuin-seki-2",
+        "cover_image_url": "/images/seki/spot2.png",
+        "f7_fragment": "慶応年間の創業以来、炭火地焼きと秘伝のタレで刀都の食を支える鰻の名店。",
+        "f7_full": "「辻屋」の店先に漂う香ばしい炭火の煙とパリッと焼き上がった鰻の旨みが、百五十余年にわたり関の職人たちを力づけてきた伝統の味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "85d83a79-53c8-4980-8c87-4c1d3b269a16",
+        "next_spot_name": "フェザーミュージアム"
+      },
+      {
+        "id": "85d83a79-53c8-4980-8c87-4c1d3b269a16",
+        "name": "フェザーミュージアム",
+        "description": "総合刃物メーカー・フェザー安全剃刀が運営する世界初の剃刀と精密刃物の博物館（9:30〜16:00開館、火曜休、入館無料）。世界の珍しいカミソリや医療・理美容用刃物の技術進化を楽しく学べる。",
+        "address": "岐阜県関市日ノ出町1-17",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.483547,
+        "lng": 136.915086,
+        "qr_token": "shuin-seki-3",
+        "cover_image_url": "/images/seki/spot3.png",
+        "f7_fragment": "カミソリの歴史から最先端の医療用メスまで、「切る」技術を辿る企業博物館。",
+        "f7_full": "「フェザーミュージアム」に並ぶ精緻な刃物の数々が、鎌倉時代の刀鍛冶の精神が現代の世界的な精密技術へと進化した軌跡を鮮やかに教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "53c2a65d-8657-43fb-8bb4-f158085f0efd",
+        "next_spot_name": "せきてらす"
+      },
+      {
+        "id": "53c2a65d-8657-43fb-8bb4-f158085f0efd",
+        "name": "せきてらす",
+        "description": "関の産業と観光の交流拠点（9:00〜17:00開館、火曜休）。約2,000点の包丁やハサミが並ぶ「岐阜関刃物会館」とカフェ・観光案内所を備え、木の温もりあふれる空間で買い物と休息を楽しめる。",
+        "address": "岐阜県関市平和通4-12-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.482027,
+        "lng": 136.915299,
+        "qr_token": "shuin-seki-4",
+        "cover_image_url": "/images/seki/spot4.png",
+        "f7_fragment": "約二千点の関の刃物が揃う直売所とオープンカフェを備えた木の温もりの拠点。",
+        "f7_full": "「せきてらす」の開放的な木造テラスと美しく並んだ包丁の輝きが、世界三大刃物産地ならではの誇りと心地よい休息の時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6f58bcd5-a534-4a9c-87fb-aa8e0572f7d3",
+        "next_spot_name": "関鍛冶伝承館"
+      },
+      {
+        "id": "6f58bcd5-a534-4a9c-87fb-aa8e0572f7d3",
+        "name": "関鍛冶伝承館",
+        "description": "七百年の歴史を持つ「関伝」の日本刀鍛錬と名刀を紹介する博物館（9:00〜16:30開館、火曜休）。関の孫六（兼元）や兼定などの名刀展示と、古式日本刀鍛錬場を見学できる。",
+        "address": "岐阜県関市南春日町9-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.48181,
+        "lng": 136.916444,
+        "qr_token": "shuin-seki-5",
+        "cover_image_url": "/images/seki/spot5.png",
+        "f7_fragment": "「折れず、曲がらず、よく切れる」関伝の名刀と古式日本刀鍛錬場を伝える館。",
+        "f7_full": "「関鍛冶伝承館」に鎮座する古式鍛錬場と凛と輝く日本刀の刃文が、七百年にわたり炎と鋼に魂を込めてきた刀都・関の旅を荘厳な余韻で締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "eaedf70d-63e9-4ae5-8fd9-844eacfce499",
+    "title": "天下分け目の陣跡と古戦場パノラマ・関ケ原へ",
+    "name": "天下分け目の陣跡と古戦場パノラマ・関ケ原へ",
+    "description": "慶長五年に東軍と西軍が激突した天下分け目の合戦の地・岐阜県関ケ原町。武将の家紋が並ぶ関ケ原駅から、関ケ原駅前観光交流館、伊吹庵、三百六十度展望室を備える岐阜関ケ原古戦場記念館、国指定史跡の徳川家康最後陣地までを歩く。",
+    "region": "関ケ原（関ケ原町）",
+    "area_name": "関ケ原（関ケ原町）",
+    "cover_image_url": "/images/sekigahara/route-eyecatch.png",
+    "imageUrl": "/images/sekigahara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "天下分け目の激戦の記憶と三百六十度の古戦場パノラマが広がる関ケ原で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大迫力のシアターと五階展望室から布陣の山々を一望する「岐阜関ケ原古戦場記念館」",
+          "description": "笹尾山や松尾山まで見渡せる三百六十度のパノラマから、天下分け目の戦場の地形とスケールを体感できた。",
+          "badge_code": "sekigahara_battlefield_memorial_museum"
+        },
+        {
+          "key": "B",
+          "text": "家康が本陣を進め、勝利の首実検を行った国指定史跡「徳川家康最後陣地」",
+          "description": "金の扇の馬印が揺れる陣場野の土塁の前に立ち、乱世が終わり江戸の世が始まった歴史の瞬間を感じた。",
+          "badge_code": "sekigahara_ieyasu_final_camp"
+        },
+        {
+          "key": "C",
+          "text": "東西両軍の家紋が迎える「関ケ原駅」と、戦国グッズが揃う「関ケ原駅前観光交流館」",
+          "description": "三つ葉葵や大一大万大吉の家紋に彩られた駅前から、四百年前の物語へと踏み出す高揚感に包まれた。",
+          "badge_code": "sekigahara_station_samurai_crests"
+        },
+        {
+          "key": "D",
+          "text": "古戦場の緑を望む「伊吹庵」で味わう、伊吹薬草や美濃抹茶の甘味と休息",
+          "description": "激戦の舞台となった陣場野のほとりで、穏やかな光と地元の味覚に包まれながら戦国の世に思いを馳せた。",
+          "badge_code": "sekigahara_ibukian_matcha_rest"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "af3d3a47-a890-4181-8417-dc048decc367",
+        "name": "関ケ原駅",
+        "description": "天下分け目の古戦場・関ケ原町の玄関口となるJR東海道本線の駅（待合室は始発〜終電）。構内や駅前広場には東西両軍の参戦武将の家紋が掲げられ、降り立った瞬間から戦国史の世界が広がる。",
+        "address": "岐阜県不破郡関ケ原町関ケ原596",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.363715,
+        "lng": 136.47049,
+        "qr_token": "shuin-sekigahara-1",
+        "cover_image_url": "/images/sekigahara/spot1.png",
+        "f7_fragment": "東西両軍の参戦武将の家紋が旅人を迎える、天下分け目の古戦場の駅の玄関口。",
+        "f7_full": "「関ケ原駅」に掲げられた数々の武将の家紋と伊吹おろしの風が、日本の歴史を動かした天下分け目の地を歩く旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "f9fffcc6-2cf0-46db-89d4-10f618d75797",
+        "next_spot_name": "関ケ原駅前観光交流館"
+      },
+      {
+        "id": "f9fffcc6-2cf0-46db-89d4-10f618d75797",
+        "name": "関ケ原駅前観光交流館",
+        "description": "関ケ原駅正面にある観光案内・土産物施設「いざ！関ケ原」（9:00〜17:00開館、火曜休、入館無料）。各陣跡への散策マップの配布や、武将の家紋グッズ・地酒・銘菓の買い物を楽しめる。",
+        "address": "岐阜県不破郡関ケ原町関ケ原598-4",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.363384,
+        "lng": 136.470595,
+        "qr_token": "shuin-sekigahara-2",
+        "cover_image_url": "/images/sekigahara/spot2.png",
+        "f7_fragment": "駅前に位置し、古戦場巡りの案内や武将家紋グッズ・特産品が揃う観光拠点。",
+        "f7_full": "「関ケ原駅前観光交流館」に並ぶ多彩な家紋グッズと古戦場マップが、これから巡る東軍・西軍の陣跡への期待を大きく高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "c6949974-7a4e-4f3d-8154-10c608f5c359",
+        "next_spot_name": "伊吹庵"
+      },
+      {
+        "id": "c6949974-7a4e-4f3d-8154-10c608f5c359",
+        "name": "伊吹庵",
+        "description": "岐阜関ケ原古戦場記念館の別館にあるカフェ・ショップ（9:30〜17:00営業、月曜休）。陣場野公園の緑を眺めながら、美濃抹茶や伊吹薬草を使った甘味、軽食を楽しめる。",
+        "address": "岐阜県不破郡関ケ原町関ケ原894-55",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.36529,
+        "lng": 136.466244,
+        "qr_token": "shuin-sekigahara-3",
+        "cover_image_url": "/images/sekigahara/spot3.png",
+        "f7_fragment": "陣場野公園の隣で、美濃抹茶のソフトクリームや軽食を味わえる憩いの茶処。",
+        "f7_full": "「伊吹庵」の爽やかな抹茶スイーツと明るい窓辺の空間が、古戦場を歩く旅人に穏やかなひと休みと彩りを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c290c61c-180d-4025-881b-53e089d4969d",
+        "next_spot_name": "岐阜関ケ原古戦場記念館"
+      },
+      {
+        "id": "c290c61c-180d-4025-881b-53e089d4969d",
+        "name": "岐阜関ケ原古戦場記念館",
+        "description": "関ケ原の戦いの全貌を体験できる最新鋭の歴史ミュージアム（9:30〜17:00開館、月曜休）。大迫力の床面スクリーン・ドームシアターや武具展示のほか、5階展望室から古戦場全域を360度一望できる。",
+        "address": "岐阜県不破郡関ケ原町関ケ原894-55",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.365656,
+        "lng": 136.466242,
+        "qr_token": "shuin-sekigahara-4",
+        "cover_image_url": "/images/sekigahara/spot4.png",
+        "f7_fragment": "大迫力の映像シアターと五階展望室からの三百六十度パノラマを誇る記念館。",
+        "f7_full": "「岐阜関ケ原古戦場記念館」の展望室から一望する笹尾山や松尾山の山並みが、東西両軍十数万の兵が対峙した天下分け目のスケールを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c543b62a-60f4-4c63-80ed-228883562301",
+        "next_spot_name": "徳川家康最後陣地"
+      },
+      {
+        "id": "c543b62a-60f4-4c63-80ed-228883562301",
+        "name": "徳川家康最後陣地",
+        "description": "徳川家康が戦況打開のため桃配山から本陣を進め、合戦勝利後に首実検を行った国指定史跡（陣場野公園、終日散策自由）。当時の土塁や石碑、金の扇の馬印の旗が残る決戦の中心地。",
+        "address": "岐阜県不破郡関ケ原町関ケ原959-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.365584,
+        "lng": 136.465167,
+        "qr_token": "shuin-sekigahara-5",
+        "cover_image_url": "/images/sekigahara/spot5.png",
+        "f7_fragment": "徳川家康が前線へ本陣を進め、合戦勝利後に首実検を行った国指定史跡の陣跡。",
+        "f7_full": "「徳川家康最後陣地」の木立に揺れる旗印と静かな土塁が、激動の戦国時代が幕を閉じた歴史の瞬間とともに、関ケ原の旅を深い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
