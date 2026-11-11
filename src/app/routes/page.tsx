@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
-import { getRouteStatsMap } from "@/utils/routeStats";
+import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
 import { getSiteUrl } from "@/utils/seo";
 import RoutesClientView from "./RoutesClientView";
 
-export const revalidate = 0; // 常に最新データを取得
+export const revalidate = 300; // 5分間キャッシュ（ISR）で毎回のDB全件クエリ負荷を軽減
 
 const siteUrl = getSiteUrl();
 
@@ -31,40 +30,16 @@ export default async function RoutesPage({
   const budget_tier = resolvedParams.budget_tier as string | undefined;
   const q = resolvedParams.q as string | undefined;
 
-  // Supabaseからルート一覧（紐づくスポット情報も含む）を取得
-  // クイズデータ(completion_quiz_data)やスポット長文解説(spots.description)を除外し、1,000件上限を超えても全件取得できるようページング処理
-  const PAGE_SIZE = 1000;
-  const ralliesList: any[] = [];
-  let offset = 0;
+  // サーバーキャッシュ済みのルート一覧＋参加・栞統計を取得し、URL条件がある場合は高速フィルタリング
+  const { routes: allRoutes, statsMap } =
+    await getCachedPublishedRoutesWithStats();
 
-  while (true) {
-    let query = supabase
-      .from("routes")
-      .select(
-        "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
-      )
-      .eq("is_published", true)
-      .order("created_at", { ascending: false })
-      .range(offset, offset + PAGE_SIZE - 1);
-
-    if (prefecture) query = query.eq("prefecture", prefecture);
-    if (category) query = query.eq("category", category);
-    if (budget_tier) query = query.eq("budget_tier", Number(budget_tier));
-
-    const { data: batch, error } = await query;
-
-    if (error) {
-      console.error("Error fetching routes:", error);
-      break;
-    }
-
-    if (!batch || batch.length === 0) break;
-    ralliesList.push(...batch);
-    if (batch.length < PAGE_SIZE) break;
-    offset += PAGE_SIZE;
-  }
-
-  const statsMap = await getRouteStatsMap(ralliesList.map((r) => r.id));
+  const ralliesList = allRoutes.filter((r) => {
+    if (prefecture && r.prefecture !== prefecture) return false;
+    if (category && r.category !== category) return false;
+    if (budget_tier && r.budget_tier !== Number(budget_tier)) return false;
+    return true;
+  });
 
   return (
     <div className="container">

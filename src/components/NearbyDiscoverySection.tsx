@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import Link from "next/link";
 import { Star, X } from "lucide-react";
 import styles from "./NearbyDiscoverySection.module.css";
@@ -808,10 +809,17 @@ export default function NearbyDiscoverySection({
           >
             {displayedRoutes.map((route) => {
               const stats = statsMap[route.id];
+              const thumbSrc =
+                route.thumbnail_url ||
+                "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80";
+              const canOptimize =
+                thumbSrc.startsWith("/") ||
+                thumbSrc.startsWith("https://images.unsplash.com/");
               return (
                 <Link
                   key={route.id}
                   href={`/routes/${route.id}`}
+                  prefetch={false}
                   style={{
                     textDecoration: "none",
                     color: "inherit",
@@ -832,12 +840,15 @@ export default function NearbyDiscoverySection({
                       overflow: "hidden",
                     }}
                   >
-                    <img
-                      src={
-                        route.thumbnail_url ||
-                        "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                      }
+                    <Image
+                      src={thumbSrc}
                       alt={route.title}
+                      width={600}
+                      height={272}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      quality={75}
+                      loading="lazy"
+                      unoptimized={!canOptimize}
                       style={{
                         width: "100%",
                         height: "100%",

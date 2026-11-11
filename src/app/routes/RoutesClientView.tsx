@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { useRouteDiscovery, DurationFilter, RouteSortBy } from "@/hooks/useRouteDiscovery";
@@ -17,6 +19,7 @@ import {
   RotateCcw,
   Tag,
   X,
+  ChevronDown,
 } from "lucide-react";
 
 interface RoutesClientViewProps {
@@ -55,7 +58,32 @@ export default function RoutesClientView({
     handleSortChange,
     locating,
     filteredRoutes,
+    visibleRoutes,
+    hasMore,
+    remainingCount,
+    loadMore,
   } = useRouteDiscovery(initialRoutes, statsMap, initialKeyword);
+
+  const loadMoreSentinelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const sentinel = loadMoreSentinelRef.current;
+    if (!sentinel || !hasMore || typeof IntersectionObserver === "undefined") {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          loadMore();
+        }
+      },
+      { rootMargin: "320px 0px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasMore, loadMore]);
 
   const hasServerFilters = Boolean(
     activePrefecture || activeCategory || activeBudgetTier
@@ -213,29 +241,50 @@ export default function RoutesClientView({
           全 <strong>{filteredRoutes.length}</strong> ルート
           {selectedArea !== "すべて" ? `（${selectedArea}）` : ""}
         </span>
+        {filteredRoutes.length > visibleRoutes.length && (
+          <span className={styles.resultSubMeta}>
+            現在 {visibleRoutes.length} 件を表示中
+          </span>
+        )}
       </div>
 
       {/* ルートカード一覧 */}
       <div className={styles.grid}>
-        {filteredRoutes.length > 0 ? (
-          filteredRoutes.map((routeItem) => {
+        {visibleRoutes.length > 0 ? (
+          visibleRoutes.map((routeItem, index) => {
             const { walkMetrics, distanceFromUserKm, stats } = routeItem;
+            const thumbSrc =
+              routeItem.thumbnail_url ||
+              "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80";
+            const canOptimize =
+              thumbSrc.startsWith("/") ||
+              thumbSrc.startsWith("https://images.unsplash.com/");
+            const isLcpCandidate = index === 0;
+            const isAboveFold = index < 6;
+
             return (
               <Link
                 href={`/routes/${routeItem.id}`}
                 key={routeItem.id}
+                prefetch={false}
                 className={styles.cardWrapper}
               >
                 <div className={styles.card}>
-                  <div
-                    className={styles.imageBox}
-                    style={{
-                      backgroundImage: `url(${
-                        routeItem.thumbnail_url ||
-                        "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                      })`,
-                    }}
-                  >
+                  <div className={styles.imageBox}>
+                    <Image
+                      src={thumbSrc}
+                      alt={routeItem.title}
+                      width={600}
+                      height={344}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={75}
+                      priority={isLcpCandidate}
+                      fetchPriority={isLcpCandidate ? "high" : undefined}
+                      loading={isAboveFold ? "eager" : "lazy"}
+                      decoding="async"
+                      unoptimized={!canOptimize}
+                      className={styles.cardThumbImage}
+                    />
                     <div className={styles.overlayTopTags}>
                       <div className={styles.categoryBadge}>{routeItem.category}</div>
                       <div className={styles.areaBadge}>{routeItem.prefecture}</div>
@@ -373,6 +422,20 @@ export default function RoutesClientView({
           </div>
         )}
       </div>
+
+      {/* 段階的読み込み（スクロール検知 ＋ 手動ボタン） */}
+      {hasMore && (
+        <div ref={loadMoreSentinelRef} className={styles.loadMoreContainer}>
+          <button
+            type="button"
+            onClick={loadMore}
+            className={`btn-secondary ${styles.loadMoreBtn}`}
+          >
+            <ChevronDown size={16} strokeWidth={2} />
+            <span>さらにルートを表示する（残り {remainingCount} 件）</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import { supabase } from "../lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import SplashAnimation from "@/components/SplashAnimation";
 import ClientSearchButton from "@/components/ClientSearchButton";
 import NearbyDiscoverySection from "@/components/NearbyDiscoverySection";
-import { getRouteStatsMap } from "@/utils/routeStats";
+import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 import { getSiteUrl } from "@/utils/seo";
 import { Star, Map } from "lucide-react";
@@ -22,8 +22,8 @@ import {
   IconBook,
 } from "@/components/icons/ShuinIcons";
 
-// Next.js App Router: サーバーコンポーネントとしてSupabaseから直接データを取得
-export const revalidate = 0; // 最新のデータを常に取得
+// Next.js App Router: サーバーコンポーネントとして5分キャッシュ（ISR）で高速配信
+export const revalidate = 300;
 
 const siteUrl = getSiteUrl();
 
@@ -39,34 +39,11 @@ export const metadata: Metadata = {
 const FEATURED_ROUTES_LIMIT = 6;
 
 export default async function Home() {
-  // 公開中（is_published = true）のルートを最新順に取得（スポット座標含む・クイズJSONや長文解説は除外し、1,000件上限を超えてもページング取得）
-  const PAGE_SIZE = 1000;
-  const allRallies: any[] = [];
-  let offset = 0;
-
-  while (true) {
-    const { data: batch, error } = await supabase
-      .from("routes")
-      .select(
-        "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
-      )
-      .eq("is_published", true)
-      .order("created_at", { ascending: false })
-      .range(offset, offset + PAGE_SIZE - 1);
-
-    if (error) {
-      console.error("Error fetching rallies:", error);
-      break;
-    }
-
-    if (!batch || batch.length === 0) break;
-    allRallies.push(...batch);
-    if (batch.length < PAGE_SIZE) break;
-    offset += PAGE_SIZE;
-  }
+  // 公開中（is_published = true）のルート一覧＋参加・栞統計をサーバーキャッシュから取得
+  const { routes: allRallies, statsMap } =
+    await getCachedPublishedRoutesWithStats();
 
   const featuredRallies = allRallies.slice(0, FEATURED_ROUTES_LIMIT);
-  const statsMap = await getRouteStatsMap(allRallies.map((r) => r.id));
 
   return (
     <main>
@@ -264,10 +241,18 @@ export default async function Home() {
           <div className={styles.rallyGrid}>
             {featuredRallies.length > 0 ? (
               featuredRallies.map((rally) => {
-                const walkMetrics = computeRouteWalkMetrics(
-                  rally.spots || [],
-                  (rally as any).rarity_estimated_min
-                );
+                const walkMetrics =
+                  rally.walkMetrics ||
+                  computeRouteWalkMetrics(
+                    rally.spots || [],
+                    (rally as any).rarity_estimated_min
+                  );
+                const thumbSrc =
+                  rally.thumbnail_url ||
+                  "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80";
+                const canOptimize =
+                  thumbSrc.startsWith("/") ||
+                  thumbSrc.startsWith("https://images.unsplash.com/");
                 return (
                   <Link
                     href={`/routes/${rally.id}`}
@@ -275,12 +260,15 @@ export default async function Home() {
                     className={styles.rallyCard}
                   >
                     <div className={styles.cardImageContainer}>
-                      <img
-                        src={
-                          rally.thumbnail_url ||
-                          "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                        }
+                      <Image
+                        src={thumbSrc}
                         alt={rally.title}
+                        width={600}
+                        height={360}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={75}
+                        loading="lazy"
+                        unoptimized={!canOptimize}
                         className={styles.cardImage}
                       />
                       <div className={styles.overlayTopTags}>

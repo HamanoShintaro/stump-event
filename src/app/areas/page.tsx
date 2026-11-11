@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
+import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
 import {
   ALL_PREFECTURE_NAMES,
   extractPrefectureHubSeoInfo,
@@ -47,25 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AreasIndexPage() {
   const siteUrl = getSiteUrl();
-  const PAGE_SIZE = 1000;
-  const allRoutes: any[] = [];
-  let offset = 0;
-
-  while (true) {
-    const { data, error } = await supabase
-      .from("routes")
-      .select(
-        "id, title, description, thumbnail_url, category, prefecture, budget_tier, is_published, created_at, spots(id, name, address, order_index, location)"
-      )
-      .eq("is_published", true)
-      .order("created_at", { ascending: false })
-      .range(offset, offset + PAGE_SIZE - 1);
-
-    if (error || !data || data.length === 0) break;
-    allRoutes.push(...data);
-    if (data.length < PAGE_SIZE) break;
-    offset += PAGE_SIZE;
-  }
+  const { routes: allRoutes } = await getCachedPublishedRoutesWithStats();
 
   const routesByPref = new Map<string, any[]>();
   for (const r of allRoutes) {

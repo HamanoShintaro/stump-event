@@ -108,7 +108,9 @@ export function useNearbyDiscovery(routes: any[] = []) {
   const enrichedRoutes: EnrichedDiscoveryRoute[] = useMemo(() => {
     return (routes || []).map((route) => {
       const spots = Array.isArray(route.spots) ? route.spots : [];
-      const walkMetrics = computeRouteWalkMetrics(spots, route.rarity_estimated_min);
+      const walkMetrics: RouteWalkMetrics =
+        route.walkMetrics ||
+        computeRouteWalkMetrics(spots, route.rarity_estimated_min);
 
       let distanceFromUserKm: number | null = null;
       let walkMinutesToStart: number | null = null;

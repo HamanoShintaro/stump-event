@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
@@ -217,23 +218,36 @@ export default async function PrefectureHubPage({
 
           {prefRoutes.length > 0 ? (
             <div className={styles.routeGrid}>
-              {prefRoutes.map((route) => {
+              {prefRoutes.map((route, routeIdx) => {
                 const walkMetrics = computeRouteWalkMetrics(route.spots || []);
                 const routeAreaInfo = extractRouteAreaInfo(route, route.spots || []);
+                const thumbSrc =
+                  route.thumbnail_url ||
+                  "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80";
+                const canOptimize =
+                  thumbSrc.startsWith("/") ||
+                  thumbSrc.startsWith("https://images.unsplash.com/");
 
                 return (
                   <Link
                     key={route.id}
                     href={`/routes/${route.id}`}
+                    prefetch={false}
                     className={"glass-card " + styles.routeCard}
                   >
                     <div className={styles.routeThumbBox}>
-                      <img
-                        src={
-                          route.thumbnail_url ||
-                          "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                        }
+                      <Image
+                        src={thumbSrc}
                         alt={route.title}
+                        width={600}
+                        height={352}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={75}
+                        priority={routeIdx === 0}
+                        fetchPriority={routeIdx === 0 ? "high" : undefined}
+                        loading={routeIdx < 6 ? "eager" : "lazy"}
+                        decoding="async"
+                        unoptimized={!canOptimize}
                         className={styles.routeThumb}
                       />
                       <div className={styles.routeBadgeRow}>
@@ -305,20 +319,31 @@ export default async function PrefectureHubPage({
               {neighborRoutes.map((route) => {
                 const walkMetrics = computeRouteWalkMetrics(route.spots || []);
                 const routeAreaInfo = extractRouteAreaInfo(route, route.spots || []);
+                const thumbSrc =
+                  route.thumbnail_url ||
+                  "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80";
+                const canOptimize =
+                  thumbSrc.startsWith("/") ||
+                  thumbSrc.startsWith("https://images.unsplash.com/");
 
                 return (
                   <Link
                     key={route.id}
                     href={`/routes/${route.id}`}
+                    prefetch={false}
                     className={"glass-card " + styles.routeCard}
                   >
                     <div className={styles.routeThumbBox}>
-                      <img
-                        src={
-                          route.thumbnail_url ||
-                          "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80"
-                        }
+                      <Image
+                        src={thumbSrc}
                         alt={route.title}
+                        width={600}
+                        height={352}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={75}
+                        loading="lazy"
+                        decoding="async"
+                        unoptimized={!canOptimize}
                         className={styles.routeThumb}
                       />
                       <div className={styles.routeBadgeRow}>

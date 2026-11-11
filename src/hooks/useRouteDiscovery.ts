@@ -8,6 +8,9 @@ import { RouteStat } from "@/utils/routeStats";
 export type DurationFilter = "all" | "short" | "medium" | "long";
 export type RouteSortBy = "newest" | "nearby" | "walkable" | "popular";
 
+const INITIAL_VISIBLE_COUNT = 24;
+const LOAD_MORE_STEP = 24;
+
 export interface AreaOption {
   areaName: string;
   count: number;
@@ -71,10 +74,16 @@ export function useRouteDiscovery(
   const [sortBy, setSortBy] = useState<RouteSortBy>("newest");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [locating, setLocating] = useState(false);
+  const [visibleCount, setVisibleCount] = useState<number>(INITIAL_VISIBLE_COUNT);
 
   useEffect(() => {
     setKeyword(initialKeyword);
   }, [initialKeyword]);
+
+  // 絞り込み・並び替え条件が変わったら初期表示件数（24件）へリセット
+  useEffect(() => {
+    setVisibleCount(INITIAL_VISIBLE_COUNT);
+  }, [keyword, durationFilter, selectedArea, sortBy, initialRoutes]);
 
   const requestUserLocation = useCallback(() => {
     if (typeof window === "undefined" || !("geolocation" in navigator)) return;
@@ -119,23 +128,41 @@ export function useRouteDiscovery(
     [userLocation, requestUserLocation]
   );
 
-  const enrichedRoutes: EnrichedRoute[] = useMemo(() => {
+  const baseEnrichedRoutes = useMemo(() => {
     return (initialRoutes || []).map((route) => {
-      const walkMetrics = computeRouteWalkMetrics(
-        route.spots || [],
-        route.rarity_estimated_min
-      );
+      const walkMetrics: RouteWalkMetrics =
+        route.walkMetrics ||
+        computeRouteWalkMetrics(
+          route.spots || [],
+          route.rarity_estimated_min
+        );
+      const stats = statsMap[route.id] || { participants: 0, favorites: 0 };
+      const routeAreas = collectRouteAreas(route);
 
+      return {
+        ...route,
+        walkMetrics,
+        stats,
+        routeAreas,
+      };
+    });
+  }, [initialRoutes, statsMap]);
+
+  const enrichedRoutes: EnrichedRoute[] = useMemo(() => {
+    return baseEnrichedRoutes.map((route) => {
       let distanceFromUserKm: number | null = null;
       if (
         userLocation &&
-        walkMetrics.centerLat !== null &&
-        walkMetrics.centerLng !== null
+        route.walkMetrics.centerLat !== null &&
+        route.walkMetrics.centerLng !== null
       ) {
         try {
           const distM = getDistance(
             { latitude: userLocation.lat, longitude: userLocation.lng },
-            { latitude: walkMetrics.centerLat, longitude: walkMetrics.centerLng }
+            {
+              latitude: route.walkMetrics.centerLat,
+              longitude: route.walkMetrics.centerLng,
+            }
           );
           distanceFromUserKm = Math.round((distM / 1000) * 10) / 10;
         } catch {
@@ -143,18 +170,12 @@ export function useRouteDiscovery(
         }
       }
 
-      const stats = statsMap[route.id] || { participants: 0, favorites: 0 };
-      const routeAreas = collectRouteAreas(route);
-
       return {
         ...route,
-        walkMetrics,
         distanceFromUserKm,
-        stats,
-        routeAreas,
       };
     });
-  }, [initialRoutes, statsMap, userLocation]);
+  }, [baseEnrichedRoutes, userLocation]);
 
   const areaList: AreaOption[] = useMemo(() => {
     const counts = new Map<string, number>();
@@ -246,6 +267,19 @@ export function useRouteDiscovery(
     return sorted;
   }, [enrichedRoutes, selectedArea, keyword, durationFilter, sortBy]);
 
+  const visibleRoutes = useMemo(() => {
+    return filteredRoutes.slice(0, visibleCount);
+  }, [filteredRoutes, visibleCount]);
+
+  const hasMore = visibleCount < filteredRoutes.length;
+  const remainingCount = Math.max(0, filteredRoutes.length - visibleCount);
+
+  const loadMore = useCallback(() => {
+    setVisibleCount((prev) =>
+      Math.min(prev + LOAD_MORE_STEP, filteredRoutes.length)
+    );
+  }, [filteredRoutes.length]);
+
   return {
     keyword,
     setKeyword,
@@ -260,6 +294,10 @@ export function useRouteDiscovery(
     locating,
     requestUserLocation,
     filteredRoutes,
+    visibleRoutes,
+    hasMore,
+    remainingCount,
+    loadMore,
     totalCount: enrichedRoutes.length,
   };
 }
