@@ -56680,5 +56680,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "5afe93d3-3467-41ff-8066-28d92bc294c0",
+    "title": "なぜ吉野山の尾根に修験の祈りと桜が宿るのか",
+    "name": "なぜ吉野山の尾根に修験の祈りと桜が宿るのか",
+    "description": "修験道の開祖・役行者が開いた世界遺産の聖地であり、南朝の哀史と日本一と称えられる桜・吉野葛の文化が息づく奈良県吉野町・吉野山。日本最古の吉野山ロープウェイ 吉野山駅から、柿の葉すし ひょうたろう、国宝・金峯山寺蔵王堂、葛屋 中井春風堂、一目千本の吉水神社までを尾根沿いに歩く。",
+    "region": "吉野山（吉野町）",
+    "area_name": "吉野山（吉野町）",
+    "cover_image_url": "/images/yoshinoyama/route-eyecatch.png",
+    "imageUrl": "/images/yoshinoyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "修験道の祈りと千本桜の絶景、吉野本葛や柿の葉すしが息づく吉野山で、あなたの心に深く響いたのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "六十八本の自然木の巨柱が立ち並ぶ、国宝・世界遺産の「金峯山寺蔵王堂」の荘厳な佇まい",
+          "description": "空を覆うような檜皮葺きの大屋根と自然木巨柱の祈りの空間に立ち、修験道の聖地の迫力に圧倒された。",
+          "badge_code": "yoshinoyama_kinpusenji_zaodo"
+        },
+        {
+          "key": "B",
+          "text": "源義経や後醍醐天皇ゆかりの書院と、一目千本の山並みを望む「吉水神社」",
+          "description": "重要文化財の書院を見学し、展望所から中千本・上千本の深い谷と尾根を見渡して歴史のロマンに浸った。",
+          "badge_code": "yoshinoyama_yoshimizu_shrine"
+        },
+        {
+          "key": "C",
+          "text": "「葛屋 中井春風堂」で味わった、出来立ての透明な「吉野本葛きり」と職人の技",
+          "description": "葛根と水だけで仕上げられた水晶のような葛きりの透明感と、つるりとした喉越しに感動した。",
+          "badge_code": "yoshinoyama_nakai_shunpudo_kuzu"
+        },
+        {
+          "key": "D",
+          "text": "尾根の参道「柿の葉すし ひょうたろう」で出会う、香り高い柿の葉すしと山里の知恵",
+          "description": "柿の葉を広げた瞬間に立ち上る爽やかな香りと、熟成された塩鯖と酢飯の調和に旅の喜びを感じた。",
+          "badge_code": "yoshinoyama_hyotaro_kakinohazushi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b8b0438b-ead3-4fe7-832c-3f74d236f9cb",
+        "name": "吉野山ロープウェイ 吉野山駅",
+        "description": "昭和四年に開業した現存する日本最古のロープウェイ「吉野山ロープウェイ」の山上駅（運行時間・運休日等は季節変動あり）。下千本エリアの尾根の入口に位置し、駅前広場から吉野の山並みと麓の景色を見渡せる。",
+        "address": "奈良県吉野郡吉野町吉野山2340-1",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.372542,
+        "lng": 135.855442,
+        "qr_token": "shuin-yoshinoyama-1",
+        "cover_image_url": "/images/yoshinoyama/spot1.png",
+        "f7_fragment": "昭和四年開業、現存する日本最古のロープウェイとして下千本の尾根へ旅人を運ぶ山上駅。",
+        "f7_full": "「吉野山ロープウェイ 吉野山駅」を降り立つと、眼下に広がる深い谷と尾根道の連なりが、世界遺産の聖地・吉野山の旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "614c7b2a-35e7-4320-8447-b38667965d32",
+        "next_spot_name": "柿の葉すし ひょうたろう"
+      },
+      {
+        "id": "614c7b2a-35e7-4320-8447-b38667965d32",
+        "name": "柿の葉すし ひょうたろう",
+        "description": "吉野山の尾根の参道に暖簾を掲げる柿の葉すしの名店（9:00〜16:00営業・売切れ次第終了、月・火曜定休※観桜期無休）。厳選した鯖や鮭と酢飯を香り豊かな柿の葉で包んだ伝統の柿の葉すしを購入できる。",
+        "address": "奈良県吉野郡吉野町吉野山429",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.370618,
+        "lng": 135.857781,
+        "qr_token": "shuin-yoshinoyama-2",
+        "cover_image_url": "/images/yoshinoyama/spot2.png",
+        "f7_fragment": "吉野山の尾根の参道沿いに暖簾を掲げ、香り高い伝統の柿の葉すしを届ける老舗名店。",
+        "f7_full": "「柿の葉すし ひょうたろう」で柿の葉を広げた瞬間に立ち上る爽やかな香りと酢飯の旨みが、吉野の山里が育んできた保存食の知恵を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "458fb89a-6a5c-424a-8af4-f449a8cb5e0f",
+        "next_spot_name": "金峯山寺蔵王堂"
+      },
+      {
+        "id": "458fb89a-6a5c-424a-8af4-f449a8cb5e0f",
+        "name": "金峯山寺蔵王堂",
+        "description": "金峯山修験本宗の総本山であり、国宝・世界遺産に登録されている本堂（8:30〜16:00拝観）。高さ約34メートルを誇る日本最大級の木造古建築で、自然木を活かした68本の巨柱が並ぶ堂内の荘厳な空間を拝観できる。",
+        "address": "奈良県吉野郡吉野町吉野山2498",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.368584,
+        "lng": 135.858863,
+        "qr_token": "shuin-yoshinoyama-3",
+        "cover_image_url": "/images/yoshinoyama/spot3.png",
+        "f7_fragment": "高さ約三十四メートルの檜皮葺き大屋根と六十八本の自然木巨柱を擁する、国宝・世界遺産の本堂。",
+        "f7_full": "「金峯山寺蔵王堂」の空を覆うような檜皮葺きの大屋根と自然木の柱の迫力が、山岳信仰の聖地・吉野山が守り抜いてきた祈りの深さを圧倒的な存在感で物語る。",
+        "is_final": false,
+        "next_spot_id": "4cf06e79-b41e-4cfd-8270-e167d4c8ddc6",
+        "next_spot_name": "葛屋 中井春風堂"
+      },
+      {
+        "id": "4cf06e79-b41e-4cfd-8270-e167d4c8ddc6",
+        "name": "葛屋 中井春風堂",
+        "description": "吉野山の中千本エリアに佇む吉野本葛の専門店（10:00〜17:00・L.O.16:30営業、水曜・第2第4木曜定休）。葛根と水だけで仕上げた賞味期限10分の「吉野本葛きり」や「吉野本葛もち」を実演とともに味わえ、お土産の本葛も揃う。",
+        "address": "奈良県吉野郡吉野町吉野山545",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.367475,
+        "lng": 135.859858,
+        "qr_token": "shuin-yoshinoyama-4",
+        "cover_image_url": "/images/yoshinoyama/spot4.png",
+        "f7_fragment": "葛根と水だけで精製した吉野本葛を使い、作りたての葛きりや葛もちを届ける専門店。",
+        "f7_full": "「葛屋 中井春風堂」の氷水に浮かぶ水晶のように透明な吉野本葛きりが、厳冬の吉野晒で磨き上げられた純粋な素材の魅力を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e86c7f2b-6063-44a4-8583-97e3af28c7f4",
+        "next_spot_name": "吉水神社"
+      },
+      {
+        "id": "e86c7f2b-6063-44a4-8583-97e3af28c7f4",
+        "name": "吉水神社",
+        "description": "役行者創建の旧吉水院を前身とし、世界遺産に登録されている古社（9:00〜17:00開門・書院受付16:30まで）。源義経・静御前潜居の地であり後醍醐天皇の南朝皇居となった日本最古級の書院（重要文化財）と、「一目千本」の眺望で知られる。",
+        "address": "奈良県吉野郡吉野町吉野山579",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.367238,
+        "lng": 135.861867,
+        "qr_token": "shuin-yoshinoyama-5",
+        "cover_image_url": "/images/yoshinoyama/spot5.png",
+        "f7_fragment": "源義経潜居と南朝皇居の歴史を伝える重要文化財の書院と、「一目千本」の絶景を擁する世界遺産の社。",
+        "f7_full": "「吉水神社」の書院と展望所から見渡す幾重もの吉野の峰々が、数多の歴史人物が心を寄せた千本桜の聖地の旅をドラマチックに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6634fad8-c57b-46d1-8d87-75c558de90a6",
+    "title": "真珠輝く鳥羽湾と九鬼水軍の海城を歩く",
+    "name": "真珠輝く鳥羽湾と九鬼水軍の海城を歩く",
+    "description": "世界で初めて真珠養殖に成功したミキモト真珠島と、九鬼嘉隆が築いた海城・鳥羽城跡、海女と水軍の歴史が息づく三重県鳥羽市。海辺の鳥羽マルシェから、ミキモト真珠島、鳥羽湾を一望する鳥羽城跡、開き海老フライ発祥の漣 鳥羽店、能楽殿を擁する賀多神社までを歩く。",
+    "region": "鳥羽（鳥羽市）",
+    "area_name": "鳥羽（鳥羽市）",
+    "cover_image_url": "/images/toba/route-eyecatch.png",
+    "imageUrl": "/images/toba/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "真珠島が浮かぶ青い鳥羽湾と九鬼水軍の石垣、海の幸が揃う鳥羽で、あなたが旅の象徴に選びたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "九鬼嘉隆が築いた「鳥羽城跡」の本丸石垣と、鳥羽の総鎮守「賀多神社」を巡る歴史散策",
+          "description": "野面積みの石垣から青い鳥羽湾を一望し、歴代城主が崇敬した古社の境内で水軍の城下町の歴史に触れた。",
+          "badge_code": "toba_kuki_navy_castle_and_shrine"
+        },
+        {
+          "key": "B",
+          "text": "世界初の真珠養殖に成功した「ミキモト真珠島」で、真珠の輝きと海女の実演を見つめる体験",
+          "description": "アコヤ貝が育む気品ある真珠の工芸品と、白い磯着で海に潜る海女の伝統技に鳥羽の誇りを感じた。",
+          "badge_code": "toba_mikimoto_pearl_island"
+        },
+        {
+          "key": "C",
+          "text": "「漣 鳥羽店」で味わう、皿いっぱいに広がる揚げたての鳥羽名物「開き海老フライ」",
+          "description": "背開きにしてふっくらと揚げられた大ぶりな海老フライの迫力と、自家製タルタルソースの旨みに満たされた。",
+          "badge_code": "toba_sazanami_ebi_fry"
+        },
+        {
+          "key": "D",
+          "text": "「鳥羽マルシェ」の海辺テラスで、離島や伊勢志摩から届く旬の海の恵みに触れる時間",
+          "description": "潮風が心地よい鳥羽湾のほとりで、海女や漁師が届けた海産物や地域の特産品を選ぶ時間が楽しかった。",
+          "badge_code": "toba_marche_seaside_bounty"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "af33ecfa-2f88-4265-8970-d60b37e57af5",
+        "name": "鳥羽マルシェ",
+        "description": "鳥羽駅前の海辺に立つ農水産物の産直市場・レストラン（10:00〜18:00営業、水曜定休）。鳥羽志摩の海女や漁師が水揚げした海産物や海藻、地域の農産物、特産品をお土産に購入できる。",
+        "address": "三重県鳥羽市鳥羽1-2383-42",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.48713,
+        "lng": 136.84477,
+        "qr_token": "shuin-toba-1",
+        "cover_image_url": "/images/toba/spot1.png",
+        "f7_fragment": "鳥羽湾の海辺に面し、海女や漁師が届ける伊勢志摩の海の幸や特産品が揃う産直マルシェ。",
+        "f7_full": "「鳥羽マルシェ」の潮風香るボードウォークと旬の海産物が、黒潮とリアス海岸に抱かれた海の街・鳥羽の旅を爽やかに切り開いてくれる。",
+        "is_final": false,
+        "next_spot_id": "b83df34d-3b31-4811-8620-3ee83b69240c",
+        "next_spot_name": "ミキモト真珠島"
+      },
+      {
+        "id": "b83df34d-3b31-4811-8620-3ee83b69240c",
+        "name": "ミキモト真珠島",
+        "description": "明治二十六年に御木本幸吉が世界で初めて真珠の養殖に成功した島（9:00〜17:00開場※季節変動あり）。精巧な美術工芸品を展示する真珠博物館や御木本幸吉記念館、伝統の白い磯着姿による「海女の実演」を見学できる。",
+        "address": "三重県鳥羽市鳥羽1-7-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.483401,
+        "lng": 136.846842,
+        "qr_token": "shuin-toba-2",
+        "cover_image_url": "/images/toba/spot2.png",
+        "f7_fragment": "御木本幸吉が世界初の真珠養殖に成功した聖地であり、真珠博物館と海女の実演を伝える島。",
+        "f7_full": "「ミキモト真珠島」で輝く真珠の工芸品と海面に潜る海女の姿が、鳥羽の海から世界へと羽ばたいた真珠養殖百三十年の情熱を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "778b4d8e-7685-413f-847b-db9448ca7ace",
+        "next_spot_name": "鳥羽城跡"
+      },
+      {
+        "id": "778b4d8e-7685-413f-847b-db9448ca7ace",
+        "name": "鳥羽城跡",
+        "description": "文禄三年に九鬼水軍の将・九鬼嘉隆が築いた海城の跡（城山公園、終日散策自由）。海側に大手門を設けた独自の縄張りと野面積みの本丸石垣が残り、高台から鳥羽湾と真珠島を一望できる。",
+        "address": "三重県鳥羽市鳥羽3-2-35",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.480831,
+        "lng": 136.844665,
+        "qr_token": "shuin-toba-3",
+        "cover_image_url": "/images/toba/spot3.png",
+        "f7_fragment": "九鬼水軍を率いた九鬼嘉隆が築き、野面積みの本丸石垣から鳥羽湾を一望する海城跡。",
+        "f7_full": "「鳥羽城跡」の重厚な石垣の上に立ち、眼下に広がる碧い鳥羽湾と島々を見渡せば、海を自在に駆けた九鬼水軍の気概が胸に迫ってくる。",
+        "is_final": false,
+        "next_spot_id": "9167fa31-a55a-4cd5-8cfc-c70ef5380832",
+        "next_spot_name": "漣 鳥羽店"
+      },
+      {
+        "id": "9167fa31-a55a-4cd5-8cfc-c70ef5380832",
+        "name": "漣 鳥羽店",
+        "description": "鳥羽名物「開き海老フライ」発祥の店として知られる海鮮料理処（平日11:00〜14:30・16:30〜18:30、土日祝10:30〜18:30 L.O.、火曜定休）。大ぶりの海老を背開きにしてサクサクに揚げた海老フライ定食や新鮮な地魚料理を味わえる。",
+        "address": "三重県鳥羽市鳥羽3-5-28",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.483578,
+        "lng": 136.8429,
+        "qr_token": "shuin-toba-4",
+        "cover_image_url": "/images/toba/spot4.png",
+        "f7_fragment": "大ぶりの海老を背開きにして揚げる鳥羽名物「開き海老フライ」発祥の海鮮料理店。",
+        "f7_full": "「漣 鳥羽店」の黄金色に揚がった豪快な開き海老フライと自家製タルタルソースの旨みが、海辺の城下町を歩いた旅に豊かな満足感を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "ed9f29ae-2744-4a8f-833e-5f83c29b31f9",
+        "next_spot_name": "賀多神社"
+      },
+      {
+        "id": "ed9f29ae-2744-4a8f-833e-5f83c29b31f9",
+        "name": "賀多神社",
+        "description": "大宝年間の創建と伝わる鳥羽の総鎮守（境内参拝自由）。歴代の鳥羽城主や真珠王・御木本幸吉の崇敬を集め、境内には三重県指定有形文化財の組立式「能舞台」を収めた能楽殿が佇む。",
+        "address": "三重県鳥羽市鳥羽2-9-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.483251,
+        "lng": 136.839958,
+        "qr_token": "shuin-toba-5",
+        "cover_image_url": "/images/toba/spot5.png",
+        "f7_fragment": "鳥羽城主や御木本幸吉の崇敬を集め、県指定有形文化財の能舞台を伝える鳥羽の総鎮守。",
+        "f7_full": "「賀多神社」の静かな木立に佇む社殿と能楽殿が、水軍の城下町として栄えた鳥羽の伝統文化と人々の祈りを穏やかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3a01f30a-bd95-4b52-88cb-9365944ded2c",
+    "title": "諏訪五蔵の銘酒と千人風呂の街・上諏訪を巡る",
+    "name": "諏訪五蔵の銘酒と千人風呂の街・上諏訪を巡る",
+    "description": "霧ヶ峰の伏流水が育む甲州街道の「諏訪五蔵」と、重要文化財の洋館温泉・片倉館、かつて諏訪湖に浮かぶようにそびえた高島城が息づく長野県諏訪市。諏訪湖畔のくらすわ 諏訪本店から、洋館の片倉館、諏訪五蔵の舞姫、味噌蔵の丸高蔵、高島城までを巡る。",
+    "region": "上諏訪（諏訪市）",
+    "area_name": "上諏訪（諏訪市）",
+    "cover_image_url": "/images/kamisuwa/route-eyecatch.png",
+    "imageUrl": "/images/kamisuwa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "銘酒と信州味噌の蔵、千人風呂の洋館、水堀が美しい高島城が揃う上諏訪で、休日にじっくり堪能したいのはどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "諏訪五蔵の酒蔵「舞姫」と、老舗味噌蔵「丸高蔵」で触れる信州の発酵文化と味噌天丼",
+          "description": "霧ヶ峰の伏流水で仕込む酒蔵と登録有形文化財の味噌蔵を巡り、香り高い信州味噌の味わいに心まで温まった。",
+          "badge_code": "kamisuwa_sake_and_miso_kura"
+        },
+        {
+          "key": "B",
+          "text": "大理石造りの千人風呂とステンドグラスを伝える、国指定重要文化財の洋館「片倉館」",
+          "description": "製糸業の栄華を物語るレトロな洋館と、立ったまま浸かるローマ風の千人風呂の意匠に目を奪われた。",
+          "badge_code": "kamisuwa_katakurakan_bathhouse"
+        },
+        {
+          "key": "C",
+          "text": "水堀に三層天守と冠木門が映り込む、かつて「諏訪の浮城」と呼ばれた名城「高島城」",
+          "description": "穏やかな水堀に映る三層天守の美しい姿と、天守から望む諏訪湖と山々の眺めに城下町の歴史を感じた。",
+          "badge_code": "kamisuwa_takashima_floating_castle"
+        },
+        {
+          "key": "D",
+          "text": "諏訪湖畔の「くらすわ 諏訪本店」で、名物クリームパンと屋上展望ガーデンからの湖景を楽しむ時間",
+          "description": "焼きたてのパンの香りに包まれ、屋上テラスから広い諏訪湖を見渡して開放的な気分を味わった。",
+          "badge_code": "kamisuwa_clasuwa_lakeside_view"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "296134e1-f1a6-4b4f-8e35-0709c2bdba6a",
+        "name": "くらすわ 諏訪本店",
+        "description": "諏訪湖畔に立つ信州の食と健康をテーマにした複合ショップ・ベーカリー（1階9:00〜18:30頃営業）。名物のクリームパンや焼きたてパン、信州の特産品を購入でき、屋上展望ガーデンから諏訪湖を一望できる。",
+        "address": "長野県諏訪市湖岸通り3-1-30",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.050442,
+        "lng": 138.113194,
+        "qr_token": "shuin-kamisuwa-1",
+        "cover_image_url": "/images/kamisuwa/spot1.png",
+        "f7_fragment": "諏訪湖を一望する屋上展望ガーデンを備え、名物クリームパンや信州食材が揃う湖畔のショップ。",
+        "f7_full": "「くらすわ 諏訪本店」の香ばしい焼きたてパンと屋上から望む広い諏訪湖のきらめきが、湖畔の街歩きを爽やかに切り開いてくれる。",
+        "is_final": false,
+        "next_spot_id": "ff568cd8-f2ee-4bdf-8d50-5b212a9a0a17",
+        "next_spot_name": "片倉館"
+      },
+      {
+        "id": "ff568cd8-f2ee-4bdf-8d50-5b212a9a0a17",
+        "name": "片倉館",
+        "description": "昭和三年に片倉財閥が地域福祉のために創設した国指定重要文化財の温泉・文化施設（10:00〜20:00開館・土日祝9:30〜、第2・第4火曜休）。ステンドグラスと彫刻に彩られた大理石造りの大浴場「千人風呂」と尖塔がそびえる洋館建築を見学・入浴できる。",
+        "address": "長野県諏訪市湖岸通り4-1-9",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.048103,
+        "lng": 138.113086,
+        "qr_token": "shuin-kamisuwa-2",
+        "cover_image_url": "/images/kamisuwa/spot2.png",
+        "f7_fragment": "昭和三年に片倉財閥が築き、大理石の千人風呂と尖塔を擁する国指定重要文化財の洋館浴場。",
+        "f7_full": "「片倉館」のステンドグラスから差し込む柔らかな光と重厚な洋館の佇まいが、近代日本の製糸業を牽引した諏訪の華やかなモダン文化を映し出す。",
+        "is_final": false,
+        "next_spot_id": "dd38477a-b038-4ee7-8980-3386914f29f3",
+        "next_spot_name": "舞姫"
+      },
+      {
+        "id": "dd38477a-b038-4ee7-8980-3386914f29f3",
+        "name": "舞姫",
+        "description": "甲州街道沿いに五つの酒蔵が連なる「諏訪五蔵」の一つ、明治二十七年創業の酒蔵（9:30〜17:00営業）。霧ヶ峰の伏流水と信州産の酒米で醸す銘酒「信州舞姫」「翠露」などを直売所で購入できる。",
+        "address": "長野県諏訪市諏訪2-9-25",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.042533,
+        "lng": 138.120256,
+        "qr_token": "shuin-kamisuwa-3",
+        "cover_image_url": "/images/kamisuwa/spot3.png",
+        "f7_fragment": "甲州街道沿いの「諏訪五蔵」の一角をなし、霧ヶ峰の伏流水で銘酒「信州舞姫」を醸す老舗酒蔵。",
+        "f7_full": "「舞姫」の軒先に揺れる杉玉と白壁の酒蔵の佇まいが、霧ヶ峰の清冽な伏流水に支えられた酒都・上諏訪の伝統を凛と伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ce2030fb-bd68-443d-8894-e8463875c9c0",
+        "next_spot_name": "丸高蔵"
+      },
+      {
+        "id": "ce2030fb-bd68-443d-8894-e8463875c9c0",
+        "name": "丸高蔵",
+        "description": "大正五年創業の信州味噌の老舗「神州一味噌」発祥の蔵を活かした食事処・直売所（ショップ10:00〜17:00・食事11:00〜14:30・喫茶11:00〜16:00、月曜定休）。国登録有形文化財の土蔵で、特製ダレの「味噌天丼」や焼きおにぎりを味わえる。",
+        "address": "長野県諏訪市高島1-8-30",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.041729,
+        "lng": 138.113729,
+        "qr_token": "shuin-kamisuwa-4",
+        "cover_image_url": "/images/kamisuwa/spot4.png",
+        "f7_fragment": "登録有形文化財の土蔵で名物の「味噌天丼」や熟成信州味噌を楽しめる、神州一味噌発祥の蔵。",
+        "f7_full": "「丸高蔵」の重厚な梁が渡る土蔵座敷で味わう香ばしい味噌天丼が、諏訪の厳しい寒さと名水が育んだ信州味噌の深いコクを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c394bd68-d0d8-491b-87bf-f3094f9c78b7",
+        "next_spot_name": "高島城"
+      },
+      {
+        "id": "c394bd68-d0d8-491b-87bf-f3094f9c78b7",
+        "name": "高島城",
+        "description": "かつて諏訪湖に突き出し「諏訪の浮城」と呼ばれた諏訪藩三万石の居城跡（公園は終日散策自由、天守閣9:00〜17:30・冬期16:30まで）。水堀と石垣に囲まれた三層天守閣と冠木門、四季折々の日本庭園を楽しめる。",
+        "address": "長野県諏訪市高島1-20-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.039798,
+        "lng": 138.112032,
+        "qr_token": "shuin-kamisuwa-5",
+        "cover_image_url": "/images/kamisuwa/spot5.png",
+        "f7_fragment": "かつて「諏訪の浮城」と称えられ、水堀に三層天守閣と冠木門が映り込む諏訪藩主の居城。",
+        "f7_full": "「高島城」の静かな水堀に映る三層天守と石垣の美しいシルエットが、湖と共生してきた信州・諏訪の歴史を穏やかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e937ad8c-9375-4a7a-891d-7aa380550a39",
+    "title": "海水満ちる今治城とタオルの街・今治へ",
+    "name": "海水満ちる今治城とタオルの街・今治へ",
+    "description": "藤堂高虎が瀬戸内海の海水を引いて築いた日本三大水城・今治城と、百三十年の歴史を誇る日本一のタオル産地、ご当地グルメが息づく愛媛県今治市。焼豚玉子飯の白楽天 今治本店から、老舗の玉屋サントノーレ、今治城、吹揚神社、テクスポート今治までを歩く。",
+    "region": "今治（今治市）",
+    "area_name": "今治（今治市）",
+    "cover_image_url": "/images/imabari/route-eyecatch.png",
+    "imageUrl": "/images/imabari/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "海水をたたえる今治城の水堀から焼豚玉子飯、純白の今治タオルまでが揃う今治で、旅の土産話にしたいのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「白楽天 今治本店」で味わった、半熟の目玉焼きと甘辛ダレが絡み合う名物「焼豚玉子飯」",
+          "description": "熱々の白飯に敷き詰められた焼豚の上で黄身を崩し、今治市民に愛されるソウルフードの力強い旨みを堪能した。",
+          "badge_code": "imabari_hakurakuten_yakibuta_tamagomeshi"
+        },
+        {
+          "key": "B",
+          "text": "昭和二十八年創業の「玉屋サントノーレ」で楽しむ、老舗の洋菓子と綿雪のような氷菓",
+          "description": "世代を超えて愛されるケーキや優しい甘みの氷菓に出会い、穏やかな街歩きの休息を楽しんだ。",
+          "badge_code": "imabari_tamaya_sainthonore_sweets"
+        },
+        {
+          "key": "C",
+          "text": "藤堂高虎が築いた日本三大水城「今治城」の海水堀と、本丸に鎮座する「吹揚神社」",
+          "description": "海の魚が泳ぐ広大な海水堀と高石垣、天守から望む来島海峡の絶景に築城の名手の構想力を感じた。",
+          "badge_code": "imabari_castle_and_fukiage_shrine"
+        },
+        {
+          "key": "D",
+          "text": "「テクスポート今治」の今治タオル本店で触れた、蒼社川の軟水が育む極上のタオルの肌触り",
+          "description": "厳しい品質基準を満たした純白のタオルの柔らかさに触れ、百三十年続く産地の手仕事に感銘を受けた。",
+          "badge_code": "imabari_texport_towel_craft"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4234514b-42c5-4856-849b-433528100493",
+        "name": "白楽天 今治本店",
+        "description": "昭和四十五年創業、今治のソウルフード「焼豚玉子飯」発祥の系譜を継ぐ中華料理店（11:00〜14:30 L.O.・17:00〜21:00 L.O.営業、火曜定休）。スライスした焼豚の上に半熟目玉焼き2個と秘伝の甘辛ダレをかけた名物の一杯を味わえる。",
+        "address": "愛媛県今治市常盤町4-1-19",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 34.064348,
+        "lng": 132.9987,
+        "qr_token": "shuin-imabari-1",
+        "cover_image_url": "/images/imabari/spot1.png",
+        "f7_fragment": "今治名物「焼豚玉子飯」を広めた元祖の系譜を継ぎ、秘伝の甘辛ダレと半熟玉子で魅了する名店。",
+        "f7_full": "「白楽天 今治本店」の熱々の白飯に絡む甘辛い焼豚ダレととろける黄身の味わいが、造船とタオルの街・今治の活気ある食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e854d9fa-afad-49bf-8ecd-35a861002012",
+        "next_spot_name": "玉屋サントノーレ"
+      },
+      {
+        "id": "e854d9fa-afad-49bf-8ecd-35a861002012",
+        "name": "玉屋サントノーレ",
+        "description": "昭和二十八年創業の老舗洋菓子・喫茶店（10:30〜19:00・夏期21:00まで営業、不定休）。季節のフルーツケーキや焼き菓子を購入できるほか、夏期には綿雪のような口どけの名物かき氷「ミルクセーキ」で賑わう。",
+        "address": "愛媛県今治市共栄町2-2-54",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 34.068035,
+        "lng": 133.000138,
+        "qr_token": "shuin-imabari-2",
+        "cover_image_url": "/images/imabari/spot2.png",
+        "f7_fragment": "昭和二十八年の創業以来、洋菓子と夏の名物かき氷「ミルクセーキ」で親しまれる老舗。",
+        "f7_full": "「玉屋サントノーレ」の彩り豊かなケーキと優しい甘みの氷菓が、瀬戸内の日差しの中を歩く今治散策に涼やかなひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "ff47de8e-c58f-43d8-8ab5-3b8e674c70b8",
+        "next_spot_name": "今治城"
+      },
+      {
+        "id": "ff47de8e-c58f-43d8-8ab5-3b8e674c70b8",
+        "name": "今治城",
+        "description": "慶長七年に藤堂高虎が築いた日本三大水城の一つ（9:00〜17:00開館・最終入館16:30、年末休）。海水を引き込んだ広大な水堀に五層六階の天守や鉄御門、武具櫓が映り込み、天守最上階から来島海峡を一望できる。",
+        "address": "愛媛県今治市通町3-1-3",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 34.063769,
+        "lng": 133.006823,
+        "qr_token": "shuin-imabari-3",
+        "cover_image_url": "/images/imabari/spot3.png",
+        "f7_fragment": "藤堂高虎が海水を引いて築き、五層天守と広大な水堀を誇る日本三大水城の名城。",
+        "f7_full": "「今治城」の満々と海水をたたえる内堀と高石垣の上にそびえる天守の姿が、瀬戸内海の海運を制した築城の名手・藤堂高虎の構想力を物語る。",
+        "is_final": false,
+        "next_spot_id": "ec85dcf5-78ce-4e90-82d9-e5615a135822",
+        "next_spot_name": "吹揚神社"
+      },
+      {
+        "id": "ec85dcf5-78ce-4e90-82d9-e5615a135822",
+        "name": "吹揚神社",
+        "description": "今治城の本丸跡に鎮座する今治の総鎮守（境内終日参拝自由、社務所9:00〜17:00）。今治城の別名「吹揚城」にちなみ、天照大神や八幡大神とともに築城の祖・藤堂高虎公や藩主・久松松平家の祖を祀る。",
+        "address": "愛媛県今治市通町3-1-4",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 34.062915,
+        "lng": 133.006558,
+        "qr_token": "shuin-imabari-4",
+        "cover_image_url": "/images/imabari/spot4.png",
+        "f7_fragment": "今治城の本丸跡に鎮座し、築城の祖・藤堂高虎公や歴代藩主の記憶を今に伝える神社。",
+        "f7_full": "「吹揚神社」の社殿と背後にそびえる今治城天守のコントラストが、廃城の危機から城跡を守り継いだ今治の人々の篤い思いを映し出す。",
+        "is_final": false,
+        "next_spot_id": "34968575-b997-4c2c-8bb0-f663f6611fcd",
+        "next_spot_name": "テクスポート今治"
+      },
+      {
+        "id": "34968575-b997-4c2c-8bb0-f663f6611fcd",
+        "name": "テクスポート今治",
+        "description": "日本最大のタオル産地・今治の産業・交流拠点施設（今治タオル本店9:30〜18:00・LAB/カフェ9:00〜18:00営業、年末年始休）。厳しい品質基準を満たした多彩なタオルが揃う「今治タオル 本店」と、歴史・技術展示の「今治タオル LAB」を併設する。",
+        "address": "愛媛県今治市東門町5-14-3",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 34.061521,
+        "lng": 133.016278,
+        "qr_token": "shuin-imabari-5",
+        "cover_image_url": "/images/imabari/spot5.png",
+        "f7_fragment": "数百種類の高品質タオルが揃う「今治タオル 本店」と技術展示のLABを備えた産地拠点。",
+        "f7_full": "「テクスポート今治」に並ぶ雲のように柔らかな純白の今治タオルが、蒼社川の清らかな軟水と職人の技が紡いだ百三十年の伝統を手肌に伝えてくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "252d3d2c-fe2a-483b-8bc3-52437800a9fd",
+    "title": "蚕都グンゼの記憶とバラ咲く街・綾部を辿る",
+    "name": "蚕都グンゼの記憶とバラ咲く街・綾部を辿る",
+    "description": "明治に波多野鶴吉が創業したグンゼ発祥の「蚕都」の歴史と、大本本部の緑深い神苑、町家の薬膳文化が息づく京都府綾部市。創業総会ゆかりの正暦寺から、大本本部 梅松苑、築百二十年の薬膳喫茶 悠々、地酒カステラの上原清月堂、赤瓦の繭蔵を活かしたグンゼ博物苑までを辿る。",
+    "region": "綾部（綾部市）",
+    "area_name": "綾部（綾部市）",
+    "cover_image_url": "/images/ayabe/route-eyecatch.png",
+    "imageUrl": "/images/ayabe/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "赤瓦の繭蔵が並ぶグンゼ博物苑から木造神殿の神苑、町家の薬膳喫茶までが揃う綾部で、あなたが心惹かれたのはどの場所だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "本町通りの老舗「上原清月堂」で出会う、綾部の地酒を使ったカステラと季節の和菓子",
+          "description": "地元の吟醸酒がほんのり香るカステラと丹波黒豆の和菓子に、城下町の丁寧な手仕事を感じた。",
+          "badge_code": "ayabe_uehara_seigetsudo_sweets"
+        },
+        {
+          "key": "B",
+          "text": "池泉庭園の金龍海と総檜造りの長生殿が佇む、緑豊かな「大本本部 梅松苑」の神苑散策",
+          "description": "澄んだ水面に映る石橋と二十世紀最大級の総檜造り神殿の圧倒的な木組みの美しさに息を呑んだ。",
+          "badge_code": "ayabe_baishoen_cypress_garden"
+        },
+        {
+          "key": "C",
+          "text": "築百二十年の町家を改装した「薬膳喫茶 悠々」で味わう、蓮の葉包蒸飯と香り高い薬膳茶",
+          "description": "老舗漢方薬局が伝える医食同源のランチと和漢植物のお茶が、街歩きの身体を優しく温めてくれた。",
+          "badge_code": "ayabe_yakuzen_cafe_yuyu"
+        },
+        {
+          "key": "D",
+          "text": "大正期の赤瓦の繭蔵を活かした「グンゼ博物苑」と、創業総会の舞台となった古刹「正暦寺」",
+          "description": "山寺での創業総会から赤瓦の繭蔵へと続く蚕都百三十年の物語と、バラ園の彩りに心を打たれた。",
+          "badge_code": "ayabe_gunze_museum_and_shorekiji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3ff881a0-17cd-47c9-8f85-9bcdc470b8e8",
+        "name": "正暦寺",
+        "description": "空也上人開基と伝わる真言宗の古刹（境内参拝自由）。明治二十九年に波多野鶴吉が「郡是製糸株式会社（現・グンゼ）」の創業総会を開いた歴史の舞台であり、高台の境内から由良川と綾部の街並みを望める。",
+        "address": "京都府綾部市寺町堂ノ前45",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.292121,
+        "lng": 135.262911,
+        "qr_token": "shuin-ayabe-1",
+        "cover_image_url": "/images/ayabe/spot1.png",
+        "f7_fragment": "空也上人開基と伝わり、明治二十九年にグンゼの創業総会が開かれた蚕都・綾部ゆかりの古刹。",
+        "f7_full": "「正暦寺」の静かな山門と本堂に立つと、地域の養蚕農家と共に日本の近代製糸業を切り開いた先人たちの情熱が今も温かく伝わってくる。",
+        "is_final": false,
+        "next_spot_id": "fbcbb054-ef44-44db-8d35-c1e49352e220",
+        "next_spot_name": "大本本部 梅松苑"
+      },
+      {
+        "id": "fbcbb054-ef44-44db-8d35-c1e49352e220",
+        "name": "大本本部 梅松苑",
+        "description": "旧綾部城主・九鬼氏の屋敷跡一帯に広がる宗教法人「大本」の発祥地・神苑（神苑参拝自由・9:30〜16:00頃、建物内部拝観は要事前予約）。池泉庭園「金龍海」や国登録有形文化財の「みろく殿」、総檜造りの大建築「長生殿」の外観を見学できる。",
+        "address": "京都府綾部市本宮町1-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.296038,
+        "lng": 135.26091,
+        "qr_token": "shuin-ayabe-2",
+        "cover_image_url": "/images/ayabe/spot2.png",
+        "f7_fragment": "池泉庭園「金龍海」と総檜造りの大建築「長生殿」が調和する、緑豊かな綾部の神苑。",
+        "f7_full": "「大本本部 梅松苑」の澄んだ水面と木曽檜の大屋根が織りなす荘厳な景観が、城下町・綾部の奥深い精神文化と木造建築の粋を映し出す。",
+        "is_final": false,
+        "next_spot_id": "85669c79-c5f5-48c0-8a84-05b8534163c2",
+        "next_spot_name": "薬膳喫茶 悠々"
+      },
+      {
+        "id": "85669c79-c5f5-48c0-8a84-05b8534163c2",
+        "name": "薬膳喫茶 悠々",
+        "description": "明治四十二年創業の赤尾漢方薬局が運営する、築120年超の町家を改装した薬膳カフェ（10:00〜17:00・L.O.16:30営業、木・日・祝・第3第5水曜定休）。「蓮の葉包蒸飯」や「薬膳スープカレー」、体調に合わせた薬膳茶を味わえる。",
+        "address": "京都府綾部市本町2-3",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.297612,
+        "lng": 135.259493,
+        "qr_token": "shuin-ayabe-3",
+        "cover_image_url": "/images/ayabe/spot3.png",
+        "f7_fragment": "明治創業の漢方薬局に併設された築百二十年の町家で、蓮の葉包蒸飯や薬膳茶を供する喫茶。",
+        "f7_full": "「薬膳喫茶 悠々」の吹き抜けの町家座敷で味わう湯気立つ蓮の葉包蒸飯と薬膳茶が、旅人の心と身体を穏やかに解きほぐしてくれる。",
+        "is_final": false,
+        "next_spot_id": "fd613877-c0d9-421a-8825-1648a573c0f6",
+        "next_spot_name": "上原清月堂"
+      },
+      {
+        "id": "fd613877-c0d9-421a-8825-1648a573c0f6",
+        "name": "上原清月堂",
+        "description": "本町通りに暖簾を掲げる老舗和菓子店（9:00〜18:00営業、木曜・最終水曜定休）。綾部の地酒と酒粕を使ったカステラ「穂乃花」や丹波黒豆の和菓子、季節の上生菓子を購入できる。",
+        "address": "京都府綾部市本町4-7",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.297827,
+        "lng": 135.255698,
+        "qr_token": "shuin-ayabe-4",
+        "cover_image_url": "/images/ayabe/spot4.png",
+        "f7_fragment": "綾部の地酒を練り込んだカステラ「穂乃花」や丹波黒豆の銘菓を届ける本町通りの和菓子処。",
+        "f7_full": "「上原清月堂」のほんのり地酒が香るしっとりとしたカステラと季節の和菓子が、由良川の恵みに育まれた城下町の優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "fc456783-8375-4fa5-8b93-6b321db1709c",
+        "next_spot_name": "グンゼ博物苑"
+      },
+      {
+        "id": "fc456783-8375-4fa5-8b93-6b321db1709c",
+        "name": "グンゼ博物苑",
+        "description": "明治二十九年に綾部で創業したグンゼの企業ミュージアム（10:00〜16:00開苑、火曜・年末年始休、入苑無料）。大正期の白壁・赤瓦の「繭蔵」を活かした展示館で製糸業の歴史を学べ、隣接する綾部バラ園やあやべ特産館も散策できる。",
+        "address": "京都府綾部市青野町膳所1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.305252,
+        "lng": 135.257546,
+        "qr_token": "shuin-ayabe-5",
+        "cover_image_url": "/images/ayabe/spot5.png",
+        "f7_fragment": "大正期の白壁と赤い石州瓦の「繭蔵」をそのまま活かした、蚕都・綾部を象徴するミュージアム。",
+        "f7_full": "「グンゼ博物苑」の赤瓦が連なる美しい繭蔵とバラの花々が、品質と誠実を貫いた蚕都・綾部百三十年の物語を華やかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
