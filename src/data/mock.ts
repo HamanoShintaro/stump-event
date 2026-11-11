@@ -59930,5 +59930,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "221fd091-5f0a-4612-8a60-7621edb8051a",
+    "title": "一本釣りの鰹と百年市場の港町・土佐久礼へ",
+    "name": "一本釣りの鰹と百年市場の港町・土佐久礼へ",
+    "description": "四百年続く鰹の一本釣り漁と国の重要文化的景観の町並みが残る高知県中土佐町久礼。観光拠点のまちの駅 ぜよぴあから、天明元年創業の高知県最古の蔵元・西岡酒造店、活気あふれる久礼大正町市場、土佐三大祭りの久礼八幡宮、双名島を望むふるさと海岸までを歩く。",
+    "region": "土佐久礼（中土佐町）",
+    "area_name": "土佐久礼（中土佐町）",
+    "cover_image_url": "/images/tosa-kure/route-eyecatch.png",
+    "imageUrl": "/images/tosa-kure/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "一本釣りの鰹が集まる百年市場と土佐最古の酒蔵が息づく久礼で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正時代から続くアーケードで藁焼きの日戻り鰹を味わう「久礼大正町市場」",
+          "description": "威勢のよい土佐弁が響く路地市場で、その日の朝に揚がった極上の鰹のタタキに感動した。",
+          "badge_code": "tosa_kure_taishomachi_bonito_market"
+        },
+        {
+          "key": "B",
+          "text": "天明元年の創業から二百四十余年、四万十川源流の湧水で辛口銘酒を醸す「西岡酒造店」",
+          "description": "高知県最古の酒蔵の重厚な佇まいと、鰹の旨みを引き立てる土佐の地酒の奥深さに魅了された。",
+          "badge_code": "tosa_kure_nishioka_oldest_brewery"
+        },
+        {
+          "key": "C",
+          "text": "土佐三大祭りの舞台「久礼八幡宮」と、漁師町の交流拠点「まちの駅 ぜよぴあ」",
+          "description": "黒潮へ漕ぎ出す漁師たちの祈りを受け止めてきた古社と、温かな港町の人情に心が和んだ。",
+          "badge_code": "tosa_kure_hachimangu_fisherman_shrine"
+        },
+        {
+          "key": "D",
+          "text": "鬼の恋島伝説が残る双子の小島「双名島」と、潮騒が響く「ふるさと海岸」",
+          "description": "大町桂月も愛した穏やかな久礼湾の海景色と、沖に浮かぶ二つの島のシルエットが心に残った。",
+          "badge_code": "tosa_kure_furusato_coast_futanajima"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9297c268-6504-4965-8435-eafd4547266f",
+        "name": "まちの駅 ぜよぴあ",
+        "description": "国の重要文化的景観「久礼の港と漁師町の景観」の観光交流拠点（9:00〜17:00開館、月曜休、入館無料）。鰹の一本釣り漁の歴史紹介や町歩き案内、特産品コーナーを備え、久礼散策の出発点として親しまれている。",
+        "address": "高知県高岡郡中土佐町久礼6527",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.329216,
+        "lng": 133.230126,
+        "qr_token": "shuin-tosa-kure-1",
+        "cover_image_url": "/images/tosa-kure/spot1.png",
+        "f7_fragment": "国の重要文化的景観に選ばれた「鰹の國」久礼の漁師町を案内する観光交流拠点。",
+        "f7_full": "「まちの駅 ぜよぴあ」の温かな案内と潮風の香りが、四百年続く鰹の一本釣り漁の町を歩く旅の始まりを心地よく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "59539181-c742-4a6a-864e-7b124a763496",
+        "next_spot_name": "西岡酒造店"
+      },
+      {
+        "id": "59539181-c742-4a6a-864e-7b124a763496",
+        "name": "西岡酒造店",
+        "description": "江戸時代の天明元年創業の高知県最古の造り酒屋（9:00〜16:00営業、不定休）。四万十川源流域の湧水で醸す代表銘柄「久礼」や「純平」の販売のほか、歴史ある仕込み蔵や展示室を見学できる。",
+        "address": "高知県高岡郡中土佐町久礼6154",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.331121,
+        "lng": 133.22783,
+        "qr_token": "shuin-tosa-kure-2",
+        "cover_image_url": "/images/tosa-kure/spot2.png",
+        "f7_fragment": "天明元年の創業以来、二百四十余年にわたり銘酒「久礼」を醸す高知県最古の酒蔵。",
+        "f7_full": "「西岡酒造店」の白壁の蔵と軒先に揺れる杉玉が、鰹の町・久礼の食文化を二百四十年支え続けてきた土佐の酒造りの誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "2e9825e0-7d67-43c2-8fbf-c62599a41082",
+        "next_spot_name": "久礼大正町市場"
+      },
+      {
+        "id": "2e9825e0-7d67-43c2-8fbf-c62599a41082",
+        "name": "久礼大正町市場",
+        "description": "明治中期の露店に始まり大正四年に現在の名となった歴史ある市場（10:00〜15:00頃営業、水曜・不定休）。朝獲れの一本釣り鰹のタタキや鮮魚、干物が並び、市場内の食堂で新鮮な海鮮を味わえる。",
+        "address": "高知県高岡郡中土佐町久礼6372-1",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.328922,
+        "lng": 133.230522,
+        "qr_token": "shuin-tosa-kure-3",
+        "cover_image_url": "/images/tosa-kure/spot3.png",
+        "f7_fragment": "大正時代からの歴史を受け継ぎ、朝獲れの一本釣り鰹や鮮魚が並ぶ活気ある市場。",
+        "f7_full": "「久礼大正町市場」のレトロなアーケードと香ばしい藁焼き鰹のタタキが、漁師町ならではの熱気と極上の味覚を楽しませてくれる。",
+        "is_final": false,
+        "next_spot_id": "11b5bd5b-8543-4dad-802b-1e459553ddd9",
+        "next_spot_name": "久礼八幡宮"
+      },
+      {
+        "id": "11b5bd5b-8543-4dad-802b-1e459553ddd9",
+        "name": "久礼八幡宮",
+        "description": "鎌倉時代末期の創建と伝わる漁師町の総鎮守（境内参拝自由）。太平洋を望む参道と社殿を備え、土佐三大祭りの一つに数えられる旧暦8月15日の秋季大祭（お宮さん）で広く知られる。",
+        "address": "高知県高岡郡中土佐町久礼6515",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.327673,
+        "lng": 133.230176,
+        "qr_token": "shuin-tosa-kure-4",
+        "cover_image_url": "/images/tosa-kure/spot4.png",
+        "f7_fragment": "土佐三大祭りの秋季大祭で知られ、鰹漁師たちの航海安全を見守ってきた総鎮守。",
+        "f7_full": "「久礼八幡宮」の海へと続く参道と風格ある社殿の佇まいが、黒潮とともに生きる久礼の漁師たちの篤い祈りを肌で感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "a61ac51c-2128-4b5b-806b-177ce82055dc",
+        "next_spot_name": "ふるさと海岸"
+      },
+      {
+        "id": "a61ac51c-2128-4b5b-806b-177ce82055dc",
+        "name": "ふるさと海岸",
+        "description": "久礼八幡宮のすぐ前に広がる海岸遊歩道（終日散策自由）。穏やかな久礼湾と沖合に浮かぶ名勝「双名島」を一望でき、明治の文豪・大町桂月も讃えた美しい海景色を楽しめる。",
+        "address": "高知県高岡郡中土佐町久礼6359",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.327171,
+        "lng": 133.231764,
+        "qr_token": "shuin-tosa-kure-5",
+        "cover_image_url": "/images/tosa-kure/spot5.png",
+        "f7_fragment": "鬼の恋島伝説が残る双子の小島「双名島」と、穏やかな久礼湾を一望する海岸。",
+        "f7_full": "「ふるさと海岸」から望む夕暮れの久礼湾と双名島のシルエットが、一本釣りの港町・土佐久礼を歩いた旅を清々しい余韻で包んでくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f6de66f8-b4e6-43ab-8c1f-279a27e528aa",
+    "title": "なぜ別府湾の海城に城下かれいの湧水が湧くのか",
+    "name": "なぜ別府湾の海城に城下かれいの湧水が湧くのか",
+    "description": "豊臣秀吉ゆかりの木下家が治め、城下の海底湧水が天下の名魚「城下かれい」を育む大分県日出町。名物かれい最中の笑和堂から、特産品が揃う二の丸館、江戸時代の藩校・致道館、別府湾に臨む海城・日出城址、国重要文化財の別荘建築・的山荘までを歩く。",
+    "region": "日出・暘谷（日出町）",
+    "area_name": "日出・暘谷（日出町）",
+    "cover_image_url": "/images/yokoku/route-eyecatch.png",
+    "imageUrl": "/images/yokoku/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "別府湾に面した日出城の石垣と城下かれいの名園が揃う暘谷で、あなたの心に刻むしるしをどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "穴太衆が築いた本丸石垣と鬼門櫓から別府湾を見渡す、木下家の海城「日出城址」",
+          "description": "青い別府湾に向かってそびえる城壁と、その直下に真水が湧き出る海城の神秘に心打たれた。",
+          "badge_code": "yokoku_hiji_castle_seaside_walls"
+        },
+        {
+          "key": "B",
+          "text": "別府湾と高崎山を借景にした日本庭園と、国指定重要文化財の近代和風別荘「的山荘」",
+          "description": "大正期の銘木建築と海へと続く庭園の美しさに、城下かれいの里が誇る迎賓の格式を感じた。",
+          "badge_code": "yokoku_tekizanso_heritage_villa"
+        },
+        {
+          "key": "C",
+          "text": "安政五年の講堂が現存する藩校「致道館」と、二の丸跡の交流拠点「二の丸館」",
+          "description": "小藩ながら多くの学者を生んだ藩校の学び舎で、城下町・日出の知の伝統に触れられた。",
+          "badge_code": "yokoku_chidokan_clan_school"
+        },
+        {
+          "key": "D",
+          "text": "大正十二年創業の老舗「笑和堂」で出会う、名魚を模した銘菓「かれい最中」",
+          "description": "将軍家献上の城下かれいを愛らしい最中に仕立てた、百年続く城下町の甘味に心が和んだ。",
+          "badge_code": "yokoku_showado_karei_monaka"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4a8aff59-aff9-471c-8494-82b4a03b3c76",
+        "name": "笑和堂",
+        "description": "大正十二年創業の老舗和洋菓子舗（8:30〜18:00営業、水曜休）。日出名物の城下かれいを型取った看板銘菓「かれい最中」や「城下かれいパイ」など、城下町ならではの銘菓を販売している。",
+        "address": "大分県速見郡日出町2115",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.370694,
+        "lng": 131.526877,
+        "qr_token": "shuin-yokoku-1",
+        "cover_image_url": "/images/yokoku/spot1.png",
+        "f7_fragment": "大正十二年の創業以来、名魚を型取った銘菓「かれい最中」を作り続ける老舗菓子舗。",
+        "f7_full": "「笑和堂」の愛らしいかれい最中と百年続く温かな店構えが、城下かれいの里・日出を歩く旅の始まりを甘く彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "78fe282b-8803-4ef5-8ad8-87bf0de6d317",
+        "next_spot_name": "二の丸館"
+      },
+      {
+        "id": "78fe282b-8803-4ef5-8ad8-87bf0de6d317",
+        "name": "二の丸館",
+        "description": "日出城の二の丸跡にある観光交流・物産拠点（9:00〜17:30営業、無休）。日出町の特産品やお土産の販売、観光案内所、軽食・喫茶コーナーを備え、城下町散策の拠点として親しまれている。",
+        "address": "大分県速見郡日出町2612-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.368458,
+        "lng": 131.531453,
+        "qr_token": "shuin-yokoku-2",
+        "cover_image_url": "/images/yokoku/spot2.png",
+        "f7_fragment": "日出城の二の丸跡に位置し、地元の特産品販売や茶屋を備えた城下町の観光拠点。",
+        "f7_full": "「二の丸館」の武家屋敷風の佇まいと日出ならではの物産品が、海城の城下町を巡る旅の途中に心地よい休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "134a4112-cbe6-458e-876f-4f749eb644b2",
+        "next_spot_name": "致道館"
+      },
+      {
+        "id": "134a4112-cbe6-458e-876f-4f749eb644b2",
+        "name": "致道館",
+        "description": "安政五年に第15代藩主・木下俊程が創設した日出藩校の講堂建築で、大分県指定史跡（9:00〜17:00開館、月曜・祝日の翌日休、入館無料）。木造2階建ての館内で江戸時代の藩学の歴史を見学できる。",
+        "address": "大分県速見郡日出町2594-4",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.367924,
+        "lng": 131.531246,
+        "qr_token": "shuin-yokoku-3",
+        "cover_image_url": "/images/yokoku/spot3.png",
+        "f7_fragment": "安政五年に創設された日出藩校の講堂を今に伝える、大分県指定史跡の木造建築。",
+        "f7_full": "「致道館」の静まり返った木造講堂と畳の広間が、多くの学者や人材を輩出した日出藩の文教の気風を凛と伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d9833c85-07d2-4eb2-81d6-1223f20a9daa",
+        "next_spot_name": "日出城址"
+      },
+      {
+        "id": "d9833c85-07d2-4eb2-81d6-1223f20a9daa",
+        "name": "日出城址",
+        "description": "慶長七年に初代藩主・木下延俊が別府湾の断崖上に築いた海城跡（終日散策自由）。穴太衆による本丸石垣や堀、移築再建された「鬼門櫓」が残り、城下の海底からは城下かれいを育む真水が湧き出る。",
+        "address": "大分県速見郡日出町2612-1",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.366751,
+        "lng": 131.531698,
+        "qr_token": "shuin-yokoku-4",
+        "cover_image_url": "/images/yokoku/spot4.png",
+        "f7_fragment": "別府湾に臨む穴太衆の石垣と鬼門櫓が残り、海底から真水が湧く木下家の海城跡。",
+        "f7_full": "「日出城址」の重厚な石垣と白壁の鬼門櫓、その向こうに広がる別府湾の輝きが、海城ならではの雄大な歴史ロマンを感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "5d00ab56-81b5-4632-8fac-d6c30e9f7695",
+        "next_spot_name": "的山荘"
+      },
+      {
+        "id": "5d00ab56-81b5-4632-8fac-d6c30e9f7695",
+        "name": "的山荘",
+        "description": "日出城三の丸跡に大正四年に建てられた近代和風別荘で、国の重要文化財（庭園・外観は見学自由、料亭営業は要予約・月曜休）。別府湾と高崎山を借景とした日本庭園の眺望と城下かれい料理で名高い。",
+        "address": "大分県速見郡日出町2663",
+        "prefecture": "大分県",
+        "city": "",
+        "lat": 33.366623,
+        "lng": 131.533864,
+        "qr_token": "shuin-yokoku-5",
+        "cover_image_url": "/images/yokoku/spot5.png",
+        "f7_fragment": "別府湾と高崎山を借景にした庭園が美しい、大正四年築の国指定重要文化財の別荘。",
+        "f7_full": "「的山荘」の格調高い近代和風建築と別府湾を見晴らす庭園の夕景が、海城と湧水の町・日出を歩いた旅を優雅な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c875f7c7-7d6b-444f-8d77-0db47a1150ba",
+    "title": "銀山を支えた鉱山町とトロッコの里・生野を歩く",
+    "name": "銀山を支えた鉱山町とトロッコの里・生野を歩く",
+    "description": "日本初の官営鉱山となった生野銀山の鉱山町として栄え、カラミ石の塀や擬洋風建築が残る兵庫県朝来市生野町口銀谷。レトロな生野駅から、国登録有形文化財の生野まちづくり工房井筒屋、明治十九年築の旧生野警察署、幕末の生野義挙を伝える生野書院、築百年の古民家パンカフェ・芒種までを歩く。",
+    "region": "生野・口銀谷（朝来市）",
+    "area_name": "生野・口銀谷（朝来市）",
+    "cover_image_url": "/images/ikuno/route-eyecatch.png",
+    "imageUrl": "/images/ikuno/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千二百年の銀山の記憶と明治の洋館、鉱山町の面影が残る生野で、あなたが深く心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天保三年築の豪商屋敷とカラミ石の蔵が残る、国登録有形文化財「生野まちづくり工房井筒屋」",
+          "description": "生野代官所の時代から山師や旅人を迎えた旧吉川邸の座敷と庭園に、鉱山町の繁栄を感じた。",
+          "badge_code": "ikuno_izutsuya_merchant_house"
+        },
+        {
+          "key": "B",
+          "text": "明治十九年築のバルコニーが優美な擬洋風建築「旧生野警察署」と「生野駅」",
+          "description": "フランス人技師が招かれた官営鉱山ならではの、ハイカラな明治の洋風建築の佇まいに魅了された。",
+          "badge_code": "ikuno_meiji_western_police_station"
+        },
+        {
+          "key": "C",
+          "text": "明治維新の先駆けとなった「生野義挙」と、生野代官所の歴史を伝える「生野書院」",
+          "description": "幕末の志士と農兵が立ち上がった代官所ゆかりの地で、時代を動かした熱い志に触れられた。",
+          "badge_code": "ikuno_shoin_samurai_history"
+        },
+        {
+          "key": "D",
+          "text": "口銀谷の築百年の古民家「芒種」で味わう、香り高い自家製天然酵母パンと珈琲",
+          "description": "歴史ある鉱山町の古民家に漂う焼きたてパンの香ばしい薫りに、心温まる時間を過ごせた。",
+          "badge_code": "ikuno_boshu_kominka_bakery"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c6daaa16-e180-47c4-8b50-d7137e8eaf3a",
+        "name": "生野駅",
+        "description": "国の重要文化的景観に選定された生野鉱山町の玄関口となるJR播但線の駅（終日見学自由）。明治期の旧駅舎の面影を取り入れたレトロな駅舎から、口銀谷の歴史的な町並みへ歩いてアクセスできる。",
+        "address": "兵庫県朝来市生野町口銀谷229-4",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.163277,
+        "lng": 134.789134,
+        "qr_token": "shuin-ikuno-1",
+        "cover_image_url": "/images/ikuno/spot1.png",
+        "f7_fragment": "国の重要文化的景観に選ばれた生野銀山の鉱山町・口銀谷への玄関口となる駅。",
+        "f7_full": "「生野駅」のレトロモダンな駅舎と山あいの澄んだ空気が、千二百年の銀山の歴史を秘めた鉱山町を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8de1bdf2-e3e8-4e5e-8ea1-7b48b0702c33",
+        "next_spot_name": "生野まちづくり工房井筒屋"
+      },
+      {
+        "id": "8de1bdf2-e3e8-4e5e-8ea1-7b48b0702c33",
+        "name": "生野まちづくり工房井筒屋",
+        "description": "天保三年に建てられた旧吉川邸（屋号・井筒屋）を活用した文化交流施設（9:00〜17:00開館、月曜休、入館無料）。主屋やカラミ石を用いた蔵など6棟が国の登録有形文化財に指定されており、カフェや売店も併設。",
+        "address": "兵庫県朝来市生野町口銀谷640",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.16633,
+        "lng": 134.794706,
+        "qr_token": "shuin-ikuno-2",
+        "cover_image_url": "/images/ikuno/spot2.png",
+        "f7_fragment": "天保三年築の旧吉川邸を活用し、カラミ石の蔵や庭園が残る国登録有形文化財の館。",
+        "f7_full": "「生野まちづくり工房井筒屋」の重厚な格子戸とカラミ石が彩る土蔵が、生野代官所とともに栄えた豪商の暮らしぶりを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3eea64a9-d862-4a50-8bd0-eead18e1c321",
+        "next_spot_name": "旧生野警察署"
+      },
+      {
+        "id": "3eea64a9-d862-4a50-8bd0-eead18e1c321",
+        "name": "旧生野警察署",
+        "description": "明治十九年に建てられた木造2階建ての擬洋風建築（外観見学自由）。白い下見板張りの外壁と2階バルコニーを備え、日本初の官営鉱山として近代化を進めた生野の面影を伝える。",
+        "address": "兵庫県朝来市生野町口銀谷527",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.167952,
+        "lng": 134.793716,
+        "qr_token": "shuin-ikuno-3",
+        "cover_image_url": "/images/ikuno/spot3.png",
+        "f7_fragment": "白い下見板張りとバルコニーが印象的な、明治十九年築の木造二階建て擬洋風庁舎。",
+        "f7_full": "「旧生野警察署」の白い擬洋風建築とバルコニーが、フランス人技師たちを迎えて近代化の先頭を走った明治の鉱山町の気風を物語る。",
+        "is_final": false,
+        "next_spot_id": "40663625-6f31-40a6-85f7-fe807ab1044b",
+        "next_spot_name": "生野書院"
+      },
+      {
+        "id": "40663625-6f31-40a6-85f7-fe807ab1044b",
+        "name": "生野書院",
+        "description": "生野代官所ゆかりの地に建つ郷土資料館（9:30〜16:30開館、月曜・年末年始休、入館無料）。幕末の文久三年に起きた「生野義挙（生野の変）」の資料や、生野代官所・生野銀山の歴史資料を展示している。",
+        "address": "兵庫県朝来市生野町口銀谷356-1",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.166855,
+        "lng": 134.791392,
+        "qr_token": "shuin-ikuno-4",
+        "cover_image_url": "/images/ikuno/spot4.png",
+        "f7_fragment": "幕末の「生野義挙」の遺品や、生野代官所・生野銀山の貴重な歴史資料を展示する館。",
+        "f7_full": "「生野書院」に伝わる幕末の志士たちの遺品と銀山絵図が、明治維新の先駆けとなった鉱山町のドラマチックな歴史を呼び覚ましてくれる。",
+        "is_final": false,
+        "next_spot_id": "7fbb0566-f057-4f8b-8b3b-950e6b02c783",
+        "next_spot_name": "芒種"
+      },
+      {
+        "id": "7fbb0566-f057-4f8b-8b3b-950e6b02c783",
+        "name": "芒種",
+        "description": "口銀谷の築100年の古民家を改装した天然酵母パンとカフェの店（11:30〜15:00営業、火曜・第3月曜・不定休）。国産小麦と自家製酵母で焼き上げるハード系パンや焼き菓子、珈琲を味わえる。",
+        "address": "兵庫県朝来市生野町口銀谷600",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.166605,
+        "lng": 134.791849,
+        "qr_token": "shuin-ikuno-5",
+        "cover_image_url": "/images/ikuno/spot5.png",
+        "f7_fragment": "築百年の古民家を再生し、国産小麦と自家製天然酵母のパンを焼き上げるベーカリー。",
+        "f7_full": "「芒種」の古民家に漂う焼きたての天然酵母パンの香ばしい薫りが、カラミ石の鉱山町・生野を歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9ea42c0e-d293-4a1a-8e7d-5b5bdc4033a0",
+    "title": "キリシタン大名の城下と名園のまち・大村を巡る",
+    "name": "キリシタン大名の城下と名園のまち・大村を巡る",
+    "description": "天正遣欧少年使節を送り出したキリシタン大名・大村純忠と、大村藩二万七千石の城下町の歴史が息づく長崎県大村市。大村市歴史資料館から、錦糸卵が彩る大村寿司 やまと、国指定名勝の旧円融寺庭園、県指定史跡の旧楠本正隆屋敷、大村湾に臨む玖島城跡の大村公園までを歩く。",
+    "region": "大村（大村市）",
+    "area_name": "大村（大村市）",
+    "cover_image_url": "/images/omura/route-eyecatch.png",
+    "imageUrl": "/images/omura/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "天正遣欧少年使節の歴史と玖島城の桜、伝統の大村寿司に出会う大村で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大村湾に突き出た海城・玖島城の石垣と、国指定天然記念物オオムラザクラの「大村公園」",
+          "description": "三方を海に囲まれた扇の勾配の石垣と、板敷櫓が映える城址公園の開放的な美しさに感動した。",
+          "badge_code": "omura_kushima_castle_and_sakura"
+        },
+        {
+          "key": "B",
+          "text": "山の斜面を活かした豪快な石組みが息づく、江戸初期の国指定名勝「旧円融寺庭園」",
+          "description": "大村藩主の菩提寺跡に残る鶴亀の石庭の造形美と、三百年の時を重ねた静寂に心洗われた。",
+          "badge_code": "omura_former_enyuji_stone_garden"
+        },
+        {
+          "key": "C",
+          "text": "木箱で押し抜き一面の錦糸卵で彩る、「大村寿司 やまと」の伝統郷土料理「大村寿司」",
+          "description": "領主の凱旋を祝って生まれた歴史と、ほんのり甘く彩り豊かな押し寿司の味わいに心が満たされた。",
+          "badge_code": "omura_yamato_omura_zushi"
+        },
+        {
+          "key": "D",
+          "text": "幕末志士の武家屋敷「旧楠本正隆屋敷」と、天正遣欧少年使節を伝える「大村市歴史資料館」",
+          "description": "ヨーロッパへ渡った少年使節から明治維新の志士まで、時代を切り拓いた大村の先人たちに胸が熱くなった。",
+          "badge_code": "omura_kusumoto_residence_and_envoy"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "296140a9-6639-4782-8679-794f41f352e0",
+        "name": "大村市歴史資料館",
+        "description": "複合施設ミライonの1階にある歴史資料館（10:00〜18:00開館、月曜・最終木曜休、常設無料）。キリシタン大名・大村純忠や天正遣欧少年使節、大村藩の歴史をわかりやすく紹介している。",
+        "address": "長崎県大村市東本町481",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.908582,
+        "lng": 129.961602,
+        "qr_token": "shuin-omura-1",
+        "cover_image_url": "/images/omura/spot1.png",
+        "f7_fragment": "キリシタン大名・大村純忠や天正遣欧少年使節、大村藩の歴史を伝える資料館。",
+        "f7_full": "「大村市歴史資料館」の天正遣欧少年使節と大村藩の展示が、世界とつながった海辺の城下町を歩く旅の始まりを知的に彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "08226522-1183-4d5c-8063-8cac53c9ff01",
+        "next_spot_name": "大村寿司 やまと"
+      },
+      {
+        "id": "08226522-1183-4d5c-8063-8cac53c9ff01",
+        "name": "大村寿司 やまと",
+        "description": "大村伝統の郷土料理「大村寿司」の専門店（10:00〜20:00営業、火・水曜休）。木箱（もろぶた）で酢飯と具材を押し固め、表面を鮮やかな錦糸卵で彩った四角い押し寿司を味わえる。",
+        "address": "長崎県大村市本町474-5",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.904533,
+        "lng": 129.960284,
+        "qr_token": "shuin-omura-2",
+        "cover_image_url": "/images/omura/spot2.png",
+        "f7_fragment": "木箱で押し固め、一面の錦糸卵で鮮やかに彩った郷土料理「大村寿司」の老舗。",
+        "f7_full": "「大村寿司 やまと」の黄金色の錦糸卵が輝く四角い押し寿司が、室町時代から続く城下町の祝い膳の華やかさを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9f213779-a86b-451c-8425-d252aaca14b4",
+        "next_spot_name": "旧円融寺庭園"
+      },
+      {
+        "id": "9f213779-a86b-451c-8425-d252aaca14b4",
+        "name": "旧円融寺庭園",
+        "description": "大村藩主の菩提寺であった円融寺跡に残る江戸時代初期の庭園で、国の名勝（見学自由）。山の斜面を活かした豪快な石組みと刈り込みが調和した、九州屈指の枯山水・池泉庭園。",
+        "address": "長崎県大村市玖島2-505",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.904097,
+        "lng": 129.964142,
+        "qr_token": "shuin-omura-3",
+        "cover_image_url": "/images/omura/spot3.png",
+        "f7_fragment": "山の斜面を活かした鶴亀の石組みが見事な、江戸時代初期作庭の国指定名勝庭園。",
+        "f7_full": "「旧円融寺庭園」の斜面に組まれた力強い巨石と緑深い刈り込みが、大村藩主が愛した桃山・江戸初期の庭園美を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "6afa9353-26ab-41e5-84eb-ff0eabdae51b",
+        "next_spot_name": "旧楠本正隆屋敷"
+      },
+      {
+        "id": "6afa9353-26ab-41e5-84eb-ff0eabdae51b",
+        "name": "旧楠本正隆屋敷",
+        "description": "幕末の大村藩士で明治期に第3代衆議院議長を務めた楠本正隆が明治三年に建てた武家屋敷（9:00〜17:00開館、月曜・年末年始休、入館無料）。主屋や土蔵、庭園が残る長崎県指定史跡。",
+        "address": "長崎県大村市玖島2-291-4",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.903009,
+        "lng": 129.966187,
+        "qr_token": "shuin-omura-4",
+        "cover_image_url": "/images/omura/spot4.png",
+        "f7_fragment": "幕末の大村藩士・楠本正隆が明治三年に建てた、主屋と庭園が残る県指定史跡の武家屋敷。",
+        "f7_full": "「旧楠本正隆屋敷」の重厚な薬医門と静かな池泉庭園が、明治維新を牽引した大村藩士の誇りと城下町の品格を感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "14e581ed-2307-477d-8202-4a700669c795",
+        "next_spot_name": "大村公園"
+      },
+      {
+        "id": "14e581ed-2307-477d-8202-4a700669c795",
+        "name": "大村公園",
+        "description": "大村湾に突き出た大村藩主の居城・玖島城跡を整備した公園（終日散策自由）。美しい勾配の石垣や板敷櫓、大村神社が鎮座し、国の天然記念物「オオムラザクラ」や花菖蒲の名所として名高い。",
+        "address": "長崎県大村市玖島1-43",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.899153,
+        "lng": 129.959046,
+        "qr_token": "shuin-omura-5",
+        "cover_image_url": "/images/omura/spot5.png",
+        "f7_fragment": "大村湾に臨む玖島城の石垣と板敷櫓が立ち、国天然記念物オオムラザクラが咲く公園。",
+        "f7_full": "「大村公園」の海に映える玖島城の石垣と白壁の板敷櫓が、キリシタン大名と名園の城下町・大村を歩いた旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "da393715-0d7d-45be-8694-b57bc17c7454",
+    "title": "六百年の湯けむりと木造三階建て楼閣・日奈久温泉",
+    "name": "六百年の湯けむりと木造三階建て楼閣・日奈久温泉",
+    "description": "室町時代の発見から六百年の歴史を刻み、俳人・種田山頭火も愛した熊本県八代市の日奈久温泉。肥薩おれんじ鉄道の日奈久温泉駅から、開湯伝説の温泉神社、元湯跡の日奈久温泉センター ばんぺい湯、国登録有形文化財の木造三階建て旅館・金波楼、名物ちくわの片山蒲鉾店までを歩く。",
+    "region": "日奈久温泉（八代市）",
+    "area_name": "日奈久温泉（八代市）",
+    "cover_image_url": "/images/hinagu-onsen/route-eyecatch.png",
+    "imageUrl": "/images/hinagu-onsen/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "種田山頭火が愛した名湯と木造三階建ての旅館建築が並ぶ日奈久温泉で、あなたが心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治四十三年築の宮大工の技が光る、国登録有形文化財の木造三階建て旅館「金波楼」",
+          "description": "狭い路地にそびえ立つ木造三階建ての威容に、明治・大正期の湯治場の華やかなロマンを感じた。",
+          "badge_code": "hinagu_onsen_kinparo_wooden_ryokan"
+        },
+        {
+          "key": "B",
+          "text": "元湯の伝統を継ぐ「日奈久温泉センター ばんぺい湯」と、山頭火ゆかりの「日奈久温泉駅」",
+          "description": "「ほんに日奈久はよいところ」と詠まれた柔らかなお湯と、晩白柚の里ならではの温もりに癒やされた。",
+          "badge_code": "hinagu_onsen_banpeiyu_hot_spring"
+        },
+        {
+          "key": "C",
+          "text": "応永十六年の開湯伝説を伝え、不知火海と温泉街の瓦屋根を一望する「温泉神社」",
+          "description": "百段の石段の上から見渡した湯けむりの町並みと、穏やかな不知火海の眺望が胸に焼きついた。",
+          "badge_code": "hinagu_onsen_shrine_sea_view"
+        },
+        {
+          "key": "D",
+          "text": "明治三十六年創業の老舗「片山蒲鉾店」で味わう、焼きたて熱々の名物「日奈久ちくわ」",
+          "description": "不知火海の白身魚の旨みがぎっしり詰まった、プリッと香ばしい伝統のちくわに旅の活力を得た。",
+          "badge_code": "hinagu_onsen_katayama_chikuwa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0c51bdeb-7971-42af-873a-c1c5c0018faf",
+        "name": "日奈久温泉駅",
+        "description": "開湯600年の歴史を誇る日奈久温泉の玄関口となる肥薩おれんじ鉄道の駅（始発〜終電）。漂泊の俳人・種田山頭火も逗留した昭和情緒あふれる温泉街へ歩いてアクセスできる。",
+        "address": "熊本県八代市日奈久塩北町2670-3",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.436145,
+        "lng": 130.581611,
+        "qr_token": "shuin-hinagu-onsen-1",
+        "cover_image_url": "/images/hinagu-onsen/spot1.png",
+        "f7_fragment": "開湯六百年の歴史を誇り、種田山頭火も愛した日奈久温泉への玄関口となる駅。",
+        "f7_full": "「日奈久温泉駅」の穏やかなホームと不知火海の潮風が、六百年の歴史を刻む名湯の町を歩く旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b468ae29-1646-44bd-88cb-d25cfb025bc9",
+        "next_spot_name": "温泉神社"
+      },
+      {
+        "id": "b468ae29-1646-44bd-88cb-d25cfb025bc9",
+        "name": "温泉神社",
+        "description": "応永十六年に神託によって日奈久温泉が発見されたことに感謝して祀られた神社（境内参拝自由）。高台の境内からは、木造旅館が連なる温泉街の瓦屋根と不知火海を一望できる。",
+        "address": "熊本県八代市日奈久上西町401",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.430691,
+        "lng": 130.575789,
+        "qr_token": "shuin-hinagu-onsen-2",
+        "cover_image_url": "/images/hinagu-onsen/spot2.png",
+        "f7_fragment": "応永十六年の開湯伝説を伝え、高台の境内から温泉街と不知火海を一望する神社。",
+        "f7_full": "「温泉神社」の石段の上から見渡す瓦屋根の連なりと穏やかな不知火海の水平線が、海辺の湯治場ならではの風情を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "403b1e34-5fa9-407c-8c47-c74533e1cd2a",
+        "next_spot_name": "日奈久温泉センター ばんぺい湯"
+      },
+      {
+        "id": "403b1e34-5fa9-407c-8c47-c74533e1cd2a",
+        "name": "日奈久温泉センター ばんぺい湯",
+        "description": "日奈久温泉の元湯跡に建つ公衆温泉施設（10:00〜21:00営業、第3火曜休）。源泉かけ流しの大衆浴場や大浴場のほか、屋外には無料の足湯があり、特産の晩白柚などのお土産も揃う。",
+        "address": "熊本県八代市日奈久中町316",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.43243,
+        "lng": 130.575057,
+        "qr_token": "shuin-hinagu-onsen-3",
+        "cover_image_url": "/images/hinagu-onsen/spot3.png",
+        "f7_fragment": "元湯の跡地に建ち、源泉かけ流しの浴場と無料の足湯を備える温泉街の交流拠点。",
+        "f7_full": "「日奈久温泉センター ばんぺい湯」の立ち上る湯けむりと心地よい足湯が、細川藩の藩営温泉として栄えた名湯の恵みを肌で感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "97450ab3-46be-492e-870e-2e4b929bd772",
+        "next_spot_name": "金波楼"
+      },
+      {
+        "id": "97450ab3-46be-492e-870e-2e4b929bd772",
+        "name": "金波楼",
+        "description": "明治四十三年に建てられた熊本県内最大級の木造3階建て旅館で、国の登録有形文化財（外観見学自由、立ち寄り湯は15:30〜19:00頃・不定休）。宮大工の粋を集めた楼閣建築と黒板塀が往時の風情を伝える。",
+        "address": "熊本県八代市日奈久上西町336-3",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.432922,
+        "lng": 130.573907,
+        "qr_token": "shuin-hinagu-onsen-4",
+        "cover_image_url": "/images/hinagu-onsen/spot4.png",
+        "f7_fragment": "明治四十三年築の威容を誇る、熊本県内最大級の国登録有形文化財の木造三階建て旅館。",
+        "f7_full": "「金波楼」の堂々たる木造三階建ての楼閣と黒板塀の路地が、明治・大正の文人たちが愛した日奈久温泉の栄華を鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "89b129a0-26be-44b3-8993-88520062436e",
+        "next_spot_name": "片山蒲鉾店"
+      },
+      {
+        "id": "89b129a0-26be-44b3-8993-88520062436e",
+        "name": "片山蒲鉾店",
+        "description": "明治三十六年創業の蒲鉾・ちくわ専門店（8:00〜18:00頃営業、不定休）。不知火海の新鮮な白身魚を使った日奈久名物「日奈久ちくわ」を毎日手づくりで焼き上げ、熱々の食べ歩きも楽しめる。",
+        "address": "熊本県八代市日奈久上西町499-3",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.432903,
+        "lng": 130.573473,
+        "qr_token": "shuin-hinagu-onsen-5",
+        "cover_image_url": "/images/hinagu-onsen/spot5.png",
+        "f7_fragment": "明治三十六年の創業以来、不知火海の白身魚で名物「日奈久ちくわ」を焼く老舗。",
+        "f7_full": "「片山蒲鉾店」の香ばしく焼き上がった日奈久ちくわの味わいが、六百年の名湯と木造楼閣の町を歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
