@@ -57980,5 +57980,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "16041e9d-a984-4c3f-8843-f84ce110b4c4",
+    "title": "なぜ石見銀山の港に赤瓦と名湯の谷が続くのか",
+    "name": "なぜ石見銀山の港に赤瓦と名湯の谷が続くのか",
+    "description": "石見銀山の銀積出港として栄え、温泉街として唯一世界遺産に登録された島根県大田市・温泉津温泉。石見神楽の舞台でもある龍御前神社から、古民家カフェの路庵、銀山奉行ゆかりの恵珖寺、大正洋館が並ぶ薬師湯、巨大登り窯が残るやきものの里までを辿る。",
+    "region": "温泉津（大田市）",
+    "area_name": "温泉津（大田市）",
+    "cover_image_url": "/images/yunotsu/route-eyecatch.png",
+    "imageUrl": "/images/yunotsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "世界遺産の温泉街・温泉津を巡り、石州瓦の湯屋と大正洋館、巨大登り窯に出会った旅で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "最高評価の自然湧出泉「薬師湯」と、大正ロマン薫る木造洋館「震湯カフェ内蔵丞」",
+          "description": "鍾乳石のように湯の花が結晶化した湯船と、大正八年築の美しいバルコニー洋館に魅了された。",
+          "badge_code": "yunotsu_yakushiyu_shinyu_romanesque"
+        },
+        {
+          "key": "B",
+          "text": "築百年の古民家を活かした「路庵」でのひとときと、赤瓦が連なる世界遺産の町並み",
+          "description": "ノスタルジックな温泉街の路地に佇む古民家空間で、島根の恵みを味わう穏やかな時間に癒やされた。",
+          "badge_code": "yunotsu_roan_kominka_valley"
+        },
+        {
+          "key": "C",
+          "text": "全長三十メートルの連房式登り窯が斜面を駆け上がる、温泉津焼の「やきものの里」",
+          "description": "北前船で全国へ運ばれた大水瓶「はんど」の歴史と、素朴で温かみのある手仕事の器に心惹かれた。",
+          "badge_code": "yunotsu_climbing_kiln_pottery"
+        },
+        {
+          "key": "D",
+          "text": "石見神楽の舞台「龍御前神社」と、赤い石州瓦の温泉街を見下ろす「恵珖寺」",
+          "description": "港と温泉街を守ってきた総氏神の社殿と、山門から見渡す世界遺産の谷あいの風景が印象的だった。",
+          "badge_code": "yunotsu_tatsugozen_ekoji_heritage"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e90b0532-e864-4095-82a3-01e58c4399af",
+        "name": "龍御前神社",
+        "description": "温泉津の街の入口に鎮座する総氏神（境内参拝自由）。航海の安全と温泉の守護神を祀り、土曜日夜には境内の神楽殿で迫力ある「石見神楽」の定期公演が行われることでも知られる。",
+        "address": "島根県大田市温泉津町温泉津イ709",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.095706,
+        "lng": 132.346242,
+        "qr_token": "shuin-yunotsu-1",
+        "cover_image_url": "/images/yunotsu/spot1.png",
+        "f7_fragment": "石見銀山の積出港と温泉街の安全を見守り、石見神楽の舞台としても親しまれる総氏神。",
+        "f7_full": "「龍御前神社」の荘厳な社殿と神楽殿の佇まいが、世界遺産の港と湯の里・温泉津を歩く旅の始まりを力強く迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f5682467-cfe0-4152-8955-463a63c1571a",
+        "next_spot_name": "路庵"
+      },
+      {
+        "id": "f5682467-cfe0-4152-8955-463a63c1571a",
+        "name": "路庵",
+        "description": "温泉津の温泉街に佇む築百年の古民家を改装したカフェ＆バー（11:30〜15:30・17:30〜20:30営業、火・水曜定休）。地元食材を活かしたピザやサラダ、珈琲を落ち着いた和モダン空間で楽しめる。",
+        "address": "島根県大田市温泉津町温泉津ロ22",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.095576,
+        "lng": 132.346915,
+        "qr_token": "shuin-yunotsu-2",
+        "cover_image_url": "/images/yunotsu/spot2.png",
+        "f7_fragment": "築百年の古民家を再生した和モダンな空間で、地元食材のピザや珈琲を味わえるカフェ。",
+        "f7_full": "「路庵」の温もりある古民家の梁と焼きたてのピザの香りが、世界遺産の温泉街を歩く旅に心地よい寛ぎを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "dbfc1766-1e44-4fa0-8513-c15a853eb2fc",
+        "next_spot_name": "恵珖寺"
+      },
+      {
+        "id": "dbfc1766-1e44-4fa0-8513-c15a853eb2fc",
+        "name": "恵珖寺",
+        "description": "大永五年に日蓮宗に改宗され、初代石見銀山奉行・大久保長安の逆修墓（生前墓）や細川幽斎ゆかりの歴史を伝える寺院（境内参拝自由）。山門から見渡す赤い石州瓦の温泉街の眺望が見どころ。",
+        "address": "島根県大田市温泉津町温泉津イ21",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.095732,
+        "lng": 132.348985,
+        "qr_token": "shuin-yunotsu-3",
+        "cover_image_url": "/images/yunotsu/spot3.png",
+        "f7_fragment": "初代石見銀山奉行・大久保長安ゆかりの逆修墓を伝え、赤瓦の温泉街を一望する日蓮宗の古刹。",
+        "f7_full": "「恵珖寺」の石段と山門から見下ろす赤い石州瓦の屋根並みが、狭い谷あいに刻まれた世界遺産の温泉街の情緒を映し出している。",
+        "is_final": false,
+        "next_spot_id": "3537882b-dbfb-4097-82ee-301dd1155dde",
+        "next_spot_name": "薬師湯"
+      },
+      {
+        "id": "3537882b-dbfb-4097-82ee-301dd1155dde",
+        "name": "薬師湯",
+        "description": "明治五年の地震で湧出した自然湧出の源泉かけ流し温泉（9:00〜21:00営業、火曜定休）。隣に建つ大正八年築の木造洋館（旧館）は「震湯カフェ内蔵丞」として公開され、大正ロマンの風情を今に伝える。",
+        "address": "島根県大田市温泉津町温泉津ロ7",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.096438,
+        "lng": 132.349762,
+        "qr_token": "shuin-yunotsu-4",
+        "cover_image_url": "/images/yunotsu/spot4.png",
+        "f7_fragment": "最高評価の自然湧出泉と、大正八年築のレトロな木造洋館カフェ「内蔵丞」が並ぶ名湯。",
+        "f7_full": "「薬師湯」の湯船に刻まれた析出物の造形と大正ロマン薫る洋館の佇まいが、温泉津の豊かな湯の恵みを五感で伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f08b9c39-7683-4dfa-8d87-06e8df53a3ef",
+        "next_spot_name": "やきものの里"
+      },
+      {
+        "id": "f08b9c39-7683-4dfa-8d87-06e8df53a3ef",
+        "name": "やきものの里",
+        "description": "江戸時代中期から続く温泉津焼の工房と、全長約30メートルの日本最大級の連房式登り窯が残るエリア（温泉津やきもの館は9:00〜17:00開館、水曜休）。素朴で温かみのある器の展示見学や買い物を楽しめる。",
+        "address": "島根県大田市温泉津町温泉津イ22-2",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.097802,
+        "lng": 132.355889,
+        "qr_token": "shuin-yunotsu-5",
+        "cover_image_url": "/images/yunotsu/spot5.png",
+        "f7_fragment": "全長約三十メートルの連房式登り窯が斜面を駆け上がり、温泉津焼の伝統を今に伝える里。",
+        "f7_full": "「やきものの里」の赤茶色の巨大登り窯と素朴な温泉津焼の器が、北前船と名湯の港町を歩いた旅に温かな手仕事の余韻を残してくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8efcf681-a653-4632-894b-81855334e33d",
+    "title": "北前船の湊と豪商の町家・多度津へ",
+    "name": "北前船の湊と豪商の町家・多度津へ",
+    "description": "金毘羅参詣の表玄関および北前船の寄港地として栄え、四国鉄道発祥の地となった香川県多度津町。豪商「多度津七福神」の合田家住宅から、銭湯を再生した藝術喫茶 清水温泉、多度津藩の武家屋敷・旧武田家住宅、天保の石造灯台・燈明堂、瀬戸内海を一望する桃陵公園までを歩く。",
+    "region": "多度津（多度津町）",
+    "area_name": "多度津（多度津町）",
+    "cover_image_url": "/images/tadotsu/route-eyecatch.png",
+    "imageUrl": "/images/tadotsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "多度津藩の武家屋敷と豪商の町家、北前船の港が息づく多度津で、あなたが強く心惹かれたのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「多度津七福神」の栄華を伝える本通の「合田家住宅」と、商都の重厚な町家建築",
+          "description": "本瓦葺きの大屋根と白漆喰の土蔵群が連なる旧金毘羅街道に、海運と商業で栄えた湊の底力を見た。",
+          "badge_code": "tadotsu_godake_shichifukujin"
+        },
+        {
+          "key": "B",
+          "text": "天保の石積み護岸に立つ「多度津湛甫の燈明堂」と、瀬戸内海の島々を一望する「桃陵公園」",
+          "description": "北前船と金毘羅参詣船を導いた花崗岩の灯台と、高台から見渡す穏やかな瀬戸内の海に心洗われた。",
+          "badge_code": "tadotsu_tomyodo_harbor_light"
+        },
+        {
+          "key": "C",
+          "text": "旧銭湯のタイル絵と浴槽を残した「藝術喫茶 清水温泉」で味わうレトロな喫茶時間",
+          "description": "大正からの銭湯建築とアートが溶け合う不思議な空間で、彩り豊かなドリンクと甘味に癒やされた。",
+          "badge_code": "tadotsu_shimizu_onsen_art_cafe"
+        },
+        {
+          "key": "D",
+          "text": "桜川沿いの「家中」に残る、多度津藩一万石の面影を伝える「旧武田家住宅」",
+          "description": "水路のせせらぎに映る白漆喰の土塀と長屋門の佇まいに、静かな陣屋町の気品を感じた。",
+          "badge_code": "tadotsu_takeda_samurai_house"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "45c70f96-ecf3-49d1-8277-90dad88e2865",
+        "name": "合田家住宅",
+        "description": "「多度津七福神」の一人に数えられた豪商・合田家の本邸で、多度津町指定有形文化財（外観見学自由）。本瓦葺きの重厚な主屋と白漆喰の土蔵群が、北前船交易と金毘羅参詣で栄えた本通の歴史を物語る。",
+        "address": "香川県仲多度郡多度津町本通1-5-11",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.268587,
+        "lng": 133.750291,
+        "qr_token": "shuin-tadotsu-1",
+        "cover_image_url": "/images/tadotsu/spot1.png",
+        "f7_fragment": "「多度津七福神」と称された豪商の栄華を今に伝える、本瓦葺きと白漆喰の重厚な商家建築。",
+        "f7_full": "「合田家住宅」の堂々たる瓦屋根と重厚な格子構えが、金毘羅参詣の表玄関として栄えた商都・多度津の誇りを鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "ac4b26fc-1de6-447a-83cd-8a85fb298cc0",
+        "next_spot_name": "藝術喫茶 清水温泉"
+      },
+      {
+        "id": "ac4b26fc-1de6-447a-83cd-8a85fb298cc0",
+        "name": "藝術喫茶 清水温泉",
+        "description": "多度津本通の旧銭湯「清水温泉」をリノベーションしたカフェ（10:00〜18:00営業、水曜休）。当時のタイル絵や浴槽を残したレトロな空間で、自家製ドリンクや甘味、軽食を味わえる。",
+        "address": "香川県仲多度郡多度津町本通1-7-8",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.269822,
+        "lng": 133.749556,
+        "qr_token": "shuin-tadotsu-2",
+        "cover_image_url": "/images/tadotsu/spot2.png",
+        "f7_fragment": "旧銭湯のタイル絵と浴槽の面影を残すレトロな空間で、彩り豊かな甘味やドリンクを楽しめる喫茶。",
+        "f7_full": "「藝術喫茶 清水温泉」の鮮やかな銭湯タイルと遊び心あふれるメニューが、古い町並みが残る本通の散策に楽しい彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "538bf94e-0f70-4406-8029-cb0ea21a6c75",
+        "next_spot_name": "旧武田家住宅"
+      },
+      {
+        "id": "538bf94e-0f70-4406-8029-cb0ea21a6c75",
+        "name": "旧武田家住宅",
+        "description": "桜川沿いの「家中（かちゅう）」地区に残る多度津藩の武家屋敷（外観見学自由）。長屋門や白漆喰の土塀、武者窓が藩政時代の陣屋町の面影を今に伝えている。",
+        "address": "香川県仲多度郡多度津町家中3-10",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.270886,
+        "lng": 133.749312,
+        "qr_token": "shuin-tadotsu-3",
+        "cover_image_url": "/images/tadotsu/spot3.png",
+        "f7_fragment": "桜川沿いの「家中」地区に長屋門と白漆喰の土塀を残す、多度津藩ゆかりの武家屋敷。",
+        "f7_full": "「旧武田家住宅」の凛とした長屋門と桜川の水面に映る白漆喰の土塀が、瀬戸内の要衝・多度津の静かな武家町の気品を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c16e2f06-a1d6-4386-8af9-dd22902d26a0",
+        "next_spot_name": "多度津湛甫の燈明堂"
+      },
+      {
+        "id": "c16e2f06-a1d6-4386-8af9-dd22902d26a0",
+        "name": "多度津湛甫の燈明堂",
+        "description": "天保九年に築かれた旧多度津港（湛甫）の石積み護岸に立つ石造の旧灯台（見学自由）。江戸から明治にかけて北前船や金毘羅参詣船の航行を導いた湊町のシンボル。",
+        "address": "香川県仲多度郡多度津町東浜2-22",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.271413,
+        "lng": 133.748447,
+        "qr_token": "shuin-tadotsu-4",
+        "cover_image_url": "/images/tadotsu/spot4.png",
+        "f7_fragment": "天保九年築造の石積み護岸に立ち、北前船と金毘羅参詣船の航路を照らし続けた石造灯台。",
+        "f7_full": "「多度津湛甫の燈明堂」の風雪に耐えた花崗岩の姿が、千石船が帆を連ねて行き交った瀬戸内の湊町の記憶を呼び覚ましてくれる。",
+        "is_final": false,
+        "next_spot_id": "0bfcfe11-7539-4ecc-8d31-aa49cdbf3660",
+        "next_spot_name": "桃陵公園"
+      },
+      {
+        "id": "0bfcfe11-7539-4ecc-8d31-aa49cdbf3660",
+        "name": "桃陵公園",
+        "description": "多度津港を見下ろす本台山に整備された県立都市公園（終日散策自由）。近代造園の父・本多静六が設計を手がけ、展望台からは塩飽諸島が浮かぶ瀬戸内海の多島美を一望できる。",
+        "address": "香川県仲多度郡多度津町桃山14",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.269797,
+        "lng": 133.747633,
+        "qr_token": "shuin-tadotsu-5",
+        "cover_image_url": "/images/tadotsu/spot5.png",
+        "f7_fragment": "本多静六博士の設計により本台山に開かれ、瀬戸内海の多島美と多度津港を一望する公園。",
+        "f7_full": "「桃陵公園」の高台から見渡す穏やかな瀬戸内海と島々のシルエットが、湊町・多度津を歩いた旅の終わりに煌めく余韻を添えてくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b1e3b631-a1cb-41a5-8d48-e4239ae0b827",
+    "title": "織田氏の陣屋町と大ケヤキの根橋・柏原を巡る",
+    "name": "織田氏の陣屋町と大ケヤキの根橋・柏原を巡る",
+    "description": "織田信長の弟・信包が開いた柏原藩二万石の陣屋町であり、豊かな丹波の実りと歴史建築が息づく兵庫県丹波市柏原町。樹齢千年の大ケヤキが川を跨ぐ木の根橋から、茅葺き古民家の中島大祥堂 丹波本店、桃山建築の柏原八幡宮、国指定史跡の柏原藩陣屋跡、明治の擬洋風校舎・たんば黎明館までを歩く。",
+    "region": "柏原（丹波市）",
+    "area_name": "柏原（丹波市）",
+    "cover_image_url": "/images/kaibara/route-eyecatch.png",
+    "imageUrl": "/images/kaibara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千年の大ケヤキが川を跨ぐ奇観と織田氏の陣屋、丹波栗の甘味が揃う柏原で、あなたの心に刻むしるしをどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "樹齢千年の大ケヤキの根が川を跨いで自然の橋をなす、県指定天然記念物「木の根橋」",
+          "description": "幅十メートルの川面を越えて対岸へ伸びる巨大な根の造形と、隣に建つ昭和レトロな旧役場に驚嘆した。",
+          "badge_code": "kaibara_kinonebashi_zelkova_bridge"
+        },
+        {
+          "key": "B",
+          "text": "茅葺き古民家の「中島大祥堂 丹波本店」で味わう、丹波栗のモンブラン「かやぶき」",
+          "description": "織田藩家老屋敷の落ち着いた座敷と庭園を眺めながら、芳醇な丹波栗の甘みに癒やされた。",
+          "badge_code": "kaibara_nakajima_taishodo_chestnut"
+        },
+        {
+          "key": "C",
+          "text": "織田氏二万石の格式を伝える国指定史跡「柏原藩陣屋跡」と、明治の擬洋風建築「たんば黎明館」",
+          "description": "江戸時代の重厚な長屋門と明治のモダンな木造洋館が隣り合う風景に、柏原の深い歴史を感じた。",
+          "badge_code": "kaibara_oda_jinya_and_reimeikan"
+        },
+        {
+          "key": "D",
+          "text": "桃山様式の重要文化財社殿と三重塔が並び立つ、丹波の厄神さん「柏原八幡宮」",
+          "description": "秀吉や光秀の時代をくぐり抜けた本殿と銅鐘、神仏習合の三重塔が放つ厳かな空気に背筋が伸びた。",
+          "badge_code": "kaibara_hachimangu_pagoda"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5ad036aa-7ad5-4793-809a-2d6a4cc157d8",
+        "name": "木の根橋",
+        "description": "推定樹齢千年の大ケヤキの根が幅約10メートルの川を跨いで自然の橋を形成している奇観で、兵庫県指定天然記念物（終日見学自由）。隣には昭和11年築のレトロな旧柏原町役場が建つ。",
+        "address": "兵庫県丹波市柏原町柏原805",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.129779,
+        "lng": 135.079183,
+        "qr_token": "shuin-kaibara-1",
+        "cover_image_url": "/images/kaibara/spot1.png",
+        "f7_fragment": "推定樹齢千年の大ケヤキの太い根が川を跨ぎ、自然の橋を形作る県指定天然記念物。",
+        "f7_full": "「木の根橋」の川面をまたぐ大ケヤキの生命力と昭和レトロな旧役場の佇まいが、丹波・柏原の城下町歩きを印象的に幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "be681f67-e4fe-4a5a-8555-7707da2949bb",
+        "next_spot_name": "中島大祥堂 丹波本店"
+      },
+      {
+        "id": "be681f67-e4fe-4a5a-8555-7707da2949bb",
+        "name": "中島大祥堂 丹波本店",
+        "description": "江戸時代の織田藩家老屋敷（築150年超の茅葺き古民家）を再生したパティスリー＆カフェ（平日11:00〜17:00・土日祝10:00〜17:30営業、無休）。丹波栗のモンブラン「かやぶき」や薪窯ピッツァを庭園とともに楽しめる。",
+        "address": "兵庫県丹波市柏原町柏原448",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.129961,
+        "lng": 135.081544,
+        "qr_token": "shuin-kaibara-2",
+        "cover_image_url": "/images/kaibara/spot2.png",
+        "f7_fragment": "築百五十年超の茅葺き古民家と日本庭園の中で、丹波栗のモンブランや食事を楽しめる本店。",
+        "f7_full": "「中島大祥堂 丹波本店」の重厚な茅葺き屋根と芳醇な丹波栗のスイーツが、陣屋町の散策に上質で温かな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "831bf7ff-ea86-4049-8977-58a1de5a78b8",
+        "next_spot_name": "柏原八幡宮"
+      },
+      {
+        "id": "831bf7ff-ea86-4049-8977-58a1de5a78b8",
+        "name": "柏原八幡宮",
+        "description": "万寿元年創建と伝わる「丹波の厄神さん」（境内参拝自由）。天正十三年に再建された国指定重要文化財の本殿・拝殿と、神仏習合の歴史を伝える神社境内の三重塔、明智光秀ゆかりの国重文「銅鐘」を見学できる。",
+        "address": "兵庫県丹波市柏原町柏原3526",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.130348,
+        "lng": 135.079518,
+        "qr_token": "shuin-kaibara-3",
+        "cover_image_url": "/images/kaibara/spot3.png",
+        "f7_fragment": "天正再建の国指定重要文化財の社殿と三重塔が並び立つ、丹波屈指の厄除け八幡宮。",
+        "f7_full": "「柏原八幡宮」の桃山様式の本殿と朱色の三重塔が織りなす厳かな空間が、戦国から江戸へと受け継がれた丹波の祈りを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b275380b-c143-41b5-8470-678edfe1823f",
+        "next_spot_name": "柏原藩陣屋跡"
+      },
+      {
+        "id": "b275380b-c143-41b5-8470-678edfe1823f",
+        "name": "柏原藩陣屋跡",
+        "description": "織田信長の弟・織田信包以来、織田氏が治めた柏原藩二万石の陣屋跡で国の史跡（長屋門外観自由、内部9:00〜17:00・月曜休）。文政三年再建の重厚な長屋門や書院の一部が現存している。",
+        "address": "兵庫県丹波市柏原町柏原683",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.128849,
+        "lng": 135.082188,
+        "qr_token": "shuin-kaibara-4",
+        "cover_image_url": "/images/kaibara/spot4.png",
+        "f7_fragment": "織田信長の弟・信包ゆかりの柏原藩二万石の政庁跡であり、長屋門と御殿を残す国指定史跡。",
+        "f7_full": "「柏原藩陣屋跡」の石垣とお堀に映える長屋門の威容が、織田家の系譜を守り抜いた丹波の陣屋町の高い格式を今に物語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "826ae2df-ae36-4b13-8761-50da0e040d6e",
+        "next_spot_name": "たんば黎明館"
+      },
+      {
+        "id": "826ae2df-ae36-4b13-8761-50da0e040d6e",
+        "name": "たんば黎明館",
+        "description": "明治十八年に高等小学校として陣屋跡の隣に建てられた擬洋風建築で、兵庫県指定重要有形文化財（9:00〜17:00開館、水曜休）。淡いグリーンの下見板張りとバルコニーが美しく、展示室やカフェを備える。",
+        "address": "兵庫県丹波市柏原町柏原688-3",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 35.129392,
+        "lng": 135.082046,
+        "qr_token": "shuin-kaibara-5",
+        "cover_image_url": "/images/kaibara/spot5.png",
+        "f7_fragment": "明治十八年に陣屋跡の隣に建てられた、バルコニーとアーチ窓が美しい県指定文化財の擬洋風校舎。",
+        "f7_full": "「たんば黎明館」の優美な下見板張りとバルコニーが、江戸の陣屋町から近代へと歩みを進めた柏原の旅を爽やかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "97692f66-97d2-4a38-8a8a-f3e0e1d7db1e",
+    "title": "牡蠣香る「カキオコ」の港と多島美・日生",
+    "name": "牡蠣香る「カキオコ」の港と多島美・日生",
+    "description": "瀬戸内海に浮かぶ日生諸島の多島美と、全国屈指の牡蠣産地ならではの「カキオコ」で知られる岡山県備前市日生。日本唯一のBIZEN中南米美術館から、名物カキオコのお好み焼 もりした、備前♡日生大橋と島々を望むみなとの見える丘公園、加子浦歴史文化館、活気あふれる魚市場・五味の市までを巡る。",
+    "region": "日生（備前市）",
+    "area_name": "日生（備前市）",
+    "cover_image_url": "/images/hinase/route-eyecatch.png",
+    "imageUrl": "/images/hinase/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "牡蠣いかだが浮かぶ日生諸島の海と熱々のカキオコ、活気ある魚市場が揃う日生で、あなたが心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「お好み焼 もりした」の鉄板で香ばしく焼き上げる、大粒牡蠣が溢れる名物「カキオコ」",
+          "description": "ぷりぷりの日生牡蠣が隙間なく並んだお好み焼きを、だし醤油とソースの二つの味で堪能した。",
+          "badge_code": "hinase_kakioko_oyster_feast"
+        },
+        {
+          "key": "B",
+          "text": "瀬戸内の旬の魚介と牡蠣がずらりと並ぶ、日生町漁協の活気あふれる魚市場「五味の市」",
+          "description": "山盛りの殻付き牡蠣や獲れたての地魚が並ぶ港の市場で、「日生千軒漁師町」の熱気を肌で感じた。",
+          "badge_code": "hinase_gominoichi_fish_market"
+        },
+        {
+          "key": "C",
+          "text": "「みなとの見える丘公園」から一望する、日生諸島の十三の島々と「備前♡日生大橋」",
+          "description": "牡蠣いかだが浮かぶ穏やかな内海と、島々を結ぶ白い斜張橋のパノラマに心が晴れ渡った。",
+          "badge_code": "hinase_hilltop_islands_panorama"
+        },
+        {
+          "key": "D",
+          "text": "打瀬網漁の歴史を伝える「加子浦歴史文化館」と、古代アンデスに出会う「BIZEN中南米美術館」",
+          "description": "「瀬戸内の白い貴婦人」と呼ばれた帆船の記憶と、異国の古代土器コレクションの対比が新鮮だった。",
+          "badge_code": "hinase_kakoura_and_latin_art"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b3a33167-40e2-4965-8336-1e27bf6d158c",
+        "name": "BIZEN中南米美術館",
+        "description": "日生港のほとりに建つ、中南米の古代土器・土偶・石彫を専門に展示する日本で唯一の美術館（10:00〜16:45開館・原則要事前予約、月・木曜休）。マヤ・アステカ・インカなど古代文明の貴重な造形作品に出会える。",
+        "address": "岡山県備前市日生町日生241-10",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.734376,
+        "lng": 134.27175,
+        "qr_token": "shuin-hinase-1",
+        "cover_image_url": "/images/hinase/spot1.png",
+        "f7_fragment": "マヤやインカなど中南米十一カ国の古代土器・土偶を収蔵する、日本唯一の専門美術館。",
+        "f7_full": "「BIZEN中南米美術館」に並ぶ表情豊かな古代アンデスの土器たちが、瀬戸内の港町歩きに異国情緒あふれる驚きをもたらしてくれる。",
+        "is_final": false,
+        "next_spot_id": "4fa6b9b0-8099-4bb0-84c8-13cc319b6712",
+        "next_spot_name": "お好み焼 もりした"
+      },
+      {
+        "id": "4fa6b9b0-8099-4bb0-84c8-13cc319b6712",
+        "name": "お好み焼 もりした",
+        "description": "日生名物「カキオコ（牡蠣お好み焼き）」の人気店（11:00〜15:00営業・売切れ次第終了、木曜休）。日生産の大粒牡蠣を贅沢にのせて焼き上げるお好み焼きを、だし醤油とソース、山椒や一味で味わえる。",
+        "address": "岡山県備前市日生町日生630-4",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.733007,
+        "lng": 134.271939,
+        "qr_token": "shuin-hinase-2",
+        "cover_image_url": "/images/hinase/spot2.png",
+        "f7_fragment": "日生産の大粒牡蠣を溢れるほど贅沢にのせて焼き上げる、ご当地グルメ「カキオコ」の人気店。",
+        "f7_full": "「お好み焼 もりした」の鉄板の上で香ばしく焼き上がるぷりぷりの牡蠣とキャベツのカキオコが、港町・日生の豊かな海の恵みを存分に堪能させてくれる。",
+        "is_final": false,
+        "next_spot_id": "7dd6aa7d-a228-4ec0-8d8f-11ecf926c18c",
+        "next_spot_name": "みなとの見える丘公園"
+      },
+      {
+        "id": "7dd6aa7d-a228-4ec0-8d8f-11ecf926c18c",
+        "name": "みなとの見える丘公園",
+        "description": "日生港と日生諸島の島々、鹿久居島へ架かる「備前♡日生大橋」を一望する高台の展望公園（終日散策自由）。展望広場には「幸福の鐘」が立つ瀬戸内屈指のビュースポット。",
+        "address": "岡山県備前市日生町日生641",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.730235,
+        "lng": 134.273697,
+        "qr_token": "shuin-hinase-3",
+        "cover_image_url": "/images/hinase/spot3.png",
+        "f7_fragment": "日生港と日生諸島の十三の島々、白い斜張橋「備前♡日生大橋」を一望する高台の展望公園。",
+        "f7_full": "「みなとの見える丘公園」から見渡す煌めく瀬戸内海と備前♡日生大橋のシルエットが、牡蠣香る港町・日生の風景を鮮やかに映し出してくれる。",
+        "is_final": false,
+        "next_spot_id": "58334562-c10e-41c8-802e-06fd29278b09",
+        "next_spot_name": "加子浦歴史文化館"
+      },
+      {
+        "id": "58334562-c10e-41c8-802e-06fd29278b09",
+        "name": "加子浦歴史文化館",
+        "description": "岡山藩の船手「加子浦」として栄えた日生の歴史と文化を紹介する資料館（9:00〜16:30開館、火曜休、入館無料）。伝統の打瀬網漁の資料や備前焼、郷土ゆかりの美術コレクションを見学できる。",
+        "address": "岡山県備前市日生町日生886",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.728,
+        "lng": 134.272137,
+        "qr_token": "shuin-hinase-4",
+        "cover_image_url": "/images/hinase/spot4.png",
+        "f7_fragment": "「瀬戸内の白い貴婦人」と呼ばれた打瀬網漁や、漁師町・日生の歴史文化を伝える資料館。",
+        "f7_full": "「加子浦歴史文化館」に並ぶ白い帆の打瀬船模型と古陶磁の展示が、海とともに歩んできた日生の物語を静かに紐解いてくれる。",
+        "is_final": false,
+        "next_spot_id": "73cd12f2-7541-4145-8c61-95d57a859004",
+        "next_spot_name": "五味の市"
+      },
+      {
+        "id": "73cd12f2-7541-4145-8c61-95d57a859004",
+        "name": "五味の市",
+        "description": "日生町漁協が運営する海の直売市場（9:00〜16:00営業、水曜定休※5〜10月は火・水曜休）。水揚げされたばかりの瀬戸内の鮮魚や殻付き牡蠣が並び、向かいの「海の駅しおじ」では名物のカキフライソフトも味わえる。",
+        "address": "岡山県備前市日生町日生801-4",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.727061,
+        "lng": 134.271269,
+        "qr_token": "shuin-hinase-5",
+        "cover_image_url": "/images/hinase/spot5.png",
+        "f7_fragment": "日生諸島で獲れたばかりの瀬戸内の地魚や殻付き牡蠣がずらりと並ぶ、活気満点の魚市場。",
+        "f7_full": "「五味の市」に並ぶ山盛りの殻付き牡蠣と夕暮れの日生港の輝きが、千軒の漁師町を歩いた旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "081e8ccb-503c-4180-88a8-2cc00fee015d",
+    "title": "白砂青松の砂州と智恵の文殊・天橋立を辿る",
+    "name": "白砂青松の砂州と智恵の文殊・天橋立を辿る",
+    "description": "宮津湾と阿蘇海を分かつ約三・六キロの白砂青松の砂州が伸びる日本三景・京都府宮津市天橋立。日本三文殊の智恩寺から、名物・智恵の餅の吉野茶屋、九十度回転する朱塗りの廻旋橋、松並木のはしだて茶屋、海中に真水が湧く磯清水と天橋立神社までを歩く。",
+    "region": "天橋立（宮津市）",
+    "area_name": "天橋立（宮津市）",
+    "cover_image_url": "/images/amanohashidate/route-eyecatch.png",
+    "imageUrl": "/images/amanohashidate/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "海に浮かぶ松並木の砂州と智恵の文殊堂、回転する赤い橋が織りなす天橋立で、あなたが深く心惹かれたのはどの風景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "船が通るたびに九十度回転する朱塗りの「廻旋橋」と、白砂青松の砂州に続く松並木",
+          "description": "二つの海を結ぶ水道で橋がゆっくりと回る光景と、どこまでも続く青松のトンネルに心躍った。",
+          "badge_code": "amanohashidate_kaisenkyo_pine_sandbar"
+        },
+        {
+          "key": "B",
+          "text": "雪舟の『天橋立図』にも描かれた国重文の多宝塔と、扇子おみくじが揺れる「智恩寺」",
+          "description": "松の枝に無数の扇子おみくじが結ばれた文殊堂の境内に、五百年変わらぬ信仰の風景を見た。",
+          "badge_code": "amanohashidate_chionji_monju"
+        },
+        {
+          "key": "C",
+          "text": "門前の「吉野茶屋」と松並木の「はしだて茶屋」で味わう、名物「智恵の餅」と「あさり丼」",
+          "description": "きめ細かなこし餡の智恵の餅と、阿蘇海の旨みが詰まったふっくら肉厚なあさり丼に舌鼓を打った。",
+          "badge_code": "amanohashidate_chienomochi_asari"
+        },
+        {
+          "key": "D",
+          "text": "海に挟まれた砂州の真ん中で真水を湛える名水百選「磯清水」と「天橋立神社」",
+          "description": "和泉式部の和歌にも詠まれた奇跡の湧水と、松林の奥に鎮座する古社の神秘的な静けさに感動した。",
+          "badge_code": "amanohashidate_isoshimizu_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f0032586-ba97-4d8a-8ccd-1623ee981f2c",
+        "name": "智恩寺",
+        "description": "日本三文殊の一つに数えられる臨済宗の古刹（境内参拝自由）。文殊堂や黄金閣（山門）、室町時代建立の国指定重要文化財「多宝塔」が立ち、松の枝に結ぶ「扇子おみくじ」で知られる。",
+        "address": "京都府宮津市文珠466",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.558751,
+        "lng": 135.184092,
+        "qr_token": "shuin-amanohashidate-1",
+        "cover_image_url": "/images/amanohashidate/spot1.png",
+        "f7_fragment": "室町時代の国指定重要文化財「多宝塔」と、松の枝に結ぶ扇子おみくじで名高い日本三文殊の古刹。",
+        "f7_full": "「智恩寺」の荘厳な山門と松の枝に揺れる扇子おみくじが、日本三景・天橋立を歩く旅の始まりに智恵と歴史の彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e891fa0b-68b5-4e9d-8ced-efb200e289c7",
+        "next_spot_name": "吉野茶屋"
+      },
+      {
+        "id": "e891fa0b-68b5-4e9d-8ced-efb200e289c7",
+        "name": "吉野茶屋",
+        "description": "智恩寺の門前に暖簾を掲げる茶屋（9:00〜17:00頃営業、不定休）。食べれば文殊の智恵を授かると伝わる天橋立名物「智恵の餅」や、阿蘇海のアサリを使った「あさり丼」を味わえる。",
+        "address": "京都府宮津市文珠468-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.557779,
+        "lng": 135.184569,
+        "qr_token": "shuin-amanohashidate-2",
+        "cover_image_url": "/images/amanohashidate/spot2.png",
+        "f7_fragment": "智恩寺の門前に佇み、名物の「智恵の餅」や丹後の「あさり丼」を供する老舗茶屋。",
+        "f7_full": "「吉野茶屋」のなめらかなこし餡がのった智恵の餅が、天橋立の砂州へと踏み出す前のひとときに優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "4338942e-cde6-4853-85ec-b83a432c098e",
+        "next_spot_name": "廻旋橋"
+      },
+      {
+        "id": "4338942e-cde6-4853-85ec-b83a432c098e",
+        "name": "廻旋橋",
+        "description": "文珠地区と天橋立の砂州を結ぶ朱塗りの可動橋（通行自由）。阿蘇海と宮津湾を結ぶ水道を船が通過する際、橋が水平に90度回転する天橋立の名物スポット。",
+        "address": "京都府宮津市文珠466-1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.557859,
+        "lng": 135.185226,
+        "qr_token": "shuin-amanohashidate-3",
+        "cover_image_url": "/images/amanohashidate/spot3.png",
+        "f7_fragment": "船が通るたびに水平に九十度回転し、門前町と天橋立の松並木を結ぶ朱塗りの可動橋。",
+        "f7_full": "「廻旋橋」の鮮やかな朱色の欄干と煌めく水面を渡れば、二つの海に挟まれた白砂青松の砂州へと視界が大きく開けていく。",
+        "is_final": false,
+        "next_spot_id": "d78b273f-ed39-47c2-897f-2d308c13291b",
+        "next_spot_name": "はしだて茶屋"
+      },
+      {
+        "id": "d78b273f-ed39-47c2-897f-2d308c13291b",
+        "name": "はしだて茶屋",
+        "description": "天橋立の松並木の中に佇む食事・甘味処（10:00〜17:00頃営業、木曜休）。白砂の浜と松林を眺めながら、名物の「あさり丼」や「黒ちくわ」「智恵だんご」を味わえる。",
+        "address": "京都府宮津市文珠642",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.559459,
+        "lng": 135.186891,
+        "qr_token": "shuin-amanohashidate-4",
+        "cover_image_url": "/images/amanohashidate/spot4.png",
+        "f7_fragment": "特別名勝・天橋立の松並木の中で、名物のあさり丼や黒ちくわ、甘味を楽しめる茶屋。",
+        "f7_full": "「はしだて茶屋」の軒先を渡る爽やかな潮風と滋味豊かなあさり丼が、白砂青松の並木道を歩く旅に心地よい寛ぎを与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3343adc6-b240-4602-8a7a-20f29090ed65",
+        "next_spot_name": "天橋立神社"
+      },
+      {
+        "id": "3343adc6-b240-4602-8a7a-20f29090ed65",
+        "name": "天橋立神社",
+        "description": "天橋立の砂州の中ほどに鎮座する古社（境内参拝自由）。すぐ脇には、両側を海に囲まれながら真水が湧き出る環境省「名水百選」の霊水「磯清水」がある。",
+        "address": "京都府宮津市文珠643",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.563402,
+        "lng": 135.187907,
+        "qr_token": "shuin-amanohashidate-5",
+        "cover_image_url": "/images/amanohashidate/spot5.png",
+        "f7_fragment": "海に囲まれた砂州の真ん中で真水が湧く名水百選「磯清水」と並び立つ、松林の中の古社。",
+        "f7_full": "「天橋立神社」の松林に佇む社殿と神秘の名水・磯清水が、日本三景の白砂青松を歩いた旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
