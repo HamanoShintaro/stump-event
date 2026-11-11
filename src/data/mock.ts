@@ -59280,5 +59280,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "2d99175c-dcd7-4965-8626-5b178d5a6885",
+    "title": "天領の白壁と大正の芝居小屋・上下を辿る",
+    "name": "天領の白壁と大正の芝居小屋・上下を辿る",
+    "description": "石見銀山街道の宿場町・幕府直轄の天領として栄え、白壁やなまこ壁の商家と近代建築が連なる広島県府中市上下町。分水嶺の上下駅から、蔵造りの上下キリスト教会、旧岡田邸の上下歴史文化資料館、大正期の芝居小屋・翁座、名物つちのこ饅頭の風月堂までを歩く。",
+    "region": "上下（府中市）",
+    "area_name": "上下（府中市）",
+    "cover_image_url": "/images/joge/route-eyecatch.png",
+    "imageUrl": "/images/joge/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "石見銀山街道の富が築いた白壁と和洋の建築が並ぶ天領・上下で、あなたが強く心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正十二年築の回り舞台と花道を受け継ぐ、国登録有形文化財の木造芝居小屋「翁座」",
+          "description": "天領の旦那衆が築いた劇場建築の堂々たる構えに、大正ロマンの華やかな賑わいを感じた。",
+          "badge_code": "joge_okinaza_wooden_theater"
+        },
+        {
+          "key": "B",
+          "text": "明治の白壁土蔵に十字架とステンドグラスが映える、国登録有形文化財「上下キリスト教会」",
+          "description": "日本の伝統的な蔵造りと西洋の教会建築が融合した、唯一無二の美しい佇まいに心打たれた。",
+          "badge_code": "joge_storehouse_christian_church"
+        },
+        {
+          "key": "C",
+          "text": "明治初期の商家・旧岡田邸を活用した「上下歴史文化資料館」と、分水嶺の駅「上下駅」",
+          "description": "石見銀山街道の銀輸送と金融で栄えた「天領上下」の成り立ちを知り、町並みの見え方が深まった。",
+          "badge_code": "joge_tenryo_history_museum"
+        },
+        {
+          "key": "D",
+          "text": "栗と白あんを香ばしいパイ生地で包んだ、老舗「風月堂」の上下銘菓「つちのこ饅頭」",
+          "description": "町を沸かせた歴史をユーモアあふれるパイ饅頭に仕立てた、老舗の温かな手仕事に心が和んだ。",
+          "badge_code": "joge_fugetsudo_pie_manju"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "28cc0fd5-1b13-48ab-854a-e3bc49672e13",
+        "name": "上下駅",
+        "description": "日本海側と瀬戸内海側の分水嶺に位置するJR福塩線の駅（観光案内所・売店は9:00〜18:00頃営業）。江戸時代に石見銀山街道の宿場・幕府直轄の天領として栄えた上下の町歩きの玄関口。",
+        "address": "広島県府中市上下町上下823-2",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.694952,
+        "lng": 133.1176,
+        "qr_token": "shuin-joge-1",
+        "cover_image_url": "/images/joge/spot1.png",
+        "f7_fragment": "日本海と瀬戸内海の分水嶺に位置し、天領上下の白壁の町並みへの玄関口となる駅。",
+        "f7_full": "「上下駅」のレトロな佇まいと分水嶺の物語が、石見銀山街道の富が築いた天領の商都を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "01a48108-afb5-4edb-86ec-b7f17eeb6698",
+        "next_spot_name": "上下キリスト教会"
+      },
+      {
+        "id": "01a48108-afb5-4edb-86ec-b7f17eeb6698",
+        "name": "上下キリスト教会",
+        "description": "明治期の白壁・3階建て土蔵を昭和30年代に改装した教会建築で、国の登録有形文化財（外観見学自由）。黒瓦の切妻屋根に十字架が立ち、土蔵とステンドグラスが調和した珍しい意匠を見学できる。",
+        "address": "広島県府中市上下町上下817",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.694922,
+        "lng": 133.12042,
+        "qr_token": "shuin-joge-2",
+        "cover_image_url": "/images/joge/spot2.png",
+        "f7_fragment": "明治期の白壁三階建て土蔵を教会へと改装した、国登録有形文化財の蔵造り教会。",
+        "f7_full": "「上下キリスト教会」の白漆喰の土蔵と屋根に輝く十字架が、天領の商家町に息づく和洋折衷の独特な歴史景観を印象づけてくれる。",
+        "is_final": false,
+        "next_spot_id": "495cb67c-a15d-4436-87e5-81b1b57b63af",
+        "next_spot_name": "上下歴史文化資料館"
+      },
+      {
+        "id": "495cb67c-a15d-4436-87e5-81b1b57b63af",
+        "name": "上下歴史文化資料館",
+        "description": "明治初期築の文学者・岡田美知代の生家（旧岡田邸）を改築した資料館（10:00〜18:00開館、月曜休、入館無料）。石見銀山街道や天領上下代官所の歴史資料、岡田美知代の文学資料を展示している。",
+        "address": "広島県府中市上下町上下1006",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.695063,
+        "lng": 133.120866,
+        "qr_token": "shuin-joge-3",
+        "cover_image_url": "/images/joge/spot3.png",
+        "f7_fragment": "明治初期の旧岡田邸を活用し、石見銀山街道と天領上下の歴史・文学を伝える資料館。",
+        "f7_full": "「上下歴史文化資料館」の趣ある町家建築と貴重な歴史資料が、銀輸送と金融で栄えた山あいの商都の記憶を解き明かしてくれる。",
+        "is_final": false,
+        "next_spot_id": "432da0fc-d2fb-4d36-8463-2e2fb5910920",
+        "next_spot_name": "翁座"
+      },
+      {
+        "id": "432da0fc-d2fb-4d36-8463-2e2fb5910920",
+        "name": "翁座",
+        "description": "大正十二年に建てられた木造2階建ての芝居小屋で、国の登録有形文化財（外観見学自由、土日祝10:00〜15:00頃は内部公開あり）。回り舞台や花道、桝席を備え、大正期の劇場建築の姿を今に伝える。",
+        "address": "広島県府中市上下町上下1038",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.696534,
+        "lng": 133.123163,
+        "qr_token": "shuin-joge-4",
+        "cover_image_url": "/images/joge/spot4.png",
+        "f7_fragment": "大正十二年に旦那衆が築き、回り舞台と花道を残す国登録有形文化財の木造芝居小屋。",
+        "f7_full": "「翁座」の重厚な木造外観と芝居小屋の佇まいが、白壁となまこ壁が連なる上下商店街に大正ロマンの華やかな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "38d764e7-5e93-4c74-82eb-3bf1477ecc0c",
+        "next_spot_name": "風月堂"
+      },
+      {
+        "id": "38d764e7-5e93-4c74-82eb-3bf1477ecc0c",
+        "name": "風月堂",
+        "description": "上下商店街に店を構える老舗菓子舗（8:00〜15:00営業、不定休）。パイ生地で栗と白あんを包んで焼き上げた上下名物「つちのこ饅頭」やスイートポテトなど、手づくりの和洋菓子が親しまれている。",
+        "address": "広島県府中市上下町上下2035-27",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.696934,
+        "lng": 133.124388,
+        "qr_token": "shuin-joge-5",
+        "cover_image_url": "/images/joge/spot5.png",
+        "f7_fragment": "栗と白あんを香ばしいパイ生地で包んだ上下銘菓「つちのこ饅頭」で知られる老舗菓子舗。",
+        "f7_full": "「風月堂」の香ばしいつちのこ饅頭と温かな甘みが、白壁と芝居小屋の町・天領上下を歩いた旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "37105d1f-68ed-42ea-8724-f4eb2fd15963",
+    "title": "船川の妻入り商家と発酵蔵・木綿街道を歩く",
+    "name": "船川の妻入り商家と発酵蔵・木綿街道を歩く",
+    "description": "江戸から明治にかけて雲州木綿の集散地として栄え、妻入りの商家や酒蔵・醤油蔵が連なる島根県出雲市平田町の「木綿街道」。古社・宇美神社から、三百年続く來間屋生姜糖本舗、登録有形文化財の酒持田本店、宝暦年間築の本石橋邸、木桶仕込みの岡茂一郎商店までを歩く。",
+    "region": "雲州平田・木綿街道（出雲市）",
+    "area_name": "雲州平田・木綿街道（出雲市）",
+    "cover_image_url": "/images/unshu-hirata/route-eyecatch.png",
+    "imageUrl": "/images/unshu-hirata/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "船川の水運と職人の手仕事が息づく出雲・木綿街道を歩き、あなたの心に強く響いたのはどの体験にしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "宝暦年間の梁組みと船川の川戸を今に伝える、木綿街道最古級の商家「本石橋邸」",
+          "description": "妻入りと平入りが並ぶ独特の町並みと、高瀬舟の水運と直結した豪商屋敷の知恵に感銘を受けた。",
+          "badge_code": "unshu_hirata_motoishibashi_machiya"
+        },
+        {
+          "key": "B",
+          "text": "享保元年から一子相伝の銅鍋炭火製法を守り続ける「來間屋生姜糖本舗」の生姜糖",
+          "description": "出西生姜の爽やかな香りと、口の中でさらりと溶ける三百年変わらない出雲の甘味に魅了された。",
+          "badge_code": "unshu_hirata_kurimaya_shogato"
+        },
+        {
+          "key": "C",
+          "text": "国登録有形文化財の「酒持田本店」と「岡茂一郎商店」が紡ぐ、出雲杜氏と木桶醤油の発酵文化",
+          "description": "杉玉が揺れる酒蔵の銘酒と、百二十年の杉桶が育む天然醸造醤油の奥深い味わいに心酔いしれた。",
+          "badge_code": "unshu_hirata_sake_and_soy_brewing"
+        },
+        {
+          "key": "D",
+          "text": "『出雲国風土記』ゆかりの古社であり、木綿と酒造りの町を見守ってきた「宇美神社」",
+          "description": "平田船川のほとりに鎮座する静謐な境内で、商都・平田を支えてきた篤い信仰の原点に触れた。",
+          "badge_code": "unshu_hirata_umi_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fe0f35e7-81bb-4ade-8241-c27e1c02d687",
+        "name": "宇美神社",
+        "description": "『出雲国風土記』にも記される平田の総氏神（境内参拝自由）。主祭神の布都御魂神のほか、平田の繁栄を支えた木綿や酒造りの守護神も祀られ、木綿街道の商人たちの篤い信仰を集めてきた。",
+        "address": "島根県出雲市平田町688-1",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.436763,
+        "lng": 132.818789,
+        "qr_token": "shuin-unshu-hirata-1",
+        "cover_image_url": "/images/unshu-hirata/spot1.png",
+        "f7_fragment": "『出雲国風土記』にも記され、木綿や酒造りの神様も祀る平田の総氏神の古社。",
+        "f7_full": "「宇美神社」の緑深い境内と歴史ある社殿の佇まいが、船川の水運とともに栄えた木綿街道を歩く旅の始まりを清らかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3b62a58b-5fff-4fac-84bf-aac8085bd2e1",
+        "next_spot_name": "來間屋生姜糖本舗"
+      },
+      {
+        "id": "3b62a58b-5fff-4fac-84bf-aac8085bd2e1",
+        "name": "來間屋生姜糖本舗",
+        "description": "享保元年創業の老舗和菓子舗（9:00〜18:00営業、不定休）。出雲市斐川町産の出西生姜と砂糖を銅鍋と炭火で煮詰める一子相伝の製法で、伝統銘菓「生姜糖」を作り続けている。",
+        "address": "島根県出雲市平田町774",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.436859,
+        "lng": 132.820521,
+        "qr_token": "shuin-unshu-hirata-2",
+        "cover_image_url": "/images/unshu-hirata/spot2.png",
+        "f7_fragment": "享保元年の創業以来、出西生姜と炭火銅鍋の製法で出雲銘菓「生姜糖」を作る老舗。",
+        "f7_full": "「來間屋生姜糖本舗」の琥珀色に透き通る生姜糖と趣ある店構えが、三百年受け継がれてきた出雲の手仕事の粋を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "38363188-1f12-47ca-84e5-9109a45c797a",
+        "next_spot_name": "酒持田本店"
+      },
+      {
+        "id": "38363188-1f12-47ca-84e5-9109a45c797a",
+        "name": "酒持田本店",
+        "description": "明治十年創業の老舗酒蔵（9:00〜17:00営業、不定休）。主屋や仕込み蔵など6棟が国の登録有形文化財に指定されており、出雲杜氏が醸す代表銘柄「ヤマサン正宗」の試飲や買い物を楽しめる。",
+        "address": "島根県出雲市平田町785",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.437132,
+        "lng": 132.820958,
+        "qr_token": "shuin-unshu-hirata-3",
+        "cover_image_url": "/images/unshu-hirata/spot3.png",
+        "f7_fragment": "国登録有形文化財の蔵が並び、出雲杜氏の技で銘酒「ヤマサン正宗」を醸す老舗酒蔵。",
+        "f7_full": "「酒持田本店」の軒先に揺れる杉玉と白壁の仕込み蔵が、良質な米と北山山系の伏流水に恵まれた出雲の酒造り文化を物語る。",
+        "is_final": false,
+        "next_spot_id": "fb699bec-722d-4e74-887b-c510d8d8f31c",
+        "next_spot_name": "本石橋邸"
+      },
+      {
+        "id": "fb699bec-722d-4e74-887b-c510d8d8f31c",
+        "name": "本石橋邸",
+        "description": "江戸時代中期の宝暦年間に建てられた木綿街道最古級の商家建築（9:00〜17:00開館、火曜休）。平田特有の妻入りと平入りが並んだ外観や、吹き抜けの土間、日本庭園を見学できる。",
+        "address": "島根県出雲市平田町841",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.438118,
+        "lng": 132.821364,
+        "qr_token": "shuin-unshu-hirata-4",
+        "cover_image_url": "/images/unshu-hirata/spot4.png",
+        "f7_fragment": "宝暦年間に建てられた妻入りと平入りの構えを残す、木綿街道最古級の豪商屋敷。",
+        "f7_full": "「本石橋邸」の太い梁が渡る通り土間と船川に面した屋敷構えが、雲州木綿の商いで沸いた江戸時代の商都の息遣いを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0b7422ed-248a-4e60-8d39-3bf073c6bf8a",
+        "next_spot_name": "岡茂一郎商店"
+      },
+      {
+        "id": "0b7422ed-248a-4e60-8d39-3bf073c6bf8a",
+        "name": "岡茂一郎商店",
+        "description": "明治三十五年創業の老舗醤油醸造元（9:00〜17:00営業、火曜・年末年始休）。国の登録有形文化財の蔵で120年以上の杉桶を用いた天然醸造を続け、再仕込み醤油やしょうゆソフトクリームを味わえる。",
+        "address": "島根県出雲市平田町861",
+        "prefecture": "島根県",
+        "city": "",
+        "lat": 35.438612,
+        "lng": 132.821449,
+        "qr_token": "shuin-unshu-hirata-5",
+        "cover_image_url": "/images/unshu-hirata/spot5.png",
+        "f7_fragment": "国登録有形文化財の蔵で百二十年余の杉桶を使い、天然醸造醤油を仕込む老舗醤油蔵。",
+        "f7_full": "「岡茂一郎商店」の歴史ある杉桶蔵と香ばしい醤油の薫りが、白壁となまこ壁が連なる木綿街道を歩いた旅を味わい深く締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "338556fb-7351-48f1-8cb8-35973b27e017",
+    "title": "北前船の入江と豪商・稲葉本家の陣屋町・久美浜へ",
+    "name": "北前船の入江と豪商・稲葉本家の陣屋町・久美浜へ",
+    "description": "穏やかな久美浜湾の入江に抱かれ、幕府直轄の代官所と北前船の豪商で栄えた京都府京丹後市久美浜町。鎌倉期の国重文本堂を持つ本願寺から、国登録有形文化財の豪商 稲葉本家、発酵甘味の糀マルシェ、名物鯛せんべいの綿徳商店、巨石の磐座が鎮座する神谷太刀宮までを歩く。",
+    "region": "久美浜（京丹後市）",
+    "area_name": "久美浜（京丹後市）",
+    "cover_image_url": "/images/kumihama/route-eyecatch.png",
+    "imageUrl": "/images/kumihama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "豪商・稲葉本家の屋敷と古代の磐座、入江の陣屋町の歴史が息づく久美浜で、あなたが心惹かれたのはどの場面だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "樹齢三百年の松の梁が渡る国登録有形文化財「豪商 稲葉本家」と、名物の「ぼたもち」",
+          "description": "糀製造と北前船で日本海に名を馳せた豪商の壮大な屋敷構えと、伝統のぼたもちの温かな味に感動した。",
+          "badge_code": "kumihama_inaba_honke_merchant"
+        },
+        {
+          "key": "B",
+          "text": "鎌倉時代建立の丹後最古の国重文本堂と、聚楽第の裏門を移築したと伝わる「本願寺」",
+          "description": "天平からの法灯を伝え、久美浜代官所・久美浜県の歴史を見守ってきた名刹の重みに触れられた。",
+          "badge_code": "kumihama_honganji_jurakudai_gate"
+        },
+        {
+          "key": "C",
+          "text": "久美浜の糀文化を継ぐ「糀マルシェ」の甘糀ドリンクと、明治創業「綿徳商店」の鯛せんべい",
+          "description": "江戸時代からの糀づくりの知恵を活かした発酵カフェと、湊町らしい香ばしい鯛せんべいに癒やされた。",
+          "badge_code": "kumihama_koji_and_tai_senbei"
+        },
+        {
+          "key": "D",
+          "text": "太刀宮造りの本殿と、太刀で割られたような巨石の磐座が鎮座する古社「神谷太刀宮」",
+          "description": "丹波道主命の宝剣を祀る古社の静寂と、圧倒的な存在感を放つ磐座「立岩」の神々しさに息をのんだ。",
+          "badge_code": "kumihama_kamitani_tachinomiya_iwakura"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "37863902-4165-4fe3-8187-89646c91e3c6",
+        "name": "本願寺",
+        "description": "天平二年に行基が開き、建久三年に法然上人が中興したと伝わる浄土宗の寺院（境内参拝自由）。鎌倉時代建立の本堂は丹後最古の木造建築として国の重要文化財に指定されており、聚楽第の裏門と伝わる山門も残る。",
+        "address": "京都府京丹後市久美浜町1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.601784,
+        "lng": 134.902268,
+        "qr_token": "shuin-kumihama-1",
+        "cover_image_url": "/images/kumihama/spot1.png",
+        "f7_fragment": "鎌倉時代建立の丹後最古の国重文本堂と、聚楽第伝承の山門を残す浄土宗の古刹。",
+        "f7_full": "「本願寺」の重厚な鎌倉期の本堂と聚楽第ゆかりの山門が、入江の陣屋町・久美浜を歩く旅の始まりを格調高く迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e1501596-8806-4926-8c06-1e57e47ee67d",
+        "next_spot_name": "豪商 稲葉本家"
+      },
+      {
+        "id": "e1501596-8806-4926-8c06-1e57e47ee67d",
+        "name": "豪商 稲葉本家",
+        "description": "糀製造と北前船の廻船業で栄えた豪商の屋敷で、国の登録有形文化財（9:00〜16:00開館、水曜休、入館無料）。明治十八年から約5年をかけて建てられた主屋や表門を見学でき、名物「ぼたもち」や丹後ばら寿司を味わえる。",
+        "address": "京都府京丹後市久美浜町3102",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.606164,
+        "lng": 134.897595,
+        "qr_token": "shuin-kumihama-2",
+        "cover_image_url": "/images/kumihama/spot2.png",
+        "f7_fragment": "糀製造と廻船業で栄えた国登録有形文化財の豪商屋敷であり、名物ぼたもちも味わえる館。",
+        "f7_full": "「豪商 稲葉本家」の巨大な松の梁が渡る通り土間と伝統のぼたもちが、日本海海運で沸いた久美浜の繁栄とおもてなしの心を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b2fdd513-c601-45af-840d-95effa353db4",
+        "next_spot_name": "糀マルシェ"
+      },
+      {
+        "id": "b2fdd513-c601-45af-840d-95effa353db4",
+        "name": "糀マルシェ",
+        "description": "久美浜の旧街道沿いに佇む発酵カフェ（10:00〜16:30営業、水・木曜休）。久美浜に受け継がれる米糀文化を活かし、砂糖不使用の自家製甘糀ドリンクや発酵スイーツ、ランチを提供している。",
+        "address": "京都府京丹後市久美浜町3178-2",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.606517,
+        "lng": 134.896587,
+        "qr_token": "shuin-kumihama-3",
+        "cover_image_url": "/images/kumihama/spot3.png",
+        "f7_fragment": "久美浜の伝統である米糀を活かした自家製甘糀ドリンクや焼き菓子を楽しめるカフェ。",
+        "f7_full": "「糀マルシェ」の優しい甘みの甘糀ドリンクと温かな空間が、白壁と格子戸が続く陣屋町の街道歩きに穏やかな休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b58f2a5e-bd09-412c-8f51-30b67a533b20",
+        "next_spot_name": "綿徳商店"
+      },
+      {
+        "id": "b58f2a5e-bd09-412c-8f51-30b67a533b20",
+        "name": "綿徳商店",
+        "description": "旧街道沿いに店を構える明治中期創業の老舗和菓子舗（8:30〜18:00頃営業、不定休）。めでたい鯛の姿を型取って香ばしく焼き上げた久美浜銘菓「鯛せんべい」や季節の上生菓子を販売している。",
+        "address": "京都府京丹後市久美浜町3162",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.607116,
+        "lng": 134.895771,
+        "qr_token": "shuin-kumihama-4",
+        "cover_image_url": "/images/kumihama/spot4.png",
+        "f7_fragment": "めでたい鯛を型取った銘菓「鯛せんべい」や季節の和菓子を作る明治中期創業の老舗。",
+        "f7_full": "「綿徳商店」の香ばしい鯛せんべいと手づくりの和菓子が、茶の湯文化が息づく湊町・久美浜の豊かな風情を感じさせてくれる。",
+        "is_final": false,
+        "next_spot_id": "f4e9df33-6f56-406a-8269-9cd10dac7ec7",
+        "next_spot_name": "神谷太刀宮"
+      },
+      {
+        "id": "f4e9df33-6f56-406a-8269-9cd10dac7ec7",
+        "name": "神谷太刀宮",
+        "description": "丹波道主命の宝剣「国見剣」を祀る式内社・神谷神社（境内参拝自由）。天明元年再建の「太刀宮造り」の本殿は京都府指定有形文化財で、境内奥には太刀で割られたような巨石「磐座（立岩）」が鎮座する。",
+        "address": "京都府京丹後市久美浜町1324",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 35.603941,
+        "lng": 134.892469,
+        "qr_token": "shuin-kumihama-5",
+        "cover_image_url": "/images/kumihama/spot5.png",
+        "f7_fragment": "京都府指定有形文化財の太刀宮造り本殿と、高さ十メートルの巨石「磐座」が鎮座する古社。",
+        "f7_full": "「神谷太刀宮」の厳かな太刀宮造りの本殿と神秘的な巨石・磐座の佇まいが、入江と豪商の町・久美浜を歩いた旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "838d17d8-0c15-486a-80d4-2697a7bf5d3c",
+    "title": "なぜお成り街道に現代の名湯と涅槃像が並ぶのか",
+    "name": "なぜお成り街道に現代の名湯と涅槃像が並ぶのか",
+    "description": "初代高松藩主・松平頼重公が菩提寺・法然寺の門前町として築き、古い町家と現代建築が調和する香川県高松市仏生山町。ことでんの車両が並ぶ仏生山駅から、建築美の名湯・仏生山温泉、天明九年創業の老舗酢蔵・神崎屋、お成り街道の古民家カフェ アジール、立体涅槃像の法然寺までを歩く。",
+    "region": "仏生山（高松市）",
+    "area_name": "仏生山（高松市）",
+    "cover_image_url": "/images/busshozan/route-eyecatch.png",
+    "imageUrl": "/images/busshozan/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "松平家の大寺院と江戸のお成り街道、そして現代の温泉・カフェ文化が交差する仏生山で、あなたが深く心惹かれたのはどの体験でしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「まち全体を旅館に見立てる」現代木造建築の立ち寄り美肌の湯「仏生山温泉 天平湯」",
+          "description": "中庭の緑を囲む開放的な露天風呂と、街歩きと一体になった新しい温泉のかたちに深く感銘を受けた。",
+          "badge_code": "busshozan_onsen_modern_bathhouse"
+        },
+        {
+          "key": "B",
+          "text": "八十二体の極彩色群像が釈迦の入滅を描く、高松藩松平家の菩提寺「法然寺」の三仏堂",
+          "description": "初代藩主・松平頼重公が築いた壮大な伽藍と、立体涅槃像の圧倒的なスケールに息をのんだ。",
+          "badge_code": "busshozan_honenji_nirvana_hall"
+        },
+        {
+          "key": "C",
+          "text": "天明九年の創業から二百三十余年、静置発酵で米酢「吉の酢」を醸す老舗酢蔵「神崎屋」",
+          "description": "白壁と焼き杉の蔵で丁寧に造り続けられるまろやかな米酢に、門前町が守り抜いた発酵の歴史を感じた。",
+          "badge_code": "busshozan_kanzakiya_rice_vinegar"
+        },
+        {
+          "key": "D",
+          "text": "お成り街道の築九十年の古民家「カフェ アジール」の甘味と、レトロ電車が並ぶ「仏生山駅」",
+          "description": "大名行列が通った街道の町家カフェで味わうフレンチトーストと、ことでんの温かな風情に癒やされた。",
+          "badge_code": "busshozan_onari_kaido_kominka_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c2d56284-2a58-41a0-88e5-ce4b324803ed",
+        "name": "仏生山駅",
+        "description": "高松琴平電気鉄道（ことでん）琴平線の主要駅（始発〜終電）。仏生山工場（車両基地）が併設されており、高松藩主の菩提寺・法然寺の門前町やお成り街道散策の玄関口となっている。",
+        "address": "香川県高松市仏生山町甲302-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.283297,
+        "lng": 134.042718,
+        "qr_token": "shuin-busshozan-1",
+        "cover_image_url": "/images/busshozan/spot1.png",
+        "f7_fragment": "ことでんの車両基地を併設し、高松藩ゆかりの門前町・仏生山への玄関口となる駅。",
+        "f7_full": "「仏生山駅」に並ぶレトロなことでん車両と穏やかな門前町の空気が、江戸と現代が交差する仏生山を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3809d426-9f92-4b28-8fd2-23201a6bdd37",
+        "next_spot_name": "仏生山温泉"
+      },
+      {
+        "id": "3809d426-9f92-4b28-8fd2-23201a6bdd37",
+        "name": "仏生山温泉",
+        "description": "建築家・岡昇平氏が設計したモダンな立ち寄り温泉「仏生山温泉 天平湯」（平日11:00〜24:00・土日祝9:00〜24:00営業、火曜休）。中庭を囲む露天風呂で美肌の重曹泉を堪能できる。",
+        "address": "香川県高松市仏生山町乙114-5",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.281799,
+        "lng": 134.049321,
+        "qr_token": "shuin-busshozan-2",
+        "cover_image_url": "/images/busshozan/spot2.png",
+        "f7_fragment": "中庭を囲む現代木造建築の空間で、とろりとした美肌の重曹泉を楽しめる立ち寄り温泉。",
+        "f7_full": "「仏生山温泉」の洗練された木造空間と開放的な露天風呂が、まち全体を旅館に見立てた新しい門前町歩きの楽しさを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "abd879ae-aced-4d7f-895a-5ecb79d375b0",
+        "next_spot_name": "神崎屋"
+      },
+      {
+        "id": "abd879ae-aced-4d7f-895a-5ecb79d375b0",
+        "name": "神崎屋",
+        "description": "江戸時代の天明九年創業の老舗酢蔵（8:00〜17:00営業、土・日曜・祝日休）。昔ながらの静置発酵法でじっくり熟成させた代表銘柄の米酢「吉の酢」やウスターソースを製造・販売している。",
+        "address": "香川県高松市仏生山町乙49",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.279155,
+        "lng": 134.04816,
+        "qr_token": "shuin-busshozan-3",
+        "cover_image_url": "/images/busshozan/spot3.png",
+        "f7_fragment": "天明九年の創業以来、静置発酵法で伝統の米酢「吉の酢」を醸し続ける老舗酢蔵。",
+        "f7_full": "「神崎屋」の白壁の蔵とまろやかな米酢「吉の酢」の香りが、法然寺の門前町で二百三十余年受け継がれてきた醸造の粋を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "bd1ebcc2-f86d-406b-811f-b787819d2f59",
+        "next_spot_name": "カフェ アジール"
+      },
+      {
+        "id": "bd1ebcc2-f86d-406b-811f-b787819d2f59",
+        "name": "カフェ アジール",
+        "description": "お成り街道沿いの築90年余の古民家を改装したカフェ（8:30〜18:00営業、月曜休）。落ち着いた和の店内や中庭テラスで、名物のフルーツフレンチトーストやランチ、珈琲を味わえる。",
+        "address": "香川県高松市仏生山町甲2507",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.276645,
+        "lng": 134.043372,
+        "qr_token": "shuin-busshozan-4",
+        "cover_image_url": "/images/busshozan/spot4.png",
+        "f7_fragment": "お成り街道の築九十年余の古民家で、フルーツフレンチトーストや珈琲を楽しめるカフェ。",
+        "f7_full": "「カフェ アジール」の格子戸から差し込む柔らかな光と彩り豊かなフレンチトーストが、歴史ある街道歩きに心華やぐ時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6a42fc4e-9e8a-4a3f-8a01-90ebda327b2f",
+        "next_spot_name": "法然寺"
+      },
+      {
+        "id": "6a42fc4e-9e8a-4a3f-8a01-90ebda327b2f",
+        "name": "法然寺",
+        "description": "初代高松藩主・松平頼重公が寛文八年に建立した松平家の菩提寺（境内参拝自由、三仏堂9:00〜16:00）。三仏堂には釈迦の入滅を82体の群像で立体表現した「立体涅槃図」が安置されている。",
+        "address": "香川県高松市仏生山町甲3215",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.273003,
+        "lng": 134.046799,
+        "qr_token": "shuin-busshozan-5",
+        "cover_image_url": "/images/busshozan/spot5.png",
+        "f7_fragment": "初代高松藩主・松平頼重公が建立し、八十二体の群像からなる「立体涅槃図」を祀る巨刹。",
+        "f7_full": "「法然寺」の壮麗な伽藍と三仏堂の立体涅槃群像が、お成り街道と名湯の門前町・仏生山を歩いた旅を圧倒的な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5b75f6b7-f6e7-4bf0-83c9-d8252be9a7ee",
+    "title": "五百年続く渡し舟と鯛めしの湊町・三津浜を巡る",
+    "name": "五百年続く渡し舟と鯛めしの湊町・三津浜を巡る",
+    "description": "夏目漱石『坊っちゃん』の舞台であり、古来より松山の海の玄関口として栄えた愛媛県松山市三津（三津浜）。港の総鎮守・三津厳島神社から、果実シロップのかき氷店・田中戸、大正モダンの洋館・舊濱田医院、登録有形文化財の町家で味わう鯛メシ専門 鯛や、五百年続く市道渡船・三津の渡しまでを歩く。",
+    "region": "三津浜（松山市）",
+    "area_name": "三津浜（松山市）",
+    "cover_image_url": "/images/mitsu/route-eyecatch.png",
+    "imageUrl": "/images/mitsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大正モダンの洋館と伝統の松山鯛めし、五百年の渡し舟が息づく三津浜で、あなたが心惹かれたのはどの光景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "室町時代から五百年以上も港の両岸を結び続ける、無料の市道渡船「三津の渡し」",
+          "description": "わずか八十メートルの海をポンポンと渡る小さな舟に、港町・三津浜の愛おしい日常風景を見た。",
+          "badge_code": "mitsu_no_watashi_harbor_ferry"
+        },
+        {
+          "key": "B",
+          "text": "国登録有形文化財の町家・森家住宅「鯛メシ専門 鯛や」で味わう、伝統の「松山鯛めし」",
+          "description": "瀬戸内の天然真鯛の旨みが染み込んだ炊き込み鯛めしと、歴史ある商家座敷の風情に感動した。",
+          "badge_code": "mitsu_taiya_matsuyama_taimeshi"
+        },
+        {
+          "key": "C",
+          "text": "淡いグリーンの下見板張りと上げ下げ窓が優美な、大正十一年の洋館「舊濱田医院」",
+          "description": "廻船問屋の町家と並んで三津浜の繁栄を物語る、大正ロマンあふれる近代建築の美しさに惹かれた。",
+          "badge_code": "mitsu_former_hamada_clinic_western"
+        },
+        {
+          "key": "D",
+          "text": "河野水軍と松山藩主の祈りが宿る「三津厳島神社」と、旬の果実が香る甘味処「田中戸」",
+          "description": "海の守護神の誇り高い境内と、港町の路地で出会う瑞々しい愛媛の果実かき氷に心が弾んだ。",
+          "badge_code": "mitsu_itsukushima_and_tanakado"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "36d4dcf2-33a1-4e68-8683-7f796dd445ae",
+        "name": "三津厳島神社",
+        "description": "推古天皇の御代の創祀と伝わる三津浜の総鎮守（境内参拝自由）。河野水軍や松山藩主から海上安全の守護神として崇敬され、秋祭りでは勇壮な神輿の「鉢合わせ」が行われる。",
+        "address": "愛媛県松山市神田町1-7",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.860984,
+        "lng": 132.718512,
+        "qr_token": "shuin-mitsu-1",
+        "cover_image_url": "/images/mitsu/spot1.png",
+        "f7_fragment": "河野水軍や松山藩主から海上安全の守護神として崇敬されてきた、三津浜の総鎮守。",
+        "f7_full": "「三津厳島神社」の潮風薫る境内と歴史ある社殿が、松山の海の玄関口として栄えた三津浜を歩く旅の始まりを凛と迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b8cebb21-ade8-4c0f-8586-b5869279e7ee",
+        "next_spot_name": "田中戸"
+      },
+      {
+        "id": "b8cebb21-ade8-4c0f-8586-b5869279e7ee",
+        "name": "田中戸",
+        "description": "三津浜のレトロな町並みに佇む甘味・かき氷の人気店（11:00〜18:00頃営業、水曜休）。愛媛県産のイチゴや柑橘など旬の果物を使った自家製シロップのかき氷を味わえる。",
+        "address": "愛媛県松山市住吉2-8-1",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.863978,
+        "lng": 132.71697,
+        "qr_token": "shuin-mitsu-2",
+        "cover_image_url": "/images/mitsu/spot2.png",
+        "f7_fragment": "愛媛の旬の果物を使った自家製シロップと、ふんわり削った氷が評判の甘味処。",
+        "f7_full": "「田中戸」の果実味あふれる自家製シロップのかき氷が、潮風が吹く三津浜のレトロな街歩きに瑞々しく爽やかな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "2d21f017-7762-4cea-8f40-0ed766032fec",
+        "next_spot_name": "舊濱田医院"
+      },
+      {
+        "id": "2d21f017-7762-4cea-8f40-0ed766032fec",
+        "name": "舊濱田医院",
+        "description": "大正十一年に建てられた旧産婦人科医院の擬洋風建築（外観見学自由、内部はイベント時等に公開）。淡いグリーンの下見板張りの外壁と円柱の玄関ポーチが、商港・三津浜の大正モダンを伝える。",
+        "address": "愛媛県松山市住吉2-2-20",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.863172,
+        "lng": 132.715604,
+        "qr_token": "shuin-mitsu-3",
+        "cover_image_url": "/images/mitsu/spot3.png",
+        "f7_fragment": "淡いグリーンの下見板張りと上げ下げ窓が美しい、大正十一年築の擬洋風医院建築。",
+        "f7_full": "「舊濱田医院」の瀟洒なパステルグリーンの洋館が、廻船問屋の町家とともに栄えた近代三津浜のハイカラな記憶を鮮やかに物語る。",
+        "is_final": false,
+        "next_spot_id": "d466e15c-d262-4bf6-86a2-ca3e238036dd",
+        "next_spot_name": "鯛メシ専門 鯛や"
+      },
+      {
+        "id": "d466e15c-d262-4bf6-86a2-ca3e238036dd",
+        "name": "鯛メシ専門 鯛や",
+        "description": "昭和四年築の町家（国登録有形文化財・森家住宅）で営業する松山鯛めし専門店（11:00〜14:30営業、火・水曜休）。天然真鯛を丸ごと米と炊き込んだ伝統の「三津の朝鯛メシ」を味わえる。",
+        "address": "愛媛県松山市三津1-3-21",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.865214,
+        "lng": 132.712286,
+        "qr_token": "shuin-mitsu-4",
+        "cover_image_url": "/images/mitsu/spot4.png",
+        "f7_fragment": "国登録有形文化財の町家・森家住宅で、炊き込みの「松山鯛めし」を供する専門店。",
+        "f7_full": "「鯛メシ専門 鯛や」の天然真鯛の旨みが染み渡る炊き込み鯛めしと歴史ある座敷が、湊町・三津浜が誇る食の伝統を堪能させてくれる。",
+        "is_final": false,
+        "next_spot_id": "9ec2c0df-d3da-41aa-8c16-f368e27f96a8",
+        "next_spot_name": "三津の渡し"
+      },
+      {
+        "id": "9ec2c0df-d3da-41aa-8c16-f368e27f96a8",
+        "name": "三津の渡し",
+        "description": "三津と対岸の港山（約80m）を結ぶ松山市道高浜2号線の無料渡船（7:00〜19:00運航、年中無休、乗船無料）。室町時代から500年以上にわたり地域の足として親しまれている港町の象徴。",
+        "address": "愛媛県松山市三津3丁目",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.867159,
+        "lng": 132.712758,
+        "qr_token": "shuin-mitsu-5",
+        "cover_image_url": "/images/mitsu/spot5.png",
+        "f7_fragment": "室町時代から五百年以上も港の両岸を結び続ける、松山市道の無料の渡し舟。",
+        "f7_full": "「三津の渡し」の小さな舟が穏やかな内港を行き交う夕暮れの風景が、歴史と人情が息づく湊町・三津浜を歩いた旅を温かく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
