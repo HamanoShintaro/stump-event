@@ -257,7 +257,9 @@ function buildGenreBoostersText(genre) {
 }
 
 function buildEyecatchPrompt(area, genre, retakeHint = '') {
-  const pureSubject = extractPureSubject(area.eyecatch_prompt || area.image_prompt);
+  const pureSubject = extractPureSubject(
+    area.eyecatch_prompt || area.image_prompt || area.illustration_prompt || area.visual_prompt || area.visual_Prompt
+  );
   const subjectText = pureSubject
     ? pureSubject
     : `Distinctive scenery and signature motifs of ${area.slug} in Japan: ${area.description || ''}`;
@@ -277,7 +279,9 @@ function buildEyecatchPrompt(area, genre, retakeHint = '') {
 
 function buildSpotPrompt(area, spot, spotIndex1Based, genre, retakeHint = '') {
   const shot = SPOT_SHOT_DIRECTIVES[(spotIndex1Based - 1) % SPOT_SHOT_DIRECTIVES.length];
-  const pureSpotSubject = extractPureSubject(spot.image_prompt);
+  const pureSpotSubject = extractPureSubject(
+    spot.image_prompt || spot.illustration_prompt || spot.visual_prompt || spot.visual_Prompt
+  );
 
   // pureSpotSubject が英語で記述されている場合は日本語混入（偽漢字誘発）を避けるため英語のまま使用する
   const contextLine = pureSpotSubject

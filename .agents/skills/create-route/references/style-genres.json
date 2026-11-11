@@ -225,17 +225,87 @@
         "anti_patterns": "Thin pen-and-ink outlines, transparent pale washes leaving white paper margins, flat dull lighting."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 4,
+        "runs": 6,
+        "avg_score": 9.5,
         "learned_boosters": [
-          "Paint entirely with opaque gouache brushstrokes and rich sunlit-to-shadow color temperature shifts, zero pen outlines"
+          "Paint entirely with opaque gouache brushstrokes and rich sunlit-to-shadow color temperature shifts, zero pen outlines",
+          "Layer opaque sunlit strokes over cool foliage shadows to strengthen depth and luminous summer atmosphere",
+          "Layer opaque foliage strokes with warm sunlit highlights and cool blue-green shadows for luminous depth",
+          "Layer opaque, broken-color brushstrokes with saturated stained-glass sunlight across wood, linen, and stone"
         ],
         "learned_avoid": [
           "black or brown ink contour lines",
           "unpainted white border fade"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:17:31",
+            "slug": "ogi",
+            "target": "spot1.png",
+            "score": 9.6,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.4,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "不透明な厚塗りの筆致と鮮やかな緑・青、木漏れ日の暖かさが際立ち、白縁のない広角構図で社殿と参道と空を豊かに捉えているが、街路の文脈は控えめ。"
+          },
+          {
+            "at": "2026-11-11T11:17:54",
+            "slug": "ogi",
+            "target": "route-eyecatch.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.1,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "不透明な厚塗りの筆致と鮮烈な緑・青、陽光の温かさが余白なく広がり、雲と建築も美しく調和しているが、手前の菓子がやや大きく風景の広がりを遮っている。"
+          },
+          {
+            "at": "2026-11-11T11:18:38",
+            "slug": "ogi",
+            "target": "spot2.png",
+            "score": 9.4,
+            "genre_fidelity": 9.4,
+            "framing_and_shot": 8.9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "鮮やかな緑と青、不透明な筆致、木組み越しの庭園と床に伸びる格子影が美しく、四辺まで描き切られている一方、空間を貫く光芒はやや控えめです。"
+          },
+          {
+            "at": "2026-11-11T11:19:01",
+            "slug": "ogi",
+            "target": "spot3.png",
+            "score": 9.3,
+            "genre_fidelity": 9.3,
+            "framing_and_shot": 8.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "不透明な厚塗りと鮮烈な木漏れ日が全面を彩り、俯瞰の食卓も魅力的だが、グラスやカップの側面がやや見えすぎて厳密な真上視点からわずかに外れる。"
+          },
+          {
+            "at": "2026-11-11T11:19:33",
+            "slug": "ogi",
+            "target": "spot4.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "不透明な厚塗りの筆致と鮮烈な緑・青、午後の暖光が際立ち、羊羹から奥へ導く対角線と軒の構図も秀逸だが、低位置からの見上げ感はやや控えめ。"
+          },
+          {
+            "at": "2026-11-11T11:20:06",
+            "slug": "ogi",
+            "target": "spot5.png",
+            "score": 9.7,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "不透明な厚塗りの筆致と濃密な緑・青、石段を染める黄金色の夕光が全面に広がり、見上げる社殿が旅の余韻を鮮やかに伝えている。"
+          }
+        ]
       }
     },
     "katazome_chigirie_folk": {
@@ -249,17 +319,88 @@
         "anti_patterns": "Photorealistic perspective rendering, generic watercolor sketch, white empty border margins, text characters."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 6,
+        "runs": 6,
+        "avg_score": 9.3,
         "learned_boosters": [
-          "Highlight visible fibrous torn mulberry paper edges and bold stencil-cut folk patterns across colored dyed paper backgrounds"
+          "Repeat bold stencil motifs across layered, visibly torn dyed-paper shapes for rhythmic full-frame cohesion",
+          "Build silhouettes from visibly torn washi layers, pairing flat mineral-color fields with bold repeating stencil motifs",
+          "Build architectural planes from visibly torn washi shapes, unified by bold stencil motifs and saturated mineral colors",
+          "Layer fibrous torn-paper silhouettes with bold stencil patterns and saturated indigo, vermilion, and ochre",
+          "Emphasize irregular torn washi edges and overlapping paper layers within bold, flat stencil shapes"
         ],
         "learned_avoid": [
           "standard architectural perspective pen drawing",
           "kanji characters inside crests or banners"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T10:57:55",
+            "slug": "mizusawa",
+            "target": "route-eyecatch.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "濃密な朱・藍・黄土の配色と和紙のちぎり肌、反復する型染風の文様が四辺まで広がり、民藝らしい力強さがある一方、道の遠近感と蕎麦の細密さがやや写実寄りです。"
+          },
+          {
+            "at": "2026-11-11T10:58:03",
+            "slug": "mizusawa",
+            "target": "spot1.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "和紙のちぎり肌と藍・朱・黄金の型染文様が鮮やかで、余白なく店構え・街路・屋根・空を捉えているが、建築の遠近と細部を少し平面化すると民藝らしさがさらに際立つ。"
+          },
+          {
+            "at": "2026-11-11T10:59:04",
+            "slug": "mizusawa",
+            "target": "spot2.png",
+            "score": 8.8,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "濃藍・朱・黄土の民藝的配色と型染文様、全面に広がる建築空間と斜光が魅力的だが、遠近と陰影がやや写実寄りで和紙のちぎり縁は弱い。"
+          },
+          {
+            "at": "2026-11-11T11:00:11",
+            "slug": "mizusawa",
+            "target": "spot4.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍・朱・黄土の濃密な型染文様と和紙のちぎり肌が際立ち、余白のない画面に低位置からの軒と石畳の対角線、暖かな午後光が映えるが、建築の立体描写はやや写実寄り。"
+          },
+          {
+            "at": "2026-11-11T11:00:31",
+            "slug": "mizusawa",
+            "target": "spot3.png",
+            "score": 9.4,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 8.8,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "和紙の繊維とちぎり縁、藍・朱・黄土の型染文様が画面いっぱいに映え、真俯瞰の茶器と湯気も明快ですが、菓子の側面にはやや斜視が残ります。"
+          },
+          {
+            "at": "2026-11-11T11:04:11",
+            "slug": "mizusawa",
+            "target": "spot5.png",
+            "score": 9.5,
+            "genre_fidelity": 9,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "濃密な民藝色と型染文様が四辺まで広がり、夕映えの社殿と石段が旅の余韻を伝える一方、ちぎり紙の毛羽立つ輪郭はやや控えめです。"
+          }
+        ]
       }
     },
     "cinematic_golden_hour": {
@@ -321,17 +462,86 @@
         "anti_patterns": "Sketchy brown pen lines, busy cluttered cartoon details, stark white vignette borders."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 3,
+        "runs": 6,
+        "avg_score": 8.98,
         "learned_boosters": [
-          "Use rich matte mineral azurite-blue and malachite-green planes with drifting golden mist and zero ink outlines"
+          "Use rich matte mineral azurite-blue and malachite-green planes with drifting golden mist and zero ink outlines",
+          "Layer matte mineral blues and greens with restrained gold mist to create depth without ink outlines",
+          "Layer granular azurite and malachite pigments beneath restrained gold mist, preserving matte surfaces and quiet tonal transitions"
         ],
         "learned_avoid": [
           "sketchbook pen outlines",
           "red artist hanko seal stamps or calligraphy"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:05:11",
+            "slug": "shimodate",
+            "target": "route-eyecatch.png",
+            "score": 9.2,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "群青と緑青の豊かな色彩、金泥を思わせる霞と静かな水面が日本画の静謐さを伝える一方、前景の壺と菓子はやや大きく風景の余韻を弱めています。"
+          },
+          {
+            "at": "2026-11-11T11:05:39",
+            "slug": "shimodate",
+            "target": "spot1.png",
+            "score": 8.8,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "群青と緑青の粒状感、金泥を思わせる光、余白のない街並みの広角構図が美しく、店内の細密描写を少し抑えると日本画らしい静謐さがさらに深まります。"
+          },
+          {
+            "at": "2026-11-11T11:06:06",
+            "slug": "shimodate",
+            "target": "spot2.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "群青と緑青に金色の光が重なる岩絵具調の静謐さ、梁と窓が生む奥行きと長い影が秀逸ですが、床の反射はやや光沢が強めです。"
+          },
+          {
+            "at": "2026-11-11T11:07:08",
+            "slug": "shimodate",
+            "target": "spot4.png",
+            "score": 8.8,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "岩絵具調の群青と緑、午後の金色光、低い視点から梁へ続く奥行きが魅力的だが、料理の細密描写と強い木部の陰影が日本画らしい静謐さをやや弱めている。"
+          },
+          {
+            "at": "2026-11-11T11:08:04",
+            "slug": "shimodate",
+            "target": "spot3.png",
+            "score": 8.8,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "群青・緑青の粒状感と淡い金泥が静謐な日本画らしさを生み、余白なしの俯瞰構図も良好ですが、上部の瓦状構造に見える側面が厳密な真上視点をやや弱めています。"
+          },
+          {
+            "at": "2026-11-11T11:08:04",
+            "slug": "shimodate",
+            "target": "spot5.png",
+            "score": 8.9,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "岩絵具を思わせる青緑の粒状感と金色の夕光、余白のない神社の遠景が美しい一方、絵馬の鮮やかな反復と細密描写が日本画らしい静謐さをやや弱めています。"
+          }
+        ]
       }
     },
     "fountain_pen_sketchbook": {
@@ -369,17 +579,86 @@
         "anti_patterns": "Thin watercolor washes, pen outlines, flat vector smoothness, white paper borders."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 3,
+        "runs": 6,
+        "avg_score": 9.32,
         "learned_boosters": [
-          "Emphasize tactile palette-knife oil paint ridges and bold warm-versus-cool color impasto from edge to edge"
+          "Emphasize tactile palette-knife oil paint ridges and bold warm-versus-cool color impasto from edge to edge",
+          "Build architecture and reflections from broad palette-knife planes, reserving raised paint highlights for focal areas",
+          "Carry thick, directional palette-knife ridges through sky, water, and architecture while preserving distinct material textures"
         ],
         "learned_avoid": [
           "pen linework or watery washes",
           "picture frame mouldings around canvas"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:13:46",
+            "slug": "yamato-koriyama",
+            "target": "route-eyecatch.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "全面を覆う厚塗りとナイフ状の筆致、鮮烈な青と朱の対比が目を引く一方、建物の細部はやや細密で大きな明暗の塊が弱まっています。"
+          },
+          {
+            "at": "2026-11-11T11:14:08",
+            "slug": "yamato-koriyama",
+            "target": "spot1.png",
+            "score": 9.6,
+            "genre_fidelity": 9.7,
+            "framing_and_shot": 9.4,
+            "cleanliness": 9.8,
+            "retake_improved": false,
+            "note": "空から石畳まで厚塗りの絵具とナイフ状の筆致が鮮やかに貫かれ、建物・街路・屋根・空を収めた余白のない広角構図も良好だが、細部にはやや細かな描き込みが残る。"
+          },
+          {
+            "at": "2026-11-11T11:15:17",
+            "slug": "yamato-koriyama",
+            "target": "spot2.png",
+            "score": 9.2,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "厚塗りの絵具とナイフ状の筆致、朱色と青紫の豊かな対比が建築の奥行きと長い影を際立たせているが、空間を横切る光芒はやや控えめ。"
+          },
+          {
+            "at": "2026-11-11T11:15:26",
+            "slug": "yamato-koriyama",
+            "target": "spot3.png",
+            "score": 8.8,
+            "genre_fidelity": 9,
+            "framing_and_shot": 7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "厚塗りの絵肌と藍・橙の鮮烈な対比、余白のない構図は秀逸ですが、桶の側面や室内の遠近感が強く、厳密な真上90度の俯瞰からやや逸れています。"
+          },
+          {
+            "at": "2026-11-11T11:16:26",
+            "slug": "yamato-koriyama",
+            "target": "spot4.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "厚塗りの絵肌と鮮烈な暖冷対比、軒や石壁が導く低位置の対角構図が秀逸で、奥の城だけがやや強く視線を奪う。"
+          },
+          {
+            "at": "2026-11-11T11:16:31",
+            "slug": "yamato-koriyama",
+            "target": "spot5.png",
+            "score": 9.6,
+            "genre_fidelity": 9.4,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "画面全域の厚塗りとパレットナイフ状の色面、石垣と水面を染める黄金の夕照が旅の終幕を鮮やかに伝える一方、橋の細部はやや整然としています。"
+          }
+        ]
       }
     },
     "pastel_chalk_morning": {
@@ -393,17 +672,88 @@
         "anti_patterns": "Hard black/brown ink outlines, stark white background cutout, glossy digital airbrush look."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 7,
+        "runs": 6,
+        "avg_score": 8.93,
         "learned_boosters": [
-          "Render with velvety chalk-pastel grain and soft colored-pencil layering on warm tinted paper without hard ink outlines"
+          "Balance peach highlights with cool lavender morning haze, preserving visible pastel grain and colored-pencil tooth",
+          "Layer visible chalk grain with delicate colored-pencil hatching; preserve warm paper texture through luminous morning shadows",
+          "Preserve visible paper tooth and use cool lavender shadows to balance luminous peach and gold pastel light",
+          "Layer velvety chalk scumbling with delicate colored-pencil grain, preserving warm paper tooth and luminous cool accents",
+          "Layer broken chalk strokes and fine colored-pencil grain over warm paper, preserving soft luminous edges"
         ],
         "learned_avoid": [
           "hard pen-and-ink outlines",
           "stark white oval border"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:09:23",
+            "slug": "iwasehama",
+            "target": "route-eyecatch.png",
+            "score": 9.3,
+            "genre_fidelity": 9.2,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "温かな紙目に重なる柔らかなパステルと色鉛筆の質感、朝光の拡散が美しく、画面全体に広がる構図も魅力的ですが、建物の輪郭を少し和らげると朝霧の詩情がさらに深まります。"
+          },
+          {
+            "at": "2026-11-11T11:10:32",
+            "slug": "iwasehama",
+            "target": "spot1.png",
+            "score": 9.1,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "温かな紙肌にパステルと色鉛筆の柔らかな質感が広がり、建物・街路・空を収めた構図も良好ですが、朝霧より夕景に寄った桃色の光がやや強めです。"
+          },
+          {
+            "at": "2026-11-11T11:10:42",
+            "slug": "iwasehama",
+            "target": "spot2.png",
+            "score": 9.2,
+            "genre_fidelity": 9.1,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "柔らかなパステルと色鉛筆の粒子感、梁と格子が導く奥行き、朝の光芒と長い影が美しく調和しているが、港側の霞を少し強めると朝霧の詩情がさらに深まる。"
+          },
+          {
+            "at": "2026-11-11T11:11:51",
+            "slug": "iwasehama",
+            "target": "spot4.png",
+            "score": 9.3,
+            "genre_fidelity": 9.3,
+            "framing_and_shot": 9.4,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "温かな紙地の粉状パステルと色鉛筆の質感が美しく、低い視点から梁と床が導く対角線の奥行きと午後の斜光も明確だが、全体の橙色を少し抑えると陰影の色彩がさらに際立つ。"
+          },
+          {
+            "at": "2026-11-11T11:12:31",
+            "slug": "iwasehama",
+            "target": "spot3.png",
+            "score": 7.7,
+            "genre_fidelity": 9,
+            "framing_and_shot": 5,
+            "cleanliness": 10,
+            "retake_improved": true,
+            "note": "温かな紙肌と柔らかなパステルの粒子、茶と器の彩りは魅力的ですが、器の側面や展望台模型が見える斜俯瞰で、必須の真上90度構図を満たしていません。"
+          },
+          {
+            "at": "2026-11-11T11:12:50",
+            "slug": "iwasehama",
+            "target": "spot5.png",
+            "score": 9,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "温かな紙目に重なるパステルと色鉛筆の柔らかな質感、夕映えの石畳と寺屋根が余韻を生む一方、前景の菓子が大きく景観の広がりはやや控えめです。"
+          }
+        ]
       }
     }
   }

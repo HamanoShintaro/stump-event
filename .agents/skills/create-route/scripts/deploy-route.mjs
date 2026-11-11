@@ -92,7 +92,7 @@ async function main() {
         choices: area.choices.map((c) => ({
           key: c.key,
           text: c.text,
-          description: c.description,
+          description: c.description || c.subtext || c.badge?.description || '',
           badge_code: c.badge?.code,
         })),
       }

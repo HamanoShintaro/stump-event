@@ -54080,5 +54080,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "f49942c8-a61f-4c22-8e47-963eeab89405",
+    "title": "なぜ小藩の城下町から知の巨人が生まれたのか",
+    "name": "なぜ小藩の城下町から知の巨人が生まれたのか",
+    "description": "伊達家一門・留守氏一万六千石の城下町として整備され、高野長英や後藤新平ら近代日本を動かした知の巨人を輩出した岩手県奥州市水沢。サワラの生垣が続く武家小路の静けさと、姥杉が聳える古社、石臼挽きの十割そばと老舗の郷土菓子が息づく街を歩く。",
+    "region": "水沢（奥州市）",
+    "area_name": "水沢（奥州市）",
+    "cover_image_url": "/images/mizusawa/route-eyecatch.png",
+    "imageUrl": "/images/mizusawa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "サワラの生垣が続く武家小路と偉人の志、石臼挽きの十割蕎麦に出会う水沢で、あなたの心を惹きつけるのはどの時間だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「菓子処 後藤屋」で手にした、くるみと黒蜜が香る銘菓「麦つき節」と「大風呂敷」",
+          "description": "商人の町・大町通りで受け継がれてきた素朴で優しいくるみ餅を手に取り、胆沢平野の豊かな実りと祝い事の文化に触れた。",
+          "badge_code": "mizusawa_gotoya_sweets"
+        },
+        {
+          "key": "B",
+          "text": "樹齢五百五十年を超える姥杉が聳え、火防祭の笛と太鼓を伝える「日高神社」",
+          "description": "源義家ゆかりの巨杉を見上げ、城下町に春を告げる日高火防祭のお囃子と重厚な重要文化財の本殿に心を打たれた。",
+          "badge_code": "mizusawa_hitaka_cedar"
+        },
+        {
+          "key": "C",
+          "text": "「旬彩そば酒房 瑳山」で味わった、石臼挽きの十割そばと更科そばの二色盛り",
+          "description": "岩手県産玄そばの野趣あふれる十割そばと透き通る更科そばを食べ比べ、寒暖差が育んだそばの豊かな香りに満たされた。",
+          "badge_code": "mizusawa_sazan_soba"
+        },
+        {
+          "key": "D",
+          "text": "サワラの生垣が続く「奥州市武家住宅資料館」と、偉人の足跡を辿る「後藤新平記念館」",
+          "description": "黒板塀と茅葺き屋根が残る吉小路の武家屋敷から後藤新平の記念館までを歩き、小さな城下町が育んだ知の系譜に感銘を受けた。",
+          "badge_code": "mizusawa_samurai_intellect"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2aca07bc-e2ca-4b87-8038-b53ff71bad0b",
+        "name": "旬彩そば酒房 瑳山",
+        "description": "水沢の寺小路にある手打ちそば処（11:30〜14:30・17:30〜22:00営業、日曜定休）。岩手県産玄そばを石臼で自家製粉した本格十割そばと更科そば、旬の天ぷらランチを味わえる。",
+        "address": "岩手県奥州市水沢寺小路32-1",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.142167,
+        "lng": 141.144117,
+        "qr_token": "shuin-mizusawa-1",
+        "cover_image_url": "/images/mizusawa/spot1.png",
+        "f7_fragment": "岩手県産の玄そばを店内の石臼で挽き、つなぎを使わない香り高い十割そばと更科そばを供する名店。",
+        "f7_full": "「旬彩そば酒房 瑳山」の瑞々しい十割そばと揚げたての天ぷらが、昼夜の寒暖差が育む奥州のそばの滋味を真っ直ぐに届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d61bf945-7f01-405d-8909-c0b44b88d72c",
+        "next_spot_name": "菓子処 後藤屋 大町本店"
+      },
+      {
+        "id": "d61bf945-7f01-405d-8909-c0b44b88d72c",
+        "name": "菓子処 後藤屋 大町本店",
+        "description": "水沢の大町通りに暖簾を掲げる昭和二十年創業の老舗菓子舗（8:30〜17:00営業、無休）。くるみ餅にきな粉と黒蜜を添える銘菓「麦つき節」や三色団子を包んだ「大風呂敷」など、奥州の風土に根差した和菓子をお土産に購入できる。",
+        "address": "岩手県奥州市水沢大町78",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.143111,
+        "lng": 141.142186,
+        "qr_token": "shuin-mizusawa-2",
+        "cover_image_url": "/images/mizusawa/spot2.png",
+        "f7_fragment": "商人の町・大町通りで八十余年暖簾を守り、くるみと黒蜜の「麦つき節」や「大風呂敷」を伝える老舗。",
+        "f7_full": "「菓子処 後藤屋 大町本店」に並ぶ素朴で滋味深い郷土菓子が、胆沢扇状地の豊かな実りと城下町の暮らしの温もりを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4caf01f0-acf0-4166-8809-8cf016003ff3",
+        "next_spot_name": "後藤新平記念館"
+      },
+      {
+        "id": "4caf01f0-acf0-4166-8809-8cf016003ff3",
+        "name": "後藤新平記念館",
+        "description": "水沢城跡近くの大手町に建つ記念館（9:00〜16:30開館、月曜・祝日の翌日・年末年始休）。医師・台湾総督府民政長官・東京市長などを歴任し近代都市計画の基礎を築いた後藤新平の生涯と遺品を展示する。",
+        "address": "岩手県奥州市水沢大手町4丁目1",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.144989,
+        "lng": 141.140452,
+        "qr_token": "shuin-mizusawa-3",
+        "cover_image_url": "/images/mizusawa/spot3.png",
+        "f7_fragment": "水沢城下から近代日本の都市計画と公衆衛生を切り拓いた後藤新平の生涯と先見性を辿る記念館。",
+        "f7_full": "「後藤新平記念館」に遺された数々の都市計画図と直筆の書簡が、留守氏の小さな城下町が育んだ大きな志を静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "1f0df0b6-3256-4d2b-850a-c4aabaa55a9c",
+        "next_spot_name": "奥州市武家住宅資料館"
+      },
+      {
+        "id": "1f0df0b6-3256-4d2b-850a-c4aabaa55a9c",
+        "name": "奥州市武家住宅資料館",
+        "description": "武家町・吉小路に残る留守氏家臣・旧内田家住宅を保存公開する資料館（9:00〜16:30開館、月曜・祝日の翌日・年末年始休、入館無料）。茅葺きの主屋と黒板塀、サワラの生垣が江戸時代の武家屋敷の風情を伝える。",
+        "address": "岩手県奥州市水沢吉小路43",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.142916,
+        "lng": 141.138975,
+        "qr_token": "shuin-mizusawa-4",
+        "cover_image_url": "/images/mizusawa/spot4.png",
+        "f7_fragment": "黒板塀とサワラの生垣が連なる吉小路で、留守氏家臣の茅葺き武家屋敷を今に伝える資料館。",
+        "f7_full": "「奥州市武家住宅資料館」の端正な式台玄関と屋敷林の緑が、北国の厳しい自然とともに生きた水沢武士の凜とした日常を映し出す。",
+        "is_final": false,
+        "next_spot_id": "5f062914-c185-4e04-8acd-f93e4ca2b23d",
+        "next_spot_name": "日高神社"
+      },
+      {
+        "id": "5f062914-c185-4e04-8acd-f93e4ca2b23d",
+        "name": "日高神社",
+        "description": "前九年の役で源義家が戦勝を祈願したと伝わる古社（境内参拝自由）。国の重要文化財に指定された寛永年間の本殿と、樹齢五百五十年以上の「姥杉」が鎮座し、春の日高火防祭の舞台として知られる。",
+        "address": "岩手県奥州市水沢日高小路13",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.142799,
+        "lng": 141.132393,
+        "qr_token": "shuin-mizusawa-5",
+        "cover_image_url": "/images/mizusawa/spot5.png",
+        "f7_fragment": "源義家ゆかりの樹齢五百五十年以上の「姥杉」が聳え、重要文化財の本殿と日高火防祭の伝統を伝える古社。",
+        "f7_full": "「日高神社」の境内に立つ巨大な姥杉と精緻な彫刻の本殿が、水沢の城下町を巡った旅を荘厳な祈りの空気とともに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "866f8cb7-01f7-4734-83c1-ccebbfb53c57",
+    "title": "波山の葆光彩磁と蔵並みの商都・下館を歩く",
+    "name": "波山の葆光彩磁と蔵並みの商都・下館を歩く",
+    "description": "鬼怒川・勤行川の水運と街道が交わる北関東の商都として栄え、近代陶芸の父・板谷波山を生んだ茨城県筑西市・下館。ミニSLが走る老舗和菓子舗の「館最中」から、筑波山を望むしもだて美術館、板谷波山記念館の丸窯、登録有形文化財の見世蔵で味わう和食、総鎮守・羽黒神社までを歩く。",
+    "region": "下館（筑西市）",
+    "area_name": "下館（筑西市）",
+    "cover_image_url": "/images/shimodate/route-eyecatch.png",
+    "imageUrl": "/images/shimodate/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "板谷波山が磨いた葆光彩磁の光と黒漆喰の見世蔵が並ぶ商都・下館で、間近に触れてみたい手仕事はどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ミニSLがお釣りを運ぶ「館最中本舗 湖月庵」で求めた、ずっしり重い銘菓「館最中」",
+          "description": "鉄道の街ならではの楽しい仕掛けに微笑み、十勝産小豆の粒あんと求肥餅が詰まった伝統の最中をお土産に手に入れた。",
+          "badge_code": "shimodate_kogetsuan_monaka"
+        },
+        {
+          "key": "B",
+          "text": "「しもだて美術館」と「板谷波山記念館」で触れた、光を包む葆光彩磁と丸窯の情熱",
+          "description": "筑波山を望む美術館と東京・田端から移築された三方焚口倒炎式丸窯を見学し、近代陶芸の最高峰を生んだ波山の精神に胸を打たれた。",
+          "badge_code": "shimodate_hazan_celadon"
+        },
+        {
+          "key": "C",
+          "text": "登録有形文化財の見世蔵「食の蔵 荒為」で味わった、季節の懐石ランチと常陸秋そば",
+          "description": "黒漆喰の土蔵と大正モダンの建具が残る商家空間で、茨城の旬の食材と香り高い蕎麦をゆっくりと堪能した。",
+          "badge_code": "shimodate_aratame_kura"
+        },
+        {
+          "key": "D",
+          "text": "商都の絵馬殿と精緻な明治神輿が伝わる、下館の総鎮守「羽黒神社」",
+          "description": "下館城主・水谷公ゆかりの社殿と数々の奉納絵馬を見上げ、四百年以上にわたり商都を見守ってきた祈りの深さに触れた。",
+          "badge_code": "shimodate_haguro_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d981ce2e-60e6-4bdd-8f74-094eb9362fb4",
+        "name": "館最中本舗 湖月庵",
+        "description": "下館駅北口近くに暖簾を掲げる老舗和菓子店（8:30〜18:00営業、火曜定休）。十勝産小豆の粒あんと求肥餅が詰まった看板銘菓「館最中」や「きぬのまゆ玉」をお土産に購入でき、店内ではミニSLがお釣りを運ぶ演出でも親しまれている。",
+        "address": "茨城県筑西市丙202-13",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.30708,
+        "lng": 139.979587,
+        "qr_token": "shuin-shimodate-1",
+        "cover_image_url": "/images/shimodate/spot1.png",
+        "f7_fragment": "ミニSLが走る店内で、十勝産小豆と求肥餅がぎっしり詰まった銘菓「館最中」を商う老舗。",
+        "f7_full": "「館最中本舗 湖月庵」の香ばしい最中と遊び心あふれるミニSLが、3路線が交わる鉄道と商人の街・下館の旅を温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8478394e-e661-4371-80b0-b2a53dd0c294",
+        "next_spot_name": "しもだて美術館"
+      },
+      {
+        "id": "8478394e-e661-4371-80b0-b2a53dd0c294",
+        "name": "しもだて美術館",
+        "description": "しもだて地域交流センター「アルテリオ」3階にある美術館（10:00〜18:00開館・入館17:30まで、月曜・祝日の翌日・年末年始休）。筑波山を望むガラス張りのロビーを備え、板谷波山や森田茂など郷土ゆかりの芸術作品を展示する。",
+        "address": "茨城県筑西市丙372",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.3092,
+        "lng": 139.979245,
+        "qr_token": "shuin-shimodate-2",
+        "cover_image_url": "/images/shimodate/spot2.png",
+        "f7_fragment": "筑波山を一望するガラスのアトリウムを備え、板谷波山ら郷土の芸術家の名品を展示する美術館。",
+        "f7_full": "「しもだて美術館」の明るい展望ロビーから望む筑波山の稜線と優美な工芸作品が、下館が育んだ豊かな美意識を静かに語りかける。",
+        "is_final": false,
+        "next_spot_id": "58fc4df1-35c4-4f1b-831a-b4d4d6243f48",
+        "next_spot_name": "板谷波山記念館"
+      },
+      {
+        "id": "58fc4df1-35c4-4f1b-831a-b4d4d6243f48",
+        "name": "板谷波山記念館",
+        "description": "近代陶芸の父・板谷波山の生家跡に建つ記念館（10:00〜18:00開館・入館17:30まで、月曜・祝日の翌日・年末年始休）。東京・田端から移築された三方焚口倒炎式丸窯や遺愛の品、代表作の陶磁器を間近に見学できる。",
+        "address": "茨城県筑西市甲866-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.311374,
+        "lng": 139.979921,
+        "qr_token": "shuin-shimodate-3",
+        "cover_image_url": "/images/shimodate/spot3.png",
+        "f7_fragment": "近代陶芸初の文化勲章受章者・板谷波山の生家跡で、移築された丸窯と珠玉の彩磁を伝える記念館。",
+        "f7_full": "「板谷波山記念館」の赤い煉瓦の丸窯と柔らかな光を宿す陶磁器が、妥協なき創作を貫いた巨匠の情熱と故郷への深い愛を映し出す。",
+        "is_final": false,
+        "next_spot_id": "716f0187-907c-4ae0-8fc5-ebc14944b8f3",
+        "next_spot_name": "食の蔵 荒為"
+      },
+      {
+        "id": "716f0187-907c-4ae0-8fc5-ebc14944b8f3",
+        "name": "食の蔵 荒為",
+        "description": "幕末〜大正期の旧商家を改装した国登録有形文化財の日本料理店（11:30〜14:30・17:30〜22:00営業、月曜定休）。重厚な黒漆喰の見世蔵や大正モダンの座敷で、季節の懐石ランチや常陸秋そばを味わえる。",
+        "address": "茨城県筑西市甲929",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.310833,
+        "lng": 139.980833,
+        "qr_token": "shuin-shimodate-4",
+        "cover_image_url": "/images/shimodate/spot4.png",
+        "f7_fragment": "国登録有形文化財の黒漆喰の見世蔵と座敷で、茨城の旬彩ランチと常陸秋そばを味わう料理処。",
+        "f7_full": "「食の蔵 荒為」の磨き込まれた大黒柱と彩り豊かな和食膳が、木綿と穀物の商都として栄えた下館の粋なもてなしを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "abae1bf0-3ab6-463f-8413-b9e81d3af6a7",
+        "next_spot_name": "羽黒神社"
+      },
+      {
+        "id": "abae1bf0-3ab6-463f-8413-b9e81d3af6a7",
+        "name": "羽黒神社",
+        "description": "文明年間に下館城主・水谷勝氏が勧請したと伝わる下館の総鎮守（境内参拝自由）。江戸後期の奉納絵馬が並ぶ絵馬殿や明治の愛宕明神神輿が伝わり、夏の下館祇園祭の拠点として親しまれている。",
+        "address": "茨城県筑西市甲37",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 36.309804,
+        "lng": 139.978324,
+        "qr_token": "shuin-shimodate-5",
+        "cover_image_url": "/images/shimodate/spot5.png",
+        "f7_fragment": "下館城主・水谷公ゆかりの総鎮守として鎮座し、歴史ある大絵馬と神輿の伝統を守る古社。",
+        "f7_full": "「羽黒神社」の絵馬殿に掲げられた数々の奉納額と荘厳な社殿が、商都・下館の歴史と芸術を辿った散策を穏やかに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "92748207-7946-42af-8e68-872e9bc81256",
+    "title": "北前船が運んだ風と三角どらやきの港町・岩瀬へ",
+    "name": "北前船が運んだ風と三角どらやきの港町・岩瀬へ",
+    "description": "日本海を駆けた北前船の寄港地として栄え、千本格子の廻船問屋が軒を連ねる富山県富山市の港町・岩瀬。漁師カフェで味わう富山湾の白えびランチから、岩瀬カナル会館、常夜灯を模した富山港展望台、三十三畳の大広間と通り土間を誇る旧馬場家住宅、名物「三角どらやき」の大塚屋までを歩く。",
+    "region": "岩瀬浜（富山市）",
+    "area_name": "岩瀬浜（富山市）",
+    "cover_image_url": "/images/iwasehama/route-eyecatch.png",
+    "imageUrl": "/images/iwasehama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北前船の廻船問屋と富山湾の白えび、三角どらやきが息づく岩瀬で、旅の記憶に持ち帰りたい情景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "三十三畳の大広間と通り土間、巨木の梁組に圧倒される北前船主の邸宅「旧馬場家住宅」",
+          "description": "船大工の技が息づく高達の吹き抜けを見上げ、日本海の荒波を越えて富と文化を運んだ廻船問屋のスケールに胸を打たれた。",
+          "badge_code": "iwasehama_baba_residence"
+        },
+        {
+          "key": "B",
+          "text": "「kitchen＆cafe GAREGARE」で味わう、富山湾の宝石・白えびのランチ",
+          "description": "漁師が営む港のカフェで透き通るような白えびの甘みと香ばしい唐揚げを堪能し、富山湾の豊かな海の恵みに満たされた。",
+          "badge_code": "iwasehama_shiroebi_feast"
+        },
+        {
+          "key": "C",
+          "text": "「岩瀬カナル会館」の水辺と、富山湾と立山連峰を一望する「富山港展望台」",
+          "description": "ヨットが揺れる運河から常夜灯型の展望台へ登り、千石船が出入りした青い海と東岩瀬の瓦屋根の大パノラマに心が澄み渡った。",
+          "badge_code": "iwasehama_port_beacon"
+        },
+        {
+          "key": "D",
+          "text": "旧街道の老舗「大塚屋」で求めた、北前船の帆を思わせる名物「三角どらやき」",
+          "description": "薄くもっちりした皮で艶やかな粒あんを三角形に包んだ素朴な銘菓を手に取り、港町で愛され続ける優しい甘さに癒やされた。",
+          "badge_code": "iwasehama_otsukaya_dorayaki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "20d7a6e2-ab7f-46db-8076-aab9bf847747",
+        "name": "kitchen＆cafe GAREGARE",
+        "description": "岩瀬浜駅近くで地元の漁師が営むガレージカフェ（11:00〜17:00営業、月曜定休）。富山湾で水揚げされた新鮮な白えびを使った白えび丼や白えびバーガー、ピザなどのランチを味わえる。",
+        "address": "富山県富山市岩瀬天神町3",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.760806,
+        "lng": 137.232881,
+        "qr_token": "shuin-iwasehama-1",
+        "cover_image_url": "/images/iwasehama/spot1.png",
+        "f7_fragment": "岩瀬の漁師が営むガレージ空間で、富山湾の宝石・白えびを贅沢に使った丼やバーガーを味わうカフェ。",
+        "f7_full": "「kitchen＆cafe GAREGARE」の甘みあふれる白えび料理が、豊かな深海を抱く富山湾の港町・岩瀬の旅を鮮やかに幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "11a72b39-8154-4a58-842a-7a6b087cbdd8",
+        "next_spot_name": "岩瀬カナル会館"
+      },
+      {
+        "id": "11a72b39-8154-4a58-842a-7a6b087cbdd8",
+        "name": "岩瀬カナル会館",
+        "description": "富岩運河の終着点・岩瀬運河のほとりに建つ観光交流施設（9:30〜17:00開館、年末年始休）。ヨットハーバーに面した水辺の散策や、岩瀬・富山の特産品選びを楽しめる。",
+        "address": "富山県富山市岩瀬天神町48",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.760232,
+        "lng": 137.233415,
+        "qr_token": "shuin-iwasehama-2",
+        "cover_image_url": "/images/iwasehama/spot2.png",
+        "f7_fragment": "ヨットが揺れる岩瀬運河の終着点に建ち、水辺の開放的な眺望と港町の歴史を伝える会館。",
+        "f7_full": "「岩瀬カナル会館」のデッキから眺める穏やかな運河の水面が、海と街を繋いできた水の道の歴史を心地よい潮風とともに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d83f2de6-62d6-4f33-8b47-222ba6e9935e",
+        "next_spot_name": "富山港展望台"
+      },
+      {
+        "id": "d83f2de6-62d6-4f33-8b47-222ba6e9935e",
+        "name": "富山港展望台",
+        "description": "神通川河口近くの富山港岸壁に建つ高さ約20mの展望施設（9:00〜16:30開館、無休、無料）。江戸時代の常夜灯を模した白い塔の上から、富山湾や立山連峰、東岩瀬の町並みを一望できる。",
+        "address": "富山県富山市東岩瀬町海岸通り5",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.758133,
+        "lng": 137.227552,
+        "qr_token": "shuin-iwasehama-3",
+        "cover_image_url": "/images/iwasehama/spot3.png",
+        "f7_fragment": "北前船の常夜灯を模した白い展望塔から、富山湾の水平線と東岩瀬の瓦屋根を一望するビュースポット。",
+        "f7_full": "「富山港展望台」の最上階から見渡す海と山の大パノラマが、千石船が帆を張って出港していった江戸・明治の海のロマンを呼び覚ます。",
+        "is_final": false,
+        "next_spot_id": "59cfebcf-cf77-4612-80ce-a20337f158f0",
+        "next_spot_name": "旧馬場家住宅"
+      },
+      {
+        "id": "59cfebcf-cf77-4612-80ce-a20337f158f0",
+        "name": "旧馬場家住宅",
+        "description": "北前船廻船問屋筆頭・馬場家の旧宅を公開する国登録有形文化財（9:00〜17:00開館・入館16:30まで、年末年始休）。三十三畳の大広間や約30mの通り土間、船大工の技が光る高達の梁組を見学できる。",
+        "address": "富山県富山市東岩瀬町107-2",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.757099,
+        "lng": 137.228361,
+        "qr_token": "shuin-iwasehama-4",
+        "cover_image_url": "/images/iwasehama/spot4.png",
+        "f7_fragment": "北前船廻船問屋筆頭・馬場家の本宅として建てられ、三十三畳の大広間と通り土間、巨木の梁組を誇る建築。",
+        "f7_full": "「旧馬場家住宅」の吹き抜けを交差する重厚な丸太梁と静かな通り土間が、日本海交易で栄えた東岩瀬の黄金時代を今に物語る。",
+        "is_final": false,
+        "next_spot_id": "8ef9cdcf-8ba3-4dcd-8026-c7b589d08639",
+        "next_spot_name": "大塚屋"
+      },
+      {
+        "id": "8ef9cdcf-8ba3-4dcd-8026-c7b589d08639",
+        "name": "大塚屋",
+        "description": "東岩瀬の旧北国街道沿いに暖簾を掲げる老舗和菓子店（8:30〜17:30営業・日曜祝日は16:00まで、月曜定休）。薄くもっちりとした皮で北海道産小豆の粒あんを三角形に包んだ名物「三角どらやき」をお土産に購入できる。",
+        "address": "富山県富山市岩瀬大町152",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.757184,
+        "lng": 137.22888,
+        "qr_token": "shuin-iwasehama-5",
+        "cover_image_url": "/images/iwasehama/spot5.png",
+        "f7_fragment": "北前船の白い帆を思わせる三角形の薄皮で、風味豊かな小豆の粒あんを包む「三角どらやき」の老舗。",
+        "f7_full": "「大塚屋」の素朴で優しい「三角どらやき」の味わいが、北前船の風と潮騒の港町・岩瀬を歩いた旅を温かな余韻で包み込む。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4bd7b918-9b88-4510-85a1-4f53e86f6d7a",
+    "title": "金魚が泳ぐ城下町と秀長ゆかりの石垣を巡る",
+    "name": "金魚が泳ぐ城下町と秀長ゆかりの石垣を巡る",
+    "description": "豊臣秀長百万石・柳沢家十五万石の城下町として栄え、藩士の副業から日本有数の金魚の産地となった奈良県大和郡山市。電話ボックスの水槽に金魚が泳ぐ自家焙煎コーヒースタンドから、秀吉に献上された「御城之口餅」の本家菊屋、藍染商家の箱本館「紺屋」、金魚すくい道場のこちくや、逆さ地蔵が残る郡山城跡までを巡る。",
+    "region": "大和郡山（大和郡山市）",
+    "area_name": "大和郡山（大和郡山市）",
+    "cover_image_url": "/images/yamato-koriyama/route-eyecatch.png",
+    "imageUrl": "/images/yamato-koriyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "静かな藍染の町家と金魚が泳ぐ水路、秀長ゆかりの石垣が残る大和郡山で、今の心に深く響くのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「K COFFEE」で味わう、旧ガソリンスタンドの自家焙煎珈琲と金魚が泳ぐ水槽",
+          "description": "レトロな給油所の屋根の下でハンドドリップの香り高い珈琲を味わい、金魚の街ならではの遊び心に心が和んだ。",
+          "badge_code": "yamato_koriyama_kcoffee"
+        },
+        {
+          "key": "B",
+          "text": "天正創業の「本家菊屋 本店」で求めた、豊臣秀吉ゆかりの銘菓「御城之口餅」",
+          "description": "四百四十年受け継がれる青大豆きな粉の一口餅を手に取り、茶会の献上菓から始まった城下町の深い歴史を噛みしめた。",
+          "badge_code": "yamato_koriyama_kikuya_mochi"
+        },
+        {
+          "key": "C",
+          "text": "藍甕が残る「箱本館「紺屋」」と、金魚文化に触れる「おみやげ処 こちくや」",
+          "description": "水路が流れる紺屋町で江戸の藍染商家と金魚すくい道場をめぐり、職人の手仕事と城下町の粋な文化に触れた。",
+          "badge_code": "yamato_koriyama_konya_goldfish"
+        },
+        {
+          "key": "D",
+          "text": "逆さ地蔵の転用石を探し、天守台から大和平野を一望する「郡山城跡」",
+          "description": "豊臣秀長が築いた巨石の石垣に歴史の痕跡を見つけ、天守台展望施設から若草山や薬師寺まで見渡す絶景に胸がすく思いがした。",
+          "badge_code": "yamato_koriyama_castle_stone"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "381863dd-d999-4ff6-8339-155db247e23a",
+        "name": "K COFFEE",
+        "description": "近鉄郡山駅近くの柳町商店街にある自家焙煎コーヒースタンド（10:00〜17:00営業、水曜・木曜定休）。旧ガソリンスタンドを活かしたユニークな店舗で、金魚が泳ぐ電話ボックス型水槽を眺めながらハンドドリップコーヒーを味わえる。",
+        "address": "奈良県大和郡山市柳4丁目46",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.644247,
+        "lng": 135.78324,
+        "qr_token": "shuin-yamato-koriyama-1",
+        "cover_image_url": "/images/yamato-koriyama/spot1.png",
+        "f7_fragment": "旧ガソリンスタンドを活かした空間で、金魚の水槽を眺めながら自家焙煎珈琲を味わうスタンド。",
+        "f7_full": "「K COFFEE」の芳醇な珈琲の香りと電話ボックスを泳ぐ金魚の姿が、歴史と遊び心が交差する大和郡山の散策を軽やかに始めてくれる。",
+        "is_final": false,
+        "next_spot_id": "6d99f485-33e1-45c2-8cc3-bc6e0d1effb4",
+        "next_spot_name": "本家菊屋 本店"
+      },
+      {
+        "id": "6d99f485-33e1-45c2-8cc3-bc6e0d1effb4",
+        "name": "本家菊屋 本店",
+        "description": "天正年間創業の奈良県最古の和菓子舗（9:00〜18:30営業、元日休）。豊臣秀吉・秀長ゆかりの銘菓「御城之口餅」や栗菓子の「菊之寿」など、城下町伝統の和菓子をお土産に購入できる。",
+        "address": "奈良県大和郡山市柳1丁目11",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.648793,
+        "lng": 135.783247,
+        "qr_token": "shuin-yamato-koriyama-2",
+        "cover_image_url": "/images/yamato-koriyama/spot2.png",
+        "f7_fragment": "天正年間の創業以来、豊臣秀吉が称えた一口餅「御城之口餅」を四百四十年受け継ぐ奈良最古の菓子舗。",
+        "f7_full": "「本家菊屋 本店」の風格ある木造店舗と青大豆きな粉が香る御城之口餅が、百万石の城下町として栄えた天正の茶会の記憶を今に伝える。",
+        "is_final": false,
+        "next_spot_id": "fc7ffcea-dd0f-40e3-8e53-2b880a3aa9e0",
+        "next_spot_name": "箱本館「紺屋」"
+      },
+      {
+        "id": "fc7ffcea-dd0f-40e3-8e53-2b880a3aa9e0",
+        "name": "箱本館「紺屋」",
+        "description": "水路が流れる紺屋町の旧藍染商家を修復・公開する施設（9:00〜17:00開館、月曜・祝日の翌日・年末年始休、入館無料）。土間に並ぶ藍甕や、金魚に関する美術・工芸コレクションを見学できる。",
+        "address": "奈良県大和郡山市紺屋町19-1",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.647837,
+        "lng": 135.785193,
+        "qr_token": "shuin-yamato-koriyama-3",
+        "cover_image_url": "/images/yamato-koriyama/spot3.png",
+        "f7_fragment": "水路が流れる紺屋町の町家に藍甕の染場を残し、藍染と金魚コレクションを展示する文化施設。",
+        "f7_full": "「箱本館「紺屋」」の土間に埋め込まれた藍甕と風に揺れる藍染の布が、城下町の自治組織「箱本」が支えた職人の誇りを物語る。",
+        "is_final": false,
+        "next_spot_id": "cea9ffa6-68d7-4cc0-8d23-4625b49fe3d4",
+        "next_spot_name": "おみやげ処 こちくや"
+      },
+      {
+        "id": "cea9ffa6-68d7-4cc0-8d23-4625b49fe3d4",
+        "name": "おみやげ処 こちくや",
+        "description": "紺屋町通りにある金魚グッズ・特産品のお土産店（9:00〜18:00営業・冬季は17:00まで、無休）。一年中本格的な金魚すくいが体験できる「金魚すくい道場」を併設している。",
+        "address": "奈良県大和郡山市紺屋町23-1",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.647819,
+        "lng": 135.784547,
+        "qr_token": "shuin-yamato-koriyama-4",
+        "cover_image_url": "/images/yamato-koriyama/spot4.png",
+        "f7_fragment": "金魚モチーフの多彩な土産物が並び、全国大会仕様の「金魚すくい道場」を併設する紺屋町の人気店。",
+        "f7_full": "「おみやげ処 こちくや」の水槽を泳ぐ色鮮やかな金魚と番付表が、江戸の藩士の副業から街の誇りへと育った金魚文化の奥深さを伝える。",
+        "is_final": false,
+        "next_spot_id": "897cd687-de80-4ee5-866a-33249a090485",
+        "next_spot_name": "郡山城跡"
+      },
+      {
+        "id": "897cd687-de80-4ee5-866a-33249a090485",
+        "name": "郡山城跡",
+        "description": "豊臣秀長・柳沢吉里らが居城とした名城跡（散策自由）。「逆さ地蔵」などの転用石が組み込まれた石垣や復元された極楽橋・追手門、大和平野を一望する天守台展望施設を見学できる。",
+        "address": "奈良県大和郡山市城内町2-18",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.651654,
+        "lng": 135.779375,
+        "qr_token": "shuin-yamato-koriyama-5",
+        "cover_image_url": "/images/yamato-koriyama/spot5.png",
+        "f7_fragment": "逆さ地蔵の転用石を秘めた壮大な石垣と、大和平野を一望する天守台展望施設を備える名城跡。",
+        "f7_full": "「郡山城跡」の天守台から見渡す若草山と城下町の瓦屋根が、四百年の歴史と金魚の街・大和郡山を巡った旅を晴れやかに締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "800dca17-fd4f-4aeb-84fd-e29901d8aa15",
+    "title": "昔ようかんの砂糖衣が輝く小城の水の都を辿る",
+    "name": "昔ようかんの砂糖衣が輝く小城の水の都を辿る",
+    "description": "天山山系の清冽な名水と小城鍋島七万三千石の茶の湯文化が出会い、二十軒以上の羊羹舗が軒を連ねる佐賀県小城市。藩祖を祀る岡山神社と名園・小城公園から、レトロ喫茶の洋食ランチ、登録有形文化財の村岡総本舗 羊羹資料館、百五十三段の石段が伸びる須賀神社までを辿る。",
+    "region": "小城（小城市）",
+    "area_name": "小城（小城市）",
+    "cover_image_url": "/images/ogi/route-eyecatch.png",
+    "imageUrl": "/images/ogi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人を誘って名水と昔ようかんの街・小城を歩くなら、真っ先に案内してあげたい場所はどこからにしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "藩祖ゆかりの「岡山神社」と、樹齢三百五十年の大角槙が佇む名園「小城公園」",
+          "description": "鈴なりの木が揺れる神社から大名庭園・自楽園の池畔を歩き、文武両道の小城鍋島藩が育んだ風雅な空気に癒やされた。",
+          "badge_code": "ogi_park_daimyo_garden"
+        },
+        {
+          "key": "B",
+          "text": "「カフェサロン ルージュ・エ・ノアール」で味わう、オムライスと羊羹パフェの喫茶時間",
+          "description": "ステンドグラスが灯る昭和レトロな空間で洋食ランチとサイフォン珈琲を堪能し、城下町の温かな日常に浸った。",
+          "badge_code": "ogi_rouge_noir_parfait"
+        },
+        {
+          "key": "C",
+          "text": "「村岡総本舗 小城本店・羊羹資料館」で出会う、シャリッと甘い伝統の「特製切り羊羹」",
+          "description": "昭和初期の擬洋風建築でシュガーロードと名水の歴史を学び、表面の砂糖衣が結晶化した昔ようかんの食感に感動した。",
+          "badge_code": "ogi_muraoka_mukashi_yokan"
+        },
+        {
+          "key": "D",
+          "text": "小城羊羹発祥の門前から百五十三段の石段を登り、佐賀平野を見渡す「須賀神社」",
+          "description": "一直線に空へ伸びる石段を登り切り、朱色の欄干越しに広がる城下町と田園の爽快なパノラマに胸がすく思いがした。",
+          "badge_code": "ogi_suga_stone_steps"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1c7c9bb9-6fb9-408e-8c41-012b89a2ed36",
+        "name": "岡山神社",
+        "description": "小城公園内に鎮座し、小城藩初代藩主・鍋島元茂と二代・直能を祀る神社（境内参拝自由）。文武両道の名君として慕われた藩祖の遺徳を伝え、境内には願掛けの鈴が結ばれた「鈴なりの木」が立つ。",
+        "address": "佐賀県小城市小城町185-1",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.28888,
+        "lng": 130.19668,
+        "qr_token": "shuin-ogi-1",
+        "cover_image_url": "/images/ogi/spot1.png",
+        "f7_fragment": "小城鍋島藩の初代・元茂と二代・直能を祀り、「鈴なりの木」が参拝者を迎える城下町の社。",
+        "f7_full": "「岡山神社」の静かな社殿と風に鳴る鈴の音が、剣術と和歌・茶の湯を愛した小城藩七万三千石の歴史へと誘ってくれる。",
+        "is_final": false,
+        "next_spot_id": "2ec11005-4de3-46f9-81f4-47a22e303b83",
+        "next_spot_name": "小城公園"
+      },
+      {
+        "id": "2ec11005-4de3-46f9-81f4-47a22e303b83",
+        "name": "小城公園",
+        "description": "小城藩初代・二代藩主が築いた名園「自楽園」を前身とする歴史公園（終日入園自由、無料）。美しい池泉と太鼓橋、樹齢350年を超える大角槙（チャボガヤ）の巨木が江戸初期の大名庭園の風格を伝える。",
+        "address": "佐賀県小城市小城町185",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.288629,
+        "lng": 130.195944,
+        "qr_token": "shuin-ogi-2",
+        "cover_image_url": "/images/ogi/spot2.png",
+        "f7_fragment": "小城藩主が造営した「自楽園」の池泉と、樹齢三百五十年の大角槙が佇む日本の歴史公園。",
+        "f7_full": "「小城公園」の水面に映る木々と大きく枝を広げた大角槙の姿が、京都の雅を取り入れた大名庭園の気品を今に伝えている。",
+        "is_final": false,
+        "next_spot_id": "61ecf023-7937-4d28-8e39-5344156afdf9",
+        "next_spot_name": "カフェサロン ルージュ・エ・ノアール"
+      },
+      {
+        "id": "61ecf023-7937-4d28-8e39-5344156afdf9",
+        "name": "カフェサロン ルージュ・エ・ノアール",
+        "description": "小城の城下町にある昭和レトロな老舗喫茶・洋食店（11:00〜23:00営業、不定休）。オムライスやハヤシライス、ご当地グルメ「マジェンバ」、小城羊羹を使った「羊羹パフェ」を味わえる。",
+        "address": "佐賀県小城市小城町252-2",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.293374,
+        "lng": 130.198822,
+        "qr_token": "shuin-ogi-3",
+        "cover_image_url": "/images/ogi/spot3.png",
+        "f7_fragment": "ステンドグラスが灯る昭和レトロな空間で、オムライスやマジェンバ、羊羹パフェを味わう老舗喫茶。",
+        "f7_full": "「カフェサロン ルージュ・エ・ノアール」の洋食ランチとサイフォン珈琲の香りが、城下町で長く愛される憩いの時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "0e167391-884b-4aef-85c3-1b44b066c1e0",
+        "next_spot_name": "村岡総本舗 小城本店・羊羹資料館"
+      },
+      {
+        "id": "0e167391-884b-4aef-85c3-1b44b066c1e0",
+        "name": "村岡総本舗 小城本店・羊羹資料館",
+        "description": "明治32年創業の老舗本店と、昭和16年建築の国登録有形文化財「羊羹資料館」（本店9:00〜18:00・資料館9:00〜17:00、無休、入館無料）。小城羊羹の歴史展示を見学し、表面が結晶化した伝統の「特製切り羊羹」を購入できる。",
+        "address": "佐賀県小城市小城町861",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.297329,
+        "lng": 130.200425,
+        "qr_token": "shuin-ogi-4",
+        "cover_image_url": "/images/ogi/spot4.png",
+        "f7_fragment": "昭和初期の擬洋風建築「羊羹資料館」を併設し、表面がシャリッと結晶化する伝統の切り羊羹を伝える老舗本店。",
+        "f7_full": "「村岡総本舗 小城本店・羊羹資料館」のレトロな洋館と竹皮包みの昔ようかんが、天山の名水と長崎街道が育んだ甘味の文化を物語る。",
+        "is_final": false,
+        "next_spot_id": "edf9baf4-89e5-4472-8297-18277899d3ee",
+        "next_spot_name": "須賀神社"
+      },
+      {
+        "id": "edf9baf4-89e5-4472-8297-18277899d3ee",
+        "name": "須賀神社",
+        "description": "千葉城跡の山麓に鎮座する古社（境内参拝自由）。小城羊羹発祥の地とされる門前から153段の石段が一直線に伸び、上部の境内から小城の城下町と佐賀平野を一望できる。",
+        "address": "佐賀県小城市小城町松尾3594",
+        "prefecture": "佐賀県",
+        "city": "",
+        "lat": 33.302706,
+        "lng": 130.205012,
+        "qr_token": "shuin-ogi-5",
+        "cover_image_url": "/images/ogi/spot5.png",
+        "f7_fragment": "小城羊羹発祥の門前から百五十三段の石段が一直線に伸び、城下町を一望する千葉氏ゆかりの古社。",
+        "f7_full": "「須賀神社」の石段の上から見渡す小城の街並みと天山山系の風が、名水と羊羹の城下町を辿った旅を清々しく締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
