@@ -25,12 +25,15 @@
         "anti_patterns": "Pale daytime brown-pen watercolor sketch, blank white margins around edges, photographic realism, fake kanji/text on lanterns or signs."
       },
       "self_improvement": {
-        "version": 2,
-        "runs": 6,
-        "avg_score": 9.42,
+        "version": 6,
+        "runs": 12,
+        "avg_score": 9.29,
         "learned_boosters": [
-          "Emphasize rich multi-block woodcut ink saturation and luminous amber lantern light against deep indigo dusk",
-          "Zoom tightly inside the woodblock image area itself edge-to-edge without any uncut collector washi margin or corner artist seal"
+          "Zoom tightly inside the woodblock image area itself edge-to-edge without any uncut collector washi margin or corner artist seal",
+          "Pair crisp carved keyblock contours with broad bokashi gradients and simplified, layered shadow shapes",
+          "Use crisp carved keyblock contours and broad bokashi gradients to distinguish woodblock printing from painterly texture",
+          "Balance crisp carved contours with broad ink planes and restrained bokashi gradients; reserve grain for subtle accents",
+          "Use carved architectural contours and restrained bokashi gradients to balance amber illumination against deep Prussian blue"
         ],
         "learned_avoid": [
           "pale washed-out beige background",
@@ -104,6 +107,72 @@
             "cleanliness": 9,
             "retake_improved": false,
             "note": "浄国寺石段から黒江の瓦屋根と湾を望む黄昏ぼかし。隅の落款防止ガードをv2に追加"
+          },
+          {
+            "at": "2026-11-11T11:44:12",
+            "slug": "chizu",
+            "target": "route-eyecatch.png",
+            "score": 9.2,
+            "genre_fidelity": 8.5,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "深い藍の宵空と琥珀色の灯り、濡れた石畳の奥行きが美しい全面構図で、木版画らしい輪郭線と色面の整理を強めるとさらによい。"
+          },
+          {
+            "at": "2026-11-11T11:44:25",
+            "slug": "chizu",
+            "target": "spot1.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "深い藍の宵空と店内の琥珀色、雨の路面の反射が新版画らしい情緒を生み、余白のない広角構図も適切だが、木版特有の彫線と平面的な色面はさらに強められる。"
+          },
+          {
+            "at": "2026-11-11T11:45:37",
+            "slug": "chizu",
+            "target": "spot2.png",
+            "score": 8.9,
+            "genre_fidelity": 8,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍と琥珀の対比、梁越しの庭への奥行き、長い斜光の影が美しい一方、木材の細密な質感はやや絵画的で、木版特有の輪郭と色面を強める余地があります。"
+          },
+          {
+            "at": "2026-11-11T11:45:50",
+            "slug": "chizu",
+            "target": "spot3.png",
+            "score": 9,
+            "genre_fidelity": 8.5,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍と琥珀色の対比、木版らしい輪郭と質感、余白のない真俯瞰構図が鮮やかだが、細かな斑点状の描写がやや強く、版面の色面とぼかしの美しさを弱めている。"
+          },
+          {
+            "at": "2026-11-11T11:46:52",
+            "slug": "chizu",
+            "target": "spot4.png",
+            "score": 9.1,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍色の宵空と琥珀色の灯り、木版画らしい線と質感、低視点の斜め構図が鮮やかで余白や文字もない一方、指定の暖かな午後光より夜景に寄っています。"
+          },
+          {
+            "at": "2026-11-11T11:47:23",
+            "slug": "chizu",
+            "target": "spot5.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 10,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "藍色の宵空と琥珀色の灯り、石段を見上げる余白のない構図が旅の余韻を美しく伝える一方、細部の質感はやや絵画的で木版の彫線と色面を強める余地があります。"
           }
         ]
       }
@@ -119,13 +188,15 @@
         "anti_patterns": "Fussy thin pen cross-hatching, pale watercolor washes, blank white vignette borders, ANY poster title text or typography."
       },
       "self_improvement": {
-        "version": 3,
-        "runs": 7,
-        "avg_score": 9.4,
+        "version": 7,
+        "runs": 13,
+        "avg_score": 9.46,
         "learned_boosters": [
-          "Use bold unoutlined flat screenprint color shapes with subtle risograph grain texture rather than fine ink linework",
-          "Bleed ink colors completely off all four canvas edges with zero outer poster trim, and simplify complex timber ceilings into flat screenprint shadow blocks",
-          "Use oversized foreground silhouettes and a receding path to anchor bold architectural color planes"
+          "Use oversized foreground silhouettes and a receding path to anchor bold architectural color planes",
+          "Use bold foreground silhouettes and converging architectural diagonals to lead toward a simplified iconic landscape",
+          "Use overlapping architectural silhouettes and diagonal light shafts to build depth within flat, limited-color print planes",
+          "Layer tactile ink grain over bold, limited-color planes while preserving strong silhouette hierarchy",
+          "Use converging architectural shapes and long graphic shadows to organize saturated sunset color planes"
         ],
         "learned_avoid": [
           "poster headline text or typography banners",
@@ -210,6 +281,72 @@
             "cleanliness": 10,
             "retake_improved": false,
             "note": "朱色の陶器と煙突、青緑の空、黄土色の植生が版画的な色面と紙の粒子感で鮮やかにまとまり、四辺まで余白なく伸びる構図も力強い一方、屋根瓦の細部はやや密です。"
+          },
+          {
+            "at": "2026-11-11T11:35:20",
+            "slug": "shimada",
+            "target": "spot1.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "大胆な青緑・朱・黄の色面と刷りの粒子感がヴィンテージ鉄道ポスターらしく、余白なく店構え・街路・空を捉えているが、屋根の右端はやや窮屈。"
+          },
+          {
+            "at": "2026-11-11T11:35:21",
+            "slug": "shimada",
+            "target": "route-eyecatch.png",
+            "score": 9.6,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱色と青緑の大胆な色面、ざらついた印刷質感、前景の茶器から橋と富士山へ導く構図が鮮烈で、細かな植生描写がやや多いもののジャンル適合性は非常に高い。"
+          },
+          {
+            "at": "2026-11-11T11:36:29",
+            "slug": "shimada",
+            "target": "spot2.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱色と青緑・山吹色の大胆な色面と版画粒子が鮮明で、四辺いっぱいの境内に社殿の奥行き、斜光と長い影が美しく成立している。"
+          },
+          {
+            "at": "2026-11-11T11:37:27",
+            "slug": "shimada",
+            "target": "spot4.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.1,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "鮮やかな朱色と青緑の色面、版画的な粒子感がレトロポスターらしく、余白のない画面で梁と手すりの対角線が茶の甘味から橋へ奥行きを導く一方、低い視点の迫力はやや控えめです。"
+          },
+          {
+            "at": "2026-11-11T11:37:29",
+            "slug": "shimada",
+            "target": "spot3.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.2,
+            "cleanliness": 9.8,
+            "retake_improved": true,
+            "note": "朱色・深緑・黄金色の大胆な色面と版画粒子が鮮明なレトロ感を生み、余白のない真俯瞰と文字のない構成も的確ですが、盆の整列がやや図鑑的です。"
+          },
+          {
+            "at": "2026-11-11T11:38:48",
+            "slug": "shimada",
+            "target": "spot5.png",
+            "score": 9.6,
+            "genre_fidelity": 9.6,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "大胆な朱・黄金・青緑の色面と紙の粒状感がヴィンテージ鉄道ポスターらしさを鮮明に伝え、余白のない橋の遠近構図と夕映えが旅の余韻を美しく演出している。"
           }
         ]
       }
@@ -414,17 +551,88 @@
         "anti_patterns": "Flat midday lighting, pale washed-out colors, sepia ink outlines, white margins."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 6,
+        "runs": 6,
+        "avg_score": 9.6,
         "learned_boosters": [
-          "Maximize dramatic sunset rim-lighting and glowing violet-to-amber sky reflections across the full frame"
+          "Carry low sunset light across foreground paving, linking violet shadows with amber foliage rim light",
+          "Use architectural lattices to cast long directional shadows across reflective floors, balancing amber sunlight with violet shade",
+          "Cast long botanical shadows across tactile surfaces, balancing amber sunlight with violet shade and rim-lit steam",
+          "Align architectural leading lines with low sunlight to unite depth, elongated shadows, and glowing reflections",
+          "Carry low sunset backlight through architectural latticework to cast long shadows across a foreground path"
         ],
         "learned_avoid": [
           "flat overhead noon lighting",
           "white oval vignette fade"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:31:19",
+            "slug": "daishoji",
+            "target": "spot1.png",
+            "score": 9.7,
+            "genre_fidelity": 9.7,
+            "framing_and_shot": 9.4,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱金と紫の夕空、柳の縁光、石畳の長い影が映画的な情緒を生み、余白なく寺院の正面・屋根・街路を収めているが、右手前の石碑と柳が建物をやや遮っている。"
+          },
+          {
+            "at": "2026-11-11T11:31:26",
+            "slug": "daishoji",
+            "target": "route-eyecatch.png",
+            "score": 9.5,
+            "genre_fidelity": 9.5,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "低い夕陽と琥珀・紫の濃密な空、建築の縁光と水面反射が全面に広がり強い訴求力を持つ一方、前景の大皿が街路の主役感をやや弱めています。"
+          },
+          {
+            "at": "2026-11-11T11:32:35",
+            "slug": "daishoji",
+            "target": "spot2.png",
+            "score": 9.8,
+            "genre_fidelity": 10,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱金と紫の鮮烈な夕景、格子越しの長い影、梁と庭が生む奥行きが指定ジャンルを見事に体現しており、九谷焼も適切な大きさだが、空中の光芒はやや控えめ。"
+          },
+          {
+            "at": "2026-11-11T11:32:44",
+            "slug": "daishoji",
+            "target": "spot3.png",
+            "score": 9.3,
+            "genre_fidelity": 9.6,
+            "framing_and_shot": 8.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "琥珀色と紫の濃密な光、長い紅葉の影、湯気が映画的な夕景を際立たせ、全面裁ち落としも良好ですが、上端の窓まわりに斜め視点が残り、厳密な真俯瞰としてはわずかに弱いです。"
+          },
+          {
+            "at": "2026-11-11T11:33:47",
+            "slug": "daishoji",
+            "target": "spot4.png",
+            "score": 9.6,
+            "genre_fidelity": 9.8,
+            "framing_and_shot": 9.3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "琥珀と紫の鮮烈な逆光、長い影、軒と石畳の対角線が低い視点の奥行きを際立たせ、余白や文字もないが、夕景の演出が強く文化館固有の特徴はやや薄い。"
+          },
+          {
+            "at": "2026-11-11T11:34:01",
+            "slug": "daishoji",
+            "target": "spot5.png",
+            "score": 9.7,
+            "genre_fidelity": 9.8,
+            "framing_and_shot": 9.6,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "朱金の夕日と紫の空、格子越しの長い影が旅の余韻を鮮烈に描き、余白も文字もない全面構図が美しい一方、室内の暖色光はやや強めです。"
+          }
+        ]
       }
     },
     "pictorial_isometric_map": {
@@ -438,17 +646,86 @@
         "anti_patterns": "Eye-level street perspective, cramped tiny central vignette with huge empty white sides, map text/kanji labels or compass lettering."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 3,
+        "runs": 6,
+        "avg_score": 8.42,
         "learned_boosters": [
-          "Keep camera high at a 45-degree bird's-eye miniature diorama angle spanning broadly across warm antique buff paper with zero text labels"
+          "Keep camera high at a 45-degree bird's-eye miniature diorama angle spanning broadly across warm antique buff paper with zero text labels",
+          "Extend miniature architecture and landscaping toward canvas edges while preserving clear rooflines and tactile material contrasts",
+          "Use enclosing walls, layered rooftops, and miniature garden paths to establish a coherent elevated dollhouse panorama"
         ],
         "learned_avoid": [
           "map legend boxes, compass letters, or place-name text",
           "eye-level street perspective"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:24:47",
+            "slug": "tondabayashi",
+            "target": "spot1.png",
+            "score": 8.2,
+            "genre_fidelity": 7,
+            "framing_and_shot": 8,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "豊かな色彩で店構えと街並みが紙面いっぱいに広がり、文字の混入もありませんが、手前の店舗は視点が低く、45度俯瞰の箱庭感がやや弱めです。"
+          },
+          {
+            "at": "2026-11-11T11:25:18",
+            "slug": "tondabayashi",
+            "target": "route-eyecatch.png",
+            "score": 8.9,
+            "genre_fidelity": 8.5,
+            "framing_and_shot": 8.7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "温かな古紙いっぱいに水路・橋・町家が色豊かにつながる鳥瞰景観が魅力的だが、手前の建物が大きく、箱庭的な俯瞰の均一感はやや弱い。"
+          },
+          {
+            "at": "2026-11-11T11:26:20",
+            "slug": "tondabayashi",
+            "target": "spot2.png",
+            "score": 8.6,
+            "genre_fidelity": 9,
+            "framing_and_shot": 7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "画面いっぱいに広がる鳥瞰の屋敷と鮮やかな庭園は箱庭らしさに優れる一方、外観全景が主体で、中庭や室内の奥行きを照らす劇的な光芒と長い影が弱い。"
+          },
+          {
+            "at": "2026-11-11T11:27:43",
+            "slug": "tondabayashi",
+            "target": "spot3.png",
+            "score": 7.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 3,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "温かな紙地いっぱいに広がる箱庭建築と蕎麦の豊かな彩りは魅力的ですが、斜め俯瞰のため必須の真上90度フラットレイ構図を満たしていません。"
+          },
+          {
+            "at": "2026-11-11T11:27:56",
+            "slug": "tondabayashi",
+            "target": "spot4.png",
+            "score": 8.2,
+            "genre_fidelity": 8,
+            "framing_and_shot": 7,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "画面いっぱいに広がる寺町と濃密な暖色、軒下からの対角線構図が魅力的ですが、透視遠近が強く箱庭的な等角表現は弱めで、指定の低い視点にも届いていません。"
+          },
+          {
+            "at": "2026-11-11T11:30:10",
+            "slug": "tondabayashi",
+            "target": "spot5.png",
+            "score": 9.3,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "高い俯瞰から屋敷と庭園を画面いっぱいに描く箱庭構成と鮮やかな夕陽が秀逸で、厳密なアイソメトリックより遠近感は強いものの、旅の締めくくりにふさわしい余韻がある。"
+          }
+        ]
       }
     },
     "nihonga_mineral_gold": {
@@ -555,17 +832,87 @@
         "anti_patterns": "Stiff tiny centered oval vignette with blank 25% margins, dull brown-grey monochrome, handwritten notes or captions."
       },
       "self_improvement": {
-        "version": 1,
-        "runs": 0,
-        "avg_score": null,
+        "version": 4,
+        "runs": 6,
+        "avg_score": 9.23,
         "learned_boosters": [
-          "Use Prussian-blue fountain-pen ink with bold cobalt shadows and vibrant watercolor splashes reaching generously across the cotton paper"
+          "Use Prussian-blue fountain-pen ink with bold cobalt shadows and vibrant watercolor splashes reaching generously across the cotton paper",
+          "Vary Prussian-blue pen pressure and leave energetic construction strokes visible beneath transparent washes",
+          "Use Prussian-blue structural strokes and cast shadows to anchor luminous amber washes and exposed warm paper",
+          "Vary Prussian-blue line weight and let transparent sunset washes cross architectural contours for lively field-sketch energy"
         ],
         "learned_avoid": [
           "handwritten cursive notes or date signatures",
           "tight oval vignette centered in empty white space"
         ],
-        "history": []
+        "history": [
+          {
+            "at": "2026-11-11T11:39:58",
+            "slug": "sakawa",
+            "target": "route-eyecatch.png",
+            "score": 9.3,
+            "genre_fidelity": 8.8,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "大胆な斜めの建築遠近と鮮やかな青・朱の透明水彩が紙面いっぱいに映えますが、万年筆の線にもう少し強弱と走りがあるとジャンルの個性がさらに際立ちます。"
+          },
+          {
+            "at": "2026-11-11T11:40:16",
+            "slug": "sakawa",
+            "target": "spot1.png",
+            "score": 9.2,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "紺青の生きた線描と鮮やかな透明水彩が建築・街路・空を伸びやかに結び、紙の余白も自然だが、万年筆特有の線の強弱がさらに出ると一層魅力的。"
+          },
+          {
+            "at": "2026-11-11T11:41:03",
+            "slug": "sakawa",
+            "target": "spot2.png",
+            "score": 9.4,
+            "genre_fidelity": 9.3,
+            "framing_and_shot": 9.2,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "紺青の奔放な線と鮮やかな透明水彩が際立ち、梁と格子が導く奥行きや長い斜光の影も秀逸だが、手前の食卓がやや視線を集める。"
+          },
+          {
+            "at": "2026-11-11T11:42:01",
+            "slug": "sakawa",
+            "target": "spot3.png",
+            "score": 8.9,
+            "genre_fidelity": 9,
+            "framing_and_shot": 8.5,
+            "cleanliness": 9,
+            "retake_improved": false,
+            "note": "鮮やかな藍の筆線と朱・緑の透明水彩が紙の質感に映え、真上からの茶器や画材の配置も明快ですが、建築画と見開き帳面の矩形が重なり、やや分割画面風に見えます。"
+          },
+          {
+            "at": "2026-11-11T11:42:05",
+            "slug": "sakawa",
+            "target": "spot4.png",
+            "score": 9.2,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "深い青のペン線と鮮やかな透明水彩、軒下から庭へ伸びる低視点の対角構図が秀逸だが、木部の緻密な描写がやや勝ち、万年筆の奔放さは控えめ。"
+          },
+          {
+            "at": "2026-11-11T11:43:02",
+            "slug": "sakawa",
+            "target": "spot5.png",
+            "score": 9.4,
+            "genre_fidelity": 9,
+            "framing_and_shot": 9.5,
+            "cleanliness": 10,
+            "retake_improved": false,
+            "note": "プルシアンブルーの躍動的な線と鮮やかな透明水彩が紙面いっぱいに広がり、門と石畳を染める夕光が旅の余韻を美しく伝える一方、細部はやや描き込みが密です。"
+          }
+        ]
       }
     },
     "oil_palette_impasto": {

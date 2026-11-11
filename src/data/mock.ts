@@ -54730,5 +54730,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "45e50663-5acd-4b14-8143-63af7e7f2f05",
+    "title": "六筋七町の白壁と十割蕎麦の富田林寺内町を歩く",
+    "name": "六筋七町の白壁と十割蕎麦の富田林寺内町を歩く",
+    "description": "戦国期に興正寺別院を中心に築かれ、大阪府内で唯一「重要伝統的建造物群保存地区」に選定されている富田林寺内町。駅前のショコラ専門店「菓子工房 yamao」から、旧田中家住宅、古民家で味わう「麺坊 七福」の十割そば、富田林興正寺別院、最古の豪商建築・旧杉山家住宅までを歩く。",
+    "region": "富田林（富田林市）",
+    "area_name": "富田林（富田林市）",
+    "cover_image_url": "/images/tondabayashi/route-eyecatch.png",
+    "imageUrl": "/images/tondabayashi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白壁と虫籠窓が連なる六筋七町の富田林寺内町で、旅のしおりに挟んで持ち帰りたい情景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「菓子工房 yamao」で出会った、濃厚なショコラ菓子「クレーム・ガナッシュ」",
+          "description": "寺内町の玄関口で芳醇なチョコレートケーキや焼き菓子を手に取り、歴史の街に息づく現代の甘い手仕事に心が華やいだ。",
+          "badge_code": "tondabayashi_yamao_ganache"
+        },
+        {
+          "key": "B",
+          "text": "古民家の蕎麦処「麺坊 七福 寺内町店」で味わった、香り高い国産十割そば",
+          "description": "風情ある町家の空間で打ちたての十割そばと揚げたての天ぷらを堪能し、南河内の穏やかな昼下がりに満たされた。",
+          "badge_code": "tondabayashi_shichifuku_soba"
+        },
+        {
+          "key": "C",
+          "text": "虫籠窓の「旧田中家住宅」と、白壁の太鼓楼と山門が聳える「富田林興正寺別院」",
+          "description": "六筋七町の整然とした通りから別院の境内へ歩みを進め、四百六十年続く自治都市の誇りと祈りの深さに触れた。",
+          "badge_code": "tondabayashi_koshoji_drum_tower"
+        },
+        {
+          "key": "D",
+          "text": "江戸初期の大黒柱と明星派歌人の記憶が息づく、重要文化財「旧杉山家住宅」",
+          "description": "八人衆筆頭の造り酒屋の豪壮な土間と優美な書院座敷を見学し、豪商の暮らしと石上露子の文学ロマンに感銘を受けた。",
+          "badge_code": "tondabayashi_sugiyama_residence"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a26ed77a-4e35-43ac-843d-882ad76c2c76",
+        "name": "菓子工房 yamao ガナッシュ富田林駅前店",
+        "description": "近鉄富田林駅前の本町通りにある洋菓子・ショコラ専門店（10:30〜20:00・日祝は19:00まで営業、無休）。看板のチョコレートケーキ「クレーム・ガナッシュ」や寺内町ゆかりの焼き菓子をお土産に購入できる。",
+        "address": "大阪府富田林市本町19-15",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.504314,
+        "lng": 135.601671,
+        "qr_token": "shuin-tondabayashi-1",
+        "cover_image_url": "/images/tondabayashi/spot1.png",
+        "f7_fragment": "富田林駅前で看板の「クレーム・ガナッシュ」や寺内町ゆかりの焼き菓子を届ける洋菓子店。",
+        "f7_full": "「菓子工房 yamao ガナッシュ富田林駅前店」の芳醇なショコラの香りが、歴史ある富田林寺内町へと向かう足取りを軽やかに彩る。",
+        "is_final": false,
+        "next_spot_id": "55b764ba-c0d4-4610-83e4-417c5a40da5d",
+        "next_spot_name": "旧田中家住宅"
+      },
+      {
+        "id": "55b764ba-c0d4-4610-83e4-417c5a40da5d",
+        "name": "旧田中家住宅",
+        "description": "寺内町の北入口近くに建つ明治中期の町家（10:00〜17:00開館、月曜・祝日の翌日・年末年始休、入館無料）。虫籠窓や格子戸、座敷と坪庭など河内地方の伝統的な町家意匠を見学できる国登録有形文化財。",
+        "address": "大阪府富田林市本町7-2",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.502066,
+        "lng": 135.60036,
+        "qr_token": "shuin-tondabayashi-2",
+        "cover_image_url": "/images/tondabayashi/spot2.png",
+        "f7_fragment": "虫籠窓と格子戸が美しく並び、明治期の河内町家の意匠を今に伝える登録有形文化財。",
+        "f7_full": "「旧田中家住宅」の端正な格子戸と静かな座敷の佇まいが、六筋七町の町割りを守り続けてきた富田林寺内町の暮らしを映し出す。",
+        "is_final": false,
+        "next_spot_id": "4d586999-0d56-4595-8479-4fe75eb9bc48",
+        "next_spot_name": "麺坊 七福 寺内町店"
+      },
+      {
+        "id": "4d586999-0d56-4595-8479-4fe75eb9bc48",
+        "name": "麺坊 七福 寺内町店",
+        "description": "じないまち交流館の向かいにある古民家十割そば処（11:00〜14:00・土日祝は15:00まで営業、月曜定休）。国産そば粉100%で打つ香り高い十割そばや鴨つけ蕎麦、揚げたての天ぷらランチを味わえる。",
+        "address": "大阪府富田林市富田林町10-12",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.501374,
+        "lng": 135.602061,
+        "qr_token": "shuin-tondabayashi-3",
+        "cover_image_url": "/images/tondabayashi/spot3.png",
+        "f7_fragment": "寺内町の風情ある古民家で、国産そば粉百パーセントの香り高い十割そばと天ぷらを供する名店。",
+        "f7_full": "「麺坊 七福 寺内町店」の喉越し豊かな十割そばと香ばしい天ぷらが、江戸の面影を残す町家空間で滋味深い昼食のひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d5f6bfa8-70f5-4be1-8b8b-1b391924a59f",
+        "next_spot_name": "富田林興正寺別院"
+      },
+      {
+        "id": "d5f6bfa8-70f5-4be1-8b8b-1b391924a59f",
+        "name": "富田林興正寺別院",
+        "description": "永禄年間に創建され、富田林寺内町の中心となった浄土真宗興正派の別院（境内参拝自由）。伏見城の遺構と伝わる山門・御成門や白壁の太鼓楼、本堂など国の重要文化財に指定された伽藍が並ぶ。",
+        "address": "大阪府富田林市富田林町13-18",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.500105,
+        "lng": 135.602356,
+        "qr_token": "shuin-tondabayashi-4",
+        "cover_image_url": "/images/tondabayashi/spot4.png",
+        "f7_fragment": "伏見城ゆかりの山門と白壁の太鼓楼が並び、寺内町四百六十年の歴史を見守る中心寺院。",
+        "f7_full": "「富田林興正寺別院」の堂々たる山門と白壁の太鼓楼が、門徒と町衆が力を合わせて築き上げた自治都市・富田林の原点を静かに物語る。",
+        "is_final": false,
+        "next_spot_id": "15465c61-269c-42af-8381-604d93728c8b",
+        "next_spot_name": "重要文化財 旧杉山家住宅"
+      },
+      {
+        "id": "15465c61-269c-42af-8381-604d93728c8b",
+        "name": "重要文化財 旧杉山家住宅",
+        "description": "寺内町創設の八人衆筆頭・杉山家の旧宅を公開する国指定重要文化財（10:00〜17:00・冬季は16:00まで開館、月曜休）。江戸初期の土間と大黒柱、狩野派の襖絵が残る書院、歌人・石上露子ゆかりの座敷を見学できる。",
+        "address": "大阪府富田林市富田林町14-31",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.49967,
+        "lng": 135.601428,
+        "qr_token": "shuin-tondabayashi-5",
+        "cover_image_url": "/images/tondabayashi/spot5.png",
+        "f7_fragment": "寺内町最古の大規模町家として国の重要文化財に指定され、造り酒屋の栄華を伝える旧杉山家住宅。",
+        "f7_full": "「重要文化財 旧杉山家住宅」の豪壮な松梁と静謐な書院庭園が、戦国から近代まで受け継がれた富田林寺内町の旅を格調高く締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "92394d08-8952-490f-81bf-6a7b6f01a0a7",
+    "title": "古九谷の彩りと芭蕉が宿った大聖寺を訪ねる",
+    "name": "古九谷の彩りと芭蕉が宿った大聖寺を訪ねる",
+    "description": "加賀百万石の支藩・大聖寺藩十万石の城下町として栄え、古九谷の美と茶の湯文化が息づく石川県加賀市大聖寺。五百羅漢と芭蕉ゆかりの全昌寺から、石川県九谷焼美術館の名品、天保創業「梅田菓子舗」の大聖寺もなか、深田久弥山の文化館、老舗「料亭 山ぎし」の昼膳までを巡る。",
+    "region": "大聖寺（加賀市）",
+    "area_name": "大聖寺（加賀市）",
+    "cover_image_url": "/images/daishoji/route-eyecatch.png",
+    "imageUrl": "/images/daishoji/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "古九谷の五彩と松尾芭蕉の句、百名山を愛した文人の記憶が交差する大聖寺で、あなたの心を惹きつけるのはどの時間だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「石川県九谷焼美術館」で出会った、三百五十年の時を超える古九谷と五彩の輝き",
+          "description": "青・緑・黄・紫・紺青の絵具が織りなす豪放華麗な大皿と対峙し、大聖寺藩が育んだやきもの芸術の原点に圧倒された。",
+          "badge_code": "daishoji_kutani_five_colors"
+        },
+        {
+          "key": "B",
+          "text": "明治創業の「料亭 山ぎし」で味わう、九谷焼の器に映える加賀の旬彩昼膳",
+          "description": "百五十年続く老舗の座敷で季節の海の幸や伝統の食文化を堪能し、十万石の城下町が磨いたもてなしの粋に触れた。",
+          "badge_code": "daishoji_yamagishi_feast"
+        },
+        {
+          "key": "C",
+          "text": "天保創業の「梅田菓子舗」で求めた、自家製あんが詰まった銘菓「大聖寺もなか」",
+          "description": "旧街道沿いの老舗で香ばしい最中や季節の和菓子を手に取り、茶の湯の城下町で愛され続ける優しい甘みに心が和んだ。",
+          "badge_code": "daishoji_umeda_monaka"
+        },
+        {
+          "key": "D",
+          "text": "五百羅漢と芭蕉の句が残る「熊谷山 全昌寺」と、明治の織物工場「深田久弥山の文化館」",
+          "description": "極彩色の五百羅漢像と『おくのほそ道』の足跡から『日本百名山』の文化館までを歩き、大聖寺の深い精神文化に感銘を受けた。",
+          "badge_code": "daishoji_zenshoji_hyakumeizan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "03adba14-bca6-4c9e-8567-ba9853d5bef7",
+        "name": "熊谷山 全昌寺",
+        "description": "大聖寺藩ゆかりの曹洞宗の古刹（9:00〜17:00拝観、無休）。松尾芭蕉が『おくのほそ道』の旅で宿泊した寺として知られ、堂内を埋め尽くす極彩色の「五百羅漢像」517体を見学できる。",
+        "address": "石川県加賀市大聖寺神明町1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.301352,
+        "lng": 136.308706,
+        "qr_token": "shuin-daishoji-1",
+        "cover_image_url": "/images/daishoji/spot1.png",
+        "f7_fragment": "松尾芭蕉と曽良の別れの句碑が立ち、極彩色の五百羅漢像五百十七体が並ぶ曹洞宗の古刹。",
+        "f7_full": "「熊谷山 全昌寺」の静かな境内と表情豊かな五百羅漢像が、元禄の芭蕉の旅情と城下町の人々の篤い祈りを深く語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "1fd6493f-bb2d-423b-88e1-58cae4ded2ac",
+        "next_spot_name": "石川県九谷焼美術館"
+      },
+      {
+        "id": "1fd6493f-bb2d-423b-88e1-58cae4ded2ac",
+        "name": "石川県九谷焼美術館",
+        "description": "大聖寺駅近くに建つ日本で唯一の九谷焼専門美術館（9:00〜17:00開館・入館16:30まで、月曜休）。江戸初期の「古九谷」から再興九谷、現代の名品までを様式別の展示空間で鑑賞できる。",
+        "address": "石川県加賀市大聖寺地方町1-10-13",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.302787,
+        "lng": 136.310215,
+        "qr_token": "shuin-daishoji-2",
+        "cover_image_url": "/images/daishoji/spot2.png",
+        "f7_fragment": "大聖寺藩が育んだ豪放華麗な「古九谷」から現代の名品までを一堂に伝える専門美術館。",
+        "f7_full": "「石川県九谷焼美術館」に輝く五彩の大皿と優美な水庭の佇まいが、加賀の支藩・大聖寺が世界に誇る美の世界を鮮やかに映し出す。",
+        "is_final": false,
+        "next_spot_id": "ea45a1ce-4f2e-4627-83e0-8a891f0ccfaf",
+        "next_spot_name": "梅田菓子舗"
+      },
+      {
+        "id": "ea45a1ce-4f2e-4627-83e0-8a891f0ccfaf",
+        "name": "梅田菓子舗",
+        "description": "天保年間創業の老舗和菓子店（8:30〜18:00営業、木曜定休）。自家製あんをたっぷり詰めた銘菓「大聖寺もなか」や季節の生菓子、餅菓子など、城下町伝統の和菓子をお土産に購入できる。",
+        "address": "石川県加賀市大聖寺荒町16",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.304985,
+        "lng": 136.314333,
+        "qr_token": "shuin-daishoji-3",
+        "cover_image_url": "/images/daishoji/spot3.png",
+        "f7_fragment": "天保年間の創業以来、茶の湯の城下町で銘菓「大聖寺もなか」と季節の餅菓子を商う老舗。",
+        "f7_full": "「梅田菓子舗」の香ばしい「大聖寺もなか」と素朴な和菓子が、茶の湯を愛した大聖寺藩の雅な暮らしの記憶を今に届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "2726fc0c-a6e0-4090-8557-73fb5d8ba49b",
+        "next_spot_name": "深田久弥山の文化館"
+      },
+      {
+        "id": "2726fc0c-a6e0-4090-8557-73fb5d8ba49b",
+        "name": "深田久弥山の文化館",
+        "description": "明治43年建築の旧絹織物工場を活用した文化施設（9:00〜17:00開館・入館16:30まで、火曜休）。国登録有形文化財のノコギリ屋根建築の中で、『日本百名山』の著者・深田久弥の遺品や原稿を見学できる。",
+        "address": "石川県加賀市大聖寺番場町18-2",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.309674,
+        "lng": 136.310572,
+        "qr_token": "shuin-daishoji-4",
+        "cover_image_url": "/images/daishoji/spot4.png",
+        "f7_fragment": "明治期のノコギリ屋根の絹織物工場を活かし、『日本百名山』の深田久弥の足跡を伝える文化館。",
+        "f7_full": "「深田久弥山の文化館」の天窓から降り注ぐ柔らかな光と庭園の緑が、白山を仰ぎ見て育った文人の情熱を静かに語りかける。",
+        "is_final": false,
+        "next_spot_id": "dcc7b8a0-4835-4ad8-8837-1a6229abdde7",
+        "next_spot_name": "料亭 山ぎし"
+      },
+      {
+        "id": "dcc7b8a0-4835-4ad8-8837-1a6229abdde7",
+        "name": "料亭 山ぎし",
+        "description": "明治初期創業の老舗料亭・割烹（昼11:30〜14:00・L.O.13:15、夜17:30〜21:00営業、月曜・第3火曜定休）。日本海の旬の魚介や加賀野菜を使った昼膳、冬季の伝統「坂網鴨」料理を味わえる。",
+        "address": "石川県加賀市大聖寺東町2-24",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.305222,
+        "lng": 136.320275,
+        "qr_token": "shuin-daishoji-5",
+        "cover_image_url": "/images/daishoji/spot5.png",
+        "f7_fragment": "明治初期から百五十年暖簾を守り、加賀の旬彩料理と伝統の坂網鴨を伝える老舗料亭・割烹。",
+        "f7_full": "「料亭 山ぎし」の九谷焼の器に盛り付けられた季節の和食膳が、古九谷と文学の街・大聖寺を巡った旅を格調高く締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "05bcce61-bbea-4877-89c0-a5e6072b4284",
+    "title": "越すに越されぬ大井川の風と世界最長の木橋・島田へ",
+    "name": "越すに越されぬ大井川の風と世界最長の木橋・島田へ",
+    "description": "東海道最大の難所・大井川の宿場町「島田宿」として栄え、牧之原台地の深蒸し茶文化が息づく静岡県島田市。茶そばを味わう「蕎麦 雪月花」から、帯祭りの舞台・大井神社、明治創業の老舗「龍月堂」、煎茶ソフトの蓬莱橋897.4茶屋、全長897.4mの木造歩道橋「蓬莱橋」までを歩く。",
+    "region": "島田（島田市）",
+    "area_name": "島田（島田市）",
+    "cover_image_url": "/images/shimada/route-eyecatch.png",
+    "imageUrl": "/images/shimada/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大切な人と大井川を渡る蓬莱橋と深蒸し茶の香る宿場町・島田を歩くなら、最初に向かいたいのはどこからにしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「蕎麦 雪月花」で味わった、香り高い手打ち蕎麦と翠色の「茶そば」",
+          "description": "落ち着いた空間で打ちたての蕎麦と茶処・島田ならではの爽やかな茶そばを堪能し、東海道の旅の始まりに心が満たされた。",
+          "badge_code": "shimada_setsugekka_chasoba"
+        },
+        {
+          "key": "B",
+          "text": "日本三奇祭「島田大祭（帯祭り）」の伝統と三柱の女神を祀る「大井神社」",
+          "description": "大井川の水神を祀る荘厳な社殿に手を合わせ、金襴緞子の丸帯が宿場を彩る三百三十年の祭礼文化に思いを馳せた。",
+          "badge_code": "shimada_oi_shrine_obi"
+        },
+        {
+          "key": "C",
+          "text": "旧東海道の老舗「御菓子司 龍月堂」で求めた、宿場伝統の饅頭と和洋菓子",
+          "description": "明治三十九年創業の店舗で素朴な薄皮の饅頭や大福を手に取り、川留めの旅人たちを癒やした島田宿の甘味文化に触れた。",
+          "badge_code": "shimada_ryugetsudo_manju"
+        },
+        {
+          "key": "D",
+          "text": "「蓬莱橋897.4茶屋」の一服と、大井川を一文字に渡る897.4mの木造歩道橋「蓬莱橋」",
+          "description": "香り高い島田茶と煎茶ソフトを味わったあと、世界一長い木造歩道橋の上から大井川と牧之原台地の大パノラマを見渡した。",
+          "badge_code": "shimada_horaibashi_bridge"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "61abd8a0-63ce-464a-83f0-86717b67e9d5",
+        "name": "蕎麦 雪月花",
+        "description": "島田駅北口の本通にある手打ち蕎麦処（11:30〜14:30・17:30〜21:00営業、月曜・第3火曜定休）。本格的なせいろ蕎麦や緑茶を練り込んだ「茶そば」、季節の天ぷらランチを味わえる。",
+        "address": "静岡県島田市本通2-3-4",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.833043,
+        "lng": 138.174068,
+        "qr_token": "shuin-shimada-1",
+        "cover_image_url": "/images/shimada/spot1.png",
+        "f7_fragment": "茶処・島田ならではの爽やかな「茶そば」と本格手打ち蕎麦、揚げたての天ぷらを供する名店。",
+        "f7_full": "「蕎麦 雪月花」の香り高い手打ち蕎麦と翠色の茶そばが、大井川の川霧が育む銘茶と宿場町・島田の旅を心地よく幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "be81e3f5-3c47-4939-8508-ca1ae496ab55",
+        "next_spot_name": "大井神社"
+      },
+      {
+        "id": "be81e3f5-3c47-4939-8508-ca1ae496ab55",
+        "name": "大井神社",
+        "description": "大井川の水神など三柱の女神を祀る島田宿の総鎮守（境内参拝自由、社務所8:30〜17:00）。安産・子育て・旅の安全の守護神として信仰され、日本三奇祭「島田大祭（帯祭り）」の舞台として知られる。",
+        "address": "静岡県島田市大井町2316",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.833749,
+        "lng": 138.171432,
+        "qr_token": "shuin-shimada-2",
+        "cover_image_url": "/images/shimada/spot2.png",
+        "f7_fragment": "大井川の水神を祀り、日本三奇祭「島田大祭（帯祭り）」の伝統を三百三十年伝える古社。",
+        "f7_full": "「大井神社」の緑深い社叢と荘厳な社殿が、越すに越されぬ大井川の渡しとともに歩んできた島田宿の篤い祈りを今に伝えている。",
+        "is_final": false,
+        "next_spot_id": "deec1d22-aa29-4aec-8ac0-0b053c7f33d5",
+        "next_spot_name": "御菓子司 龍月堂"
+      },
+      {
+        "id": "deec1d22-aa29-4aec-8ac0-0b053c7f33d5",
+        "name": "御菓子司 龍月堂",
+        "description": "旧東海道（本通）沿いに店を構える明治39年創業の老舗菓子店（8:00〜19:00営業、火曜定休）。島田宿伝統の小まん頭や味噌まんじゅう、生クリーム大福などの和洋菓子をお土産に購入できる。",
+        "address": "静岡県島田市本通6-7847",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.83228,
+        "lng": 138.179485,
+        "qr_token": "shuin-shimada-3",
+        "cover_image_url": "/images/shimada/spot3.png",
+        "f7_fragment": "旧東海道島田宿で明治三十九年から暖簾を守り、伝統の小まん頭や和洋菓子を届ける老舗。",
+        "f7_full": "「御菓子司 龍月堂」の素朴な饅頭と彩り豊かな和洋菓子が、東海道を往来した旅人たちをもてなした宿場町の温もりを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "97ee0bd8-e321-43fe-80b1-7bcfec437e44",
+        "next_spot_name": "蓬莱橋897.4茶屋"
+      },
+      {
+        "id": "97ee0bd8-e321-43fe-80b1-7bcfec437e44",
+        "name": "蓬莱橋897.4茶屋",
+        "description": "蓬莱橋の左岸たもとにある観光物産処・カフェ（9:00〜17:00・冬季は16:00まで営業、元日休）。島田茶の試飲や「濃い煎茶ソフトクリーム」を味わい、地元特産品のお土産選びを楽しめる。",
+        "address": "静岡県島田市南2丁目地先",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.825507,
+        "lng": 138.184336,
+        "qr_token": "shuin-shimada-4",
+        "cover_image_url": "/images/shimada/spot4.png",
+        "f7_fragment": "蓬莱橋のたもとに佇み、香り高い島田茶や濃厚な「濃い煎茶ソフト」を味わえる茶屋。",
+        "f7_full": "「蓬莱橋897.4茶屋」で味わう鮮やかな緑の島田茶と煎茶ソフトが、大井川の川風とともに牧之原大茶園の豊かな恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "62d8619d-6f07-46a4-8009-96fd235ac792",
+        "next_spot_name": "蓬莱橋"
+      },
+      {
+        "id": "62d8619d-6f07-46a4-8009-96fd235ac792",
+        "name": "蓬莱橋",
+        "description": "大井川に架かる全長897.4mの「世界一長い木造歩道橋」（終日通行可能、番小屋8:30〜17:00、大人100円）。明治12年に茶畑開拓のため架けられ、「厄無し（897.4）・長生きの橋」として親しまれている。",
+        "address": "静岡県島田市南2丁目22-14",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.824966,
+        "lng": 138.184683,
+        "qr_token": "shuin-shimada-5",
+        "cover_image_url": "/images/shimada/spot5.png",
+        "f7_fragment": "大井川を一直線に渡る全長八百九十七・四メートルの、世界一長い木造歩道橋。",
+        "f7_full": "「蓬莱橋」の長い木の橋板を踏みしめて眺める大井川と牧之原台地の絶景が、宿場町と茶の里・島田を巡った旅を爽快に締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7c203b87-7a41-4c5f-8cd7-4488aa43d79e",
+    "title": "白壁の酒蔵と牧野博士が愛した草花の町・佐川を巡る",
+    "name": "白壁の酒蔵と牧野博士が愛した草花の町・佐川を巡る",
+    "description": "土佐藩筆頭家老・深尾家一万石の文教の町として栄え、銘酒「司牡丹」と植物学者・牧野富太郎博士を育んだ高知県佐川町。白壁の司牡丹 ほてい蔵から、古民家「杉や」の小鉢ランチ、維新資料を伝える青山文庫、地乳ソフトの旧浜口家住宅、牧野富太郎ふるさと館までを巡る。",
+    "region": "佐川（佐川町）",
+    "area_name": "佐川（佐川町）",
+    "cover_image_url": "/images/sakawa/route-eyecatch.png",
+    "imageUrl": "/images/sakawa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "四百年続く白壁の酒蔵と、牧野富太郎博士が愛した草花が息づく佐川で、間近に触れてみたい物語はどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "四百年の白壁蔵が続く「司牡丹 ほてい蔵」で出会う、土佐の端麗辛口と酒蔵の道",
+          "description": "杉玉が揺れる白壁の酒蔵通りを歩き、坂本龍馬や田中光顕ゆかりの銘酒「司牡丹」の歴史と芳醇な香りに触れた。",
+          "badge_code": "sakawa_tsukasabotan_brewery"
+        },
+        {
+          "key": "B",
+          "text": "古民家レストラン「杉や」で味わった、仁淀川流域の旬を映す彩り小鉢ランチ",
+          "description": "酒蔵の町に佇む温かい古民家で季節の野菜や高知の食材が並ぶ小鉢膳を堪能し、山あいの豊かな恵みに満たされた。",
+          "badge_code": "sakawa_sugiya_kobachi"
+        },
+        {
+          "key": "C",
+          "text": "維新の書を伝える「佐川町立青山文庫」と、地乳ソフトを味わう「旧浜口家住宅」",
+          "description": "深尾家一万石の文教の伝統を学び、江戸時代の造り酒屋の縁側で味わう濃厚な「さかわの地乳」ソフトと珈琲に癒やされた。",
+          "badge_code": "sakawa_hamaguchi_jichi"
+        },
+        {
+          "key": "D",
+          "text": "生家跡の「牧野富太郎ふるさと館」で触れた、緻密な植物図とバイカオウレンの花",
+          "description": "造り酒屋「岸屋」の跡地で博士が描き上げた細密な植物画と向き合い、草花に生涯を捧げた純粋な探究心に胸を打たれた。",
+          "badge_code": "sakawa_makino_botanical"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1307be17-a83c-432f-88e7-effd0e0f2b4a",
+        "name": "司牡丹 ほてい蔵",
+        "description": "慶長8年創業の老舗酒蔵・司牡丹酒造の白壁蔵を活用した直売所（9:30〜13:00・13:45〜16:30営業、年末年始休）。土佐を代表する銘酒「司牡丹」の季節酒や酒粕スイーツをお土産に購入できる。",
+        "address": "高知県高岡郡佐川町甲1299",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.498817,
+        "lng": 133.288501,
+        "qr_token": "shuin-sakawa-1",
+        "cover_image_url": "/images/sakawa/spot1.png",
+        "f7_fragment": "四百二十年続く司牡丹酒造の白壁蔵を活かし、土佐の銘酒と酒蔵文化を届ける直売処。",
+        "f7_full": "「司牡丹 ほてい蔵」の連なる白壁と水切り瓦、芳醇な土佐酒の香りが、酒蔵の道・佐川上町を歩く旅を風雅に幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6efb6e36-c066-4999-807d-47e90a013c44",
+        "next_spot_name": "杉や"
+      },
+      {
+        "id": "6efb6e36-c066-4999-807d-47e90a013c44",
+        "name": "杉や",
+        "description": "上町の酒蔵通り近くに佇む古民家カフェレストラン（11:00〜14:00・L.O.13:00営業、夜は予約制、月曜・火曜定休）。地元の旬の野菜や高知の食材を多彩な小鉢に盛り込んだ日替わりランチを味わえる。",
+        "address": "高知県高岡郡佐川町甲1412-3",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.499871,
+        "lng": 133.289781,
+        "qr_token": "shuin-sakawa-2",
+        "cover_image_url": "/images/sakawa/spot2.png",
+        "f7_fragment": "上町の歴史ある古民家を改装し、仁淀川流域の旬の食材を使った小鉢ランチを供する食事処。",
+        "f7_full": "「杉や」の彩り豊かな小鉢ランチと木の温もりに満ちた空間が、山あいの城下町・佐川が育む四季の滋味を優しく届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "1e1cff8e-902e-4b8e-8e4d-2b8d836c875b",
+        "next_spot_name": "佐川町立青山文庫"
+      },
+      {
+        "id": "1e1cff8e-902e-4b8e-8e4d-2b8d836c875b",
+        "name": "佐川町立青山文庫",
+        "description": "佐川の歴史と幕末維新資料を展示する町立博物館（9:00〜17:00開館・入館16:30まで、月曜休）。坂本龍馬や武市半平太らの遺墨コレクション（田中光顕旧蔵）や、牧野富太郎博士の関連資料を見学できる。",
+        "address": "高知県高岡郡佐川町甲1453-1",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.497944,
+        "lng": 133.288698,
+        "qr_token": "shuin-sakawa-3",
+        "cover_image_url": "/images/sakawa/spot3.png",
+        "f7_fragment": "坂本龍馬ら幕末志士の貴重な遺墨と、深尾家一万石・牧野富太郎の資料を伝える歴史博物館。",
+        "f7_full": "「佐川町立青山文庫」に遺された志士たちの筆跡と植物画が、土佐の文教の地・佐川が輩出した情熱の系譜を静かに語りかける。",
+        "is_final": false,
+        "next_spot_id": "5fef33c8-2f01-422e-8155-7c07d4230784",
+        "next_spot_name": "旧浜口家住宅"
+      },
+      {
+        "id": "5fef33c8-2f01-422e-8155-7c07d4230784",
+        "name": "旧浜口家住宅",
+        "description": "江戸中期から酒造業を営んだ商家を公開する国登録有形文化財（9:00〜17:00開館、カフェ10:00〜16:00、月曜休、入館無料）。庭園を望む座敷で「さかわの地乳」ソフトクリームや珈琲を味わえる。",
+        "address": "高知県高岡郡佐川町甲1472-1",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.49878,
+        "lng": 133.288218,
+        "qr_token": "shuin-sakawa-4",
+        "cover_image_url": "/images/sakawa/spot4.png",
+        "f7_fragment": "江戸期の造り酒屋の主屋を活かし、庭園を眺めながら地乳ソフトと珈琲を味わえる文化財建築。",
+        "f7_full": "「旧浜口家住宅」の縁側に吹く風と濃厚な地乳ソフトの甘みが、白壁の町並みを歩く合間に心地よいやすらぎの時間を与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "2e38036b-a269-4182-8b93-d905d08d5410",
+        "next_spot_name": "牧野富太郎ふるさと館"
+      },
+      {
+        "id": "2e38036b-a269-4182-8b93-d905d08d5410",
+        "name": "牧野富太郎ふるさと館",
+        "description": "植物学者・牧野富太郎博士の生家（旧造り酒屋「岸屋」）跡に建つ記念館（9:00〜17:00開館、月曜休、入館無料）。博士の書斎の再現や精緻な植物図、庭に咲くバイカオウレンなどの山野草を見学できる。",
+        "address": "高知県高岡郡佐川町甲1485",
+        "prefecture": "高知県",
+        "city": "",
+        "lat": 33.499032,
+        "lng": 133.286745,
+        "qr_token": "shuin-sakawa-5",
+        "cover_image_url": "/images/sakawa/spot5.png",
+        "f7_fragment": "日本の植物学の父・牧野富太郎博士の生家跡に建ち、緻密な植物図と書斎を伝える記念館。",
+        "f7_full": "「牧野富太郎ふるさと館」の庭に息づく山野草と細密な植物図が、酒蔵と草花の町・佐川を巡った旅を清らかな感動で締めくくる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f2ccd271-c89a-4d45-89cd-ff3f6e07db1e",
+    "title": "なぜ杉の宿場町に四十部屋の豪邸が建つのか",
+    "name": "なぜ杉の宿場町に四十部屋の豪邸が建つのか",
+    "description": "因幡と上方を結ぶ参勤交代の街道「智頭往来」の宿場町として栄え、日本有数の智頭杉の産地として知られる鳥取県智頭町。老舗「常盤堂」の銘菓・杉の実から、山林王の邸宅・重要文化財「石谷家住宅」、古民家「智頭宿 楽之」の山里ランチ、大きな杉玉が揺れる「諏訪酒造」、鎮守の「諏訪神社」までを歩く。",
+    "region": "智頭（智頭町）",
+    "area_name": "智頭（智頭町）",
+    "cover_image_url": "/images/chizu/route-eyecatch.png",
+    "imageUrl": "/images/chizu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "智頭杉の香り漂う智頭往来の宿場町と山林王の邸宅・石谷家住宅を巡る智頭で、今の心に深く響くのはどの風景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「御菓子司 常盤堂」で求めた、林業のまちを映す銘菓「杉の実」と「丸たんぼう」",
+          "description": "昭和八年創業の老舗で智頭杉にちなんだ優しい焼き菓子を手に取り、森とともに歩んできた宿場町の温もりに触れた。",
+          "badge_code": "chizu_tokiwado_suginomi"
+        },
+        {
+          "key": "B",
+          "text": "高さ十四メートルの土間と名園に息を呑む、重要文化財「石谷家住宅」",
+          "description": "智頭杉や屋久杉など銘木を尽くした四十部屋の近代和風建築と四季の池泉庭園を見学し、山林王の美意識に圧倒された。",
+          "badge_code": "chizu_ishitani_residence"
+        },
+        {
+          "key": "C",
+          "text": "築百三十五年の古民家「智頭宿 楽之」で味わう、山里の旬菜とジビエの昼食",
+          "description": "智頭往来に面した温かな古民家で山の恵みと丁寧な手料理を堪能し、参勤交代の宿場町に流れる穏やかな時間を満喫した。",
+          "badge_code": "chizu_tanoshi_lunch"
+        },
+        {
+          "key": "D",
+          "text": "巨大な杉玉が揺れる「諏訪酒造」の純米酒と、火防と林業の鎮守「諏訪神社」",
+          "description": "芦津渓谷の軟水で醸す銘酒「諏訪泉」の酒蔵から巨木が聳える諏訪神社までを歩き、森と水が育む祈りと文化に触れた。",
+          "badge_code": "chizu_suwa_sugidama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "848ccfce-dd59-4ee6-84e8-707bdf2706fa",
+        "name": "御菓子司 常盤堂",
+        "description": "昭和8年創業の老舗和洋菓子店（8:00〜19:00営業、第1・3日曜午後・元日休）。智頭杉にちなんだ白あん焼き菓子「杉の実」や「丸たんぼう」、チーズケーキなどをお土産に購入できる。",
+        "address": "鳥取県八頭郡智頭町智頭1514-12",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.267364,
+        "lng": 134.228581,
+        "qr_token": "shuin-chizu-1",
+        "cover_image_url": "/images/chizu/spot1.png",
+        "f7_fragment": "昭和八年の創業以来、林業のまち・智頭で銘菓「杉の実」や「丸たんぼう」を焼き上げる老舗。",
+        "f7_full": "「御菓子司 常盤堂」の素朴で優しい「杉の実」の味わいが、緑深い杉の山々に抱かれた智頭宿の旅を温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4fb7dda2-b4ac-45a2-8a54-62cfbefd9c9f",
+        "next_spot_name": "国指定重要文化財 石谷家住宅"
+      },
+      {
+        "id": "4fb7dda2-b4ac-45a2-8a54-62cfbefd9c9f",
+        "name": "国指定重要文化財 石谷家住宅",
+        "description": "智頭往来に面する山林王・石谷家の大邸宅（10:00〜17:00開館・入館16:30まで、水曜休・4〜11月は無休）。高さ14mの吹き抜け土間や銘木を尽くした40余りの部屋、国登録記念物（名勝）の庭園を見学できる。",
+        "address": "鳥取県八頭郡智頭町智頭396",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.270169,
+        "lng": 134.230267,
+        "qr_token": "shuin-chizu-2",
+        "cover_image_url": "/images/chizu/spot2.png",
+        "f7_fragment": "三千坪の敷地に四十余りの座敷と七棟の土蔵、名勝庭園を擁する近代和風建築の最高峰。",
+        "f7_full": "「国指定重要文化財 石谷家住宅」の天を突く松梁とガラス越しに輝く庭園が、智頭杉の山林王が築いた壮麗な美の世界を映し出す。",
+        "is_final": false,
+        "next_spot_id": "16e310a9-b512-4526-897b-0de4f9b4aa9f",
+        "next_spot_name": "智頭宿 楽之"
+      },
+      {
+        "id": "16e310a9-b512-4526-897b-0de4f9b4aa9f",
+        "name": "智頭宿 楽之",
+        "description": "智頭往来沿いの築135年の古民家を活かした食堂・カフェ（ランチ11:30〜14:30・L.O.14:00営業、月曜・火曜定休）。地元の旬の野菜や智頭産鹿肉のジビエを使ったランチを味わえる。",
+        "address": "鳥取県八頭郡智頭町智頭484",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.269633,
+        "lng": 134.228722,
+        "qr_token": "shuin-chizu-3",
+        "cover_image_url": "/images/chizu/spot3.png",
+        "f7_fragment": "築百三十五年の古民家を再生し、智頭の旬の野菜定食やジビエ料理を供する宿場町の食堂。",
+        "f7_full": "「智頭宿 楽之」の滋味豊かな山里ランチと古民家の心地よい空間が、参勤交代の街道として栄えた智頭往来の賑わいを今に伝える。",
+        "is_final": false,
+        "next_spot_id": "eafea691-9806-472b-88d3-f21cd422f542",
+        "next_spot_name": "諏訪酒造（酒蔵交流館 梶屋）"
+      },
+      {
+        "id": "eafea691-9806-472b-88d3-f21cd422f542",
+        "name": "諏訪酒造（酒蔵交流館 梶屋）",
+        "description": "安政6年創業の老舗酒蔵・諏訪酒造の直営店（10:00〜17:00・冬季は16:30まで営業、年末年始休）。巨大な智頭杉の杉玉が目印で、芦津渓谷の名水で醸す純米酒「諏訪泉」の試飲や購入を楽しめる。",
+        "address": "鳥取県八頭郡智頭町智頭451",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.2708,
+        "lng": 134.22823,
+        "qr_token": "shuin-chizu-4",
+        "cover_image_url": "/images/chizu/spot4.png",
+        "f7_fragment": "直径一メートル超の智頭杉の杉玉を掲げ、芦津渓谷の軟水で全量純米酒「諏訪泉」を醸す老舗酒蔵。",
+        "f7_full": "「諏訪酒造（酒蔵交流館 梶屋）」の大きな杉玉と芳醇な純米酒の香りが、豊かな森と清流が育む智頭の醸造文化を深く物語る。",
+        "is_final": false,
+        "next_spot_id": "bce198bf-c498-4b97-879d-76d0b37b3f26",
+        "next_spot_name": "諏訪神社"
+      },
+      {
+        "id": "bce198bf-c498-4b97-879d-76d0b37b3f26",
+        "name": "諏訪神社",
+        "description": "弘安年間創建と伝わる智頭宿の鎮守（境内参拝自由）。火防と林業繁栄の守護神として信仰され、巨木に囲まれた社殿と6年ごとの奇祭「柱祭り」で知られる。",
+        "address": "鳥取県八頭郡智頭町智頭227",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.271147,
+        "lng": 134.231417,
+        "qr_token": "shuin-chizu-5",
+        "cover_image_url": "/images/chizu/spot5.png",
+        "f7_fragment": "ケヤキや智頭杉の巨木に包まれ、宿場町の火防と林業繁栄を鎌倉期から見守る鎮守の古社。",
+        "f7_full": "「諏訪神社」の静謐な杜と宿場町を見下ろす石段の風景が、杉と名水のまち・智頭を巡った旅を清らかな余韻とともに締めくくる。",
+        "is_final": true
+      }
+    ]
   }
 ];
