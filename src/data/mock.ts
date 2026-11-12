@@ -71630,5 +71630,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "44ac7f12-1e82-4160-830e-b304bb60fe05",
+    "title": "まぐろの魚市場と江尻宿の社・清水を巡る",
+    "name": "まぐろの魚市場と江尻宿の社・清水を巡る",
+    "description": "富士山を望む日本三大美港・清水港と、旧東海道江尻宿およびサッカーの街の文化が息づく静岡県静岡市清水区。JR清水駅から、全国屈指のまぐろ水揚げを誇る清水魚市場 河岸の市、天明元年創業の老舗和菓子処・甘静舎、樹齢四百年の大クスが聳える小芝神社、サッカー神社として名高い魚町稲荷神社までを巡る。",
+    "region": "清水港の魚市場と旧江尻宿（静岡市清水区）",
+    "area_name": "清水港の魚市場と旧江尻宿（静岡市清水区）",
+    "cover_image_url": "/images/shimizu/route-eyecatch.png",
+    "imageUrl": "/images/shimizu/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "富士を望む清水港のまぐろ市場と老舗の河童まんじゅう、江尻宿の古社が息づく清水で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "全国屈指の冷凍まぐろ水揚げを誇る港で鮮度抜群の海の幸を味わう「清水魚市場 河岸の市」",
+          "description": "仲卸直営の活気あふれる市場で駿河湾の海の恵みと本まぐろに出会い、みなとまち清水の豊かな食文化を堪能した。",
+          "badge_code": "shimizu_kashinoichi_maguro"
+        },
+        {
+          "key": "B",
+          "text": "旧東海道江尻宿の鎮守であり、巨大サッカーボール碑が鎮座する「魚町稲荷神社」",
+          "description": "天正年間創建の稲荷社と少年サッカー発祥の碑に手を合わせ、港町に根付いた歴史とスポーツ文化の誇りに触れた。",
+          "badge_code": "shimizu_uomachi_inari_soccer"
+        },
+        {
+          "key": "C",
+          "text": "江尻城の鎮守として祀られ、樹齢四百年の大クスが聳える「小芝神社」",
+          "description": "戦国時代の江尻城ゆかりの境内で巨大な御神木クスノキを仰ぎ、城下と宿場を見守ってきた悠久の緑に癒やされた。",
+          "badge_code": "shimizu_oshiba_shrine_camphor"
+        },
+        {
+          "key": "D",
+          "text": "海を望む「清水駅」から歩き、天明元年創業の老舗「甘静舎」で出会う河童まんじゅう",
+          "description": "潮風香る駅前から旧江尻宿の巴川沿いを訪ね、二百四十年続く老舗の黒糖蒸し饅頭で心和むひとときを過ごした。",
+          "badge_code": "shimizu_kanseisha_abekawa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8bf0f40f-b1f6-4b3f-830b-73fcba2bdd5d",
+        "name": "清水駅",
+        "description": "JR東海道本線の主要駅であり、日本三大美港・清水港への玄関口（自由通路は始発〜終電）。みなと口デッキからは清水港と駿河湾、晴天時には富士山を一望できる。",
+        "address": "静岡県静岡市清水区真砂町1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.023246,
+        "lng": 138.488932,
+        "qr_token": "shuin-shimizu-1",
+        "cover_image_url": "/images/shimizu/spot1.png",
+        "f7_fragment": "みなと口デッキから清水港と駿河湾を望み、活気ある魚市場へと誘う玄関口。",
+        "f7_full": "「清水駅」の潮風が吹き抜ける開放的なデッキと港の景色が、海の幸と旧江尻宿の歴史を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ba148cb0-6dd8-493e-81b9-e70d5b5ab08e",
+        "next_spot_name": "清水魚市場 河岸の市"
+      },
+      {
+        "id": "ba148cb0-6dd8-493e-81b9-e70d5b5ab08e",
+        "name": "清水魚市場 河岸の市",
+        "description": "清水港の岸壁沿いに位置する仲卸直営の魚市場（いちば館9:30〜17:30、まぐろ館10:00頃〜、水曜休）。全国屈指の水揚げを誇る冷凍まぐろや駿河湾の桜えび・しらすを味わえる。",
+        "address": "静岡県静岡市清水区島崎町149",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.021225,
+        "lng": 138.490616,
+        "qr_token": "shuin-shimizu-2",
+        "cover_image_url": "/images/shimizu/spot2.png",
+        "f7_fragment": "全国屈指のまぐろ水揚げを誇る清水港で、仲卸直営の海鮮丼が集まる魚市場。",
+        "f7_full": "「清水魚市場 河岸の市」の活気ある市場と艶やかな本まぐろの丼が、日本三大美港・清水ならではの海の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b519f816-5ccd-4d44-8257-d7f270258426",
+        "next_spot_name": "甘静舎"
+      },
+      {
+        "id": "b519f816-5ccd-4d44-8257-d7f270258426",
+        "name": "甘静舎",
+        "description": "巴川の稚児橋近くに暖簾を掲げる天明元年創業の老舗和菓子店（10:00〜18:00営業、水曜休）。河童伝説にちなんだ黒糖蒸し饅頭「河童まんじゅう」や和三盆菓子で親しまれる。",
+        "address": "静岡県静岡市清水区江尻町4-26",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.019469,
+        "lng": 138.48155,
+        "qr_token": "shuin-shimizu-3",
+        "cover_image_url": "/images/shimizu/spot3.png",
+        "f7_fragment": "天明元年の創業以来、旧江尻宿で愛される銘菓「河童まんじゅう」の老舗。",
+        "f7_full": "「甘静舎」の黒糖が香る河童まんじゅうと歴史ある佇まいが、旧東海道・江尻宿に息づく温かな伝統の甘みを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "072eae04-6a3b-4be3-8615-cb34f0dbf005",
+        "next_spot_name": "小芝神社"
+      },
+      {
+        "id": "072eae04-6a3b-4be3-8615-cb34f0dbf005",
+        "name": "小芝神社",
+        "description": "戦国時代の江尻城（小芝城）ゆかりの鎮守社（境内参拝自由）。静岡市指定天然記念物の樹齢四百年の御神木「大クス」が聳え、緑陰で静かにひと休みできる。",
+        "address": "静岡県静岡市清水区小芝町4-10",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.022883,
+        "lng": 138.481306,
+        "qr_token": "shuin-shimizu-4",
+        "cover_image_url": "/images/shimizu/spot4.png",
+        "f7_fragment": "戦国時代の江尻城跡ゆかりの緑豊かな境内に、樹齢四百年の大クスが聳える古社。",
+        "f7_full": "「小芝神社」の天を覆う巨大な御神木クスノキと静かな社殿の佇まいが、戦国の城下から続く江尻の歴史を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e54bc50f-7375-4d62-8a94-5b093038652a",
+        "next_spot_name": "魚町稲荷神社"
+      },
+      {
+        "id": "e54bc50f-7375-4d62-8a94-5b093038652a",
+        "name": "魚町稲荷神社",
+        "description": "天正六年に創建され、旧東海道・江尻宿魚町の鎮守として親しまれてきた神社（境内参拝自由）。境内に巨大な石造サッカーボール碑が鎮座し、「サッカー神社」として全国に知られる。",
+        "address": "静岡県静岡市清水区江尻町14-74",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.020205,
+        "lng": 138.480522,
+        "qr_token": "shuin-shimizu-5",
+        "cover_image_url": "/images/shimizu/spot5.png",
+        "f7_fragment": "旧東海道江尻宿の鎮守であり、大石球が鎮座する全国に名高いサッカー神社。",
+        "f7_full": "「魚町稲荷神社」の朱塗りの社殿と大きなサッカーボールの石碑が、港町とサッカー文化が融合した清水の旅を爽やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bed1b7d7-f7f6-428a-8ba2-e17c06765e2b",
+    "title": "朝ラーとサッカーの熱気が息づく街・藤枝へ",
+    "name": "朝ラーとサッカーの熱気が息づく街・藤枝へ",
+    "description": "茶処の早朝文化が生んだ「朝ラー」と旧東海道藤枝宿の歴史、そしてサッカーの街の活気が息づく静岡県藤枝市。JR藤枝駅から、緑豊かな青木中央公園、大正八年創業の朝ラー発祥店・マルナカ、江戸時代から続く老舗和菓子処の紅家 紅粉屋九右衛門、樹齢七百五十年の「久遠の松」が聳える大慶寺までを巡る。",
+    "region": "朝ラーの街と旧東海道藤枝宿（藤枝市）",
+    "area_name": "朝ラーの街と旧東海道藤枝宿（藤枝市）",
+    "cover_image_url": "/images/fujieda/route-eyecatch.png",
+    "imageUrl": "/images/fujieda/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鰹出汁香る朝ラーと旧藤枝宿の銘菓、樹齢七百五十年の名松が息づく藤枝で、あなたが深く惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "日蓮聖人お手植えと伝わる樹齢約七百五十年の「久遠の松」が枝を広げる「大慶寺」",
+          "description": "旧東海道藤枝宿の旅人の目印となってきた名松を仰ぎ、七世紀半を超えて受け継がれる生命力に圧倒された。",
+          "badge_code": "fujieda_daikeiji_kuon_pine"
+        },
+        {
+          "key": "B",
+          "text": "大正八年創業、鰹出汁香る「温」と「冷」の朝ラーメン文化を生んだ老舗「マルナカ」",
+          "description": "茶業の早朝文化から誕生した藤枝ならではの朝ラーを味わい、百年を超えて愛される和風出汁の滋養に満たされた。",
+          "badge_code": "fujieda_marunaka_asara"
+        },
+        {
+          "key": "C",
+          "text": "旧東海道藤枝宿で江戸時代から暖簾を守り、銘菓「長寿柿」を伝える「紅家 紅粉屋九右衛門」",
+          "description": "宿場町の歴史を屋号に刻む老舗和菓子処を訪ね、家康公ゆかりの逸話と手練り餡の優しい甘みに心が和んだ。",
+          "badge_code": "fujieda_beniya_wagashi"
+        },
+        {
+          "key": "D",
+          "text": "サッカーの街の活気あふれる「藤枝駅」から歩き、ケヤキ並木と芝生が広がる「青木中央公園」で過ごす時間",
+          "description": "藤色のフラッグが揺れる駅前から緑豊かな公園のベンチへ歩き、朝の穏やかな空気の中で街の日常に溶け込んだ。",
+          "badge_code": "fujieda_station_aoki_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cff8dbf2-3bbb-4455-85b2-3f19a51c78cb",
+        "name": "藤枝駅",
+        "description": "JR東海道本線の駅であり、「サッカーのまち」と「朝ラーのまち」として知られる藤枝市の玄関口（自由通路は始発〜終電）。南北自由通路や駅前広場が整備されている。",
+        "address": "静岡県藤枝市前島1-1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.849182,
+        "lng": 138.252038,
+        "qr_token": "shuin-fujieda-1",
+        "cover_image_url": "/images/fujieda/spot1.png",
+        "f7_fragment": "サッカーと茶の街・藤枝の活気を伝え、旧東海道藤枝宿へと旅人を誘う玄関口。",
+        "f7_full": "「藤枝駅」の藤色に彩られた開放的なデッキと爽やかな朝の空気が、朝ラーと宿場町の歴史を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "55f40e2b-ae81-43c6-8389-be18f4c0b097",
+        "next_spot_name": "青木中央公園"
+      },
+      {
+        "id": "55f40e2b-ae81-43c6-8389-be18f4c0b097",
+        "name": "青木中央公園",
+        "description": "藤枝駅北側の青木地区に広がる緑豊かな近隣公園（入園自由）。広々とした芝生広場や木陰のベンチが整備され、旧東海道エリアへ向かう途中の休憩に最適。",
+        "address": "静岡県藤枝市青木3-8-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.855125,
+        "lng": 138.252829,
+        "qr_token": "shuin-fujieda-2",
+        "cover_image_url": "/images/fujieda/spot2.png",
+        "f7_fragment": "ケヤキ並木の先に緑の芝生広場と木陰のベンチが広がる、市民の憩いの公園。",
+        "f7_full": "「青木中央公園」の瑞々しい木々と開放的な芝生広場が、駅前から旧藤枝宿へと向かう散策の足取りを心地よく整えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0ad8848d-9e3c-440e-8a0f-f12e4ef981d4",
+        "next_spot_name": "マルナカ"
+      },
+      {
+        "id": "0ad8848d-9e3c-440e-8a0f-f12e4ef981d4",
+        "name": "マルナカ",
+        "description": "大正八年創業、藤枝「朝ラー」発祥の店として知られる老舗中華そば店（8:30〜13:20頃営業、日祝・第2第4土曜休）。鰹出汁香る「温」と「冷」のラーメンで名高い。",
+        "address": "静岡県藤枝市志太3-1-24",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.863662,
+        "lng": 138.249325,
+        "qr_token": "shuin-fujieda-3",
+        "cover_image_url": "/images/fujieda/spot3.png",
+        "f7_fragment": "大正八年の創業以来、鰹出汁の「温」と「冷」で知られる藤枝朝ラーの老舗。",
+        "f7_full": "「マルナカ」の香り高い鰹出汁スープと凛とした佇まいが、茶処・藤枝の早朝文化が育んだ百年の味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "7a4ab079-c754-4a37-8657-1b67086ffd33",
+        "next_spot_name": "紅家 紅粉屋九右衛門"
+      },
+      {
+        "id": "7a4ab079-c754-4a37-8657-1b67086ffd33",
+        "name": "紅家 紅粉屋九右衛門",
+        "description": "旧東海道・藤枝宿に暖簾を掲げる江戸時代創業の老舗和菓子店（8:30〜18:00営業、水曜休）。徳川家康公ゆかりの銘菓「長寿柿」や手練り餡のどら焼きを商う。",
+        "address": "静岡県藤枝市藤枝4-1-9",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.869778,
+        "lng": 138.252482,
+        "qr_token": "shuin-fujieda-4",
+        "cover_image_url": "/images/fujieda/spot4.png",
+        "f7_fragment": "旧東海道藤枝宿で江戸時代から暖簾を守る、銘菓「長寿柿」の老舗和菓子処。",
+        "f7_full": "「紅家 紅粉屋九右衛門」の伝統の暖簾と上品な和菓子が、旧東海道藤枝宿に息づくおもてなしの心と甘みを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3277c66f-1cb7-4628-8729-aa2a2bf8a37d",
+        "next_spot_name": "大慶寺"
+      },
+      {
+        "id": "3277c66f-1cb7-4628-8729-aa2a2bf8a37d",
+        "name": "大慶寺",
+        "description": "鎌倉時代に日蓮聖人の縁で開かれた日蓮宗の古刹（境内参拝自由）。聖人手植えと伝わる樹齢約七百五十年の静岡県指定天然記念物「久遠の松」や相良城移築の客殿で知られる。",
+        "address": "静岡県藤枝市藤枝4-2-7",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.869909,
+        "lng": 138.254017,
+        "qr_token": "shuin-fujieda-5",
+        "cover_image_url": "/images/fujieda/spot5.png",
+        "f7_fragment": "日蓮聖人お手植えと伝わる樹齢約七百五十年の名松「久遠の松」が聳える古刹。",
+        "f7_full": "「大慶寺」の四方に枝を広げる雄大な久遠の松と静謐な伽藍が、旧東海道藤枝宿を巡った旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c93fcd2a-5778-49d9-8aab-afeb886eb7ed",
+    "title": "なぜ東海道どまん中の袋井に茶屋と太鼓が響くのか",
+    "name": "なぜ東海道どまん中の袋井に茶屋と太鼓が響くのか",
+    "description": "江戸と京を結ぶ東海道五十三次の二十七番目・「どまん中」の宿場町として栄えた静岡県袋井市。JR袋井駅から、手作りの洋食と珈琲の喫茶 OCCAA、戦国時代から十四代続く御菓子所 五太夫きくや、「へそ寺」と呼ばれる観福寺、歌川広重の浮世絵を再現した東海道どまん中茶屋までを巡る。",
+    "region": "東海道どまん中・袋井宿（袋井市）",
+    "area_name": "東海道どまん中・袋井宿（袋井市）",
+    "cover_image_url": "/images/fukuroi/route-eyecatch.png",
+    "imageUrl": "/images/fukuroi/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "東海道どまん中の宿場町・袋井宿の茶屋と十四代続く銘菓が息づく袋井で、あなたの心に響いたのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "歌川広重の浮世絵を再現した茅葺きの茶屋で遠州茶と大太鼓に出会う「東海道どまん中茶屋」",
+          "description": "二十七番目の宿場町を象徴する出茶屋で香り高い袋井茶を味わい、江戸と京の中間地点に息づく旅情に浸った。",
+          "badge_code": "fukuroi_domannaka_chaya"
+        },
+        {
+          "key": "B",
+          "text": "東海道袋井宿のさらに中央に位置し、「へそ寺」の愛称で親しまれる曹洞宗「観福寺」",
+          "description": "旧東海道沿いの山門に立つ「へそ寺」の石碑と穏やかな本堂に手を合わせ、宿場町の中心を守り続けた歴史を感じた。",
+          "badge_code": "fukuroi_kanpukuji_heso"
+        },
+        {
+          "key": "C",
+          "text": "戦国時代から十四代にわたり暖簾を守り、銘菓「北の丸」を伝える「御菓子所 五太夫きくや」",
+          "description": "四百年以上の歴史を持つ老舗和菓子処を訪ね、宿場町の風情と正岡子規の句にちなんだ伝統の甘みに感銘を受けた。",
+          "badge_code": "fukuroi_godayu_kikuya_sweets"
+        },
+        {
+          "key": "D",
+          "text": "橋上駅舎の「袋井駅」から歩き、駅前の「喫茶 OCCAA」で手作り洋食と珈琲を味わうひととき",
+          "description": "遠州の風が吹く駅前から温もりある喫茶店へ立ち寄り、シェフ直伝の洋食と香り高い珈琲で心豊かな時間を過ごした。",
+          "badge_code": "fukuroi_occaa_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bff2571a-4c69-4467-82fd-204dfb4c68b4",
+        "name": "袋井駅",
+        "description": "JR東海道本線の駅であり、東海道五十三次二十七番目の宿場町「袋井宿」や遠州三山への玄関口（自由通路は始発〜終電）。南北を結ぶ明るい橋上自由通路を備える。",
+        "address": "静岡県袋井市高尾1211-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.741346,
+        "lng": 137.925788,
+        "qr_token": "shuin-fukuroi-1",
+        "cover_image_url": "/images/fukuroi/spot1.png",
+        "f7_fragment": "東海道五十三次どまん中の宿場町・袋井宿と遠州三山への旅を開く玄関口。",
+        "f7_full": "「袋井駅」の光差し込む橋上自由通路と穏やかな駅前広場が、東海道五十三次どまん中の宿場町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0da075da-757f-4271-8f0f-b50fa4492dd6",
+        "next_spot_name": "喫茶 OCCAA"
+      },
+      {
+        "id": "0da075da-757f-4271-8f0f-b50fa4492dd6",
+        "name": "喫茶 OCCAA",
+        "description": "JR袋井駅北口から徒歩すぐの食事・喫茶店（8:00〜18:00営業、日曜休）。洋食シェフ直伝のタレを使った生姜焼きや豚バラカレー、モーニング、珈琲を提供している。",
+        "address": "静岡県袋井市高尾町1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.741697,
+        "lng": 137.925318,
+        "qr_token": "shuin-fukuroi-2",
+        "cover_image_url": "/images/fukuroi/spot2.png",
+        "f7_fragment": "袋井駅北口のすぐそばで、洋食シェフ直伝の生姜焼きや本格カレーが人気の喫茶店。",
+        "f7_full": "「喫茶 OCCAA」の香ばしい生姜焼きと淹れたての珈琲が、宿場町散策へと向かう前の温かなひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "8d5ad05a-0af5-405b-893d-7f6f58d6655c",
+        "next_spot_name": "御菓子所 五太夫きくや"
+      },
+      {
+        "id": "8d5ad05a-0af5-405b-893d-7f6f58d6655c",
+        "name": "御菓子所 五太夫きくや",
+        "description": "戦国時代から十四代続く袋井駅前の老舗和菓子店（9:00〜18:00営業、木曜休）。南蛮菓子「北の丸」や正岡子規の句にちなんだ「村一つ」など袋井ゆかりの銘菓が揃う。",
+        "address": "静岡県袋井市高尾町25-7",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.742365,
+        "lng": 137.925985,
+        "qr_token": "shuin-fukuroi-3",
+        "cover_image_url": "/images/fukuroi/spot3.png",
+        "f7_fragment": "戦国時代から十四代にわたり続く、袋井宿ゆかりの銘菓「北の丸」の老舗和菓子処。",
+        "f7_full": "「御菓子所 五太夫きくや」の品格ある店構えと十四代受け継がれる銘菓が、袋井宿の歴史と風雅な甘みを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "fb989bca-8d27-43e0-816a-09ae6989616c",
+        "next_spot_name": "観福寺"
+      },
+      {
+        "id": "fb989bca-8d27-43e0-816a-09ae6989616c",
+        "name": "観福寺",
+        "description": "旧東海道・袋井宿の中央に位置し、「へそ寺」の愛称で知られる曹洞宗の寺院（境内参拝自由）。山門前に「東海道どまん中 へそ寺」の碑が立ち、宿場町の歴史を今に伝える。",
+        "address": "静岡県袋井市袋井186-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.74788,
+        "lng": 137.92234,
+        "qr_token": "shuin-fukuroi-4",
+        "cover_image_url": "/images/fukuroi/spot4.png",
+        "f7_fragment": "東海道袋井宿のちょうど真ん中に鎮座し、「へそ寺」と呼ばれる曹洞宗の寺院。",
+        "f7_full": "「観福寺」の山門前に立つへそ寺の石碑と静かな本堂の佇まいが、東海道五十三次のどまん中を歩む旅の実感を深めてくれる。",
+        "is_final": false,
+        "next_spot_id": "8cf0ef89-a157-48d7-84c9-37fccb648037",
+        "next_spot_name": "東海道どまん中茶屋"
+      },
+      {
+        "id": "8cf0ef89-a157-48d7-84c9-37fccb648037",
+        "name": "東海道どまん中茶屋",
+        "description": "歌川広重の浮世絵『東海道五十三次 袋井出茶屋ノ図』をモチーフに建てられた休憩・交流施設（4〜8月は9:30〜15:30、9〜3月は10:00〜15:00営業、月・火曜休、祝日は開館）。袋井茶の接待や大太鼓の展示がある。",
+        "address": "静岡県袋井市袋井339",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.748982,
+        "lng": 137.925312,
+        "qr_token": "shuin-fukuroi-5",
+        "cover_image_url": "/images/fukuroi/spot5.png",
+        "f7_fragment": "広重の浮世絵の出茶屋を再現し、香り高い遠州茶の接待と大太鼓で迎える休憩処。",
+        "f7_full": "「東海道どまん中茶屋」の茅葺き屋根と香り高い袋井茶のおもてなしが、二十七番目の宿場町を巡った旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f9d408e3-9dd2-4a1f-8ddb-834037b564c2",
+    "title": "遠江国府の古社と明治の擬洋風校舎・見付を辿る",
+    "name": "遠江国府の古社と明治の擬洋風校舎・見付を辿る",
+    "description": "古代の遠江国府と旧東海道見付宿の歴史が重なる静岡県磐田市。樹齢六百年の大クスが聳えるJR磐田駅から、大正十四年創業の和菓子司 扇月、県指定文化財の楼門を擁する府八幡宮、遠江国総社の淡海國玉神社、現存日本最古の木造擬洋風小学校校舎・磐田市旧見付学校までを辿る。",
+    "region": "遠江国府と旧東海道見付宿（磐田市）",
+    "area_name": "遠江国府と旧東海道見付宿（磐田市）",
+    "cover_image_url": "/images/iwata/route-eyecatch.png",
+    "imageUrl": "/images/iwata/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "遠江国府の古社と現存最古の木造擬洋風校舎、老舗の朝生菓子が息づく磐田で、あなたの印象に残ったのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天平年間の創建と伝わり、江戸初期の壮麗な楼門が聳える「府八幡宮」",
+          "description": "遠江国司ゆかりの深い杜と寛永十二年建立の楼門を仰ぎ、千三百年続く国府の祈りに心を澄ませた。",
+          "badge_code": "iwata_fu_hachimangu_romon"
+        },
+        {
+          "key": "B",
+          "text": "遠江国の諸神を祀る総社であり、東海道見付宿の中心に鎮座する「淡海國玉神社」",
+          "description": "見事な木彫が施された天保年間再建の拝殿に手を合わせ、古代の総社と宿場町が重なる歴史を体感した。",
+          "badge_code": "iwata_omikunitama_soja"
+        },
+        {
+          "key": "C",
+          "text": "大クスが立つ「磐田駅」から歩き、大正十四年創業の「和菓子司 扇月」で出会う朝生菓子",
+          "description": "樹齢六百年の大クスに見送られて歩き出し、職人が毎朝仕立てる自家製餡の和菓子で優しい時間を過ごした。",
+          "badge_code": "iwata_sengetsu_wagashi"
+        },
+        {
+          "key": "D",
+          "text": "明治八年に建てられた現存日本最古の木造擬洋風小学校校舎「磐田市旧見付学校」",
+          "description": "白漆喰の壁とエンタシスの柱、五階建ての塔屋が織りなす明治の学び舎を見上げ、宿場町の人々の教育への情熱に胸を打たれた。",
+          "badge_code": "iwata_kyu_mitsuke_school"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d1b5aac0-295f-47ab-88a4-52e8f8748016",
+        "name": "磐田駅",
+        "description": "JR東海道本線の駅であり、遠江国府・見付宿の歴史とスポーツ文化が息づく磐田市の玄関口（自由通路は始発〜終電）。北口広場には樹齢六百年を超える市指定天然記念物の大クスが立つ。",
+        "address": "静岡県磐田市中泉2934-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.710142,
+        "lng": 137.851833,
+        "qr_token": "shuin-iwata-1",
+        "cover_image_url": "/images/iwata/spot1.png",
+        "f7_fragment": "北口広場に樹齢六百年の大クスが聳え、遠江国府と旧見付宿へ誘う玄関口。",
+        "f7_full": "「磐田駅」の北口広場に枝を広げる巨大な大クスが、古代の国府と東海道見付宿を辿る旅の始まりを力強く迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "81505d69-19fa-43df-8279-331735b22e36",
+        "next_spot_name": "和菓子司 扇月"
+      },
+      {
+        "id": "81505d69-19fa-43df-8279-331735b22e36",
+        "name": "和菓子司 扇月",
+        "description": "大正十四年創業の老舗和菓子店（10:00〜17:00営業、日曜・月曜休）。自家製餡のどら焼きや季節の朝生菓子、赤飯など、職人の手仕事による和菓子が揃う。",
+        "address": "静岡県磐田市中泉3-5-18",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.713904,
+        "lng": 137.852574,
+        "qr_token": "shuin-iwata-2",
+        "cover_image_url": "/images/iwata/spot2.png",
+        "f7_fragment": "大正十四年の創業以来、毎朝仕立てる朝生菓子とどら焼きが評判の和菓子処。",
+        "f7_full": "「和菓子司 扇月」の温かな店構えと職人が毎朝仕立てる手作りの朝生菓子が、見付へと続く道中に優しい甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b1460f3c-1dfc-4a40-85f7-59c33035677d",
+        "next_spot_name": "府八幡宮"
+      },
+      {
+        "id": "b1460f3c-1dfc-4a40-85f7-59c33035677d",
+        "name": "府八幡宮",
+        "description": "天平年間に遠江国司・桜井王によって創建されたと伝わる古社（境内参拝自由）。寛永十二年建立の静岡県指定有形文化財「楼門」や中門、本殿が緑豊かな境内に鎮座する。",
+        "address": "静岡県磐田市中泉112-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.719811,
+        "lng": 137.853431,
+        "qr_token": "shuin-iwata-3",
+        "cover_image_url": "/images/iwata/spot3.png",
+        "f7_fragment": "天平年間創建、江戸初期建立の静岡県指定有形文化財「楼門」が聳える古社。",
+        "f7_full": "「府八幡宮」の深い木立と堂々たる二層の楼門が、遠江国府の時代から受け継がれてきた祈りの歴史を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3c4e014b-71ec-4d9a-85ca-f62bb8f459df",
+        "next_spot_name": "淡海國玉神社"
+      },
+      {
+        "id": "3c4e014b-71ec-4d9a-85ca-f62bb8f459df",
+        "name": "淡海國玉神社",
+        "description": "大国主命を祀る遠江国の総社であり、旧東海道・見付宿の中心に鎮座する古社（境内参拝自由）。天保年間再建の拝殿と本殿は磐田市指定有形文化財に指定されている。",
+        "address": "静岡県磐田市見付2452-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.727835,
+        "lng": 137.857149,
+        "qr_token": "shuin-iwata-4",
+        "cover_image_url": "/images/iwata/spot4.png",
+        "f7_fragment": "旧東海道見付宿の中心に鎮座し、精緻な社殿彫刻を今に伝える遠江国総社。",
+        "f7_full": "「淡海國玉神社」の静謐な境内と彫刻が彩る拝殿が、遠江国総社としての誇りと見付宿の落ち着いた空気を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e5d32936-7b8d-4f7e-8b44-00856a754809",
+        "next_spot_name": "磐田市旧見付学校"
+      },
+      {
+        "id": "e5d32936-7b8d-4f7e-8b44-00856a754809",
+        "name": "磐田市旧見付学校",
+        "description": "明治八年に落成した現存する日本最古の木造擬洋風小学校校舎（9:00〜16:30開館、月曜・祝日の翌日休、入館無料）。国指定史跡であり、明治期の教育資料を展示している。",
+        "address": "静岡県磐田市見付2452",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.727444,
+        "lng": 137.857023,
+        "qr_token": "shuin-iwata-5",
+        "cover_image_url": "/images/iwata/spot5.png",
+        "f7_fragment": "明治八年落成、白漆喰と五階建ての塔屋が美しい現存日本最古の擬洋風校舎。",
+        "f7_full": "「磐田市旧見付学校」の白亜の擬洋風建築と太鼓楼の佇まいが、遠江国府から見付宿を辿った旅を知的な感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "87545a78-cc80-4400-8311-519e7ea3b110",
+    "title": "扇形庫の転車台と清流の城下町・天竜二俣を訪ねる",
+    "name": "扇形庫の転車台と清流の城下町・天竜二俣を訪ねる",
+    "description": "昭和の鉄道遺産と戦国の山城、そして天竜材の文化が息づく静岡県浜松市天竜区二俣。国登録有形文化財の木造駅舎と扇形車庫・転車台が残る天竜二俣駅から、藤森照信設計の浜松市秋野不矩美術館、明治・大正期の土蔵・マルカワの蔵、本田宗一郎ものづくり伝承館、野面積みの天守台が聳える国指定史跡・二俣城跡までを訪ねる。",
+    "region": "天浜線の転車台と二俣城下（浜松市天竜区）",
+    "area_name": "天浜線の転車台と二俣城下（浜松市天竜区）",
+    "cover_image_url": "/images/tenryu_futamata/route-eyecatch.png",
+    "imageUrl": "/images/tenryu_futamata/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "現役の転車台と天竜杉の美術館、戦国の天守台が息づく天竜二俣で、あなたが強く惹かれたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "徳川・武田の攻防の舞台となり、野面積みの天守台が聳える国指定史跡「二俣城跡」",
+          "description": "天竜川と二俣川を望む城山を登り、四百年以上の時を超えて残る荒々しい天守台の石垣に戦国の息吹を感じた。",
+          "badge_code": "tenryu_futamata_castle_keep"
+        },
+        {
+          "key": "B",
+          "text": "天竜杉と漆喰の独創的な藤森照信建築で日本画の大作と出会う「浜松市秋野不矩美術館」",
+          "description": "自然素材に包まれた温もりある美術館で素足になって作品を鑑賞し、天竜の森と芸術が溶け合う空間に魅了された。",
+          "badge_code": "tenryu_futamata_akinofuku_art"
+        },
+        {
+          "key": "C",
+          "text": "旧二俣町役場のレトロな木造庁舎で技術者の情熱に触れる「本田宗一郎ものづくり伝承館」",
+          "description": "国登録有形文化財の庁舎で初期のオートバイと名言に向き合い、天竜が育んだ「やらまいか」の探究心に勇気をもらった。",
+          "badge_code": "tenryu_futamata_honda_craft"
+        },
+        {
+          "key": "D",
+          "text": "転車台が残る「天竜二俣駅」から歩き、登録有形文化財の土蔵「マルカワの蔵」で過ごすひととき",
+          "description": "木造駅舎とSLに見送られて二俣の町並みを歩き、明治・大正期の重厚な蔵の中で舟運と商家の記憶に浸った。",
+          "badge_code": "tenryu_futamata_marukawa_kura"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "891f53c8-b941-43dc-8cf3-a87095c5bece",
+        "name": "天竜二俣駅",
+        "description": "天竜浜名湖鉄道の中心駅（窓口7:15〜17:00）。昭和十五年築の木造駅舎や現役の転車台・扇形車庫など多数の国登録有形文化財を有し、鉄道遺産の聖地として知られる。",
+        "address": "静岡県浜松市天竜区二俣町阿蔵114-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.859477,
+        "lng": 137.819887,
+        "qr_token": "shuin-tenryu_futamata-1",
+        "cover_image_url": "/images/tenryu_futamata/spot1.png",
+        "f7_fragment": "昭和十五年築の木造駅舎と現役の転車台・扇形車庫が残る鉄道遺産の中心駅。",
+        "f7_full": "「天竜二俣駅」の木の温もりあふれるレトロな駅舎と扇形車庫の風景が、清流と歴史の街・二俣を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "70934f90-a0c4-4a59-88de-cc5664388d48",
+        "next_spot_name": "浜松市秋野不矩美術館"
+      },
+      {
+        "id": "70934f90-a0c4-4a59-88de-cc5664388d48",
+        "name": "浜松市秋野不矩美術館",
+        "description": "二俣出身の日本画家・秋野不矩の作品を収蔵・展示する市立美術館（9:30〜17:00開館、月曜休）。建築家・藤森照信が天竜杉と漆喰を用いて設計した独創的な建物も必見。",
+        "address": "静岡県浜松市天竜区二俣町二俣130",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.864859,
+        "lng": 137.819286,
+        "qr_token": "shuin-tenryu_futamata-2",
+        "cover_image_url": "/images/tenryu_futamata/spot2.png",
+        "f7_fragment": "天竜杉と白漆喰を用いた藤森照信建築で日本画の大作を鑑賞する丘の美術館。",
+        "f7_full": "「浜松市秋野不矩美術館」の森に溶け込む天竜杉の建築と力強い日本画の世界が、五感に響く豊かな芸術の時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "92160afe-9955-4acd-8828-8535c7ba9411",
+        "next_spot_name": "マルカワの蔵"
+      },
+      {
+        "id": "92160afe-9955-4acd-8828-8535c7ba9411",
+        "name": "マルカワの蔵",
+        "description": "明治・大正期の酒蔵・醤油蔵を活用した文化空間・ショップ「叉水（さすい）」（10:00〜16:00営業、月曜・火曜休）。国登録有形文化財の土蔵空間で展示や買い物を楽しめる。",
+        "address": "静岡県浜松市天竜区二俣町二俣1174",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.867316,
+        "lng": 137.814935,
+        "qr_token": "shuin-tenryu_futamata-3",
+        "cover_image_url": "/images/tenryu_futamata/spot3.png",
+        "f7_fragment": "明治・大正期の国登録有形文化財の土蔵を再生した文化空間・ショップ。",
+        "f7_full": "「マルカワの蔵」の重厚な漆喰壁と太い梁が織りなす静かな空間が、天竜川の舟運で栄えた二俣の商家の記憶を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b0418a0d-0cae-4e8d-868f-e1a9ff56f726",
+        "next_spot_name": "本田宗一郎ものづくり伝承館"
+      },
+      {
+        "id": "b0418a0d-0cae-4e8d-868f-e1a9ff56f726",
+        "name": "本田宗一郎ものづくり伝承館",
+        "description": "昭和十一年築の旧二俣町役場（国登録有形文化財）を活用し、本田宗一郎の歩みとものづくりの精神を伝える展示施設（10:00〜16:30開館、月・火曜休、入館無料）。",
+        "address": "静岡県浜松市天竜区二俣町二俣1112",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.866116,
+        "lng": 137.814203,
+        "qr_token": "shuin-tenryu_futamata-4",
+        "cover_image_url": "/images/tenryu_futamata/spot4.png",
+        "f7_fragment": "旧二俣町役場の登録有形文化財庁舎で、本田宗一郎の情熱と原点に出会う館。",
+        "f7_full": "「本田宗一郎ものづくり伝承館」のレトロな木造庁舎と初期のオートバイ展示が、天竜の地が育んだものづくりの情熱を熱く語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "3b0c9da6-0050-4745-80c1-346b47af0062",
+        "next_spot_name": "二俣城跡"
+      },
+      {
+        "id": "3b0c9da6-0050-4745-80c1-346b47af0062",
+        "name": "二俣城跡",
+        "description": "天竜川と二俣川の合流点に築かれた戦国時代の山城跡であり国指定史跡（入園自由）。徳川氏と武田氏の攻防の舞台となり、本丸には野面積みの天守台石垣が現存する。",
+        "address": "静岡県浜松市天竜区二俣町二俣1085",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.86205,
+        "lng": 137.808949,
+        "qr_token": "shuin-tenryu_futamata-5",
+        "cover_image_url": "/images/tenryu_futamata/spot5.png",
+        "f7_fragment": "天竜川を見下ろす断崖の山上に、野面積みの天守台石垣が聳える国指定史跡。",
+        "f7_full": "「二俣城跡」の苔むした野面積みの天守台と天竜川を渡る風が、鉄道遺産と城下町を巡った天竜二俣の旅を雄大な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
