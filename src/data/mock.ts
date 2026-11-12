@@ -69030,5 +69030,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "e8191038-10b9-4b18-8edb-32108048b53b",
+    "title": "出世城の石垣と円盤餃子・浜松を巡る",
+    "name": "出世城の石垣と円盤餃子・浜松を巡る",
+    "description": "徳川家康公が天下統一の礎を築いた「出世城」と、音楽・ものづくり文化が息づく静岡県浜松市。JR浜松駅から、円盤焼きに茹でもやしを添える浜松餃子の名店・むつぎく、明治二十年創業の秋芳堂、野面積みの石垣が残る浜松城、日本庭園の茶室・松韻亭までを巡る。",
+    "region": "浜松城下（浜松市中央区）",
+    "area_name": "浜松城下（浜松市中央区）",
+    "cover_image_url": "/images/hamamatsu/route-eyecatch.png",
+    "imageUrl": "/images/hamamatsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "野面積みの石垣が聳える浜松城と円盤焼きの浜松餃子、庭園の茶室が息づく浜松で、あなたが心惹かれたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "若き徳川家康公が十七年間を過ごし、戦国の野面積み石垣が残る出世城「浜松城」",
+          "description": "荒々しくも堅固な自然石の石垣と天守からの眺めに、三方ヶ原の試練を越えて天下へと飛躍した家康公の志を感じた。",
+          "badge_code": "hamamatsu_castle_shusse_stone"
+        },
+        {
+          "key": "B",
+          "text": "昭和三十七年創業の名店「むつぎく」で味わう、円盤焼きと茹でもやしの「浜松餃子」",
+          "description": "パリッと香ばしい薄皮から溢れるキャベツの甘みと、中央に添えられたもやしの絶妙な調和に箸が止まらなかった。",
+          "badge_code": "hamamatsu_mutsugiku_enban_gyoza"
+        },
+        {
+          "key": "C",
+          "text": "浜松城公園の深い緑に佇み、日本庭園を眺めながら一服の抹茶に憩う茶室「松韻亭」",
+          "description": "銘木を用いた数寄屋造りの空間で、滝のせせらぎと松風の音に耳を傾けながら味わうお茶の時間に心が澄み渡った。",
+          "badge_code": "hamamatsu_shointei_tea_garden"
+        },
+        {
+          "key": "D",
+          "text": "音楽の都の玄関口「浜松駅」と、明治二十年創業の「秋芳堂」で出会う「カステラ饅頭」",
+          "description": "活気ある駅前から城下町を歩き、百年以上愛され続ける白餡入りカステラ饅頭の優しい甘さに心が和んだ。",
+          "badge_code": "hamamatsu_shuhodo_castella_manju"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fc14fd80-7464-466e-8184-0037bc7cba41",
+        "name": "浜松駅",
+        "description": "東海道新幹線とJR東海道本線が乗り入れる遠州地方の中心駅（改札・コンコースは始発〜終電）。構内には「音楽の都」を象徴するピアノの展示があり、浜松城や中心市街地への散策起点となっている。",
+        "address": "静岡県浜松市中央区砂山町6-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.704171,
+        "lng": 137.73447,
+        "qr_token": "shuin-hamamatsu-1",
+        "cover_image_url": "/images/hamamatsu/spot1.png",
+        "f7_fragment": "東海道新幹線が発着し、「出世の街・音楽の都」浜松へと誘う遠州の中心駅。",
+        "f7_full": "「浜松駅」の華やかなコンコースとものづくりの街の活気が、徳川家康公ゆかりの出世城と名物グルメを巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b3a43c0e-4fd3-4348-86cf-b91a3c84c7a7",
+        "next_spot_name": "むつぎく"
+      },
+      {
+        "id": "b3a43c0e-4fd3-4348-86cf-b91a3c84c7a7",
+        "name": "むつぎく",
+        "description": "浜松駅近くに位置する昭和三十七年創業の浜松餃子専門店（11:30〜14:30・17:00〜21:00営業、月・火曜休）。キャベツたっぷりの餃子を円盤状に焼き上げ、中央に茹でもやしを添える伝統の浜松餃子を味わえる。",
+        "address": "静岡県浜松市中央区砂山町356-5",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.701893,
+        "lng": 137.734944,
+        "qr_token": "shuin-hamamatsu-2",
+        "cover_image_url": "/images/hamamatsu/spot2.png",
+        "f7_fragment": "昭和三十七年の創業以来、円盤焼きに茹でもやしを添える浜松餃子の老舗名店。",
+        "f7_full": "「むつぎく」の香ばしく焼き上げられた円盤餃子とキャベツの優しい甘みが、浜松の街歩きに欠かせない本場の味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "281e3039-974c-47d7-8551-0626cf1d25a3",
+        "next_spot_name": "秋芳堂"
+      },
+      {
+        "id": "281e3039-974c-47d7-8551-0626cf1d25a3",
+        "name": "秋芳堂",
+        "description": "鍛冶町通りに店を構える明治二十年創業の老舗菓子店（9:00〜18:00営業、水曜・木曜休）。卵と蜂蜜の風味豊かな生地で自家製白餡を包んで焼き上げた浜松銘菓「カステラ饅頭」で広く親しまれている。",
+        "address": "静岡県浜松市中央区肴町312-16",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.705525,
+        "lng": 137.729137,
+        "qr_token": "shuin-hamamatsu-3",
+        "cover_image_url": "/images/hamamatsu/spot3.png",
+        "f7_fragment": "明治二十年の創業以来、白餡入りの銘菓「カステラ饅頭」を焼き上げる老舗。",
+        "f7_full": "「秋芳堂」のふんわり香ばしいカステラ饅頭となめらかな白餡の甘みが、明治から続く城下町浜松の懐かしい味を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "419982a4-949f-4f6a-8fbc-7bdce59aba45",
+        "next_spot_name": "浜松城"
+      },
+      {
+        "id": "419982a4-949f-4f6a-8fbc-7bdce59aba45",
+        "name": "浜松城",
+        "description": "徳川家康公が17年間在城し、歴代城主の多くが幕府の重職に出世した「出世城」として知られる日本百名城（8:30〜16:30開館、年始休）。戦国期の「野面積み」石垣がそのまま残り、天守閣最上階から市街を一望できる。",
+        "address": "静岡県浜松市中央区元城町100-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.71224,
+        "lng": 137.724966,
+        "qr_token": "shuin-hamamatsu-4",
+        "cover_image_url": "/images/hamamatsu/spot4.png",
+        "f7_fragment": "徳川家康公が十七年間在城し、戦国の野面積み石垣を今に伝える「出世城」。",
+        "f7_full": "「浜松城」の荒々しい野面積みの石垣と白亜の天守閣が、若き日の徳川家康公が天下取りへの礎を固めた歴史の息吹を力強く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9c5f1797-1787-4514-8a3a-1e8ff8ce1520",
+        "next_spot_name": "松韻亭"
+      },
+      {
+        "id": "9c5f1797-1787-4514-8a3a-1e8ff8ce1520",
+        "name": "松韻亭",
+        "description": "浜松城公園の緑の中に佇む数寄屋造りの茶室・日本庭園（9:30〜17:00開館・呈茶は10:00〜16:00、月曜休）。北山杉や木曽檜を用いた落ち着いた空間で、庭園を眺めながら抹茶と季節の和菓子を味わえる。",
+        "address": "静岡県浜松市中央区鹿谷町11-4",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.715152,
+        "lng": 137.723778,
+        "qr_token": "shuin-hamamatsu-5",
+        "cover_image_url": "/images/hamamatsu/spot5.png",
+        "f7_fragment": "浜松城公園の森に佇み、日本庭園を眺めながら抹茶と和菓子に憩う数寄屋茶室。",
+        "f7_full": "「松韻亭」の静かな日本庭園と香り高い一服の抹茶が、出世城・浜松を巡り歩いた旅を風雅な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "103ce98e-9f6f-4065-8ad0-e1cfd160a686",
+    "title": "信玄公の矜持と甲府城下・甲府へ",
+    "name": "信玄公の矜持と甲府城下・甲府へ",
+    "description": "武田信玄公の誇りと、天下を見晴らす甲府城（舞鶴城）の石垣が息づく山梨県甲府市。JR甲府駅から、明治・大正の街並みを再現した甲州夢小路、富士山を望む舞鶴城公園、甲府鳥もつ煮発祥の老舗・奥藤本店 甲府駅前店、伝統銘菓「くろ玉」の澤田屋 本店までを歩く。",
+    "region": "甲府城下（甲府市）",
+    "area_name": "甲府城下（甲府市）",
+    "cover_image_url": "/images/kofu/route-eyecatch.png",
+    "imageUrl": "/images/kofu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白壁の櫓が輝く舞鶴城公園と発祥の甲府鳥もつ煮、黒糖香る銘菓「くろ玉」が息づく甲府で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "四百年前の石垣と白漆喰の「稲荷櫓」が聳え、天守台から富士山を望む「舞鶴城公園（甲府城跡）」",
+          "description": "豊臣・徳川の時代を生き抜いた壮大な石垣の上に立ち、甲府盆地と霊峰富士を一望する大パノラマに心震えた。",
+          "badge_code": "kofu_maizuru_castle_park"
+        },
+        {
+          "key": "B",
+          "text": "大正二年創業の「奥藤本店」で味わう、飴色の甘辛ダレが絡む発祥の「甲府鳥もつ煮」",
+          "description": "強火で一気に照り煮にされた鳥もつの濃厚な旨みと、香り高い手打ちそばの組み合わせに甲府の食文化の粋を堪能した。",
+          "badge_code": "kofu_okuto_torimotsuni_origin"
+        },
+        {
+          "key": "C",
+          "text": "明治四十四年創業の「澤田屋 本店」で出会う、うぐいす餡を黒糖羊羹で包んだ銘菓「くろ玉」",
+          "description": "つややかな漆黒の玉の中に秘められた鮮やかな青えんどう豆の風味と、黒糖の深いコクに職人の手仕事を感じた。",
+          "badge_code": "kofu_sawadaya_kurodama_sweets"
+        },
+        {
+          "key": "D",
+          "text": "武田信玄公像が立つ「甲府駅」と、時の鐘が響くレトロな街並み「甲州夢小路」",
+          "description": "威風堂々たる信玄公像に挨拶し、明治・大正の面影を再現した石畳の路地で甲州の粋な文化に触れた。",
+          "badge_code": "kofu_koshu_yumekoji_bell"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "01dd3c4b-8aea-48c2-836b-9c7db3bf86e9",
+        "name": "甲府駅",
+        "description": "JR中央本線と身延線が乗り入れる山梨県の中心駅（改札は始発〜終電）。南口広場には巨大な「武田信玄公之像」が鎮座し、舞鶴城公園や甲州夢小路への散策起点となっている。",
+        "address": "山梨県甲府市丸の内1丁目1-8",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.666886,
+        "lng": 138.568924,
+        "qr_token": "shuin-kofu-1",
+        "cover_image_url": "/images/kofu/spot1.png",
+        "f7_fragment": "南口広場に勇壮な武田信玄公像が鎮座し、甲斐の城下町へと誘う県都の玄関口。",
+        "f7_full": "「甲府駅」の前に立つ堂々たる武田信玄公像と四方を囲む山々が、甲府城の歴史と本場の味を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9d23ec1a-a2f5-47a8-8102-6eadcefcbe78",
+        "next_spot_name": "甲州夢小路"
+      },
+      {
+        "id": "9d23ec1a-a2f5-47a8-8102-6eadcefcbe78",
+        "name": "甲州夢小路",
+        "description": "甲府駅北口近くに整備された、明治・大正・昭和初期の甲府城下町を再現した観光商業施設（散策自由、各店10:00〜18:00頃）。復元された「時の鐘」や古民家、カフェ・ショップが石畳沿いに並ぶ。",
+        "address": "山梨県甲府市丸の内1丁目1-25",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.666837,
+        "lng": 138.571324,
+        "qr_token": "shuin-kofu-2",
+        "cover_image_url": "/images/kofu/spot2.png",
+        "f7_fragment": "明治・大正期の甲府城下町を再現し、「時の鐘」が佇む石畳のレトロな小路。",
+        "f7_full": "「甲州夢小路」の石畳に並ぶ古民家と「時の鐘」の情緒が、往時の甲府城下町の華やぎと心地よいひと休みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "474946e6-f062-4d0d-8ce9-f8cca03256dd",
+        "next_spot_name": "舞鶴城公園"
+      },
+      {
+        "id": "474946e6-f062-4d0d-8ce9-f8cca03256dd",
+        "name": "舞鶴城公園",
+        "description": "豊臣秀吉公の命で築かれた甲府城跡を整備した歴史公園・日本百名城（散策自由、稲荷櫓は9:00〜16:30開館・月曜休）。築城当時の野面積み石垣や復元された稲荷櫓・鉄門が見どころで、天守台から富士山を一望できる。",
+        "address": "山梨県甲府市丸の内1丁目5-4",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.664704,
+        "lng": 138.57151,
+        "qr_token": "shuin-kofu-3",
+        "cover_image_url": "/images/kofu/spot3.png",
+        "f7_fragment": "四百年前の野面積み石垣と白壁の稲荷櫓が聳え、霊峰富士山を望む甲府城跡。",
+        "f7_full": "「舞鶴城公園」の白漆喰が輝く稲荷櫓と天守台からの大パノラマが、甲斐国を治めた天下の名城の威容を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4566fc5f-da54-4f4c-8db5-3bab95ff5622",
+        "next_spot_name": "奥藤本店 甲府駅前店"
+      },
+      {
+        "id": "4566fc5f-da54-4f4c-8db5-3bab95ff5622",
+        "name": "奥藤本店 甲府駅前店",
+        "description": "大正二年創業の老舗そば店であり、「甲府鳥もつ煮」発祥の店（11:00〜14:30・17:00〜20:30営業、木曜休）。強火で甘辛く照り煮にした元祖「甲府鳥もつ煮」と本格手打ちそばを味わえる。",
+        "address": "山梨県甲府市丸の内1丁目7-4",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.665803,
+        "lng": 138.568365,
+        "qr_token": "shuin-kofu-4",
+        "cover_image_url": "/images/kofu/spot4.png",
+        "f7_fragment": "大正二年の創業以来、本格手打ちそばと発祥の「甲府鳥もつ煮」を伝える老舗。",
+        "f7_full": "「奥藤本店 甲府駅前店」の飴色に輝く甘辛い鳥もつ煮と香り高い手打ちそばが、甲府が世界に誇るご当地グルメの原点を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e39c8015-d2bc-4122-8ffb-5d11c8a3b1f0",
+        "next_spot_name": "澤田屋 本店"
+      },
+      {
+        "id": "e39c8015-d2bc-4122-8ffb-5d11c8a3b1f0",
+        "name": "澤田屋 本店",
+        "description": "甲府市中央に店を構える明治四十四年創業の老舗和菓子店（10:00〜18:00営業、火曜・元日休）。青えんどう豆のうぐいす餡を沖縄黒糖の羊羹で包んだ山梨銘菓「くろ玉」の本舗として知られる。",
+        "address": "山梨県甲府市中央4丁目3-24",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.660854,
+        "lng": 138.571613,
+        "qr_token": "shuin-kofu-5",
+        "cover_image_url": "/images/kofu/spot5.png",
+        "f7_fragment": "明治四十四年の創業以来、うぐいす餡を黒糖羊羹で包む銘菓「くろ玉」の本店。",
+        "f7_full": "「澤田屋 本店」のつややかに輝く銘菓「くろ玉」の深いコクと爽やかな甘みが、甲府城下を巡り歩いた旅を豊かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "24fb7b1e-e16c-4c41-8009-818264c5c182",
+    "title": "なぜ富士と湖畔の風は旅人を惹きつけるのか",
+    "name": "なぜ富士と湖畔の風は旅人を惹きつけるのか",
+    "description": "世界文化遺産・富士山の雄姿を水面に映し、太宰治の文学と甲州の食文化が息づく山梨県富士河口湖町。富士急行線の河口湖駅から、鉄鍋の「不動ほうとう」を味わうほうとう不動 河口湖駅前店、国産蜂蜜のフジヤマクッキー 本店、絶景の富士山パノラマロープウェイ、さざ波が響く河口湖畔遊歩道までを巡る。",
+    "region": "富士河口湖（富士河口湖町）",
+    "area_name": "富士河口湖（富士河口湖町）",
+    "cover_image_url": "/images/kawaguchiko/route-eyecatch.png",
+    "imageUrl": "/images/kawaguchiko/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "霊峰富士を映す河口湖の絶景と鉄鍋の不動ほうとう、富士山型のクッキーが息づく河口湖で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "太宰治『お伽草紙』の舞台・天上山へと登り、富士山と湖を一望する「富士山パノラマロープウェイ」",
+          "description": "三分の空中散歩の先に広がる、裾野まで遮るもののない霊峰富士と河口湖の大パノラマに言葉を失うほど感動した。",
+          "badge_code": "kawaguchiko_tenjoyama_ropeway"
+        },
+        {
+          "key": "B",
+          "text": "駅前の名店「ほうとう不動」で味わう、かぼちゃと自家製太麺を鉄鍋で煮込んだ「不動ほうとう」",
+          "description": "ぐつぐつと湯気を立てる鉄鍋の味噌仕立てスープと、コシの強い自家製麺の温もりに富士北麓の伝統の味を堪能した。",
+          "badge_code": "kawaguchiko_hoto_fudo_iron_pot"
+        },
+        {
+          "key": "C",
+          "text": "湖畔の「フジヤマクッキー 本店」で出会う、富士山の蜂蜜とチーズが香る焼き菓子",
+          "description": "ホワイトチョコで雪化粧を表現した愛らしい富士山型クッキーのサクサクとした食感と、蜂蜜の優しい甘さに心が弾んだ。",
+          "badge_code": "kawaguchiko_fujiyama_cookie"
+        },
+        {
+          "key": "D",
+          "text": "霊峰を背負う「河口湖駅」から歩き、静かな水面に富士を映す「河口湖畔遊歩道」",
+          "description": "山小屋風の駅舎から湖へと下り、さざ波の立つ水辺で雄大な富士山の稜線を仰ぐ贅沢な時間に心が洗われた。",
+          "badge_code": "kawaguchiko_lakeside_promenade"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7468a952-27d4-4916-8db3-3cd581b6ac7d",
+        "name": "河口湖駅",
+        "description": "富士山麓電気鉄道富士急行線の終着駅であり、富士五湖観光の玄関口（待合室は始発〜終電）。背後に雄大な富士山が聳える木造風の駅舎と、駅前に保存されたレトロな鉄道車両が旅人を迎える。",
+        "address": "山梨県南都留郡富士河口湖町船津3631-2",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.498338,
+        "lng": 138.768611,
+        "qr_token": "shuin-kawaguchiko-1",
+        "cover_image_url": "/images/kawaguchiko/spot1.png",
+        "f7_fragment": "背後に雄大な霊峰富士山が聳え、富士五湖の旅へと誘う富士急行線の終着駅。",
+        "f7_full": "「河口湖駅」の三角屋根の駅舎と背後に広がる霊峰富士の大パノラマが、湖畔の絶景と甲州の味を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c0d695a7-5cee-4d7c-8ef5-9cbff77cf0fb",
+        "next_spot_name": "ほうとう不動 河口湖駅前店"
+      },
+      {
+        "id": "c0d695a7-5cee-4d7c-8ef5-9cbff77cf0fb",
+        "name": "ほうとう不動 河口湖駅前店",
+        "description": "河口湖駅のすぐ向かいに店を構えるほうとう専門店（11:00〜19:00営業、無休）。コシの強い自家製麺とかぼちゃ、山菜を味噌仕立ての汁で煮込んだ看板メニュー「不動ほうとう」を鉄鍋で味わえる。",
+        "address": "山梨県南都留郡富士河口湖町船津3631-2",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.498861,
+        "lng": 138.768655,
+        "qr_token": "shuin-kawaguchiko-2",
+        "cover_image_url": "/images/kawaguchiko/spot2.png",
+        "f7_fragment": "河口湖駅前で自家製太麺とかぼちゃを鉄鍋で煮込む「不動ほうとう」の名店。",
+        "f7_full": "「ほうとう不動 河口湖駅前店」の熱々の鉄鍋から立ち昇る味噌の香りと自家製麺の旨みが、富士山麓の伝統の味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "72ecb141-342e-4dea-81b2-58818ddfbebd",
+        "next_spot_name": "フジヤマクッキー 本店"
+      },
+      {
+        "id": "72ecb141-342e-4dea-81b2-58818ddfbebd",
+        "name": "フジヤマクッキー 本店",
+        "description": "河口湖畔の通りに佇む富士山型クッキーの専門店（10:00〜17:00営業、第2・第4火曜休）。国産小麦と富士山の蜂蜜、チーズを使用して毎日丁寧に焼き上げる「フジヤマクッキー」が土産として人気。",
+        "address": "山梨県南都留郡富士河口湖町浅川1165-1",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.504293,
+        "lng": 138.771695,
+        "qr_token": "shuin-kawaguchiko-3",
+        "cover_image_url": "/images/kawaguchiko/spot3.png",
+        "f7_fragment": "河口湖畔に店を構え、国産蜂蜜とチーズで富士山型のクッキーを焼く専門店。",
+        "f7_full": "「フジヤマクッキー 本店」に並ぶ雪化粧の富士山型クッキーと甘い香りが、湖畔歩きの途中に可愛らしく心弾むひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "56cdd07d-0578-4a93-8cf0-b7dd0066352c",
+        "next_spot_name": "富士山パノラマロープウェイ"
+      },
+      {
+        "id": "56cdd07d-0578-4a93-8cf0-b7dd0066352c",
+        "name": "富士山パノラマロープウェイ",
+        "description": "河口湖畔から標高1,075mの天上山山頂を結ぶロープウェイ（8:30〜17:00運行、無休）。太宰治の小説『お伽草紙』の「カチカチ山」の舞台であり、展望台から富士山と河口湖の大パノラマを一望できる。",
+        "address": "山梨県南都留郡富士河口湖町浅川1163-1",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.504005,
+        "lng": 138.77199,
+        "qr_token": "shuin-kawaguchiko-4",
+        "cover_image_url": "/images/kawaguchiko/spot4.png",
+        "f7_fragment": "太宰治の「カチカチ山」の舞台・天上山から富士山と河口湖を一望する展望拠点。",
+        "f7_full": "「富士山パノラマロープウェイ」で登る天上山からの雄大な富士山と眼下の河口湖が、心に深く刻まれる感動の絶景を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a7e5cbbe-3518-4b46-8e6b-ee62fcb54eca",
+        "next_spot_name": "河口湖畔遊歩道"
+      },
+      {
+        "id": "a7e5cbbe-3518-4b46-8e6b-ee62fcb54eca",
+        "name": "河口湖畔遊歩道",
+        "description": "河口湖の船津浜・浅川沿いに整備された水辺の遊歩道（終日散策自由）。遊覧船が発着する穏やかな湖面越しに富士山の稜線を望め、爽やかな湖風を感じながらひと休みできる。",
+        "address": "山梨県南都留郡富士河口湖町船津4034",
+        "prefecture": "山梨県",
+        "city": "",
+        "lat": 35.503988,
+        "lng": 138.770226,
+        "qr_token": "shuin-kawaguchiko-5",
+        "cover_image_url": "/images/kawaguchiko/spot5.png",
+        "f7_fragment": "穏やかなさざ波が寄せる水辺から、四季折々の富士山の雄姿を仰ぐ湖畔の道。",
+        "f7_full": "「河口湖畔遊歩道」の水面に映る空と霊峰富士の優美なシルエットが、富士北麓の自然と味覚を巡った旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cfb8ec22-1608-49b0-845f-3c8b3fd833f2",
+    "title": "夫婦岩の荒磯と浜参宮の里・二見浦を歩く",
+    "name": "夫婦岩の荒磯と浜参宮の里・二見浦を歩く",
+    "description": "古来お伊勢参りの禊の地「浜参宮」として栄え、大注連縄で結ばれた夫婦岩と近代和風建築が息づく三重県伊勢市二見町。JR参宮線の二見浦駅から、明治二十年創業の酒素まんじゅう・旭家、表参道の赤福 二見支店、国指定重要文化財の賓日館、夫婦岩を拝む二見興玉神社までを歩く。",
+    "region": "二見浦・夫婦岩（伊勢市）",
+    "area_name": "二見浦・夫婦岩（伊勢市）",
+    "cover_image_url": "/images/futaminoura/route-eyecatch.png",
+    "imageUrl": "/images/futaminoura/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大注連縄で結ばれた夫婦岩と重要文化財の賓日館、参道の赤福餅が息づく二見浦で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大注連縄で結ばれた「夫婦岩」と、無数の二見蛙が迎える禊の古社「二見興玉神社」",
+          "description": "伊勢湾の波音が響く参道を歩き、男岩と女岩を結ぶ大注連縄の凛とした姿に太古からの浜参宮の祈りを感じた。",
+          "badge_code": "futaminoura_meotoiwa_okitama_shrine"
+        },
+        {
+          "key": "B",
+          "text": "皇族や貴賓を迎えた百二十畳の大広間とシャンデリアが輝く重要文化財「賓日館」",
+          "description": "桃山式の格天井と精巧な錺金具、そして手挽き硝子の窓から望む二見浦の海に、明治建築の気品と粋を見た。",
+          "badge_code": "futaminoura_hinjitsukan_heritage"
+        },
+        {
+          "key": "C",
+          "text": "風情ある表参道の「赤福 二見支店」で味わう、できたての「赤福餅」と香ばしいほうじ茶",
+          "description": "五十鈴川の清流を模したこし餡と柔らかなお餅を、純和風の静かな座敷で味わう贅沢なひとときに心が和んだ。",
+          "badge_code": "futaminoura_akafuku_futami_branch"
+        },
+        {
+          "key": "D",
+          "text": "夫婦岩モチーフの「二見浦駅」と、明治二十年創業の「旭家」で出会う「酒素まんじゅう」",
+          "description": "三角屋根の駅から潮風薫る参道へ踏み出し、米麹と日本酒がふわっと香る伝統の蒸し饅頭に旅情が深まった。",
+          "badge_code": "futaminoura_asahiya_sakamoto_manju"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "20ca0dc5-ed63-4739-8128-d5805532e0cc",
+        "name": "二見浦駅",
+        "description": "JR参宮線の駅であり、二見浦・夫婦岩への玄関口（待合室は始発〜終電）。名勝・夫婦岩をイメージした大小二つのガラス張りの三角屋根が並ぶ駅舎が特徴で、表参道へと真っ直ぐ繋がっている。",
+        "address": "三重県伊勢市二見町茶屋108-3",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.503981,
+        "lng": 136.777085,
+        "qr_token": "shuin-futaminoura-1",
+        "cover_image_url": "/images/futaminoura/spot1.png",
+        "f7_fragment": "夫婦岩を模した大小二つの三角屋根が並び、禊の浜・二見浦へと誘う玄関口。",
+        "f7_full": "「二見浦駅」の夫婦岩をかたどったユニークな駅舎と穏やかな潮風が、古来のお伊勢参りの習わし「浜参宮」の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b42106de-374d-4733-862d-7708e1ce13d8",
+        "next_spot_name": "旭家"
+      },
+      {
+        "id": "b42106de-374d-4733-862d-7708e1ce13d8",
+        "name": "旭家",
+        "description": "二見浦表参道入口近くに店を構える明治二十年創業の老舗和菓子店（8:00〜19:00営業、不定休）。米麹を自然発酵させた「酒素」で生地を膨らませる伝統の「酒素まんじゅう」で広く知られる。",
+        "address": "三重県伊勢市二見町茶屋107-6",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.505717,
+        "lng": 136.777237,
+        "qr_token": "shuin-futaminoura-2",
+        "cover_image_url": "/images/futaminoura/spot2.png",
+        "f7_fragment": "明治二十年の創業以来、米麹が香る伝統の「酒素まんじゅう」を蒸し上げる老舗。",
+        "f7_full": "「旭家」の蒸したての湯気と日本酒がほのかに香る「酒素まんじゅう」が、明治から参拝客に親しまれてきた二見浦の素朴な甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d31b42f6-07dc-4be8-802e-51df87b64cb8",
+        "next_spot_name": "赤福 二見支店"
+      },
+      {
+        "id": "d31b42f6-07dc-4be8-802e-51df87b64cb8",
+        "name": "赤福 二見支店",
+        "description": "二見浦表参道沿いに佇む宝永四年創業「赤福」の直営店舗（9:00〜17:00営業、無休）。純和風の落ち着いた座敷で、できたての「赤福餅」や夏季の「赤福氷」、冬季の「赤福ぜんざい」を味わえる。",
+        "address": "三重県伊勢市二見町茶屋204-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.507282,
+        "lng": 136.777834,
+        "qr_token": "shuin-futaminoura-3",
+        "cover_image_url": "/images/futaminoura/spot3.png",
+        "f7_fragment": "表参道の純和風店舗で、できたての「赤福餅」と季節の甘味を味わえる名所。",
+        "f7_full": "「赤福 二見支店」の凛とした和風建築とできたての赤福餅のなめらかな口どけが、松並木の参道歩きに格別の安らぎを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "99838ea8-786d-4eb9-8d1e-8e671db44383",
+        "next_spot_name": "賓日館"
+      },
+      {
+        "id": "99838ea8-786d-4eb9-8d1e-8e671db44383",
+        "name": "賓日館",
+        "description": "明治二十年に伊勢神宮参拝の賓客用宿泊施設として建てられた国指定重要文化財の近代和風建築（9:00〜17:00開館、火曜休）。皇族が滞在した「御殿の間」や百二十畳敷きの「大広間」、日本庭園を見学できる。",
+        "address": "三重県伊勢市二見町茶屋566-2",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.508041,
+        "lng": 136.784551,
+        "qr_token": "shuin-futaminoura-4",
+        "cover_image_url": "/images/futaminoura/spot4.png",
+        "f7_fragment": "明治二十年に神宮参拝の貴賓館として建てられた、国指定重要文化財の名建築。",
+        "f7_full": "「賓日館」の百二十畳の大広間とシャンデリアが織りなす和洋折衷の美が、明治の宮大工たちが粋を尽くした近代和風建築の輝きを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "36590e49-ee88-4fc5-867e-11582bcfc92f",
+        "next_spot_name": "二見興玉神社"
+      },
+      {
+        "id": "36590e49-ee88-4fc5-867e-11582bcfc92f",
+        "name": "二見興玉神社",
+        "description": "猿田彦大神を祀り、お伊勢参りの前に心身を清める「浜参宮」の古社（境内参拝自由）。沖合の興玉神石と日の出を拝む鳥居の役目を果たす名勝「夫婦岩」や、無数の「二見蛙」で知られる。",
+        "address": "三重県伊勢市二見町江575",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.508299,
+        "lng": 136.788458,
+        "qr_token": "shuin-futaminoura-5",
+        "cover_image_url": "/images/futaminoura/spot5.png",
+        "f7_fragment": "大注連縄で結ばれた名勝「夫婦岩」を拝み、浜参宮の伝統を今に伝える古社。",
+        "f7_full": "「二見興玉神社」の荒磯に立つ夫婦岩と清らかな波音が、禊の浜・二見浦を巡り歩いた旅を神聖で晴れやかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bdb7acb0-2b75-40f2-8c60-fd5ca1e46df5",
+    "title": "藤堂家の屋敷と乱歩生誕の街・名張の旅",
+    "name": "藤堂家の屋敷と乱歩生誕の街・名張の旅",
+    "description": "名張藤堂家一万五千石の陣屋町であり、探偵小説の父・江戸川乱歩生誕の地として知られる三重県名張市。近鉄大阪線の名張駅から、昭和五年創業の老舗・賛急屋の「なばり饅頭」、現存する武家屋敷の名張藤堂家邸跡、江戸川乱歩生誕地碑、総鎮守の宇流冨志禰神社までを辿る。",
+    "region": "名張城下と乱歩の街（名張市）",
+    "area_name": "名張城下と乱歩の街（名張市）",
+    "cover_image_url": "/images/nabari/route-eyecatch.png",
+    "imageUrl": "/images/nabari/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名張藤堂家の武家屋敷と江戸川乱歩生誕の路地、老舗のなばり饅頭が息づく名張で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "宝永年間の再建から三百年を超え、上級武士の居館「中奥」が現存する「名張藤堂家邸跡」",
+          "description": "数寄屋風の「祝の間」や茶室、枯山水庭園の凛とした佇まいに、名張一万五千石を治めた藤堂家の格式と美意識を感じた。",
+          "badge_code": "nabari_todo_residence_samurai"
+        },
+        {
+          "key": "B",
+          "text": "日本探偵小説の父が産声を上げた地に立ち、文学の原点に触れる「江戸川乱歩生誕地碑」",
+          "description": "古い商家や格子戸が残る路地を歩き、明智小五郎や怪人二十面相を生んだ文豪のふるさとを旅する高揚感を味わった。",
+          "badge_code": "nabari_edogawa_rampo_birthplace"
+        },
+        {
+          "key": "C",
+          "text": "昭和五年創業の「賛急屋」で出会う、薄皮からこし餡が透ける名物「なばり饅頭」",
+          "description": "駅前の老舗で一つひとつ手作りされる、素朴でさらりとした甘さのなばり饅頭に宿場町・城下町の温もりを感じた。",
+          "badge_code": "nabari_sankyuya_manju_sweets"
+        },
+        {
+          "key": "D",
+          "text": "初瀬街道の要衝「名張駅」から歩き、深い杜に鎮座する総鎮守「宇流冨志禰神社」",
+          "description": "万葉の時代から歌に詠まれた隠（なばり）の街を巡り、巨木に包まれた式内社の清らかな空気に心が洗われた。",
+          "badge_code": "nabari_urufushine_shrine_grove"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ab27b524-585a-49c7-8571-2943aa948c69",
+        "name": "名張駅",
+        "description": "近鉄大阪線の主要駅であり、名張観光の玄関口（改札は始発〜終電）。西口には江戸川乱歩の銅像が立ち、名張藤堂家邸跡や初瀬街道の旧市街へと向かう散策の起点となっている。",
+        "address": "三重県名張市平尾3225-3",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.621773,
+        "lng": 136.095609,
+        "qr_token": "shuin-nabari-1",
+        "cover_image_url": "/images/nabari/spot1.png",
+        "f7_fragment": "西口広場に江戸川乱歩の銅像が立ち、藤堂家の陣屋町・名張へと誘う玄関口。",
+        "f7_full": "「名張駅」の西口広場とレトロな街並みが、武家屋敷の歴史と日本探偵小説の父・江戸川乱歩の記憶を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "30e79326-585b-4bc7-856d-fe1479440045",
+        "next_spot_name": "賛急屋"
+      },
+      {
+        "id": "30e79326-585b-4bc7-856d-fe1479440045",
+        "name": "賛急屋",
+        "description": "名張駅西口前に店を構える昭和五年創業の老舗和菓子・食事処（9:00〜22:00営業、無休・元日休）。北海道産小豆のこし餡を極薄の皮で包んだ看板銘菓「なばり饅頭」で広く親しまれている。",
+        "address": "三重県名張市平尾3225-4",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.621561,
+        "lng": 136.094944,
+        "qr_token": "shuin-nabari-2",
+        "cover_image_url": "/images/nabari/spot2.png",
+        "f7_fragment": "昭和五年の創業以来、薄皮にこし餡を包む看板銘菓「なばり饅頭」を作る老舗。",
+        "f7_full": "「賛急屋」の薄皮からこし餡が透ける「なばり饅頭」の素朴な甘みが、参急電鉄開通以来名張の玄関口を守り続ける老舗の温もりを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7344c47-9682-427e-8d05-0b3e2eaf7ce5",
+        "next_spot_name": "名張藤堂家邸跡"
+      },
+      {
+        "id": "c7344c47-9682-427e-8d05-0b3e2eaf7ce5",
+        "name": "名張藤堂家邸跡",
+        "description": "津藩藤堂家の一門・名張藤堂家1万5千石の屋敷跡・県指定史跡（9:00〜17:00開館、月・木曜休）。宝永七年再建の「中奥」の一部や枯山水庭園が現存し、豊臣秀吉拝領の茶釜や甲冑などを展示する。",
+        "address": "三重県名張市丸之内54",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.622348,
+        "lng": 136.091098,
+        "qr_token": "shuin-nabari-3",
+        "cover_image_url": "/images/nabari/spot3.png",
+        "f7_fragment": "宝永年間再建の上級武士の居館「中奥」と枯山水庭園が現存する県指定史跡。",
+        "f7_full": "「名張藤堂家邸跡」の数寄屋風の祝の間と静かな枯山水庭園が、名張一万五千石を治めた藤堂家の格式と武家文化の粋を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "415f95d5-1ac0-499e-8153-984cc8d28a68",
+        "next_spot_name": "江戸川乱歩生誕地碑"
+      },
+      {
+        "id": "415f95d5-1ac0-499e-8153-984cc8d28a68",
+        "name": "江戸川乱歩生誕地碑",
+        "description": "明治二十七年に推理小説家・江戸川乱歩が誕生した馬塚町跡に整備された記念広場（終日見学自由）。生誕地碑や作品モニュメントが並び、古い町並みが残る「乱歩通り」散策のひと休みに立ち寄れる。",
+        "address": "三重県名張市新町140",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.620133,
+        "lng": 136.091341,
+        "qr_token": "shuin-nabari-4",
+        "cover_image_url": "/images/nabari/spot4.png",
+        "f7_fragment": "探偵小説の父・江戸川乱歩が産声を上げた地に立つ、ミステリーゆかりの碑。",
+        "f7_full": "「江戸川乱歩生誕地碑」が立つ静かな広場と古い格子戸の町並みが、数々の名作推理小説を生んだ文豪の原点を静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "95aa7eca-901b-4713-8dc8-626415d64753",
+        "next_spot_name": "宇流冨志禰神社"
+      },
+      {
+        "id": "95aa7eca-901b-4713-8dc8-626415d64753",
+        "name": "宇流冨志禰神社",
+        "description": "『延喜式』神名帳に記された式内社であり、名張の総鎮守（境内参拝自由）。名張川近くの深い社叢に包まれ、春日造の本殿や秋の例大祭「名張秋祭り」で知られる。",
+        "address": "三重県名張市平尾3319",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.619044,
+        "lng": 136.093261,
+        "qr_token": "shuin-nabari-5",
+        "cover_image_url": "/images/nabari/spot5.png",
+        "f7_fragment": "延喜式神名帳に記された格式を誇り、深い杜に鎮座する名張の総鎮守の古社。",
+        "f7_full": "「宇流冨志禰神社」の巨木が聳える神聖な杜と厳かな社殿が、藤堂家の城下町と乱歩ゆかりの路地を辿った名張の旅を清らかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
