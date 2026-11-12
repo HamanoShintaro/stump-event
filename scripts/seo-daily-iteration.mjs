@@ -532,6 +532,395 @@ async function fetchGa4Metrics() {
   }
 }
 
+// 初期開発・テスト検証アカウントおよびシード用ダミーID（外部の実ユーザー数と明確に区別するため定義）
+const KNOWN_INTERNAL_TEST_USER_IDS = new Set([
+  "d8a49f45-0c41-4c53-9c75-211156614b78",
+  "fb6cadbb-95f5-48c9-8296-fd4a4f881220",
+  "dc0b3208-3516-489a-95dd-855f6632e15a",
+  "ba0ebacc-6b0e-475a-8121-554cd644a8b3",
+]);
+const SEED_DUMMY_USER_IDS = new Set([
+  "e9999999-9999-9999-9999-999999999999",
+]);
+
+async function fetchUserMetrics(supabase, hasServiceRoleKey, ga4Result) {
+  const nowMs = Date.now();
+  const ms24h = 24 * 60 * 60 * 1000;
+  const ms7d = 7 * ms24h;
+
+  const ga4Rows = Array.isArray(ga4Result?.rows) ? ga4Result.rows : [];
+  const loginPageRow = ga4Rows.find((r) => r.pagePath === "/login");
+  const mypageRow = ga4Rows.find((r) => r.pagePath === "/mypage");
+
+  const ga4AuthFunnel28d = {
+    loginPageViews: loginPageRow?.screenPageViews || 0,
+    loginActiveUsers: loginPageRow?.activeUsers || 0,
+    mypageViews: mypageRow?.screenPageViews || 0,
+    mypageActiveUsers: mypageRow?.activeUsers || 0,
+  };
+
+  if (!supabase) {
+    return {
+      status: "unconfigured",
+      authSource: "none",
+      headline: {
+        externalRegisteredUsers: 0,
+        internalTestUsers: 0,
+        totalRegisteredUsers: 0,
+        newExternalUsers24h: 0,
+        newExternalUsers7d: 0,
+      },
+      activity: {
+        stampsTotal: 0,
+        stamps24h: 0,
+        stamps7d: 0,
+        routeJoinsTotal: 0,
+        routeJoins24h: 0,
+        routeJoins7d: 0,
+        routeCompletionsTotal: 0,
+        bookmarksTotal: 0,
+      },
+      ga4AuthFunnel28d,
+    };
+  }
+
+  try {
+    // 1. Service Role Key がある場合は auth.users を全件取得
+    let authStats = null;
+    if (hasServiceRoleKey) {
+      const allAuthUsers = [];
+      let page = 1;
+      const perPage = 1000;
+      while (page <= 10) {
+        const { data, error } = await supabase.auth.admin.listUsers({
+          page,
+          perPage,
+        });
+        if (error || !data?.users?.length) break;
+        allAuthUsers.push(...data.users);
+        if (data.users.length < perPage) break;
+        page++;
+      }
+
+      const realUsers = allAuthUsers.filter(
+        (u) => u?.id && !SEED_DUMMY_USER_IDS.has(u.id)
+      );
+      const externalUsers = realUsers.filter(
+        (u) => !KNOWN_INTERNAL_TEST_USER_IDS.has(u.id)
+      );
+      const internalUsers = realUsers.filter((u) =>
+        KNOWN_INTERNAL_TEST_USER_IDS.has(u.id)
+      );
+
+      const countRecent = (list, windowMs) =>
+        list.filter((u) => {
+          const ts = u.created_at ? Date.parse(u.created_at) : NaN;
+          return Number.isFinite(ts) && nowMs - ts <= windowMs;
+        }).length;
+
+      authStats = {
+        totalAuthUsers: realUsers.length,
+        externalAuthUsers: externalUsers.length,
+        internalTestUsers: internalUsers.length,
+        newExternalUsers24h: countRecent(externalUsers, ms24h),
+        newExternalUsers7d: countRecent(externalUsers, ms7d),
+        newTotalUsers24h: countRecent(realUsers, ms24h),
+        newTotalUsers7d: countRecent(realUsers, ms7d),
+      };
+    }
+
+    // 2. アクティビティテーブル横断集計（押印・ルート参加・お気に入り・称号）
+    const [urRes, stampsRes, badgesRes, bookmarksRes] = await Promise.all([
+      supabase
+        .from("user_routes")
+        .select("user_id, status, joined_at, completed_at"),
+      supabase.from("stamps").select("user_id, acquired_at"),
+      supabase.from("badge_assignments").select("user_id, acquired_at"),
+      supabase.from("user_bookmarks").select("user_id, created_at"),
+    ]);
+
+    const userFirstSeen = new Map();
+    const recordSeen = (uid, dateStr) => {
+      if (!uid || SEED_DUMMY_USER_IDS.has(uid)) return;
+      const ts = dateStr ? Date.parse(dateStr) : NaN;
+      const prev = userFirstSeen.get(uid);
+      if (prev === undefined) {
+        userFirstSeen.set(uid, Number.isFinite(ts) ? ts : Infinity);
+      } else if (Number.isFinite(ts) && ts < prev) {
+        userFirstSeen.set(uid, ts);
+      }
+    };
+
+    const userRoutes = Array.isArray(urRes.data) ? urRes.data : [];
+    const stamps = (Array.isArray(stampsRes.data) ? stampsRes.data : []).filter(
+      (s) => s?.user_id && !SEED_DUMMY_USER_IDS.has(s.user_id)
+    );
+    const badges = Array.isArray(badgesRes.data) ? badgesRes.data : [];
+    const bookmarks = Array.isArray(bookmarksRes.data) ? bookmarksRes.data : [];
+
+    for (const r of userRoutes) recordSeen(r.user_id, r.joined_at);
+    for (const s of stamps) recordSeen(s.user_id, s.acquired_at);
+    for (const b of badges) recordSeen(b.user_id, b.acquired_at);
+    for (const bm of bookmarks) recordSeen(bm.user_id, bm.created_at);
+
+    const allActiveIds = [...userFirstSeen.keys()];
+    const externalActiveIds = allActiveIds.filter(
+      (id) => !KNOWN_INTERNAL_TEST_USER_IDS.has(id)
+    );
+    const internalActiveIds = allActiveIds.filter((id) =>
+      KNOWN_INTERNAL_TEST_USER_IDS.has(id)
+    );
+
+    const newExternalActive24h = externalActiveIds.filter((id) => {
+      const ts = userFirstSeen.get(id);
+      return Number.isFinite(ts) && nowMs - ts <= ms24h;
+    }).length;
+    const newExternalActive7d = externalActiveIds.filter((id) => {
+      const ts = userFirstSeen.get(id);
+      return Number.isFinite(ts) && nowMs - ts <= ms7d;
+    }).length;
+
+    const countRowsWithin = (rows, field, windowMs) =>
+      rows.filter((r) => {
+        const ts = r?.[field] ? Date.parse(r[field]) : NaN;
+        return Number.isFinite(ts) && nowMs - ts <= windowMs;
+      }).length;
+
+    const externalStamps = stamps.filter(
+      (s) => !KNOWN_INTERNAL_TEST_USER_IDS.has(s.user_id)
+    );
+    const externalUserRoutes = userRoutes.filter(
+      (r) => r?.user_id && !KNOWN_INTERNAL_TEST_USER_IDS.has(r.user_id)
+    );
+
+    return {
+      status: "ok",
+      authSource: authStats
+        ? "supabase_auth_admin"
+        : "public_activity_tables_and_ga4",
+      headline: {
+        externalRegisteredUsers: authStats
+          ? authStats.externalAuthUsers
+          : externalActiveIds.length,
+        internalTestUsers: authStats
+          ? authStats.internalTestUsers
+          : internalActiveIds.length,
+        totalRegisteredUsers: authStats
+          ? authStats.totalAuthUsers
+          : allActiveIds.length,
+        newExternalUsers24h: authStats
+          ? authStats.newExternalUsers24h
+          : newExternalActive24h,
+        newExternalUsers7d: authStats
+          ? authStats.newExternalUsers7d
+          : newExternalActive7d,
+      },
+      activity: {
+        stampsTotal: stamps.length,
+        externalStampsTotal: externalStamps.length,
+        stamps24h: countRowsWithin(stamps, "acquired_at", ms24h),
+        stamps7d: countRowsWithin(stamps, "acquired_at", ms7d),
+        routeJoinsTotal: userRoutes.length,
+        externalRouteJoinsTotal: externalUserRoutes.length,
+        routeJoins24h: countRowsWithin(userRoutes, "joined_at", ms24h),
+        routeJoins7d: countRowsWithin(userRoutes, "joined_at", ms7d),
+        routeCompletionsTotal: userRoutes.filter(
+          (r) => r.status === "COMPLETED"
+        ).length,
+        bookmarksTotal: bookmarks.length,
+      },
+      ga4AuthFunnel28d,
+    };
+  } catch (err) {
+    return {
+      status: "error",
+      message: err instanceof Error ? err.message : String(err),
+      authSource: "error",
+      headline: {
+        externalRegisteredUsers: 0,
+        internalTestUsers: 0,
+        totalRegisteredUsers: 0,
+        newExternalUsers24h: 0,
+        newExternalUsers7d: 0,
+      },
+      activity: null,
+      ga4AuthFunnel28d,
+    };
+  }
+}
+
+async function fetchStripeListPages(endpointPath, secretKey, maxPages = 5) {
+  const items = [];
+  let startingAfter = null;
+  for (let page = 0; page < maxPages; page++) {
+    const url = new URL(`https://api.stripe.com/v1/${endpointPath}`);
+    if (!url.searchParams.has("limit")) {
+      url.searchParams.set("limit", "100");
+    }
+    if (startingAfter) {
+      url.searchParams.set("starting_after", startingAfter);
+    }
+    const res = await fetch(url.toString(), {
+      headers: { Authorization: `Bearer ${secretKey}` },
+    });
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`Stripe API error (${res.status}) on ${endpointPath}: ${errText}`);
+    }
+    const data = await res.json();
+    const batch = Array.isArray(data.data) ? data.data : [];
+    items.push(...batch);
+    if (!data.has_more || batch.length === 0) break;
+    startingAfter = batch[batch.length - 1].id;
+  }
+  return items;
+}
+
+async function fetchStripeMetrics() {
+  const secretKey =
+    process.env.STRIPE_LIVE_SECRET_KEY || process.env.STRIPE_SECRET_KEY;
+  if (!secretKey) {
+    return {
+      status: "unconfigured",
+      mode: null,
+      message: "STRIPE_SECRET_KEY が未設定のため Stripe 集計をスキップしました。",
+      customers: { total: 0, new24h: 0, new7d: 0 },
+      subscriptions: {
+        active: 0,
+        cancelAtPeriodEnd: 0,
+        canceled: 0,
+        pastDue: 0,
+        estimatedMrrJpy: 0,
+      },
+      payments: {
+        succeededTotal: 0,
+        succeeded24h: 0,
+        succeeded7d: 0,
+        succeeded30d: 0,
+        netRevenueTotalJpy: 0,
+        netRevenue24hJpy: 0,
+        netRevenue7dJpy: 0,
+        netRevenue30dJpy: 0,
+        refundedCount: 0,
+      },
+    };
+  }
+
+  const mode = secretKey.startsWith("sk_live_") ? "live" : "test";
+  const nowSec = Math.floor(Date.now() / 1000);
+  const sec24h = 24 * 60 * 60;
+  const sec7d = 7 * sec24h;
+  const sec30d = 30 * sec24h;
+
+  try {
+    const [customers, subscriptions, charges] = await Promise.all([
+      fetchStripeListPages("customers", secretKey),
+      fetchStripeListPages("subscriptions?status=all", secretKey),
+      fetchStripeListPages("charges", secretKey),
+    ]);
+
+    const activeSubs = subscriptions.filter(
+      (s) => s.status === "active" || s.status === "trialing"
+    );
+    const renewingSubs = activeSubs.filter((s) => !s.cancel_at_period_end);
+    const cancelAtPeriodEndSubs = activeSubs.filter((s) =>
+      Boolean(s.cancel_at_period_end)
+    );
+    const canceledSubs = subscriptions.filter((s) => s.status === "canceled");
+    const pastDueSubs = subscriptions.filter(
+      (s) => s.status === "past_due" || s.status === "unpaid"
+    );
+
+    let estimatedMrrJpy = 0;
+    for (const sub of renewingSubs) {
+      const priceObj = sub.items?.data?.[0]?.price || sub.plan || null;
+      const unitAmount = Number(
+        priceObj?.unit_amount ?? priceObj?.amount ?? 480
+      );
+      const interval = priceObj?.recurring?.interval || priceObj?.interval || "month";
+      if (interval === "year") {
+        estimatedMrrJpy += Math.round(unitAmount / 12);
+      } else {
+        estimatedMrrJpy += unitAmount;
+      }
+    }
+
+    const succeededCharges = charges.filter(
+      (c) => c.paid === true && c.status === "succeeded"
+    );
+    const refundedCharges = charges.filter(
+      (c) => c.refunded === true || Number(c.amount_refunded || 0) > 0
+    );
+
+    const netAmountOf = (c) =>
+      Math.max(0, Number(c.amount || 0) - Number(c.amount_refunded || 0));
+
+    const filterChargesWithin = (windowSec) =>
+      succeededCharges.filter((c) => nowSec - Number(c.created || 0) <= windowSec);
+
+    const charges24h = filterChargesWithin(sec24h);
+    const charges7d = filterChargesWithin(sec7d);
+    const charges30d = filterChargesWithin(sec30d);
+
+    const sumNet = (list) => list.reduce((acc, c) => acc + netAmountOf(c), 0);
+
+    return {
+      status: "ok",
+      mode,
+      customers: {
+        total: customers.length,
+        new24h: customers.filter((c) => nowSec - Number(c.created || 0) <= sec24h)
+          .length,
+        new7d: customers.filter((c) => nowSec - Number(c.created || 0) <= sec7d)
+          .length,
+      },
+      subscriptions: {
+        active: activeSubs.length,
+        cancelAtPeriodEnd: cancelAtPeriodEndSubs.length,
+        canceled: canceledSubs.length,
+        pastDue: pastDueSubs.length,
+        estimatedMrrJpy,
+      },
+      payments: {
+        succeededTotal: succeededCharges.length,
+        succeeded24h: charges24h.length,
+        succeeded7d: charges7d.length,
+        succeeded30d: charges30d.length,
+        netRevenueTotalJpy: sumNet(succeededCharges),
+        netRevenue24hJpy: sumNet(charges24h),
+        netRevenue7dJpy: sumNet(charges7d),
+        netRevenue30dJpy: sumNet(charges30d),
+        refundedCount: refundedCharges.length,
+      },
+    };
+  } catch (err) {
+    return {
+      status: "error",
+      mode,
+      message: err instanceof Error ? err.message : String(err),
+      customers: { total: 0, new24h: 0, new7d: 0 },
+      subscriptions: {
+        active: 0,
+        cancelAtPeriodEnd: 0,
+        canceled: 0,
+        pastDue: 0,
+        estimatedMrrJpy: 0,
+      },
+      payments: {
+        succeededTotal: 0,
+        succeeded24h: 0,
+        succeeded7d: 0,
+        succeeded30d: 0,
+        netRevenueTotalJpy: 0,
+        netRevenue24hJpy: 0,
+        netRevenue7dJpy: 0,
+        netRevenue30dJpy: 0,
+        refundedCount: 0,
+      },
+    };
+  }
+}
+
 export function extractCityFromAddress(address) {
   if (!address || typeof address !== "string") return null;
   const withoutPref = address
@@ -1174,24 +1563,29 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 }
 
 async function main() {
-  const [gscResult, ga4Result, sitemapSubmitResult] = await Promise.all([
-    fetchSearchConsoleMetrics(),
-    fetchGa4Metrics(),
-    submitSitemapToSearchConsole(),
-  ]);
+  const [gscResult, ga4Result, sitemapSubmitResult, stripeMetrics] =
+    await Promise.all([
+      fetchSearchConsoleMetrics(),
+      fetchGa4Metrics(),
+      submitSitemapToSearchConsole(),
+      fetchStripeMetrics(),
+    ]);
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const hasServiceRoleKey = Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY);
   const supabaseKey =
     process.env.SUPABASE_SERVICE_ROLE_KEY ||
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   const routes = [];
   const microFeedbackList = [];
+  let supabaseClient = null;
   if (supabaseUrl && supabaseKey) {
-    const supabase = createClient(supabaseUrl, supabaseKey, {
+    supabaseClient = createClient(supabaseUrl, supabaseKey, {
       auth: { persistSession: false },
       realtime: { transport: ws },
     });
+    const supabase = supabaseClient;
     const PAGE_SIZE = 1000;
     let offset = 0;
     while (true) {
@@ -1225,8 +1619,12 @@ async function main() {
     }
   }
 
+  const [userMetrics, areaIntentResult] = await Promise.all([
+    fetchUserMetrics(supabaseClient, hasServiceRoleKey, ga4Result),
+    discoverAreaSearchIntents(routes, gscResult.rows || []),
+  ]);
   const { byAreaName: areaKeywordsMap, byPrefecture: prefectureKeywordsMap } =
-    await discoverAreaSearchIntents(routes, gscResult.rows || []);
+    areaIntentResult;
 
   // 都道府県ハブ（/areas, /areas/[prefecture]）およびスポット個別ページ（/routes/[id]/spot/[spotId]）監査
   const prefEntries = Object.values(prefectureKeywordsMap);
@@ -1415,6 +1813,23 @@ async function main() {
     ga4Status: ga4Result.status,
     ga4Message: ga4Result.message || null,
     summary: {
+      externalRegisteredUsers:
+        userMetrics?.headline?.externalRegisteredUsers ?? 0,
+      newExternalUsers24h: userMetrics?.headline?.newExternalUsers24h ?? 0,
+      newExternalUsers7d: userMetrics?.headline?.newExternalUsers7d ?? 0,
+      internalTestUsers: userMetrics?.headline?.internalTestUsers ?? 0,
+      totalStamps: userMetrics?.activity?.stampsTotal ?? 0,
+      stamps24h: userMetrics?.activity?.stamps24h ?? 0,
+      stripeMode: stripeMetrics?.mode || null,
+      stripeActiveSubscriptions: stripeMetrics?.subscriptions?.active ?? 0,
+      stripeEstimatedMrrJpy:
+        stripeMetrics?.subscriptions?.estimatedMrrJpy ?? 0,
+      stripeCustomersTotal: stripeMetrics?.customers?.total ?? 0,
+      stripePayments24hCount: stripeMetrics?.payments?.succeeded24h ?? 0,
+      stripeNetRevenue24hJpy: stripeMetrics?.payments?.netRevenue24hJpy ?? 0,
+      stripeNetRevenue30dJpy: stripeMetrics?.payments?.netRevenue30dJpy ?? 0,
+      stripeNetRevenueTotalJpy:
+        stripeMetrics?.payments?.netRevenueTotalJpy ?? 0,
       totalGscRows: (gscResult.rows || []).length,
       totalGscPages: (gscResult.pageRows || []).length,
       sitemapStatus: sitemapSubmitResult.status,
@@ -1434,6 +1849,8 @@ async function main() {
       microFeedbackOpenCount: microFeedbackSummary.openCount,
       dailySnsRouteId: dailySnsPick?.routeId || null,
     },
+    userMetrics,
+    stripeMetrics,
     dailySnsPick,
     microFeedbackSummary,
     prefectureHubAudit,
