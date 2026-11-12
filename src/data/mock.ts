@@ -67730,5 +67730,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "a0fe99ba-9570-4a5b-8270-529ad6743cee",
+    "title": "笏谷石の福井城址と北ノ庄の記憶・福井を辿る",
+    "name": "笏谷石の福井城址と北ノ庄の記憶・福井を辿る",
+    "description": "柴田勝家公の北ノ庄城と結城秀康公の福井城、二つの城の記憶と独自の食文化が息づく福井県福井市。恐竜モニュメントが迎える福井駅から、お市の方ゆかりの柴田神社、ソースカツ丼発祥のヨーロッパ軒 総本店、お堀端の森八大名閣 本店、「福の井」が残る福井城址までを辿る。",
+    "region": "福井城址と北ノ庄城・順化（福井市）",
+    "area_name": "福井城址と北ノ庄城・順化（福井市）",
+    "cover_image_url": "/images/fukui/route-eyecatch.png",
+    "imageUrl": "/images/fukui/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北ノ庄城址の柴田神社と笏谷石の福井城址、元祖ソースカツ丼が息づく福井で、あなたの旅のしるしはどこにある？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "青緑色の笏谷石の石垣と御廊下橋、「福の井」が残る六十八万石の「福井城址」",
+          "description": "結城秀康公が築いた壮大な天守台と水堀を渡る御廊下橋を歩き、福井の地名の由来となった古井戸の歴史に触れた。",
+          "badge_code": "fukui_castle_shakudani_stone_walls"
+        },
+        {
+          "key": "B",
+          "text": "柴田勝家公とお市の方、浅井三姉妹を祀る北ノ庄城本丸跡の「柴田神社」",
+          "description": "発掘された北ノ庄城の石垣と九十九橋の礎石を前に、戦国の世を気高く生き抜いた武将と姫君の絆に思いを馳せた。",
+          "badge_code": "fukui_shibata_shrine_kitanosho"
+        },
+        {
+          "key": "C",
+          "text": "恐竜が迎える「福井駅」と、大正二年創業「ヨーロッパ軒 総本店」の元祖「ソースカツ丼」",
+          "description": "恐竜王国の玄関口から街へ繰り出し、きめ細かな衣に秘伝のウスターソースが染みた伝統のカツ丼に舌鼓を打った。",
+          "badge_code": "fukui_europaken_sauce_katsudon"
+        },
+        {
+          "key": "D",
+          "text": "福井城のお堀端に佇む昭和八年創業「森八大名閣 本店」の格調高い伝統銘菓",
+          "description": "松平家御用達の技を受け継ぐ老舗で、城下の茶の湯文化が息づく上品な和菓子と凛とした佇まいに心和んだ。",
+          "badge_code": "fukui_morihachi_daimyokaku_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9e2d78cb-e957-47a9-82f4-6c5e9629cd84",
+        "name": "福井駅",
+        "description": "北陸新幹線やハピラインふくい線などが集まる福井県の中心駅（改札は始発〜終電）。西口「恐竜広場」には実物大の動く恐竜モニュメントが並び、城下町散策の起点となっている。",
+        "address": "福井県福井市中央1丁目1-1",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.061914,
+        "lng": 136.222854,
+        "qr_token": "shuin-fukui-1",
+        "cover_image_url": "/images/fukui/spot1.png",
+        "f7_fragment": "西口広場に実物大の恐竜モニュメントが並び、城下町・福井へと誘う拠点駅。",
+        "f7_full": "「福井駅」の迫力ある恐竜広場と城下へと伸びる通りが、北ノ庄城と福井城の歴史を巡る旅の始まりを楽しく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "671847f2-dd07-4df9-8467-2c0f1d521c11",
+        "next_spot_name": "柴田神社"
+      },
+      {
+        "id": "671847f2-dd07-4df9-8467-2c0f1d521c11",
+        "name": "柴田神社",
+        "description": "柴田勝家公が築いた北ノ庄城の本丸跡に鎮座する神社（境内参拝自由、社務所は9:00〜17:00）。勝家公とお市の方、浅井三姉妹を祀り、発掘された北ノ庄城の石垣や九十九橋の礎石が残る。",
+        "address": "福井県福井市中央1丁目21-17",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.06027,
+        "lng": 136.219659,
+        "qr_token": "shuin-fukui-2",
+        "cover_image_url": "/images/fukui/spot2.png",
+        "f7_fragment": "北ノ庄城の本丸跡に鎮座し、柴田勝家公とお市の方、浅井三姉妹を祀る古社。",
+        "f7_full": "「柴田神社」の静かな社殿と発掘された北ノ庄城の石垣が、戦国の世を駆け抜けた柴田勝家公とお市の方の誇り高い記憶を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "55a2bbf8-2c46-4f92-8837-c9d270ed2881",
+        "next_spot_name": "ヨーロッパ軒 総本店"
+      },
+      {
+        "id": "55a2bbf8-2c46-4f92-8837-c9d270ed2881",
+        "name": "ヨーロッパ軒 総本店",
+        "description": "片町・順化エリアに本店を構える大正二年創業の老舗洋食店（11:00〜19:50営業、月曜・火曜休）。薄く揚げたトンカツに秘伝のウスターソースを絡めた福井名物「ソースカツ丼」発祥の店。",
+        "address": "福井県福井市順化1丁目7-4",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.064073,
+        "lng": 136.214781,
+        "qr_token": "shuin-fukui-3",
+        "cover_image_url": "/images/fukui/spot3.png",
+        "f7_fragment": "大正二年の創業以来、秘伝ソースの福井名物「ソースカツ丼」を供する総本店。",
+        "f7_full": "「ヨーロッパ軒 総本店」のレトロな洋館建築と香ばしいソースカツ丼が、百年以上にわたり福井市民に愛され続けるソウルフードの味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "3f1a9074-76f3-46b2-8ba9-7e57f5be55a3",
+        "next_spot_name": "森八大名閣 本店"
+      },
+      {
+        "id": "3f1a9074-76f3-46b2-8ba9-7e57f5be55a3",
+        "name": "森八大名閣 本店",
+        "description": "福井城址のお堀端に本店を構える昭和八年創業の老舗和菓子店（9:00〜18:00営業、月曜定休）。福井藩御用菓子司の流れを汲み、代表銘菓「越の雪中梅」や「御挟餅」、季節の上生菓子が揃う。",
+        "address": "福井県福井市大手3丁目15-9",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.066442,
+        "lng": 136.218063,
+        "qr_token": "shuin-fukui-4",
+        "cover_image_url": "/images/fukui/spot4.png",
+        "f7_fragment": "福井城のお堀端に佇み、松平家御用達の伝統を継ぐ銘菓を商う昭和八年創業の老舗。",
+        "f7_full": "「森八大名閣 本店」の端正な店構えと繊細な季節の和菓子が、越前松平家の城下町に育まれた格調高い茶の湯の文化を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a9b64cf5-8dee-4e4f-8288-a91e363ec22b",
+        "next_spot_name": "福井城址"
+      },
+      {
+        "id": "a9b64cf5-8dee-4e4f-8288-a91e363ec22b",
+        "name": "福井城址",
+        "description": "結城秀康公が築いた福井藩六十八万石の居城跡（終日散策自由）。福井特産の笏谷石で築かれた壮大な天守台と内堀、復元された屋根付きの「御廊下橋」と山里口御門、名水井戸「福の井」が残る。",
+        "address": "福井県福井市大手3丁目17-1",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.065565,
+        "lng": 136.220879,
+        "qr_token": "shuin-fukui-5",
+        "cover_image_url": "/images/fukui/spot5.png",
+        "f7_fragment": "笏谷石の石垣と御廊下橋、福井の地名の由来となった「福の井」が残る城址。",
+        "f7_full": "「福井城址」の内堀に映る笏谷石の石垣と優美な御廊下橋が、二つの城の歴史と食文化を巡り歩いた福井の旅を凛とした余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8ae7f400-9a2d-41ec-8fa2-5938243cd4fd",
+    "title": "二つの街道と諏訪大社・下諏訪宿へ",
+    "name": "二つの街道と諏訪大社・下諏訪宿へ",
+    "description": "中山道と甲州街道が交わる唯一の温泉宿場町であり、諏訪大社下社の門前町として栄えた長野県下諏訪町。下諏訪駅から、水運儀象台のしもすわ今昔館おいでや、街道合流点の下諏訪宿本陣岩波家、薪炊き塩羊羹の新鶴本店、大注連縄と御柱が聳える諏訪大社下社秋宮までを歩く。",
+    "region": "下諏訪（下諏訪町）",
+    "area_name": "下諏訪（下諏訪町）",
+    "cover_image_url": "/images/shimosuwa/route-eyecatch.png",
+    "imageUrl": "/images/shimosuwa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大注連縄が揺れる諏訪大社と薪炊きの塩羊羹、二つの街道が交わる下諏訪で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治六年創業の「新鶴本店」で出会う、樫の薪で練り上げた伝統の「塩羊羹」",
+          "description": "十勝産小豆の滋味を天然の塩が引き立てる、門前町で百五十年愛されてきた凛とした甘さに心満たされた。",
+          "badge_code": "shimosuwa_shintsuru_shio_yokan"
+        },
+        {
+          "key": "B",
+          "text": "大注連縄の「神楽殿」と四隅に天を突く「御柱」が鎮座する「諏訪大社下社秋宮」",
+          "description": "重要文化財の社殿と青銅製の巨大狛犬、そして立ち昇る御神湯の湯気に、古代から続く諏訪信仰の威厳を感じた。",
+          "badge_code": "shimosuwa_taisha_akimiya_onbashira"
+        },
+        {
+          "key": "C",
+          "text": "縄文の黒曜石と千年前の中華時計塔・水運儀象台に出会う「しもすわ今昔館おいでや」",
+          "description": "水の力で時を刻む高さ十二メートルの精密な時計塔と黒曜石の輝きに、諏訪のものづくりの原点を垣間見た。",
+          "badge_code": "shimosuwa_konjakukan_clock_tower"
+        },
+        {
+          "key": "D",
+          "text": "温泉宿場の玄関口「下諏訪駅」と、街道合流点の名園を伝える「下諏訪宿本陣岩波家」",
+          "description": "中山道と甲州街道が交わる湯の街を歩き、皇女和宮や明治天皇も訪れた本陣の格式高い佇まいに旅情を感じた。",
+          "badge_code": "shimosuwa_honjin_iwanami_post_town"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f98c575d-d048-4434-8784-d45aec6c1f78",
+        "name": "下諏訪駅",
+        "description": "JR中央本線の主要駅であり、諏訪大社下社と下諏訪温泉への玄関口（待合室は始発〜終電）。駅前には御柱祭のモニュメントが立ち、中山道・甲州街道が交わる歴史ある宿場町への散策起点となっている。",
+        "address": "長野県諏訪郡下諏訪町5317",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.071984,
+        "lng": 138.085061,
+        "qr_token": "shuin-shimosuwa-1",
+        "cover_image_url": "/images/shimosuwa/spot1.png",
+        "f7_fragment": "諏訪大社下社と温泉宿場町・下諏訪へと誘う、御柱の心意気が息づく玄関口。",
+        "f7_full": "「下諏訪駅」の落ち着いた和風意匠の駅舎が、二つの五街道が合流する唯一の温泉宿場町と諏訪大社を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cf28f52e-2e9a-4323-80e0-1f1919728b4b",
+        "next_spot_name": "しもすわ今昔館おいでや"
+      },
+      {
+        "id": "cf28f52e-2e9a-4323-80e0-1f1919728b4b",
+        "name": "しもすわ今昔館おいでや",
+        "description": "中山道と甲州街道の合流点近くに建つ歴史・時計体験施設（9:00〜17:00開館、無休）。高さ約12mの古代水運時計塔「水運儀象台」と縄文時代の黒曜石採掘遺跡を展示し、中庭には無料の足湯も備える。",
+        "address": "長野県諏訪郡下諏訪町立町3289",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.075643,
+        "lng": 138.089364,
+        "qr_token": "shuin-shimosuwa-2",
+        "cover_image_url": "/images/shimosuwa/spot2.png",
+        "f7_fragment": "世界初の天文時計塔「水運儀象台」と黒曜石の歴史を伝える街道の文化拠点。",
+        "f7_full": "「しもすわ今昔館おいでや」に聳える水運儀象台の精巧な響きと足湯の温もりが、縄文の黒曜石から精密機械へと続く諏訪の歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d4a9c8be-78c3-4845-8497-0fa6739c3400",
+        "next_spot_name": "下諏訪宿本陣岩波家"
+      },
+      {
+        "id": "d4a9c8be-78c3-4845-8497-0fa6739c3400",
+        "name": "下諏訪宿本陣岩波家",
+        "description": "中山道と甲州街道の合流点に位置する下諏訪宿の旧本陣（10:00〜16:00公開、水曜休）。皇女和宮や明治天皇も休息した奥座敷と名園を見学でき、宿場町の格式を感じながらひと息つける。",
+        "address": "長野県諏訪郡下諏訪町3492",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.076398,
+        "lng": 138.090536,
+        "qr_token": "shuin-shimosuwa-3",
+        "cover_image_url": "/images/shimosuwa/spot3.png",
+        "f7_fragment": "中山道と甲州街道の合流点に建ち、往時の奥座敷と名園を今に伝える旧本陣。",
+        "f7_full": "「下諏訪宿本陣岩波家」の風格ある表門と四季を映す日本庭園が、二つの街道が交わる宿場町の栄華と静かな休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "878c3897-ac7e-4749-87fa-aaa1135f5f41",
+        "next_spot_name": "新鶴本店"
+      },
+      {
+        "id": "878c3897-ac7e-4749-87fa-aaa1135f5f41",
+        "name": "新鶴本店",
+        "description": "諏訪大社下社秋宮の門前に店を構える明治六年創業の老舗和菓子店（9:00〜17:30営業、水曜休）。十勝産小豆と天然塩を樫の薪で練り上げた代表銘菓「塩羊羹」や「もちまんじゅう」で広く知られる。",
+        "address": "長野県諏訪郡下諏訪町横町木の下3501",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.075559,
+        "lng": 138.09042,
+        "qr_token": "shuin-shimosuwa-4",
+        "cover_image_url": "/images/shimosuwa/spot4.png",
+        "f7_fragment": "諏訪大社秋宮の門前で明治六年から樫の薪で「塩羊羹」を練り上げる老舗処。",
+        "f7_full": "「新鶴本店」の風情ある木造店舗と薪炊きの塩羊羹の凛とした甘みが、百五十年にわたりお諏訪さまの参拝客を癒やしてきた伝統を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "240dd0a5-4afd-4f3f-83ac-94c65fe1c03e",
+        "next_spot_name": "諏訪大社下社秋宮"
+      },
+      {
+        "id": "240dd0a5-4afd-4f3f-83ac-94c65fe1c03e",
+        "name": "諏訪大社下社秋宮",
+        "description": "全国一万余の諏訪神社の総本社・諏訪大社四社の一つ（境内参拝自由、宝物殿は8:30〜17:00）。重要文化財の「神楽殿」や大注連縄、日本最大級の青銅製狛犬、四隅に聳える「御柱」、温泉の手水「御神湯」が見どころ。",
+        "address": "長野県諏訪郡下諏訪町5828",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.075389,
+        "lng": 138.091277,
+        "qr_token": "shuin-shimosuwa-5",
+        "cover_image_url": "/images/shimosuwa/spot5.png",
+        "f7_fragment": "大注連縄の神楽殿と巨大な御柱が聳え、御神湯が湧く信濃国一之宮の名高い古社。",
+        "f7_full": "「諏訪大社下社秋宮」の大注連縄を掲げた神楽殿と天を突く御柱の威容が、温泉宿場町・下諏訪を巡り歩いた旅を厳かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ca418c14-cbbe-452d-8f99-27f23c89aa6c",
+    "title": "北アルプスと碌山の赤煉瓦・安曇野を歩く",
+    "name": "北アルプスと碌山の赤煉瓦・安曇野を歩く",
+    "description": "残雪の北アルプスと清らかな湧水に抱かれ、近代彫刻と古代の海洋民族の記憶が息づく長野県安曇野市穂高。JR大糸線の穂高駅から、駅前カフェのひつじ屋、日本アルプスの総鎮守・穂高神社、明治創業の丸山菓子舗 本店、ツタが絡まる赤煉瓦の碌山美術館までを歩く。",
+    "region": "安曇野・穂高（安曇野市）",
+    "area_name": "安曇野・穂高（安曇野市）",
+    "cover_image_url": "/images/hotaka/route-eyecatch.png",
+    "imageUrl": "/images/hotaka/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "ツタが絡まる赤煉瓦の美術館と日本アルプスの総鎮守、名水のカフェが息づく安曇野で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "緑のツタが絡まる赤煉瓦の教会風建築で、荻原守衛の彫刻に出会う「碌山美術館」",
+          "description": "市民と子どもたちの寄付で建った温もりある赤煉瓦の空間と、命を吹き込まれたブロンズ像の迫力に胸を打たれた。",
+          "badge_code": "hotaka_rokuzan_art_museum"
+        },
+        {
+          "key": "B",
+          "text": "海洋民族・安曇氏の祖神を祀り、巨大な御船祭を伝える総鎮守「穂高神社」",
+          "description": "樹齢五百年の巨杉が聳える清浄な境内で、海から北アルプスの峰へと至る壮大な神話と信仰に触れた。",
+          "badge_code": "hotaka_shrine_alps_guardian"
+        },
+        {
+          "key": "C",
+          "text": "明治三十七年創業の老舗「丸山菓子舗 本店」で出会う、信州の果実と名水の銘菓",
+          "description": "安曇野の澄んだ水と信州産の素材を活かした優しい和洋菓子の甘みに、豊かな大地の恵みを味わった。",
+          "badge_code": "hotaka_maruyama_shinshu_sweets"
+        },
+        {
+          "key": "D",
+          "text": "北アルプスを望む「穂高駅」から歩き、名水の珈琲に憩う「ひつじ屋」",
+          "description": "切妻屋根の駅前から爽やかな風の中を歩き、絵本とクラフトに囲まれたカフェのひとときに心が和んだ。",
+          "badge_code": "hotaka_station_hitsujiya_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7bb2dd9e-2d79-4894-84fd-87ecd1d5e4bd",
+        "name": "穂高駅",
+        "description": "JR大糸線の主要駅であり、安曇野観光の玄関口（待合室は始発〜終電）。北アルプスの山並みをイメージした三角屋根の駅舎と駅前の双体道祖神が旅人を迎え、碌山美術館や穂高神社への散策起点となっている。",
+        "address": "長野県安曇野市穂高5952-3",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.339821,
+        "lng": 137.881825,
+        "qr_token": "shuin-hotaka-1",
+        "cover_image_url": "/images/hotaka/spot1.png",
+        "f7_fragment": "北アルプスの峰々を仰ぎ、名水と芸術の里・安曇野へと誘う大糸線の玄関口。",
+        "f7_full": "「穂高駅」の三角屋根の駅舎と爽やかな高原の風が、穂高神社の深い杜と赤煉瓦の美術館を歩く安曇野の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "293fdc3b-a913-4e9c-8f68-cd1d07fe2810",
+        "next_spot_name": "ひつじ屋"
+      },
+      {
+        "id": "293fdc3b-a913-4e9c-8f68-cd1d07fe2810",
+        "name": "ひつじ屋",
+        "description": "穂高駅前の通りに佇むカフェ・雑貨＆レンタサイクル店（10:00〜17:00営業、水曜・木曜休）。安曇野の湧水で淹れた珈琲や手作りスイーツ、絵本やクラフト雑貨を楽しみながら街歩きの休憩をとれる。",
+        "address": "長野県安曇野市穂高5951-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.339654,
+        "lng": 137.882436,
+        "qr_token": "shuin-hotaka-2",
+        "cover_image_url": "/images/hotaka/spot2.png",
+        "f7_fragment": "穂高駅前の通りに佇み、安曇野の名水珈琲とクラフト雑貨に憩う温かなカフェ。",
+        "f7_full": "「ひつじ屋」の木の温もりあふれる空間と香り高い珈琲が、駅前から穂高神社へと歩く旅の途中に心地よい安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "1035b6b7-3eb4-4a2b-8abc-e140cf2c9126",
+        "next_spot_name": "穂高神社"
+      },
+      {
+        "id": "1035b6b7-3eb4-4a2b-8abc-e140cf2c9126",
+        "name": "穂高神社",
+        "description": "奥穂高岳に奥宮を祀る「日本アルプスの総鎮守」（境内参拝自由、社務所は8:30〜17:00）。古代の海洋民族・安曇氏の祖神を祀り、樹齢500年を超える孝養杉や国重要無形民俗文化財の「御船祭」で名高い。",
+        "address": "長野県安曇野市穂高6079",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.338683,
+        "lng": 137.884308,
+        "qr_token": "shuin-hotaka-3",
+        "cover_image_url": "/images/hotaka/spot3.png",
+        "f7_fragment": "奥穂高岳に奥宮を祀り、樹齢五百年超の巨杉が聳える日本アルプスの総鎮守。",
+        "f7_full": "「穂高神社」の巨杉に包まれた厳かな社殿と清冽な空気が、海からアルプスへと至る安曇族の壮大な歴史と信仰を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1c74ba15-92d4-42d0-81e5-cfdd613f84ef",
+        "next_spot_name": "丸山菓子舗 本店"
+      },
+      {
+        "id": "1c74ba15-92d4-42d0-81e5-cfdd613f84ef",
+        "name": "丸山菓子舗 本店",
+        "description": "旧街道沿いに店を構える明治三十七年創業の老舗和洋菓子店（9:00〜18:00営業、水曜休）。信州産のりんごやくるみ、安曇野の名水を活かした伝統和菓子や焼き菓子を幅広く取り揃えている。",
+        "address": "長野県安曇野市穂高4537",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.343801,
+        "lng": 137.884924,
+        "qr_token": "shuin-hotaka-4",
+        "cover_image_url": "/images/hotaka/spot4.png",
+        "f7_fragment": "明治三十七年の創業以来、信州の果実と名水を活かした和洋菓子を作る老舗。",
+        "f7_full": "「丸山菓子舗 本店」に並ぶ信州りんごの焼き菓子や季節の和菓子が、北アルプスの麓・安曇野の豊かな実りと伝統の甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "5acffad5-4513-4632-862d-642d26b22759",
+        "next_spot_name": "碌山美術館"
+      },
+      {
+        "id": "5acffad5-4513-4632-862d-642d26b22759",
+        "name": "碌山美術館",
+        "description": "近代彫刻の先駆者・荻原守衛（碌山）の作品を収蔵・公開する美術館（9:00〜17:10開館・冬季短縮、11〜4月の月曜休）。国登録有形文化財に指定されたツタが絡まる赤煉瓦の教会風建築「碌山館」が象徴。",
+        "address": "長野県安曇野市穂高5095-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 36.34371,
+        "lng": 137.881396,
+        "qr_token": "shuin-hotaka-5",
+        "cover_image_url": "/images/hotaka/spot5.png",
+        "f7_fragment": "ツタが絡まる赤煉瓦の教会風建築で、彫刻家・荻原守衛の芸術を伝える美術館。",
+        "f7_full": "「碌山美術館」の木漏れ日に映える赤煉瓦の尖塔と魂のこもった彫刻群が、芸術と名水の里・安曇野を歩いた旅を深い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3f00552e-4a78-414a-8545-4ef791b0bbaf",
+    "title": "飛騨川のせせらぎと名湯・下呂温泉の旅",
+    "name": "飛騨川のせせらぎと名湯・下呂温泉の旅",
+    "description": "林羅山が「天下の三名泉」と讃えた美肌の湯と飛騨川の清流が息づく岐阜県下呂市。JR高山本線の下呂駅から、湯の街を結ぶしらさぎ橋、足湯と温玉ソフトのゆあみ屋、温泉の科学を学ぶ下呂発 温泉博物館、白鷺伝説を伝える古刹・温泉寺までを巡る。",
+    "region": "下呂温泉（下呂市）",
+    "area_name": "下呂温泉（下呂市）",
+    "cover_image_url": "/images/gero/route-eyecatch.png",
+    "imageUrl": "/images/gero/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "飛騨川のせせらぎと白鷺伝説の古刹、足湯の温玉ソフトが息づく下呂で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "百七十三段の石段を上り、白鷺伝説の薬師如来と湯の街を一望する「温泉寺」",
+          "description": "一羽の白鷺が源泉のありかを知らせた伝説に思いを馳せ、高台から見下ろす飛騨川と温泉街のパノラマに感動した。",
+          "badge_code": "gero_onsenji_white_heron"
+        },
+        {
+          "key": "B",
+          "text": "源泉かけ流しの足湯に浸かりながら味わう、「ゆあみ屋」の名物「温玉ソフト」",
+          "description": "とろりとした温泉たまごと濃厚なソフトクリームが溶け合う、温泉街ならではのユニークな甘さに笑顔がこぼれた。",
+          "badge_code": "gero_yuamiya_ontama_soft"
+        },
+        {
+          "key": "C",
+          "text": "柳並木の阿多野谷沿いに佇み、日本三名泉の科学と歴史を紐解く「下呂発 温泉博物館」",
+          "description": "江戸時代の温泉番付から湧出の仕組みまで、千年の湯治文化を支える大地と泉質の神秘に知的好奇心が満たされた。",
+          "badge_code": "gero_onsen_science_museum"
+        },
+        {
+          "key": "D",
+          "text": "湯けむり迎える「下呂駅」から飛騨川を渡り、チャップリン像が立つ「しらさぎ橋」",
+          "description": "高山本線の駅から清流の風を感じて橋を渡り、川辺の噴泉池と山々に抱かれた名湯の街並みに心が躍った。",
+          "badge_code": "gero_shirasagi_bridge_hidagawa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "05ead0e6-c583-46d6-8a5e-6f4cb91b0348",
+        "name": "下呂駅",
+        "description": "JR高山本線の主要駅であり、日本三名泉・下呂温泉への玄関口（待合室は始発〜終電）。駅前には源泉に触れられる手湯があり、飛騨川を渡って広がる温泉街への散策起点となっている。",
+        "address": "岐阜県下呂市幸田1398",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.805315,
+        "lng": 137.239802,
+        "qr_token": "shuin-gero-1",
+        "cover_image_url": "/images/gero/spot1.png",
+        "f7_fragment": "高山本線の特急が発着し、日本三名泉・下呂温泉へと誘う湯けむりの玄関口。",
+        "f7_full": "「下呂駅」の旅情あふれる木造風の駅舎と駅前の温かい源泉が、飛騨川の清流と千年の名湯を巡る下呂温泉の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "500649fd-b811-4385-891f-489d82ac9413",
+        "next_spot_name": "しらさぎ橋"
+      },
+      {
+        "id": "500649fd-b811-4385-891f-489d82ac9413",
+        "name": "しらさぎ橋",
+        "description": "下呂温泉街の中心・阿多野谷に架かる橋（終日通行自由）。映画監督チャップリン像や林羅山像が立つ記念撮影スポットであり、飛騨川のせせらぎと温泉街の柳並木を眺めながらひと休みできる。",
+        "address": "岐阜県下呂市湯之島845",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.808578,
+        "lng": 137.244286,
+        "qr_token": "shuin-gero-2",
+        "cover_image_url": "/images/gero/spot2.png",
+        "f7_fragment": "湯の街の中心で阿多野谷に架かり、飛騨川と柳並木を望む温泉街散策の拠点橋。",
+        "f7_full": "「しらさぎ橋」の上を吹き抜ける飛騨川の爽やかな風と柳の緑が、天下の三名泉・下呂温泉ならではの開放的な旅情を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "04b9698a-1e4d-431e-8be7-2a7e07a23835",
+        "next_spot_name": "ゆあみ屋"
+      },
+      {
+        "id": "04b9698a-1e4d-431e-8be7-2a7e07a23835",
+        "name": "ゆあみ屋",
+        "description": "しらさぎ橋のすぐ近くに佇む足湯併設のスイーツ・土産処（9:00〜18:30営業、無休）。無料の天然温泉足湯に浸かりながら、温泉たまごをのせた名物「温玉ソフト」や温泉で温めた「ほんわかプリン」を味わえる。",
+        "address": "岐阜県下呂市湯之島801-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.80847,
+        "lng": 137.242885,
+        "qr_token": "shuin-gero-3",
+        "cover_image_url": "/images/gero/spot3.png",
+        "f7_fragment": "無料の源泉足湯に浸かりながら、名物「温玉ソフト」やプリンを味わう甘味処。",
+        "f7_full": "「ゆあみ屋」の温かい足湯と濃厚な「温玉ソフト」のまろやかな甘みが、温泉街のそぞろ歩きに笑顔と至福のひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0702e6e6-5e64-45bb-8c64-2022645b4427",
+        "next_spot_name": "下呂発 温泉博物館"
+      },
+      {
+        "id": "0702e6e6-5e64-45bb-8c64-2022645b4427",
+        "name": "下呂発 温泉博物館",
+        "description": "阿多野谷沿いに建つ温泉専門の博物館（9:00〜17:00開館、木曜休）。温泉の湧出メカニズムや泉質の違いを学ぶ科学展示と、江戸時代の温泉番付などの歴史資料を公開し、中庭には歩行浴の足湯も備える。",
+        "address": "岐阜県下呂市湯之島543-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.810188,
+        "lng": 137.241423,
+        "qr_token": "shuin-gero-4",
+        "cover_image_url": "/images/gero/spot4.png",
+        "f7_fragment": "柳並木の川沿いに建ち、温泉の科学と江戸期の湯治文化を紐解く専門博物館。",
+        "f7_full": "「下呂発 温泉博物館」のユニークな科学実験展示と歴史ある温泉番付が、千年にわたり愛され続ける名湯の秘密を楽しく解き明かしてくれる。",
+        "is_final": false,
+        "next_spot_id": "1829a537-5a66-4e42-8828-78c3654c0ed0",
+        "next_spot_name": "温泉寺"
+      },
+      {
+        "id": "1829a537-5a66-4e42-8828-78c3654c0ed0",
+        "name": "温泉寺",
+        "description": "173段の石段を上った湯ヶ峰の中腹に鎮座する臨済宗妙心寺派の寺院（境内参拝自由、8:30〜17:00）。傷ついた白鷺が源泉のありかを知らせた「白鷺伝説」の薬師如来を祀り、境内から下呂温泉街を一望できる。",
+        "address": "岐阜県下呂市湯之島680",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.810674,
+        "lng": 137.242817,
+        "qr_token": "shuin-gero-5",
+        "cover_image_url": "/images/gero/spot5.png",
+        "f7_fragment": "百七十三段の石段の上に鎮座し、白鷺伝説の薬師如来を祀る下呂温泉の古刹。",
+        "f7_full": "「温泉寺」の石段を上りきった境内に湧く薬師の湯と眼下に広がる温泉街の絶景が、日本三名泉・下呂を巡った旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cd54c078-2a5b-404b-8b43-ec0ccefe7467",
+    "title": "霊峰の湧水と浅間大社・富士宮を辿る",
+    "name": "霊峰の湧水と浅間大社・富士宮を辿る",
+    "description": "全国浅間神社の総本宮と霊峰富士の清冽な湧水が息づく静岡県富士宮市。JR身延線の富士宮駅から、逆さ富士が水面に映る静岡県富士山世界遺産センター、富士宮やきそばのお宮横丁、重要文化財の本殿が輝く富士山本宮浅間大社、特別天然記念物の湧玉池までを辿る。",
+    "region": "富士宮（富士宮市）",
+    "area_name": "富士宮（富士宮市）",
+    "cover_image_url": "/images/fujinomiya/route-eyecatch.png",
+    "imageUrl": "/images/fujinomiya/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "浅間造の朱塗りの社殿と湧玉池の名水、逆さ富士の建築が息づく富士宮で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "徳川家康公が寄進した朱塗りの二階建て「浅間造」本殿が輝く「富士山本宮浅間大社」",
+          "description": "全国千三百社の総本宮として富士山そのものを御神体と仰ぐ、壮麗な社殿と霊峰の威容に深く感動した。",
+          "badge_code": "fujinomiya_sengen_taisha_shrine"
+        },
+        {
+          "key": "B",
+          "text": "富士山の雪解け水が一日二十万トン湧き出す、特別天然記念物の霊泉「湧玉池」",
+          "description": "水底の玄武岩まで透き通るエメラルドグリーンの湧水と、朱塗りの神路橋が織りなす神聖な水辺に心が洗われた。",
+          "badge_code": "fujinomiya_wakutama_sacred_spring"
+        },
+        {
+          "key": "C",
+          "text": "水盤に「逆さ富士」の木格子建築が映り込む「静岡県富士山世界遺産センター」",
+          "description": "富士ひのきのらせんスロープを登りきった先で、大きな窓いっぱいに広がる本物の富士山の絶景に息をのんだ。",
+          "badge_code": "fujinomiya_mt_fuji_heritage_center"
+        },
+        {
+          "key": "D",
+          "text": "霊峰を仰ぐ「富士宮駅」から歩き、香ばしい「富士宮やきそば」を味わう「お宮横丁」",
+          "description": "コシの強い蒸し麺に肉かすと削り粉が絡む本場のやきそばと、湧水井戸の冷たい名水に門前町の活気を感じた。",
+          "badge_code": "fujinomiya_omiya_yokocho_yakisoba"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b4c076b3-1648-4bdb-80a7-53a16d259da9",
+        "name": "富士宮駅",
+        "description": "JR身延線の主要駅であり、富士山本宮浅間大社および富士山表口への玄関口（待合室は始発〜終電）。北口のペデストリアンデッキからは雄大な富士山を望め、門前町散策の起点となっている。",
+        "address": "静岡県富士宮市中央町16-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.221648,
+        "lng": 138.615045,
+        "qr_token": "shuin-fujinomiya-1",
+        "cover_image_url": "/images/fujinomiya/spot1.png",
+        "f7_fragment": "北口デッキから雄大な富士山を仰ぎ、浅間大社の門前町へと誘う身延線の駅。",
+        "f7_full": "「富士宮駅」のデッキから仰ぐ霊峰富士の堂々たる姿が、世界遺産の祈りと湧き水の街・富士宮を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "33c6dd79-44a0-4614-8cfc-08a71522aa80",
+        "next_spot_name": "静岡県富士山世界遺産センター"
+      },
+      {
+        "id": "33c6dd79-44a0-4614-8cfc-08a71522aa80",
+        "name": "静岡県富士山世界遺産センター",
+        "description": "世界文化遺産・富士山の価値を発信する拠点施設（9:00〜17:00開館・夏季延長、第3火曜休）。富士ひのきの木格子で組まれた「逆さ富士」の展示棟が水盤に映り込み、最上階から本物の富士山を一望できる。",
+        "address": "静岡県富士宮市宮町5-12",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.22378,
+        "lng": 138.608858,
+        "qr_token": "shuin-fujinomiya-2",
+        "cover_image_url": "/images/fujinomiya/spot2.png",
+        "f7_fragment": "富士ひのきの「逆さ富士」が水盤に映り、疑似登山と富士の絶景を楽しめる拠点。",
+        "f7_full": "「静岡県富士山世界遺産センター」の水面に映る逆さ富士の建築美と展望ホールの絶景が、信仰と芸術の山・富士山の魅力を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4340de33-5ea5-4658-823f-6acb11e4d44c",
+        "next_spot_name": "お宮横丁"
+      },
+      {
+        "id": "4340de33-5ea5-4658-823f-6acb11e4d44c",
+        "name": "お宮横丁",
+        "description": "富士山本宮浅間大社の門前に位置する屋外型グルメ広場（10:00〜17:30頃営業、店舗により不定休）。名物の「富士宮やきそば」や静岡おでん、ジェラートなどの店舗が並び、富士山の湧水井戸も備える。",
+        "address": "静岡県富士宮市宮町4-23",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.224836,
+        "lng": 138.61011,
+        "qr_token": "shuin-fujinomiya-3",
+        "cover_image_url": "/images/fujinomiya/spot3.png",
+        "f7_fragment": "浅間大社の門前で本場の「富士宮やきそば」と富士の湧水を味わえるグルメ広場。",
+        "f7_full": "「お宮横丁」の鉄板から立ち昇る富士宮やきそばの香ばしい香りと冷たい湧水が、門前町歩きの途中に活気あふれる休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "894132e3-7e42-4c8a-8bfb-d6e286bd02f9",
+        "next_spot_name": "富士山本宮浅間大社"
+      },
+      {
+        "id": "894132e3-7e42-4c8a-8bfb-d6e286bd02f9",
+        "name": "富士山本宮浅間大社",
+        "description": "全国約1,300社の浅間神社の総本宮であり、世界文化遺産「富士山」の構成資産（境内参拝自由、開門5:00〜20:00・季節変動あり）。徳川家康公寄進の二階建て「浅間造」本殿（重要文化財）や楼門が威容を誇る。",
+        "address": "静岡県富士宮市宮町1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.227487,
+        "lng": 138.610026,
+        "qr_token": "shuin-fujinomiya-4",
+        "cover_image_url": "/images/fujinomiya/spot4.png",
+        "f7_fragment": "徳川家康公寄進の「浅間造」本殿が輝く、全国千三百社の浅間神社の総本宮。",
+        "f7_full": "「富士山本宮浅間大社」の鮮やかな朱塗りの楼門と二階建ての本殿が、富士山そのものを神と仰ぐ千年以上の祈りの歴史を荘厳に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "aa3a6877-362a-41fa-8441-088ad0fe25ff",
+        "next_spot_name": "湧玉池"
+      },
+      {
+        "id": "aa3a6877-362a-41fa-8441-088ad0fe25ff",
+        "name": "湧玉池",
+        "description": "富士山本宮浅間大社の境内に位置する国の特別天然記念物の湧水池（終日見学自由）。富士山の雪解け水が溶岩層を通って1日約20万トン湧き出しており、古来より富士登山の禊の場として尊ばれてきた。",
+        "address": "静岡県富士宮市宮町1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.22717,
+        "lng": 138.611425,
+        "qr_token": "shuin-fujinomiya-5",
+        "cover_image_url": "/images/fujinomiya/spot5.png",
+        "f7_fragment": "富士山の雪解け水が一日二十万トン湧き出す、国の特別天然記念物の清冽な霊泉。",
+        "f7_full": "「湧玉池」の底まで透き通る清冽な湧水と朱色の神路橋の風景が、霊峰富士の恵みと信仰を辿った富士宮の旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
