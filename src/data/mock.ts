@@ -72280,5 +72280,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "cb41fde3-9caf-4bf1-83a4-897cd6e48a48",
+    "title": "信長公の石垣と城下の祈り・小牧を歩く",
+    "name": "信長公の石垣と城下の祈り・小牧を歩く",
+    "description": "織田信長公が初めて築いた小牧山城と尾張藩の宿場町・小牧宿の歴史が息づく愛知県小牧市。名鉄小牧駅から、老舗和菓子処の牧野屋本店、火伏観音として信仰される戒蔵院、信長公ゆかりの総鎮守・小牧神明社、国指定史跡の山頂に立つ小牧山歴史館までを歩く。",
+    "region": "史跡小牧山と旧小牧宿（小牧市）",
+    "area_name": "史跡小牧山と旧小牧宿（小牧市）",
+    "cover_image_url": "/images/komaki/route-eyecatch.png",
+    "imageUrl": "/images/komaki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "信長公が築いた小牧山城の石垣と城下町の社寺、老舗の和菓子が息づく小牧で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "信長公の小牧山築城とともに遷座され、山車文化を伝える総鎮守「小牧神明社」",
+          "description": "小牧山の麓に鎮座する古社に手を合わせ、城の守護神としての歴史とからくり山車の伝統に触れた。",
+          "badge_code": "komaki_shinmeisha_shrine"
+        },
+        {
+          "key": "B",
+          "text": "信長公の石垣と家康公の土塁が残り、濃尾平野を一望する史跡小牧山の「小牧山歴史館」",
+          "description": "国指定史跡の小牧山を登り、二人の天下人が刻印を残した山城の歴史と山頂からの大パノラマに胸が熱くなった。",
+          "badge_code": "komaki_castle_history_museum"
+        },
+        {
+          "key": "C",
+          "text": "城下町の移転とともに歩み、「火伏観音」として信仰を集める真言宗の古刹「戒蔵院」",
+          "description": "十一面観音菩薩を祀る静かな本堂で手を合わせ、小牧の町並みを火災から守り続けた篤い祈りを感じた。",
+          "badge_code": "komaki_kaizoin_kannon"
+        },
+        {
+          "key": "D",
+          "text": "シンボルロードが伸びる「小牧駅」から歩き、老舗「牧野屋本店」で味わう手作りの和菓子",
+          "description": "光あふれる駅前から旧街道筋へ歩き、職人が丁寧に仕立てた自家製餡の和菓子で心和むひとときを過ごした。",
+          "badge_code": "komaki_makinoya_wagashi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c2f99f93-5669-44a0-854e-a12e6a35b8dc",
+        "name": "小牧駅",
+        "description": "名鉄小牧線の中心駅であり、国指定史跡・小牧山への玄関口（構内は始発〜終電）。地下駅舎からサンクンガーデンを経て、小牧山へと続くシンボルロードへとつながる。",
+        "address": "愛知県小牧市中央1-260",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.289071,
+        "lng": 136.928066,
+        "qr_token": "shuin-komaki-1",
+        "cover_image_url": "/images/komaki/spot1.png",
+        "f7_fragment": "サンクンガーデンから史跡小牧山へと伸びるシンボルロードの起点となる駅。",
+        "f7_full": "「小牧駅」の明るい広場と西へまっすぐ続く並木道が、信長公ゆかりの城下町と小牧山を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f8d1a20e-4dc1-46e6-8cfb-853356cc4eaf",
+        "next_spot_name": "牧野屋本店"
+      },
+      {
+        "id": "f8d1a20e-4dc1-46e6-8cfb-853356cc4eaf",
+        "name": "牧野屋本店",
+        "description": "小牧駅から北の旧街道筋に店を構える老舗和菓子店（8:00〜19:00営業、水曜休）。自家製餡の饅頭やどら焼き、季節の朝生菓子など手作りの和菓子が並ぶ。",
+        "address": "愛知県小牧市小牧2-290",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.293342,
+        "lng": 136.928175,
+        "qr_token": "shuin-komaki-2",
+        "cover_image_url": "/images/komaki/spot2.png",
+        "f7_fragment": "旧街道筋で長年愛される、自家製餡のお饅頭や季節の上生菓子の老舗和菓子処。",
+        "f7_full": "「牧野屋本店」の昔ながらの温かな店構えと手作りの和菓子が、小牧山へと向かう散策の途中に優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a3265e9e-7001-40b9-8123-84757ea6acc8",
+        "next_spot_name": "戒蔵院"
+      },
+      {
+        "id": "a3265e9e-7001-40b9-8123-84757ea6acc8",
+        "name": "戒蔵院",
+        "description": "「火伏観音」として信仰を集める真言宗智山派の寺院（境内参拝自由）。信長公の小牧山築城や江戸初期の宿場移転とともに歩んだ歴史を持ち、小牧十観音霊場の第八番札所でもある。",
+        "address": "愛知県小牧市小牧3-143",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.290104,
+        "lng": 136.922642,
+        "qr_token": "shuin-komaki-3",
+        "cover_image_url": "/images/komaki/spot3.png",
+        "f7_fragment": "城下町を火災から守る「火伏観音」として篤い信仰を集める真言宗智山派の古刹。",
+        "f7_full": "「戒蔵院」の静かな本堂と鐘楼の佇まいが、信長公の城下町から宿場町へと受け継がれた小牧の祈りの歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "881a903d-e6d5-4639-83d9-438949b1d301",
+        "next_spot_name": "小牧神明社"
+      },
+      {
+        "id": "881a903d-e6d5-4639-83d9-438949b1d301",
+        "name": "小牧神明社",
+        "description": "天照大御神を祀る小牧の総鎮守（境内参拝自由）。永禄六年の小牧山築城に際して信長公により城の守護神として勧請され、境内には市指定文化財の山車を収める山車蔵が並ぶ。",
+        "address": "愛知県小牧市小牧5-153",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.290275,
+        "lng": 136.919853,
+        "qr_token": "shuin-komaki-4",
+        "cover_image_url": "/images/komaki/spot4.png",
+        "f7_fragment": "信長公の小牧山築城に際して勧請され、伝統の山車蔵が立ち並ぶ小牧の総鎮守。",
+        "f7_full": "「小牧神明社」の緑深い社叢と山車蔵が並ぶ境内が、小牧山城の守護神として歩んできた誇りと静かな安らぎを与えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c60eeced-9a66-4521-8ce1-354913c6c11e",
+        "next_spot_name": "小牧山歴史館"
+      },
+      {
+        "id": "c60eeced-9a66-4521-8ce1-354913c6c11e",
+        "name": "小牧山歴史館",
+        "description": "国指定史跡・小牧山の山頂に立つ歴史博物館（9:00〜16:30開館、第3木曜休）。織田信長公が築いた石垣や徳川家康公が改修した土塁の歴史を展示し、展望室から濃尾平野を一望できる。",
+        "address": "愛知県小牧市堀の内1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.292564,
+        "lng": 136.913412,
+        "qr_token": "shuin-komaki-5",
+        "cover_image_url": "/images/komaki/spot5.png",
+        "f7_fragment": "信長公が初めて築いた石垣の山城・国指定史跡小牧山の山頂に聳える歴史博物館。",
+        "f7_full": "「小牧山歴史館」の山頂に聳える天守風建築と眼下に広がる濃尾平野の眺望が、天下人の足跡を辿った小牧の旅を爽快に締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c1c7acf1-171d-461c-8810-cdd750c3f82e",
+    "title": "日本デンマークの記憶と七夕の社・安城へ",
+    "name": "日本デンマークの記憶と七夕の社・安城へ",
+    "description": "明治用水の恵みにより「日本デンマーク」と称えられた歴史と、安城七夕まつりの文化が息づく愛知県安城市。JR安城駅から、老舗和菓子処の御菓子司 両口屋菓匠、知と交流の拠点・アンフォーレ、先人の遺徳と七夕の神を祀る安城神社、水車と小動物が迎える安城公園までを巡る。",
+    "region": "七夕の街と安城公園（安城市）",
+    "area_name": "七夕の街と安城公園（安城市）",
+    "cover_image_url": "/images/anjo/route-eyecatch.png",
+    "imageUrl": "/images/anjo/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本デンマーク開拓の先人を祀る社と知の森、老舗の銘菓が息づく安城で、あなたが深く惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治用水の恵みを伝える水車モニュメントと緑の木立、小動物が迎える「安城公園」",
+          "description": "せせらぎと大水車が彩る緑陰の遊歩道を歩き、穏やかな自然の中で街を潤してきた水の記憶に触れた。",
+          "badge_code": "anjo_park_waterwheel"
+        },
+        {
+          "key": "B",
+          "text": "ガラス張りの図書情報館と「願いごと広場」、カフェが融合した街の拠点「アンフォーレ」",
+          "description": "光あふれる知の森と芝生広場でひと休みし、人と本と願いごとが交差する現代の安城の賑わいを感じた。",
+          "badge_code": "anjo_anforet_forest"
+        },
+        {
+          "key": "C",
+          "text": "日本デンマークを築いた先人の遺徳を顕彰し、安城七夕神社が鎮座する「安城神社」",
+          "description": "深い社叢に包まれた拝殿と七夕神社に手を合わせ、荒野を豊かな大地へ変えた先人の情熱と願いごとの文化に胸を打たれた。",
+          "badge_code": "anjo_shrine_tanabata"
+        },
+        {
+          "key": "D",
+          "text": "七夕の街の玄関口「安城駅」から歩き、「御菓子司 両口屋菓匠」で味わう銘菓「鼓やき」",
+          "description": "南口デッキから駅前通りへ歩き、十勝産小豆の粒餡と一粒栗を包んだ伝統の和菓子で心和むひとときを過ごした。",
+          "badge_code": "anjo_ryoguchiya_tsuzumi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5e0b8275-4361-40f0-8d0a-5744f0ca764c",
+        "name": "安城駅",
+        "description": "JR東海道本線の主要駅であり、「日本デンマーク」の歴史と「安城七夕まつり」で知られる安城市の玄関口（自由通路は始発〜終電）。南口から中心市街地へとペデストリアンデッキが続く。",
+        "address": "愛知県安城市御幸本町1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.959995,
+        "lng": 137.087162,
+        "qr_token": "shuin-anjo-1",
+        "cover_image_url": "/images/anjo/spot1.png",
+        "f7_fragment": "日本デンマーク開拓の歴史と七夕まつりの街・安城の中心街へ誘う玄関口。",
+        "f7_full": "「安城駅」の開放的な南口ペデストリアンデッキと賑やかな通りの眺めが、開拓の歴史と七夕の社を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e5d21b4a-e48f-4daa-8f63-bcb1eb69fb17",
+        "next_spot_name": "御菓子司 両口屋菓匠"
+      },
+      {
+        "id": "e5d21b4a-e48f-4daa-8f63-bcb1eb69fb17",
+        "name": "御菓子司 両口屋菓匠",
+        "description": "JR安城駅南口近くに店を構える老舗和菓子店（8:30〜19:30営業、火曜休）。十勝産小豆の粒餡と栗を包んだ名物「鼓やき」や季節の上生菓子が親しまれている。",
+        "address": "愛知県安城市御幸本町2-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.959573,
+        "lng": 137.087628,
+        "qr_token": "shuin-anjo-2",
+        "cover_image_url": "/images/anjo/spot2.png",
+        "f7_fragment": "安城駅南口のすぐ近くで長年親しまれる、一粒栗入り銘菓「鼓やき」の老舗。",
+        "f7_full": "「御菓子司 両口屋菓匠」の温かな暖簾と一粒栗入りの銘菓「鼓やき」が、安城の街歩きに上品で優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "1d69bd2d-c590-43ee-86af-e8241aa4bdc8",
+        "next_spot_name": "アンフォーレ"
+      },
+      {
+        "id": "1d69bd2d-c590-43ee-86af-e8241aa4bdc8",
+        "name": "アンフォーレ",
+        "description": "安城市図書情報館や「願いごと広場」、カフェが集まる中心市街地拠点施設（図書情報館9:00〜20:00、火曜・第4金曜休）。1階のカフェでランチや有機コーヒーを楽しめる。",
+        "address": "愛知県安城市御幸本町504-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.959085,
+        "lng": 137.084512,
+        "qr_token": "shuin-anjo-3",
+        "cover_image_url": "/images/anjo/spot3.png",
+        "f7_fragment": "ガラス張りの図書情報館と芝生の「願いごと広場」、カフェが集う街の拠点。",
+        "f7_full": "「アンフォーレ」の光あふれる建築と緑の広場、香り高いカフェの一杯が、街の真ん中で心地よいくつろぎの時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "8afb7049-487b-4c62-855c-ac8207db5134",
+        "next_spot_name": "安城神社"
+      },
+      {
+        "id": "8afb7049-487b-4c62-855c-ac8207db5134",
+        "name": "安城神社",
+        "description": "昭和五年に創建され、明治用水の開削など安城の発展に尽くした先人を祀る神社（境内参拝自由）。境内には「安城七夕まつり」の象徴である安城七夕神社も鎮座する。",
+        "address": "愛知県安城市桜町18-40",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.957484,
+        "lng": 137.078939,
+        "qr_token": "shuin-anjo-4",
+        "cover_image_url": "/images/anjo/spot4.png",
+        "f7_fragment": "明治用水で安城を拓いた先人の遺徳を祀り、境内に安城七夕神社が鎮座する社。",
+        "f7_full": "「安城神社」の静謐な社叢と安城七夕神社の社が、大地を潤した先人への感謝と街の願いごと文化を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0cbdc9e7-362c-4d59-8dd1-24eaac13a51d",
+        "next_spot_name": "安城公園"
+      },
+      {
+        "id": "0cbdc9e7-362c-4d59-8dd1-24eaac13a51d",
+        "name": "安城公園",
+        "description": "安城市役所に隣接する緑豊かな総合公園（入園自由、動物舎は9:00〜16:30）。明治用水にちなんだ水車や桜並木、ポニーやシカがいる小動物園があり、市民の憩いの場となっている。",
+        "address": "愛知県安城市桜町289-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.958698,
+        "lng": 137.079293,
+        "qr_token": "shuin-anjo-5",
+        "cover_image_url": "/images/anjo/spot5.png",
+        "f7_fragment": "明治用水の水車モニュメントとせせらぎ、小動物園や桜並木が広がる憩いの公園。",
+        "f7_full": "「安城公園」の水車が回るせせらぎと豊かな木漏れ日が、七夕と開拓の街・安城を巡った旅を穏やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7e5380be-b9fb-41c1-8fb0-a0a4af6da0bd",
+    "title": "なぜ土岐の谷あいに美濃焼の窯と器が息づくのか",
+    "name": "なぜ土岐の谷あいに美濃焼の窯と器が息づくのか",
+    "description": "千三百年以上の歴史を紡ぐ美濃焼の主要産地であり、桃山陶・織部焼発祥の地として知られる岐阜県土岐市。JR土岐市駅から、大正創業の虎渓渡辺製菓、織部の里を見守る久尻神社、窯元直営の複合施設・KOYO BASE、国指定史跡の登り窯跡を伝える織部の里公園までを巡る。",
+    "region": "美濃焼の里・久尻と織部の里公園（土岐市）",
+    "area_name": "美濃焼の里・久尻と織部の里公園（土岐市）",
+    "cover_image_url": "/images/toki/route-eyecatch.png",
+    "imageUrl": "/images/toki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "織部発祥の古窯と久尻の杜、現代の食卓を彩る器が息づく土岐で、あなたが深く惹かれたのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "国指定史跡「元屋敷陶器窯跡」と茅葺きの茶室が桃山陶の歴史を伝える「織部の里公園」",
+          "description": "志野や織部を生み出した連房式登り窯跡の前に立ち、四百年前の陶工たちが炎に託した情熱に触れた。",
+          "badge_code": "toki_oribe_park_kiln"
+        },
+        {
+          "key": "B",
+          "text": "織部焼発祥の地・久尻の歴史を見守り、美濃焼の風鈴と文化財の本殿が佇む「久尻神社」",
+          "description": "久尻の里に鎮座する古社の杜を訪ね、やきものの町を見守ってきた静謐な社殿と歴史に触れた。",
+          "badge_code": "toki_kujiri_shrine"
+        },
+        {
+          "key": "C",
+          "text": "「土岐市駅」から歩き、大正十二年創業の「虎渓渡辺製菓」で選ぶ銘菓「とっくり陶祖最中」",
+          "description": "美濃焼のモニュメントが迎える駅前から土岐川を渡り、徳利の形を模した焼き物の里ならではの最中に出会った。",
+          "badge_code": "toki_kokei_tokkuri_monaka"
+        },
+        {
+          "key": "D",
+          "text": "窯元の工場に隣接する「KOYO BASE」で、多彩な美濃焼の器と地元食材の料理を五感で楽しむひととき",
+          "description": "職人たちのものづくりの現場のすぐそばで、料理を引き立てる器の美しさと現代の美濃焼の可能性に胸を打たれた。",
+          "badge_code": "toki_koyo_base_craft"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bf062c32-4d1f-4686-8737-80253b5d25f9",
+        "name": "土岐市駅",
+        "description": "JR中央本線の駅であり、美濃焼の一大産地・土岐市の玄関口（改札・自由通路は始発〜終電）。駅前広場には美濃焼のモニュメントが設置され、土岐川と市街地へ道が続く。",
+        "address": "岐阜県土岐市泉町久尻572-3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.359869,
+        "lng": 137.18262,
+        "qr_token": "shuin-toki-1",
+        "cover_image_url": "/images/toki/spot1.png",
+        "f7_fragment": "美濃焼のモニュメントが旅人を迎え、焼き物の里・土岐の旅が始まる玄関口。",
+        "f7_full": "「土岐市駅」の美濃焼をあしらった駅前広場と穏やかな山並みが、千三百年のやきものの里を巡る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "ab297dc5-8cd7-4bef-8990-66652e2e73a6",
+        "next_spot_name": "虎渓渡辺製菓"
+      },
+      {
+        "id": "ab297dc5-8cd7-4bef-8990-66652e2e73a6",
+        "name": "虎渓渡辺製菓",
+        "description": "大正十二年創業の老舗和菓子店「陶都菓匠 虎渓」（9:00〜18:00営業、水曜休）。美濃焼の徳利を模した名物「とっくり陶祖最中」や「窯出しどら焼き」などの銘菓で知られる。",
+        "address": "岐阜県土岐市土岐津町土岐口2091-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.353304,
+        "lng": 137.182484,
+        "qr_token": "shuin-toki-2",
+        "cover_image_url": "/images/toki/spot2.png",
+        "f7_fragment": "大正十二年創業、美濃焼の徳利を模した「とっくり陶祖最中」の老舗菓舗。",
+        "f7_full": "「虎渓渡辺製菓」の香ばしいとっくり陶祖最中と焼き物の里ならではの銘菓が、土岐の街歩きに優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d3085cb9-67ff-46b5-8e7e-816652587a05",
+        "next_spot_name": "久尻神社"
+      },
+      {
+        "id": "d3085cb9-67ff-46b5-8e7e-816652587a05",
+        "name": "久尻神社",
+        "description": "平安時代創建と伝わる久尻地区の氏神（境内参拝自由）。美濃初の連房式登り窯が築かれた織部発祥の里を見守り、市指定文化財の本殿や弓道場「弦武館」がある。",
+        "address": "岐阜県土岐市泉町久尻784",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.358614,
+        "lng": 137.173574,
+        "qr_token": "shuin-toki-3",
+        "cover_image_url": "/images/toki/spot3.png",
+        "f7_fragment": "織部焼発祥の里・久尻を見守り、文化財の本殿と美濃焼風鈴が佇む古社。",
+        "f7_full": "「久尻神社」の静かな杜と歴史ある本殿の佇まいが、桃山陶・織部を生み出した陶工たちの誇りと祈りを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "61f89478-6d8e-40dc-8130-9b0bb61badc1",
+        "next_spot_name": "KOYO BASE"
+      },
+      {
+        "id": "61f89478-6d8e-40dc-8130-9b0bb61badc1",
+        "name": "KOYO BASE",
+        "description": "窯元・光洋陶器の本社敷地内にある器と食の複合体験施設（11:00〜17:00営業、火曜・水曜休）。ダイニングカフェ「CLAY Table」や美濃焼の直営ショップを備える。",
+        "address": "岐阜県土岐市泉町久尻1496-5",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.359264,
+        "lng": 137.171291,
+        "qr_token": "shuin-toki-4",
+        "cover_image_url": "/images/toki/spot4.png",
+        "f7_fragment": "光洋陶器の工場に隣接し、多彩な美濃焼の器でランチや甘味を味わえる複合施設。",
+        "f7_full": "「KOYO BASE」の開放的なダイニングと美しい美濃焼のプレートが、器と食が織りなす豊かなひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c9f6cc52-636a-4532-8ee0-55b3309655eb",
+        "next_spot_name": "織部の里公園"
+      },
+      {
+        "id": "c9f6cc52-636a-4532-8ee0-55b3309655eb",
+        "name": "織部の里公園",
+        "description": "国指定史跡「元屋敷陶器窯跡」を中心に整備された歴史公園（9:00〜17:00開園、月曜休、入園無料）。美濃最古の連房式登り窯跡や古民家を移築した茶室「暮雪庵」を見学できる。",
+        "address": "岐阜県土岐市泉町久尻1246-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.366021,
+        "lng": 137.176018,
+        "qr_token": "shuin-toki-5",
+        "cover_image_url": "/images/toki/spot5.png",
+        "f7_fragment": "国指定史跡の連房式登り窯跡と茅葺きの茶室が佇む織部焼発祥の歴史公園。",
+        "f7_full": "「織部の里公園」の元屋敷陶器窯跡と緑の里山が、四百年前の美濃桃山陶の情熱を伝えて旅を穏やかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5bc0acf9-57d0-4fda-8b9b-f8857b78b662",
+    "title": "総ひのきの芦湯と銘菓の温泉街・あわらを辿る",
+    "name": "総ひのきの芦湯と銘菓の温泉街・あわらを辿る",
+    "description": "明治の開湯以来「関西の奥座敷」として栄える福井県あわら市のあわら温泉。えちぜん鉄道のあわら湯のまち駅から、文豪・魯迅ゆかりの藤野厳九郎記念館、総ひのき造りの足湯・芦湯、銘菓「どんりん」のだるまや菓舗、明治創業の御菓子司 浅野耕月堂までを巡る。",
+    "region": "あわら温泉と湯のまち広場（あわら市）",
+    "area_name": "あわら温泉と湯のまち広場（あわら市）",
+    "cover_image_url": "/images/awara/route-eyecatch.png",
+    "imageUrl": "/images/awara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "総ひのきの湯けむりと師弟の記憶、老舗の銘菓が息づくあわら温泉で、あなたが深く惹かれたのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "総ひのき造りと笏谷石の数寄屋風建築にステンドグラスが輝く、源泉掛け流しの足湯「あわら温泉 芦湯」",
+          "description": "桧の香りと湯けむりに包まれた五つの浴槽で足を温め、関西の奥座敷ならではの贅沢な湯の恵みを肌で感じた。",
+          "badge_code": "awara_ashiyu_cypress"
+        },
+        {
+          "key": "B",
+          "text": "文豪・魯迅が敬愛した恩師の旧宅（登録有形文化財）を保存する「あわら市藤野厳九郎記念館」",
+          "description": "和風建築の診察室や添削ノートの展示を見つめ、国境を越えて結ばれた師弟の温かな絆に胸を打たれた。",
+          "badge_code": "awara_fujino_memorial"
+        },
+        {
+          "key": "C",
+          "text": "明治三十二年創業の「御菓子司 浅野耕月堂」で出会う、珈琲香る伝統銘菓「松乃露」",
+          "description": "温泉街の老舗で職人が一粒ずつ焼き上げる「松乃露」を手にし、百年以上愛される上品な口溶けを味わった。",
+          "badge_code": "awara_asano_matsunotsuyu"
+        },
+        {
+          "key": "D",
+          "text": "「あわら湯のまち駅」から温泉街を歩き、「だるまや菓舗」で選ぶフルーツカステラ最中「どんりん」",
+          "description": "情緒ある駅舎から湯のまちを散策し、カステラと小豆餡を最中で包んだ和洋折衷の銘菓に出会った。",
+          "badge_code": "awara_darumaya_donrin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cea6f9df-1936-46ac-81c9-43aeada13968",
+        "name": "あわら湯のまち駅",
+        "description": "えちぜん鉄道三国芦原線の主要駅であり、あわら温泉の玄関口（窓口は早朝〜夜営業）。駅舎内には観光案内所「おしえる座ぁ」や芦原芸妓の展示がある。",
+        "address": "福井県あわら市温泉1-1",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.223185,
+        "lng": 136.193919,
+        "qr_token": "shuin-awara-1",
+        "cover_image_url": "/images/awara/spot1.png",
+        "f7_fragment": "関西の奥座敷・あわら温泉の玄関口として多くの旅人を迎える風情ある駅舎。",
+        "f7_full": "「あわら湯のまち駅」の情緒ある和風駅舎と湯のまち広場の賑わいが、名湯と老舗銘菓を巡る旅の始まりを温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "92602703-d736-43e0-89d7-67464e7edde3",
+        "next_spot_name": "あわら市藤野厳九郎記念館"
+      },
+      {
+        "id": "92602703-d736-43e0-89d7-67464e7edde3",
+        "name": "あわら市藤野厳九郎記念館",
+        "description": "文豪・魯迅の恩師である医師・藤野厳九郎の旧宅（国の登録有形文化財）を湯のまち広場に移築した記念館（9:00〜18:00開館、火曜休）。診察室や添削ノートなどの資料を展示している。",
+        "address": "福井県あわら市温泉1-203",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.223868,
+        "lng": 136.193229,
+        "qr_token": "shuin-awara-2",
+        "cover_image_url": "/images/awara/spot2.png",
+        "f7_fragment": "文豪・魯迅の恩師である医師・藤野厳九郎の旧宅を保存する記念館。",
+        "f7_full": "「あわら市藤野厳九郎記念館」の落ち着いた和風建築と遺品の数々が、国境を越えた師弟の温かな絆を静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "de2b24ea-b9df-4b4e-8e5a-d98d18436dbd",
+        "next_spot_name": "あわら温泉 芦湯"
+      },
+      {
+        "id": "de2b24ea-b9df-4b4e-8e5a-d98d18436dbd",
+        "name": "あわら温泉 芦湯",
+        "description": "湯のまち広場にある総ひのき造り・笏谷石張りの足湯施設（7:00〜23:00営業、無休、無料）。2つの源泉を掛け流した5種類の浴槽と美しいステンドグラスを備える。",
+        "address": "福井県あわら市温泉1-203",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.223825,
+        "lng": 136.192626,
+        "qr_token": "shuin-awara-3",
+        "cover_image_url": "/images/awara/spot3.png",
+        "f7_fragment": "総ひのき造りの数寄屋風建築とステンドグラスが彩る源泉掛け流しの足湯。",
+        "f7_full": "「あわら温泉 芦湯」の清々しい桧の香りと柔らかな源泉掛け流しのお湯が、街歩きの足を優しく包み込んで癒やしてくれる。",
+        "is_final": false,
+        "next_spot_id": "0ddd4abf-d392-4aa8-86aa-e4db2cb82842",
+        "next_spot_name": "だるまや菓舗"
+      },
+      {
+        "id": "0ddd4abf-d392-4aa8-86aa-e4db2cb82842",
+        "name": "だるまや菓舗",
+        "description": "あわら温泉街に店を構える老舗和洋菓子店（8:00〜18:00営業、火曜休）。フルーツカステラと小豆餡を最中皮で包んだ看板銘菓「どんりん」で知られる。",
+        "address": "福井県あわら市温泉3-601",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.22445,
+        "lng": 136.19227,
+        "qr_token": "shuin-awara-4",
+        "cover_image_url": "/images/awara/spot4.png",
+        "f7_fragment": "フルーツカステラと小豆餡を最中で包んだ銘菓「どんりん」で知られる老舗。",
+        "f7_full": "「だるまや菓舗」の香ばしい最中とフルーツカステラが調和した「どんりん」が、温泉街の散策に楽しい甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "bce5efbd-98a7-40cc-844f-1043620de676",
+        "next_spot_name": "御菓子司 浅野耕月堂"
+      },
+      {
+        "id": "bce5efbd-98a7-40cc-844f-1043620de676",
+        "name": "御菓子司 浅野耕月堂",
+        "description": "明治三十二年創業の老舗和菓子店（8:00〜19:00営業、火曜休）。昭和天皇お買い上げの栄を賜った珈琲風味のメレンゲ銘菓「松乃露」の元祖として親しまれている。",
+        "address": "福井県あわら市温泉4-916",
+        "prefecture": "福井県",
+        "city": "",
+        "lat": 36.225878,
+        "lng": 136.192062,
+        "qr_token": "shuin-awara-5",
+        "cover_image_url": "/images/awara/spot5.png",
+        "f7_fragment": "明治三十二年創業、珈琲香る伝統銘菓「松乃露」を一粒ずつ焼き上げる老舗。",
+        "f7_full": "「御菓子司 浅野耕月堂」の老舗の暖簾とほろ苦く溶ける「松乃露」が、あわら温泉を巡った旅を上品な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8a27245f-df07-4b69-8f4f-490183f65bf6",
+    "title": "名勝の苔庭と北国街道の宿場・米原を訪ねる",
+    "name": "名勝の苔庭と北国街道の宿場・米原を訪ねる",
+    "description": "中山道と北国街道が交わる宿場町・米原宿の歴史と、国の名勝庭園が息づく滋賀県米原市。交通の要衝・米原駅から、東口の純喫茶・スタンダール、古民家カフェのcafe du MBF、枯山水苔庭と茶処で知られる青岸寺、米原宿の氏神・湯谷神社までを巡る。",
+    "region": "青岸寺と北国街道・米原宿（米原市）",
+    "area_name": "青岸寺と北国街道・米原宿（米原市）",
+    "cover_image_url": "/images/maibara/route-eyecatch.png",
+    "imageUrl": "/images/maibara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名勝の苔庭と北国街道の宿場町、鉄道の結節点が重なる米原で、あなたが深く惹かれたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "米原宿の総社として千年の歴史を紡ぎ、本陣の「明治天皇小休所」を伝える「湯谷神社」",
+          "description": "石段を登った高台の社殿に手を合わせ、曳山まつりの伝統と宿場町の誇りを守る杜の静けさに触れた。",
+          "badge_code": "maibara_yutani_shrine"
+        },
+        {
+          "key": "B",
+          "text": "国の名勝に指定された緑鮮やかな枯山水苔庭と、書院の茶処「喫茶去」が迎える「青岸寺」",
+          "description": "杉苔と巨石が織りなす静謐な名園を縁側から眺め、お抹茶とともに禅寺の穏やかな時間に心を浸した。",
+          "badge_code": "maibara_seiganji_moss_garden"
+        },
+        {
+          "key": "C",
+          "text": "旧北国街道・米原宿の町家を再生した「cafe du MBF」で味わう自家製パンと湖北の恵み",
+          "description": "梁が残る温かな古民家空間で焼きたてのパンや地元野菜の料理を楽しみ、往時の街道の賑わいに思いを馳せた。",
+          "badge_code": "maibara_mbf_kominka"
+        },
+        {
+          "key": "D",
+          "text": "交通の要衝「米原駅」から東口へ歩き、純喫茶「スタンダール」で味わう香り高い珈琲",
+          "description": "東海道と北陸を結ぶターミナル駅から一歩足を踏み出し、レトロな喫茶店で旅の始まりに心落ち着く一杯を楽しんだ。",
+          "badge_code": "maibara_stendhal_coffee"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a095a055-e198-4a39-8609-b698b8e3f88b",
+        "name": "米原駅",
+        "description": "JR東海道本線・北陸本線・東海道新幹線と近江鉄道が集まる交通の要衝・ターミナル駅（自由通路は始発〜終電）。東口から旧北国街道・米原宿の町並みへ続く。",
+        "address": "滋賀県米原市米原475",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.31477,
+        "lng": 136.289845,
+        "qr_token": "shuin-maibara-1",
+        "cover_image_url": "/images/maibara/spot1.png",
+        "f7_fragment": "東海道と北陸を結ぶ鉄道の要衝であり、旧北国街道・米原宿への旅が始まる駅。",
+        "f7_full": "「米原駅」の行き交う列車と東口に広がる太尾山の豊かな緑が、街道の宿場町と名勝庭園を巡る旅の始まりを告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "379fc1e2-ad2c-4281-8218-afccecd3987b",
+        "next_spot_name": "スタンダール"
+      },
+      {
+        "id": "379fc1e2-ad2c-4281-8218-afccecd3987b",
+        "name": "スタンダール",
+        "description": "JR米原駅東口近くに佇む老舗喫茶店（8:00〜19:00営業、不定休）。クラシカルな店内で香り高いコーヒーやモーニング、軽食を味わえる。",
+        "address": "滋賀県米原市米原418",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.313944,
+        "lng": 136.291251,
+        "qr_token": "shuin-maibara-2",
+        "cover_image_url": "/images/maibara/spot2.png",
+        "f7_fragment": "米原駅東口のすぐそばで長年旅人と地元の人々に親しまれるレトロな純喫茶。",
+        "f7_full": "「スタンダール」の落ち着いた空間と丁寧に淹れられた珈琲の香りが、宿場町を歩く旅の始まりに心地よい安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e1bf4ec5-0a67-48e3-8897-e2d8bb195a4a",
+        "next_spot_name": "cafe du MBF"
+      },
+      {
+        "id": "e1bf4ec5-0a67-48e3-8897-e2d8bb195a4a",
+        "name": "cafe du MBF",
+        "description": "旧北国街道沿いの古民家を改装したカフェ＆イタリアンレストラン（9:00〜17:00営業・ディナーは予約制等、水曜休）。北海道産小麦の自家製パンや地元食材のパスタが人気。",
+        "address": "滋賀県米原市米原661-6",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.315384,
+        "lng": 136.293898,
+        "qr_token": "shuin-maibara-3",
+        "cover_image_url": "/images/maibara/spot3.png",
+        "f7_fragment": "旧北国街道の古民家を再生し、自家製パンと本格イタリアンを供するカフェ。",
+        "f7_full": "「cafe du MBF」の梁が渡る温かな町家空間と焼きたての自家製パンが、米原宿の街道歩きに彩り豊かな味わいを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0569a69d-4c6d-44e2-8ac1-75d81d58f9fa",
+        "next_spot_name": "青岸寺"
+      },
+      {
+        "id": "0569a69d-4c6d-44e2-8ac1-75d81d58f9fa",
+        "name": "青岸寺",
+        "description": "南北朝時代の米原寺を前身とし、江戸初期に再興された曹洞宗の寺院（9:00〜17:00拝観、火曜・第4月曜休）。国の名勝「青岸寺庭園」と茶処「喫茶去」で知られる。",
+        "address": "滋賀県米原市米原669",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.314611,
+        "lng": 136.295384,
+        "qr_token": "shuin-maibara-4",
+        "cover_image_url": "/images/maibara/spot4.png",
+        "f7_fragment": "国の名勝に指定された美しい枯山水苔庭と茶処「喫茶去」を擁する曹洞宗寺院。",
+        "f7_full": "「青岸寺」の深い緑を湛えた名勝の枯山水苔庭と静かな書院の佇まいが、訪れる人の心を穏やかに澄み渡らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "e35ee5c4-3b78-4c5a-86a9-551b38fb96bb",
+        "next_spot_name": "湯谷神社"
+      },
+      {
+        "id": "e35ee5c4-3b78-4c5a-86a9-551b38fb96bb",
+        "name": "湯谷神社",
+        "description": "天慶元年勧請と伝わる米原宿の氏神（境内参拝自由）。旧本陣から移築された「明治天皇小休所」が残り、秋には子ども歌舞伎で知られる米原曳山まつりが行われる。",
+        "address": "滋賀県米原市米原771",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.312831,
+        "lng": 136.295443,
+        "qr_token": "shuin-maibara-5",
+        "cover_image_url": "/images/maibara/spot5.png",
+        "f7_fragment": "米原宿の歴史を見守り、旧本陣の「明治天皇小休所」を今に伝える千年の古社。",
+        "f7_full": "「湯谷神社」の太尾山麓の杜と宿場町の歴史を伝える社殿が、名勝庭園と北国街道を巡った米原の旅を清らかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
