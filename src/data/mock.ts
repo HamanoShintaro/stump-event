@@ -70330,5 +70330,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "cdf492ec-acbf-4622-81d7-92cb222a1dc2",
+    "title": "鯉が泳ぐ瀬戸川と白壁土蔵・飛驒古川を巡る",
+    "name": "鯉が泳ぐ瀬戸川と白壁土蔵・飛驒古川を巡る",
+    "description": "色鮮やかな錦鯉が泳ぐ瀬戸川と白壁土蔵の町並み、そしてユネスコ無形文化遺産「古川祭」の伝統が息づく岐阜県飛騨市古川町。JR高山本線の飛驒古川駅から、瀬戸川と白壁土蔵街、飛騨古川まつり会館、明治三年創業の渡辺酒造店、井之廣製菓舗の味噌煎餅までを巡る。",
+    "region": "飛驒古川・瀬戸川と白壁土蔵街（飛騨市）",
+    "area_name": "飛驒古川・瀬戸川と白壁土蔵街（飛騨市）",
+    "cover_image_url": "/images/furukawa/route-eyecatch.png",
+    "imageUrl": "/images/furukawa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "錦鯉が泳ぐ瀬戸川の白壁土蔵と古川祭の豪華屋台、老舗の酒蔵と味噌煎餅が息づく飛驒古川で、あなたが心惹かれたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "飛驒古川駅から歩き、白壁土蔵の足元を千匹の錦鯉が泳ぐ「瀬戸川と白壁土蔵街」",
+          "description": "澄み切った水路をゆったりと泳ぐ鯉と白黒のコントラストが美しい土蔵の並びに、住民が守り継ぐ水辺の誇りを感じた。",
+          "badge_code": "furukawa_setogawa_white_storehouses"
+        },
+        {
+          "key": "B",
+          "text": "ユネスコ無形文化遺産「古川祭」の本物の祭屋台と起し太鼓の迫力に触れる「飛騨古川まつり会館」",
+          "description": "飛驒の匠が彫り上げた豪華な屋台彫刻と、静と動が織りなす伝統祭礼のエネルギーに圧倒された。",
+          "badge_code": "furukawa_matsuri_kaikan_floats"
+        },
+        {
+          "key": "C",
+          "text": "杉玉が揺れる登録有形文化財の町家で銘酒「蓬莱」を醸す、明治三年創業の「渡辺酒造店」",
+          "description": "北アルプスの名水と飛驒の米が育む酒蔵の空気に触れ、百五十年続く造り酒屋の伝統を味わった。",
+          "badge_code": "furukawa_watanabe_sake_brewery"
+        },
+        {
+          "key": "D",
+          "text": "明治四十一年創業の「井之廣製菓舗」で出会う、三年熟成味噌が香る「味噌煎餅」",
+          "description": "自家製の熟成米麹味噌で焼き上げられた煎餅の、パリッと軽やかな食感と香ばしい甘みに心がほぐれた。",
+          "badge_code": "furukawa_inohiro_miso_senbei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f23e04f9-94a8-4511-8b9b-0ded416e8922",
+        "name": "飛驒古川駅",
+        "description": "JR高山本線の主要駅であり、飛騨市古川町の玄関口（待合室は始発〜終電）。飛驒の木材を活かした温もりある駅舎と跨線橋から、瀬戸川や白壁土蔵街が残る旧城下町へと歩いて向かえる。",
+        "address": "岐阜県飛騨市古川町金森町8-22",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.236726,
+        "lng": 137.189603,
+        "qr_token": "shuin-furukawa-1",
+        "cover_image_url": "/images/furukawa/spot1.png",
+        "f7_fragment": "飛驒の山々に抱かれ、白壁土蔵と匠の伝統が息づく町・飛驒古川へと誘う玄関口。",
+        "f7_full": "「飛驒古川駅」の木の温もりあふれる駅舎と澄んだ高原の風が、瀬戸川の錦鯉と伝統建築が待つ城下町の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4935abba-bf6b-4a33-8323-242222aeb1a2",
+        "next_spot_name": "瀬戸川と白壁土蔵街"
+      },
+      {
+        "id": "4935abba-bf6b-4a33-8323-242222aeb1a2",
+        "name": "瀬戸川と白壁土蔵街",
+        "description": "壱之町から殿町にかけて約500m続く飛驒古川を代表する景観（終日散策自由）。白壁の土蔵と寺院の石垣に沿う清流・瀬戸川には、春から秋にかけて1,000匹以上の色とりどりの鯉が泳ぐ。",
+        "address": "岐阜県飛騨市古川町壱之町11",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.235436,
+        "lng": 137.186631,
+        "qr_token": "shuin-furukawa-2",
+        "cover_image_url": "/images/furukawa/spot2.png",
+        "f7_fragment": "白壁の土蔵と石垣が連なる水路を、千匹の色鮮やかな鯉が泳ぐ水辺の町並み。",
+        "f7_full": "「瀬戸川と白壁土蔵街」の清らかなせせらぎと悠々と泳ぐ錦鯉の姿が、飛驒の人々が大切に守り育ててきた美しい暮らしの情景を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "bf576332-847a-4598-8aec-8a62265b0133",
+        "next_spot_name": "飛騨古川まつり会館"
+      },
+      {
+        "id": "bf576332-847a-4598-8aec-8a62265b0133",
+        "name": "飛騨古川まつり会館",
+        "description": "ユネスコ無形文化遺産・国重要無形民俗文化財「古川祭」の魅力を紹介する展示館（9:00〜17:00開館・冬季16:30まで、年末年始休）。実物の豪華な祭屋台3台の常設展示や、起し太鼓の立体映像、からくり人形体験を楽しめる。",
+        "address": "岐阜県飛騨市古川町壱之町14-5",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.23697,
+        "lng": 137.185854,
+        "qr_token": "shuin-furukawa-3",
+        "cover_image_url": "/images/furukawa/spot3.png",
+        "f7_fragment": "ユネスコ無形文化遺産「古川祭」の実物屋台と、飛驒の匠の彫刻美を伝える会館。",
+        "f7_full": "「飛騨古川まつり会館」に聳える豪華絢爛な本物の祭屋台と起し太鼓の熱気が、飛驒の匠の技と誇り高い祭礼文化を鮮やかに届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a27c7d5e-481c-4242-8aa4-53bcb2bfa3df",
+        "next_spot_name": "渡辺酒造店"
+      },
+      {
+        "id": "a27c7d5e-481c-4242-8aa4-53bcb2bfa3df",
+        "name": "渡辺酒造店",
+        "description": "壱之町通りに暖簾を掲げる明治三年創業の老舗酒蔵（9:00〜16:00営業、無休）。国登録有形文化財の主屋で、代表銘柄「蓬莱」をはじめとする地酒の試飲・購入や酒粕スイーツを楽しめる。",
+        "address": "岐阜県飛騨市古川町壱之町7-7",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.235313,
+        "lng": 137.186326,
+        "qr_token": "shuin-furukawa-4",
+        "cover_image_url": "/images/furukawa/spot4.png",
+        "f7_fragment": "明治三年の創業以来、登録有形文化財の町家で銘酒「蓬莱」を醸す老舗酒蔵。",
+        "f7_full": "「渡辺酒造店」の杉玉が揺れる重厚な町家と銘酒「蓬莱」の芳醇な香りが、北アルプスの伏流水と飛驒の米が織りなす酒造りの粋を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "33370b31-f7ba-471b-8f41-fe0f0450e621",
+        "next_spot_name": "井之廣製菓舗"
+      },
+      {
+        "id": "33370b31-f7ba-471b-8f41-fe0f0450e621",
+        "name": "井之廣製菓舗",
+        "description": "弐之町に店を構える明治四十一年創業の味噌煎餅専門店（8:00〜18:00営業、日曜休）。三年熟成させた自家製の生味噌と厳選素材で焼き上げる、香ばしく軽やかな「味噌煎餅」で広く親しまれている。",
+        "address": "岐阜県飛騨市古川町弐之町7-12",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 36.235611,
+        "lng": 137.184464,
+        "qr_token": "shuin-furukawa-5",
+        "cover_image_url": "/images/furukawa/spot5.png",
+        "f7_fragment": "明治四十一年の創業以来、三年熟成の自家製味噌で「味噌煎餅」を焼く老舗。",
+        "f7_full": "「井之廣製菓舗」のパリッと香ばしい味噌煎餅と三年熟成味噌の深いコクが、飛驒古川の町並みを巡り歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8225ed63-8c52-491c-8b08-46506113163f",
+    "title": "登録文化財の名駅舎と外宮参道・伊勢へ",
+    "name": "登録文化財の名駅舎と外宮参道・伊勢へ",
+    "description": "昭和六年築の登録有形文化財駅舎と、千五百年の祈りが続く「伊勢神宮 豊受大神宮（外宮）」の門前が息づく三重県伊勢市。近鉄宇治山田駅から、へんばや商店 伊勢市駅前店のへんば餅、伊勢せきや 本店の参宮あわび、赤福 外宮前店、豊受大神宮（外宮）までを歩く。",
+    "region": "外宮参道と伊勢神宮外宮（伊勢市）",
+    "area_name": "外宮参道と伊勢神宮外宮（伊勢市）",
+    "cover_image_url": "/images/ujiyamada/route-eyecatch.png",
+    "imageUrl": "/images/ujiyamada/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千五百年の杜に鎮座する豊受大神宮と名駅舎の宇治山田駅、外宮参道の名物が息づく伊勢で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "衣食住の守り神・豊受大御神を祀り、千五百年の朝夕の御饌が続く「伊勢神宮 豊受大神宮（外宮）」",
+          "description": "巨杉が連なる玉砂利の参道を歩み、古式の神明造による清らかな正宮の前に立って心が澄み渡るような尊さを感じた。",
+          "badge_code": "ujiyamada_ise_geku_sanctuary"
+        },
+        {
+          "key": "B",
+          "text": "外宮前の老舗「伊勢せきや 本店」で出会う、伝統の「参宮あわび」と御饌の朝かゆ",
+          "description": "伊勢志摩の海の幸をふっくらと炊き上げた脹煮の技と、神饌にならった食文化の奥深さに感銘を受けた。",
+          "badge_code": "ujiyamada_sekiya_sangu_awabi"
+        },
+        {
+          "key": "C",
+          "text": "外宮参道の終点に佇む「赤福 外宮前店」で味わう、できたての「赤福餅」",
+          "description": "外宮の緑を望みながらいただいた、なめらかなこし餡とやわらかなお餅の変わらぬ美味しさに心満たされた。",
+          "badge_code": "ujiyamada_akafuku_gekumae"
+        },
+        {
+          "key": "D",
+          "text": "時計塔が聳える名建築「宇治山田駅」と、安永四年創業の「へんばや商店」のへんば餅",
+          "description": "昭和初期の華麗な駅舎から石畳の外宮参道を歩き、香ばしい焼き色がついたへんば餅を味わうひとときに胸が躍った。",
+          "badge_code": "ujiyamada_station_henbaya_mochi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5bff72d9-4a0d-4c78-8c86-464e7146b069",
+        "name": "宇治山田駅",
+        "description": "昭和六年に開業した近鉄の主要駅であり、国登録有形文化財の名建築（改札は始発〜終電）。久野節設計によるテラコッタ貼りの重厚な外観と北端の火の見櫓（時計塔）が特徴で、外宮参道への玄関口となっている。",
+        "address": "三重県伊勢市岩渕2丁目1-43",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.488268,
+        "lng": 136.713961,
+        "qr_token": "shuin-ujiyamada-1",
+        "cover_image_url": "/images/ujiyamada/spot1.png",
+        "f7_fragment": "昭和六年築の時計塔とテラコッタ装飾が輝く、国の登録有形文化財の名駅舎。",
+        "f7_full": "「宇治山田駅」の堂々たる時計塔とアーチ窓が連なる近代建築が、外宮参道の賑わいと千五百年の聖域を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3b3af848-d130-4778-8a77-39104e1c4b72",
+        "next_spot_name": "へんばや商店 伊勢市駅前店"
+      },
+      {
+        "id": "3b3af848-d130-4778-8a77-39104e1c4b72",
+        "name": "へんばや商店 伊勢市駅前店",
+        "description": "外宮参道沿いに位置する安永四年創業の老舗餅店（9:00〜17:00営業、月曜休）。米粉の餅皮でこし餡を包み、両面に香ばしい焼き色をつけた伝統の伊勢名物「へんば餅」が参拝客に親しまれている。",
+        "address": "三重県伊勢市吹上1丁目8-33",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.49033,
+        "lng": 136.709059,
+        "qr_token": "shuin-ujiyamada-2",
+        "cover_image_url": "/images/ujiyamada/spot2.png",
+        "f7_fragment": "安永四年の創業以来、両面に香ばしい焼き色をつけた「へんば餅」を作る老舗。",
+        "f7_full": "「へんばや商店 伊勢市駅前店」の香ばしい焼き色がついたもっちり柔らかなへんば餅が、石畳が続く外宮参道歩きに優しい甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ca66a842-4106-402b-8cf1-0a993af3eebd",
+        "next_spot_name": "伊勢せきや 本店"
+      },
+      {
+        "id": "ca66a842-4106-402b-8cf1-0a993af3eebd",
+        "name": "伊勢せきや 本店",
+        "description": "外宮表参道入口に本店を構える「参宮あわび」の老舗（1階売店8:30〜17:00・無休、2階茶屋7:30〜14:30・火水休）。秘伝のたれで柔らかく煮上げたあわびの脹煮や釜飯の素を取り揃え、2階では御饌の朝かゆを味わえる。",
+        "address": "三重県伊勢市本町13-7",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.488414,
+        "lng": 136.707052,
+        "qr_token": "shuin-ujiyamada-3",
+        "cover_image_url": "/images/ujiyamada/spot3.png",
+        "f7_fragment": "外宮前で秘伝の「参宮あわび」を伝え、二階で御饌の朝かゆを供する老舗本店。",
+        "f7_full": "「伊勢せきや 本店」の滋味深い参宮あわびと神饌にならった食文化が、御饌都神を祀る外宮門前ならではの豊かな恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e739745b-6253-419c-82c5-c84feaabe505",
+        "next_spot_name": "赤福 外宮前店"
+      },
+      {
+        "id": "e739745b-6253-419c-82c5-c84feaabe505",
+        "name": "赤福 外宮前店",
+        "description": "外宮前の交差点角に位置する宝永四年創業「赤福」の店舗（9:00〜17:00営業、無休）。外宮の杜を望む店内で、できたての「赤福餅」や季節限定の「赤福氷」「赤福ぜんざい」を味わえる。",
+        "address": "三重県伊勢市本町14-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.488075,
+        "lng": 136.706788,
+        "qr_token": "shuin-ujiyamada-4",
+        "cover_image_url": "/images/ujiyamada/spot4.png",
+        "f7_fragment": "外宮の杜を間近に望み、できたての「赤福餅」と季節の甘味を味わえる名店。",
+        "f7_full": "「赤福 外宮前店」のなめらかな赤福餅と香ばしいほうじ茶が、お伊勢参りの参拝客を三百年以上もてなし続けてきた伝統の安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6adfecf2-97cb-448d-82ec-4a8cb4fd7a4e",
+        "next_spot_name": "伊勢神宮 豊受大神宮"
+      },
+      {
+        "id": "6adfecf2-97cb-448d-82ec-4a8cb4fd7a4e",
+        "name": "伊勢神宮 豊受大神宮",
+        "description": "衣食住・産業の守り神である豊受大御神を祀る伊勢神宮の外宮（参拝自由、5:00〜18:00頃・季節変動あり）。千五百年以上にわたり毎日朝夕の神饌が奉られ、巨木に包まれた古式の神明造の正宮が鎮座する。",
+        "address": "三重県伊勢市豊川町279",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.487129,
+        "lng": 136.703272,
+        "qr_token": "shuin-ujiyamada-5",
+        "cover_image_url": "/images/ujiyamada/spot5.png",
+        "f7_fragment": "衣食住の守り神・豊受大御神を祀り、千五百年の祈りが息づく神明造の正宮。",
+        "f7_full": "「伊勢神宮 豊受大神宮」の巨杉に包まれた玉砂利の参道と素木の社殿が、宇治山田から歩んだ伊勢の旅を厳かで清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a9493f55-62e0-419e-84b2-71665b8d179c",
+    "title": "なぜ焼津の海は八雲と神話を魅了したのか",
+    "name": "なぜ焼津の海は八雲と神話を魅了したのか",
+    "description": "日本武尊の草薙剣神話が地名の由来となり、文豪・小泉八雲が毎夏を過ごした港町・静岡県焼津市。JR東海道本線の焼津駅から、鰹節が香るかつおサブレの御菓子司 角屋、創建千六百年の焼津神社、焼津小泉八雲記念館、焼津市歴史民俗資料館までを巡る。",
+    "region": "焼津神社と八雲ゆかりの街（焼津市）",
+    "area_name": "焼津神社と八雲ゆかりの街（焼津市）",
+    "cover_image_url": "/images/yaizu/route-eyecatch.png",
+    "imageUrl": "/images/yaizu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本武尊の神話が宿る焼津神社と小泉八雲が愛した海の記憶、名物のかつおサブレが息づく焼津で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "日本武尊の草薙剣神話と「焼津」の地名の由来を伝え、荒祭で名高い古社「焼津神社」",
+          "description": "千六百年の杜に立つ勇壮な日本武尊像を仰ぎ、東海屈指の荒神輿が練り歩く海の街の情熱を肌で感じた。",
+          "badge_code": "yaizu_shrine_yamato_takeru"
+        },
+        {
+          "key": "B",
+          "text": "毎夏を焼津の海辺で過ごした文豪と、魚屋・山口乙吉との絆を伝える「焼津小泉八雲記念館」",
+          "description": "『怪談』の作者が「神様のお気に入り」と愛した焼津の風景と、国境を超えた温かな友情の物語に胸が熱くなった。",
+          "badge_code": "yaizu_koizumi_yakumo_museum"
+        },
+        {
+          "key": "C",
+          "text": "足湯が湧く「焼津駅」から歩き、老舗「御菓子司 角屋」で出会う「かつおサブレ」",
+          "description": "焼津産の鰹節パウダーを練り込んだ魚型のサブレを手に入れ、遠洋漁業の港町ならではの遊び心に微笑んだ。",
+          "badge_code": "yaizu_kadoya_katsuo_sable"
+        },
+        {
+          "key": "D",
+          "text": "黒潮の海へ漕ぎ出したカツオ漁船と鰹節づくりの歴史を紐解く「焼津市歴史民俗資料館」",
+          "description": "精巧な和船模型や漁具の数々を見学し、日本屈指の水産都市・焼津を築き上げた海の男たちの誇りに触れた。",
+          "badge_code": "yaizu_maritime_folklore_museum"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8c3b713f-1580-4362-8a22-e85c2f34e433",
+        "name": "焼津駅",
+        "description": "JR東海道本線の駅であり、水産都市・焼津の玄関口（改札は始発〜終電）。南口広場には天然の「焼津黒潮温泉」を引いた無料の駅前足湯があり、港町散策の起点として親しまれている。",
+        "address": "静岡県焼津市栄町1丁目1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.872171,
+        "lng": 138.3182,
+        "qr_token": "shuin-yaizu-1",
+        "cover_image_url": "/images/yaizu/spot1.png",
+        "f7_fragment": "南口広場に黒潮温泉の足湯が湧き、カツオと八雲の港町・焼津へと誘う拠点駅。",
+        "f7_full": "「焼津駅」の潮風が吹く南口広場と黒潮温泉の足湯の温もりが、神話と文豪の記憶が息づく港町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a88acd4a-53b0-42ca-8938-65fbb60ae730",
+        "next_spot_name": "御菓子司 角屋"
+      },
+      {
+        "id": "a88acd4a-53b0-42ca-8938-65fbb60ae730",
+        "name": "御菓子司 角屋",
+        "description": "焼津市本町に店を構える老舗和洋菓子店（10:00〜18:30頃営業、水曜休）。焼津産の鰹節粉末を生地に練り込んで魚型に焼き上げたご当地銘菓「かつおサブレ」で広く知られる。",
+        "address": "静岡県焼津市本町5丁目7-8",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.86277,
+        "lng": 138.3215,
+        "qr_token": "shuin-yaizu-2",
+        "cover_image_url": "/images/yaizu/spot2.png",
+        "f7_fragment": "焼津産の鰹節粉末を練り込んだ、魚型の名物「かつおサブレ」を焼き上げる老舗。",
+        "f7_full": "「御菓子司 角屋」の香ばしいバターと鰹節が調和した「かつおサブレ」が、遠洋漁業の街・焼津ならではの楽しく美味しい旅情を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "56dd1a97-af52-4ca5-8041-c25d9317cdce",
+        "next_spot_name": "焼津神社"
+      },
+      {
+        "id": "56dd1a97-af52-4ca5-8041-c25d9317cdce",
+        "name": "焼津神社",
+        "description": "反正天皇四年の創建と伝わる焼津の総氏神（境内参拝自由、社務所は9:00〜16:45）。日本武尊の東征と草薙剣の神話が「焼津」の地名の由来となった古社であり、8月の例大祭「荒祭」で知られる。",
+        "address": "静岡県焼津市焼津2丁目7-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.865098,
+        "lng": 138.313753,
+        "qr_token": "shuin-yaizu-3",
+        "cover_image_url": "/images/yaizu/spot3.png",
+        "f7_fragment": "日本武尊の草薙剣神話と「焼津」の地名の由来を伝える、創建千六百年の古社。",
+        "f7_full": "「焼津神社」の深い杜と日本武尊の銅像が、古代の草薙神話から海の男たちの荒祭まで受け継がれる焼津の魂を力強く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e7ea088b-d7d2-4b40-8e43-2a715d5394a2",
+        "next_spot_name": "焼津小泉八雲記念館"
+      },
+      {
+        "id": "e7ea088b-d7d2-4b40-8e43-2a715d5394a2",
+        "name": "焼津小泉八雲記念館",
+        "description": "明治期に毎夏のように焼津に滞在した文豪・小泉八雲（ラフカディオ・ハーン）の記念館（9:00〜17:00開館、月曜休・無料）。焼津の魚屋・山口乙吉との交流や、焼津を舞台にした著作・遺愛品を展示する。",
+        "address": "静岡県焼津市三ケ名1550",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.864468,
+        "lng": 138.306475,
+        "qr_token": "shuin-yaizu-4",
+        "cover_image_url": "/images/yaizu/spot4.png",
+        "f7_fragment": "毎夏を焼津で過ごした文豪・小泉八雲の著作と、心温まる交流を伝える記念館。",
+        "f7_full": "「焼津小泉八雲記念館」に並ぶ直筆の手紙や初版本が、焼津の海と人々をこよなく愛した文豪の眼差しと温かな友情の記憶を語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "c87b751c-24fc-4414-81bc-4dc405a02774",
+        "next_spot_name": "焼津市歴史民俗資料館"
+      },
+      {
+        "id": "c87b751c-24fc-4414-81bc-4dc405a02774",
+        "name": "焼津市歴史民俗資料館",
+        "description": "焼津の漁業史と民俗文化を紹介する博物館（9:00〜17:00開館、月曜休・無料）。カツオ一本釣り漁船の模型や鰹節製造用具、第五福竜丸に関する資料など、海とともに歩んだ焼津の歴史を学べる。",
+        "address": "静岡県焼津市三ケ名1550",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.864732,
+        "lng": 138.305991,
+        "qr_token": "shuin-yaizu-5",
+        "cover_image_url": "/images/yaizu/spot5.png",
+        "f7_fragment": "カツオ一本釣り漁船の模型や鰹節づくりの道具から、港町の歴史を紐解く資料館。",
+        "f7_full": "「焼津市歴史民俗資料館」の和船模型と漁業遺産の数々が、黒潮の海とともに歩んできた焼津の旅を深い感動と余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1a95e182-6743-4ad8-84be-db4f6b42d803",
+    "title": "大御所家康の駿府城とわさびの街・静岡を歩く",
+    "name": "大御所家康の駿府城とわさびの街・静岡を歩く",
+    "description": "徳川家康公が大御所政治を行った駿府城と、本わさび・銘茶・スイーツの文化が息づく静岡県静岡市葵区。JR静岡駅から、明治八年創業・田丸屋本店のわさび漬、静岡発祥のタルト専門店・キル フェ ボン 静岡、駿府城の東御門・巽櫓、日本庭園の紅葉山庭園までを歩く。",
+    "region": "駿府城下（静岡市葵区）",
+    "area_name": "駿府城下（静岡市葵区）",
+    "cover_image_url": "/images/shizuoka/route-eyecatch.png",
+    "imageUrl": "/images/shizuoka/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "お堀に映る駿府城の巽櫓と明治創業のわさび漬、静岡発祥のフルーツタルトが息づく静岡で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大御所・徳川家康公の居城の威容を今に伝える、L字型の「駿府城 東御門・巽櫓」",
+          "description": "重厚な石垣の枡形門と三層の白漆喰の巽櫓を見上げ、天下人が晩年を過ごした駿府の格式を肌で感じた。",
+          "badge_code": "shizuoka_sunpu_castle_tatsumi_yagura"
+        },
+        {
+          "key": "B",
+          "text": "富士山や三保の松原の縮景と四季の茶室が調和する、駿府城内の「紅葉山庭園」",
+          "description": "四つの風景が移り変わる池泉の庭を歩き、本場・静岡の銘茶と花木が織りなす風雅なひとときに癒やされた。",
+          "badge_code": "shizuoka_momijiyama_garden_tea"
+        },
+        {
+          "key": "C",
+          "text": "発祥の地・静岡の「キル フェ ボン」で出会う、旬の果実が輝く「フルーツタルト」",
+          "description": "全国に知られるタルト専門店の原点の街で、駿河の太陽が育てたみずみずしいフルーツタルトの華やかさにときめいた。",
+          "badge_code": "shizuoka_quil_fait_bon_tart"
+        },
+        {
+          "key": "D",
+          "text": "家康公像が立つ「静岡駅」と、明治八年創業の「田丸屋本店」で出会う「わさび漬」",
+          "description": "わさび栽培発祥の地・静岡の清流が育んだ本わさびと、熟成酒粕が醸し出す爽やかな香りと伝統の技に感銘を受けた。",
+          "badge_code": "shizuoka_tamaruya_wasabi_heritage"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "478d81fc-4604-4d99-8b17-e7170ec79896",
+        "name": "静岡駅",
+        "description": "東海道新幹線とJR東海道本線が乗り入れる静岡県の中心駅（改札は始発〜終電）。北口広場には若き日の「竹千代君像」と「徳川家康公像」が並び、駿府城公園へと続く城下町散策の起点となっている。",
+        "address": "静岡県静岡市葵区黒金町50",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.971966,
+        "lng": 138.388899,
+        "qr_token": "shuin-shizuoka-1",
+        "cover_image_url": "/images/shizuoka/spot1.png",
+        "f7_fragment": "北口に徳川家康公と竹千代君の像が立ち、大御所の都・駿府へと誘う県都の駅。",
+        "f7_full": "「静岡駅」の前に立つ徳川家康公像と華やかな駅前通りが、駿府九十六ヶ町の歴史と銘産を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5e7a989a-5782-4e35-8105-97f649823ed9",
+        "next_spot_name": "田丸屋本店 紺屋町本店"
+      },
+      {
+        "id": "5e7a989a-5782-4e35-8105-97f649823ed9",
+        "name": "田丸屋本店 紺屋町本店",
+        "description": "紺屋町に本店を構える明治八年創業のわさび漬の老舗（10:00〜19:00営業、元日休）。清流で育った本わさびを熟成吟醸酒粕に漬け込んだ伝統の「わさび漬」や、わさびソフトクリームを楽しめる。",
+        "address": "静岡県静岡市葵区紺屋町6-7",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.972628,
+        "lng": 138.387315,
+        "qr_token": "shuin-shizuoka-2",
+        "cover_image_url": "/images/shizuoka/spot2.png",
+        "f7_fragment": "明治八年の創業以来、本わさびと吟醸酒粕で伝統の「わさび漬」を作る総本店。",
+        "f7_full": "「田丸屋本店 紺屋町本店」の爽やかな辛味が香るわさび漬が、わさび栽培発祥の地・静岡ならではの清冽な恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6800e006-f934-4252-8084-2d3138d62aa3",
+        "next_spot_name": "キル フェ ボン 静岡"
+      },
+      {
+        "id": "6800e006-f934-4252-8084-2d3138d62aa3",
+        "name": "キル フェ ボン 静岡",
+        "description": "両替町通りに位置する、静岡発祥のフルーツタルト専門店の第一号店（11:00〜19:00営業、無休）。静岡県産の紅ほっぺやクラウンメロンなど、四季折々の旬の果実を贅沢に盛り付けたタルトが並ぶ。",
+        "address": "静岡県静岡市葵区両替町2丁目4-15",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.973916,
+        "lng": 138.382687,
+        "qr_token": "shuin-shizuoka-3",
+        "cover_image_url": "/images/shizuoka/spot3.png",
+        "f7_fragment": "平成三年にこの静岡で誕生した、旬の果実が輝くフルーツタルト専門店の原点。",
+        "f7_full": "「キル フェ ボン 静岡」の宝石のように輝くフルーツタルトと甘い香りが、発祥の街・静岡ならではの華やかな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "767a4ca4-0621-4817-8230-79a4ddf60afd",
+        "next_spot_name": "駿府城 東御門・巽櫓"
+      },
+      {
+        "id": "767a4ca4-0621-4817-8230-79a4ddf60afd",
+        "name": "駿府城 東御門・巽櫓",
+        "description": "徳川家康公が築いた駿府城の二ノ丸東南角に復元された城門と隅櫓（9:00〜16:30開館、月曜休）。伝統工法による総檜造りのL字型三層櫓「巽櫓」と堅固な枡形門「東御門」の内部で駿府城の歴史を学べる。",
+        "address": "静岡県静岡市葵区駿府城公園1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.977758,
+        "lng": 138.382875,
+        "qr_token": "shuin-shizuoka-4",
+        "cover_image_url": "/images/shizuoka/spot4.png",
+        "f7_fragment": "総檜造りで復元されたL字型の「巽櫓」と枡形門が聳え立つ、駿府城の象徴。",
+        "f7_full": "「駿府城 東御門・巽櫓」のお堀に映る白漆喰の壁と重厚な石垣が、大御所・徳川家康公が治めた天下の名城の威容を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9a097188-f748-467a-8cc0-f11ef8d19558",
+        "next_spot_name": "紅葉山庭園"
+      },
+      {
+        "id": "9a097188-f748-467a-8cc0-f11ef8d19558",
+        "name": "紅葉山庭園",
+        "description": "駿府城公園の北東角に整備された池泉庭園（9:00〜16:30開園、月曜休）。富士山や三保の松原など駿河の名勝を取り入れた4つの庭と数寄屋造りの茶室を備え、静岡茶と季節の和菓子に憩える。",
+        "address": "静岡県静岡市葵区駿府城公園1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.980215,
+        "lng": 138.384505,
+        "qr_token": "shuin-shizuoka-5",
+        "cover_image_url": "/images/shizuoka/spot5.png",
+        "f7_fragment": "富士山や三保の松原の縮景と数寄屋造りの茶室が調和する、駿府城内の庭園。",
+        "f7_full": "「紅葉山庭園」の静かな池泉と茶室から香る静岡茶の風味が、大御所の城下町・静岡を巡り歩いた旅を風雅な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b42f25e3-ceb0-4e65-84c1-a01fd4ac743e",
+    "title": "尾州ウールの記憶と一之宮・尾張一宮の旅",
+    "name": "尾州ウールの記憶と一之宮・尾張一宮の旅",
+    "description": "世界三大毛織物産地「尾州」の歴史と、市名の由来となった尾張国一之宮・真清田神社が息づく愛知県一宮市。JR尾張一宮駅から、昭和八年築の旧繊維ビル・Re-TAiL、門前町の餅菓匠 清香、日本茶と抹茶甘味の茶 真清園、二千六百年の古社・真清田神社までを辿る。",
+    "region": "尾州ウールの街と真清田神社（一宮市）",
+    "area_name": "尾州ウールの街と真清田神社（一宮市）",
+    "cover_image_url": "/images/ichinomiya/route-eyecatch.png",
+    "imageUrl": "/images/ichinomiya/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和八年築の旧繊維ビルと門前町の餅菓子・抹茶、尾張国一之宮の真清田神社が息づく一宮で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「一宮」の市名の由来であり、二千六百年の歴史と霊水を伝える尾張国一之宮「真清田神社」",
+          "description": "堂々たる楼門と登録有形文化財の社殿、そして神水舎の清らかな湧水に、尾張の大地と織物文化を守ってきた古社の神威を感じた。",
+          "badge_code": "ichinomiya_masumida_shrine_origin"
+        },
+        {
+          "key": "B",
+          "text": "「尾張一宮駅」から歩き、昭和八年築の旧織物組合ビルを活かした「Re-TAiL」",
+          "description": "スクラッチタイルや丸窓が残るレトロな空間で尾州ウールの手触りに触れ、日本を支えた繊維の街の誇りに胸が熱くなった。",
+          "badge_code": "ichinomiya_retail_bishu_wool"
+        },
+        {
+          "key": "C",
+          "text": "本町商店街の「餅菓匠 清香」で出会う、杵つき餅と自家製餡の「季節の餅菓子」",
+          "description": "国産もち米を丁寧につき上げたコシのあるお餅と、瑞々しい果実や小豆餡が織りなす門前町の優しい甘みに心和んだ。",
+          "badge_code": "ichinomiya_seika_mochi_sweets"
+        },
+        {
+          "key": "D",
+          "text": "真清田神社門前の「茶 真清園」で味わう、香り高い日本茶と濃厚な「抹茶スイーツ」",
+          "description": "茶香炉が香る落ち着いた店先でいただいた、濃厚な宇治抹茶ソフトと急須淹れの煎茶の深い旨みに旅の疲れが癒やされた。",
+          "badge_code": "ichinomiya_masumien_matcha_tea"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e534e35f-6c0f-42d5-8c19-aa7cf99819a2",
+        "name": "尾張一宮駅",
+        "description": "JR東海道本線と名鉄名古屋本線が隣接する尾張北部の拠点駅（改札は始発〜終電）。駅ビル「i-ビル」が併設され、繊維の街・尾州の近代建築や尾張国一之宮・真清田神社への門前町歩きの玄関口となっている。",
+        "address": "愛知県一宮市栄3丁目1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.302124,
+        "lng": 136.797455,
+        "qr_token": "shuin-ichinomiya-1",
+        "cover_image_url": "/images/ichinomiya/spot1.png",
+        "f7_fragment": "JRと名鉄が並び立ち、尾州ウールの街と真清田神社へと誘う一宮の拠点駅。",
+        "f7_full": "「尾張一宮駅」の開放的な東口広場と本町へと続く街並みが、世界有数の毛織物産地と二千六百年の古社を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8b476132-484b-4401-8cc4-b36ef732f38d",
+        "next_spot_name": "Re-TAiL"
+      },
+      {
+        "id": "8b476132-484b-4401-8cc4-b36ef732f38d",
+        "name": "Re-TAiL",
+        "description": "昭和八年に旧尾西織物同業組合事務所として建てられた近代建築を活用した複合施設（10:00〜18:00開館、月・火曜休）。スクラッチタイルや丸窓が残るレトロな館内に、尾州ウールのショップやアトリエが集まる。",
+        "address": "愛知県一宮市栄4丁目5-11",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.300423,
+        "lng": 136.799021,
+        "qr_token": "shuin-ichinomiya-2",
+        "cover_image_url": "/images/ichinomiya/spot2.png",
+        "f7_fragment": "昭和八年築の旧繊維組合ビルを再生し、尾州ウールの魅力を発信する複合拠点。",
+        "f7_full": "「Re-TAiL」の重厚なスクラッチタイルの外壁とレトロな階段が、日本の毛織物産業を牽引した尾州の黄金期の記憶を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "dab73a24-cf3e-4407-8cdd-8a28b1da4b29",
+        "next_spot_name": "餅菓匠 清香"
+      },
+      {
+        "id": "dab73a24-cf3e-4407-8cdd-8a28b1da4b29",
+        "name": "餅菓匠 清香",
+        "description": "本町商店街近くに店を構える餅菓子・和菓子処（10:00〜18:00営業、火・水曜休）。国産もち米を杵でついたコシのあるお餅と北海道産小豆の自家製餡を使った大福や季節のフルーツ大福、だんごが親しまれている。",
+        "address": "愛知県一宮市本町2丁目3-14",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.303849,
+        "lng": 136.800733,
+        "qr_token": "shuin-ichinomiya-3",
+        "cover_image_url": "/images/ichinomiya/spot3.png",
+        "f7_fragment": "真清田神社の門前町で、杵つき餅と自家製餡の「季節の大福」を作る和菓子処。",
+        "f7_full": "「餅菓匠 清香」のつきたての餅の弾力と瑞々しい餡の甘みが、真清田神社の門前町を歩く旅人に温かな笑顔と安らぎを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "90572cb3-09d0-451a-8562-ef4da4f04b62",
+        "next_spot_name": "茶 真清園"
+      },
+      {
+        "id": "90572cb3-09d0-451a-8562-ef4da4f04b62",
+        "name": "茶 真清園",
+        "description": "真清田神社の門前に店を構える日本茶専門店・甘味処（10:00〜17:00営業、日・月曜休）。全国の産地から厳選した煎茶や抹茶を取り揃え、香り高いお茶や濃厚な抹茶ソフトクリーム・抹茶ラテを味わえる。",
+        "address": "愛知県一宮市本町1丁目2-22",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.305092,
+        "lng": 136.800835,
+        "qr_token": "shuin-ichinomiya-4",
+        "cover_image_url": "/images/ichinomiya/spot4.png",
+        "f7_fragment": "真清田神社門前で、厳選した日本茶と濃厚な「抹茶甘味」を供する日本茶専門店。",
+        "f7_full": "「茶 真清園」の清々しい茶香炉の香りと濃厚な抹茶ソフトの味わいが、お宮参りの門前町ならではの雅やかなひとときを演出してくれる。",
+        "is_final": false,
+        "next_spot_id": "b301c74d-21af-4b5e-8eec-a0131fe7221c",
+        "next_spot_name": "真清田神社"
+      },
+      {
+        "id": "b301c74d-21af-4b5e-8eec-a0131fe7221c",
+        "name": "真清田神社",
+        "description": "「一宮市」の市名の由来となった尾張国の一之宮（境内参拝自由、授与所は9:00〜17:00）。天火明命を主祭神に祀り、国の登録有形文化財の本殿・拝殿や霊水が湧く神水舎が鎮座する二千六百年の古社。",
+        "address": "愛知県一宮市真清田1丁目2-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.307421,
+        "lng": 136.801904,
+        "qr_token": "shuin-ichinomiya-5",
+        "cover_image_url": "/images/ichinomiya/spot5.png",
+        "f7_fragment": "「一宮市」の名の由来となった、二千六百年の歴史を誇る尾張国一之宮の古社。",
+        "f7_full": "「真清田神社」の荘厳な楼門と登録有形文化財の本殿が、尾州ウールの街と門前町を巡り歩いた一宮の旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
