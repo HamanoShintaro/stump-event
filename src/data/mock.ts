@@ -70980,5 +70980,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "0b8c8036-7c7d-4669-89dd-476508ae482b",
+    "title": "東海道四日市宿と百年なが餅・四日市を巡る",
+    "name": "東海道四日市宿と百年なが餅・四日市を巡る",
+    "description": "「四日の市」に由来する商都の歴史と、東海道四日市宿の伝統銘菓が息づく三重県四日市市。近鉄四日市駅から、昭和四年築の登録有形文化財・すわ公園交流館、鎌倉創建の総産土神・諏訪神社、旧銀行建築の洋菓子店・タンブラン、天文十九年創業のなが餅 笹井屋 本店までを巡る。",
+    "region": "東海道四日市宿と諏訪の杜（四日市市）",
+    "area_name": "東海道四日市宿と諏訪の杜（四日市市）",
+    "cover_image_url": "/images/yokkaichi/route-eyecatch.png",
+    "imageUrl": "/images/yokkaichi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "登録文化財のすわ公園交流館と天文創業のなが餅、鎌倉創建の諏訪神社が息づく四日市で、あなたが心惹かれたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天文十九年創業の「なが餅 笹井屋 本店」で出会う、四百七十年受け継がれる名物「なが餅」",
+          "description": "戦国時代から東海道の旅人に愛されてきた、両面の香ばしい焼き色と北海道産小豆餡の素朴な甘みに深い歴史を感じた。",
+          "badge_code": "yokkaichi_sasaiya_nagamochi_origin"
+        },
+        {
+          "key": "B",
+          "text": "「近鉄四日市駅」から歩き、昭和四年築の旧図書館を活用した国登録有形文化財「すわ公園交流館」",
+          "description": "スクラッチタイルの外壁とイオニア式円柱が調和するクラシカルな洋風建築に、戦前の四日市の文化的な佇まいを見た。",
+          "badge_code": "yokkaichi_suwa_park_exchange_hall"
+        },
+        {
+          "key": "C",
+          "text": "鎌倉時代の建仁二年創建、東海道四日市宿を見守ってきた総産土神「諏訪神社」",
+          "description": "賑やかな商店街のすぐ奥に広がる静謐な杜と白の大鳥居に立ち、三百年続く四日市祭の伝統に思いを馳せた。",
+          "badge_code": "yokkaichi_suwa_shrine_guardian"
+        },
+        {
+          "key": "D",
+          "text": "旧銀行の重厚な建物を活かした「タンブラン」で出会う、旬の果実のケーキと焼き菓子",
+          "description": "クラシカルな洋館の空間に並ぶ色鮮やかなタルトと香ばしい焼き菓子に、四日市の街歩きの華やかな彩りを感じた。",
+          "badge_code": "yokkaichi_tanblan_patisserie_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "79fdc8de-81ba-46ae-83eb-f23cc53a757a",
+        "name": "近鉄四日市駅",
+        "description": "近鉄名古屋線・湯の山線などが乗り入れる三重県最大の乗降客数を誇る拠点駅（改札は始発〜終電）。東口からは中央通りや一番街商店街が伸び、諏訪神社や旧東海道四日市宿への街歩きの起点となっている。",
+        "address": "三重県四日市市安島1丁目1-56",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.967788,
+        "lng": 136.61837,
+        "qr_token": "shuin-yokkaichi-1",
+        "cover_image_url": "/images/yokkaichi/spot1.png",
+        "f7_fragment": "北勢の鉄道路線が交差し、東海道四日市宿の街並みへと誘う三重屈指の拠点駅。",
+        "f7_full": "「近鉄四日市駅」の活気ある東口広場とアーケード街が、室町からの定期市と東海道宿場の歴史を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b51a9feb-7074-4bba-88a1-eef9cab4da3e",
+        "next_spot_name": "すわ公園交流館"
+      },
+      {
+        "id": "b51a9feb-7074-4bba-88a1-eef9cab4da3e",
+        "name": "すわ公園交流館",
+        "description": "諏訪公園内に建つ昭和四年築の旧四日市市立図書館を活用した国登録有形文化財（9:30〜18:30開館、月曜休・無料）。スクラッチタイルとイオニア式円柱が美しい洋風建築で、地域の歴史文化を発信している。",
+        "address": "三重県四日市市諏訪栄町22-25",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.968649,
+        "lng": 136.621948,
+        "qr_token": "shuin-yokkaichi-2",
+        "cover_image_url": "/images/yokkaichi/spot2.png",
+        "f7_fragment": "昭和四年築の旧図書館を再生した、イオニア式円柱が輝く国登録有形文化財。",
+        "f7_full": "「すわ公園交流館」の気品あるスクラッチタイルの外壁とアーチ窓が、戦災を乗り越えて受け継がれた昭和モダンの建築美を静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "df8796d9-73f1-467a-8d99-47ddfad4fbe1",
+        "next_spot_name": "諏訪神社"
+      },
+      {
+        "id": "df8796d9-73f1-467a-8d99-47ddfad4fbe1",
+        "name": "諏訪神社",
+        "description": "建仁二年に信濃の諏訪大社より勧請された四日市の総産土神（境内参拝自由、社務所は9:00〜16:00）。東海道四日市宿の鎮守として崇敬され、毎年10月には江戸時代から続く例祭「四日市祭」の舞台となる。",
+        "address": "三重県四日市市諏訪栄町22-38",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.968009,
+        "lng": 136.622206,
+        "qr_token": "shuin-yokkaichi-3",
+        "cover_image_url": "/images/yokkaichi/spot3.png",
+        "f7_fragment": "鎌倉時代の建仁二年創建、四日市宿の総産土神として親しまれる「おすわさん」。",
+        "f7_full": "「諏訪神社」の白の大鳥居と緑深い社叢が、商店街の賑わいのすぐ隣で八百年にわたり四日市の街を見守ってきた祈りの歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "71f28f3c-db43-4f47-8ffe-6220172dd620",
+        "next_spot_name": "タンブラン"
+      },
+      {
+        "id": "71f28f3c-db43-4f47-8ffe-6220172dd620",
+        "name": "タンブラン",
+        "description": "旧銀行の建物をリノベーションした人気パティスリー（11:00〜18:00営業、水・木曜休）。クラシカルな空間に旬のフルーツを使ったケーキやタルト、焼き菓子が並び、街歩きの立ち寄り処として親しまれている。",
+        "address": "三重県四日市市栄町9-2",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.965326,
+        "lng": 136.626056,
+        "qr_token": "shuin-yokkaichi-4",
+        "cover_image_url": "/images/yokkaichi/spot4.png",
+        "f7_fragment": "旧銀行の重厚な建築を活かし、旬の果実のケーキと焼き菓子を供する洋菓子処。",
+        "f7_full": "「タンブラン」の重厚な旧銀行建築の佇まいと彩り豊かなケーキが、東海道宿場町の散策にエレガントで甘いひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "43acc910-c9ce-46a6-8316-afb61be442ab",
+        "next_spot_name": "なが餅 笹井屋 本店"
+      },
+      {
+        "id": "43acc910-c9ce-46a6-8316-afb61be442ab",
+        "name": "なが餅 笹井屋 本店",
+        "description": "旧東海道沿いに本店を構える天文十九年創業の老舗和菓子店（8:30〜17:00営業、火・木曜休）。戦国時代から四百七十年以上にわたり受け継がれる四日市代表銘菓「なが餅」の元祖として知られる。",
+        "address": "三重県四日市市北町5-13",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.97196,
+        "lng": 136.626129,
+        "qr_token": "shuin-yokkaichi-5",
+        "cover_image_url": "/images/yokkaichi/spot5.png",
+        "f7_fragment": "戦国時代の天文十九年創業、旧東海道で四百七十年続く名物「なが餅」の元祖。",
+        "f7_full": "「なが餅 笹井屋 本店」の風格ある暖簾と香ばしく焼き上げられた伝統のなが餅が、東海道四日市宿を巡り歩いた旅を温かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "58225057-1023-4589-819c-6dd8e01a526d",
+    "title": "日本三大観音と藤堂高虎の城下・津へ",
+    "name": "日本三大観音と藤堂高虎の城下・津へ",
+    "description": "築城の名手・藤堂高虎公が築いた津藩三十二万石の城下町と、日本三大観音「津観音」の門前町が息づく三重県津市。津新町駅から、高石垣が残る続日本百名城・津城跡、大門名物の蜂蜜まん本舗、大正二年創業の平治煎餅本店、創建千三百年の津観音までを歩く。",
+    "region": "津城跡と津観音・大門（津市）",
+    "area_name": "津城跡と津観音・大門（津市）",
+    "cover_image_url": "/images/tsu/route-eyecatch.png",
+    "imageUrl": "/images/tsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "藤堂高虎が築いた津城跡の石垣と日本三大観音の津観音、老舗の平治煎餅と蜂蜜まんが息づく津で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "築城の名手・藤堂高虎公が築いた高石垣と内堀、白壁の隅櫓が威容を誇る「津城跡」",
+          "description": "水面に映る屏風折れの石垣と勇壮な高虎公騎馬像を仰ぎ、三十二万石の城下町の骨格を築いた名将の知略を感じた。",
+          "badge_code": "tsu_castle_todo_takatora_walls"
+        },
+        {
+          "key": "B",
+          "text": "和銅二年の開創と伝わり、朱塗りの本堂と五重塔が聳える日本三大観音「津観音」",
+          "description": "阿漕浦から出現した観音様の伝承と「観音さんを参らにゃ片参り」の歴史に触れ、千三百年続く門前町の祈りに包まれた。",
+          "badge_code": "tsu_kannon_five_story_pagoda"
+        },
+        {
+          "key": "C",
+          "text": "大正二年創業の「平治煎餅本店」で出会う、阿漕浦の伝説を映した笠型の「平治煎餅」",
+          "description": "孝子・平治の笠をかたどった独特のフォルムと、卵と小麦粉だけで焼き上げた優しく素朴な甘さに心和んだ。",
+          "badge_code": "tsu_heiji_senbei_daimon"
+        },
+        {
+          "key": "D",
+          "text": "城下町の玄関口「津新町駅」と、外はカリッと香ばしい「蜂蜜まん本舗」の「蜂蜜まんじゅう」",
+          "description": "新町通りから城下町を歩き、銅板でカリッと香ばしく焼き上げられた熱々の蜂蜜まんじゅうの美味しさに笑顔がこぼれた。",
+          "badge_code": "tsu_hachimitsuman_sweet_buns"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "885d3288-48fe-43ab-854c-46eb6c242702",
+        "name": "津新町駅",
+        "description": "近鉄名古屋線の特急・急行停車駅であり、津市役所の最寄り駅（改札は始発〜終電）。江戸期の伊賀街道（新町通り）へと続き、続日本百名城・津城跡や門前町・大門エリアの散策拠点となる城下町の玄関口。",
+        "address": "三重県津市新町1丁目5-35",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.716126,
+        "lng": 136.500027,
+        "qr_token": "shuin-tsu-1",
+        "cover_image_url": "/images/tsu/spot1.png",
+        "f7_fragment": "近鉄名古屋線が走り、津城跡や門前町・大門の最寄りとして親しまれる城下町の玄関口。",
+        "f7_full": "「津新町駅」の穏やかな駅前広場と東へ伸びる新町通りが、藤堂高虎公の城下町と門前町・大門を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b2fbfcaf-ea76-4e37-8793-6ec450c59aa0",
+        "next_spot_name": "津城跡"
+      },
+      {
+        "id": "b2fbfcaf-ea76-4e37-8793-6ec450c59aa0",
+        "name": "津城跡",
+        "description": "藤堂高虎公が改修した津藩32万石の居城跡であり、続日本百名城（お城公園、終日入園自由）。高虎公が築いた見事な高石垣と内堀が現存し、復興された隅櫓（三重櫓）や藤堂高虎公騎馬像、日本庭園を見学できる。",
+        "address": "三重県津市丸之内27",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.717741,
+        "lng": 136.507877,
+        "qr_token": "shuin-tsu-2",
+        "cover_image_url": "/images/tsu/spot2.png",
+        "f7_fragment": "築城の名手・藤堂高虎公が築いた高石垣と内堀、白壁の隅櫓が残る名城跡。",
+        "f7_full": "「津城跡」の内堀に映る堂々たる高石垣と藤堂高虎公の騎馬像が、伊勢・伊賀三十二万石を治めた名将の気概を力強く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8dbcf2a0-de52-4346-8825-91c0d73106b2",
+        "next_spot_name": "蜂蜜まん本舗"
+      },
+      {
+        "id": "8dbcf2a0-de52-4346-8825-91c0d73106b2",
+        "name": "蜂蜜まん本舗",
+        "description": "津市大門に本店を構える「蜂蜜まんじゅう」の専門店（9:45〜17:00営業、水曜休）。国産蜂蜜を練り込んだ生地でこし餡を包み、銅板で香ばしく焼き上げる焼きたての味わいが地元で長く愛されている。",
+        "address": "三重県津市大門8-5",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.719208,
+        "lng": 136.51095,
+        "qr_token": "shuin-tsu-3",
+        "cover_image_url": "/images/tsu/spot3.png",
+        "f7_fragment": "国産蜂蜜入りの生地とこし餡を銅板でカリッと焼き上げる「蜂蜜まん」の名店。",
+        "f7_full": "「蜂蜜まん本舗」の銅板で香ばしく焼き上げられた熱々の蜂蜜まんじゅうが、城下町歩きの合間に素朴で温かな幸せを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "bc319163-dcf1-427c-8c8d-47db0761ead7",
+        "next_spot_name": "平治煎餅本店"
+      },
+      {
+        "id": "bc319163-dcf1-427c-8c8d-47db0761ead7",
+        "name": "平治煎餅本店",
+        "description": "大門大通りに店を構える大正二年創業の老舗和菓子店（9:00〜18:00営業、水曜休）。阿漕浦の孝子・平治の伝説にちなみ、忘れた「笠」の形を模して焼き上げた玉子煎餅「平治煎餅」で広く知られる。",
+        "address": "三重県津市大門20-15",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.719733,
+        "lng": 136.511603,
+        "qr_token": "shuin-tsu-4",
+        "cover_image_url": "/images/tsu/spot4.png",
+        "f7_fragment": "大正二年の創業以来、阿漕浦の伝説にちなむ笠型の「平治煎餅」を焼く総本店。",
+        "f7_full": "「平治煎餅本店」の笠をかたどった愛らしい平治煎餅と優しい卵の風味が、百十余年にわたり津の門前町で守られてきた伝統を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1d0c9fe0-3c69-4881-8e47-acb17e9c3105",
+        "next_spot_name": "津観音"
+      },
+      {
+        "id": "1d0c9fe0-3c69-4881-8e47-acb17e9c3105",
+        "name": "津観音",
+        "description": "和銅二年の開創と伝わる日本三大観音の一つ・恵日山観音寺（境内参拝自由、授与所は9:00〜17:00）。阿漕浦から出現した聖観世音菩薩を本尊とし、朱塗りの本堂や五重塔が聳えるお伊勢参りゆかりの古刹。",
+        "address": "三重県津市大門32-19",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.720661,
+        "lng": 136.512648,
+        "qr_token": "shuin-tsu-5",
+        "cover_image_url": "/images/tsu/spot5.png",
+        "f7_fragment": "日本三大観音の一つに数えられ、朱塗りの五重塔と本堂が聳える千三百年の古刹。",
+        "f7_full": "「津観音」の朱塗りに輝く五重塔と香煙が漂う本堂が、城下町と門前町・大門を巡り歩いた津の旅を静かな祈りの余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d280f013-9fd4-40a3-86ba-d9d41749fb39",
+    "title": "穴太衆積みの里坊と山王総本宮・坂本を辿る",
+    "name": "穴太衆積みの里坊と山王総本宮・坂本を辿る",
+    "description": "比叡山延暦寺と日吉大社の門前町として栄え、「穴太衆積み」の石垣と里坊が連なる滋賀県大津市坂本。坂本比叡山口駅から、享保元年創業の本家鶴喜そば、重要文化財の権現造社殿・日吉東照宮、国指定名勝庭園の旧竹林院、国宝社殿を擁する日吉大社までを辿る。",
+    "region": "穴太衆積みの里坊と日吉大社（大津市坂本）",
+    "area_name": "穴太衆積みの里坊と日吉大社（大津市坂本）",
+    "cover_image_url": "/images/sakamoto/route-eyecatch.png",
+    "imageUrl": "/images/sakamoto/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "穴太衆積みの石垣が続く里坊の町並みと三百年蕎麦、国宝の日吉大社が息づく坂本で、あなたの旅のしるしはどこにある？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "八王子山を借景に大宮川の清流が巡る、国指定名勝庭園の里坊「旧竹林院」",
+          "description": "瑞々しい苔と青もみじが彩る延暦寺の里坊庭園を眺め、比叡山の麓に息づく静寂と風雅な美意識に心洗われた。",
+          "badge_code": "sakamoto_kyu_chikurinin_garden"
+        },
+        {
+          "key": "B",
+          "text": "日光東照宮のひな型となった極彩色の重要文化財・権現造社殿「日吉東照宮」",
+          "description": "黒漆と金箔が輝く荘厳な唐門と社殿を仰ぎ、高台の境内から坂本の街並みと琵琶湖の絶景を一望した。",
+          "badge_code": "sakamoto_hiyoshi_toshogu_shrine"
+        },
+        {
+          "key": "C",
+          "text": "国宝の東西本殿と「神猿」が鎮座する全国三千八百社の山王総本宮「日吉大社」",
+          "description": "独特の日吉造の社殿と楼門を支える棟持猿を仰ぎ、比叡山の深い森に宿る千二百年の祈りに胸を打たれた。",
+          "badge_code": "sakamoto_hiyoshi_taisha_masaru"
+        },
+        {
+          "key": "D",
+          "text": "「坂本比叡山口駅」から参道を歩き、享保元年創業「本家鶴喜そば」で味わう手打ちそば",
+          "description": "登録有形文化財の重厚な木造建築で、比叡山の行者や参拝客を三百年癒やしてきた香り高い手打ちそばを堪能した。",
+          "badge_code": "sakamoto_honke_tsuruki_soba"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e4e67baa-ded2-455d-80b7-4021b976b8e5",
+        "name": "坂本比叡山口駅",
+        "description": "京阪石山坂本線の終着駅であり、重伝建地区・坂本と比叡山への玄関口（改札は始発〜終電）。社寺風の三角屋根の駅舎から、穴太衆積みの石垣と日吉大社参道への街歩きが始まる。",
+        "address": "滋賀県大津市坂本4丁目12-35",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.070724,
+        "lng": 135.871344,
+        "qr_token": "shuin-sakamoto-1",
+        "cover_image_url": "/images/sakamoto/spot1.png",
+        "f7_fragment": "社寺風の駅舎が旅人を迎え、穴太衆積みの石垣と比叡山の麓へと誘う玄関口。",
+        "f7_full": "「坂本比叡山口駅」の趣ある木造風駅舎と参道の大鳥居が、里坊の石垣と日吉大社を巡る坂本の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "07be7506-0c89-4429-8e59-49a4dbeae2a8",
+        "next_spot_name": "本家鶴喜そば"
+      },
+      {
+        "id": "07be7506-0c89-4429-8e59-49a4dbeae2a8",
+        "name": "本家鶴喜そば",
+        "description": "日吉参道に暖簾を掲げる享保元年創業の老舗蕎麦処（11:00〜16:00・L.O.15:30営業、最終月曜休）。国の登録有形文化財に指定された明治期の木造店舗で、伝統の手打ちそばを味わえる。",
+        "address": "滋賀県大津市坂本4丁目11-40",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.070614,
+        "lng": 135.87031,
+        "qr_token": "shuin-sakamoto-2",
+        "cover_image_url": "/images/sakamoto/spot2.png",
+        "f7_fragment": "享保元年の創業以来、登録有形文化財の木造店舗で手打ちそばを供する老舗。",
+        "f7_full": "「本家鶴喜そば」の風格ある入母屋造りの店構えと香り高い手打ちそばが、三百年にわたり門前町で愛されてきた味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a49ad4ea-bd6b-40f3-8908-0938b1af137f",
+        "next_spot_name": "日吉東照宮"
+      },
+      {
+        "id": "a49ad4ea-bd6b-40f3-8908-0938b1af137f",
+        "name": "日吉東照宮",
+        "description": "寛永十一年に徳川家光公が創建した東照宮（境内参拝自由、社殿拝観は土日祝10:00〜16:00）。日光東照宮のひな型となった国指定重要文化財の権現造社殿と琵琶湖の眺望が見どころ。",
+        "address": "滋賀県大津市坂本4丁目2-12",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.068348,
+        "lng": 135.864386,
+        "qr_token": "shuin-sakamoto-3",
+        "cover_image_url": "/images/sakamoto/spot3.png",
+        "f7_fragment": "日光東照宮のひな型と伝わる、国指定重要文化財の権現造社殿が輝く名社だ。",
+        "f7_full": "「日吉東照宮」の黒漆と金箔が輝く権現造の社殿と琵琶湖を望む高台の風景が、比叡山と徳川家の深い歴史を教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a1a54b4a-6536-4339-80f6-79c8246708e5",
+        "next_spot_name": "旧竹林院"
+      },
+      {
+        "id": "a1a54b4a-6536-4339-80f6-79c8246708e5",
+        "name": "旧竹林院",
+        "description": "延暦寺の僧侶が隠居した「里坊」の一つであり、国指定名勝の庭園を擁する邸宅（9:00〜17:00開園、月曜休）。八王子山を借景に大宮川の清流を引き込んだ苔と紅葉の庭が広がる。",
+        "address": "滋賀県大津市坂本5丁目2-13",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.071625,
+        "lng": 135.865799,
+        "qr_token": "shuin-sakamoto-4",
+        "cover_image_url": "/images/sakamoto/spot4.png",
+        "f7_fragment": "八王子山を借景に大宮川の清流が巡る、国指定名勝庭園を擁する延暦寺の里坊。",
+        "f7_full": "「旧竹林院」の瑞々しい苔庭と主屋の縁側が、穴太衆積みの石垣に守られた坂本の里坊ならではの静寂と風雅を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f5a7bb30-c751-4d34-8e8e-18548905ec49",
+        "next_spot_name": "日吉大社"
+      },
+      {
+        "id": "f5a7bb30-c751-4d34-8e8e-18548905ec49",
+        "name": "日吉大社",
+        "description": "全国約3,800社の日吉・日枝・山王神社の総本宮（9:00〜16:30参拝、無休）。国宝の西本宮・東本宮本殿や重要文化財の楼門・日吉三橋、神の使い「神猿」で名高い。",
+        "address": "滋賀県大津市坂本5丁目1-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.071644,
+        "lng": 135.862186,
+        "qr_token": "shuin-sakamoto-5",
+        "cover_image_url": "/images/sakamoto/spot5.png",
+        "f7_fragment": "国宝の東西本殿と魔除けの「神猿」が鎮座する、全国三千八百社の山王総本宮。",
+        "f7_full": "「日吉大社」の朱塗りの楼門と国宝社殿を包む深い社叢が、石垣の門前町・坂本を巡り歩いた旅を荘厳な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a1cd6148-ad73-419b-828e-b6f2995f3ac2",
+    "title": "黄金の信長公像と柳ヶ瀬の銘菓・岐阜を歩く",
+    "name": "黄金の信長公像と柳ヶ瀬の銘菓・岐阜を歩く",
+    "description": "織田信長公が「岐阜」と名付けた天下布武の街と、黄金鳥居の古社・柳ヶ瀬の和菓子文化が息づく岐阜県岐阜市。JR岐阜駅から、金華山を一望する岐阜シティ・タワー43、黄金の鳥居が輝く金神社、大正元年創業・ベンテンドーの栗粉餅、ツバメヤ 柳ヶ瀬本店の本わらび餅までを歩く。",
+    "region": "黄金の信長像と柳ヶ瀬・金町（岐阜市）",
+    "area_name": "黄金の信長像と柳ヶ瀬・金町（岐阜市）",
+    "cover_image_url": "/images/gifu/route-eyecatch.png",
+    "imageUrl": "/images/gifu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "黄金の織田信長公像と黄金鳥居の金神社、柳ヶ瀬のわらび餅と栗粉餅が息づく岐阜で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "成務天皇の御代創建と伝わり、黄金色の大鳥居が眩く輝く財宝・産業の守護神「金神社」",
+          "description": "青空に映える高さ八メートルの黄金鳥居をくぐり、千八百年以上にわたり岐阜の街を見守ってきた母神の杜に心が満ちた。",
+          "badge_code": "gifu_kogane_shrine_golden_torii"
+        },
+        {
+          "key": "B",
+          "text": "黄金の信長公像が立つ「岐阜駅」と、金華山・長良川を一望する「岐阜シティ・タワー43」",
+          "description": "駅前の黄金像に迎えられ、地上四十三階の展望室から信長公が天下を見据えた金華山と清流・長良川の絶景を一望した。",
+          "badge_code": "gifu_station_city_tower_panorama"
+        },
+        {
+          "key": "C",
+          "text": "大正元年創業の「ベンテンドー」で出会う、国産栗のそぼろをまとった「栗粉餅」",
+          "description": "裏ごしした栗本来のほろほろとした優しい甘みと、つきたてのお餅が織りなす百年老舗の素朴な味わいに心和んだ。",
+          "badge_code": "gifu_bentendo_kuriko_mochi"
+        },
+        {
+          "key": "D",
+          "text": "柳ヶ瀬の「ツバメヤ 柳ヶ瀬本店」で出会う、純黒糖と焙煎きな粉の「本わらび餅」",
+          "description": "香ばしいきな粉の中から現れる、純黒糖のコクととろけるような本わらび餅の口どけに深い感動を覚えた。",
+          "badge_code": "gifu_tsubameya_yanagase_warabimochi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "65ee78ce-f807-4629-8936-48739f5c4e15",
+        "name": "岐阜駅",
+        "description": "JR東海道本線と高山本線が接続する岐阜県の中心駅（改札は始発〜終電）。北口信長ゆめ広場には「黄金の織田信長公像」や旧市内電車の丸窓電車が展示され、県都散策の起点となっている。",
+        "address": "岐阜県岐阜市橋本町1丁目10",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.409528,
+        "lng": 136.756466,
+        "qr_token": "shuin-gifu-1",
+        "cover_image_url": "/images/gifu/spot1.png",
+        "f7_fragment": "北口広場に黄金の織田信長公像が輝き、天下布武の都・岐阜へと誘う拠点駅。",
+        "f7_full": "「岐阜駅」の北口広場に聳える黄金の織田信長公像が、戦国の天下布武の記憶と柳ヶ瀬の銘菓を巡る旅の始まりを力強く迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e02a057e-81e9-419d-80a0-aacdd5eebb2f",
+        "next_spot_name": "岐阜シティ・タワー43"
+      },
+      {
+        "id": "e02a057e-81e9-419d-80a0-aacdd5eebb2f",
+        "name": "岐阜シティ・タワー43",
+        "description": "JR岐阜駅西側に聳える地上43階・高さ163mの複合タワー（43階無料展望室は10:00〜22:00・最終入場21:45、無休）。最上階の展望室から金華山・岐阜城や長良川、濃尾平野の大パノラマを一望できる。",
+        "address": "岐阜県岐阜市橋本町2丁目52",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.410699,
+        "lng": 136.754364,
+        "qr_token": "shuin-gifu-2",
+        "cover_image_url": "/images/gifu/spot2.png",
+        "f7_fragment": "地上四十三階の無料展望室から、金華山と長良川の絶景を一望するランドマーク。",
+        "f7_full": "「岐阜シティ・タワー43」の展望室から見渡す金華山と清流・長良川のパノラマが、信長公が愛した美濃の風土の広がりを教えてくれる。",
+        "is_final": false,
+        "next_spot_id": "922d882f-be1b-40af-8493-70db11f899e9",
+        "next_spot_name": "金神社"
+      },
+      {
+        "id": "922d882f-be1b-40af-8493-70db11f899e9",
+        "name": "金神社",
+        "description": "成務天皇五年の創建と伝わり、産業繁栄や金運・財宝の守護神として崇敬される古社（境内参拝自由、社務所は9:00〜17:00）。参道入口に聳える高さ8mの黄金色の大鳥居がシンボルとなっている。",
+        "address": "岐阜県岐阜市金町5丁目3",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.416703,
+        "lng": 136.757502,
+        "qr_token": "shuin-gifu-3",
+        "cover_image_url": "/images/gifu/spot3.png",
+        "f7_fragment": "高さ八メートルの黄金色の大鳥居が眩く輝く、産業繁栄と金運招福の千年古社。",
+        "f7_full": "「金神社」の眩い黄金の大鳥居と緑豊かな社殿が、岐阜の商工業と人々の暮らしを千八百年以上にわたり守り続けてきた祈りを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "17ff7717-a5f0-4787-8f46-f2518a92d834",
+        "next_spot_name": "ベンテンドー"
+      },
+      {
+        "id": "17ff7717-a5f0-4787-8f46-f2518a92d834",
+        "name": "ベンテンドー",
+        "description": "神田町通りに店を構える大正元年創業の老舗和菓子店（10:30〜18:00営業、不定休）。国産栗のほろほろとしたそぼろ（栗粉）をつきたての餅にたっぷりまぶした名物「栗粉餅」で広く知られる。",
+        "address": "岐阜県岐阜市神田町5丁目12",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.418007,
+        "lng": 136.759896,
+        "qr_token": "shuin-gifu-4",
+        "cover_image_url": "/images/gifu/spot4.png",
+        "f7_fragment": "大正元年の創業以来、国産栗のそぼろをまとった名物「栗粉餅」を作る老舗。",
+        "f7_full": "「ベンテンドー」のほろりと崩れる栗粉と柔らかなお餅が織りなす栗粉餅が、大正から岐阜の街で愛され続ける素朴な旬の喜びを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c4903901-7077-4dea-80a3-7acd0d3aac6e",
+        "next_spot_name": "ツバメヤ 柳ヶ瀬本店"
+      },
+      {
+        "id": "c4903901-7077-4dea-80a3-7acd0d3aac6e",
+        "name": "ツバメヤ 柳ヶ瀬本店",
+        "description": "柳ヶ瀬商店街近くに本店を構える和菓子店（9:00〜18:00営業・本わらび餅は11:00〜、月曜休）。純黒糖を練り込んだとろける食感の「本わらび餅」や全粒粉のサブレ、どら焼きが人気を集めている。",
+        "address": "岐阜県岐阜市神田町4丁目13",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.418453,
+        "lng": 136.759982,
+        "qr_token": "shuin-gifu-5",
+        "cover_image_url": "/images/gifu/spot5.png",
+        "f7_fragment": "柳ヶ瀬の街角で、純黒糖と香ばしい焙煎きな粉の「本わらび餅」を供する名店。",
+        "f7_full": "「ツバメヤ 柳ヶ瀬本店」の香ばしいきな粉に包まれたとろける本わらび餅が、岐阜の街を巡り歩いた旅を温かく優しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b747435f-5d5e-4149-8e6e-6336bcc10454",
+    "title": "琵琶湖の港町と東海道大津宿・大津の旅",
+    "name": "琵琶湖の港町と東海道大津宿・大津の旅",
+    "description": "東海道五十三次の宿場町と琵琶湖水運の拠点として栄えた滋賀県大津市。JR大津駅から、国重要無形民俗文化財・大津祭の天孫神社、昭和九年築の近代建築・旧大津公会堂、明治二年創業・三井寺力餅本家の力餅、外輪船が浮かぶ琵琶湖岸の大津港までを辿る。",
+    "region": "東海道大津宿と浜大津・琵琶湖岸（大津市）",
+    "area_name": "東海道大津宿と浜大津・琵琶湖岸（大津市）",
+    "cover_image_url": "/images/otsu/route-eyecatch.png",
+    "imageUrl": "/images/otsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "琵琶湖が広がる大津港と昭和九年築の旧大津公会堂、明治創業の三井寺力餅が息づく大津で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "琵琶湖水運の歴史を今に伝え、青い湖面と比叡の山並みが広がる「大津港」",
+          "description": "かつて大津百艘船が行き交った港の岸辺に立ち、外輪船ミシガンと広大な琵琶湖のきらめきに心が解き放たれた。",
+          "badge_code": "otsu_port_biwako_harbor"
+        },
+        {
+          "key": "B",
+          "text": "明治二年創業の「三井寺力餅本家」で味わう、緑色のきな粉をまとった「三井寺力餅」",
+          "description": "弁慶の怪力伝説にちなんだ伝統銘菓をいただき、秘伝の蜜と青大豆・抹茶きな粉のとろけるような調和に感動した。",
+          "badge_code": "otsu_miidera_chikaramochi_sweets"
+        },
+        {
+          "key": "C",
+          "text": "スクラッチタイルとスペイン瓦が湖畔に映える、昭和九年築の「旧大津公会堂」",
+          "description": "アーチ窓が連なるレトロな洋風建築の佇まいに、昭和初期の湖都・大津を彩ったモダンな文化の香りを感じた。",
+          "badge_code": "otsu_former_public_hall_modern"
+        },
+        {
+          "key": "D",
+          "text": "「大津駅」から東海道宿場の街を歩き、からくり曳山の「大津祭」を伝える「天孫神社」",
+          "description": "平安初期の創建と伝わる古社の緑深い境内で手を合わせ、十三基の曳山が巡行する伝統祭礼の歴史に思いを馳せた。",
+          "badge_code": "otsu_tenson_shrine_festival"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1d8168d7-bf8d-4404-851d-d42417a946ea",
+        "name": "大津駅",
+        "description": "JR琵琶湖線が乗り入れる滋賀県の県庁所在地駅（改札は始発〜終電）。北口からは琵琶湖へとまっすぐ伸びる中央大通りが続き、旧東海道大津宿や浜大津への街歩きの起点となっている。",
+        "address": "滋賀県大津市春日町1-3",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.00321,
+        "lng": 135.864576,
+        "qr_token": "shuin-otsu-1",
+        "cover_image_url": "/images/otsu/spot1.png",
+        "f7_fragment": "滋賀県の県都の玄関口であり、旧東海道大津宿と琵琶湖岸へと旅人を誘う拠点駅。",
+        "f7_full": "「大津駅」の開放的な北口広場と琵琶湖へ続く並木道が、大津宿の歴史と湖畔の風景を巡る旅の始まりを爽やかに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8a3c4502-952a-4bcb-886d-4087fe98d7de",
+        "next_spot_name": "天孫神社"
+      },
+      {
+        "id": "8a3c4502-952a-4bcb-886d-4087fe98d7de",
+        "name": "天孫神社",
+        "description": "延暦元年の創建と伝わる大津の鎮守（境内参拝自由、授与所は9:00〜19:00）。国指定重要無形民俗文化財であり湖国三大祭の一つである「大津祭」を斎行する古社として広く親しまれている。",
+        "address": "滋賀県大津市京町3丁目3-36",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.005656,
+        "lng": 135.867213,
+        "qr_token": "shuin-otsu-2",
+        "cover_image_url": "/images/otsu/spot2.png",
+        "f7_fragment": "延暦元年の創建と伝わり、国重要無形民俗文化財の「大津祭」を今に伝える古社。",
+        "f7_full": "「天孫神社」の静謐な社殿と木漏れ日が差す境内が、十三基の曳山が街を彩る大津祭の誇りと千二百年の祈りを静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "90cf8624-855d-484e-85cd-72e7c3be748e",
+        "next_spot_name": "旧大津公会堂"
+      },
+      {
+        "id": "90cf8624-855d-484e-85cd-72e7c3be748e",
+        "name": "旧大津公会堂",
+        "description": "浜大津に建つ昭和九年築の洋風近代建築（通路・展示見学は9:00〜21:00頃、店舗により異なる）。スクラッチタイル貼りの外壁やスペイン瓦の屋根が当時の面影を残し、現在は飲食店や市民スペースとして活用されている。",
+        "address": "滋賀県大津市浜大津1丁目4-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.010526,
+        "lng": 135.865236,
+        "qr_token": "shuin-otsu-3",
+        "cover_image_url": "/images/otsu/spot3.png",
+        "f7_fragment": "昭和九年に建てられた、スクラッチタイルとアーチ窓が美しい近代洋風建築。",
+        "f7_full": "「旧大津公会堂」の重厚なスクラッチタイルの外壁とレトロな階段が、琵琶湖の港町として賑わった昭和モダンの記憶を優美に語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "5dc13c67-fb5b-491b-8473-e317dd87d6ed",
+        "next_spot_name": "三井寺力餅本家"
+      },
+      {
+        "id": "5dc13c67-fb5b-491b-8473-e317dd87d6ed",
+        "name": "三井寺力餅本家",
+        "description": "浜大津駅前に店を構える明治二年創業の老舗和菓子店（7:00〜19:00営業、無休）。弁慶の怪力伝説にちなみ、柔らかな串餅に秘伝の蜜と鮮やかな緑色の青大豆・抹茶きな粉をたっぷりまぶした「三井寺力餅」が名物。",
+        "address": "滋賀県大津市浜大津2丁目1-30",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.011115,
+        "lng": 135.862953,
+        "qr_token": "shuin-otsu-4",
+        "cover_image_url": "/images/otsu/spot4.png",
+        "f7_fragment": "明治二年の創業以来、鮮やかな緑色のきな粉をまぶした「三井寺力餅」を作る老舗。",
+        "f7_full": "「三井寺力餅本家」の出来立ての柔らかなお餅と香り高い緑のきな粉が、明治から大津の旅人に愛され続けてきた優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "3fd70bd2-8eb1-453e-8d0a-4ebf4d471d4c",
+        "next_spot_name": "大津港"
+      },
+      {
+        "id": "3fd70bd2-8eb1-453e-8d0a-4ebf4d471d4c",
+        "name": "大津港",
+        "description": "古来より琵琶湖水運の中心として栄えた湖岸の港（湖岸散策自由、ターミナルは8:00〜21:30）。外輪船「ミシガン」の発着場であり、沖合には世界最大級の「びわこ花噴水」と雄大な琵琶湖のパノラマが広がる。",
+        "address": "滋賀県大津市浜大津5丁目1-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.012501,
+        "lng": 135.866035,
+        "qr_token": "shuin-otsu-5",
+        "cover_image_url": "/images/otsu/spot5.png",
+        "f7_fragment": "外輪船ミシガンが発着し、びわこ花噴水と雄大な琵琶湖を一望する湖岸の港。",
+        "f7_full": "「大津港」のきらめく琵琶湖の水面と比叡・比良の山並みが、東海道大津宿と湖都を巡り歩いた旅を爽やかな開放感で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
