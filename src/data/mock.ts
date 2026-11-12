@@ -67080,5 +67080,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "2f650463-e689-43ea-86bb-97fba465a39f",
+    "title": "日本のベニス内川と万葉の古社・新湊を巡る",
+    "name": "日本のベニス内川と万葉の古社・新湊を巡る",
+    "description": "両岸に漁船が連なる「日本のベニス」内川と、大伴家持ゆかりの万葉文化が息づく富山県射水市新湊。万葉線の新町口駅から、映画ロケ地の番屋カフェ、川の駅 新湊、赤い屋根の歩道橋・東橋、千二百年の古社・放生津八幡宮までを巡る。",
+    "region": "新湊・内川（射水市）",
+    "area_name": "新湊・内川（射水市）",
+    "cover_image_url": "/images/shinminato/route-eyecatch.png",
+    "imageUrl": "/images/shinminato/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "漁船が並ぶ内川の橋と映画ゆかりの番屋、万葉の古社が息づく新湊で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "両岸に漁船が連なる内川に架かる、総ヒノキ造りと赤い屋根の歩道橋「東橋」",
+          "description": "スペインの建築家が手掛けた温かみある木の橋から、運河の水面と立山連峰を望む絶景に息をのんだ。",
+          "badge_code": "shinminato_uchikawa_azumabashi"
+        },
+        {
+          "key": "B",
+          "text": "大伴家持が勧請した千二百五十年の古社であり、曳山祭の舞台「放生津八幡宮」",
+          "description": "万葉集に詠まれた「奈呉の海」の記憶と、十三基の曳山が集う湊町の誇り高い信仰に背筋が伸びた。",
+          "badge_code": "shinminato_hojozu_hachimangu"
+        },
+        {
+          "key": "C",
+          "text": "映画『人生の約束』のロケ地となった、内川の水辺に佇む古民家「番屋カフェ」",
+          "description": "かつての番屋の梁が残る空間で、窓のすぐ外に浮かぶ漁船を眺めながら味わう珈琲に心が和んだ。",
+          "badge_code": "shinminato_banya_cafe_canal"
+        },
+        {
+          "key": "D",
+          "text": "万葉線の「新町口駅」から歩き出し、絢爛な曳山に出会う「川の駅 新湊」",
+          "description": "路面電車が走るレトロな湊町で、昼の花山と夜の提灯山の二つの顔を持つ曳山の美しさに魅了された。",
+          "badge_code": "shinminato_kawanoeki_hikiyama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "16f8ff40-9f6c-43be-8785-1a296f8340b5",
+        "name": "新町口駅",
+        "description": "高岡駅と越ノ潟駅を結ぶ路面電車・万葉線の停留場（終日利用可能）。「日本のベニス」と呼ばれる内川エリアや川の駅 新湊への最寄り駅であり、湊町の散策起点として親しまれている。",
+        "address": "富山県射水市中央町16",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.778983,
+        "lng": 137.084158,
+        "qr_token": "shuin-shinminato-1",
+        "cover_image_url": "/images/shinminato/spot1.png",
+        "f7_fragment": "路面電車・万葉線が走り、日本のベニス・内川の水辺へと誘う湊町の玄関口。",
+        "f7_full": "「新町口駅」に響く路面電車の軽やかな走行音と潮風が、漁船が連なる内川と万葉の古社を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9b138ea9-93a6-4b25-88b6-38480204a4de",
+        "next_spot_name": "番屋カフェ"
+      },
+      {
+        "id": "9b138ea9-93a6-4b25-88b6-38480204a4de",
+        "name": "番屋カフェ",
+        "description": "内川沿いの古い番屋（漁師の作業小屋）を改装したカフェ（9:00〜17:00営業、水曜休）。映画『人生の約束』のロケ地としても知られ、内川を行き交う船を眺めながら珈琲や軽食・甘味を楽しめる。",
+        "address": "富山県射水市放生津町17-5",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.78192,
+        "lng": 137.086048,
+        "qr_token": "shuin-shinminato-2",
+        "cover_image_url": "/images/shinminato/spot2.png",
+        "f7_fragment": "映画のロケ地となった内川沿いの番屋で、水辺を眺めながら珈琲を味わうカフェ。",
+        "f7_full": "「番屋カフェ」の温もりある木の梁と窓辺に広がる内川の水面が、湊町のゆったりとした時間の流れと芳醇な珈琲の香りを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e13cd05b-9d0b-4560-8e19-8ed729a99610",
+        "next_spot_name": "川の駅 新湊"
+      },
+      {
+        "id": "e13cd05b-9d0b-4560-8e19-8ed729a99610",
+        "name": "川の駅 新湊",
+        "description": "内川沿いに位置する観光交流施設（9:00〜21:00開館、第4水曜休）。「新湊曳山まつり」の曳山常設展示や特産品ショップ、カフェ、内川遊覧船の発着場を備え、街歩きの休憩にも最適。",
+        "address": "富山県射水市立町1-26",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.780984,
+        "lng": 137.087672,
+        "qr_token": "shuin-shinminato-3",
+        "cover_image_url": "/images/shinminato/spot3.png",
+        "f7_fragment": "内川のほとりに建ち、絢爛な曳山の展示と水辺の休息を届ける観光交流拠点。",
+        "f7_full": "「川の駅 新湊」の開放的な水辺のデッキと華やかな曳山の展示が、内川沿いの散策へ向けた心躍るひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d4d89a28-106d-4df8-8b79-7afd7af3d45b",
+        "next_spot_name": "東橋"
+      },
+      {
+        "id": "d4d89a28-106d-4df8-8b79-7afd7af3d45b",
+        "name": "東橋",
+        "description": "内川に架かる歩行者専用の屋根付き橋（終日通行自由）。スペインの建築家セザール・ポルテラ氏の設計による総ヒノキ造りと赤い切妻屋根が特徴で、内川を代表する景観スポットとなっている。",
+        "address": "富山県射水市八幡町1-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.779574,
+        "lng": 137.090823,
+        "qr_token": "shuin-shinminato-4",
+        "cover_image_url": "/images/shinminato/spot4.png",
+        "f7_fragment": "スペインの建築家が設計した、内川の水面に映える総ヒノキ造りの赤い屋根橋。",
+        "f7_full": "「東橋」の鮮やかな赤い屋根とヒノキの回廊が、両岸に漁船が連なる「日本のベニス」内川ならではの詩情豊かな風景を映し出してくれる。",
+        "is_final": false,
+        "next_spot_id": "cd155184-9e74-46cf-85c0-6f7114d1d655",
+        "next_spot_name": "放生津八幡宮"
+      },
+      {
+        "id": "cd155184-9e74-46cf-85c0-6f7114d1d655",
+        "name": "放生津八幡宮",
+        "description": "奈良時代の天平十八年に大伴家持が勧請したと伝わる古社（境内参拝自由、社務所は9:00〜16:00）。境内には家持の万葉歌碑が立ち、秋の「新湊曳山まつり」の中心舞台として広く崇敬されている。",
+        "address": "富山県射水市八幡町2-2-27",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.780485,
+        "lng": 137.094429,
+        "qr_token": "shuin-shinminato-5",
+        "cover_image_url": "/images/shinminato/spot5.png",
+        "f7_fragment": "大伴家持が創建したと伝わり、新湊曳山まつりの舞台となる奈呉の浦の古社。",
+        "f7_full": "「放生津八幡宮」の荘厳な社殿と万葉歌碑の佇まいが、内川の運河と歴史を巡り歩いた新湊の旅を格調高い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e21db568-4a39-4a3f-840f-3f9a6524ffc6",
+    "title": "白亜の洋館と元祖ローメン・信州伊那へ",
+    "name": "白亜の洋館と元祖ローメン・信州伊那へ",
+    "description": "南アルプスと中央アルプスに抱かれ、独自の食文化と近代建築が息づく長野県伊那市。JR飯田線の伊那市駅から、明治創業の越後屋菓子店、市民交流拠点のいなっせ、国登録有形文化財の伊那市創造館、ローメン発祥の名店・中国風菜館 萬里までを歩く。",
+    "region": "伊那（伊那市）",
+    "area_name": "伊那（伊那市）",
+    "cover_image_url": "/images/ina/route-eyecatch.png",
+    "imageUrl": "/images/ina/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和初期の白亜の洋館と元祖ローメン、老舗の餅菓子が息づく伊那で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和三十年に伊那のソウルフードを生み出した、元祖ローメンの名店「中国風菜館 萬里」",
+          "description": "特製蒸し麺にマトンとキャベツの旨みが染み込んだ「ローメン誕生の地」の一杯に、伊那谷の食の底力を味わった。",
+          "badge_code": "ina_banri_origin_romen"
+        },
+        {
+          "key": "B",
+          "text": "昭和五年の旧上伊那図書館を活かし、県宝の縄文土器を伝える「伊那市創造館」",
+          "description": "国登録有形文化財の格調高い洋風建築と、縄文人の造形美を伝える「顔面付釣手形土器」の迫力に魅了された。",
+          "badge_code": "ina_sozokan_modern_library"
+        },
+        {
+          "key": "C",
+          "text": "明治三十七年創業の「越後屋菓子店」で出会う、柔らかな求肥の銘菓「越後屋の月」",
+          "description": "透き通るような羽二重餅とさらりとした自家製こしあんが織りなす、百二十年変わらぬ優しい甘さに癒やされた。",
+          "badge_code": "ina_echigoya_tsuki_wagashi"
+        },
+        {
+          "key": "D",
+          "text": "二つのアルプスを望む「伊那市駅」と、伊那谷の学びと交流の拠点「いなっせ」",
+          "description": "飯田線の駅から天竜川が刻んだ段丘の街へと歩き出し、南信州ならではの爽やかな空気と活気に触れた。",
+          "badge_code": "ina_station_inasse_valley"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d8180409-9023-471f-87a8-32deafff554d",
+        "name": "伊那市駅",
+        "description": "南アルプスと中央アルプスに挟まれた伊那市の中心駅となるJR飯田線の主要駅（待合室は始発〜終電）。明治四十五年に開業した歴史を持ち、市街地の文化施設や名物「ローメン」の名店への散策起点となっている。",
+        "address": "長野県伊那市荒井3485",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.838498,
+        "lng": 137.959224,
+        "qr_token": "shuin-ina-1",
+        "cover_image_url": "/images/ina/spot1.png",
+        "f7_fragment": "二つのアルプスに抱かれた伊那谷の中心都市・伊那へと誘う飯田線の玄関口。",
+        "f7_full": "「伊那市駅」のホームに吹く爽やかな伊那谷の風が、白亜の近代建築と伝統の食文化が息づく街を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "90492368-2887-459d-8e20-009cb71ab5c6",
+        "next_spot_name": "越後屋菓子店"
+      },
+      {
+        "id": "90492368-2887-459d-8e20-009cb71ab5c6",
+        "name": "越後屋菓子店",
+        "description": "伊那市駅前に店を構える明治三十七年創業の老舗和菓子店（9:00〜18:30営業、水曜・木曜休）。北海道産小豆のこしあんを驚くほど柔らかな求肥で包んだ代表銘菓「越後屋の月（うさぎのお餅）」で広く知られる。",
+        "address": "長野県伊那市荒井3473",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.83886,
+        "lng": 137.959006,
+        "qr_token": "shuin-ina-2",
+        "cover_image_url": "/images/ina/spot2.png",
+        "f7_fragment": "明治三十七年の創業以来、柔らかな求肥の銘菓「越後屋の月」を作る老舗処。",
+        "f7_full": "「越後屋菓子店」の透き通るように柔らかな求肥と上品なこしあんの甘みが、百二十年にわたり伊那の人々に愛されてきた伝統の味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "bcda58f9-e3e7-411f-87d4-c6a8c7355b33",
+        "next_spot_name": "いなっせ"
+      },
+      {
+        "id": "bcda58f9-e3e7-411f-87d4-c6a8c7355b33",
+        "name": "いなっせ",
+        "description": "伊那市駅前に建つ伊那市生涯学習センターを中心とする複合施設（8:30〜22:00開館、水曜・年末年始休）。展示ホールや市民交流スペース、休憩ロビーを備え、まちなか散策のひと休みに利用できる。",
+        "address": "長野県伊那市荒井3500-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.839554,
+        "lng": 137.95871,
+        "qr_token": "shuin-ina-3",
+        "cover_image_url": "/images/ina/spot3.png",
+        "f7_fragment": "伊那市駅前に建ち、市民の学びとまちなか散策の休息を支える生涯学習拠点。",
+        "f7_full": "「いなっせ」の明るいロビー空間が、これから向かう旧上伊那図書館の近代建築と伊那の街並み散策へ向けた心地よい休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "15fee8e7-cdf4-4b68-8684-62c4022d9063",
+        "next_spot_name": "伊那市創造館"
+      },
+      {
+        "id": "15fee8e7-cdf4-4b68-8684-62c4022d9063",
+        "name": "伊那市創造館",
+        "description": "昭和五年竣工の「旧上伊那図書館」を活用した文化施設（10:00〜17:00開館、火曜・祝翌日・年末年始休、入館無料）。国登録有形文化財の重厚な洋風建築の館内に、長野県宝「顔面付釣手形土器」などの考古・歴史資料を展示する。",
+        "address": "長野県伊那市荒井3520",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.838916,
+        "lng": 137.95656,
+        "qr_token": "shuin-ina-4",
+        "cover_image_url": "/images/ina/spot4.png",
+        "f7_fragment": "昭和五年竣工の国登録有形文化財・旧上伊那図書館を活かした白亜の文化施設。",
+        "f7_full": "「伊那市創造館」の端正な白亜の洋風建築と縄文時代の貴重な土器展示が、伊那谷が育んできた五千年の歴史と教育の志を静かに物語っている。",
+        "is_final": false,
+        "next_spot_id": "3b0d7e42-cba1-489c-8857-ef28dac07104",
+        "next_spot_name": "中国風菜館 萬里"
+      },
+      {
+        "id": "3b0d7e42-cba1-489c-8857-ef28dac07104",
+        "name": "中国風菜館 萬里",
+        "description": "昭和三十年に伊那名物「ローメン」を考案した発祥の店（11:00〜14:00・17:00〜20:00頃営業、月曜休）。特製の蒸し中華麺にマトン（羊肉）とキャベツを合わせた元祖の味を求め、全国から多くの人が訪れる。",
+        "address": "長野県伊那市坂下3308",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.840874,
+        "lng": 137.962056,
+        "qr_token": "shuin-ina-5",
+        "cover_image_url": "/images/ina/spot5.png",
+        "f7_fragment": "昭和三十年に伊那谷のソウルフード「ローメン」を生み出した、元祖の名店。",
+        "f7_full": "「中国風菜館 萬里」の湯気立つローメンの香ばしい香りと深い旨みが、二つのアルプスを仰ぐ伊那の街を歩いた旅を温かな満足感で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a42a0868-daca-4e2f-8b60-21434ee9e8d3",
+    "title": "三河湾に浮かぶ神の島と城郭ホテル・蒲郡を歩く",
+    "name": "三河湾に浮かぶ神の島と城郭ホテル・蒲郡を歩く",
+    "description": "穏やかな三河湾に国の天然記念物・竹島が浮かび、多くの文豪が愛した海辺の街・愛知県蒲郡市。蒲郡駅から、深海生物で名高い竹島水族館、文豪の足跡を伝える海辺の文学記念館、昭和九年創業の蒲郡クラシックホテル、日本七弁天の八百富神社までを歩く。",
+    "region": "蒲郡・竹島（蒲郡市）",
+    "area_name": "蒲郡・竹島（蒲郡市）",
+    "cover_image_url": "/images/gamagori/route-eyecatch.png",
+    "imageUrl": "/images/gamagori/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "三河湾に浮かぶ竹島と昭和初期の城郭ホテル、深海の水族館が息づく蒲郡で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "海を渡る「竹島橋」の先、国の天然記念物の杜に鎮座する日本七弁天「八百富神社」",
+          "description": "三百八十七メートルの橋を渡って足を踏み入れた神の島の静寂と、海風に揺れる照葉樹の緑に心が洗われた。",
+          "badge_code": "gamagori_takeshima_yaotomi_shrine"
+        },
+        {
+          "key": "B",
+          "text": "タカアシガニなど希少な深海生物と、飼育員の手書き解説に出会う「竹島水族館」",
+          "description": "大迫力の深海水槽を泳ぐ生き物たちの神秘的な姿と、ユーモアあふれる温かな展示の工夫に笑顔がこぼれた。",
+          "badge_code": "gamagori_takeshima_deepsea_aquarium"
+        },
+        {
+          "key": "C",
+          "text": "竹島を見下ろす高台に聳える、昭和九年創業の城郭風建築「蒲郡クラシックホテル」",
+          "description": "和の破風屋根と洋館が融合した堂々たる佇まいと、庭園から望む三河湾の大パノラマに時代を超えた気品を感じた。",
+          "badge_code": "gamagori_classic_hotel_heritage"
+        },
+        {
+          "key": "D",
+          "text": "海辺の玄関口「蒲郡駅」と、近代の文豪たちが愛した常磐館を継ぐ「海辺の文学記念館」",
+          "description": "数多くの名作を生んだ数寄屋造りの空間から竹島を眺め、文人たちが魅了された海辺の叙情に浸った。",
+          "badge_code": "gamagori_seaside_literature_memorial"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cb245db0-93b9-4805-84f3-c5837b7f5a8e",
+        "name": "蒲郡駅",
+        "description": "JR東海道本線と名鉄蒲郡線が乗り入れる三河湾観光の玄関口（待合室は始発〜終電）。南口から海辺に向かって歩道が整備されており、国の天然記念物・竹島や竹島水族館への散策起点となっている。",
+        "address": "愛知県蒲郡市元町1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.82292,
+        "lng": 137.226053,
+        "qr_token": "shuin-gamagori-1",
+        "cover_image_url": "/images/gamagori/spot1.png",
+        "f7_fragment": "東海道本線と名鉄線が交わり、三河湾と竹島の海辺へと誘う蒲郡市の玄関口。",
+        "f7_full": "「蒲郡駅」の潮風が吹き抜ける南口広場が、多くの文豪が愛した三河湾の景勝地・竹島エリアを歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8318c7ce-9904-4eb7-8623-a409b838f7ee",
+        "next_spot_name": "竹島水族館"
+      },
+      {
+        "id": "8318c7ce-9904-4eb7-8623-a409b838f7ee",
+        "name": "竹島水族館",
+        "description": "三河湾や深海の生き物を中心に展示する市立水族館（9:00〜17:00開館、無休・臨時休館あり）。全国屈指の深海生物の展示数と、飼育員によるユニークな手書き解説プレートで全国的な人気を集めている。",
+        "address": "愛知県蒲郡市竹島町1-6",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.817272,
+        "lng": 137.231945,
+        "qr_token": "shuin-gamagori-2",
+        "cover_image_url": "/images/gamagori/spot2.png",
+        "f7_fragment": "タカアシガニなど全国屈指の深海生物と手書きの解説が魅力の海辺の水族館。",
+        "f7_full": "「竹島水族館」の大水槽を悠々と泳ぐ深海生物と温もりある展示が、三河湾と遠州灘の豊かな海の神秘を楽しく体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "d263e188-fb03-48f6-8aad-da16039badbb",
+        "next_spot_name": "海辺の文学記念館"
+      },
+      {
+        "id": "d263e188-fb03-48f6-8aad-da16039badbb",
+        "name": "海辺の文学記念館",
+        "description": "明治から昭和にかけて多くの文豪が宿泊した老舗旅館「常磐館」の風情を再現した文化施設（9:00〜17:00開館、無休、入館無料）。蒲郡ゆかりの文学資料展示や、竹島を眺めながら抹茶を味わえる茶席（有料）を備える。",
+        "address": "愛知県蒲郡市竹島町15-62",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.815033,
+        "lng": 137.234833,
+        "qr_token": "shuin-gamagori-3",
+        "cover_image_url": "/images/gamagori/spot3.png",
+        "f7_fragment": "文豪たちが愛した料理旅館「常磐館」の趣を再現し、三河湾を望む文学記念館。",
+        "f7_full": "「海辺の文学記念館」の風雅な和風建築と窓辺に広がる三河湾の景色が、文豪たちが心を寄せた海辺の静かな休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9ff6d4de-be92-4f2e-827a-5696e831f023",
+        "next_spot_name": "蒲郡クラシックホテル"
+      },
+      {
+        "id": "9ff6d4de-be92-4f2e-827a-5696e831f023",
+        "name": "蒲郡クラシックホテル",
+        "description": "昭和九年に創業した日本初の国際観光ホテルの一つ（庭園散策・ラウンジ利用可）。竹島を見下ろす高台に聳える城郭風建築とアール・デコ様式の意匠が特徴で、近代化産業遺産および景観重要建造物に指定されている。",
+        "address": "愛知県蒲郡市竹島町15-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.815954,
+        "lng": 137.235626,
+        "qr_token": "shuin-gamagori-4",
+        "cover_image_url": "/images/gamagori/spot4.png",
+        "f7_fragment": "竹島を望む高台に昭和九年から聳える、城郭風意匠の名門クラシックホテル。",
+        "f7_full": "「蒲郡クラシックホテル」の堂々たる破風屋根と美しい庭園が、昭和初期の迎賓文化の気品と三河湾の絶景を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "beff29d9-6d5b-4ca3-88c7-2f269ef96387",
+        "next_spot_name": "八百富神社"
+      },
+      {
+        "id": "beff29d9-6d5b-4ca3-88c7-2f269ef96387",
+        "name": "八百富神社",
+        "description": "島全体が国の天然記念物に指定されている「竹島」の中央に鎮座する古社（境内参拝自由、社務所は9:00〜17:00頃）。平安時代の養和元年創建と伝わる日本七弁天の一つで、長さ387mの竹島橋を渡って参拝する。",
+        "address": "愛知県蒲郡市竹島町3-15",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.810585,
+        "lng": 137.231634,
+        "qr_token": "shuin-gamagori-5",
+        "cover_image_url": "/images/gamagori/spot5.png",
+        "f7_fragment": "海を渡る竹島橋の先、国の天然記念物の島に鎮座する日本七弁天の名高い古社。",
+        "f7_full": "「八百富神社」へと続く海上の竹島橋と神の島の深い緑が、三河湾の海辺と歴史建築を巡り歩いた蒲郡の旅を神秘的な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e17758b5-9138-4a4e-859c-0d114f0ca857",
+    "title": "二百五十年の味醂蔵と路地・大浜てらまちの旅",
+    "name": "二百五十年の味醂蔵と路地・大浜てらまちの旅",
+    "description": "黒板塀の本みりん蔵と古刹が軒を連ねる「大浜てらまち」の情緒が息づく愛知県碧南市。名鉄三河線の碧南駅から、碧南市藤井達吉現代美術館、大浜大仏の海徳寺、安永元年創業の九重味淋 石川八郎治商店、清沢満之ゆかりの西方寺までを巡る。",
+    "region": "碧南・大浜てらまち（碧南市）",
+    "area_name": "碧南・大浜てらまち（碧南市）",
+    "cover_image_url": "/images/hekinan/route-eyecatch.png",
+    "imageUrl": "/images/hekinan/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "黒板塀のみりん蔵と近代工芸の美術館、古刹が連なる碧南で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "安永元年の創業以来、二百五十年の伝統を守る本みりん蔵「九重味淋 石川八郎治商店」",
+          "description": "国登録有形文化財の「大蔵」が連なる黒板塀の佇まいと、芳醇な本みりんの優しい甘みに感動した。",
+          "badge_code": "hekinan_kokonoe_mirin_brewery"
+        },
+        {
+          "key": "B",
+          "text": "近代工芸の先駆者・藤井達吉の独創的な美意識に出会う「碧南市藤井達吉現代美術館」",
+          "description": "七宝から和紙、陶芸までジャンルを超えて創作を続けた郷土の芸術家の情熱と洗練された建築に魅了された。",
+          "badge_code": "hekinan_fujii_tatsukichi_museum"
+        },
+        {
+          "key": "C",
+          "text": "近代仏教の哲学者・清沢満之の足跡と太鼓楼を伝える大浜の名刹「西方寺」",
+          "description": "大浜てらまちの路地に聳える荘厳な本堂と、近代日本の精神史に大きな足跡を残した思想の深さに触れた。",
+          "badge_code": "hekinan_saihoji_teramachi_temple"
+        },
+        {
+          "key": "D",
+          "text": "三河線の終着「碧南駅」から路地を歩き、大浜大仏に出会う「海徳寺」",
+          "description": "湊町の記憶が残る入り組んだ路地を抜けて、穏やかな大仏様が鎮座するお寺の静けさに心が安らいだ。",
+          "badge_code": "hekinan_kaitokuji_daibutsu_alley"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1def883c-ee19-4308-8661-b2ba92eb185c",
+        "name": "碧南駅",
+        "description": "名鉄三河線の終着駅であり、碧南市南部の大浜地区への玄関口（待合室は始発〜終電）。大正三年の開業以来、三河みりんの醸造蔵や十ヶ寺が連なる「大浜てらまち」への散策起点として親しまれている。",
+        "address": "愛知県碧南市沢渡町4",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.873981,
+        "lng": 136.985563,
+        "qr_token": "shuin-hekinan-1",
+        "cover_image_url": "/images/hekinan/spot1.png",
+        "f7_fragment": "名鉄三河線の終着駅であり、みりん蔵と大浜てらまちへと誘う湊町の玄関口。",
+        "f7_full": "「碧南駅」の落ち着いたホームと駅前の街並みが、二百五十年の本みりん蔵と古刹が連なる大浜てらまちの旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "99e47d72-7560-4c1e-8aba-9c36c6bba7d8",
+        "next_spot_name": "碧南市藤井達吉現代美術館"
+      },
+      {
+        "id": "99e47d72-7560-4c1e-8aba-9c36c6bba7d8",
+        "name": "碧南市藤井達吉現代美術館",
+        "description": "碧南出身の近代工芸の先駆者・藤井達吉の作品を中心に収蔵・展示する市立美術館（10:00〜17:00開館、月曜・年末年始休）。七宝・染色・陶芸・和紙など多彩な工芸作品と現代美術に出会える文化拠点。",
+        "address": "愛知県碧南市音羽町1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.873396,
+        "lng": 136.981796,
+        "qr_token": "shuin-hekinan-2",
+        "cover_image_url": "/images/hekinan/spot2.png",
+        "f7_fragment": "郷土出身の近代工芸の先駆者・藤井達吉の芸術と現代美術を伝える公立美術館。",
+        "f7_full": "「碧南市藤井達吉現代美術館」の洗練された展示空間と独創的な工芸作品が、ものづくりの街・碧南が育んだ高い美意識を体感させてくれる。",
+        "is_final": false,
+        "next_spot_id": "f60ee6cd-0e68-448b-8717-bde4bc9ef0a5",
+        "next_spot_name": "海徳寺"
+      },
+      {
+        "id": "f60ee6cd-0e68-448b-8717-bde4bc9ef0a5",
+        "name": "海徳寺",
+        "description": "大浜てらまちの一角に位置する浄土宗西山深草派の寺院（境内参拝自由）。室町時代の創建と伝わり、境内に鎮座する「大浜大仏（釈迦如来坐像）」や市指定民俗文化財の双盤念仏で知られる。",
+        "address": "愛知県碧南市音羽町1-60",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.872361,
+        "lng": 136.981505,
+        "qr_token": "shuin-hekinan-3",
+        "cover_image_url": "/images/hekinan/spot3.png",
+        "f7_fragment": "大浜てらまちの路地に佇み、穏やかな「大浜大仏」が街を見守る室町期の古刹。",
+        "f7_full": "「海徳寺」の静かな境内に鎮座する大浜大仏の優しい眼差しが、てらまちの路地歩きの途中に穏やかな安らぎのひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "029dbef9-0dd0-4d94-8aff-e9851ecf10ca",
+        "next_spot_name": "九重味淋 石川八郎治商店"
+      },
+      {
+        "id": "029dbef9-0dd0-4d94-8aff-e9851ecf10ca",
+        "name": "九重味淋 石川八郎治商店",
+        "description": "安永元年創業の日本最古の本みりん専業蔵「九重味淋」の直売店（9:30〜17:30営業、月曜・火曜休）。国登録有形文化財の「大蔵」が並ぶ歴史的な佇まいの中で、伝統の本みりん「九重櫻」やみりんスイーツを購入できる。",
+        "address": "愛知県碧南市浜寺町2-11",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.873901,
+        "lng": 136.980829,
+        "qr_token": "shuin-hekinan-4",
+        "cover_image_url": "/images/hekinan/spot4.png",
+        "f7_fragment": "安永元年の創業以来、二百五十年の伝統を守る三河本みりん専業蔵の直売店。",
+        "f7_full": "「九重味淋 石川八郎治商店」の黒板塀が連なる蔵の風景と芳醇なみりんの香りが、三河の醸造文化が紡いできた二百五十年の誇りを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6caf0946-16e3-4f68-8cdf-4f0214c71416",
+        "next_spot_name": "西方寺"
+      },
+      {
+        "id": "6caf0946-16e3-4f68-8cdf-4f0214c71416",
+        "name": "西方寺",
+        "description": "大浜てらまちを代表する真宗大谷派の寺院（境内参拝自由、清沢満之記念館は金〜月・祝の10:00〜16:30開館）。近代日本仏教の革新者・清沢満之が住職を務めた寺であり、市指定文化財の太鼓楼や鐘楼が残る。",
+        "address": "愛知県碧南市浜寺町2-19",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.873508,
+        "lng": 136.980958,
+        "qr_token": "shuin-hekinan-5",
+        "cover_image_url": "/images/hekinan/spot5.png",
+        "f7_fragment": "近代仏教の哲学者・清沢満之ゆかりの、太鼓楼が聳える大浜てらまちの古刹。",
+        "f7_full": "「西方寺」の白壁の太鼓楼と大屋根が織りなす荘厳な佇まいが、みりん蔵と古刹の路地を巡り歩いた碧南の旅を静かな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e0faf141-82ff-4ba9-8837-c8e30e4605c2",
+    "title": "渡辺崋山の志と白壁の田原城・三河田原を辿る",
+    "name": "渡辺崋山の志と白壁の田原城・三河田原を辿る",
+    "description": "温暖な渥美半島の中心であり、幕末の先覚者・渡辺崋山と三宅氏一万二千石の歴史が息づく愛知県田原市。安藤忠雄氏設計の三河田原駅から、老舗菓子処の冨貴屋、崋山晩年の幽居跡が残る池ノ原公園、桜門と二ノ丸櫓が立つ田原市博物館、本丸跡の巴江神社までを辿る。",
+    "region": "田原（田原市）",
+    "area_name": "田原（田原市）",
+    "cover_image_url": "/images/tahara/route-eyecatch.png",
+    "imageUrl": "/images/tahara/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "渡辺崋山の芸術と白壁の田原城、渥美半島の銘菓が息づく田原で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "白壁の「桜門」と「二ノ丸櫓」が聳え、渡辺崋山の真筆に出会う「田原市博物館」",
+          "description": "領民を飢饉から救い、西洋画法で時代を切り拓いた家老・渡辺崋山の高い志と筆致に深く胸を打たれた。",
+          "badge_code": "tahara_castle_kazan_museum"
+        },
+        {
+          "key": "B",
+          "text": "渡辺崋山が晩年を過ごした茅葺きの「幽居跡」が佇む、静謐な「池ノ原公園」",
+          "description": "逆境にあっても学びと絵画への情熱を失わなかった先覚者の簡素な住まいと、緑深い庭園に心が澄み渡った。",
+          "badge_code": "tahara_ikenohara_kazan_retreat"
+        },
+        {
+          "key": "C",
+          "text": "田原城本丸の高台に鎮座し、藩祖・三宅氏と児島高徳公を祀る「巴江神社」",
+          "description": "かつて海波が寄せた「巴江城」の石垣を上り、城下町を守り続けてきた本丸の杜の威厳を感じた。",
+          "badge_code": "tahara_tomoe_shrine_honmaru"
+        },
+        {
+          "key": "D",
+          "text": "安藤忠雄氏設計の「三河田原駅」と、菜の花やメロンの銘菓が揃う老舗「冨貴屋」",
+          "description": "太陽と海を映すモダンな駅舎から歩き出し、温暖な渥美半島の恵みを詰めた優しいお菓子の甘みに笑顔になった。",
+          "badge_code": "tahara_station_fukiya_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a9bb1679-f586-4a6b-829f-e408c090df30",
+        "name": "三河田原駅",
+        "description": "豊橋鉄道渥美線の終着駅であり、渥美半島・田原市の玄関口（待合室は始発〜終電）。建築家・安藤忠雄氏の設計による曲線屋根と打ち放しコンクリートのモダンな駅舎が特徴で、城下町散策の起点となっている。",
+        "address": "愛知県田原市田原町東大浜4-10",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.666864,
+        "lng": 137.26868,
+        "qr_token": "shuin-tahara-1",
+        "cover_image_url": "/images/tahara/spot1.png",
+        "f7_fragment": "安藤忠雄氏設計の優美な曲線駅舎が迎え、花の半島・三河田原へと誘う終着駅。",
+        "f7_full": "「三河田原駅」の太陽と波をイメージした現代建築の駅舎が、渡辺崋山と田原城の歴史が息づく城下町を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1ee2e312-5935-4c48-8fee-fc405d05daf9",
+        "next_spot_name": "冨貴屋"
+      },
+      {
+        "id": "1ee2e312-5935-4c48-8fee-fc405d05daf9",
+        "name": "冨貴屋",
+        "description": "はなとき通り沿いに店を構える老舗和洋菓子店（9:00〜19:00営業、月曜休）。渥美半島特産のメロンや菜の花をモチーフにした焼き菓子・ロールケーキ、伝統の和菓子など、地元ならではの銘菓を販売している。",
+        "address": "愛知県田原市田原町築出57-13",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.6702,
+        "lng": 137.270112,
+        "qr_token": "shuin-tahara-2",
+        "cover_image_url": "/images/tahara/spot2.png",
+        "f7_fragment": "はなとき通りで長く親しまれ、渥美半島の菜の花やメロンの銘菓を作る老舗処。",
+        "f7_full": "「冨貴屋」に並ぶ菜の花色の焼き菓子や香り豊かなメロンスイーツが、常春の渥美半島が育んだ温暖な風土の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "0bb9a0b1-3a1e-4251-8ebe-b8ae331cedc8",
+        "next_spot_name": "池ノ原公園"
+      },
+      {
+        "id": "0bb9a0b1-3a1e-4251-8ebe-b8ae331cedc8",
+        "name": "池ノ原公園",
+        "description": "田原藩家老・渡辺崋山が晩年を過ごした屋敷跡を整備した歴史公園（終日入園自由、池ノ原会館は9:00〜17:00・月曜休）。復元された茅葺き屋根の「渡辺崋山幽居跡」や立礼茶席のある池ノ原会館が佇む。",
+        "address": "愛知県田原市田原町中小路17",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.673542,
+        "lng": 137.265429,
+        "qr_token": "shuin-tahara-3",
+        "cover_image_url": "/images/tahara/spot3.png",
+        "f7_fragment": "田原藩家老・渡辺崋山が晩年を過ごした、茅葺き屋根の幽居跡が佇む歴史公園。",
+        "f7_full": "「池ノ原公園」の緑に包まれた茅葺きの幽居跡と静かな庭園が、幕末の先覚者・渡辺崋山が貫いた誠実な生き様を静かに語りかけてくる。",
+        "is_final": false,
+        "next_spot_id": "c2e7361d-78a3-405d-85d6-1fcb4df87f3e",
+        "next_spot_name": "田原市博物館"
+      },
+      {
+        "id": "c2e7361d-78a3-405d-85d6-1fcb4df87f3e",
+        "name": "田原市博物館",
+        "description": "田原城の二ノ丸跡に建つ市立博物館（9:00〜17:00開館、月曜・年末年始休）。再建された白壁の「桜門」や「二ノ丸櫓」を備え、重要文化財を含む渡辺崋山の書画・資料や田原藩の歴史遺産を収蔵・公開している。",
+        "address": "愛知県田原市田原町巴江11-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.673643,
+        "lng": 137.269107,
+        "qr_token": "shuin-tahara-4",
+        "cover_image_url": "/images/tahara/spot4.png",
+        "f7_fragment": "白壁の桜門と二ノ丸櫓が聳え、渡辺崋山の真筆と田原藩の歴史を伝える博物館。",
+        "f7_full": "「田原市博物館」の石垣に映える白壁の二ノ丸櫓と崋山の迫真の書画が、小藩ながら日本の近代化に光を灯した田原の誇りを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "67ec6df5-21b3-41b2-8b6c-bff54c46ea9e",
+        "next_spot_name": "巴江神社"
+      },
+      {
+        "id": "67ec6df5-21b3-41b2-8b6c-bff54c46ea9e",
+        "name": "巴江神社",
+        "description": "田原城の本丸跡に鎮座する神社（境内参拝自由）。明治二年に田原藩祖・三宅康貞公と遠祖・児島高徳公らを祀って創建され、かつて海城であった「巴江城（田原城）」の石垣と豊かな社叢が城下町の歴史を今に伝える。",
+        "address": "愛知県田原市田原町巴江10",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.673933,
+        "lng": 137.270053,
+        "qr_token": "shuin-tahara-5",
+        "cover_image_url": "/images/tahara/spot5.png",
+        "f7_fragment": "田原城本丸の石垣上に鎮座し、藩祖・三宅氏の歴史を今に伝える城下町の古社。",
+        "f7_full": "「巴江神社」の本丸跡を包む深い緑と荘厳な社殿が、渡辺崋山の足跡と城下町・田原を辿った旅を清々しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
