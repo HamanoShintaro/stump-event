@@ -72930,5 +72930,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "efc81d56-125a-46b4-8444-31332b1d6c5e",
+    "title": "銀杏並木の学びの森と甘味の街・各務原を歩く",
+    "name": "銀杏並木の学びの森と甘味の街・各務原を歩く",
+    "description": "旧岐阜大学キャンパスの緑を受け継ぐ二つの公園と、こだわりのカフェ・甘味文化が息づく岐阜県各務原市。那加本町の老舗・御菓子処 餅信 本店から、名鉄市民公園前駅、噴水と芝生が広がる各務原市民公園、和パフェの明治茶房、イチョウ並木とカフェの学びの森までを歩く。",
+    "region": "学びの森と各務原市民公園（各務原市）",
+    "area_name": "学びの森と各務原市民公園（各務原市）",
+    "cover_image_url": "/images/kakamigahara/route-eyecatch.png",
+    "imageUrl": "/images/kakamigahara/route-eyecatch.png",
+    "category": "自然・散策",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大学跡地の豊かな並木道と芝生広場、老舗の甘味が調和する各務原で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "かつての大学キャンパスの緑を受け継ぎ、噴水とせせらぎ、中央図書館が佇む「各務原市民公園」",
+          "description": "木々の木漏れ日と水の音に包まれ、街の真ん中で穏やかに広がる知と憩いの風景に心が和んだ。",
+          "badge_code": "kakamigahara_shimin_park"
+        },
+        {
+          "key": "B",
+          "text": "美しいイチョウ並木のプロムナードと公園カフェが心地よい時間を紡ぐ「学びの森」",
+          "description": "空へ伸びるイチョウの並木道と芝生広場を渡る風の中に、各務原らしい洗練された日常を感じた。",
+          "badge_code": "kakamigahara_manabi_no_mori"
+        },
+        {
+          "key": "C",
+          "text": "クラシカルな洋館風の店内で、彩り豊かな「抹茶パフェ」や「白玉道楽」を味わう「明治茶房」",
+          "description": "落ち着いたレトロな空間で、丁寧に仕立てられた和の甘味と昆布茶の余韻をゆっくり楽しんだ。",
+          "badge_code": "kakamigahara_meiji_sabo"
+        },
+        {
+          "key": "D",
+          "text": "那加の街角に暖簾を掲げる老舗「御菓子処 餅信 本店」で選ぶ「噂の栗どら」と名物「飛行機餅」",
+          "description": "航空の街の歴史を映す焼印の大福や栗どら焼きに、地元で長く愛される菓子職人の技を感じた。",
+          "badge_code": "kakamigahara_mochinobu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5a7c3417-20c1-405e-8c6e-dee891fb64d9",
+        "name": "御菓子処 餅信 本店",
+        "description": "那加本町に店を構える老舗和菓子処（月・火・木〜土曜8:30〜18:30、水・日曜・祝日8:30〜18:00営業、無休）。名物の「噂の栗どら」や「飛行機餅」などこだわりの和洋菓子が揃う。",
+        "address": "岐阜県各務原市那加本町7",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.399381,
+        "lng": 136.835842,
+        "qr_token": "shuin-kakamigahara-1",
+        "cover_image_url": "/images/kakamigahara/spot1.png",
+        "f7_fragment": "名物「噂の栗どら」や「飛行機餅」で親しまれる那加本町の老舗和菓子処の店先。",
+        "f7_full": "「御菓子処 餅信 本店」の温かな店構えと手作りの栗どら・餅菓子が、緑の公園を巡る各務原の街歩きの始まりに優しい甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "e9929445-f116-404e-8d20-ab46723b6627",
+        "next_spot_name": "市民公園前駅"
+      },
+      {
+        "id": "e9929445-f116-404e-8d20-ab46723b6627",
+        "name": "市民公園前駅",
+        "description": "名鉄各務原線の駅であり、各務原市民公園や「学びの森」への玄関口（構内は始発〜終電）。駅のすぐ南東に緑豊かな公園と中央図書館が広がる。",
+        "address": "岐阜県各務原市那加門前町4-51",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.400641,
+        "lng": 136.841655,
+        "qr_token": "shuin-kakamigahara-2",
+        "cover_image_url": "/images/kakamigahara/spot2.png",
+        "f7_fragment": "緑豊かな各務原市民公園と「学びの森」のすぐ近くに佇む街歩きの拠点となる駅。",
+        "f7_full": "「市民公園前駅」のホームから続く並木道と爽やかな緑の風が、二つの公園を巡る各務原の散策路へと穏やかに導いてくれる。",
+        "is_final": false,
+        "next_spot_id": "4f029b73-292c-4b75-814f-f5057efba5cd",
+        "next_spot_name": "各務原市民公園"
+      },
+      {
+        "id": "4f029b73-292c-4b75-814f-f5057efba5cd",
+        "name": "各務原市民公園",
+        "description": "岐阜大学農学部の跡地を整備して開園した総合公園（入園自由）。広大な芝生広場や噴水、せせらぎ、市立中央図書館があり、市民の憩いの場となっている。",
+        "address": "岐阜県各務原市那加門前町3-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.399256,
+        "lng": 136.84236,
+        "qr_token": "shuin-kakamigahara-3",
+        "cover_image_url": "/images/kakamigahara/spot3.png",
+        "f7_fragment": "旧大学キャンパスの緑を受け継ぎ、噴水と大芝生広場が広がる市民憩いの都市公園。",
+        "f7_full": "「各務原市民公園」のきらめく噴水と広々とした芝生広場が、訪れる人に開放的で穏やかな深呼吸の時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "5408e49f-c3f0-472c-8eee-b98ecef0b5a8",
+        "next_spot_name": "明治茶房"
+      },
+      {
+        "id": "5408e49f-c3f0-472c-8eee-b98ecef0b5a8",
+        "name": "明治茶房",
+        "description": "クラシカルな雰囲気が漂う甘味処・喫茶店（8:30〜17:00営業、月曜・火曜休）。ボリューム満点の「抹茶パフェ」や「白玉道楽」、モーニングが人気。",
+        "address": "岐阜県各務原市那加桜町1-48",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.399338,
+        "lng": 136.847839,
+        "qr_token": "shuin-kakamigahara-4",
+        "cover_image_url": "/images/kakamigahara/spot4.png",
+        "f7_fragment": "洋館風の落ち着いた店内で名物「抹茶パフェ」や白玉甘味を味わえる甘味茶房。",
+        "f7_full": "「明治茶房」のレトロな空間と彩り豊かな抹茶パフェ・昆布茶のおもてなしが、街歩きの午後に贅沢な甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "98f864d7-76f8-4c00-8707-7d9fcdd125c7",
+        "next_spot_name": "学びの森"
+      },
+      {
+        "id": "98f864d7-76f8-4c00-8707-7d9fcdd125c7",
+        "name": "学びの森",
+        "description": "約300mにわたるイチョウ並木「プロムナード」と大芝生広場で知られる都市公園（入園自由）。園内には人気カフェ「KAKAMIGAHARA STAND」が佇む。",
+        "address": "岐阜県各務原市那加雲雀町10-4",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.402746,
+        "lng": 136.845854,
+        "qr_token": "shuin-kakamigahara-5",
+        "cover_image_url": "/images/kakamigahara/spot5.png",
+        "f7_fragment": "約七十本のイチョウ並木とガラス張りの公園カフェが迎える緑豊かな都市公園。",
+        "f7_full": "「学びの森」の美しいイチョウ並木と芝生広場を渡る風が、四季の彩りとともに各務原の旅を心地よく締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "05334558-f783-4d05-828f-5239bf32fbe5",
+    "title": "樹齢三百年の藤と山車の町・美濃竹鼻へ",
+    "name": "樹齢三百年の藤と山車の町・美濃竹鼻へ",
+    "description": "樹齢三百年を超える竹鼻別院の大藤と、豪華な山車が曳かれる竹鼻まつりの伝統が息づく岐阜県羽島市・美濃竹鼻。名鉄竹鼻駅から、総鎮守の八剱神社、絵天井で知られる本覚寺、みそぎ団子発祥の老舗・兎月園、県指定天然記念物の藤棚を擁する竹鼻別院までを巡る。",
+    "region": "竹鼻別院と美濃竹鼻の町並み（羽島市）",
+    "area_name": "竹鼻別院と美濃竹鼻の町並み（羽島市）",
+    "cover_image_url": "/images/takehana/route-eyecatch.png",
+    "imageUrl": "/images/takehana/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "樹齢三百年の大藤と山車祭り、門前町の和菓子が息づく美濃竹鼻で、あなたが心惹かれたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "豪華絢爛な山車が巡行する「竹鼻まつり」と夏越の「みそぎ神事」を伝える総鎮守「八剱神社」",
+          "description": "城下町の鎮守として受け継がれてきた社殿に手を合わせ、祭礼の熱気と伝統文化の深さに触れた。",
+          "badge_code": "takehana_hakken_shrine"
+        },
+        {
+          "key": "B",
+          "text": "本町通りの老舗「兎月園」で出会う、香ばしい赤味噌だれの竹鼻名物「みそぎ団子」",
+          "description": "こし餡入りの団子に甘辛い赤味噌だれを塗って焼き上げた、門前町ならではの素朴で奥深い味わいに心和んだ。",
+          "badge_code": "takehana_togetsuen_sweets"
+        },
+        {
+          "key": "C",
+          "text": "推定樹齢三百年以上の一本の古木が広大な藤棚を織りなす真宗大谷派「竹鼻別院」",
+          "description": "重厚な本堂の前で四方に枝を伸ばす大藤の生命力と、門前町の中心としての気高い佇まいに圧倒された。",
+          "badge_code": "takehana_betsuin_wisteria"
+        },
+        {
+          "key": "D",
+          "text": "竹鼻城主・不破氏の菩提寺であり、幕末の大和絵師・浮田一蕙の絵天井を伝える「本覚寺」",
+          "description": "濃尾地震を乗り越えて受け継がれた四方睨みの雲龍図の歴史に、城下町・竹鼻の深い記憶を感じた。",
+          "badge_code": "takehana_hongakuji_dragon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "334bbf28-1957-45d2-80e5-31fcbe7d84ca",
+        "name": "竹鼻駅",
+        "description": "大正10年開業の名鉄竹鼻線の駅（構内は始発〜終電）。竹鼻別院や八剱神社など、歴史ある美濃竹鼻の寺社と古い町並みへの玄関口となっている。",
+        "address": "岐阜県羽島市竹鼻町狐穴字栄町3305",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.326614,
+        "lng": 136.706232,
+        "qr_token": "shuin-takehana-1",
+        "cover_image_url": "/images/takehana/spot1.png",
+        "f7_fragment": "百年以上の歴史を持ち、美濃竹鼻の寺社と古い町並みへの玄関口となる名鉄の駅。",
+        "f7_full": "「竹鼻駅」の赤い電車が走るホームから西へ続く通りが、大藤の別院と山車祭りの記憶が息づく美濃竹鼻の旅へと誘ってくれる。",
+        "is_final": false,
+        "next_spot_id": "f4845727-0788-4e20-8543-133a074693c9",
+        "next_spot_name": "八剱神社"
+      },
+      {
+        "id": "f4845727-0788-4e20-8543-133a074693c9",
+        "name": "八剱神社",
+        "description": "竹鼻町の総鎮守として崇敬される古社（境内参拝自由）。5月3日の「竹鼻まつり」では県重要有形民俗文化財の山車が曳行され、6月末にはみそぎ神事が行われる。",
+        "address": "岐阜県羽島市竹鼻町3298-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.328952,
+        "lng": 136.70389,
+        "qr_token": "shuin-takehana-2",
+        "cover_image_url": "/images/takehana/spot2.png",
+        "f7_fragment": "絢爛な山車が巡行する「竹鼻まつり」と夏越のみそぎ神事を伝える竹鼻の総鎮守。",
+        "f7_full": "「八剱神社」の厳かな社殿と緑豊かな社叢が、江戸時代から続く山車祭りと門前町の誇り高い伝統を今に深く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "0be7ed51-2db9-48f2-85a1-aca58929e55d",
+        "next_spot_name": "本覚寺"
+      },
+      {
+        "id": "0be7ed51-2db9-48f2-85a1-aca58929e55d",
+        "name": "本覚寺",
+        "description": "戦国時代の竹鼻城主・不破広綱の菩提寺である曹洞宗寺院（境内参拝自由）。本堂天井には県指定重要文化財である幕末の大和絵師・浮田一蕙筆の絵天井（雲龍図）が残る。",
+        "address": "岐阜県羽島市竹鼻町2434-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.326329,
+        "lng": 136.702688,
+        "qr_token": "shuin-takehana-3",
+        "cover_image_url": "/images/takehana/spot3.png",
+        "f7_fragment": "竹鼻城主・不破氏の菩提寺であり、浮田一蕙筆の迫力ある絵天井を伝える曹洞宗寺院。",
+        "f7_full": "「本覚寺」の落ち着いた境内と歴史を伝える本堂の佇まいが、城下町・美濃竹鼻の武家の記憶を静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "853a852e-3d96-4645-856f-c7bd919180a6",
+        "next_spot_name": "兎月園"
+      },
+      {
+        "id": "853a852e-3d96-4645-856f-c7bd919180a6",
+        "name": "兎月園",
+        "description": "竹鼻の本町通りに店を構える老舗和菓子処（8:00〜18:00営業、火曜休）。こし餡入りの団子に赤味噌だれを塗って焼き上げた竹鼻名物「みそぎ団子」発祥の店として知られる。",
+        "address": "岐阜県羽島市竹鼻町2631-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.323726,
+        "lng": 136.702548,
+        "qr_token": "shuin-takehana-4",
+        "cover_image_url": "/images/takehana/spot4.png",
+        "f7_fragment": "香ばしい赤味噌だれの竹鼻名物「みそぎ団子」発祥として知られる老舗菓舗。",
+        "f7_full": "「兎月園」の甘辛く香ばしいみそぎ団子と季節の和菓子が、古い町並みを歩く旅のひとときに温かな甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "81991307-f7e2-4c34-8a07-ab9e4e6715f7",
+        "next_spot_name": "竹鼻別院"
+      },
+      {
+        "id": "81991307-f7e2-4c34-8a07-ab9e4e6715f7",
+        "name": "竹鼻別院",
+        "description": "真宗大谷派の寺院であり、推定樹齢300年以上の県指定天然記念物「竹鼻別院のフジ」で知られる名刹（境内参拝自由）。重厚な本堂と広大な藤棚が門前町の象徴となっている。",
+        "address": "岐阜県羽島市竹鼻町2802",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.324187,
+        "lng": 136.700572,
+        "qr_token": "shuin-takehana-5",
+        "cover_image_url": "/images/takehana/spot5.png",
+        "f7_fragment": "推定樹齢三百年以上の県指定天然記念物「竹鼻別院のフジ」と大本堂の名刹。",
+        "f7_full": "「竹鼻別院」の堂々たる木造本堂と三世紀の時を刻む大藤の棚が、美濃竹鼻を巡った旅を圧倒的な生命力と静寂で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "76ab6de1-e204-46ff-856a-bccae204dcc3",
+    "title": "なぜ可児に光秀公の記憶と老舗の甘味が息づくのか",
+    "name": "なぜ可児に光秀公の記憶と老舗の甘味が息づくのか",
+    "description": "明智光秀公ゆかりの歴史と、明治・大正から続く和菓子文化が息づく岐阜県可児市。光秀ちまきや栗んとまんの駿河屋本店から、和菓子とベーカリーの入口屋、大鐘が佇むJR可児駅、明治創業の元祖廣見饅頭本舗 丸万、広見郷の古社を受け継ぐ広見神社までを巡る。",
+    "region": "可児の老舗和菓子処と広見神社（可児市）",
+    "area_name": "可児の老舗和菓子処と広見神社（可児市）",
+    "cover_image_url": "/images/kani/route-eyecatch.png",
+    "imageUrl": "/images/kani/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "光秀公ゆかりの物語と三代の老舗菓舗、広見郷の古社が息づく可児で、あなたの心が動いたのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "下恵土の通りを歩き、百年近い歴史を持つ「入口屋」で出会う餅菓子と焼きたてパンの香り",
+          "description": "伝統の和菓子職人の技とベーカリーが融合した温かな店内で、街歩きを彩る優しい甘味を選んだ。",
+          "badge_code": "kani_iriguchiya_sweets"
+        },
+        {
+          "key": "B",
+          "text": "大正六年創業の「駿河屋本店」で味わう、光秀公ゆかりの「光秀ちまき」と香ばしい「栗んとまん」",
+          "description": "地域の歴史と物語をお菓子に込めた百年老舗の創意工夫と、黒糖と栗の豊かな風味に感銘を受けた。",
+          "badge_code": "kani_surugaya_mitsuhide"
+        },
+        {
+          "key": "C",
+          "text": "明治二十三年創業の「元祖廣見饅頭本舗 丸万」が受け継ぐ「廣見饅頭」と名物「ミックス大福」",
+          "description": "五つの時代を超えて広見の街を見守ってきた老舗の暖簾と、求肥に包まれた贅沢な味わいに心満たされた。",
+          "badge_code": "kani_maruman_hiromi_manju"
+        },
+        {
+          "key": "D",
+          "text": "平安期の古社や雨乞いの雷神信仰を合祀し、広見郷の歴史を静かに見守る鎮守「広見神社」",
+          "description": "古い石造狛犬が迎える緑の境内で社殿に手を合わせ、広見の街が受け継いできた祈りの歴史に思いを馳せた。",
+          "badge_code": "kani_hiromi_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "285f3c57-826b-4ec2-8bb2-31bd84107740",
+        "name": "駿河屋本店",
+        "description": "大正6年創業の創作和菓子処（9:00〜19:00営業、火曜休）。明智光秀公ゆかりの「光秀ちまき」や県優良観光土産品の「栗んとまん」「かりんとまん」が名物。",
+        "address": "岐阜県可児市下恵土1526-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.425193,
+        "lng": 137.051307,
+        "qr_token": "shuin-kani-1",
+        "cover_image_url": "/images/kani/spot1.png",
+        "f7_fragment": "大正六年創業、「光秀ちまき」や「栗んとまん」で親しまれる創作和菓子処。",
+        "f7_full": "「駿河屋本店」の地域の歴史を映した光秀ちまきや香ばしい栗んとまんが、百年続く菓子づくりの誇りとともに旅の始まりを彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "8557f7a5-0f2e-4147-8e1c-91c04bc32048",
+        "next_spot_name": "入口屋"
+      },
+      {
+        "id": "8557f7a5-0f2e-4147-8e1c-91c04bc32048",
+        "name": "入口屋",
+        "description": "可児駅近くで百年近い歴史を持つ餅・和菓子とパンの店（8:00〜19:00営業、水曜休）。四季の和菓子や大福に加え、和菓子職人が手掛ける自家製パンも人気。",
+        "address": "岐阜県可児市下恵土1217",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.423637,
+        "lng": 137.053285,
+        "qr_token": "shuin-kani-2",
+        "cover_image_url": "/images/kani/spot2.png",
+        "f7_fragment": "約一世紀の歴史を持つ餅・和菓子の技とベーカリーが融合する駅前の老舗菓舗。",
+        "f7_full": "「入口屋」のやわらかな餅菓子と香ばしいパンの香りが、可児駅前の通りを歩く旅のひとときに温かな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "283291e0-78c9-422c-894c-113d14015118",
+        "next_spot_name": "可児駅"
+      },
+      {
+        "id": "283291e0-78c9-422c-894c-113d14015118",
+        "name": "可児駅",
+        "description": "JR太多線の駅であり、名鉄広見線の新可児駅と隣接する可児市の玄関口（構内は始発〜終電）。駅前広場には鋳物師の歴史を伝える「可児の大鐘」がある。",
+        "address": "岐阜県可児市下恵土1254",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.422465,
+        "lng": 137.055498,
+        "qr_token": "shuin-kani-3",
+        "cover_image_url": "/images/kani/spot3.png",
+        "f7_fragment": "JR太多線と名鉄広見線が交わり、駅前広場に「可児の大鐘」が佇む玄関口。",
+        "f7_full": "「可児駅」の駅前広場に据えられた大鐘のモニュメントと穏やかな盆地の風が、下恵土から広見の中心街へと続く散策路をつないでくれる。",
+        "is_final": false,
+        "next_spot_id": "b3886cc6-bcf3-4ed4-8e6f-b8f1c85ebf1d",
+        "next_spot_name": "元祖廣見饅頭本舗 丸万"
+      },
+      {
+        "id": "b3886cc6-bcf3-4ed4-8e6f-b8f1c85ebf1d",
+        "name": "元祖廣見饅頭本舗 丸万",
+        "description": "明治23年創業の老舗和菓子店（9:00〜19:00営業、水曜休）。伝統の「廣見饅頭」や吉野葛を使った「栗のしずく」、フルーツと栗が入った「ミックス大福」で知られる。",
+        "address": "岐阜県可児市広見630-6",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.423353,
+        "lng": 137.062108,
+        "qr_token": "shuin-kani-4",
+        "cover_image_url": "/images/kani/spot4.png",
+        "f7_fragment": "明治二十三年創業、伝統の「廣見饅頭」と名物「ミックス大福」を守る老舗菓舗。",
+        "f7_full": "「元祖廣見饅頭本舗 丸万」の五つの時代を超えて受け継がれる廣見饅頭と季節の大福が、広見の街歩きの午後に豊かな甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "56661fc2-1a9d-4a1e-8187-7cb6c7510b37",
+        "next_spot_name": "広見神社"
+      },
+      {
+        "id": "56661fc2-1a9d-4a1e-8187-7cb6c7510b37",
+        "name": "広見神社",
+        "description": "平安時代の『美濃国神名帳』記載の古社をルーツに持つ村木神社や雷鳴神社など、広見郷の神社を合祀した鎮守（境内参拝自由）。歴史ある石造狛犬が残る。",
+        "address": "岐阜県可児市広見1026-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.421611,
+        "lng": 137.069308,
+        "qr_token": "shuin-kani-5",
+        "cover_image_url": "/images/kani/spot5.png",
+        "f7_fragment": "平安期の古社や雨乞いの雷神信仰を受け継ぎ、広見郷の街を見守る鎮守の社。",
+        "f7_full": "「広見神社」の緑深い社叢と歴史を刻む石造狛犬の佇まいが、老舗の甘味を巡った可児の旅を静かに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0ea7bbee-546a-41b6-80f1-7ebe0b5510d2",
+    "title": "ホタルの宿場町と比叡東門の寺・守山を辿る",
+    "name": "ホタルの宿場町と比叡東門の寺・守山を辿る",
+    "description": "中山道六十七番目の宿場町「守山宿」の町家と、地名の由来となった古刹が息づく滋賀県守山市。JR守山駅から、自家焙煎珈琲とウィーン菓子の米安珈琲焙煎所、旧造り酒屋の守山宿・町家「うの家」、老舗の御菓子司 田中弥菓舗、比叡山の東門を守る東門院までを辿る。",
+    "region": "中山道守山宿と東門院（守山市）",
+    "area_name": "中山道守山宿と東門院（守山市）",
+    "cover_image_url": "/images/moriyama_shiga/route-eyecatch.png",
+    "imageUrl": "/images/moriyama_shiga/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "中山道守山宿の町家と比叡東門の古刹、香り高い珈琲と和菓子が重なる守山で、あなたを惹きつけたのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "最澄が比叡山の東門を守る道場として開き、「守山」の地名の由来となった名刹「東門院」",
+          "description": "朱塗りの山門をくぐり、千二百年の祈りと朝鮮通信使の歴史を伝える静謐な境内に深く心を打たれた。",
+          "badge_code": "moriyama_tomonin_temple"
+        },
+        {
+          "key": "B",
+          "text": "江戸末期から明治期の造り酒屋の建築と庭園を今に伝える「守山宿・町家 うの家」",
+          "description": "杉玉が揺れる表構えから主屋や酒蔵へと歩みを進め、中山道守山宿の豊かな商家文化を肌で感じた。",
+          "badge_code": "moriyama_unoke_machiya"
+        },
+        {
+          "key": "C",
+          "text": "明治創業の米屋の記憶を受け継ぎ、香り高い珈琲とウィーン菓子を供する「米安珈琲焙煎所」",
+          "description": "旧街道沿いの落ち着いた店内で自家焙煎のスペシャルティコーヒーを味わい、贅沢な午後の時間を過ごした。",
+          "badge_code": "moriyama_comeyasu_coffee"
+        },
+        {
+          "key": "D",
+          "text": "東門院門前の老舗「御菓子司 田中弥菓舗」で選ぶ「中山道守山宿もなか」と「守山蛍餅」",
+          "description": "昭和九年創業の温かな店先で、宿場町の歴史やホタルの里の風情を映した郷土銘菓の甘みに心和んだ。",
+          "badge_code": "moriyama_tanakaya_wagashi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fb7576ee-ef8c-4065-8d7e-f51afe53383c",
+        "name": "守山駅",
+        "description": "明治45年開業のJR東海道本線（琵琶湖線）の駅（自由通路は始発〜終電）。中山道67番目の宿場町「守山宿」や東門院への街歩きの玄関口となっている。",
+        "address": "滋賀県守山市梅田町1-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.050531,
+        "lng": 135.99603,
+        "qr_token": "shuin-moriyama_shiga-1",
+        "cover_image_url": "/images/moriyama_shiga/spot1.png",
+        "f7_fragment": "「京発ち守山泊まり」と謳われた中山道守山宿への玄関口となるJR琵琶湖線の駅。",
+        "f7_full": "「守山駅」の西口から続く通りと名水の街の清らかな空気が、中山道守山宿の町家と古刹を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3291b1e0-2122-4be5-8948-4afd5f936f4a",
+        "next_spot_name": "米安珈琲焙煎所"
+      },
+      {
+        "id": "3291b1e0-2122-4be5-8948-4afd5f936f4a",
+        "name": "米安珈琲焙煎所",
+        "description": "旧中山道沿いに佇む自家焙煎スペシャルティコーヒー専門店（平日10:00〜19:00、土日祝10:00〜18:00営業、木曜・第2第4水曜休）。こだわりの珈琲とドイツ・ウィーン菓子が人気。",
+        "address": "滋賀県守山市守山1-11-12",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.054865,
+        "lng": 135.994022,
+        "qr_token": "shuin-moriyama_shiga-2",
+        "cover_image_url": "/images/moriyama_shiga/spot2.png",
+        "f7_fragment": "旧中山道沿いで自家焙煎珈琲と本格ドイツ・ウィーン菓子を供する人気の専門店。",
+        "f7_full": "「米安珈琲焙煎所」の焙煎したての珈琲の香りと伝統的な焼き菓子が、守山宿の街道歩きに芳醇なひとときを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "5a12fd08-1b2d-4293-89ef-9e58192d1f07",
+        "next_spot_name": "守山宿・町家「うの家」"
+      },
+      {
+        "id": "5a12fd08-1b2d-4293-89ef-9e58192d1f07",
+        "name": "守山宿・町家「うの家」",
+        "description": "江戸末期〜明治初期に建てられた旧造り酒屋（宇野宗佑元首相生家）を改修した歴史文化施設（9:00〜17:00開館、第1・第3火曜休、入館無料）。主屋や酒蔵、日本庭園を見学できる。",
+        "address": "滋賀県守山市守山1-10-2",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.05556,
+        "lng": 135.993393,
+        "qr_token": "shuin-moriyama_shiga-3",
+        "cover_image_url": "/images/moriyama_shiga/spot3.png",
+        "f7_fragment": "旧造り酒屋の主屋と酒蔵・日本庭園を今に伝える中山道守山宿の歴史拠点町家。",
+        "f7_full": "「守山宿・町家 うの家」の重厚な格子戸と梁が渡る酒蔵・美しい日本庭園が、中山道守山宿の往時の賑わいと風格を映し出してくれる。",
+        "is_final": false,
+        "next_spot_id": "e6b580bf-178f-4202-8429-273ec3f81a63",
+        "next_spot_name": "御菓子司 田中弥菓舗"
+      },
+      {
+        "id": "e6b580bf-178f-4202-8429-273ec3f81a63",
+        "name": "御菓子司 田中弥菓舗",
+        "description": "昭和9年創業の旧中山道沿いの老舗和菓子店（9:30〜19:00営業、日曜・祝日休）。「中山道守山宿もなか」「守山蛍餅」「東門もなか」など郷土銘菓を手掛ける。",
+        "address": "滋賀県守山市守山1-7-8",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.054998,
+        "lng": 135.991068,
+        "qr_token": "shuin-moriyama_shiga-4",
+        "cover_image_url": "/images/moriyama_shiga/spot4.png",
+        "f7_fragment": "昭和九年創業、「中山道守山宿もなか」や「守山蛍餅」を手作りする老舗菓舗。",
+        "f7_full": "「御菓子司 田中弥菓舗」の素朴で上品なもなかと蛍餅が、中山道守山宿の歴史とホタルの里の情緒を優しく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d7029d2d-311b-409e-8323-efcb2376549e",
+        "next_spot_name": "東門院"
+      },
+      {
+        "id": "d7029d2d-311b-409e-8323-efcb2376549e",
+        "name": "東門院",
+        "description": "延暦7年に最澄が比叡山の東門を守る道場として創建したと伝わる天台宗寺院（9:00〜16:00参拝）。「守山」の地名の由来であり、国重文の木造不動明王坐像や朝鮮通信使ゆかりの史跡が残る。",
+        "address": "滋賀県守山市守山2-2-46",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.055741,
+        "lng": 135.991051,
+        "qr_token": "shuin-moriyama_shiga-5",
+        "cover_image_url": "/images/moriyama_shiga/spot5.png",
+        "f7_fragment": "最澄が比叡山の東門を守る寺として開き、「守山」の地名の由来となった古刹。",
+        "f7_full": "「東門院」の朱塗りの仁王門と千二百年の歴史を伝える本堂の静寂が、中山道守山宿を辿った旅を厳かに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "763dbf80-3c20-44fc-89c8-1e5d5795fcca",
+    "title": "周航の歌の港とヴォーリズ建築・今津を訪ねる",
+    "name": "周航の歌の港とヴォーリズ建築・今津を訪ねる",
+    "description": "名曲「琵琶湖周航の歌」誕生の地であり、大正・昭和のヴォーリズ建築と湖上水運の歴史が息づく滋賀県高島市今津。JR近江今津駅から、琵琶湖周航の歌資料館、うなぎ・川魚料理の西友本店、国登録有形文化財の今津ヴォーリズ資料館、湖上守護の住吉神社までを訪ねる。",
+    "region": "今津のヴォーリズ建築と琵琶湖畔（高島市）",
+    "area_name": "今津のヴォーリズ建築と琵琶湖畔（高島市）",
+    "cover_image_url": "/images/omi_imazu/route-eyecatch.png",
+    "imageUrl": "/images/omi_imazu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "周航の歌が生まれた港町とヴォーリズ建築、湖の恵みが交差する近江今津で、あなたの心に響いたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正六年に旧制三高ボート部の若者たちが宿で生み出した名曲の軌跡をたどる「琵琶湖周航の歌資料館」",
+          "description": "小口太郎の詞と吉田千秋の旋律が出会った奇跡の物語に触れ、湖を渡る風に青春の歌声を重ねた。",
+          "badge_code": "omi_imazu_shuko_song"
+        },
+        {
+          "key": "B",
+          "text": "旧百三十三銀行今津支店として建てられた国登録有形文化財の洋館「今津ヴォーリズ資料館」",
+          "description": "西近江路の町並みに佇むクラシカルな洋風建築の意匠を見上げ、大正モダンの気品と温もりに魅了された。",
+          "badge_code": "omi_imazu_vories_museum"
+        },
+        {
+          "key": "C",
+          "text": "昭和初期創業の老舗「近江今津 西友 本店」で味わう炭火焼のうなぎと琵琶湖の川魚佃煮",
+          "description": "九里半街道の宿場町に漂う香ばしい蒲焼の香りと、湖国の伝統を受け継ぐ小鮎やえび豆の味わいを堪能した。",
+          "badge_code": "omi_imazu_nishitomo_unagi"
+        },
+        {
+          "key": "D",
+          "text": "鎌倉時代から琵琶湖の航海安全を見守り、浜へと続く「辻子」の小路が息づく「住吉神社」",
+          "description": "船頭や商人が祈りを捧げた古社の境内に立ち、若狭と京を結んだ港町・今津の悠久の歴史を感じた。",
+          "badge_code": "omi_imazu_sumiyoshi_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "010f8f7b-ca7d-4b6f-8a33-03055bd02aad",
+        "name": "近江今津駅",
+        "description": "JR湖西線の主要駅であり、竹生島行きの今津港やヴォーリズ通りへの玄関口（構内は始発〜終電）。「琵琶湖周航の歌」誕生の地として知られる湖畔の街の起点。",
+        "address": "滋賀県高島市今津町名小路1-9-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.398403,
+        "lng": 136.03229,
+        "qr_token": "shuin-omi_imazu-1",
+        "cover_image_url": "/images/omi_imazu/spot1.png",
+        "f7_fragment": "「琵琶湖周航の歌」誕生の港町・今津と神秘の竹生島への玄関口となるJRの駅。",
+        "f7_full": "「近江今津駅」の東口から琵琶湖へと続く緩やかな坂道が、名曲の記憶とヴォーリズ建築が息づく湖畔の街歩きへと誘ってくれる。",
+        "is_final": false,
+        "next_spot_id": "7aa41084-b345-4a32-86be-94da7b9e3db2",
+        "next_spot_name": "琵琶湖周航の歌資料館"
+      },
+      {
+        "id": "7aa41084-b345-4a32-86be-94da7b9e3db2",
+        "name": "琵琶湖周航の歌資料館",
+        "description": "大正6年に今津の宿で誕生した名曲「琵琶湖周航の歌」の歴史と資料を展示する施設（9:00〜17:00開館、月曜・祝日の翌日休、入館無料）。様々な歌手の音源試聴もできる。",
+        "address": "滋賀県高島市今津町中沼1-4-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.398944,
+        "lng": 136.034458,
+        "qr_token": "shuin-omi_imazu-2",
+        "cover_image_url": "/images/omi_imazu/spot2.png",
+        "f7_fragment": "大正六年に今津の宿で生まれた名曲「琵琶湖周航の歌」の軌跡を伝える資料館。",
+        "f7_full": "「琵琶湖周航の歌資料館」に並ぶ当時のボートや直筆資料が、百年にわたり歌い継がれる湖国の名曲の誕生秘話を鮮やかに蘇らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "9a339e74-c8ce-4595-8098-6856177af616",
+        "next_spot_name": "近江今津 西友 本店"
+      },
+      {
+        "id": "9a339e74-c8ce-4595-8098-6856177af616",
+        "name": "近江今津 西友 本店",
+        "description": "昭和初期創業のうなぎ・川魚料理の老舗（販売10:00〜19:00、食事11:00〜15:00・17:00〜20:00営業、不定休）。炭火で焼き上げる関西風のうなぎ蒲焼や「ひつまむし」、湖魚の佃煮が名物。",
+        "address": "滋賀県高島市今津町住吉2-1-20",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.402674,
+        "lng": 136.032087,
+        "qr_token": "shuin-omi_imazu-3",
+        "cover_image_url": "/images/omi_imazu/spot3.png",
+        "f7_fragment": "昭和初期創業、炭火焼のうなぎ蒲焼・ひつまむしと琵琶湖の川魚佃煮の老舗。",
+        "f7_full": "「近江今津 西友 本店」の香ばしい炭火焼うなぎと伝統の川魚料理が、九里半街道の宿場町として栄えた今津の豊かな食文化を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8cbb36b4-dc3d-4065-87ba-4b9bd5a9358f",
+        "next_spot_name": "今津ヴォーリズ資料館"
+      },
+      {
+        "id": "8cbb36b4-dc3d-4065-87ba-4b9bd5a9358f",
+        "name": "今津ヴォーリズ資料館",
+        "description": "大正12年に百三十三銀行今津支店として建てられたヴォーリズ設計の洋館（10:00〜17:00開館、月曜・祝日の翌日休、入館無料）。国の登録有形文化財であり、ヴォーリズの業績を展示している。",
+        "address": "滋賀県高島市今津町今津175",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.402091,
+        "lng": 136.035562,
+        "qr_token": "shuin-omi_imazu-4",
+        "cover_image_url": "/images/omi_imazu/spot4.png",
+        "f7_fragment": "大正十二年築の旧銀行建築を活かした国登録有形文化財のヴォーリズ資料館。",
+        "f7_full": "「今津ヴォーリズ資料館」の重厚で温かみのある洋風建築が、旧西近江路の町並みに大正モダンの気品と歴史の深みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "f6aa58ba-d1a6-4cc3-8be5-14c26ddcf47d",
+        "next_spot_name": "住吉神社"
+      },
+      {
+        "id": "f6aa58ba-d1a6-4cc3-8be5-14c26ddcf47d",
+        "name": "住吉神社",
+        "description": "弘安元年に現在地に造営されたと伝わる湖上安全の守護神（境内参拝自由）。羽柴秀吉も参拝したと伝わり、周辺には琵琶湖と街道を結ぶ「辻子（ずし）」の小路が残る。",
+        "address": "滋賀県高島市今津町今津289-2",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.401082,
+        "lng": 136.036038,
+        "qr_token": "shuin-omi_imazu-5",
+        "cover_image_url": "/images/omi_imazu/spot5.png",
+        "f7_fragment": "鎌倉時代から琵琶湖の航海安全を見守り続ける港町・今津の由緒ある鎮守社。",
+        "f7_full": "「住吉神社」の湖風に揺れる境内の木々と静かな社殿が、周航の歌とヴォーリズ建築を訪ねた今津の旅を清らかに締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
