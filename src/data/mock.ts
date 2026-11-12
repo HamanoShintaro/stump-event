@@ -68380,5 +68380,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "78ddb1aa-2c5c-4ba8-814b-33693ae83f8f",
+    "title": "関所と崖家造の宿場・木曽福島を巡る",
+    "name": "関所と崖家造の宿場・木曽福島を巡る",
+    "description": "江戸と京を結ぶ中山道の中間点であり、四大関所の一つ「福島関所」と木曽代官の記憶が息づく長野県木曽町。JR中央本線の木曽福島駅から、宝暦創業のそば処・くるまや本店、老舗菓子処の田ぐち、名園が残る山村代官屋敷、高台の福島関所資料館までを巡る。",
+    "region": "木曽福島（木曽町）",
+    "area_name": "木曽福島（木曽町）",
+    "cover_image_url": "/images/kisofukushima/route-eyecatch.png",
+    "imageUrl": "/images/kisofukushima/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "木曽川のせせらぎと石臼挽きの木曽そば、四大関所の歴史が息づく木曽福島で、あなたが心惹かれたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "宝暦年間創業の老舗「くるまや本店」で味わう、二枚盛りの手打ち「ざるそば」",
+          "description": "石臼挽きの玄そばと木曽の湧水が織りなす力強い香りと喉ごしに、街道の旅人を支えてきた本場の味を堪能した。",
+          "badge_code": "kisofukushima_kurumaya_soba"
+        },
+        {
+          "key": "B",
+          "text": "木曽川の断崖を見下ろす要害に建ち、四大関所の歴史を伝える「福島関所資料館」",
+          "description": "「入鉄砲に出女」を取り締まった番所と冠木門の佇まいに、中山道の真ん中を守り抜いた関所の重みを感じた。",
+          "badge_code": "kisofukushima_sekisho_checkpoint"
+        },
+        {
+          "key": "C",
+          "text": "木曽代官・山村家の格式と、斜面の湧水を活かした名園が息づく「山村代官屋敷」",
+          "description": "難を逃れたお成り間の建築美と静寂の池泉庭園に、木曽谷を治めた文武両道の代官の暮らしを垣間見た。",
+          "badge_code": "kisofukushima_yamamura_daikan"
+        },
+        {
+          "key": "D",
+          "text": "谷あいの宿場玄関口「木曽福島駅」と、そば饅頭や朴葉巻が並ぶ老舗「田ぐち」",
+          "description": "木曽谷の斜面を下り、本町通りの老舗で出会った香り高いそば饅頭の優しい甘さに旅情が深まった。",
+          "badge_code": "kisofukushima_taguchi_soba_manju"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7e59933a-39a2-469e-8040-2ed4cea3cde9",
+        "name": "木曽福島駅",
+        "description": "JR中央本線の主要駅であり、木曽路観光の拠点（待合室は始発〜終電）。中山道福島宿や福島関所跡、崖家造の町並みへと向かう散策の玄関口となっている。",
+        "address": "長野県木曽郡木曽町福島2011-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.844002,
+        "lng": 137.693348,
+        "qr_token": "shuin-kisofukushima-1",
+        "cover_image_url": "/images/kisofukushima/spot1.png",
+        "f7_fragment": "中央本線の特急が発着し、中山道の中間宿場・木曽福島へと誘う谷の玄関口。",
+        "f7_full": "「木曽福島駅」から見渡す段丘の街並みと清らかな山の空気が、四大関所と木曽代官の歴史が息づく宿場町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "17735921-149f-45d4-8fa3-3b944320e3ec",
+        "next_spot_name": "くるまや本店"
+      },
+      {
+        "id": "17735921-149f-45d4-8fa3-3b944320e3ec",
+        "name": "くるまや本店",
+        "description": "江戸中期の宝暦年間創業、260年以上の歴史を持つ手打ちそばの老舗（11:00〜16:00頃営業、水曜休）。一人前が二枚の竹ざるで供される名物「ざるそば」や冬季限定の「すんきそば」で知られる。",
+        "address": "長野県木曽郡木曽町福島5367-2",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.848125,
+        "lng": 137.695212,
+        "qr_token": "shuin-kisofukushima-2",
+        "cover_image_url": "/images/kisofukushima/spot2.png",
+        "f7_fragment": "宝暦年間から二百六十年以上続く、二枚盛りの手打ち木曽そばで名高い老舗。",
+        "f7_full": "「くるまや本店」の風格ある暖簾の奥で供される石臼挽きのざるそばが、中山道を往来した旅人たちの舌を魅了してきた本場の味わいを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d8de8316-e9a3-4a7c-832c-8b94bf64ac4b",
+        "next_spot_name": "田ぐち"
+      },
+      {
+        "id": "d8de8316-e9a3-4a7c-832c-8b94bf64ac4b",
+        "name": "田ぐち",
+        "description": "木曽福島の本町通りに店を構える明治創業の老舗和洋菓子処（9:00〜18:00営業、木曜休）。木曽産そば粉を使った「そば饅頭」や初夏の「朴葉巻」、自家製ジェラートが人気。",
+        "address": "長野県木曽郡木曽町福島5283",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.84922,
+        "lng": 137.695561,
+        "qr_token": "shuin-kisofukushima-3",
+        "cover_image_url": "/images/kisofukushima/spot3.png",
+        "f7_fragment": "明治の創業以来、木曽産のそば饅頭や朴葉巻、ジェラートを届ける老舗菓子処。",
+        "f7_full": "「田ぐち」の香り高いそば饅頭と季節の和洋菓子が、木曽谷の豊かな自然の恵みと宿場町のおもてなしの心を温かく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d0677593-7795-4b50-869d-223ae56b53ce",
+        "next_spot_name": "山村代官屋敷"
+      },
+      {
+        "id": "d0677593-7795-4b50-869d-223ae56b53ce",
+        "name": "山村代官屋敷",
+        "description": "木曽代官と福島関所番を世襲した尾張藩重臣・山村家の下屋敷跡（9:00〜16:30開館・冬季短縮、木曜休）。火災を免れた「お成り間」や池泉庭園、山村家伝来の資料や狐の嫁入り展示を見学できる。",
+        "address": "長野県木曽郡木曽町福島5808-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.851866,
+        "lng": 137.698202,
+        "qr_token": "shuin-kisofukushima-4",
+        "cover_image_url": "/images/kisofukushima/spot4.png",
+        "f7_fragment": "木曽代官・山村家の格式ある「お成り間」と池泉庭園を今に伝える史跡屋敷。",
+        "f7_full": "「山村代官屋敷」の静謐な庭園と歴史資料の数々が、江戸時代の木曽谷と福島関所を治めた代官の暮らしと文化の奥深さを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5775451a-b593-41b8-8da6-f000b57c23c6",
+        "next_spot_name": "福島関所資料館"
+      },
+      {
+        "id": "5775451a-b593-41b8-8da6-f000b57c23c6",
+        "name": "福島関所資料館",
+        "description": "日本四大関所の一つ・国指定史跡「福島関所跡」に建つ資料館（9:00〜16:30開館・冬季短縮、12〜3月の火曜・年末年始休）。復元された門と番所に通行手形や武器類を展示し、木曽川を見下ろす高台で歴史を学べる。",
+        "address": "長野県木曽郡木曽町福島5031-1",
+        "prefecture": "長野県",
+        "city": "",
+        "lat": 35.850592,
+        "lng": 137.702179,
+        "qr_token": "shuin-kisofukushima-5",
+        "cover_image_url": "/images/kisofukushima/spot5.png",
+        "f7_fragment": "天下の四大関所「福島関所跡」に復元された、中山道の歴史を今に伝える番所。",
+        "f7_full": "「福島関所資料館」の厳めしい冠木門と高台から見下ろす木曽川の渓谷が、木曽路の要衝・木曽福島を巡り歩いた旅を深い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "30bbf36e-9846-4253-8f82-89dfacc2599a",
+    "title": "家康公生誕の城と八丁味噌・岡崎へ",
+    "name": "家康公生誕の城と八丁味噌・岡崎へ",
+    "description": "徳川家康公生誕の城下町であり、東海道岡崎宿と天然醸造の八丁味噌が息づく愛知県岡崎市。名鉄名古屋本線の東岡崎駅から、天明二年創業の和菓子処・備前屋 本店、昇竜伝説の龍城神社、日本百名城の岡崎城、石積みの木桶が並ぶカクキュー八丁味噌の郷までを歩く。",
+    "region": "岡崎城下と八丁味噌（岡崎市）",
+    "area_name": "岡崎城下と八丁味噌（岡崎市）",
+    "cover_image_url": "/images/okazaki/route-eyecatch.png",
+    "imageUrl": "/images/okazaki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "家康公生誕の岡崎城と石積みの木桶が並ぶ八丁味噌蔵、東海道の銘菓が息づく岡崎で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "徳川家康公が誕生し、天下統一への第一歩を踏み出した出世城「岡崎城」",
+          "description": "戦国の空堀と天守閣から見渡す矢作川の流れに、厭離穢土・欣求浄土の旗を掲げた三河武士の誇りを感じた。",
+          "badge_code": "okazaki_castle_ieyasu_birthplace"
+        },
+        {
+          "key": "B",
+          "text": "巨大な木桶に三トンの石を積み上げ、二夏二冬熟成させる「カクキュー八丁味噌の郷」",
+          "description": "国登録有形文化財の黒板塀の味噌蔵に漂う芳醇な香りと職人の石積み技に、三百五十年続く醸造の底力を知った。",
+          "badge_code": "okazaki_kakukyu_hatcho_miso"
+        },
+        {
+          "key": "C",
+          "text": "天明二年創業の老舗「備前屋 本店」で出会う、淡雪のように溶ける銘菓「あわ雪」",
+          "description": "東海道岡崎宿の伝馬通りで二百年以上愛されてきた、白く優美な和菓子の口どけに往時の旅情を味わった。",
+          "badge_code": "okazaki_bizenya_awayuki_sweets"
+        },
+        {
+          "key": "D",
+          "text": "乙川河畔の「東岡崎駅」から歩き、家康公産湯の井戸が伝わる「龍城神社」",
+          "description": "若き家康公の騎馬像に見送られて川を渡り、金の龍が昇った伝説の本丸社殿で清々しい空気に包まれた。",
+          "badge_code": "okazaki_tatsuki_shrine_dragon_well"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9dc4a04f-8c1a-4654-84c5-3b2f89a7bd28",
+        "name": "東岡崎駅",
+        "description": "名鉄名古屋本線の主要駅であり、岡崎観光の玄関口（改札は始発〜終電）。北口の乙川河畔へと続くデッキには巨大な「徳川家康公像」が立ち、岡崎城や旧東海道への散策起点となっている。",
+        "address": "愛知県岡崎市明大寺本町4丁目70",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.952065,
+        "lng": 137.167338,
+        "qr_token": "shuin-okazaki-1",
+        "cover_image_url": "/images/okazaki/spot1.png",
+        "f7_fragment": "乙川河畔に若き徳川家康公の騎馬像が立ち、城下町・岡崎へと誘う玄関口。",
+        "f7_full": "「東岡崎駅」のデッキに聳える勇壮な家康公騎馬像と乙川のせせらぎが、天下人の生誕地と東海道宿場を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c37d8b43-e304-40e0-81f6-6ae204fd3149",
+        "next_spot_name": "備前屋 本店"
+      },
+      {
+        "id": "c37d8b43-e304-40e0-81f6-6ae204fd3149",
+        "name": "備前屋 本店",
+        "description": "旧東海道（伝馬通り）に店を構える天明二年創業の老舗和菓子店（9:00〜18:00営業、無休・元日休）。淡雪のような口どけの代表銘菓「あわ雪」や和洋折衷の「手風琴のしらべ」で広く知られる。",
+        "address": "愛知県岡崎市伝馬通2丁目17",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.957435,
+        "lng": 137.170329,
+        "qr_token": "shuin-okazaki-2",
+        "cover_image_url": "/images/okazaki/spot2.png",
+        "f7_fragment": "旧東海道で天明二年の創業から伝統銘菓「あわ雪」を作り続ける老舗和菓子処。",
+        "f7_full": "「備前屋 本店」の凛とした暖簾とほろりと溶ける「あわ雪」の上品な甘みが、東海道岡崎宿で二百年以上愛されてきた茶の湯の心を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "801e2fe2-a5a1-40f3-87a0-9f68fd4dd97c",
+        "next_spot_name": "龍城神社"
+      },
+      {
+        "id": "801e2fe2-a5a1-40f3-87a0-9f68fd4dd97c",
+        "name": "龍城神社",
+        "description": "岡崎城本丸に隣接して鎮座し、徳川家康公と本多忠勝公を祀る神社（境内参拝自由、授与所は9:00〜16:00）。家康公誕生の際に金龍が昇ったと伝わる「東照公産湯の井戸」があり、城内の緑の中でひと息つける。",
+        "address": "愛知県岡崎市康生町561",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.956194,
+        "lng": 137.159098,
+        "qr_token": "shuin-okazaki-3",
+        "cover_image_url": "/images/okazaki/spot3.png",
+        "f7_fragment": "岡崎城本丸に鎮座し、徳川家康公と本多忠勝公を祀る昇竜伝説ゆかりの神社。",
+        "f7_full": "「龍城神社」の厳かな社殿と東照公産湯の井戸が、徳川家康公誕生の瑞祥と三河武士の揺るぎない絆を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "d4661933-7867-4182-846a-440ba9975673",
+        "next_spot_name": "岡崎城"
+      },
+      {
+        "id": "d4661933-7867-4182-846a-440ba9975673",
+        "name": "岡崎城",
+        "description": "徳川家康公生誕の城として知られる日本百名城の一つ（9:00〜17:00開館、年末休）。戦国期からの石垣や空堀が残り、三層五階の天守閣では歴史資料展示や最上階からの城下町眺望を楽しめる。",
+        "address": "愛知県岡崎市康生町561-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.956343,
+        "lng": 137.158794,
+        "qr_token": "shuin-okazaki-4",
+        "cover_image_url": "/images/okazaki/spot4.png",
+        "f7_fragment": "徳川家康公が誕生した天下人の聖地であり、三層五階の天守が輝く日本百名城。",
+        "f7_full": "「岡崎城」の白亜の天守閣と苔むした石垣が、戦国の世から天下泰平へと向かった徳川家康公の原点と城下町の誇りを力強く伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5f2e8e3d-1f70-402e-8de5-a33b15b62cae",
+        "next_spot_name": "カクキュー八丁味噌の郷"
+      },
+      {
+        "id": "5f2e8e3d-1f70-402e-8de5-a33b15b62cae",
+        "name": "カクキュー八丁味噌の郷",
+        "description": "岡崎城から西へ八丁（約870m）に位置する延宝三年創業の八丁味噌蔵元（9:00〜17:00営業、無休・年末年始休）。国登録有形文化財の黒板塀の味噌蔵見学や、名物「八丁味噌ソフトクリーム」・直売での買い物を楽しめる。",
+        "address": "愛知県岡崎市八帖町字往還通69",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.958062,
+        "lng": 137.152746,
+        "qr_token": "shuin-okazaki-5",
+        "cover_image_url": "/images/okazaki/spot5.png",
+        "f7_fragment": "岡崎城の西八丁に黒板塀の蔵が連なり、石積み天然醸造を今に伝える老舗蔵元。",
+        "f7_full": "「カクキュー八丁味噌の郷」に並ぶ巨大な木桶と円錐状の石積みが、家康公のふるさと岡崎を巡り歩いた旅を芳醇な香りで締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "13e68ed4-bae8-43bd-8925-61f2e1530291",
+    "title": "なぜ豊川の門前は千年の狐と賑わうのか",
+    "name": "なぜ豊川の門前は千年の狐と賑わうのか",
+    "description": "室町創建の古刹「妙厳寺（豊川稲荷）」と、名物のいなり寿司が息づく愛知県豊川市。JR飯田線の豊川駅から、宝珠まんじゅうの和菓子処・喜楽 本店、総門前の老舗・門前そば山彦、総ケヤキ造りの大本殿が聳える豊川稲荷、千体以上の狐像が並ぶ霊狐塚までを巡る。",
+    "region": "豊川稲荷門前町（豊川市）",
+    "area_name": "豊川稲荷門前町（豊川市）",
+    "cover_image_url": "/images/toyokawa/route-eyecatch.png",
+    "imageUrl": "/images/toyokawa/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "総ケヤキ造りの大本殿と千体のお狐さま、門前のいなり寿司が息づく豊川で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "織田信長や徳川家康も崇敬した、神仏習合の壮麗な伽藍が聳える「豊川稲荷（妙厳寺）」",
+          "description": "総ケヤキ造りの巨大な本殿と今川義元寄進の山門に、五百八十年を超えて続く商売繁盛・開運の篤い祈りを感じた。",
+          "badge_code": "toyokawa_inari_myogonji_temple"
+        },
+        {
+          "key": "B",
+          "text": "杉木立の奥に千体以上のお狐さまの石像と赤い前掛けが連なる聖域「霊狐塚」",
+          "description": "願いが叶った人々の感謝が形となった無数の狐像の眼差しに、背筋が伸びるような神秘の空気を体感した。",
+          "badge_code": "toyokawa_reikozuka_thousand_foxes"
+        },
+        {
+          "key": "C",
+          "text": "総門前の老舗「門前そば 山彦」で味わう、ゆず香る五目酢飯の「いなほ稲荷寿司」",
+          "description": "お狐さまゆかりの門前町で百年以上受け継がれてきた、秘伝の甘辛油揚げと五目いなり寿司の味わいに心満たされた。",
+          "badge_code": "toyokawa_yamahiko_inari_sushi"
+        },
+        {
+          "key": "D",
+          "text": "参拝客を迎える「豊川駅」と、名物の宝珠まんじゅうが並ぶ老舗「喜楽 本店」",
+          "description": "レトロな表参道を歩き、宝珠まんじゅうと白狐のお面を模したきつねせんべいに出会って門前町の伝統に心和んだ。",
+          "badge_code": "toyokawa_omotesando_kiraku_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f52b32a0-5fd2-4628-8b14-ba769f86dae4",
+        "name": "豊川駅",
+        "description": "JR飯田線の主要駅であり、名鉄豊川稲荷駅と隣接する豊川稲荷参拝の玄関口（待合室は始発〜終電）。駅前広場から西へ伸びる表参道には、いなり寿司店や土産物店が軒を連ねている。",
+        "address": "愛知県豊川市豊川栄町1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.822472,
+        "lng": 137.396982,
+        "qr_token": "shuin-toyokawa-1",
+        "cover_image_url": "/images/toyokawa/spot1.png",
+        "f7_fragment": "JR飯田線と名鉄線が並び、日本三大稲荷・豊川稲荷の表参道へと誘う玄関口。",
+        "f7_full": "「豊川駅」の開放的な駅前広場とお狐さまのモニュメントが、千年の祈りと名物いなり寿司で賑わう門前町の旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3abc6c80-d450-41d8-81a0-b017c39e00c0",
+        "next_spot_name": "喜楽 本店"
+      },
+      {
+        "id": "3abc6c80-d450-41d8-81a0-b017c39e00c0",
+        "name": "喜楽 本店",
+        "description": "豊川稲荷表参道に位置する老舗和菓子店（8:30〜17:00営業、無休）。しっとりした薄皮でこしあんを包んだ名物「宝珠まんじゅう」や、白狐のお面を模した手焼きの「稲荷巻せんべい（きつねせんべい）」で親しまれている。",
+        "address": "愛知県豊川市門前町61",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.82426,
+        "lng": 137.39485,
+        "qr_token": "shuin-toyokawa-2",
+        "cover_image_url": "/images/toyokawa/spot2.png",
+        "f7_fragment": "表参道に暖簾を掲げ、名物「宝珠まんじゅう」と「きつねせんべい」を伝える老舗和菓子処。",
+        "f7_full": "「喜楽 本店」のしっとりとした宝珠まんじゅうと香ばしいきつねせんべいが、豊川稲荷の参道歩きに温かな甘みと旅の思い出を添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "19d94cee-4637-459f-8aaf-17280dde46e4",
+        "next_spot_name": "門前そば 山彦"
+      },
+      {
+        "id": "19d94cee-4637-459f-8aaf-17280dde46e4",
+        "name": "門前そば 山彦",
+        "description": "豊川稲荷の総門前に店を構える大正創業のそば・いなり寿司の老舗（10:30〜16:00頃営業、不定休）。秘伝の煮汁が染みた油揚げにゆず香る五目酢飯を包んだ名物「いなほ稲荷寿司」や門前そばを味わえる。",
+        "address": "愛知県豊川市門前町1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.824663,
+        "lng": 137.394761,
+        "qr_token": "shuin-toyokawa-3",
+        "cover_image_url": "/images/toyokawa/spot3.png",
+        "f7_fragment": "総門前で大正時代から愛される、ゆず香る五目「いなほ稲荷寿司」の老舗処。",
+        "f7_full": "「門前そば 山彦」の秘伝の煮汁が染みた油揚げとゆず香る五目いなり寿司が、お狐さまの門前町ならではの伝統の美味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9ee02155-bf53-405d-8a8f-db3134af0c60",
+        "next_spot_name": "豊川稲荷"
+      },
+      {
+        "id": "9ee02155-bf53-405d-8a8f-db3134af0c60",
+        "name": "豊川稲荷",
+        "description": "室町時代の嘉吉元年に創建された曹洞宗の寺院・円福山妙厳寺（境内参拝自由、5:00〜20:00頃）。鎮守・豊川吒枳尼真天を祀る日本三大稲荷の一つであり、総ケヤキ造りの大本殿や今川義元寄進の山門が聳える。",
+        "address": "愛知県豊川市豊川町1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.824542,
+        "lng": 137.392074,
+        "qr_token": "shuin-toyokawa-4",
+        "cover_image_url": "/images/toyokawa/spot4.png",
+        "f7_fragment": "総ケヤキ造りの大本殿が聳え、商売繁盛の祈りを集める日本三大稲荷の古刹。",
+        "f7_full": "「豊川稲荷」の威風堂々たる総門と巨大なケヤキ造りの本殿が、戦国武将から現代の人々までを惹きつけてやまない篤い信仰の力を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c39a67ca-f28c-4da8-8e90-1b499cafe877",
+        "next_spot_name": "霊狐塚"
+      },
+      {
+        "id": "c39a67ca-f28c-4da8-8e90-1b499cafe877",
+        "name": "霊狐塚",
+        "description": "豊川稲荷の境内最奥に位置する聖域（参拝自由、開門時間内）。祈願成就の御礼として全国の信者から奉納された1,000体以上の狐の石像が赤い前掛けを着けて並び、神秘的な森の景観を見せる。",
+        "address": "愛知県豊川市豊川町1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.826673,
+        "lng": 137.39144,
+        "qr_token": "shuin-toyokawa-5",
+        "cover_image_url": "/images/toyokawa/spot5.png",
+        "f7_fragment": "境内の奥深い杉の森に千体以上の奉納狐像が並ぶ、豊川稲荷最奥の神秘の聖域。",
+        "f7_full": "「霊狐塚」の杉木立の中で赤い前掛けを揺らす千体のお狐さまの石像が、豊川の門前町と聖域を巡り歩いた旅を神秘的な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2ae74637-60d9-4906-8bba-8fe1f3510384",
+    "title": "松川の木造建築と名湯の街・伊東を歩く",
+    "name": "松川の木造建築と名湯の街・伊東を歩く",
+    "description": "日本有数の湧出量を誇る伊東温泉と、昭和初期のレトロな木造建築美が息づく静岡県伊東市。JR伊東線の伊東駅から、温泉卵の黄身餡を使った銘菓「ホール・イン」の梅家 湯の花店、自家製ソフトクリームのスイートハウスわかば、松川河畔に建つ木造三階建ての東海館、相模灘を望むなぎさ公園までを歩く。",
+    "region": "伊東温泉と松川河畔（伊東市）",
+    "area_name": "伊東温泉と松川河畔（伊東市）",
+    "cover_image_url": "/images/ito/route-eyecatch.png",
+    "imageUrl": "/images/ito/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "松川河畔に佇む木造三階建ての東海館と純喫茶のソフトクリーム、温泉卵の銘菓が息づく伊東で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "松川河畔に佇み、昭和初期の棟梁たちが技を競い合った木造三階建ての「東海館」",
+          "description": "繊細な組子障子や銘木の床柱、そして望楼から見渡す温泉街と相模灘のパノラマに、日本の木造建築の粋を見た。",
+          "badge_code": "ito_tokaikan_wooden_architecture"
+        },
+        {
+          "key": "B",
+          "text": "昭和二十三年創業の純喫茶「スイートハウスわかば」で味わう、自家製「ソフトクリーム」",
+          "description": "銅釜で炊き上げたミルクの優しい甘さとレトロな店内の空気に、三代にわたり愛される湯の街の温もりを感じた。",
+          "badge_code": "ito_wakaba_soft_serve_cafe"
+        },
+        {
+          "key": "C",
+          "text": "昭和十二年創業の「梅家 湯の花店」で出会う、温泉卵で仕立てた銘菓「ホール・イン」",
+          "description": "伊東温泉の源泉で茹でた黄身餡とホワイトチョコレートが溶け合う、ハイカラな伊豆銘菓の伝統に心和んだ。",
+          "badge_code": "ito_umeya_hole_in_sweets"
+        },
+        {
+          "key": "D",
+          "text": "湯の街の玄関口「伊東駅」から歩き、相模灘と彫刻を望む「なぎさ公園」",
+          "description": "アーケード街を抜けて海辺へ出ると、青い海と空に映えるブロンズ像と伊豆大島の眺めが心地よく広がっていた。",
+          "badge_code": "ito_nagisa_park_sagami_bay"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c7a93046-5f2f-4aa2-8777-f9e59ff5a469",
+        "name": "伊東駅",
+        "description": "JR伊東線と伊豆急行線が接続する伊豆東海岸の主要駅（待合室は始発〜終電）。駅前から「湯の花通り」などの商店街が伸び、松川河畔や海辺へと続く伊東温泉散策の起点となっている。",
+        "address": "静岡県伊東市湯川3丁目12-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.97461,
+        "lng": 139.092218,
+        "qr_token": "shuin-ito-1",
+        "cover_image_url": "/images/ito/spot1.png",
+        "f7_fragment": "日本屈指の湯量を誇る伊東温泉と、昭和レトロな湯の街へと誘う伊豆の玄関口。",
+        "f7_full": "「伊東駅」の活気ある駅前広場と湯の街のアーケードが、文人墨客に愛された名湯と木造建築を歩く旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "dd241258-9ac4-4320-84a3-52298063902a",
+        "next_spot_name": "梅家 湯の花店"
+      },
+      {
+        "id": "dd241258-9ac4-4320-84a3-52298063902a",
+        "name": "梅家 湯の花店",
+        "description": "湯の花通り商店街に店を構える昭和十二年創業の老舗和洋菓子店（8:30〜17:00営業、水曜休）。伊東温泉の源泉で茹でた卵の黄身餡をホワイトチョコレートで包んだ銘菓「ホール・イン」で広く知られる。",
+        "address": "静岡県伊東市湯川1丁目14-9",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.973283,
+        "lng": 139.093336,
+        "qr_token": "shuin-ito-2",
+        "cover_image_url": "/images/ito/spot2.png",
+        "f7_fragment": "昭和十二年の創業以来、温泉卵の黄身餡を使った銘菓「ホール・イン」を作る老舗。",
+        "f7_full": "「梅家 湯の花店」のクラシカルな店構えとホワイトチョコが香る「ホール・イン」が、伊東温泉ならではのハイカラな銘菓の歴史を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "ddcbd42f-087b-4a11-85d0-93dc258faa06",
+        "next_spot_name": "スイートハウスわかば"
+      },
+      {
+        "id": "ddcbd42f-087b-4a11-85d0-93dc258faa06",
+        "name": "スイートハウスわかば",
+        "description": "キネマ通り近くに店を構える昭和二十三年創業の純喫茶・甘味処（9:00〜21:00営業、月曜休）。銅釜で毎朝炊き上げる自家製「ソフトクリーム」や手焼きのホットケーキが名物。",
+        "address": "静岡県伊東市中央町6-4",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.971672,
+        "lng": 139.095011,
+        "qr_token": "shuin-ito-3",
+        "cover_image_url": "/images/ito/spot3.png",
+        "f7_fragment": "昭和二十三年創業、銅釜炊きの濃厚な自家製ソフトクリームで愛される純喫茶。",
+        "f7_full": "「スイートハウスわかば」のレトロな空間と濃厚で爽やかな自家製ソフトクリームが、湯の街歩きの途中に懐かしく甘い時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6dd6cf3a-d397-4697-83ed-88acc9a5637e",
+        "next_spot_name": "東海館"
+      },
+      {
+        "id": "6dd6cf3a-d397-4697-83ed-88acc9a5637e",
+        "name": "東海館",
+        "description": "松川河畔に建つ昭和三年築の木造三階建て旧温泉旅館・伊東市指定有形文化財（9:00〜21:00開館、第3火曜休）。銘木と職人技が光る客室や大広間、温泉街を一望する望楼を見学でき、土日祝は入浴も可能。",
+        "address": "静岡県伊東市東松原町12-10",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.971686,
+        "lng": 139.096988,
+        "qr_token": "shuin-ito-4",
+        "cover_image_url": "/images/ito/spot4.png",
+        "f7_fragment": "松川河畔に聳える昭和三年築の木造三階建て、名棟梁の技が光る旧温泉旅館。",
+        "f7_full": "「東海館」の精緻な組子細工と望楼付きの堂々たる木造建築が、昭和初期の伊東温泉の華やぎと日本の職人技の粋を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "fdd47e50-c193-4dad-8af7-1422db9668c6",
+        "next_spot_name": "なぎさ公園"
+      },
+      {
+        "id": "fdd47e50-c193-4dad-8af7-1422db9668c6",
+        "name": "なぎさ公園",
+        "description": "伊東海岸の海辺に整備された彫刻公園（終日入園自由）。相模灘と伊豆大島を望む芝生の広場に、伊東ゆかりの彫刻家・重岡建治氏による家族をテーマにしたブロンズ像が点在する。",
+        "address": "静岡県伊東市東松原町178-36",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.972901,
+        "lng": 139.10046,
+        "qr_token": "shuin-ito-5",
+        "cover_image_url": "/images/ito/spot5.png",
+        "f7_fragment": "青い相模灘と伊豆大島を望む海辺の芝生に、温かなブロンズ彫刻が並ぶ公園。",
+        "f7_full": "「なぎさ公園」の潮風に揺れる芝生と青い相模灘の水平線が、レトロな湯の街・伊東を巡り歩いた旅を清々しい開放感で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f48e7fa1-b523-4580-8cb1-7fae91a1c0b2",
+    "title": "なまこ壁と開国の記憶・伊豆下田の旅",
+    "name": "なまこ壁と開国の記憶・伊豆下田の旅",
+    "description": "黒船来航と日米下田条約の舞台であり、なまこ壁と伊豆石の情緒が息づく静岡県下田市。伊豆急行線の伊豆急下田駅から、坂本龍馬飛翔の地・宝福寺、川端康成も愛したマドレーヌの日新堂菓子店、条約締結の古刹・了仙寺、柳並木のペリーロードまでを辿る。",
+    "region": "下田・ペリーロード（下田市）",
+    "area_name": "下田・ペリーロード（下田市）",
+    "cover_image_url": "/images/shimoda/route-eyecatch.png",
+    "imageUrl": "/images/shimoda/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "柳が揺れるペリーロードのなまこ壁と開国の古刹、老舗のマドレーヌが息づく下田で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "平滑川沿いに柳並木となまこ壁、伊豆石の建物が連なる石畳の小径「ペリーロード」",
+          "description": "かつてペリー一行が行進した川沿いの石畳を歩き、ガス灯と白黒のなまこ壁が織りなす異国情緒に心奪われた。",
+          "badge_code": "shimoda_perry_road_namakokabe"
+        },
+        {
+          "key": "B",
+          "text": "日米下田条約が締結された国指定史跡であり、アメリカジャスミンが香る「了仙寺」",
+          "description": "黒船の提督と日本の幕臣が対峙した本堂の前に立ち、鎖国から開国へと時代が動いた歴史の重みを肌で感じた。",
+          "badge_code": "shimoda_ryosenji_treaty_temple"
+        },
+        {
+          "key": "C",
+          "text": "大正十三年創業の「日新堂菓子店」で出会う、川端康成も愛したレモンケーキ「マドレーヌ」",
+          "description": "文豪も魅了された爽やかなレモン風味のマドレーヌとレトロな包みに、百年続く下田の菓子文化を感じた。",
+          "badge_code": "shimoda_nisshindo_madeleine_sweets"
+        },
+        {
+          "key": "D",
+          "text": "黒船モニュメントの「伊豆急下田駅」と、坂本龍馬の脱藩赦免の地「宝福寺」",
+          "description": "勝海舟が山内容堂に直談判し、龍馬が日本の夜明けへと大きく羽ばたく礎となった本堂の空気に胸が熱くなった。",
+          "badge_code": "shimoda_hofukuji_ryoma_flight"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f927bbf7-b22c-499c-84d0-aac8d54470e5",
+        "name": "伊豆急下田駅",
+        "description": "伊豆急行線の終着駅であり、南伊豆観光の玄関口（待合室は始発〜終電）。駅前には黒船「サスケハナ号」の模型や足湯「開国の湯」があり、なまこ壁が残る旧市街やペリーロードへの散策起点となっている。",
+        "address": "静岡県下田市東本郷1丁目1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.67912,
+        "lng": 138.944444,
+        "qr_token": "shuin-shimoda-1",
+        "cover_image_url": "/images/shimoda/spot1.png",
+        "f7_fragment": "黒船モニュメントと足湯が旅人を迎え、開国の港町・伊豆下田へと誘う終着駅。",
+        "f7_full": "「伊豆急下田駅」の南国情緒あふれる駅前広場と黒船のモニュメントが、幕末の激動と異国情緒が息づく下田を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8e6bc5c8-2218-45fb-84ce-1d5ce48d5006",
+        "next_spot_name": "宝福寺"
+      },
+      {
+        "id": "8e6bc5c8-2218-45fb-84ce-1d5ce48d5006",
+        "name": "宝福寺",
+        "description": "幕末に下田奉行所の仮庁舎や山内容堂の宿舎となった浄土真宗の寺院（境内参拝自由、お吉記念館は8:30〜17:00）。勝海舟の謁見により坂本龍馬の脱藩が赦免された「龍馬飛翔の地」であり、唐人お吉の菩提寺としても知られる。",
+        "address": "静岡県下田市一丁目18-26",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.676417,
+        "lng": 138.94309,
+        "qr_token": "shuin-shimoda-2",
+        "cover_image_url": "/images/shimoda/spot2.png",
+        "f7_fragment": "坂本龍馬の脱藩赦免の舞台となり、唐人お吉の記憶を伝える幕末ゆかりの寺。",
+        "f7_full": "「宝福寺」の落ち着いた本堂と歴史を伝える書院が、坂本龍馬が維新の舞台へと大きく羽ばたいた幕末の一夜のドラマを静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "94c933d5-3a8b-4e1f-8edc-6ddfe679ee4e",
+        "next_spot_name": "日新堂菓子店"
+      },
+      {
+        "id": "94c933d5-3a8b-4e1f-8edc-6ddfe679ee4e",
+        "name": "日新堂菓子店",
+        "description": "大正十三年創業の老舗和洋菓子店（9:00〜18:00営業、水曜休）。川端康成が愛した昔ながらのレモンケーキ「マドレーヌ」や、黒ごま餡を包んだ開国銘菓「ロロ黒船」で広く親しまれている。",
+        "address": "静岡県下田市三丁目3-4",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.67283,
+        "lng": 138.943608,
+        "qr_token": "shuin-shimoda-3",
+        "cover_image_url": "/images/shimoda/spot3.png",
+        "f7_fragment": "大正十三年創業、川端康成も愛したレモンケーキ「マドレーヌ」を伝える老舗菓子処。",
+        "f7_full": "「日新堂菓子店」の爽やかなレモンが香るマドレーヌとレトロな佇まいが、開国の街・下田ならではの文学と菓子の記憶を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "957e0a6c-5566-451f-8bf6-8b809a05c974",
+        "next_spot_name": "了仙寺"
+      },
+      {
+        "id": "957e0a6c-5566-451f-8bf6-8b809a05c974",
+        "name": "了仙寺",
+        "description": "寛永十二年創建の日蓮宗寺院であり、国指定史跡（境内参拝自由、8:30〜17:00）。嘉永七年にペリー一行の応接所となって「日米下田条約」が締結された開国の舞台であり、5月には約1,000株のアメリカジャスミンが咲き誇る。",
+        "address": "静岡県下田市三丁目12-12",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.672209,
+        "lng": 138.941613,
+        "qr_token": "shuin-shimoda-4",
+        "cover_image_url": "/images/shimoda/spot4.png",
+        "f7_fragment": "ペリー一行との「日米下田条約」が調印された、日本開国の舞台である国指定史跡。",
+        "f7_full": "「了仙寺」の厳かな参道と歴史を刻んだ本堂が、黒船来航から日米和親へと歩み出した日本開国の歴史的瞬間を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "087d2875-90b9-4f4e-85b7-9359752aadcf",
+        "next_spot_name": "ペリーロード"
+      },
+      {
+        "id": "087d2875-90b9-4f4e-85b7-9359752aadcf",
+        "name": "ペリーロード",
+        "description": "了仙寺門前から平滑川沿いに約500m続く石畳の遊歩道（終日通行自由）。ペリー提督一行が行進した道沿いに、柳並木とガス灯、なまこ壁や伊豆石造りのレトロな建物が連なり、川辺の風を感じてひと休みできる。",
+        "address": "静岡県下田市三丁目14",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.671091,
+        "lng": 138.943301,
+        "qr_token": "shuin-shimoda-5",
+        "cover_image_url": "/images/shimoda/spot5.png",
+        "f7_fragment": "平滑川沿いに柳並木となまこ壁、伊豆石の蔵が連なる異国情緒の石畳の小径。",
+        "f7_full": "「ペリーロード」の川面に映る柳の緑と白黒のなまこ壁が、黒船と開国の記憶を辿った下田の旅をノスタルジックな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
