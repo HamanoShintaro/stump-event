@@ -69680,5 +69680,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "da0a5620-538b-41d9-870e-10bd3c1608f2",
+    "title": "吉田城の鉄櫓と百年ちくわ・豊橋を巡る",
+    "name": "吉田城の鉄櫓と百年ちくわ・豊橋を巡る",
+    "description": "東海道吉田宿と吉田藩七万石の歴史、そして伝統の練り物文化が息づく愛知県豊橋市。JR豊橋駅から、明治九年創業のみたらし団子・大正軒、文政十年創業のヤマサちくわ 本店、奇祭「豊橋鬼祭」の安久美神戸神明社、豊川河畔の吉田城までを巡る。",
+    "region": "吉田宿・豊橋城下（豊橋市）",
+    "area_name": "吉田宿・豊橋城下（豊橋市）",
+    "cover_image_url": "/images/toyohashi/route-eyecatch.png",
+    "imageUrl": "/images/toyohashi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "豊川河畔に聳える吉田城の鉄櫓と二百年続く豊橋ちくわ、老舗のみたらし団子が息づく豊橋で、あなたが心惹かれたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "豊川を天然の堀とし、池田輝政期の石垣と「鉄櫓」が聳える続日本百名城「吉田城」",
+          "description": "悠々と流れる大河のほとりに立つ白壁の鉄櫓と荒々しい石垣に、東海道の要衝を守った出世城の誇りを感じた。",
+          "badge_code": "toyohashi_yoshida_castle_kurogane"
+        },
+        {
+          "key": "B",
+          "text": "文政十年創業の「ヤマサちくわ 本店」で出会う、皮目香ばしい伝統の「豊橋ちくわ」",
+          "description": "江戸時代から魚町で受け継がれてきた石臼練りの技と、噛むほどに広がる白身魚の豊かな旨みに感銘を受けた。",
+          "badge_code": "toyohashi_yamasa_chikuwa_craft"
+        },
+        {
+          "key": "C",
+          "text": "赤鬼と天狗が舞う国指定重要無形民俗文化財「豊橋鬼祭」を伝える「安久美神戸神明社」",
+          "description": "平安時代の寄進に始まる千年古社の境内に立ち、白い粉とタンキリ飴が舞う天下の奇祭の熱気に思いを馳せた。",
+          "badge_code": "toyohashi_akumi_shinmeisha_oni"
+        },
+        {
+          "key": "D",
+          "text": "路面電車が走る「豊橋駅」と、明治九年創業の「大正軒」で味わう「みたらしだんご」",
+          "description": "現役で動く自動団子焼き機のリズミカルな動きと、秘伝タレが香ばしく焦げた焼きたて団子の美味しさに心和んだ。",
+          "badge_code": "toyohashi_taishoken_mitarashi_dango"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1fdeae3f-a672-4ee7-8441-ca3e601fc3ee",
+        "name": "豊橋駅",
+        "description": "東海道新幹線やJR・名鉄が乗り入れる東三河の玄関口（改札は始発〜終電）。東口ペデストリアンデッキの下からは路面電車が発着し、旧東海道吉田宿や吉田城跡への街歩きの起点となっている。",
+        "address": "愛知県豊橋市花田町西宿1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.762912,
+        "lng": 137.381921,
+        "qr_token": "shuin-toyohashi-1",
+        "cover_image_url": "/images/toyohashi/spot1.png",
+        "f7_fragment": "新幹線と路面電車が交差し、東海道吉田宿の城下町へと誘う東三河の拠点駅。",
+        "f7_full": "「豊橋駅」の活気ある駅前広場と路面電車のベルの音が、吉田藩の城下町と伝統の味覚を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "026b256e-141c-48b9-8841-92051b5ce1a9",
+        "next_spot_name": "大正軒"
+      },
+      {
+        "id": "026b256e-141c-48b9-8841-92051b5ce1a9",
+        "name": "大正軒",
+        "description": "明治九年創業の老舗餅菓子・甘味処（9:30〜18:00営業、水曜・第2第4火曜休）。独自の動力式自動団子焼き機で香ばしく焼き上げる秘伝タレの「みたらしだんご」や五平餅で広く親しまれている。",
+        "address": "愛知県豊橋市新本町10-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.767553,
+        "lng": 137.387957,
+        "qr_token": "shuin-toyohashi-2",
+        "cover_image_url": "/images/toyohashi/spot2.png",
+        "f7_fragment": "明治九年の創業以来、自動焼き機と秘伝タレで「みたらしだんご」を焼く甘味処。",
+        "f7_full": "「大正軒」のリズミカルな団子焼き機と香ばしい秘伝タレのみたらしだんごが、明治から続く豊橋の庶民の味を温かく届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "93272273-a92b-4ff6-85c3-dbec137dde55",
+        "next_spot_name": "ヤマサちくわ 本店"
+      },
+      {
+        "id": "93272273-a92b-4ff6-85c3-dbec137dde55",
+        "name": "ヤマサちくわ 本店",
+        "description": "文政十年創業の豊橋名産ちくわの老舗本店（7:00〜20:00営業、無休）。新鮮な白身魚を石臼で練り上げて香ばしく焼き上げた「特製ちくわ」や「豆ちくわ」など、多彩な練り物が並ぶ。",
+        "address": "愛知県豊橋市魚町97",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.765777,
+        "lng": 137.38949,
+        "qr_token": "shuin-toyohashi-3",
+        "cover_image_url": "/images/toyohashi/spot3.png",
+        "f7_fragment": "文政十年の創業以来、石臼練りの伝統製法で「豊橋ちくわ」を焼き上げる総本店。",
+        "f7_full": "「ヤマサちくわ 本店」の老舗の暖簾と香ばしい焼き色のちくわが、江戸時代から東海道の旅人に愛されてきた魚町の誇りを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "fb24870a-346a-488e-804b-93a37c35a72c",
+        "next_spot_name": "安久美神戸神明社"
+      },
+      {
+        "id": "fb24870a-346a-488e-804b-93a37c35a72c",
+        "name": "安久美神戸神明社",
+        "description": "天慶三年の伊勢神宮への飽海神戸寄進に起源を持つ古社（境内参拝自由）。国指定重要無形民俗文化財の奇祭「豊橋鬼祭」が毎年2月に行われ、歴代吉田城主からも厚く崇敬された。",
+        "address": "愛知県豊橋市八町通3丁目17",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.768059,
+        "lng": 137.394643,
+        "qr_token": "shuin-toyohashi-4",
+        "cover_image_url": "/images/toyohashi/spot4.png",
+        "f7_fragment": "平安時代の飽海神戸に起源を持ち、奇祭「豊橋鬼祭」を今に伝える千年古社。",
+        "f7_full": "「安久美神戸神明社」の凛とした神明造の社殿と緑深い境内が、赤鬼と天狗が舞う天下の奇祭の伝統を力強く語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "e5a6d02e-5c02-45bf-8c2f-cd5da6c1e89c",
+        "next_spot_name": "吉田城"
+      },
+      {
+        "id": "e5a6d02e-5c02-45bf-8c2f-cd5da6c1e89c",
+        "name": "吉田城",
+        "description": "豊川河畔の豊橋公園内に位置する続日本百名城（公園内散策自由、鉄櫓は10:00〜15:00開館・月曜休）。池田輝政が築いた野面積み石垣や、本丸跡に再建されたシンボルの「鉄櫓」を見学できる。",
+        "address": "愛知県豊橋市今橋町3",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 34.770728,
+        "lng": 137.392966,
+        "qr_token": "shuin-toyohashi-5",
+        "cover_image_url": "/images/toyohashi/spot5.png",
+        "f7_fragment": "豊川河畔に野面積み石垣と白壁の「鉄櫓」が聳え立つ、続日本百名城の名城。",
+        "f7_full": "「吉田城」の雄大な豊川に映える鉄櫓と戦国期の石垣が、東海道吉田宿と城下町を巡り歩いた豊橋の旅を晴れやかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "639754d8-e3ee-4eec-8928-3c42a36ba691",
+    "title": "国宝の白亜天守と井伊家の城下・彦根へ",
+    "name": "国宝の白亜天守と井伊家の城下・彦根へ",
+    "description": "井伊家三十五万石の誇りと、現存十二天守にして国宝の「彦根城」が聳える滋賀県彦根市。JR彦根駅から、天守を借景とする名勝・玄宮園、国宝の彦根城、文化六年創業・いと重菓舗 本店の銘菓「埋れ木」、夢京橋キャッスルロードの比内地鶏 ほっこりやまでを歩く。",
+    "region": "彦根城と夢京橋（彦根市）",
+    "area_name": "彦根城と夢京橋（彦根市）",
+    "cover_image_url": "/images/hikone/route-eyecatch.png",
+    "imageUrl": "/images/hikone/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水面に映る国宝・彦根城天守と和三盆香る銘菓「埋れ木」、炭火香る親子丼が息づく彦根で、あなたの心に刻むしるしをどの風景にする？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "唐破風と花頭窓が優美な調和を見せ、金亀山に聳える国宝「彦根城」",
+          "description": "四百年の時を超えて現存する天守と天秤櫓の威容、そして最上階から望む琵琶湖の輝きに深く胸を打たれた。",
+          "badge_code": "hikone_castle_national_treasure"
+        },
+        {
+          "key": "B",
+          "text": "彦根駅前から歩き、広大な池泉越しに国宝天守を仰ぐ大名庭園「玄宮園」",
+          "description": "臨池閣「鳳翔台」と九つの橋が織りなす水辺の絶景に、江戸時代の大名が愛でた風雅の極みを体感した。",
+          "badge_code": "hikone_genkyuen_daimyo_garden"
+        },
+        {
+          "key": "C",
+          "text": "文化六年創業の「いと重菓舗 本店」で出会う、和三盆と抹茶の銘菓「埋れ木」",
+          "description": "井伊直弼公の青春と茶の湯の心を映した、上品な白餡と抹茶・和三盆の口どけに城下町の気品を感じた。",
+          "badge_code": "hikone_itojyu_umoregi_sweets"
+        },
+        {
+          "key": "D",
+          "text": "夢京橋キャッスルロードの「比内地鶏 ほっこりや」で味わう、炭火香る「親子丼」",
+          "description": "黒格子の町家が並ぶ城下町通りでいただいた、香ばしい比内地鶏と濃厚なとろとろ卵の味わいに心満たされた。",
+          "badge_code": "hikone_hokkoriya_oyakodon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "050b520c-1043-4a67-81aa-872477f656aa",
+        "name": "彦根駅",
+        "description": "JR琵琶湖線と近江鉄道が乗り入れる湖東地域の中心駅（改札は始発〜終電）。西口広場には赤備えの「井伊直政公顕彰像」が立ち、彦根城や玄宮園へと向かう城下町散策の起点となっている。",
+        "address": "滋賀県彦根市古沢町40-2",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.272213,
+        "lng": 136.263354,
+        "qr_token": "shuin-hikone-1",
+        "cover_image_url": "/images/hikone/spot1.png",
+        "f7_fragment": "西口に井伊直政公の騎馬像が立ち、国宝・彦根城の城下町へと誘う拠点駅。",
+        "f7_full": "「彦根駅」の前に立つ勇壮な井伊直政公の騎馬像と城下へ伸びる大通りが、彦根藩三十五万石の歴史を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "619c44d2-b46e-44a0-83e8-46ce1c1dbba0",
+        "next_spot_name": "玄宮園"
+      },
+      {
+        "id": "619c44d2-b46e-44a0-83e8-46ce1c1dbba0",
+        "name": "玄宮園",
+        "description": "彦根城北東に広がる江戸時代初期の大名庭園・国指定名勝（8:30〜17:00開園、無休）。琵琶湖を模した広大な池と臨池閣「鳳翔台」、そして背後に聳える国宝・彦根城天守の借景が調和した名園。",
+        "address": "滋賀県彦根市金亀町3",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.27789,
+        "lng": 136.253942,
+        "qr_token": "shuin-hikone-2",
+        "cover_image_url": "/images/hikone/spot2.png",
+        "f7_fragment": "広大な池泉と数寄屋造りの鳳翔台から、国宝・彦根城天守を仰ぐ大名庭園。",
+        "f7_full": "「玄宮園」の静かな水面に映る木々と背後に聳える国宝天守の姿が、江戸時代の藩主が愛した近江の大名庭園の風雅を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c1c0fde5-be80-44e7-841f-49f1ba60b266",
+        "next_spot_name": "彦根城"
+      },
+      {
+        "id": "c1c0fde5-be80-44e7-841f-49f1ba60b266",
+        "name": "彦根城",
+        "description": "井伊家35万石の居城であり、国宝指定の現存天守を擁する日本百名城（8:30〜17:00開城、無休）。多彩な破風と花頭窓を持つ三層三階の天守や、重要文化財の天秤櫓・太鼓門櫓などが現存する。",
+        "address": "滋賀県彦根市金亀町1-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.276484,
+        "lng": 136.251843,
+        "qr_token": "shuin-hikone-3",
+        "cover_image_url": "/images/hikone/spot3.png",
+        "f7_fragment": "多彩な破風と花頭窓が優美に調和し、四百年の威容を誇る国宝の現存天守閣。",
+        "f7_full": "「彦根城」の白亜に輝く国宝天守と重厚な天秤櫓の石垣が、徳川四天王・井伊家が築き上げた近世城郭の美の極致を語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "ad44d415-678a-4513-81fb-4c322b3d523b",
+        "next_spot_name": "いと重菓舗 本店"
+      },
+      {
+        "id": "ad44d415-678a-4513-81fb-4c322b3d523b",
+        "name": "いと重菓舗 本店",
+        "description": "文化六年創業の老舗和菓子店（8:30〜18:00営業、火曜休）。白餡を求肥で包み和三盆糖と抹茶をまぶした、井伊直弼公ゆかりの彦根代表銘菓「埋れ木」で広く知られる。",
+        "address": "滋賀県彦根市本町1丁目3-37",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.271105,
+        "lng": 136.253027,
+        "qr_token": "shuin-hikone-4",
+        "cover_image_url": "/images/hikone/spot4.png",
+        "f7_fragment": "文化六年の創業以来、和三盆と抹茶が香る井伊家ゆかりの銘菓「埋れ木」を作る老舗。",
+        "f7_full": "「いと重菓舗 本店」の風格ある暖簾と抹茶香る銘菓「埋れ木」の上品な甘みが、二百年を超える城下町の茶の湯文化を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "648de3fb-01aa-49f3-85c5-c6d66464f810",
+        "next_spot_name": "比内地鶏 ほっこりや"
+      },
+      {
+        "id": "648de3fb-01aa-49f3-85c5-c6d66464f810",
+        "name": "比内地鶏 ほっこりや",
+        "description": "夢京橋キャッスルロード沿いに店を構える比内地鶏料理の専門店（11:30〜15:00・17:30〜21:30営業、水曜休）。炭火で炙った香ばしい比内地鶏と濃厚な卵で仕立てる名物「親子丼」を味わえる。",
+        "address": "滋賀県彦根市本町2丁目2-11",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.271123,
+        "lng": 136.251395,
+        "qr_token": "shuin-hikone-5",
+        "cover_image_url": "/images/hikone/spot5.png",
+        "f7_fragment": "夢京橋キャッスルロードの町家で、炭火香る比内地鶏の「親子丼」を供する名店。",
+        "f7_full": "「比内地鶏 ほっこりや」の炭火が香る親子丼と夢京橋キャッスルロードの白壁の町並みが、国宝の街・彦根の旅を豊かな満足感で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "98fa9650-dc51-44fd-85dc-902279518239",
+    "title": "なぜ草津は二大街道が交わる要衝なのか",
+    "name": "なぜ草津は二大街道が交わる要衝なのか",
+    "description": "東海道五十三次と中山道六十九次が合流・分岐する天下の要衝として栄えた滋賀県草津市。JR草津駅から、現存する大建築の国指定史跡・草津宿本陣、旅文化を伝える草津宿街道交流館、明治二十五年創業・松利老舗のどら焼き、創建千二百年の立木神社までを巡る。",
+    "region": "東海道・中山道草津宿（草津市）",
+    "area_name": "東海道・中山道草津宿（草津市）",
+    "cover_image_url": "/images/kusatsu/route-eyecatch.png",
+    "imageUrl": "/images/kusatsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "東海道と中山道が交わる草津宿本陣の座敷と老舗のどら焼き、千二百年の立木神社が息づく草津で、強く心惹かれたのはどの瞬間だっただろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大名や皇女和宮も休泊し、江戸後期の壮大な座敷群が現存する国指定史跡「草津宿本陣」",
+          "description": "威風堂々たる表門と二百六十八畳の座敷、そして歴史上の偉人たちの名が記された大福帳に江戸の街道の息吹を感じた。",
+          "badge_code": "kusatsu_juku_honjin_heritage"
+        },
+        {
+          "key": "B",
+          "text": "東海道と中山道が結ばれる宿場の賑わいと道中文化を紐解く「草津宿街道交流館」",
+          "description": "大名行列の関札や江戸時代の旅装束、浮世絵に描かれた草津宿の姿に、いにしえの旅人たちのロマンを重ねた。",
+          "badge_code": "kusatsu_kaido_museum_lore"
+        },
+        {
+          "key": "C",
+          "text": "明治二十五年創業の「松利老舗」で出会う、職人が手焼きする大判の「どら焼き」",
+          "description": "旧東海道沿いで百三十年以上愛される、ふっくら香ばしい皮と北海道産粒あんの素朴な甘みに心満たされた。",
+          "badge_code": "kusatsu_matsuri_roho_dorayaki"
+        },
+        {
+          "key": "D",
+          "text": "二大路線の「草津駅」から旧街道を歩き、神鹿と柿の鞭伝説が宿る「立木神社」",
+          "description": "千二百五十年を超えて旅人の道中安全を見守ってきた緑深い境内に佇み、宿場町の安らぎに包まれた。",
+          "badge_code": "kusatsu_tachiki_shrine_sacred_deer"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6aff9be9-74b0-42ea-842c-ef41a68cc042",
+        "name": "草津駅",
+        "description": "JR琵琶湖線と草津線が接続する湖南地域の主要駅（改札は始発〜終電）。江戸時代に東海道と中山道が分岐・合流した旧草津宿への玄関口であり、東口から歴史ある本陣通りへと歩いて向かえる。",
+        "address": "滋賀県草津市渋川1丁目1-16",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.022357,
+        "lng": 135.96171,
+        "qr_token": "shuin-kusatsu-1",
+        "cover_image_url": "/images/kusatsu/spot1.png",
+        "f7_fragment": "JR琵琶湖線と草津線が交差し、二大街道の宿場町・草津宿へと誘う玄関口。",
+        "f7_full": "「草津駅」の賑わう東口デッキと旧街道へと続く町並みが、東海道と中山道が交わる天下の宿場町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3dd44dc2-1a4b-4e28-81db-a4e2bd0caf6e",
+        "next_spot_name": "草津宿本陣"
+      },
+      {
+        "id": "3dd44dc2-1a4b-4e28-81db-a4e2bd0caf6e",
+        "name": "草津宿本陣",
+        "description": "東海道・中山道の草津宿に現存する日本有数の規模を誇る本陣建築・国指定史跡（9:00〜17:00開館、月曜休）。嘉永二年再建の表門や268畳の座敷群が残り、浅野内匠頭や皇女和宮らの休泊記録を伝える。",
+        "address": "滋賀県草津市草津1丁目2-8",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.017779,
+        "lng": 135.960256,
+        "qr_token": "shuin-kusatsu-2",
+        "cover_image_url": "/images/kusatsu/spot2.png",
+        "f7_fragment": "大名や皇女和宮も休泊した、二百六十八畳の座敷群が現存する国指定史跡の本陣。",
+        "f7_full": "「草津宿本陣」の堂々たる表門と格式高い上段の間が、東海道と中山道を行き交った大名行列や幕末のドラマを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "66bd2ce9-ea17-4dfa-88c0-02376f433e94",
+        "next_spot_name": "草津宿街道交流館"
+      },
+      {
+        "id": "66bd2ce9-ea17-4dfa-88c0-02376f433e94",
+        "name": "草津宿街道交流館",
+        "description": "旧東海道沿いに建つ歴史資料館（9:00〜17:00開館、月曜休）。東海道と中山道が合流する草津宿のジオラマ模型や、大名が掲げた関札、江戸時代の旅道具・浮世絵などを展示している。",
+        "address": "滋賀県草津市草津3丁目10-4",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.015694,
+        "lng": 135.959094,
+        "qr_token": "shuin-kusatsu-3",
+        "cover_image_url": "/images/kusatsu/spot3.png",
+        "f7_fragment": "東海道と中山道が交わる草津宿の歴史と、江戸時代の旅文化を伝える資料館。",
+        "f7_full": "「草津宿街道交流館」に並ぶ大名の関札や旅道具の展示が、二つの大街道が交差した宿場町の活気と旅人の物語を鮮やかに蘇らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "acf23598-293a-4b64-8801-ad2ed0b852ca",
+        "next_spot_name": "松利老舗"
+      },
+      {
+        "id": "acf23598-293a-4b64-8801-ad2ed0b852ca",
+        "name": "松利老舗",
+        "description": "旧東海道沿いに店を構える明治二十五年創業の老舗和菓子店（9:00〜19:00頃営業、日曜午後休）。職人が一枚ずつ手焼きするふっくら大判の「どら焼き」や季節の和菓子が街道歩きの土産として親しまれている。",
+        "address": "滋賀県草津市草津3丁目10-40",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.015331,
+        "lng": 135.958728,
+        "qr_token": "shuin-kusatsu-4",
+        "cover_image_url": "/images/kusatsu/spot4.png",
+        "f7_fragment": "明治二十五年の創業以来、旧東海道沿いで大判の「どら焼き」を手焼きする老舗。",
+        "f7_full": "「松利老舗」の香ばしく焼き上げられた大判どら焼きと粒あんの優しい甘みが、百年を超えて宿場町で愛される老舗の温もりを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "6b44416e-59b4-48ba-88bc-4143f13d0bce",
+        "next_spot_name": "立木神社"
+      },
+      {
+        "id": "6b44416e-59b4-48ba-88bc-4143f13d0bce",
+        "name": "立木神社",
+        "description": "神護景雲元年の創建と伝わる草津の総鎮守（境内参拝自由、授与所は9:00〜16:00）。白鹿に乗って降臨した武甕槌命が柿の鞭を挿した伝承を持ち、旧東海道を行き交う旅人の道中安全を見守ってきた。",
+        "address": "滋賀県草津市草津4丁目1-3",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.01327,
+        "lng": 135.956167,
+        "qr_token": "shuin-kusatsu-5",
+        "cover_image_url": "/images/kusatsu/spot5.png",
+        "f7_fragment": "創建千二百五十年の歴史を誇り、旧東海道の旅人を見守る草津総鎮守の古社。",
+        "f7_full": "「立木神社」の朱塗りの鳥居と緑深い社叢が、東海道と中山道の宿場町・草津を巡り歩いた旅を清々しい余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1ec2d323-2a2c-4fbc-824a-9d514f4b491e",
+    "title": "天守台の多門櫓と東海道宿場・亀山を歩く",
+    "name": "天守台の多門櫓と東海道宿場・亀山を歩く",
+    "description": "歌川広重の浮世絵『雪晴』に描かれた東海道亀山宿と、伊勢亀山藩六万石の城下町が息づく三重県亀山市。JR亀山駅から、幕末創業・瑞宝軒の銘菓「亀乃尾」、藩主石川家ゆかりの亀山神社、県指定史跡の旧亀山城多門櫓、呉服商の町家・旧舘家住宅までを歩く。",
+    "region": "東海道亀山宿と亀山城下（亀山市）",
+    "area_name": "東海道亀山宿と亀山城下（亀山市）",
+    "cover_image_url": "/images/kameyama/route-eyecatch.png",
+    "imageUrl": "/images/kameyama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "高石垣に聳える旧亀山城多門櫓と東海道の呉服商町家、幕末創業の銘菓「亀乃尾」が息づく亀山で、心をとらえたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "高さ十五メートルの天守台石垣の上に白壁が輝く、三重県に現存する江戸期の城郭建築「旧亀山城多門櫓」",
+          "description": "歌川広重の浮世絵にも描かれた高石垣と白漆喰の櫓を見上げ、四百年続く城下宿の誇りを肌で感じた。",
+          "badge_code": "kameyama_castle_tamon_yagura"
+        },
+        {
+          "key": "B",
+          "text": "ウダツと格子戸が旧東海道の面影を伝える、呉服商「枡屋」の町家「旧舘家住宅」",
+          "description": "黒漆喰のつし二階と奥深い通り庭の佇まいに、江戸から明治にかけて東海道亀山宿を彩った商家の賑わいを見た。",
+          "badge_code": "kameyama_juku_tachike_townhouse"
+        },
+        {
+          "key": "C",
+          "text": "亀山城の西出丸跡に鎮座し、旧亀山藩主・石川家の歴史を今に伝える「亀山神社」",
+          "description": "城郭の地形を残す静かな杜で手を合わせ、六万石の城下町を治めた歴代藩主と人々の絆に触れた。",
+          "badge_code": "kameyama_shrine_ishikawa_clan"
+        },
+        {
+          "key": "D",
+          "text": "鉄道の要衝「亀山駅」と、幕末創業の「瑞宝軒」で出会う献上銘菓「亀乃尾」",
+          "description": "亀甲型に整えられた白い求肥でこし餡を包んだ伝統銘菓を手に入れ、百七十年を超える城下町の菓子文化の深さに心和んだ。",
+          "badge_code": "kameyama_zuihouken_kamenoo_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "43a503bd-f1b7-45f9-8bdf-c2d1bbd1586d",
+        "name": "亀山駅",
+        "description": "JR関西本線と紀勢本線が交わる三重県北中部の鉄道要衝（待合室は始発〜終電）。明治二十三年の開業以来の歴史を持ち、東海道亀山宿や旧亀山城多門櫓へと向かう城下町散策の起点となっている。",
+        "address": "三重県亀山市御幸町80",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.850301,
+        "lng": 136.450425,
+        "qr_token": "shuin-kameyama-1",
+        "cover_image_url": "/images/kameyama/spot1.png",
+        "f7_fragment": "JR関西本線と紀勢本線が交差し、東海道亀山宿の城下町へと誘う鉄道拠点駅。",
+        "f7_full": "「亀山駅」の落ち着いた駅前広場と台地へと続く坂道が、浮世絵にも描かれた東海道亀山宿と名城の記憶を辿る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "60a64a97-cbb5-4cf5-8009-e64c4de6168b",
+        "next_spot_name": "瑞宝軒"
+      },
+      {
+        "id": "60a64a97-cbb5-4cf5-8009-e64c4de6168b",
+        "name": "瑞宝軒",
+        "description": "幕末の嘉永年間に創業した老舗和洋菓子店（9:30〜18:30営業、木曜休）。明治天皇の伊勢行幸の際にも献上された、白い求肥でこし餡を包み亀甲型に整えた代表銘菓「亀乃尾」やバウムクーヘンで知られる。",
+        "address": "三重県亀山市御幸町231-54",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.850571,
+        "lng": 136.450914,
+        "qr_token": "shuin-kameyama-2",
+        "cover_image_url": "/images/kameyama/spot2.png",
+        "f7_fragment": "幕末の嘉永年間創業、亀甲型の求肥でこし餡を包んだ銘菓「亀乃尾」の老舗。",
+        "f7_full": "「瑞宝軒」の気品ある亀甲型の求肥菓子「亀乃尾」と優しいこし餡の甘みが、百七十年を超える亀山城下の伝統の味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "25af3f31-4ca7-417d-87b2-8bcb6ca53a1e",
+        "next_spot_name": "亀山神社"
+      },
+      {
+        "id": "25af3f31-4ca7-417d-87b2-8bcb6ca53a1e",
+        "name": "亀山神社",
+        "description": "亀山城の西出丸跡に鎮座する神社（境内参拝自由）。延享元年に亀山藩主・石川総慶公が藩祖の霊を城内に祀った真澂神社を起源とし、城郭の面影を残す緑豊かな境内が親しまれている。",
+        "address": "三重県亀山市西丸町570",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.85658,
+        "lng": 136.449812,
+        "qr_token": "shuin-kameyama-3",
+        "cover_image_url": "/images/kameyama/spot3.png",
+        "f7_fragment": "亀山城の西出丸跡に鎮座し、旧亀山藩主・石川家ゆかりの歴史を伝える古社。",
+        "f7_full": "「亀山神社」の緑深い杜と城郭の地形を残す境内が、伊勢亀山藩六万石を治めた石川家の歴史と誇りを静かに語りかけてくれる。",
+        "is_final": false,
+        "next_spot_id": "2087bae6-75fe-4447-8c71-1b881cde4ce4",
+        "next_spot_name": "旧亀山城多門櫓"
+      },
+      {
+        "id": "2087bae6-75fe-4447-8c71-1b881cde4ce4",
+        "name": "旧亀山城多門櫓",
+        "description": "寛永九年に亀山城の天守台の上に建てられたL字型の単層櫓・三重県指定史跡（外観見学自由、内部公開は土日祝10:00〜16:00）。三重県内に現存する江戸時代の貴重な城郭建造物であり、高石垣とともに威容を誇る。",
+        "address": "三重県亀山市本丸町575-2",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.856115,
+        "lng": 136.450694,
+        "qr_token": "shuin-kameyama-4",
+        "cover_image_url": "/images/kameyama/spot4.png",
+        "f7_fragment": "高さ十五メートルの天守台石垣の上に聳える、三重県指定史跡の現存多門櫓。",
+        "f7_full": "「旧亀山城多門櫓」の白漆喰の壁と堂々たる天守台石垣が、歌川広重の浮世絵にも描かれた東海道屈指の城下宿の面影を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "9f67a7bf-0402-4997-8b55-d3726d53c614",
+        "next_spot_name": "旧舘家住宅"
+      },
+      {
+        "id": "9f67a7bf-0402-4997-8b55-d3726d53c614",
+        "name": "旧舘家住宅",
+        "description": "旧東海道亀山宿の西町に残る明治期の呉服商「枡屋」の伝統的町家（外観見学自由、内部公開は土日祝9:00〜16:30）。黒漆喰のつし二階やウダツ、格子戸、通り庭など、宿場町の商家建築を今に伝える。",
+        "address": "三重県亀山市西町410",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.854056,
+        "lng": 136.447918,
+        "qr_token": "shuin-kameyama-5",
+        "cover_image_url": "/images/kameyama/spot5.png",
+        "f7_fragment": "黒漆喰のつし二階とウダツが残り、東海道亀山宿の商家建築を今に伝える町家。",
+        "f7_full": "「旧舘家住宅」の重厚な格子戸とウダツが上がる町家の佇まいが、東海道亀山宿と城下町を巡り歩いた旅を温かな歴史の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "471ac79f-b2df-4a25-8e05-3931e26c7627",
+    "title": "狩野川の水辺と城下町の味・沼津の旅",
+    "name": "狩野川の水辺と城下町の味・沼津の旅",
+    "description": "水野氏五万石の沼津城下と狩野川の清流、そして独自の食文化が息づく静岡県沼津市。JR沼津駅から、焼いて茹で上げる名物餃子の中央亭、昭和三年創業・ほさかの銘菓「栗せん」、狩野川河畔の沼津城本丸跡（中央公園）、地元食材の洋菓子店・グランマまでを辿る。",
+    "region": "沼津城下と狩野川河畔（沼津市）",
+    "area_name": "沼津城下と狩野川河畔（沼津市）",
+    "cover_image_url": "/images/numazu/route-eyecatch.png",
+    "imageUrl": "/images/numazu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "狩野川河畔の沼津城跡と焼いて茹で上げる名物餃子、昭和三年創業の栗せんが息づく沼津で、あなたが心惹かれたのはどの体験だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和二十二年創業の「中央亭」で味わう、焼いた後に熱湯で茹で上げる名物「沼津餃子」",
+          "description": "ふっくらモチモチの厚皮とジューシーなキャベツ餡が織りなす、沼津ならではの独自の餃子文化に感動した。",
+          "badge_code": "numazu_chuotei_boiled_gyoza"
+        },
+        {
+          "key": "B",
+          "text": "狩野川の流れを天然の堀とした水野氏五万石の居城跡「沼津城本丸跡（中央公園）」",
+          "description": "かつての石垣石が残る川辺の公園に立ち、東海道の旅人が仰ぎ見た水城の歴史と穏やかな狩野川の風景に心癒やされた。",
+          "badge_code": "numazu_castle_kanogawa_river"
+        },
+        {
+          "key": "C",
+          "text": "昭和三年創業の「ほさか」で出会う、白いんげん豆の白餡と卵で焼き上げた銘菓「栗せん」",
+          "description": "仲見世商店街で長く愛される、白いんげん豆の優しい甘みが広がる無添加の栗型煎餅とみかん飴に懐かしさを覚えた。",
+          "badge_code": "numazu_hosaka_kurisen_sweets"
+        },
+        {
+          "key": "D",
+          "text": "あゆみ橋を渡った上土町の「グランマ」で出会う、富士山麓の恵みの洋菓子と「ひものサブレ」",
+          "description": "朝霧高原の卵や寿太郎みかんなど、駿河と伊豆の豊かな食材が詰まったスイーツの美味しさに笑顔がこぼれた。",
+          "badge_code": "numazu_grandma_fujisan_sweets"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a00c604e-de23-4108-8b3a-5eb15be31632",
+        "name": "沼津駅",
+        "description": "JR東海道本線と御殿場線が乗り入れる静岡県東部の主要駅（改札は始発〜終電）。南口からは仲見世商店街や狩野川河畔、沼津港方面への街歩きルートが広がっている。",
+        "address": "静岡県沼津市大手町1丁目1-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.102649,
+        "lng": 138.859801,
+        "qr_token": "shuin-numazu-1",
+        "cover_image_url": "/images/numazu/spot1.png",
+        "f7_fragment": "東海道本線と御殿場線が交差し、狩野川と駿河湾の街・沼津へと誘う拠点駅。",
+        "f7_full": "「沼津駅」の活気ある南口広場と潮風が香る大通りが、東海道沼津宿の歴史と名物グルメを巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ad2e32a9-1f18-4d9a-8b2b-3ae435e41865",
+        "next_spot_name": "中央亭"
+      },
+      {
+        "id": "ad2e32a9-1f18-4d9a-8b2b-3ae435e41865",
+        "name": "中央亭",
+        "description": "昭和二十二年創業の餃子専門店（11:00〜売り切れ次第閉店、月曜休）。大ぶりの餃子を鉄鍋で焼いた後にたっぷりの熱湯で茹で上げる独自の製法で知られ、モチモチの皮とジューシーな餡を味わえる。",
+        "address": "静岡県沼津市添地町46",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.10191,
+        "lng": 138.856036,
+        "qr_token": "shuin-numazu-2",
+        "cover_image_url": "/images/numazu/spot2.png",
+        "f7_fragment": "昭和二十二年の創業以来、焼いてから茹で上げる大ぶり餃子を供する名店。",
+        "f7_full": "「中央亭」のふっくらと茹で上げられた大ぶりの餃子と特製からし油の香ばしさが、沼津で長く愛され続ける伝統の味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "a150562e-e2f3-4770-89c0-433383546ca6",
+        "next_spot_name": "ほさか"
+      },
+      {
+        "id": "a150562e-e2f3-4770-89c0-433383546ca6",
+        "name": "ほさか",
+        "description": "沼津仲見世商店街に店を構える昭和三年創業の老舗和菓子店（10:00〜17:00営業、水曜休）。白いんげん豆の白餡を使った優しい甘さの無添加煎餅「栗せん」や「みかん飴・茶飴」が親しまれている。",
+        "address": "静岡県沼津市大手町5丁目2-9",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.101233,
+        "lng": 138.85868,
+        "qr_token": "shuin-numazu-3",
+        "cover_image_url": "/images/numazu/spot3.png",
+        "f7_fragment": "昭和三年の創業以来、白いんげん豆の白餡で銘菓「栗せん」を焼き上げる老舗。",
+        "f7_full": "「ほさか」のほろりと甘い無添加の栗型煎餅「栗せん」とみかん飴が、昭和初期から続く沼津仲見世の懐かしい風情を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "6dbb2651-e34b-4fde-86ef-c8f5b0e5173b",
+        "next_spot_name": "沼津城本丸跡"
+      },
+      {
+        "id": "6dbb2651-e34b-4fde-86ef-c8f5b0e5173b",
+        "name": "沼津城本丸跡",
+        "description": "水野氏5万石の居城であった沼津城の本丸跡に整備された中央公園（終日入園自由）。狩野川の流れと香貫山を望む開放的な広場に、本丸跡の石碑や出土した当時の石垣石が保存されており、川風に吹かれてひと休みできる。",
+        "address": "静岡県沼津市大手町4丁目3-185-4",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.098899,
+        "lng": 138.859317,
+        "qr_token": "shuin-numazu-4",
+        "cover_image_url": "/images/numazu/spot4.png",
+        "f7_fragment": "狩野川のほとりに築かれた水野氏五万石の居城跡を伝える、緑豊かな水辺の公園。",
+        "f7_full": "「沼津城本丸跡」に残る築城当時の石垣石と狩野川の穏やかな流れが、東海道沼津宿を見守った水城の記憶と心地よい休息を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "8c9a4912-7e25-4c51-8613-805e9d083943",
+        "next_spot_name": "グランマ"
+      },
+      {
+        "id": "8c9a4912-7e25-4c51-8613-805e9d083943",
+        "name": "グランマ",
+        "description": "狩野川近くの旧東海道・上土町に本店を構える洋菓子店（10:00〜18:30営業、水曜・第3火曜休）。朝霧高原の卵や沼津産寿太郎みかんなど地元の旬の食材を使ったケーキや「ひものサブレ」「富士千本」が人気。",
+        "address": "静岡県沼津市上土町63",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.097584,
+        "lng": 138.858086,
+        "qr_token": "shuin-numazu-5",
+        "cover_image_url": "/images/numazu/spot5.png",
+        "f7_fragment": "狩野川近くの上土町で、富士山麓と駿河の旬の食材を洋菓子に仕立てる名店。",
+        "f7_full": "「グランマ」のひものサブレと地元果実が輝くケーキの優しい甘みが、狩野川河畔と沼津城下を巡り歩いた旅を華やかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
