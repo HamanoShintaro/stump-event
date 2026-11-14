@@ -74230,5 +74230,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "1a77eaa7-0584-4aca-8578-6eb59b9cc51a",
+    "title": "お多賀さんの絵馬通りと糸切餅・多賀を歩く",
+    "name": "お多賀さんの絵馬通りと糸切餅・多賀を歩く",
+    "description": "「お多賀さん」と親しまれる延命長寿の古社・多賀大社と、名物「糸切餅」の暖簾が揺れる門前町・滋賀県犬上郡多賀町。白い大鳥居が立つ多賀大社前駅から、古民家の藝やcafe、絵馬通りの多賀あさひや、糸切餅元祖 莚寿堂本舗を経て、太閤橋が架かる多賀大社へと歩く。",
+    "region": "多賀・絵馬通りと糸切餅の門前町（多賀町）",
+    "area_name": "多賀・絵馬通りと糸切餅の門前町（多賀町）",
+    "cover_image_url": "/images/tagataishamae/route-eyecatch.png",
+    "imageUrl": "/images/tagataishamae/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "石畳の絵馬通りと紅白・青の糸切餅、千三百年の古社が息づく多賀で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "豊臣秀吉公ゆかりの「太閤橋」と、お多賀杓子の故事を伝える「多賀大社」の荘厳な社殿",
+          "description": "伊邪那岐命・伊邪那美命を祀る「お多賀さん」の深い杜で、延命長寿を願う人々の祈りに包まれた。",
+          "badge_code": "tagataishamae_taga_taisha"
+        },
+        {
+          "key": "B",
+          "text": "白い大鳥居が聳える「多賀大社前駅」から、真っ直ぐに続く石畳風の表参道「絵馬通り」",
+          "description": "ローカル線の終着駅を出た瞬間に広がる門前町の開放感と、参道の穏やかな賑わいに心が弾んだ。",
+          "badge_code": "tagataishamae_ema_street"
+        },
+        {
+          "key": "C",
+          "text": "歴史ある町家を活かした「藝やcafe」と「多賀あさひや」で味わう門前町のゆったりした時間",
+          "description": "多賀道の古い町並みに溶け込む古民家カフェで、香り高い珈琲や甘酒スムージーとともに心地よい静けさを楽しんだ。",
+          "badge_code": "tagataishamae_geiya_cafe"
+        },
+        {
+          "key": "D",
+          "text": "門前の老舗「莚寿堂本舗」で、三味線の糸を使って鮮やかに切り分けられる名物「糸切餅」",
+          "description": "青と赤の三本線が入った真っ白な米粉餅と上品なこし餡に、鎌倉時代から続く縁起菓子の粋を感じた。",
+          "badge_code": "tagataishamae_itokirimochi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "aa19b771-975b-4de1-878f-86655c6cc6c5",
+        "name": "多賀大社前駅",
+        "description": "近江鉄道多賀線の終着駅であり、多賀大社参詣の玄関口（始発〜終電）。赤い瓦屋根の駅舎のすぐ前に白い大鳥居が聳え、境内へと続く石畳風の門前参道「絵馬通り」が始まる。",
+        "address": "滋賀県犬上郡多賀町多賀1550-2",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.226452,
+        "lng": 136.284083,
+        "qr_token": "shuin-tagataishamae-1",
+        "cover_image_url": "/images/tagataishamae/spot1.png",
+        "f7_fragment": "白い大鳥居が駅前に聳え、多賀大社への表参道「絵馬通り」が始まる終着駅。",
+        "f7_full": "「多賀大社前駅」の赤い瓦屋根と駅前に聳える白い大鳥居が、全国から参拝客が訪れる門前町の華やかな旅情を高めてくれる。",
+        "is_final": false,
+        "next_spot_id": "47cc97db-6e55-438a-8737-5a8178f017cf",
+        "next_spot_name": "藝やcafe"
+      },
+      {
+        "id": "47cc97db-6e55-438a-8737-5a8178f017cf",
+        "name": "藝やcafe",
+        "description": "多賀町の旧町並みに佇む古民家カフェ（11:00〜18:00営業、木曜休）。古い時計店の町家を改修した温もりある空間で、ハンドドリップ珈琲や自家製ケーキ、ランチを味わえる。",
+        "address": "滋賀県犬上郡多賀町多賀1199",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.225321,
+        "lng": 136.285025,
+        "qr_token": "shuin-tagataishamae-2",
+        "cover_image_url": "/images/tagataishamae/spot2.png",
+        "f7_fragment": "古い町家の梁と土壁を活かした空間で、自家製甘味と珈琲を味わう古民家カフェ。",
+        "f7_full": "「藝やcafe」の木の温もりあふれる町家空間と香り高い珈琲が、お多賀さんの門前町を巡る旅の始まりに穏やかな時間を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "c2bd2479-a449-41ad-8b40-4e907186708d",
+        "next_spot_name": "多賀あさひや"
+      },
+      {
+        "id": "c2bd2479-a449-41ad-8b40-4e907186708d",
+        "name": "多賀あさひや",
+        "description": "多賀大社表参道「絵馬通り」に佇む築百五十年の古民家カフェ（11:00〜17:00営業、月・木曜休）。風情ある中庭や座敷で、甘酒スムージーやもち粉ケーキ、特製のお稲荷さんを味わえる。",
+        "address": "滋賀県犬上郡多賀町多賀627",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.224752,
+        "lng": 136.289188,
+        "qr_token": "shuin-tagataishamae-3",
+        "cover_image_url": "/images/tagataishamae/spot3.png",
+        "f7_fragment": "絵馬通りの築百五十年の古民家で、庭を眺めながら甘酒スムージーを味わう茶房。",
+        "f7_full": "「多賀あさひや」の江戸末期から受け継がれる町家空間と優しい甘味が、絵馬通りの散策途中に心和むひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "3474dbb4-237c-4f5e-8c51-94bb5b01089c",
+        "next_spot_name": "糸切餅元祖 莚寿堂本舗"
+      },
+      {
+        "id": "3474dbb4-237c-4f5e-8c51-94bb5b01089c",
+        "name": "糸切餅元祖 莚寿堂本舗",
+        "description": "多賀大社門前に構える明治十二年創業の糸切餅の老舗（8:00〜17:00営業・売切次第終了、水曜休）。青と赤の三本線を描いた米粉の餅でこし餡を包み、三味線の糸で切る名物「糸切餅」の実演や茶屋が人気。",
+        "address": "滋賀県犬上郡多賀町多賀599",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.22421,
+        "lng": 136.290522,
+        "qr_token": "shuin-tagataishamae-4",
+        "cover_image_url": "/images/tagataishamae/spot4.png",
+        "f7_fragment": "明治十二年の創業以来、三味線の糸で切る伝統の「糸切餅」を伝える門前の老舗。",
+        "f7_full": "「糸切餅元祖 莚寿堂本舗」の鮮やかな三本線の糸切餅と職人の手さばきが、お多賀さん参りに欠かせない門前銘菓の伝統を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "24586422-38c0-44ac-875e-bc3948011ad2",
+        "next_spot_name": "多賀大社"
+      },
+      {
+        "id": "24586422-38c0-44ac-875e-bc3948011ad2",
+        "name": "多賀大社",
+        "description": "伊邪那岐命・伊邪那美命を祀る近江国第一の大社（境内参拝自由・授与所8:30〜17:00）。「お多賀さん」と親しまれ、豊臣秀吉公寄進の「太閤橋」や国名勝「奥書院庭園」、縁起物の「お多賀杓子」で知られる。",
+        "address": "滋賀県犬上郡多賀町多賀604",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.225158,
+        "lng": 136.291025,
+        "qr_token": "shuin-tagataishamae-5",
+        "cover_image_url": "/images/tagataishamae/spot5.png",
+        "f7_fragment": "伊邪那岐命・伊邪那美命を祀り、太閤橋と奥書院庭園を伝える「お多賀さん」。",
+        "f7_full": "「多賀大社」の反り橋・太閤橋と桧皮葺の拝殿が織りなす神聖な佇まいが、絵馬通りを歩いた旅を清らかな祈りと感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "66c05caa-33ae-45b4-8c0f-114ce418899e",
+    "title": "信長公の天主とヴォーリズ洋館・安土へ",
+    "name": "信長公の天主とヴォーリズ洋館・安土へ",
+    "description": "織田信長公が天下布武の理想を託した安土城の歴史と、近代のヴォーリズ建築、近江源氏の古社が息づく滋賀県近江八幡市安土町。JR安土駅前の御菓子司 万吾樓から、安土城郭資料館、初期ヴォーリズ建築の旧伊庭家住宅、沙沙貴神社を経て、国重文本堂の浄厳院へと巡る。",
+    "region": "安土・信長公の城下とヴォーリズ洋館（近江八幡市）",
+    "area_name": "安土・信長公の城下とヴォーリズ洋館（近江八幡市）",
+    "cover_image_url": "/images/azuchi/route-eyecatch.png",
+    "imageUrl": "/images/azuchi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "信長公ゆかりの史跡と近江源氏の社、初期ヴォーリズ洋館が点在する安土で、あなたの目を惹いたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "織田信長公が移築させ、「安土宗論」の舞台となった「浄厳院」の国重要文化財本堂と楼門",
+          "description": "戦国時代の熱気と『信長公記』の記憶をそのまま今に伝える大伽藍の圧倒的な存在感に胸を打たれた。",
+          "badge_code": "azuchi_jogonin"
+        },
+        {
+          "key": "B",
+          "text": "「安土城郭資料館」で左右に開く五層七階の「安土城天主」復元模型の絢爛な断面",
+          "description": "吹き抜けの宝塔や金碧障壁画が輝く内部構造に、信長公が思い描いた独創的な天下の城の姿を見た。",
+          "badge_code": "azuchi_castle_museum"
+        },
+        {
+          "key": "C",
+          "text": "大正二年に建てられた初期ヴォーリズ建築の粋を伝える「旧伊庭家住宅」のハーフティンバー洋館",
+          "description": "下見板張りの外壁と日当たりのよいサンルームに、和と洋を調和させた温かな住まいの美意識を感じた。",
+          "badge_code": "azuchi_iba_residence"
+        },
+        {
+          "key": "D",
+          "text": "安土駅前の老舗「御菓子司 万吾樓」で出会う永楽通宝の意匠を刻んだ最中「まけずの鍔」",
+          "description": "信長公の愛刀の鍔にちなむ香ばしい最中と粒餡の甘みに、城下町で百余年愛される老舗の誇りを感じた。",
+          "badge_code": "azuchi_mangoro"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f3a64dda-99f8-4fa0-8572-ef4b76630ff4",
+        "name": "御菓子司 万吾樓",
+        "description": "JR安土駅北口前に構える創業百余年の老舗和菓子店（8:30〜18:30頃営業・土日祝17:30頃まで、火曜休）。織田信長公の愛刀の鍔に刻まれた永楽通宝にちなむ最中「まけずの鍔」で広く知られる。",
+        "address": "滋賀県近江八幡市安土町常楽寺420",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.142758,
+        "lng": 136.132661,
+        "qr_token": "shuin-azuchi-1",
+        "cover_image_url": "/images/azuchi/spot1.png",
+        "f7_fragment": "織田信長公ゆかりの永楽通宝を象った代表銘菓「まけずの鍔」を伝える駅前の老舗。",
+        "f7_full": "「御菓子司 万吾樓」の香ばしい最中「まけずの鍔」と自家製粒餡の深い味わいが、信長公の城下町・安土を巡る旅の始まりを彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "19649002-7910-445f-8e5d-2585c9b2a2e7",
+        "next_spot_name": "安土城郭資料館"
+      },
+      {
+        "id": "19649002-7910-445f-8e5d-2585c9b2a2e7",
+        "name": "安土城郭資料館",
+        "description": "JR安土駅南広場に建つ城郭資料館（9:00〜17:00開館、月曜・祝日の翌日・年末年始休、入館料大人200円）。五層七階の「安土城天主」を20分の1縮尺で精巧に再現し、内部構造まで見られる大型分割模型を展示する。",
+        "address": "滋賀県近江八幡市安土町小中700",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.142056,
+        "lng": 136.133439,
+        "qr_token": "shuin-azuchi-2",
+        "cover_image_url": "/images/azuchi/spot2.png",
+        "f7_fragment": "五層七階の「安土城天主」を二十分の一で精巧に再現した分割模型を展示する資料館。",
+        "f7_full": "「安土城郭資料館」に聳える絢爛豪華な安土城天主の復元模型が、織田信長公が天下に示した独創的な城郭建築の全貌を鮮やかに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4a05bf88-4be7-45ef-87fe-1ce7526c6f81",
+        "next_spot_name": "旧伊庭家住宅"
+      },
+      {
+        "id": "4a05bf88-4be7-45ef-87fe-1ce7526c6f81",
+        "name": "旧伊庭家住宅",
+        "description": "大正二年にW・M・ヴォーリズの設計で建てられた和洋折衷住宅（木〜日曜・祝日10:00〜16:00開館・1〜2月は土日祝のみ、入館無料）。初期ヴォーリズ住宅建築の代表作として国の登録有形文化財に指定されている。",
+        "address": "滋賀県近江八幡市安土町小中191",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.138524,
+        "lng": 136.136272,
+        "qr_token": "shuin-azuchi-3",
+        "cover_image_url": "/images/azuchi/spot3.png",
+        "f7_fragment": "大正二年にヴォーリズの設計で建てられた、国登録有形文化財の和洋折衷洋館。",
+        "f7_full": "「旧伊庭家住宅」のハーフティンバーの切妻屋根と陽光差し込むサンルームが、初期ヴォーリズ建築ならではの温かな住まいの美意識を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "195d6dbb-cd1b-4376-85e2-cbf77759d30e",
+        "next_spot_name": "沙沙貴神社"
+      },
+      {
+        "id": "195d6dbb-cd1b-4376-85e2-cbf77759d30e",
+        "name": "沙沙貴神社",
+        "description": "近江源氏・佐々木氏の氏神であり、全国の佐々木姓の総本宮として知られる式内社（境内参拝自由）。江戸時代後期再建の楼門・本殿・拝殿・権殿・東西回廊が滋賀県指定有形文化財に指定されている。",
+        "address": "滋賀県近江八幡市安土町常楽寺1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.136813,
+        "lng": 136.134579,
+        "qr_token": "shuin-azuchi-4",
+        "cover_image_url": "/images/azuchi/spot4.png",
+        "f7_fragment": "近江源氏・佐々木氏の総本宮として、県指定有形文化財の楼門と社殿が並ぶ古社。",
+        "f7_full": "「沙沙貴神社」の堂々たる楼門と桧皮葺の社殿が連なる広い境内が、近江源氏ゆかりの誇り高い歴史と清々しい神域の空気を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "7f3ada5e-c6da-4f26-8eb6-ebe790695364",
+        "next_spot_name": "浄厳院"
+      },
+      {
+        "id": "7f3ada5e-c6da-4f26-8eb6-ebe790695364",
+        "name": "浄厳院",
+        "description": "天正五年に織田信長公が移築・整備させた浄土宗・真宗ゆかりの名刹（境内参拝9:00〜16:30頃）。「安土宗論」が行われた舞台として知られ、入母屋造・本瓦葺の「本堂」は国の重要文化財に指定されている。",
+        "address": "滋賀県近江八幡市安土町慈恩寺744",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.137858,
+        "lng": 136.128607,
+        "qr_token": "shuin-azuchi-5",
+        "cover_image_url": "/images/azuchi/spot5.png",
+        "f7_fragment": "織田信長公が移築させ、「安土宗論」の舞台となった国重要文化財本堂を擁する名刹。",
+        "f7_full": "「浄厳院」の国重要文化財の本堂と重厚な楼門の佇まいが、信長公の足跡と安土の歴史を辿り歩いた旅を深い余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0e966392-c23c-4f9f-834b-32b4ae7bba75",
+    "title": "なぜ新居宿に東海道の関所と旅籠が息づくのか",
+    "name": "なぜ新居宿に東海道の関所と旅籠が息づくのか",
+    "description": "浜名湖と遠州灘が交わる水辺に開かれた旧東海道三十一番目の宿場町・静岡県湖西市新居町。JR新居町駅から、国内に現存する貴重な関所建物の特別史跡「新居関所」、登録有形文化財の小松楼まちづくり交流館、旅籠紀伊国屋資料館を経て、大正末期創業の菓子処 まんじゅやへと辿る。",
+    "region": "新居宿・特別史跡新居関所と旧東海道の旅籠（湖西市）",
+    "area_name": "新居宿・特別史跡新居関所と旧東海道の旅籠（湖西市）",
+    "cover_image_url": "/images/araimachi/route-eyecatch.png",
+    "imageUrl": "/images/araimachi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "現存する関所建物と明治期の旅籠・置屋建築が並ぶ新居宿で、あなたの胸を打ったのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「新居関所」の白漆喰の面番所と、畳敷きの広間に並ぶ江戸時代の通行手形や武具を間近に見たとき",
+          "description": "小学校や役場として使われながら生き延びた、全国でここにだけ現存する関所建物の重みを肌で感じた。",
+          "badge_code": "araimachi_sekisho"
+        },
+        {
+          "key": "B",
+          "text": "「旅籠紀伊国屋資料館」の吹き抜け階段や坪庭を眺め、江戸から明治の旅人が憩う宿場の空気を想像したとき",
+          "description": "紀州藩の御用宿も務めた大旅籠の意匠と、大正期のタイル張り浴室に残る職人の粋に魅了された。",
+          "badge_code": "araimachi_kinokuniya"
+        },
+        {
+          "key": "C",
+          "text": "「小松楼まちづくり交流館」の黒板塀と二階の座敷から、渡船場として賑わった水辺の記憶に触れたとき",
+          "description": "明治末期の元芸妓置屋の繊細な組子障子が、今も地域の交流の場として大切に守られている姿に心和んだ。",
+          "badge_code": "araimachi_komatsuro"
+        },
+        {
+          "key": "D",
+          "text": "大正十五年創業の「菓子処 まんじゅや」で、香り高い酒まんじゅうと手筒花火ゆかりの銘菓を選んだとき",
+          "description": "約百年にわたり宿場町の暮らしに寄り添い続ける老舗の甘味が、街道歩きの疲れを優しく癒やしてくれた。",
+          "badge_code": "araimachi_manjuya"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "63a9fe41-92de-4bd6-8467-9235065097d3",
+        "name": "新居町駅",
+        "description": "JR東海道本線の駅（始発〜終電）。浜名湖の今切口に近い旧東海道三十一番目の宿場町・新居宿の玄関口であり、南口から西へ関所通りが伸びる。",
+        "address": "静岡県湖西市新居町浜名519-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.694181,
+        "lng": 137.568709,
+        "qr_token": "shuin-araimachi-1",
+        "cover_image_url": "/images/araimachi/spot1.png",
+        "f7_fragment": "今切の渡しに代わって浜名湖を渡る鉄路の玄関口から、宿場町の通りへ歩き出す。",
+        "f7_full": "「新居町駅」の南口から真っ直ぐ伸びる関所通りが、江戸時代の区割りを今に伝える東海道新居宿への旅を静かに導いてくれる。",
+        "is_final": false,
+        "next_spot_id": "373e0978-f29a-4153-82bb-5ec4e3ae9e20",
+        "next_spot_name": "新居関所"
+      },
+      {
+        "id": "373e0978-f29a-4153-82bb-5ec4e3ae9e20",
+        "name": "新居関所",
+        "description": "全国でここにだけ現存する関所の主要建造物として国の特別史跡に指定されている関所跡（9:00〜16:30開館、月曜休、大人400円）。安政二年改築の「面番所」と復元された大御門、史料館を見学できる。",
+        "address": "静岡県湖西市新居町新居1227-5",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.694821,
+        "lng": 137.561515,
+        "qr_token": "shuin-araimachi-2",
+        "cover_image_url": "/images/araimachi/spot2.png",
+        "f7_fragment": "小学校や役場として使われ生き延びた、国内に現存する貴重な関所建物・面番所。",
+        "f7_full": "「新居関所」に現存する白漆喰の面番所と大御門が、東海道の要衝を守り抜いた江戸時代の緊張感と歴史の重みを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8e7f2184-76ac-4817-87ff-caad929f8d59",
+        "next_spot_name": "小松楼まちづくり交流館"
+      },
+      {
+        "id": "8e7f2184-76ac-4817-87ff-caad929f8d59",
+        "name": "小松楼まちづくり交流館",
+        "description": "かつての渡船場の水路脇に建つ国登録有形文化財の交流施設（9:00〜16:30開館、月曜休、無料）。明治四十二年築の元芸妓置屋を修復した木造二階建てで、黒板塀や組子障子が見どころ。",
+        "address": "静岡県湖西市新居町新居1190-3",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.69403,
+        "lng": 137.559826,
+        "qr_token": "shuin-araimachi-3",
+        "cover_image_url": "/images/araimachi/spot3.png",
+        "f7_fragment": "渡船場の水路脇に黒板塀を巡らせる、明治末期の元芸妓置屋・小松楼の静かな和空間。",
+        "f7_full": "「小松楼まちづくり交流館」の風情ある黒板塀と繊細な組子障子が、渡船場として栄えた新居宿の近代の華やぎを静かに物語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "ae69ab72-022d-4e1a-8de5-31eaa30f71d7",
+        "next_spot_name": "旅籠紀伊国屋資料館"
+      },
+      {
+        "id": "ae69ab72-022d-4e1a-8de5-31eaa30f71d7",
+        "name": "旅籠紀伊国屋資料館",
+        "description": "新居関所の西隣に建つ旧東海道の旅籠建築を公開する資料館（9:00〜16:30開館、月曜休、大人250円）。紀州藩の御用宿も務めた大旅籠で、吹き抜けの箱階段や坪庭、大正期のタイル張り浴室が残る。",
+        "address": "静岡県湖西市新居町新居1280-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.694619,
+        "lng": 137.559835,
+        "qr_token": "shuin-araimachi-4",
+        "cover_image_url": "/images/araimachi/spot4.png",
+        "f7_fragment": "紀州藩の御用宿も務めた旅籠の、吹き抜け階段と坪庭が伝える旧東海道の旅情。",
+        "f7_full": "「旅籠紀伊国屋資料館」の吹き抜け階段と明かり取りの坪庭が、東海道を往来した旅人たちが羽を休めた宿場の空気を鮮やかに蘇らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "bf4ae91d-6ba2-4da5-8d08-8cf32aaa3e89",
+        "next_spot_name": "菓子処 まんじゅや"
+      },
+      {
+        "id": "bf4ae91d-6ba2-4da5-8d08-8cf32aaa3e89",
+        "name": "菓子処 まんじゅや",
+        "description": "旧東海道新居宿の通りに構える大正十五年創業の老舗和菓子店（9:30〜17:30頃営業、火曜休）。手筒花火にちなんだ銘菓「花火野郎」や「酒まんじゅう」、伝統菓子「すわま」などを揃える。",
+        "address": "静岡県湖西市新居町新居1529",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.694335,
+        "lng": 137.559142,
+        "qr_token": "shuin-araimachi-5",
+        "cover_image_url": "/images/araimachi/spot5.png",
+        "f7_fragment": "大正末期から新居宿で暖簾を守る菓子処で味わう、酒まんじゅうと銘菓「花火野郎」。",
+        "f7_full": "「菓子処 まんじゅや」のふっくらとした酒まんじゅうと街道ゆかりの銘菓が、新居宿の歴史を辿り歩いた旅を温かな甘みで締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1b431328-5b6d-4796-8385-c78be2a9557b",
+    "title": "天日干しの干物と伊豆乃踊子の港・網代を辿る",
+    "name": "天日干しの干物と伊豆乃踊子の港・網代を辿る",
+    "description": "「京大阪に江戸網代」と謳われた天然の良港・静岡県熱海市網代。JR網代駅前の菓子舗 間瀬 網代駅前店から、網代湾を望む大縄公園、天日干しが並ぶひもの銀座の干物屋ふじま、漁師町の阿治古神社を経て、明治五年創業の菓子舗 間瀬 本店へと辿る。",
+    "region": "網代・天日干しのひもの銀座と港町の総鎮守（熱海市）",
+    "area_name": "網代・天日干しのひもの銀座と港町の総鎮守（熱海市）",
+    "cover_image_url": "/images/ajiro/route-eyecatch.png",
+    "imageUrl": "/images/ajiro/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "潮風香るひもの銀座と漁師町の古社、老舗菓子の本店が並ぶ網代で、あなたを惹きつけたのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「菓子舗 間瀬」の網代駅前店と本店を訪ね、銘菓「伊豆乃踊子」と茶室の甘味に癒やされたとき",
+          "description": "明治五年に網代の小さな饅頭屋として始まった老舗が、百五十余年守り続ける伊豆の甘みに心温まった。",
+          "badge_code": "ajiro_mase"
+        },
+        {
+          "key": "B",
+          "text": "「大縄公園」の海辺のベンチで、穏やかな網代湾と初島まで見渡す青い海原の風を吸い込んだとき",
+          "description": "三方を岬と山に守られた天然の良港の静かな波音に、江戸時代の廻船が集った湊の記憶を重ねた。",
+          "badge_code": "ajiro_onawa_park"
+        },
+        {
+          "key": "C",
+          "text": "国道沿いの「干物屋ふじま」で、潮風と太陽の光を浴びて天日干しされる干物の輝きを見たとき",
+          "description": "ハイパー干物クリエイターが塩水濃度と干し時間を極めた、網代ならではの天日干しの技に魅了された。",
+          "badge_code": "ajiro_himono"
+        },
+        {
+          "key": "D",
+          "text": "「阿治古神社」の石段を見上げ、網代の地名の由来となった海の神様と御船祭の伝統を知ったとき",
+          "description": "御神船「両宮丸」を曳き回し鹿島踊を奉納する例大祭の誇りと、海と共に生きる漁師町の篤い信仰に触れた。",
+          "badge_code": "ajiro_ajiko_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "551770f0-732d-4e95-82ab-c3dc7b8b8694",
+        "name": "菓子舗 間瀬 網代駅前店",
+        "description": "JR伊東線・網代駅の改札前に佇む数寄屋造りの和菓子店（9:00〜17:00営業、木曜休）。胡桃入りの白餡を焼き上げた代表銘菓「伊豆乃踊子」や季節の和菓子を揃える。",
+        "address": "静岡県熱海市下多賀170",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.044054,
+        "lng": 139.081806,
+        "qr_token": "shuin-ajiro-1",
+        "cover_image_url": "/images/ajiro/spot1.png",
+        "f7_fragment": "網代駅の目の前で旅人を迎える数寄屋造りの店構えと、胡桃香る銘菓「伊豆乃踊子」。",
+        "f7_full": "「菓子舗 間瀬 網代駅前店」の数寄屋造りの佇まいと銘菓「伊豆乃踊子」が、潮風香る網代の港町歩きを華やかに幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "49791ba6-c3d7-4e9a-8039-58c7a5c4e8a3",
+        "next_spot_name": "大縄公園"
+      },
+      {
+        "id": "49791ba6-c3d7-4e9a-8039-58c7a5c4e8a3",
+        "name": "大縄公園",
+        "description": "網代湾の穏やかな入り江に面した海辺の公園（終日入園自由）。ヤシの木と芝生が続く遊歩道にベンチが設けられ、初島や伊東方面の海岸線を一望できる。",
+        "address": "静岡県熱海市下多賀1714",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.045934,
+        "lng": 139.081343,
+        "qr_token": "shuin-ajiro-2",
+        "cover_image_url": "/images/ajiro/spot2.png",
+        "f7_fragment": "三方を岬と山に抱かれた網代湾の穏やかな海面と、潮風が吹き抜ける海辺の公園。",
+        "f7_full": "「大縄公園」の海辺のベンチから望む穏やかな網代湾と青い海原が、「京大阪に江戸網代」と讃えられた天然の良港の歴史を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5bdd5fd2-ae0d-4b79-89e3-3e510ef9b7dc",
+        "next_spot_name": "干物屋ふじま"
+      },
+      {
+        "id": "5bdd5fd2-ae0d-4b79-89e3-3e510ef9b7dc",
+        "name": "干物屋ふじま",
+        "description": "網代海岸の国道135号（ひもの銀座）沿いに構える干物専門店（9:00〜17:00営業、不定休）。網代の潮風と太陽で天日干しされる色艶の良いアジやサバ、イカの干物が店頭に並ぶ。",
+        "address": "静岡県熱海市網代12-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.044739,
+        "lng": 139.087049,
+        "qr_token": "shuin-ajiro-3",
+        "cover_image_url": "/images/ajiro/spot3.png",
+        "f7_fragment": "網代の潮風と太陽の光を浴びて店頭で輝く、ハイパー干物クリエイターの天日干し。",
+        "f7_full": "「干物屋ふじま」の店頭で潮風と太陽を浴びて輝く天日干しの干物が、漁師町・網代ならではの豊かな食文化の粋を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "2d912385-2971-4bb3-890f-fd1dfd2c57a7",
+        "next_spot_name": "阿治古神社"
+      },
+      {
+        "id": "2d912385-2971-4bb3-890f-fd1dfd2c57a7",
+        "name": "阿治古神社",
+        "description": "網代漁港を見守る網代の産土神（境内参拝自由）。地名の由来とされる阿治古命を祀り、7月の例大祭では御神船「両宮丸」の巡行や熱海市指定無形民俗文化財「鹿島踊」が奉納される。",
+        "address": "静岡県熱海市網代172",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.047106,
+        "lng": 139.091167,
+        "qr_token": "shuin-ajiro-4",
+        "cover_image_url": "/images/ajiro/spot4.png",
+        "f7_fragment": "網代の地名の由来となった海の神を祀り、御船祭の伝統を今に伝える漁師町の鎮守。",
+        "f7_full": "「阿治古神社」の石段と大楠が茂る神域の佇まいが、荒波の海と共に生きてきた網代の漁師たちの誇りと篤い信仰を物語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "460dfb0e-77c5-4e2b-8bce-c64436d66b2c",
+        "next_spot_name": "菓子舗 間瀬 本店"
+      },
+      {
+        "id": "460dfb0e-77c5-4e2b-8bce-c64436d66b2c",
+        "name": "菓子舗 間瀬 本店",
+        "description": "網代漁港近くの街角に暖簾を掲げる明治五年創業の和菓子舗の総本店（9:00〜17:30営業、水曜休）。四季の上生菓子やどら焼き、「伊豆みかん」などを揃え、喫茶室も併設する。",
+        "address": "静岡県熱海市網代400-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.048186,
+        "lng": 139.091308,
+        "qr_token": "shuin-ajiro-5",
+        "cover_image_url": "/images/ajiro/spot5.png",
+        "f7_fragment": "明治五年に網代の地で小さな饅頭屋として始まり、百五十余年の歴史を刻む総本店。",
+        "f7_full": "「菓子舗 間瀬 本店」の落ち着いた暖簾と四季を映す和菓子が、潮風香る網代の港町を巡り歩いた旅を優しい甘みで締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8d76bf8a-abb7-4f3e-88f3-5cf009545d02",
+    "title": "孝子伝説の菊水泉とレトロ駅舎・養老を訪ねる",
+    "name": "孝子伝説の菊水泉とレトロ駅舎・養老を訪ねる",
+    "description": "滝の水が美酒に変わった「養老孝子伝説」と名水が息づく岐阜県養老郡養老町。大正期の木造駅舎が残る養老駅から、体験型アート庭園の養老天命反転地、源丞内ゆかりの養老寺、名水百選の菊水泉と茶屋が並ぶ養老公園 清水を経て、元正天皇を祀る養老神社へと訪ねる。",
+    "region": "養老・天命反転地と元号ゆかりの菊水泉（養老町）",
+    "area_name": "養老・天命反転地と元号ゆかりの菊水泉（養老町）",
+    "cover_image_url": "/images/yoro/route-eyecatch.png",
+    "imageUrl": "/images/yoro/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "平衡感覚を揺さぶる巨大アート庭園と千三百年の名水・孝子伝説が重なる養老で、あなたの心に響いたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「養老天命反転地」のすり鉢状の楕円形のフィールドに立ち、水平と垂直が消えた迷路を身体ごと歩いたとき",
+          "description": "荒川修作とマドリン・ギンズが創り上げた大地のアートの中で、日常の感覚が解き放たれる高揚感を味わった。",
+          "badge_code": "yoro_tenmei_hantenchi"
+        },
+        {
+          "key": "B",
+          "text": "大正八年築のレトロな「養老駅」を見上げ、ホームの梁に揺れる無数の養老ひょうたんに出会ったとき",
+          "description": "百年を超えて旅人を見守る三角屋根の木造駅舎と、孝子伝説ゆかりのひょうたんが織りなす風景に心和んだ。",
+          "badge_code": "yoro_station"
+        },
+        {
+          "key": "C",
+          "text": "孝子・源丞内が開創したと伝わる「養老寺」に参拝し、滝の水を汲んだひょうたんの伝説に触れたとき",
+          "description": "「老いを養う」という元号と地名の由来になった親孝行の物語が、静かな山寺に息づいていることに感動した。",
+          "badge_code": "yoro_yoroji"
+        },
+        {
+          "key": "D",
+          "text": "名水百選「菊水泉（養老公園 清水）」と「養老神社」を訪ね、元正天皇が元号を「養老」と改めた歴史を思ったとき",
+          "description": "千三百年前の行幸から絶えることなく湧き続ける霊水と、モミジに包まれた神域の清らかさに心が洗われた。",
+          "badge_code": "yoro_kikusuisen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ea186e62-2ee2-4e3b-89f9-98b008cef60d",
+        "name": "養老駅",
+        "description": "養老公園の玄関口となる養老鉄道養老線の有人駅（始発〜終電）。大正八年築の三角屋根の木造駅舎が残り、ホームの屋根下には地元特産の無数のひょうたんが吊るされている。",
+        "address": "岐阜県養老郡養老町鷲巣1194-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.28673,
+        "lng": 136.556918,
+        "qr_token": "shuin-yoro-1",
+        "cover_image_url": "/images/yoro/spot1.png",
+        "f7_fragment": "大正八年築の三角屋根の木造駅舎と、ホームの梁に揺れる無数の養老ひょうたん。",
+        "f7_full": "「養老駅」の大正ロマン漂う木造駅舎と風に揺れる無数の養老ひょうたんが、孝子伝説の里を訪れた旅人を温かく迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "a043aa69-58fa-47c4-8f3c-6077de988f2f",
+        "next_spot_name": "養老天命反転地"
+      },
+      {
+        "id": "a043aa69-58fa-47c4-8f3c-6077de988f2f",
+        "name": "養老天命反転地",
+        "description": "養老公園内に広がる約18,000平方メートルの体験型アート庭園（9:00〜17:00開園、火曜休、大人850円）。荒川修作とマドリン・ギンズが手掛けた「楕円形のフィールド」などを歩いて体感できる。",
+        "address": "岐阜県養老郡養老町高林1298-2",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.281976,
+        "lng": 136.550342,
+        "qr_token": "shuin-yoro-2",
+        "cover_image_url": "/images/yoro/spot2.png",
+        "f7_fragment": "水平と垂直を排除した巨大なすり鉢状のフィールドを、自らの身体で歩くアート庭園。",
+        "f7_full": "「養老天命反転地」の色彩豊かなパビリオンとすり鉢状の大地が、五感と平衡感覚を解き放つ独創的な体験を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9e15c90b-8b56-44ed-889c-9183760873fc",
+        "next_spot_name": "養老寺"
+      },
+      {
+        "id": "9e15c90b-8b56-44ed-889c-9183760873fc",
+        "name": "養老寺",
+        "description": "養老公園の渓谷沿いに佇む真宗大谷派の寺院・滝寿山養老寺（境内参拝自由）。養老孝子伝説の主人公・源丞内が開創したと伝わり、境内に源丞内の墓や十一面観世音菩薩を伝える。",
+        "address": "岐阜県養老郡養老町養老公園1276-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.283977,
+        "lng": 136.543278,
+        "qr_token": "shuin-yoro-3",
+        "cover_image_url": "/images/yoro/spot3.png",
+        "f7_fragment": "滝の水が美酒に変わった奇跡を授かった孝子・源丞内が開創したと伝わる古刹。",
+        "f7_full": "「養老寺」の木立に包まれた山門と本堂の静かな佇まいが、老父を想う孝子の奇跡から始まった養老伝説の原点を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "5fc4c203-833d-4d34-86ee-5e1a95dc495a",
+        "next_spot_name": "養老公園 清水"
+      },
+      {
+        "id": "5fc4c203-833d-4d34-86ee-5e1a95dc495a",
+        "name": "養老公園 清水",
+        "description": "名水百選「菊水泉」のすぐそばに佇む老舗茶屋・湧水スポット（湧水見学自由・茶屋は11:30〜16:00頃営業、不定休）。霊泉の散策とともに、炭火で焼く養老焼きだんごや養老サイダーを味わえる。",
+        "address": "岐阜県養老郡養老町養老公園1274",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.282851,
+        "lng": 136.54032,
+        "qr_token": "shuin-yoro-4",
+        "cover_image_url": "/images/yoro/spot4.png",
+        "f7_fragment": "元正天皇ゆかりの名水百選「菊水泉」のそばで、炭火焼きだんごを味わう茶屋。",
+        "f7_full": "「養老公園 清水」のそばに湧き出る名水・菊水泉と香ばしい炭火焼きだんごが、千三百年前の改元の物語と山の恵みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "ef891eea-38eb-4316-8174-28add3669b48",
+        "next_spot_name": "養老神社"
+      },
+      {
+        "id": "ef891eea-38eb-4316-8174-28add3669b48",
+        "name": "養老神社",
+        "description": "菊水泉の上段、養老山の中腹に鎮座する古社（境内参拝自由）。元正天皇・聖武天皇・菅原道真公を祀り、ひょうたん形の絵馬が並ぶモミジの名所としても知られる。",
+        "address": "岐阜県養老郡養老町養老公園1288-1",
+        "prefecture": "岐阜県",
+        "city": "",
+        "lat": 35.282449,
+        "lng": 136.538935,
+        "qr_token": "shuin-yoro-5",
+        "cover_image_url": "/images/yoro/spot5.png",
+        "f7_fragment": "名水・菊水泉の上段に鎮座し、元正天皇と聖武天皇を祀る木立の中の静謐な社殿。",
+        "f7_full": "「養老神社」の巨木に包まれた朱の社殿とひょうたん絵馬が、養老の自然と伝説を訪ね歩いた旅を清らかな祈りで締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
