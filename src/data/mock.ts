@@ -74880,5 +74880,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "451c1995-e865-40de-8f4e-2e6cc5c59ca0",
+    "title": "弘法大師の独鈷の湯と源氏の記憶・修善寺を歩く",
+    "name": "弘法大師の独鈷の湯と源氏の記憶・修善寺を歩く",
+    "description": "弘法大師空海の開湯伝説と、鎌倉幕府二代将軍・源頼家公の歴史が息づく静岡県伊豆市修善寺。夫婦杉が聳える日枝神社から、湯の手水がある福地山 修禅寺、門前の饅頭総本山 源楽、桂川に湧く独鈷の湯を経て、北条政子寄進の指月殿へと歩く。",
+    "region": "修善寺・弘法大師ゆかりの独鈷の湯と源氏史跡（伊豆市）",
+    "area_name": "修善寺・弘法大師ゆかりの独鈷の湯と源氏史跡（伊豆市）",
+    "cover_image_url": "/images/shuzenji/route-eyecatch.png",
+    "imageUrl": "/images/shuzenji/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "桂川のせせらぎと弘法大師の霊泉、鎌倉源氏の史跡が重なる修善寺で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "弘法大師が独鈷杵で岩を砕いて湧出させたと伝わる、桂川の河畔に湯けむりを上げる「独鈷の湯」",
+          "description": "川のせせらぎの真ん中に湧き続ける霊泉と朱色の橋の風景に、千二百年の温泉街の原点を肌で感じた。",
+          "badge_code": "shuzenji_tokkonoyu"
+        },
+        {
+          "key": "B",
+          "text": "温かい温泉が注ぐ手水舎で手を清め、大同二年開創の古刹「福地山 修禅寺」の本堂に参拝したとき",
+          "description": "地名の由来となった名刹の凛とした伽藍と、源氏や北条氏の歴史を伝える境内の空気に背筋が伸びた。",
+          "badge_code": "shuzenji_temple"
+        },
+        {
+          "key": "C",
+          "text": "北条政子が源頼家公の冥福を祈って寄進した「指月殿」と、木立に佇む夫婦杉の「日枝神社」",
+          "description": "ハスの花を手にした釈迦如来坐像と巨樹が守る杜の静けさに、鎌倉時代の悲劇と祈りの深さを想った。",
+          "badge_code": "shuzenji_shigetsuden"
+        },
+        {
+          "key": "D",
+          "text": "修禅寺門前の「饅頭総本山 源楽」で味わう、竹炭の黒い皮に濃厚な黒胡麻餡が詰まった黒饅頭",
+          "description": "せいろから立ち上る湯気と香ばしい黒胡麻の風味が、温泉街のそぞろ歩きに温かな彩りを添えてくれた。",
+          "badge_code": "shuzenji_genraku"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "113af773-62b7-4a71-8aa9-24020bee3ca7",
+        "name": "日枝神社",
+        "description": "修禅寺の東隣に鎮座する古社（境内参拝自由）。かつて修禅寺の鎮守社であり、県指定天然記念物の「一位樫」や樹齢八百年超の「夫婦杉」、源範頼公が幽閉された信功院跡が残る。",
+        "address": "静岡県伊豆市修善寺826",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.971693,
+        "lng": 138.928433,
+        "qr_token": "shuin-shuzenji-1",
+        "cover_image_url": "/images/shuzenji/spot1.png",
+        "f7_fragment": "樹齢八百年を超える夫婦杉が聳え、源範頼公ゆかりの記憶を伝える鎮守の杜。",
+        "f7_full": "「日枝神社」の天を突く夫婦杉と一位樫の巨木が、修善寺温泉の旅の始まりに神秘的な木立の空気と鎌倉の歴史を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "65948e9b-47b2-4d21-8fa4-611c498a383f",
+        "next_spot_name": "修禅寺"
+      },
+      {
+        "id": "65948e9b-47b2-4d21-8fa4-611c498a383f",
+        "name": "修禅寺",
+        "description": "大同二年に弘法大師空海が開創したと伝わる曹洞宗の名刹・福地山修禅寺（境内参拝5:00〜17:00・宝物館は大人300円）。温泉が出る水屋や、源頼家公ゆかりの宝物で知られる。",
+        "address": "静岡県伊豆市修善寺964",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.971454,
+        "lng": 138.927559,
+        "qr_token": "shuin-shuzenji-2",
+        "cover_image_url": "/images/shuzenji/spot2.png",
+        "f7_fragment": "弘法大師空海が開創し、温かい温泉が注ぐ手水舎が旅人を迎える曹洞宗の古刹。",
+        "f7_full": "「修禅寺」の風格ある山門と温泉が湧き出る手水舎の湯気が、千二百年の歴史を刻む伊豆の名刹の気品を静かに伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "82f3b53f-27bd-40c4-87e8-e7b147123c75",
+        "next_spot_name": "饅頭総本山 源楽 修善寺本店"
+      },
+      {
+        "id": "82f3b53f-27bd-40c4-87e8-e7b147123c75",
+        "name": "饅頭総本山 源楽 修善寺本店",
+        "description": "修禅寺の山門前に店を構える和菓子店（9:30〜16:30頃営業、無休）。竹炭を練り込んだ黒い皮で濃厚な黒胡麻餡を包んだ「源楽胡麻まんじゅう」などの蒸し饅頭が名物。",
+        "address": "静岡県伊豆市修善寺967",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.970691,
+        "lng": 138.927492,
+        "qr_token": "shuin-shuzenji-3",
+        "cover_image_url": "/images/shuzenji/spot3.png",
+        "f7_fragment": "修禅寺の門前で湯気を上げる、竹炭の皮に濃厚な黒胡麻餡を包んだ名物の黒饅頭。",
+        "f7_full": "「饅頭総本山 源楽 修善寺本店」のせいろから立ち上る湯気と香ばしい黒胡麻まんじゅうが、門前歩きの途中に温かな甘みを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7f47b58-c66a-4b16-8316-65cc3641aad2",
+        "next_spot_name": "独鈷の湯"
+      },
+      {
+        "id": "c7f47b58-c66a-4b16-8316-65cc3641aad2",
+        "name": "独鈷の湯",
+        "description": "修善寺温泉の中央を流れる桂川の河畔に湧く、修善寺温泉発祥の霊湯（終日見学自由・入浴および足湯不可）。弘法大師が独鈷杵で岩を打ち砕いて湧出させたと伝わる。",
+        "address": "静岡県伊豆市修善寺943-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.970304,
+        "lng": 138.927542,
+        "qr_token": "shuin-shuzenji-4",
+        "cover_image_url": "/images/shuzenji/spot4.png",
+        "f7_fragment": "弘法大師空海が独鈷杵で岩を砕いて湧出させたと伝わる、桂川河畔の発祥の湯。",
+        "f7_full": "「独鈷の湯」の岩造りの湯船から立ち上る湯けむりと桂川のせせらぎが、伊豆最古の温泉場の原風景を鮮やかに浮かび上がらせてくれる。",
+        "is_final": false,
+        "next_spot_id": "4fa2c53f-bc3a-42df-86b6-9d03dd7d0574",
+        "next_spot_name": "指月殿"
+      },
+      {
+        "id": "4fa2c53f-bc3a-42df-86b6-9d03dd7d0574",
+        "name": "指月殿",
+        "description": "鹿山の麓に建つ伊豆最古級の木造建築（境内見学自由）。非業の死を遂げた鎌倉幕府二代将軍・源頼家公の冥福を祈り母・北条政子が寄進した経堂で、脇に頼家公の墓が佇む。",
+        "address": "静岡県伊豆市修善寺934",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.969353,
+        "lng": 138.92802,
+        "qr_token": "shuin-shuzenji-5",
+        "cover_image_url": "/images/shuzenji/spot5.png",
+        "f7_fragment": "源頼家公の冥福を祈り北条政子が寄進した、伊豆最古級の木造経堂と墓塔群。",
+        "f7_full": "「指月殿」の古雅な木造経堂と木立に佇む源頼家公の墓塔が、修善寺の湯の町を巡り歩いた旅を鎌倉歴史ロマンの余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "21e95b77-b116-4c38-89a6-4989bcc60f8a",
+    "title": "パン祖の代官屋敷と源頼朝旗揚げの地・韮山へ",
+    "name": "パン祖の代官屋敷と源頼朝旗揚げの地・韮山へ",
+    "description": "源頼朝公が再起を図った蛭ヶ島と、幕末の代官・江川太郎左衛門英龍公の屋敷が息づく静岡県伊豆の国市韮山。伊豆箱根鉄道の韮山駅から、蛭ヶ島茶屋、後北条氏ゆかりの韮山城跡、国重文の江川邸を経て、自然酵母パンのビオ代官へと巡る。",
+    "region": "韮山・源頼朝公の蛭ヶ島と重要文化財江川邸（伊豆の国市）",
+    "area_name": "韮山・源頼朝公の蛭ヶ島と重要文化財江川邸（伊豆の国市）",
+    "cover_image_url": "/images/nirayama/route-eyecatch.png",
+    "imageUrl": "/images/nirayama/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "源頼朝公の配流地と北条早雲の山城、幕末代官の巨大屋敷が並ぶ韮山で、あなたの目を惹いたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「江川邸」の主屋土間から見上げる、釘を使わずに組み上げられた壮大な小屋組と「パン祖の碑」",
+          "description": "四百年を超えて屋敷を支えるケヤキの柱と、幕末の海防とパン文化を切り拓いた江川坦庵公の先見性に圧倒された。",
+          "badge_code": "nirayama_egawatei"
+        },
+        {
+          "key": "B",
+          "text": "源頼朝公と北条政子の夫婦像が富士山を望む「蛭ヶ島公園」と、囲炉裏のある「蛭ヶ島茶屋」",
+          "description": "二十年の配流生活を経て平家打倒の旗を揚げた若き頼朝公と政子の絆に、鎌倉幕府誕生のドラマを重ねた。",
+          "badge_code": "nirayama_hirugashima"
+        },
+        {
+          "key": "C",
+          "text": "北条早雲公が伊豆支配の拠点として築き、城池の水面に緑の丘陵を映す国史跡「韮山城跡」",
+          "description": "小田原征伐の大軍を相手に百日近く籠城し守り抜いた戦国屈指の名城の縄張りと、静かな水辺の対比が印象的だった。",
+          "badge_code": "nirayama_castle_ruins"
+        },
+        {
+          "key": "D",
+          "text": "代官屋敷の一角に佇む「ビオ代官」で、パン祖のまち・韮山ならではの自然酵母パンを選んだとき",
+          "description": "日本で初めて兵糧パンを焼いた江川英龍公の物語が、現代の香ばしい焼きたてパンへと繋がっていることに心躍った。",
+          "badge_code": "nirayama_bio_daikan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "72066e7a-1666-4c21-8031-d87554dfcbd4",
+        "name": "韮山駅",
+        "description": "伊豆箱根鉄道駿豆線の有人駅（始発〜終電）。源頼朝公ゆかりの蛭ヶ島や国史跡・韮山城跡、重要文化財・江川邸など、中世から幕末までの史跡巡りの玄関口。",
+        "address": "静岡県伊豆の国市四日町794-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.053232,
+        "lng": 138.945429,
+        "qr_token": "shuin-nirayama-1",
+        "cover_image_url": "/images/nirayama/spot1.png",
+        "f7_fragment": "源頼朝公の旗揚げ地と幕末の代官屋敷が点在する、歴史の里・韮山の玄関口。",
+        "f7_full": "「韮山駅」の穏やかなホームと北方に望む富士山の姿が、鎌倉武士と幕末代官の足跡が重なる伊豆の国市の旅を静かに導いてくれる。",
+        "is_final": false,
+        "next_spot_id": "c10de0a3-2d3d-4408-8aae-8d352a77bc6b",
+        "next_spot_name": "蛭ヶ島茶屋"
+      },
+      {
+        "id": "c10de0a3-2d3d-4408-8aae-8d352a77bc6b",
+        "name": "蛭ヶ島茶屋",
+        "description": "源頼朝公の配流地跡である「蛭ヶ島公園」内に佇む茶屋・休憩処（9:00〜17:00営業、無休）。頼朝公と北条政子の夫婦像を見学しながら、囲炉裏のある店内で甘味や軽食を楽しめる。",
+        "address": "静岡県伊豆の国市四日町17-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.051658,
+        "lng": 138.951602,
+        "qr_token": "shuin-nirayama-2",
+        "cover_image_url": "/images/nirayama/spot2.png",
+        "f7_fragment": "源頼朝公と北条政子の夫婦像が立つ蛭ヶ島公園で、旅人を迎える囲炉裏の茶屋。",
+        "f7_full": "「蛭ヶ島茶屋」が佇む蛭ヶ島公園の緑と頼朝・政子の夫婦像が、鎌倉幕府創設へと向かった若き日の誓いを今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e03a073b-ea6a-4a12-8f80-302399277d98",
+        "next_spot_name": "韮山城跡"
+      },
+      {
+        "id": "e03a073b-ea6a-4a12-8f80-302399277d98",
+        "name": "韮山城跡",
+        "description": "北条早雲（伊勢盛時）公が築き、約百年にわたり後北条氏の伊豆支配の拠点となった国指定史跡の山城跡（散策自由）。麓の城池や土塁、空堀の遺構が残る。",
+        "address": "静岡県伊豆の国市韮山韮山438-3",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.053648,
+        "lng": 138.955578,
+        "qr_token": "shuin-nirayama-3",
+        "cover_image_url": "/images/nirayama/spot3.png",
+        "f7_fragment": "北条早雲公が伊豆支配の拠点として築き、城池に緑の丘を映す国史跡の山城跡。",
+        "f7_full": "「韮山城跡」の静かな城池と緑深い本丸の丘陵が、戦国時代の幕を開けた北条早雲公の気概と百日籠城の記憶を鮮やかに浮かび上がらせてくれる。",
+        "is_final": false,
+        "next_spot_id": "da042803-f491-4a29-8b2b-e5fcd1dc9d10",
+        "next_spot_name": "江川邸"
+      },
+      {
+        "id": "da042803-f491-4a29-8b2b-e5fcd1dc9d10",
+        "name": "江川邸",
+        "description": "江戸時代の韮山代官・江川家の屋敷である国指定重要文化財（9:00〜16:30開館・水曜15:00まで、大人750円）。壮大な小屋組の主屋や米蔵、三十六代英龍公ゆかりの「パン祖の碑」が残る。",
+        "address": "静岡県伊豆の国市韮山韮山1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.054583,
+        "lng": 138.959275,
+        "qr_token": "shuin-nirayama-4",
+        "cover_image_url": "/images/nirayama/spot4.png",
+        "f7_fragment": "釘を使わない壮大な小屋組の主屋と「パン祖の碑」が伝わる国重要文化財の代官屋敷。",
+        "f7_full": "「江川邸」の重厚な茅葺き大屋根と土間に連なるケヤキの柱が、幕末の日本を支えた韮山代官・江川坦庵公の先見と伝統の重みを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "2ce246b9-3c7c-4d99-82fb-d2e92ae42ce3",
+        "next_spot_name": "ビオ代官"
+      },
+      {
+        "id": "2ce246b9-3c7c-4d99-82fb-d2e92ae42ce3",
+        "name": "ビオ代官",
+        "description": "代官屋敷敷地内に店を構える自然酵母パンの店（10:30〜16:30頃営業・売切次第終了、月・火曜休）。パン祖・江川英龍公ゆかりの韮山で、国産小麦と自家製酵母のパンを焼き上げる。",
+        "address": "静岡県伊豆の国市韮山山木142-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.06032,
+        "lng": 138.958904,
+        "qr_token": "shuin-nirayama-5",
+        "cover_image_url": "/images/nirayama/spot5.png",
+        "f7_fragment": "パン祖・江川英龍公ゆかりの韮山で、自家製自然酵母のパンを焼き上げるベーカリー。",
+        "f7_full": "「ビオ代官」の香ばしい自然酵母パンと歴史ある屋敷の佇まいが、パン祖のまち・韮山を巡り歩いた旅を豊かな小麦の香りで締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "890354af-0faf-42cd-8ba3-9a3ccda3e1c7",
+    "title": "なぜ河津に一本の原木から桜と大噴湯が息づくのか",
+    "name": "なぜ河津に一本の原木から桜と大噴湯が息づくのか",
+    "description": "早咲きの河津桜の発祥木と、地上約三十メートルまで自噴する峰温泉が息づく静岡県賀茂郡河津町。自家焙煎珈琲のcafe AILANAから、樹齢千年超の大楠が聳える川津来宮神社、河津桜原木、老舗菓子処の港月堂を経て、峰温泉大噴湯公園へと巡る。",
+    "region": "河津・千年大楠の川津来宮神社と峰温泉大噴湯（河津町）",
+    "area_name": "河津・千年大楠の川津来宮神社と峰温泉大噴湯（河津町）",
+    "cover_image_url": "/images/kawazu/route-eyecatch.png",
+    "imageUrl": "/images/kawazu/route-eyecatch.png",
+    "category": "自然・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "樹齢千年の大楠と河津桜の原木、空へ噴き上がる大噴湯が並ぶ河津で、あなたの胸を打ったのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「峰温泉大噴湯公園」で、地上約三十メートルの高さまで白い湯けむりを上げて噴き上がる自噴泉を見たとき",
+          "description": "大正十五年から絶えることなく噴き上がり続ける熱湯の迫力と、源泉で作る温泉卵の温もりに感動した。",
+          "badge_code": "kawazu_daifunto"
+        },
+        {
+          "key": "B",
+          "text": "「川津来宮神社」の社殿奥で、樹齢千年を超える国の天然記念物「大楠」の巨幹と向き合ったとき",
+          "description": "幹回り十四メートルの大樹が放つ圧倒的な生命力と、受け継がれる奇祭「鳥精進・酒精進」の伝統に畏敬を覚えた。",
+          "badge_code": "kawazu_kinomiya_camphor"
+        },
+        {
+          "key": "C",
+          "text": "河津川で見つけられた一本の苗木から全国の河津桜の親となった「河津桜原木」を見上げたとき",
+          "description": "偶然見つけられた一本の若木が、半世紀を経て日本中に春の喜びを届ける名木になった物語に胸が熱くなった。",
+          "badge_code": "kawazu_sakura_origin"
+        },
+        {
+          "key": "D",
+          "text": "自家焙煎の「cafe AILANA」の珈琲と、昭和二十年創業「港月堂」の看板銘菓「チーズどらやき」",
+          "description": "香り高いスペシャルティコーヒーと、甘さと塩味が調和する老舗のどら焼きが、河津の旅を豊かに彩ってくれた。",
+          "badge_code": "kawazu_sweets_coffee"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "04e06a1a-aaab-41a9-85ee-d91ba1e149a4",
+        "name": "cafe AILANA",
+        "description": "河津町笹原に佇む自家焙煎スペシャルティコーヒーのカフェ（10:00〜17:00営業、火〜木曜休）。浅煎りから深煎りまで揃うハンドドリップ珈琲や、地元卵の日替わりシフォンケーキを味わえる。",
+        "address": "静岡県賀茂郡河津町笹原64-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.750417,
+        "lng": 138.992857,
+        "qr_token": "shuin-kawazu-1",
+        "cover_image_url": "/images/kawazu/spot1.png",
+        "f7_fragment": "自家焙煎のスペシャルティコーヒーと、地元卵の手作りシフォンケーキが香るカフェ。",
+        "f7_full": "「cafe AILANA」の丁寧に淹れられた自家焙煎珈琲とふんわり焼き上げたシフォンケーキが、河津の里を巡る旅を心地よく幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "07a1ee42-52a1-4559-8daa-18cdc22bb4ed",
+        "next_spot_name": "川津来宮神社"
+      },
+      {
+        "id": "07a1ee42-52a1-4559-8daa-18cdc22bb4ed",
+        "name": "川津来宮神社",
+        "description": "杉桙別命を祀る河津の式内社（境内参拝自由・授与所9:00〜16:00頃）。国指定天然記念物の推定樹齢千年超の御神木「大楠」が聳え、10月の例大祭「鳥精進・酒精進」で知られる。",
+        "address": "静岡県賀茂郡河津町田中154",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.75413,
+        "lng": 138.989153,
+        "qr_token": "shuin-kawazu-2",
+        "cover_image_url": "/images/kawazu/spot2.png",
+        "f7_fragment": "推定樹齢千年を超える国の天然記念物「大楠」が聳え立つ、河津の由緒ある古社。",
+        "f7_full": "「川津来宮神社」の社殿奥に聳える樹齢千年超の大楠の巨幹が、太古から受け継がれてきた伊豆の自然信仰と圧倒的な生命力を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "1f6d4536-c7b4-4d91-8018-52de5616b668",
+        "next_spot_name": "河津桜原木"
+      },
+      {
+        "id": "1f6d4536-c7b4-4d91-8018-52de5616b668",
+        "name": "河津桜原木",
+        "description": "飯田家の庭先に立つ「河津桜」の発祥木（屋外見学自由）。昭和三十年頃に河津川沿いで発見された一本の苗木が育った町指定天然記念物の原木で、全国の河津桜のルーツ。",
+        "address": "静岡県賀茂郡河津町田中212-2",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.756312,
+        "lng": 138.989124,
+        "qr_token": "shuin-kawazu-3",
+        "cover_image_url": "/images/kawazu/spot3.png",
+        "f7_fragment": "河津川沿いで見つけられた一本の苗木から、全国の河津桜の親となった発祥の原木。",
+        "f7_full": "「河津桜原木」の堂々と枝を広げる姿が、偶然見つけられた一本の苗木から全国へと広がった早咲き桜の奇跡の物語を静かに語ってくれる。",
+        "is_final": false,
+        "next_spot_id": "e02824f5-2ba3-4803-8b02-f58ca5d175bb",
+        "next_spot_name": "港月堂"
+      },
+      {
+        "id": "e02824f5-2ba3-4803-8b02-f58ca5d175bb",
+        "name": "港月堂",
+        "description": "峰温泉エリアに店を構える昭和二十年創業の老舗和洋菓子店（9:00〜17:00営業、水曜休）。特製クリームチーズを挟んだ名物「チーズどらやき」や河津桜ゆかりの銘菓が揃う。",
+        "address": "静岡県賀茂郡河津町峰495",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.756245,
+        "lng": 138.983543,
+        "qr_token": "shuin-kawazu-4",
+        "cover_image_url": "/images/kawazu/spot4.png",
+        "f7_fragment": "昭和二十年創業の老舗が焼き上げる、塩気あるクリームチーズ入りの名物どら焼き。",
+        "f7_full": "「港月堂」のふんわりとした皮と特製クリームチーズが調和する「チーズどらやき」が、温泉街の散策に心和む甘みを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "9032cc49-90a1-4826-85f3-500808354590",
+        "next_spot_name": "峰温泉大噴湯公園"
+      },
+      {
+        "id": "9032cc49-90a1-4826-85f3-500808354590",
+        "name": "峰温泉大噴湯公園",
+        "description": "大正十五年から自噴し続ける東洋屈指の間欠泉・大噴湯を擁する公園（9:00〜16:00開園、火・金曜休、無料）。1時間おきに地上約30mまで熱湯が噴き上がり、足湯や温泉卵作りも楽しめる。",
+        "address": "静岡県賀茂郡河津町峰446-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.757294,
+        "lng": 138.982688,
+        "qr_token": "shuin-kawazu-5",
+        "cover_image_url": "/images/kawazu/spot5.png",
+        "f7_fragment": "大正末期から絶えず湧き続け、地上約三十メートルまで白い湯柱を上げる大噴湯。",
+        "f7_full": "「峰温泉大噴湯公園」の青空へ豪快に噴き上がる白い湯柱と湯けむりが、河津の自然と名木を巡り歩いた旅を躍動感あふれる感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3b1d5993-e66b-44ab-89fb-a22cc828696a",
+    "title": "雛のつるし飾りと金目鯛の港町・伊豆稲取を辿る",
+    "name": "雛のつるし飾りと金目鯛の港町・伊豆稲取を辿る",
+    "description": "娘の成長を願う「雛のつるし飾り」の伝統と、一本釣りの「稲取キンメ」が水揚げされる港町・静岡県賀茂郡東伊豆町稲取。百十八段の石段が続く素盞鳴神社から、伊豆稲取駅、石臼挽きの手打そば 誇宇耶、文化公園雛の館を経て、漁港前の網元料理 徳造丸 本店へと辿る。",
+    "region": "伊豆稲取・百十八段の素盞鳴神社と雛のつるし飾り・金目鯛の港（東伊豆町）",
+    "area_name": "伊豆稲取・百十八段の素盞鳴神社と雛のつるし飾り・金目鯛の港（東伊豆町）",
+    "cover_image_url": "/images/inatori/route-eyecatch.png",
+    "imageUrl": "/images/inatori/route-eyecatch.png",
+    "category": "グルメ・食文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "百十八段の石段と雛のつるし飾り、金目鯛の漁港が息づく伊豆稲取で、あなたを惹きつけたのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「文化公園雛の館」で、娘の幸せを願って着物の端切れで一針ずつ縫われた色鮮やかな「雛のつるし飾り」を見たとき",
+          "description": "桃や猿っ子、這い子人形など一つひとつの細工に込められた母や祖母の深い愛情と手仕事の美しさに心打たれた。",
+          "badge_code": "inatori_tsurushibina"
+        },
+        {
+          "key": "B",
+          "text": "高台の「素盞鳴神社」へと真っ直ぐ伸びる百十八段の石段を上り、眼下に広がる青い相模灘と稲取の港を一望したとき",
+          "description": "早春には日本屈指の雛段飾りとなる急な石段と、海を見守ってきた港町の総鎮守の開放感に胸がすく思いがした。",
+          "badge_code": "inatori_susanoo_shrine"
+        },
+        {
+          "key": "C",
+          "text": "「伊豆稲取駅」の築城石を見学し、店内の石臼で自家製粉する「手打そば 誇宇耶」で香り高い手打ち蕎麦を味わったとき",
+          "description": "海と山の斜面に広がる稲取の町を歩き、職人が丹念に打ち上げた蕎麦の豊かな香りと喉ごしに癒やされた。",
+          "badge_code": "inatori_kouya_soba"
+        },
+        {
+          "key": "D",
+          "text": "稲取漁港前の「網元料理 徳造丸 本店」で、一本釣りの「稲取キンメ」と秘伝の煮汁が織りなす港町の食文化に触れたとき",
+          "description": "日戻り漁で水揚げされる金目鯛の輝きと、大正十五年創業の網元ならではの活気あふれる港の空気を満喫した。",
+          "badge_code": "inatori_kinmedai"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c36fb370-7db1-4f3d-8ab9-f88f4d07c187",
+        "name": "素盞鳴神社",
+        "description": "稲取の港を見下ろす高台に鎮座する総鎮守（境内参拝自由・授与所9:00〜17:00頃）。元和三年創建と伝わり、本殿へと続く118段の石段は早春の「雛段飾り」の舞台として名高い。",
+        "address": "静岡県賀茂郡東伊豆町稲取15",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.777222,
+        "lng": 139.044106,
+        "qr_token": "shuin-inatori-1",
+        "cover_image_url": "/images/inatori/spot1.png",
+        "f7_fragment": "百十八段の石段が本殿へと真っ直ぐ伸び、青い相模灘と稲取の港を一望する古社。",
+        "f7_full": "「素盞鳴神社」の百十八段の石段と眼下に広がる相模灘の青い海原が、坂の港町・伊豆稲取を巡る旅を爽快な眺めで幕開けてくれる。",
+        "is_final": false,
+        "next_spot_id": "b279f849-8042-46bf-82b3-fe1dccf9d790",
+        "next_spot_name": "伊豆稲取駅"
+      },
+      {
+        "id": "b279f849-8042-46bf-82b3-fe1dccf9d790",
+        "name": "伊豆稲取駅",
+        "description": "昭和三十六年に開業した伊豆急行線の有人駅（始発〜終電）。雛のつるし飾りと金目鯛の町・稲取の玄関口であり、駅前には江戸城築城石のモニュメントが据えられている。",
+        "address": "静岡県賀茂郡東伊豆町稲取1993",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.774303,
+        "lng": 139.037103,
+        "qr_token": "shuin-inatori-2",
+        "cover_image_url": "/images/inatori/spot2.png",
+        "f7_fragment": "江戸城築城石のモニュメントと雛のつるし飾りが旅人を迎える、稲取温泉の玄関口。",
+        "f7_full": "「伊豆稲取駅」に飾られた雛のつるし飾りと築城石のモニュメントが、海と山の斜面に広がる港町の歴史を旅人に温かく伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "4887691d-cf0d-4275-8b25-b75078a6d538",
+        "next_spot_name": "手打そば 誇宇耶"
+      },
+      {
+        "id": "4887691d-cf0d-4275-8b25-b75078a6d538",
+        "name": "手打そば 誇宇耶",
+        "description": "国道135号沿いに構える自家製粉の手打ち蕎麦処（11:00〜20:00営業、木曜休）。国内産の玄蕎麦を店内の石臼で挽き、伊豆の水で打ち上げる香り高い蕎麦や天ぷらを味わえる。",
+        "address": "静岡県賀茂郡東伊豆町稲取1940-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.768188,
+        "lng": 139.033363,
+        "qr_token": "shuin-inatori-3",
+        "cover_image_url": "/images/inatori/spot3.png",
+        "f7_fragment": "厳選した国産玄蕎麦を店内の石臼で自家製粉し、伊豆の水で打ち上げる手打ち蕎麦処。",
+        "f7_full": "「手打そば 誇宇耶」の石臼挽きならではの豊かな蕎麦の香りと瑞々しい喉ごしが、坂道の多い稲取散策の足取りを心地よく支えてくれる。",
+        "is_final": false,
+        "next_spot_id": "b1f41fdd-1346-4221-8bb1-ec3603d5ef00",
+        "next_spot_name": "文化公園雛の館"
+      },
+      {
+        "id": "b1f41fdd-1346-4221-8bb1-ec3603d5ef00",
+        "name": "文化公園雛の館",
+        "description": "稲取発祥の「雛のつるし飾り」を展示する文化施設（季節開館9:00〜16:30頃、大人500円・公園と足湯は散策自由）。巨大なジャンボつるし飾りや繊細な手仕事の細工を見学できる。",
+        "address": "静岡県賀茂郡東伊豆町稲取1729",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.768128,
+        "lng": 139.038589,
+        "qr_token": "shuin-inatori-4",
+        "cover_image_url": "/images/inatori/spot4.png",
+        "f7_fragment": "娘や孫の健やかな成長を願い、着物の端切れで一針ずつ縫い上げられた雛のつるし飾り。",
+        "f7_full": "「文化公園雛の館」を彩る無数の雛のつるし飾りと端切れの細工が、江戸時代から稲取の母たちが紡いできた深い慈しみを伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "c7514822-94e1-44cb-8cd5-5c3d90719705",
+        "next_spot_name": "網元料理 徳造丸 本店"
+      },
+      {
+        "id": "c7514822-94e1-44cb-8cd5-5c3d90719705",
+        "name": "網元料理 徳造丸 本店",
+        "description": "稲取漁港の目の前に構える大正十五年創業の網元料理・海産物店（平日9:30〜16:45・土日祝10:30〜20:30営業、木曜休）。名物「稲取キンメ」の姿煮や刺身、秘伝の煮汁などの土産が揃う。",
+        "address": "静岡県賀茂郡東伊豆町稲取798",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 34.770769,
+        "lng": 139.043548,
+        "qr_token": "shuin-inatori-5",
+        "cover_image_url": "/images/inatori/spot5.png",
+        "f7_fragment": "稲取漁港の目の前で大正十五年から暖簾を守り、名物「稲取キンメ」を届ける網元料理店。",
+        "f7_full": "「網元料理 徳造丸 本店」の秘伝の煮汁で炊き上げた金目鯛と漁港の潮風が、伊豆稲取の伝統と味覚を辿った旅を贅沢な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6dcc8b00-fbfd-42c5-80bd-543e6c13d5dd",
+    "title": "信長公出陣の清洲城と三英傑の古社・清洲を訪ねる",
+    "name": "信長公出陣の清洲城と三英傑の古社・清洲を訪ねる",
+    "description": "織田信長公が桶狭間の戦いへ出陣し、天下統一への礎を築いた尾張の中心地・愛知県清須市。老舗和菓子処の御菓子司 菊花堂から、三英傑ゆかりの清洲山王宮 日吉神社、五条川に朱の大手橋が架かる清洲城、清洲ふるさとのやかたを経て、本丸跡の清洲古城跡公園へと訪ねる。",
+    "region": "清洲・織田信長公天下布武の清洲城と三英傑の日吉神社（清須市）",
+    "area_name": "清洲・織田信長公天下布武の清洲城と三英傑の日吉神社（清須市）",
+    "cover_image_url": "/images/kiyosu/route-eyecatch.png",
+    "imageUrl": "/images/kiyosu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "五条川に映る朱の大手橋と清洲城、三英傑の記憶が息づく清洲で、あなたの心に響いたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "五条川に架かる朱塗りの大手橋を渡り、桶狭間への出陣の地「清洲城」の天主閣を見上げたとき",
+          "description": "若き織田信長公が十年間居城とした城の姿と、最上階から見渡す尾張平野の広がりに戦国ロマンを感じた。",
+          "badge_code": "kiyosu_castle"
+        },
+        {
+          "key": "B",
+          "text": "かつての本丸跡である「清洲古城跡公園」の木立に立ち、「清須越」で名古屋へ移った巨大城下町を想ったとき",
+          "description": "信長公を祀る小社と城址碑の静けさの中に、清洲会議や都市丸ごとの大移転という歴史のうねりを体感した。",
+          "badge_code": "kiyosu_honmaru_ruins"
+        },
+        {
+          "key": "C",
+          "text": "信長公の戦勝祈願と秀吉公誕生の伝承が息づく「清洲山王宮 日吉神社」で、神猿像と子産石に出会ったとき",
+          "description": "三英傑すべてと深い縁を持つ古社の境内で、母・大政所の祈りと日吉丸の物語に心が温まった。",
+          "badge_code": "kiyosu_hiyoshi_shrine"
+        },
+        {
+          "key": "D",
+          "text": "門前の老舗「御菓子司 菊花堂」で、織田木瓜の家紋を象った代表銘菓「信長もなか」を手に取ったとき",
+          "description": "香ばしい最中種と上品な粒餡の味わいに、城下町・清洲の歴史を和菓子で守り継ぐ職人の誇りを感じた。",
+          "badge_code": "kiyosu_kikkado"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a7e92db3-0067-483e-854e-97c6fc35a90e",
+        "name": "御菓子司 菊花堂",
+        "description": "日吉神社門前の旧美濃路近くに店を構える老舗和菓子店（9:00〜18:00頃営業、不定休）。織田家の木瓜紋を象った最中「信長もなか」や清洲ゆかりの銘菓を揃える。",
+        "address": "愛知県清須市清洲2257-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.20909,
+        "lng": 136.842485,
+        "qr_token": "shuin-kiyosu-1",
+        "cover_image_url": "/images/kiyosu/spot1.png",
+        "f7_fragment": "織田家の木瓜紋を象った代表銘菓「信長もなか」を伝える、城下町・清洲の老舗。",
+        "f7_full": "「御菓子司 菊花堂」の香ばしい「信長もなか」と城下町の風情が、天下布武の出発点・清洲を巡る旅の始まりを華やかに彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "8817de82-8295-4ff0-8267-1b8b5bfb8aef",
+        "next_spot_name": "清洲山王宮 日吉神社"
+      },
+      {
+        "id": "8817de82-8295-4ff0-8267-1b8b5bfb8aef",
+        "name": "清洲山王宮 日吉神社",
+        "description": "天安元年勧請と伝わる古社（境内参拝自由・授与所9:00〜16:00）。織田信長公の戦勝祈願や、豊臣秀吉公の母・大政所の子授け祈願の伝承が残り、神猿像や子産石で知られる。",
+        "address": "愛知県清須市清洲2272",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.21015,
+        "lng": 136.842839,
+        "qr_token": "shuin-kiyosu-2",
+        "cover_image_url": "/images/kiyosu/spot2.png",
+        "f7_fragment": "信長公の戦勝祈願と秀吉公誕生の伝承が息づく、神猿が守る三英傑ゆかりの古社。",
+        "f7_full": "「清洲山王宮 日吉神社」の神猿像と緑豊かな境内が、信長公と秀吉公の運命が交差した尾張・清洲の深い歴史ロマンを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "0b8ef2ff-923b-4379-8a17-ed2a0628180f",
+        "next_spot_name": "清洲城"
+      },
+      {
+        "id": "0b8ef2ff-923b-4379-8a17-ed2a0628180f",
+        "name": "清洲城",
+        "description": "織田信長公が桶狭間の戦いへ出陣した居城を再現した三層四階の天主閣（9:00〜16:30開館、月曜休、大人400円）。五条川に架かる朱塗りの大手橋や枯山水庭園「御園」が見どころ。",
+        "address": "愛知県清須市朝日城屋敷1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.216565,
+        "lng": 136.843592,
+        "qr_token": "shuin-kiyosu-3",
+        "cover_image_url": "/images/kiyosu/spot3.png",
+        "f7_fragment": "五条川に朱塗りの大手橋を映し、織田信長公の天下取りの出発点を伝える天主閣。",
+        "f7_full": "「清洲城」の凛々しい天主閣と五条川に架かる朱塗りの大手橋が、桶狭間へと駆け抜けた若き織田信長公の気概を鮮やかに蘇らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "a849acc9-18f1-44c3-846d-869eadc4889e",
+        "next_spot_name": "清洲ふるさとのやかた"
+      },
+      {
+        "id": "a849acc9-18f1-44c3-846d-869eadc4889e",
+        "name": "清洲ふるさとのやかた",
+        "description": "清洲城の対岸・清洲公園隣に建つ観光休憩処・売店（9:00〜17:00開館、月曜休、無料）。御城印や信長公・濃姫ゆかりの土産物を揃え、無料休憩スペースを併設する。",
+        "address": "愛知県清須市清洲古城479-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.217494,
+        "lng": 136.842144,
+        "qr_token": "shuin-kiyosu-4",
+        "cover_image_url": "/images/kiyosu/spot4.png",
+        "f7_fragment": "五条川の畔で清洲城を望みながら、城下町の土産選びと休息を楽しめる観光処。",
+        "f7_full": "「清洲ふるさとのやかた」の穏やかな休憩処と清洲公園の信長公・濃姫像が、川風吹く城跡散策の途中に心和むひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "75ea905a-d56d-4a01-87d3-9a6b4d3afd3d",
+        "next_spot_name": "清洲古城跡公園"
+      },
+      {
+        "id": "75ea905a-d56d-4a01-87d3-9a6b4d3afd3d",
+        "name": "清洲古城跡公園",
+        "description": "かつての清洲城本丸跡に整備された歴史公園（終日入園自由）。清洲城址の石碑や織田信長公を祀る小社が建ち、清洲会議や「清須越」の歴史を今に伝える。",
+        "address": "愛知県清須市清洲古城448",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.217993,
+        "lng": 136.841434,
+        "qr_token": "shuin-kiyosu-5",
+        "cover_image_url": "/images/kiyosu/spot5.png",
+        "f7_fragment": "かつての清洲城本丸跡の木立に、信長公を祀る小社と城址碑が佇む歴史公園。",
+        "f7_full": "「清洲古城跡公園」の深い木立と信長公を祀る小社が、天下布武の城下町を巡り歩いた旅を静謐な歴史の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
