@@ -14,6 +14,7 @@ import {
   LocateFixed,
   Maximize2,
   X,
+  List,
 } from "lucide-react";
 import { getDistance } from "geolib";
 import { useAuth } from "@/context/AuthContext";
@@ -260,6 +261,7 @@ interface RouteMapUIProps {
   rally: any;
   spots: RouteSpot[];
   activeSpotId: string | null;
+  initialSpotId?: string | null;
   groupId: string | null;
   groupMembers?: any[];
   memberLatestStamps?: Record<string, string>;
@@ -271,6 +273,7 @@ export default function RouteMapUI({
   rally,
   spots,
   activeSpotId,
+  initialSpotId = null,
   groupId,
   groupMembers = [],
   memberLatestStamps = {},
@@ -294,7 +297,7 @@ export default function RouteMapUI({
     navArrowAngle,
     distanceToActive,
     distanceToSelected,
-  } = useRouteMap({ spots, activeSpotId });
+  } = useRouteMap({ spots, activeSpotId, initialSpotId });
 
   const formatDistance = (meters: number) => {
     if (meters >= 1000) {
@@ -467,72 +470,129 @@ export default function RouteMapUI({
           })}
       </MapContainer>
 
-      {/* 右側フローティング視点切り替えボタン群（ルート全体に戻す ／ 現在地へ戻る） */}
+      {/* 右上フローティング視点切り替え＆スポット番号クイック選択バー（下部カードと絶対に重ならない配置） */}
       <div
         style={{
           position: "absolute",
-          right: "16px",
-          bottom: selectedSpot ? "205px" : "108px",
-          zIndex: 10,
+          top: "12px",
+          right: "12px",
+          left: "54px",
+          zIndex: 500,
           display: "flex",
-          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
           gap: "8px",
-          alignItems: "flex-end",
-          transition: "bottom 0.25s ease",
+          pointerEvents: "none",
         }}
       >
-        <button
-          type="button"
-          onClick={resetToRouteOverview}
-          title="ルート全体の縮尺・中央に戻す"
+        {/* スポット番号クイック切替ピル */}
+        <div
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "6px",
-            padding: "9px 13px",
-            borderRadius: "999px",
-            background: "rgba(255, 253, 249, 0.96)",
-            backdropFilter: "blur(8px)",
-            border: "1.5px solid #EBE5D9",
-            boxShadow: "0 4px 12px rgba(44, 37, 32, 0.14)",
-            color: "var(--text-color)",
-            fontSize: "0.78rem",
-            fontWeight: 800,
-            cursor: "pointer",
-            whiteSpace: "nowrap",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "5px",
+            pointerEvents: "auto",
           }}
         >
-          <Maximize2 size={14} color="var(--primary-color)" strokeWidth={2} />
-          ルート全体
-        </button>
+          {spots.map((sp, idx) => {
+            const isSel = selectedSpot?.id === sp.id;
+            const isAct = activeSpotId === sp.id;
+            return (
+              <button
+                key={sp.id}
+                type="button"
+                onClick={() => selectAndFocusSpot(sp)}
+                title={`${idx + 1}. ${sp.name}`}
+                style={{
+                  width: "32px",
+                  height: "32px",
+                  borderRadius: "999px",
+                  border: isSel || isAct ? "2px solid var(--primary-color)" : "1.5px solid #EBE5D9",
+                  background: isSel
+                    ? "var(--primary-color)"
+                    : isAct
+                      ? "#FFF5F3"
+                      : "rgba(255, 253, 249, 0.96)",
+                  color: isSel ? "#FFF" : "var(--text-color)",
+                  fontSize: "0.78rem",
+                  fontWeight: 800,
+                  cursor: "pointer",
+                  boxShadow: "0 3px 10px rgba(44, 37, 32, 0.14)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {idx + 1}
+              </button>
+            );
+          })}
+        </div>
 
-        {userPos && (
+        {/* 右側フローティング視点切り替えボタン群（ルート全体に戻す ／ 現在地へ戻る） */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+            alignItems: "flex-end",
+            pointerEvents: "auto",
+            flexShrink: 0,
+          }}
+        >
           <button
             type="button"
-            onClick={focusOnUserLocation}
-            title="現在地へ移動"
-            aria-label="現在地へ移動"
+            onClick={resetToRouteOverview}
+            title="ルート全体の縮尺・中央に戻す"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "6px",
-              padding: "9px 13px",
+              gap: "5px",
+              padding: "8px 12px",
               borderRadius: "999px",
               background: "rgba(255, 253, 249, 0.96)",
               backdropFilter: "blur(8px)",
               border: "1.5px solid #EBE5D9",
               boxShadow: "0 4px 12px rgba(44, 37, 32, 0.14)",
               color: "var(--text-color)",
-              fontSize: "0.78rem",
+              fontSize: "0.76rem",
               fontWeight: 800,
               cursor: "pointer",
               whiteSpace: "nowrap",
             }}
           >
-            <LocateFixed size={15} color="var(--primary-color)" strokeWidth={2} />
-            現在地
+            <Maximize2 size={13} color="var(--primary-color)" strokeWidth={2} />
+            ルート全体
           </button>
-        )}
+
+          {userPos && (
+            <button
+              type="button"
+              onClick={focusOnUserLocation}
+              title="現在地へ移動"
+              aria-label="現在地へ移動"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                padding: "8px 12px",
+                borderRadius: "999px",
+                background: "rgba(255, 253, 249, 0.96)",
+                backdropFilter: "blur(8px)",
+                border: "1.5px solid #EBE5D9",
+                boxShadow: "0 4px 12px rgba(44, 37, 32, 0.14)",
+                color: "var(--text-color)",
+                fontSize: "0.76rem",
+                fontWeight: 800,
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <LocateFixed size={14} color="var(--primary-color)" strokeWidth={2} />
+              現在地
+            </button>
+          )}
+        </div>
       </div>
 
       {selectedSpot ? (
@@ -559,12 +619,12 @@ export default function RouteMapUI({
             <X size={14} strokeWidth={2} />
           </button>
 
-          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
             {selectedSpot.image_url && (
               <div
                 style={{
-                  width: "80px",
-                  height: "80px",
+                  width: "72px",
+                  height: "72px",
                   borderRadius: "12px",
                   backgroundImage: `url(${selectedSpot.image_url})`,
                   backgroundSize: "cover",
@@ -577,7 +637,7 @@ export default function RouteMapUI({
               <h3
                 style={{
                   margin: 0,
-                  fontSize: "1.05rem",
+                  fontSize: "1rem",
                   fontWeight: "800",
                   color: "var(--text-color)",
                 }}
@@ -587,7 +647,7 @@ export default function RouteMapUI({
               <p
                 style={{
                   margin: "4px 0 0",
-                  fontSize: "0.82rem",
+                  fontSize: "0.8rem",
                   color: "#666",
                   display: "flex",
                   alignItems: "center",
@@ -618,10 +678,10 @@ export default function RouteMapUI({
 
               <div
                 style={{
-                  marginTop: "12px",
+                  marginTop: "10px",
                   display: "flex",
                   alignItems: "center",
-                  gap: "8px",
+                  gap: "6px",
                   flexWrap: "wrap",
                 }}
               >
@@ -631,32 +691,34 @@ export default function RouteMapUI({
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: "6px",
-                    padding: "8px 16px",
-                    fontSize: "0.85rem",
+                    gap: "5px",
+                    padding: "8px 14px",
+                    fontSize: "0.82rem",
                     textDecoration: "none",
                     fontWeight: "bold",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {activeSpotId === selectedSpot.id
-                    ? "しるしを刻む"
+                    ? "しるしを刻む / 詳細"
                     : "スポット詳細 / 押印へ"}
                 </Link>
-                <button
-                  type="button"
-                  onClick={resetToRouteOverview}
+                <Link
+                  href={`/routes/${rally.id}${groupId ? `?groupId=${groupId}` : ""}`}
                   className="btn-secondary"
                   style={{
-                    padding: "7px 12px",
-                    fontSize: "0.78rem",
+                    padding: "7px 11px",
+                    fontSize: "0.76rem",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "4px",
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
                   }}
                 >
-                  <Maximize2 size={12} strokeWidth={2} />
-                  全体表示に戻す
-                </button>
+                  <List size={12} strokeWidth={2} />
+                  一覧へ
+                </Link>
               </div>
 
               {/* しるしを獲得したメンバー＆共有された写真・コメント一覧 */}
@@ -769,29 +831,33 @@ export default function RouteMapUI({
           </div>
         </div>
       ) : activeSpot ? (
-        /* 目的地が設定されている場合のデフォルトナビ表示（タップでその目的地へ寄る） */
+        /* 目的地が設定されている場合のデフォルトナビ表示（タップでフォーカス＋直接押印/一覧へ移動可能） */
         <div
           className={"glass-card " + styles.infoOverlay}
           style={{
             borderLeft: "4px solid var(--primary-color)",
-            cursor: "pointer",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "stretch",
+            gap: "10px",
           }}
-          onClick={() => selectAndFocusSpot(activeSpot)}
         >
           <div
+            onClick={() => selectAndFocusSpot(activeSpot)}
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-              gap: "16px",
+              gap: "12px",
+              cursor: "pointer",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
               <div
                 style={{
-                  width: "38px",
-                  height: "38px",
+                  width: "36px",
+                  height: "36px",
                   borderRadius: "10px",
                   background: "rgba(199, 68, 46, 0.1)",
                   border: "1px solid rgba(199, 68, 46, 0.24)",
@@ -802,25 +868,27 @@ export default function RouteMapUI({
                   flexShrink: 0,
                 }}
               >
-                <Navigation size={18} strokeWidth={2} />
+                <Navigation size={17} strokeWidth={2} />
               </div>
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <div
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "0.72rem",
                     color: "#888",
-                    fontWeight: "600",
-                    letterSpacing: "0.5px",
+                    fontWeight: "700",
                   }}
                 >
-                  現在の目的地（タップでフォーカス）
+                  現在の目的地（タップで寄る）
                 </div>
                 <div
                   style={{
-                    fontSize: "1.05rem",
+                    fontSize: "0.98rem",
                     fontWeight: "800",
                     color: "var(--text-color)",
                     marginTop: "2px",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {activeSpot.name}
@@ -831,7 +899,7 @@ export default function RouteMapUI({
               <div style={{ textAlign: "right", flexShrink: 0 }}>
                 <div
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "0.72rem",
                     color: "#888",
                     fontWeight: "600",
                   }}
@@ -840,7 +908,7 @@ export default function RouteMapUI({
                 </div>
                 <div
                   style={{
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     fontWeight: "800",
                     color: "var(--primary-color)",
                     marginTop: "2px",
@@ -851,23 +919,88 @@ export default function RouteMapUI({
               </div>
             )}
           </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "8px", width: "100%" }}>
+            <Link
+              href={`/routes/${rally.id}/spot/${activeSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
+              className="btn-primary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "9px 12px",
+                fontSize: "0.82rem",
+                fontWeight: 800,
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>しるしを刻む / スポット詳細へ</span>
+            </Link>
+            <Link
+              href={`/routes/${rally.id}${groupId ? `?groupId=${groupId}` : ""}`}
+              className="btn-secondary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "4px",
+                padding: "9px 12px",
+                fontSize: "0.78rem",
+                fontWeight: 700,
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <List size={14} strokeWidth={2} />
+              <span>一覧へ</span>
+            </Link>
+          </div>
         </div>
       ) : (
-        <div className={"glass-card " + styles.infoOverlay}>
+        <div
+          className={"glass-card " + styles.infoOverlay}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
           <p
             style={{
               margin: 0,
-              fontSize: "0.9rem",
+              fontSize: "0.82rem",
               color: "#5C4E43",
               fontWeight: "700",
               display: "flex",
               alignItems: "center",
-              gap: "8px",
+              gap: "6px",
+              flex: 1,
             }}
           >
-            <MapIcon size={18} color="var(--primary-color)" />
-            しるしピンをタップするとその場所へ寄り、詳細を確認できます。
+            <MapIcon size={16} color="var(--primary-color)" style={{ flexShrink: 0 }} />
+            <span>番号ボタンまたはピンをタップで詳細を表示</span>
           </p>
+          <Link
+            href={`/routes/${rally.id}${groupId ? `?groupId=${groupId}` : ""}`}
+            className="btn-secondary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              padding: "7px 11px",
+              fontSize: "0.76rem",
+              fontWeight: 800,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+            }}
+          >
+            <List size={13} strokeWidth={2} />
+            <span>一覧へ</span>
+          </Link>
         </div>
       )}
     </div>

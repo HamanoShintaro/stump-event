@@ -792,8 +792,9 @@ export function JoinRallyButton({
             className="btn-primary" 
             style={{ 
               width: "100%", 
-              fontSize: "1.1rem", 
-              padding: "16px",
+              fontSize: "clamp(0.9rem, 3.8vw, 1.08rem)", 
+              padding: "14px 12px",
+              whiteSpace: "nowrap",
               opacity: isNavigating ? 0.7 : 1,
               cursor: isNavigating ? "not-allowed" : "pointer"
             }}

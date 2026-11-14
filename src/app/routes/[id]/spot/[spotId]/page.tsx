@@ -14,9 +14,28 @@ import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import { useSubscription } from "@/hooks/useSubscription";
-import { uploadStampPhotoWithFallback } from "@/utils/stampMedia";
+import {
+  getDisplayNameFromAuthUser,
+  persistStampEventMemory,
+  uploadStampPhotoWithFallback,
+} from "@/utils/stampMedia";
 import { motion, AnimatePresence } from "framer-motion";
-import { Footprints, Map as MapIcon, Star, CheckCircle, Share2, Compass, Award, Camera, Image as ImageIcon, Trash2 } from "lucide-react";
+import {
+  Footprints,
+  Map as MapIcon,
+  Star,
+  CheckCircle,
+  Share2,
+  Compass,
+  Award,
+  Camera,
+  Image as ImageIcon,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+  Navigation,
+  List,
+} from "lucide-react";
 import { evaluateBadges } from "@/utils/badgeEvaluator";
 import BadgeReveal from "./BadgeReveal";
 import { useSpotStampStatus } from "@/hooks/useSpotStampStatus";
@@ -351,25 +370,90 @@ export default function SpotCheckInPage({
     fileInputRef.current?.click();
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) {
-      if (!canUploadPhotoForSpot(spot?.id)) {
-        e.target.value = "";
-        setShowUpgradeModal(true);
-        return;
+    if (!file) return;
+
+    if (!canUploadPhotoForSpot(spot?.id)) {
+      e.target.value = "";
+      setShowUpgradeModal(true);
+      return;
+    }
+
+    // Android等の省メモリ端末でFileReaderの多重Base64展開によるOOMを防ぐため、ObjectURLで軽量プレビューしつつ即座に自動圧縮・保存する
+    let previewUrl: string | null = null;
+    try {
+      if (typeof URL !== "undefined" && typeof URL.createObjectURL === "function") {
+        previewUrl = URL.createObjectURL(file);
+        setImagePreview(previewUrl);
       }
+    } catch {
+      // ignore
+    }
+
+    if (!user || !spot) {
       setSelectedFile(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+      return;
+    }
+
+    setIsSavingMemo(true);
+    try {
+      const uploadedUrl = await uploadStampPhotoWithFallback(
+        supabase,
+        user.id,
+        spot.id,
+        file
+      );
+
+      const { eventId } = await persistStampEventMemory({
+        supabase,
+        userId: user.id,
+        spotId: spot.id,
+        routeId: route?.id || resolvedParams.id,
+        groupId,
+        eventId: stampEventId,
+        memo: memoInput.trim() ? memoInput.trim() : undefined,
+        photoUrl: uploadedUrl,
+      });
+
+      if (eventId) setStampEventId(eventId);
+      setSavedPhotoUrl(uploadedUrl);
+      setSelectedFile(null);
+      setImagePreview(null);
+      setMemoSaved(true);
+      await refreshGroupData();
+      await refetchHistory();
+      await refreshSubscription();
+    } catch (err: any) {
+      setSelectedFile(file);
+      await showAlert({
+        text: `写真の保存に失敗しました: ${err?.message || "もう一度お試しください"}`,
+        okText: "確認",
+      });
+    } finally {
+      setIsSavingMemo(false);
+      if (previewUrl) {
+        try {
+          URL.revokeObjectURL(previewUrl);
+        } catch {
+          // ignore
+        }
+      }
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     }
   };
 
   const handleRemoveFile = () => {
     setSelectedFile(null);
+    if (imagePreview && imagePreview.startsWith("blob:")) {
+      try {
+        URL.revokeObjectURL(imagePreview);
+      } catch {
+        // ignore
+      }
+    }
     setImagePreview(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -383,7 +467,7 @@ export default function SpotCheckInPage({
       setShowUpgradeModal(true);
       return;
     }
-    
+
     setIsSavingMemo(true);
     try {
       let uploadedUrl: string | null = savedPhotoUrl;
@@ -396,59 +480,22 @@ export default function SpotCheckInPage({
         );
       }
 
-      const updateData: any = {
+      const { eventId } = await persistStampEventMemory({
+        supabase,
+        userId: user.id,
+        spotId: spot.id,
+        routeId: route?.id || resolvedParams.id,
+        groupId,
+        eventId: stampEventId,
         memo: memoInput.trim() || null,
-        photo_url: uploadedUrl || null,
-        ...(groupId ? { group_id: groupId } : {}),
-      };
+        photoUrl: uploadedUrl || null,
+      });
 
-      let targetEventId = stampEventId;
-      if (!targetEventId) {
-        const { data: existingEv } = await supabase
-          .from("stamp_events")
-          .select("id")
-          .eq("user_id", user.id)
-          .eq("spot_id", spot.id)
-          .order("created_at", { ascending: false })
-          .limit(1)
-          .maybeSingle();
-        targetEventId = existingEv?.id || null;
-      }
-
-      if (targetEventId) {
-        const { error } = await supabase
-          .from("stamp_events")
-          .update(updateData)
-          .eq("id", targetEventId);
-        if (error) throw error;
-        setStampEventId(targetEventId);
-      } else {
-        const { data: insertedEv, error } = await supabase
-          .from("stamp_events")
-          .insert({
-            user_id: user.id,
-            spot_id: spot.id,
-            route_id: route?.id || resolvedParams.id,
-            group_id: groupId,
-            method: "gps",
-            visitor_number: 1,
-            is_first_visit: false,
-            ...updateData,
-          })
-          .select("id")
-          .single();
-        if (error) throw error;
-        if (insertedEv) setStampEventId(insertedEv.id);
-      }
-
+      if (eventId) setStampEventId(eventId);
       if (uploadedUrl) {
         setSavedPhotoUrl(uploadedUrl);
       }
-      setSelectedFile(null);
-      setImagePreview(null);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
+      handleRemoveFile();
       setMemoSaved(true);
       await refreshGroupData();
       await refetchHistory();
@@ -1111,62 +1158,65 @@ export default function SpotCheckInPage({
                     </div>
                   ) : (
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                      <div style={{ display: "flex", gap: "8px" }}>
+                      <button
+                        type="button"
+                        onClick={handlePhotoButtonClick}
+                        disabled={isSavingMemo}
+                        style={{
+                          width: "100%",
+                          padding: "10px 12px",
+                          background: imagePreview ? "rgba(201,168,76,0.25)" : "rgba(201,168,76,0.15)",
+                          border: "1.5px solid var(--accent-color)",
+                          borderRadius: "8px",
+                          color: "var(--accent-color)",
+                          cursor: isSavingMemo ? "wait" : "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "6px",
+                          fontSize: "0.82rem",
+                          fontWeight: 800
+                        }}
+                      >
+                        <Camera size={16} />
+                        <span>{isSavingMemo ? "写真を圧縮・保存中..." : "📷 写真を撮影・選択して残す（自動保存）"}</span>
+                      </button>
+
+                      <div style={{ display: "flex", gap: "6px", width: "100%" }}>
                         <input 
                           type="text" 
-                          placeholder="例: ここの景色綺麗ですね！" 
+                          placeholder="ひとこと感想を残す（任意）" 
                           value={memoInput}
                           onChange={(e) => setMemoInput(e.target.value)}
                           maxLength={100}
                           disabled={isSavingMemo}
                           style={{ 
                             flex: 1, 
-                            padding: "8px 12px", 
+                            minWidth: 0,
+                            padding: "8px 10px", 
                             fontSize: "0.85rem", 
                             background: "rgba(255, 255, 255, 0.05)", 
-                            border: "1px solid rgba(255, 255, 255, 0.1)", 
+                            border: "1px solid rgba(255, 255, 255, 0.15)", 
                             borderRadius: "6px", 
                             color: "#FFF",
                             outline: "none"
                           }}
                         />
-                        
-                        <button
-                          type="button"
-                          onClick={handlePhotoButtonClick}
-                          disabled={isSavingMemo}
-                          style={{
-                            padding: "8px 10px",
-                            background: imagePreview ? "rgba(201,168,76,0.2)" : "rgba(255, 255, 255, 0.05)",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "6px",
-                            color: imagePreview ? "var(--accent-color)" : "#FFF",
-                            cursor: "pointer",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "4px",
-                            fontSize: "0.75rem"
-                          }}
-                          title="写真を添付"
-                        >
-                          <Camera size={16} />
-                          <span>写真</span>
-                        </button>
 
                         <button 
                           onClick={handleSaveMemo}
                           disabled={isSavingMemo || (!memoInput.trim() && !selectedFile)}
                           className="btn-primary"
-                          style={{ padding: "8px 12px", fontSize: "0.75rem", background: "var(--accent-color)", color: "#111", border: "none", cursor: "pointer", borderRadius: "6px", fontWeight: 700 }}
+                          style={{ flexShrink: 0, whiteSpace: "nowrap", padding: "8px 12px", fontSize: "0.78rem", background: "var(--accent-color)", color: "#111", border: "none", cursor: "pointer", borderRadius: "6px", fontWeight: 700 }}
                         >
-                          {isSavingMemo ? "保存中..." : "保存"}
+                          {isSavingMemo ? "保存中..." : "感想を保存"}
                         </button>
                       </div>
 
                       {/* 添付画像プレビュー */}
                       {imagePreview && (
                         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                          <div style={{ position: "relative", width: "80px", height: "80px", borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--accent-color)" }}>
+                          <div style={{ position: "relative", width: "68px", height: "68px", flexShrink: 0, borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--accent-color)" }}>
                             <img src={imagePreview} alt="Preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             <button
                               type="button"
@@ -1192,7 +1242,7 @@ export default function SpotCheckInPage({
                             </button>
                           </div>
                           <span style={{ fontSize: "0.75rem", color: "var(--accent-color)" }}>
-                            📷 写真を選択中（「保存」または下のボタンで自動保存されます）
+                            {isSavingMemo ? "📷 写真を自動保存しています..." : "📷 写真を選択中（「感想を保存」で再保存）"}
                           </span>
                         </div>
                       )}
@@ -1575,10 +1625,52 @@ export default function SpotCheckInPage({
       </AnimatePresence>
 
       {/* B. 通常の押印画面表示層（IDLE時のみインタラクティブ） */}
-      <div className="container" style={{ paddingBottom: "100px" }}>
-        <header style={{ padding: "20px 0" }}>
-          <Link href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`} className={"btn-primary " + styles.backBtn}>
-            ← 戻る
+      <div className="container" style={{ paddingBottom: "110px" }}>
+        <header
+          style={{
+            padding: "16px 0",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "10px",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`}
+            className={"btn-secondary " + styles.backBtn}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "8px 14px",
+              fontSize: "0.86rem",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+            }}
+          >
+            <ChevronLeft size={16} />
+            <span>ルート詳細・一覧へ</span>
+          </Link>
+
+          <Link
+            href={`/routes/${resolvedParams.id}/map?spotId=${spot.id}${groupId ? `&groupId=${groupId}` : ""}`}
+            className="btn-primary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "8px 14px",
+              fontSize: "0.86rem",
+              fontWeight: 800,
+              borderRadius: "999px",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              boxShadow: "0 4px 12px rgba(199, 68, 46, 0.22)",
+            }}
+          >
+            <MapIcon size={15} />
+            <span>ルート地図を開く</span>
           </Link>
         </header>
 
@@ -1596,9 +1688,16 @@ export default function SpotCheckInPage({
               }} />
             )}
             
-            <div style={{ padding: "28px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "16px", marginBottom: "16px" }}>
-                <h1 className={styles.title} style={{ margin: 0, fontSize: "1.65rem", fontWeight: "800" }}>{spot.name}</h1>
+            <div style={{ padding: "22px 20px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px", marginBottom: "14px" }}>
+                <div>
+                  {allSpots.length > 0 && (
+                    <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "var(--primary-color)", marginBottom: "4px" }}>
+                      スポット {Math.max(1, allSpots.findIndex((s) => s.id === spot.id) + 1)} / {allSpots.length}
+                    </div>
+                  )}
+                  <h1 className={styles.title} style={{ margin: 0, fontSize: "1.45rem", fontWeight: "800", lineHeight: 1.35 }}>{spot.name}</h1>
+                </div>
                 {stampAcquired && ceremonyStep === 'idle' && (
                   <div style={{
                     backgroundColor: "rgba(255, 255, 255, 0.95)",
@@ -1623,7 +1722,7 @@ export default function SpotCheckInPage({
                 )}
               </div>
               
-              <p className={styles.description} style={{ fontSize: "1rem", lineHeight: "1.7", color: "var(--text-color)", opacity: 0.85, marginBottom: "20px", whiteSpace: "pre-wrap" }}>
+              <p className={styles.description} style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--text-color)", opacity: 0.88, marginBottom: "16px", whiteSpace: "pre-wrap" }}>
                 {spot.description}
               </p>
               
@@ -1633,8 +1732,147 @@ export default function SpotCheckInPage({
                   <span>{spot.address}</span>
                 </div>
               )}
+
+              {/* 地図で確認 / ここを目的地にして地図を開くクイック導線 */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                  gap: "8px",
+                  marginTop: "14px",
+                  paddingTop: "12px",
+                  borderTop: "1px solid rgba(0,0,0,0.06)",
+                }}
+              >
+                <Link
+                  href={`/routes/${resolvedParams.id}/map?spotId=${spot.id}${groupId ? `&groupId=${groupId}` : ""}`}
+                  className="btn-secondary"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                    padding: "10px 12px",
+                    fontSize: "0.82rem",
+                    fontWeight: 800,
+                    borderRadius: "10px",
+                    textDecoration: "none",
+                  }}
+                >
+                  <MapIcon size={15} />
+                  <span>地図でこの場所を見る</span>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={async () => {
+                    if (user) {
+                      try {
+                        await supabase
+                          .from("users")
+                          .upsert({ id: user.id, active_spot_id: spot.id }, { onConflict: "id" });
+                      } catch (e) {
+                        console.warn("Failed to set active_spot_id:", e);
+                      }
+                    }
+                    triggerNavigationLoading();
+                    router.push(
+                      `/routes/${resolvedParams.id}/map?spotId=${spot.id}${groupId ? `&groupId=${groupId}` : ""}`
+                    );
+                  }}
+                  className="btn-primary"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
+                    padding: "10px 12px",
+                    fontSize: "0.82rem",
+                    fontWeight: 800,
+                    borderRadius: "10px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Navigation size={15} />
+                  <span>目的地にして地図へ</span>
+                </button>
+              </div>
             </div>
           </div>
+
+          {/* 前後のスポットへのクイック切り替えバー */}
+          {allSpots.length > 1 && (() => {
+            const currentIdx = allSpots.findIndex((s) => s.id === spot.id);
+            const prevSpot = currentIdx > 0 ? allSpots[currentIdx - 1] : null;
+            const nextSpot = currentIdx >= 0 && currentIdx < allSpots.length - 1 ? allSpots[currentIdx + 1] : null;
+            if (!prevSpot && !nextSpot) return null;
+            return (
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: prevSpot && nextSpot ? "1fr 1fr" : "1fr",
+                  gap: "8px",
+                }}
+              >
+                {prevSpot && (
+                  <Link
+                    href={`/routes/${resolvedParams.id}/spot/${prevSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      padding: "10px 12px",
+                      borderRadius: "12px",
+                      background: "rgba(255, 255, 255, 0.85)",
+                      border: "1px solid rgba(44, 38, 35, 0.14)",
+                      textDecoration: "none",
+                      color: "var(--text-color)",
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      minWidth: 0,
+                    }}
+                  >
+                    <ChevronLeft size={16} style={{ flexShrink: 0, color: "var(--primary-color)" }} />
+                    <div style={{ minWidth: 0, overflow: "hidden" }}>
+                      <div style={{ fontSize: "0.68rem", opacity: 0.65 }}>前のスポット (#{currentIdx})</div>
+                      <div style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                        {prevSpot.name}
+                      </div>
+                    </div>
+                  </Link>
+                )}
+                {nextSpot && (
+                  <Link
+                    href={`/routes/${resolvedParams.id}/spot/${nextSpot.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "6px",
+                      padding: "10px 12px",
+                      borderRadius: "12px",
+                      background: "rgba(255, 255, 255, 0.85)",
+                      border: "1px solid rgba(44, 38, 35, 0.14)",
+                      textDecoration: "none",
+                      color: "var(--text-color)",
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      minWidth: 0,
+                      textAlign: "right",
+                    }}
+                  >
+                    <div style={{ minWidth: 0, overflow: "hidden", flex: 1 }}>
+                      <div style={{ fontSize: "0.68rem", opacity: 0.65 }}>次のスポット (#{currentIdx + 2})</div>
+                      <div style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                        {nextSpot.name}
+                      </div>
+                    </div>
+                    <ChevronRight size={16} style={{ flexShrink: 0, color: "var(--primary-color)" }} />
+                  </Link>
+                )}
+              </div>
+            );
+          })()}
 
           {isTodayStamped && ceremonyStep === 'idle' ? (
             <div className={"glass-card " + styles.successCard}>
@@ -1694,17 +1932,42 @@ export default function SpotCheckInPage({
                   </div>
                 ) : (
                   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                    <div style={{ display: "flex", gap: "8px" }}>
+                    <button
+                      type="button"
+                      onClick={handlePhotoButtonClick}
+                      disabled={isSavingMemo}
+                      style={{
+                        width: "100%",
+                        padding: "10px 12px",
+                        background: imagePreview ? "rgba(199,68,46,0.12)" : "rgba(199,68,46,0.06)",
+                        border: "1.5px solid var(--primary-color)",
+                        borderRadius: "8px",
+                        color: "var(--primary-color)",
+                        cursor: isSavingMemo ? "wait" : "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "6px",
+                        fontSize: "0.82rem",
+                        fontWeight: 800
+                      }}
+                    >
+                      <Camera size={16} />
+                      <span>{isSavingMemo ? "写真を圧縮・保存中..." : "📷 写真を撮影・選択して残す（自動保存）"}</span>
+                    </button>
+
+                    <div style={{ display: "flex", gap: "6px", width: "100%" }}>
                       <input 
                         type="text" 
-                        placeholder="例: 到着しました！" 
+                        placeholder="ひとこと感想を残す（任意）" 
                         value={memoInput}
                         onChange={(e) => setMemoInput(e.target.value)}
                         maxLength={100}
                         disabled={isSavingMemo}
                         style={{ 
                           flex: 1, 
-                          padding: "8px 12px", 
+                          minWidth: 0,
+                          padding: "8px 10px", 
                           fontSize: "0.82rem", 
                           background: "#FFFDF9", 
                           border: "1px solid #EBE5D9", 
@@ -1714,42 +1977,20 @@ export default function SpotCheckInPage({
                         }}
                       />
 
-                      <button
-                        type="button"
-                        onClick={handlePhotoButtonClick}
-                        disabled={isSavingMemo}
-                        style={{
-                          padding: "8px 10px",
-                          background: imagePreview ? "rgba(199,68,46,0.1)" : "#FFFDF9",
-                          border: "1px solid #EBE5D9",
-                          borderRadius: "6px",
-                          color: imagePreview ? "var(--primary-color)" : "#5C4E43",
-                          cursor: "pointer",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "4px",
-                          fontSize: "0.75rem",
-                          fontWeight: 700
-                        }}
-                      >
-                        <Camera size={16} />
-                        <span>写真</span>
-                      </button>
-
                       <button 
                         onClick={handleSaveMemo}
                         disabled={isSavingMemo || (!memoInput.trim() && !selectedFile)}
                         className="btn-primary"
-                        style={{ padding: "8px 12px", fontSize: "0.75rem", borderRadius: "6px", cursor: "pointer", fontWeight: 700 }}
+                        style={{ flexShrink: 0, whiteSpace: "nowrap", padding: "8px 12px", fontSize: "0.75rem", borderRadius: "6px", cursor: "pointer", fontWeight: 700 }}
                       >
-                        {isSavingMemo ? "保存中" : "保存"}
+                        {isSavingMemo ? "保存中" : "感想を保存"}
                       </button>
                     </div>
 
                     {/* 添付画像プレビュー */}
                     {imagePreview && (
                       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                        <div style={{ position: "relative", width: "80px", height: "80px", borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--primary-color)" }}>
+                        <div style={{ position: "relative", width: "68px", height: "68px", flexShrink: 0, borderRadius: "6px", overflow: "hidden", border: "1.5px solid var(--primary-color)" }}>
                           <img src={imagePreview} alt="Preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                           <button
                             type="button"
@@ -1775,7 +2016,7 @@ export default function SpotCheckInPage({
                           </button>
                         </div>
                         <span style={{ fontSize: "0.75rem", color: "var(--primary-color)", fontWeight: 700 }}>
-                          📷 「保存」を押すと印に写真が登録されます
+                          {isSavingMemo ? "📷 写真を自動保存しています..." : "📷 写真を選択中（「感想を保存」で再保存）"}
                         </span>
                       </div>
                     )}
@@ -1817,16 +2058,24 @@ export default function SpotCheckInPage({
                 )}
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%", maxWidth: "300px", margin: "20px auto 0" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px", width: "100%", maxWidth: "320px", margin: "20px auto 0" }}>
+                <Link
+                  href={`/routes/${resolvedParams.id}/map?spotId=${spot.id}${groupId ? `&groupId=${groupId}` : ""}`}
+                  className="btn-primary"
+                  style={{ width: "100%", padding: "12px", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}
+                >
+                  <MapIcon size={16} />
+                  <span>ルート地図で次の場所を見る</span>
+                </Link>
                 <button 
                   onClick={() => triggerCeremony(visitorNumber)}
-                  className="btn-primary"
-                  style={{ width: "100%", padding: "12px" }}
+                  className="btn-secondary"
+                  style={{ width: "100%", padding: "10px", fontSize: "0.86rem" }}
                 >
                   💮 セレモニーを再体験する
                 </button>
                 <Link href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`} className={"btn-secondary " + styles.glowBtn}>
-                  ルート詳細に戻る
+                  ルート詳細・一覧に戻る
                 </Link>
               </div>
             </div>
@@ -1848,7 +2097,7 @@ export default function SpotCheckInPage({
                             <button
                               type="button"
                               onClick={() => setMemoSaved(false)}
-                              style={{ background: "#FFF", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", padding: "3px 8px", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer" }}
+                              style={{ background: "#FFF", border: "1px solid var(--primary-color)", color: "var(--primary-color)", borderRadius: "6px", padding: "3px 8px", fontSize: "0.72rem", fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}
                             >
                               ✏️ 編集・写真追加
                             </button>
@@ -1859,34 +2108,50 @@ export default function SpotCheckInPage({
                         </div>
                       ) : (
                         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                          <div style={{ display: "flex", gap: "8px" }}>
+                          <button
+                            type="button"
+                            onClick={handlePhotoButtonClick}
+                            disabled={isSavingMemo}
+                            style={{
+                              width: "100%",
+                              padding: "10px 12px",
+                              border: "1.5px solid var(--primary-color)",
+                              borderRadius: "8px",
+                              background: "rgba(199,68,46,0.06)",
+                              color: "var(--primary-color)",
+                              cursor: isSavingMemo ? "wait" : "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: "6px",
+                              fontSize: "0.82rem",
+                              fontWeight: 800
+                            }}
+                          >
+                            <Camera size={16} />
+                            <span>{isSavingMemo ? "写真を圧縮・保存中..." : "📷 写真を撮影・選択して残す（自動保存）"}</span>
+                          </button>
+                          <div style={{ display: "flex", gap: "6px", width: "100%" }}>
                             <input
                               type="text"
-                              placeholder="この印に感想を残す..."
+                              placeholder="ひとこと感想を残す（任意）"
                               value={memoInput}
                               onChange={(e) => setMemoInput(e.target.value)}
                               maxLength={100}
                               disabled={isSavingMemo}
-                              style={{ flex: 1, padding: "8px 10px", fontSize: "0.82rem", border: "1px solid #EBE5D9", borderRadius: "6px" }}
+                              style={{ flex: 1, minWidth: 0, padding: "8px 10px", fontSize: "0.82rem", border: "1px solid #EBE5D9", borderRadius: "6px" }}
                             />
-                            <button
-                              type="button"
-                              onClick={handlePhotoButtonClick}
-                              style={{ padding: "8px 10px", border: "1px solid #EBE5D9", borderRadius: "6px", background: "#FFF", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px", fontSize: "0.75rem", fontWeight: 700 }}
-                            >
-                              <Camera size={16} /> 写真
-                            </button>
                             <button
                               onClick={handleSaveMemo}
                               disabled={isSavingMemo || (!memoInput.trim() && !selectedFile)}
                               className="btn-primary"
-                              style={{ padding: "8px 12px", fontSize: "0.75rem", borderRadius: "6px" }}
+                              style={{ flexShrink: 0, whiteSpace: "nowrap", padding: "8px 12px", fontSize: "0.75rem", borderRadius: "6px" }}
                             >
-                              {isSavingMemo ? "保存中" : "保存"}
+                              {isSavingMemo ? "保存中" : "感想を保存"}
                             </button>
                           </div>
                           {imagePreview && (
-                            <img src={imagePreview} alt="Preview" style={{ width: "80px", height: "80px", objectFit: "cover", borderRadius: "6px", border: "1.5px solid var(--primary-color)" }} />
+                            <img src={imagePreview} alt="Preview" style={{ width: "68px", height: "68px", objectFit: "cover", borderRadius: "6px", border: "1.5px solid var(--primary-color)" }} />
                           )}
                         </div>
                       )}
@@ -2182,6 +2447,69 @@ export default function SpotCheckInPage({
           reason="photo_limit"
           usedPhotoCount={usedPhotoCount}
         />
+
+        {/* 下部固定スイッチャー（地図 ⇄ ルート詳細・一覧） */}
+        {ceremonyStep === 'idle' && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "12px",
+              left: "12px",
+              right: "12px",
+              maxWidth: "560px",
+              margin: "0 auto",
+              zIndex: 90,
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "8px",
+              padding: "8px",
+              borderRadius: "16px",
+              background: "rgba(253, 251, 247, 0.96)",
+              backdropFilter: "blur(12px)",
+              border: "1.5px solid rgba(44, 38, 35, 0.14)",
+              boxShadow: "0 10px 28px rgba(0, 0, 0, 0.14)",
+            }}
+          >
+            <Link
+              href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`}
+              className="btn-secondary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "10px 8px",
+                fontSize: "0.82rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <List size={15} />
+              <span>スポット一覧・詳細</span>
+            </Link>
+            <Link
+              href={`/routes/${resolvedParams.id}/map?spotId=${spot.id}${groupId ? `&groupId=${groupId}` : ""}`}
+              className="btn-primary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "10px 8px",
+                fontSize: "0.82rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <MapIcon size={15} />
+              <span>ルート地図を開く</span>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

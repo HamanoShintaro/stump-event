@@ -166,6 +166,101 @@ export default async function AreasIndexPage() {
               <span>収録スポット 計 {totalSpots} 箇所</span>
             </div>
           </div>
+
+          {/* フリーワード検索 ＆ 地図から探すクイック導線 */}
+          <div
+            style={{
+              marginTop: "18px",
+              paddingTop: "16px",
+              borderTop: "1px dashed rgba(44, 38, 35, 0.14)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <form
+              action="/routes"
+              method="get"
+              style={{
+                display: "flex",
+                gap: "8px",
+                width: "100%",
+              }}
+            >
+              <input
+                type="text"
+                name="q"
+                placeholder="駅名・街名・スポット名で検索..."
+                aria-label="駅名・街名・スポット名で検索"
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  padding: "10px 14px",
+                  fontSize: "0.9rem",
+                  borderRadius: "10px",
+                  border: "1.5px solid rgba(44, 38, 35, 0.2)",
+                  background: "#FFFFFF",
+                  color: "var(--text-color)",
+                  outline: "none",
+                }}
+              />
+              <button
+                type="submit"
+                className="btn-primary"
+                style={{
+                  flexShrink: 0,
+                  whiteSpace: "nowrap",
+                  padding: "10px 18px",
+                  fontSize: "0.88rem",
+                  fontWeight: 800,
+                  borderRadius: "10px",
+                }}
+              >
+                検索
+              </button>
+            </form>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "10px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Link
+                href="/map"
+                className="btn-primary"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "9px 16px",
+                  fontSize: "0.84rem",
+                  fontWeight: 800,
+                  borderRadius: "999px",
+                  textDecoration: "none",
+                }}
+              >
+                <span>🗺️ 全国マップからルートを探す</span>
+              </Link>
+              <Link
+                href="/routes"
+                className="btn-secondary"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "9px 16px",
+                  fontSize: "0.84rem",
+                  fontWeight: 700,
+                  borderRadius: "999px",
+                  textDecoration: "none",
+                }}
+              >
+                <span>🧭 全ルート一覧・条件絞り込み</span>
+              </Link>
+            </div>
+          </div>
         </section>
 
         {REGION_ORDER.map((regionName) => {

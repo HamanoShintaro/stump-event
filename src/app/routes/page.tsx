@@ -75,15 +75,54 @@ export default async function RoutesPage({
             marginBottom: "20px",
           }}
         >
-          <Link href="/areas" className="btn-secondary">
-            都道府県・街エリア一覧から探す
+          <Link
+            href="/map"
+            className="btn-primary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "10px 18px",
+              fontSize: "0.88rem",
+              fontWeight: 800,
+              textDecoration: "none",
+              borderRadius: "999px",
+            }}
+          >
+            <span>🗺️ 地図からルートを探す</span>
+          </Link>
+          <Link
+            href="/areas"
+            className="btn-secondary"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "10px 18px",
+              fontSize: "0.88rem",
+              fontWeight: 700,
+              textDecoration: "none",
+              borderRadius: "999px",
+            }}
+          >
+            <span>🗾 都道府県・エリア一覧から探す</span>
           </Link>
           {prefecture && (
             <Link
               href={`/areas/${encodeURIComponent(prefecture)}`}
               className="btn-secondary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                padding: "10px 18px",
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                textDecoration: "none",
+                borderRadius: "999px",
+              }}
             >
-              {prefecture}の街歩きまとめページを見る
+              <span>{prefecture}の街歩きまとめを見る</span>
             </Link>
           )}
         </div>

@@ -251,69 +251,120 @@ export async function fetchGroupCompanionMembers(
 }
 
 /**
- * 画像ファイルをクライアント側 Canvas でリサイズ・JPEG圧縮する（最大1024px / 品質0.78）
- * 60KB〜150KB程度に軽量化することで、モバイル回線でのアップロード失敗や容量制限エラーを防ぐ
+ * 画像ファイルをクライアント側 Canvas で省メモリにリサイズ・JPEG圧縮する（最大960px / 品質0.75）
+ * Android（OPPO等の廉価端末）でのメモリ不足（OOM）を防ぐため、元ファイルの FileReader.readAsDataURL は行わず
+ * URL.createObjectURL + Image / createImageBitmap で直接縮小描画して即座にメモリを解放する。
  */
 export async function compressImageFile(
   file: File,
-  maxDimension = 1024,
-  quality = 0.78
+  maxDimension = 960,
+  quality = 0.75
 ): Promise<{ blob: Blob; dataUrl: string }> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = () => reject(new Error("画像の読み込みに失敗しました"));
-    reader.onload = () => {
-      const dataUrlSource = reader.result as string;
-      const img = new Image();
-      img.onerror = () => {
-        // Image デコードに失敗した場合は元のファイル/DataURLをそのまま返す
-        resolve({ blob: file, dataUrl: dataUrlSource });
-      };
-      img.onload = () => {
-        try {
-          let { width, height } = img;
-          if (width > maxDimension || height > maxDimension) {
-            if (width >= height) {
-              height = Math.round((height * maxDimension) / width);
-              width = maxDimension;
-            } else {
-              width = Math.round((width * maxDimension) / height);
-              height = maxDimension;
-            }
+  const renderToCanvas = (
+    source: CanvasImageSource,
+    srcWidth: number,
+    srcHeight: number
+  ): Promise<{ blob: Blob; dataUrl: string } | null> => {
+    return new Promise((resolve) => {
+      try {
+        let width = srcWidth || 800;
+        let height = srcHeight || 600;
+        if (width > maxDimension || height > maxDimension) {
+          if (width >= height) {
+            height = Math.max(1, Math.round((height * maxDimension) / width));
+            width = maxDimension;
+          } else {
+            width = Math.max(1, Math.round((width * maxDimension) / height));
+            height = maxDimension;
           }
-          const canvas = document.createElement("canvas");
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext("2d");
-          if (!ctx) {
-            resolve({ blob: file, dataUrl: dataUrlSource });
-            return;
-          }
-          ctx.drawImage(img, 0, 0, width, height);
-          const compressedDataUrl = canvas.toDataURL("image/jpeg", quality);
-          canvas.toBlob(
-            (blob) => {
-              resolve({
-                blob: blob || file,
-                dataUrl: compressedDataUrl,
-              });
-            },
-            "image/jpeg",
-            quality
-          );
-        } catch {
-          resolve({ blob: file, dataUrl: dataUrlSource });
         }
-      };
-      img.src = dataUrlSource;
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          resolve(null);
+          return;
+        }
+        ctx.drawImage(source, 0, 0, width, height);
+        const compressedDataUrl = canvas.toDataURL("image/jpeg", Math.min(quality, 0.72));
+        canvas.toBlob(
+          (blob) => {
+            // Canvas バッファを明示解放
+            canvas.width = 1;
+            canvas.height = 1;
+            resolve({
+              blob: blob || file,
+              dataUrl: compressedDataUrl,
+            });
+          },
+          "image/jpeg",
+          quality
+        );
+      } catch {
+        resolve(null);
+      }
+    });
+  };
+
+  // 1. createImageBitmap が使える環境では EXIF 回転を考慮しつつ省メモリでデコード
+  if (typeof window !== "undefined" && typeof window.createImageBitmap === "function") {
+    try {
+      const bitmap = await window.createImageBitmap(file);
+      const result = await renderToCanvas(bitmap, bitmap.width, bitmap.height);
+      try {
+        bitmap.close();
+      } catch {
+        // ignore
+      }
+      if (result) return result;
+    } catch {
+      // Image + ObjectURL フォールバックへ進む
+    }
+  }
+
+  // 2. URL.createObjectURL + Image による省メモリデコード
+  return new Promise((resolve, reject) => {
+    if (typeof URL === "undefined" || typeof URL.createObjectURL !== "function") {
+      reject(new Error("お使いのブラウザは画像処理に対応していません"));
+      return;
+    }
+    const objectUrl = URL.createObjectURL(file);
+    const img = new Image();
+    const cleanup = () => {
+      try {
+        URL.revokeObjectURL(objectUrl);
+      } catch {
+        // ignore
+      }
     };
-    reader.readAsDataURL(file);
+
+    img.onerror = () => {
+      cleanup();
+      // 万が一デコードできない形式でも小サイズならそのままアップロードを試みる
+      resolve({ blob: file, dataUrl: "" });
+    };
+
+    img.onload = async () => {
+      const w = img.naturalWidth || img.width || 800;
+      const h = img.naturalHeight || img.height || 600;
+      const result = await renderToCanvas(img, w, h);
+      img.src = "";
+      cleanup();
+      if (result) {
+        resolve(result);
+      } else {
+        resolve({ blob: file, dataUrl: "" });
+      }
+    };
+
+    img.src = objectUrl;
   });
 }
 
 /**
  * 押印写真を圧縮して Supabase Storage ('stamps') にアップロードする。
- * Storage の RLS ポリシー制限等で失敗した場合も、軽量化した DataURL に自動フォールバックし、
+ * Storage の RLS ポリシー制限や通信瞬断で失敗した場合も、軽量化した DataURL に自動フォールバックし、
  * 確実に stamp_events.photo_url に保存できるようにする。
  */
 export async function uploadStampPhotoWithFallback(
@@ -322,15 +373,16 @@ export async function uploadStampPhotoWithFallback(
   spotId: string,
   file: File
 ): Promise<string> {
-  const { blob, dataUrl } = await compressImageFile(file, 1024, 0.78);
+  const { blob, dataUrl } = await compressImageFile(file, 960, 0.75);
   const filePath = `${userId}/${spotId}_${Date.now()}.jpg`;
+  const contentType = blob.type && blob.type.startsWith("image/") ? blob.type : "image/jpeg";
 
   try {
     const { error: uploadError } = await supabase.storage
       .from("stamps")
       .upload(filePath, blob, {
         upsert: true,
-        contentType: "image/jpeg",
+        contentType,
       });
 
     if (!uploadError) {
@@ -347,7 +399,91 @@ export async function uploadStampPhotoWithFallback(
     console.warn("Storage upload exception, using compressed DataURL fallback:", err);
   }
 
-  return dataUrl;
+  if (dataUrl) {
+    return dataUrl;
+  }
+  throw new Error("写真の圧縮またはアップロードに失敗しました。別の写真でお試しください。");
+}
+
+/**
+ * stamp_events に対して写真・ひとことコメントを確実に永続化するヘルパー。
+ * 既存行の UPDATE を試行し、万が一 RLS や行不在で 0 件更新だった場合は INSERT フォールバックを行う。
+ */
+export async function persistStampEventMemory({
+  supabase,
+  userId,
+  spotId,
+  routeId,
+  groupId,
+  eventId,
+  memo,
+  photoUrl,
+}: {
+  supabase: SupabaseClient;
+  userId: string;
+  spotId: string;
+  routeId?: string | null;
+  groupId?: string | null;
+  eventId?: string | null;
+  memo?: string | null;
+  photoUrl?: string | null;
+}): Promise<{ eventId: string | null }> {
+  let targetEventId = eventId || null;
+
+  if (!targetEventId) {
+    const { data: existingEv } = await supabase
+      .from("stamp_events")
+      .select("id")
+      .eq("user_id", userId)
+      .eq("spot_id", spotId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    targetEventId = existingEv?.id || null;
+  }
+
+  const updatePayload: Record<string, any> = {};
+  if (memo !== undefined) updatePayload.memo = memo;
+  if (photoUrl !== undefined) updatePayload.photo_url = photoUrl;
+  if (groupId) updatePayload.group_id = groupId;
+
+  if (targetEventId) {
+    const { data: updatedRows, error: updateError } = await supabase
+      .from("stamp_events")
+      .update(updatePayload)
+      .eq("id", targetEventId)
+      .eq("user_id", userId)
+      .select("id");
+
+    if (!updateError && updatedRows && updatedRows.length > 0) {
+      return { eventId: targetEventId };
+    }
+  }
+
+  // UPDATE が 0 件または RLS 等で拒否された場合は INSERT で確実に記録を残す
+  const insertPayload: Record<string, any> = {
+    user_id: userId,
+    spot_id: spotId,
+    ...(routeId ? { route_id: routeId } : {}),
+    group_id: groupId || null,
+    method: "gps",
+    visitor_number: 1,
+    is_first_visit: false,
+    memo: memo ?? null,
+    photo_url: photoUrl ?? null,
+  };
+
+  const { data: insertedEv, error: insertError } = await supabase
+    .from("stamp_events")
+    .insert(insertPayload)
+    .select("id")
+    .maybeSingle();
+
+  if (insertError) {
+    throw insertError;
+  }
+
+  return { eventId: insertedEv?.id || targetEventId };
 }
 
 /**

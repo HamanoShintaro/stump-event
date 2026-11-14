@@ -6,6 +6,7 @@ import { isRouteCurrentlyActive } from "@/utils/userRoutes";
 import {
   normalizeLocalImageUrl,
   parseMemberDisplayName,
+  persistStampEventMemory,
   uploadStampPhotoWithFallback,
 } from "@/utils/stampMedia";
 
@@ -786,15 +787,13 @@ export function useShuinBook(user: any) {
       if (!user || !eventId || !file) return null;
       const uploadedUrl = await uploadStampPhotoWithFallback(supabase, user.id, spotId, file);
 
-      const { error } = await supabase
-        .from("stamp_events")
-        .update({ photo_url: uploadedUrl })
-        .eq("id", eventId)
-        .eq("user_id", user.id);
-
-      if (error) {
-        throw error;
-      }
+      await persistStampEventMemory({
+        supabase,
+        userId: user.id,
+        spotId,
+        eventId,
+        photoUrl: uploadedUrl,
+      });
 
       setDiary((prev) =>
         prev.map((item) =>

@@ -45,11 +45,12 @@ export default function MapPage({
   searchParams 
 }: { 
   params: Promise<{ id: string }>,
-  searchParams: Promise<{ groupId?: string }>
+  searchParams: Promise<{ groupId?: string; spotId?: string }>
 }) {
   const resolvedParams = use(params);
   const resolvedSearchParams = use(searchParams);
   const urlGroupId = resolvedSearchParams.groupId || null;
+  const urlSpotId = resolvedSearchParams.spotId || null;
   const router = useRouter();
   const { user } = useAuth();
   
@@ -403,16 +404,19 @@ export default function MapPage({
             href={`/routes/${rally.id}${effectiveGroupId ? `?groupId=${effectiveGroupId}` : ""}`}
             className="btn-secondary"
             style={{
-              padding: "7px 12px",
-              fontSize: "0.82rem",
+              padding: "7px 11px",
+              fontSize: "0.78rem",
+              fontWeight: 700,
               display: "inline-flex",
               alignItems: "center",
               gap: "4px",
               textDecoration: "none",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
             }}
           >
             <ChevronLeft size={15} strokeWidth={2} />
-            戻る
+            詳細・一覧へ
           </Link>
           <h1 className={styles.title} style={{ fontSize: "0.95rem", margin: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, textAlign: "center", padding: "0 8px" }}>
             {rally.title}
@@ -545,6 +549,7 @@ export default function MapPage({
           rally={rally} 
           spots={spots} 
           activeSpotId={activeSpotId} 
+          initialSpotId={urlSpotId}
           groupId={effectiveGroupId}
           groupMembers={groupMembersForMap}
           memberLatestStamps={memberLatestStamps}

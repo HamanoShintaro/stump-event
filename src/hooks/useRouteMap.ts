@@ -22,16 +22,36 @@ const DEFAULT_FALLBACK_CENTER: [number, number] = [35.6812, 139.7671];
 export function useRouteMap({
   spots,
   activeSpotId,
+  initialSpotId = null,
 }: {
   spots: RouteSpot[];
   activeSpotId: string | null;
+  initialSpotId?: string | null;
 }) {
   const [userPos, setUserPos] = useState<[number, number] | null>(null);
   const [selectedSpot, setSelectedSpot] = useState<RouteSpot | null>(null);
+  const [hasAppliedInitialSpot, setHasAppliedInitialSpot] = useState(false);
   const [viewportAction, setViewportAction] = useState<RouteMapViewportAction>({
     type: "overview",
     id: 0,
   });
+
+  // URL等で initialSpotId が指定されている場合、初期表示時にそのスポットを選択＆フォーカス
+  useEffect(() => {
+    if (hasAppliedInitialSpot || spots.length === 0) return;
+    if (initialSpotId) {
+      const target = spots.find((s) => s.id === initialSpotId);
+      if (target) {
+        setSelectedSpot(target);
+        setViewportAction({
+          type: "focus-spot",
+          spot: target,
+          id: Date.now(),
+        });
+      }
+    }
+    setHasAppliedInitialSpot(true);
+  }, [spots, initialSpotId, hasAppliedInitialSpot]);
 
   // 1. Geolocation tracking (does NOT trigger automatic map zoom/fitBounds on GPS jitter)
   useEffect(() => {

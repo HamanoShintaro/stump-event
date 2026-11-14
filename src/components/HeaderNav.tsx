@@ -11,6 +11,8 @@ import {
   User,
   BookOpen,
   Compass,
+  Map as MapIcon,
+  MapPin,
   Bookmark,
   Bell,
   Settings,
@@ -20,6 +22,16 @@ import {
 } from "lucide-react";
 import { useBadgeNotifications } from "@/hooks/useBadgeNotifications";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
+
+const PREFECTURE_LIST = [
+  "北海道", "青森県", "岩手県", "宮城県", "秋田県", "山形県", "福島県",
+  "茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県",
+  "新潟県", "富山県", "石川県", "福井県", "山梨県", "長野県", "岐阜県", "静岡県", "愛知県",
+  "三重県", "滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県",
+  "鳥取県", "島根県", "岡山県", "広島県", "山口県",
+  "徳島県", "香川県", "愛媛県", "高知県",
+  "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県",
+];
 
 export default function HeaderNav() {
   const { user, loading, logout } = useAuth();
@@ -123,28 +135,89 @@ export default function HeaderNav() {
               </button>
               <h2
                 style={{
-                  fontSize: "1.3rem",
+                  fontSize: "1.2rem",
                   fontWeight: "800",
                   color: "var(--text-color)",
-                  marginBottom: "20px",
+                  marginBottom: "14px",
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",
                 }}
               >
-                <Search size={22} color="var(--primary-color)" />
+                <Search size={20} color="var(--primary-color)" />
                 ルートを探す
               </h2>
 
+              {/* クイック探索ショートカット（地図から探す・都道府県一覧・手引き） */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "8px",
+                  marginBottom: "16px",
+                }}
+              >
+                <Link
+                  href="/map"
+                  onClick={() => {
+                    triggerNavigationLoading("/map");
+                    setSearchOpen(false);
+                  }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "5px",
+                    padding: "10px 8px",
+                    borderRadius: "10px",
+                    background: "rgba(199, 68, 46, 0.08)",
+                    border: "1.5px solid var(--primary-color)",
+                    color: "var(--primary-color)",
+                    fontSize: "0.78rem",
+                    fontWeight: 800,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <MapIcon size={15} />
+                  <span>地図から探す</span>
+                </Link>
+                <Link
+                  href="/areas"
+                  onClick={() => {
+                    triggerNavigationLoading("/areas");
+                    setSearchOpen(false);
+                  }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "5px",
+                    padding: "10px 8px",
+                    borderRadius: "10px",
+                    background: "#FFFDF9",
+                    border: "1px solid #D6CEC3",
+                    color: "var(--text-color)",
+                    fontSize: "0.78rem",
+                    fontWeight: 800,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <MapPin size={15} color="var(--primary-color)" />
+                  <span>47都道府県一覧</span>
+                </Link>
+              </div>
+
               <form
                 onSubmit={handleSearchSubmit}
-                style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+                style={{ display: "flex", flexDirection: "column", gap: "14px" }}
               >
                 <div>
                   <label
                     style={{
                       display: "block",
-                      fontSize: "0.86rem",
+                      fontSize: "0.84rem",
                       fontWeight: "700",
                       color: "#5C4E43",
                       marginBottom: "6px",
@@ -158,7 +231,7 @@ export default function HeaderNav() {
                     placeholder="例: 谷根千、鎌倉、カフェ、神社..."
                     style={{
                       width: "100%",
-                      padding: "12px",
+                      padding: "11px 12px",
                       borderRadius: "8px",
                       border: "1px solid #D6CEC3",
                       background: "#FFFDF9",
@@ -172,7 +245,7 @@ export default function HeaderNav() {
                   <label
                     style={{
                       display: "block",
-                      fontSize: "0.86rem",
+                      fontSize: "0.84rem",
                       fontWeight: "700",
                       color: "#5C4E43",
                       marginBottom: "6px",
@@ -184,7 +257,7 @@ export default function HeaderNav() {
                     name="prefecture"
                     style={{
                       width: "100%",
-                      padding: "12px",
+                      padding: "11px 12px",
                       borderRadius: "8px",
                       border: "1px solid #D6CEC3",
                       background: "#FFFDF9",
@@ -192,86 +265,84 @@ export default function HeaderNav() {
                       color: "var(--text-color)",
                     }}
                   >
-                    <option value="">すべて</option>
-                    <option value="東京都">東京都</option>
-                    <option value="神奈川県">神奈川県</option>
-                    <option value="埼玉県">埼玉県</option>
-                    <option value="千葉県">千葉県</option>
-                    <option value="大阪府">大阪府</option>
-                    <option value="京都府">京都府</option>
-                    <option value="福岡県">福岡県</option>
-                    <option value="北海道">北海道</option>
-                    <option value="沖縄県">沖縄県</option>
+                    <option value="">すべての都道府県</option>
+                    {PREFECTURE_LIST.map((pref) => (
+                      <option key={pref} value={pref}>
+                        {pref}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      fontSize: "0.86rem",
-                      fontWeight: "700",
-                      color: "#5C4E43",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    カテゴリ
-                  </label>
-                  <select
-                    name="category"
-                    style={{
-                      width: "100%",
-                      padding: "12px",
-                      borderRadius: "8px",
-                      border: "1px solid #D6CEC3",
-                      background: "#FFFDF9",
-                      fontSize: "0.95rem",
-                      color: "var(--text-color)",
-                    }}
-                  >
-                    <option value="">すべて</option>
-                    <option value="食べたい">食べたい</option>
-                    <option value="見たい">見たい</option>
-                    <option value="体験したい">体験したい</option>
-                    <option value="集めたい">集めたい</option>
-                    <option value="推しに触れたい">推しに触れたい</option>
-                    <option value="学びたい">学びたい</option>
-                    <option value="癒されたい">癒されたい</option>
-                    <option value="達成したい">達成したい</option>
-                    <option value="人と過ごしたい">人と過ごしたい</option>
-                    <option value="地域を感じたい">地域を感じたい</option>
-                  </select>
-                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "0.82rem",
+                        fontWeight: "700",
+                        color: "#5C4E43",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      カテゴリ
+                    </label>
+                    <select
+                      name="category"
+                      style={{
+                        width: "100%",
+                        padding: "10px 8px",
+                        borderRadius: "8px",
+                        border: "1px solid #D6CEC3",
+                        background: "#FFFDF9",
+                        fontSize: "0.88rem",
+                        color: "var(--text-color)",
+                      }}
+                    >
+                      <option value="">すべて</option>
+                      <option value="食べたい">食べたい</option>
+                      <option value="見たい">見たい</option>
+                      <option value="体験したい">体験したい</option>
+                      <option value="集めたい">集めたい</option>
+                      <option value="推しに触れたい">推しに触れたい</option>
+                      <option value="学びたい">学びたい</option>
+                      <option value="癒されたい">癒されたい</option>
+                      <option value="達成したい">達成したい</option>
+                      <option value="人と過ごしたい">人と過ごしたい</option>
+                      <option value="地域を感じたい">地域を感じたい</option>
+                    </select>
+                  </div>
 
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      fontSize: "0.86rem",
-                      fontWeight: "700",
-                      color: "#5C4E43",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    予算
-                  </label>
-                  <select
-                    name="budget_tier"
-                    style={{
-                      width: "100%",
-                      padding: "12px",
-                      borderRadius: "8px",
-                      border: "1px solid #D6CEC3",
-                      background: "#FFFDF9",
-                      fontSize: "0.95rem",
-                      color: "var(--text-color)",
-                    }}
-                  >
-                    <option value="">すべて</option>
-                    <option value="1">〜1,000円</option>
-                    <option value="2">〜5,000円</option>
-                    <option value="3">5,000円〜</option>
-                  </select>
+                  <div>
+                    <label
+                      style={{
+                        display: "block",
+                        fontSize: "0.82rem",
+                        fontWeight: "700",
+                        color: "#5C4E43",
+                        marginBottom: "6px",
+                      }}
+                    >
+                      予算
+                    </label>
+                    <select
+                      name="budget_tier"
+                      style={{
+                        width: "100%",
+                        padding: "10px 8px",
+                        borderRadius: "8px",
+                        border: "1px solid #D6CEC3",
+                        background: "#FFFDF9",
+                        fontSize: "0.88rem",
+                        color: "var(--text-color)",
+                      }}
+                    >
+                      <option value="">すべて</option>
+                      <option value="1">〜1,000円</option>
+                      <option value="2">〜5,000円</option>
+                      <option value="3">5,000円〜</option>
+                    </select>
+                  </div>
                 </div>
 
                 <button
@@ -279,14 +350,41 @@ export default function HeaderNav() {
                   className="btn-primary"
                   style={{
                     width: "100%",
-                    padding: "14px",
-                    marginTop: "8px",
-                    fontSize: "1rem",
+                    padding: "13px",
+                    marginTop: "4px",
+                    fontSize: "0.95rem",
                   }}
                 >
-                  検索する
+                  条件でルートを検索する
                 </button>
               </form>
+
+              <div
+                style={{
+                  marginTop: "14px",
+                  paddingTop: "12px",
+                  borderTop: "1px dashed #E5DEC9",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Link
+                  href="/guide"
+                  onClick={() => setSearchOpen(false)}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    color: "#5C4E43",
+                    textDecoration: "underline",
+                  }}
+                >
+                  <HelpCircle size={14} color="var(--primary-color)" />
+                  <span>街歩きの手引き（SHUINの使い方）を見る</span>
+                </Link>
+              </div>
             </div>
           </div>,
           document.body
@@ -295,67 +393,66 @@ export default function HeaderNav() {
 
   return (
     <>
-      <nav
-        ref={menuRef}
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        {/* 共通探索導線：ルートを探す（アカウントメニューから独立） */}
+      <nav ref={menuRef} className="shuin-header-nav">
+        {/* 地図から探す（スマホでも1タップで全国マップへ遷移可能） */}
+        <Link
+          href="/map"
+          title="地図からルートを探す"
+          className="shuin-header-pill"
+          style={{
+            background:
+              pathname === "/map"
+                ? "var(--primary-color)"
+                : "rgba(255, 253, 249, 0.94)",
+            border:
+              pathname === "/map"
+                ? "1px solid var(--primary-color)"
+                : "1px solid #D6CEC3",
+            color: pathname === "/map" ? "#FFFDF9" : "var(--text-color)",
+          }}
+        >
+          <MapIcon
+            size={14}
+            color={pathname === "/map" ? "#FFFDF9" : "var(--primary-color)"}
+          />
+          <span>地図</span>
+        </Link>
+
+        {/* 共通探索導線：ルート一覧を探す */}
         <Link
           href="/routes"
           title="ルートを探す"
+          className="shuin-header-pill"
           style={{
-            background: pathname?.startsWith("/routes")
-              ? "var(--primary-color)"
-              : "rgba(255, 253, 249, 0.94)",
-            border: pathname?.startsWith("/routes")
-              ? "1px solid var(--primary-color)"
-              : "1px solid #D6CEC3",
-            borderRadius: "999px",
-            height: "38px",
-            padding: "0 12px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "5px",
-            fontSize: "0.76rem",
-            fontWeight: 800,
-            color: pathname?.startsWith("/routes") ? "#FFFDF9" : "var(--text-color)",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
-            textDecoration: "none",
-            whiteSpace: "nowrap",
+            background:
+              pathname === "/routes"
+                ? "var(--primary-color)"
+                : "rgba(255, 253, 249, 0.94)",
+            border:
+              pathname === "/routes"
+                ? "1px solid var(--primary-color)"
+                : "1px solid #D6CEC3",
+            color: pathname === "/routes" ? "#FFFDF9" : "var(--text-color)",
           }}
         >
           <Compass
-            size={15}
-            color={pathname?.startsWith("/routes") ? "#FFFDF9" : "var(--primary-color)"}
+            size={14}
+            color={pathname === "/routes" ? "#FFFDF9" : "var(--primary-color)"}
           />
-          <span>ルートを探す</span>
+          <span className="shuin-header-label-desktop">ルートを探す</span>
+          <span className="shuin-header-label-mobile">一覧</span>
         </Link>
 
-        {/* 街歩きの手引き（使い方）ボタン */}
+        {/* 街歩きの手引き（PCヘッダー表示＋スマホは検索モーダル＆メニュー内） */}
         <Link
           href="/guide"
           title="街歩きの手引き（使い方）"
           aria-label="街歩きの手引き（使い方）"
+          className="shuin-header-pill shuin-header-desktop-only"
           style={{
             background: "rgba(255, 253, 249, 0.92)",
             border: "1px solid #D6CEC3",
-            borderRadius: "999px",
-            height: "38px",
-            padding: "0 10px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "4px",
-            fontSize: "0.74rem",
-            fontWeight: 800,
             color: "#5C4E43",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
-            textDecoration: "none",
-            whiteSpace: "nowrap",
           }}
         >
           <HelpCircle size={15} color="var(--primary-color)" />
@@ -368,25 +465,9 @@ export default function HeaderNav() {
           onClick={() => setSearchOpen(true)}
           aria-label="条件を指定してルートを検索"
           title="条件を指定してルートを検索"
-          style={{
-            background: "rgba(255, 253, 249, 0.92)",
-            border: "1px solid #D6CEC3",
-            borderRadius: "50%",
-            width: "38px",
-            height: "38px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
-            color: "var(--primary-color)",
-            transition: "transform 0.2s",
-            flexShrink: 0,
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          className="shuin-header-icon-btn"
         >
-          <Search size={18} />
+          <Search size={16} />
         </button>
 
         {loading ? (
@@ -654,42 +735,29 @@ export default function HeaderNav() {
           /* 未ログイン用アイコン */
           <Link
             href={`/login?redirect=${pathname}`}
+            title="ログイン"
             style={{
-              display: "flex",
-              flexDirection: "column",
+              display: "inline-flex",
               alignItems: "center",
+              justifyContent: "center",
+              gap: "4px",
+              height: "34px",
+              padding: "0 9px",
+              borderRadius: "999px",
+              background: "#FFFDF9",
+              border: "1.5px solid #D6CEC3",
               textDecoration: "none",
-              transition: "transform 0.2s",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
             }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05) translateY(-2px)")
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.transform = "scale(1) translateY(0)")
-            }
           >
-            <div style={{ filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.1))" }}>
-              <div
-                style={{
-                  width: "40px",
-                  height: "40px",
-                  backgroundColor: "#fff",
-                  border: "1.5px solid #D6CEC3",
-                  borderRadius: "8px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <User size={21} color="#A39687" />
-              </div>
-            </div>
+            <User size={15} color="var(--primary-color)" />
             <span
               style={{
-                fontSize: "0.62rem",
+                fontSize: "0.7rem",
                 fontWeight: "800",
                 color: "#5C4E43",
-                marginTop: "2px",
               }}
             >
               ログイン

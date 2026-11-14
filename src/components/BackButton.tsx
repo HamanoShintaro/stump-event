@@ -11,16 +11,19 @@ interface BackButtonProps {
 }
 
 const buttonStyle = {
-  display: "flex",
+  display: "inline-flex",
   alignItems: "center",
-  gap: "4px",
+  gap: "3px",
   background: "transparent",
   border: "none",
   color: "var(--text-color)",
   fontWeight: "700",
+  fontSize: "0.9rem",
   cursor: "pointer",
-  padding: "8px 0",
+  padding: "8px 4px 8px 0",
   textDecoration: "none",
+  whiteSpace: "nowrap",
+  flexShrink: 0,
 } as const;
 
 export default function BackButton({ href }: BackButtonProps) {

@@ -16,6 +16,7 @@ import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import {
   getDisplayNameFromAuthUser,
   normalizeLocalImageUrl,
+  persistStampEventMemory,
   uploadStampPhotoWithFallback,
 } from "@/utils/stampMedia";
 import {
@@ -27,6 +28,8 @@ import {
   MessageSquareQuote,
   Users,
   CheckCircle2,
+  Navigation,
+  Search,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getDistance } from "geolib";
@@ -166,50 +169,38 @@ export default function ClientSpotList({
     setIsEditingModalMemory(false);
   }, [selectedStorySpot, mySpotEvents]);
 
-  const handleSaveModalMemory = async () => {
+  const handleSaveModalMemory = async (overrideFile?: File) => {
     if (!user || !selectedStorySpot) return;
-    if (modalPhotoFile && !canUploadPhotoForSpot(selectedStorySpot.id)) {
+    const activeFile = overrideFile || modalPhotoFile;
+    if (activeFile && !canUploadPhotoForSpot(selectedStorySpot.id)) {
       setShowUpgradeModal(true);
       return;
     }
     setIsSavingModalMemory(true);
     try {
       let finalPhotoUrl = mySpotEvents[selectedStorySpot.id]?.photoUrl || null;
-      if (modalPhotoFile) {
+      if (activeFile) {
         finalPhotoUrl = await uploadStampPhotoWithFallback(
           supabase,
           user.id,
           selectedStorySpot.id,
-          modalPhotoFile
+          activeFile
         );
       }
 
       const trimmedMemo = modalMemoInput.trim() || null;
       const existingEv = mySpotEvents[selectedStorySpot.id];
 
-      if (existingEv?.id) {
-        const { error } = await supabase
-          .from("stamp_events")
-          .update({
-            memo: trimmedMemo,
-            photo_url: finalPhotoUrl,
-            ...(effectiveGroupId ? { group_id: effectiveGroupId } : {}),
-          })
-          .eq("id", existingEv.id)
-          .eq("user_id", user.id);
-        if (error) throw error;
-      } else {
-        const { error } = await supabase
-          .from("stamp_events")
-          .insert({
-            user_id: user.id,
-            spot_id: selectedStorySpot.id,
-            group_id: effectiveGroupId || null,
-            memo: trimmedMemo,
-            photo_url: finalPhotoUrl,
-          });
-        if (error) throw error;
-      }
+      await persistStampEventMemory({
+        supabase,
+        userId: user.id,
+        spotId: selectedStorySpot.id,
+        routeId,
+        eventId: existingEv?.id || null,
+        groupId: effectiveGroupId || null,
+        memo: trimmedMemo,
+        photoUrl: finalPhotoUrl,
+      });
 
       await fetchMySpotEvents();
       await refreshGroupData();
@@ -302,7 +293,9 @@ export default function ClientSpotList({
       setActiveSpotId(spotId);
       trackRouteMapOpen(routeId);
       const targetGroupId = effectiveGroupId || groupId;
-      const mapUrl = `/routes/${routeId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+      const mapUrl =
+        `/routes/${routeId}/map?spotId=${encodeURIComponent(spotId)}` +
+        (targetGroupId ? `&groupId=${encodeURIComponent(targetGroupId)}` : "");
       triggerNavigationLoading(mapUrl);
       // マップへ自動遷移
       router.push(mapUrl);
@@ -323,7 +316,8 @@ export default function ClientSpotList({
     );
   }
 
-  const targetGroupQuery = (effectiveGroupId || groupId) ? `?groupId=${effectiveGroupId || groupId}` : "";
+  const targetGroupId = effectiveGroupId || groupId;
+  const targetGroupQuery = targetGroupId ? `?groupId=${targetGroupId}` : "";
 
   return (
     <>
@@ -612,89 +606,74 @@ export default function ClientSpotList({
                 <span>{spot.address}</span>
               </p>
               <div className={styles.spotActions} style={{ position: "relative", zIndex: 2 }}>
-                {isActive ? (
-                  <div style={{ display: "flex", gap: "12px", width: "100%", flexWrap: "wrap" }}>
-                    <div style={{ flex: 1, minWidth: "120px" }}>
-                      <button 
-                        className="btn-primary" 
-                        style={{ width: "100%", padding: "10px 16px", fontSize: "0.9rem", fontWeight: "700" }}
-                        onClick={() => {
-                          const spotUrl = `/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`;
-                          triggerNavigationLoading(spotUrl);
-                          router.push(spotUrl);
-                        }}
-                      >
-                        {isStamped ? "しるしを見る" : (user ? "詳細 / 押印する" : "詳細を見る")}
-                      </button>
-                    </div>
-                    {isStamped ? (
-                      <button 
-                        className="btn-secondary" 
-                        style={{ 
-                          flex: 1, 
-                          minWidth: "120px", 
-                          display: "flex", 
-                          alignItems: "center", 
-                          justifyContent: "center", 
-                          gap: "8px", 
-                          fontWeight: "700",
-                          padding: "10px 16px",
-                          fontSize: "0.9rem",
-                          opacity: 0.6,
-                          cursor: "not-allowed",
-                          borderColor: "rgba(0, 0, 0, 0.1)",
-                          color: "rgba(0, 0, 0, 0.4)"
-                        }}
-                        disabled
-                      >
-                        しるし獲得済み
-                      </button>
-                    ) : (
-                      <button 
-                        className="btn-secondary" 
-                        style={{ 
-                          flex: 1, 
-                          minWidth: "120px", 
-                          display: "flex", 
-                          alignItems: "center", 
-                          justifyContent: "center", 
-                          gap: "8px", 
-                          fontWeight: "700",
-                          padding: "10px 16px",
-                          fontSize: "0.9rem"
-                        }}
-                        onClick={() => {
-                          const mapUrl = `/routes/${routeId}/map${targetGroupQuery}`;
-                          triggerNavigationLoading(mapUrl);
-                          router.push(mapUrl);
-                        }}
-                      >
-                        <MapIcon size={16} />
-                        マップを表示
-                      </button>
-                    )}
-                  </div>
-                ) : (
-                  isJoined && (
-                    <button 
-                      className={isStamped ? "btn-secondary" : "btn-primary"} 
-                      style={{ 
-                        width: "100%", 
-                        padding: "12px", 
-                        fontSize: "0.95rem",
-                        ...(isStamped ? {
-                          opacity: 0.8,
-                          borderColor: "rgba(0, 0, 0, 0.15)",
-                          color: "rgba(0, 0, 0, 0.6)"
-                        } : {})
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))", gap: "10px", width: "100%" }}>
+                  <button
+                    className={isJoined && !isActive && !isStamped ? "btn-secondary" : "btn-primary"}
+                    style={{
+                      width: "100%",
+                      padding: "10px 12px",
+                      fontSize: "0.86rem",
+                      fontWeight: 800,
+                      whiteSpace: "nowrap",
+                    }}
+                    onClick={() => {
+                      trackSpotDetailOpen(routeId, spot.id);
+                      const spotUrl = `/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`;
+                      triggerNavigationLoading(spotUrl);
+                      router.push(spotUrl);
+                    }}
+                  >
+                    {isStamped ? "しるし・詳細を見る" : user ? "詳細 / 押印へ" : "詳細を見る"}
+                  </button>
+
+                  {isJoined && !isActive && !isStamped ? (
+                    <button
+                      className="btn-primary"
+                      style={{
+                        width: "100%",
+                        padding: "10px 12px",
+                        fontSize: "0.86rem",
+                        fontWeight: 800,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "6px",
+                        whiteSpace: "nowrap",
                       }}
                       onClick={() => handleSetDestination(spot.id)}
                       disabled={isSettingDest !== null}
                     >
-                      {isSettingDest === spot.id ? "設定中..." : "ここを目的地にする"}
+                      <Navigation size={15} />
+                      <span>{isSettingDest === spot.id ? "設定中..." : "目的地にして地図へ"}</span>
                     </button>
-                  )
-                )}
+                  ) : (
+                    <button
+                      className="btn-secondary"
+                      style={{
+                        width: "100%",
+                        padding: "10px 12px",
+                        fontSize: "0.86rem",
+                        fontWeight: 700,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "6px",
+                        whiteSpace: "nowrap",
+                      }}
+                      onClick={() => {
+                        trackRouteMapOpen(routeId);
+                        const mapUrl =
+                          `/routes/${routeId}/map?spotId=${encodeURIComponent(spot.id)}` +
+                          (targetGroupId ? `&groupId=${encodeURIComponent(targetGroupId)}` : "");
+                        triggerNavigationLoading(mapUrl);
+                        router.push(mapUrl);
+                      }}
+                    >
+                      <MapIcon size={15} />
+                      <span>地図で場所を見る</span>
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -721,24 +700,31 @@ export default function ClientSpotList({
                 style={{
                   background: "rgba(255, 253, 249, 0.94)",
                   border: "1px dashed var(--accent-color)",
-                  borderRadius: "999px",
-                  padding: "4px 14px",
+                  borderRadius: "20px",
+                  padding: "6px 14px",
                   fontSize: "0.76rem",
                   fontWeight: 700,
                   color: "var(--text-color)",
                   boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                   display: "inline-flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "6px",
+                  maxWidth: "100%",
+                  textAlign: "center",
+                  lineHeight: 1.4,
                 }}
               >
-                <Footprints size={13} strokeWidth={2} color="var(--primary-color)" />
+                <Footprints size={13} strokeWidth={2} color="var(--primary-color)" style={{ flexShrink: 0 }} />
                 <span>
-                  次のスポット「{segmentConnector.nextName}」まで 約
-                  {segmentConnector.distMeters < 1000
-                    ? `${segmentConnector.distMeters}m`
-                    : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
-                  （徒歩約{segmentConnector.walkMin}分）
+                  次のスポット「{segmentConnector.nextName}」まで{" "}
+                  <span style={{ whiteSpace: "nowrap" }}>
+                    約
+                    {segmentConnector.distMeters < 1000
+                      ? `${segmentConnector.distMeters}m`
+                      : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
+                  </span>
+                  <span style={{ whiteSpace: "nowrap" }}>（徒歩約{segmentConnector.walkMin}分）</span>
                 </span>
               </div>
               <div
@@ -919,7 +905,7 @@ export default function ClientSpotList({
                               background: "rgba(199,68,46,0.04)"
                             }}>
                               <Camera size={14} strokeWidth={2} />
-                              <span>写真を選択・変更する</span>
+                              <span>{isSavingModalMemory ? "写真を圧縮・保存中..." : "写真を選択・変更する（自動保存）"}</span>
                               <input
                                 type="file"
                                 accept="image/*"
@@ -934,6 +920,7 @@ export default function ClientSpotList({
                                     }
                                     setModalPhotoFile(f);
                                     setModalPhotoPreview(URL.createObjectURL(f));
+                                    void handleSaveModalMemory(f);
                                   }
                                 }}
                               />
@@ -963,7 +950,7 @@ export default function ClientSpotList({
                               <button
                                 type="button"
                                 disabled={isSavingModalMemory}
-                                onClick={handleSaveModalMemory}
+                                onClick={() => handleSaveModalMemory()}
                                 className="btn-primary"
                                 style={{ padding: "6px 14px", fontSize: "0.78rem" }}
                               >
@@ -1057,6 +1044,81 @@ export default function ClientSpotList({
         reason="photo_limit"
         usedPhotoCount={usedPhotoCount}
       />
+
+      {/* スクロール中も常時アクセスできる下部フローティング導線（ルート地図 ＆ 別ルート検索） */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: "12px",
+          left: "12px",
+          right: "12px",
+          maxWidth: "560px",
+          margin: "0 auto",
+          zIndex: 85,
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "8px",
+          padding: "8px",
+          borderRadius: "16px",
+          background: "rgba(253, 251, 247, 0.96)",
+          backdropFilter: "blur(12px)",
+          border: "1.5px solid rgba(44, 38, 35, 0.14)",
+          boxShadow: "0 10px 28px rgba(0, 0, 0, 0.14)",
+        }}
+      >
+        <button
+          type="button"
+          className="btn-primary"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
+            padding: "10px 8px",
+            fontSize: "0.82rem",
+            fontWeight: 800,
+            borderRadius: "10px",
+            whiteSpace: "nowrap",
+          }}
+          onClick={() => {
+            trackRouteMapOpen(routeId);
+            const targetGroupId = effectiveGroupId || groupId;
+            const queryParts: string[] = [];
+            if (activeSpotId) queryParts.push(`spotId=${encodeURIComponent(activeSpotId)}`);
+            if (targetGroupId) queryParts.push(`groupId=${encodeURIComponent(targetGroupId)}`);
+            const mapUrl =
+              `/routes/${routeId}/map` + (queryParts.length > 0 ? `?${queryParts.join("&")}` : "");
+            triggerNavigationLoading(mapUrl);
+            router.push(mapUrl);
+          }}
+        >
+          <MapIcon size={15} />
+          <span>ルート地図を開く</span>
+        </button>
+
+        <button
+          type="button"
+          className="btn-secondary"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "6px",
+            padding: "10px 8px",
+            fontSize: "0.82rem",
+            fontWeight: 800,
+            borderRadius: "10px",
+            whiteSpace: "nowrap",
+            background: "#FFFDF9",
+          }}
+          onClick={() => {
+            window.dispatchEvent(new CustomEvent("openSearchModal"));
+          }}
+        >
+          <Search size={15} />
+          <span>別のルートを探す</span>
+        </button>
+      </div>
     </>
   );
 }

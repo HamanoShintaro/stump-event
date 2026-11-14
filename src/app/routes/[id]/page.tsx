@@ -117,7 +117,7 @@ export default async function RallyDetailPage({
         <HeaderNav />
       </header>
 
-      <main className={styles.main}>
+      <main className={styles.main} style={{ paddingBottom: "84px" }}>
         {/* ナラティブヘッダー情報 */}
         <div className={"glass-card " + styles.headerCard}>
           <div 
@@ -198,6 +198,148 @@ export default async function RallyDetailPage({
           routeTitle={rally.title}
           areaName={areaInfo.areaName}
         />
+
+        {/* 別の街・ルートをフリーワードや地図から探す回遊カード（検索・SNS流入後の離脱防止） */}
+        <section
+          className="glass-card"
+          aria-labelledby="discover-other-routes-title"
+          style={{
+            padding: "24px 20px",
+            marginTop: "28px",
+            border: "1.5px solid rgba(201, 168, 76, 0.45)",
+            borderRadius: "18px",
+            background: "rgba(255, 253, 249, 0.96)",
+          }}
+        >
+          <h2
+            id="discover-other-routes-title"
+            style={{
+              margin: "0 0 8px 0",
+              fontSize: "1.15rem",
+              fontWeight: 800,
+              color: "var(--text-color)",
+            }}
+          >
+            🔍 別の街・駅のルートも探してみる
+          </h2>
+          <p
+            style={{
+              margin: "0 0 14px 0",
+              fontSize: "0.86rem",
+              lineHeight: 1.6,
+              color: "var(--text-color)",
+              opacity: 0.8,
+            }}
+          >
+            駅名・街名・スポット名のフリーワード入力や、全国マップ・都道府県一覧から次の散策先を探せます。
+          </p>
+
+          <form
+            action="/routes"
+            method="get"
+            style={{
+              display: "flex",
+              gap: "8px",
+              width: "100%",
+              marginBottom: "14px",
+            }}
+          >
+            <input
+              type="text"
+              name="q"
+              placeholder="駅名・街名・スポット名で検索..."
+              aria-label="駅名・街名・スポット名で検索"
+              style={{
+                flex: 1,
+                minWidth: 0,
+                padding: "11px 14px",
+                fontSize: "0.9rem",
+                borderRadius: "10px",
+                border: "1.5px solid rgba(44, 38, 35, 0.2)",
+                background: "#FFFFFF",
+                color: "var(--text-color)",
+                outline: "none",
+              }}
+            />
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{
+                flexShrink: 0,
+                whiteSpace: "nowrap",
+                padding: "11px 18px",
+                fontSize: "0.88rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+              }}
+            >
+              検索
+            </button>
+          </form>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+              gap: "10px",
+            }}
+          >
+            <Link
+              href="/map"
+              className="btn-primary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "11px 12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>🗺️ 地図から探す</span>
+            </Link>
+            <Link
+              href="/routes"
+              className="btn-secondary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "11px 12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>🧭 全ルート一覧</span>
+            </Link>
+            <Link
+              href="/areas"
+              className="btn-secondary"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "6px",
+                padding: "11px 12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                borderRadius: "10px",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>🗾 都道府県一覧</span>
+            </Link>
+          </div>
+        </section>
 
         {/* エリア別・検索意図マッチ街歩きガイド */}
         <section className={styles.seoGuideSection} aria-labelledby="area-walk-guide-title">
