@@ -73580,5 +73580,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "3b19108c-9760-4f85-8501-b4f21f5c8201",
+    "title": "近江八景「堅田の落雁」と湖族の郷・堅田を歩く",
+    "name": "近江八景「堅田の落雁」と湖族の郷・堅田を歩く",
+    "description": "琵琶湖が大きくくびれた要衝に位置し、中世には自治都市「湖族の郷」として栄えた滋賀県大津市本堅田。名物大福の御菓子処 嶋屋本店から、手焼きどら焼きのきなせや、蓮如上人ゆかりの本福寺、湖魚佃煮の魚富商店を経て、琵琶湖上に浮かぶ満月寺・浮御堂へと巡る。",
+    "region": "堅田・浮御堂と湖族の郷（大津市）",
+    "area_name": "堅田・浮御堂と湖族の郷（大津市）",
+    "cover_image_url": "/images/katata/route-eyecatch.png",
+    "imageUrl": "/images/katata/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "湖上水運を担った湖族の町並みと琵琶湖に浮かぶ仏堂が調和する堅田で、あなたの心を動かしたのはどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "琵琶湖の湖面へと石橋が伸び、千体阿弥陀仏を祀る「満月寺 浮御堂」の静謐な佇まい",
+          "description": "水上に浮かぶお堂の回廊からさざ波と比良の峰々を眺め、近江八景「堅田の落雁」の風雅に浸った。",
+          "badge_code": "katata_ukimido"
+        },
+        {
+          "key": "B",
+          "text": "蓮如上人を守り抜いた堅田衆の誇りと中世自治の記憶を伝える「本福寺」の境内",
+          "description": "湖の関所を治めた湖族たちが自らの町と信仰を命がけで守り抜いた歴史の重みを肌で感じた。",
+          "badge_code": "katata_honpukuji"
+        },
+        {
+          "key": "C",
+          "text": "浮御堂の門前で直火釜から醤油と生姜の香ばしい湯気が立ち上る「魚富商店」の湖魚佃煮",
+          "description": "添加物を使わず琵琶湖の小鮎やモロコを炊き上げる手仕事に、湖とともに生きる食文化の奥深さを知った。",
+          "badge_code": "katata_uotomi_tsukudani"
+        },
+        {
+          "key": "D",
+          "text": "「御菓子処 嶋屋 本店」の瑞々しいいちご大福と「きなせや」の手焼きどら焼きの優しい甘み",
+          "description": "毎朝つきたての餅で果実を包む大福と銅板手焼きのどら焼きに、港町の日常に寄り添う温もりを感じた。",
+          "badge_code": "katata_wagashi_stroll"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a8735b57-a1de-4e96-8f3b-ee86e79a7ee2",
+        "name": "御菓子処 嶋屋 本店",
+        "description": "本堅田の大通り沿いに店を構える老舗和菓子店（8:30〜18:00営業・売切次第終了、月曜休）。大粒の苺を白餡と柔らかな餅で包んだ「いちご大福」や「バナナとくるみの大福」、「でっち羊かん」で知られる。",
+        "address": "滋賀県大津市本堅田5丁目6-54",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.114699,
+        "lng": 135.911218,
+        "qr_token": "shuin-katata-1",
+        "cover_image_url": "/images/katata/spot1.png",
+        "f7_fragment": "大粒の果実を柔らかな求肥と白餡で包む、本堅田の大通りで愛される老舗和菓子処。",
+        "f7_full": "「御菓子処 嶋屋 本店」の瑞々しいいちご大福とつきたての餅の柔らかさが、湖族の郷・堅田を巡る旅の始まりを華やかに彩ってくれる。",
+        "is_final": false,
+        "next_spot_id": "1d4da7d7-ded0-493a-831b-f468860abd74",
+        "next_spot_name": "きなせや"
+      },
+      {
+        "id": "1d4da7d7-ded0-493a-831b-f468860abd74",
+        "name": "きなせや",
+        "description": "本堅田3丁目にある手焼きどら焼き専門店（10:00〜19:00営業、火曜・水曜休）。北海道産小豆を炊き上げた自家製餡をふんわり焼き上げた皮で挟む定番どら焼きや季節のどら焼きを味わえる。",
+        "address": "滋賀県大津市本堅田3丁目11-16",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.11488,
+        "lng": 135.913576,
+        "qr_token": "shuin-katata-2",
+        "cover_image_url": "/images/katata/spot2.png",
+        "f7_fragment": "銅板で一枚ずつ丁寧に手焼きする皮に、自家製粒餡を挟んだ本堅田のどら焼き専門店。",
+        "f7_full": "「きなせや」の香ばしい手焼きどら焼きとふっくら炊き上げた小豆餡の風味が、湖岸へと向かう散策の途中に温かな安らぎを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "39f175ab-d60c-4cac-8ed3-2850d5a1537c",
+        "next_spot_name": "本福寺"
+      },
+      {
+        "id": "39f175ab-d60c-4cac-8ed3-2850d5a1537c",
+        "name": "本福寺",
+        "description": "本堅田の旧町並みに建つ浄土真宗本願寺派の古刹（境内参拝自由）。室町時代に蓮如上人を庇護し湖上布教の拠点となった寺院で、中世堅田の自治と湖族の歴史を伝える『本福寺跡書』などの史料でも知られる。",
+        "address": "滋賀県大津市本堅田1丁目22-30",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.111202,
+        "lng": 135.919338,
+        "qr_token": "shuin-katata-3",
+        "cover_image_url": "/images/katata/spot3.png",
+        "f7_fragment": "蓮如上人を支えた中世堅田の自治と、湖族たちの篤い信仰の歴史を今に伝える古刹。",
+        "f7_full": "「本福寺」の重厚な本堂と静かな境内が、琵琶湖の水運を掌握し自治都市を築き上げた堅田衆の誇り高い歴史を今に伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "45b71803-95ce-4f21-8f6d-1468efb105fe",
+        "next_spot_name": "魚富商店"
+      },
+      {
+        "id": "45b71803-95ce-4f21-8f6d-1468efb105fe",
+        "name": "魚富商店",
+        "description": "浮御堂の近くに暖簾を掲げる昭和五年創業の湖魚佃煮専門店（9:00〜17:00営業、木曜休）。添加物を使わず直火釜で炊き上げる琵琶湖産の「小鮎の佃煮」やモロコ、伝統の「鮒寿司」を取り揃える。",
+        "address": "滋賀県大津市本堅田1丁目16-14",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.110123,
+        "lng": 135.920665,
+        "qr_token": "shuin-katata-4",
+        "cover_image_url": "/images/katata/spot4.png",
+        "f7_fragment": "昭和五年の創業以来、無添加の直火釜で琵琶湖の小鮎やモロコの佃煮を炊き上げる老舗。",
+        "f7_full": "「魚富商店」に並ぶ艶やかな小鮎の佃煮と醤油の香ばしい薫りが、琵琶湖の豊かな恵みとともに歩んできた堅田の食の伝統を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "2d871e5a-00fe-4a5d-8c8a-9dd69bc8a3e1",
+        "next_spot_name": "満月寺 浮御堂"
+      },
+      {
+        "id": "2d871e5a-00fe-4a5d-8c8a-9dd69bc8a3e1",
+        "name": "満月寺 浮御堂",
+        "description": "近江八景「堅田の落雁」で知られる臨済宗大徳寺派の寺院（8:00〜17:00拝観、無休、拝観料300円）。平安時代に恵心僧都が創建したと伝わり、岸辺から石橋を渡った琵琶湖上に千体阿弥陀仏を祀る浮御堂が建つ。",
+        "address": "滋賀県大津市本堅田1丁目16-18",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 35.109851,
+        "lng": 135.921593,
+        "qr_token": "shuin-katata-5",
+        "cover_image_url": "/images/katata/spot5.png",
+        "f7_fragment": "近江八景「堅田の落雁」の舞台として、石橋の先の琵琶湖上に静かに浮かぶ水上の仏堂。",
+        "f7_full": "「満月寺 浮御堂」の湖上に張り出したお堂と比良の峰々を映す琵琶湖の煌めきが、湖族の郷・堅田を歩いた旅を清らかな余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d6910d24-5751-4701-8103-20e0501d3f7b",
+    "title": "紫式部ゆかりの硅灰石と瀬田川の門前・石山寺へ",
+    "name": "紫式部ゆかりの硅灰石と瀬田川の門前・石山寺へ",
+    "description": "天然記念物の奇岩「硅灰石」の上に国宝の本堂と多宝塔が建ち、紫式部が『源氏物語』を起筆したと伝わる滋賀県大津市の石山寺。京阪石山寺駅から、門前甘味の洗心寮、しじみ釜めしの志じみ茶屋 湖舟、文豪ゆかりの茶丈藤村を経て、大本山・石山寺の境内へと巡る。",
+    "region": "石山寺・硅灰石の古刹と瀬田川門前（大津市）",
+    "area_name": "石山寺・硅灰石の古刹と瀬田川門前（大津市）",
+    "cover_image_url": "/images/ishiyamadera/route-eyecatch.png",
+    "imageUrl": "/images/ishiyamadera/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "天然記念物の奇岩に建つ国宝の伽藍と瀬田川沿いの門前文化が息づく石山寺で、あなたの目を惹いたのはどの風景ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ごつごつとした「硅灰石」の奇岩の上に聳える「石山寺」の国宝本堂と優美な多宝塔",
+          "description": "紫式部が『源氏物語』の構想を練った千年古刹で、奇岩と国宝建築が織りなす造形美に見入った。",
+          "badge_code": "ishiyamadera_national_treasure"
+        },
+        {
+          "key": "B",
+          "text": "島崎藤村ゆかりの「茶丈藤村」で味わう小豆と求肥・胡桃の銘菓「たばしる」の気品",
+          "description": "瀬田川のせせらぎが聴こえる静かな茶房で、文学の記憶を映す手作りの和菓子に心が和んだ。",
+          "badge_code": "ishiyamadera_sajo_toson"
+        },
+        {
+          "key": "C",
+          "text": "門前参道の松並木を望みながら近江の味覚と餅菓子を楽しむ「淡味の膳処 洗心寮」",
+          "description": "瀬田川の風を感じる門前の憩い処で、香ばしい団子や近江茶スイーツの優しい味わいに癒やされた。",
+          "badge_code": "ishiyamadera_senshinryo"
+        },
+        {
+          "key": "D",
+          "text": "「志じみ茶屋 湖舟」の鉄釜から立ち上る琵琶湖・瀬田川産しじみ釜めしの滋味深い香り",
+          "description": "注文ごとに一釜ずつ炊き上げられる「志じみめし」の濃厚な出汁に、瀬田川の豊かな恵みを感じた。",
+          "badge_code": "ishiyamadera_shijimimeshi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fc7c1b73-7599-4cd6-85c5-0979f43db042",
+        "name": "石山寺駅",
+        "description": "京阪石山坂本線の終着駅であり、大本山・石山寺参詣の玄関口（始発〜終電）。瀬田川の清流に近い駅前広場から、老舗の食事処や甘味処が並ぶ門前参道へと続いている。",
+        "address": "滋賀県大津市石山寺3丁目1-4",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.960517,
+        "lng": 135.909177,
+        "qr_token": "shuin-ishiyamadera-1",
+        "cover_image_url": "/images/ishiyamadera/spot1.png",
+        "f7_fragment": "大正三年の開業以来、瀬田川畔の古刹・石山寺への参拝客を温かく迎える終着駅。",
+        "f7_full": "「石山寺駅」の落ち着いた佇まいと瀬田川から吹き抜ける爽やかな川風が、紫式部ゆかりの門前町を巡る旅の始まりを迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "ef832b5f-0477-4384-84ee-dd441e869a25",
+        "next_spot_name": "淡味の膳処 洗心寮"
+      },
+      {
+        "id": "ef832b5f-0477-4384-84ee-dd441e869a25",
+        "name": "淡味の膳処 洗心寮",
+        "description": "石山寺門前に位置する食事・甘味・土産処（平日10:00〜16:00・土日祝10:00〜16:30営業、不定休）。近江の湯葉や赤こんにゃくを使った料理のほか、門前名物の餅菓子や団子、近江茶スイーツを楽しめる。",
+        "address": "滋賀県大津市石山寺1丁目3-18",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.960468,
+        "lng": 135.908768,
+        "qr_token": "shuin-ishiyamadera-2",
+        "cover_image_url": "/images/ishiyamadera/spot2.png",
+        "f7_fragment": "石山寺の参道入口で近江の伝統食材を使った味覚と門前餅菓子・甘味を届ける憩い処。",
+        "f7_full": "「淡味の膳処 洗心寮」から望む門前の松並木と香ばしい門前甘味が、大本山・石山寺へと向かう参道歩きの始まりに温かな彩りを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "e4580d57-c519-4e94-874d-f26b35797037",
+        "next_spot_name": "志じみ茶屋 湖舟"
+      },
+      {
+        "id": "e4580d57-c519-4e94-874d-f26b35797037",
+        "name": "志じみ茶屋 湖舟",
+        "description": "石山寺参道に暖簾を掲げる郷土料理店（ランチ11:00〜15:00営業、不定休）。瀬田川・琵琶湖名物のしじみ出汁で一釜ずつ炊き上げる「志じみめし（しじみ釜めし）」や鰻料理を味わえる。",
+        "address": "滋賀県大津市石山寺3丁目2-37",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.960772,
+        "lng": 135.908023,
+        "qr_token": "shuin-ishiyamadera-3",
+        "cover_image_url": "/images/ishiyamadera/spot3.png",
+        "f7_fragment": "琵琶湖・瀬田川名物のしじみを一釜ずつ香ばしく炊き上げる石山寺門前の郷土料理処。",
+        "f7_full": "「志じみ茶屋 湖舟」の炊きたてのしじみ釜めしと滋味深い出汁の香りが、瀬田川の豊かな恵みと石山寺門前の伝統の味を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "d20c4f14-ebf9-4baa-8d1c-a8377c192a1c",
+        "next_spot_name": "茶丈藤村"
+      },
+      {
+        "id": "d20c4f14-ebf9-4baa-8d1c-a8377c192a1c",
+        "name": "茶丈藤村",
+        "description": "瀬田川沿いの参道に佇む、文豪・島崎藤村ゆかりの和菓子処・甘味処（平日10:00〜17:00・土日祝9:00〜18:00営業、火曜休）。小豆と求肥・くるみを合わせた代表銘菓「たばしる」や季節の上生菓子で知られる。",
+        "address": "滋賀県大津市石山寺1丁目3-20",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.961696,
+        "lng": 135.907061,
+        "qr_token": "shuin-ishiyamadera-4",
+        "cover_image_url": "/images/ishiyamadera/spot4.png",
+        "f7_fragment": "文豪・島崎藤村の門前滞在にちなみ、代表銘菓「たばしる」と季節の和菓子を伝える店。",
+        "f7_full": "「茶丈藤村」の上品な小豆菓子と静かな茶房の佇まいが、瀬田川のせせらぎに耳を傾けた文豪の記憶を優美に呼び覚ましてくれる。",
+        "is_final": false,
+        "next_spot_id": "d7afb2ed-5a88-4aac-8a8a-d79bb4fd6fc2",
+        "next_spot_name": "石山寺"
+      },
+      {
+        "id": "d7afb2ed-5a88-4aac-8a8a-d79bb4fd6fc2",
+        "name": "石山寺",
+        "description": "天平宝字年間に良弁僧正が開基した東寺真言宗の大本山（8:00〜16:30拝観、無休、入山料600円）。国天然記念物「硅灰石」の上に建つ国宝の本堂や多宝塔を有し、紫式部が『源氏物語』を起筆した寺として知られる。",
+        "address": "滋賀県大津市石山寺1丁目1-1",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.960509,
+        "lng": 135.905577,
+        "qr_token": "shuin-ishiyamadera-5",
+        "cover_image_url": "/images/ishiyamadera/spot5.png",
+        "f7_fragment": "天然記念物「硅灰石」の上に国宝の本堂と多宝塔が聳える紫式部ゆかりの千年古刹。",
+        "f7_full": "「石山寺」の奇岩・硅灰石の上に佇む国宝本堂と優美な多宝塔の姿が、千年の文学と祈りが息づく門前町の旅を格別な感動で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d91d0b55-ffa8-4785-8e2b-3bfa3d6cf272",
+    "title": "なぜ関宿に二百軒の町家が息づくのか",
+    "name": "なぜ関宿に二百軒の町家が息づくのか",
+    "description": "東海道五十三次の四十七番目の宿場町であり、江戸から明治期の町家二百軒以上が連なる重要伝統的建造物群保存地区・三重県亀山市関町。JR関駅から、関まちなみ資料館、百六里庭・眺関亭、創業三百八十余年の深川屋 陸奥大掾を経て、重要文化財の関の地蔵院へと巡る。",
+    "region": "関宿・東海道四十七番目の町並み（亀山市）",
+    "area_name": "関宿・東海道四十七番目の町並み（亀山市）",
+    "cover_image_url": "/images/sekijuku/route-eyecatch.png",
+    "imageUrl": "/images/sekijuku/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "江戸から明治期の町家が連なる旧東海道・関宿の街歩きで、あなたの心を動かしたのはどの瞬間ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「深川屋 陸奥大掾」の大看板を仰ぎ、三百八十余年受け継がれる銘菓「関の戸」を手にする瞬間",
+          "description": "鈴鹿の白雪を阿波の和三盆糖で映した一子相伝の餅菓子に、東海道関宿の格式と誇りを感じた。",
+          "badge_code": "sekijuku_sekinoto"
+        },
+        {
+          "key": "B",
+          "text": "百六里庭の「眺関亭」二階から、鈴鹿の山並みへと連なる関宿の瓦屋根を見下ろす瞬間",
+          "description": "電柱のない旧東海道に沿って江戸・明治期の町家がどこまでも続く壮観な屋根並みに息をのんだ。",
+          "badge_code": "sekijuku_chokantei"
+        },
+        {
+          "key": "C",
+          "text": "「関まちなみ資料館」の通り庭から坪庭へと抜ける光と、虫籠窓・袖壁の造形に触れる瞬間",
+          "description": "「うなぎの寝床」の町家に凝らされた採光と防火の工夫に、街道と生きた先人の知恵を見た。",
+          "badge_code": "sekijuku_machinami_museum"
+        },
+        {
+          "key": "D",
+          "text": "重要文化財の本堂と鐘楼・愛染堂が並ぶ「関の地蔵院」で旅人の祈りに思いを重ねる瞬間",
+          "description": "精緻な彫刻を伝える古刹の境内に立ち、東海道を往来した無数の旅人の足音に耳を澄ませた。",
+          "badge_code": "sekijuku_jizoin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ca3ee633-d7a2-4a11-8535-0581cfec7e63",
+        "name": "関駅",
+        "description": "JR関西本線の駅であり、国選定重要伝統的建造物群保存地区「東海道関宿」への玄関口（待合室は始発〜終電）。古代の鈴鹿関ゆかりの地であり、北へ歩けば江戸・明治期の町家が連なる旧東海道へと至る。",
+        "address": "三重県亀山市関町新所664-2",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.851313,
+        "lng": 136.392448,
+        "qr_token": "shuin-sekijuku-1",
+        "cover_image_url": "/images/sekijuku/spot1.png",
+        "f7_fragment": "東海道四十七番目の宿場町・関宿の重伝建地区へと続く鉄道の穏やかな玄関口。",
+        "f7_full": "「関駅」の穏やかな駅前から一歩踏み出すと、二百軒以上の歴史的町家が連なる東海道関宿のタイムスリップの旅が幕を開ける。",
+        "is_final": false,
+        "next_spot_id": "83cac0c5-c6af-406c-89e7-98e4f2d56316",
+        "next_spot_name": "関まちなみ資料館"
+      },
+      {
+        "id": "83cac0c5-c6af-406c-89e7-98e4f2d56316",
+        "name": "関まちなみ資料館",
+        "description": "江戸時代末期の町家（旧別所家）を活用した資料館（9:00〜16:30開館、月曜・祝日の翌日・年末年始休、入館料大人300円）。「うなぎの寝床」と呼ばれる町家の内部構造や関宿の歴史資料を展示している。",
+        "address": "三重県亀山市関町中町482",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.852338,
+        "lng": 136.393208,
+        "qr_token": "shuin-sekijuku-2",
+        "cover_image_url": "/images/sekijuku/spot2.png",
+        "f7_fragment": "江戸時代末期の町家建築の内部構造と、関宿の歴史・町並み保存の歩みを伝える資料館。",
+        "f7_full": "「関まちなみ資料館」の吹き抜けの通り庭と坪庭から差す柔らかな光が、旧東海道の宿場町に息づく町家建築の知恵と風情を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "7af4e172-803a-4b97-8cf5-7207198119f1",
+        "next_spot_name": "眺関亭（百六里庭）"
+      },
+      {
+        "id": "7af4e172-803a-4b97-8cf5-7207198119f1",
+        "name": "眺関亭（百六里庭）",
+        "description": "江戸から百六里の位置にちなむ小公園「百六里庭」内の展望施設（8:00〜17:00開園、無休・入園無料）。二階の展望台から、旧東海道に沿って連なる関宿の伝統的な瓦屋根を一望できる。",
+        "address": "三重県亀山市関町中町327",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.852266,
+        "lng": 136.392518,
+        "qr_token": "shuin-sekijuku-3",
+        "cover_image_url": "/images/sekijuku/spot3.png",
+        "f7_fragment": "江戸から百六里の宿場町に連なる伝統の瓦屋根を二階から一望できる百六里庭の展望処。",
+        "f7_full": "「眺関亭」の二階から見渡す幾重ものいぶし銀の瓦屋根と鈴鹿の山並みが、国の重伝建地区・東海道関宿の壮観なスケールを届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "25727603-97cf-4473-83b6-5abd353c3916",
+        "next_spot_name": "深川屋 陸奥大掾"
+      },
+      {
+        "id": "25727603-97cf-4473-83b6-5abd353c3916",
+        "name": "深川屋 陸奥大掾",
+        "description": "寛永年間創業、三百八十余年の歴史を誇る老舗和菓子司（9:30〜17:00頃営業、木曜休・祝日は営業）。こし餡を求肥餅で包み阿波の和三盆糖をまぶした代表銘菓「関の戸」を一子相伝で作り続けている。",
+        "address": "三重県亀山市関町中町387",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.852348,
+        "lng": 136.391458,
+        "qr_token": "shuin-sekijuku-4",
+        "cover_image_url": "/images/sekijuku/spot4.png",
+        "f7_fragment": "寛永年間の創業以来、和三盆糖をまぶした銘菓「関の戸」を一子相伝で伝える老舗菓子司。",
+        "f7_full": "「深川屋 陸奥大掾」の格式ある町家と白雪のような銘菓「関の戸」の口どけが、三百八十余年にわたり旅人を魅了してきた宿場銘菓の粋を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "72b8b0d9-aacd-4158-8d0d-f275cbfa034f",
+        "next_spot_name": "関の地蔵院"
+      },
+      {
+        "id": "72b8b0d9-aacd-4158-8d0d-f275cbfa034f",
+        "name": "関の地蔵院",
+        "description": "天平十三年に僧・行基が開創したと伝わる真言宗御室派の古刹（境内参拝自由・本堂9:00〜16:00）。「関の地蔵」として親しまれ、本堂・鐘楼・愛染堂の三棟が国重要文化財に指定されている。",
+        "address": "三重県亀山市関町木崎919-1",
+        "prefecture": "三重県",
+        "city": "",
+        "lat": 34.853036,
+        "lng": 136.389282,
+        "qr_token": "shuin-sekijuku-5",
+        "cover_image_url": "/images/sekijuku/spot5.png",
+        "f7_fragment": "「関の地蔵」と親しまれ、本堂・鐘楼・愛染堂の三棟が国重要文化財に指定される古刹。",
+        "f7_full": "「関の地蔵院」の重要文化財の本堂と鐘楼の風格ある佇まいが、東海道関宿を巡り歩いた旅を温かな祈りと歴史の余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "94f12c15-4fbf-4aed-8f35-df209e095126",
+    "title": "湯けむり坂の仲見世と海辺の社・熱海を辿る",
+    "name": "湯けむり坂の仲見世と海辺の社・熱海を辿る",
+    "description": "徳川家康公も愛した名湯の歴史と、昭和レトロな商店街、相模湾の青い海が溶け合う静岡県熱海市。JR熱海駅から坂道を下り、温泉鎮守の湯前神社、大正創業の常盤木羊羹店 總本店、熱海銀座の熱海プリンカフェ 2ndを経て、お宮の松と熱海サンビーチへと辿る。",
+    "region": "熱海・湯前神社と銀座通りから海辺へ（熱海市）",
+    "area_name": "熱海・湯前神社と銀座通りから海辺へ（熱海市）",
+    "cover_image_url": "/images/atami/route-eyecatch.png",
+    "imageUrl": "/images/atami/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "湯けむり漂う坂道の社とレトロな商店街、相模湾の海辺が続く熱海で、あなたの心を惹きつけたのはどの体験ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「湯前神社」の湯けむり立ち上る手水舎で、徳川家康公ゆかりの「御汲湯」の歴史に触れる体験",
+          "description": "坂の下の樟の杜に息づく源泉信仰と江戸時代の湯桝に、名湯・熱海千二百年の原点を感じた。",
+          "badge_code": "atami_yuzen_shrine"
+        },
+        {
+          "key": "B",
+          "text": "大正創業の「常盤木羊羹店 總本店」で、伊豆の柑橘や梅が香る「鶴吉羊羹」を選ぶ体験",
+          "description": "ニューサマーオレンジや熱海梅を銅釜炊きの羊羹に閉じ込めた老舗の技に、洗練された菓子の粋を見た。",
+          "badge_code": "atami_tokiwagi_yokan"
+        },
+        {
+          "key": "C",
+          "text": "熱海銀座商店街の「熱海プリンカフェ 2nd」で、銭湯タイルに囲まれ牛乳瓶プリンを味わう体験",
+          "description": "風呂桶トレイに乗った濃厚なプリンとほろ苦いカラメルに、昭和レトロな商店街の明るい活気を感じた。",
+          "badge_code": "atami_pudding_cafe"
+        },
+        {
+          "key": "D",
+          "text": "『金色夜叉』の舞台「お宮の松」から、白い砂浜の熱海サンビーチと相模湾の潮風を浴びる体験",
+          "description": "坂道の温泉街を抜けた先に広がる青い海とヤシの並木道に、時代を超えて愛される海辺の開放感を覚えた。",
+          "badge_code": "atami_omiya_no_matsu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4f0ad69e-9280-4e2d-8c6e-dd85626c2011",
+        "name": "熱海駅",
+        "description": "JR東海道本線・伊東線・東海道新幹線が乗り入れる熱海温泉の玄関口（ラスカ熱海は9:00〜20:00頃営業）。駅前広場には無料の足湯「家康の湯」や明治期の軽便鉄道「蒸気機関車7号機」が設置されている。",
+        "address": "静岡県熱海市田原本町11-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.103842,
+        "lng": 139.077884,
+        "qr_token": "shuin-atami-1",
+        "cover_image_url": "/images/atami/spot1.png",
+        "f7_fragment": "足湯「家康の湯」と軽便鉄道の蒸気機関車が旅人を迎える熱海温泉の玄関口。",
+        "f7_full": "「熱海駅」の湯けむり漂う駅前広場と海へ向かって下る商店街の賑わいが、名湯と潮風の街・熱海を辿る旅の始まりを楽しく告げてくれる。",
+        "is_final": false,
+        "next_spot_id": "c2627953-67f6-4512-8e4a-f0da30f2be4e",
+        "next_spot_name": "湯前神社"
+      },
+      {
+        "id": "c2627953-67f6-4512-8e4a-f0da30f2be4e",
+        "name": "湯前神社",
+        "description": "天平宝字年間の創建と伝わる熱海温泉の守護神社（境内参拝自由）。少彦名命を祀り、徳川家康公の湯治や江戸城への「御汲湯」の歴史を伝える石造の湯桝や源泉の手水舎が境内に残る。",
+        "address": "静岡県熱海市上宿町4-12",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.098332,
+        "lng": 139.071367,
+        "qr_token": "shuin-atami-2",
+        "cover_image_url": "/images/atami/spot2.png",
+        "f7_fragment": "徳川家康公への「御汲湯」の歴史と源泉信仰を今に伝える熱海温泉鎮守の古社。",
+        "f7_full": "「湯前神社」の樟の木陰と温かい湯けむりが立ち上る境内の佇まいが、千二百年にわたり名湯を守り続けてきた祈りの記憶を伝えてくれる。",
+        "is_final": false,
+        "next_spot_id": "217f516d-d6a3-49c9-8e73-0d137e0823c8",
+        "next_spot_name": "常盤木羊羹店 總本店"
+      },
+      {
+        "id": "217f516d-d6a3-49c9-8e73-0d137e0823c8",
+        "name": "常盤木羊羹店 總本店",
+        "description": "銀座通り近くに構える大正時代創業の羊羹専門店（10:00〜18:00営業、不定休）。熱海特産の橙や東伊豆産ニューサマーオレンジ、熱海産梅などを使った代表銘菓「鶴吉羊羹」で知られる。",
+        "address": "静岡県熱海市銀座町9-1",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.097256,
+        "lng": 139.073059,
+        "qr_token": "shuin-atami-3",
+        "cover_image_url": "/images/atami/spot3.png",
+        "f7_fragment": "大正時代の創業以来、伊豆の柑橘や熱海梅が香る「鶴吉羊羹」を練り上げる老舗。",
+        "f7_full": "「常盤木羊羹店 總本店」の重厚な和風建築と瑞々しい「鶴吉羊羹」の彩りが、熱海銀座の歴史と洗練された和菓子の技を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "1f1c909b-30c4-46b2-8a45-2b9792c3892f",
+        "next_spot_name": "熱海プリンカフェ 2nd"
+      },
+      {
+        "id": "1f1c909b-30c4-46b2-8a45-2b9792c3892f",
+        "name": "熱海プリンカフェ 2nd",
+        "description": "熱海銀座商店街にあるプリンのカフェ専門店（10:00〜18:00営業、無休）。銭湯の浴場をモチーフにしたタイル張りの店内で、牛乳瓶に入ったなめらかな「熱海プリン」やソフトクリームを楽しめる。",
+        "address": "静岡県熱海市銀座町10-22",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.096862,
+        "lng": 139.073854,
+        "qr_token": "shuin-atami-4",
+        "cover_image_url": "/images/atami/spot4.png",
+        "f7_fragment": "銭湯タイル張りのレトロな空間で、牛乳瓶入りのなめらかな熱海プリンを味わうカフェ。",
+        "f7_full": "「熱海プリンカフェ 2nd」の白いタイル壁と濃厚でなめらかなプリンの甘みが、昭和レトロな熱海銀座の街歩きに心弾むひとときを添えてくれる。",
+        "is_final": false,
+        "next_spot_id": "cfba9615-9ab4-4890-8697-908d5c3b36ea",
+        "next_spot_name": "お宮の松（熱海サンビーチ）"
+      },
+      {
+        "id": "cfba9615-9ab4-4890-8697-908d5c3b36ea",
+        "name": "お宮の松（熱海サンビーチ）",
+        "description": "熱海サンビーチ沿いの海岸通りに立つ名勝（終日散策自由）。尾崎紅葉の小説『金色夜叉』の舞台として知られ、二代目「お宮の松」と貫一・お宮の像から相模湾の青い海と砂浜を一望できる。",
+        "address": "静岡県熱海市東海岸町15",
+        "prefecture": "静岡県",
+        "city": "",
+        "lat": 35.099006,
+        "lng": 139.076742,
+        "qr_token": "shuin-atami-5",
+        "cover_image_url": "/images/atami/spot5.png",
+        "f7_fragment": "尾崎紅葉『金色夜叉』の舞台として、相模湾の青い海と白い砂浜を望む海辺の名勝。",
+        "f7_full": "「お宮の松」の緑の枝ぶりと熱海サンビーチに打ち寄せる相模湾の青い波が、湯けむり坂を下り歩いた旅を爽やかな潮風で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fad51270-e06b-4f83-88fd-e2ec21196d3b",
+    "title": "琵琶湖の水城門と旧東海道・膳所を訪ねる",
+    "name": "琵琶湖の水城門と旧東海道・膳所を訪ねる",
+    "description": "徳川家康公が藤堂高虎公に縄張りを命じた水城「膳所城」と、旧東海道の城下町の歴史が息づく滋賀県大津市膳所。鎌倉期重文本殿の和田神社から、湖岸の膳所城跡公園、膳所城の城門を移築した膳所神社、老舗の亀屋廣房を経て、北大手門を伝える篠津神社へと訪ねる。",
+    "region": "膳所・湖畔の水城跡と城下町の重文城門（大津市）",
+    "area_name": "膳所・湖畔の水城跡と城下町の重文城門（大津市）",
+    "cover_image_url": "/images/zeze/route-eyecatch.png",
+    "imageUrl": "/images/zeze/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "琵琶湖に突き出た水城跡と旧膳所城の城門を受け継ぐ神社が並ぶ膳所で、あなたの心に響いたのはどの記憶ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「膳所神社」と「篠津神社」の参道入口に今も威容を伝える旧膳所城の重要文化財城門",
+          "description": "明治の廃城を乗り越え、本丸大手門と北大手門を地域の鎮守の表門として守り継いできた人々の想いに打たれた。",
+          "badge_code": "zeze_castle_gates"
+        },
+        {
+          "key": "B",
+          "text": "琵琶湖へ突き出した「膳所城跡公園」の野面積みの石垣から眺めた広い湖面と比叡・比良の山並み",
+          "description": "徳川家康公と藤堂高虎公が築いた天下普請の「水城」本丸跡で、石垣を洗う波音に耳を澄ませた。",
+          "badge_code": "zeze_castle_ruins"
+        },
+        {
+          "key": "C",
+          "text": "旧東海道に暖簾を掲げる「御菓子司 膳所 亀屋廣房」の大納言粒餡入り「六萬石もなか」と「兼平餅」",
+          "description": "京都「亀末廣」の技を受け継ぎ、膳所藩六万石や今井兼平の物語を映す城下町銘菓の気品に魅了された。",
+          "badge_code": "zeze_kameya_hirofusa"
+        },
+        {
+          "key": "D",
+          "text": "鎌倉時代建立の重文本殿が佇む「和田神社」と、石田三成公ゆかりの樹齢六百年超の大イチョウ",
+          "description": "優美な檜皮葺の社殿と関ヶ原の後日談を秘めた巨樹の前に立ち、近江が辿った歴史の深さを感じた。",
+          "badge_code": "zeze_wada_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d032d571-6ad8-4798-8af1-787a279368eb",
+        "name": "和田神社",
+        "description": "旧東海道近くに鎮座する白鳳年間創祀の古社（境内参拝自由）。鎌倉時代後期建立の一間社流造・檜皮葺の「本殿」は国重要文化財で、境内には石田三成公ゆかりの樹齢六百年超の大イチョウ（市指定天然記念物）が聳える。",
+        "address": "滋賀県大津市木下町7-13",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.998061,
+        "lng": 135.891352,
+        "qr_token": "shuin-zeze-1",
+        "cover_image_url": "/images/zeze/spot1.png",
+        "f7_fragment": "鎌倉時代後期建立の国重要文化財本殿と、石田三成公ゆかりの大銀杏が立つ古社。",
+        "f7_full": "「和田神社」の優美な檜皮葺の本殿と天を突く大イチョウの枝ぶりが、城下町・膳所の歴史を辿る旅の始まりを厳かに迎えてくれる。",
+        "is_final": false,
+        "next_spot_id": "8ed184e4-e100-4f10-8bf1-0c3de283932e",
+        "next_spot_name": "膳所城跡公園"
+      },
+      {
+        "id": "8ed184e4-e100-4f10-8bf1-0c3de283932e",
+        "name": "膳所城跡公園",
+        "description": "慶長六年に徳川家康公が藤堂高虎公に縄張りを命じた「膳所城」の本丸跡を整備した湖岸公園（終日入園自由）。琵琶湖へ突き出した本丸の石垣が残り、湖面と比叡・比良の山並みを一望できる。",
+        "address": "滋賀県大津市本丸町6-40",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.995187,
+        "lng": 135.894967,
+        "qr_token": "shuin-zeze-2",
+        "cover_image_url": "/images/zeze/spot2.png",
+        "f7_fragment": "徳川家康公が藤堂高虎公に築かせた水城「膳所城」の本丸石垣が残る琵琶湖岸の公園。",
+        "f7_full": "「膳所城跡公園」の湖水に臨む石垣と広大な琵琶湖の煌めきが、東海道随一の美しさと謳われた水城の面影を爽やかな湖風とともに届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "49a99fed-98f5-4aad-87ad-2b037add4bfe",
+        "next_spot_name": "膳所神社"
+      },
+      {
+        "id": "49a99fed-98f5-4aad-87ad-2b037add4bfe",
+        "name": "膳所神社",
+        "description": "天智天皇の時代に創建されたと伝わる膳所の総鎮守（境内参拝自由）。旧東海道に面して建つ薬医門形式の「表門」は、旧膳所城の本丸大手門を移築したもので国の重要文化財に指定されている。",
+        "address": "滋賀県大津市膳所1丁目14-16",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.994748,
+        "lng": 135.89056,
+        "qr_token": "shuin-zeze-3",
+        "cover_image_url": "/images/zeze/spot3.png",
+        "f7_fragment": "旧膳所城の本丸大手門を移築した国重要文化財の「表門」が旧東海道に面して構える古社。",
+        "f7_full": "「膳所神社」の重厚な表門に刻まれた城郭建築の風格が、かつて琵琶湖畔に威容を誇った水城・膳所城の記憶を鮮やかに蘇らせてくれる。",
+        "is_final": false,
+        "next_spot_id": "56a5a778-b03e-43f7-8fea-7a4fb4385101",
+        "next_spot_name": "御菓子司 膳所 亀屋廣房"
+      },
+      {
+        "id": "56a5a778-b03e-43f7-8fea-7a4fb4385101",
+        "name": "御菓子司 膳所 亀屋廣房",
+        "description": "旧東海道沿いに暖簾を掲げる、京都「亀末廣」から暖簾分けされた老舗和菓子司（平日9:00〜12:00営業、日曜休・木曜祝日不定休）。膳所藩六万石にちなんだ北海道産大納言粒餡の「六萬石もなか」や近江羽二重餅の「兼平餅」で親しまれている。",
+        "address": "滋賀県大津市本丸町3-7",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.992436,
+        "lng": 135.891912,
+        "qr_token": "shuin-zeze-4",
+        "cover_image_url": "/images/zeze/spot4.png",
+        "f7_fragment": "京菓子の技を受け継ぎ、膳所藩ゆかりの代表銘菓「六萬石もなか」を仕立てる老舗菓子司。",
+        "f7_full": "「御菓子司 膳所 亀屋廣房」の香ばしい「六萬石もなか」と大納言小豆の深い味わいが、旧東海道の城下町に息づく菓子の伝統を届けてくれる。",
+        "is_final": false,
+        "next_spot_id": "3d0cbeef-c15d-472d-805f-c5a95240dceb",
+        "next_spot_name": "篠津神社"
+      },
+      {
+        "id": "3d0cbeef-c15d-472d-805f-c5a95240dceb",
+        "name": "篠津神社",
+        "description": "旧東海道沿いに鎮座する中庄の古社（境内参拝自由）。明治五年に旧膳所城の「北大手門」を移築した本瓦葺・高麗門形式の「表門」が国の重要文化財に指定されている。",
+        "address": "滋賀県大津市中庄1丁目14-24",
+        "prefecture": "滋賀県",
+        "city": "",
+        "lat": 34.990636,
+        "lng": 135.892996,
+        "qr_token": "shuin-zeze-5",
+        "cover_image_url": "/images/zeze/spot5.png",
+        "f7_fragment": "旧膳所城の北大手門を移築した国重要文化財の本瓦葺・高麗門が堂々と聳える鎮守の社。",
+        "f7_full": "「篠津神社」の堂々たる重要文化財の高麗門と静かな境内の佇まいが、水城の記憶が息づく膳所の城下町散策を格別な余韻で締めくくってくれる。",
+        "is_final": true
+      }
+    ]
   }
 ];
