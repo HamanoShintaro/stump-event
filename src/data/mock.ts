@@ -89570,5 +89570,13005 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "7594bc06-29be-4cb5-8725-c4d28d7ce569",
+    "title": "智恵文・ひまわり発祥の里と原生林神社にパンへ",
+    "name": "智恵文・ひまわり発祥の里と原生林神社にパンへ",
+    "description": "明治四十四年開業の「JR智恵文駅」から、原生林が残る「智恵文神社」、名寄のひまわり栽培発祥地「智恵文のひまわり畑」、夏季の朝採り直売所「ちえぶん旬菜」、ハスカップ酵母パンが人気の名寄老舗「パンのいしだ」を巡るルート。",
+    "region": "智恵文・ひまわり発祥の里と原生林の神社",
+    "area_name": "智恵文・ひまわり発祥の里と原生林の神社",
+    "cover_image_url": "/images/chiebun/route-eyecatch.png",
+    "imageUrl": "/images/chiebun/route-eyecatch.png",
+    "category": "ひまわり発祥と直売所",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名寄「ひまわりのまち」発祥の地・智恵文の駅や原生林の神社、直売所、老舗パン屋を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治の開拓期から原生林を残し「智恵文村歌碑」が立つ「智恵文神社」",
+          "description": "大正五年竣工の社殿を囲む原生林の深い静けさに、開拓の記憶が宿っていた。",
+          "badge_code": "chiebun_shrine"
+        },
+        {
+          "key": "B",
+          "text": "明治三十年栽培開始、名寄ひまわり発祥を伝える「智恵文のひまわり畑」",
+          "description": "一面の黄色い花畑が名寄の夏を象徴する文化の原点だったと知り感動した。",
+          "badge_code": "chiebun_sunflower"
+        },
+        {
+          "key": "C",
+          "text": "地元の生産者有志が朝採り野菜を届ける「ちえぶん旬菜」",
+          "description": "みずみずしい地場野菜と生産者たちの温かい手仕事に、農村の豊かさを感じた。",
+          "badge_code": "chiebun_shunsai"
+        },
+        {
+          "key": "D",
+          "text": "道産小麦と名寄産ハスカップの自家製酵母が香る「パンのいしだ」",
+          "description": "ハスカップ酵母の風味豊かなパンの美味しさに、旅の疲れも吹き飛んだ。",
+          "badge_code": "chiebun_ishida"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3569b407-2c2f-4f52-82ab-c0a7c440a60f",
+        "name": "JR智恵文駅",
+        "description": "1911年（明治44年）11月3日開業（終日開放・無料）。駅名はアイヌ語「チェプ・ウン・トウ（魚のいる沼）」に由来し、かつての智恵文村の玄関口として親しまれてきた無人駅。",
+        "address": "北海道名寄市字智恵文11線",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.455483,
+        "lng": 142.414718,
+        "qr_token": "shuin-chiebun-1",
+        "cover_image_url": "/images/chiebun/spot1.png",
+        "f7_fragment": "明治四十四年開業、アイヌ語「魚のいる沼」に由来する無人駅。",
+        "f7_full": "「JR智恵文駅」に降り立ち、ひまわり発祥の里と原生林の社を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "b44bda18-4fe4-400e-807d-12925438d4ca",
+        "next_spot_name": "智恵文神社"
+      },
+      {
+        "id": "b44bda18-4fe4-400e-807d-12925438d4ca",
+        "name": "智恵文神社",
+        "description": "明治33年入植の開拓に端を発し大正5年に社殿竣工（常時参拝可・無料）。境内に原生林が残り「智恵文村歌碑」「御創祀百年記念碑」が立つ。",
+        "address": "北海道名寄市字智恵文11線北3",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.438907,
+        "lng": 142.403055,
+        "qr_token": "shuin-chiebun-2",
+        "cover_image_url": "/images/chiebun/spot2.png",
+        "f7_fragment": "原生林の中に大正五年竣工の社殿と「智恵文村歌碑」が佇む鎮守社。",
+        "f7_full": "「智恵文神社」の深い原生林の中で手を合わせ、村の開拓史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "97ff7566-5c89-47c6-8823-ee8915512815",
+        "next_spot_name": "智恵文のひまわり畑（名寄研究農場周辺）"
+      },
+      {
+        "id": "97ff7566-5c89-47c6-8823-ee8915512815",
+        "name": "智恵文のひまわり畑（名寄研究農場周辺）",
+        "description": "明治30年に智恵文地区でひまわり栽培が始まったことが名寄市「ひまわりに包まれるまち」の発祥とされる（散策自由・無料、見頃は7月下旬〜8月中旬）。",
+        "address": "北海道名寄市字智恵文7線北2",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.431933,
+        "lng": 142.430114,
+        "qr_token": "shuin-chiebun-3",
+        "cover_image_url": "/images/chiebun/spot3.png",
+        "f7_fragment": "明治三十年栽培開始、名寄市「ひまわりに包まれるまち」発祥の農園風景。",
+        "f7_full": "「智恵文のひまわり畑」周辺を歩き、名寄のシンボルが生まれた大地の広がりに感動した。",
+        "is_final": false,
+        "next_spot_id": "1579d941-74e2-48b2-8f1c-2606c8399dde",
+        "next_spot_name": "ちえぶん旬菜"
+      },
+      {
+        "id": "1579d941-74e2-48b2-8f1c-2606c8399dde",
+        "name": "ちえぶん旬菜",
+        "description": "智恵文の生産者有志による朝採り野菜の地産地消直売所。夏季の土日中心に営業（9:00〜16:00頃目安、季節・天候により変動のため要事前確認）。朝採り野菜等100円〜500円前後。",
+        "address": "北海道名寄市字智恵文11線南2",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.431876,
+        "lng": 142.402084,
+        "qr_token": "shuin-chiebun-4",
+        "cover_image_url": "/images/chiebun/spot4.png",
+        "f7_fragment": "智恵文の生産者有志が夏季を中心に朝採り野菜を届ける地産地消直売所。",
+        "f7_full": "「ちえぶん旬菜」の素朴な直売所で、智恵文の豊かな大地の恵みに触れた。",
+        "is_final": false,
+        "next_spot_id": "7b7256f9-df4c-46d2-8ede-61dc624ebe85",
+        "next_spot_name": "パンのいしだ（ベーカリーイシダ）"
+      },
+      {
+        "id": "7b7256f9-df4c-46d2-8ede-61dc624ebe85",
+        "name": "パンのいしだ（ベーカリーイシダ）",
+        "description": "北海道産小麦と名寄産ハスカップの自家製天然酵母パンが人気の老舗ベーカリー。8:00〜18:00（売切次第終了）、火曜休（臨時休業あり）。パン各種180〜450円前後。",
+        "address": "北海道名寄市西4条南2丁目10-1",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.354125,
+        "lng": 142.457433,
+        "qr_token": "shuin-chiebun-5",
+        "cover_image_url": "/images/chiebun/spot5.png",
+        "f7_fragment": "北海道産小麦と名寄産ハスカップの自家製天然酵母パンが人気の老舗店。",
+        "f7_full": "「パンのいしだ」でハスカップ酵母の香り高いパンを味わい、智恵文の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c16f3080-5aae-4f9a-85f3-bde62d90ce60",
+    "title": "智北・三日月湖の智恵文沼と天塩川難所の碑へ",
+    "name": "智北・三日月湖の智恵文沼と天塩川難所の碑へ",
+    "description": "昭和三十四年仮乗降場として生まれた「JR智北駅」から、昭和十四年治水工事で生まれた河跡湖「智恵文沼」、大河を望む「天智橋」、天塩川最大の難所を伝える「スーポロ・川舟安全祈願碑」、名寄市街の老舗洋食喫茶「ドミール302」を巡るルート。",
+    "region": "智北・三日月湖のヒブナと天塩川治水史",
+    "area_name": "智北・三日月湖のヒブナと天塩川治水史",
+    "cover_image_url": "/images/chihoku/route-eyecatch.png",
+    "imageUrl": "/images/chihoku/route-eyecatch.png",
+    "category": "河跡湖と天塩川史跡",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "天塩川の治水と舟運の歴史が息づく智北の駅から智恵文沼や難所の碑、老舗洋食喫茶を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和十四年の天塩川流路切替工事で生まれた三日月湖「智恵文沼」",
+          "description": "アイヌ語「魚の入る沼」に由来し、ヒブナが棲む静かな湖面に心が和んだ。",
+          "badge_code": "chihoku_numa"
+        },
+        {
+          "key": "B",
+          "text": "天塩川と智恵文の頭文字を合わせ、大河の治水を見渡す「天智橋」",
+          "description": "北海道を北へ流れる大河・天塩川の雄大な水面に、開拓の労苦を思った。",
+          "badge_code": "chihoku_tenchibashi"
+        },
+        {
+          "key": "C",
+          "text": "激流の難所で舟運安全と慰霊を祈り明治建立された「スーポロ・川舟安全祈願碑」",
+          "description": "川舟で物資を運んだ明治の激流の歴史を刻む碑の前に立ち、深く頭が下がった。",
+          "badge_code": "chihoku_suporo"
+        },
+        {
+          "key": "D",
+          "text": "三百種以上のメニューと満腹定食で愛される名寄の老舗「ドミール302」",
+          "description": "昭和の喫茶文化を感じる豊富なメニューと温かい洋食に、お腹も心も満たされた。",
+          "badge_code": "chihoku_domiru"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5159ae4f-27e3-404a-854a-5584ccce0a7d",
+        "name": "JR智北駅",
+        "description": "1959年（昭和34年）11月、住民要望と智恵文沼の観光開発を見込んで「智北仮乗降場」として開設（終日開放・無料）。1987年旅客駅昇格、1991年道道拡幅に伴い約120m移設。",
+        "address": "北海道名寄市字智恵文智北1",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.461307,
+        "lng": 142.395561,
+        "qr_token": "shuin-chihoku-1",
+        "cover_image_url": "/images/chihoku/spot1.png",
+        "f7_fragment": "昭和三十四年開設、智恵文沼への玄関口として住民要望で生まれた無人駅。",
+        "f7_full": "「JR智北駅」に降り立ち、三日月湖と天塩川舟運の歴史を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "446144df-ee27-45b7-85d7-cb2cdcc0c025",
+        "next_spot_name": "智恵文沼（ひぶなの里 ちえぶん沼パーク）"
+      },
+      {
+        "id": "446144df-ee27-45b7-85d7-cb2cdcc0c025",
+        "name": "智恵文沼（ひぶなの里 ちえぶん沼パーク）",
+        "description": "1939年（昭和14年）の天塩川流路切替工事で生まれた半月形の河跡湖（終日散策自由・無料）。アイヌ語「チェプ・ウン・トウ（魚の入る沼）」に由来し、ヒブナが生息する。",
+        "address": "北海道名寄市字智恵文11線",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.436948,
+        "lng": 142.403592,
+        "qr_token": "shuin-chihoku-2",
+        "cover_image_url": "/images/chihoku/spot2.png",
+        "f7_fragment": "昭和十四年の天塩川流路切替工事で生まれ、ヒブナが棲む半月形の河跡湖。",
+        "f7_full": "「智恵文沼」の静かな湖畔に立ち、治水工事とアイヌ語地名が伝える歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "e8f4ecc2-7b9b-43e0-8c7d-7c0bfba5f26f",
+        "next_spot_name": "天智橋（天塩川河川景観）"
+      },
+      {
+        "id": "e8f4ecc2-7b9b-43e0-8c7d-7c0bfba5f26f",
+        "name": "天智橋（天塩川河川景観）",
+        "description": "「天塩川」と「智恵文」の頭文字を合わせて名付けられた道道252号の橋（通行自由・無料）。治水と開拓の歴史を刻む大河・天塩川の雄大な河川景観を一望できる。",
+        "address": "北海道名寄市字智恵文252",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.449035,
+        "lng": 142.408984,
+        "qr_token": "shuin-chihoku-3",
+        "cover_image_url": "/images/chihoku/spot3.png",
+        "f7_fragment": "天塩川と智恵文の名を冠し、治水と舟運の大河を一望する景勝の橋。",
+        "f7_full": "「天智橋」から大河・天塩川の流れを望み、開拓を支えた川の大きさに圧倒された。",
+        "is_final": false,
+        "next_spot_id": "5887a7da-7ea5-4966-8d96-a0a0674345ab",
+        "next_spot_name": "スーポロ・川舟安全祈願碑"
+      },
+      {
+        "id": "5887a7da-7ea5-4966-8d96-a0a0674345ab",
+        "name": "スーポロ・川舟安全祈願碑",
+        "description": "アイヌ語で「スーポロ（激流の所）」と呼ばれた天塩川最大の難所で、水難事故の犠牲者慰霊と舟運安全を祈願して明治43年（1910年）に建立された金毘羅大権現の碑（見学自由・無料）。",
+        "address": "北海道名寄市字智恵文智東1",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.357599,
+        "lng": 142.443947,
+        "qr_token": "shuin-chihoku-4",
+        "cover_image_url": "/images/chihoku/spot4.png",
+        "f7_fragment": "天塩川最大の難所「スーポロ」で舟運安全を祈り明治四十三年に建立された碑。",
+        "f7_full": "「スーポロ・川舟安全祈願碑」の前に立ち、天塩川舟運に命を懸けた先人を偲んだ。",
+        "is_final": false,
+        "next_spot_id": "c238e843-7868-44e6-8a85-986f4f384f61",
+        "next_spot_name": "ドミール302"
+      },
+      {
+        "id": "c238e843-7868-44e6-8a85-986f4f384f61",
+        "name": "ドミール302",
+        "description": "300種以上の豊富なメニューとボリューム満点の定食で長年愛される名寄市街の老舗喫茶・食事処。10:00〜21:30（食事は11:30〜）、水曜・木曜休（不定休あり要確認）。定食・洋食800〜1,300円前後。",
+        "address": "北海道名寄市西3条南2丁目17-2",
+        "prefecture": "北海道",
+        "city": "名寄市",
+        "lat": 44.354368,
+        "lng": 142.458233,
+        "qr_token": "shuin-chihoku-5",
+        "cover_image_url": "/images/chihoku/spot5.png",
+        "f7_fragment": "三百種以上のメニューと満腹定食で長年親しまれる名寄市街の老舗喫茶。",
+        "f7_full": "「ドミール302」で懐かしい洋食と昭和喫茶の温もりを味わい、智北の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e7c65f94-7f0e-4547-8d47-712c52ac744c",
+    "title": "美深・白樺樹液ビールと赤レンガに名物菓子へ",
+    "name": "美深・白樺樹液ビールと赤レンガに名物菓子へ",
+    "description": "旧美幸線も分岐した「JR美深駅」から、町内焙煎珈琲の「kusuda design and cafe」、松浦武四郎の探検資料が残る「美深町文化会館COM100 郷土資料室」、築90年赤レンガ倉庫の「Restaurant BSB」、かぼちゃ銘菓の老舗「菓子司 すぎむら」を巡る徒歩ルート。",
+    "region": "美深・赤レンガ醸造所と松浦武四郎の郷土館",
+    "area_name": "美深・赤レンガ醸造所と松浦武四郎の郷土館",
+    "cover_image_url": "/images/bifuka/route-eyecatch.png",
+    "imageUrl": "/images/bifuka/route-eyecatch.png",
+    "category": "クラフトビールと郷土史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "かつて美幸線が分岐した美深の駅からデザインカフェ、郷土資料室、日本最北の赤レンガブルワリーを巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "町内焙煎の珈琲とデザイン雑貨が駅前で迎える「kusuda design and cafe」",
+          "description": "駅を出てすぐの洗練された空間でいただく丁寧に淹れられた珈琲が格別だった。",
+          "badge_code": "bifuka_kusuda"
+        },
+        {
+          "key": "B",
+          "text": "松浦武四郎の探検資料や開拓史を無料で学べる「美深町文化会館COM100 郷土資料室」",
+          "description": "幕末の探検家・松浦武四郎の足跡と厳しい林業開拓の道具に深く見入った。",
+          "badge_code": "bifuka_com100"
+        },
+        {
+          "key": "C",
+          "text": "築90年の赤レンガ倉庫で白樺ビールとホゲット肉を味わう「Restaurant BSB」",
+          "description": "日本最北のクラフトビール醸造所と希少な松山農場ホゲット肉に感動した。",
+          "badge_code": "bifuka_bsb"
+        },
+        {
+          "key": "D",
+          "text": "美深産かぼちゃの銘菓「ピウカ・ボッチャ」が並ぶ老舗「菓子司 すぎむら」",
+          "description": "アイヌ語「石の多い場所」にちなんだ銘菓の優しい甘さに、町への愛を感じた。",
+          "badge_code": "bifuka_sugimura"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8c8e17b1-4293-4028-84e6-55a0978410d7",
+        "name": "JR美深駅（美深町交通ターミナル）",
+        "description": "1911年（明治44年）11月3日開業、かつて国鉄美幸線が分岐した拠点。現駅舎は1987年落成の「美深町交通ターミナル」で、観光案内所・売店「びーす」を併設（入場無料、売店等元日休）。",
+        "address": "北海道中川郡美深町字開運町1-1",
+        "prefecture": "北海道",
+        "city": "美深町",
+        "lat": 44.482954,
+        "lng": 142.350372,
+        "qr_token": "shuin-bifuka-1",
+        "cover_image_url": "/images/bifuka/spot1.png",
+        "f7_fragment": "かつて国鉄美幸線も分岐した歴史を持ち、観光案内所を併設する交通拠点。",
+        "f7_full": "「JR美深駅」に降り立ち、最北のクラフトビールと郷土史を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "64b525b6-f03f-48e8-8b73-ea101a9a0dd0",
+        "next_spot_name": "kusuda design and cafe"
+      },
+      {
+        "id": "64b525b6-f03f-48e8-8b73-ea101a9a0dd0",
+        "name": "kusuda design and cafe",
+        "description": "町内焙煎の香り高いコーヒーとデザイン雑貨を扱う駅近の洗練されたカフェ。平日10:00〜18:00頃・土日祝10:00〜17:00、水曜＋不定休。コーヒー約500円〜。",
+        "address": "北海道中川郡美深町東2条南1丁目13",
+        "prefecture": "北海道",
+        "city": "美深町",
+        "lat": 44.481837,
+        "lng": 142.348358,
+        "qr_token": "shuin-bifuka-2",
+        "cover_image_url": "/images/bifuka/spot2.png",
+        "f7_fragment": "町内焙煎の香り高いコーヒーとデザイン雑貨が楽しめる駅近カフェ。",
+        "f7_full": "「kusuda design and cafe」で町内焙煎の珈琲を味わい、旅の始まりを彩った。",
+        "is_final": false,
+        "next_spot_id": "a148e3ec-4fd2-4c17-874f-3566fa7f8bda",
+        "next_spot_name": "美深町文化会館COM100 郷土資料室"
+      },
+      {
+        "id": "a148e3ec-4fd2-4c17-874f-3566fa7f8bda",
+        "name": "美深町文化会館COM100 郷土資料室",
+        "description": "幕末の探検家・松浦武四郎の資料や明治期以降の開拓生活用具、農林業資料、自然標本を展示する資料室。10:00〜17:00、年末年始（12/30〜1/5）休、入館無料。",
+        "address": "北海道中川郡美深町字西町22",
+        "prefecture": "北海道",
+        "city": "美深町",
+        "lat": 44.480989,
+        "lng": 142.34028,
+        "qr_token": "shuin-bifuka-3",
+        "cover_image_url": "/images/bifuka/spot3.png",
+        "f7_fragment": "松浦武四郎の探検資料や明治開拓期の生活・農林業資料を伝える無料資料室。",
+        "f7_full": "「美深町文化会館COM100 郷土資料室」で松浦武四郎の足跡と開拓史に深く見入った。",
+        "is_final": false,
+        "next_spot_id": "a86f761d-225e-4fa7-8fd3-87df0ca8d02e",
+        "next_spot_name": "Restaurant BSB（美深白樺ブルワリー併設）"
+      },
+      {
+        "id": "a86f761d-225e-4fa7-8fd3-87df0ca8d02e",
+        "name": "Restaurant BSB（美深白樺ブルワリー併設）",
+        "description": "築90年の赤レンガ倉庫を改装した日本最北のクラフトビール醸造所併設レストラン。11:30〜21:30（L.O.21:00）、年中無休（不定休あり）。松山農場の希少なホゲット肉ジンギスカンや白樺樹液使用ビールが名物。",
+        "address": "北海道中川郡美深町大通北4丁目9-5-2",
+        "prefecture": "北海道",
+        "city": "美深町",
+        "lat": 44.485379,
+        "lng": 142.344535,
+        "qr_token": "shuin-bifuka-4",
+        "cover_image_url": "/images/bifuka/spot4.png",
+        "f7_fragment": "築90年の赤レンガ倉庫に佇む、日本最北のクラフトビール醸造所併設レストラン。",
+        "f7_full": "「Restaurant BSB」の赤レンガ空間で白樺ブルワリーと地元食材の饗宴を味わった。",
+        "is_final": false,
+        "next_spot_id": "eb61bed7-554c-4f36-8e93-7c6bd3a85e77",
+        "next_spot_name": "菓子司 すぎむら"
+      },
+      {
+        "id": "eb61bed7-554c-4f36-8e93-7c6bd3a85e77",
+        "name": "菓子司 すぎむら",
+        "description": "国道40号沿いで長年親しまれる老舗菓子店。8:00〜18:30、不定休。アイヌ語「ピウカ（石の多い場所）」にちなむ銘菓「ピウカ・ボッチャ」や美深産かぼちゃパイ（200〜300円前後）が人気。",
+        "address": "北海道中川郡美深町大通北4丁目1",
+        "prefecture": "北海道",
+        "city": "美深町",
+        "lat": 44.485095,
+        "lng": 142.345044,
+        "qr_token": "shuin-bifuka-5",
+        "cover_image_url": "/images/bifuka/spot5.png",
+        "f7_fragment": "アイヌ語「ピウカ」にちなむ銘菓や美深産かぼちゃパイが人気の老舗菓子店。",
+        "f7_full": "「菓子司 すぎむら」で銘菓ピウカ・ボッチャを求め、温かな甘さとともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "69523993-293f-45b7-8b13-5070dad5ce8c",
+    "title": "天塩川温泉・板張り駅と掛け流し名湯に巨樹へ",
+    "name": "天塩川温泉・板張り駅と掛け流し名湯に巨樹へ",
+    "description": "木造板張りホームが旅情を誘う「JR天塩川温泉駅」から、天塩川を渡る「止若内橋」、大正発見の冷鉱泉を源泉とする「住民保養センター 天塩川温泉」、「天塩川リバーサイドパークキャンプ場（澱粉工場発祥之碑）」、森の巨人たち百選「天仰の松」を巡るルート。",
+    "region": "天塩川温泉・板張り駅と掛け流し温泉、森の巨樹",
+    "area_name": "天塩川温泉・板張り駅と掛け流し温泉、森の巨樹",
+    "cover_image_url": "/images/teshiogawa_onsen/route-eyecatch.png",
+    "imageUrl": "/images/teshiogawa_onsen/route-eyecatch.png",
+    "category": "秘境温泉と森の巨樹",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "宗谷本線の秘境駅から天塩川を渡り、掛け流し温泉や森の巨樹を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「南咲来仮乗降場」から昇格した木造板張りホームの「JR天塩川温泉駅」",
+          "description": "短い板張りホームに降り立つ瞬間から、道北の秘境温泉旅への期待が高まった。",
+          "badge_code": "teshiogawa_onsen_station"
+        },
+        {
+          "key": "B",
+          "text": "渡船や吊り橋から永久橋へと継がれた天塩川の架け橋「止若内橋」",
+          "description": "大河・天塩川の雄大な流れを見下ろしながら歩く橋上の風景が清々しかった。",
+          "badge_code": "teshiogawa_onsen_bridge"
+        },
+        {
+          "key": "C",
+          "text": "大正初期発見の「常盤鉱泉」を源泉とする「住民保養センター 天塩川温泉」",
+          "description": "源泉100%掛け流しの湯と名物・源泉ラーメンや音威子府そばに心身が潤った。",
+          "badge_code": "teshiogawa_onsen_yudokoro"
+        },
+        {
+          "key": "D",
+          "text": "道有林の深い森にそびえ立つイチイ（オンコ）の古木「天仰の松」",
+          "description": "道有林の奥に静かに佇む巨大なオンコ（イチイ）の生命力に息を呑んだ。",
+          "badge_code": "teshiogawa_onsen_matsu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "eb9daf8c-d9cb-4a97-8537-01f422b228cb",
+        "name": "JR天塩川温泉駅",
+        "description": "1956年「南咲来仮乗降場」として開業、1981年「天塩川温泉仮乗降場」へ改称、1987年JR駅へ昇格した無人駅（終日開放・無料）。木造板張りホームが秘境駅らしい風情を醸し出す。",
+        "address": "北海道中川郡音威子府村字咲来1",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.664691,
+        "lng": 142.25861,
+        "qr_token": "shuin-teshiogawa_onsen-1",
+        "cover_image_url": "/images/teshiogawa_onsen/spot1.png",
+        "f7_fragment": "昭和三十一年仮乗降場として開業した、木造板張りホームの秘境温泉駅。",
+        "f7_full": "「JR天塩川温泉駅」の板張りホームに降り立ち、大河と秘湯の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "f46ec8d8-1639-476d-8aa7-a89a098d6768",
+        "next_spot_name": "止若内橋（天塩川河川景観）"
+      },
+      {
+        "id": "f46ec8d8-1639-476d-8aa7-a89a098d6768",
+        "name": "止若内橋（天塩川河川景観）",
+        "description": "駅から天塩川温泉へ向かう一本道で天塩川を渡る橋（通行自由・無料）。かつての渡船や吊り橋から永久橋へと移り変わった道北の交通史と、雄大な河川景観を伝える。",
+        "address": "北海道中川郡音威子府村字咲来919",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.660405,
+        "lng": 142.254483,
+        "qr_token": "shuin-teshiogawa_onsen-2",
+        "cover_image_url": "/images/teshiogawa_onsen/spot2.png",
+        "f7_fragment": "渡船や吊り橋から永久橋へと継がれ、大河・天塩川の雄姿を見渡す橋。",
+        "f7_full": "「止若内橋」の上から悠々たる天塩川の流れを眺め、温泉郷への期待を膨らませた。",
+        "is_final": false,
+        "next_spot_id": "a3967da4-bc10-46a1-8306-d949cf970914",
+        "next_spot_name": "住民保養センター 天塩川温泉"
+      },
+      {
+        "id": "a3967da4-bc10-46a1-8306-d949cf970914",
+        "name": "住民保養センター 天塩川温泉",
+        "description": "大正初期発見の冷鉱泉「常盤鉱泉」を源泉とする100%掛け流し（加温）温泉。入浴10:00〜21:00（大人500円）、レストラン11:00〜14:00・17:00〜19:30（源泉ラーメン・音威子府そば等）、不定休。",
+        "address": "北海道中川郡音威子府村字咲来919",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.660483,
+        "lng": 142.254355,
+        "qr_token": "shuin-teshiogawa_onsen-3",
+        "cover_image_url": "/images/teshiogawa_onsen/spot3.png",
+        "f7_fragment": "大正初期発見の常盤鉱泉を引く100%掛け流しの湯と食堂が人気の温泉拠点。",
+        "f7_full": "「住民保養センター 天塩川温泉」で掛け流しの名湯に浸かり、極上の休息を味わった。",
+        "is_final": false,
+        "next_spot_id": "9bdce6c2-fa15-4a1e-87bb-997f119e60de",
+        "next_spot_name": "天塩川リバーサイドパークキャンプ場"
+      },
+      {
+        "id": "9bdce6c2-fa15-4a1e-87bb-997f119e60de",
+        "name": "天塩川リバーサイドパークキャンプ場",
+        "description": "天塩川河畔に広がる自然豊かなキャンプ場（5月中旬〜10月下旬、周辺散策自由・無料）。温泉裏手周辺には大正期以降に盛んだった馬鈴薯澱粉製造を伝える「音威子府村澱粉工場発祥之碑」が建つ。",
+        "address": "北海道中川郡音威子府村字咲来919",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.660452,
+        "lng": 142.252713,
+        "qr_token": "shuin-teshiogawa_onsen-4",
+        "cover_image_url": "/images/teshiogawa_onsen/spot4.png",
+        "f7_fragment": "天塩川河畔に広がり、地域の澱粉産業史を伝える記念碑も佇む自然空間。",
+        "f7_full": "「天塩川リバーサイドパークキャンプ場」周辺を歩き、川辺の自然と開拓史に触れた。",
+        "is_final": false,
+        "next_spot_id": "6f499d45-9897-4ad3-8de9-9d0239a90aac",
+        "next_spot_name": "天仰の松"
+      },
+      {
+        "id": "6f499d45-9897-4ad3-8de9-9d0239a90aac",
+        "name": "天仰の松",
+        "description": "北海道の名木として親しまれる巨大なイチイ（オンコ）の古木（見学自由・無料、冬季積雪期や林道状況に注意・夏季熊鈴推奨）。止若内橋先の三叉路から物満内林道へ約2〜3km。",
+        "address": "北海道中川郡音威子府村物満内224林班",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.640684,
+        "lng": 142.24674,
+        "qr_token": "shuin-teshiogawa_onsen-5",
+        "cover_image_url": "/images/teshiogawa_onsen/spot5.png",
+        "f7_fragment": "道有林の深い森に佇み、天を仰ぐように枝を広げるイチイの巨木。",
+        "f7_full": "「天仰の松」の堂々たる樹姿を仰ぎ見、音威子府の深い森の記憶とともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8617ae58-90a3-4465-88d7-c5118641bbf2",
+    "title": "咲来・村発祥の常盤神社と白いそばに喫茶へ",
+    "name": "咲来・村発祥の常盤神社と白いそばに喫茶へ",
+    "description": "アイヌ語「夏の通り道」に由来する音威子府村発祥の地「JR咲来駅」から、白っぽい名物そばの「お食事処 咲来」、開拓の碑が立つ「常盤神社・咲来開拓之碑」、廃校活用の「旧咲来小学校・楢の大樹の碑」、そば粉シフォンの「カフェ咲来」を巡る徒歩ルート。",
+    "region": "咲来・村発祥の神社と白いそば、シフォン喫茶",
+    "area_name": "咲来・村発祥の神社と白いそば、シフォン喫茶",
+    "cover_image_url": "/images/sakkuru/route-eyecatch.png",
+    "imageUrl": "/images/sakkuru/route-eyecatch.png",
+    "category": "白いそばと村発祥の地",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "音威子府村発祥の地・咲来の駅から名物の白いそばや開拓神社、カフェを巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "音威子府産玄そば粉を使いながら白っぽい見た目が特徴の「お食事処 咲来」",
+          "description": "黒い音威子府そばとはまた違う、風味豊かな白い「咲来そば」の美味しさに驚いた。",
+          "badge_code": "sakkuru_shokudo"
+        },
+        {
+          "key": "B",
+          "text": "明治三十七年の駅逓所設置や村発祥の記憶を伝える「常盤神社・咲来開拓之碑」",
+          "description": "かつて「常盤村」役場も置かれた音威子府開基の原点に立ち、歴史の重みを感じた。",
+          "badge_code": "sakkuru_tokiwa"
+        },
+        {
+          "key": "C",
+          "text": "明治三十九年開校の学び舎を継ぐ「旧咲来小学校・楢の大樹の碑」",
+          "description": "公民館として残る校舎と旧校舎跡地の碑に、百年にわたる地域の絆を感じた。",
+          "badge_code": "sakkuru_school"
+        },
+        {
+          "key": "D",
+          "text": "そば粉100%シフォンケーキとエゾシカ料理が人気の「カフェ咲来」",
+          "description": "ハンターでもある店主の温かいもてなしと、ふわっと香るシフォンに癒された。",
+          "badge_code": "sakkuru_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4700612c-d697-4953-8b4e-6092a86b1226",
+        "name": "JR咲来駅",
+        "description": "1912年（大正元年）11月5日開業の無人駅（終日開放・無料）。地名はアイヌ語「サク・ル（夏の通り道）」に由来し、音威子府村で最初に開拓が進んだ歴史ある集落の玄関口。",
+        "address": "北海道中川郡音威子府村字咲来1",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.692461,
+        "lng": 142.267355,
+        "qr_token": "shuin-sakkuru-1",
+        "cover_image_url": "/images/sakkuru/spot1.png",
+        "f7_fragment": "大正元年開業、アイヌ語「夏の通り道」に由来する音威子府発祥の地。",
+        "f7_full": "「JR咲来駅」に降り立ち、村発祥の集落と名物の白いそばを巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "321c9693-dc7e-4f4a-8517-ff27fc695c44",
+        "next_spot_name": "お食事処 咲来"
+      },
+      {
+        "id": "321c9693-dc7e-4f4a-8517-ff27fc695c44",
+        "name": "お食事処 咲来",
+        "description": "音威子府産玄そば粉を使いつつ、一般的な黒いそばとは異なる白っぽい「咲来そば」が名物の食堂。11:00〜18:30（火曜〜14:00）、不定休。咲来そば・丼物等700〜1,300円程度。",
+        "address": "北海道中川郡音威子府村字咲来393-2",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.688443,
+        "lng": 142.266424,
+        "qr_token": "shuin-sakkuru-2",
+        "cover_image_url": "/images/sakkuru/spot2.png",
+        "f7_fragment": "音威子府産玄そばを使いながら白っぽく仕上げた「咲来そば」が名物の食堂。",
+        "f7_full": "「お食事処 咲来」で上品な白い咲来そばを堪能し、地元の食文化の奥深さに触れた。",
+        "is_final": false,
+        "next_spot_id": "c7d63352-3eeb-40d2-8847-a8a4263e9e5d",
+        "next_spot_name": "常盤神社・咲来開拓之碑"
+      },
+      {
+        "id": "c7d63352-3eeb-40d2-8847-a8a4263e9e5d",
+        "name": "常盤神社・咲来開拓之碑",
+        "description": "明治37年（1904年）のパンケサックル駅逓所設置や、かつて「常盤村」役場が置かれた音威子府村発祥地の歴史を伝える神社と記念碑（常時参拝・見学可・無料）。",
+        "address": "北海道中川郡音威子府村字咲来3",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.689626,
+        "lng": 142.269716,
+        "qr_token": "shuin-sakkuru-3",
+        "cover_image_url": "/images/sakkuru/spot3.png",
+        "f7_fragment": "明治の駅逓所設置や旧常盤村役場など、村発祥の記憶を刻む神社と開拓碑。",
+        "f7_full": "「常盤神社・咲来開拓之碑」を訪れ、明治三十七年から続く村の原点に手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "acd15c5d-f0e9-46ab-8ee2-d4705d8bf93e",
+        "next_spot_name": "旧音威子府村立咲来小学校・楢の大樹の碑"
+      },
+      {
+        "id": "acd15c5d-f0e9-46ab-8ee2-d4705d8bf93e",
+        "name": "旧音威子府村立咲来小学校・楢の大樹の碑",
+        "description": "1906年（明治39年）開校、2007年（平成19年）閉校（外観・記念碑見学自由・無料）。現校舎は「咲来公民館」として活用され、河川改修前の旧校舎跡地には「楢の大樹の碑」が残る。",
+        "address": "北海道中川郡音威子府村字咲来4",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.694589,
+        "lng": 142.26423,
+        "qr_token": "shuin-sakkuru-4",
+        "cover_image_url": "/images/sakkuru/spot4.png",
+        "f7_fragment": "明治三十九年開校の学び舎を継ぐ公民館と、旧校舎跡を示す楢の大樹の碑。",
+        "f7_full": "「旧音威子府村立咲来小学校・楢の大樹の碑」を巡り、百年続く地域の絆に触れた。",
+        "is_final": false,
+        "next_spot_id": "37c78f46-1cde-44fd-872c-c1fca37a8671",
+        "next_spot_name": "カフェ咲来（cafe 咲来）"
+      },
+      {
+        "id": "37c78f46-1cde-44fd-872c-c1fca37a8671",
+        "name": "カフェ咲来（cafe 咲来）",
+        "description": "ハンターでもある店主が営み、新鮮なエゾシカ料理や地元そば粉100%シフォンケーキ、珈琲が味わえる人気カフェ。11:30〜15:00（事前予約で時間外対応可）、不定休。スイーツ・料理500〜1,200円前後。",
+        "address": "北海道中川郡音威子府村字咲来321-3",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.689537,
+        "lng": 142.266499,
+        "qr_token": "shuin-sakkuru-5",
+        "cover_image_url": "/images/sakkuru/spot5.png",
+        "f7_fragment": "地元そば粉100%のシフォンケーキやエゾシカ料理が人気の隠れ家カフェ。",
+        "f7_full": "「カフェ咲来」でそば粉のシフォンケーキと珈琲を味わい、村の温もりとともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "36ef45a0-517a-4d92-83b9-a1d87cb57887",
+    "title": "音威子府・名物黒いそばと木遊館に石段神社へ",
+    "name": "音威子府・名物黒いそばと木遊館に石段神社へ",
+    "description": "天北線資料室と駅そばを擁する「JR音威子府駅」から、地元農園が黒いそばを出す「お食事処うさぎ」、木工体験の「山村・都市交流センター 木遊館」、2026年刷新の「道の駅おといねっぷ」、134段の石段が続く「音威子府八幡神社」を巡る徒歩ルート。",
+    "region": "音威子府・黒いそばと木遊館、道の駅",
+    "area_name": "音威子府・黒いそばと木遊館、道の駅",
+    "cover_image_url": "/images/otoineppu/route-eyecatch.png",
+    "imageUrl": "/images/otoineppu/route-eyecatch.png",
+    "category": "黒いそばと森の匠",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "森と匠の里・音威子府の駅から名物の黒いそばや木遊館、八幡神社を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "天北線資料室や有志により復活した駅そばも抱く「JR音威子府駅」",
+          "description": "かつて天北線が分岐した鉄道の記憶と、復活した駅そばの温かさに胸が熱くなった。",
+          "badge_code": "otoineppu_station"
+        },
+        {
+          "key": "B",
+          "text": "地元・立川農園が営み黒い「おといねっぷ蕎麦」を届ける「お食事処うさぎ」",
+          "description": "濃い色合いと豊かなそばの香りが際立つ黒いおといねっぷ蕎麦が絶品だった。",
+          "badge_code": "otoineppu_usagi"
+        },
+        {
+          "key": "C",
+          "text": "「森と匠の村」の豊かな木工文化に触れる「山村・都市交流センター 木遊館」",
+          "description": "北の木材の香りあふれる空間で、音威子府のクラフト精神を感じられた。",
+          "badge_code": "otoineppu_mokuyukan"
+        },
+        {
+          "key": "D",
+          "text": "百三十四段の石段の上に鎮座し村を見守る「音威子府八幡神社」",
+          "description": "明治四十二年創建の社へと続く石段を登り切り、村の静かな展望に心洗われた。",
+          "badge_code": "otoineppu_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "21b777f3-9caf-4485-8202-05568fc02ac7",
+        "name": "JR音威子府駅（交通ターミナル）",
+        "description": "1912年11月5日開業、かつて天北線が分岐した鉄道要衝（駅舎終日開放・無料）。館内に「天北線資料室」（日中開放・時期により変動）や、2025年7月に復活した「駅そば音威子府」（11:00〜14:00、水曜休等）がある。",
+        "address": "北海道中川郡音威子府村字音威子府509",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.729039,
+        "lng": 142.259908,
+        "qr_token": "shuin-otoineppu-1",
+        "cover_image_url": "/images/otoineppu/spot1.png",
+        "f7_fragment": "かつて天北線が分岐した要衝で、天北線資料室と復活した駅そばを抱く駅。",
+        "f7_full": "「JR音威子府駅」に降り立ち、黒いそばと森と匠の村を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "3eacf850-82de-451a-83df-6c72b37626bb",
+        "next_spot_name": "お食事処うさぎ（立川農園）"
+      },
+      {
+        "id": "3eacf850-82de-451a-83df-6c72b37626bb",
+        "name": "お食事処うさぎ（立川農園）",
+        "description": "地元・立川農園が営む人気食事処。11:00〜14:30（L.O.14:00）・17:00〜19:00（L.O.18:30）、不定休。名物の黒い「おといねっぷ蕎麦」（かけ・ざる800円、とり天1,000円）やカレーを提供。",
+        "address": "北海道中川郡音威子府村字音威子府384",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.727791,
+        "lng": 142.259988,
+        "qr_token": "shuin-otoineppu-2",
+        "cover_image_url": "/images/otoineppu/spot2.png",
+        "f7_fragment": "地元・立川農園が営み、香り高い黒い「おといねっぷ蕎麦」を届ける店。",
+        "f7_full": "「お食事処うさぎ」で香り高い黒いおといねっぷ蕎麦を味わい、大地の恵みに満たされた。",
+        "is_final": false,
+        "next_spot_id": "88f3c157-977c-428b-8632-109280f347d2",
+        "next_spot_name": "山村・都市交流センター 木遊館"
+      },
+      {
+        "id": "88f3c157-977c-428b-8632-109280f347d2",
+        "name": "山村・都市交流センター 木遊館",
+        "description": "「森と匠の村」を体感できる木工体験・展示施設。9:00〜16:30、月曜・火曜・祝日休館。入館料大人220円（冬期330円）・中学生以下無料（木工体験は別途材料費）。専門スタッフ常駐。",
+        "address": "北海道中川郡音威子府村字音威子府179-1",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.728244,
+        "lng": 142.263821,
+        "qr_token": "shuin-otoineppu-3",
+        "cover_image_url": "/images/otoineppu/spot3.png",
+        "f7_fragment": "「森と匠の村」を体感できる木工展示・体験の交流拠点施設。",
+        "f7_full": "「山村・都市交流センター 木遊館」で木の香りと匠の技に触れ、村の個性を知った。",
+        "is_final": false,
+        "next_spot_id": "dfc735f7-98c9-4077-8042-28a6b2de0ed9",
+        "next_spot_name": "道の駅おといねっぷ"
+      },
+      {
+        "id": "dfc735f7-98c9-4077-8042-28a6b2de0ed9",
+        "name": "道の駅おといねっぷ",
+        "description": "国道275号・40号分岐点に立つ村の拠点（6:00〜22:00、無休、入館無料）。2026年3月にセイコーマートが指定管理者・テナントとして入り刷新オープン。特産品や2階展示室を備える。",
+        "address": "北海道中川郡音威子府村字音威子府155",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.729063,
+        "lng": 142.257975,
+        "qr_token": "shuin-otoineppu-4",
+        "cover_image_url": "/images/otoineppu/spot4.png",
+        "f7_fragment": "国道分岐点に立ち、2026年に刷新された村の特産と旅の拠点。",
+        "f7_full": "「道の駅おといねっぷ」で特産品を選び、道北の拠点の活気を実感した。",
+        "is_final": false,
+        "next_spot_id": "8edf7348-d116-4e1f-876a-5e919404fb17",
+        "next_spot_name": "音威子府八幡神社"
+      },
+      {
+        "id": "8edf7348-d116-4e1f-876a-5e919404fb17",
+        "name": "音威子府八幡神社",
+        "description": "明治42年（1909年）創建、昭和27年に現在地の高台へ遷座、昭和43年拝殿改築の村の総鎮守（終日参拝自由・無料）。一の鳥居から約134段の石段が森の中へ続く。",
+        "address": "北海道中川郡音威子府村字音威子府1",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.728563,
+        "lng": 142.272835,
+        "qr_token": "shuin-otoineppu-5",
+        "cover_image_url": "/images/otoineppu/spot5.png",
+        "f7_fragment": "明治四十二年創建、約134段の石段の先に佇む村の総鎮守。",
+        "f7_full": "「音威子府八幡神社」の石段を登り切って参拝し、静かな達成感とともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "54654c87-0f8d-4396-8e87-36e4dcc9f5ae",
+    "title": "筬島・砂澤ビッキの美術館と北海道命名の地へ",
+    "name": "筬島・砂澤ビッキの美術館と北海道命名の地へ",
+    "description": "車掌車改造のダルマ駅舎が迎える「JR筬島駅」から、旧筬島小学校活用の「エコミュージアムおさしまセンター BIKKYアトリエ3モア」、館内の喫茶「いないいないばぁー」、天塩川の「筬島大橋」、松浦武四郎ゆかりの「北海道命名之地碑」を巡るルート。",
+    "region": "筬島・砂澤ビッキのアトリエと北海道命名の地",
+    "area_name": "筬島・砂澤ビッキのアトリエと北海道命名の地",
+    "cover_image_url": "/images/osashima/route-eyecatch.png",
+    "imageUrl": "/images/osashima/route-eyecatch.png",
+    "category": "彫刻と北海道命名の地",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "宗谷本線の無人駅・筬島から彫刻家・砂澤ビッキのアトリエや北海道命名の地の碑を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "車掌車改造のダルマ駅舎を村が守り続ける「JR筬島駅」",
+          "description": "住民や村に愛される「みんなの駅」の温かい佇まいに旅の心が躍った。",
+          "badge_code": "osashima_station"
+        },
+        {
+          "key": "B",
+          "text": "旧筬島小学校の木造校舎に残る「エコミュージアムおさしまセンター BIKKYアトリエ3モア」",
+          "description": "廃校の木造校舎に息づく砂澤ビッキの力強い木彫作品群に圧倒された。",
+          "badge_code": "osashima_bikky"
+        },
+        {
+          "key": "C",
+          "text": "かつて札幌・すすきのにあったバーを館内に再現した喫茶「いないいないばぁー」",
+          "description": "美術館の木造校舎の一室に再現された不思議な喫茶空間でほっと一息つけた。",
+          "badge_code": "osashima_cafe"
+        },
+        {
+          "key": "D",
+          "text": "松浦武四郎が「北加伊道」から命名の発想を得た「北海道命名之地碑」",
+          "description": "幕末にアイヌの古老との対話から「北海道」の名が生まれた地に立ち感動した。",
+          "badge_code": "osashima_naming"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e9712a54-2419-4dd8-81c3-2b6633eff946",
+        "name": "JR筬島駅",
+        "description": "1922年11月8日開業（終日開放・無料）。1984年の無人化後に車掌車改造のダルマ駅舎となり、現在は音威子府村が「みんなの駅」として大切に維持管理している。",
+        "address": "北海道中川郡音威子府村字物満内176-38",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.738856,
+        "lng": 142.197767,
+        "qr_token": "shuin-osashima-1",
+        "cover_image_url": "/images/osashima/spot1.png",
+        "f7_fragment": "車掌車改造のダルマ駅舎を村が「みんなの駅」として守り続ける無人駅。",
+        "f7_full": "「JR筬島駅」のダルマ駅舎に降り立ち、芸術と歴史の地を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "90cae202-6627-4402-8291-d218e80bf7fc",
+        "next_spot_name": "BIKKYアトリエ3モア（砂澤ビッキ記念館）"
+      },
+      {
+        "id": "90cae202-6627-4402-8291-d218e80bf7fc",
+        "name": "BIKKYアトリエ3モア（砂澤ビッキ記念館）",
+        "description": "1978年廃校の旧筬島小学校木造校舎を活用した記念館。4月下旬〜10月31日開館（9:30〜16:30、月曜休※祝翌日、冬期休館）、高校生以上300円・中学生以下無料。彫刻家・砂澤ビッキ晩年のアトリエ。",
+        "address": "北海道中川郡音威子府村字物満内55",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.737454,
+        "lng": 142.196219,
+        "qr_token": "shuin-osashima-2",
+        "cover_image_url": "/images/osashima/spot2.png",
+        "f7_fragment": "旧筬島小学校の木造校舎に、彫刻家・砂澤ビッキの晩年の作品を残す記念館。",
+        "f7_full": "「BIKKYアトリエ3モア」の木造校舎で、砂澤ビッキの迫力ある木彫作品に感動した。",
+        "is_final": false,
+        "next_spot_id": "8e6bb342-f569-44ad-8c5b-41aace575c51",
+        "next_spot_name": "喫茶「いないいないばぁー」"
+      },
+      {
+        "id": "8e6bb342-f569-44ad-8c5b-41aace575c51",
+        "name": "喫茶「いないいないばぁー」",
+        "description": "BIKKYアトリエ3モア館内にある喫茶スペース。4月下旬〜10月31日営業（9:30〜16:30、月曜休※施設に準ずる）。札幌・すすきのにあった同名のバーを再現し、珈琲や地元そば茶を提供（喫茶のみ入館無料）。",
+        "address": "北海道中川郡音威子府村字物満内55",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.737564,
+        "lng": 142.196148,
+        "qr_token": "shuin-osashima-3",
+        "cover_image_url": "/images/osashima/spot3.png",
+        "f7_fragment": "すすきのにあったバーを木造校舎に再現したアトリエ内の喫茶スペース。",
+        "f7_full": "喫茶「いないいないばぁー」で珈琲とそば茶をいただき、芸術の余韻を味わった。",
+        "is_final": false,
+        "next_spot_id": "2f9f054b-a2a0-4b50-803f-d207def5ec1f",
+        "next_spot_name": "筬島大橋"
+      },
+      {
+        "id": "2f9f054b-a2a0-4b50-803f-d207def5ec1f",
+        "name": "筬島大橋",
+        "description": "天塩川（音威子府渓谷）に架かり、筬島集落・駅側と国道40号側を結ぶ橋（終日通行可・無料）。四季折々の山々と大河・天塩川の渓谷美を橋上から望める。",
+        "address": "北海道中川郡音威子府村字物満内1",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.733903,
+        "lng": 142.197031,
+        "qr_token": "shuin-osashima-4",
+        "cover_image_url": "/images/osashima/spot4.png",
+        "f7_fragment": "音威子府渓谷の天塩川に架かり、筬島集落と国道40号を結ぶ景勝の大橋。",
+        "f7_full": "「筬島大橋」の上から音威子府渓谷と天塩川の雄大な流れを眺め、深呼吸した。",
+        "is_final": false,
+        "next_spot_id": "a2e52a6e-b723-486a-8c36-a0ca1c44a6da",
+        "next_spot_name": "松浦武四郎「北海道命名之地」碑"
+      },
+      {
+        "id": "a2e52a6e-b723-486a-8c36-a0ca1c44a6da",
+        "name": "松浦武四郎「北海道命名之地」碑",
+        "description": "幕末の探検家・松浦武四郎が天塩川調査の際、この地でアイヌの古老から「カイナー」の意味を教わり「北加伊道」→「北海道」命名の発想を得た由来を伝える碑（見学自由・無料、冬期積雪時は入口通行止め）。",
+        "address": "北海道中川郡音威子府村字物満内2",
+        "prefecture": "北海道",
+        "city": "音威子府村",
+        "lat": 44.741111,
+        "lng": 142.183571,
+        "qr_token": "shuin-osashima-5",
+        "cover_image_url": "/images/osashima/spot5.png",
+        "f7_fragment": "松浦武四郎がアイヌの古老との対話から「北海道」命名の着想を得た史跡碑。",
+        "f7_full": "「北海道命名之地」碑の前に立ち、北海道という名が生まれた歴史の瞬間に触れた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "88783e02-14bb-4d88-81d6-b81a0340bdcf",
+    "title": "佐久・伝承の駅舎と首長竜の館に道の駅へ",
+    "name": "佐久・伝承の駅舎と首長竜の館に道の駅へ",
+    "description": "「佐久ふるさと伝承館」を併設する「JR佐久駅」から、北大演習林の丘に創祀された「佐久神社」、天塩川を渡る「佐久橋」、廃校活用でクビナガリュウ骨格を展示する「中川町エコミュージアムセンター」、暖炉とラーメンが人気の「道の駅なかがわ」を巡るルート。",
+    "region": "佐久・ふるさと伝承館とクビナガリュウの里",
+    "area_name": "佐久・ふるさと伝承館とクビナガリュウの里",
+    "cover_image_url": "/images/saku_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/saku_hokkaido/route-eyecatch.png",
+    "category": "化石と伝承の里",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "ハッカ蒸留の伝承やクビナガリュウの化石が眠る佐久の駅からエコミュージアム、道の駅を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "木製ハッカ蒸留装置や馬橇を展示する「佐久ふるさと伝承館」併設の「JR佐久駅」",
+          "description": "駅待合室と一体になった伝承館に、かつて北見と並んだハッカ産地の誇りを見た。",
+          "badge_code": "saku_hokkaido_station"
+        },
+        {
+          "key": "B",
+          "text": "大正初めに北大演習林の丘に小祠を建てて創祀された「佐久神社」",
+          "description": "林業と開拓の歴史が息づく高台の静かな社に、地域の長い歩みを感じた。",
+          "badge_code": "saku_hokkaido_shrine"
+        },
+        {
+          "key": "C",
+          "text": "旧佐久中学校を活用し約11mのクビナガリュウ骨格を展示する「中川町エコミュージアムセンター」",
+          "description": "中川町で発掘された巨大なクビナガリュウとアンモナイト化石の迫力に圧倒された。",
+          "badge_code": "saku_hokkaido_ecomuseum"
+        },
+        {
+          "key": "D",
+          "text": "道内最大級の暖炉と道産小麦麺ラーメンが迎える「道の駅なかがわ」",
+          "description": "大きな暖炉の温もりと、山わさびソフトやボリュームある食事に旅の疲れが癒えた。",
+          "badge_code": "saku_hokkaido_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d9ee3824-a6cd-464a-8a9c-48ba0b5f28b5",
+        "name": "JR佐久駅（佐久ふるさと伝承館）",
+        "description": "1922年（大正11年）11月8日開業の無人駅（終日開放・無料）。駅舎内に「佐久ふるさと伝承館」を併設し、かつて北見と並んだハッカの木製蒸留装置や馬橇、アンモナイト化石を展示。",
+        "address": "北海道中川郡中川町字佐久1",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.744036,
+        "lng": 142.048239,
+        "qr_token": "shuin-saku_hokkaido-1",
+        "cover_image_url": "/images/saku_hokkaido/spot1.png",
+        "f7_fragment": "駅舎内にハッカ蒸留装置や馬橇を伝える「佐久ふるさと伝承館」を併設する駅。",
+        "f7_full": "「JR佐久駅（佐久ふるさと伝承館）」に降り立ち、ハッカと化石の里を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "ca6f127f-6af7-46c6-89bb-22c851c733da",
+        "next_spot_name": "佐久神社"
+      },
+      {
+        "id": "ca6f127f-6af7-46c6-89bb-22c851c733da",
+        "name": "佐久神社",
+        "description": "大正初めに北大演習林の丘に小祠を建てて創建されたと伝わる地域の神社（終日参拝自由・無料）。静かな森の気配に包まれ、佐久地区の開拓と林業の歴史を今に伝えている。",
+        "address": "北海道中川郡中川町字佐久2",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.746308,
+        "lng": 142.04958,
+        "qr_token": "shuin-saku_hokkaido-2",
+        "cover_image_url": "/images/saku_hokkaido/spot2.png",
+        "f7_fragment": "大正初めに北大演習林の丘に小祠を建てて創祀された佐久の鎮守。",
+        "f7_full": "「佐久神社」の静かな境内で手を合わせ、森とともに歩んだ集落の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "4d99c9c9-da1b-4c24-8f98-4034abea05a0",
+        "next_spot_name": "佐久橋"
+      },
+      {
+        "id": "4d99c9c9-da1b-4c24-8f98-4034abea05a0",
+        "name": "佐久橋",
+        "description": "道道218号板谷佐久停車場線沿いに天塩川を跨いで架かる橋梁（終日通行可・無料）。雄大な天塩川の流れと佐久地区の豊かな山並みを望むことができる。",
+        "address": "北海道中川郡中川町字佐久218",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.745303,
+        "lng": 142.062551,
+        "qr_token": "shuin-saku_hokkaido-3",
+        "cover_image_url": "/images/saku_hokkaido/spot3.png",
+        "f7_fragment": "道道218号沿いに天塩川を跨ぎ、佐久の豊かな山河を見渡す橋梁。",
+        "f7_full": "「佐久橋」から天塩川のゆったりとした流れを眺め、自然の広がりに深呼吸した。",
+        "is_final": false,
+        "next_spot_id": "193be9f4-0861-4c0d-8abf-e05be40c6fa7",
+        "next_spot_name": "中川町エコミュージアムセンター（エコールなかがわ）"
+      },
+      {
+        "id": "193be9f4-0861-4c0d-8abf-e05be40c6fa7",
+        "name": "中川町エコミュージアムセンター（エコールなかがわ）",
+        "description": "旧佐久中学校校舎を活用した自然史博物館。9:30〜16:30、月曜（祝翌日）・12/29〜1/7休（11月中旬〜4月中旬は土日祝も休館）、高校生以上200円・中学生以下無料。約11mのクビナガリュウ復元骨格等を展示。",
+        "address": "北海道中川郡中川町字安川28-9",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.744678,
+        "lng": 142.035436,
+        "qr_token": "shuin-saku_hokkaido-4",
+        "cover_image_url": "/images/saku_hokkaido/spot4.png",
+        "f7_fragment": "旧佐久中学校を活用し、全長約11mのクビナガリュウ骨格や化石を展示する博物館。",
+        "f7_full": "「中川町エコミュージアムセンター」で巨大なクビナガリュウ骨格を見上げ、太古のロマンに酔った。",
+        "is_final": false,
+        "next_spot_id": "5c487c04-a315-4856-88c3-daa9de4d80e3",
+        "next_spot_name": "道の駅なかがわ（レストラン匠舎）"
+      },
+      {
+        "id": "5c487c04-a315-4856-88c3-daa9de4d80e3",
+        "name": "道の駅なかがわ（レストラン匠舎）",
+        "description": "道内最大級の暖炉を備えた国道40号沿いの拠点。物産9:00〜17:00・レストラン11:00〜13:30頃、12/30〜1/4休。道産小麦100%麺ラーメンや自家製「ロースカツ三兄弟」、ハスカップや山わさびソフトが人気。",
+        "address": "北海道中川郡中川町字誉498-1",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.801552,
+        "lng": 142.067063,
+        "qr_token": "shuin-saku_hokkaido-5",
+        "cover_image_url": "/images/saku_hokkaido/spot5.png",
+        "f7_fragment": "道内最大級の暖炉と道産小麦麺ラーメン、山わさびソフトが人気の道の駅。",
+        "f7_full": "「道の駅なかがわ」で暖炉の温もりとご当地グルメを楽しみ、佐久の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2f1dbd0c-4e9f-466f-862b-4db927a080bd",
+    "title": "天塩中川・昭和の駅舎と名物豚丼に町営温泉へ",
+    "name": "天塩中川・昭和の駅舎と名物豚丼に町営温泉へ",
+    "description": "昭和の佇まいを残す「JR天塩中川駅」から、地元密着の「Qマート 中川店」、昭和五十二年創業の豚丼名店「居酒屋 十一（とういち）」、温泉とアンモナイト型プールを備える「ポンピラ アクア リズイング」、誉地区の「中川神社」を巡るルート。",
+    "region": "天塩中川・木造駅舎と名物豚丼、町営温泉",
+    "area_name": "天塩中川・木造駅舎と名物豚丼、町営温泉",
+    "cover_image_url": "/images/teshionakagawa/route-eyecatch.png",
+    "imageUrl": "/images/teshionakagawa/route-eyecatch.png",
+    "category": "昭和駅舎と豚丼温泉",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "かつて「誉平駅」と呼ばれた天塩中川の駅から地元の買い物拠点や豚丼の名店、町営温泉を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正十一年に「誉平（ぽんぴら）駅」として開業した昭和佇まいの「JR天塩中川駅」",
+          "description": "中川町交流プラザを兼ねた味わい深い駅舎に、道北の暮らしの温もりを感じた。",
+          "badge_code": "teshionakagawa_station"
+        },
+        {
+          "key": "B",
+          "text": "昭和五十二年創業、手作りのたれが自慢の豚丼を味わう「居酒屋 十一」",
+          "description": "香ばしく焼き上げた豚肉と秘伝のたれが絡む豚丼の旨さに疲れが吹き飛んだ。",
+          "badge_code": "teshionakagawa_toichi"
+        },
+        {
+          "key": "C",
+          "text": "塩化物泉の湯とアンモナイト型プールを備える「ポンピラ アクア リズイング」",
+          "description": "中川町らしいアンモナイト型の造りと、優しい町営温泉の湯に癒された。",
+          "badge_code": "teshionakagawa_pompira"
+        },
+        {
+          "key": "D",
+          "text": "国道40号沿いの誉地区に鎮座し町を見守る「中川神社」",
+          "description": "地域の歴史を見守り続けてきた静かな社の佇まいに、旅の心が落ち着いた。",
+          "badge_code": "teshionakagawa_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9cab09c7-a393-4a3e-828f-61631f607591",
+        "name": "JR天塩中川駅（中川町交流プラザ）",
+        "description": "1922年（大正11年）11月8日「誉平（ぽんぴら）駅」として開業、1951年現駅名に改称（終日開放・無料、特急一部停車）。昭和の佇まいを残す木造風の駅舎。",
+        "address": "北海道中川郡中川町字中川537-1",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.811957,
+        "lng": 142.075068,
+        "qr_token": "shuin-teshionakagawa-1",
+        "cover_image_url": "/images/teshionakagawa/spot1.png",
+        "f7_fragment": "大正十一年「誉平駅」として開業した、昭和の佇まいを残す駅舎。",
+        "f7_full": "「JR天塩中川駅」に降り立ち、地元の食と町営温泉を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "7a126f95-b340-4b8c-81be-bcf98b50b70c",
+        "next_spot_name": "Qマート 中川店"
+      },
+      {
+        "id": "7a126f95-b340-4b8c-81be-bcf98b50b70c",
+        "name": "Qマート 中川店",
+        "description": "JR天塩中川駅から徒歩約1〜2分の距離にある西條グループの地域密着型スーパー。9:00〜19:00（日曜は17:00閉店の場合あり）。中川町中心部の暮らしと買出しを支えている。",
+        "address": "北海道中川郡中川町字中川308",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.81177,
+        "lng": 142.074047,
+        "qr_token": "shuin-teshionakagawa-2",
+        "cover_image_url": "/images/teshionakagawa/spot2.png",
+        "f7_fragment": "駅から徒歩二分で町の暮らしと買出しを支える地域密着スーパー。",
+        "f7_full": "「Qマート 中川店」に立ち寄り、中川町の穏やかな日常の空気に触れた。",
+        "is_final": false,
+        "next_spot_id": "55f0c28e-4503-414f-85cd-81817e3c0097",
+        "next_spot_name": "居酒屋 十一（とういち）"
+      },
+      {
+        "id": "55f0c28e-4503-414f-85cd-81817e3c0097",
+        "name": "居酒屋 十一（とういち）",
+        "description": "昭和52年（1977年）創業の地元密着店。18:00〜23:00（L.O.22:30）、日曜休。半世紀近く継ぎ足され守られてきた手作りのたれが自慢の「豚丼」が町民や旅人に愛される名物。",
+        "address": "北海道中川郡中川町字中川357-1",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.810995,
+        "lng": 142.073209,
+        "qr_token": "shuin-teshionakagawa-3",
+        "cover_image_url": "/images/teshionakagawa/spot3.png",
+        "f7_fragment": "昭和五十二年創業、手作りのたれが自慢の「豚丼」が名物の地元密着店。",
+        "f7_full": "「居酒屋 十一」で秘伝のたれが香る名物豚丼を味わい、中川の食の豊かさに唸った。",
+        "is_final": false,
+        "next_spot_id": "442637fe-5725-42f2-8e7e-beab85b71516",
+        "next_spot_name": "ポンピラ アクア リズイング"
+      },
+      {
+        "id": "442637fe-5725-42f2-8e7e-beab85b71516",
+        "name": "ポンピラ アクア リズイング",
+        "description": "塩化物泉の温泉・薬湯やアンモナイト型プールを備える町営温泉施設。日帰り入浴11:00〜20:00受付（21:00閉館）、大人400円・小人200円。館内「レストラン ウェルビー」で発芽蕎麦粉メニューも提供。",
+        "address": "北海道中川郡中川町字中川439-1",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.801341,
+        "lng": 142.075525,
+        "qr_token": "shuin-teshionakagawa-4",
+        "cover_image_url": "/images/teshionakagawa/spot4.png",
+        "f7_fragment": "塩化物泉の湯やアンモナイト型プールを備え、発芽蕎麦も楽しめる町営温泉。",
+        "f7_full": "「ポンピラ アクア リズイング」の温かい塩化物泉に浸かり、旅の疲れを癒やした。",
+        "is_final": false,
+        "next_spot_id": "ff3f872a-e114-4897-8a10-f200d2fc25cc",
+        "next_spot_name": "中川神社"
+      },
+      {
+        "id": "ff3f872a-e114-4897-8a10-f200d2fc25cc",
+        "name": "中川神社",
+        "description": "国道40号沿いの誉地区に鎮座し、中川町の開拓と暮らしを静かに見守り続けてきた地域の鎮守（終日参拝自由・無料）。清らかな木立に包まれた境内が旅の心を整えてくれる。",
+        "address": "北海道中川郡中川町字誉67",
+        "prefecture": "北海道",
+        "city": "中川町",
+        "lat": 44.816526,
+        "lng": 142.058169,
+        "qr_token": "shuin-teshionakagawa-5",
+        "cover_image_url": "/images/teshionakagawa/spot5.png",
+        "f7_fragment": "国道40号沿いの誉地区に鎮座し、中川町の暮らしを見守り続ける鎮守社。",
+        "f7_full": "「中川神社」の静かな境内で手を合わせ、道北の穏やかな旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "455a11cb-fe23-4a69-8eff-ed1282a9ad78",
+    "title": "問寒別・車掌車ダルマ駅と最北の研究林跡へ",
+    "name": "問寒別・車掌車ダルマ駅と最北の研究林跡へ",
+    "description": "ヨ3500形車掌車転用のダルマ駅舎が迎える「JR問寒別駅」から、看板猫で知られる「Qマート 問寒別店」、集落中心の「問寒別郵便局」、学校林を望む「問寒別神社」、日本最北の大学研究林と歴史を伝える「北海道大学 天塩研究林（問寒別渡船場跡）」を巡る徒歩ルート。",
+    "region": "問寒別・ダルマ駅舎と看板猫、最北の研究林",
+    "area_name": "問寒別・ダルマ駅舎と看板猫、最北の研究林",
+    "cover_image_url": "/images/toikanbetsu/route-eyecatch.png",
+    "imageUrl": "/images/toikanbetsu/route-eyecatch.png",
+    "category": "秘境ダルマ駅と研究林",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "車掌車のダルマ駅舎が迎える問寒別の集落から看板猫のスーパー、日本最北の大学研究林を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ヨ3500形車掌車を転用したダルマ駅舎が愛らしい「JR問寒別駅」",
+          "description": "アイヌ語「土が被さる川」に由来する秘境の駅で、鉄道旅の醍醐味を味わえた。",
+          "badge_code": "toikanbetsu_station"
+        },
+        {
+          "key": "B",
+          "text": "集落の暮らしを支え看板猫でも親しまれる「Qマート 問寒別店」",
+          "description": "小さな集落の頼もしいスーパーで、地元の温かな日常と看板猫に癒された。",
+          "badge_code": "toikanbetsu_qmart"
+        },
+        {
+          "key": "C",
+          "text": "学校林と遊歩道を望み、夏の例祭が受け継がれる「問寒別神社」",
+          "description": "豊かな学校林の緑に寄り添う静かな境内に、地域コミュニティの強さを感じた。",
+          "badge_code": "toikanbetsu_shrine"
+        },
+        {
+          "key": "D",
+          "text": "日本最北の大学研究林と渡船場跡が残る「北海道大学 天塩研究林」",
+          "description": "最北の森を守る研究の歴史と、橋が架かる前の渡船場跡の記憶に胸を打たれた。",
+          "badge_code": "toikanbetsu_teshio_forest"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0b2d92f7-bf0e-4c9d-87de-8baddaaa5005",
+        "name": "JR問寒別駅",
+        "description": "1923年（大正12年）11月10日、天塩線延伸に伴い開業（終日開放・無料）。ヨ3500形車掌車を転用したダルマ駅舎が特徴。地名はアイヌ語「トイ・カム・ペッ（土が被さる川）」に由来。",
+        "address": "北海道天塩郡幌延町字問寒別1",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.912469,
+        "lng": 142.025475,
+        "qr_token": "shuin-toikanbetsu-1",
+        "cover_image_url": "/images/toikanbetsu/spot1.png",
+        "f7_fragment": "大正十二年開業、ヨ3500形車掌車転用のダルマ駅舎が残る無人駅。",
+        "f7_full": "「JR問寒別駅」のダルマ駅舎に降り立ち、最北の研究林と集落を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "ffc49d9f-540c-4466-8b67-8d706d7e6533",
+        "next_spot_name": "Qマート 問寒別店"
+      },
+      {
+        "id": "ffc49d9f-540c-4466-8b67-8d706d7e6533",
+        "name": "Qマート 問寒別店",
+        "description": "JR問寒別駅から徒歩約2分の集落を支える小型食品スーパー。9:00〜17:30、日曜・1/1〜1/3休。旧Aコープ跡地に開き、看板猫「テンちゃん」でも旅人に親しまれている。",
+        "address": "北海道天塩郡幌延町字問寒別52",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.913679,
+        "lng": 142.025715,
+        "qr_token": "shuin-toikanbetsu-2",
+        "cover_image_url": "/images/toikanbetsu/spot2.png",
+        "f7_fragment": "集落の暮らしを支え、看板猫でも旅人に親しまれる駅近の小型スーパー。",
+        "f7_full": "「Qマート 問寒別店」で買い物を楽しみ、北の集落の温かな日常に触れた。",
+        "is_final": false,
+        "next_spot_id": "79e58463-2376-4127-81c6-1acf944ee575",
+        "next_spot_name": "問寒別郵便局"
+      },
+      {
+        "id": "79e58463-2376-4127-81c6-1acf944ee575",
+        "name": "問寒別郵便局",
+        "description": "問寒別集落の中心部に位置し、地域住民の暮らしを長年支えてきた郵便局（郵便窓口平日9:00〜17:00、土日祝休）。旅人にとっては記念貯金や風景印の立ち寄り先としても知られる。",
+        "address": "北海道天塩郡幌延町問寒別137-7",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.915424,
+        "lng": 142.021646,
+        "qr_token": "shuin-toikanbetsu-3",
+        "cover_image_url": "/images/toikanbetsu/spot3.png",
+        "f7_fragment": "問寒別集落の中心で暮らしと便りを結び続けてきた地域の生活拠点。",
+        "f7_full": "「問寒別郵便局」の前を歩き、北国の集落の暮らしを支える風景を心に留めた。",
+        "is_final": false,
+        "next_spot_id": "e7757a26-c787-4689-80fd-8273d9ead20c",
+        "next_spot_name": "問寒別神社"
+      },
+      {
+        "id": "e7757a26-c787-4689-80fd-8273d9ead20c",
+        "name": "問寒別神社",
+        "description": "問寒別小学校・学校林付近に鎮座し、例年7月下旬に「問寒別神社祭」が行われる地域信仰の場（終日参拝自由・無料）。向かいに学校林と遊歩道が広がる。",
+        "address": "北海道天塩郡幌延町字問寒別2",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.920421,
+        "lng": 142.012314,
+        "qr_token": "shuin-toikanbetsu-4",
+        "cover_image_url": "/images/toikanbetsu/spot4.png",
+        "f7_fragment": "学校林と遊歩道のそばに鎮座し、夏の例祭が受け継がれる集落の鎮守。",
+        "f7_full": "「問寒別神社」の静かな杜で手を合わせ、集落の平和と旅の無事を祈った。",
+        "is_final": false,
+        "next_spot_id": "28c1210c-6ed6-4d09-8cc0-2c1d3d461129",
+        "next_spot_name": "北海道大学 天塩研究林（事務所周辺）"
+      },
+      {
+        "id": "28c1210c-6ed6-4d09-8cc0-2c1d3d461129",
+        "name": "北海道大学 天塩研究林（事務所周辺）",
+        "description": "日本最北の大学研究林である北大天塩研究林の拠点（構内立入は規定に準ずる、周辺散策・天塩川沿いの問寒別渡船場跡標柱は見学自由・無料）。林業研究と開拓の歴史が色濃く残る。",
+        "address": "北海道天塩郡幌延町字問寒別131",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.917384,
+        "lng": 142.019566,
+        "qr_token": "shuin-toikanbetsu-5",
+        "cover_image_url": "/images/toikanbetsu/spot5.png",
+        "f7_fragment": "日本最北の大学研究林の拠点で、最北の森と渡船場跡の歴史が息づく地。",
+        "f7_full": "「北海道大学 天塩研究林」周辺の深い森を仰ぎ、最北の学術と開拓史に触れて旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2ee9b0da-6542-4bbc-832d-ede10397da46",
+    "title": "糠南・愛される物置駅と簡易軌道の遺構巡りへ",
+    "name": "糠南・愛される物置駅と簡易軌道の遺構巡りへ",
+    "description": "ヨドコウ物置の待合室で有名な秘境「JR糠南駅」から、牧草地と川面が広がる「問寒別川（糠南の原野）」、古民家旅人宿「ウタラといかん」、町営軌道の起点を示す「問寒別簡易軌道 始点跡」、コンクリート橋脚が残る「問寒別簡易軌道 橋台遺構」を巡る徒歩ルート。",
+    "region": "糠南・物置駅舎と簡易軌道遺構、原野の宿",
+    "area_name": "糠南・物置駅舎と簡易軌道遺構、原野の宿",
+    "cover_image_url": "/images/nukanan/route-eyecatch.png",
+    "imageUrl": "/images/nukanan/route-eyecatch.png",
+    "category": "秘境物置駅と簡易軌道",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "物置の待合室で知られる秘境・糠南駅から牧草地の川辺や簡易軌道の遺構を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ヨドコウ製物置「あぜくら」を待合室に転用した1両未満ホームの「JR糠南駅」",
+          "description": "小さな物置の待合室と板張りホームが、全国から鉄道ファンを惹きつける魅力を実感した。",
+          "badge_code": "nukanan_station"
+        },
+        {
+          "key": "B",
+          "text": "かつて渡船場が置かれた牧草地と清流の風景「問寒別川（糠南の原野）」",
+          "description": "広々とした牧草地と静かな川の眺めを歩きながら、道北の原野の大きさに感動した。",
+          "badge_code": "nukanan_river"
+        },
+        {
+          "key": "C",
+          "text": "築古民家を改装し鉄道ファンや地元農家が語らう「ウタラといかん」",
+          "description": "素朴な古民家ゲストハウスの温かい佇まいに、旅人同士の交流の温もりを感じた。",
+          "badge_code": "nukanan_utara"
+        },
+        {
+          "key": "D",
+          "text": "昭和四十六年廃止の殖民軌道が川を渡った「問寒別簡易軌道 橋台遺構」",
+          "description": "道道沿いに残るコンクリート橋脚に、かつて開拓の物資を運んだ小軌道の記憶を見た。",
+          "badge_code": "nukanan_bridge_ruin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ec800aeb-95aa-4c20-8ec7-9312194c83a8",
+        "name": "JR糠南駅",
+        "description": "1955年12月2日「糠南仮乗降場」として開業、1987年4月1日駅昇格（終日開放・無料）。ヨドコウ製物置「あぜくら」を転用した待合室と1両未満の板張りホームが特徴の日本屈指の秘境駅。",
+        "address": "北海道天塩郡幌延町字問寒別746-3",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.920753,
+        "lng": 142.000692,
+        "qr_token": "shuin-nukanan-1",
+        "cover_image_url": "/images/nukanan/spot1.png",
+        "f7_fragment": "ヨドコウ製物置の待合室と板張りホームが愛される日本屈指の秘境駅。",
+        "f7_full": "「JR糠南駅」の物置待合室に降り立ち、道北の原野と簡易軌道遺構の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "4cbc1f2b-7f05-4d72-8ecb-7519098a8ff2",
+        "next_spot_name": "問寒別川（糠南の原野）"
+      },
+      {
+        "id": "4cbc1f2b-7f05-4d72-8ecb-7519098a8ff2",
+        "name": "問寒別川（糠南の原野）",
+        "description": "天塩川水系の問寒別川と広大な牧草地が広がる秘境駅間の徒歩ルート（終日開放・無料）。かつて渡船場が置かれ、問寒別橋架設以前からの地域の交通の要衝として歴史を刻んできた。",
+        "address": "北海道天塩郡幌延町字問寒別1",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.920753,
+        "lng": 142.000692,
+        "qr_token": "shuin-nukanan-2",
+        "cover_image_url": "/images/nukanan/spot2.png",
+        "f7_fragment": "牧草地の中を問寒別川が流れ、道北の原野の広がりを体感できる徒歩道。",
+        "f7_full": "「問寒別川（糠南の原野）」の雄大な牧草地を歩き、道北の空の広さに深呼吸した。",
+        "is_final": false,
+        "next_spot_id": "f7d6b6b5-a25d-4879-8376-1bb562b820f8",
+        "next_spot_name": "日本一しょぼいゲストハウス ウタラといかん"
+      },
+      {
+        "id": "f7d6b6b5-a25d-4879-8376-1bb562b820f8",
+        "name": "日本一しょぼいゲストハウス ウタラといかん",
+        "description": "築古民家を改装した旅人宿兼バーチャルオフィス（宿泊チェックイン制・要事前確認、時期により休業中の場合あり、素泊まり4,000円〜）。鉄道ファンやライダー、地元農家が交流するユニークな拠点。",
+        "address": "北海道天塩郡幌延町字問寒別127-11",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.91467,
+        "lng": 142.023831,
+        "qr_token": "shuin-nukanan-3",
+        "cover_image_url": "/images/nukanan/spot3.png",
+        "f7_fragment": "築古民家を改装し、鉄道ファンや旅人、地元農家が交流するユニークな宿。",
+        "f7_full": "「ウタラといかん」の素朴な古民家の佇まいに触れ、北の旅人宿の温もりを感じた。",
+        "is_final": false,
+        "next_spot_id": "656f62d3-a6e2-4cd8-8567-7aca7fb2ddac",
+        "next_spot_name": "問寒別簡易軌道 始点跡（史跡標柱）"
+      },
+      {
+        "id": "656f62d3-a6e2-4cd8-8567-7aca7fb2ddac",
+        "name": "問寒別簡易軌道 始点跡（史跡標柱）",
+        "description": "1929年（昭和4年）着工・1930年（昭和5年）開通の殖民軌道問寒別線（のち幌延町営軌道、1971年廃止）の起点・機関庫跡地に幌延町教育委員会が設置した史跡標柱（終日見学自由・無料）。",
+        "address": "北海道天塩郡幌延町字問寒別3",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.912446,
+        "lng": 142.027196,
+        "qr_token": "shuin-nukanan-4",
+        "cover_image_url": "/images/nukanan/spot4.png",
+        "f7_fragment": "昭和五年から四十六年まで活躍した町営簡易軌道の起点・機関庫跡を示す標柱。",
+        "f7_full": "「問寒別簡易軌道 始点跡」の標柱の前に立ち、開拓を支えた小軌道の記憶を辿った。",
+        "is_final": false,
+        "next_spot_id": "a3f697f2-1f00-439c-8294-dfc9213a3a86",
+        "next_spot_name": "問寒別簡易軌道 橋台遺構"
+      },
+      {
+        "id": "a3f697f2-1f00-439c-8294-dfc9213a3a86",
+        "name": "問寒別簡易軌道 橋台遺構",
+        "description": "道道583号上問寒問寒別停車場線沿い・問寒別川周辺に現存するコンクリート製の橋台・橋脚遺構（終日見学自由・無料）。かつて簡易軌道が川を渡っていた姿を静かに今へ残している。",
+        "address": "北海道天塩郡幌延町字問寒別583",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 44.912457,
+        "lng": 142.026336,
+        "qr_token": "shuin-nukanan-5",
+        "cover_image_url": "/images/nukanan/spot5.png",
+        "f7_fragment": "廃止から半世紀を経て今も残る、問寒別簡易軌道のコンクリート橋台遺構。",
+        "f7_full": "「問寒別簡易軌道 橋台遺構」を見学し、北の鉄路と開拓の記憶を胸に旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "db2acf49-635e-488c-8a40-0279d2fec232",
+    "title": "幌延・羽幌線分岐の街と日本希少トナカイ牧場へ",
+    "name": "幌延・羽幌線分岐の街と日本希少トナカイ牧場へ",
+    "description": "かつて羽幌線が分岐した「JR幌延駅（ホロカル併設）」から、駅前旅館内の人気食堂「喰い処 菜味季」、伊勢の御分霊を祀る「幌延神社」、樹齢300年の天然木が残る「名林公園」、約65頭のトナカイに出会える「幌延町トナカイ観光牧場」を巡るルート。",
+    "region": "幌延・特急停車の街とトナカイ観光牧場",
+    "area_name": "幌延・特急停車の街とトナカイ観光牧場",
+    "cover_image_url": "/images/horonobe/route-eyecatch.png",
+    "imageUrl": "/images/horonobe/route-eyecatch.png",
+    "category": "北の鉄道とトナカイ牧場",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "かつて羽幌線が分岐した幌延の駅から市街地の名林公園、国内でも希少なトナカイ牧場を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "かつて羽幌線が分岐し、駅構内に「ホロカル」を併設する「JR幌延駅」",
+          "description": "駅構内のホロカルで秘境駅グッズや特産品を眺めながら、町の魅力を知れた。",
+          "badge_code": "horonobe_station"
+        },
+        {
+          "key": "B",
+          "text": "駅から徒歩二分、定食やラーメンで地元に愛される「喰い処 菜味季」",
+          "description": "駅近くの落ち着いた店内でいただく温かい定食とラーメンが体に染みた。",
+          "badge_code": "horonobe_namiki"
+        },
+        {
+          "key": "C",
+          "text": "樹齢百年から三百年の天然木と開拓記念碑が残る「名林公園」",
+          "description": "街なかにありながら三百年もの歴史を刻む巨木群の静かな迫力に圧倒された。",
+          "badge_code": "horonobe_meirin"
+        },
+        {
+          "key": "D",
+          "text": "約65頭のトナカイを間近に見学・エサやりできる「幌延町トナカイ観光牧場」",
+          "description": "北国・幌延ならではの愛らしいトナカイたちの群れと触れ合えて感動した。",
+          "badge_code": "horonobe_reindeer"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1971ea32-6185-4b19-8a43-fe0673603aa5",
+        "name": "JR幌延駅（ホロカル併設）",
+        "description": "1925年7月20日開業、かつて国鉄羽幌線も分岐した特急停車駅（終日開放・無料）。駅構内の移住情報PR支援センター「ホロカル」（9:00〜16:00、木曜・年末年始休）では秘境駅グッズや珈琲も提供。",
+        "address": "北海道天塩郡幌延町1条南1丁目1",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.014556,
+        "lng": 141.8461,
+        "qr_token": "shuin-horonobe-1",
+        "cover_image_url": "/images/horonobe/spot1.png",
+        "f7_fragment": "かつて羽幌線も分岐し、秘境駅グッズの「ホロカル」を併設する特急停車駅。",
+        "f7_full": "「JR幌延駅」に降り立ち、秘境駅の町の中心街とトナカイ牧場を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "140ecbbd-28dd-40b8-8b75-ef67dc55021a",
+        "next_spot_name": "喰い処 菜味季（なみき）"
+      },
+      {
+        "id": "140ecbbd-28dd-40b8-8b75-ef67dc55021a",
+        "name": "喰い処 菜味季（なみき）",
+        "description": "JR幌延駅から徒歩約2分、ビジネス旅館光栄荘内で営業する人気の食事処。昼11:30〜13:30・夜17:30〜22:30頃、日曜休（祝不定休）。定食・ラーメン・丼もの（1,000円前後〜）が好評。",
+        "address": "北海道天塩郡幌延町1条北1丁目9",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.015597,
+        "lng": 141.846228,
+        "qr_token": "shuin-horonobe-2",
+        "cover_image_url": "/images/horonobe/spot2.png",
+        "f7_fragment": "駅徒歩二分、ビジネス旅館光栄荘内で定食やラーメンを届ける人気食堂。",
+        "f7_full": "「喰い処 菜味季」で温かい食事をいただき、幌延の街歩きの元気をチャージした。",
+        "is_final": false,
+        "next_spot_id": "230a1d5f-5080-4e36-81cb-a6e2ff235678",
+        "next_spot_name": "幌延神社"
+      },
+      {
+        "id": "230a1d5f-5080-4e36-81cb-a6e2ff235678",
+        "name": "幌延神社",
+        "description": "明治時代に伊勢神宮の御分霊を奉斎して創建された幌延町の鎮守社（終日参拝自由・無料）。毎年7月15日に例祭が行われ、長く町民の信仰を集めてきた。",
+        "address": "北海道天塩郡幌延町宮園町104",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.019268,
+        "lng": 141.849932,
+        "qr_token": "shuin-horonobe-3",
+        "cover_image_url": "/images/horonobe/spot3.png",
+        "f7_fragment": "明治時代に伊勢神宮の御分霊を奉斎して創建された幌延の鎮守社。",
+        "f7_full": "「幌延神社」の静かな社殿に手を合わせ、明治から続く町の歩みに思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "27b8deae-7dfd-46a0-8bf1-8e25aafb2141",
+        "next_spot_name": "名林公園"
+      },
+      {
+        "id": "27b8deae-7dfd-46a0-8bf1-8e25aafb2141",
+        "name": "名林公園",
+        "description": "樹齢100〜300年の天然木が残る市街地の樹木園（終日開放・無料）。園内には開拓記念碑が立ち、夏には地域の祭り「ほろのべ名林公園まつり」の会場としても賑わう。",
+        "address": "北海道天塩郡幌延町宮園町9",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.016461,
+        "lng": 141.851424,
+        "qr_token": "shuin-horonobe-4",
+        "cover_image_url": "/images/horonobe/spot4.png",
+        "f7_fragment": "樹齢100〜300年の天然木と開拓記念碑が残る市街地の貴重な樹木園。",
+        "f7_full": "「名林公園」の三百年を生きる天然木を見上げ、北の大地の生命力に感銘を受けた。",
+        "is_final": false,
+        "next_spot_id": "3c472be8-fea7-4b76-8940-cffb7f185380",
+        "next_spot_name": "幌延町トナカイ観光牧場"
+      },
+      {
+        "id": "3c472be8-fea7-4b76-8940-cffb7f185380",
+        "name": "幌延町トナカイ観光牧場",
+        "description": "約65頭のトナカイを飼育する国内でも希少な専門牧場（9:00〜16:30・売店〜17:00、月火・12/31〜1/5休、入場無料・エサやり500円）。JR幌延駅から沿岸バス約5分。",
+        "address": "北海道天塩郡幌延町字北進398-1",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.040852,
+        "lng": 141.861187,
+        "qr_token": "shuin-horonobe-5",
+        "cover_image_url": "/images/horonobe/spot5.png",
+        "f7_fragment": "約65頭のトナカイを飼育しエサやりも楽しめる日本希少の専門牧場。",
+        "f7_full": "「幌延町トナカイ観光牧場」で愛らしいトナカイたちと出会い、幌延の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "751ecdb9-1066-4dbd-87e7-e4dfc9392875",
+    "title": "下沼・ぬまひきょんの駅とサロベツ原野の沼へ",
+    "name": "下沼・ぬまひきょんの駅とサロベツ原野の沼へ",
+    "description": "車掌車ダルマ駅舎に「ぬまひきょん」が描かれた「JR下沼駅」から、開拓者の名を冠した「湧水サロベツ権左衛門」、利尻富士を望む「名山台展望公園」、原野を学ぶ「幌延ビジターセンター」、木道が続く「パンケ沼園地」を巡るルート。",
+    "region": "下沼・ダルマ駅とサロベツ原野、パンケ沼",
+    "area_name": "下沼・ダルマ駅とサロベツ原野、パンケ沼",
+    "cover_image_url": "/images/shimonuma/route-eyecatch.png",
+    "imageUrl": "/images/shimonuma/route-eyecatch.png",
+    "category": "ダルマ駅とサロベツ原野",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "秘境駅「JR下沼駅」からサロベツ原野の展望台やビジターセンター、パンケ沼を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "車掌車ダルマ駅舎に秘境駅キャラ「ぬまひきょん」が描かれた「JR下沼駅」",
+          "description": "大正十五年開業の歴史と、可愛らしいイラストで歓迎してくれる駅舎に和んだ。",
+          "badge_code": "shimonuma_station"
+        },
+        {
+          "key": "B",
+          "text": "開拓者の名に由来するまろやかな軟水の湧き水「湧水サロベツ権左衛門」",
+          "description": "駅から徒歩一分の場所で、サロベツの大地が磨いた清らかな水に出会えた。",
+          "badge_code": "shimonuma_gonzaemon"
+        },
+        {
+          "key": "C",
+          "text": "サロベツ原野と海上の利尻富士を一望する高台の「名山台展望公園」",
+          "description": "広大な湿原の向こうに浮かぶ利尻富士の雄大なシルエットに息を呑んだ。",
+          "badge_code": "shimonuma_meizandai"
+        },
+        {
+          "key": "D",
+          "text": "周囲約8kmの汽水湖と木道散策路が広がる「パンケ沼園地（サロベツ国立公園）」",
+          "description": "静かな湿原の木道を歩きながら、サロベツ原野の貴重な自然を肌で感じた。",
+          "badge_code": "shimonuma_panke"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2e6e4ca2-ba9d-43d0-8263-3621b5851e00",
+        "name": "JR下沼駅",
+        "description": "1926年9月25日開業、1985年にヨ3500形車掌車改造のダルマ駅舎へ改築された無人駅（終日開放・無料）。2017年に外壁へご当地秘境駅キャラ「ぬまひきょん」が描かれ親しまれている。",
+        "address": "北海道天塩郡幌延町字下沼595-7",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.037119,
+        "lng": 141.758138,
+        "qr_token": "shuin-shimonuma-1",
+        "cover_image_url": "/images/shimonuma/spot1.png",
+        "f7_fragment": "車掌車ダルマ駅舎にご当地キャラ「ぬまひきょん」が描かれた無人駅。",
+        "f7_full": "「JR下沼駅」に降り立ち、サロベツ原野の大自然を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "2ab88c48-3278-495d-8226-01ed6cd18f55",
+        "next_spot_name": "湧水サロベツ権左衛門"
+      },
+      {
+        "id": "2ab88c48-3278-495d-8226-01ed6cd18f55",
+        "name": "湧水サロベツ権左衛門",
+        "description": "JR下沼駅から徒歩約1分の場所にある天然湧水スポット（終日利用可・無料、冬季は除雪なしのため春〜秋推奨）。開拓者の名に由来するまろやかな軟水がこんこんと湧き出ている。",
+        "address": "北海道天塩郡幌延町字下沼71-6",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.036949,
+        "lng": 141.756701,
+        "qr_token": "shuin-shimonuma-2",
+        "cover_image_url": "/images/shimonuma/spot2.png",
+        "f7_fragment": "JR下沼駅徒歩一分、開拓者の名に由来するまろやかな軟水の湧水地。",
+        "f7_full": "「湧水サロベツ権左衛門」でサロベツの大地が育んだ清らかな湧水に触れた。",
+        "is_final": false,
+        "next_spot_id": "726798a4-cc68-4827-8d9a-62169c823dad",
+        "next_spot_name": "名山台展望公園"
+      },
+      {
+        "id": "726798a4-cc68-4827-8d9a-62169c823dad",
+        "name": "名山台展望公園",
+        "description": "国道40号沿いの高台にある展望公園（終日開放・無料※併設売店等は閉業済みで展望台のみ利用可）。広大なサロベツ原野と海上に浮かぶ利尻富士を一望する絶景スポット。",
+        "address": "北海道天塩郡幌延町字下沼485",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.042006,
+        "lng": 141.756831,
+        "qr_token": "shuin-shimonuma-3",
+        "cover_image_url": "/images/shimonuma/spot3.png",
+        "f7_fragment": "果てしないサロベツ原野と海上の利尻富士を一望する高台の展望公園。",
+        "f7_full": "「名山台展望公園」からサロベツ原野と利尻富士の壮大なパノラマを見渡した。",
+        "is_final": false,
+        "next_spot_id": "885d7d36-577b-4736-80c0-945bf2f5685c",
+        "next_spot_name": "幌延ビジターセンター"
+      },
+      {
+        "id": "885d7d36-577b-4736-80c0-945bf2f5685c",
+        "name": "幌延ビジターセンター",
+        "description": "サロベツ原野の自然や生態系を紹介する施設。5〜10月開館（9:00〜17:00・無休、11〜4月冬期休館）、入館無料。2階にガラス張りの展望休憩室があり、原野や長沼を望みながら休憩できる。",
+        "address": "北海道天塩郡幌延町字下沼2077",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.010111,
+        "lng": 141.730901,
+        "qr_token": "shuin-shimonuma-4",
+        "cover_image_url": "/images/shimonuma/spot4.png",
+        "f7_fragment": "2階のガラス張り展望休憩室から原野と長沼を一望できる無料の自然拠点。",
+        "f7_full": "「幌延ビジターセンター」の展望休憩室で原野を眺めながら穏やかに休憩した。",
+        "is_final": false,
+        "next_spot_id": "72fe2d24-d784-406f-8c2a-2b50775cce65",
+        "next_spot_name": "パンケ沼園地（サロベツ国立公園）"
+      },
+      {
+        "id": "72fe2d24-d784-406f-8c2a-2b50775cce65",
+        "name": "パンケ沼園地（サロベツ国立公園）",
+        "description": "幌延ビジターセンターから木道散策路で結ばれた周囲約8kmの汽水湖・パンケ沼の園地（終日散策自由・無料、積雪期注意）。湿原植物や野鳥を観察しながら展望デッキへ歩ける。",
+        "address": "北海道天塩郡幌延町字下沼2078",
+        "prefecture": "北海道",
+        "city": "幌延町",
+        "lat": 45.03374,
+        "lng": 141.734454,
+        "qr_token": "shuin-shimonuma-5",
+        "cover_image_url": "/images/shimonuma/spot5.png",
+        "f7_fragment": "サロベツ原野最大の汽水湖・パンケ沼を木道と展望デッキから望む自然園地。",
+        "f7_full": "「パンケ沼園地」の湿原の木道を歩き、サロベツの雄大な自然とともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8d113a67-32f5-4b8a-8e7a-f61d03b55f44",
+    "title": "豊富・酪農の街の老舗食堂と石油成分の名湯へ",
+    "name": "豊富・酪農の街の老舗食堂と石油成分の名湯へ",
+    "description": "観光情報センター併設の「JR豊富駅」から、かつ丼や手打ち蕎麦で愛される老舗「丸勝亭」、街を見守る「豊富八幡神社」、開拓と酪農を伝える「豊富町郷土資料室」、世界でも珍しい石油成分を含む温泉「豊富温泉ふれあいセンター」を巡るルート。",
+    "region": "豊富・酪農の街並みと石油香る豊富温泉",
+    "area_name": "豊富・酪農の街並みと石油香る豊富温泉",
+    "cover_image_url": "/images/toyotomi/route-eyecatch.png",
+    "imageUrl": "/images/toyotomi/route-eyecatch.png",
+    "category": "酪農と石油成分の湯",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "サロベツの酪農の拠点・豊富の駅から老舗食堂や郷土資料室、世界でも珍しい豊富温泉を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "かつ丼や手打ち蕎麦で町民や旅人に長年親しまれる「丸勝亭」",
+          "description": "駅からも歩ける老舗食堂のボリュームあるかつ丼と手打ち蕎麦が絶品だった。",
+          "badge_code": "toyotomi_marukatsu"
+        },
+        {
+          "key": "B",
+          "text": "市街地を静かに見守り続ける町の鎮守「豊富八幡神社」",
+          "description": "酪農の町の穏やかな風景の中で、地域の安寧を願う静謐な社に出会えた。",
+          "badge_code": "toyotomi_shrine"
+        },
+        {
+          "key": "C",
+          "text": "豊富町の開拓史や酪農の歩みを展示する「豊富町郷土資料室」",
+          "description": "厳しい自然を乗り越えて日本有数の酪農郷を築いた先人の資料に見入った。",
+          "badge_code": "toyotomi_museum"
+        },
+        {
+          "key": "D",
+          "text": "大正の石油試掘で湧出した世界でも珍しい湯「豊富温泉ふれあいセンター」",
+          "description": "石油成分が浮かぶ独特の湯の温もりと、全国から湯治客が集う魅力を体感した。",
+          "badge_code": "toyotomi_onsen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ac02ce51-bf5f-490f-8224-ab49f100b8ca",
+        "name": "JR豊富駅（豊富町観光情報センター）",
+        "description": "1926年（大正15年）9月25日開業の特急停車駅（駅は終日開放・無料）。隣接する豊富町観光情報センター（4〜11月9:00〜17:00・冬〜15:00、年末年始休）では特産品販売やレンタサイクルも利用できる。",
+        "address": "北海道天塩郡豊富町西3条7丁目1",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.104569,
+        "lng": 141.772491,
+        "qr_token": "shuin-toyotomi-1",
+        "cover_image_url": "/images/toyotomi/spot1.png",
+        "f7_fragment": "大正十五年開業、観光情報センターを併設するサロベツ酪農の玄関口。",
+        "f7_full": "「JR豊富駅」に降り立ち、酪農の町の老舗の味と豊富温泉を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "95d95e56-d3ef-4ccb-8c62-7b8b975289fd",
+        "next_spot_name": "丸勝亭"
+      },
+      {
+        "id": "95d95e56-d3ef-4ccb-8c62-7b8b975289fd",
+        "name": "丸勝亭",
+        "description": "豊富大通にある人気の老舗食堂。11:00〜15:00（売切次第終了）、日曜休（不定休あり）。かつ丼（1,400円前後）やラーメン、手打ち蕎麦などが地元客と旅人の双方に愛されている。",
+        "address": "北海道天塩郡豊富町豊富大通4丁目1",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.100546,
+        "lng": 141.777041,
+        "qr_token": "shuin-toyotomi-2",
+        "cover_image_url": "/images/toyotomi/spot2.png",
+        "f7_fragment": "豊富大通でボリューム満点のかつ丼や手打ち蕎麦が愛される老舗食堂。",
+        "f7_full": "「丸勝亭」で名物のかつ丼を味わい、豊富町の温かい食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "2a076f24-fe8a-404c-8adf-24d664d6352d",
+        "next_spot_name": "豊富八幡神社"
+      },
+      {
+        "id": "2a076f24-fe8a-404c-8adf-24d664d6352d",
+        "name": "豊富八幡神社",
+        "description": "豊富町の市街地を静かに見守り続けてきた地域の鎮守社（終日参拝自由・無料）。木立に包まれた境内が、酪農と開拓の歩みを今に伝えている。",
+        "address": "北海道天塩郡豊富町字上サロベツ1596-2",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.108086,
+        "lng": 141.77601,
+        "qr_token": "shuin-toyotomi-3",
+        "cover_image_url": "/images/toyotomi/spot3.png",
+        "f7_fragment": "市街地の木立に包まれ、豊富町の開拓と暮らしを見守り続ける鎮守社。",
+        "f7_full": "「豊富八幡神社」の静かな境内で手を合わせ、地域の安寧と開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "6d9c2e05-c594-43b4-8f89-a4fa1b0449d6",
+        "next_spot_name": "豊富町郷土資料室（豊富町民センター内）"
+      },
+      {
+        "id": "6d9c2e05-c594-43b4-8f89-a4fa1b0449d6",
+        "name": "豊富町郷土資料室（豊富町民センター内）",
+        "description": "豊富町民センター内に設けられた資料室（9:00〜16:00、月曜・年末年始休、入館無料）。豊富町の開拓史や酪農の歩み、暮らしの道具などを無料で学べる。",
+        "address": "北海道天塩郡豊富町字上サロベツ2010",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.105008,
+        "lng": 141.768635,
+        "qr_token": "shuin-toyotomi-4",
+        "cover_image_url": "/images/toyotomi/spot4.png",
+        "f7_fragment": "豊富町民センター内で町の開拓史や酪農の歩みを紹介する無料資料室。",
+        "f7_full": "「豊富町郷土資料室」で開拓期の道具や酪農の記録を見学し、町への理解を深めた。",
+        "is_final": false,
+        "next_spot_id": "6a41df0e-27b2-49d1-8075-574b9dde6363",
+        "next_spot_name": "豊富温泉ふれあいセンター"
+      },
+      {
+        "id": "6a41df0e-27b2-49d1-8075-574b9dde6363",
+        "name": "豊富温泉ふれあいセンター",
+        "description": "大正時代の石油試掘で天然ガスとともに湧出した世界でも珍しい石油成分を含む温泉施設。10:00〜21:00（受付20:30）、隔週木曜・元日等休。日帰り入浴大人510円・小学生250円・65歳以上300円。食堂「味彩」併設。",
+        "address": "北海道天塩郡豊富町字温泉1",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.073701,
+        "lng": 141.840284,
+        "qr_token": "shuin-toyotomi-5",
+        "cover_image_url": "/images/toyotomi/spot5.png",
+        "f7_fragment": "大正の石油試掘で湧出した、世界でも珍しい石油成分を含む湯治の名湯。",
+        "f7_full": "「豊富温泉ふれあいセンター」の個性豊かな名湯に浸かり、豊富の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "664c6591-994a-4bdf-84b8-434e9d603053",
+    "title": "兜沼・昭和の木造郵便局舎と湖畔公園の小祠へ",
+    "name": "兜沼・昭和の木造郵便局舎と湖畔公園の小祠へ",
+    "description": "兜の鍬形に似た沼の名を持つ「JR兜沼駅」から、明治四十二年創立の「兜沼神社」、昭和九年建築の「旧兜沼郵便局舎（郷土資料室）」、売店や休憩室を備える「兜沼公園キャンプ場 インフォメーションセンター」、開拓史を伝える「音吉神社（熊霊堂）」を巡る徒歩ルート。",
+    "region": "兜沼・木造旧郵便局舎と湖畔公園、熊霊堂",
+    "area_name": "兜沼・木造旧郵便局舎と湖畔公園、熊霊堂",
+    "cover_image_url": "/images/kabutonuma/route-eyecatch.png",
+    "imageUrl": "/images/kabutonuma/route-eyecatch.png",
+    "category": "湖畔の遺産と神社",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "兜の鍬形に似た沼の名を持つ兜沼駅から高台の神社や昭和の木造郵便局舎、湖畔公園を巡るなかで誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治四十二年創立、湖畔の歌舞登神社と合祀し高台へ移った「兜沼神社」",
+          "description": "集落の北方高台から兜沼を見渡す社の静けさに、明治からの開拓の記憶を感じた。",
+          "badge_code": "kabutonuma_shrine"
+        },
+        {
+          "key": "B",
+          "text": "昭和九年建築、町内最古級の木造局舎を保存公開する「旧兜沼郵便局舎」",
+          "description": "昭和初期のモダンで温かな木造郵便局舎が公園内にそのまま残る姿に感動した。",
+          "badge_code": "kabutonuma_post"
+        },
+        {
+          "key": "C",
+          "text": "売店や軽食・休憩室で公園来訪者を迎える「兜沼公園 インフォメーションセンター」",
+          "description": "緑豊かな湖畔公園の拠点で、軽食や冷たい飲み物とともにほっと一息つけた。",
+          "badge_code": "kabutonuma_park"
+        },
+        {
+          "key": "D",
+          "text": "開拓期の功労者・梅村庄次郎がアイヌの音吉のため建てた「音吉神社（熊霊堂）」",
+          "description": "開拓者とアイヌの人々との絆を伝える小さな祠に、深い歴史の物語を感じた。",
+          "badge_code": "kabutonuma_otokichi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "822e1124-2ac7-4df8-83a7-3ffb0a9d7090",
+        "name": "JR兜沼駅",
+        "description": "1924年（大正13年）6月25日、天塩北線開業時に開設された無人駅（終日開放・無料、1988年現駅舎建替）。兜の鍬形に似た沼の形が駅名の由来となっている。",
+        "address": "北海道天塩郡豊富町字上サロベツ619",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.22025,
+        "lng": 141.69722,
+        "qr_token": "shuin-kabutonuma-1",
+        "cover_image_url": "/images/kabutonuma/spot1.png",
+        "f7_fragment": "大正十三年開業、兜の鍬形に似た沼の形から名付けられた無人駅。",
+        "f7_full": "「JR兜沼駅」に降り立ち、昭和の木造郵便局舎と湖畔公園を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c993da4a-887c-4ca4-8acb-b19d1060e376",
+        "next_spot_name": "兜沼神社"
+      },
+      {
+        "id": "c993da4a-887c-4ca4-8acb-b19d1060e376",
+        "name": "兜沼神社",
+        "description": "1909年（明治42年）創立（終日参拝自由・無料）。1930年（昭和5年）に鉄道用地となった湖畔の歌舞登神社と合祀し現在地へ移転造営された。例祭日は7月25日。",
+        "address": "北海道天塩郡豊富町字上サロベツ317",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.227333,
+        "lng": 141.698097,
+        "qr_token": "shuin-kabutonuma-2",
+        "cover_image_url": "/images/kabutonuma/spot2.png",
+        "f7_fragment": "明治四十二年創立、昭和五年に湖畔の歌舞登神社と合祀し移転した高台の社。",
+        "f7_full": "「兜沼神社」の高台の境内で手を合わせ、鉄道と開拓が交わる歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "3638787f-da19-4466-8593-aa6e1a373a1e",
+        "next_spot_name": "旧兜沼郵便局舎（豊富町郷土資料室 兜沼資料室）"
+      },
+      {
+        "id": "3638787f-da19-4466-8593-aa6e1a373a1e",
+        "name": "旧兜沼郵便局舎（豊富町郷土資料室 兜沼資料室）",
+        "description": "1934年（昭和9年）建築の町内最古級の木造郵便局舎を兜沼公園内に保存公開（5月上旬〜10月上旬の土日9:00〜16:00、平日は教育委員会要連絡、無料）。昭和初期の貴重な洋風木造建築。",
+        "address": "北海道天塩郡豊富町字上サロベツ3863",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.217568,
+        "lng": 141.698031,
+        "qr_token": "shuin-kabutonuma-3",
+        "cover_image_url": "/images/kabutonuma/spot3.png",
+        "f7_fragment": "昭和九年建築の町内最古級の木造郵便局舎を保存公開する歴史資料室。",
+        "f7_full": "「旧兜沼郵便局舎」のレトロな木造建築を眺め、昭和初期の暮らしに思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "309fca01-b739-41bf-8c1e-fb396434ac46",
+        "next_spot_name": "兜沼公園 インフォメーションセンター"
+      },
+      {
+        "id": "309fca01-b739-41bf-8c1e-fb396434ac46",
+        "name": "兜沼公園 インフォメーションセンター",
+        "description": "兜沼公園キャンプ場の管理棟。5/1〜9/30管理人駐在（9:00〜18:00、7〜8月〜20:00、公園は通年開放・無料）。一般来訪者も利用可能な売店（食料品・飲料）・軽食・休憩室を備える。",
+        "address": "北海道天塩郡豊富町字上サロベツ3863",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.2171,
+        "lng": 141.6975,
+        "qr_token": "shuin-kabutonuma-4",
+        "cover_image_url": "/images/kabutonuma/spot4.png",
+        "f7_fragment": "一般客も利用できる売店・軽食・休憩室を備えた兜沼湖畔の拠点。",
+        "f7_full": "「兜沼公園 インフォメーションセンター」で湖畔の風を感じながら心地よく休憩した。",
+        "is_final": false,
+        "next_spot_id": "a1cbd676-5200-4904-84ec-934b35fb2cbd",
+        "next_spot_name": "音吉神社（熊霊堂）"
+      },
+      {
+        "id": "a1cbd676-5200-4904-84ec-934b35fb2cbd",
+        "name": "音吉神社（熊霊堂）",
+        "description": "兜沼公園の奥に静かに佇む歴史的小祠（終日参拝自由・無料）。明治期の開拓の功労者・梅村庄次郎が、親交のあったアイヌの音吉のために建てたと伝わる。",
+        "address": "北海道天塩郡豊富町字上サロベツ3863",
+        "prefecture": "北海道",
+        "city": "豊富町",
+        "lat": 45.2165,
+        "lng": 141.699,
+        "qr_token": "shuin-kabutonuma-5",
+        "cover_image_url": "/images/kabutonuma/spot5.png",
+        "f7_fragment": "開拓期の功労者・梅村庄次郎がアイヌの音吉のため建てたと伝わる歴史的小祠。",
+        "f7_full": "「音吉神社（熊霊堂）」の静かな小祠に手を合わせ、兜沼の絆の歴史とともに旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "283616be-0255-4251-8f80-92638aeea8dd",
+    "title": "勇知・上勇知の原野と利尻富士を望む海辺",
+    "name": "勇知・上勇知の原野と利尻富士を望む海辺",
+    "description": "車掌車改造のダルマ駅舎「JR勇知駅」から、明治四十四年創立の「明治神社」、自然卵養鶏の薪窯パン「埜や（NOYA）」、利尻富士を望む丘の「Café Kira」、日本海を一望する「浜勇知展望休憩施設（こうほねの家）」を巡るルート。",
+    "region": "勇知・上勇知の原野と利尻富士",
+    "area_name": "勇知・上勇知の原野と利尻富士",
+    "cover_image_url": "/images/yuchi/route-eyecatch.png",
+    "imageUrl": "/images/yuchi/route-eyecatch.png",
+    "category": "ダルマ駅と海辺の展望",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "JR勇知駅のダルマ駅舎から上勇知の原野とカフェを巡り日本海の展望地へ出るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正十三年開業・車掌車改造のダルマ駅舎が迎える「JR勇知駅」",
+          "description": "宗谷本線の静かな無人駅として愛され、ホームから天候が良ければ利尻富士を望める。",
+          "badge_code": "yuchi_station"
+        },
+        {
+          "key": "B",
+          "text": "自然卵養鶏カヤニファームの薪窯焼きパンとタルト「埜や（NOYA）」",
+          "description": "平飼い卵や稚内牛乳を使い、上勇知の原野で土曜中心に焼き上げるこだわりの薪窯の香りに魅了された。",
+          "badge_code": "yuchi_noya"
+        },
+        {
+          "key": "C",
+          "text": "牧草地の丘から利尻富士を望むキャンドル工房併設「Café Kira」",
+          "description": "窓側カウンターから雄大な利尻富士を眺めながら珈琲と手作りケーキを味わい癒やされた。",
+          "badge_code": "yuchi_kira"
+        },
+        {
+          "key": "D",
+          "text": "屋上テラスから日本海と利尻富士を一望する「浜勇知展望休憩施設（こうほねの家）」",
+          "description": "利尻礼文サロベツ国立公園内に建ち、日本海と利尻富士の雄大な大パノラマに心洗われた。",
+          "badge_code": "yuchi_kouhone"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3ed797c9-27f2-4381-8d7b-b15b699573fd",
+        "name": "JR勇知駅",
+        "description": "1924年（大正13年）6月25日、鉄道省天塩北線の駅として開業（終日開放・無料）。1984年無人化後に車掌車を改造したダルマ駅舎へ改築され、晴天時には周辺から利尻富士を望める。",
+        "address": "北海道稚内市大字抜海村字上勇知原野1069-2",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.259336,
+        "lng": 141.685183,
+        "qr_token": "shuin-yuchi-1",
+        "cover_image_url": "/images/yuchi/spot1.png",
+        "f7_fragment": "大正十三年開業、車掌車改造のダルマ駅舎が迎える宗谷本線の無人駅。",
+        "f7_full": "「JR勇知駅」に降り立ち、上勇知の原野と利尻富士を望む海辺の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "56569099-a407-48ab-874a-bf19a375b210",
+        "next_spot_name": "明治神社"
+      },
+      {
+        "id": "56569099-a407-48ab-874a-bf19a375b210",
+        "name": "明治神社",
+        "description": "1911年（明治44年）に入植者によって創立された単立神社（終日参拝自由・無料、例祭7月30日）。境内には大正13年建立・昭和41年再建の忠魂碑が残る。",
+        "address": "北海道稚内市大字抜海村字上勇知1",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.261395,
+        "lng": 141.685455,
+        "qr_token": "shuin-yuchi-2",
+        "cover_image_url": "/images/yuchi/spot2.png",
+        "f7_fragment": "明治四十四年に入植者によって創立され、大正期の忠魂碑も残る社。",
+        "f7_full": "「明治神社」の静かな境内で手を合わせ、上勇知の開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "89a9cf42-a279-42d7-8eb2-cf9926567d55",
+        "next_spot_name": "埜や（NOYA）"
+      },
+      {
+        "id": "89a9cf42-a279-42d7-8eb2-cf9926567d55",
+        "name": "埜や（NOYA）",
+        "description": "自然卵養鶏「カヤニファーム」が2025年5月に開いた薪窯焼きパン・キッシュ・タルトのテイクアウト店（主に土曜12:00〜15:00、冬季変動あり要SNS確認）。平飼い卵「宗谷のしおかぜたまご」や稚内牛乳を使用。",
+        "address": "北海道稚内市大字抜海村字上ユーチ原野1099-4",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.283534,
+        "lng": 141.679773,
+        "qr_token": "shuin-yuchi-3",
+        "cover_image_url": "/images/yuchi/spot3.png",
+        "f7_fragment": "自然卵養鶏カヤニファームが平飼い卵と稚内牛乳で作る薪窯パン・タルト店。",
+        "f7_full": "「埜や（NOYA）」で原野の恵みが詰まった薪窯焼きのパンや焼き菓子に出会った。",
+        "is_final": false,
+        "next_spot_id": "a976d692-92d2-4453-83f3-e5d5ecce4f22",
+        "next_spot_name": "Café Kira（カフェ キラ）"
+      },
+      {
+        "id": "a976d692-92d2-4453-83f3-e5d5ecce4f22",
+        "name": "Café Kira（カフェ キラ）",
+        "description": "上勇知の牧草地の小高い丘に建つペルシャン・キャンドル工房併設の隠れ家カフェ（10:00〜19:00、不定休）。窓側カウンターから利尻富士を望みながら珈琲や手作りケーキを楽しめる。",
+        "address": "北海道稚内市大字抜海村字上勇知949-3",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.252569,
+        "lng": 141.715929,
+        "qr_token": "shuin-yuchi-4",
+        "cover_image_url": "/images/yuchi/spot4.png",
+        "f7_fragment": "牧草地の丘で利尻富士を望みながら珈琲を楽しめるキャンドル工房併設カフェ。",
+        "f7_full": "「Café Kira」の窓辺から利尻富士を眺めつつ、穏やかなカフェタイムを過ごした。",
+        "is_final": false,
+        "next_spot_id": "0494af90-7efb-48e5-83e7-f4b63526dd7e",
+        "next_spot_name": "浜勇知展望休憩施設（こうほねの家）"
+      },
+      {
+        "id": "0494af90-7efb-48e5-83e7-f4b63526dd7e",
+        "name": "浜勇知展望休憩施設（こうほねの家）",
+        "description": "利尻礼文サロベツ国立公園内のオロロンライン沿いに建つ展望施設（4/29〜11/3の9:00〜17:00開館、冬期閉館、入館無料）。屋上展望テラスから日本海と利尻富士を一望でき、初夏には隣接する沼にコウホネが咲く。",
+        "address": "北海道稚内市大字抜海村字下勇知1",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.265879,
+        "lng": 141.605103,
+        "qr_token": "shuin-yuchi-5",
+        "cover_image_url": "/images/yuchi/spot5.png",
+        "f7_fragment": "日本海と利尻富士を屋上テラスから一望するオロロンライン沿いの無料展望施設。",
+        "f7_full": "「浜勇知展望休憩施設」の屋上から日本海と利尻富士の大パノラマを望み、旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ffcea3ea-d032-45eb-8be6-b66b9541d21a",
+    "title": "南稚内・大黒の老舗菓子と潮見の珈琲巡り",
+    "name": "南稚内・大黒の老舗菓子と潮見の珈琲巡り",
+    "description": "かつて初代稚内駅として栄えた「JR南稚内駅」から、創業六十余年の「菓子夢工房くどう」、しじみラーメンが評判の「はるき茶屋」、住宅街の鎮守「大黒南神社」、潮見地区の「森のコーヒー ケープサイド」を巡るルート。",
+    "region": "南稚内・大黒の老舗菓子と潮見",
+    "area_name": "南稚内・大黒の老舗菓子と潮見",
+    "cover_image_url": "/images/minami_wakkanai/route-eyecatch.png",
+    "imageUrl": "/images/minami_wakkanai/route-eyecatch.png",
+    "category": "街歩きと老舗菓子",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "南稚内の駅から大黒通りの老舗菓子や人気食堂を巡り潮見の喫茶店へ歩く道すがら、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "かつて初代稚内駅・天北線分岐駅として栄えた「JR南稚内駅」",
+          "description": "大正十一年開業の歴史を持ち、長らく道北の鉄道交通の要衝として街を支えてきた。",
+          "badge_code": "minami_wakkanai_station"
+        },
+        {
+          "key": "B",
+          "text": "豊富産牛乳や宗谷の塩を使った創業六十余年の「菓子夢工房くどう」",
+          "description": "シュークリーム「シェフの帽子」や「里におりたタヌキ」など愛らしい名物に心が躍った。",
+          "badge_code": "minami_wakkanai_kudo"
+        },
+        {
+          "key": "C",
+          "text": "カツオ・昆布・しじみの旨みが重なる「はるき茶屋」のしじみラーメン",
+          "description": "大黒地区で地元客に愛される、深い旨みのスープが体に染み渡った。",
+          "badge_code": "minami_wakkanai_haruki"
+        },
+        {
+          "key": "D",
+          "text": "挽きたての香り高い一杯とスイーツが寛げる「森のコーヒー ケープサイド」",
+          "description": "潮見地区の住宅街に佇み、香り豊かな珈琲とともに穏やかな時間を過ごせた。",
+          "badge_code": "minami_wakkanai_capeside"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "55ddbf79-5306-4499-8a32-fce7a449bce8",
+        "name": "JR南稚内駅",
+        "description": "1922年（大正11年）11月1日、初代「稚内駅」として開業、1939年現名称へ改称、1952年現在地へ移転（終日利用可・みどりの窓口あり）。1989年までは天北線の分岐駅として栄えた。",
+        "address": "北海道稚内市大黒1丁目8-1",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.398194,
+        "lng": 141.683,
+        "qr_token": "shuin-minami_wakkanai-1",
+        "cover_image_url": "/images/minami_wakkanai/spot1.png",
+        "f7_fragment": "大正十一年初代稚内駅として開業し、天北線の分岐駅も担った交通の要衝。",
+        "f7_full": "「JR南稚内駅」に降り立ち、大黒と潮見の暮らしが息づく街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "12bd59d0-1730-48d4-8aeb-06be6c362a69",
+        "next_spot_name": "菓子夢工房くどう"
+      },
+      {
+        "id": "12bd59d0-1730-48d4-8aeb-06be6c362a69",
+        "name": "菓子夢工房くどう",
+        "description": "創業60余年の老舗和洋菓子店（平日土9:30〜19:00・日祝〜18:30、水曜・第1第3木曜休）。豊富町産牛乳や宗谷の塩を使い、シュークリーム「シェフの帽子」やたぬきケーキ「里におりたタヌキ」が名物。",
+        "address": "北海道稚内市大黒2丁目7-30",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.397562,
+        "lng": 141.6866,
+        "qr_token": "shuin-minami_wakkanai-2",
+        "cover_image_url": "/images/minami_wakkanai/spot2.png",
+        "f7_fragment": "豊富産牛乳や宗谷の塩で作るシュークリームとたぬきケーキが名物の老舗店。",
+        "f7_full": "「菓子夢工房くどう」で愛らしい名物菓子に出会い、南稚内の甘い魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "76c74402-d678-4085-8804-3f57bf0f412d",
+        "next_spot_name": "はるき茶屋"
+      },
+      {
+        "id": "76c74402-d678-4085-8804-3f57bf0f412d",
+        "name": "はるき茶屋",
+        "description": "大黒地区で評判のラーメン・和食食堂（11:30〜14:00・17:00〜21:30頃、不定休）。カツオ・昆布・しじみの旨みを重ねた「しじみラーメン」や豊富な定食メニューが人気。",
+        "address": "北海道稚内市大黒3丁目3-23",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.397463,
+        "lng": 141.688703,
+        "qr_token": "shuin-minami_wakkanai-3",
+        "cover_image_url": "/images/minami_wakkanai/spot3.png",
+        "f7_fragment": "カツオ・昆布・しじみの旨みが重なるしじみラーメンが評判の地元食堂。",
+        "f7_full": "「はるき茶屋」で滋味深いしじみラーメンを啜り、道北の食の温かさを堪能した。",
+        "is_final": false,
+        "next_spot_id": "8a35b87a-459e-4f77-8bd1-91acd88ab604",
+        "next_spot_name": "大黒南神社（南神社）"
+      },
+      {
+        "id": "8a35b87a-459e-4f77-8bd1-91acd88ab604",
+        "name": "大黒南神社（南神社）",
+        "description": "大黒・緑地区の住宅街に鎮座し、地元住民に「南神社」の名で親しまれている地域密着型の神社（終日参拝自由・無料）。街歩きの途中に静かな祈りの時間を届けてくれる。",
+        "address": "北海道稚内市緑1丁目2-18",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.396324,
+        "lng": 141.684299,
+        "qr_token": "shuin-minami_wakkanai-4",
+        "cover_image_url": "/images/minami_wakkanai/spot4.png",
+        "f7_fragment": "大黒・緑の住宅街で「南神社」として親しまれる地域密着の鎮守社。",
+        "f7_full": "「大黒南神社」の穏やかな境内で手を合わせ、南稚内の暮らしの安寧を感じた。",
+        "is_final": false,
+        "next_spot_id": "00241419-7e28-42b4-8aac-0bc4ee3a9501",
+        "next_spot_name": "森のコーヒー ケープサイド"
+      },
+      {
+        "id": "00241419-7e28-42b4-8aac-0bc4ee3a9501",
+        "name": "森のコーヒー ケープサイド",
+        "description": "潮見地区に佇む落ち着いた雰囲気の喫茶店・カフェ（9:30〜16:00、月曜・第3日曜休）。挽きたての「森のコーヒー」やスイーツ、モーニングやランチ（スープカレー等）を楽しめる。",
+        "address": "北海道稚内市潮見3丁目5-32",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.395101,
+        "lng": 141.703609,
+        "qr_token": "shuin-minami_wakkanai-5",
+        "cover_image_url": "/images/minami_wakkanai/spot5.png",
+        "f7_fragment": "潮見地区で挽きたての「森のコーヒー」とスイーツを楽しめる落ち着いた喫茶店。",
+        "f7_full": "「森のコーヒー ケープサイド」で芳醇な珈琲を味わい、南稚内の街歩きを終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a4141bd9-718e-4f03-881a-1da7bcf45bc8",
+    "title": "勇払・八王子千人同心の記憶と港を巡る旅",
+    "name": "勇払・八王子千人同心の記憶と港を巡る旅",
+    "description": "大正二年開業の歴史を持つ「JR勇払駅」から、市指定文化財を伝える「勇払恵比須神社」、八王子千人同心の歩みを紹介する「勇武津資料館」、地元人気の「麺商 三春商店」、「苫小牧港勇払マリーナ」を巡るルート。",
+    "region": "勇払・千人同心の記憶と港",
+    "area_name": "勇払・千人同心の記憶と港",
+    "cover_image_url": "/images/yufutsu/route-eyecatch.png",
+    "imageUrl": "/images/yufutsu/route-eyecatch.png",
+    "category": "開拓史跡と港湾散歩",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "JR勇払駅から千人同心の史跡や市指定文化財の神社、港のマリーナへと歩くなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "嘉永三年銘の元弁天社御宮形など市指定文化財を伝える「勇払恵比須神社」",
+          "description": "18世紀中頃の弁天社を前身とし、航海安全と商売繁昌を見守り続けてきた勇払の古社。",
+          "badge_code": "yufutsu_ebisu"
+        },
+        {
+          "key": "B",
+          "text": "寛政十二年に移住した八王子千人同心の足跡を学ぶ「勇武津資料館」",
+          "description": "北方警備と開拓に向かった千人同心の歴史資料や隣接公園の同心像に胸を打たれた。",
+          "badge_code": "yufutsu_museum"
+        },
+        {
+          "key": "C",
+          "text": "勇払の街でこだわりの一杯を提供する人気店「麺商 三春商店」",
+          "description": "地元客に愛されるラーメン店で、こだわりのスープと麺の美味しさに満たされた。",
+          "badge_code": "yufutsu_miharu"
+        },
+        {
+          "key": "D",
+          "text": "ヨットやクルーザーが並ぶ爽やかな「苫小牧港勇払マリーナ」",
+          "description": "勇払地区の南端に広がる公共マリーナ兼「とまこまい海の駅」の港湾景観が爽快だった。",
+          "badge_code": "yufutsu_marina"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8f51ab9b-cfb2-4acc-80d0-94e38ffe1823",
+        "name": "JR勇払駅",
+        "description": "1913年（大正2年）10月1日、苫小牧軽便鉄道の駅として開業、1962年苫小牧西港建設に伴う線路付け替えで現在地へ移転（終日開放・無料）。日高本線の歴史を伝える無人駅。",
+        "address": "北海道苫小牧市字勇払142-26",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.632093,
+        "lng": 141.727854,
+        "qr_token": "shuin-yufutsu-1",
+        "cover_image_url": "/images/yufutsu/spot1.png",
+        "f7_fragment": "大正二年苫小牧軽便鉄道として開業し、西港建設で現在地へ移転した駅。",
+        "f7_full": "「JR勇払駅」に降り立ち、八王子千人同心の歴史と港を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "0796477e-7618-4e8c-862c-9a805282570e",
+        "next_spot_name": "勇払恵比須神社"
+      },
+      {
+        "id": "0796477e-7618-4e8c-862c-9a805282570e",
+        "name": "勇払恵比須神社",
+        "description": "18世紀中頃の弁天社を前身とし、1952年現社号へ改称（終日参拝自由・無料）。嘉永3年（1850年）銘の元弁天社御宮形や扁額など奉納品21点が苫小牧市指定有形民俗文化財に指定されている。",
+        "address": "北海道苫小牧市字勇払138-1",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.634718,
+        "lng": 141.727354,
+        "qr_token": "shuin-yufutsu-2",
+        "cover_image_url": "/images/yufutsu/spot2.png",
+        "f7_fragment": "嘉永三年銘の元弁天社御宮形など二十一点の市指定有形民俗文化財を伝える古社。",
+        "f7_full": "「勇払恵比須神社」の境内に立ち、江戸期から続く海上交易の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "1be07b14-474a-44e3-8c6a-0f10e0a31f8c",
+        "next_spot_name": "勇武津資料館"
+      },
+      {
+        "id": "1be07b14-474a-44e3-8c6a-0f10e0a31f8c",
+        "name": "勇武津資料館",
+        "description": "1800年（寛政12年）に北方警備と開拓のため移住した「八王子千人同心」の歴史や勇払の歩みを展示（10:00〜17:00、月曜・年末年始休、入館無料）。隣接公園に同心像・墓石群がある。",
+        "address": "北海道苫小牧市字勇払132-32",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.631049,
+        "lng": 141.734031,
+        "qr_token": "shuin-yufutsu-3",
+        "cover_image_url": "/images/yufutsu/spot3.png",
+        "f7_fragment": "寛政十二年に移住した八王子千人同心の北方警備と開拓を伝える無料資料館。",
+        "f7_full": "「勇武津資料館」で八王子千人同心の資料を見学し、北の大地への想いに感銘を受けた。",
+        "is_final": false,
+        "next_spot_id": "3fd9fe5c-b104-417e-8149-ae705572e6b8",
+        "next_spot_name": "麺商 三春商店"
+      },
+      {
+        "id": "3fd9fe5c-b104-417e-8149-ae705572e6b8",
+        "name": "麺商 三春商店",
+        "description": "勇払地区で営業中の人気ラーメン店（11:00〜14:00・17:00〜20:00、火曜休）。こだわりのスープと麺が地元客に評判の一軒。",
+        "address": "北海道苫小牧市勇払5-11",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.626617,
+        "lng": 141.731714,
+        "qr_token": "shuin-yufutsu-4",
+        "cover_image_url": "/images/yufutsu/spot4.png",
+        "f7_fragment": "勇払地区でこだわりのスープと麺が地元客に愛される人気のラーメン店。",
+        "f7_full": "「麺商 三春商店」で熱々の美味しいラーメンをいただき、午後の元気を満たした。",
+        "is_final": false,
+        "next_spot_id": "208d5860-8bc2-42dd-80e8-70b34349cae9",
+        "next_spot_name": "苫小牧港勇払マリーナ（とまこまい海の駅）"
+      },
+      {
+        "id": "208d5860-8bc2-42dd-80e8-70b34349cae9",
+        "name": "苫小牧港勇払マリーナ（とまこまい海の駅）",
+        "description": "勇払地区の南端に位置する公共マリーナ兼「とまこまい海の駅」（季節により8:00〜17:00等、火曜・年末年始等休、入場無料）。ヨットやクルーザーが並ぶ爽やかな港湾景観を楽しめる。",
+        "address": "北海道苫小牧市字勇払376",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.622592,
+        "lng": 141.733805,
+        "qr_token": "shuin-yufutsu-5",
+        "cover_image_url": "/images/yufutsu/spot5.png",
+        "f7_fragment": "白いヨットやクルーザーが並ぶ勇払南端の公共マリーナ兼とまこまい海の駅。",
+        "f7_full": "「苫小牧港勇払マリーナ」で潮風とヨットの景色を眺め、勇払の歴史散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e8f70d58-3cd3-42a5-8592-7d28621cd043",
+    "title": "浜厚真・太平洋のサーフ海岸と農園の恵み",
+    "name": "浜厚真・太平洋のサーフ海岸と農園の恵み",
+    "description": "貨車改造の駅舎が迎える厚真町唯一の駅「JR浜厚真駅」から、開拓の記憶を伝える「浜厚真八幡神社」、サーフィンの聖地「浜厚真海浜公園」、平飼い養鶏農家直営の「FORT by THE COAST」、名湯「こぶしの湯あつま」を巡るルート。",
+    "region": "浜厚真・太平洋の海岸と農園",
+    "area_name": "浜厚真・太平洋の海岸と農園",
+    "cover_image_url": "/images/hama_atsuma/route-eyecatch.png",
+    "imageUrl": "/images/hama_atsuma/route-eyecatch.png",
+    "category": "サーフ海岸と里山温泉",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "貨車駅舎の浜厚真駅からサーフィンの海辺や養鶏農家直営ダイナー、温泉へ巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正二年開業・厚真町唯一の鉄道駅で貨車駅舎が残る「JR浜厚真駅」",
+          "description": "苫小牧軽便鉄道の厚真駅として開業し、昭和六十二年に貨車改造駅舎へ改築された素朴な姿が印象的だった。",
+          "badge_code": "hama_atsuma_station"
+        },
+        {
+          "key": "B",
+          "text": "厚真町の開祖・青木与八翁の記念碑が残る「浜厚真八幡神社」",
+          "description": "寛政十二年の南部藩士移住に始まる開拓の歴史を見守り続けてきた海辺の鎮守に手を合わせた。",
+          "badge_code": "hama_atsuma_shrine"
+        },
+        {
+          "key": "C",
+          "text": "北海道屈指のサーフィンの聖地として知られる「浜厚真海浜公園」",
+          "description": "広大な砂浜と太平洋の水平線が一望でき、力強い波と海風に心が洗われた。",
+          "badge_code": "hama_atsuma_beach"
+        },
+        {
+          "key": "D",
+          "text": "平飼い養鶏農家・小林農園直営の海沿いダイナー「FORT by THE COAST」",
+          "description": "農業倉庫をリノベーションした空間で、平飼い卵や親鶏のスパイスカレーを堪能した。",
+          "badge_code": "hama_atsuma_fort"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "dddce944-fa5b-479c-8c90-97e48b1d9da0",
+        "name": "JR浜厚真駅",
+        "description": "1913年（大正2年）10月1日、苫小牧軽便鉄道の「厚真駅」として開業、1925年現名称に改称、1987年貨車改造の「貨車駅舎」へ改築（終日開放・無料）。厚真町唯一の鉄道駅。",
+        "address": "北海道勇払郡厚真町字浜厚真1",
+        "prefecture": "北海道",
+        "city": "厚真町",
+        "lat": 42.60691,
+        "lng": 141.836991,
+        "qr_token": "shuin-hama_atsuma-1",
+        "cover_image_url": "/images/hama_atsuma/spot1.png",
+        "f7_fragment": "大正二年開業、貨車改造の駅舎が迎える厚真町唯一の鉄道駅。",
+        "f7_full": "「JR浜厚真駅」の貨車駅舎に降り立ち、太平洋のサーフ海岸と里山温泉を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "9e231766-8649-449e-86a4-5f2351a4772b",
+        "next_spot_name": "浜厚真八幡神社"
+      },
+      {
+        "id": "9e231766-8649-449e-86a4-5f2351a4772b",
+        "name": "浜厚真八幡神社",
+        "description": "1800年（寛政12年）の南部藩士移住や明治初期の入植に始まる浜厚真の開拓の歴史とともに歩んできた鎮守（終日参拝自由・無料）。厚真町の開祖・青木与八翁の記念碑が残る。",
+        "address": "北海道勇払郡厚真町字浜厚真2",
+        "prefecture": "北海道",
+        "city": "厚真町",
+        "lat": 42.60557,
+        "lng": 141.837594,
+        "qr_token": "shuin-hama_atsuma-2",
+        "cover_image_url": "/images/hama_atsuma/spot2.png",
+        "f7_fragment": "南部藩士移住からの開拓を見守り、厚真町の開祖の記念碑も残る鎮守。",
+        "f7_full": "「浜厚真八幡神社」の静かな境内で手を合わせ、浜厚真の開拓史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "e7b7e83d-a37a-4011-8e39-598dcaeb7d52",
+        "next_spot_name": "浜厚真海浜公園"
+      },
+      {
+        "id": "e7b7e83d-a37a-4011-8e39-598dcaeb7d52",
+        "name": "浜厚真海浜公園",
+        "description": "北海道屈指のサーフィンの聖地「浜厚真海岸」に面した公園（通年24時間開放・無料）。広大な砂浜と太平洋の雄大な波を一望でき、サーフィン大会の会場としても知られる。",
+        "address": "北海道勇払郡厚真町浜厚真79-2",
+        "prefecture": "北海道",
+        "city": "厚真町",
+        "lat": 42.603874,
+        "lng": 141.831011,
+        "qr_token": "shuin-hama_atsuma-3",
+        "cover_image_url": "/images/hama_atsuma/spot3.png",
+        "f7_fragment": "北海道屈指のサーフィンの聖地・浜厚真海岸に面した開放的な海浜公園。",
+        "f7_full": "「浜厚真海浜公園」で太平洋の力強い波と潮風を感じ、浜辺の風景を満喫した。",
+        "is_final": false,
+        "next_spot_id": "2d04a299-188a-4aed-8d49-c9a42c04777b",
+        "next_spot_name": "FORT by THE COAST"
+      },
+      {
+        "id": "2d04a299-188a-4aed-8d49-c9a42c04777b",
+        "name": "FORT by THE COAST",
+        "description": "平飼い養鶏農家「小林農園」直営の海沿いファームレストラン＆ダイナー（11:00〜20:00、平日14:30〜16:00は物販のみ、月曜・第2火曜休）。農業倉庫を改装した空間で卵料理やカレー、ピッツァ、スイーツを提供。",
+        "address": "北海道勇払郡厚真町浜厚真472-7",
+        "prefecture": "北海道",
+        "city": "厚真町",
+        "lat": 42.600666,
+        "lng": 141.862002,
+        "qr_token": "shuin-hama_atsuma-4",
+        "cover_image_url": "/images/hama_atsuma/spot4.png",
+        "f7_fragment": "農業倉庫を改装した平飼い養鶏農家直営の海沿いレストラン＆ダイナー。",
+        "f7_full": "「FORT by THE COAST」で平飼い卵と地元食材の恵みを堪能し、心が弾んだ。",
+        "is_final": false,
+        "next_spot_id": "5321dfcb-fd5e-4d1c-863f-9817db9cefe7",
+        "next_spot_name": "こぶしの湯あつま"
+      },
+      {
+        "id": "5321dfcb-fd5e-4d1c-863f-9817db9cefe7",
+        "name": "こぶしの湯あつま",
+        "description": "厚真町中心部にある温泉・宿泊施設（日帰り入浴10:00〜22:00頃、不定休）。ラドン泉やサウナ、特産品売店を備え、館内レストランでは厚真産米・豚肉を使った「あつま豚丼」やハスカップソフトも味わえる。",
+        "address": "北海道勇払郡厚真町字本郷229-1",
+        "prefecture": "北海道",
+        "city": "厚真町",
+        "lat": 42.734611,
+        "lng": 141.867157,
+        "qr_token": "shuin-hama_atsuma-5",
+        "cover_image_url": "/images/hama_atsuma/spot5.png",
+        "f7_fragment": "ラドン泉やサウナ、特産品売店を備え名物ハスカップソフトも楽しめる町の温泉。",
+        "f7_full": "「こぶしの湯あつま」の温かいラドン泉に浸かって旅の疲れを癒やし、一日を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2fb5cf11-5cb8-47a0-83b9-a5d00a7e74d6",
+    "title": "鵡川・本場ししゃもの老舗と四季の湯巡り",
+    "name": "鵡川・本場ししゃもの老舗と四季の湯巡り",
+    "description": "現在のJR日高本線の終着駅「JR鵡川駅」から、昭和五十年創業の「ケーキショップ おのでら」、ホッキカレーとししゃも料理が評判の「自然喰処 灯泉房」、老舗「カネダイ大野商店」、「道の駅 むかわ四季の館」を巡るルート。",
+    "region": "鵡川・本場ししゃもの商店街",
+    "area_name": "鵡川・本場ししゃもの商店街",
+    "cover_image_url": "/images/mukawa/route-eyecatch.png",
+    "imageUrl": "/images/mukawa/route-eyecatch.png",
+    "category": "ししゃも名店と温泉道の駅",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日高本線の終着・JR鵡川駅から商店街の老舗菓子や本場ししゃもの名店、温泉道の駅を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "かつて富内線も分岐し現在は日高本線の終着を担う「JR鵡川駅」",
+          "description": "大正二年開業の歴史を持ち、むかわ交通ターミナルを併設する町の玄関口から旅が始まった。",
+          "badge_code": "mukawa_station"
+        },
+        {
+          "key": "B",
+          "text": "ししゃもを象った「柳葉魚最中」が名物の老舗「ケーキショップ おのでら」",
+          "description": "昭和五十年創業、黄色い建物が目印の店内で愛らしい柳葉魚最中に微笑んだ。",
+          "badge_code": "mukawa_onodera"
+        },
+        {
+          "key": "C",
+          "text": "ホッキカレーや旬のししゃも料理を堪能できる「自然喰処 灯泉房」",
+          "description": "通年のホッキカレーをはじめ、むかわの海の幸が詰まった一皿に唸った。",
+          "badge_code": "mukawa_tosenbo"
+        },
+        {
+          "key": "D",
+          "text": "創業百年超、すだれ干しと店内焼きが名物の「カネダイ大野商店」",
+          "description": "店頭のすだれ干しと店内で焼いて味わう本場生干しししゃもの香ばしさに感激した。",
+          "badge_code": "mukawa_kanedai"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b65df03c-5955-441f-878f-5834ba2d3742",
+        "name": "JR鵡川駅",
+        "description": "1913年（大正2年）10月1日、苫小牧軽便鉄道の駅として開業（終日開放・無料）。かつては国鉄富内線の分岐駅でもあり、2021年4月の鵡川〜様似間廃止に伴い現在のJR日高本線の終着駅となった。",
+        "address": "北海道勇払郡むかわ町末広2-1",
+        "prefecture": "北海道",
+        "city": "むかわ町",
+        "lat": 42.578824,
+        "lng": 141.923678,
+        "qr_token": "shuin-mukawa-1",
+        "cover_image_url": "/images/mukawa/spot1.png",
+        "f7_fragment": "大正二年開業、現在はJR日高本線の終着駅を担うむかわ町の玄関口。",
+        "f7_full": "「JR鵡川駅」に降り立ち、本場ししゃもの老舗と天然温泉を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "893476bc-78eb-446d-8492-8308feefe161",
+        "next_spot_name": "ケーキショップ おのでら"
+      },
+      {
+        "id": "893476bc-78eb-446d-8492-8308feefe161",
+        "name": "ケーキショップ おのでら",
+        "description": "1975年（昭和50年）創業の老舗和洋菓子店（8:30〜19:00、日曜休）。黄色い建物が目印で、鵡川名物のししゃもをかたどった「柳葉魚最中」や「たぬきケーキ」、ショートケーキが名物。",
+        "address": "北海道勇払郡むかわ町末広1-71-2",
+        "prefecture": "北海道",
+        "city": "むかわ町",
+        "lat": 42.578527,
+        "lng": 141.920904,
+        "qr_token": "shuin-mukawa-2",
+        "cover_image_url": "/images/mukawa/spot2.png",
+        "f7_fragment": "昭和五十年創業、ししゃも型の「柳葉魚最中」とケーキが名物の老舗店。",
+        "f7_full": "「ケーキショップ おのでら」で可愛い「柳葉魚最中」に出会い、町の銘菓に和んだ。",
+        "is_final": false,
+        "next_spot_id": "1c206cbc-96b7-4f3b-8c08-c37631caea61",
+        "next_spot_name": "自然喰処 灯泉房"
+      },
+      {
+        "id": "1c206cbc-96b7-4f3b-8c08-c37631caea61",
+        "name": "自然喰処 灯泉房",
+        "description": "地元で人気の食事処（11:00〜14:00・17:00〜22:00、水曜休・不定休あり）。通年で評判の「ホッキカレー」をはじめ、例年10〜11月中旬のししゃも漁期には限定のししゃも御膳やししゃも寿司も提供。",
+        "address": "北海道勇払郡むかわ町末広1-70-2",
+        "prefecture": "北海道",
+        "city": "むかわ町",
+        "lat": 42.578461,
+        "lng": 141.921067,
+        "qr_token": "shuin-mukawa-3",
+        "cover_image_url": "/images/mukawa/spot3.png",
+        "f7_fragment": "通年人気のホッキカレーや秋漁期限定のししゃも料理を味わえる食事処。",
+        "f7_full": "「自然喰処 灯泉房」で海の幸が詰まった料理を味わい、むかわの食の豊かさを実感した。",
+        "is_final": false,
+        "next_spot_id": "6405362b-db27-4a58-8f65-d930aec4d893",
+        "next_spot_name": "カネダイ大野商店"
+      },
+      {
+        "id": "6405362b-db27-4a58-8f65-d930aec4d893",
+        "name": "カネダイ大野商店",
+        "description": "創業100年を超える老舗の鵡川ししゃも専門店（1〜9月10:00〜17:00・日曜休、10〜12月9:00〜17:00・無休）。店頭の「すだれ干し」が名物で、生干しししゃもを店内のホットプレートで焼いてその場で味わえる。",
+        "address": "北海道勇払郡むかわ町美幸2-42",
+        "prefecture": "北海道",
+        "city": "むかわ町",
+        "lat": 42.576479,
+        "lng": 141.926608,
+        "qr_token": "shuin-mukawa-4",
+        "cover_image_url": "/images/mukawa/spot4.png",
+        "f7_fragment": "創業百年超、店頭のすだれ干しと店内焼きが名物の鵡川ししゃも専門店。",
+        "f7_full": "「カネダイ大野商店」ですだれ干しのししゃもを味わい、本場ならではの味に唸った。",
+        "is_final": false,
+        "next_spot_id": "75ecbe0a-9a4c-4373-8b3f-a95da97aec6b",
+        "next_spot_name": "道の駅 むかわ四季の館"
+      },
+      {
+        "id": "75ecbe0a-9a4c-4373-8b3f-a95da97aec6b",
+        "name": "道の駅 むかわ四季の館",
+        "description": "物産館・お食事処「たんぽぽ」・天然温泉「四季の湯」（ナトリウム-塩化物強塩泉、10:00〜22:00、大人520円等）を備えた複合道の駅（道の駅全体8:00〜22:00、無料休憩所24時間、年中無休・点検休あり）。",
+        "address": "北海道勇払郡むかわ町美幸3-3-1",
+        "prefecture": "北海道",
+        "city": "むかわ町",
+        "lat": 42.574337,
+        "lng": 141.926036,
+        "qr_token": "shuin-mukawa-5",
+        "cover_image_url": "/images/mukawa/spot5.png",
+        "f7_fragment": "物産館と良質な天然温泉「四季の湯」を備え、街歩きの疲れを癒やせる道の駅。",
+        "f7_full": "「道の駅 むかわ四季の館」で特産品と天然温泉を楽しみ、鵡川の街歩きを終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "63a602f4-8e04-4afc-89d8-435070ceb838",
+    "title": "輪西・鉄の街の商店街と潮見の丘めぐり",
+    "name": "輪西・鉄の街の商店街と潮見の丘めぐり",
+    "description": "昭和三年開業の木造駅舎が残る「JR輪西駅」から、室蘭カレーラーメンの名店「らーめん ぎょうざ 蘭たん亭」、商店街の核「ぷらっと・てついち」、製鉄所の守護神「輪西神社」、高台の「潮見公園」を巡るルート。",
+    "region": "輪西・鉄の街と潮見の丘",
+    "area_name": "輪西・鉄の街と潮見の丘",
+    "cover_image_url": "/images/wanishi/route-eyecatch.png",
+    "imageUrl": "/images/wanishi/route-eyecatch.png",
+    "category": "製鉄の街とカレー麺",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "製鉄所の発展とともに歩んだ輪西の駅から商店街やカレーラーメンの名店、高台の公園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和三年開業当時からの木造駅舎が今も残る「JR輪西駅」",
+          "description": "製鉄所の発展とともに誕生し、歴史を刻む温かな木造駅舎の佇まいが旅情を誘った。",
+          "badge_code": "wanishi_station"
+        },
+        {
+          "key": "B",
+          "text": "昭和五十七年創業・室蘭カレーラーメンの人気店「らーめん ぎょうざ 蘭たん亭」",
+          "description": "スパイシーでコクのある室蘭カレーラーメンと名物ぎょうざの美味しさに唸った。",
+          "badge_code": "wanishi_rantantei"
+        },
+        {
+          "key": "C",
+          "text": "製鉄所の守護神の頓宮として建立された「輪西神社」",
+          "description": "大国主神や火・製鉄の神々を祀り、鉄の街の暮らしを静かに見守ってきた歴史に触れた。",
+          "badge_code": "wanishi_shrine"
+        },
+        {
+          "key": "D",
+          "text": "高台から室蘭港と製鉄所方面を見晴らす「潮見公園」",
+          "description": "鉄の街・輪西の広がりと港の風景を一望でき、爽やかな風を感じられた。",
+          "badge_code": "wanishi_shiomi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3d600d3a-1fde-4f19-8b77-03044a565606",
+        "name": "JR輪西駅",
+        "description": "1928年（昭和3年）9月10日開業、製鉄所の発展とともに誕生し開業当時からの木造駅舎が今も残る無人駅（終日開放・無料、1994年完全無人化）。昭和の面影を色濃く伝える。",
+        "address": "北海道室蘭市仲町12",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.334036,
+        "lng": 141.007261,
+        "qr_token": "shuin-wanishi-1",
+        "cover_image_url": "/images/wanishi/spot1.png",
+        "f7_fragment": "昭和三年開業、製鉄所の発展とともに歩んだ木造駅舎が残る駅。",
+        "f7_full": "「JR輪西駅」の木造駅舎に降り立ち、鉄の街・輪西の商店街を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "4e9e31fe-1f8e-4f39-8e42-0a8558f14b52",
+        "next_spot_name": "らーめん ぎょうざ 蘭たん亭"
+      },
+      {
+        "id": "4e9e31fe-1f8e-4f39-8e42-0a8558f14b52",
+        "name": "らーめん ぎょうざ 蘭たん亭",
+        "description": "1982年創業、JR輪西駅から徒歩約3〜5分の室蘭カレーラーメン人気店（11:00〜15:00・16:50〜20:30、日曜・第1第3月曜休）。コクのあるスープと手作り餃子が評判。",
+        "address": "北海道室蘭市輪西町1-30-8",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.334463,
+        "lng": 141.009533,
+        "qr_token": "shuin-wanishi-2",
+        "cover_image_url": "/images/wanishi/spot2.png",
+        "f7_fragment": "昭和五十七年創業、室蘭カレーラーメンと餃子が地元で評判の人気店。",
+        "f7_full": "「らーめん ぎょうざ 蘭たん亭」で熱々の室蘭カレーラーメンを味わい、活力を得た。",
+        "is_final": false,
+        "next_spot_id": "e1fb0706-947a-41d1-8652-4c25afc5b758",
+        "next_spot_name": "ぷらっと・てついち"
+      },
+      {
+        "id": "e1fb0706-947a-41d1-8652-4c25afc5b758",
+        "name": "ぷらっと・てついち",
+        "description": "輪西商店街の核となる複合商業施設（室蘭市民会館併設、入場無料）。スーパーのホームストア輪西店（9:00〜21:00、元旦休）や鮮魚・茶舗など多彩な専門店が入居している。",
+        "address": "北海道室蘭市輪西町2-5-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.334217,
+        "lng": 141.013143,
+        "qr_token": "shuin-wanishi-3",
+        "cover_image_url": "/images/wanishi/spot3.png",
+        "f7_fragment": "輪西商店街の核として鮮魚や茶舗など専門店が集う複合商業施設。",
+        "f7_full": "「ぷらっと・てついち」の賑やかな店内を歩き、輪西の暮らしの温かさに触れた。",
+        "is_final": false,
+        "next_spot_id": "95c8f7e3-5117-4c2a-865a-7ceb1cd47c2b",
+        "next_spot_name": "輪西神社"
+      },
+      {
+        "id": "95c8f7e3-5117-4c2a-865a-7ceb1cd47c2b",
+        "name": "輪西神社",
+        "description": "1929年（昭和4年）に製鉄所の守護神「御傘山神社」の頓宮として建立、1931年輪西神社と奉称（終日参拝自由・無料）。大国主神や火・製鉄の神々を祀る。",
+        "address": "北海道室蘭市みゆき町2-17-10",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.333073,
+        "lng": 141.013934,
+        "qr_token": "shuin-wanishi-4",
+        "cover_image_url": "/images/wanishi/spot4.png",
+        "f7_fragment": "昭和四年建立、製鉄所の守護神ゆかりで火と製鉄の神々も祀る輪西の鎮守。",
+        "f7_full": "「輪西神社」の静かな社殿に手を合わせ、鉄の街を見守り続けた祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "3aa5e602-33c3-4ecd-8f72-ac13978e1121",
+        "next_spot_name": "潮見公園"
+      },
+      {
+        "id": "3aa5e602-33c3-4ecd-8f72-ac13978e1121",
+        "name": "潮見公園",
+        "description": "輪西・みゆき町の高台に位置する展望公園（終日開放・入園無料）。緑に囲まれた高台から室蘭港や製鉄所方面を見晴らすことができ、散策の締めくくりに心地よい風が吹く。",
+        "address": "北海道室蘭市みゆき町3-289",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.333015,
+        "lng": 141.019293,
+        "qr_token": "shuin-wanishi-5",
+        "cover_image_url": "/images/wanishi/spot5.png",
+        "f7_fragment": "輪西・みゆき町の高台から室蘭港や製鉄所方面を見晴らす展望公園。",
+        "f7_full": "「潮見公園」から鉄の街と港の風景を見渡し、輪西の街歩きを爽やかに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b761f167-5f3d-4fc4-85b7-6da7f2db36fe",
+    "title": "御崎・室蘭線発祥の地と御前水の社",
+    "name": "御崎・室蘭線発祥の地と御前水の社",
+    "description": "構内に「室蘭線発祥の地」碑が立つ「JR御崎駅」から、天然酵母の「リアン」、明治天皇ゆかりの「天澤泉」碑を伝える「御傘山神社」、老舗洋菓子店「菓子工房 モンパリ」、室蘭港を望む「御前水公園」を巡るルート。",
+    "region": "御崎・室蘭線発祥と御前水",
+    "area_name": "御崎・室蘭線発祥と御前水",
+    "cover_image_url": "/images/misaki_muroran/route-eyecatch.png",
+    "imageUrl": "/images/misaki_muroran/route-eyecatch.png",
+    "category": "鉄道発祥と明治の史跡",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "室蘭線発祥の地・御崎駅から明治の御巡幸ゆかりの社や老舗洋菓子店、御前水公園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "構内に「室蘭線発祥の地」記念碑が立つ「JR御崎駅」",
+          "description": "明治二十五年の貨物取扱所から始まり、室蘭線の歴史の原点に触れることができた。",
+          "badge_code": "misaki_muroran_station"
+        },
+        {
+          "key": "B",
+          "text": "道産小麦と天然酵母のもっちり専門店「天然酵母の蒸しパン屋 リアン」",
+          "description": "長時間低温発酵で仕上げた優しい甘みの蒸しパンに心がほっこり温まった。",
+          "badge_code": "misaki_muroran_liens"
+        },
+        {
+          "key": "C",
+          "text": "御前水町の地名由来「天澤泉」碑が伝わる「御傘山神社」",
+          "description": "明治四十一年創建の社で、明治天皇御巡幸の清水の物語に触れ背筋が伸びた。",
+          "badge_code": "misaki_muroran_mikasayama"
+        },
+        {
+          "key": "D",
+          "text": "明治天皇御野立所蹟碑が立つ高台の「御前水公園」",
+          "description": "明治十四年御巡幸の際と同じく室蘭港を見渡す高台の風景に歴史を感じた。",
+          "badge_code": "misaki_muroran_gozensui"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "12ec868f-dbfe-44a5-8f8e-e29e72495503",
+        "name": "JR御崎駅",
+        "description": "1892年に貨物取扱所が置かれ、1905年6月21日に正式開業した駅（終日開放・無料、1986年無人化）。構内には1958年建立の「室蘭線発祥の地」記念碑が立っている。",
+        "address": "北海道室蘭市御崎町2-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.329178,
+        "lng": 140.993867,
+        "qr_token": "shuin-misaki_muroran-1",
+        "cover_image_url": "/images/misaki_muroran/spot1.png",
+        "f7_fragment": "明治二十五年起源、構内に「室蘭線発祥の地」記念碑が立つ歴史ある駅。",
+        "f7_full": "「JR御崎駅」の室蘭線発祥の地記念碑から、御前水の歴史と菓子を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "b72668d8-6f58-4d08-8587-8e1b9d15d937",
+        "next_spot_name": "天然酵母の蒸しパン屋 リアン"
+      },
+      {
+        "id": "b72668d8-6f58-4d08-8587-8e1b9d15d937",
+        "name": "天然酵母の蒸しパン屋 リアン",
+        "description": "道産小麦・てん菜糖・天然酵母で長時間低温発酵させたもっちり蒸しパン専門店（11:30〜17:00、月火休・日曜等不定休あり）。優しい味わいが人気。",
+        "address": "北海道室蘭市港南町1-19-7",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.334201,
+        "lng": 140.955783,
+        "qr_token": "shuin-misaki_muroran-2",
+        "cover_image_url": "/images/misaki_muroran/spot2.png",
+        "f7_fragment": "道産小麦と天然酵母の長時間低温発酵で作るもっちり蒸しパン専門店。",
+        "f7_full": "「天然酵母の蒸しパン屋 リアン」で優しい香りの蒸しパンに出会い、心が和んだ。",
+        "is_final": false,
+        "next_spot_id": "852904e4-a42d-4880-8597-0957ff3908e5",
+        "next_spot_name": "御傘山神社"
+      },
+      {
+        "id": "852904e4-a42d-4880-8597-0957ff3908e5",
+        "name": "御傘山神社",
+        "description": "1908年（明治41年）に日本製鋼所の守り神として創建（終日参拝自由・無料）。境内に1881年明治天皇御巡幸の清水に由来する「天澤泉」碑があり、御前水町の地名の由来となった。",
+        "address": "北海道室蘭市御前水町1-12-3",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.323422,
+        "lng": 140.998972,
+        "qr_token": "shuin-misaki_muroran-3",
+        "cover_image_url": "/images/misaki_muroran/spot3.png",
+        "f7_fragment": "明治四十一年創建、御前水の地名由来「天澤泉」碑が境内に残る鎮守。",
+        "f7_full": "「御傘山神社」の天澤泉碑を訪ね、御前水の地名に込められた明治の記憶に触れた。",
+        "is_final": false,
+        "next_spot_id": "f8cf35b8-fbc4-46ce-803c-78798eab433e",
+        "next_spot_name": "菓子工房 モンパリ"
+      },
+      {
+        "id": "f8cf35b8-fbc4-46ce-803c-78798eab433e",
+        "name": "菓子工房 モンパリ",
+        "description": "道産素材のケーキや銘菓「げんこつパイ」で知られる老舗洋菓子店（平日10:00〜18:00・土日祝〜17:30、火曜休・月1回月火連休、テイクアウト営業）。",
+        "address": "北海道室蘭市御前水町1-13-22",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.322786,
+        "lng": 140.997089,
+        "qr_token": "shuin-misaki_muroran-4",
+        "cover_image_url": "/images/misaki_muroran/spot4.png",
+        "f7_fragment": "道産素材のケーキとサクサクの名物銘菓「げんこつパイ」が人気の洋菓子店。",
+        "f7_full": "「菓子工房 モンパリ」で銘菓げんこつパイを手に入れ、甘い余韻に包まれた。",
+        "is_final": false,
+        "next_spot_id": "dd71da0b-fb4f-4c0b-8bba-339f08933c9c",
+        "next_spot_name": "御前水公園"
+      },
+      {
+        "id": "dd71da0b-fb4f-4c0b-8bba-339f08933c9c",
+        "name": "御前水公園",
+        "description": "高台に位置する地域の公園（終日開放・無料）。1881年9月4日に明治天皇が北海道御巡幸の際に休憩し室蘭港を展望されたことを記念する「明治天皇御野立所蹟」碑が立つ。",
+        "address": "北海道室蘭市御前水町2-2",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.322336,
+        "lng": 140.998448,
+        "qr_token": "shuin-misaki_muroran-5",
+        "cover_image_url": "/images/misaki_muroran/spot5.png",
+        "f7_fragment": "明治十四年の明治天皇御巡幸を記念する「御野立所蹟」碑が立つ高台公園。",
+        "f7_full": "「御前水公園」の記念碑の前から室蘭港を望み、明治の足跡を辿る旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1c6b4568-b2d2-4655-897a-e4c78c3391a8",
+    "title": "母恋・断崖絶壁の地球岬と潮風散歩",
+    "name": "母恋・断崖絶壁の地球岬と潮風散歩",
+    "description": "昭和十五年築の木造駅舎と名物駅弁で知られる「JR母恋駅」から、創業五十年以上の老舗「浜勝」、奇岩を望む「チャラツナイ展望台」、室蘭随一の名勝「地球岬」、室蘭八景「トッカリショ展望台」を巡るルート。",
+    "region": "母恋・地球岬と断崖海岸",
+    "area_name": "母恋・地球岬と断崖海岸",
+    "cover_image_url": "/images/bokoi/route-eyecatch.png",
+    "imageUrl": "/images/bokoi/route-eyecatch.png",
+    "category": "名物駅弁と絶景断崖",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和の木造駅舎が残る母恋駅から老舗の室蘭やきとりや地球岬、トッカリショの断崖絶壁を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和十五年築の木造駅舎と名物駅弁「母恋めし」の「JR母恋駅」",
+          "description": "アイヌ語「ポクセイ・オ・イ」に由来する優しい駅名とレトロな木造駅舎に旅情を感じた。",
+          "badge_code": "bokoi_station"
+        },
+        {
+          "key": "B",
+          "text": "創業五十年以上の老舗で味わう「浜勝」の室蘭やきとりとラーメン",
+          "description": "国産豚肩ロースの室蘭やきとりやみそカレーラーメンの深い味わいに満たされた。",
+          "badge_code": "bokoi_hamakatsu"
+        },
+        {
+          "key": "C",
+          "text": "高さ百メートルの断崖に白亜の灯台が立つ室蘭随一の名勝「地球岬」",
+          "description": "太平洋の大海原を見下ろす断崖と白亜のチキウ岬灯台の圧倒的な絶景に息を呑んだ。",
+          "badge_code": "bokoi_chikyumisaki"
+        },
+        {
+          "key": "D",
+          "text": "灰色の断崖と緑のクマザサが映える室蘭八景「トッカリショ展望台」",
+          "description": "「アザラシの岩」に由来する絶壁と青い海の鮮やかな対比が心に焼き付いた。",
+          "badge_code": "bokoi_tokkarisho"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ae05a456-96da-4f70-84de-944f0db7ce2b",
+        "name": "JR母恋駅",
+        "description": "1935年開業、1940年築のレトロな木造駅舎が残る駅（終日利用可）。駅名はアイヌ語「ポクセイ・オ・イ（ホッキ貝が群生する場所）」に由来し、構内売店で名物駅弁「母恋めし」（9:30〜13:00頃売切次第終了、木曜休）を販売。",
+        "address": "北海道室蘭市母恋北町1-1-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.317205,
+        "lng": 140.989511,
+        "qr_token": "shuin-bokoi-1",
+        "cover_image_url": "/images/bokoi/spot1.png",
+        "f7_fragment": "昭和十五年築の木造駅舎が残り、名物駅弁「母恋めし」でも知られる駅。",
+        "f7_full": "「JR母恋駅」のレトロな木造駅舎に降り立ち、地球岬と断崖海岸を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c7649054-4655-44a4-8b5a-df5369a81c6d",
+        "next_spot_name": "浜勝"
+      },
+      {
+        "id": "c7649054-4655-44a4-8b5a-df5369a81c6d",
+        "name": "浜勝",
+        "description": "創業50年以上の老舗食堂・居酒屋（11:30〜14:00・16:30〜23:00、日曜・年末年始休）。国産豚肩ロースの「室蘭やきとり」「やきとり丼」や「みそカレーラーメン」が名物。",
+        "address": "北海道室蘭市母恋北町2-9-4",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.315284,
+        "lng": 140.989234,
+        "qr_token": "shuin-bokoi-2",
+        "cover_image_url": "/images/bokoi/spot2.png",
+        "f7_fragment": "創業五十年以上、国産豚の「室蘭やきとり」やみそカレーラーメンが名物の老舗。",
+        "f7_full": "「浜勝」で本場の室蘭やきとりを味わい、母恋の街の温かな味覚に満たされた。",
+        "is_final": false,
+        "next_spot_id": "059693e8-96bd-423c-87af-29d975191764",
+        "next_spot_name": "チャラツナイ展望台"
+      },
+      {
+        "id": "059693e8-96bd-423c-87af-29d975191764",
+        "name": "チャラツナイ展望台",
+        "description": "室蘭八景「金屏風・銀屏風」やマサカリ岩・蓬莱門などの奇岩と太平洋を望む景勝地（終日開放・無料）。名称はアイヌ語で「滝のようにサラサラ流れる小川」に由来する。",
+        "address": "北海道室蘭市母恋南町1-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.312301,
+        "lng": 140.991649,
+        "qr_token": "shuin-bokoi-3",
+        "cover_image_url": "/images/bokoi/spot3.png",
+        "f7_fragment": "室蘭八景「金屏風・銀屏風」や蓬莱門などの奇岩を一望する景勝地。",
+        "f7_full": "「チャラツナイ展望台」から太平洋の荒波と奇岩群を眺め、地球岬への期待が高まった。",
+        "is_final": false,
+        "next_spot_id": "b3c9ef47-ca3a-45c3-8013-ce6a9c3b1c10",
+        "next_spot_name": "地球岬"
+      },
+      {
+        "id": "b3c9ef47-ca3a-45c3-8013-ce6a9c3b1c10",
+        "name": "地球岬",
+        "description": "高さ100m超の断崖に白亜のチキウ岬灯台が立つ室蘭随一の名勝（終日開放・見学無料、2026年4月より緑地駐車場のみ有料）。水平線が丸く見えるほど雄大なパノラマが広がる。",
+        "address": "北海道室蘭市母恋南町4-77",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.301821,
+        "lng": 141.001849,
+        "qr_token": "shuin-bokoi-4",
+        "cover_image_url": "/images/bokoi/spot4.png",
+        "f7_fragment": "高さ百メートル超の断崖に白亜のチキウ岬灯台が立つ室蘭随一の名勝。",
+        "f7_full": "「地球岬」から果てしない太平洋の水平線と白亜の灯台を望み、自然の雄大さに感動した。",
+        "is_final": false,
+        "next_spot_id": "0606ad5d-0c03-4ec1-8f7c-83c1cecf9adf",
+        "next_spot_name": "トッカリショ展望台"
+      },
+      {
+        "id": "0606ad5d-0c03-4ec1-8f7c-83c1cecf9adf",
+        "name": "トッカリショ展望台",
+        "description": "室蘭八景の一つ（終日開放・無料）。アイヌ語「トカル・イショ（アザラシの岩）」に由来し、灰色の断崖と斜面の緑のクマザサ、青い海の鮮やかな対比が美しい絶景スポット。",
+        "address": "北海道室蘭市母恋南町3-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.310757,
+        "lng": 140.997818,
+        "qr_token": "shuin-bokoi-5",
+        "cover_image_url": "/images/bokoi/spot5.png",
+        "f7_fragment": "灰色の断崖と緑のクマザサ、青い海の対比が美しい室蘭八景の絶景地。",
+        "f7_full": "「トッカリショ展望台」の断崖絶壁と海の美しい色彩を目に焼き付け、母恋の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "75454e0b-8cf0-47fe-8301-ed14022dd9f1",
+    "title": "室蘭・最古の木造駅舎と測量山夜景",
+    "name": "室蘭・最古の木造駅舎と測量山夜景",
+    "description": "JR室蘭支線の終着駅「JR室蘭駅」から、ジャズが流れる老舗レトロ喫茶「カフェ英国館」、明治四十五年築の国登録有形文化財「旧室蘭駅舎」、鯨八幡の通称で親しまれる「室蘭八幡宮」、日本夜景遺産の「測量山展望台」を巡るルート。",
+    "region": "室蘭・旧駅舎と測量山展望",
+    "area_name": "室蘭・旧駅舎と測量山展望",
+    "cover_image_url": "/images/muroran/route-eyecatch.png",
+    "imageUrl": "/images/muroran/route-eyecatch.png",
+    "category": "最古の木造駅舎と夜景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北海道最古の木造駅舎や老舗喫茶、鯨八幡の社を経て日本夜景遺産の測量山へと至る室蘭の街歩きで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "煉瓦造りの外観とジャズが流れる老舗レトロ喫茶「カフェ英国館」",
+          "description": "ドラマや映画のロケ地としても知られ、落ち着いた空間で珈琲と洋食を楽しめた。",
+          "badge_code": "muroran_eikokukan"
+        },
+        {
+          "key": "B",
+          "text": "明治四十五年築・道内現存最古の木造駅舎「旧室蘭駅舎」",
+          "description": "特徴的なマンサード屋根と鉄道資料が、北海道鉄道史の重みを伝えてくれた。",
+          "badge_code": "muroran_old_station"
+        },
+        {
+          "key": "C",
+          "text": "漂着クジラ売却益で造営され「鯨八幡」と親しまれる「室蘭八幡宮」",
+          "description": "明治二年創祀の長い歴史と海辺の港町ならではのユニークな由来に感心した。",
+          "badge_code": "muroran_hachimangu"
+        },
+        {
+          "key": "D",
+          "text": "白鳥大橋や室蘭港を一望する日本夜景遺産「測量山展望台」",
+          "description": "明治五年の見当山に始まり、室蘭港と白鳥大橋を見渡す大パノラマに感動した。",
+          "badge_code": "muroran_sokuryozan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "10cc6371-b661-463c-875a-abe1ad1b7f79",
+        "name": "JR室蘭駅",
+        "description": "JR室蘭支線の終着駅（終日利用可・無料、1997年現在地へ移転開業、2024年10月無人駅化）。1892年の北海道炭礦鉄道開通から続く鉄路の終点として港町を見守る。",
+        "address": "北海道室蘭市中央町4-5-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.31802,
+        "lng": 140.974382,
+        "qr_token": "shuin-muroran-1",
+        "cover_image_url": "/images/muroran/spot1.png",
+        "f7_fragment": "明治二十五年から続く鉄路の終点、JR室蘭支線の終着駅。",
+        "f7_full": "「JR室蘭駅」に降り立ち、道内最古の木造駅舎と測量山を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "0b8c4422-2c8d-4ac6-819b-cad7e759cca1",
+        "next_spot_name": "カフェ英国館"
+      },
+      {
+        "id": "0b8c4422-2c8d-4ac6-819b-cad7e759cca1",
+        "name": "カフェ英国館",
+        "description": "煉瓦造りの外観とジャズが流れる老舗レトロ喫茶（8:30〜20:00、モーニング〜10:00・ランチ11:30〜14:00、日曜休）。ドラマや映画のロケ地としても親しまれている。",
+        "address": "北海道室蘭市幕西町1-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.320002,
+        "lng": 140.970435,
+        "qr_token": "shuin-muroran-2",
+        "cover_image_url": "/images/muroran/spot2.png",
+        "f7_fragment": "煉瓦造りの外観とジャズが流れ、ロケ地としても親しまれる老舗喫茶。",
+        "f7_full": "「カフェ英国館」の落ち着いた空間で珈琲をいただき、港町のレトロな雰囲気に浸った。",
+        "is_final": false,
+        "next_spot_id": "1a6d853b-1ba6-4ce8-8ad2-784ea34055d8",
+        "next_spot_name": "旧室蘭駅舎"
+      },
+      {
+        "id": "1a6d853b-1ba6-4ce8-8ad2-784ea34055d8",
+        "name": "旧室蘭駅舎",
+        "description": "1912年（明治45年）築の北海道内現存最古の木造駅舎（国登録有形文化財、4〜10月8:00〜19:00・11〜3月〜17:00、1/1休、入館無料）。特徴的なマンサード屋根を持ち、室蘭観光協会・案内所として鉄道資料等を展示。",
+        "address": "北海道室蘭市海岸町1-5-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.322082,
+        "lng": 140.970236,
+        "qr_token": "shuin-muroran-3",
+        "cover_image_url": "/images/muroran/spot3.png",
+        "f7_fragment": "明治四十五年築、マンサード屋根が特徴の道内現存最古の木造駅舎。",
+        "f7_full": "「旧室蘭駅舎」の美しい木造建築と鉄道資料を見学し、明治の面影に感動した。",
+        "is_final": false,
+        "next_spot_id": "fe7feaa8-59b2-4622-88f5-2e9a44bc2c9c",
+        "next_spot_name": "室蘭八幡宮"
+      },
+      {
+        "id": "fe7feaa8-59b2-4622-88f5-2e9a44bc2c9c",
+        "name": "室蘭八幡宮",
+        "description": "1869年（明治2年）創祀、1875年に現在地へ遷座（終日参拝自由・無料）。漂着クジラ売却益で造営されたことから「鯨八幡」の通称で親しまれている室蘭の古社。",
+        "address": "北海道室蘭市海岸町2-9-3",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.321171,
+        "lng": 140.968446,
+        "qr_token": "shuin-muroran-4",
+        "cover_image_url": "/images/muroran/spot4.png",
+        "f7_fragment": "明治二年創祀、漂着クジラの逸話から「鯨八幡」と呼ばれる古社。",
+        "f7_full": "「室蘭八幡宮」の静かな境内に参拝し、港町ならではの鯨八幡の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "2c69c671-589a-475d-8dbc-171ae9f9004d",
+        "next_spot_name": "測量山展望台"
+      },
+      {
+        "id": "2c69c671-589a-475d-8dbc-171ae9f9004d",
+        "name": "測量山展望台",
+        "description": "標高199.6m、1872年に札幌本道計画の視察で登られ「見当山」と呼ばれたのが始まり（終日開放・無料）。室蘭八景・日本夜景遺産に選定され、白鳥大橋や室蘭港を一望できる。",
+        "address": "北海道室蘭市清水町1-1",
+        "prefecture": "北海道",
+        "city": "室蘭市",
+        "lat": 42.321012,
+        "lng": 140.956991,
+        "qr_token": "shuin-muroran-5",
+        "cover_image_url": "/images/muroran/spot5.png",
+        "f7_fragment": "室蘭八景・日本夜景遺産に選定され白鳥大橋と室蘭港を一望する展望台。",
+        "f7_full": "「測量山展望台」から白鳥大橋と室蘭港の雄大な風景を望み、室蘭の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "72c70b17-02d0-455f-8595-96d9ecd27af5",
+    "title": "桑園・場外市場の朝と北大植物園",
+    "name": "桑園・場外市場の朝と北大植物園",
+    "description": "明治八年の桑畑開拓に由来する「JR桑園駅」から、約六十店舗が連なる札幌の台所「札幌市中央卸売市場 場外市場」、桑園公園向かいの「椿サロン 本店」、築百年超の洋館「Cafe BEAN's」、「北海道大学植物園」を巡るルート。",
+    "region": "桑園・市場の朝と北大植物園",
+    "area_name": "桑園・市場の朝と北大植物園",
+    "cover_image_url": "/images/soen/route-eyecatch.png",
+    "imageUrl": "/images/soen/route-eyecatch.png",
+    "category": "市場グルメと洋館カフェ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "桑園の駅から場外市場の活気や個性豊かなカフェ、明治十九年開園の北大植物園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "約六十店舗が連なる札幌の台所「札幌市中央卸売市場 場外市場」",
+          "description": "新鮮な海鮮丼や旬の青果・海産物がずらりと並び、北海道の食の豊かさに胸が躍った。",
+          "badge_code": "soen_market"
+        },
+        {
+          "key": "B",
+          "text": "桑園公園向かいの名物ほっとけーき「椿サロン 本店」",
+          "description": "北海道産素材にこだわったふわふわのほっとけーきと洗練された空間に癒やされた。",
+          "badge_code": "soen_tsubaki"
+        },
+        {
+          "key": "C",
+          "text": "築百年超の歴史的洋館を活かした「Cafe BEAN's」",
+          "description": "北大名誉教授の書庫だった洋館で、自家焙煎珈琲の豊かな香りに包まれた。",
+          "badge_code": "soen_beans"
+        },
+        {
+          "key": "D",
+          "text": "明治十九年開園・日本で二番目に古い「北海道大学植物園」",
+          "description": "札幌の都心に広がる豊かな原生林と歴史的温室の緑に深く癒やされた。",
+          "badge_code": "soen_botanical"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e8da3402-0cdf-49e7-8f5c-a8f1b7914f6a",
+        "name": "JR桑園駅",
+        "description": "1924年（大正13年）6月1日開業（2024年に100周年）、1988年高架化（終日利用可・無料）。地名は1875年に開拓使が桑畑を造り養蚕を奨励したことに由来する。",
+        "address": "北海道札幌市中央区北11条西15丁目1-1",
+        "prefecture": "北海道",
+        "city": "札幌市中央区",
+        "lat": 43.07129,
+        "lng": 141.332162,
+        "qr_token": "shuin-soen-1",
+        "cover_image_url": "/images/soen/spot1.png",
+        "f7_fragment": "大正十三年開業、明治八年の桑畑開拓に由来する名を持つ高架駅。",
+        "f7_full": "「JR桑園駅」に降り立ち、札幌の市場グルメと洋館カフェ、植物園を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "9a46bc1f-45fc-4c4e-885a-9511707942c8",
+        "next_spot_name": "札幌市中央卸売市場 場外市場"
+      },
+      {
+        "id": "9a46bc1f-45fc-4c4e-885a-9511707942c8",
+        "name": "札幌市中央卸売市場 場外市場",
+        "description": "約60店舗が連なる札幌の台所（6:00〜15:00頃・大型店〜17:00、無休・店舗により異なる）。JR桑園駅から西へ徒歩約10分で、新鮮な海鮮丼や旬の青果・海産物を楽しめる。",
+        "address": "北海道札幌市中央区北11条西21丁目2-3",
+        "prefecture": "北海道",
+        "city": "札幌市中央区",
+        "lat": 43.071767,
+        "lng": 141.321439,
+        "qr_token": "shuin-soen-2",
+        "cover_image_url": "/images/soen/spot2.png",
+        "f7_fragment": "約六十店舗が連なり、新鮮な海鮮丼や旬の味覚が楽しめる札幌の台所。",
+        "f7_full": "「札幌市中央卸売市場 場外市場」で活気と海の幸を堪能し、札幌の朝を満喫した。",
+        "is_final": false,
+        "next_spot_id": "bde64e54-5c23-41d7-8772-bb0ad0d99757",
+        "next_spot_name": "椿サロン 本店"
+      },
+      {
+        "id": "bde64e54-5c23-41d7-8772-bb0ad0d99757",
+        "name": "椿サロン 本店",
+        "description": "桑園公園向かいの洗練されたデザイナーズカフェ（月〜木日祝11:00〜18:00・金土〜22:00、無休）。北海道産素材にこだわった「ほっとけーき」や珈琲が名物。",
+        "address": "北海道札幌市中央区北7条西19丁目1-2",
+        "prefecture": "北海道",
+        "city": "札幌市中央区",
+        "lat": 43.066729,
+        "lng": 141.326079,
+        "qr_token": "shuin-soen-3",
+        "cover_image_url": "/images/soen/spot3.png",
+        "f7_fragment": "北海道産素材にこだわった名物「ほっとけーき」が味わえるデザイナーズカフェ。",
+        "f7_full": "「椿サロン 本店」でふわふわのほっとけーきと珈琲を味わい、贅沢なカフェ時間を過ごした。",
+        "is_final": false,
+        "next_spot_id": "2ace118e-fd8f-415a-8dbc-cc864aaa5572",
+        "next_spot_name": "Cafe BEAN's"
+      },
+      {
+        "id": "2ace118e-fd8f-415a-8dbc-cc864aaa5572",
+        "name": "Cafe BEAN's",
+        "description": "北大名誉教授の書庫だった築100年超の歴史的洋館を活かしたカフェ（11:30〜20:00・L.O.19:00、水曜休）。自家焙煎珈琲と手作りスイーツが静かな時間を届けてくれる。",
+        "address": "北海道札幌市中央区北6条西12丁目8-4",
+        "prefecture": "北海道",
+        "city": "札幌市中央区",
+        "lat": 43.06702,
+        "lng": 141.336468,
+        "qr_token": "shuin-soen-4",
+        "cover_image_url": "/images/soen/spot4.png",
+        "f7_fragment": "北大名誉教授の書庫だった築百年超の洋館で自家焙煎珈琲を味わえるカフェ。",
+        "f7_full": "「Cafe BEAN's」の重厚な洋館で自家焙煎珈琲を飲み、札幌の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "bcaf5629-8760-4088-8817-dba72b11a335",
+        "next_spot_name": "北海道大学植物園"
+      },
+      {
+        "id": "bcaf5629-8760-4088-8817-dba72b11a335",
+        "name": "北海道大学植物園",
+        "description": "明治19年（1886年）開園、日本で2番目に古い植物園（夏期4/29〜11/3 9:00〜16:30等・月曜休、一般420円・小中学生300円／冬期温室のみ平日10:00〜15:30等、日祝休、7歳以上120円）。",
+        "address": "北海道札幌市中央区北3条西8丁目1",
+        "prefecture": "北海道",
+        "city": "札幌市中央区",
+        "lat": 43.064106,
+        "lng": 141.344371,
+        "qr_token": "shuin-soen-5",
+        "cover_image_url": "/images/soen/spot5.png",
+        "f7_fragment": "明治十九年開園、日本で二番目に古い歴史と原生林の緑を伝える植物園。",
+        "f7_full": "「北海道大学植物園」の豊かな緑と歴史的空間を歩き、桑園の街歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b04c33b0-8528-45eb-8032-de4ab163492b",
+    "title": "八軒・路地裏のパンとカレーから農試公園へ",
+    "name": "八軒・路地裏のパンとカレーから農試公園へ",
+    "description": "明治初期の八戸入植に由来する「JR八軒駅」から、「八軒中央公園」、素材にこだわるベーカリー「Kawakami Bakery ろっぱや」、老舗「スープカレー専門店 エスパーイトウ 八軒総本店」、緑豊かな「農試公園」を巡るルート。",
+    "region": "八軒・路地裏のパンと農試公園",
+    "area_name": "八軒・路地裏のパンと農試公園",
+    "cover_image_url": "/images/hachiken/route-eyecatch.png",
+    "imageUrl": "/images/hachiken/route-eyecatch.png",
+    "category": "街歩きと地元グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "明治初期の開拓に由来する八軒の駅から路地裏のパンやスープカレー、ポプラ並木の農試公園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治初期の八戸の入植に地名が由来する「JR八軒駅」",
+          "description": "札沼線で唯一札幌市西区に位置し、開拓の記憶を駅名に刻む高架駅だった。",
+          "badge_code": "hachiken_station"
+        },
+        {
+          "key": "B",
+          "text": "約五十種類のパンが並ぶ「Kawakami Bakery ろっぱや」",
+          "description": "マーガリンやショートニングを使わず焼き上げたクリームパンやクロワッサンが絶品だった。",
+          "badge_code": "hachiken_roppaya"
+        },
+        {
+          "key": "C",
+          "text": "十六種類のスパイスが香る「スープカレー専門店 エスパーイトウ 八軒総本店」",
+          "description": "二〇〇八年創業の老舗で、名物パリチキと豊かなスパイスの旨みに体が温まった。",
+          "badge_code": "hachiken_esper"
+        },
+        {
+          "key": "D",
+          "text": "北海道農業試験場跡地のポプラ並木が美しい「農試公園」",
+          "description": "屋内運動場ツインキャップや川沿いのポプラ並木を歩き、地域の憩いに癒やされた。",
+          "badge_code": "hachiken_noushi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "370cba95-4324-4667-8f69-1fff92c91e9f",
+        "name": "JR八軒駅",
+        "description": "1988年11月3日開業、1996年高架化（終日利用可・無料）。札沼線で唯一札幌市西区に位置し、地名は明治初期に本願寺道路建設等に際して入植した農民が8戸だったことに由来する。",
+        "address": "北海道札幌市西区八軒6条東2-1",
+        "prefecture": "北海道",
+        "city": "札幌市西区",
+        "lat": 43.085661,
+        "lng": 141.318983,
+        "qr_token": "shuin-hachiken-1",
+        "cover_image_url": "/images/hachiken/spot1.png",
+        "f7_fragment": "昭和六十三年開業、明治初期の八戸の入植に由来する名を持つ高架駅。",
+        "f7_full": "「JR八軒駅」に降り立ち、路地裏のパンとカレー、緑の農試公園を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "e0dfbe55-19c3-4ca2-83ff-245231eb7cba",
+        "next_spot_name": "八軒中央公園"
+      },
+      {
+        "id": "e0dfbe55-19c3-4ca2-83ff-245231eb7cba",
+        "name": "八軒中央公園",
+        "description": "JR八軒駅から北西すぐの琴似栄町通沿いに位置し、八軒児童会館に隣接する地域の拠点公園（常時開放・無料）。童話プリントのベンチや大型遊具を備え、夏の納涼まつり会場にもなる。",
+        "address": "北海道札幌市西区八軒7条東1-1",
+        "prefecture": "北海道",
+        "city": "札幌市西区",
+        "lat": 43.087752,
+        "lng": 141.316585,
+        "qr_token": "shuin-hachiken-2",
+        "cover_image_url": "/images/hachiken/spot2.png",
+        "f7_fragment": "八軒児童会館に隣接し、童話ベンチや大型遊具が親しまれる拠点公園。",
+        "f7_full": "「八軒中央公園」の穏やかな緑の中を歩き、八軒の暮らしの温もりに触れた。",
+        "is_final": false,
+        "next_spot_id": "2b548db8-dc74-4d13-8bc4-f560eab0ca3e",
+        "next_spot_name": "Kawakami Bakery ろっぱや"
+      },
+      {
+        "id": "2b548db8-dc74-4d13-8bc4-f560eab0ca3e",
+        "name": "Kawakami Bakery ろっぱや",
+        "description": "琴似栄町通沿いの地域密着ベーカリー（9:00〜18:30売切次第終了、月火休）。マーガリンやショートニングを使わず素材にこだわった約50種類以上のパンが並び、クリームパンやクロワッサンが人気。",
+        "address": "北海道札幌市西区八軒3条東1-3-8",
+        "prefecture": "北海道",
+        "city": "札幌市西区",
+        "lat": 43.084178,
+        "lng": 141.312288,
+        "qr_token": "shuin-hachiken-3",
+        "cover_image_url": "/images/hachiken/spot3.png",
+        "f7_fragment": "素材にこだわり五十種類以上を焼き上げる地域密着の人気ベーカリー。",
+        "f7_full": "「Kawakami Bakery ろっぱや」で焼きたてパンの豊かな香りに包まれた。",
+        "is_final": false,
+        "next_spot_id": "db6c6121-57a4-406b-822e-2db77db19f80",
+        "next_spot_name": "スープカレー専門店 エスパーイトウ 八軒総本店"
+      },
+      {
+        "id": "db6c6121-57a4-406b-822e-2db77db19f80",
+        "name": "スープカレー専門店 エスパーイトウ 八軒総本店",
+        "description": "2008年創業の老舗スープカレー専門店（11:00〜15:00・17:00〜21:30頃、不定休）。クミンやカルダモンなど16種類のスパイスを使ったスープに名物「パリチキ」や彩り豊かな野菜が人気。",
+        "address": "北海道札幌市西区八軒5条西1-2-32",
+        "prefecture": "北海道",
+        "city": "札幌市西区",
+        "lat": 43.087342,
+        "lng": 141.314224,
+        "qr_token": "shuin-hachiken-4",
+        "cover_image_url": "/images/hachiken/spot4.png",
+        "f7_fragment": "平成二十年創業、十六種類のスパイスと名物パリチキが人気の総本店。",
+        "f7_full": "「エスパーイトウ 八軒総本店」で香り高いスープカレーを味わい、大満足の一杯となった。",
+        "is_final": false,
+        "next_spot_id": "5ee85852-cdc4-468e-865a-41c60ddb8ae5",
+        "next_spot_name": "農試公園"
+      },
+      {
+        "id": "5ee85852-cdc4-468e-865a-41c60ddb8ae5",
+        "name": "農試公園",
+        "description": "農林省北海道農業試験場跡地を整備した運動公園（屋外常時開放・無料、屋内施設8:30〜21:00）。屋内運動場ツインキャップや交通コーナー、琴似発寒川沿いの美しいポプラ並木を備える。",
+        "address": "北海道札幌市西区八軒5条西6-95-21",
+        "prefecture": "北海道",
+        "city": "札幌市西区",
+        "lat": 43.089717,
+        "lng": 141.303565,
+        "qr_token": "shuin-hachiken-5",
+        "cover_image_url": "/images/hachiken/spot5.png",
+        "f7_fragment": "北海道農業試験場跡地に整備され、川沿いのポプラ並木が美しい運動公園。",
+        "f7_full": "「農試公園」のポプラ並木を歩き、歴史と緑が調和する八軒の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fbc7fd51-9e68-4e67-8eca-633258645f0a",
+    "title": "新川・開拓の社と緑の公園から大型書店の喫茶へ",
+    "name": "新川・開拓の社と緑の公園から大型書店の喫茶へ",
+    "description": "「JR新川駅」から、ジャズが流れる実力派「らーめん 影虎」、道内唯一「皇大」を冠する「新川皇大神社」、開基百年記念碑が立つ「新川中央公園」、大型書店併設「カフェ＆レストラン インターリュード」を巡るルート。",
+    "region": "新川・皇大神社と大型書店の喫茶",
+    "area_name": "新川・皇大神社と大型書店の喫茶",
+    "cover_image_url": "/images/shinkawa_sapporo/route-eyecatch.png",
+    "imageUrl": "/images/shinkawa_sapporo/route-eyecatch.png",
+    "category": "開拓の社と文化の散歩",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "新川の駅から実力派のラーメン店や北海道唯一の「皇大」を冠する神社、大型書店の喫茶を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ジャズが流れる空間で味わう実力派「らーめん 影虎」",
+          "description": "名店の流れをくむ魚介醤油つけ麺や背脂醤油らーめんの奥深い旨みに唸った。",
+          "badge_code": "shinkawa_kagetora"
+        },
+        {
+          "key": "B",
+          "text": "北海道で唯一「皇大」の名を冠する「新川皇大神社」",
+          "description": "明治四十一年創祀の歴史と美しい季節の花手水、馬頭大神への信仰に触れた。",
+          "badge_code": "shinkawa_kotaijingu"
+        },
+        {
+          "key": "C",
+          "text": "「不撓不屈」の開基百年記念碑が立つ「新川中央公園」",
+          "description": "明治二十二年からの開拓と水害克服の歩みを刻む記念碑の前で歴史に思いを馳せた。",
+          "badge_code": "shinkawa_park"
+        },
+        {
+          "key": "D",
+          "text": "大型書店併設のヨーロッパ調「カフェ＆レストラン インターリュード」",
+          "description": "日本最大級の複合書店コーチャンフォー内で優雅なスイーツと休憩時間を楽しめた。",
+          "badge_code": "shinkawa_interlude"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7a51f612-a81d-486b-8c9e-53fff6368585",
+        "name": "JR新川駅",
+        "description": "1986年11月1日に新川臨時乗降場として開業し、1987年4月1日に駅へ昇格、2000年に複線高架駅化（終日利用可・無料）。新川通沿いの住宅街の玄関口。",
+        "address": "北海道札幌市北区新川4条1-3",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.098499,
+        "lng": 141.324006,
+        "qr_token": "shuin-shinkawa_sapporo-1",
+        "cover_image_url": "/images/shinkawa_sapporo/spot1.png",
+        "f7_fragment": "昭和六十一年臨時乗降場として開業し、複線高架化で街を支える駅。",
+        "f7_full": "「JR新川駅」に降り立ち、開拓の神社と緑の公園、書店の喫茶を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "f6130acd-9906-4105-8ae0-235832894e4b",
+        "next_spot_name": "らーめん 影虎"
+      },
+      {
+        "id": "f6130acd-9906-4105-8ae0-235832894e4b",
+        "name": "らーめん 影虎",
+        "description": "名店「麺屋 菜々兵衛」等の流れをくむ実力派ラーメン店（平日11:00〜15:00・17:00〜20:30頃・土日祝11:00〜20:00、不定休）。「魚介醤油つけ麺」や「背脂醤油らーめん」が人気。",
+        "address": "北海道札幌市北区新川3条5-3-12",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.102098,
+        "lng": 141.315018,
+        "qr_token": "shuin-shinkawa_sapporo-2",
+        "cover_image_url": "/images/shinkawa_sapporo/spot2.png",
+        "f7_fragment": "ジャズが流れる落ち着いた空間で魚介醤油つけ麺などを味わえる実力派。",
+        "f7_full": "「らーめん 影虎」で丁寧に仕上げられた一杯を味わい、心もお腹も満たされた。",
+        "is_final": false,
+        "next_spot_id": "2031facd-87bc-4012-825a-f28818796374",
+        "next_spot_name": "新川皇大神社"
+      },
+      {
+        "id": "2031facd-87bc-4012-825a-f28818796374",
+        "name": "新川皇大神社",
+        "description": "明治37年石標建立・明治41年創祀（参拝自由・無料、授与所9:00〜17:00）。伊勢神宮と同じ神々を祀り北海道で唯一「皇大」を冠するほか、季節の花手水やペット守護の馬頭大神でも人気。",
+        "address": "北海道札幌市北区新川3条13-3-12",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.108901,
+        "lng": 141.301206,
+        "qr_token": "shuin-shinkawa_sapporo-3",
+        "cover_image_url": "/images/shinkawa_sapporo/spot3.png",
+        "f7_fragment": "明治四十一年創祀、北海道で唯一「皇大」を冠し花手水でも人気の神社。",
+        "f7_full": "「新川皇大神社」の美しい花手水と静かな拝殿に触れ、開拓の祈りに手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "3e5a3b13-bbd7-4f16-8771-c28700d33f4b",
+        "next_spot_name": "新川中央公園"
+      },
+      {
+        "id": "3e5a3b13-bbd7-4f16-8771-c28700d33f4b",
+        "name": "新川中央公園",
+        "description": "自然林を残し野球場や藤棚・ライラックを備えた地域の公園（常時開放・無料）。園内には明治22年からの開拓と水害克服の歴史を伝え「不撓不屈」と刻まれた「新川『開基百年記念』碑」が立つ。",
+        "address": "北海道札幌市北区新川4条14-5",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.112036,
+        "lng": 141.300261,
+        "qr_token": "shuin-shinkawa_sapporo-4",
+        "cover_image_url": "/images/shinkawa_sapporo/spot4.png",
+        "f7_fragment": "藤棚やライラックが彩り、「不撓不屈」の開基百年記念碑が立つ公園。",
+        "f7_full": "「新川中央公園」の開基百年記念碑の前に立ち、新川の不撓不屈の歴史を偲んだ。",
+        "is_final": false,
+        "next_spot_id": "ef9c081b-bd7e-4045-8eee-0a0b07d46920",
+        "next_spot_name": "カフェ＆レストラン インターリュード（コーチャンフォー新川通り店）"
+      },
+      {
+        "id": "ef9c081b-bd7e-4045-8eee-0a0b07d46920",
+        "name": "カフェ＆レストラン インターリュード（コーチャンフォー新川通り店）",
+        "description": "日本最大級の複合大型書店「コーチャンフォー新川通り店」併設のヨーロッパ調カフェ＆レストラン（10:00〜21:00・L.O.20:30、元日休等）。スイーツやドリンクで優雅に休憩できる。",
+        "address": "北海道札幌市北区新川3条18-1-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.114675,
+        "lng": 141.292061,
+        "qr_token": "shuin-shinkawa_sapporo-5",
+        "cover_image_url": "/images/shinkawa_sapporo/spot5.png",
+        "f7_fragment": "大型書店コーチャンフォー併設、スイーツや珈琲で寛げるヨーロッパ調カフェ。",
+        "f7_full": "「カフェ＆レストラン インターリュード」で甘いスイーツと珈琲を味わい、旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2a9e725b-8a82-4f7c-88d9-86b4ed6d78ce",
+    "title": "新琴似・屯田兵の面影と防風林を巡る北の喫茶路",
+    "name": "新琴似・屯田兵の面影と防風林を巡る北の喫茶路",
+    "description": "新琴似屯田兵村の玄関口「JR新琴似駅」から、明治二十年創祀の「新琴似神社」、明治十九年築の洋風木造建築「新琴似屯田兵中隊本部」、自家焙煎の「JINNO COFFEE」、百年超のポプラが並ぶ「屯田防風林」を巡るルート。",
+    "region": "新琴似・屯田兵と防風林",
+    "area_name": "新琴似・屯田兵と防風林",
+    "cover_image_url": "/images/shinkotoni/route-eyecatch.png",
+    "imageUrl": "/images/shinkotoni/route-eyecatch.png",
+    "category": "屯田兵の史跡と喫茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "新琴似の駅から屯田兵の歴史を伝える神社や中隊本部、喫茶店を経て百年超の防風林を歩くなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治二十年に屯田兵が開拓守護神として祀った「新琴似神社」",
+          "description": "清らかな境内と季節の花手水が美しく、屯田兵村から続く地域の信仰を感じた。",
+          "badge_code": "shinkotoni_shrine"
+        },
+        {
+          "key": "B",
+          "text": "明治十九年建築の札幌市指定有形文化財「新琴似屯田兵中隊本部」",
+          "description": "新琴似屯田兵村の司令部だった貴重な洋風木造建築が今も美しい姿で残っていた。",
+          "badge_code": "shinkotoni_headquarters"
+        },
+        {
+          "key": "C",
+          "text": "自家焙煎珈琲とふわとろパンケーキが人気の「JINNO COFFEE」",
+          "description": "落ち着いた空間で味わう自家焙煎珈琲とパンケーキが散策の疲れを癒やしてくれた。",
+          "badge_code": "shinkotoni_jinno"
+        },
+        {
+          "key": "D",
+          "text": "樹齢百年超のポプラやヤチダモが続く「屯田防風林（ポプラ通中央緑地）」",
+          "description": "屯田兵が農作物を守るため残した延長二キロ超の防風林の木漏れ日が心地よかった。",
+          "badge_code": "shinkotoni_windbreak"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6da46953-93b4-4a5b-8112-7bf447c681a9",
+        "name": "JR新琴似駅",
+        "description": "1934年（昭和9年）11月20日開業、2000年に高架駅化（終日利用可・無料）。かつての新琴似屯田兵村の玄関口で、地下鉄南北線麻生駅にも近い利便性の高い駅。",
+        "address": "北海道札幌市北区新琴似8条1-4-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.113082,
+        "lng": 141.335295,
+        "qr_token": "shuin-shinkotoni-1",
+        "cover_image_url": "/images/shinkotoni/spot1.png",
+        "f7_fragment": "昭和九年開業、かつての新琴似屯田兵村の玄関口を担う高架駅。",
+        "f7_full": "「JR新琴似駅」に降り立ち、屯田兵の史跡と百年超の防風林を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "ee5c7db5-8732-4322-84c2-618e4f349c8d",
+        "next_spot_name": "新琴似神社"
+      },
+      {
+        "id": "ee5c7db5-8732-4322-84c2-618e4f349c8d",
+        "name": "新琴似神社",
+        "description": "明治20年（1887年）5月20日創祀（参拝自由・無料、社務所9:00〜17:00頃）。陸軍屯田兵が入植の際に開拓守護神として祀ったのが始まりで、季節の花手水や特別御朱印も人気。",
+        "address": "北海道札幌市北区新琴似8条3-1-6",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.11365,
+        "lng": 141.332171,
+        "qr_token": "shuin-shinkotoni-2",
+        "cover_image_url": "/images/shinkotoni/spot2.png",
+        "f7_fragment": "明治二十年に屯田兵が開拓守護神として祀った由緒ある鎮守社。",
+        "f7_full": "「新琴似神社」の清らかな境内で手を合わせ、屯田兵村の開拓の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "aa30cfbe-2a0f-4b5b-8910-0866d1a981bd",
+        "next_spot_name": "新琴似屯田兵中隊本部"
+      },
+      {
+        "id": "aa30cfbe-2a0f-4b5b-8910-0866d1a981bd",
+        "name": "新琴似屯田兵中隊本部",
+        "description": "新琴似神社境内に建つ明治19年（1886年）建築の洋風木造建築（札幌市指定有形文化財、外観常時可・館内公開は4〜11月火木土10:00〜16:00、入館無料）。屯田兵村司令部の貴重な遺構。",
+        "address": "北海道札幌市北区新琴似8条3-1-8",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.1135,
+        "lng": 141.331765,
+        "qr_token": "shuin-shinkotoni-3",
+        "cover_image_url": "/images/shinkotoni/spot3.png",
+        "f7_fragment": "明治十九年築の洋風木造建築で、屯田兵村司令部だった市指定有形文化財。",
+        "f7_full": "「新琴似屯田兵中隊本部」の白い洋風木造建築を眺め、明治の屯田兵の暮らしを偲んだ。",
+        "is_final": false,
+        "next_spot_id": "1e7473d7-0572-4948-8d2c-bbc50a685680",
+        "next_spot_name": "JINNO COFFEE"
+      },
+      {
+        "id": "1e7473d7-0572-4948-8d2c-bbc50a685680",
+        "name": "JINNO COFFEE",
+        "description": "自家焙煎珈琲とふわとろのパンケーキ、鉄板スパゲッティなどが人気のカフェ（10:30〜17:30等、不定休）。旧・神野喫茶店から続く温かな雰囲気でゆったり寛げる。",
+        "address": "北海道札幌市北区新琴似10条7-1-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.118693,
+        "lng": 141.328732,
+        "qr_token": "shuin-shinkotoni-4",
+        "cover_image_url": "/images/shinkotoni/spot4.png",
+        "f7_fragment": "自家焙煎珈琲とふわとろパンケーキ、鉄板スパゲッティが人気のカフェ。",
+        "f7_full": "「JINNO COFFEE」で自家焙煎珈琲とパンケーキを味わい、穏やかな休憩時間を過ごした。",
+        "is_final": false,
+        "next_spot_id": "acd6cb57-06a9-4588-80a4-322ffeb1d198",
+        "next_spot_name": "屯田防風林（ポプラ通中央緑地）"
+      },
+      {
+        "id": "acd6cb57-06a9-4588-80a4-322ffeb1d198",
+        "name": "屯田防風林（ポプラ通中央緑地）",
+        "description": "明治時代に屯田兵が農作物を強風や寒さから守るために残した自然林をルーツとする延長約2.2kmの緑地（常時開放・無料）。「美しい日本の歩きたくなるみち500選」選定。樹齢100年超のポプラが並ぶ。",
+        "address": "北海道札幌市北区屯田2条4-3",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.122601,
+        "lng": 141.333674,
+        "qr_token": "shuin-shinkotoni-5",
+        "cover_image_url": "/images/shinkotoni/spot5.png",
+        "f7_fragment": "屯田兵が残した自然林に由来し、樹齢百年超のポプラが続く延長2.2kmの緑地。",
+        "f7_full": "「屯田防風林」の木漏れ日あふれる並木道を歩き、新琴似の歴史散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c1033120-04e9-472b-85f3-c0b0ac686fe3",
+    "title": "太平・名店らーめんと手作り菓子から百年碑公園へ",
+    "name": "太平・名店らーめんと手作り菓子から百年碑公園へ",
+    "description": "「JR太平駅」から、個性派スイーツ「そふと工房プラス 太平本店」、鶏塩白湯が人気の名店「麺や けせらせら」、隠れ家洋菓子店「moco.sweet」、開基百年碑が立つ「太平公園」を巡るルート。",
+    "region": "太平・味覚と開基百年公園",
+    "area_name": "太平・味覚と開基百年公園",
+    "cover_image_url": "/images/taihei/route-eyecatch.png",
+    "imageUrl": "/images/taihei/route-eyecatch.png",
+    "category": "地元グルメと公園散歩",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "平坦で平和な願いが込められた太平の駅から人気スイーツや名店ラーメン、開基百年碑の公園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "多彩なトッピングが楽しめる「そふと工房プラス 太平本店」",
+          "description": "季節限定メニューやボリューム満点のソフトクリームが散策の楽しい寄り道になった。",
+          "badge_code": "taihei_softcream"
+        },
+        {
+          "key": "B",
+          "text": "クリーミーな鶏塩白湯が名物の「麺や けせらせら」",
+          "description": "コク深くまろやかな鶏塩白湯ラーメンの一杯に、太平エリアの名店の実力を感じた。",
+          "badge_code": "taihei_queserasera"
+        },
+        {
+          "key": "C",
+          "text": "隠れ家風の手作り洋菓子＆雑貨店「moco.sweet」",
+          "description": "可愛らしい店内に並ぶ名物mocoレモンやタルトの優しい味わいにほっこりした。",
+          "badge_code": "taihei_mocosweet"
+        },
+        {
+          "key": "D",
+          "text": "開拓百年の記念碑が立つ北区有数の広さの「太平公園」",
+          "description": "昭和六十三年建立の太平開基百年碑やタコのすべり台が地域の歩みを伝えていた。",
+          "badge_code": "taihei_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9e597342-e9e0-42bf-84b6-be8977035365",
+        "name": "JR太平駅",
+        "description": "1986年11月1日太平臨時乗降場として開業し1987年駅昇格（終日利用可・無料）。地名「太平」は平坦な地形と「太く大きく平和に発展するように」との願いから1937年に命名された。",
+        "address": "北海道札幌市北区太平2条5丁目1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.124143,
+        "lng": 141.349951,
+        "qr_token": "shuin-taihei-1",
+        "cover_image_url": "/images/taihei/spot1.png",
+        "f7_fragment": "昭和六十一年開業、平和な発展の願いを込めた地名を冠する住宅街の駅。",
+        "f7_full": "「JR太平駅」に降り立ち、名店グルメと手作り菓子、開基百年碑の公園を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "9f78af61-a9bf-4964-85ab-317ec544a943",
+        "next_spot_name": "そふと工房プラス 太平本店"
+      },
+      {
+        "id": "9f78af61-a9bf-4964-85ab-317ec544a943",
+        "name": "そふと工房プラス 太平本店",
+        "description": "多彩なトッピングや季節限定メニュー、ボリューム満点のソフトクリームで知られる太平の人気スイーツ店（11:30〜19:00頃、不定休）。",
+        "address": "北海道札幌市北区太平4条3-4-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.128971,
+        "lng": 141.349157,
+        "qr_token": "shuin-taihei-2",
+        "cover_image_url": "/images/taihei/spot2.png",
+        "f7_fragment": "多彩なトッピングと季節限定ソフトクリームが楽しめる太平の人気店。",
+        "f7_full": "「そふと工房プラス 太平本店」で冷たく美味しいソフトクリームを味わい、心が弾んだ。",
+        "is_final": false,
+        "next_spot_id": "9a381ca7-7b4c-4349-8bfd-9915c79a6bf2",
+        "next_spot_name": "麺や けせらせら"
+      },
+      {
+        "id": "9a381ca7-7b4c-4349-8bfd-9915c79a6bf2",
+        "name": "麺や けせらせら",
+        "description": "太平エリアを代表する人気ラーメン店（11:30〜15:00・17:00〜20:00頃、木曜・第3水曜休）。クリーミーでコク深い「鶏塩白湯ラーメン」や「塩らぁめん」が名物。",
+        "address": "北海道札幌市北区太平7条5-2-5",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.130619,
+        "lng": 141.354999,
+        "qr_token": "shuin-taihei-3",
+        "cover_image_url": "/images/taihei/spot3.png",
+        "f7_fragment": "クリーミーでコク深い「鶏塩白湯ラーメン」が名物の太平の名店。",
+        "f7_full": "「麺や けせらせら」で名物の鶏塩白湯ラーメンを堪能し、評判通りの美味しさに感動した。",
+        "is_final": false,
+        "next_spot_id": "f25a1dc2-828e-4a97-8366-2cbe58e30a0c",
+        "next_spot_name": "moco.sweet"
+      },
+      {
+        "id": "f25a1dc2-828e-4a97-8366-2cbe58e30a0c",
+        "name": "moco.sweet",
+        "description": "住宅街に佇む隠れ家風の手作り洋菓子＆雑貨店（10:00〜16:00売切次第終了、不定休・要SNS確認）。可愛らしい店内でケーキやタルト、名物「mocoレモン」等の焼き菓子を販売。",
+        "address": "北海道札幌市北区太平8条4-2-8",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.132865,
+        "lng": 141.353557,
+        "qr_token": "shuin-taihei-4",
+        "cover_image_url": "/images/taihei/spot4.png",
+        "f7_fragment": "住宅街に佇み、ケーキや名物「mocoレモン」が並ぶ隠れ家洋菓子店。",
+        "f7_full": "「moco.sweet」で可愛らしい手作り焼き菓子に出会い、太平の温かい魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "46ee2382-b9cd-41d1-8283-3bb2d5e68064",
+        "next_spot_name": "太平公園"
+      },
+      {
+        "id": "46ee2382-b9cd-41d1-8283-3bb2d5e68064",
+        "name": "太平公園",
+        "description": "北区有数の広さを誇る総合公園（常時開放・無料）。タコのすべり台や野球場、夏季の遊水プールを備え、公園南端には明治22年からの開拓100年を記念して1988年に建てられた「太平開基百年碑」がある。",
+        "address": "北海道札幌市北区太平12条3-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.138385,
+        "lng": 141.353746,
+        "qr_token": "shuin-taihei-5",
+        "cover_image_url": "/images/taihei/spot5.png",
+        "f7_fragment": "タコのすべり台や昭和六十三年建立の「太平開基百年碑」がある総合公園。",
+        "f7_full": "「太平公園」の開基百年碑と緑の広場を歩き、太平の暮らしと歴史を巡る旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d2620141-1c3f-4246-8b5d-d18c62231c61",
+    "title": "百合が原・花と温室の公園から名菓の喫茶室へ",
+    "name": "百合が原・花と温室の公園から名菓の喫茶室へ",
+    "description": "花と緑の博覧会に合わせて開業した「JR百合が原駅」から、パフェが人気の「OWN WAY CAFE」、四季の花々が咲く「百合が原公園」、新交流拠点「LiLiLi」、北海道銘菓の直営店「六花亭 百合が原店」を巡るルート。",
+    "region": "百合が原・花と名菓の散策",
+    "area_name": "百合が原・花と名菓の散策",
+    "cover_image_url": "/images/yurigahara/route-eyecatch.png",
+    "imageUrl": "/images/yurigahara/route-eyecatch.png",
+    "category": "花と温室と北海道銘菓",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "花と緑の博覧会に始まった百合が原駅から隠れ家カフェや広大な花公園、六花亭の喫茶室を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "季節限定パフェと手作りスイーツが評判の「OWN WAY CAFE」",
+          "description": "駅から北へ歩いて出会う隠れ家風カフェで、彩り豊かなパフェと珈琲を楽しめた。",
+          "badge_code": "yurigahara_ownway"
+        },
+        {
+          "key": "B",
+          "text": "世界各地のユリや四季の花々が咲く約25.4haの「百合が原公園」",
+          "description": "温室「緑のセンター」や園内を巡るリリートレインなど花と緑の楽園に癒やされた。",
+          "badge_code": "yurigahara_park"
+        },
+        {
+          "key": "C",
+          "text": "令和七年秋オープンの公園内新交流拠点「LiLiLi」",
+          "description": "人気ベーカリーどんぐり共同開発のフォカッチャサンドと丸美珈琲を公園で味わえた。",
+          "badge_code": "yurigahara_lilili"
+        },
+        {
+          "key": "D",
+          "text": "銘菓販売と喫茶室を併設する「六花亭 百合が原店」",
+          "description": "お馴染みの北海道銘菓とともに、公園の傍らで喫茶室のピザやスイーツを満喫できた。",
+          "badge_code": "yurigahara_rokkatei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2b74f567-a9ac-4330-87c4-3e4fb5425266",
+        "name": "JR百合が原駅",
+        "description": "1986年6月28日、百合が原公園での「'86さっぽろ花と緑の博覧会」に合わせて臨時乗降場として開業、翌1987年4月1日に駅昇格（終日利用可・無料）。花公園の玄関口。",
+        "address": "北海道札幌市北区百合が原5-2",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.130898,
+        "lng": 141.360614,
+        "qr_token": "shuin-yurigahara-1",
+        "cover_image_url": "/images/yurigahara/spot1.png",
+        "f7_fragment": "昭和六十一年の花と緑の博覧会に合わせて誕生した公園の玄関口駅。",
+        "f7_full": "「JR百合が原駅」に降り立ち、花と温室の公園と名菓の喫茶室を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c3db6c65-5b4d-475e-81a5-d85063305155",
+        "next_spot_name": "OWN WAY CAFE"
+      },
+      {
+        "id": "c3db6c65-5b4d-475e-81a5-d85063305155",
+        "name": "OWN WAY CAFE",
+        "description": "駅から北へ徒歩圏の隠れ家風人気カフェ（11:00〜19:00、不定休）。季節限定パフェや手作りスイーツ、ランチ、香り高い珈琲が評判で、ゆったりとした時間を過ごせる。",
+        "address": "北海道札幌市北区百合が原7-9-25",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.135041,
+        "lng": 141.36307,
+        "qr_token": "shuin-yurigahara-2",
+        "cover_image_url": "/images/yurigahara/spot2.png",
+        "f7_fragment": "季節限定パフェや手作りスイーツ、珈琲が評判の隠れ家風カフェ。",
+        "f7_full": "「OWN WAY CAFE」で華やかなパフェと珈琲を味わい、散策の楽しさが膨らんだ。",
+        "is_final": false,
+        "next_spot_id": "ec2149e8-12e2-421b-819c-909e1f14b903",
+        "next_spot_name": "百合が原公園"
+      },
+      {
+        "id": "ec2149e8-12e2-421b-819c-909e1f14b903",
+        "name": "百合が原公園",
+        "description": "世界各地のユリやライラック、チューリップ、ダリアなど四季の花々が咲く約25.4haの総合公園（園内24時間開放・無料、緑のセンターや世界の庭園は8:45〜17:15・月曜休、150円等）。",
+        "address": "北海道札幌市北区百合が原公園210",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.128633,
+        "lng": 141.364449,
+        "qr_token": "shuin-yurigahara-3",
+        "cover_image_url": "/images/yurigahara/spot3.png",
+        "f7_fragment": "世界のユリや四季の花々が約25.4haに咲き誇る温室付き花公園。",
+        "f7_full": "「百合が原公園」の豊かな花々と温室の緑に包まれ、季節の美しさを満喫した。",
+        "is_final": false,
+        "next_spot_id": "2cde8626-7c61-4043-8519-b0b196f33ee1",
+        "next_spot_name": "LiLiLi"
+      },
+      {
+        "id": "2cde8626-7c61-4043-8519-b0b196f33ee1",
+        "name": "LiLiLi",
+        "description": "百合が原公園内に2025年10月25日オープンした通年営業の新交流施設・カフェ（9:00〜18:00・フード10:00〜、月曜休）。人気ベーカリーどんぐり共同開発のフォカッチャサンドや丸美珈琲店の珈琲を提供。",
+        "address": "北海道札幌市北区百合が原公園213-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.126661,
+        "lng": 141.361766,
+        "qr_token": "shuin-yurigahara-4",
+        "cover_image_url": "/images/yurigahara/spot4.png",
+        "f7_fragment": "どんぐり共同開発のフォカッチャや丸美珈琲が味わえる公園内新拠点。",
+        "f7_full": "「LiLiLi」で札幌の人気店が織りなすフォカッチャサンドと珈琲を堪能した。",
+        "is_final": false,
+        "next_spot_id": "254c17d9-23c0-4a5a-8cae-2813e1bdf685",
+        "next_spot_name": "六花亭 百合が原店"
+      },
+      {
+        "id": "254c17d9-23c0-4a5a-8cae-2813e1bdf685",
+        "name": "六花亭 百合が原店",
+        "description": "百合が原公園南側に隣接する北海道銘菓「六花亭」の直営店舗（店舗10:00〜17:30・喫茶室11:00〜16:30、木曜休）。マルセイバターサンド等の銘菓購入と喫茶室でのピザやスイーツが楽しめる。",
+        "address": "北海道札幌市東区北50条東15-6-12",
+        "prefecture": "北海道",
+        "city": "札幌市東区",
+        "lat": 43.124173,
+        "lng": 141.3634,
+        "qr_token": "shuin-yurigahara-5",
+        "cover_image_url": "/images/yurigahara/spot5.png",
+        "f7_fragment": "マルセイバターサンド等の銘菓販売と喫茶室を併設する六花亭直営店。",
+        "f7_full": "「六花亭 百合が原店」で北海道銘菓を手に取り、花と甘味に満たされた旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8c39c034-218f-42d6-8935-7d5c78e1698e",
+    "title": "篠路・開拓の古社とアオサギの森を巡る散歩",
+    "name": "篠路・開拓の古社とアオサギの森を巡る散歩",
+    "description": "昭和九年開業の「JR篠路駅」から、安政二年創祀の札幌最古級「篠路神社」、荒井金助らの墓や記念保護樹木が残る「龍雲寺」、アオサギの集団営巣地「篠路五ノ戸の森緑地」、人気ベーカリー「DAD'S BAKE」を巡るルート。",
+    "region": "篠路・開拓の古社とアオサギの森",
+    "area_name": "篠路・開拓の古社とアオサギの森",
+    "cover_image_url": "/images/shinoro/route-eyecatch.png",
+    "imageUrl": "/images/shinoro/route-eyecatch.png",
+    "category": "開拓史跡と野鳥の森",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "安政二年の古社や明治の寺院、アオサギが棲む森を巡る篠路の街歩きで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "安政二年創祀・札幌最古級の古社「篠路神社」",
+          "description": "荒井金助らが祀った長い歴史と、市指定無形文化財の篠路獅子舞の伝統に触れた。",
+          "badge_code": "shinoro_shrine"
+        },
+        {
+          "key": "B",
+          "text": "荒井金助の墓と樹齢百年超イチョウが残る「龍雲寺」",
+          "description": "明治五年創建の浄土宗寺院で、開拓功労者の墓碑と巨木イチョウに歴史を感じた。",
+          "badge_code": "shinoro_ryuunji"
+        },
+        {
+          "key": "C",
+          "text": "国内有数のアオサギ集団営巣地「篠路五ノ戸の森緑地」",
+          "description": "住宅街の中に約二百種の植物とアオサギのコロニーが息づく自然の豊かさに驚いた。",
+          "badge_code": "shinoro_heron"
+        },
+        {
+          "key": "D",
+          "text": "素材の味わいを活かした地域人気ベーカリー「DAD'S BAKE」",
+          "description": "ショコラブレッドやねぎ味噌フォカッチャなど、こだわりパンの香りに癒やされた。",
+          "badge_code": "shinoro_dadsbake"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b014c5a7-c1c0-4172-8b1f-9edc80cc45a6",
+        "name": "JR篠路駅",
+        "description": "1934年（昭和9年）11月20日、札沼南線開通に伴い請願駅として開業（終日利用可・無料）。かつて農産物や茨戸油田の石油積み出し拠点として栄え、東口側には開拓期からの街並みが残る。",
+        "address": "北海道札幌市北区篠路4条7-2",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.14584,
+        "lng": 141.365202,
+        "qr_token": "shuin-shinoro-1",
+        "cover_image_url": "/images/shinoro/spot1.png",
+        "f7_fragment": "昭和九年請願駅として開業、開拓期からの街並みが東口に残る駅。",
+        "f7_full": "「JR篠路駅」に降り立ち、安政の古社とアオサギの森を巡る街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "a0ba0f9e-4499-426c-89bf-aa92952bee97",
+        "next_spot_name": "篠路神社"
+      },
+      {
+        "id": "a0ba0f9e-4499-426c-89bf-aa92952bee97",
+        "name": "篠路神社",
+        "description": "安政2年（1855年）に荒井金助らが「若宮八幡」として創祀した札幌最古級の神社（境内自由・無料）。市指定無形文化財「篠路獅子舞」やペルシュロン種の記念碑、樹齢150年超のしだれ柳がある。",
+        "address": "北海道札幌市北区篠路4条7-2-33",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.146111,
+        "lng": 141.364917,
+        "qr_token": "shuin-shinoro-2",
+        "cover_image_url": "/images/shinoro/spot2.png",
+        "f7_fragment": "安政二年創祀、札幌最古級の古社でしだれ柳と獅子舞の伝統を伝える社。",
+        "f7_full": "「篠路神社」の静かな境内で手を合わせ、安政期から続く篠路の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "d25bb71f-452b-46ba-8c4f-6e2c101f831f",
+        "next_spot_name": "龍雲寺"
+      },
+      {
+        "id": "d25bb71f-452b-46ba-8c4f-6e2c101f831f",
+        "name": "龍雲寺",
+        "description": "1872年（明治5年）に荒井好太郎の妻ナツが開拓使から資金を借りて創建した浄土宗寺院（参拝自由・無料）。旧本堂は北海道開拓の村へ移築現存し、境内に荒井金助と早山清太郎の墓や樹齢100年超イチョウがある。",
+        "address": "北海道札幌市北区篠路5条10-10-21",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.149974,
+        "lng": 141.372167,
+        "qr_token": "shuin-shinoro-3",
+        "cover_image_url": "/images/shinoro/spot3.png",
+        "f7_fragment": "明治五年創建、開拓功労者の墓や樹齢百年超のイチョウが残る浄土宗寺院。",
+        "f7_full": "「龍雲寺」の記念保護樹木のイチョウを見上げ、開拓の恩人たちの足跡に触れた。",
+        "is_final": false,
+        "next_spot_id": "d9dd0b5a-bbb1-4485-89b7-a991a259eb68",
+        "next_spot_name": "篠路五ノ戸の森緑地"
+      },
+      {
+        "id": "d9dd0b5a-bbb1-4485-89b7-a991a259eb68",
+        "name": "篠路五ノ戸の森緑地",
+        "description": "明治〜大正期の開拓農家の屋敷林をルーツとする都市緑地（終日開放・無料、2024年市「活用促進景観資源」登録）。約200種の植物が自生し、国内有数のアオサギの集団営巣地（コロニー）として知られる。",
+        "address": "北海道札幌市北区篠路3条10-4",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.143015,
+        "lng": 141.374479,
+        "qr_token": "shuin-shinoro-4",
+        "cover_image_url": "/images/shinoro/spot4.png",
+        "f7_fragment": "開拓農家の屋敷林をルーツとし、国内有数のアオサギ営巣地として知られる森。",
+        "f7_full": "「篠路五ノ戸の森緑地」の木立の中を歩き、アオサギが棲む街中の森に感動した。",
+        "is_final": false,
+        "next_spot_id": "1125feaa-1f96-4899-8271-92fa75068b59",
+        "next_spot_name": "DAD'S BAKE"
+      },
+      {
+        "id": "1125feaa-1f96-4899-8271-92fa75068b59",
+        "name": "DAD'S BAKE",
+        "description": "アメリカンな外観の地域人気ベーカリー（水〜金9:00〜19:00・土日祝8:00〜18:00売切次第終了、月火休）。マーガリンや余計な添加物に頼らず素材の味を活かした「ショコラブレッド」や「ねぎ味噌フォカッチャ」が評判。",
+        "address": "北海道札幌市北区篠路1条9-1-6",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.13847,
+        "lng": 141.36905,
+        "qr_token": "shuin-shinoro-5",
+        "cover_image_url": "/images/shinoro/spot5.png",
+        "f7_fragment": "素材の味を活かしたショコラブレッドやねぎ味噌フォカッチャが評判のパン店。",
+        "f7_full": "「DAD'S BAKE」で香り高いこだわりパンを手に入れ、篠路の街歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2c447335-9e81-40f3-8260-fffe561f2297",
+    "title": "拓北・天然酵母パンと公園の並木をめぐる旅",
+    "name": "拓北・天然酵母パンと公園の並木をめぐる旅",
+    "description": "ひまわり団地造成に伴い誕生した「JR拓北駅」から、手作りスイーツ「スイーツピース」、一軒家カフェ「cafe olive」、人気店「天然酵母パン 伊久里」、列車を望む「拓北公園」を巡るルート。",
+    "region": "拓北・天然酵母パンと公園並木",
+    "area_name": "拓北・天然酵母パンと公園並木",
+    "cover_image_url": "/images/takuhoku/route-eyecatch.png",
+    "imageUrl": "/images/takuhoku/route-eyecatch.png",
+    "category": "ベーカリーとトレインビュー",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "団地とともに発展した拓北の駅から駅近スイーツや一軒家カフェ、天然酵母パン、拓北公園を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「幸せカタラーナ」など手作りスイーツの「スイーツピース」",
+          "description": "駅から歩いてすぐの場所で、温かい想いが込められた焼き菓子やスイーツに出会えた。",
+          "badge_code": "takuhoku_sweetspiece"
+        },
+        {
+          "key": "B",
+          "text": "本格パスタと自家製ジェラートの一軒家「cafe olive」",
+          "description": "落ち着いた一軒家の空間で味わう前菜付きランチと自家焙煎珈琲が贅沢だった。",
+          "badge_code": "takuhoku_olive"
+        },
+        {
+          "key": "C",
+          "text": "道産小麦と天然酵母のクロワッサン「天然酵母パン 伊久里」",
+          "description": "朝から焼きたての香りが漂う人気店で、カリッと香ばしいパンに感動した。",
+          "badge_code": "takuhoku_ikuri"
+        },
+        {
+          "key": "D",
+          "text": "JR学園都市線の列車を望む約4haの「拓北公園」",
+          "description": "広々とした芝生と緑の向こうを走る列車を眺め、爽やかな休日気分を味わえた。",
+          "badge_code": "takuhoku_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a141ab1b-eb65-4f0f-868d-527fdb187936",
+        "name": "JR拓北駅",
+        "description": "1967年（昭和42年）12月15日、ひまわり団地造成に伴い請願駅「東篠路駅」として開業、1995年現駅名へ改称・複線化（終日利用可・無料）。住宅街の暮らしを支える駅。",
+        "address": "北海道札幌市北区拓北6条3-9-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.155589,
+        "lng": 141.381069,
+        "qr_token": "shuin-takuhoku-1",
+        "cover_image_url": "/images/takuhoku/spot1.png",
+        "f7_fragment": "昭和四十二年ひまわり団地造成に伴い「東篠路駅」として開業した駅。",
+        "f7_full": "「JR拓北駅」に降り立ち、天然酵母パンと一軒家カフェ、緑の公園を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "39fe04ac-47d0-4c7e-81d7-1f19874ac7cf",
+        "next_spot_name": "スイーツピース"
+      },
+      {
+        "id": "39fe04ac-47d0-4c7e-81d7-1f19874ac7cf",
+        "name": "スイーツピース",
+        "description": "JR拓北駅から徒歩約1〜2分の手作りスイーツ専門店（10:00〜17:00、日祝・お盆・年末年始休）。「幸せカタラーナ」「幸せレモンケーキ」「幸せカシュカシュ」などが人気。",
+        "address": "北海道札幌市北区拓北6条2-7-14",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.155715,
+        "lng": 141.380115,
+        "qr_token": "shuin-takuhoku-2",
+        "cover_image_url": "/images/takuhoku/spot2.png",
+        "f7_fragment": "「幸せカタラーナ」やレモンケーキを手作りで届ける駅近スイーツ専門店。",
+        "f7_full": "「スイーツピース」で優しさの詰まった手作りスイーツに出会い、心がほっこりした。",
+        "is_final": false,
+        "next_spot_id": "292de74c-bbb2-4062-881c-ef3d1d62d90a",
+        "next_spot_name": "cafe olive"
+      },
+      {
+        "id": "292de74c-bbb2-4062-881c-ef3d1d62d90a",
+        "name": "cafe olive",
+        "description": "JR拓北駅から徒歩約7分の落ち着いた一軒家カフェ（11:00〜16:00・L.O.15:00、日月休・月曜以外の祝日営業）。本格パスタ・ピッツァ・ニョッキのランチセットや自家製ジェラートが人気。",
+        "address": "北海道札幌市北区拓北7条2-1-3",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.15752,
+        "lng": 141.37679,
+        "qr_token": "shuin-takuhoku-3",
+        "cover_image_url": "/images/takuhoku/spot3.png",
+        "f7_fragment": "本格パスタ・ピッツァや自家製ジェラートが人気の落ち着いた一軒家カフェ。",
+        "f7_full": "「cafe olive」の心地よい空間で本格パスタと珈琲を堪能し、豊かな時間を過ごした。",
+        "is_final": false,
+        "next_spot_id": "00b1ef11-13aa-4416-863e-bd2f3024450e",
+        "next_spot_name": "天然酵母パン 伊久里"
+      },
+      {
+        "id": "00b1ef11-13aa-4416-863e-bd2f3024450e",
+        "name": "天然酵母パン 伊久里",
+        "description": "JR拓北駅北口から徒歩約5分の人気ベーカリー（7:00〜17:00売切次第終了、火曜休・祝日の場合営業）。北海道産小麦と天然酵母を使ったパンやカリッとした食感のクロワッサンが評判。",
+        "address": "北海道札幌市北区拓北8条3-1-6",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.15888,
+        "lng": 141.381015,
+        "qr_token": "shuin-takuhoku-4",
+        "cover_image_url": "/images/takuhoku/spot4.png",
+        "f7_fragment": "北海道産小麦と天然酵母のパンや香ばしいクロワッサンが評判のベーカリー。",
+        "f7_full": "「天然酵母パン 伊久里」で香り豊かな焼き立てパンを選び、嬉しいお土産になった。",
+        "is_final": false,
+        "next_spot_id": "b3366cfb-0ecf-4de4-8bda-1fb4ba4e3887",
+        "next_spot_name": "拓北公園"
+      },
+      {
+        "id": "b3366cfb-0ecf-4de4-8bda-1fb4ba4e3887",
+        "name": "拓北公園",
+        "description": "敷地面積約4ヘクタールの広大な地区公園（終日開放・無料）。大型遊具や芝生の多目的広場、無料パークゴルフ場を備え、すぐそばをJR学園都市線の列車が走るトレインビュースポットとしても親しまれる。",
+        "address": "北海道札幌市北区拓北5条5-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.154238,
+        "lng": 141.386935,
+        "qr_token": "shuin-takuhoku-5",
+        "cover_image_url": "/images/takuhoku/spot5.png",
+        "f7_fragment": "約4haの広大な敷地のそばをJR列車が走るトレインビューの地区公園。",
+        "f7_full": "「拓北公園」の芝生広場から走り抜ける列車を眺め、拓北の街歩きを爽やかに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e8423893-3acf-4500-8f42-2945ca9b0c9e",
+    "title": "あいの里公園・緑の街区からモール泉へ",
+    "name": "あいの里公園・緑の街区からモール泉へ",
+    "description": "札幌市最北端の鉄道駅「JRあいの里公園駅」から、駅徒歩一分の健康カフェ「バロンドールカフェ」、緑豊かな「あいの里東公園」、「南あいの里公園」、モール泉の天然温泉「札幌あいの里温泉 なごみ」を巡るルート。",
+    "region": "あいの里公園・緑の街区と温泉",
+    "area_name": "あいの里公園・緑の街区と温泉",
+    "cover_image_url": "/images/ainosato_koen/route-eyecatch.png",
+    "imageUrl": "/images/ainosato_koen/route-eyecatch.png",
+    "category": "ニュータウン散歩と温泉",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "札幌市最北端の鉄道駅・あいの里公園駅から健康志向のカフェや緑の住宅街公園を経てモール泉へと巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "札幌市最北端の鉄道駅で旧名・釜谷臼駅だった「JRあいの里公園駅」",
+          "description": "昭和三十三年開業の歴史と、ニュータウン造成による移転・改称の歩みを知った。",
+          "badge_code": "ainosato_koen_station"
+        },
+        {
+          "key": "B",
+          "text": "高野豆腐入り煮込みハンバーグが人気の「バロンドールカフェ」",
+          "description": "十品目以上の美健ランチや雑穀米など体に優しい料理に元気が湧いた。",
+          "badge_code": "ainosato_koen_ballondor"
+        },
+        {
+          "key": "C",
+          "text": "小高い築山と東屋が親しまれる「あいの里東公園」",
+          "description": "あいの里の街区に広がる開放的な芝生と緑の散歩道に癒やされた。",
+          "badge_code": "ainosato_koen_eastpark"
+        },
+        {
+          "key": "D",
+          "text": "茶褐色のモール泉系の湯で温まる「札幌あいの里温泉 なごみ」",
+          "description": "地域に親しまれる天然温泉と露天風呂に浸かり、散策の疲れがすっきり流れた。",
+          "badge_code": "ainosato_koen_nagomi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a9784ade-5991-4b1d-8d5a-f45fc1746ff9",
+        "name": "JRあいの里公園駅",
+        "description": "1958年（昭和33年）7月1日「釜谷臼駅」として開業、1986年ニュータウン造成時に現在地へ約600m移転、1995年現駅名へ改称（終日利用可・無料）。札幌市最北端の鉄道駅。",
+        "address": "北海道札幌市北区あいの里2条8-1",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.161246,
+        "lng": 141.41333,
+        "qr_token": "shuin-ainosato_koen-1",
+        "cover_image_url": "/images/ainosato_koen/spot1.png",
+        "f7_fragment": "昭和三十三年「釜谷臼駅」として開業した札幌市最北端の鉄道駅。",
+        "f7_full": "「JRあいの里公園駅」に降り立ち、緑豊かな南街区とモール泉を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "01fe2a7c-6882-49c9-8244-8e7b2ce36d50",
+        "next_spot_name": "バロンドールカフェ"
+      },
+      {
+        "id": "01fe2a7c-6882-49c9-8244-8e7b2ce36d50",
+        "name": "バロンドールカフェ",
+        "description": "JRあいの里公園駅から徒歩約1分のスポーツクラブ1階にあるカフェ（10:00〜16:00・L.O.15:30、日月祝休）。高野豆腐入り煮込みハンバーグや約10品目が摂れる「美健ランチ」が評判。",
+        "address": "北海道札幌市北区あいの里2条8-2-2",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.161157,
+        "lng": 141.412575,
+        "qr_token": "shuin-ainosato_koen-2",
+        "cover_image_url": "/images/ainosato_koen/spot2.png",
+        "f7_fragment": "駅徒歩一分、高野豆腐入り煮込みハンバーグや美健ランチが人気のカフェ。",
+        "f7_full": "「バロンドールカフェ」で体に優しい美健ランチをいただき、散策の元気を満たした。",
+        "is_final": false,
+        "next_spot_id": "62323ce4-712e-4fa7-8cbd-5ea0bc2f7075",
+        "next_spot_name": "あいの里東公園"
+      },
+      {
+        "id": "62323ce4-712e-4fa7-8cbd-5ea0bc2f7075",
+        "name": "あいの里東公園",
+        "description": "あいの里2条の住宅街にある近隣公園（終日開放・無料）。野球場やテニスコート、大型複合遊具のほか、小高い築山や東屋があり街歩きの穏やかな立ち寄り先として親しまれている。",
+        "address": "北海道札幌市北区あいの里2条7-12",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.15836,
+        "lng": 141.408502,
+        "qr_token": "shuin-ainosato_koen-3",
+        "cover_image_url": "/images/ainosato_koen/spot3.png",
+        "f7_fragment": "小高い築山や東屋、スポーツ施設が揃うあいの里2条の憩いの近隣公園。",
+        "f7_full": "「あいの里東公園」の緑と築山の景色を楽しみ、ニュータウンの穏やかさを感じた。",
+        "is_final": false,
+        "next_spot_id": "42e78834-1366-498a-821d-0c2f77a772ce",
+        "next_spot_name": "南あいの里公園"
+      },
+      {
+        "id": "42e78834-1366-498a-821d-0c2f77a772ce",
+        "name": "南あいの里公園",
+        "description": "南あいの里の閑静な住宅街に整備された緑豊かな公園（終日開放・無料）。広々とした芝生と遊歩道が続き、地域の穏やかな風景を楽しみながら歩くことができる。",
+        "address": "北海道札幌市北区南あいの里7-17-10",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.152291,
+        "lng": 141.405232,
+        "qr_token": "shuin-ainosato_koen-4",
+        "cover_image_url": "/images/ainosato_koen/spot4.png",
+        "f7_fragment": "南あいの里の閑静な住宅街に芝生と遊歩道が広がる緑豊かな公園。",
+        "f7_full": "「南あいの里公園」の爽やかな遊歩道を歩き、温泉への期待を高めた。",
+        "is_final": false,
+        "next_spot_id": "941ab09a-695c-4e91-84c7-926eae10aa79",
+        "next_spot_name": "札幌あいの里温泉 なごみ"
+      },
+      {
+        "id": "941ab09a-695c-4e91-84c7-926eae10aa79",
+        "name": "札幌あいの里温泉 なごみ",
+        "description": "南あいの里にある地域密着の日帰り天然温泉（10:00〜23:00・最終受付22:30、年中無休・メンテ休あり、2026年10月改定で大人550円・小学生150円・幼児80円）。茶褐色のモール泉系の湯と露天風呂が評判。",
+        "address": "北海道札幌市北区南あいの里5-1-20",
+        "prefecture": "北海道",
+        "city": "札幌市北区",
+        "lat": 43.152472,
+        "lng": 141.398558,
+        "qr_token": "shuin-ainosato_koen-5",
+        "cover_image_url": "/images/ainosato_koen/spot5.png",
+        "f7_fragment": "茶褐色のモール泉系の湯と露天風呂で温まれる地域密着の天然温泉。",
+        "f7_full": "「札幌あいの里温泉 なごみ」のモール泉にゆったり浸かり、あいの里の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3da8bd8b-3a8a-42d9-83e3-fd0317bff71b",
+    "title": "ロイズタウン・カカオの香りと北欧の道の駅",
+    "name": "ロイズタウン・カカオの香りと北欧の道の駅",
+    "description": "令和四年開業の新駅「JRロイズタウン駅」から、「ロイズ ローズガーデン」、体験型施設「ロイズカカオ＆チョコレートタウン」、「ロイズタウン工場直売店」、「北欧の風 道の駅とうべつ」を巡るルート。",
+    "region": "ロイズタウン・甘い香りの旅",
+    "area_name": "ロイズタウン・甘い香りの旅",
+    "cover_image_url": "/images/royce_town/route-eyecatch.png",
+    "imageUrl": "/images/royce_town/route-eyecatch.png",
+    "category": "カカオ工場と北欧道の駅",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "令和四年開業のロイズタウン駅からバラの庭や体験型チョコ工場、北欧風の道の駅を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "JR北海道在来線二十年ぶりの新駅「JRロイズタウン駅」",
+          "description": "当別町とロイズコンフェクトが連携して設置した請願駅から甘い旅が始まった。",
+          "badge_code": "royce_town_station"
+        },
+        {
+          "key": "B",
+          "text": "カカオとチョコの魅力を学ぶ「ロイズカカオ＆チョコレートタウン」",
+          "description": "ゲームや展示、工場ライン見学を通じてカカオからチョコができるまでを楽しく学べた。",
+          "badge_code": "royce_town_museum"
+        },
+        {
+          "key": "C",
+          "text": "限定パンやソフトが揃う「ロイズタウン工場直売店」",
+          "description": "ジャンボメロンパンや限定ピザ、駅モチーフ限定グッズなどワクワクが止まらなかった。",
+          "badge_code": "royce_town_shop"
+        },
+        {
+          "key": "D",
+          "text": "スウェーデン姉妹都市にちなむ「北欧の風 道の駅とうべつ」",
+          "description": "北欧風の洗練された建物で地元食材イタリアンや農産物直売所を楽しめた。",
+          "badge_code": "royce_town_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4a67e5de-da7a-4f68-8f3d-4269e2b24410",
+        "name": "JRロイズタウン駅",
+        "description": "2022年（令和4年）3月12日開業、当別町とロイズコンフェクトが連携して設置した請願駅（終日利用可・無料）。JR北海道在来線では20年ぶりの新駅として注目された。",
+        "address": "北海道石狩郡当別町当別太1225-9",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.180011,
+        "lng": 141.436508,
+        "qr_token": "shuin-royce_town-1",
+        "cover_image_url": "/images/royce_town/spot1.png",
+        "f7_fragment": "令和四年開業、当別町とロイズが連携して設けた在来線二十年ぶりの新駅。",
+        "f7_full": "「JRロイズタウン駅」に降り立ち、カカオの香りと北欧の道の駅を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "dcb8cf7b-7f13-4cd6-8582-9533a3f25beb",
+        "next_spot_name": "ロイズ ローズガーデン（ロイズタウン工場）"
+      },
+      {
+        "id": "dcb8cf7b-7f13-4cd6-8582-9533a3f25beb",
+        "name": "ロイズ ローズガーデン（ロイズタウン工場）",
+        "description": "ロイズタウン工場の店舗前に広がる無料ガーデン（冬季は積雪期）。初夏から夏にかけて100種以上のバラや宿根草が咲き誇り、工場散策のフォトスポットとして親しまれている。",
+        "address": "北海道石狩郡当別町ロイズタウン1-1",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.182723,
+        "lng": 141.432232,
+        "qr_token": "shuin-royce_town-2",
+        "cover_image_url": "/images/royce_town/spot2.png",
+        "f7_fragment": "工場の店舗前に広がり、初夏〜夏に百種以上のバラが咲く無料庭園。",
+        "f7_full": "「ロイズ ローズガーデン」の鮮やかな花々を眺め、工場体験への期待が膨らんだ。",
+        "is_final": false,
+        "next_spot_id": "208c7dd2-bcad-4db0-8d03-155598c55b0e",
+        "next_spot_name": "ロイズカカオ＆チョコレートタウン"
+      },
+      {
+        "id": "208c7dd2-bcad-4db0-8d03-155598c55b0e",
+        "name": "ロイズカカオ＆チョコレートタウン",
+        "description": "2023年8月グランドオープンの体験型施設（10:00〜17:00・最終入場15:00、不定休、大人1,200円・こども500円・3歳以下無料）。カカオ栽培からチョコレート製造までを展示や工場ライン見学で楽しく学べる。",
+        "address": "北海道石狩郡当別町ロイズタウン1-1",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.182772,
+        "lng": 141.432117,
+        "qr_token": "shuin-royce_town-3",
+        "cover_image_url": "/images/royce_town/spot3.png",
+        "f7_fragment": "カカオ栽培から製造までを展示と工場ライン見学で学べる体験型施設。",
+        "f7_full": "「ロイズカカオ＆チョコレートタウン」で甘い香りと迫力の製造工程を体感した。",
+        "is_final": false,
+        "next_spot_id": "8b33b538-f4ff-4aed-8124-86c1d23f9f62",
+        "next_spot_name": "ロイズタウン工場直売店"
+      },
+      {
+        "id": "8b33b538-f4ff-4aed-8124-86c1d23f9f62",
+        "name": "ロイズタウン工場直売店",
+        "description": "工場1階の無料入場エリアにある直売店（9:00〜18:00、無休）。200種以上のチョコ・焼き菓子に加え、直売所限定の「ジャンボメロンパン」や「ロイズタウンピザ」、駅モチーフ限定グッズも揃う。",
+        "address": "北海道石狩郡当別町ロイズタウン1-1",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.182723,
+        "lng": 141.432232,
+        "qr_token": "shuin-royce_town-4",
+        "cover_image_url": "/images/royce_town/spot4.png",
+        "f7_fragment": "二百種以上の菓子や限定ジャンボメロンパンが揃う工場1階の直売店。",
+        "f7_full": "「ロイズタウン工場直売店」で限定パンとスイーツを手に入れ、大満足の買い物となった。",
+        "is_final": false,
+        "next_spot_id": "d0564156-6165-49fb-8c65-b2ae0e654424",
+        "next_spot_name": "北欧の風 道の駅とうべつ"
+      },
+      {
+        "id": "d0564156-6165-49fb-8c65-b2ae0e654424",
+        "name": "北欧の風 道の駅とうべつ",
+        "description": "国道337号沿いの北欧風道の駅（3〜11月9:00〜17:00・無休、12〜2月10:00〜16:00・水曜休等）。姉妹都市スウェーデン・レクサンドにちなみ、「カフェ テルツィーナ」の地元食材イタリアンや農産物直売所を備える。",
+        "address": "北海道石狩郡当別町当別太774-11",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.177209,
+        "lng": 141.448056,
+        "qr_token": "shuin-royce_town-5",
+        "cover_image_url": "/images/royce_town/spot5.png",
+        "f7_fragment": "スウェーデン姉妹都市にちなみ地元食材イタリアンも味わえる北欧風道の駅。",
+        "f7_full": "「北欧の風 道の駅とうべつ」で当別の食の恵みを堪能し、甘い旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2aa41e9e-41a8-4a4f-8189-62276c682d1d",
+    "title": "太美・北欧風の駅舎から老舗の味と温泉へ",
+    "name": "太美・北欧風の駅舎から老舗の味と温泉へ",
+    "description": "スウェーデンヒルズに合わせて改築された北欧風駅舎の「JR太美駅」から、元祖テールラーメン発祥の「本家なかむら 本店」、農園レストラン「ぺこぺこのはたけ」、「西当別神社」、美肌の湯「ふとみ銘泉 万葉の湯」を巡るルート。",
+    "region": "太美・北欧駅と老舗の味",
+    "area_name": "太美・北欧駅と老舗の味",
+    "cover_image_url": "/images/futomi/route-eyecatch.png",
+    "imageUrl": "/images/futomi/route-eyecatch.png",
+    "category": "北欧駅舎と名湯散歩",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北欧風の駅舎が迎える太美駅から元祖テールラーメンの老舗や農園カフェ、美肌の湯を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "スウェーデンヒルズに合わせ改築された北欧風駅舎「JR太美駅」",
+          "description": "旧・石狩太美駅の歴史と、令和四年の駅名改称を経て親しまれる愛らしい駅舎に和んだ。",
+          "badge_code": "futomi_station"
+        },
+        {
+          "key": "B",
+          "text": "元祖テールラーメン発祥の老舗「本家なかむら 本店」",
+          "description": "駅近くで長く愛される濃厚な牛テールスープのラーメンに思わず唸った。",
+          "badge_code": "futomi_nakamura"
+        },
+        {
+          "key": "C",
+          "text": "共生型コミュニティ農園の「Restaurant＆Cafe ぺこぺこのはたけ」",
+          "description": "当別町や道産の新鮮野菜を使った彩り豊かな小鉢御膳に心が温まった。",
+          "badge_code": "futomi_pekopeko"
+        },
+        {
+          "key": "D",
+          "text": "弱アルカリ性「美肌の湯」が自慢の「ふとみ銘泉 万葉の湯」",
+          "description": "駅から徒歩圏の大型天然温泉で露天風呂に浸かり、極上の湯浴みを満喫できた。",
+          "badge_code": "futomi_manyo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2db02d52-8508-4712-87f0-faec03edc940",
+        "name": "JR太美駅",
+        "description": "1934年（昭和9年）11月20日「石狩太美駅」として開業、1990年近隣「スウェーデンヒルズ」に合わせ北欧風駅舎に改築、2022年3月「太美駅」へ改称（終日利用可・無料）。",
+        "address": "北海道石狩郡当別町太美町1499",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.189671,
+        "lng": 141.448476,
+        "qr_token": "shuin-futomi-1",
+        "cover_image_url": "/images/futomi/spot1.png",
+        "f7_fragment": "スウェーデンヒルズに合わせて改築された北欧風駅舎が迎える駅。",
+        "f7_full": "「JR太美駅」の北欧風駅舎に降り立ち、老舗のラーメンと美肌の湯を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "71d6c5ad-d57f-4184-8dbb-7d9fed0e3774",
+        "next_spot_name": "本家なかむら 本店"
+      },
+      {
+        "id": "71d6c5ad-d57f-4184-8dbb-7d9fed0e3774",
+        "name": "本家なかむら 本店",
+        "description": "JR太美駅から徒歩約1〜2分の老舗ラーメン＆焼肉店（11:00〜14:30等・17:00〜20:00、月火休）。「元祖テールラーメン発祥の店」として知られ、牛テールスープや大きなチャーシュー麺が人気。",
+        "address": "北海道石狩郡当別町太美町1499-47",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.190398,
+        "lng": 141.447976,
+        "qr_token": "shuin-futomi-2",
+        "cover_image_url": "/images/futomi/spot2.png",
+        "f7_fragment": "駅徒歩二分、「元祖テールラーメン発祥の店」として知られる老舗。",
+        "f7_full": "「本家なかむら 本店」で元祖テールラーメンを味わい、太美の看板グルメに唸った。",
+        "is_final": false,
+        "next_spot_id": "5671e35d-8e4c-4e31-873e-225e14b0deff",
+        "next_spot_name": "Restaurant＆Cafe ぺこぺこのはたけ"
+      },
+      {
+        "id": "5671e35d-8e4c-4e31-873e-225e14b0deff",
+        "name": "Restaurant＆Cafe ぺこぺこのはたけ",
+        "description": "共生型コミュニティ農園が手掛けるレストラン＆カフェ（ランチ11:30〜13:30・喫茶11:00〜16:00、土日祝休・第2第4土曜営業）。当別町や道産の新鮮野菜を使った小鉢御膳やスイーツを楽しめる。",
+        "address": "北海道石狩郡当別町太美町1481-6",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.191199,
+        "lng": 141.444587,
+        "qr_token": "shuin-futomi-3",
+        "cover_image_url": "/images/futomi/spot3.png",
+        "f7_fragment": "共生型コミュニティ農園が手掛け、地元野菜の御膳や喫茶を楽しめる店。",
+        "f7_full": "「ぺこぺこのはたけ」で採れたて野菜とスイーツに触れ、当別の大地の温もりを感じた。",
+        "is_final": false,
+        "next_spot_id": "e9071d2f-b56f-4c71-8c19-2cb091a2707a",
+        "next_spot_name": "西当別神社"
+      },
+      {
+        "id": "e9071d2f-b56f-4c71-8c19-2cb091a2707a",
+        "name": "西当別神社",
+        "description": "1893年建立の宇佐八幡小祠と出雲大社分霊を1902年に合祀して「太美神社」を新設、1909年「西当別神社」へ改称、1934年札沼線開通に伴い現在地へ移転した地域の鎮守（参拝自由・無料）。",
+        "address": "北海道石狩郡当別町字当別太612",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.185696,
+        "lng": 141.439913,
+        "qr_token": "shuin-futomi-4",
+        "cover_image_url": "/images/futomi/spot4.png",
+        "f7_fragment": "明治期の合祀に始まり昭和九年の札沼線開通に伴い現在地へ移った鎮守。",
+        "f7_full": "「西当別神社」の静かな社殿に手を合わせ、鉄道と歩んだ地域の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "c715ff29-e9e9-43e3-864b-eff7409dc9e9",
+        "next_spot_name": "ふとみ銘泉 万葉の湯"
+      },
+      {
+        "id": "c715ff29-e9e9-43e3-864b-eff7409dc9e9",
+        "name": "ふとみ銘泉 万葉の湯",
+        "description": "JR太美駅から徒歩約5分の大型天然温泉施設（10:00〜翌9:00・大浴場10:00〜24:00等、年中無休、日帰り大人1,800円・小学生700円・幼児300円）。弱アルカリ性の「美肌の湯」と露天風呂が自慢。",
+        "address": "北海道石狩郡当別町太美町1695",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.188244,
+        "lng": 141.444879,
+        "qr_token": "shuin-futomi-5",
+        "cover_image_url": "/images/futomi/spot5.png",
+        "f7_fragment": "駅徒歩五分、弱アルカリ性の「美肌の湯」と露天風呂を備えた天然温泉。",
+        "f7_full": "「ふとみ銘泉 万葉の湯」の美肌の湯にゆっくり浸かり、太美の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f8c29ce0-7a4d-4daa-8e2b-a4618093d331",
+    "title": "伊達の開拓史と赤れんがの街を巡る当別散歩",
+    "name": "伊達の開拓史と赤れんがの街を巡る当別散歩",
+    "description": "「JR当別駅」から、昭和十六年築の「ふれあい倉庫（当別赤れんが6号）」、西海岸風の「Cafe & Kitchen Offshore」、明治十三年築の「伊達邸別館・当別伊達記念館」、伊達邦直公を祀る「当別神社」を巡るルート。",
+    "region": "当別・伊達開拓史と赤れんが",
+    "area_name": "当別・伊達開拓史と赤れんが",
+    "cover_image_url": "/images/tobetsu/route-eyecatch.png",
+    "imageUrl": "/images/tobetsu/route-eyecatch.png",
+    "category": "開拓史跡と赤れんが倉庫",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "伊達邦直公の開拓史が息づく当別の駅から赤れんが倉庫や人気カフェ、記念館、当別神社を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和十六年築の旧農協倉庫を活かした「ふれあい倉庫（当別赤れんが6号）」",
+          "description": "駅南口すぐの赤れんが倉庫に朝採れ野菜や当別の特産品が並び、街の温もりを感じた。",
+          "badge_code": "tobetsu_warehouse"
+        },
+        {
+          "key": "B",
+          "text": "西海岸風の空間で地元食材を味わう「Cafe & Kitchen Offshore」",
+          "description": "地元食材のハンバーガーやパスタ、ご当地パフェの美味しさに思わず笑顔になった。",
+          "badge_code": "tobetsu_offshore"
+        },
+        {
+          "key": "C",
+          "text": "明治十三年築の歴史的建造物「伊達邸別館・当別伊達記念館」",
+          "description": "仙台藩岩出山領主・伊達邦直公ゆかりの品々から当別開拓の気迫が伝わってきた。",
+          "badge_code": "tobetsu_date_museum"
+        },
+        {
+          "key": "D",
+          "text": "伊達邦直公を御祭神として祀る当別町の総鎮守「当別神社」",
+          "description": "阿蘇公園に隣接する静かな杜で、開拓の祖を祀る社に手を合わせ心が整った。",
+          "badge_code": "tobetsu_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "21f146fe-c7d7-47f1-81b1-ed045ace93a0",
+        "name": "JR当別駅",
+        "description": "1934年（昭和9年）11月20日「石狩当別駅」として開業、2022年3月12日「当別駅」へ改称（終日利用可・無料）。札幌近郊と当別市街を結ぶJR札沼線の拠点駅。",
+        "address": "北海道石狩郡当別町錦町55-9",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.222328,
+        "lng": 141.514551,
+        "qr_token": "shuin-tobetsu-1",
+        "cover_image_url": "/images/tobetsu/spot1.png",
+        "f7_fragment": "昭和九年開業、令和四年に「石狩当別」から改称された札沼線の拠点駅。",
+        "f7_full": "「JR当別駅」に降り立ち、伊達邦直公の開拓史と赤れんがの街を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "809a0112-a161-4748-8297-d23c1b2ca2fa",
+        "next_spot_name": "ふれあい倉庫（当別赤れんが6号）"
+      },
+      {
+        "id": "809a0112-a161-4748-8297-d23c1b2ca2fa",
+        "name": "ふれあい倉庫（当別赤れんが6号）",
+        "description": "JR当別駅南口から徒歩約1分、1941年築の旧農協レンガ倉庫を再利用した地域交流・物販施設（4〜10月9:00〜18:00・11〜3月〜16:00、月曜休、入場無料）。朝採れ野菜や当別特産品を販売。",
+        "address": "北海道石狩郡当別町錦町294-4",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.221639,
+        "lng": 141.513858,
+        "qr_token": "shuin-tobetsu-2",
+        "cover_image_url": "/images/tobetsu/spot2.png",
+        "f7_fragment": "駅南口徒歩一分、昭和十六年築の旧農協レンガ倉庫を活かした物販施設。",
+        "f7_full": "「ふれあい倉庫」の温かな赤れんが空間で当別の特産品に触れ、心が弾んだ。",
+        "is_final": false,
+        "next_spot_id": "14edea7b-07d9-4330-8275-b685fa8de854",
+        "next_spot_name": "Cafe & Kitchen Offshore（カフェ＆キッチン オフショア）"
+      },
+      {
+        "id": "14edea7b-07d9-4330-8275-b685fa8de854",
+        "name": "Cafe & Kitchen Offshore（カフェ＆キッチン オフショア）",
+        "description": "JR当別駅から徒歩約5分（11:30〜21:00・L.O.20:30・17:00以降は5名以上予約制、月曜・第2第4火曜休）。西海岸風の店内で地元食材を使ったハンバーガーやパスタ、ご当地パフェを提供。",
+        "address": "北海道石狩郡当別町弥生51-26",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.219152,
+        "lng": 141.515897,
+        "qr_token": "shuin-tobetsu-3",
+        "cover_image_url": "/images/tobetsu/spot3.png",
+        "f7_fragment": "西海岸風の店内で地元食材のハンバーガーやパスタ、パフェが味わえる店。",
+        "f7_full": "「Cafe & Kitchen Offshore」で地元食材たっぷりのランチを堪能し、活力を得た。",
+        "is_final": false,
+        "next_spot_id": "3eed64b9-8c8e-4f8d-8e95-92b5d10055e7",
+        "next_spot_name": "伊達邸別館・当別伊達記念館"
+      },
+      {
+        "id": "3eed64b9-8c8e-4f8d-8e95-92b5d10055e7",
+        "name": "伊達邸別館・当別伊達記念館",
+        "description": "明治13年（1880年）築の歴史的建造物「伊達邸別館」と、仙台藩岩出山領主・伊達邦直公ゆかりの品や開拓資料を展示する記念館（10:00〜16:30、月曜休・11/1〜4/30冬季休館、入館無料）。",
+        "address": "北海道石狩郡当別町元町105",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.219506,
+        "lng": 141.518944,
+        "qr_token": "shuin-tobetsu-4",
+        "cover_image_url": "/images/tobetsu/spot4.png",
+        "f7_fragment": "明治十三年築の伊達邸別館とともに伊達邦直公ゆかりの資料を展示する施設。",
+        "f7_full": "「伊達邸別館・当別伊達記念館」で当別開拓の歩みを学び、深い感銘を受けた。",
+        "is_final": false,
+        "next_spot_id": "3ea8b780-40bb-460c-89fe-f4732236d0c7",
+        "next_spot_name": "当別神社"
+      },
+      {
+        "id": "3ea8b780-40bb-460c-89fe-f4732236d0c7",
+        "name": "当別神社",
+        "description": "JR当別駅から南東へ徒歩約8〜12分、阿蘇公園に隣接して鎮座し伊達邦直公を御祭神とする当別町の総鎮守（境内終日開放・参拝無料、社務所9:00〜17:00）。月替わりの御朱印でも親しまれる。",
+        "address": "北海道石狩郡当別町元町51-12",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.218222,
+        "lng": 141.520605,
+        "qr_token": "shuin-tobetsu-5",
+        "cover_image_url": "/images/tobetsu/spot5.png",
+        "f7_fragment": "伊達邦直公を御祭神として祀り、阿蘇公園に隣接する当別町の総鎮守。",
+        "f7_full": "「当別神社」の静かな杜で手を合わせ、伊達開拓史を巡る当別の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "649a4a26-f2d0-44f0-80ef-8f8cc6fbc41a",
+    "title": "学園都市線の終着駅からパンと湯の金沢散歩",
+    "name": "学園都市線の終着駅からパンと湯の金沢散歩",
+    "description": "JR札沼線の終着駅「JR北海道医療大学駅」から、10階からの眺望が魅力の「渋谷ダブルトールカフェ」、薪窯ハード系パンの「パン屋 きみかげ」、「金澤神社」、「北海道ふくろう乃湯リゾート」を巡るルート。",
+    "region": "北海道医療大学・終着駅と金沢",
+    "area_name": "北海道医療大学・終着駅と金沢",
+    "cover_image_url": "/images/hokkaido_iryodaigaku/route-eyecatch.png",
+    "imageUrl": "/images/hokkaido_iryodaigaku/route-eyecatch.png",
+    "category": "終着駅の珈琲と薪窯パン",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "学園都市線の終着・北海道医療大学駅から地上十階のカフェや薪窯パン、金沢の温泉を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "令和二年よりJR札沼線の終着駅となった「JR北海道医療大学駅」",
+          "description": "昭和五十六年に仮乗降場として始まり、学園都市線の終点を担う駅の風景が印象的だった。",
+          "badge_code": "hokkaido_iryodaigaku_station"
+        },
+        {
+          "key": "B",
+          "text": "中央講義棟10階から絶景を望む「渋谷ダブルトールカフェ」",
+          "description": "駅直結の大学棟10階で、一般利用者も本格シアトル系エスプレッソと眺望を楽しめた。",
+          "badge_code": "hokkaido_iryodaigaku_cafe"
+        },
+        {
+          "key": "C",
+          "text": "薪窯で焼き上げるハード系が人気の「パン屋 きみかげ」",
+          "description": "遠方からもファンが通う香り高い薪窯パンの深い味わいにすっかり魅了された。",
+          "badge_code": "hokkaido_iryodaigaku_kimikage"
+        },
+        {
+          "key": "D",
+          "text": "源泉かけ流しモール泉の「北海道ふくろう乃湯リゾート」",
+          "description": "金沢地区の豊かな自然の中で、美肌の湯と親しまれるモール泉に癒やされた。",
+          "badge_code": "hokkaido_iryodaigaku_onsen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "18a67801-a40d-4063-815d-49def7a1ff78",
+        "name": "JR北海道医療大学駅",
+        "description": "1981年12月1日「大学前仮乗降場」として開業、1982年駅昇格、2020年5月の一部廃止以降JR札沼線（学園都市線）の終着駅となっている（終日利用可・無料）。",
+        "address": "北海道石狩郡当別町字金沢1757",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.246895,
+        "lng": 141.561859,
+        "qr_token": "shuin-hokkaido_iryodaigaku-1",
+        "cover_image_url": "/images/hokkaido_iryodaigaku/spot1.png",
+        "f7_fragment": "昭和五十六年開業、令和二年よりJR札沼線の終着駅を担う学園の駅。",
+        "f7_full": "「JR北海道医療大学駅」に降り立ち、終着駅の絶景カフェと金沢の温泉を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "fc420a16-2341-4771-8eae-356df8edbf0d",
+        "next_spot_name": "渋谷ダブルトールカフェ 北海道医療大学店"
+      },
+      {
+        "id": "fc420a16-2341-4771-8eae-356df8edbf0d",
+        "name": "渋谷ダブルトールカフェ 北海道医療大学店",
+        "description": "駅直結の大学キャンパス中央講義棟10階に位置し一般利用可能（月〜金10:00〜17:00、土日祝休・大学スケジュール準拠）。10階からの眺望とともに本格シアトル系エスプレッソやラテアートを楽しめる。",
+        "address": "北海道石狩郡当別町金沢1757",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.246895,
+        "lng": 141.561859,
+        "qr_token": "shuin-hokkaido_iryodaigaku-2",
+        "cover_image_url": "/images/hokkaido_iryodaigaku/spot2.png",
+        "f7_fragment": "中央講義棟10階から眺望を楽しみつつ本格エスプレッソを味わえるカフェ。",
+        "f7_full": "「渋谷ダブルトールカフェ」の10階からの眺めと香り高い珈琲に心が弾んだ。",
+        "is_final": false,
+        "next_spot_id": "d7aa6d3b-4df0-459e-8a97-923114be5b09",
+        "next_spot_name": "パン屋 きみかげ"
+      },
+      {
+        "id": "d7aa6d3b-4df0-459e-8a97-923114be5b09",
+        "name": "パン屋 きみかげ",
+        "description": "JR北海道医療大学駅から南西へ約2.5km（徒歩約30〜35分）の人気ベーカリー（10:30〜16:30売切次第終了、日月休）。薪窯で焼き上げる香り高いハード系パンが遠方からも多くのファンを集めている。",
+        "address": "北海道石狩郡当別町東裏1756-18",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.227168,
+        "lng": 141.547685,
+        "qr_token": "shuin-hokkaido_iryodaigaku-3",
+        "cover_image_url": "/images/hokkaido_iryodaigaku/spot3.png",
+        "f7_fragment": "薪窯で焼き上げる香り高いハード系パンが遠方からも愛されるベーカリー。",
+        "f7_full": "「パン屋 きみかげ」で薪窯焼きの香り高いパンを手に入れ、幸せな気分になった。",
+        "is_final": false,
+        "next_spot_id": "7b4dbd4a-ca1a-4fb6-8d6b-bc9d51575cc6",
+        "next_spot_name": "金澤神社"
+      },
+      {
+        "id": "7b4dbd4a-ca1a-4fb6-8d6b-bc9d51575cc6",
+        "name": "金澤神社",
+        "description": "駅東南東の金沢地区（旧・石狩金沢エリア）に鎮座する地域の神社（境内終日開放・無料）。旧岩出山藩（宮城県）の「金澤の荘」ゆかりの移住者らが関わった開拓の歴史を見守り続け、現在は当別神社が管理している。",
+        "address": "北海道石狩郡当別町金沢187",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.245853,
+        "lng": 141.565999,
+        "qr_token": "shuin-hokkaido_iryodaigaku-4",
+        "cover_image_url": "/images/hokkaido_iryodaigaku/spot4.png",
+        "f7_fragment": "旧・石狩金沢エリアで「金澤の荘」ゆかりの移住者らの開拓を見守り続けてきた地域の鎮守。",
+        "f7_full": "「金澤神社」の静かな境内に参拝し、石狩金沢の開拓の記憶に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "c0593a79-0daa-4a3e-836b-24640313e738",
+        "next_spot_name": "北海道ふくろう乃湯リゾート"
+      },
+      {
+        "id": "c0593a79-0daa-4a3e-836b-24640313e738",
+        "name": "北海道ふくろう乃湯リゾート",
+        "description": "金澤神社のすぐ北隣、旧「開拓ふくろふの湯」が2021年にキャンプ場併設リゾートとして刷新（通年営業、管理棟9:00〜16:00頃、日帰り入浴は土日祝・ハイシーズン中心で土曜13:00〜、日祝10:00〜、入浴券購入17:00まで）。源泉かけ流し（加温）モール泉。",
+        "address": "北海道石狩郡当別町字金沢157-8",
+        "prefecture": "北海道",
+        "city": "当別町",
+        "lat": 43.246936,
+        "lng": 141.566605,
+        "qr_token": "shuin-hokkaido_iryodaigaku-5",
+        "cover_image_url": "/images/hokkaido_iryodaigaku/spot5.png",
+        "f7_fragment": "キャンプ場併設のリゾート内で美肌の湯のモール泉を楽しめる癒やし拠点。",
+        "f7_full": "「北海道ふくろう乃湯リゾート」の豊かな自然と温泉の恵みに触れ、旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a1d9ace1-06df-45b0-80f3-820f1ada1cfe",
+    "title": "植苗・野鳥の楽園ウトナイ湖とカレーラーメン",
+    "name": "植苗・野鳥の楽園ウトナイ湖とカレーラーメン",
+    "description": "大正十五年開業の「JR植苗駅」から、植苗の森の「植苗神社」、苫小牧名物元祖カレーラーメンの「味の大王 総本店」、ラムサール条約登録湿地の「ウトナイ湖野生鳥獣保護センター」、「道の駅 ウトナイ湖」を巡るルート。",
+    "region": "植苗・ウトナイ湖とカレー麺",
+    "area_name": "植苗・ウトナイ湖とカレー麺",
+    "cover_image_url": "/images/uenae/route-eyecatch.png",
+    "imageUrl": "/images/uenae/route-eyecatch.png",
+    "category": "野鳥の楽園と苫小牧名物",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "植苗の駅から森の鎮守や元祖カレーラーメンの名店、ラムサール条約のウトナイ湖を巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和三十年代に地域の社を合祀し再建された「植苗神社」",
+          "description": "植苗の豊かな森の中に静かに佇み、地域の安寧を見守り続ける杜に心が整った。",
+          "badge_code": "uenae_shrine"
+        },
+        {
+          "key": "B",
+          "text": "苫小牧名物・元祖カレーラーメンの「味の大王 総本店」",
+          "description": "スパイシーでコクのあるカレースープと縮れ麺、エゾシカ餃子の旨さに元気が出た。",
+          "badge_code": "uenae_ajino_daio"
+        },
+        {
+          "key": "C",
+          "text": "ラムサール条約登録湿地を学ぶ「ウトナイ湖野生鳥獣保護センター」",
+          "description": "日本初の国指定鳥獣保護区・ウトナイ湖の豊かな生態系と野鳥観察を無料で楽しめた。",
+          "badge_code": "uenae_wildlife"
+        },
+        {
+          "key": "D",
+          "text": "360度展望台とB1とんちゃん豚まんが人気の「道の駅 ウトナイ湖」",
+          "description": "湖畔の展望台やホッキ貝グルメ、可愛らしいシマエナガグッズまで魅力満載だった。",
+          "badge_code": "uenae_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0ede0018-c308-4526-871e-4184274528b8",
+        "name": "JR植苗駅",
+        "description": "1926年（大正15年）8月21日、北海道鉄道の駅として開業したJR千歳線の静かな無人駅（終日利用可・無料）。ウトナイ湖や植苗地区の散策の起点となる。",
+        "address": "北海道苫小牧市字植苗89",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.713595,
+        "lng": 141.735126,
+        "qr_token": "shuin-uenae-1",
+        "cover_image_url": "/images/uenae/spot1.png",
+        "f7_fragment": "大正十五年北海道鉄道として開業し、植苗の森に佇む千歳線の無人駅。",
+        "f7_full": "「JR植苗駅」に降り立ち、名物カレーラーメンと野鳥の楽園ウトナイ湖を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "2f9d7c94-6f81-4664-8413-7766bbcded58",
+        "next_spot_name": "植苗神社"
+      },
+      {
+        "id": "2f9d7c94-6f81-4664-8413-7766bbcded58",
+        "name": "植苗神社",
+        "description": "昭和30年代に周辺の小さな社を合祀して現在地に再建された、植苗の森に静かに佇む地域の鎮守（終日参拝自由・無料）。緑に包まれた静謐な空気を楽しめる。",
+        "address": "北海道苫小牧市字植苗190-4",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.72231,
+        "lng": 141.70781,
+        "qr_token": "shuin-uenae-2",
+        "cover_image_url": "/images/uenae/spot2.png",
+        "f7_fragment": "昭和三十年代に地域の社を合祀して再建された植苗の森の鎮守。",
+        "f7_full": "「植苗神社」の静かな社殿に手を合わせ、豊かな森と地域の安寧を感じた。",
+        "is_final": false,
+        "next_spot_id": "722c5ed7-c45f-4152-8675-2d459d28c19b",
+        "next_spot_name": "味の大王 総本店"
+      },
+      {
+        "id": "722c5ed7-c45f-4152-8675-2d459d28c19b",
+        "name": "味の大王 総本店",
+        "description": "苫小牧ご当地グルメ「元祖カレーラーメン」の名店（11:00〜20:00・水曜〜15:00、年中無休・年末年始除く）。スパイシーでコクのあるカレースープと縮れ麺、エゾシカ餃子が人気。",
+        "address": "北海道苫小牧市字植苗138-3",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.71511,
+        "lng": 141.70703,
+        "qr_token": "shuin-uenae-3",
+        "cover_image_url": "/images/uenae/spot3.png",
+        "f7_fragment": "苫小牧ご当地グルメ「元祖カレーラーメン」やエゾシカ餃子が人気の名店。",
+        "f7_full": "「味の大王 総本店」で熱々の元祖カレーラーメンを堪能し、苫小牧の味に唸った。",
+        "is_final": false,
+        "next_spot_id": "d41be140-81f8-44c7-8202-5bb2669453dc",
+        "next_spot_name": "ウトナイ湖野生鳥獣保護センター"
+      },
+      {
+        "id": "d41be140-81f8-44c7-8202-5bb2669453dc",
+        "name": "ウトナイ湖野生鳥獣保護センター",
+        "description": "日本初の国指定鳥獣保護区・ラムサール条約登録湿地であるウトナイ湖畔の観察施設（9:00〜17:00、月曜・年末年始休、入館無料）。野鳥観察や湿地生態の展示を無料で楽しめる。",
+        "address": "北海道苫小牧市字植苗156-26",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.700681,
+        "lng": 141.696248,
+        "qr_token": "shuin-uenae-4",
+        "cover_image_url": "/images/uenae/spot4.png",
+        "f7_fragment": "日本初の国指定鳥獣保護区・ウトナイ湖の野鳥や湿地を学べる無料施設。",
+        "f7_full": "「ウトナイ湖野生鳥獣保護センター」で野鳥の営みと湿原の豊かさに感動した。",
+        "is_final": false,
+        "next_spot_id": "eb4a0a95-0092-414b-84f7-5078f503645a",
+        "next_spot_name": "道の駅 ウトナイ湖"
+      },
+      {
+        "id": "eb4a0a95-0092-414b-84f7-5078f503645a",
+        "name": "道の駅 ウトナイ湖",
+        "description": "国道36号沿いのウトナイ湖畔に立つ道の駅（3〜10月9:00〜18:00・11〜2月〜17:00、年末年始休）。360度展望台のほか、ホッキ貝グルメや「B1とんちゃん」豚まん、シマエナガグッズが人気。",
+        "address": "北海道苫小牧市字植苗156-30",
+        "prefecture": "北海道",
+        "city": "苫小牧市",
+        "lat": 42.699939,
+        "lng": 141.694528,
+        "qr_token": "shuin-uenae-5",
+        "cover_image_url": "/images/uenae/spot5.png",
+        "f7_fragment": "360度展望台やホッキ貝グルメ、B1とんちゃん豚まんが人気の湖畔道の駅。",
+        "f7_full": "「道の駅 ウトナイ湖」で湖畔の展望とご当地の味を満喫し、植苗の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9b5bd897-bd44-40e8-8480-c365fc68a030",
+    "title": "南千歳・大空の記憶と石臼挽き蕎麦の丘",
+    "name": "南千歳・大空の記憶と石臼挽き蕎麦の丘",
+    "description": "「JR南千歳駅」から、北海1号機のモニュメントが立つ「空港公園」、石臼挽き手打ちの「駒そば亭」、庭園併設スイーツの「ドレモルタオ」、道産豚を炭火で焼く「豚丼 とんすけ」を巡るルート。",
+    "region": "南千歳・大空の記憶と石臼挽き蕎麦",
+    "area_name": "南千歳・大空の記憶と石臼挽き蕎麦",
+    "cover_image_url": "/images/minami_chitose/route-eyecatch.png",
+    "imageUrl": "/images/minami_chitose/route-eyecatch.png",
+    "category": "空の玄関と石臼蕎麦",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北海道の空と鉄路の要衝・南千歳駅から大空の記念公園や石臼挽きの蕎麦、甘い丘のスイーツを巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "複葉機「北海1号機」のモニュメントが立つ「空港公園」",
+          "description": "大正十五年の千歳初飛来を刻む記念碑と、すぐ近くを飛ぶ飛行機の迫力に胸が躍った。",
+          "badge_code": "minami_chitose_park"
+        },
+        {
+          "key": "B",
+          "text": "千歳駒そばを店内の石臼で挽いて打つ「駒そば亭」",
+          "description": "地元・駒里地区産そば粉100%を毎日石臼挽きする手打ち蕎麦の香りに唸った。",
+          "badge_code": "minami_chitose_komasoba"
+        },
+        {
+          "key": "C",
+          "text": "小樽ルタオの庭園併設カフェ「ドレモルタオ（Doremo LeTAO）」",
+          "description": "白樺の庭を眺めながら味わうふわふわのリコッタパンケーキと限定スイーツが絶品だった。",
+          "badge_code": "minami_chitose_doremo"
+        },
+        {
+          "key": "D",
+          "text": "北海道産豚肉を炭火で焼き上げる「豚丼 とんすけ」",
+          "description": "白美豚や四元豚など厳選豚肉に香ばしい炭火の香りが絡む一杯に大満足した。",
+          "badge_code": "minami_chitose_tonsuke"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "11aa6003-8b6a-41a3-8e96-3673fb7a161a",
+        "name": "JR南千歳駅",
+        "description": "1980年10月1日「千歳空港駅」として開業、1992年7月1日「南千歳駅」へ改称（終日利用可・無料）。新千歳空港と札幌・道東・道南を結ぶ北海道の鉄道交通の要衝。",
+        "address": "北海道千歳市平和1388-2",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.80826,
+        "lng": 141.675283,
+        "qr_token": "shuin-minami_chitose-1",
+        "cover_image_url": "/images/minami_chitose/spot1.png",
+        "f7_fragment": "昭和五十五年「千歳空港駅」として開業した北海道鉄道交通の要衝。",
+        "f7_full": "「JR南千歳駅」に降り立ち、大空の記憶と石臼挽き蕎麦、甘い丘を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "dba861fe-8894-4fff-8002-94a4f2e43f58",
+        "next_spot_name": "空港公園"
+      },
+      {
+        "id": "dba861fe-8894-4fff-8002-94a4f2e43f58",
+        "name": "空港公園",
+        "description": "JR南千歳駅から徒歩約5分の公園（終日開放・無料）。大正15年に千歳村へ初飛来した複葉機「北海1号機」のモニュメントや滑走路を模した広場があり、離発着する飛行機を間近に望める。",
+        "address": "北海道千歳市柏台南1-5",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.812063,
+        "lng": 141.678106,
+        "qr_token": "shuin-minami_chitose-2",
+        "cover_image_url": "/images/minami_chitose/spot2.png",
+        "f7_fragment": "大正十五年飛来の「北海1号機」モニュメントが立つ滑走路風の公園。",
+        "f7_full": "「空港公園」で北海1号機の記念碑を眺め、千歳と大空の長い歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "7356d82b-0613-4117-8070-df5a42185707",
+        "next_spot_name": "駒そば亭"
+      },
+      {
+        "id": "7356d82b-0613-4117-8070-df5a42185707",
+        "name": "駒そば亭",
+        "description": "JR南千歳駅南口から徒歩約10分・空港公園すぐ隣（平日11:00〜15:30・土日祝〜17:00、月曜休）。千歳市駒里地区産「千歳駒そば」100%を毎日店内の石臼で挽いて手打ちする人気そば店。",
+        "address": "北海道千歳市柏台南1-5-2",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.813673,
+        "lng": 141.678951,
+        "qr_token": "shuin-minami_chitose-3",
+        "cover_image_url": "/images/minami_chitose/spot3.png",
+        "f7_fragment": "千歳市駒里地区産「千歳駒そば」を毎日店内の石臼で挽き手打ちする人気店。",
+        "f7_full": "「駒そば亭」で石臼挽きの香り高い千歳駒そばを堪能し、地元の恵みに満たされた。",
+        "is_final": false,
+        "next_spot_id": "6c833afd-15fe-43e3-85fe-54f098ef0a33",
+        "next_spot_name": "ドレモルタオ（Doremo LeTAO）"
+      },
+      {
+        "id": "6c833afd-15fe-43e3-85fe-54f098ef0a33",
+        "name": "ドレモルタオ（Doremo LeTAO）",
+        "description": "小樽の洋菓子舗ルタオが展開する庭園併設の大型路面店（ショップ10:00〜17:00・カフェ11:00〜17:00、年中無休）。ふわふわのリコッタパンケーキや限定スイーツを楽しめる。",
+        "address": "北海道千歳市朝日町6-1-1",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.820694,
+        "lng": 141.655858,
+        "qr_token": "shuin-minami_chitose-4",
+        "cover_image_url": "/images/minami_chitose/spot4.png",
+        "f7_fragment": "美しい庭園を併設し、ふわふわのリコッタパンケーキや限定スイーツが人気の店。",
+        "f7_full": "「ドレモルタオ」のカフェでふわふわのパンケーキを味わい、甘い幸せに包まれた。",
+        "is_final": false,
+        "next_spot_id": "1ec284f1-f7e3-485b-808e-f7f6ec619405",
+        "next_spot_name": "豚丼 とんすけ"
+      },
+      {
+        "id": "1ec284f1-f7e3-485b-808e-f7f6ec619405",
+        "name": "豚丼 とんすけ",
+        "description": "厳選された北海道産豚肉（白美豚・四元豚など）を炭火で香ばしく焼き上げるこだわりの豚丼店（11:30〜15:00・17:00〜22:00、月曜休・祝日の場合翌平日）。",
+        "address": "北海道千歳市東郊2-1-4",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.835618,
+        "lng": 141.66343,
+        "qr_token": "shuin-minami_chitose-5",
+        "cover_image_url": "/images/minami_chitose/spot5.png",
+        "f7_fragment": "厳選された北海道産豚肉を炭火で香ばしく焼き上げるこだわりの豚丼店。",
+        "f7_full": "「豚丼 とんすけ」で炭火の香り豊かな道産豚の豚丼を味わい、旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "08d930c2-eb5f-47c2-88f0-df2ffe66a40c",
+    "title": "千歳・支笏湖の伏流水とサケ遡上の川辺へ",
+    "name": "千歳・支笏湖の伏流水とサケ遡上の川辺へ",
+    "description": "大正十五年開業の「JR千歳駅」から、支笏湖の伏流水「幸井の水」が湧く「千歳神社」、百ヘクタール超の「青葉公園」、「道の駅 サーモンパーク千歳」、「サケのふるさと 千歳水族館」を巡るルート。",
+    "region": "千歳・支笏湖の伏流水と千歳川",
+    "area_name": "千歳・支笏湖の伏流水と千歳川",
+    "cover_image_url": "/images/chitose_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/chitose_hokkaido/route-eyecatch.png",
+    "category": "御神水とサケのふるさと",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "支笏湖の伏流水が湧き出る千歳神社や広大な青葉公園、サケが遡上する千歳川のほとりを巡るなかで、誰かに語りたくなるのはどれだろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "支笏湖カルデラの伏流水「幸井の水」が湧く「千歳神社」",
+          "description": "一六五八年創祀の古社で、地下五十七メートルから湧く清らかな御神水に心洗われた。",
+          "badge_code": "chitose_hokkaido_shrine"
+        },
+        {
+          "key": "B",
+          "text": "総面積百ヘクタール超の雑木林が広がる「青葉公園」",
+          "description": "千歳神社の裏手に広がる豊かな森の散策路を歩き、北国の自然の息吹を感じた。",
+          "badge_code": "chitose_hokkaido_aoba"
+        },
+        {
+          "key": "C",
+          "text": "サーモン丼やもろこし麺が揃う「道の駅 サーモンパーク千歳」",
+          "description": "千歳川沿いに立ち、鮭をモチーフにしたグルメや新鮮な農産物直売が楽しかった。",
+          "badge_code": "chitose_hokkaido_salmonpark"
+        },
+        {
+          "key": "D",
+          "text": "千歳川の川底を直接見られる「サケのふるさと 千歳水族館」",
+          "description": "日本最大級の淡水魚水槽と水中観察ゾーンで、サケのふるさと千歳川を体感できた。",
+          "badge_code": "chitose_hokkaido_aquarium"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9c8abc26-2717-4f74-83b2-a84f0b31ce64",
+        "name": "JR千歳駅",
+        "description": "1926年（大正15年）8月21日開業（終日利用可・無料）。千歳市中心部や支笏湖方面への玄関口として多くの市民と旅人を迎えている。",
+        "address": "北海道千歳市千代田町7-7-2",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.828246,
+        "lng": 141.651789,
+        "qr_token": "shuin-chitose_hokkaido-1",
+        "cover_image_url": "/images/chitose_hokkaido/spot1.png",
+        "f7_fragment": "大正十五年開業、千歳市街と支笏湖方面への玄関口を担う駅。",
+        "f7_full": "「JR千歳駅」に降り立ち、支笏湖の伏流水とサケの川辺を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "633a6fda-820d-4b77-85d4-b7d4b33c5e5f",
+        "next_spot_name": "千歳神社"
+      },
+      {
+        "id": "633a6fda-820d-4b77-85d4-b7d4b33c5e5f",
+        "name": "千歳神社",
+        "description": "1658年創祀の歴史ある古社（参拝・社務所9:00〜17:00、無料）。地下57mから支笏湖カルデラの伏流水が湧き出る御神水「幸井（さちい）の水」でも広く知られている。",
+        "address": "北海道千歳市真町1",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.818104,
+        "lng": 141.641941,
+        "qr_token": "shuin-chitose_hokkaido-2",
+        "cover_image_url": "/images/chitose_hokkaido/spot2.png",
+        "f7_fragment": "一六五八年創祀、支笏湖の伏流水「幸井の水」が湧く歴史ある古社。",
+        "f7_full": "「千歳神社」の幸井の水に触れて手を合わせ、千歳の清らかな水の恵みを感じた。",
+        "is_final": false,
+        "next_spot_id": "cd90b105-d3dd-46fe-85d9-f4f3b5ac3c78",
+        "next_spot_name": "青葉公園"
+      },
+      {
+        "id": "cd90b105-d3dd-46fe-85d9-f4f3b5ac3c78",
+        "name": "青葉公園",
+        "description": "千歳神社の裏手に隣接する総面積100ヘクタール超の総合自然公園（終日開放・入園無料）。豊かな雑木林と散策路が広がり、四季折々の自然散策をゆったり楽しめる。",
+        "address": "北海道千歳市真町1",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.818142,
+        "lng": 141.642281,
+        "qr_token": "shuin-chitose_hokkaido-3",
+        "cover_image_url": "/images/chitose_hokkaido/spot3.png",
+        "f7_fragment": "千歳神社に隣接し、百ヘクタール超の雑木林と散策路が広がる自然公園。",
+        "f7_full": "「青葉公園」の豊かな雑木林の中を歩き、北海道らしい大きな自然の息吹に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "5f46e617-4e73-459e-84f7-da9e5053851a",
+        "next_spot_name": "道の駅 サーモンパーク千歳"
+      },
+      {
+        "id": "5f46e617-4e73-459e-84f7-da9e5053851a",
+        "name": "道の駅 サーモンパーク千歳",
+        "description": "千歳川沿いに位置し2023年にリニューアルされた道の駅（9:00〜17:00、年中無休）。農産物直売や鮭モチーフのベーカリー・サーモン丼、「もろ・もろこしラーメン」など北海道グルメが充実。",
+        "address": "北海道千歳市花園2-4-2",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.83414,
+        "lng": 141.658918,
+        "qr_token": "shuin-chitose_hokkaido-4",
+        "cover_image_url": "/images/chitose_hokkaido/spot4.png",
+        "f7_fragment": "千歳川沿いに立ち、鮭グルメや農産物直売が充実する人気の道の駅。",
+        "f7_full": "「道の駅 サーモンパーク千歳」で北海道の旬の特産品や鮭グルメを存分に楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "e50bc468-5a18-4b21-88d9-5e5b472d3407",
+        "next_spot_name": "サケのふるさと 千歳水族館"
+      },
+      {
+        "id": "e50bc468-5a18-4b21-88d9-5e5b472d3407",
+        "name": "サケのふるさと 千歳水族館",
+        "description": "道の駅に隣接する淡水専門水族館（3〜11月9:00〜17:00・12〜2月10:00〜16:00、年末年始休、大人800円・高校生500円・小中学生300円）。日本最大級の淡水魚水槽や千歳川の川底を直接見られる「水中観察ゾーン」を備える。",
+        "address": "北海道千歳市花園2-312",
+        "prefecture": "北海道",
+        "city": "千歳市",
+        "lat": 42.83278,
+        "lng": 141.65917,
+        "qr_token": "shuin-chitose_hokkaido-5",
+        "cover_image_url": "/images/chitose_hokkaido/spot5.png",
+        "f7_fragment": "日本最大級の淡水魚水槽と千歳川の水中観察ゾーンを備える淡水専門水族館。",
+        "f7_full": "「サケのふるさと 千歳水族館」の水中観察ゾーンで清流の命に出会い、千歳の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3de50f71-771c-4397-80a3-f024558f6037",
+    "title": "長都・麦の香り湧く千歳の街と公園散歩",
+    "name": "長都・麦の香り湧く千歳の街と公園散歩",
+    "description": "JR長都駅から麦香るキリンビール工場と住宅街の温かなカフェ、緑の勇舞公園、千歳の名店もりもとを巡る散策ルート。",
+    "region": "長都・勇舞",
+    "area_name": "長都・勇舞",
+    "cover_image_url": "/images/osatsu/route-eyecatch.png",
+    "imageUrl": "/images/osatsu/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "長都の街歩きで、どの風景に惹かれましたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "麦汁の香りと一番搾りの秘密に出会う工場見学",
+          "description": "麦芽の豊かな香りが広がる工場で、ものづくりの情熱に触れた",
+          "badge_code": "osatsu_malt_seeker"
+        },
+        {
+          "key": "B",
+          "text": "自家栽培野菜の恵みを味わう隠れ家カフェのひととき",
+          "description": "彩り豊かな旬野菜の料理に、旅の歩みも思わずゆるんだ",
+          "badge_code": "osatsu_harvest_table"
+        },
+        {
+          "key": "C",
+          "text": "展望の小山と木陰の遊歩道が続く勇舞公園の風",
+          "description": "住宅街に抱かれた緑の丘で、千歳の澄んだ空気を深呼吸した",
+          "badge_code": "osatsu_yuumai_breeze"
+        },
+        {
+          "key": "D",
+          "text": "千歳生まれの名店の和洋菓子と焼きたてパンを選ぶ楽しさ",
+          "description": "地元の人々で賑わう名店で、ハスカップの銘菓やパンを手に入れた",
+          "badge_code": "osatsu_morimoto"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "38e95eb9-c203-4e71-8220-93e991032ff4",
+        "name": "JR長都駅",
+        "description": "昭和33年（1958年）3月に仮乗降場として設置され、同年7月1日に駅として開業したJR千歳線の無人駅（終日利用可・無料）。工場エリアと住宅街を結ぶ玄関口。",
+        "address": "北海道千歳市上長都922",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.852144,
+        "lng": 141.623159,
+        "qr_token": "shuin-osatsu-1",
+        "cover_image_url": "/images/osatsu/spot1.png",
+        "f7_fragment": "昭和三十三年開業、千歳北部の工場地帯と住宅街を結ぶJR千歳線の玄関口。",
+        "f7_full": "「JR長都駅」の静かなホームを後にし、麦の香りが漂う千歳北部の街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "c4fb79c4-7fa5-4850-88d8-c55fcd6965e4",
+        "next_spot_name": "キリンビール北海道千歳工場"
+      },
+      {
+        "id": "c4fb79c4-7fa5-4850-88d8-c55fcd6965e4",
+        "name": "キリンビール北海道千歳工場",
+        "description": "麦汁の飲み比べや試飲が楽しめる見学ツアー（要予約、20歳以上500円・20歳未満無料、月・火曜休）を実施。ショップ（9:45〜16:30）や併設レストラン「ハウベ」（11:30〜21:00・第4月曜休）も備える。",
+        "address": "北海道千歳市上長都949-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.845767,
+        "lng": 141.61893,
+        "qr_token": "shuin-osatsu-2",
+        "cover_image_url": "/images/osatsu/spot2.png",
+        "f7_fragment": "麦汁の飲み比べや見学ツアーでビールづくりの技に触れられる工場。",
+        "f7_full": "「キリンビール北海道千歳工場」で麦芽の豊かな香りと醸造の技に魅了された。",
+        "is_final": false,
+        "next_spot_id": "922892f3-cd68-4272-81c4-b2882bc10895",
+        "next_spot_name": "Dining Cafe OPA"
+      },
+      {
+        "id": "922892f3-cd68-4272-81c4-b2882bc10895",
+        "name": "Dining Cafe OPA",
+        "description": "自家栽培の新鮮野菜を使ったパスタやオムライス、ピザが人気の隠れ家的カフェレストラン（11:30〜15:30・土日祝11:00〜／17:30〜21:30、水曜・第1木曜休）。",
+        "address": "北海道千歳市長都駅前5-5-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.858318,
+        "lng": 141.628063,
+        "qr_token": "shuin-osatsu-3",
+        "cover_image_url": "/images/osatsu/spot3.png",
+        "f7_fragment": "自家栽培の新鮮野菜を使ったパスタやオムライスが評判の隠れ家カフェ。",
+        "f7_full": "「Dining Cafe OPA」で旬の野菜の優しい味わいを堪能し、ほっと一息ついた。",
+        "is_final": false,
+        "next_spot_id": "7949cf14-ac0a-4426-8d91-e833f36370d1",
+        "next_spot_name": "勇舞公園"
+      },
+      {
+        "id": "7949cf14-ac0a-4426-8d91-e833f36370d1",
+        "name": "勇舞公園",
+        "description": "勇舞エリアの住宅街に広がる広々とした都市公園（終日開放・入園無料）。整った遊歩道や展望の小山、芝生広場、遊具が揃い、四季の自然を感じながらのびやかに散策できる。",
+        "address": "北海道千歳市勇舞6-9-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.856436,
+        "lng": 141.631707,
+        "qr_token": "shuin-osatsu-4",
+        "cover_image_url": "/images/osatsu/spot4.png",
+        "f7_fragment": "芝生広場や展望の小山、遊歩道が整い四季の自然を味わえる勇舞の公園。",
+        "f7_full": "「勇舞公園」の展望の小山から広い空を仰ぎ、千歳の爽やかな風を感じた。",
+        "is_final": false,
+        "next_spot_id": "9f3ec6b1-6b4d-4afd-825f-45a393380ddc",
+        "next_spot_name": "もりもと ちとせモール店"
+      },
+      {
+        "id": "9f3ec6b1-6b4d-4afd-825f-45a393380ddc",
+        "name": "もりもと ちとせモール店",
+        "description": "千歳発祥の老舗和洋菓子・パン店「もりもと」のちとせモール内店舗（9:00〜21:00、無休・施設に準ずる）。名物「ハスカップジュエリー」や焼きたてのパン・量り売りパンが人気。",
+        "address": "北海道千歳市勇舞8-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.854208,
+        "lng": 141.626576,
+        "qr_token": "shuin-osatsu-5",
+        "cover_image_url": "/images/osatsu/spot5.png",
+        "f7_fragment": "千歳発祥の老舗菓子・パン店。ハスカップジュエリーや焼きたてパンが人気。",
+        "f7_full": "「もりもと ちとせモール店」で千歳自慢の銘菓を選び、長都の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0f2ee84d-ea10-456e-8d93-a57a7821adb1",
+    "title": "サッポロビール庭園・潤いの森と牧場の恵み",
+    "name": "サッポロビール庭園・潤いの森と牧場の恵み",
+    "description": "工場の緑豊かな庭園から川辺の彫刻公園とカフェ、さらに自然体験のえこりん村へと続く恵庭の散策ルート。",
+    "region": "戸磯・えこりん村",
+    "area_name": "戸磯・えこりん村",
+    "cover_image_url": "/images/sapporo_beer_teien/route-eyecatch.png",
+    "imageUrl": "/images/sapporo_beer_teien/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "恵庭の自然と恵みを巡る道で、どの場所に心惹かれましたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "緑の庭園と赤れんがの雰囲気漂うビール工場",
+          "description": "工場直送の鮮度と、美しい庭園の散策に心が躍った",
+          "badge_code": "beer_teien_star"
+        },
+        {
+          "key": "B",
+          "text": "川辺の森のそばで淹れたて珈琲を味わうカフェ時間",
+          "description": "優しいランチと香ばしい珈琲に、歩みの疲れがほどけた",
+          "badge_code": "beer_teien_fukuza"
+        },
+        {
+          "key": "C",
+          "text": "清流のせせらぎと屋外彫刻が調和する河畔公園",
+          "description": "水辺の緑とアートが溶け合う静かな散歩道に癒やされた",
+          "badge_code": "beer_teien_yukanboshi"
+        },
+        {
+          "key": "D",
+          "text": "とまとの森の生命力に出会う自然豊かなえこりん村",
+          "description": "枝を広げる巨木トマトと豊かな自然の恵みに驚かされた",
+          "badge_code": "beer_teien_ecorinvillage"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5ca0160b-9851-47cb-8733-eb89e6f2f4e6",
+        "name": "JRサッポロビール庭園駅",
+        "description": "平成2年（1990年）7月1日、サッポロビール北海道工場の開業に合わせて新設されたJR千歳線の駅（終日利用可・無料）。広大な緑地帯の玄関口となっている。",
+        "address": "北海道恵庭市戸磯593-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.8675,
+        "lng": 141.6048,
+        "qr_token": "shuin-sapporo_beer_teien-1",
+        "cover_image_url": "/images/sapporo_beer_teien/spot1.png",
+        "f7_fragment": "平成二年、工場の開業に合わせて誕生したユニークな駅名のJR千歳線の駅。",
+        "f7_full": "「JRサッポロビール庭園駅」を後にし、緑と恵みあふれる恵庭の散策へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "61bd3bc3-ff92-4845-8d84-1b5e57470479",
+        "next_spot_name": "サッポロビール北海道工場"
+      },
+      {
+        "id": "61bd3bc3-ff92-4845-8d84-1b5e57470479",
+        "name": "サッポロビール北海道工場",
+        "description": "ガイド付き「サッポロ クラシック☆ツアー」（要予約、大人1,000円等、月・火曜休）で工場直送の生ビール試飲が楽しめるほか、美しい庭園やレストラン「ヴァルハラ」（火曜休）を併設。",
+        "address": "北海道恵庭市戸磯542-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.861804,
+        "lng": 141.602999,
+        "qr_token": "shuin-sapporo_beer_teien-2",
+        "cover_image_url": "/images/sapporo_beer_teien/spot2.png",
+        "f7_fragment": "クラシックの工場見学や美しい庭園、レストランを備える恵庭の名所。",
+        "f7_full": "「サッポロビール北海道工場」の広大な庭園を歩き、北のビール造りの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "2b8c1a67-7909-41ba-8e4d-52bc80253e19",
+        "next_spot_name": "cafe福座"
+      },
+      {
+        "id": "2b8c1a67-7909-41ba-8e4d-52bc80253e19",
+        "name": "cafe福座",
+        "description": "ユカンボシ川河畔公園のすぐそばに佇む人気カフェ（10:00〜17:00・ランチ11:00〜15:00、第1月曜ほか不定休）。こだわりの焙煎珈琲や体に優しい食事、手作りスイーツが味わえる。",
+        "address": "北海道恵庭市恵南6-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.869011,
+        "lng": 141.585884,
+        "qr_token": "shuin-sapporo_beer_teien-3",
+        "cover_image_url": "/images/sapporo_beer_teien/spot3.png",
+        "f7_fragment": "川のせせらぎそばでこだわりの珈琲と優しい食事を味わえる人気カフェ。",
+        "f7_full": "「cafe福座」で香り高い珈琲とともに穏やかな時間を過ごし、旅の元気を養った。",
+        "is_final": false,
+        "next_spot_id": "c922de31-9c40-45de-8fd4-c7311cf398ae",
+        "next_spot_name": "ユカンボシ川河畔公園"
+      },
+      {
+        "id": "c922de31-9c40-45de-8fd4-c7311cf398ae",
+        "name": "ユカンボシ川河畔公園",
+        "description": "別名「ユカンボシ河畔彫刻広場」とも呼ばれる緑豊かな公園（終日開放・入園無料）。清らかな川の流れに沿って遊歩道が整備され、点在する彫刻作品を眺めながら散策できる。",
+        "address": "北海道恵庭市駒場町5-657-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.869736,
+        "lng": 141.585263,
+        "qr_token": "shuin-sapporo_beer_teien-4",
+        "cover_image_url": "/images/sapporo_beer_teien/spot4.png",
+        "f7_fragment": "清流沿いの遊歩道に屋外彫刻が点在する緑豊かな河畔公園。",
+        "f7_full": "「ユカンボシ川河畔公園」で清流のせせらぎと屋外彫刻が織りなす風景を満喫した。",
+        "is_final": false,
+        "next_spot_id": "207bc4bb-9cd7-4e76-872c-12c7e6238767",
+        "next_spot_name": "えこりん村"
+      },
+      {
+        "id": "207bc4bb-9cd7-4e76-872c-12c7e6238767",
+        "name": "えこりん村",
+        "description": "自然と共生するエコロジーテーマ施設（入場無料・体験飲食別、年末年始休）。ウェルカムセンター（4〜10月9:30〜17:00等）や「とまとの森」（4月中旬〜10月中旬10:00〜16:00）、レストラン「らくだ軒」がある。",
+        "address": "北海道恵庭市牧場277-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.87059,
+        "lng": 141.55217,
+        "qr_token": "shuin-sapporo_beer_teien-5",
+        "cover_image_url": "/images/sapporo_beer_teien/spot5.png",
+        "f7_fragment": "巨大なトマトの木がある「とまとの森」やレストランを備える自然体験拠点。",
+        "f7_full": "「えこりん村」で生命力あふれる自然の恵みに触れ、恵庭の旅を華やかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c32a64c7-7223-401d-86b0-c445688553f4",
+    "title": "恵庭・古社の祈りと縄文の記憶に触れる旅",
+    "name": "恵庭・古社の祈りと縄文の記憶に触れる旅",
+    "description": "花のまち恵庭の玄関口から明治創祀の豊栄神社と釜めしの名店、国指定史跡カリンバ遺跡、ジェラート店を巡るルート。",
+    "region": "恵庭中心部・黄金",
+    "area_name": "恵庭中心部・黄金",
+    "cover_image_url": "/images/eniwa/route-eyecatch.png",
+    "imageUrl": "/images/eniwa/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "恵庭の古社と縄文の歴史を辿る道で、どの場面が印象的でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治七年の開拓移住者が祀った豊栄神社の静寂",
+          "description": "歴史を刻む社殿の杜で、先人の祈りにそっと手を合わせた",
+          "badge_code": "eniwa_toyosaka_shrine"
+        },
+        {
+          "key": "B",
+          "text": "道産食材の出汁が香る名店いちえの熱々釜めし",
+          "description": "蓋を開けた瞬間の湯気と海の幸の旨みに笑顔がこぼれた",
+          "badge_code": "eniwa_ichie_kamameshi"
+        },
+        {
+          "key": "C",
+          "text": "漆塗り装身具が出土した縄文の聖地カリンバ遺跡",
+          "description": "数千年の時を超えた縄文の人々の暮らしにロマンを感じた",
+          "badge_code": "eniwa_karinba_jomon"
+        },
+        {
+          "key": "D",
+          "text": "道産ミルクが溶け合う本格ジェラート店の甘い余韻",
+          "description": "散策の終わりに味わう爽やかなジェラートが格別だった",
+          "badge_code": "eniwa_gigi_gelato"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "570654c9-0895-4660-8bcd-b98589655f81",
+        "name": "JR恵庭駅",
+        "description": "大正15年（1926年）8月21日に開業した「花のまち恵庭」の玄関口（終日利用可・無料）。快速エアポートも停車し、四季を通じて美しい花壇が訪れる人を迎える。",
+        "address": "北海道恵庭市相生町1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.882728,
+        "lng": 141.586811,
+        "qr_token": "shuin-eniwa-1",
+        "cover_image_url": "/images/eniwa/spot1.png",
+        "f7_fragment": "大正十五年開業、花壇が彩る「花のまち恵庭」の玄関口。",
+        "f7_full": "「JR恵庭駅」から花のまちの爽やかな風に吹かれながら、恵庭巡りの旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "be1e5834-6024-44be-8e4f-42bd8bca8c99",
+        "next_spot_name": "豊栄神社"
+      },
+      {
+        "id": "be1e5834-6024-44be-8e4f-42bd8bca8c99",
+        "name": "豊栄神社",
+        "description": "明治7年（1874年）6月15日に移住者たちが稲荷大神を奉斎した小祠に始まる歴史ある神社（終日参拝可・無料）。恵庭の開拓と発展を静かに見守り続けている。",
+        "address": "北海道恵庭市大町3-6-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.885461,
+        "lng": 141.568436,
+        "qr_token": "shuin-eniwa-2",
+        "cover_image_url": "/images/eniwa/spot2.png",
+        "f7_fragment": "明治七年に移住者が稲荷大神を祀ったことに始まる恵庭の古社。",
+        "f7_full": "「豊栄神社」の清らかな社殿に参拝し、開拓期から続く恵庭の歴史に想いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "dd070a43-cb0b-4238-85f4-f26e81e260be",
+        "next_spot_name": "旬のお料理・釜めし いちえ"
+      },
+      {
+        "id": "dd070a43-cb0b-4238-85f4-f26e81e260be",
+        "name": "旬のお料理・釜めし いちえ",
+        "description": "ウニやイクラなど北海道産の豊かな食材を炊き上げる釜めしと旬の和食で知られる名店（11:00〜15:00／水〜日17:00〜21:00・土曜〜22:00、火曜・月曜夜休）。",
+        "address": "北海道恵庭市柏木町3-3-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.894217,
+        "lng": 141.565607,
+        "qr_token": "shuin-eniwa-3",
+        "cover_image_url": "/images/eniwa/spot3.png",
+        "f7_fragment": "道産食材をふっくら炊き上げる名物釜めしと旬の和食が人気の名店。",
+        "f7_full": "「旬のお料理・釜めし いちえ」で湯気香る絶品釜めしを味わい、深い満足に浸った。",
+        "is_final": false,
+        "next_spot_id": "7bb6bef7-81e9-4efc-86fc-5bcc3a0d2694",
+        "next_spot_name": "カリンバ遺跡"
+      },
+      {
+        "id": "7bb6bef7-81e9-4efc-86fc-5bcc3a0d2694",
+        "name": "カリンバ遺跡",
+        "description": "縄文時代後期〜晩期の墓壙群から色鮮やかな漆塗り装身具などが多数出土した国指定史跡（日中自由見学・無料）。隣接するカリンバ自然公園はミズバショウの群生地としても親しまれる。",
+        "address": "北海道恵庭市黄金中央5-216-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.888186,
+        "lng": 141.593468,
+        "qr_token": "shuin-eniwa-4",
+        "cover_image_url": "/images/eniwa/spot4.png",
+        "f7_fragment": "縄文時代の漆塗り装身具が多数出土した国指定史跡の公園。",
+        "f7_full": "「カリンバ遺跡」の広々とした緑の地に立ち、はるかな縄文の記憶に触れた。",
+        "is_final": false,
+        "next_spot_id": "76d45e74-31ce-40b0-8878-99f5169d188e",
+        "next_spot_name": "Gelateria e Bar Gigi"
+      },
+      {
+        "id": "76d45e74-31ce-40b0-8878-99f5169d188e",
+        "name": "Gelateria e Bar Gigi",
+        "description": "恵庭駅東口から徒歩約7〜8分の人気店（11:00〜17:30等、月曜・第2火曜休）。北海道産ミルクや旬の果実を活かした濃厚イタリアンジェラートやパンケーキが楽しめる。",
+        "address": "北海道恵庭市黄金南2-19-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.885987,
+        "lng": 141.592339,
+        "qr_token": "shuin-eniwa-5",
+        "cover_image_url": "/images/eniwa/spot5.png",
+        "f7_fragment": "道産ミルクや旬の果実の本格イタリアンジェラートが評判の人気店。",
+        "f7_full": "「Gelateria e Bar Gigi」の爽やかなジェラートで寛ぎ、恵庭の街歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fd66fcd4-853f-4b1f-834d-b44e9765d76d",
+    "title": "恵み野・花咲く街並みと焙煎珈琲の散歩道",
+    "name": "恵み野・花咲く街並みと焙煎珈琲の散歩道",
+    "description": "美しいまちなみ大賞受賞の恵み野駅から手作りベーグルと自家焙煎珈琲、中央公園、はなふるが彩る道の駅まで巡るルート。",
+    "region": "恵み野・南島松",
+    "area_name": "恵み野・南島松",
+    "cover_image_url": "/images/megumino/route-eyecatch.png",
+    "imageUrl": "/images/megumino/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "花と香りに包まれた恵み野の道で、どの場面が印象的でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "道産小麦がもちもち香るカラフルな手作りベーグル",
+          "description": "焼きたてのベーグルを手に取り、恵み野散歩の元気をもらった",
+          "badge_code": "megumino_tomoe_bagel"
+        },
+        {
+          "key": "B",
+          "text": "名店の焙煎珈琲の香りに包まれる癒やしのひととき",
+          "description": "丁寧に煎られた珈琲の一杯が、散歩の時間を豊かに彩った",
+          "badge_code": "megumino_carrot_roast"
+        },
+        {
+          "key": "C",
+          "text": "日本庭園と緑の遊歩道が広がる恵み野中央公園",
+          "description": "花と緑が息づく公園の散歩道で、街の美しさを実感した",
+          "badge_code": "megumino_central_park"
+        },
+        {
+          "key": "D",
+          "text": "色とりどりのテーマガーデンが迎える道の駅とはなふる",
+          "description": "花々に囲まれた道の駅で、恵庭の美味しい恵みに出会った",
+          "badge_code": "megumino_hanaful_garden"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2fa4297b-8489-418e-8cbe-cde33977dbc3",
+        "name": "JR恵み野駅",
+        "description": "昭和57年（1982年）3月1日に開業したJR千歳線の駅（終日利用可・無料）。「美しいまちなみ大賞」を受賞したガーデニングの街・恵み野の玄関口。",
+        "address": "北海道恵庭市恵み野西1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.902437,
+        "lng": 141.574465,
+        "qr_token": "shuin-megumino-1",
+        "cover_image_url": "/images/megumino/spot1.png",
+        "f7_fragment": "昭和五十七年開業、ガーデニングの街として知られる恵み野の玄関口。",
+        "f7_full": "「JR恵み野駅」のホームを後にし、花と香りに包まれた恵み野の散歩へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "27e175ad-ad4d-4531-8d9d-3ea2a3b64177",
+        "next_spot_name": "トモヱベーグル"
+      },
+      {
+        "id": "27e175ad-ad4d-4531-8d9d-3ea2a3b64177",
+        "name": "トモヱベーグル",
+        "description": "北海道産小麦を使った色鮮やかでモチモチ食感の手作りベーグル専門店（11:00〜17:00・ランチ11:00〜14:00、年末年始等除き無休）。豊富なフレーバーが揃う。",
+        "address": "北海道恵庭市恵み野西2-2-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.902437,
+        "lng": 141.577248,
+        "qr_token": "shuin-megumino-2",
+        "cover_image_url": "/images/megumino/spot2.png",
+        "f7_fragment": "北海道産小麦を使った色鮮やかでモチモチ食感の手作りベーグル専門店。",
+        "f7_full": "「トモヱベーグル」で焼き立てのもちもちベーグルを味わい、笑顔がほころんだ。",
+        "is_final": false,
+        "next_spot_id": "6423f5fc-2f59-4173-8c24-dbecf1fd914f",
+        "next_spot_name": "珈琲きゃろっと"
+      },
+      {
+        "id": "6423f5fc-2f59-4173-8c24-dbecf1fd914f",
+        "name": "珈琲きゃろっと",
+        "description": "全国から注文が集まる自家焙煎スペシャルティコーヒー専門店（10:00〜17:00、水曜・日曜休）。豆や焼き菓子の購入のほか、屋外ブレイクステーションでテイクアウト珈琲も楽しめる。",
+        "address": "北海道恵庭市恵み野西1-25-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.903928,
+        "lng": 141.580179,
+        "qr_token": "shuin-megumino-3",
+        "cover_image_url": "/images/megumino/spot3.png",
+        "f7_fragment": "全国から注文が集まる自家焙煎スペシャルティコーヒーの名店。",
+        "f7_full": "「珈琲きゃろっと」で香り豊かなスペシャルティコーヒーと出会い、至福のひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "de8afd78-d2f4-43bb-896b-8b99b7420d9a",
+        "next_spot_name": "恵み野中央公園"
+      },
+      {
+        "id": "de8afd78-d2f4-43bb-896b-8b99b7420d9a",
+        "name": "恵み野中央公園",
+        "description": "約11ヘクタールの広大な敷地に日本庭園・野外音楽堂・冒険広場の3エリアを備えた街のシンボル公園（終日開放・入園無料）。遊歩道トンネルで安全に往来できる設計が特徴。",
+        "address": "北海道恵庭市恵み野北3-9-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.905127,
+        "lng": 141.585471,
+        "qr_token": "shuin-megumino-4",
+        "cover_image_url": "/images/megumino/spot4.png",
+        "f7_fragment": "日本庭園や野外音楽堂などを約11haの敷地に備える恵み野のシンボル公園。",
+        "f7_full": "「恵み野中央公園」の日本庭園と緑の木立を巡り、街の穏やかな美しさに癒やされた。",
+        "is_final": false,
+        "next_spot_id": "64ad2fc2-f1be-4a09-8dfb-dd241c62b754",
+        "next_spot_name": "道の駅 花ロードえにわ（花の拠点 はなふる）"
+      },
+      {
+        "id": "64ad2fc2-f1be-4a09-8dfb-dd241c62b754",
+        "name": "道の駅 花ロードえにわ（花の拠点 はなふる）",
+        "description": "焼き立てパン「えにパン」や恵庭産放牧豚カレー、直売所「かのな」、7つのテーマガーデンが広がる複合拠点（4〜10月9:00〜18:00・11〜3月〜17:00、年末年始休）。",
+        "address": "北海道恵庭市南島松817-18",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.897278,
+        "lng": 141.584789,
+        "qr_token": "shuin-megumino-5",
+        "cover_image_url": "/images/megumino/spot5.png",
+        "f7_fragment": "七つのテーマガーデンと焼き立てパンや農産物直売所が一体となった花の拠点。",
+        "f7_full": "「道の駅 花ロードえにわ（花の拠点 はなふる）」で花々と恵庭の美味を満喫し、旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4295206c-cc2f-4871-8255-d47fc0da5e3c",
+    "title": "島松・軟石の蔵と大志の記憶を巡る一日",
+    "name": "島松・軟石の蔵と大志の記憶を巡る一日",
+    "description": "島松駅から軟石倉庫の夢創館、老舗洋食店、クラーク博士の言葉を生んだ旧島松駅逓所、石蔵カフェ蔵楽を辿る歴史ルート。",
+    "region": "島松・旧駅逓所",
+    "area_name": "島松・旧駅逓所",
+    "cover_image_url": "/images/shimamatsu/route-eyecatch.png",
+    "imageUrl": "/images/shimamatsu/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "島松の開拓史と軟石建築を巡る道で、どの場面に惹かれましたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和十二年築の軟石倉庫でジャズを聴く夢創館",
+          "description": "歴史を刻む石造りの空間で、穏やかな文化の息吹に触れた",
+          "badge_code": "shimamatsu_musokan"
+        },
+        {
+          "key": "B",
+          "text": "駅前で長く愛される老舗喫茶レストランの温かい味",
+          "description": "地元に根付いた一皿に、旅の歩みも心地よく満たされた",
+          "badge_code": "shimamatsu_greenspot"
+        },
+        {
+          "key": "C",
+          "text": "大志の言葉と寒地稲作の歴史が宿る旧島松駅逓所",
+          "description": "道内最古級の駅逓建築に立ち、北海道開拓の熱意に胸を打たれた",
+          "badge_code": "shimamatsu_ekiteisho"
+        },
+        {
+          "key": "D",
+          "text": "農園の石蔵で味わう地元野菜と肉の優しいランチ",
+          "description": "島松軟石の温もりある蔵の中で、土地の恵みに癒やされた",
+          "badge_code": "shimamatsu_kurara"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ceec62b0-8453-4416-87fc-23f28d679b9f",
+        "name": "JR島松駅",
+        "description": "大正15年（1926年）8月21日に開業した恵庭市北部の歴史ある駅（終日利用可・無料）。島松軟石の蔵や開拓史跡への旅の起点。",
+        "address": "北海道恵庭市島松仲町1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.921809,
+        "lng": 141.573557,
+        "qr_token": "shuin-shimamatsu-1",
+        "cover_image_url": "/images/shimamatsu/spot1.png",
+        "f7_fragment": "大正十五年開業、軟石建築と開拓史跡が息づく恵庭北部の歴史ある駅。",
+        "f7_full": "「JR島松駅」から一歩を踏み出し、軟石の蔵と開拓の記憶を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "3db381eb-506e-4cb6-8ec3-83a125bf3c30",
+        "next_spot_name": "夢創館"
+      },
+      {
+        "id": "3db381eb-506e-4cb6-8ec3-83a125bf3c30",
+        "name": "夢創館",
+        "description": "昭和12年（1937年）に島松軟石で建てられた旧米穀倉庫を平成11年に改修した文化交流施設（入館無料、併設喫茶コーナーは10:00〜17:00、年末年始休）。ジャズが流れる落ち着いた空間。",
+        "address": "北海道恵庭市島松仲町1-2-20",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.920804,
+        "lng": 141.574003,
+        "qr_token": "shuin-shimamatsu-2",
+        "cover_image_url": "/images/shimamatsu/spot2.png",
+        "f7_fragment": "昭和十二年築の島松軟石の旧米穀倉庫を活かしたジャズ流れる文化交流施設。",
+        "f7_full": "「夢創館」の軟石の蔵の中でジャズの音色に耳を傾け、穏やかな休憩を過ごした。",
+        "is_final": false,
+        "next_spot_id": "3c561a0a-61f3-43a9-8139-f5e579de034f",
+        "next_spot_name": "グリーンスポット"
+      },
+      {
+        "id": "3c561a0a-61f3-43a9-8139-f5e579de034f",
+        "name": "グリーンスポット",
+        "description": "島松駅前で長年愛され続けるアットホームな老舗レストラン・喫茶（11:00〜14:00頃・夜17:00〜20:00、日曜休）。ステーキや生姜焼き定食、カレーなどが親しまれている。",
+        "address": "北海道恵庭市島松仲町2-9-20",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.918812,
+        "lng": 141.575227,
+        "qr_token": "shuin-shimamatsu-3",
+        "cover_image_url": "/images/shimamatsu/spot3.png",
+        "f7_fragment": "島松で長年親しまれるアットホームな老舗レストラン・喫茶。",
+        "f7_full": "「グリーンスポット」で昔ながらの温かい料理を味わい、旅の元気を取り戻した。",
+        "is_final": false,
+        "next_spot_id": "4a868bae-8024-471b-83d0-4fc0ea1d2d5c",
+        "next_spot_name": "旧島松駅逓所"
+      },
+      {
+        "id": "4a868bae-8024-471b-83d0-4fc0ea1d2d5c",
+        "name": "旧島松駅逓所",
+        "description": "道内最古級の駅逓建築にして国指定史跡（4/28〜11/3開館・10:00〜17:00、月曜・祝翌日休、大人200円・小中学生100円）。クラーク博士の名言「Boys, be ambitious」や寒地稲作の祖・中山久蔵ゆかりの地。",
+        "address": "北海道北広島市島松1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.924028,
+        "lng": 141.53778,
+        "qr_token": "shuin-shimamatsu-4",
+        "cover_image_url": "/images/shimamatsu/spot4.png",
+        "f7_fragment": "クラーク博士の言葉と中山久蔵の寒地稲作ゆかりの国指定史跡。",
+        "f7_full": "「旧島松駅逓所」の重厚な木造建築に立ち、北海道開拓の大志と歴史に感動した。",
+        "is_final": false,
+        "next_spot_id": "775233de-ebe5-41bd-883b-18a07b90dcb7",
+        "next_spot_name": "農家カフェ 蔵楽（KURARA）"
+      },
+      {
+        "id": "775233de-ebe5-41bd-883b-18a07b90dcb7",
+        "name": "農家カフェ 蔵楽（KURARA）",
+        "description": "昭和30年頃の島松軟石の石蔵を活かした野菜農園Mina Farm直営のカフェ（夏期10:00〜17:00・冬期〜16:00、水曜休・季節により長期休業あり）。地元食材の料理やスイーツを楽しめる。",
+        "address": "北海道北広島市三島119-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.920587,
+        "lng": 141.507105,
+        "qr_token": "shuin-shimamatsu-5",
+        "cover_image_url": "/images/shimamatsu/spot5.png",
+        "f7_fragment": "昭和三十年頃の島松軟石の石蔵を活かした野菜農園直営のカフェ。",
+        "f7_full": "「農家カフェ 蔵楽（KURARA）」の石蔵で土地の恵みを味わい、島松の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e77c4e7d-19da-4f2b-8125-68b4794b53d7",
+    "title": "白球の聖地と開拓の記憶を巡る北広島散歩",
+    "name": "白球の聖地と開拓の記憶を巡る北広島散歩",
+    "description": "JR北広島駅から駅直結のトナリエ北広島、廃校活用の知新の駅、窯焼きピッツァ、エスコンフィールドを巡る散策ルート。",
+    "region": "北広島・Fビレッジ",
+    "area_name": "北広島・Fビレッジ",
+    "cover_image_url": "/images/kitahiroshima/route-eyecatch.png",
+    "imageUrl": "/images/kitahiroshima/route-eyecatch.png",
+    "category": "歴史・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び北広島を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅直結の新しい賑わいに触れた瞬間",
+          "description": "2025年開業の駅前商業空間で、変わりゆく街の息吹を感じた",
+          "badge_code": "kitahiroshima_tonarie"
+        },
+        {
+          "key": "B",
+          "text": "廃校舎で土地の歴史と自然に耳を澄ませた時間",
+          "description": "知新の駅で北広島の自然や開拓の記憶に静かに向き合った",
+          "badge_code": "kitahiroshima_chishin"
+        },
+        {
+          "key": "C",
+          "text": "道産素材のジェラートや窯焼きの香りに癒やされた時間",
+          "description": "北海道素材の恵みを味わい、街歩きの足を心地よく休めた",
+          "badge_code": "kitahiroshima_artlacze"
+        },
+        {
+          "key": "D",
+          "text": "広大な天然芝と白球の聖地を目の前にした高揚感",
+          "description": "Fビレッジの広大な空間に立ち、新しい北広島の象徴を体感した",
+          "badge_code": "kitahiroshima_escon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bc73004c-e562-43cb-8c0a-a30ceebbfc25",
+        "name": "JR北広島駅",
+        "description": "大正15年（1926年）8月21日に開業したJR千歳線の主要駅（終日利用可・無料）。ボールパーク開業に伴い駅直結施設や歩行者動線の整備が進む北広島市の玄関口。",
+        "address": "北海道北広島市中央6-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.979131,
+        "lng": 141.563158,
+        "qr_token": "shuin-kitahiroshima-1",
+        "cover_image_url": "/images/kitahiroshima/spot1.png",
+        "f7_fragment": "大正十五年開業、新しい商業施設とFビレッジへの玄関口となるJR千歳線の駅。",
+        "f7_full": "「JR北広島駅」の新しい賑わいを後にし、新旧の魅力が交差する北広島の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "8fdcc5e6-8fd5-4c7b-8c6a-5709434bf8d9",
+        "next_spot_name": "トナリエ北広島"
+      },
+      {
+        "id": "8fdcc5e6-8fd5-4c7b-8c6a-5709434bf8d9",
+        "name": "トナリエ北広島",
+        "description": "2025年3月15日に開業したJR北広島駅西口直結の複合商業施設（1F 10:00〜20:00・2F〜22:00等）。1〜3階に多彩な店舗やフードホールが並び、4〜14階はホテルとなっている。",
+        "address": "北海道北広島市栄町1-52",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.978988,
+        "lng": 141.562043,
+        "qr_token": "shuin-kitahiroshima-2",
+        "cover_image_url": "/images/kitahiroshima/spot2.png",
+        "f7_fragment": "令和七年春にJR北広島駅西口直結で誕生した多彩な店舗が揃う複合商業施設。",
+        "f7_full": "「トナリエ北広島」で新しい駅前の賑わいを体感し、街のこれからに胸を躍らせた。",
+        "is_final": false,
+        "next_spot_id": "42937acd-4bb9-4103-815d-ca97d00f3843",
+        "next_spot_name": "北広島市エコミュージアムセンター知新の駅"
+      },
+      {
+        "id": "42937acd-4bb9-4103-815d-ca97d00f3843",
+        "name": "北広島市エコミュージアムセンター知新の駅",
+        "description": "2014年7月に廃校となった旧小学校校舎を活用して開設された郷土博物館（9:00〜17:00、月曜・年末年始休、入館無料）。北広島の自然・歴史・文化を「屋根のない博物館」として紹介する。",
+        "address": "北海道北広島市広葉町3-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.975154,
+        "lng": 141.554252,
+        "qr_token": "shuin-kitahiroshima-3",
+        "cover_image_url": "/images/kitahiroshima/spot3.png",
+        "f7_fragment": "旧小学校校舎を活用し北広島の自然や開拓史を伝える地域博物館。",
+        "f7_full": "「北広島市エコミュージアムセンター知新の駅」で、北広島の開拓の歩みを深く学んだ。",
+        "is_final": false,
+        "next_spot_id": "1cb2316b-94eb-488a-8cd0-836212ce879b",
+        "next_spot_name": "ARTLACZÉ Gelato & Pizza 北広島店"
+      },
+      {
+        "id": "1cb2316b-94eb-488a-8cd0-836212ce879b",
+        "name": "ARTLACZÉ Gelato & Pizza 北広島店",
+        "description": "北海道産素材にこだわったジェラートと本格窯焼きピッツァを味わえる人気店（10:30〜20:00、11〜3月は月曜休・4〜10月無休）。Fビレッジ近隣の美沢エリアに佇む。",
+        "address": "北海道北広島市美沢5-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.983946,
+        "lng": 141.555788,
+        "qr_token": "shuin-kitahiroshima-4",
+        "cover_image_url": "/images/kitahiroshima/spot4.png",
+        "f7_fragment": "北海道産素材のジェラートと本格窯焼きピッツァを堪能できる人気店。",
+        "f7_full": "「ARTLACZÉ Gelato & Pizza 北広島店」で道産素材の絶品ピッツァとジェラートを味わった。",
+        "is_final": false,
+        "next_spot_id": "7f991af9-45d9-4ae2-86e8-4ff83aed8929",
+        "next_spot_name": "エスコンフィールドHOKKAIDO"
+      },
+      {
+        "id": "7f991af9-45d9-4ae2-86e8-4ff83aed8929",
+        "name": "エスコンフィールドHOKKAIDO",
+        "description": "2023年3月30日に公式戦初開催で開業した北海道日本ハムファイターズの本拠地（基本9:30〜21:00・変動あり、無休）。天然芝フィールドを望む開放的な空間で非試合日もグルメや散策を楽しめる。",
+        "address": "北海道北広島市Fビレッジ1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.990282,
+        "lng": 141.549533,
+        "qr_token": "shuin-kitahiroshima-5",
+        "cover_image_url": "/images/kitahiroshima/spot5.png",
+        "f7_fragment": "天然芝フィールドと開放的なガラス壁が印象的な北海道の新しい白球の聖地。",
+        "f7_full": "「エスコンフィールドHOKKAIDO」の壮大な風景に感動し、北広島の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "650e50ed-c3a9-427a-83bd-96a92ae756d4",
+    "title": "旧駅舎の面影と緑豊かな丘を歩く上野幌",
+    "name": "旧駅舎の面影と緑豊かな丘を歩く上野幌",
+    "description": "JR上野幌駅から旧上野幌小学校跡の厚別南緑地、上野幌公園、旧上野幌駅跡の厚別南公園、珈琲店を巡る歴史散歩ルート。",
+    "region": "上野幌・厚別南",
+    "area_name": "上野幌・厚別南",
+    "cover_image_url": "/images/kaminopporo/route-eyecatch.png",
+    "imageUrl": "/images/kaminopporo/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "緑と線路の記憶が重なる上野幌で、心が動かされた場所はどこ？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "旧校舎跡の静かな森と炭窯の記憶",
+          "description": "旧上野幌小学校跡の厚別南緑地で、豊かな自然林に触れた",
+          "badge_code": "kaminopporo_greenbelt"
+        },
+        {
+          "key": "B",
+          "text": "地域の笑顔が集う開放的な公園の風景",
+          "description": "上野幌公園の穏やかな空気の中、街の日常に寄り添って歩いた",
+          "badge_code": "kaminopporo_park"
+        },
+        {
+          "key": "C",
+          "text": "旧駅舎のイチイの木が語る鉄道の歴史",
+          "description": "旧上野幌駅跡地の小高い丘に立ち、半世紀前の鉄路に思いを馳せた",
+          "badge_code": "kaminopporo_oldstation"
+        },
+        {
+          "key": "D",
+          "text": "珈琲の香りに包まれて一息ついた午後",
+          "description": "旧駅跡の散策の終わりに、温かい珈琲で心をほどいた",
+          "badge_code": "kaminopporo_coffee"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "62598052-8331-4043-861b-9e050ad99f65",
+        "name": "JR上野幌駅",
+        "description": "大正15年（1926年）8月21日に開業し、昭和48年（1973年）の千歳線新線切替に伴い現在地へ移転した駅（終日利用可・無料）。札幌市内の千歳線最南端・最東端の駅。",
+        "address": "北海道札幌市厚別区厚別町上野幌686-16",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.016714,
+        "lng": 141.487027,
+        "qr_token": "shuin-kaminopporo-1",
+        "cover_image_url": "/images/kaminopporo/spot1.png",
+        "f7_fragment": "昭和四十八年の新線切替で現在地へ移った札幌市の千歳線最南端の駅。",
+        "f7_full": "「JR上野幌駅」を後にし、かつての学び舎と旧鉄路の面影を辿る散策へ出発した。",
+        "is_final": false,
+        "next_spot_id": "208e579a-d47f-479f-8744-1ef08eeb94fe",
+        "next_spot_name": "厚別南緑地"
+      },
+      {
+        "id": "208e579a-d47f-479f-8744-1ef08eeb94fe",
+        "name": "厚別南緑地",
+        "description": "明治期開校の「旧上野幌小学校」跡地などを整備した都市緑地（終日開放・無料）。自然林の中にエゾリスや野鳥の姿が見られ、往時の暮らしを伝える炭窯の複製も設けられている。",
+        "address": "北海道札幌市厚別区厚別南7-26",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.020772,
+        "lng": 141.482806,
+        "qr_token": "shuin-kaminopporo-2",
+        "cover_image_url": "/images/kaminopporo/spot2.png",
+        "f7_fragment": "旧上野幌小学校跡地を整備し、自然林や炭窯の複製が残る都市緑地。",
+        "f7_full": "「厚別南緑地」の静かな木立の中を歩き、往時の学び舎と自然の息吹に触れた。",
+        "is_final": false,
+        "next_spot_id": "50258671-b362-4226-85d1-03a83602b909",
+        "next_spot_name": "上野幌公園"
+      },
+      {
+        "id": "50258671-b362-4226-85d1-03a83602b909",
+        "name": "上野幌公園",
+        "description": "広々とした芝生広場や多目的広場を備えた地域の憩いの公園（終日開放・無料）。個性的なベンチが並び、冬には雪遊びの舞台としても親しまれている。",
+        "address": "北海道札幌市厚別区厚別南5-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.026426,
+        "lng": 141.473232,
+        "qr_token": "shuin-kaminopporo-3",
+        "cover_image_url": "/images/kaminopporo/spot3.png",
+        "f7_fragment": "広々とした芝生広場が広がり、丘の住宅街に寄り添う憩いの公園。",
+        "f7_full": "「上野幌公園」の開放的な芝生広場を歩き、丘の街の穏やかな日常に触れた。",
+        "is_final": false,
+        "next_spot_id": "905647e4-4f3b-4ddf-82c7-1f9c540ae278",
+        "next_spot_name": "厚別南公園"
+      },
+      {
+        "id": "905647e4-4f3b-4ddf-82c7-1f9c540ae278",
+        "name": "厚別南公園",
+        "description": "平成3年（1991年）に旧国鉄千歳線「旧上野幌駅」の跡地へ整備された公園（終日開放・無料）。旧駅舎があった小高い丘にはシンボルだったイチイの木が残り、歴史を伝える説明板が立つ。",
+        "address": "北海道札幌市厚別区厚別南5-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.02512,
+        "lng": 141.476716,
+        "qr_token": "shuin-kaminopporo-4",
+        "cover_image_url": "/images/kaminopporo/spot4.png",
+        "f7_fragment": "旧国鉄「旧上野幌駅」跡地に整備され、往時のイチイの木が残る公園。",
+        "f7_full": "「厚別南公園」の丘で旧駅舎のイチイの木に出会い、半世紀前の鉄路を偲んだ。",
+        "is_final": false,
+        "next_spot_id": "3f43f392-3ec0-4682-85ce-53bf4a50ae1b",
+        "next_spot_name": "星乃珈琲店 札幌厚別店"
+      },
+      {
+        "id": "3f43f392-3ec0-4682-85ce-53bf4a50ae1b",
+        "name": "星乃珈琲店 札幌厚別店",
+        "description": "落ち着いた木調の店内でハンドドリップ珈琲や窯焼きスフレパンケーキを味わえる喫茶店（8:00〜20:00、不定休）。旧駅跡の散策後にゆっくり座って休憩できる。",
+        "address": "北海道札幌市厚別区厚別南4-25-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.022932,
+        "lng": 141.471469,
+        "qr_token": "shuin-kaminopporo-5",
+        "cover_image_url": "/images/kaminopporo/spot5.png",
+        "f7_fragment": "ハンドドリップ珈琲や窯焼きスフレパンケーキで寛げる落ち着いた喫茶店。",
+        "f7_full": "「星乃珈琲店 札幌厚別店」で温かい珈琲を味わい、上野幌の旅を穏やかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7433c28b-252c-478b-81b4-9ab155b77597",
+    "title": "科学と海の知に出会う新札幌のまち歩き",
+    "name": "科学と海の知に出会う新札幌のまち歩き",
+    "description": "JR新札幌駅から老舗のサンピアザ水族館、刷新された札幌市青少年科学館、名物チキンペッカー、厚別中央公園を巡るルート。",
+    "region": "新札幌・厚別中央",
+    "area_name": "新札幌・厚別中央",
+    "cover_image_url": "/images/shinsapporo/route-eyecatch.png",
+    "imageUrl": "/images/shinsapporo/route-eyecatch.png",
+    "category": "文化・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "知的好奇心と街の味が詰まった新札幌で、どの体験に惹かれましたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "街ナカの水槽で出会った海の生きものたち",
+          "description": "1981年から愛されるサンピアザ水族館で、水中の世界に癒やされた",
+          "badge_code": "shinsapporo_aquarium"
+        },
+        {
+          "key": "B",
+          "text": "生まれ変わった展示室と星空のプラネタリウム",
+          "description": "2024年刷新の青少年科学館で、科学の驚きと星空に触れた",
+          "badge_code": "shinsapporo_science"
+        },
+        {
+          "key": "C",
+          "text": "中札内産若鶏の炭火焼きが香る地元グルメ",
+          "description": "1991年創業のチキンペッカーで、新札幌の定番の味を堪能した",
+          "badge_code": "shinsapporo_pecker"
+        },
+        {
+          "key": "D",
+          "text": "副都心のすぐそばに広がる穏やかな芝生広場",
+          "description": "厚別中央公園の開放的な緑の中で、穏やかに歩みを終えた",
+          "badge_code": "shinsapporo_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "82c441c0-f64c-4e5e-84d7-11de93d18362",
+        "name": "JR新札幌駅",
+        "description": "昭和48年（1973年）9月9日に千歳線新線切替とともに開業した駅（終日利用可・無料）。地下鉄東西線と結節する札幌東部副都心の中心拠点。",
+        "address": "北海道札幌市厚別区厚別中央2条5-6-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.038224,
+        "lng": 141.473006,
+        "qr_token": "shuin-shinsapporo-1",
+        "cover_image_url": "/images/shinsapporo/spot1.png",
+        "f7_fragment": "昭和四十八年開業、地下鉄とも直結する札幌東部副都心の玄関口。",
+        "f7_full": "「JR新札幌駅」の賑わいを抜け、知とグルメが詰まった副都心の散策へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "c2e97eab-215e-487f-8e5e-de3a3ed40bba",
+        "next_spot_name": "新さっぽろサンピアザ水族館"
+      },
+      {
+        "id": "c2e97eab-215e-487f-8e5e-de3a3ed40bba",
+        "name": "新さっぽろサンピアザ水族館",
+        "description": "昭和56年（1981年）開館の都市型水族館（10:00〜17:00、年中無休）。珍しい淡水魚や海水魚、ゴマフアザラシやペンギンたちの愛らしい姿を間近に観察できる。",
+        "address": "北海道札幌市厚別区厚別中央2条5-7-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.03684,
+        "lng": 141.471711,
+        "qr_token": "shuin-shinsapporo-2",
+        "cover_image_url": "/images/shinsapporo/spot2.png",
+        "f7_fragment": "昭和五十六年開館、ペンギンやアザラシに間近で会える老舗の都市型水族館。",
+        "f7_full": "「新さっぽろサンピアザ水族館」で海の生きものたちの愛らしい姿に心が和んだ。",
+        "is_final": false,
+        "next_spot_id": "7974c840-cbab-479b-8663-91609cb80ed6",
+        "next_spot_name": "札幌市青少年科学館"
+      },
+      {
+        "id": "7974c840-cbab-479b-8663-91609cb80ed6",
+        "name": "札幌市青少年科学館",
+        "description": "昭和56年（1981年）開館、令和6年（2024年）4月に展示室全体が大規模リニューアルされた体験型科学館（5〜9月9:00〜17:00・10〜4月9:30〜16:30、月曜等休）。プラネタリウムも併設。",
+        "address": "北海道札幌市厚別区厚別中央1条5-2-20",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.036111,
+        "lng": 141.472222,
+        "qr_token": "shuin-shinsapporo-3",
+        "cover_image_url": "/images/shinsapporo/spot3.png",
+        "f7_fragment": "令和六年に展示室が全面刷新されプラネタリウムも楽しめる体験型科学館。",
+        "f7_full": "「札幌市青少年科学館」の新しい体験展示と星空に魅了され、科学の楽しさを味わった。",
+        "is_final": false,
+        "next_spot_id": "c56db5fa-6585-491e-82c3-2dbe07e26628",
+        "next_spot_name": "チキンペッカー（本店）"
+      },
+      {
+        "id": "c56db5fa-6585-491e-82c3-2dbe07e26628",
+        "name": "チキンペッカー（本店）",
+        "description": "平成3年（1991年）創業の鶏料理専門店（10:00〜19:30、元日のみ休）。十勝・中札内村の契約農場から仕入れる新鮮な若鶏の炭火焼きや唐揚げが名物。「鳥せい」の姉妹店。",
+        "address": "北海道札幌市厚別区厚別中央2条4-11-39",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.036085,
+        "lng": 141.469867,
+        "qr_token": "shuin-shinsapporo-4",
+        "cover_image_url": "/images/shinsapporo/spot4.png",
+        "f7_fragment": "平成三年創業、十勝・中札内産若鶏の炭火焼きや唐揚げが名物の専門店。",
+        "f7_full": "「チキンペッカー（本店）」で炭火香る名物チキンを味わい、新札幌の味を満喫した。",
+        "is_final": false,
+        "next_spot_id": "460685cd-08b8-4757-85cc-96e127ec5640",
+        "next_spot_name": "厚別中央公園"
+      },
+      {
+        "id": "460685cd-08b8-4757-85cc-96e127ec5640",
+        "name": "厚別中央公園",
+        "description": "副都心の商業エリアから少し離れた住宅地に広がる公園（終日開放・無料）。広々とした芝生広場と緑の木陰があり、散策の最後に心地よく深呼吸できる。",
+        "address": "北海道札幌市厚別区厚別中央3条3-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.039039,
+        "lng": 141.463877,
+        "qr_token": "shuin-shinsapporo-5",
+        "cover_image_url": "/images/shinsapporo/spot5.png",
+        "f7_fragment": "副都心のそばに広々とした芝生広場を備える緑豊かな住宅地の公園。",
+        "f7_full": "「厚別中央公園」の爽やかな緑の中で深呼吸し、新札幌のまち歩きを終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b3fc8d7a-46ff-41dd-845a-9773ba0ce1dd",
+    "title": "甘い香りと開拓の社を訪ねる平和の午後",
+    "name": "甘い香りと開拓の社を訪ねる平和の午後",
+    "description": "JR平和駅から窯焼ポテトのかわいや工場売店、北郷とちの木公園、自家焙煎カフェ、開拓ゆかりの白石神社を巡るルート。",
+    "region": "平和・北郷・白石",
+    "area_name": "平和・北郷・白石",
+    "cover_image_url": "/images/heiwa/route-eyecatch.png",
+    "imageUrl": "/images/heiwa/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "甘味と静かな祈りが息づく平和の街で、どの場面が印象的でしたか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "工場直売所で出会った窯焼ポテトのやさしい甘み",
+          "description": "1976年創業のかわいや本社売店で、伝統の窯焼ポテトを手にした",
+          "badge_code": "heiwa_kawaiya"
+        },
+        {
+          "key": "B",
+          "text": "線路を越えた住宅街の穏やかな公園の空気",
+          "description": "とちの木公園の静かな木陰で、白石の暮らしの息遣いを感じた",
+          "badge_code": "heiwa_tochinoki"
+        },
+        {
+          "key": "C",
+          "text": "自家焙煎コーヒーと手作り焼菓子に満たされた時間",
+          "description": "BELONGの落ち着いた空間で、丁寧な一杯とともに歩みを休めた",
+          "badge_code": "heiwa_belong"
+        },
+        {
+          "key": "D",
+          "text": "明治の開拓を伝える社と神寄谷の静謐な湧水",
+          "description": "明治5年ゆかりの白石神社を訪れ、土地の歴史に深く敬意を払った",
+          "badge_code": "heiwa_shiroishi_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d2d2a9dc-cf33-4988-8e78-b398c031775b",
+        "name": "JR平和駅",
+        "description": "昭和61年（1986年）11月1日に臨時乗降場として開業し、翌年に駅へ昇格したJR千歳線の駅（終日利用可・無料）。南北を跨線人道橋で結び地域をつなぐ。",
+        "address": "北海道札幌市白石区平和通16丁目北10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.046866,
+        "lng": 141.43864,
+        "qr_token": "shuin-heiwa-1",
+        "cover_image_url": "/images/heiwa/spot1.png",
+        "f7_fragment": "昭和六十一年開業、長い人道橋が南北の街を結ぶJR千歳線の駅。",
+        "f7_full": "「JR平和駅」から下町の風を感じつつ、甘い香りと開拓の歴史を辿る散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "f9d49b74-03ef-487e-8076-4367ad3d1be2",
+        "next_spot_name": "かわいや 本社・工場売店"
+      },
+      {
+        "id": "f9d49b74-03ef-487e-8076-4367ad3d1be2",
+        "name": "かわいや 本社・工場売店",
+        "description": "昭和51年（1976年）4月創業の菓子メーカーの本社直売店（9:00〜17:00、土日祝休）。サツマイモの皮を器に使い新聞紙風の包み紙で有名な「窯焼ポテト」や「ポテトアップルパイ」が看板。",
+        "address": "北海道札幌市白石区平和通17丁目北11-11",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.041809,
+        "lng": 141.439504,
+        "qr_token": "shuin-heiwa-2",
+        "cover_image_url": "/images/heiwa/spot2.png",
+        "f7_fragment": "昭和五十一年創業、新聞紙風の包み紙が目印の「窯焼ポテト」本社直売店。",
+        "f7_full": "「かわいや 本社・工場売店」で伝統の窯焼ポテトに出会い、甘い香りに包まれた。",
+        "is_final": false,
+        "next_spot_id": "7a4e7fa2-bbc9-405e-8dae-8890cf4f467d",
+        "next_spot_name": "北郷とちの木公園"
+      },
+      {
+        "id": "7a4e7fa2-bbc9-405e-8dae-8890cf4f467d",
+        "name": "北郷とちの木公園",
+        "description": "平和駅の北郷側に位置する落ち着いた住宅街の公園（終日開放・無料）。線路を越えた先の穏やかな街並みに溶け込む地域の憩いの場。",
+        "address": "北海道札幌市白石区北郷2条14-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.047606,
+        "lng": 141.441502,
+        "qr_token": "shuin-heiwa-3",
+        "cover_image_url": "/images/heiwa/spot3.png",
+        "f7_fragment": "JR平和駅の北郷側に広がる穏やかな住宅街の憩いの公園。",
+        "f7_full": "「北郷とちの木公園」の木陰で一息つき、白石の穏やかな暮らしの空気に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "73654787-68f3-421e-83fc-d6066bdc5c64",
+        "next_spot_name": "COFFEE&TREAT BELONG"
+      },
+      {
+        "id": "73654787-68f3-421e-83fc-d6066bdc5c64",
+        "name": "COFFEE&TREAT BELONG",
+        "description": "自家焙煎のハンドドリップコーヒーと手作りドーナツやマフィン、スコーンなどが味わえる温かみのあるカフェ（12:00〜19:00売切終了、火曜・不定休）。",
+        "address": "北海道札幌市白石区北郷2条12-6-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.049677,
+        "lng": 141.437919,
+        "qr_token": "shuin-heiwa-4",
+        "cover_image_url": "/images/heiwa/spot4.png",
+        "f7_fragment": "自家焙煎ハンドドリップ珈琲と手作りドーナツや焼菓子が人気のカフェ。",
+        "f7_full": "「COFFEE&TREAT BELONG」で丁寧な珈琲と焼菓子を楽しみ、心地よく足を休めた。",
+        "is_final": false,
+        "next_spot_id": "84dbd277-b0cc-402d-89c1-53307fa00385",
+        "next_spot_name": "白石神社"
+      },
+      {
+        "id": "84dbd277-b0cc-402d-89c1-53307fa00385",
+        "name": "白石神社",
+        "description": "明治4年（1871年）の旧仙台藩白石城主・片倉家家臣らの入植を背景に、翌明治5年に札幌神社の旧社殿を移築した遥拝所をルーツとする古社（授与所9:00〜16:00、無休）。右奥に湧水と末社が集う神寄谷がある。",
+        "address": "北海道札幌市白石区本通14丁目北1-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.040228,
+        "lng": 141.428297,
+        "qr_token": "shuin-heiwa-5",
+        "cover_image_url": "/images/heiwa/spot5.png",
+        "f7_fragment": "明治五年創祀の遥拝所に始まり、旧仙台藩白石家の開拓史を伝える古社。",
+        "f7_full": "「白石神社」の清らかな杜に参拝し、開拓の歴史と静かな祈りに包まれて旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "148cec2d-cb5f-494c-8782-172a8ca4b95f",
+    "title": "空の玄関口で味わう北海道の魅力と湯浴み",
+    "name": "空の玄関口で味わう北海道の魅力と湯浴み",
+    "description": "JR新千歳空港駅から大空ミュージアム、国内初の空港内チョコ工場、北海道ラーメン道場、天然温泉まで屋内で巡るルート。",
+    "region": "新千歳空港ターミナル",
+    "area_name": "新千歳空港ターミナル",
+    "cover_image_url": "/images/shin_chitose_airport/route-eyecatch.png",
+    "imageUrl": "/images/shin_chitose_airport/route-eyecatch.png",
+    "category": "グルメ・体験",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び新千歳空港を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "飛行機の歴史と空への憧れに触れたミュージアム",
+          "description": "大空ミュージアムで北海道の航空史と空のロマンに触れた",
+          "badge_code": "newchitose_ozora"
+        },
+        {
+          "key": "B",
+          "text": "甘い香りに包まれた空港内のチョコレート工場",
+          "description": "国内初の空港内チョコ工場で、製造風景と限定スイーツを楽しんだ",
+          "badge_code": "newchitose_royce"
+        },
+        {
+          "key": "C",
+          "text": "北海道各地の麺が競演する熱気あふれる一杯",
+          "description": "北海道ラーメン道場で道内自慢の味を存分に堪能した",
+          "badge_code": "newchitose_ramen"
+        },
+        {
+          "key": "D",
+          "text": "滑走路の気配を感じながら浸かった空港の天然温泉",
+          "description": "新千歳空港温泉「熱の湯」で旅の疲れを心地よく癒やした",
+          "badge_code": "newchitose_onsen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d9ce8343-26f4-4282-8f1a-89791c335b4c",
+        "name": "JR新千歳空港駅",
+        "description": "平成4年（1992年）7月1日に新千歳空港ターミナルビル直下に開業した千歳線支線の終着駅（終日利用可・無料）。北海道の空の玄関口へ直結する。",
+        "address": "北海道千歳市美々1292-33",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.787648,
+        "lng": 141.681135,
+        "qr_token": "shuin-shin_chitose_airport-1",
+        "cover_image_url": "/images/shin_chitose_airport/spot1.png",
+        "f7_fragment": "平成四年開業、北海道の空の玄関口直下に位置する千歳線支線の終着駅。",
+        "f7_full": "「JR新千歳空港駅」からターミナル内へ上がり、北海道の魅力が詰まった巡りを始めた。",
+        "is_final": false,
+        "next_spot_id": "6a1d06a0-c170-405e-85a3-0e977d80de56",
+        "next_spot_name": "大空ミュージアム"
+      },
+      {
+        "id": "6a1d06a0-c170-405e-85a3-0e977d80de56",
+        "name": "大空ミュージアム",
+        "description": "新千歳空港国内線ターミナルビル3Fにある体験型航空ミュージアム（10:00〜18:00、年中無休、入場無料）。航空機や空港の歴史展示、フライトシミュレーター体験が楽しめる。",
+        "address": "北海道千歳市美々987-22",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.788205,
+        "lng": 141.681793,
+        "qr_token": "shuin-shin_chitose_airport-2",
+        "cover_image_url": "/images/shin_chitose_airport/spot2.png",
+        "f7_fragment": "空港と航空機の歴史やフライトシミュレーターに触れられる体験型博物館。",
+        "f7_full": "「大空ミュージアム」で空への憧れと北海道の航空史を楽しく学んだ。",
+        "is_final": false,
+        "next_spot_id": "8a514504-4812-4a83-843b-e10e3e357562",
+        "next_spot_name": "ロイズ チョコレートワールド"
+      },
+      {
+        "id": "8a514504-4812-4a83-843b-e10e3e357562",
+        "name": "ロイズ チョコレートワールド",
+        "description": "2011年7月15日にオープンした国内初の空港内チョコレート工場（8:00〜19:00等、年中無休）。ガラス越しに製造工程を見学でき、限定商品や併設ベーカリーのパンも人気。",
+        "address": "北海道千歳市美々987-22",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.787444,
+        "lng": 141.679061,
+        "qr_token": "shuin-shin_chitose_airport-3",
+        "cover_image_url": "/images/shin_chitose_airport/spot3.png",
+        "f7_fragment": "ガラス越しに製造工程を見学できる国内初の空港内チョコレート工場。",
+        "f7_full": "「ロイズ チョコレートワールド」の甘い香りと製造風景に胸が躍った。",
+        "is_final": false,
+        "next_spot_id": "e0c6fa9b-6810-4eee-87c7-fa101376916e",
+        "next_spot_name": "北海道ラーメン道場"
+      },
+      {
+        "id": "e0c6fa9b-6810-4eee-87c7-fa101376916e",
+        "name": "北海道ラーメン道場",
+        "description": "北海道各地を代表する有名ラーメン店が一堂に会する人気グルメエリア（9:00または10:00〜21:00・店舗により変動、年中無休）。札幌・旭川・函館など道内の味を食べ比べできる。",
+        "address": "北海道千歳市美々987-22",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.787969,
+        "lng": 141.680236,
+        "qr_token": "shuin-shin_chitose_airport-4",
+        "cover_image_url": "/images/shin_chitose_airport/spot4.png",
+        "f7_fragment": "札幌・旭川・函館など北海道各地の名店が集う空港内のグルメエリア。",
+        "f7_full": "「北海道ラーメン道場」で湯気立つ北の麺を堪能し、深い満足に浸った。",
+        "is_final": false,
+        "next_spot_id": "a738d59a-6faf-4cee-8f44-025a4663a9e8",
+        "next_spot_name": "新千歳空港温泉"
+      },
+      {
+        "id": "a738d59a-6faf-4cee-8f44-025a4663a9e8",
+        "name": "新千歳空港温泉",
+        "description": "2011年7月15日開業の天然温泉施設（10:00〜翌9:00・深夜清掃あり、年中無休）。保温効果が高く「熱の湯」と呼ばれるナトリウム－塩化物泉で、露天風呂やリラックスルームを備える。",
+        "address": "北海道千歳市美々987-22",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.788,
+        "lng": 141.680405,
+        "qr_token": "shuin-shin_chitose_airport-5",
+        "cover_image_url": "/images/shin_chitose_airport/spot5.png",
+        "f7_fragment": "「熱の湯」と呼ばれる塩化物泉の露天風呂を備えた空港内の天然温泉。",
+        "f7_full": "「新千歳空港温泉」の温かな湯に浸かり、新千歳空港の散策を至福のうちに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bc713664-2a20-4506-821d-62c838d9ab55",
+    "title": "空知の分岐点と美食めぐる滝川の記憶",
+    "name": "空知の分岐点と美食めぐる滝川の記憶",
+    "description": "函館本線と根室本線の分岐点・JR滝川駅から駅前喫茶、松尾ジンギスカン本店、美術自然史館、滝川神社を巡るルート。",
+    "region": "滝川・明神・一の坂",
+    "area_name": "滝川・明神・一の坂",
+    "cover_image_url": "/images/takikawa/route-eyecatch.png",
+    "imageUrl": "/images/takikawa/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び滝川を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前の老舗喫茶で味わった穏やかな時間の香り",
+          "description": "旅の始まりに駅前の珈琲店で静かなひとときを過ごした",
+          "badge_code": "takikawa_seika"
+        },
+        {
+          "key": "B",
+          "text": "本店で堪能した秘伝のタレ香る滝川名物の味",
+          "description": "昭和31年創業の本店で味付けジンギスカンの歴史に触れた",
+          "badge_code": "takikawa_matsuo"
+        },
+        {
+          "key": "C",
+          "text": "500万年前の海を伝えるカイギュウ化石との出会い",
+          "description": "空知川から蘇ったタキカワカイギュウの標本に驚いた",
+          "badge_code": "takikawa_kaigyu"
+        },
+        {
+          "key": "D",
+          "text": "屯田兵の開拓を見守り続けてきた厳かな社での参拝",
+          "description": "明治23年の入植期から続く滝川神社でまちの原点に触れた",
+          "badge_code": "takikawa_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e5b5393d-49ce-4808-8256-735344d66e08",
+        "name": "JR滝川駅",
+        "description": "明治31年（1898年）7月16日開業、大正2年に下富良野線（現・根室本線）が分岐した空知の要衝（終日利用可）。昭和37年建造の駅舎が旅人を迎える。",
+        "address": "北海道滝川市栄町4-9-15",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.555171,
+        "lng": 141.901263,
+        "qr_token": "shuin-takikawa-1",
+        "cover_image_url": "/images/takikawa/spot1.png",
+        "f7_fragment": "明治三十一年開業、函館本線と根室本線が分岐する空知の鉄道の要衝。",
+        "f7_full": "「JR滝川駅」の昭和薫る駅舎を後にし、名物グルメと開拓史を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "e4a3a5c4-4b69-4033-84d0-712ff2b3e65c",
+        "next_spot_name": "COFFEE HOUSE Seika"
+      },
+      {
+        "id": "e4a3a5c4-4b69-4033-84d0-712ff2b3e65c",
+        "name": "COFFEE HOUSE Seika",
+        "description": "滝川駅至近で長年親しまれる老舗喫茶店（10:00〜20:00、日曜・祝日休）。散策前後のひと息に心地よい落ち着いた空間が広がる。",
+        "address": "北海道滝川市栄町4-7-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.557293,
+        "lng": 141.902763,
+        "qr_token": "shuin-takikawa-2",
+        "cover_image_url": "/images/takikawa/spot2.png",
+        "f7_fragment": "JR滝川駅すぐそばで親しまれる落ち着いた雰囲気の老舗喫茶店。",
+        "f7_full": "「COFFEE HOUSE Seika」で香り高い珈琲を味わい、旅の歩みを心地よく整えた。",
+        "is_final": false,
+        "next_spot_id": "4f11d6fb-7b77-4c8d-8f2a-e223be6f6f9c",
+        "next_spot_name": "松尾ジンギスカン 滝川本店"
+      },
+      {
+        "id": "4f11d6fb-7b77-4c8d-8f2a-e223be6f6f9c",
+        "name": "松尾ジンギスカン 滝川本店",
+        "description": "昭和31年（1956年）創業の味付けジンギスカン発祥の本店（11:00〜22:00、年末年始休）。秘伝のタレに漬け込んだ柔らかな羊肉が全国的に知られる滝川名物の拠点。",
+        "address": "北海道滝川市明神町3-5-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.554726,
+        "lng": 141.911909,
+        "qr_token": "shuin-takikawa-3",
+        "cover_image_url": "/images/takikawa/spot3.png",
+        "f7_fragment": "昭和三十一年創業、秘伝のタレに漬け込む味付けジンギスカン発祥の本店。",
+        "f7_full": "「松尾ジンギスカン 滝川本店」で伝統の味を堪能し、滝川の食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "72eb5508-4da0-43c0-8e2a-b8fa2256f11a",
+        "next_spot_name": "滝川市美術自然史館"
+      },
+      {
+        "id": "72eb5508-4da0-43c0-8e2a-b8fa2256f11a",
+        "name": "滝川市美術自然史館",
+        "description": "昭和61年（1986年）開館の文化施設（10:00〜17:00、月曜・祝翌日・12〜2月冬期休館）。空知川河床で発見された約500万年前の新種化石「タキカワカイギュウ」骨格標本などを展示。",
+        "address": "北海道滝川市新町2-5-30",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.552071,
+        "lng": 141.914467,
+        "qr_token": "shuin-takikawa-4",
+        "cover_image_url": "/images/takikawa/spot4.png",
+        "f7_fragment": "約500万年前の化石「タキカワカイギュウ」や岩橋英遠作品を展示する文化館。",
+        "f7_full": "「滝川市美術自然史館」で五百万年前の海の化石と芸術に出会い、深い感銘を受けた。",
+        "is_final": false,
+        "next_spot_id": "25874f7b-cf4e-493c-8292-72933901db36",
+        "next_spot_name": "滝川神社"
+      },
+      {
+        "id": "25874f7b-cf4e-493c-8292-72933901db36",
+        "name": "滝川神社",
+        "description": "明治23年（1890年）7月、屯田兵440戸の移住に伴い設けられた神霊遥拝所をルーツとする地域の鎮守（参拝自由）。明治36年に現在地へ社殿を建立し、昭和11年に県社へ昇格した。",
+        "address": "北海道滝川市一の坂町東1-1-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.564068,
+        "lng": 141.913269,
+        "qr_token": "shuin-takikawa-5",
+        "cover_image_url": "/images/takikawa/spot5.png",
+        "f7_fragment": "明治二十三年の屯田兵移住に伴い創祀された遥拝所に始まる滝川の総鎮守。",
+        "f7_full": "「滝川神社」の清らかな杜に参拝し、開拓の歴史に思いを馳せて旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c0c148b2-cdce-4cf1-8238-4de2148cbdfb",
+    "title": "炭鉱の記憶と七七七段を仰ぐ赤平の町",
+    "name": "炭鉱の記憶と七七七段を仰ぐ赤平の町",
+    "description": "JR赤平駅から名物カツラーメンの珍来、古民家カフェを経て日本一のズリ山階段と旧住友赤平炭鉱の立坑櫓を巡るルート。",
+    "region": "赤平・ズリ山・炭鉱遺産",
+    "area_name": "赤平・ズリ山・炭鉱遺産",
+    "cover_image_url": "/images/akabira/route-eyecatch.png",
+    "imageUrl": "/images/akabira/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び赤平を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "炭鉱のまちに受け継がれる熱々の一杯",
+          "description": "赤平名物のカツラーメンを味わい、まちの食文化に触れた",
+          "badge_code": "akabira_chinrai"
+        },
+        {
+          "key": "B",
+          "text": "古民家の温もりに包まれた穏やかな珈琲時間",
+          "description": "大町の古民家カフェで香り高い一杯とスイーツに癒やされた",
+          "badge_code": "akabira_luft"
+        },
+        {
+          "key": "C",
+          "text": "日本一の七七七段を仰ぎ見たズリ山の雄姿",
+          "description": "日本一の段数を誇るズリ山階段と赤平の街並みを望んだ",
+          "badge_code": "akabira_zuriyama"
+        },
+        {
+          "key": "D",
+          "text": "東洋一と謳われた立坑櫓が語る炭鉱の誇り",
+          "description": "旧住友赤平炭鉱の遺産に触れ、地下に刻まれた歴史を感じ取った",
+          "badge_code": "akabira_pithead"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a33cf5a5-1b9b-4f3d-870d-082424389bd4",
+        "name": "JR赤平駅",
+        "description": "大正2年（1913年）11月10日に「上赤平駅」として開業、昭和18年に現駅名へ改称（駅舎開放時間利用可）。昭和35年には貨物発送量全国1位を記録した炭鉱の拠点。",
+        "address": "北海道赤平市泉町1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.554802,
+        "lng": 142.048524,
+        "qr_token": "shuin-akabira-1",
+        "cover_image_url": "/images/akabira/spot1.png",
+        "f7_fragment": "大正二年開業、かつて貨物発送量全国一位を誇った炭鉱の町の玄関口。",
+        "f7_full": "「JR赤平駅」を後にし、炭鉱の歴史と名物が息づく赤平の街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "70aba792-caed-4237-8108-43a886a375fe",
+        "next_spot_name": "珍来"
+      },
+      {
+        "id": "70aba792-caed-4237-8108-43a886a375fe",
+        "name": "珍来",
+        "description": "炭鉱マンのスタミナ食として定着した赤平名物「カツラーメン」や味噌ベースの「がんがんラーメン」で知られる老舗ラーメン店（昼〜18:00、7のつく日休・土日祝営業）。",
+        "address": "北海道赤平市大町1-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.554718,
+        "lng": 142.051724,
+        "qr_token": "shuin-akabira-2",
+        "cover_image_url": "/images/akabira/spot2.png",
+        "f7_fragment": "炭鉱マンのスタミナ食に始まる赤平名物カツラーメンが評判の老舗店。",
+        "f7_full": "「珍来」で熱々の赤平名物カツラーメンを味わい、まちの食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "be49b854-1eee-4632-8488-b86a8a9f983b",
+        "next_spot_name": "Café Luft（カフェ ルフト）"
+      },
+      {
+        "id": "be49b854-1eee-4632-8488-b86a8a9f983b",
+        "name": "Café Luft（カフェ ルフト）",
+        "description": "古民家を改装した落ち着いた雰囲気のカフェ（11:30〜18:00、不定休）。パティシエの店主による手作りタルト等のスイーツやプレッツェル、自家焙煎コーヒーを提供する。",
+        "address": "北海道赤平市大町1-6-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.552507,
+        "lng": 142.054909,
+        "qr_token": "shuin-akabira-3",
+        "cover_image_url": "/images/akabira/spot3.png",
+        "f7_fragment": "古民家を改装した店内で本格スイーツと自家焙煎珈琲を楽しめるカフェ。",
+        "f7_full": "「Café Luft（カフェ ルフト）」で木の温もりと甘いスイーツに包まれ、足を休めた。",
+        "is_final": false,
+        "next_spot_id": "838bdf8f-78d2-48b3-8017-6c4761a96b6a",
+        "next_spot_name": "ズリ山展望広場"
+      },
+      {
+        "id": "838bdf8f-78d2-48b3-8017-6c4761a96b6a",
+        "name": "ズリ山展望広場",
+        "description": "炭鉱の捨石（ズリ）が積み上がってできた人工の山に設けられた展望広場（散策自由、冬季閉鎖の場合あり）。頂上へ続く「ズリ山階段」は777段あり日本一の段数を誇る。",
+        "address": "北海道赤平市字赤平693-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.550747,
+        "lng": 142.043859,
+        "qr_token": "shuin-akabira-4",
+        "cover_image_url": "/images/akabira/spot4.png",
+        "f7_fragment": "日本一の777段のズリ山階段を備え、赤平の街と歴史を望む展望広場。",
+        "f7_full": "「ズリ山展望広場」で七百七十七段の雄姿を見上げ、炭鉱の歴史の大きさを実感した。",
+        "is_final": false,
+        "next_spot_id": "b1b90a26-8667-484e-8e20-bbb1c2cca178",
+        "next_spot_name": "赤平市炭鉱遺産ガイダンス施設"
+      },
+      {
+        "id": "b1b90a26-8667-484e-8e20-bbb1c2cca178",
+        "name": "赤平市炭鉱遺産ガイダンス施設",
+        "description": "旧住友赤平炭鉱の立坑櫓や自走枠整備工場などを間近に見学できる拠点（9:30〜17:00、月火・年末年始休、常設展示無料）。元炭鉱夫らによる有料ガイド付き内部見学ツアーも実施。",
+        "address": "北海道赤平市字赤平485",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.549051,
+        "lng": 142.055393,
+        "qr_token": "shuin-akabira-5",
+        "cover_image_url": "/images/akabira/spot5.png",
+        "f7_fragment": "旧住友赤平炭鉱の立坑櫓を間近に見学できる炭鉱遺産の保存・展示拠点。",
+        "f7_full": "「赤平市炭鉱遺産ガイダンス施設」の立坑櫓を仰ぎ、赤平の誇りある歴史に感動した。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "deb45289-2401-4a48-8748-969ca8511acc",
+    "title": "炭山の面影と開拓の碑を巡る茂尻散歩",
+    "name": "炭山の面影と開拓の碑を巡る茂尻散歩",
+    "description": "河岸段丘の高台に立つJR茂尻駅から老舗の柳屋食堂、茂尻出雲神社、あかびら発祥の地記念碑、老舗精肉店を巡るルート。",
+    "region": "茂尻・百戸",
+    "area_name": "茂尻・百戸",
+    "cover_image_url": "/images/moshiri/route-eyecatch.png",
+    "imageUrl": "/images/moshiri/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び茂尻を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前の老舗食堂で味わった温かな一皿",
+          "description": "炭鉱の面影が残る駅前の食堂で、地元に愛される味を堪能した",
+          "badge_code": "moshiri_yanagiya"
+        },
+        {
+          "key": "B",
+          "text": "参道の先に佇む出雲神社の静かな空気",
+          "description": "長い参道と狛犬が迎える茂尻出雲神社で、静かな祈りを捧げた",
+          "badge_code": "moshiri_izumo"
+        },
+        {
+          "key": "C",
+          "text": "明治の開拓を伝えるあかびら発祥の地の碑",
+          "description": "翠光苑に立つ記念碑の前で、明治23年からの歩みに触れた",
+          "badge_code": "moshiri_suikoen"
+        },
+        {
+          "key": "D",
+          "text": "昭和27年創業の老舗肉店に香る伝統のたれ",
+          "description": "地域に受け継がれるジンギスカンの文化に出会った",
+          "badge_code": "moshiri_takimoto"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1be13fd5-97de-42de-8647-8e9d7483d9e9",
+        "name": "JR茂尻駅",
+        "description": "大正7年（1918年）12月28日に茂尻炭鉱の石炭積出用貨物駅として開業、大正15年に旅客営業を開始（終日利用可）。空知川の河岸段丘上に立つ無人駅。",
+        "address": "北海道赤平市茂尻元町南2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.53731,
+        "lng": 142.082215,
+        "qr_token": "shuin-moshiri-1",
+        "cover_image_url": "/images/moshiri/spot1.png",
+        "f7_fragment": "大正七年に石炭積出駅として開業した河岸段丘上のレトロな無人駅。",
+        "f7_full": "「JR茂尻駅」の高台から階段を下り、炭山と開拓の歴史が息づく茂尻の町へ出た。",
+        "is_final": false,
+        "next_spot_id": "aabefaa9-041f-4d61-85d4-9086224d5baf",
+        "next_spot_name": "柳屋食堂"
+      },
+      {
+        "id": "aabefaa9-041f-4d61-85d4-9086224d5baf",
+        "name": "柳屋食堂",
+        "description": "茂尻駅近くで長年親しまれる大衆食堂（月〜金11:00〜18:00・土曜〜15:00、日曜休）。赤平名物カツラーメンや各種ラーメン、家庭的な定食が味わえる。",
+        "address": "北海道赤平市茂尻元町北1-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.539129,
+        "lng": 142.083045,
+        "qr_token": "shuin-moshiri-2",
+        "cover_image_url": "/images/moshiri/spot2.png",
+        "f7_fragment": "茂尻駅近くで赤平名物カツラーメンや定食を届ける老舗の大衆食堂。",
+        "f7_full": "「柳屋食堂」で昔ながらの温かい料理を味わい、茂尻の人情と活力を感じた。",
+        "is_final": false,
+        "next_spot_id": "59cca28c-b5a2-440e-8e67-2ff238857fd9",
+        "next_spot_name": "茂尻出雲神社"
+      },
+      {
+        "id": "59cca28c-b5a2-440e-8e67-2ff238857fd9",
+        "name": "茂尻出雲神社",
+        "description": "空知川左岸の出雲公園に隣接して鎮座する神社（参拝自由）。長い参道と複数の狛犬が迎える、地域に根ざした歴史あるお社。",
+        "address": "北海道赤平市茂尻元町北1-21",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.540084,
+        "lng": 142.082515,
+        "qr_token": "shuin-moshiri-3",
+        "cover_image_url": "/images/moshiri/spot3.png",
+        "f7_fragment": "空知川左岸の出雲公園隣に鎮座し、長い参道と狛犬が迎える古社。",
+        "f7_full": "「茂尻出雲神社」の長い参道と静かな社殿に参拝し、穏やかな祈りの時を過ごした。",
+        "is_final": false,
+        "next_spot_id": "8fdc0775-2046-400c-8af6-839a57d4cf7c",
+        "next_spot_name": "翠光苑（あかびら発祥の地記念碑）"
+      },
+      {
+        "id": "8fdc0775-2046-400c-8af6-839a57d4cf7c",
+        "name": "翠光苑（あかびら発祥の地記念碑）",
+        "description": "大きな池や水辺、広場を備えた公園（散策自由）。敷地内に立つ「あかびら発祥の地記念碑」は、明治23年（1890年）の開墾入植に始まる赤平の歴史を伝えている。",
+        "address": "北海道赤平市百戸町西1-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.545475,
+        "lng": 142.080266,
+        "qr_token": "shuin-moshiri-4",
+        "cover_image_url": "/images/moshiri/spot4.png",
+        "f7_fragment": "美しい池とともに明治二十三年入植を伝える「あかびら発祥の地記念碑」がある公園。",
+        "f7_full": "「翠光苑（あかびら発祥の地記念碑）」で水辺を歩き、赤平開拓の原点に触れた。",
+        "is_final": false,
+        "next_spot_id": "9bed7bde-6006-44f2-88e9-c73a5c9f6962",
+        "next_spot_name": "焼肉の滝本（滝本商店）"
+      },
+      {
+        "id": "9bed7bde-6006-44f2-88e9-c73a5c9f6962",
+        "name": "焼肉の滝本（滝本商店）",
+        "description": "昭和27年（1952年）創業の老舗精肉店・焼肉店（精肉10:00〜22:00・焼肉17:00〜22:00、火曜休）。名物の味付けジンギスカンやホルモンが地元で長く愛されている。",
+        "address": "北海道赤平市茂尻中央町南1-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.538103,
+        "lng": 142.084114,
+        "qr_token": "shuin-moshiri-5",
+        "cover_image_url": "/images/moshiri/spot5.png",
+        "f7_fragment": "昭和二十七年創業、名物の味付けジンギスカンやホルモンが人気の老舗精肉店。",
+        "f7_full": "「焼肉の滝本（滝本商店）」で伝統の味に出会い、茂尻の旅を心地よく締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1cd9a7b0-82d9-4335-8bc3-88e4ac8af390",
+    "title": "平岸の祈りと石炭の余韻に触れる散歩道",
+    "name": "平岸の祈りと石炭の余韻に触れる散歩道",
+    "description": "石炭積み出しで栄えた赤平市・JR平岸駅から、道産特注麺のラーメンふたご屋、平岸神社、本恵寺、平岸中央公園を巡るルート。",
+    "region": "赤平・平岸仲町",
+    "area_name": "赤平・平岸仲町",
+    "cover_image_url": "/images/hiragishi_akabira/route-eyecatch.png",
+    "imageUrl": "/images/hiragishi_akabira/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び赤平・平岸を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "道産麺とボリュームに満たされた至福の一杯",
+          "description": "北海道産特注麺が自慢の店で、平岸の温かい一皿を味わった",
+          "badge_code": "hiragishi_akabira_futagoya"
+        },
+        {
+          "key": "B",
+          "text": "明治の開拓期からまちを見守る平岸神社の静寂",
+          "description": "明治の入植と炭鉱の時代を見つめ続けてきた神社に参拝した",
+          "badge_code": "hiragishi_akabira_shrine"
+        },
+        {
+          "key": "C",
+          "text": "仲町の住宅街に佇む歴史ある寺院の穏やかな佇まい",
+          "description": "本恵寺の静かな境内で、地域に根付く暮らしの歴史に触れた",
+          "badge_code": "hiragishi_akabira_temple"
+        },
+        {
+          "key": "D",
+          "text": "緑と広場が広がる市民の憩いの公園での風景",
+          "description": "平岸中央公園の開放的な景色の中、まちの日常を歩いた",
+          "badge_code": "hiragishi_akabira_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5ee5c7fa-254a-4914-82a3-05445c53d069",
+        "name": "JR平岸駅",
+        "description": "大正2年（1913年）11月10日開業のJR根室本線の駅（終日利用可）。かつて周囲の炭鉱からの石炭積出拠点として栄え、昭和57年に無人化・駅舎改築された。",
+        "address": "北海道赤平市平岸仲町1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.541401,
+        "lng": 142.123872,
+        "qr_token": "shuin-hiragishi_akabira-1",
+        "cover_image_url": "/images/hiragishi_akabira/spot1.png",
+        "f7_fragment": "大正二年開業、かつて石炭積出の拠点として栄えた赤平市平岸の無人駅。",
+        "f7_full": "「JR平岸駅」の静かなホームを後にし、赤平・平岸の歴史と味を訪ねる旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "5155498d-996d-432f-82fa-8e4149a79b6d",
+        "next_spot_name": "ラーメン ふたご屋"
+      },
+      {
+        "id": "5155498d-996d-432f-82fa-8e4149a79b6d",
+        "name": "ラーメン ふたご屋",
+        "description": "北海道産100%の特注麺を使用する人気ラーメン店（11:00〜19:00、月曜休の場合あり）。赤平名物のカツラーメンや辛味噌ラーメンなどが味わえる。",
+        "address": "北海道赤平市平岸新光町5-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.541698,
+        "lng": 142.116133,
+        "qr_token": "shuin-hiragishi_akabira-2",
+        "cover_image_url": "/images/hiragishi_akabira/spot2.png",
+        "f7_fragment": "北海道産100%の特注麺でカツラーメンや辛味噌を届ける平岸の人気ラーメン店。",
+        "f7_full": "「ラーメン ふたご屋」でコシのある道産麺と温かいスープを堪能し、活力を得た。",
+        "is_final": false,
+        "next_spot_id": "ffda9ee5-050b-45dc-80ad-28d542ac347d",
+        "next_spot_name": "平岸神社"
+      },
+      {
+        "id": "ffda9ee5-050b-45dc-80ad-28d542ac347d",
+        "name": "平岸神社",
+        "description": "天照皇大神を御祭神として祀る地域の神社（参拝自由）。明治28年（1895年）頃の三重団体等の入植から始まった平岸地区の歩みとともに鎮座し続けている。",
+        "address": "北海道赤平市平岸仲町2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.543017,
+        "lng": 142.119788,
+        "qr_token": "shuin-hiragishi_akabira-3",
+        "cover_image_url": "/images/hiragishi_akabira/spot3.png",
+        "f7_fragment": "明治二十八年頃の入植期から平岸地区の歩みを見守り続ける地域の神社。",
+        "f7_full": "「平岸神社」の静謐な境内で手を合わせ、土地の開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "62f8406a-1468-40fa-8b9b-32b8572bfe06",
+        "next_spot_name": "本恵寺"
+      },
+      {
+        "id": "62f8406a-1468-40fa-8b9b-32b8572bfe06",
+        "name": "本恵寺",
+        "description": "平岸仲町の住宅街に佇む浄土真宗本願寺派の寺院（境内参拝可）。炭鉱の隆盛や時代の移り変わりの中で地域住民の心の拠り所として受け継がれてきた。",
+        "address": "北海道赤平市平岸仲町2-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.542173,
+        "lng": 142.121558,
+        "qr_token": "shuin-hiragishi_akabira-4",
+        "cover_image_url": "/images/hiragishi_akabira/spot4.png",
+        "f7_fragment": "平岸仲町の住宅街で地域の人々の心の拠り所として受け継がれる寺院。",
+        "f7_full": "「本恵寺」の落ち着いた境内を歩き、地域に根付く静かな祈りの空気に触れた。",
+        "is_final": false,
+        "next_spot_id": "c41446d2-a5d3-48cd-82d3-d93e500f0dd5",
+        "next_spot_name": "平岸中央公園"
+      },
+      {
+        "id": "c41446d2-a5d3-48cd-82d3-d93e500f0dd5",
+        "name": "平岸中央公園",
+        "description": "ドーム施設や遊具、水遊び場、各種スポーツコートなどを備えた平岸地区の中心的な総合公園（散策自由）。市民の憩いとふれあいの場として親しまれる。",
+        "address": "北海道赤平市平岸仲町5-32-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.538091,
+        "lng": 142.123372,
+        "qr_token": "shuin-hiragishi_akabira-5",
+        "cover_image_url": "/images/hiragishi_akabira/spot5.png",
+        "f7_fragment": "ドーム施設や広場を備え、平岸地区の日常の憩いを支える総合公園。",
+        "f7_full": "「平岸中央公園」の開放的な空間で深呼吸し、赤平・平岸の散歩を心地よく終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b0a50bfb-078a-4126-8950-3770be98a861",
+    "title": "星の降る里の歴史と名物に触れる芦別路",
+    "name": "星の降る里の歴史と名物に触れる芦別路",
+    "description": "レトロな木造駅舎が残るJR芦別駅から山小屋風喫茶、蘆別神社、名物ガタタンの道の駅、空知川を渡る旭ヶ丘公園を巡るルート。",
+    "region": "芦別・星の降る里",
+    "area_name": "芦別・星の降る里",
+    "cover_image_url": "/images/ashibetsu/route-eyecatch.png",
+    "imageUrl": "/images/ashibetsu/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び芦別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "山小屋風の老舗喫茶で味わったレトロなひととき",
+          "description": "駅前の山小屋風喫茶で、レトロな空気と温かな一皿を楽しんだ",
+          "badge_code": "ashibetsu_yufure"
+        },
+        {
+          "key": "B",
+          "text": "樹齢百年のイチイが見守る蘆別神社での参拝",
+          "description": "境内でまちの歴史を見つめ続けてきたイチイの古木に出会った",
+          "badge_code": "ashibetsu_shrine"
+        },
+        {
+          "key": "C",
+          "text": "道の駅で出会った名物ガタタンと星の里の恵み",
+          "description": "道の駅スタープラザ芦別で名物ガタタンや特産品に触れた",
+          "badge_code": "ashibetsu_gatatan"
+        },
+        {
+          "key": "D",
+          "text": "空知川を渡った先に広がる旭ヶ丘の自然風景",
+          "description": "星の降る里大橋を渡り、自然豊かな公園の空気を満喫した",
+          "badge_code": "ashibetsu_asahigaoka"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3134c900-b8db-489f-8fd5-9deff4b05bac",
+        "name": "JR芦別駅",
+        "description": "大正2年（1913年）11月10日に「下芦別駅」として開業、昭和21年に現駅名へ改称（駅舎開放時間利用可）。昭和22年頃建造のレトロな木造駅舎が今も現役で使われている。",
+        "address": "北海道芦別市本町1018-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.516636,
+        "lng": 142.184543,
+        "qr_token": "shuin-ashibetsu-1",
+        "cover_image_url": "/images/ashibetsu/spot1.png",
+        "f7_fragment": "昭和二十二年頃建造のレトロな木造駅舎が今も現役で残る星の降る里の玄関口。",
+        "f7_full": "「JR芦別駅」の懐かしい木造駅舎を後にし、星の降る里の街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "030bd86c-acc7-4c4f-8c67-5cd58520e860",
+        "next_spot_name": "喫茶 友歩嶺（ゆうふれ）"
+      },
+      {
+        "id": "030bd86c-acc7-4c4f-8c67-5cd58520e860",
+        "name": "喫茶 友歩嶺（ゆうふれ）",
+        "description": "JR芦別駅至近の山小屋風レトロな老舗喫茶店（11:00〜20:00頃、不定休）。スパイスカレーや手作りピザ、オムライスなどが地元の人々にも愛されている。",
+        "address": "北海道芦別市北1条西1-2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.516739,
+        "lng": 142.185657,
+        "qr_token": "shuin-ashibetsu-2",
+        "cover_image_url": "/images/ashibetsu/spot2.png",
+        "f7_fragment": "JR芦別駅近くでレトロな山小屋風の佇まいを残す老舗喫茶店。",
+        "f7_full": "「喫茶 友歩嶺（ゆうふれ）」の温かい山小屋空間で寛ぎ、散策の元気を養った。",
+        "is_final": false,
+        "next_spot_id": "2d383986-fd95-4619-8f2b-598be186d64a",
+        "next_spot_name": "蘆別神社（芦別神社）"
+      },
+      {
+        "id": "2d383986-fd95-4619-8f2b-598be186d64a",
+        "name": "蘆別神社（芦別神社）",
+        "description": "芦別市中心部に鎮座する歴史ある地域の総鎮守（参拝自由）。境内にはまちの歴史を見守り続けてきた樹齢100年近いイチイの古木が立っている。",
+        "address": "北海道芦別市北3条西1-6-10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.523137,
+        "lng": 142.184586,
+        "qr_token": "shuin-ashibetsu-3",
+        "cover_image_url": "/images/ashibetsu/spot3.png",
+        "f7_fragment": "樹齢百年近いイチイの古木が境内に立つ芦別市中心部の総鎮守。",
+        "f7_full": "「蘆別神社（芦別神社）」の樹齢百年近いイチイを仰ぎ、清らかな気持ちで参拝した。",
+        "is_final": false,
+        "next_spot_id": "71b8b870-4f03-4f4f-8d7b-68934f440e72",
+        "next_spot_name": "道の駅スタープラザ芦別"
+      },
+      {
+        "id": "71b8b870-4f03-4f4f-8d7b-68934f440e72",
+        "name": "道の駅スタープラザ芦別",
+        "description": "特産品売店や観光案内所が入る道の駅（売店9:00〜・2Fレストラン11:00〜、年末年始休）。芦別名物の具だくさんあんかけ麺「ガタタン」が味わえ、隣接の百年記念館も人気。",
+        "address": "北海道芦別市北4条東1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.524804,
+        "lng": 142.18932,
+        "qr_token": "shuin-ashibetsu-4",
+        "cover_image_url": "/images/ashibetsu/spot4.png",
+        "f7_fragment": "芦別名物のあんかけ麺「ガタタン」や星の降る里の特産品が揃う道の駅。",
+        "f7_full": "「道の駅スタープラザ芦別」で名物ガタタンと特産品に出会い、大満足の時間を過ごした。",
+        "is_final": false,
+        "next_spot_id": "c60e70f3-900b-4a75-83b4-e5367752b8b7",
+        "next_spot_name": "旭ヶ丘公園"
+      },
+      {
+        "id": "c60e70f3-900b-4a75-83b4-e5367752b8b7",
+        "name": "旭ヶ丘公園",
+        "description": "空知川に架かる「星の降る里大橋」を渡った先に広がる自然豊かな総合公園（4/15〜10/31開園・冬期休園）。展望台や動物の飼育エリアを備え、芦別の自然と街並みを一望できる。",
+        "address": "北海道芦別市旭町641",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.519092,
+        "lng": 142.202331,
+        "qr_token": "shuin-ashibetsu-5",
+        "cover_image_url": "/images/ashibetsu/spot5.png",
+        "f7_fragment": "空知川を渡った先に広がり、展望台から芦別の街と山々を望む総合公園。",
+        "f7_full": "「旭ヶ丘公園」の爽やかな風の中で街並みを一望し、芦別の旅を心地よく終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a424fe07-468a-4682-8480-ba006740ecc5",
+    "title": "炭鉱の記憶とダム湖を巡る上芦別の旅",
+    "name": "炭鉱の記憶とダム湖を巡る上芦別の旅",
+    "description": "JR上芦別駅から山神を祀る上芦別神社、名物ガタタンの新宝来軒、明治鉱業記念碑、野花南湖畔の上芦別公園を巡るルート。",
+    "region": "上芦別・野花南湖",
+    "area_name": "上芦別・野花南湖",
+    "cover_image_url": "/images/kamiashibetsu/route-eyecatch.png",
+    "imageUrl": "/images/kamiashibetsu/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び上芦別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "炭鉱の山神と地域の暮らしを見守る上芦別神社",
+          "description": "明治末期からの歴史を刻む静かな社殿に手を合わせた",
+          "badge_code": "kamiashibetsu_shrine"
+        },
+        {
+          "key": "B",
+          "text": "復活した老舗の味・芦別名物ガタタンの温もり",
+          "description": "新宝来軒で具だくさんの熱々とろみスープを堪能した",
+          "badge_code": "kamiashibetsu_gatatan"
+        },
+        {
+          "key": "C",
+          "text": "かつての炭鉱街を伝える明治鉱業の記念碑",
+          "description": "約4千人が暮らした明治地区の歴史に静かに思いを馳せた",
+          "badge_code": "kamiashibetsu_meiji_monument"
+        },
+        {
+          "key": "D",
+          "text": "野花南湖のつり橋と空知川の豊かな水辺の風",
+          "description": "大正期建造のダム湖畔で、清々しい自然の風景に出合った",
+          "badge_code": "kamiashibetsu_nokananko"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "aafcc7d3-beed-409a-8346-b07299e0d314",
+        "name": "JR上芦別駅",
+        "description": "大正9年（1920年）1月16日に開業したJR根室本線の無人駅（終日利用可）。かつて三菱鉱業や明治鉱業の炭鉱・森林鉄道の石炭積み出し拠点として栄えた。",
+        "address": "北海道芦別市上芦別町411-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.488861,
+        "lng": 142.211065,
+        "qr_token": "shuin-kamiashibetsu-1",
+        "cover_image_url": "/images/kamiashibetsu/spot1.png",
+        "f7_fragment": "大正九年開業、かつて炭鉱と森林鉄道の積み出し拠点として栄えた駅。",
+        "f7_full": "「JR上芦別駅」の静かなホームを後にし、炭山の記憶と湖を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "046a3b0c-0bbf-4f86-8f68-b7810320b8d1",
+        "next_spot_name": "上芦別神社"
+      },
+      {
+        "id": "046a3b0c-0bbf-4f86-8f68-b7810320b8d1",
+        "name": "上芦別神社",
+        "description": "明治末期の京都殖民協会入植時の奉斎に始まり、大正2年に三菱鉱業の「山神」としても祀られた神社（参拝自由）。昭和45年に現在地へ新社殿が建立された。",
+        "address": "北海道芦別市上芦別町173",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.492498,
+        "lng": 142.20556,
+        "qr_token": "shuin-kamiashibetsu-2",
+        "cover_image_url": "/images/kamiashibetsu/spot2.png",
+        "f7_fragment": "明治末期の入植に始まり、炭鉱の山神としても地域の暮らしを守った神社。",
+        "f7_full": "「上芦別神社」の静かな杜に参拝し、炭山とともに歩んだ地域の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "7c5ed16e-d3c6-4508-87fd-d33e2f677a1f",
+        "next_spot_name": "新宝来軒"
+      },
+      {
+        "id": "7c5ed16e-d3c6-4508-87fd-d33e2f677a1f",
+        "name": "新宝来軒",
+        "description": "2015年に閉店した老舗「宝来軒」の味を継ぎ、2016年に復活・創業した中華食堂（11:00〜15:00・17:00〜19:30頃、火曜休）。名物「ガタタン」やガタタンラーメンが人気。",
+        "address": "北海道芦別市上芦別町38-83",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.497775,
+        "lng": 142.199809,
+        "qr_token": "shuin-kamiashibetsu-3",
+        "cover_image_url": "/images/kamiashibetsu/spot3.png",
+        "f7_fragment": "老舗の味を継ぎ復活した中華食堂。芦別名物ガタタンが自慢の人気店。",
+        "f7_full": "「新宝来軒」で受け継がれる名物ガタタンを堪能し、旅の活力をしっかり養った。",
+        "is_final": false,
+        "next_spot_id": "edaabf18-45da-40d5-8d21-5bd48b7f098b",
+        "next_spot_name": "明治児童公園（明治鉱業上芦別鉱業所記念碑）"
+      },
+      {
+        "id": "edaabf18-45da-40d5-8d21-5bd48b7f098b",
+        "name": "明治児童公園（明治鉱業上芦別鉱業所記念碑）",
+        "description": "かつて「芦別五山」の一つ・明治鉱業上芦別鉱業所が置かれ約4,000人が暮らした明治地区の跡地にある公園（終日開放）。昭和55年に炭鉱関係者が建立した記念碑が立つ。",
+        "address": "北海道芦別市上芦別町350",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.493413,
+        "lng": 142.21785,
+        "qr_token": "shuin-kamiashibetsu-4",
+        "cover_image_url": "/images/kamiashibetsu/spot4.png",
+        "f7_fragment": "約四千人が暮らした炭鉱街跡地に昭和五十五年建立の記念碑が立つ公園。",
+        "f7_full": "「明治児童公園（明治鉱業上芦別鉱業所記念碑）」で炭鉱街の記憶に静かに触れた。",
+        "is_final": false,
+        "next_spot_id": "25dc877b-a6e6-4417-89ef-075ce974f7d5",
+        "next_spot_name": "上芦別公園（野花南湖）"
+      },
+      {
+        "id": "25dc877b-a6e6-4417-89ef-075ce974f7d5",
+        "name": "上芦別公園（野花南湖）",
+        "description": "大正7年（1918年）に初代ダムが建設された人造湖・野花南湖のほとりに広がる自然公園（4月中下旬〜10月末開園、冬期閉鎖）。湖に架かるつり橋や野鳥の飛来地として親しまれる。",
+        "address": "北海道芦別市上芦別町201",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.484543,
+        "lng": 142.224234,
+        "qr_token": "shuin-kamiashibetsu-5",
+        "cover_image_url": "/images/kamiashibetsu/spot5.png",
+        "f7_fragment": "大正期建造の野花南湖畔に広がり、つり橋や野鳥の風景を楽しめる自然公園。",
+        "f7_full": "「上芦別公園（野花南湖）」のつり橋から静かな湖面を眺め、上芦別の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ffcaabb9-398d-4501-8645-c4695ed270d4",
+    "title": "縄文の墓と空知川が息づく野花南散歩",
+    "name": "縄文の墓と空知川が息づく野花南散歩",
+    "description": "国鉄開通記念碑が立つJR野花南駅から国道沿いのキタキツネ、野花南大橋、道指定史跡の周堤墓群、野花南神社を巡るルート。",
+    "region": "野花南・空知川",
+    "area_name": "野花南・空知川",
+    "cover_image_url": "/images/nokanan/route-eyecatch.png",
+    "imageUrl": "/images/nokanan/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び野花南を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "季節限定で開く国道沿いの温かい食堂喫茶",
+          "description": "透き通ったスープのラーメンや手作りカレーに癒やされた",
+          "badge_code": "nokanan_kitakitsune"
+        },
+        {
+          "key": "B",
+          "text": "空知川の清流を一望する野花南大橋の眺め",
+          "description": "雄大な川の流れと河岸段丘の風景に心が広がった",
+          "badge_code": "nokanan_bridge"
+        },
+        {
+          "key": "C",
+          "text": "三千年の祈りを今に伝える野花南周堤墓群",
+          "description": "縄文時代後期のドーナツ状共同墓地跡に太古の記憶を感じた",
+          "badge_code": "nokanan_jomon"
+        },
+        {
+          "key": "D",
+          "text": "高知からの入植者が祀った野花南神社の木陰",
+          "description": "開拓期の祈りを受け継ぐ静かな杜で旅の安全を祈った",
+          "badge_code": "nokanan_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "83b4a4ef-3ffc-4144-8275-2d03a978cbe3",
+        "name": "JR野花南駅（国鉄開通記念碑）",
+        "description": "大正2年（1913年）11月10日開業のJR根室本線の無人駅（終日利用可）。駅前右手には大正2年の鉄道開通を記念して建てられた自然石の「国鉄開通記念碑」が立つ。",
+        "address": "北海道芦別市野花南町100",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.474264,
+        "lng": 142.261909,
+        "qr_token": "shuin-nokanan-1",
+        "cover_image_url": "/images/nokanan/spot1.png",
+        "f7_fragment": "大正二年開業、駅前に自然石の「国鉄開通記念碑」が立つ根室本線の無人駅。",
+        "f7_full": "「JR野花南駅（国鉄開通記念碑）」を出発し、縄文と開拓の記憶を辿る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "ccd26e50-b522-4b27-83e3-cf82dd3d4771",
+        "next_spot_name": "カフェレスト キタキツネ"
+      },
+      {
+        "id": "ccd26e50-b522-4b27-83e3-cf82dd3d4771",
+        "name": "カフェレスト キタキツネ",
+        "description": "国道38号線沿いの野花南バス停近くに佇む食堂・喫茶店（6〜11月下旬頃の11:00〜14:00、火曜・冬期休）。透き通ったスープのラーメンや手作りカレーが人気。",
+        "address": "北海道芦別市野花南町977",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.472057,
+        "lng": 142.258382,
+        "qr_token": "shuin-nokanan-2",
+        "cover_image_url": "/images/nokanan/spot2.png",
+        "f7_fragment": "国道38号線沿いで季節営業し、ラーメンや手作りカレーが親しまれる食堂。",
+        "f7_full": "「カフェレスト キタキツネ」で温かい食事を楽しみ、旅の元気をたっぷり養った。",
+        "is_final": false,
+        "next_spot_id": "f80a0e9d-56e4-4d5a-8a0c-6657e8fe9f7c",
+        "next_spot_name": "野花南大橋"
+      },
+      {
+        "id": "f80a0e9d-56e4-4d5a-8a0c-6657e8fe9f7c",
+        "name": "野花南大橋",
+        "description": "空知川に架かる国道38号線の橋梁（終日通行可）。アイヌ語「ノカンナイ（小さい川）」などに由来する地名のとおり、周辺には美しい河岸段丘と豊かな川の流れが広がる。",
+        "address": "北海道芦別市野花南町977-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.472311,
+        "lng": 142.259232,
+        "qr_token": "shuin-nokanan-3",
+        "cover_image_url": "/images/nokanan/spot3.png",
+        "f7_fragment": "空知川に架かり、河岸段丘と豊かな山川の風景を一望できる国道38号の橋。",
+        "f7_full": "「野花南大橋」から空知川の清らかな流れを眺め、北海道の大きな自然を感じた。",
+        "is_final": false,
+        "next_spot_id": "09ca13c8-bb3f-4492-8eda-880d32ce9cde",
+        "next_spot_name": "野花南周堤墓群"
+      },
+      {
+        "id": "09ca13c8-bb3f-4492-8eda-880d32ce9cde",
+        "name": "野花南周堤墓群",
+        "description": "昭和28年（1953年）発見、平成12年（2000年）に北海道指定史跡となった縄文時代後期（約3,000年前）の共同墓地跡（終日見学可、農道通行注意）。ドーナツ状の周堤が特徴。",
+        "address": "北海道芦別市野花南町3250",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.459701,
+        "lng": 142.272682,
+        "qr_token": "shuin-nokanan-4",
+        "cover_image_url": "/images/nokanan/spot4.png",
+        "f7_fragment": "約三千年前の縄文時代後期のドーナツ状共同墓地跡として道指定史跡の遺跡。",
+        "f7_full": "「野花南周堤墓群」の静かな森の跡に立ち、三千年の時を超えた祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "c7ab1598-0fd1-4a14-89b6-1172137a8ebf",
+        "next_spot_name": "野花南神社"
+      },
+      {
+        "id": "c7ab1598-0fd1-4a14-89b6-1172137a8ebf",
+        "name": "野花南神社",
+        "description": "開拓期に高知県から入植した人々が故郷の神社の分霊を祀ったと伝わる野花南の静かな鎮守（参拝自由）。地域の歴史と開拓の祈りを今に伝えている。",
+        "address": "北海道芦別市野花南町674",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.479744,
+        "lng": 142.242843,
+        "qr_token": "shuin-nokanan-5",
+        "cover_image_url": "/images/nokanan/spot5.png",
+        "f7_fragment": "開拓期に高知からの入植者が故郷の神霊を祀ったと伝わる野花南の鎮守。",
+        "f7_full": "「野花南神社」の静かな杜で手を合わせ、野花南の縄文と開拓の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3d17f051-5e75-4cb8-853e-bd0418673a9e",
+    "title": "清流の恵みと甘い香りに誘われる清水",
+    "name": "清流の恵みと甘い香りに誘われる清水",
+    "description": "JR十勝清水駅から第九のまち銘菓の静月、名物そばと牛トロの三品、清水公園、明治創祀の清水神社を巡るルート。",
+    "region": "十勝清水・本通",
+    "area_name": "十勝清水・本通",
+    "cover_image_url": "/images/tokachishimizu/route-eyecatch.png",
+    "imageUrl": "/images/tokachishimizu/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び十勝清水を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "第九のまちの老舗洋菓子店が焼く甘いワッフル",
+          "description": "1969年創業の静月で、清水町の歴史ある銘菓に出合った",
+          "badge_code": "tokachishimizu_seigetsu"
+        },
+        {
+          "key": "B",
+          "text": "十勝産そばとご当地牛肉グルメの贅沢な一膳",
+          "description": "そば処 三品で地元ならではの豊かな味覚を堪能した",
+          "badge_code": "tokachishimizu_mishina"
+        },
+        {
+          "key": "C",
+          "text": "十勝の爽やかな風が通り抜ける清水公園の緑",
+          "description": "町民の憩いの場で自然の息吹を感じながら一息ついた",
+          "badge_code": "tokachishimizu_park"
+        },
+        {
+          "key": "D",
+          "text": "ペケレペッの清流の記憶を伝える清水神社",
+          "description": "明治33年創祀の歴史ある杜で静かに手を合わせた",
+          "badge_code": "tokachishimizu_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "421ecf40-ed13-49e9-8e99-4b865429643c",
+        "name": "JR十勝清水駅",
+        "description": "明治40年（1907年）9月8日に「清水駅」として開業、昭和9年に現駅名へ改称（終日利用可）。町名はアイヌ語「ペケレペッ（水が清澄な川）」の意訳に由来する。",
+        "address": "北海道上川郡清水町本通1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.013786,
+        "lng": 142.879795,
+        "qr_token": "shuin-tokachishimizu-1",
+        "cover_image_url": "/images/tokachishimizu/spot1.png",
+        "f7_fragment": "明治四十年開業、アイヌ語「ペケレペッ」に由来する清流の町の玄関口。",
+        "f7_full": "「JR十勝清水駅」を後にし、清らかな町の美味と歴史を訪ねる散策へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "f11ffb52-6776-4c88-8600-8e0e2073af01",
+        "next_spot_name": "銘菓と洋菓子 静月"
+      },
+      {
+        "id": "f11ffb52-6776-4c88-8600-8e0e2073af01",
+        "name": "銘菓と洋菓子 静月",
+        "description": "昭和44年（1969年）創業の老舗洋菓子・銘菓店（月〜土9:00〜19:00・日〜17:00、不定休）。看板商品のふわふわワッフルや「第九のまちしみず」にちなんだ郷土銘菓が人気。",
+        "address": "北海道上川郡清水町本通2-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.014157,
+        "lng": 142.880634,
+        "qr_token": "shuin-tokachishimizu-2",
+        "cover_image_url": "/images/tokachishimizu/spot2.png",
+        "f7_fragment": "昭和四十四年創業、看板のワッフルや第九のまちの郷土銘菓が人気の老舗店。",
+        "f7_full": "「銘菓と洋菓子 静月」で懐かしい甘さの銘菓に出会い、心がほっこり温まった。",
+        "is_final": false,
+        "next_spot_id": "52fc3cf9-2ae1-4e27-8c2b-166ff78a93e0",
+        "next_spot_name": "そば処 三品（みしな）"
+      },
+      {
+        "id": "52fc3cf9-2ae1-4e27-8c2b-166ff78a93e0",
+        "name": "そば処 三品（みしな）",
+        "description": "十勝産そばを使った「ごぼう天蕎麦」や、清水町ご当地グルメ「十勝清水牛玉ステーキ丼」・牛トロ丼とのセットで知られる人気店（11:30〜14:00売切終了、木・金曜休）。",
+        "address": "北海道上川郡清水町南2条3-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.013384,
+        "lng": 142.883004,
+        "qr_token": "shuin-tokachishimizu-3",
+        "cover_image_url": "/images/tokachishimizu/spot3.png",
+        "f7_fragment": "十勝産そばや清水町名物の牛玉ステーキ丼・牛トロ丼が味わえる人気店。",
+        "f7_full": "「そば処 三品（みしな）」で十勝ならではのそばと牛肉の味覚を心ゆくまで堪能した。",
+        "is_final": false,
+        "next_spot_id": "70c38e93-bfd4-4edf-8efa-cdc4b3555e32",
+        "next_spot_name": "清水公園"
+      },
+      {
+        "id": "70c38e93-bfd4-4edf-8efa-cdc4b3555e32",
+        "name": "清水公園",
+        "description": "豊かな緑に囲まれた町民の憩いの公園（終日開放）。十勝の爽やかな自然と季節の木立を感じながらゆったりと散策を楽しめる。",
+        "address": "北海道上川郡清水町字清水第3線56-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.004807,
+        "lng": 142.874837,
+        "qr_token": "shuin-tokachishimizu-4",
+        "cover_image_url": "/images/tokachishimizu/spot4.png",
+        "f7_fragment": "豊かな緑と爽やかな風に包まれ、自然の息吹を感じられる町民の憩いの公園。",
+        "f7_full": "「清水公園」の爽やかな緑の中で深呼吸し、十勝清水の穏やかな時間を満喫した。",
+        "is_final": false,
+        "next_spot_id": "d4b1b231-e42b-4733-85f7-fbf1e5462abd",
+        "next_spot_name": "清水神社"
+      },
+      {
+        "id": "d4b1b231-e42b-4733-85f7-fbf1e5462abd",
+        "name": "清水神社",
+        "description": "明治33年（1900年）に字ペケレベツで天照皇大神を遙拝したことに始まる清水町の総鎮守（参拝自由）。開拓の時代から町の発展を見守り続けている。",
+        "address": "北海道上川郡清水町北3条西2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.015632,
+        "lng": 142.874175,
+        "qr_token": "shuin-tokachishimizu-5",
+        "cover_image_url": "/images/tokachishimizu/spot5.png",
+        "f7_fragment": "明治三十三年の天照皇大神遙拝に始まり、清流の町を見守り続ける鎮守。",
+        "f7_full": "「清水神社」の清らかな杜に参拝し、十勝清水の散策を晴れやかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6229e405-9eb8-4e64-818d-160a2151e80b",
+    "title": "石の里の神社と古民家を巡る御影散歩",
+    "name": "石の里の神社と古民家を巡る御影散歩",
+    "description": "御影石の産出にちなむJR御影駅から旧佐念頃神社の御影神社、昭和古民家カフェ、御影公園、名物とんかつのみしなを巡るルート。",
+    "region": "十勝御影・御影本通",
+    "area_name": "十勝御影・御影本通",
+    "cover_image_url": "/images/mikage_tokachi/route-eyecatch.png",
+    "imageUrl": "/images/mikage_tokachi/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び十勝・御影を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "佐念頃神社から受け継がれる御影神社の静寂",
+          "description": "明治41年創祀の歴史ある境内で、石の里の歩みに手を合わせた",
+          "badge_code": "mikage_tokachi_shrine"
+        },
+        {
+          "key": "B",
+          "text": "昭和初期の建物で寛ぐ古民家カフェの時間",
+          "description": "ふるカフェ カマクラヤで温かいランチとスイーツに癒やされた",
+          "badge_code": "mikage_tokachi_kamakuraya"
+        },
+        {
+          "key": "C",
+          "text": "十勝の畑作と防風林が望める御影公園の風",
+          "description": "街の東側に広がる公園で、北海道らしい穏やかな空を感じた",
+          "badge_code": "mikage_tokachi_park"
+        },
+        {
+          "key": "D",
+          "text": "国道沿いの名店・とんかつのみしなの満足の一皿",
+          "description": "地元と旅人に長く愛される老舗の味わいに心まで満たされた",
+          "badge_code": "mikage_tokachi_mishina"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e6383950-863e-4c7f-8eb9-c9f1da633056",
+        "name": "JR御影駅",
+        "description": "明治40年（1907年）9月8日に「佐念頃（さねんころ）駅」として開業（終日利用可）。良質な花崗岩（御影石）の産出にちなみ大正11年（1922年）に現駅名へ改称された。",
+        "address": "北海道上川郡清水町御影本通1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.942993,
+        "lng": 142.93628,
+        "qr_token": "shuin-mikage_tokachi-1",
+        "cover_image_url": "/images/mikage_tokachi/spot1.png",
+        "f7_fragment": "旧名・佐念頃駅として明治四十年開業、御影石の産出に名を由来する駅。",
+        "f7_full": "「JR御影駅」の静かなホームを後にし、石の里と古民家を巡る御影の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "983d2817-6646-4fdd-8a7a-d101e989986f",
+        "next_spot_name": "御影神社"
+      },
+      {
+        "id": "983d2817-6646-4fdd-8a7a-d101e989986f",
+        "name": "御影神社",
+        "description": "明治41年（1908年）に小祠を建立して「佐念頃神社」として創祀され、のちに改称された地域の鎮守（参拝自由）。天照大神を祭神とし、静かな杜に抱かれている。",
+        "address": "北海道上川郡清水町字御影西2条2-11",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.945646,
+        "lng": 142.934941,
+        "qr_token": "shuin-mikage_tokachi-2",
+        "cover_image_url": "/images/mikage_tokachi/spot2.png",
+        "f7_fragment": "明治四十一年創祀、旧名「佐念頃神社」の名を伝える御影の鎮守。",
+        "f7_full": "「御影神社」の静謐な境内で手を合わせ、開拓と石の里の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "5750c020-bbda-4df7-82d9-09c224948db3",
+        "next_spot_name": "ふるカフェ カマクラヤ"
+      },
+      {
+        "id": "5750c020-bbda-4df7-82d9-09c224948db3",
+        "name": "ふるカフェ カマクラヤ",
+        "description": "昭和初期の建築物をリノベーションした温もりあふれる古民家カフェ（11:00〜15:00頃、月・日曜休・不定休あり）。優しい味わいのランチや手作りスイーツを楽しめる。",
+        "address": "北海道上川郡清水町御影東1条2-17",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.943149,
+        "lng": 142.938724,
+        "qr_token": "shuin-mikage_tokachi-3",
+        "cover_image_url": "/images/mikage_tokachi/spot3.png",
+        "f7_fragment": "昭和初期の建物を活かした懐かしい空気あふれる御影の古民家カフェ。",
+        "f7_full": "「ふるカフェ カマクラヤ」の昭和薫る空間で寛ぎ、穏やかな午後のひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "efe09349-1bab-4cd0-8e26-d6571c69f5af",
+        "next_spot_name": "御影公園（御影公園多目的広場）"
+      },
+      {
+        "id": "efe09349-1bab-4cd0-8e26-d6571c69f5af",
+        "name": "御影公園（御影公園多目的広場）",
+        "description": "御影市街地の東側に広がる町民の憩いの場（終日開放）。周囲の防風林や広大な十勝の畑作地帯の空気を感じられ、冬期は地域のイルミネーション会場としても親しまれる。",
+        "address": "北海道上川郡清水町御影東1条4-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.944809,
+        "lng": 142.940935,
+        "qr_token": "shuin-mikage_tokachi-4",
+        "cover_image_url": "/images/mikage_tokachi/spot4.png",
+        "f7_fragment": "御影市街東側に広がり、防風林と十勝の空を身近に感じる憩いの公園。",
+        "f7_full": "「御影公園（御影公園多目的広場）」の開放的な空の下で、十勝の爽やかな風を感じた。",
+        "is_final": false,
+        "next_spot_id": "3492b3f7-6054-44d6-8df9-39fe3923c5cd",
+        "next_spot_name": "とんかつのみしな"
+      },
+      {
+        "id": "3492b3f7-6054-44d6-8df9-39fe3923c5cd",
+        "name": "とんかつのみしな",
+        "description": "国道38号線沿いに構える十勝・御影の名物とんかつ店（11:00〜21:00・L.O.20:00頃、基本無休・臨時休業あり）。地元の人々や旅人に長年愛される老舗食堂。",
+        "address": "北海道上川郡清水町御影字御影南1線57-43",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.943747,
+        "lng": 142.948545,
+        "qr_token": "shuin-mikage_tokachi-5",
+        "cover_image_url": "/images/mikage_tokachi/spot5.png",
+        "f7_fragment": "国道38号沿いで地元の人々や旅人に長く愛される十勝・御影の名物とんかつ店。",
+        "f7_full": "「とんかつのみしな」でサクサクのとんかつを堪能し、十勝御影の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a53eb9be-d608-4ccc-8af0-57d955164a68",
+    "title": "柏の巨木と黄金の恵みを味わう芽室道",
+    "name": "柏の巨木と黄金の恵みを味わう芽室道",
+    "description": "JR芽室駅から本通を北へ進み、めむろまちの駅、明治創祀の芽室神社、樹齢400年超の柏が茂る芽室公園、コーン炒飯の名店を巡るルート。",
+    "region": "芽室本通・芽室公園",
+    "area_name": "芽室本通・芽室公園",
+    "cover_image_url": "/images/memuro/route-eyecatch.png",
+    "imageUrl": "/images/memuro/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び芽室を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "めむろーど1階で出会うスイートコーンの特産品",
+          "description": "駅前の案内拠点で芽室町の魅力と美味しいお土産に触れた",
+          "badge_code": "memuro_machinoeki"
+        },
+        {
+          "key": "B",
+          "text": "本通の先に鎮座する明治創祀の芽室神社",
+          "description": "明治33年創祀の歴史ある杜で静かに手を合わせた",
+          "badge_code": "memuro_shrine"
+        },
+        {
+          "key": "C",
+          "text": "樹齢四百年を超える芽室公園のカシワの巨木群",
+          "description": "芽室遺産に認定された太古からの巨木の下で深呼吸した",
+          "badge_code": "memuro_oak_trees"
+        },
+        {
+          "key": "D",
+          "text": "黄金色のコーンが弾ける名物・十勝芽室コーン炒飯",
+          "description": "レストランHiroで芽室が誇る新ご当地グルメを堪能した",
+          "badge_code": "memuro_corn_rice"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cb6700ae-f5e5-4b44-83ae-cffd2334f95a",
+        "name": "JR芽室駅",
+        "description": "明治40年（1907年）9月8日に開業し、特急「とかち」も停車する芽室町の玄関口（窓口6:40〜16:45）。駅北側から本通が一直線に延びている。",
+        "address": "北海道河西郡芽室町本通1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.910016,
+        "lng": 143.048352,
+        "qr_token": "shuin-memuro-1",
+        "cover_image_url": "/images/memuro/spot1.png",
+        "f7_fragment": "明治四十年開業、特急「とかち」も停車し本通が一直線に延びる玄関口。",
+        "f7_full": "「JR芽室駅」を後にし、柏の巨木と黄金のグルメを巡る芽室の旅へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "033ace60-a293-4839-8673-7250c8c35dc3",
+        "next_spot_name": "めむろまちの駅（めむろーど1階）"
+      },
+      {
+        "id": "033ace60-a293-4839-8673-7250c8c35dc3",
+        "name": "めむろまちの駅（めむろーど1階）",
+        "description": "芽室町観光物産協会が運営する観光案内・特産品販売所（10:00〜18:00、水曜休・祝日の場合営業）。スイートコーン関連商品やケンボロー豚などの地元特産品が揃う。",
+        "address": "北海道河西郡芽室町本通1-19",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.910285,
+        "lng": 143.048719,
+        "qr_token": "shuin-memuro-2",
+        "cover_image_url": "/images/memuro/spot2.png",
+        "f7_fragment": "スイートコーン商品やケンボロー豚など芽室の特産品が揃う駅前案内拠点。",
+        "f7_full": "「めむろまちの駅（めむろーど1階）」で芽室ならではの豊かな特産品に出会った。",
+        "is_final": false,
+        "next_spot_id": "e0653772-3d8a-46b0-8b39-78f7fe05c578",
+        "next_spot_name": "芽室神社"
+      },
+      {
+        "id": "e0653772-3d8a-46b0-8b39-78f7fe05c578",
+        "name": "芽室神社",
+        "description": "明治33年（1900年）創祀、天照大御神を祀る芽室町の総鎮守（参拝常時可、社務所9:00〜17:00）。本通の突き当たり付近、緑豊かな芽室公園に隣接して鎮座する。",
+        "address": "北海道河西郡芽室町本通8-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.91847,
+        "lng": 143.045474,
+        "qr_token": "shuin-memuro-3",
+        "cover_image_url": "/images/memuro/spot3.png",
+        "f7_fragment": "明治三十三年創祀、本通の先に鎮座し芽室公園に隣接する町の総鎮守。",
+        "f7_full": "「芽室神社」の厳かな社殿に参拝し、芽室開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "0a396efc-8fc4-4045-80ad-1b18e756292b",
+        "next_spot_name": "芽室公園"
+      },
+      {
+        "id": "0a396efc-8fc4-4045-80ad-1b18e756292b",
+        "name": "芽室公園",
+        "description": "約20ヘクタールの広大な敷地を有し、樹齢200〜400年を超えるカシワの巨木群が「芽室公園と柏の木」として芽室遺産に認定されている公園（終日開放）。",
+        "address": "北海道河西郡芽室町本通8-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.919311,
+        "lng": 143.04508,
+        "qr_token": "shuin-memuro-4",
+        "cover_image_url": "/images/memuro/spot4.png",
+        "f7_fragment": "樹齢二百〜四百年超のカシワの巨木群が芽室遺産に認定された広大な公園。",
+        "f7_full": "「芽室公園」で樹齢数百年を数えるカシワの巨木を見上げ、自然の力に感動した。",
+        "is_final": false,
+        "next_spot_id": "37b83de8-954c-48a8-8873-86013046371f",
+        "next_spot_name": "レストランHiro"
+      },
+      {
+        "id": "37b83de8-954c-48a8-8873-86013046371f",
+        "name": "レストランHiro",
+        "description": "芽室町の新ご当地グルメ「十勝芽室コーン炒飯」や地元食材の洋食メニューが人気の駅前レストラン（11:00〜14:00・17:00〜20:30、日曜休）。",
+        "address": "北海道河西郡芽室町本通2-8-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.911178,
+        "lng": 143.047985,
+        "qr_token": "shuin-memuro-5",
+        "cover_image_url": "/images/memuro/spot5.png",
+        "f7_fragment": "芽室町の新ご当地グルメ「十勝芽室コーン炒飯」が人気の駅前レストラン。",
+        "f7_full": "「レストランHiro」で十勝芽室コーン炒飯を堪能し、芽室の街歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f9fb9120-c628-4298-859a-59f54d120f1c",
+    "title": "十勝の恵みと大成の風を味わう芽室散歩",
+    "name": "十勝の恵みと大成の風を味わう芽室散歩",
+    "description": "通学生の将来の大成を願って名付けられたJR大成駅から、麺屋縁、JAめむろ愛菜屋、めむろ窯、芽室東公園を巡るルート。",
+    "region": "大成・東めむろ",
+    "area_name": "大成・東めむろ",
+    "cover_image_url": "/images/taisei_memuro/route-eyecatch.png",
+    "imageUrl": "/images/taisei_memuro/route-eyecatch.png",
+    "category": "グルメ・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び大成・東めむろを訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "東芽室の暖簾をくぐった熱々の一杯",
+          "description": "駅から東へ歩き、東めむろの人気ラーメン店で温まった",
+          "badge_code": "taisei_memuro_en"
+        },
+        {
+          "key": "B",
+          "text": "朝採り野菜が並ぶ農の直売所での出会い",
+          "description": "農業のまち芽室の直売所で、大地が育んだ旬の味覚に触れた",
+          "badge_code": "taisei_memuro_aisaiya"
+        },
+        {
+          "key": "C",
+          "text": "十勝産小麦の窯焼きピッツァと焼きたてパン",
+          "description": "地元産の小麦と野菜が香る窯焼きの一品でほっと一息ついた",
+          "badge_code": "taisei_memuro_kama"
+        },
+        {
+          "key": "D",
+          "text": "東めむろの広い空の下で深呼吸した芝生公園",
+          "description": "十勝平野の風を感じながら、穏やかな芝生公園を歩いた",
+          "badge_code": "taisei_memuro_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "34956e20-ceff-4e6b-89ff-79950aace3f0",
+        "name": "JR大成駅",
+        "description": "昭和61年（1986年）11月1日に臨時乗降場として開業、翌年に駅へ昇格した無人駅（終日利用可）。芽室高校の通学生の利便性向上のため新設され、生徒の将来の「大成」を願って命名された。",
+        "address": "北海道河西郡芽室町東芽室南2線1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.916008,
+        "lng": 143.06984,
+        "qr_token": "shuin-taisei_memuro-1",
+        "cover_image_url": "/images/taisei_memuro/spot1.png",
+        "f7_fragment": "昭和六十一年開業、通学生の将来の「大成」を願って名付けられた無人駅。",
+        "f7_full": "「JR大成駅」の清々しいホームを後にし、十勝の恵みを味わう東めむろの散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "ef95cf49-a13d-4181-88dc-3e315c2c8b7f",
+        "next_spot_name": "麺屋 縁"
+      },
+      {
+        "id": "ef95cf49-a13d-4181-88dc-3e315c2c8b7f",
+        "name": "麺屋 縁",
+        "description": "東めむろエリアで親しまれている人気のラーメン店（11:00〜14:00・17:30〜20:00、火曜休）。散策の腹ごしらえに温かな一杯を楽しめる。",
+        "address": "北海道河西郡芽室町東めむろ3条南1-3-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.910939,
+        "lng": 143.076908,
+        "qr_token": "shuin-taisei_memuro-2",
+        "cover_image_url": "/images/taisei_memuro/spot2.png",
+        "f7_fragment": "東めむろエリアで地元の人々に親しまれている人気のラーメン店。",
+        "f7_full": "「麺屋 縁」で心のこもった温かなラーメンを味わい、旅の元気をしっかり養った。",
+        "is_final": false,
+        "next_spot_id": "9b04c313-f2f9-45a2-881e-26183e1e1710",
+        "next_spot_name": "JAめむろ ファーマーズマーケット 愛菜屋"
+      },
+      {
+        "id": "9b04c313-f2f9-45a2-881e-26183e1e1710",
+        "name": "JAめむろ ファーマーズマーケット 愛菜屋",
+        "description": "スイートコーン生産量日本一など農業のまち・芽室の朝採り新鮮野菜や地元特産品が並ぶJAめむろ直営の直売所（9:00〜17:00等、月・木曜休、11月下旬〜4月末冬季休業）。",
+        "address": "北海道河西郡芽室町東めむろ3条南1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.912223,
+        "lng": 143.076157,
+        "qr_token": "shuin-taisei_memuro-3",
+        "cover_image_url": "/images/taisei_memuro/spot3.png",
+        "f7_fragment": "芽室の朝採り新鮮野菜や地元特産品が並ぶJAめむろ直営のファーマーズマーケット。",
+        "f7_full": "「JAめむろ ファーマーズマーケット 愛菜屋」で十勝の大地が育んだ旬の恵みに出会った。",
+        "is_final": false,
+        "next_spot_id": "f6e20dba-6e16-40af-8e1f-00cfb302ecd6",
+        "next_spot_name": "めむろ窯"
+      },
+      {
+        "id": "f6e20dba-6e16-40af-8e1f-00cfb302ecd6",
+        "name": "めむろ窯",
+        "description": "帯広の老舗・満寿屋商店（ますやパン）が手掛けるピッツァとパンのお店（9:30〜15:00・ピッツェリア11:00〜14:00、月・木曜休）。十勝産小麦と地元野菜を使った窯焼きメニューを提供する。",
+        "address": "北海道河西郡芽室町東めむろ3条南1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.912104,
+        "lng": 143.075819,
+        "qr_token": "shuin-taisei_memuro-4",
+        "cover_image_url": "/images/taisei_memuro/spot4.png",
+        "f7_fragment": "満寿屋商店が手掛け、十勝産小麦の窯焼きピッツァとパンを届ける人気店。",
+        "f7_full": "「めむろ窯」で十勝産小麦が香る焼きたてパンとピッツァを味わい、幸せな休憩を過ごした。",
+        "is_final": false,
+        "next_spot_id": "cc824cd7-5c9b-45a5-8fe3-d00b504fd4a5",
+        "next_spot_name": "芽室東公園"
+      },
+      {
+        "id": "cc824cd7-5c9b-45a5-8fe3-d00b504fd4a5",
+        "name": "芽室東公園",
+        "description": "東めむろ地区に整備された、芝生と緩やかな傾斜が開放的な地区公園（終日開放）。広大な十勝の空を仰ぎながら穏やかに散策できる。",
+        "address": "北海道河西郡芽室町東めむろ3条北2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.915684,
+        "lng": 143.075004,
+        "qr_token": "shuin-taisei_memuro-5",
+        "cover_image_url": "/images/taisei_memuro/spot5.png",
+        "f7_fragment": "東めむろ地区に整備された芝生と緩やかな傾斜が開放的な地区公園。",
+        "f7_full": "「芽室東公園」の広い空の下で十勝の風を感じ、大成の散策を爽やかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a4e8abe8-ec93-46df-8efd-c4c1ece4ac8d",
+    "title": "十勝名物と緑の園をめぐる西帯広の休日",
+    "name": "十勝名物と緑の園をめぐる西帯広の休日",
+    "description": "JR西帯広駅から名物ホルジンの有楽町、緑の三角屋根の六花亭ガーデン、インデアンカレー、修景水路の西帯広公園を巡るルート。",
+    "region": "西帯広・西22条",
+    "area_name": "西帯広・西22条",
+    "cover_image_url": "/images/nishiobihiro/route-eyecatch.png",
+    "imageUrl": "/images/nishiobihiro/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西帯広を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅近くの暖簾で味わう名物ホルモンとジンギスカン",
+          "description": "鉄板を囲み、香ばしいホルモンと締めのうどんを堪能した",
+          "badge_code": "nishiobihiro_yurakucho"
+        },
+        {
+          "key": "B",
+          "text": "緑の三角屋根の下で過ごす喫茶室のひととき",
+          "description": "ニレの木に寄り添う六花亭ガーデンで帯広の甘味を楽しんだ",
+          "badge_code": "nishiobihiro_rokkatei"
+        },
+        {
+          "key": "C",
+          "text": "十勝の日常に根づく濃厚なインデアンカレーの一皿",
+          "description": "地元の人々とともに愛されるご当地カレーのコクを味わった",
+          "badge_code": "nishiobihiro_indian"
+        },
+        {
+          "key": "D",
+          "text": "修景水路のせせらぎと広い芝生を眺めた時間",
+          "description": "約3.7ヘクタールの西帯広公園で爽やかな風に癒やされた",
+          "badge_code": "nishiobihiro_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ecf25b79-831b-469e-8948-a8c0147a638a",
+        "name": "JR西帯広駅",
+        "description": "明治40年（1907年）9月8日に「伏古駅」として開業し、昭和29年（1954年）に現駅名へ改称されたJR根室本線の駅（終日利用可）。十勝のローカルグルメ巡りの玄関口。",
+        "address": "北海道帯広市西23条南1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.924083,
+        "lng": 143.125437,
+        "qr_token": "shuin-nishiobihiro-1",
+        "cover_image_url": "/images/nishiobihiro/spot1.png",
+        "f7_fragment": "明治四十年「伏古駅」として開業、十勝グルメ巡りの起点となる駅。",
+        "f7_full": "「JR西帯広駅」を後にし、十勝名物と緑豊かな公園を巡る休日の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "cc530348-c518-47c4-849a-5d164a637666",
+        "next_spot_name": "ジンギスカン 有楽町"
+      },
+      {
+        "id": "cc530348-c518-47c4-849a-5d164a637666",
+        "name": "ジンギスカン 有楽町",
+        "description": "地元で長年親しまれるジンギスカン・ホルモンの名店（水〜金11:00〜20:00・土日祝13:00〜20:00、月・火曜休）。鉄板で焼くホルモンと締めのうどん（「ホルジン」）が名物。",
+        "address": "北海道帯広市西23条南1-39",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.924309,
+        "lng": 143.124085,
+        "qr_token": "shuin-nishiobihiro-2",
+        "cover_image_url": "/images/nishiobihiro/spot2.png",
+        "f7_fragment": "鉄板で焼く名物ホルモンと締めのうどんが地元で長年愛される老舗店。",
+        "f7_full": "「ジンギスカン 有楽町」で鉄板の香ばしさと伝統のホルジンを堪能し、活力を得た。",
+        "is_final": false,
+        "next_spot_id": "650bda24-c861-4412-8079-f5a43f0ca28b",
+        "next_spot_name": "六花亭ガーデン（西帯広店）"
+      },
+      {
+        "id": "650bda24-c861-4412-8079-f5a43f0ca28b",
+        "name": "六花亭ガーデン（西帯広店）",
+        "description": "緑の三角屋根と大きなニレの木が目印の六花亭直営店（店舗9:00〜17:30等・喫茶9:00〜16:00・モーニング〜11:00、無休）。帯広市内の六花亭喫茶室で唯一モーニングサービスを実施している。",
+        "address": "北海道帯広市西22条南2-21-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.91742,
+        "lng": 143.1367,
+        "qr_token": "shuin-nishiobihiro-3",
+        "cover_image_url": "/images/nishiobihiro/spot3.png",
+        "f7_fragment": "緑の三角屋根とニレの木が目印、帯広市内で唯一モーニングも行う六花亭直営店。",
+        "f7_full": "「六花亭ガーデン（西帯広店）」のニレの木陰で寛ぎ、至福の甘味を楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "0c024312-a6b8-4cf3-88c9-e1803f3efc0e",
+        "next_spot_name": "カレーショップ インデアン 西21条店"
+      },
+      {
+        "id": "0c024312-a6b8-4cf3-88c9-e1803f3efc0e",
+        "name": "カレーショップ インデアン 西21条店",
+        "description": "十勝のソウルフードとして圧倒的な人気を誇るご当地カレー店（11:00〜21:00・L.O.20:45、水曜休）。数十種類のスパイスと旨みが溶け込んだ濃厚なルーが愛されている。",
+        "address": "北海道帯広市西21条南2-6-152",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.917661,
+        "lng": 143.141143,
+        "qr_token": "shuin-nishiobihiro-4",
+        "cover_image_url": "/images/nishiobihiro/spot4.png",
+        "f7_fragment": "十勝のソウルフードとして地元の日常に深く根付くご当地カレーの名店。",
+        "f7_full": "「カレーショップ インデアン 西21条店」で濃厚な十勝の一皿に出会い、笑顔になった。",
+        "is_final": false,
+        "next_spot_id": "b5afa27a-2cb2-4625-840a-1334d2592214",
+        "next_spot_name": "西帯広公園"
+      },
+      {
+        "id": "b5afa27a-2cb2-4625-840a-1334d2592214",
+        "name": "西帯広公園",
+        "description": "約3.7ヘクタールの敷地に修景水路や芝生広場、パークゴルフ場（18ホール）などが整備された近隣公園（終日開放）。十勝らしい広い空の下で心地よく散策できる。",
+        "address": "北海道帯広市西22条南3-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.913455,
+        "lng": 143.13718,
+        "qr_token": "shuin-nishiobihiro-5",
+        "cover_image_url": "/images/nishiobihiro/spot5.png",
+        "f7_fragment": "約3.7haの敷地に修景水路や芝生広場、パークゴルフ場が整う近隣公園。",
+        "f7_full": "「西帯広公園」の修景水路と芝生広場を歩き、西帯広の休日を爽やかに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c2dae264-e383-46ea-89c3-29065f4de28f",
+    "title": "十勝の麦と甘味に親しむ柏林台さんぽ",
+    "name": "十勝の麦と甘味に親しむ柏林台さんぽ",
+    "description": "JR柏林台駅から十勝銘菓の柳月、緑豊かな柏林台公園、高倉町珈琲、十勝産小麦100%のはるこまベーカリーを巡るルート。",
+    "region": "柏林台・西19条",
+    "area_name": "柏林台・西19条",
+    "cover_image_url": "/images/hakurindai/route-eyecatch.png",
+    "imageUrl": "/images/hakurindai/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び柏林台を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "三方六など十勝銘菓を手に取った買い物",
+          "description": "十勝生まれの菓子舗で旅のお供にぴったりの銘菓を選んだ",
+          "badge_code": "hakurindai_ryugetsu"
+        },
+        {
+          "key": "B",
+          "text": "緑の木陰と広い芝生を通り抜けた公園の風",
+          "description": "地域の暮らしが息づく公園の木陰を歩き、爽やかな風を感じた",
+          "badge_code": "hakurindai_park"
+        },
+        {
+          "key": "C",
+          "text": "自家焙煎の香りに包まれる珈琲休憩",
+          "description": "地元に愛される喫茶店で香り高い珈琲とケーキに癒やされた",
+          "badge_code": "hakurindai_yoshida_coffee"
+        },
+        {
+          "key": "D",
+          "text": "十勝産小麦100%の香ばしいパンとの出会い",
+          "description": "風味豊かな日常食のパンを焼く名店の味に心が満たされた",
+          "badge_code": "hakurindai_harukoma"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "84e7aae6-b617-4184-8084-9429da224b44",
+        "name": "JR柏林台駅",
+        "description": "昭和61年（1986年）11月1日に臨時乗降場として開業、翌年に駅へ昇格した高架駅（終日利用可）。帯広市西部の住宅街と十勝の味覚をつなぐ駅。",
+        "address": "北海道帯広市西17条南1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.928874,
+        "lng": 143.164441,
+        "qr_token": "shuin-hakurindai-1",
+        "cover_image_url": "/images/hakurindai/spot1.png",
+        "f7_fragment": "昭和六十一年開業、帯広西部の住宅街と十勝の甘味を結ぶ高架駅。",
+        "f7_full": "「JR柏林台駅」を後にし、十勝の麦と甘味に出会う柏林台の散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "99855fb5-78f9-4717-8033-8d23158bb764",
+        "next_spot_name": "柳月 ぴあざフクハラ西18条店"
+      },
+      {
+        "id": "99855fb5-78f9-4717-8033-8d23158bb764",
+        "name": "柳月 ぴあざフクハラ西18条店",
+        "description": "「三方六」や「あんバタサン」で知られる十勝発祥の菓子舗・柳月の店舗（10:00〜20:00、施設に準ずる休）。旅のお供やお土産選びに最適。",
+        "address": "北海道帯広市西18条北1-30",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.931217,
+        "lng": 143.161702,
+        "qr_token": "shuin-hakurindai-2",
+        "cover_image_url": "/images/hakurindai/spot2.png",
+        "f7_fragment": "三方六やあんバタサンで親しまれる十勝発祥の老舗菓子舗の店舗。",
+        "f7_full": "「柳月 ぴあざフクハラ西18条店」で十勝自慢の銘菓を選び、心弾む買物をした。",
+        "is_final": false,
+        "next_spot_id": "7ef56e5c-6531-4731-830a-8df4ca719e74",
+        "next_spot_name": "柏林台公園"
+      },
+      {
+        "id": "7ef56e5c-6531-4731-830a-8df4ca719e74",
+        "name": "柏林台公園",
+        "description": "野球場やパークゴルフ場、遊具などが整備された地域住民の憩いの公園（終日開放）。柏の木立と広い芝生が心地よい散策空間を作り出している。",
+        "address": "北海道帯広市柏林台中町5-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.922416,
+        "lng": 143.167747,
+        "qr_token": "shuin-hakurindai-3",
+        "cover_image_url": "/images/hakurindai/spot3.png",
+        "f7_fragment": "野球場やパークゴルフ場を備え、緑の木陰が心地よい地域の憩いの公園。",
+        "f7_full": "「柏林台公園」の広々とした木陰を歩き、爽やかな帯広の風に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "aa0cc579-e52f-40e9-838d-855368f63257",
+        "next_spot_name": "珈琲専科ヨシダ いっきゅう店"
+      },
+      {
+        "id": "aa0cc579-e52f-40e9-838d-855368f63257",
+        "name": "珈琲専科ヨシダ いっきゅう店",
+        "description": "昭和54年（1979年）創業の帯広老舗ロースタリー「珈琲専科ヨシダ」のフクハラいっきゅう店内店舗（10:00〜19:00、フクハラいっきゅう店に準ずる不定休）。香り高い自家焙煎珈琲で寛げる。",
+        "address": "北海道帯広市西19条南2-30-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.918722,
+        "lng": 143.151806,
+        "qr_token": "shuin-hakurindai-4",
+        "cover_image_url": "/images/hakurindai/spot4.png",
+        "f7_fragment": "帯広の老舗自家焙煎珈琲店による、香り高い一杯を楽しめる喫茶スポット。",
+        "f7_full": "「珈琲専科ヨシダ いっきゅう店」で自家焙煎珈琲を味わい、ほっと寛いだ。",
+        "is_final": false,
+        "next_spot_id": "54117076-e926-467b-84b3-567a4abec905",
+        "next_spot_name": "はるこまベーカリー"
+      },
+      {
+        "id": "54117076-e926-467b-84b3-567a4abec905",
+        "name": "はるこまベーカリー",
+        "description": "平成11年（1999年）創業（平成22年に現在地へ移転）、十勝産小麦100%にこだわり日常食としてのパンを焼き上げる人気ベーカリー（10:00〜19:00、日曜・月曜休）。カフェスペースも併設。",
+        "address": "北海道帯広市西19条南5-43-11",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.906006,
+        "lng": 143.153088,
+        "qr_token": "shuin-hakurindai-5",
+        "cover_image_url": "/images/hakurindai/spot5.png",
+        "f7_fragment": "十勝産小麦100%にこだわり、香り豊かな日常食のパンを焼き上げる人気店。",
+        "f7_full": "「はるこまベーカリー」で十勝産小麦の香り高いパンに出会い、柏林台の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "74899e1c-ab98-4e27-8d1d-1fcb14bc02bc",
+    "title": "駅裏の喫茶と高台の社をめぐる札内散策",
+    "name": "駅裏の喫茶と高台の社をめぐる札内散策",
+    "description": "JR札内駅から駅裏の一糸と庭Cafe、明治創祀の札内神社、200mの遊水路が流れるいなほ公園、老舗の平和園札内店を巡るルート。",
+    "region": "札内・文京・みずほ",
+    "area_name": "札内・文京・みずほ",
+    "cover_image_url": "/images/satsunai/route-eyecatch.png",
+    "imageUrl": "/images/satsunai/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び札内を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅裏の静かな空間で味わった季節のスイーツ",
+          "description": "一糸と庭Cafeの木目調の店内で、美しい洋菓子と珈琲を味わった",
+          "badge_code": "satsunai_itotoniwa"
+        },
+        {
+          "key": "B",
+          "text": "明治の開拓期から続く高台の社での参拝",
+          "description": "明治31年創祀の歴史ある境内で、静かに手を合わせた",
+          "badge_code": "satsunai_shrine"
+        },
+        {
+          "key": "C",
+          "text": "長い遊水路と芝生広場が広がる公園の景色",
+          "description": "いなほ公園で爽やかな水辺と広い空の下を散策した",
+          "badge_code": "satsunai_inaho_park"
+        },
+        {
+          "key": "D",
+          "text": "地元で愛される老舗の焼肉とジンギスカン",
+          "description": "十勝の食文化を支える名店の味を堪能し、お腹も心も満たされた",
+          "badge_code": "satsunai_heiwaen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b2450abd-4e73-4e37-84c4-3c8b77ed647b",
+        "name": "JR札内駅",
+        "description": "明治43年（1910年）1月7日に開業したJR根室本線の駅（終日利用可）。地名「札内」はアイヌ語の「サッナイ（乾く川）」に由来する。",
+        "address": "北海道中川郡幕別町札内中央町638-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.913227,
+        "lng": 143.255555,
+        "qr_token": "shuin-satsunai-1",
+        "cover_image_url": "/images/satsunai/spot1.png",
+        "f7_fragment": "明治四十三年開業、アイヌ語「サッナイ」に名を由来する札内の玄関口。",
+        "f7_full": "「JR札内駅」を後にし、駅裏のカフェと高台の神社を巡る札内の散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "e59cff8e-ee4d-48a1-8806-0a49fb28013e",
+        "next_spot_name": "一糸と庭Cafe"
+      },
+      {
+        "id": "e59cff8e-ee4d-48a1-8806-0a49fb28013e",
+        "name": "一糸と庭Cafe",
+        "description": "人気洋菓子店「一糸（ito）」と「uraniwa cafe」が統合して誕生した駅裏手のカフェ＆洋菓子店（10:00〜18:00、木曜・第2・第4金曜休）。木目調の落ち着いた店内で季節のスイーツやランチが楽しめる。",
+        "address": "北海道中川郡幕別町札内中央町528-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.911889,
+        "lng": 143.256912,
+        "qr_token": "shuin-satsunai-2",
+        "cover_image_url": "/images/satsunai/spot2.png",
+        "f7_fragment": "人気洋菓子店とカフェが統合して誕生した駅裏手の落ち着いた木目調カフェ。",
+        "f7_full": "「一糸と庭Cafe」で美しい洋菓子と穏やかな空間を味わい、心がほっと和んだ。",
+        "is_final": false,
+        "next_spot_id": "ec182691-e00a-4400-81e7-ede4e506a254",
+        "next_spot_name": "札内神社"
+      },
+      {
+        "id": "ec182691-e00a-4400-81e7-ede4e506a254",
+        "name": "札内神社",
+        "description": "明治31年（1898年）に「別奴神社」として創祀され、大正4年に「札内神社」へ改称、昭和49年に発祥地である現在地へ遷座した鎮守（境内終日参拝可、授与所9:00〜17:00）。",
+        "address": "北海道中川郡幕別町札内文京町28",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.90945,
+        "lng": 143.242392,
+        "qr_token": "shuin-satsunai-3",
+        "cover_image_url": "/images/satsunai/spot3.png",
+        "f7_fragment": "明治三十一年創祀の別奴神社を起源とし、文京町の高台に鎮座する鎮守。",
+        "f7_full": "「札内神社」の清らかな杜に参拝し、明治から続く札内開拓の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "33500e6a-f322-4b36-802d-9ccaecd2f89b",
+        "next_spot_name": "いなほ公園"
+      },
+      {
+        "id": "33500e6a-f322-4b36-802d-9ccaecd2f89b",
+        "name": "いなほ公園",
+        "description": "総延長200mの流れる遊水路や噴水池、広い芝生広場や遊歩道が整備された地区公園（終日開放、水遊び場は4月下旬〜11月上旬）。地域の人々に愛される爽やかな水と緑の空間。",
+        "address": "北海道中川郡幕別町札内みずほ町160-14",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.903681,
+        "lng": 143.245706,
+        "qr_token": "shuin-satsunai-4",
+        "cover_image_url": "/images/satsunai/spot4.png",
+        "f7_fragment": "総延長200mの遊水路や噴水池、広い芝生広場が整備された爽やかな地区公園。",
+        "f7_full": "「いなほ公園」の長い遊水路と芝生広場を歩き、みずほの爽やかな風に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "e64ed516-054c-4989-8833-c808a4e76aa6",
+        "next_spot_name": "平和園 札内店"
+      },
+      {
+        "id": "e64ed516-054c-4989-8833-c808a4e76aa6",
+        "name": "平和園 札内店",
+        "description": "十勝管内で長年親しまれる老舗の焼肉・ジンギスカンチェーンの札内店（11:00〜22:00、火曜休・祝日の場合営業）。香ばしいジンギスカンや焼肉で旅を締めくくれる。",
+        "address": "北海道中川郡幕別町札内西町93",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.920643,
+        "lng": 143.238057,
+        "qr_token": "shuin-satsunai-5",
+        "cover_image_url": "/images/satsunai/spot5.png",
+        "f7_fragment": "十勝管内で長年親しまれる老舗焼肉・ジンギスカンチェーンの人気店舗。",
+        "f7_full": "「平和園 札内店」で十勝自慢の焼肉とジンギスカンを堪能し、札内の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "29c526bb-0556-4599-8c0d-80b2a4235c7b",
+    "title": "止若の記憶と発祥の芝生をめぐる幕別散歩",
+    "name": "止若の記憶と発祥の芝生をめぐる幕別散歩",
+    "description": "旧止若駅として開業したJR幕別駅から本町の洋食店、ねこの座布団のTOKACHI BARON、幕別神社、パークゴルフ発祥の地を巡るルート。",
+    "region": "幕別本町・寿町",
+    "area_name": "幕別本町・寿町",
+    "cover_image_url": "/images/makubetsu/route-eyecatch.png",
+    "imageUrl": "/images/makubetsu/route-eyecatch.png",
+    "category": "歴史・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び幕別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "本町の2階から街を見下ろす洋食ランチ",
+          "description": "駅近くの本町通りで温かな洋食を味わい、街歩きを始めた",
+          "badge_code": "makubetsu_zeropoint"
+        },
+        {
+          "key": "B",
+          "text": "老舗の味を受け継ぐ銘菓ねこの座布団",
+          "description": "惜しまれつつ閉じた老舗の看板銘菓を継ぐ一軒に出会った",
+          "badge_code": "makubetsu_baron"
+        },
+        {
+          "key": "C",
+          "text": "明治の開拓から町を見守り続ける社",
+          "description": "明治33年創祀の幕別神社で、鉄道と歩んだ町の歴史を偲んだ",
+          "badge_code": "makubetsu_shrine"
+        },
+        {
+          "key": "D",
+          "text": "パークゴルフ発祥の芝生とらせん状モニュメント",
+          "description": "1983年誕生の発祥の地で、巨大な環境芸術を仰ぎ見た",
+          "badge_code": "makubetsu_parkgolf"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f49f9d7a-e9be-4061-8751-00d77ee3ae4d",
+        "name": "JR幕別駅",
+        "description": "明治38年（1905年）10月21日に「止若（やむわっか）駅」として開業、昭和38年に「幕別駅」へ改称（終日利用可）。パークゴルフ発祥の町の玄関口。",
+        "address": "北海道中川郡幕別町錦町141",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.907784,
+        "lng": 143.359117,
+        "qr_token": "shuin-makubetsu-1",
+        "cover_image_url": "/images/makubetsu/spot1.png",
+        "f7_fragment": "明治三十八年「止若駅」として開業、パークゴルフ発祥の町の玄関口。",
+        "f7_full": "「JR幕別駅」の静かなホームを後にし、止若の記憶と発祥の地を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "1b00bc23-bb1d-46ff-826d-bd45efebb503",
+        "next_spot_name": "Cafe & Grill ゼロポイント"
+      },
+      {
+        "id": "1b00bc23-bb1d-46ff-826d-bd45efebb503",
+        "name": "Cafe & Grill ゼロポイント",
+        "description": "幕別駅近くの本町通り沿い・宮本洋物店2階で、昼は洋食・夜はバーとして親しまれるアットホームな飲食店（11:00〜21:00・ランチ〜14:00、日曜休）。",
+        "address": "北海道中川郡幕別町本町78-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.908662,
+        "lng": 143.358357,
+        "qr_token": "shuin-makubetsu-2",
+        "cover_image_url": "/images/makubetsu/spot2.png",
+        "f7_fragment": "本町通りの2階で親しまれるアットホームな洋食・バーの飲食店。",
+        "f7_full": "「Cafe & Grill ゼロポイント」で温かい洋食を味わい、街歩きの活力を得た。",
+        "is_final": false,
+        "next_spot_id": "f82315db-feac-4b64-8f1d-d8b3e20e9fcb",
+        "next_spot_name": "TOKACHI BARON"
+      },
+      {
+        "id": "f82315db-feac-4b64-8f1d-d8b3e20e9fcb",
+        "name": "TOKACHI BARON",
+        "description": "2022年に閉店した老舗「杉野菓子店」の店舗と看板銘菓「ねこの座布団」などを事業継承したスイーツ発信拠点（10:30〜17:00、水・木曜休、土日祝イートイン可）。",
+        "address": "北海道中川郡幕別町本町122",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.908715,
+        "lng": 143.356963,
+        "qr_token": "shuin-makubetsu-3",
+        "cover_image_url": "/images/makubetsu/spot3.png",
+        "f7_fragment": "老舗・杉野菓子店の看板銘菓「ねこの座布団」を受け継ぐスイーツ拠点。",
+        "f7_full": "「TOKACHI BARON」で受け継がれる銘菓に出会い、地域の温かい絆に触れた。",
+        "is_final": false,
+        "next_spot_id": "a20b8e6e-2a54-4a35-805e-e07a7300f8b7",
+        "next_spot_name": "幕別神社"
+      },
+      {
+        "id": "a20b8e6e-2a54-4a35-805e-e07a7300f8b7",
+        "name": "幕別神社",
+        "description": "明治33年（1900年）9月15日創祀（境内終日参拝可）。旧武山市街への移住者が「八幡様」として祀った小祠に始まり、鉄道開通や市街地の発展に伴い現在地へ遷座した。",
+        "address": "北海道中川郡幕別町本町148",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.908525,
+        "lng": 143.354861,
+        "qr_token": "shuin-makubetsu-4",
+        "cover_image_url": "/images/makubetsu/spot4.png",
+        "f7_fragment": "明治三十三年創祀、鉄道開通と市街地発展とともに受け継がれた鎮守。",
+        "f7_full": "「幕別神社」の静かな杜に参拝し、旧止若から続く町の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "94e9dfc0-b784-4ac0-82f7-e02826da1da4",
+        "next_spot_name": "幕別町運動公園（つつじコース・クロニクル・スパイラル）"
+      },
+      {
+        "id": "94e9dfc0-b784-4ac0-82f7-e02826da1da4",
+        "name": "幕別町運動公園（つつじコース・クロニクル・スパイラル）",
+        "description": "昭和58年（1983年）に幕別町職員らが考案した「パークゴルフ発祥の地（つつじコース）」にして、開基100年記念の巨大環境芸術「クロニクル・スパイラル」が立つ公園（終日開放）。",
+        "address": "北海道中川郡幕別町寿町152",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.903485,
+        "lng": 143.349331,
+        "qr_token": "shuin-makubetsu-5",
+        "cover_image_url": "/images/makubetsu/spot5.png",
+        "f7_fragment": "1983年誕生のパークゴルフ発祥の地にして巨大モニュメントが立つ運動公園。",
+        "f7_full": "「幕別町運動公園（つつじコース・クロニクル・スパイラル）」で発祥の地の風を感じた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bad17004-f303-4c9e-8781-7de08c2934ff",
+    "title": "利別川のほとり菓子と古民家をめぐる旅",
+    "name": "利別川のほとり菓子と古民家をめぐる旅",
+    "description": "JR利別駅から地元人気の洋菓子店おかしの小松、利別神社、利別郵便局、古民家カフェCafe&Life akaoを巡るルート。",
+    "region": "利別・池田",
+    "area_name": "利別・池田",
+    "cover_image_url": "/images/toshibetsu/route-eyecatch.png",
+    "imageUrl": "/images/toshibetsu/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び利別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "山幸ぶどうのシロップと洋菓子が待つ菓子店",
+          "description": "池田町特産のぶどう品種「山幸」の甘い魅力に出合った",
+          "badge_code": "toshibetsu_komatsu"
+        },
+        {
+          "key": "B",
+          "text": "利別本町の静かな境内で手を合わせた神社",
+          "description": "地域を見守り続ける利別神社で旅の安寧を祈った",
+          "badge_code": "toshibetsu_shrine"
+        },
+        {
+          "key": "C",
+          "text": "町の暮らしを支える利別本町の郵便局",
+          "description": "旅の便りを思わせる地域密着の風景に触れた",
+          "badge_code": "toshibetsu_post"
+        },
+        {
+          "key": "D",
+          "text": "古民家カフェで味わうスパイスカレーと珈琲",
+          "description": "Cafe&Life akaoの落ち着いた空間で心から寛いだ",
+          "badge_code": "toshibetsu_akao"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "17117356-85e6-4508-8408-929cc13e11b9",
+        "name": "JR利別駅",
+        "description": "明治37年（1904年）12月15日に開業したJR根室本線の無人駅（終日利用可）。近くを利別川が流れ、駅周辺には穏やかな街並みが広がる。",
+        "address": "北海道中川郡池田町字利別西町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.934636,
+        "lng": 143.424331,
+        "qr_token": "shuin-toshibetsu-1",
+        "cover_image_url": "/images/toshibetsu/spot1.png",
+        "f7_fragment": "明治三十七年開業、利別川のほど近くに佇む静かな無人駅。",
+        "f7_full": "「JR利別駅」の素朴なホームを後にし、菓子と古民家を巡る利別の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "dcc0d6ed-8789-4b8b-8e8d-772a9f97229f",
+        "next_spot_name": "おかしの小松"
+      },
+      {
+        "id": "dcc0d6ed-8789-4b8b-8e8d-772a9f97229f",
+        "name": "おかしの小松",
+        "description": "行列ができることもある地元の人気洋菓子店（平日10:00〜18:00・土日祝9:00〜17:00、火曜・第4水曜休）。十勝ワイン独自のぶどう品種「山幸」を使ったスイーツが評判。",
+        "address": "北海道中川郡池田町字利別西町23-28",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.928024,
+        "lng": 143.426773,
+        "qr_token": "shuin-toshibetsu-2",
+        "cover_image_url": "/images/toshibetsu/spot2.png",
+        "f7_fragment": "十勝ワイン独自のぶどう品種「山幸」のシロップや洋菓子が評判の人気店。",
+        "f7_full": "「おかしの小松」で山幸ぶどうの豊かな甘さに出会い、心が弾む買物をした。",
+        "is_final": false,
+        "next_spot_id": "0ccf837e-ba7f-4704-8425-c1df2ad76f44",
+        "next_spot_name": "利別神社"
+      },
+      {
+        "id": "0ccf837e-ba7f-4704-8425-c1df2ad76f44",
+        "name": "利別神社",
+        "description": "利別本町エリアに静かに鎮座し、地域の暮らしと歴史を見守り続ける神社（参拝自由・無休）。落ち着いた木立に囲まれた清らかな境内が迎えてくれる。",
+        "address": "北海道中川郡池田町字利別本町14-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.928987,
+        "lng": 143.431189,
+        "qr_token": "shuin-toshibetsu-3",
+        "cover_image_url": "/images/toshibetsu/spot3.png",
+        "f7_fragment": "利別本町に静かに鎮座し、地域の暮らしを見守り続ける歴史ある神社。",
+        "f7_full": "「利別神社」の清らかな境内で手を合わせ、利別本町の穏やかな歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "e72b8635-5bfc-42f5-8f79-ff14259cedd7",
+        "next_spot_name": "利別郵便局"
+      },
+      {
+        "id": "e72b8635-5bfc-42f5-8f79-ff14259cedd7",
+        "name": "利別郵便局",
+        "description": "利別本町の中心部に位置する地域密着の郵便局（窓口平日9:00〜17:00、土日祝休）。旅の記念に切手やご当地ポストカードなどを購入して便りを出す楽しみもある。",
+        "address": "北海道中川郡池田町字利別本町15-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.928355,
+        "lng": 143.432092,
+        "qr_token": "shuin-toshibetsu-4",
+        "cover_image_url": "/images/toshibetsu/spot4.png",
+        "f7_fragment": "利別本町の暮らしを支え、旅の便りや記念切手も求められる地域密着の郵便局。",
+        "f7_full": "「利別郵便局」の前で町の暮らしの温もりに触れ、旅の便りに思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "0f1ef740-0316-4c2b-8ac8-cb759f73d1e7",
+        "next_spot_name": "Cafe&Life akao"
+      },
+      {
+        "id": "0f1ef740-0316-4c2b-8ac8-cb759f73d1e7",
+        "name": "Cafe&Life akao",
+        "description": "古民家を丁寧に改装した一軒家カフェ（12:00〜・季節変動あり、月曜・火曜休）。手作りのスパイスカレーや挽きたてコーヒーを落ち着いた空間で味わえる。",
+        "address": "北海道中川郡池田町字利別本町15-21",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.928495,
+        "lng": 143.432804,
+        "qr_token": "shuin-toshibetsu-5",
+        "cover_image_url": "/images/toshibetsu/spot5.png",
+        "f7_fragment": "古民家を改装した空間で手作りスパイスカレーと珈琲を味わえる一軒家カフェ。",
+        "f7_full": "「Cafe&Life akao」で香り高いカレーと珈琲を堪能し、利別の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c2755769-e40f-4824-8f2b-3ccc6b7fd8b7",
+    "title": "十勝ワインの丘と歴史息づく駅前の散策路",
+    "name": "十勝ワインの丘と歴史息づく駅前の散策路",
+    "description": "JR池田駅からいけだ牛の名店レストランよねくら、池田神社、丘の上のいけだワイン城、桜の名所・清見ヶ丘公園を巡るルート。",
+    "region": "十勝池田・ワイン城",
+    "area_name": "十勝池田・ワイン城",
+    "cover_image_url": "/images/ikeda_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/ikeda_hokkaido/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び十勝・池田を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前の老舗で味わう名物いけだ牛の一皿",
+          "description": "柔らかな地元ブランド牛のサーロインステーキを堪能した",
+          "badge_code": "ikeda_hokkaido_yonekura"
+        },
+        {
+          "key": "B",
+          "text": "明治の開拓期から町を見守る池田神社の杜",
+          "description": "歴史ある社殿の前で静かに手を合わせ、町の歩みに触れた",
+          "badge_code": "ikeda_hokkaido_shrine"
+        },
+        {
+          "key": "C",
+          "text": "清見の丘にそびえる古城・いけだワイン城",
+          "description": "地下熟成室の香りと十勝ワインの豊かな歴史に触れた",
+          "badge_code": "ikeda_hokkaido_winecastle"
+        },
+        {
+          "key": "D",
+          "text": "桜と十勝の風が心地よい高台の清見ヶ丘公園",
+          "description": "約600本のエゾヤマザクラが彩る公園で爽やかな風に吹かれた",
+          "badge_code": "ikeda_hokkaido_kiyomigaoka"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b1ad2772-1267-457b-88af-fc05a10ff298",
+        "name": "JR池田駅",
+        "description": "明治37年（1904年）12月15日に開業した、十勝ワインのふるさと・池田町の玄関口（窓口営業時間あり）。駅前から歴史とグルメの散策が始まる。",
+        "address": "北海道中川郡池田町字東1条32-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.920992,
+        "lng": 143.453239,
+        "qr_token": "shuin-ikeda_hokkaido-1",
+        "cover_image_url": "/images/ikeda_hokkaido/spot1.png",
+        "f7_fragment": "明治三十七年開業、十勝ワインのふるさと・池田町の玄関口。",
+        "f7_full": "「JR池田駅」を後にし、いけだ牛とワインの丘を巡る池田の散策へ踏み出した。",
+        "is_final": false,
+        "next_spot_id": "7c5ba58f-3068-42ae-8d32-1cf67ee885ce",
+        "next_spot_name": "レストランよねくら"
+      },
+      {
+        "id": "7c5ba58f-3068-42ae-8d32-1cf67ee885ce",
+        "name": "レストランよねくら",
+        "description": "JR池田駅前の老舗洋食店（9:00〜17:00・L.O.16:00頃、木曜休）。柔らかな地元ブランド牛「いけだ牛」を使ったサーロインステーキ丼やカットステーキが名物。",
+        "address": "北海道中川郡池田町字大通1-27",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.92109,
+        "lng": 143.452444,
+        "qr_token": "shuin-ikeda_hokkaido-2",
+        "cover_image_url": "/images/ikeda_hokkaido/spot2.png",
+        "f7_fragment": "柔らかい地元ブランド牛「いけだ牛」のステーキが名物の駅前老舗洋食店。",
+        "f7_full": "「レストランよねくら」で芳醇ないけだ牛を味わい、旅の活力をしっかり養った。",
+        "is_final": false,
+        "next_spot_id": "d21ff6e5-e586-42f5-8e4e-bb7f319e6d6c",
+        "next_spot_name": "池田神社"
+      },
+      {
+        "id": "d21ff6e5-e586-42f5-8e4e-bb7f319e6d6c",
+        "name": "池田神社",
+        "description": "明治34年（1901年）8月に社殿が建築され、大正11年（1922年）8月25日に現在地に創立許可された歴史ある神社（参拝自由、御朱印9:00〜17:00）。",
+        "address": "北海道中川郡池田町字旭町1-7-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.927016,
+        "lng": 143.454577,
+        "qr_token": "shuin-ikeda_hokkaido-3",
+        "cover_image_url": "/images/ikeda_hokkaido/spot3.png",
+        "f7_fragment": "明治三十四年建築の社殿に始まる歴史を刻み、町の開拓を見守る神社。",
+        "f7_full": "「池田神社」の静かな杜に参拝し、開拓の記憶に手を合わせて心を整えた。",
+        "is_final": false,
+        "next_spot_id": "0eaade5b-6a79-4e33-8eb6-1615ad57319f",
+        "next_spot_name": "いけだワイン城（池田町ブドウ・ブドウ酒研究所）"
+      },
+      {
+        "id": "0eaade5b-6a79-4e33-8eb6-1615ad57319f",
+        "name": "いけだワイン城（池田町ブドウ・ブドウ酒研究所）",
+        "description": "昭和49年（1974年）オープン、令和2年（2020年）6月に大規模刷新された町のシンボル（9:00〜17:00・レストラン11:00〜、年末年始休）。地下熟成室見学や十勝ワインの試飲・購入が楽しめる。",
+        "address": "北海道中川郡池田町字清見83-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.919024,
+        "lng": 143.457896,
+        "qr_token": "shuin-ikeda_hokkaido-4",
+        "cover_image_url": "/images/ikeda_hokkaido/spot4.png",
+        "f7_fragment": "ヨーロッパの古城風の佇まいを持ち、地下熟成室見学やワイン購入を楽しめる名所。",
+        "f7_full": "「いけだワイン城（池田町ブドウ・ブドウ酒研究所）」で十勝ワインの魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "649c9c88-753f-46ec-80c7-52ed886bd494",
+        "next_spot_name": "清見ヶ丘公園"
+      },
+      {
+        "id": "649c9c88-753f-46ec-80c7-52ed886bd494",
+        "name": "清見ヶ丘公園",
+        "description": "ワイン城の北側に広がる高台の公園（通年散策可、パークゴルフ場等は5〜10月）。春は約600本のエゾヤマザクラが咲き誇る桜の名所で、ベンチや芝生でひと休みできる。",
+        "address": "北海道中川郡池田町字清見ヶ丘1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.927365,
+        "lng": 143.455551,
+        "qr_token": "shuin-ikeda_hokkaido-5",
+        "cover_image_url": "/images/ikeda_hokkaido/spot5.png",
+        "f7_fragment": "ワイン城の北側に広がり、約600本のエゾヤマザクラが彩る高台の憩いの公園。",
+        "f7_full": "「清見ヶ丘公園」の高台のベンチで十勝の風を感じ、池田の散策を爽やかに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e9a5cc55-2cbb-40da-8c8a-72acbcb35480",
+    "title": "十ドル看板が迎える北の農村と祈りの小径",
+    "name": "十ドル看板が迎える北の農村と祈りの小径",
+    "description": "10ドル駅の愛称で親しまれるJR十弗駅から十弗簡易郵便局、十弗農業センター、十弗ポンプ場、牧草地の十弗西神社を巡るルート。",
+    "region": "十弗宝町・北栄",
+    "area_name": "十弗宝町・北栄",
+    "cover_image_url": "/images/tofutsu/route-eyecatch.png",
+    "imageUrl": "/images/tofutsu/route-eyecatch.png",
+    "category": "自然・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び十弗を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "宝町の駅前に佇む小さな簡易郵便局",
+          "description": "地域の暮らしを支える素朴な窓口の温もりに触れた",
+          "badge_code": "tofutsu_post"
+        },
+        {
+          "key": "B",
+          "text": "十弗地区の人々が集う農業センター",
+          "description": "開拓から続く農村の営みと地域の絆に思いを馳せた",
+          "badge_code": "tofutsu_center"
+        },
+        {
+          "key": "C",
+          "text": "十勝川水系の農地を守る十弗ポンプ場",
+          "description": "低平地の水害を防ぐ北の大地の治水の知恵を知った",
+          "badge_code": "tofutsu_pump"
+        },
+        {
+          "key": "D",
+          "text": "牧草地帯の先に鎮座する十弗西神社",
+          "description": "広大な牧草地の先で、地域の開拓を見守る社に参拝した",
+          "badge_code": "tofutsu_west_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5b522438-2cbd-43be-8978-2c03091ab569",
+        "name": "JR十弗駅",
+        "description": "明治44年（1911年）12月15日開業の無人駅（終日利用可）。アイヌ語「ト・プッ（沼の口）」が由来。「弗」が「$」に似ることから「10ドル駅」と呼ばれ「10$メモリアルボード」も立つ。",
+        "address": "北海道中川郡豊頃町十弗宝町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.855775,
+        "lng": 143.500972,
+        "qr_token": "shuin-tofutsu-1",
+        "cover_image_url": "/images/tofutsu/spot1.png",
+        "f7_fragment": "「十ドル駅」の愛称と10$メモリアルボードで知られるJR根室本線の無人駅。",
+        "f7_full": "「JR十弗駅」のユニークな木造駅舎を後にし、のどかな北の農村散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "e1dd7eb2-ca6b-49c8-859b-eaca097ba121",
+        "next_spot_name": "十弗簡易郵便局"
+      },
+      {
+        "id": "e1dd7eb2-ca6b-49c8-859b-eaca097ba121",
+        "name": "十弗簡易郵便局",
+        "description": "元Aコープの建物を移転利用した地域密着の簡易郵便局（平日9:00〜16:00、土日祝・年末年始等休）。切手や郵便窓口など十弗の暮らしを支えている。",
+        "address": "北海道中川郡豊頃町十弗宝町39",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.855873,
+        "lng": 143.501664,
+        "qr_token": "shuin-tofutsu-2",
+        "cover_image_url": "/images/tofutsu/spot2.png",
+        "f7_fragment": "元Aコープの建物を活かして十弗宝町の駅前に佇む地域密着の簡易郵便局。",
+        "f7_full": "「十弗簡易郵便局」の前を歩き、小さな集落の温かな日常の営みに触れた。",
+        "is_final": false,
+        "next_spot_id": "f2aa3eaf-9c5d-4aa1-8f1a-3745e4316443",
+        "next_spot_name": "十弗農業センター"
+      },
+      {
+        "id": "f2aa3eaf-9c5d-4aa1-8f1a-3745e4316443",
+        "name": "十弗農業センター",
+        "description": "十弗駅前に位置する地域の拠点施設（行事等の利用時間に準ずる、指定避難所）。十弗地区の会合や生涯学習の場として住民に親しまれている。",
+        "address": "北海道中川郡豊頃町十弗宝町107-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.856534,
+        "lng": 143.500783,
+        "qr_token": "shuin-tofutsu-3",
+        "cover_image_url": "/images/tofutsu/spot3.png",
+        "f7_fragment": "十弗地区の会合や生涯学習の場として親しまれる地域密着の拠点施設。",
+        "f7_full": "「十弗農業センター」を訪ね、十勝の農村集落を支える人々のつながりを感じた。",
+        "is_final": false,
+        "next_spot_id": "d53f9fe2-799b-42de-8a46-45529531cd43",
+        "next_spot_name": "豊頃町役場 十弗ポンプ場"
+      },
+      {
+        "id": "d53f9fe2-799b-42de-8a46-45529531cd43",
+        "name": "豊頃町役場 十弗ポンプ場",
+        "description": "十勝川水系の低平地が広がる十弗地区の治水・排水を支える地域の重要インフラ施設（外観見学自由・施設内立入不可）。大河とともに生きる北の大地の知恵を伝える。",
+        "address": "北海道中川郡豊頃町十弗75",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.873751,
+        "lng": 143.499851,
+        "qr_token": "shuin-tofutsu-4",
+        "cover_image_url": "/images/tofutsu/spot4.png",
+        "f7_fragment": "十勝川水系の低平地が広がる十弗地区の排水・治水を支えるインフラ施設。",
+        "f7_full": "「豊頃町役場 十弗ポンプ場」を眺め、大河とともに生きる土地の知恵に触れた。",
+        "is_final": false,
+        "next_spot_id": "fa486ffb-dd9f-473b-89de-02d7cffe86a0",
+        "next_spot_name": "十弗西神社"
+      },
+      {
+        "id": "fa486ffb-dd9f-473b-89de-02d7cffe86a0",
+        "name": "十弗西神社",
+        "description": "十弗地区西側の北栄エリアの牧草地帯に静かに鎮座し、地域の開拓と暮らしを見守り続ける神社（参拝自由・無休）。どこまでも広い十勝の空が美しい。",
+        "address": "北海道中川郡豊頃町北栄1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.846866,
+        "lng": 143.497755,
+        "qr_token": "shuin-tofutsu-5",
+        "cover_image_url": "/images/tofutsu/spot5.png",
+        "f7_fragment": "北栄エリアの広大な牧草地帯の中に鎮座し、地域の暮らしを見守る神社。",
+        "f7_full": "「十弗西神社」の広大な牧草地と静かな杜に参拝し、十弗の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d273300b-dcef-4492-8982-7e5416985683",
+    "title": "豊頃大橋を越え甘味と町の拠点へ続く道",
+    "name": "豊頃大橋を越え甘味と町の拠点へ続く道",
+    "description": "JR豊頃駅から豊頃神社、国道沿いの赤胴ラーメン、豊頃大橋を渡った先の朝日堂アメリカンドーナツ、ココロコテラスを巡るルート。",
+    "region": "豊頃・茂岩本町",
+    "area_name": "豊頃・茂岩本町",
+    "cover_image_url": "/images/toyokoro/route-eyecatch.png",
+    "imageUrl": "/images/toyokoro/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び豊頃を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "佐々田町の杜に鎮座する豊頃神社の祈り",
+          "description": "駅からほど近い地域の氏神で、旅の安全を静かに祈願した",
+          "badge_code": "toyokoro_shrine"
+        },
+        {
+          "key": "B",
+          "text": "国道38号線沿いの昔ながらの一杯",
+          "description": "地元の人々に親しまれる赤胴ラーメンで体の芯から温まった",
+          "badge_code": "toyokoro_akado"
+        },
+        {
+          "key": "C",
+          "text": "全国からファンが集う朝日堂のアメリカンドーナツ",
+          "description": "生クリームやあんこが詰まった名物の優しい甘さに笑顔がこぼれた",
+          "badge_code": "toyokoro_asahido"
+        },
+        {
+          "key": "D",
+          "text": "茂岩の中心で寛ぐ拠点・ココロコテラス",
+          "description": "豊頃町の特産品と観光情報が集まる温かい空間で一息ついた",
+          "badge_code": "toyokoro_cocoloco"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d7bfbd38-dc5e-4f92-8fca-fa12c6dd9f76",
+        "name": "JR豊頃駅",
+        "description": "明治37年（1904年）8月12日に開業したJR根室本線の無人駅（終日利用可）。豊頃町の北側玄関口として旅人を迎えている。",
+        "address": "北海道中川郡豊頃町豊頃旭町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.817404,
+        "lng": 143.538571,
+        "qr_token": "shuin-toyokoro-1",
+        "cover_image_url": "/images/toyokoro/spot1.png",
+        "f7_fragment": "明治三十七年開業、十勝川北岸に佇む豊頃町の北側玄関口。",
+        "f7_full": "「JR豊頃駅」を後にし、大河を渡って名物ドーナツを目指す豊頃の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "8d64e5e9-133c-459b-83b6-9fa47bf4f418",
+        "next_spot_name": "豊頃神社"
+      },
+      {
+        "id": "8d64e5e9-133c-459b-83b6-9fa47bf4f418",
+        "name": "豊頃神社",
+        "description": "駅近くの佐々田町に鎮座する地域の氏神（参拝自由・無休）。落ち着いた木立の境内で、これからの旅の安全を静かに祈願できる。",
+        "address": "北海道中川郡豊頃町豊頃佐々田町105",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.820692,
+        "lng": 143.536512,
+        "qr_token": "shuin-toyokoro-2",
+        "cover_image_url": "/images/toyokoro/spot2.png",
+        "f7_fragment": "豊頃駅近くの佐々田町に鎮座し、旅の始まりを見守る地域の氏神。",
+        "f7_full": "「豊頃神社」の落ち着いた境内に参拝し、清々しい気持ちで街歩きを続けた。",
+        "is_final": false,
+        "next_spot_id": "229053c2-826f-42f1-898a-e299cf988c4b",
+        "next_spot_name": "赤胴ラーメン"
+      },
+      {
+        "id": "229053c2-826f-42f1-898a-e299cf988c4b",
+        "name": "赤胴ラーメン",
+        "description": "国道38号線沿いにある地元で長年親しまれる昔ながらのラーメン店（火〜日11:00〜19:30・月11:00〜14:00、不定休）。ほっとする味わいが旅のお腹を満たす。",
+        "address": "北海道中川郡豊頃町豊頃旭町238",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.81521,
+        "lng": 143.541093,
+        "qr_token": "shuin-toyokoro-3",
+        "cover_image_url": "/images/toyokoro/spot3.png",
+        "f7_fragment": "国道38号沿いで地元に親しまれる昔ながらの温かいラーメン店。",
+        "f7_full": "「赤胴ラーメン」で湯気立つ昔ながらの一杯を味わい、大河越えの活力を得た。",
+        "is_final": false,
+        "next_spot_id": "963128c3-e1ac-4f7a-8652-dab7aa089601",
+        "next_spot_name": "朝日堂"
+      },
+      {
+        "id": "963128c3-e1ac-4f7a-8652-dab7aa089601",
+        "name": "朝日堂",
+        "description": "豊頃町を代表する老舗菓子店（9:00〜20:00、月・火曜休・祝日の場合営業）。ふんわり生地に生クリームやあんこをたっぷり詰めた名物「アメリカンドーナツ」が全国的人気。",
+        "address": "北海道中川郡豊頃町茂岩本町30",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.8021,
+        "lng": 143.506334,
+        "qr_token": "shuin-toyokoro-4",
+        "cover_image_url": "/images/toyokoro/spot4.png",
+        "f7_fragment": "名物「アメリカンドーナツ」が全国的な人気を誇る豊頃町茂岩の老舗菓子店。",
+        "f7_full": "「朝日堂」でふわふわの名物アメリカンドーナツを手に入れ、笑顔がほころんだ。",
+        "is_final": false,
+        "next_spot_id": "d3a90732-08b0-4855-8306-7006f589c786",
+        "next_spot_name": "ココロコテラス（まちなか活性化拠点施設）"
+      },
+      {
+        "id": "d3a90732-08b0-4855-8306-7006f589c786",
+        "name": "ココロコテラス（まちなか活性化拠点施設）",
+        "description": "平成30年（2018年）3月に開業したまちなか活性化拠点施設（5〜10月9:00〜17:00・11〜4月10:00〜18:00、火曜・年末年始休）。特産品の販売や観光案内、休憩スペースを備える。",
+        "address": "北海道中川郡豊頃町茂岩本町110-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.802424,
+        "lng": 143.505186,
+        "qr_token": "shuin-toyokoro-5",
+        "cover_image_url": "/images/toyokoro/spot5.png",
+        "f7_fragment": "平成三十年開業、特産品販売と観光案内・休憩スペースを備えた茂岩の拠点施設。",
+        "f7_full": "「ココロコテラス（まちなか活性化拠点施設）」で寛ぎ、豊頃の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fe9a9eac-0150-4be5-8b5b-7b8fed1307f7",
+    "title": "山桜の記憶と浦幌開拓の原点をめぐる小径",
+    "name": "山桜の記憶と浦幌開拓の原点をめぐる小径",
+    "description": "かつての山桜の群生に駅名を由来するJR新吉野駅から、吉野郵便局、吉野公民館、吉野神社、浦幌開拓の碑を巡るルート。",
+    "region": "浦幌・新吉野・平和",
+    "area_name": "浦幌・新吉野・平和",
+    "cover_image_url": "/images/shinyoshino_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/shinyoshino_hokkaido/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び新吉野を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "山桜の里の集落に根ざした吉野郵便局",
+          "description": "新吉野駅近くの素朴な集落の暮らしの温もりに触れた",
+          "badge_code": "shinyoshino_post"
+        },
+        {
+          "key": "B",
+          "text": "住民の学びと集いを支える浦幌町吉野公民館",
+          "description": "地域の活動拠点の前に立ち、人々のつながりを感じた",
+          "badge_code": "shinyoshino_hall"
+        },
+        {
+          "key": "C",
+          "text": "集落と線路を見守り続ける平和地区の吉野神社",
+          "description": "静かな境内で手を合わせ、穏やかな時の流れを味わった",
+          "badge_code": "shinyoshino_shrine"
+        },
+        {
+          "key": "D",
+          "text": "かつて生剛村が栄えた浦幌開拓の碑",
+          "description": "「浦幌町発祥の地」に立ち、先人たちの開拓の歴史を偲んだ",
+          "badge_code": "shinyoshino_pioneer"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fb541997-c312-4cf3-836f-42cb198f256f",
+        "name": "JR新吉野駅",
+        "description": "明治43年（1910年）1月7日に「下頃部駅」として開業、昭和17年に付近の山桜群生地にちなみ現駅名へ改称（終日利用可）。待合室を備えた静かな無人駅。",
+        "address": "北海道十勝郡浦幌町字吉野1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.778288,
+        "lng": 143.607994,
+        "qr_token": "shuin-shinyoshino_hokkaido-1",
+        "cover_image_url": "/images/shinyoshino_hokkaido/spot1.png",
+        "f7_fragment": "かつての山桜群生地に駅名を由来する、浦幌町吉野の静かな無人駅。",
+        "f7_full": "「JR新吉野駅」の静かな待合室を後にし、山桜と浦幌開拓の原点を辿る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "e8ae00f6-075a-4b2e-832f-ed34689d58ee",
+        "next_spot_name": "吉野郵便局"
+      },
+      {
+        "id": "e8ae00f6-075a-4b2e-832f-ed34689d58ee",
+        "name": "吉野郵便局",
+        "description": "吉野地区の集落に根ざした郵便局（郵便窓口平日9:00〜17:00、土日祝休）。旅の記念に切手やはがきを求めることもでき、集落の温かい日常を感じられる。",
+        "address": "北海道十勝郡浦幌町字吉野119",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.776528,
+        "lng": 143.607384,
+        "qr_token": "shuin-shinyoshino_hokkaido-2",
+        "cover_image_url": "/images/shinyoshino_hokkaido/spot2.png",
+        "f7_fragment": "吉野地区の静かな集落に根ざし、旅の記念切手も求められる郵便局。",
+        "f7_full": "「吉野郵便局」の前を歩き、山桜の里の穏やかな暮らしの風景に触れた。",
+        "is_final": false,
+        "next_spot_id": "ffc376a3-0479-42d8-87ff-9811dcd20553",
+        "next_spot_name": "浦幌町吉野公民館"
+      },
+      {
+        "id": "ffc376a3-0479-42d8-87ff-9811dcd20553",
+        "name": "浦幌町吉野公民館",
+        "description": "大研修室や図書室などを備えた地域住民の生涯学習・活動の拠点施設（9:00〜22:00、土日休）。国道38号線沿いに立ち、地域の人々の絆を伝えている。",
+        "address": "北海道十勝郡浦幌町字吉野111",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.776496,
+        "lng": 143.608947,
+        "qr_token": "shuin-shinyoshino_hokkaido-3",
+        "cover_image_url": "/images/shinyoshino_hokkaido/spot3.png",
+        "f7_fragment": "大研修室や図書室を備え、吉野地区の人々の生涯学習と交流を支える公民館。",
+        "f7_full": "「浦幌町吉野公民館」の前に立ち、集落で受け継がれる人々の絆に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "c9c19012-17cd-46b5-8727-0e006b6d387c",
+        "next_spot_name": "吉野神社"
+      },
+      {
+        "id": "c9c19012-17cd-46b5-8727-0e006b6d387c",
+        "name": "吉野神社",
+        "description": "新吉野駅周辺・平和地区の静かな集落を見守り続ける地域の鎮守（参拝自由・無休）。穏やかな木立に包まれ、旅の無事を静かに祈ることができる。",
+        "address": "北海道十勝郡浦幌町平和1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.777659,
+        "lng": 143.611288,
+        "qr_token": "shuin-shinyoshino_hokkaido-4",
+        "cover_image_url": "/images/shinyoshino_hokkaido/spot4.png",
+        "f7_fragment": "新吉野駅周辺と平和地区の静かな集落を見守り続ける地域の鎮守。",
+        "f7_full": "「吉野神社」の静かな杜で手を合わせ、穏やかな時の流れを味わった。",
+        "is_final": false,
+        "next_spot_id": "c46f390e-a63a-4912-8cd1-101eab949cd0",
+        "next_spot_name": "浦幌開拓の碑（浦幌町発祥の地）"
+      },
+      {
+        "id": "c46f390e-a63a-4912-8cd1-101eab949cd0",
+        "name": "浦幌開拓の碑（浦幌町発祥の地）",
+        "description": "かつて生剛（せいごう）村の役場や市街地が置かれた「浦幌町発祥の地」に建立された歴史的記念碑（見学自由・無休）。町の原点となった開拓の歴史を今に伝えている。",
+        "address": "北海道十勝郡浦幌町字平和10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.772405,
+        "lng": 143.695173,
+        "qr_token": "shuin-shinyoshino_hokkaido-5",
+        "cover_image_url": "/images/shinyoshino_hokkaido/spot5.png",
+        "f7_fragment": "かつて生剛村の役場が置かれた「浦幌町発祥の地」に立つ歴史的な開拓の碑。",
+        "f7_full": "「浦幌開拓の碑（浦幌町発祥の地）」の前に立ち、町の原点と先人の志に触れた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6918dd93-4259-422b-8e12-06d15a8e2f30",
+    "title": "十勝最古の駅と森の社が織りなす浦幌の記憶",
+    "name": "十勝最古の駅と森の社が織りなす浦幌の記憶",
+    "description": "十勝管内最古の歴史を誇るJR浦幌駅から、K/Pg境界を収蔵する町立博物館、森の浦幌神社、老舗喫茶、道の駅を巡るルート。",
+    "region": "浦幌・桜町・東山",
+    "area_name": "浦幌・桜町・東山",
+    "cover_image_url": "/images/urahoro/route-eyecatch.png",
+    "imageUrl": "/images/urahoro/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び浦幌を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "億年の地層と十勝の営みに触れた知の展示室",
+          "description": "浦幌町立博物館でK/Pg境界の地層標本と郷土の歴史に触れた",
+          "badge_code": "urahoro_museum"
+        },
+        {
+          "key": "B",
+          "text": "森の静寂に包まれた歴史ある社と祈りの境内",
+          "description": "明治29年創祀の浦幌神社で木立の参道と乳神神社を巡った",
+          "badge_code": "urahoro_shrine"
+        },
+        {
+          "key": "C",
+          "text": "駅近のまち角で湯気と珈琲に一息ついた喫茶店",
+          "description": "老舗の軽食喫茶カナリアで手打ちそばや珈琲の温もりを味わった",
+          "badge_code": "urahoro_canaria"
+        },
+        {
+          "key": "D",
+          "text": "国道沿いに地域の恵みが集う旅の直売所",
+          "description": "道の駅うらほろで十勝・浦幌ならではの特産品に出会った",
+          "badge_code": "urahoro_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7278c0d1-b0f9-4fd0-88a4-44cd341304ca",
+        "name": "JR浦幌駅",
+        "description": "明治36年（1903年）12月25日開業、十勝管内で最も歴史ある駅（終日開放）。ホーム側には明治40年建造のレンガ造り「危険品庫（ランプ小屋）」が今も残る。",
+        "address": "北海道十勝郡浦幌町字本町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.810642,
+        "lng": 143.651599,
+        "qr_token": "shuin-urahoro-1",
+        "cover_image_url": "/images/urahoro/spot1.png",
+        "f7_fragment": "明治三十六年開業、明治期のレンガ造りランプ小屋が残る十勝最古の駅。",
+        "f7_full": "「JR浦幌駅」のレンガ小屋に歴史を感じつつ、森の社を巡る浦幌の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "3770fdd1-17ff-4d5f-83b7-b75fdaa7b25e",
+        "next_spot_name": "浦幌町立博物館"
+      },
+      {
+        "id": "3770fdd1-17ff-4d5f-83b7-b75fdaa7b25e",
+        "name": "浦幌町立博物館",
+        "description": "浦幌町の自然・歴史・アイヌ文化・生活資料を展示する博物館（10:00〜18:00、月曜・祝翌日・年末年始等休館、入館無料）。恐竜絶滅期の「K/Pg境界」地層標本を収蔵する。",
+        "address": "北海道十勝郡浦幌町字桜町16-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.809827,
+        "lng": 143.657907,
+        "qr_token": "shuin-urahoro-2",
+        "cover_image_url": "/images/urahoro/spot2.png",
+        "f7_fragment": "恐竜絶滅期のK/Pg境界地層標本や浦幌の自然・歴史を伝える無料の博物館。",
+        "f7_full": "「浦幌町立博物館」で億年の地層標本に出会い、地球と地域の歴史に感動した。",
+        "is_final": false,
+        "next_spot_id": "eb4563f8-00fc-425e-87b5-9e499a9c988a",
+        "next_spot_name": "浦幌神社（乳神神社）"
+      },
+      {
+        "id": "eb4563f8-00fc-425e-87b5-9e499a9c988a",
+        "name": "浦幌神社（乳神神社）",
+        "description": "明治29年（1896年）創祀の浦幌町の総鎮守（境内参拝自由、社務所9:00〜18:00）。境内の「乳神神社」は安産・病気平癒の信仰のほか、バイク交通安全祈願の参拝者でも知られる。",
+        "address": "北海道十勝郡浦幌町字東山町18-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.809135,
+        "lng": 143.662961,
+        "qr_token": "shuin-urahoro-3",
+        "cover_image_url": "/images/urahoro/spot3.png",
+        "f7_fragment": "明治二十九年創祀の総鎮守。乳神神社や交通安全祈願でも広く知られる森の社。",
+        "f7_full": "「浦幌神社（乳神神社）」の静かな森の中で手を合わせ、清々しい気持ちになった。",
+        "is_final": false,
+        "next_spot_id": "eefeec92-5dc4-4874-890c-c4d0a3c8ba6b",
+        "next_spot_name": "軽食喫茶 カナリア"
+      },
+      {
+        "id": "eefeec92-5dc4-4874-890c-c4d0a3c8ba6b",
+        "name": "軽食喫茶 カナリア",
+        "description": "駅周辺の市街地に佇む老舗の軽食喫茶（11:00〜22:00、不定休）。温かな手打ちそばやパスタ、香り高い喫茶メニューでほっと一息つける。",
+        "address": "北海道十勝郡浦幌町字幸町48-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.810333,
+        "lng": 143.657354,
+        "qr_token": "shuin-urahoro-4",
+        "cover_image_url": "/images/urahoro/spot4.png",
+        "f7_fragment": "幸町の街角で手打ちそばやパスタ、喫茶メニューを味わえる老舗の喫茶店。",
+        "f7_full": "「軽食喫茶 カナリア」で温かい手打ちそばと珈琲を楽しみ、旅の元気を養った。",
+        "is_final": false,
+        "next_spot_id": "6d4a7c54-7fee-4a49-863b-7015b6c99c50",
+        "next_spot_name": "道の駅うらほろ"
+      },
+      {
+        "id": "6d4a7c54-7fee-4a49-863b-7015b6c99c50",
+        "name": "道の駅うらほろ",
+        "description": "国道38号沿いに位置する道の駅（9:00〜17:00・夏季18:00、年末年始休）。浦幌町の豊かな特産品が並ぶ直売所や地元グルメを楽しめるレストランを併設する。",
+        "address": "北海道十勝郡浦幌町字北町16-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.813897,
+        "lng": 143.663681,
+        "qr_token": "shuin-urahoro-5",
+        "cover_image_url": "/images/urahoro/spot5.png",
+        "f7_fragment": "国道38号沿いに立ち、浦幌町の特産品直売所やレストランを備えた道の駅。",
+        "f7_full": "「道の駅うらほろ」で浦幌ならではの特産品に出会い、楽しい旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "14899f39-3aab-4595-84b3-cd509826e43b",
+    "title": "太平洋を望む鉄路と鮭とば香る厚内の港町",
+    "name": "太平洋を望む鉄路と鮭とば香る厚内の港町",
+    "description": "根室本線で初めて太平洋を望めるJR厚内駅から、自家製鮭とばの山本商店、厚内郵便局、船神輿の厚内神社、厚内漁港を巡るルート。",
+    "region": "浦幌・厚内漁港",
+    "area_name": "浦幌・厚内漁港",
+    "cover_image_url": "/images/atsunai/route-eyecatch.png",
+    "imageUrl": "/images/atsunai/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び厚内を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "潮風香る自家製鮭とばが並ぶ駅前のよろずや",
+          "description": "山本商店で手作りの鮭とばや海の珍味に出会った",
+          "badge_code": "atsunai_yamamoto"
+        },
+        {
+          "key": "B",
+          "text": "浜の暮らしを見守り続ける昔ながらの郵便局",
+          "description": "厚内郵便局が佇む漁港集落の穏やかな日常を歩いた",
+          "badge_code": "atsunai_post"
+        },
+        {
+          "key": "C",
+          "text": "川を渡った先に鎮座する船神輿ゆかりの社",
+          "description": "昭和30年遷座の厚内神社で漁業の町の信仰に触れた",
+          "badge_code": "atsunai_shrine"
+        },
+        {
+          "key": "D",
+          "text": "太平洋の水平線と潮騒が広がる厚内の海辺",
+          "description": "厚内漁港から雄大な太平洋の海原を望み、深呼吸した",
+          "badge_code": "atsunai_port"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "739a9934-ff45-4fa1-8946-c92bc8380273",
+        "name": "JR厚内駅",
+        "description": "明治36年（1903年）12月25日に開業した無人駅（終日開放）。帯広方面から根室本線の下り列車に乗って、車窓から初めて太平洋を望める駅として鉄道旅人に知られる。",
+        "address": "北海道十勝郡浦幌町字厚内215-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.809364,
+        "lng": 143.814779,
+        "qr_token": "shuin-atsunai-1",
+        "cover_image_url": "/images/atsunai/spot1.png",
+        "f7_fragment": "明治三十六年開業、根室本線の下り列車で初めて太平洋を望める港町の駅。",
+        "f7_full": "「JR厚内駅」を後にし、潮風と鮭とばが香る厚内の港町歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "f7309cbf-bb94-4a4e-842a-593be31e02c8",
+        "next_spot_name": "山本商店（フードインやまもと）"
+      },
+      {
+        "id": "f7309cbf-bb94-4a4e-842a-593be31e02c8",
+        "name": "山本商店（フードインやまもと）",
+        "description": "駅前で食料品や雑貨を扱う地域密着の商店（8:00〜17:00、不定休）。前浜の秋鮭を使い保存料・着色料不使用で仕上げる自家製の「鮭とば」やたこ燻製が全国から注目される名物。",
+        "address": "北海道十勝郡浦幌町字厚内215-21",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.809103,
+        "lng": 143.814427,
+        "qr_token": "shuin-atsunai-2",
+        "cover_image_url": "/images/atsunai/spot2.png",
+        "f7_fragment": "前浜の秋鮭を使った無添加の自家製「鮭とば」が名物の駅前商店。",
+        "f7_full": "「山本商店（フードインやまもと）」で潮風香る名物の鮭とばに出会い、笑顔になった。",
+        "is_final": false,
+        "next_spot_id": "de1dc736-7634-461b-889d-8242cd742be4",
+        "next_spot_name": "厚内郵便局"
+      },
+      {
+        "id": "de1dc736-7634-461b-889d-8242cd742be4",
+        "name": "厚内郵便局",
+        "description": "漁港集落の暮らしを支え続ける郵便局（郵便窓口平日9:00〜17:00、土日祝休）。駅前通りから続く旧来の落ち着いた町並みの中に佇んでいる。",
+        "address": "北海道十勝郡浦幌町厚内二条通2-11-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.808027,
+        "lng": 143.816359,
+        "qr_token": "shuin-atsunai-3",
+        "cover_image_url": "/images/atsunai/spot3.png",
+        "f7_fragment": "厚内二条通の旧来の町並みで漁港集落の暮らしを支える郵便局。",
+        "f7_full": "「厚内郵便局」の佇まいを眺め、海辺の集落の穏やかな暮らしに触れた。",
+        "is_final": false,
+        "next_spot_id": "af5c6e3d-740a-4003-8758-9f5ed8092051",
+        "next_spot_name": "厚内神社"
+      },
+      {
+        "id": "af5c6e3d-740a-4003-8758-9f5ed8092051",
+        "name": "厚内神社",
+        "description": "天照皇大神と稲荷大明神を祀る地域の鎮守（境内自由・無休）。昭和18年の合祀を経て昭和30年に現在地へ遷座し、例祭では勇壮な船神輿が練り歩く。",
+        "address": "北海道十勝郡浦幌町字厚内チブネオコッペ1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.806115,
+        "lng": 143.812096,
+        "qr_token": "shuin-atsunai-4",
+        "cover_image_url": "/images/atsunai/spot4.png",
+        "f7_fragment": "例祭で船神輿が練り歩き、海の安全と町の暮らしを見守り続ける鎮守。",
+        "f7_full": "「厚内神社」の境内に参拝し、海に生きる町の信仰と誇りに触れた。",
+        "is_final": false,
+        "next_spot_id": "d71d4783-2a29-40da-8e85-ca562ea691e1",
+        "next_spot_name": "厚内漁港"
+      },
+      {
+        "id": "d71d4783-2a29-40da-8e85-ca562ea691e1",
+        "name": "厚内漁港",
+        "description": "厚内川河口付近に広がる太平洋に面した漁港（終日開放・漁業作業エリア立入注意）。秋には鮭漁などで活気を見せ、雄大な太平洋の水平線と海岸線を望むことができる。",
+        "address": "北海道十勝郡浦幌町字厚内1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.807174,
+        "lng": 143.820424,
+        "qr_token": "shuin-atsunai-5",
+        "cover_image_url": "/images/atsunai/spot5.png",
+        "f7_fragment": "太平洋に面し、雄大な水平線と秋鮭漁の活気を感じられる厚内の漁港。",
+        "f7_full": "「厚内漁港」から広がる太平洋の水平線を望み、厚内の潮風散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "54648f1f-3cea-462f-8f2d-adff41339904",
+    "title": "音別川の風と高台の眺望に出会う小さな旅路",
+    "name": "音別川の風と高台の眺望に出会う小さな旅路",
+    "description": "国鉄時代からの駅舎が残るJR音別駅から、おんぽーと、昭和54年創業の味閣、音別神社、新音別八景の音別の丘を巡るルート。",
+    "region": "釧路音別・本町",
+    "area_name": "釧路音別・本町",
+    "cover_image_url": "/images/onbetsu/route-eyecatch.png",
+    "imageUrl": "/images/onbetsu/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び音別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "ご当地バーガーや焼き菓子に出会える交流拠点",
+          "description": "ルート38音別館おんぽーとで地元の特産品や軽食に触れた",
+          "badge_code": "onbetsu_onport"
+        },
+        {
+          "key": "B",
+          "text": "金魚の泳ぐ池を眺めながら味わう老舗食堂",
+          "description": "昭和54年創業の和風レストラン味閣でまちの味を楽しんだ",
+          "badge_code": "onbetsu_mikaku"
+        },
+        {
+          "key": "C",
+          "text": "相馬ゆかりの神々を祀る音別川ほとりの社",
+          "description": "明治39年創祀の音別神社で地域の開拓の歴史に触れた",
+          "badge_code": "onbetsu_shrine"
+        },
+        {
+          "key": "D",
+          "text": "河口と鉄路と大海原を見渡す新音別八景の高台",
+          "description": "音別の丘から太平洋と音別川河口の絶景を望んだ",
+          "badge_code": "onbetsu_hill"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6f6a1394-87d0-4e94-82be-aa644a82eb27",
+        "name": "JR音別駅",
+        "description": "明治36年（1903年）3月1日に開業したJR根室本線の駅（終日開放）。国鉄時代からの趣ある駅舎が残り、かつては貨物輸送の拠点としても栄えた。",
+        "address": "北海道釧路市音別町本町1-139",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.889078,
+        "lng": 143.931771,
+        "qr_token": "shuin-onbetsu-1",
+        "cover_image_url": "/images/onbetsu/spot1.png",
+        "f7_fragment": "明治三十六年開業、国鉄時代からの趣ある駅舎が残る音別の玄関口。",
+        "f7_full": "「JR音別駅」の懐かしい駅舎を後にし、音別のまちと高台の眺望を目指す旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "80c19366-1bbd-41f3-8323-c9e904d7d62a",
+        "next_spot_name": "ルート38音別館 おんぽーと"
+      },
+      {
+        "id": "80c19366-1bbd-41f3-8323-c9e904d7d62a",
+        "name": "ルート38音別館 おんぽーと",
+        "description": "音別地域の交流拠点施設（平日8:45〜17:00・土日祝9:00〜、年末年始休、物販10:00〜16:00）。特産品物販コーナーでは地元名物「しいカツバーガー」や焼き菓子が人気。",
+        "address": "北海道釧路市音別町本町1-51",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.8897,
+        "lng": 143.931299,
+        "qr_token": "shuin-onbetsu-2",
+        "cover_image_url": "/images/onbetsu/spot2.png",
+        "f7_fragment": "地元名物「しいカツバーガー」や焼き菓子が並ぶ音別の交流・特産品拠点。",
+        "f7_full": "「ルート38音別館 おんぽーと」で音別ならではの味と温かな案内に出会った。",
+        "is_final": false,
+        "next_spot_id": "a9dc21c1-d9ac-4dae-8b06-773990148814",
+        "next_spot_name": "和風レストラン 味閣"
+      },
+      {
+        "id": "a9dc21c1-d9ac-4dae-8b06-773990148814",
+        "name": "和風レストラン 味閣",
+        "description": "昭和54年（1979年）創業の老舗食堂（11:00〜19:00、不定休）。国道38号沿いにあり、ラーメンや定食・丼物で親しまれるほか店内に金魚の泳ぐ池があることでも知られる。",
+        "address": "北海道釧路市音別町本町1-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.890024,
+        "lng": 143.933033,
+        "qr_token": "shuin-onbetsu-3",
+        "cover_image_url": "/images/onbetsu/spot3.png",
+        "f7_fragment": "昭和五十四年創業、金魚の泳ぐ池があることでも知られる国道沿いの老舗食堂。",
+        "f7_full": "「和風レストラン 味閣」で心温まるランチを味わい、旅の元気を養った。",
+        "is_final": false,
+        "next_spot_id": "b34d39c9-3030-4baf-82c8-7b1127a6e4af",
+        "next_spot_name": "音別神社"
+      },
+      {
+        "id": "b34d39c9-3030-4baf-82c8-7b1127a6e4af",
+        "name": "音別神社",
+        "description": "明治39年（1906年）4月15日創祀（境内参拝自由・無休）。福島県の相馬太田神社の御分霊を奉戴したことに始まり、音別川右岸の高台からまちを見守り続けている。",
+        "address": "北海道釧路市音別町尺別9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.883932,
+        "lng": 143.922339,
+        "qr_token": "shuin-onbetsu-4",
+        "cover_image_url": "/images/onbetsu/spot4.png",
+        "f7_fragment": "明治三十九年創祀、相馬太田神社の御分霊を祀る音別川右岸の高台の社。",
+        "f7_full": "「音別神社」の高台の杜に参拝し、相馬ゆかりの開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "1d7dc975-dbd8-4a04-862d-9828dbb9c876",
+        "next_spot_name": "音別の丘"
+      },
+      {
+        "id": "1d7dc975-dbd8-4a04-862d-9828dbb9c876",
+        "name": "音別の丘",
+        "description": "新音別八景に選定されている見晴らしの良い展望地（終日開放）。音別川の河口や雄大な太平洋、大地を走る根室本線の鉄路を一望できる絶景スポット。",
+        "address": "北海道釧路市音別町音別1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.882012,
+        "lng": 143.923269,
+        "qr_token": "shuin-onbetsu-5",
+        "cover_image_url": "/images/onbetsu/spot5.png",
+        "f7_fragment": "新音別八景に選ばれ、音別川河口と太平洋・根室本線を一望できる展望地。",
+        "f7_full": "「音別の丘」から太平洋と鉄路の大パノラマを望み、音別の旅を爽やかに終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6b50fbad-c946-4844-8942-29a7371274c2",
+    "title": "海の鳥居と美食の街が誘う白糠の潮風散歩",
+    "name": "海の鳥居と美食の街が誘う白糠の潮風散歩",
+    "description": "JR白糠駅から昭和23年創業の郷菓とら信、地元食材のレストランはまなす、白糠厳島神社、太平洋一望の岬の森東山公園を巡るルート。",
+    "region": "白糠・岬・石炭岬",
+    "area_name": "白糠・岬・石炭岬",
+    "cover_image_url": "/images/shiranuka/route-eyecatch.png",
+    "imageUrl": "/images/shiranuka/route-eyecatch.png",
+    "category": "グルメ・絶景",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び白糠を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昭和23年創業の老舗で出会った駒おどり最中",
+          "description": "郷菓とら信でハミングロードの伝統和菓子に出会った",
+          "badge_code": "shiranuka_torashin"
+        },
+        {
+          "key": "B",
+          "text": "白糠の羊とチーズの恵みを堪能した街の名店",
+          "description": "レストランはまなすで白糠ならではの地元食材を味わった",
+          "badge_code": "shiranuka_hamanasu"
+        },
+        {
+          "key": "C",
+          "text": "線路が参道を横切り海へ神輿が渡る港の鎮守",
+          "description": "白糠厳島神社で海を見守る鳥居と伝統の歴史に触れた",
+          "badge_code": "shiranuka_itsukushima"
+        },
+        {
+          "key": "D",
+          "text": "望洋の碑のもと太平洋を一望した高台の展望地",
+          "description": "岬の森東山公園の展望広場から丸い水平線を望んだ",
+          "badge_code": "shiranuka_higashiyama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "68823b10-4213-44a9-81df-5d051134814e",
+        "name": "JR白糠駅",
+        "description": "明治34年（1901年）7月20日開業、かつて国鉄白糠線の起点駅でもあった駅（終日開放）。昭和44年改築の駅舎が海のまち・白糠の玄関口となっている。",
+        "address": "北海道白糠郡白糠町東1条南1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.955889,
+        "lng": 144.076843,
+        "qr_token": "shuin-shiranuka-1",
+        "cover_image_url": "/images/shiranuka/spot1.png",
+        "f7_fragment": "明治三十四年開業、かつて白糠線の起点でもあった美食の町の玄関口。",
+        "f7_full": "「JR白糠駅」を後にし、白糠の甘い銘菓と海の絶景を巡る潮風散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "492ca710-3a7e-4a68-807a-b0d63cfcdb0b",
+        "next_spot_name": "郷菓 とら信"
+      },
+      {
+        "id": "492ca710-3a7e-4a68-807a-b0d63cfcdb0b",
+        "name": "郷菓 とら信",
+        "description": "昭和23年（1948年）創業の老舗和洋菓子店（月〜土9:00〜17:30頃・日祝〜16:00、不定休）。欧米風デザインのハミングロード沿いで銘菓「駒おどり最中」や白糠おはぎが人気。",
+        "address": "北海道白糠郡白糠町東2条南2-1-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.954922,
+        "lng": 144.077974,
+        "qr_token": "shuin-shiranuka-2",
+        "cover_image_url": "/images/shiranuka/spot2.png",
+        "f7_fragment": "昭和二十三年創業、銘菓「駒おどり最中」や白糠おはぎが評判の老舗菓子店。",
+        "f7_full": "「郷菓 とら信」で伝統の駒おどり最中に出会い、町並みの温もりを感じた。",
+        "is_final": false,
+        "next_spot_id": "2e75d7f7-8250-4955-82c4-2a55f59294ec",
+        "next_spot_name": "レストラン はまなす"
+      },
+      {
+        "id": "2e75d7f7-8250-4955-82c4-2a55f59294ec",
+        "name": "レストラン はまなす",
+        "description": "茶路めん羊牧場のラム肉や白糠酪恵舎のチーズなど白糠町の極上食材を活かした洋食が味わえる人気レストラン（11:00〜14:30・17:00〜20:00、水曜休）。",
+        "address": "北海道白糠郡白糠町東2条南2-1-26",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.954746,
+        "lng": 144.077938,
+        "qr_token": "shuin-shiranuka-3",
+        "cover_image_url": "/images/shiranuka/spot3.png",
+        "f7_fragment": "茶路めん羊牧場のラム肉や白糠酪恵舎のチーズなど白糠の食材が光る名店。",
+        "f7_full": "「レストラン はまなす」で白糠自慢の羊とチーズ料理を堪能し、感動に浸った。",
+        "is_final": false,
+        "next_spot_id": "691995a0-d2f1-44f0-8ad2-981048cc7b32",
+        "next_spot_name": "白糠厳島神社"
+      },
+      {
+        "id": "691995a0-d2f1-44f0-8ad2-981048cc7b32",
+        "name": "白糠厳島神社",
+        "description": "文化年間（1804〜1818年）に安芸国厳島神社から勧請された古社（境内自由・無休）。参道途中に根室本線の線路が横切る風景と7月下旬の例大祭「海中みこし渡御」で知られる。",
+        "address": "北海道白糠郡白糠町岬1-1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.95509,
+        "lng": 144.085075,
+        "qr_token": "shuin-shiranuka-4",
+        "cover_image_url": "/images/shiranuka/spot4.png",
+        "f7_fragment": "文化年間勧請、線路が参道を横切り「海中みこし渡御」でも知られる古社。",
+        "f7_full": "「白糠厳島神社」で海と鉄路が交わる独特の境内を歩き、伝統の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "7ae8edfb-908f-48d2-8824-86003c4e497b",
+        "next_spot_name": "岬の森東山公園"
+      },
+      {
+        "id": "7ae8edfb-908f-48d2-8824-86003c4e497b",
+        "name": "岬の森東山公園",
+        "description": "標高約50mの展望広場に「望洋の碑」が建つ公園（終日開放）。眼下の白糠漁港や白糠の市街地、そして丸く広がる太平洋の大パノラマを一望できる絶景スポット。",
+        "address": "北海道白糠郡白糠町石炭岬17",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.954387,
+        "lng": 144.088795,
+        "qr_token": "shuin-shiranuka-5",
+        "cover_image_url": "/images/shiranuka/spot5.png",
+        "f7_fragment": "標高約50mの展望広場に望洋の碑が建ち、白糠市街と太平洋を一望できる公園。",
+        "f7_full": "「岬の森東山公園」の展望広場から丸い水平線を望み、白糠の散歩を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9d6a0186-4e9a-4148-8ee2-b0b06b6b87d0",
+    "title": "炭鉱の記憶と日常のぬくもりが息づく西庶路",
+    "name": "炭鉱の記憶と日常のぬくもりが息づく西庶路",
+    "description": "明治鉱業庶路炭鉱の専用線接続点に始まるJR西庶路駅から、西庶路神社、西庶路郵便局、ふれあい公園、洋食店を巡るルート。",
+    "region": "白糠・西庶路",
+    "area_name": "白糠・西庶路",
+    "cover_image_url": "/images/nishishoro/route-eyecatch.png",
+    "imageUrl": "/images/nishishoro/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西庶路を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "夏祭りや冬灯りが地域をつなぐ静かな鎮守の森",
+          "description": "西庶路神社で地域行事が息づく穏やかな境内に触れた",
+          "badge_code": "nishishoro_shrine"
+        },
+        {
+          "key": "B",
+          "text": "旧炭鉱の記憶が残る街並みを見守る日常の窓口",
+          "description": "西庶路郵便局周辺の昔ながらの街区を歩き抜けた",
+          "badge_code": "nishishoro_post"
+        },
+        {
+          "key": "C",
+          "text": "芝生と遊具が広がり子どもたちの声が響く憩いの広場",
+          "description": "西庶路ふれあい公園で街の開放的な空気に触れ一息ついた",
+          "badge_code": "nishishoro_park"
+        },
+        {
+          "key": "D",
+          "text": "国道沿いの赤い三角屋根・ドライブイン 紀文",
+          "description": "昭和47年開業の老舗で温かい定食や名物豚丼を味わった",
+          "badge_code": "nishishoro_kibun"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5fa1184f-f274-4509-80cd-dfb3d991ecc5",
+        "name": "JR西庶路駅",
+        "description": "昭和16年（1941年）3月28日に明治鉱業庶路炭鉱の専用線接続点として開設、昭和27年に駅へ昇格した無人駅（終日開放）。炭鉱閉山後も地域の玄関口として残る。",
+        "address": "北海道白糠郡白糠町西庶路西1条南3-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.006803,
+        "lng": 144.109103,
+        "qr_token": "shuin-nishishoro-1",
+        "cover_image_url": "/images/nishishoro/spot1.png",
+        "f7_fragment": "昭和十六年開設の庶路炭鉱専用線接続点に始まり、地域を見守る無人駅。",
+        "f7_full": "「JR西庶路駅」を後にし、炭鉱の記憶と日常の温もりが息づく町歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "3696acfa-a96e-4598-850d-fd72a19a2db2",
+        "next_spot_name": "西庶路神社"
+      },
+      {
+        "id": "3696acfa-a96e-4598-850d-fd72a19a2db2",
+        "name": "西庶路神社",
+        "description": "西庶路錦公園に隣接する地域の鎮守（境内自由・無休）。7月中旬の例大祭では西庶路音頭のパレードや神輿渡御で賑わい、年末年始には参道にスウェーデントーチが灯される。",
+        "address": "北海道白糠郡白糠町西庶路西1条北1-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.979228,
+        "lng": 144.125747,
+        "qr_token": "shuin-nishishoro-2",
+        "cover_image_url": "/images/nishishoro/spot2.png",
+        "f7_fragment": "夏の西庶路音頭パレードや冬のスウェーデントーチで地域を結ぶ鎮守。",
+        "f7_full": "「西庶路神社」の穏やかな境内に参拝し、地域に息づく季節の行事に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "fa125576-0c27-40d9-87b3-9c849a263547",
+        "next_spot_name": "西庶路郵便局"
+      },
+      {
+        "id": "fa125576-0c27-40d9-87b3-9c849a263547",
+        "name": "西庶路郵便局",
+        "description": "西庶路の住宅街・市街地の暮らしを支える拠点（郵便窓口平日9:00〜17:00、土日祝休）。かつて炭鉱町として栄えた街の記憶を今に伝える街区に位置している。",
+        "address": "北海道白糠郡白糠町西庶路東1条北2-1-33",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.980698,
+        "lng": 144.126718,
+        "qr_token": "shuin-nishishoro-3",
+        "cover_image_url": "/images/nishishoro/spot3.png",
+        "f7_fragment": "旧炭鉱町の面影が残る市街地の一角で、日々の暮らしを支える郵便局。",
+        "f7_full": "「西庶路郵便局」の周辺を歩き、炭鉱時代から続く街並みの記憶を感じた。",
+        "is_final": false,
+        "next_spot_id": "bb589d2f-f5da-41c1-8335-a99ae5747832",
+        "next_spot_name": "西庶路ふれあい公園"
+      },
+      {
+        "id": "bb589d2f-f5da-41c1-8335-a99ae5747832",
+        "name": "西庶路ふれあい公園",
+        "description": "パークゴルフ場や健康遊具、トランポリン遊具「ふわふわドーム」などが整備された地域の憩いの場（終日開放）。木陰やベンチで心地よく一息つくことができる。",
+        "address": "北海道白糠郡白糠町西庶路東2条北2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.983149,
+        "lng": 144.130406,
+        "qr_token": "shuin-nishishoro-4",
+        "cover_image_url": "/images/nishishoro/spot4.png",
+        "f7_fragment": "芝生やふわふわドームを備え、ベンチで憩える地域密着の公園。",
+        "f7_full": "「西庶路ふれあい公園」の爽やかな風の中で一息つき、街の開放感を味わった。",
+        "is_final": false,
+        "next_spot_id": "f13e7e22-e001-4e37-8c40-e86309f384e7",
+        "next_spot_name": "ドライブイン 紀文"
+      },
+      {
+        "id": "f13e7e22-e001-4e37-8c40-e86309f384e7",
+        "name": "ドライブイン 紀文",
+        "description": "昭和47年（1972年）開業、赤い三角屋根と時計が目印の老舗ドライブイン（11:00〜19:00、不定休）。ボリュームのある豚丼や定食で旅を締めくくれる。",
+        "address": "北海道白糠郡白糠町西庶路西1条南3-2-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.974753,
+        "lng": 144.129499,
+        "qr_token": "shuin-nishishoro-5",
+        "cover_image_url": "/images/nishishoro/spot5.png",
+        "f7_fragment": "昭和四十七年開業、赤い三角屋根が目印の国道沿いの老舗ドライブイン。",
+        "f7_full": "「ドライブイン 紀文」で温かな名物豚丼を堪能し、西庶路の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "805f64e9-e4fe-4290-817c-0ec85306c8b5",
+    "title": "庶路の鎮守と西庶路の風をめぐる街歩き",
+    "name": "庶路の鎮守と西庶路の風をめぐる街歩き",
+    "description": "JR庶路駅から高台の庶路八幡神社、西庶路の商店やふれあい公園、老舗ドライブイン紀文へと歩くルート。",
+    "region": "庶路・西庶路",
+    "area_name": "庶路・西庶路",
+    "cover_image_url": "/images/shoro/route-eyecatch.png",
+    "imageUrl": "/images/shoro/route-eyecatch.png",
+    "category": "歴史・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び庶路を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "高台に鎮座する庶路八幡神社の静けさ",
+          "description": "緑豊かな丘の上で潮風を感じながら穏やかに手を合わせた",
+          "badge_code": "shoro_hachiman"
+        },
+        {
+          "key": "B",
+          "text": "北海道の味に出会うセイコーマート",
+          "description": "地元密着の店内で温かいお弁当や北海道グルメを選んだ",
+          "badge_code": "shoro_seicomart"
+        },
+        {
+          "key": "C",
+          "text": "白いドームが映える庶路ふれあい公園",
+          "description": "道東の広い空の下で心地よい芝生と遊歩道に癒やされた",
+          "badge_code": "shoro_fureai_park"
+        },
+        {
+          "key": "D",
+          "text": "国道沿いの老舗・ドライブイン 紀文",
+          "description": "長く親しまれる和食中心の温かい食卓でお腹が満たされた",
+          "badge_code": "shoro_kibun"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "708ba981-ae74-4ee4-8071-5ee4f4b667a2",
+        "name": "JR庶路駅",
+        "description": "明治34年（1901年）7月20日に開業したJR根室本線の無人駅（終日利用可）。地名はアイヌ語の「ソ・オロ（滝のところ）」に由来すると伝えられている。",
+        "address": "北海道白糠郡白糠町庶路1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.983416,
+        "lng": 144.149863,
+        "qr_token": "shuin-shoro-1",
+        "cover_image_url": "/images/shoro/spot1.png",
+        "f7_fragment": "明治三十四年開業、アイヌ語「ソ・オロ」に地名を由来する静かな無人駅。",
+        "f7_full": "「JR庶路駅」の静かなホームを後にし、庶路から西庶路へ続く爽やかな散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "15705517-7b53-4b9b-8d90-b807e99fbaee",
+        "next_spot_name": "庶路八幡神社"
+      },
+      {
+        "id": "15705517-7b53-4b9b-8d90-b807e99fbaee",
+        "name": "庶路八幡神社",
+        "description": "庶路地区の北側高台に鎮座する地域の鎮守（終日参拝可・無休）。町のコミュニティバス停留所にも名を連ねる、地域に根付いた歴史ある神社。",
+        "address": "北海道白糠郡白糠町庶路宮下5-3-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.989102,
+        "lng": 144.149017,
+        "qr_token": "shuin-shoro-2",
+        "cover_image_url": "/images/shoro/spot2.png",
+        "f7_fragment": "庶路地区の北側高台に鎮座し、地域の暮らしを見守り続ける歴史ある鎮守。",
+        "f7_full": "「庶路八幡神社」の高台の杜で静かに手を合わせ、清々しい旅の始まりを迎えた。",
+        "is_final": false,
+        "next_spot_id": "9ce7b368-6355-4807-8ab4-dea2ab3ddecf",
+        "next_spot_name": "セイコーマート 西庶路店"
+      },
+      {
+        "id": "9ce7b368-6355-4807-8ab4-dea2ab3ddecf",
+        "name": "セイコーマート 西庶路店",
+        "description": "北海道民の日常に寄り添うローカルコンビニ（6:00〜24:00、無休）。店内調理「ホットシェフ」の温かい弁当や惣菜、北海道産食材を使った人気商品を揃える。",
+        "address": "北海道白糠郡白糠町西庶路東3条南2-1-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.97994,
+        "lng": 144.135675,
+        "qr_token": "shuin-shoro-3",
+        "cover_image_url": "/images/shoro/spot3.png",
+        "f7_fragment": "店内調理ホットシェフや道産食材の商品が揃う北海道民お馴染みのコンビニ。",
+        "f7_full": "「セイコーマート 西庶路店」で北海道らしい飲み物とおやつを選び、笑顔になった。",
+        "is_final": false,
+        "next_spot_id": "d7aeab83-b349-447b-8d96-2ec3dd920e40",
+        "next_spot_name": "庶路ふれあい公園（西庶路ふれあい公園）"
+      },
+      {
+        "id": "d7aeab83-b349-447b-8d96-2ec3dd920e40",
+        "name": "庶路ふれあい公園（西庶路ふれあい公園）",
+        "description": "白いトランポリン遊具「ふわふわドーム」やウォーキングコース、健康遊具が整備された広大な公園（終日開放）。ベンチや休憩スペースでゆっくり休める。",
+        "address": "北海道白糠郡白糠町西庶路東2条北2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.983305,
+        "lng": 144.130867,
+        "qr_token": "shuin-shoro-4",
+        "cover_image_url": "/images/shoro/spot4.png",
+        "f7_fragment": "ふわふわドームや芝生広場、ベンチが整備され道東の空の下で寛げる公園。",
+        "f7_full": "「庶路ふれあい公園（西庶路ふれあい公園）」のベンチで寛ぎ、道東の風を満喫した。",
+        "is_final": false,
+        "next_spot_id": "de51ae75-042e-4530-89c8-c05dc33544b4",
+        "next_spot_name": "ドライブイン 紀文"
+      },
+      {
+        "id": "de51ae75-042e-4530-89c8-c05dc33544b4",
+        "name": "ドライブイン 紀文",
+        "description": "国道38号沿いで長く親しまれる和食中心のドライブイン（11:00〜19:00、不定休）。JR西庶路駅からも徒歩約3分の場所にあり、温かい食事で旅を締めくくれる。",
+        "address": "北海道白糠郡白糠町西庶路西1条南3-2-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.974753,
+        "lng": 144.129499,
+        "qr_token": "shuin-shoro-5",
+        "cover_image_url": "/images/shoro/spot5.png",
+        "f7_fragment": "国道38号沿いで長く親しまれる和食中心の温かい老舗ドライブイン。",
+        "f7_full": "「ドライブイン 紀文」で温かい食事を堪能し、庶路の豊かな町歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "85dbe379-20fa-481a-87cc-509a9d735e22",
+    "title": "日本一の馬産地の記憶を巡る大楽毛散歩",
+    "name": "日本一の馬産地の記憶を巡る大楽毛散歩",
+    "description": "日本釧路種の馬像が立つJR大楽毛駅から大楽毛馬市場跡の神馬事記念館、大楽毛神社、炭火豚丼のぶた福を巡るルート。",
+    "region": "大楽毛",
+    "area_name": "大楽毛",
+    "cover_image_url": "/images/otanoshike/route-eyecatch.png",
+    "imageUrl": "/images/otanoshike/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び大楽毛を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大楽毛馬市跡に建つ神馬事記念館",
+          "description": "日本一の馬産地として栄えた歴史の記念碑と銅像に見入った",
+          "badge_code": "otanoshike_jin_baji"
+        },
+        {
+          "key": "B",
+          "text": "馬にゆかりの深い大楽毛神社",
+          "description": "相馬妙見大神を祀る由緒ある境内で静かに手を合わせた",
+          "badge_code": "otanoshike_shrine"
+        },
+        {
+          "key": "C",
+          "text": "炭火香る豚丼の人気店・ぶた福",
+          "description": "香ばしく焼き上げた自慢の豚丼で旅のお腹が満たされた",
+          "badge_code": "otanoshike_butafuku"
+        },
+        {
+          "key": "D",
+          "text": "西エリアの拠点・セブン-イレブン",
+          "description": "大楽毛西の国道沿いで飲み物や旅のお供を気軽に調達した",
+          "badge_code": "otanoshike_seven"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0a56b877-a0f1-447b-8ac4-b43dc55bc6f7",
+        "name": "JR大楽毛駅",
+        "description": "明治34年（1901年）7月20日に開業したJR根室本線の駅（終日利用可）。駅前ロータリーにはかつての名馬産地を象徴する「日本釧路種」の馬の銅像が立つ。",
+        "address": "北海道釧路市大楽毛5-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.00932,
+        "lng": 144.272657,
+        "qr_token": "shuin-otanoshike-1",
+        "cover_image_url": "/images/otanoshike/spot1.png",
+        "f7_fragment": "明治三十四年開業、駅前に「日本釧路種」の馬像が立つ大楽毛の玄関口。",
+        "f7_full": "「JR大楽毛駅」の馬像に歴史を感じつつ、馬産地の記憶を巡る大楽毛の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "ff74d160-3e2c-4d5f-87b9-8ee325eac821",
+        "next_spot_name": "神馬事記念館（大楽毛馬市場跡）"
+      },
+      {
+        "id": "ff74d160-3e2c-4d5f-87b9-8ee325eac821",
+        "name": "神馬事記念館（大楽毛馬市場跡）",
+        "description": "明治44年（1911年）開設の「大楽毛馬市」跡地に建つ記念館（屋外碑終日可、館内は平日10:00〜15:00要予約）。大楽毛家畜市場沿革碑や神八三郎翁の銅像が立つ。",
+        "address": "北海道釧路市大楽毛5-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.0112,
+        "lng": 144.272587,
+        "qr_token": "shuin-otanoshike-2",
+        "cover_image_url": "/images/otanoshike/spot2.png",
+        "f7_fragment": "明治四十四年開設の「大楽毛馬市」跡地に建ち、馬産の歴史を伝える記念館。",
+        "f7_full": "「神馬事記念館（大楽毛馬市場跡）」の沿革碑を眺め、日本一の馬市に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "885093aa-411c-4006-806e-b2930acf68f4",
+        "next_spot_name": "大楽毛神社"
+      },
+      {
+        "id": "885093aa-411c-4006-806e-b2930acf68f4",
+        "name": "大楽毛神社",
+        "description": "明治31年（1898年）に福島県の相馬妙見大神を勧請したのが始まりと伝えられる神社（終日参拝可・無休）。馬産地として栄えた土地柄から馬にゆかりの深い社として親しまれる。",
+        "address": "北海道釧路市大楽毛4-11-10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.012273,
+        "lng": 144.275465,
+        "qr_token": "shuin-otanoshike-3",
+        "cover_image_url": "/images/otanoshike/spot3.png",
+        "f7_fragment": "明治三十一年創祀、相馬妙見大神を祀る馬産地・大楽毛ゆかりの神社。",
+        "f7_full": "「大楽毛神社」の清らかな杜に参拝し、馬と歩んだ開拓の歴史に手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "facaca62-05c9-4dea-8ec5-f24ba9eee177",
+        "next_spot_name": "ぶた福"
+      },
+      {
+        "id": "facaca62-05c9-4dea-8ec5-f24ba9eee177",
+        "name": "ぶた福",
+        "description": "炭火で香ばしく焼き上げる豚丼や豚料理が評判の地元人気店（11:00〜14:30・17:00〜20:00、火曜休）。道東散策の途中にしっかりとした旨味を味わえる。",
+        "address": "北海道釧路市大楽毛西1-15-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.013261,
+        "lng": 144.265096,
+        "qr_token": "shuin-otanoshike-4",
+        "cover_image_url": "/images/otanoshike/spot4.png",
+        "f7_fragment": "炭火で香ばしく焼き上げる絶品の豚丼や豚料理が評判の地元人気店。",
+        "f7_full": "「ぶた福」で炭火の香り豊かな絶品豚丼を堪能し、お腹も心も満たされた。",
+        "is_final": false,
+        "next_spot_id": "ddec5f10-a5e4-41ec-84f1-fade3b42a5d8",
+        "next_spot_name": "セブン-イレブン 釧路大楽毛店"
+      },
+      {
+        "id": "ddec5f10-a5e4-41ec-84f1-fade3b42a5d8",
+        "name": "セブン-イレブン 釧路大楽毛店",
+        "description": "大楽毛西エリアの国道沿いに位置する便利なコンビニ（4:00〜24:00、無休）。散策途中の温かい飲み物や軽食、おやつなどの調達に最適。",
+        "address": "北海道釧路市大楽毛西2-1-33",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.012216,
+        "lng": 144.264984,
+        "qr_token": "shuin-otanoshike-5",
+        "cover_image_url": "/images/otanoshike/spot5.png",
+        "f7_fragment": "大楽毛西エリアの国道沿いで飲み物や軽食の調達に便利な買い物拠点。",
+        "f7_full": "「セブン-イレブン 釧路大楽毛店」で旅のお供を手に入れ、大楽毛の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c92cb2cb-6cbf-4f6e-8b9f-9a77ba734a75",
+    "title": "レトロ喫茶から星が浦大通へ続く街歩き",
+    "name": "レトロ喫茶から星が浦大通へ続く街歩き",
+    "description": "JR新大楽毛駅から大楽毛1号公園、レトロな老舗喫茶デシベル、星が浦大通のハンバーガー店ROUTE 38やコープさっぽろへ歩くルート。",
+    "region": "新大楽毛・星が浦",
+    "area_name": "新大楽毛・星が浦",
+    "cover_image_url": "/images/shin_otanoshike/route-eyecatch.png",
+    "imageUrl": "/images/shin_otanoshike/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び新大楽毛を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅至近で憩える大楽毛1号公園",
+          "description": "緑の広がる近隣公園のベンチで澄んだ空気を味わった",
+          "badge_code": "shin_otanoshike_park"
+        },
+        {
+          "key": "B",
+          "text": "レトロな老舗喫茶デシベルの空間",
+          "description": "個性的な照明が彩る店内で香り高い珈琲と名物を味わった",
+          "badge_code": "shin_otanoshike_decibel"
+        },
+        {
+          "key": "C",
+          "text": "星が浦大通のハンバーガー ROUTE 38",
+          "description": "アメリカンテイストの空間でこだわりのグルメバーガーを頬張った",
+          "badge_code": "shin_otanoshike_route38"
+        },
+        {
+          "key": "D",
+          "text": "地元に愛されるコープさっぽろ 星が浦店",
+          "description": "北海道ならではの食材や店内ベーカリーのパンを選んだ",
+          "badge_code": "shin_otanoshike_coop"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f520f17a-b1db-4bfb-8b9b-5a767180f56f",
+        "name": "JR新大楽毛駅",
+        "description": "昭和63年（1988年）11月3日に開業したJR根室本線の無人駅（終日利用可）。釧路西部の工業・商業エリア「星が浦」の西の玄関口となっている。",
+        "address": "北海道釧路市大楽毛南1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.009673,
+        "lng": 144.294264,
+        "qr_token": "shuin-shin_otanoshike-1",
+        "cover_image_url": "/images/shin_otanoshike/spot1.png",
+        "f7_fragment": "昭和六十三年開業、星が浦エリアの西の玄関口となるJR根室本線の無人駅。",
+        "f7_full": "「JR新大楽毛駅」を後にし、レトロ喫茶から星が浦大通へと続く街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "fb46ca89-4666-4a48-8683-d98cba40fb5e",
+        "next_spot_name": "大楽毛1号公園"
+      },
+      {
+        "id": "fb46ca89-4666-4a48-8683-d98cba40fb5e",
+        "name": "大楽毛1号公園",
+        "description": "駅至近に広がる約1.3ヘクタールの近隣公園（終日開放）。野球場や遊具、トイレ・ベンチが整備されており、散策の始まりに心地よく一息つくことができる。",
+        "address": "北海道釧路市大楽毛1-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.009984,
+        "lng": 144.295032,
+        "qr_token": "shuin-shin_otanoshike-2",
+        "cover_image_url": "/images/shin_otanoshike/spot2.png",
+        "f7_fragment": "野球場やベンチが整備された、JR新大楽毛駅至近の広々とした近隣公園。",
+        "f7_full": "「大楽毛1号公園」の爽やかな緑の中で深呼吸し、穏やかな散歩の始まりを楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "1bd193c8-3bd4-48ce-8cca-7661c062f2ae",
+        "next_spot_name": "コーヒーショップ デシベル（DECIBEL）"
+      },
+      {
+        "id": "1bd193c8-3bd4-48ce-8cca-7661c062f2ae",
+        "name": "コーヒーショップ デシベル（DECIBEL）",
+        "description": "個性的な照明やストーブが温かく彩るレトロな老舗喫茶店（10:00〜21:30、水曜・第3木曜休）。香り高い珈琲や名物のピラフグラタン等でくつろげる。",
+        "address": "北海道釧路市大楽毛1-9-22",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.010974,
+        "lng": 144.295713,
+        "qr_token": "shuin-shin_otanoshike-3",
+        "cover_image_url": "/images/shin_otanoshike/spot3.png",
+        "f7_fragment": "個性的な照明とストーブが彩る、名物ピラフグラタンも人気のレトロ喫茶。",
+        "f7_full": "「コーヒーショップ デシベル（DECIBEL）」のレトロな空間で珈琲を味わい、心が和んだ。",
+        "is_final": false,
+        "next_spot_id": "de8d3cfb-7c22-4799-842a-1cbd389cad4b",
+        "next_spot_name": "ROUTE 38（ルートサンジュウハチ）"
+      },
+      {
+        "id": "de8d3cfb-7c22-4799-842a-1cbd389cad4b",
+        "name": "ROUTE 38（ルートサンジュウハチ）",
+        "description": "国道38号沿いの星が浦エリアにあるアメリカンテイストのハンバーガーショップ・カフェ（11:00〜18:00・水〜15:00、火曜休）。こだわりのグルメバーガーが味わえる。",
+        "address": "北海道釧路市星が浦大通4-4-17",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.013583,
+        "lng": 144.310051,
+        "qr_token": "shuin-shin_otanoshike-4",
+        "cover_image_url": "/images/shin_otanoshike/spot4.png",
+        "f7_fragment": "国道38号沿いに佇み、こだわりのグルメバーガーが味わえるお洒落なカフェ。",
+        "f7_full": "「ROUTE 38（ルートサンジュウハチ）」で本格グルメバーガーを頬張り、笑顔になった。",
+        "is_final": false,
+        "next_spot_id": "3864fe7a-dd0f-4b90-814f-aabb5bfe8410",
+        "next_spot_name": "コープさっぽろ 星が浦店"
+      },
+      {
+        "id": "3864fe7a-dd0f-4b90-814f-aabb5bfe8410",
+        "name": "コープさっぽろ 星が浦店",
+        "description": "星が浦エリアの暮らしを支える地域スーパー（9:00〜20:00、無休・元日等除く）。北海道ならではの食材や、店内ベーカリー「レフボン」の焼きたてパンが揃う。",
+        "address": "北海道釧路市星が浦大通3-5-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.014919,
+        "lng": 144.31658,
+        "qr_token": "shuin-shin_otanoshike-5",
+        "cover_image_url": "/images/shin_otanoshike/spot5.png",
+        "f7_fragment": "道産食材や店内ベーカリー「レフボン」の焼きたてパンが揃う星が浦の拠点。",
+        "f7_full": "「コープさっぽろ 星が浦店」で道産のお土産を選び、新大楽毛の散歩を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2e7d224b-e3fb-4981-8515-1c8fb9a7df27",
+    "title": "鳥取開拓の誇りと洋食カフェを巡る道",
+    "name": "鳥取開拓の誇りと洋食カフェを巡る道",
+    "description": "JR新富士駅から鳥取7号公園、鳥取城を模した百年館が建つ鳥取神社、洋食のカフェレスト63、雑貨カフェRHYTHMを巡るルート。",
+    "region": "新富士・鳥取大通",
+    "area_name": "新富士・鳥取大通",
+    "cover_image_url": "/images/shinfuji_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/shinfuji_hokkaido/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び新富士を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "屋根付きベンチがある鳥取7号公園",
+          "description": "住宅街の静かな公園でひと休みして鳥取開拓の街を感じた",
+          "badge_code": "shinfuji_tottori_park"
+        },
+        {
+          "key": "B",
+          "text": "鳥取神社と鳥取城風の鳥取百年館",
+          "description": "旧鳥取藩士族の開拓の歴史を伝える美しい建物に見入った",
+          "badge_code": "shinfuji_tottori_shrine"
+        },
+        {
+          "key": "C",
+          "text": "釧路洋食が人気のカフェレスト63",
+          "description": "名物スパカツやスペシャルライスで元気いっぱいになった",
+          "badge_code": "shinfuji_caferest63"
+        },
+        {
+          "key": "D",
+          "text": "雑貨とカフェの店 RHYTHM",
+          "description": "木の温もりあふれる空間で暮らしを彩る雑貨選びを楽しんだ",
+          "badge_code": "shinfuji_rhythm"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ab920f0b-4d68-4cca-83ad-1afd3fbaac51",
+        "name": "JR新富士駅",
+        "description": "大正12年（1923年）12月25日に開業したJR根室本線の駅（終日利用可）。隣接する釧路貨物駅とともに長く道東の物流を支え続けてきた。",
+        "address": "北海道釧路市新富士町3-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.001785,
+        "lng": 144.349835,
+        "qr_token": "shuin-shinfuji_hokkaido-1",
+        "cover_image_url": "/images/shinfuji_hokkaido/spot1.png",
+        "f7_fragment": "大正十二年開業、釧路貨物駅に隣接し道東の物流を支えてきた歴史ある駅。",
+        "f7_full": "「JR新富士駅」を後にし、鳥取県士族の開拓史と洋食カフェを巡る散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "1fd85da3-1367-46e8-85b7-ce10120f0254",
+        "next_spot_name": "鳥取7号公園"
+      },
+      {
+        "id": "1fd85da3-1367-46e8-85b7-ce10120f0254",
+        "name": "鳥取7号公園",
+        "description": "鳥取南の落ち着いた住宅街に佇む地域公園（終日開放）。屋根付きの休憩ベンチが設けられており、散策途中に腰を下ろしてゆっくり一息つくことができる。",
+        "address": "北海道釧路市鳥取南5-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.008579,
+        "lng": 144.342057,
+        "qr_token": "shuin-shinfuji_hokkaido-2",
+        "cover_image_url": "/images/shinfuji_hokkaido/spot2.png",
+        "f7_fragment": "鳥取南の落ち着いた住宅街にあり、屋根付きベンチで一息つける地域公園。",
+        "f7_full": "「鳥取7号公園」のベンチで呼吸を整え、鳥取地区の穏やかな街並みを感じた。",
+        "is_final": false,
+        "next_spot_id": "1c74fd5f-1a27-48d0-8a37-ddbb6c7ae83a",
+        "next_spot_name": "鳥取神社（鳥取百年館）"
+      },
+      {
+        "id": "1c74fd5f-1a27-48d0-8a37-ddbb6c7ae83a",
+        "name": "鳥取神社（鳥取百年館）",
+        "description": "明治17〜18年に鳥取県から移住した旧鳥取藩士族らが創祀した神社（参拝無休・百年館9:00〜16:00）。境内には鳥取城を模した「鳥取百年館」が建つ。",
+        "address": "北海道釧路市鳥取大通4-2-18",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.012686,
+        "lng": 144.352752,
+        "qr_token": "shuin-shinfuji_hokkaido-3",
+        "cover_image_url": "/images/shinfuji_hokkaido/spot3.png",
+        "f7_fragment": "旧鳥取藩士族が創祀し、境内に鳥取城風の百年館が建つ歴史ある神社。",
+        "f7_full": "「鳥取神社（鳥取百年館）」で鳥取県士族の誇りある開拓史に触れ、胸を打たれた。",
+        "is_final": false,
+        "next_spot_id": "cf32f115-7216-4cc4-8a02-0e216054206d",
+        "next_spot_name": "カフェレスト63"
+      },
+      {
+        "id": "cf32f115-7216-4cc4-8a02-0e216054206d",
+        "name": "カフェレスト63",
+        "description": "スパカツや名物「スペシャルライス」など、釧路らしいボリューム満点の洋食メニューが人気のレストラン（11:00〜15:00・17:00〜20:00、水・木曜休）。",
+        "address": "北海道釧路市鳥取大通6-5-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.016744,
+        "lng": 144.342854,
+        "qr_token": "shuin-shinfuji_hokkaido-4",
+        "cover_image_url": "/images/shinfuji_hokkaido/spot4.png",
+        "f7_fragment": "スパカツや名物スペシャルライスなど釧路洋食が人気のアットホームな名店。",
+        "f7_full": "「カフェレスト63」でボリューム満点の釧路洋食を味わい、元気を取り戻した。",
+        "is_final": false,
+        "next_spot_id": "a3b566dc-e74a-4286-8552-776987eb1b21",
+        "next_spot_name": "shop&cafe RHYTHM（リズム）"
+      },
+      {
+        "id": "a3b566dc-e74a-4286-8552-776987eb1b21",
+        "name": "shop&cafe RHYTHM（リズム）",
+        "description": "木の温もりあふれる空間の1階が雑貨店、2階がカフェになっている人気スポット（10:30〜17:00、水曜休）。暮らしを彩る丁寧な雑貨選びを楽しめる。",
+        "address": "北海道釧路市鳥取大通8-7-27",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.017048,
+        "lng": 144.335334,
+        "qr_token": "shuin-shinfuji_hokkaido-5",
+        "cover_image_url": "/images/shinfuji_hokkaido/spot5.png",
+        "f7_fragment": "木の温もりあふれる空間の1階で素敵な雑貨選びを楽しめる人気ショップ＆カフェ。",
+        "f7_full": "「shop&cafe RHYTHM（リズム）」でお気に入りの雑貨に出会い、新富士の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a3efae59-501b-4222-85e4-467269b55dcd",
+    "title": "縄文の貝塚と材木町の高台をめぐる旅",
+    "name": "縄文の貝塚と材木町の高台をめぐる旅",
+    "description": "JR東釧路駅から貝塚エリアの買い物・つけ麺虎吉、北海道最大規模の国指定史跡・東釧路貝塚公園、材木町の泰心寺へ歩くルート。",
+    "region": "貝塚・材木町",
+    "area_name": "貝塚・材木町",
+    "cover_image_url": "/images/higashikushiro/route-eyecatch.png",
+    "imageUrl": "/images/higashikushiro/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び東釧路を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "貝塚の暮らしを支えるコープさっぽろ",
+          "description": "地元に密着したお店で北海道らしい食品や旅のお供を選んだ",
+          "badge_code": "higashikushiro_coop"
+        },
+        {
+          "key": "B",
+          "text": "濃厚な一杯が評判のつけ麺・拉麺 虎吉",
+          "description": "地元屈指の人気店でこだわり抜いた熱い麺に舌鼓を打った",
+          "badge_code": "higashikushiro_torakichi"
+        },
+        {
+          "key": "C",
+          "text": "北海道最大の国指定史跡・東釧路貝塚",
+          "description": "縄文前期の祭祀跡や高台の展望から悠久の時に思いを馳せた",
+          "badge_code": "higashikushiro_kaizuka"
+        },
+        {
+          "key": "D",
+          "text": "材木町の高台に佇む静かな泰心寺",
+          "description": "穏やかな境内で歴史ある釧路の散策を静かに締めくくった",
+          "badge_code": "higashikushiro_taishinji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f6b71df3-76a3-4c9e-8704-b0e3384ffbef",
+        "name": "JR東釧路駅",
+        "description": "大正14年（1925年）3月16日に信号場として開業し昭和3年に駅へ昇格（終日利用可）。根室本線と釧網本線が分岐する交通の要衝となっている。",
+        "address": "北海道釧路市貝塚2-23",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.995452,
+        "lng": 144.411544,
+        "qr_token": "shuin-higashikushiro-1",
+        "cover_image_url": "/images/higashikushiro/spot1.png",
+        "f7_fragment": "根室本線と釧網本線が分岐する、旅情あふれる貝塚地区の鉄道の要衝。",
+        "f7_full": "「JR東釧路駅」の分岐点に旅情を感じつつ、縄文の貝塚を巡る東釧路の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c9ddf2f9-fd89-4343-8195-68b84fc74592",
+        "next_spot_name": "コープさっぽろ 貝塚店"
+      },
+      {
+        "id": "c9ddf2f9-fd89-4343-8195-68b84fc74592",
+        "name": "コープさっぽろ 貝塚店",
+        "description": "貝塚エリアの住民の日常を支えるスーパーマーケット（9:00〜21:00、無休・元日等除く）。北海道ならではの食品や飲み物、日用品が幅広く揃う。",
+        "address": "北海道釧路市貝塚3-2-28",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.996247,
+        "lng": 144.410474,
+        "qr_token": "shuin-higashikushiro-2",
+        "cover_image_url": "/images/higashikushiro/spot2.png",
+        "f7_fragment": "北海道ならではの食品や飲み物が幅広く揃う、貝塚エリアの買い物拠点。",
+        "f7_full": "「コープさっぽろ 貝塚店」で飲み物や地元のおやつを選び、次のグルメへ向かった。",
+        "is_final": false,
+        "next_spot_id": "c5dc5d49-ea49-4dce-812f-47f65afca539",
+        "next_spot_name": "つけ麺・拉麺 虎吉"
+      },
+      {
+        "id": "c5dc5d49-ea49-4dce-812f-47f65afca539",
+        "name": "つけ麺・拉麺 虎吉",
+        "description": "濃厚なつけ麺やラーメンで知られる地元屈指の人気店（11:30〜20:00・平日昼のみ営業の場合あり、月曜・第3火曜休）。こだわりのスープが旅のお腹を満たす。",
+        "address": "北海道釧路市貝塚3-4-20",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.99726,
+        "lng": 144.410214,
+        "qr_token": "shuin-higashikushiro-3",
+        "cover_image_url": "/images/higashikushiro/spot3.png",
+        "f7_fragment": "濃厚なつけ麺とラーメンで高い人気を誇る、貝塚エリア屈指の名店。",
+        "f7_full": "「つけ麺・拉麺 虎吉」で濃厚な旨味の一杯を堪能し、縄文史跡へ向かう活力を得た。",
+        "is_final": false,
+        "next_spot_id": "76eab3b2-a96a-4388-8ad6-4b6d4b9b8e5a",
+        "next_spot_name": "東釧路貝塚公園（史跡 東釧路貝塚）"
+      },
+      {
+        "id": "76eab3b2-a96a-4388-8ad6-4b6d4b9b8e5a",
+        "name": "東釧路貝塚公園（史跡 東釧路貝塚）",
+        "description": "縄文時代前期を中心とする北海道最大規模の国指定史跡（終日開放）。イルカの頭骨を放射状に並べた祭祀跡が出土し、高台にはあずまやや展望台も設けられている。",
+        "address": "北海道釧路市貝塚1-11-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.994109,
+        "lng": 144.412291,
+        "qr_token": "shuin-higashikushiro-4",
+        "cover_image_url": "/images/higashikushiro/spot4.png",
+        "f7_fragment": "イルカの祭祀跡が出土した、北海道最大規模の国指定史跡を伝える公園。",
+        "f7_full": "「東釧路貝塚公園（史跡 東釧路貝塚）」の高台に立ち、六千年前の縄文ロマンに浸った。",
+        "is_final": false,
+        "next_spot_id": "60836ceb-d021-4a7e-8cf5-a06f403909e0",
+        "next_spot_name": "泰心寺"
+      },
+      {
+        "id": "60836ceb-d021-4a7e-8cf5-a06f403909e0",
+        "name": "泰心寺",
+        "description": "貝塚から材木町方面へ抜ける高台エリアに佇む地域ゆかりの寺院（日中参拝可・無休）。落ち着いた境内の中で、東釧路の歴史散策を穏やかに締めくくれる。",
+        "address": "北海道釧路市材木町21-35",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.994662,
+        "lng": 144.405751,
+        "qr_token": "shuin-higashikushiro-5",
+        "cover_image_url": "/images/higashikushiro/spot5.png",
+        "f7_fragment": "貝塚から材木町へ抜ける高台に佇み、静かな祈りで散策を結べる寺院。",
+        "f7_full": "「泰心寺」の穏やかな境内に手を合わせ、縄文と鉄道が交わる東釧路の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "09af192a-0d72-4fda-812c-c83a3e2ba0e3",
+    "title": "武佐の原生林と人気ベーカリーをめぐる道",
+    "name": "武佐の原生林と人気ベーカリーをめぐる道",
+    "description": "JR武佐駅から樹齢400年超の巨木が残る武佐の森緑地、老舗の八松庵、手作り食堂の遊花、Bakery LABOへ歩くルート。",
+    "region": "武佐",
+    "area_name": "武佐",
+    "cover_image_url": "/images/musa_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/musa_hokkaido/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び武佐を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "樹齢400年超の巨木が守る武佐の森緑地",
+          "description": "鉄道の防雪林として守られてきた自然林の木道で深呼吸した",
+          "badge_code": "musa_forest"
+        },
+        {
+          "key": "B",
+          "text": "老舗そば処 八松庵の名物種込そば",
+          "description": "コシのある更科そばと大ぶり海老天の温かな一杯を味わった",
+          "badge_code": "musa_hachishoan"
+        },
+        {
+          "key": "C",
+          "text": "無添加の手作りが光る食事＆喫茶 遊花",
+          "description": "隠れ家的な温かい空間で丁寧な手作り料理をゆっくり楽しんだ",
+          "badge_code": "musa_yuka"
+        },
+        {
+          "key": "D",
+          "text": "煮玉子パンも人気の Bakery LABO",
+          "description": "緑ケ岡のパン屋さんで独創的な惣菜パンやデニッシュを選んだ",
+          "badge_code": "musa_bakery_labo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "02680b76-0057-4a62-8e5e-0d414f9e7483",
+        "name": "JR武佐駅",
+        "description": "昭和63年（1988年）3月13日にJR北海道発足後のダイヤ改正で新設された、花咲線（釧路駅以東）で最も新しい無人駅（終日利用可）。駅名はアイヌ語「モサ（イラクサ）」由来。",
+        "address": "北海道釧路市武佐4-56-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.990605,
+        "lng": 144.425972,
+        "qr_token": "shuin-musa_hokkaido-1",
+        "cover_image_url": "/images/musa_hokkaido/spot1.png",
+        "f7_fragment": "昭和六十三年新設、花咲線（釧路以東）で最も新しい歴史を持つ無人駅。",
+        "f7_full": "「JR武佐駅」を後にし、鉄道防雪林の巨木と老舗喫茶を巡る武佐の街歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "3dfbb271-5454-403a-8632-981c45e3b8df",
+        "next_spot_name": "武佐の森緑地"
+      },
+      {
+        "id": "3dfbb271-5454-403a-8632-981c45e3b8df",
+        "name": "武佐の森緑地",
+        "description": "鉄道防雪林として守られてきた約10haの自然林を活かした緑地公園（終日開放）。樹齢400年を超えるミズナラやハルニレの巨木、散策路・木製デッキ・ベンチを備える。",
+        "address": "北海道釧路市武佐4-49",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.98919,
+        "lng": 144.430246,
+        "qr_token": "shuin-musa_hokkaido-2",
+        "cover_image_url": "/images/musa_hokkaido/spot2.png",
+        "f7_fragment": "鉄道防雪林として守られた樹齢400年超の巨木が茂る約10haの自然林公園。",
+        "f7_full": "「武佐の森緑地」の木道と巨木の下で深呼吸し、街に息づく森の力に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "19723ea2-4168-4e97-824b-523534796765",
+        "next_spot_name": "そば処 八松庵 武佐店"
+      },
+      {
+        "id": "19723ea2-4168-4e97-824b-523534796765",
+        "name": "そば処 八松庵 武佐店",
+        "description": "地元で長年親しまれる老舗蕎麦店（11:00〜20:00、木曜休）。コシのある更科そばや、大ぶりの海老天がのる名物「種込そば」、ボリュームある丼ものが人気。",
+        "address": "北海道釧路市武佐3-10-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.98273,
+        "lng": 144.427421,
+        "qr_token": "shuin-musa_hokkaido-3",
+        "cover_image_url": "/images/musa_hokkaido/spot3.png",
+        "f7_fragment": "コシのある更科そばや大ぶり海老天の「種込そば」が人気の老舗蕎麦店。",
+        "f7_full": "「そば処 八松庵 武佐店」で老舗の更科そばを堪能し、お腹も心も温まった。",
+        "is_final": false,
+        "next_spot_id": "241f40e9-b3b8-4546-8c2a-a4533e6c3873",
+        "next_spot_name": "食事＆喫茶 遊花"
+      },
+      {
+        "id": "241f40e9-b3b8-4546-8c2a-a4533e6c3873",
+        "name": "食事＆喫茶 遊花",
+        "description": "無添加・手作りにこだわる隠れ家的な食堂＆喫茶（11:00〜17:00・18:00以降要予約、日曜休）。日替わりランチや煮込みハンバーグ、自家製パンなどが評判。",
+        "address": "北海道釧路市武佐2-13-27",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.980835,
+        "lng": 144.423692,
+        "qr_token": "shuin-musa_hokkaido-4",
+        "cover_image_url": "/images/musa_hokkaido/spot4.png",
+        "f7_fragment": "無添加・手作りのランチや煮込みハンバーグ、自家製パンが評判の隠れ家喫茶。",
+        "f7_full": "「食事＆喫茶 遊花」の温かな佇まいに触れ、手作りの優しさを感じた。",
+        "is_final": false,
+        "next_spot_id": "0bfda571-ad52-4a0e-81a1-d54b94a68df0",
+        "next_spot_name": "Bakery LABO"
+      },
+      {
+        "id": "0bfda571-ad52-4a0e-81a1-d54b94a68df0",
+        "name": "Bakery LABO",
+        "description": "武佐エリアからも近い緑ケ岡の道路沿いにある人気のパン屋さん（8:00〜18:00・売切次第終了、月・火曜休）。名物の煮玉子パンや各種デニッシュ、惣菜パンが揃う。",
+        "address": "北海道釧路市緑ケ岡6-30-10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.985292,
+        "lng": 144.418897,
+        "qr_token": "shuin-musa_hokkaido-5",
+        "cover_image_url": "/images/musa_hokkaido/spot5.png",
+        "f7_fragment": "名物の「煮玉子パン」や焼きたてデニッシュが人気の緑ケ岡のベーカリー。",
+        "f7_full": "「Bakery LABO」で香ばしい焼きたてパンを手に入れ、武佐の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "aa5b340c-5a10-4b22-85ad-6b9a7026b221",
+    "title": "炭鉱の記憶と桜公園をめぐる別保道",
+    "name": "炭鉱の記憶と桜公園をめぐる別保道",
+    "description": "別保炭鉱の積出拠点だったJR別保駅から日本一遅い桜の別保公園、高台の別保神社、郵便局、老舗洋食ネーベン・フルスへ歩くルート。",
+    "region": "別保・別保原野",
+    "area_name": "別保・別保原野",
+    "cover_image_url": "/images/beppo/route-eyecatch.png",
+    "imageUrl": "/images/beppo/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び別保を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "日本一遅い桜が咲く別保公園とロ・バザール",
+          "description": "600本以上の桜並木と道東の特産品が並ぶ拠点で一息ついた",
+          "badge_code": "beppo_park"
+        },
+        {
+          "key": "B",
+          "text": "駅を見下ろす高台の鎮守・別保神社",
+          "description": "京都・賀茂別雷神社の御分霊を祀る由緒ある社に参拝した",
+          "badge_code": "beppo_shrine"
+        },
+        {
+          "key": "C",
+          "text": "町の暮らしを見守り続ける別保郵便局",
+          "description": "釧路町役場近くの落ち着いた街並みで地域の日常に触れた",
+          "badge_code": "beppo_post"
+        },
+        {
+          "key": "D",
+          "text": "30年以上続く老舗洋食・ネーベン・フルス",
+          "description": "ジューシーなハンバーグなど本格洋食で旅を締めくくった",
+          "badge_code": "beppo_nebenfluss"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a331eee4-8933-44b6-860e-12b125a00e4a",
+        "name": "JR別保駅",
+        "description": "大正6年（1917年）12月1日に「上別保駅」として開業、昭和27年に現駅名へ改称（終日利用可）。昭和戦前期には別保炭鉱の石炭や木材の積出拠点として専用線が敷かれていた。",
+        "address": "北海道釧路郡釧路町別保4-40-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.994384,
+        "lng": 144.469596,
+        "qr_token": "shuin-beppo-1",
+        "cover_image_url": "/images/beppo/spot1.png",
+        "f7_fragment": "大正六年「上別保駅」として開業、かつて別保炭鉱の積出拠点だった無人駅。",
+        "f7_full": "「JR別保駅」を後にし、日本一遅い桜と炭鉱の記憶を巡る別保の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "90e093c6-45b8-47c1-887c-6e157176193d",
+        "next_spot_name": "別保公園（地産地消センター ロ・バザール）"
+      },
+      {
+        "id": "90e093c6-45b8-47c1-887c-6e157176193d",
+        "name": "別保公園（地産地消センター ロ・バザール）",
+        "description": "600本以上のエゾヤマザクラが植えられ「日本一遅い桜まつり」会場として知られる総合公園（公園終日開放、ロ・バザール9:00〜18:00、月曜休）。仙鳳趾産カキ等の特産品も扱う。",
+        "address": "北海道釧路郡釧路町字別保原野南24線78-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.994454,
+        "lng": 144.460083,
+        "qr_token": "shuin-beppo-2",
+        "cover_image_url": "/images/beppo/spot2.png",
+        "f7_fragment": "600本超のエゾヤマザクラと特産品拠点「ロ・バザール」を擁する総合公園。",
+        "f7_full": "「別保公園（地産地消センター ロ・バザール）」で道東の爽やかな自然に触れた。",
+        "is_final": false,
+        "next_spot_id": "13ca3d4a-e10d-46fd-8d2e-c7c5e63c5af5",
+        "next_spot_name": "別保神社"
+      },
+      {
+        "id": "13ca3d4a-e10d-46fd-8d2e-c7c5e63c5af5",
+        "name": "別保神社",
+        "description": "大正7年（1918年）、別保市街の発展と産業繁栄を祈願して京都・賀茂別雷神社より御分霊を勧請し創建された鎮守社（境内参拝自由・無休）。駅を見下ろす高台に鎮座する。",
+        "address": "北海道釧路郡釧路町別保3-30",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.006035,
+        "lng": 144.47319,
+        "qr_token": "shuin-beppo-3",
+        "cover_image_url": "/images/beppo/spot3.png",
+        "f7_fragment": "大正七年創建、京都・賀茂別雷神社の御分霊を祀る別保の高台の鎮守社。",
+        "f7_full": "「別保神社」の高台に参拝し、別保のまちの百年を見守る杜に手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "289299bd-bd0d-45f6-8f7e-96707e6aeda8",
+        "next_spot_name": "別保郵便局"
+      },
+      {
+        "id": "289299bd-bd0d-45f6-8f7e-96707e6aeda8",
+        "name": "別保郵便局",
+        "description": "釧路町役場ほど近くに建つ地域の生活拠点（郵便窓口平日9:00〜17:00、土日祝休）。別保市街地の変遷を郵便・金融面から支え続けてきた。",
+        "address": "北海道釧路郡釧路町別保2-6-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.994843,
+        "lng": 144.468093,
+        "qr_token": "shuin-beppo-4",
+        "cover_image_url": "/images/beppo/spot4.png",
+        "f7_fragment": "釧路町役場ほど近くで別保市街地の暮らしを支え続けてきた地域の郵便局。",
+        "f7_full": "「別保郵便局」の前を歩き、別保市街地の穏やかで温かな日常に触れた。",
+        "is_final": false,
+        "next_spot_id": "a5758d96-0526-467a-895f-2fa26131b7a6",
+        "next_spot_name": "ネーベン・フルス"
+      },
+      {
+        "id": "a5758d96-0526-467a-895f-2fa26131b7a6",
+        "name": "ネーベン・フルス",
+        "description": "釧路町役場近くで30年以上続く老舗洋食レストラン（11:30〜15:00・17:00〜20:00、木曜・第3水曜休）。ドイツ語で「支流」を意味し、ジューシーなハンバーグ等が人気。",
+        "address": "北海道釧路郡釧路町別保1-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.995284,
+        "lng": 144.465327,
+        "qr_token": "shuin-beppo-5",
+        "cover_image_url": "/images/beppo/spot5.png",
+        "f7_fragment": "釧路町役場近くで30年以上続く、本格ハンバーグが人気の老舗洋食レストラン。",
+        "f7_full": "「ネーベン・フルス」で老舗の本格洋食を堪能し、別保の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ef30cad7-458b-4293-8e8d-5a54fe36208e",
+    "title": "木造駅舎と炭鉱の歴史香る上尾幌道",
+    "name": "木造駅舎と炭鉱の歴史香る上尾幌道",
+    "description": "昭和初期の木造モルタル駅舎が現存するJR上尾幌駅から上尾幌郵便局、ふれあい体験農園、学び山公園、上尾幌神社へ歩くルート。",
+    "region": "上尾幌",
+    "area_name": "上尾幌",
+    "cover_image_url": "/images/kamioboro/route-eyecatch.png",
+    "imageUrl": "/images/kamioboro/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び上尾幌を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "山あいの暮らしを支える上尾幌郵便局",
+          "description": "木造駅舎のすぐそばで静かな集落の温かい日常を感じた",
+          "badge_code": "kamioboro_post"
+        },
+        {
+          "key": "B",
+          "text": "里山の自然を活かすふれあい体験農園",
+          "description": "地域に開かれた貸し農園で北の大地と農業の息吹を感じた",
+          "badge_code": "kamioboro_farm"
+        },
+        {
+          "key": "C",
+          "text": "緑の芝生が心地よい学び山公園",
+          "description": "周囲の木々に囲まれた開放的な芝生広場で一息ついた",
+          "badge_code": "kamioboro_park"
+        },
+        {
+          "key": "D",
+          "text": "炭鉱時代から土地を見守る上尾幌神社",
+          "description": "集落のはずれに佇む静かな鎮守に手を合わせて旅を結んだ",
+          "badge_code": "kamioboro_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "89f5d989-7b73-432b-8a7d-c6d16f8bc842",
+        "name": "JR上尾幌駅",
+        "description": "大正6年（1917年）12月1日開業の無人駅（終日利用可）。かつて上尾幌炭鉱の石炭や木材の積み出しで賑わい、昭和初期からの味わい深い木造モルタル駅舎が現存する。",
+        "address": "北海道厚岸郡厚岸町上尾幌1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.032914,
+        "lng": 144.612874,
+        "qr_token": "shuin-kamioboro-1",
+        "cover_image_url": "/images/kamioboro/spot1.png",
+        "f7_fragment": "大正六年開業、昭和初期からの木造モルタル駅舎が現存する炭鉱ゆかりの駅。",
+        "f7_full": "「JR上尾幌駅」の古い木造駅舎を後にし、山あいの炭鉱の記憶を辿る散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "937c5eb8-1be1-4690-8397-67c73640dbc9",
+        "next_spot_name": "上尾幌郵便局"
+      },
+      {
+        "id": "937c5eb8-1be1-4690-8397-67c73640dbc9",
+        "name": "上尾幌郵便局",
+        "description": "駅前に佇む山間集落の郵便局（郵便窓口平日9:00〜17:00、日祝休）。郵便・貯金のほか住民票等の証明書交付事務も担い、静かな上尾幌の暮らしを支えている。",
+        "address": "北海道厚岸郡厚岸町上尾幌52",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.03226,
+        "lng": 144.612951,
+        "qr_token": "shuin-kamioboro-2",
+        "cover_image_url": "/images/kamioboro/spot2.png",
+        "f7_fragment": "JR上尾幌駅前に佇み、証明書交付など山間集落の暮らしを支える郵便局。",
+        "f7_full": "「上尾幌郵便局」の前を通り、山あいの集落で受け継がれる穏やかな暮らしに触れた。",
+        "is_final": false,
+        "next_spot_id": "0a191e34-2e35-4da2-8de1-65145bafb15f",
+        "next_spot_name": "厚岸町上尾幌ふれあい体験農園"
+      },
+      {
+        "id": "0a191e34-2e35-4da2-8de1-65145bafb15f",
+        "name": "厚岸町上尾幌ふれあい体験農園",
+        "description": "上尾幌地区の豊かな自然環境を活かした町営の貸し農園・体験施設（日中利用可・冬季閉鎖あり）。地域の農業振興と交流の場として大切に整備されている。",
+        "address": "北海道厚岸郡厚岸町上尾幌7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.033467,
+        "lng": 144.621856,
+        "qr_token": "shuin-kamioboro-3",
+        "cover_image_url": "/images/kamioboro/spot3.png",
+        "f7_fragment": "上尾幌の自然環境を活かし、農業振興と地域交流のために整備された町営農園。",
+        "f7_full": "「厚岸町上尾幌ふれあい体験農園」ののどかな風景に、里山の豊かさを感じた。",
+        "is_final": false,
+        "next_spot_id": "0e4be8c6-853c-4538-800b-648e00e5cf66",
+        "next_spot_name": "上尾幌学び山公園パークゴルフ場"
+      },
+      {
+        "id": "0e4be8c6-853c-4538-800b-648e00e5cf66",
+        "name": "上尾幌学び山公園パークゴルフ場",
+        "description": "9ホール・364mのコースを備える町営パークゴルフ場（日の出〜日没、5月上旬〜11月上旬開放、無料）。緑豊かな芝生と木々に囲まれ、のどかな里山風景の中で休憩できる。",
+        "address": "北海道厚岸郡厚岸町上尾幌9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.030427,
+        "lng": 144.617251,
+        "qr_token": "shuin-kamioboro-4",
+        "cover_image_url": "/images/kamioboro/spot4.png",
+        "f7_fragment": "緑豊かな芝生と木々に囲まれ、のどかな里山風景の中で憩える町営公園。",
+        "f7_full": "「上尾幌学び山公園パークゴルフ場」の爽やかな緑の中で、里山の風に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "b0104d3a-0742-47aa-8749-0d824c440365",
+        "next_spot_name": "上尾幌神社"
+      },
+      {
+        "id": "b0104d3a-0742-47aa-8749-0d824c440365",
+        "name": "上尾幌神社",
+        "description": "道道1128号線と221号線の交差付近、集落のはずれに鎮座する地域の鎮守社（境内参拝自由・無休）。炭鉱で栄えた時代から現在まで上尾幌の歩みを見守り続けている。",
+        "address": "北海道厚岸郡厚岸町上尾幌183",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.030992,
+        "lng": 144.611925,
+        "qr_token": "shuin-kamioboro-5",
+        "cover_image_url": "/images/kamioboro/spot5.png",
+        "f7_fragment": "道道交差付近に鎮座し、炭鉱時代から上尾幌の歩みを見守り続ける地域の鎮守。",
+        "f7_full": "「上尾幌神社」の静かな杜に手を合わせ、上尾幌の温かい歴史の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "37c6d90f-67b5-4937-877a-0ea58d0538c5",
+    "title": "貨車駅と牧草地の風をめぐる尾幌道",
+    "name": "貨車駅と牧草地の風をめぐる尾幌道",
+    "description": "牛のイラストが描かれた車掌車改造駅・JR尾幌駅から国道沿いの商店、尾幌酪農ふれあい館、郵便局、老舗の太厚食堂へ歩くルート。",
+    "region": "尾幌",
+    "area_name": "尾幌",
+    "cover_image_url": "/images/oboro/route-eyecatch.png",
+    "imageUrl": "/images/oboro/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び尾幌を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "国道44号沿いのセブン-イレブン 厚岸尾幌店",
+          "description": "広大な酪農地帯の旅の途中で温かい飲み物や軽食を調達した",
+          "badge_code": "oboro_seven"
+        },
+        {
+          "key": "B",
+          "text": "牧草地に囲まれた尾幌酪農ふれあい館",
+          "description": "のどかな牧草地の風を感じながら広場とベンチで寛いだ",
+          "badge_code": "oboro_rakuno"
+        },
+        {
+          "key": "C",
+          "text": "酪農地帯の暮らしを支える尾幌郵便局",
+          "description": "集落中心部に佇む素朴な窓口から地域の営みを感じた",
+          "badge_code": "oboro_post"
+        },
+        {
+          "key": "D",
+          "text": "国道44号沿いの老舗・太厚食堂の温かい一杯",
+          "description": "味噌ラーメンや牡蠣丼など地元に愛される食堂の味に触れた",
+          "badge_code": "oboro_taiko"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bd8206b0-f0e1-45f6-80c9-160a56c32154",
+        "name": "JR尾幌駅",
+        "description": "大正6年（1917年）12月1日開業の無人駅（終日利用可）。昭和61年に車掌車を改造した貨車駅（ダルマ駅）へ改築され、外壁の牛などの手描きイラストが名物となっている。",
+        "address": "北海道厚岸郡厚岸町尾幌1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.018478,
+        "lng": 144.703862,
+        "qr_token": "shuin-oboro-1",
+        "cover_image_url": "/images/oboro/spot1.png",
+        "f7_fragment": "車掌車を改造した外壁の牛イラストが親しまれる、花咲線名物の貨車駅。",
+        "f7_full": "「JR尾幌駅」の愛らしい貨車駅舎を後にし、牧草地と老舗食堂を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "2bdb349e-07dd-4a05-88f9-b05008865ded",
+        "next_spot_name": "セブン-イレブン 厚岸尾幌店"
+      },
+      {
+        "id": "2bdb349e-07dd-4a05-88f9-b05008865ded",
+        "name": "セブン-イレブン 厚岸尾幌店",
+        "description": "国道44号線沿いに位置し、尾幌集落の玄関口として住民や旅人の買い物を支える24時間営業の店舗（年中無休）。飲み物や軽食の調達に便利。",
+        "address": "北海道厚岸郡厚岸町尾幌77-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.016971,
+        "lng": 144.704208,
+        "qr_token": "shuin-oboro-2",
+        "cover_image_url": "/images/oboro/spot2.png",
+        "f7_fragment": "国道44号沿いで尾幌集落や旅人の買い物を24時間支える便利なコンビニ。",
+        "f7_full": "「セブン-イレブン 厚岸尾幌店」で飲み物を手に入れ、牧草地へと歩き出した。",
+        "is_final": false,
+        "next_spot_id": "cf23dddf-7552-4a8e-8d38-c1f1da9d89d2",
+        "next_spot_name": "尾幌酪農ふれあい館"
+      },
+      {
+        "id": "cf23dddf-7552-4a8e-8d38-c1f1da9d89d2",
+        "name": "尾幌酪農ふれあい館",
+        "description": "広大な牧草地に囲まれた厚岸町の酪農交流・研修施設（9:00〜22:00、月曜・年末年始休）。広場やベンチから牧歌的な酪農風景を眺めてゆっくり休憩できる。",
+        "address": "北海道厚岸郡厚岸町尾幌124",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.016277,
+        "lng": 144.706627,
+        "qr_token": "shuin-oboro-3",
+        "cover_image_url": "/images/oboro/spot3.png",
+        "f7_fragment": "広大な牧草地に囲まれ、のどかな酪農風景を眺めながら憩える交流施設。",
+        "f7_full": "「尾幌酪農ふれあい館」の広場で深呼吸し、厚岸の豊かな酪農風景に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "6dff2470-67dd-411c-839e-6b308e1a04ff",
+        "next_spot_name": "尾幌郵便局"
+      },
+      {
+        "id": "6dff2470-67dd-411c-839e-6b308e1a04ff",
+        "name": "尾幌郵便局",
+        "description": "尾幌の集落中心部に位置する郵便局（郵便窓口平日9:00〜17:00、日祝休）。郵便・貯金・保険の窓口を備え、酪農地帯の暮らしを長年にわたり支えている。",
+        "address": "北海道厚岸郡厚岸町尾幌253",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.014845,
+        "lng": 144.703318,
+        "qr_token": "shuin-oboro-4",
+        "cover_image_url": "/images/oboro/spot4.png",
+        "f7_fragment": "尾幌集落の中心部で、酪農地帯の人々の暮らしを長く支え続ける郵便局。",
+        "f7_full": "「尾幌郵便局」の周辺を歩き、酪農の里の穏やかな暮らしの気配を感じた。",
+        "is_final": false,
+        "next_spot_id": "85d6d529-a8b1-4616-88bc-98f54e33ada4",
+        "next_spot_name": "太厚食堂"
+      },
+      {
+        "id": "85d6d529-a8b1-4616-88bc-98f54e33ada4",
+        "name": "太厚食堂",
+        "description": "国道44号沿いでドライバーや地元住民に愛される老舗食堂（不定休・要事前確認）。味噌ラーメンやチャーシューメンに加え、甘口タレの親子丼や牡蠣丼などが人気。",
+        "address": "北海道厚岸郡厚岸町尾幌332",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.015916,
+        "lng": 144.700972,
+        "qr_token": "shuin-oboro-5",
+        "cover_image_url": "/images/oboro/spot5.png",
+        "f7_fragment": "国道44号沿いで味噌ラーメンや牡蠣丼などが地元で愛される老舗食堂。",
+        "f7_full": "「太厚食堂」の温かな佇まいと厚岸の味に触れ、尾幌の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "bacbc783-9e04-4335-81ff-0002d2db8538",
+    "title": "漁港の潮風と望洋台をめぐる門静道",
+    "name": "漁港の潮風と望洋台をめぐる門静道",
+    "description": "厚岸湾を望む無人駅・JR門静駅から昆布漁の厚岸漁港、門静簡易郵便局、集会所を経て絶景高台のあっけし望洋台へ歩くルート。",
+    "region": "門静・厚岸湾",
+    "area_name": "門静・厚岸湾",
+    "cover_image_url": "/images/monshizu/route-eyecatch.png",
+    "imageUrl": "/images/monshizu/route-eyecatch.png",
+    "category": "絶景・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び門静を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "昆布漁の活気が息づく厚岸漁港（門静地区）",
+          "description": "潮風を感じながら厚岸湾の豊かな漁村の営みに触れた",
+          "badge_code": "monshizu_port"
+        },
+        {
+          "key": "B",
+          "text": "漁村の日常を支える門静簡易郵便局",
+          "description": "門静2丁目の集落中心部で地域の温かい生活に触れた",
+          "badge_code": "monshizu_post"
+        },
+        {
+          "key": "C",
+          "text": "住民が集う厚岸町門静地区集会所",
+          "description": "海辺の街区から高台へと続く道のりで地域の絆を感じた",
+          "badge_code": "monshizu_hall"
+        },
+        {
+          "key": "D",
+          "text": "厚岸湾と大橋を一望するあっけし望洋台",
+          "description": "厚岸観光十景の高台から海と岬の大パノラマを満喫した",
+          "badge_code": "monshizu_boyodai"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2d7a2fa7-4310-47b7-8941-12da2ac16ba2",
+        "name": "JR門静駅",
+        "description": "大正6年（1917年）12月1日開業の無人駅（終日利用可）。駅名はアイヌ語で「入り江の根もと」を意味する「モイスッ」に由来し、すぐ目の前に厚岸湾を望む。",
+        "address": "北海道厚岸郡厚岸町門静3-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.057866,
+        "lng": 144.781887,
+        "qr_token": "shuin-monshizu-1",
+        "cover_image_url": "/images/monshizu/spot1.png",
+        "f7_fragment": "アイヌ語「モイスッ（入り江の根もと）」に由来し厚岸湾を望む無人駅。",
+        "f7_full": "「JR門静駅」で潮の香りを胸に吸い込み、漁港と望洋台を目指す散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "0f31ccc3-b4bd-4cb7-8ae0-9e2cde51b867",
+        "next_spot_name": "厚岸漁港（門静地区）"
+      },
+      {
+        "id": "0f31ccc3-b4bd-4cb7-8ae0-9e2cde51b867",
+        "name": "厚岸漁港（門静地区）",
+        "description": "第3種漁港・厚岸漁港の一角をなす沿岸漁業の拠点（見学自由・作業エリア立入注意）。夏場には特産の昆布漁や昆布干しの風景が見られ、潮風を感じながら歩ける。",
+        "address": "北海道厚岸郡厚岸町門静3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.051865,
+        "lng": 144.78166,
+        "qr_token": "shuin-monshizu-2",
+        "cover_image_url": "/images/monshizu/spot2.png",
+        "f7_fragment": "夏には特産の昆布漁や昆布干しの風景が見られる沿岸漁業の漁港拠点。",
+        "f7_full": "「厚岸漁港（門静地区）」の海辺で潮風を感じ、厚岸の豊かな海の営みに触れた。",
+        "is_final": false,
+        "next_spot_id": "30338551-ffac-4515-82f9-83fa1291c39c",
+        "next_spot_name": "門静簡易郵便局"
+      },
+      {
+        "id": "30338551-ffac-4515-82f9-83fa1291c39c",
+        "name": "門静簡易郵便局",
+        "description": "門静2丁目の集落中心部に位置する地域密着型の簡易郵便局（平日9:00〜16:00頃、土日祝休）。漁村の日常を支える生活インフラとして機能している。",
+        "address": "北海道厚岸郡厚岸町門静2-62",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.057097,
+        "lng": 144.788843,
+        "qr_token": "shuin-monshizu-3",
+        "cover_image_url": "/images/monshizu/spot3.png",
+        "f7_fragment": "門静2丁目の集落中心部で漁村の日常を支え続ける地域密着の簡易郵便局。",
+        "f7_full": "「門静簡易郵便局」の周辺を歩き、漁村集落の穏やかで温かい空気を感じた。",
+        "is_final": false,
+        "next_spot_id": "18051ef7-e19c-44e5-8798-ecc4c779302d",
+        "next_spot_name": "厚岸町門静地区集会所"
+      },
+      {
+        "id": "18051ef7-e19c-44e5-8798-ecc4c779302d",
+        "name": "厚岸町門静地区集会所",
+        "description": "門静地区の住民が集うコミュニティ拠点（施設利用時開館・外観見学自由）。門静2丁目から1丁目の高台へ向かう国道沿いの動線上に位置している。",
+        "address": "北海道厚岸郡厚岸町門静2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.06094,
+        "lng": 144.788223,
+        "qr_token": "shuin-monshizu-4",
+        "cover_image_url": "/images/monshizu/spot4.png",
+        "f7_fragment": "門静2丁目から高台へ向かう途上に立ち、地域の絆をつなぐコミュニティ拠点。",
+        "f7_full": "「厚岸町門静地区集会所」を通り過ぎ、高台の絶景への期待に胸を膨らませた。",
+        "is_final": false,
+        "next_spot_id": "7c849cdc-45ca-4a5f-8cde-18eb99e6e601",
+        "next_spot_name": "あっけし望洋台（厚岸望洋台）"
+      },
+      {
+        "id": "7c849cdc-45ca-4a5f-8cde-18eb99e6e601",
+        "name": "あっけし望洋台（厚岸望洋台）",
+        "description": "厚岸観光十景の一つに数えられる国道44号沿いの展望パーキング・景勝地（終日開放・無休）。高台のベンチや展望スペースから、厚岸湾や厚岸大橋、愛冠岬を一望できる。",
+        "address": "北海道厚岸郡厚岸町門静1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.058605,
+        "lng": 144.794337,
+        "qr_token": "shuin-monshizu-5",
+        "cover_image_url": "/images/monshizu/spot5.png",
+        "f7_fragment": "厚岸観光十景に数えられ、厚岸湾と厚岸大橋、愛冠岬を一望できる展望地。",
+        "f7_full": "「あっけし望洋台（厚岸望洋台）」から厚岸湾の大パノラマを望み、門静の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c3d813f1-bd44-4fe5-8b9d-7c01a7dc9e8d",
+    "title": "牡蠣香る厚岸湾と駅弁の歴史を巡る港町散歩",
+    "name": "牡蠣香る厚岸湾と駅弁の歴史を巡る港町散歩",
+    "description": "JR厚岸駅から高台の道の駅グルメパーク、100年超の老舗駅弁屋・氏家待合所、海事記念館、漁協直売店エーウロコへ巡るルート。",
+    "region": "厚岸・宮園・港町",
+    "area_name": "厚岸・宮園・港町",
+    "cover_image_url": "/images/akkeshi/route-eyecatch.png",
+    "imageUrl": "/images/akkeshi/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び厚岸を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "厚岸湾を一望する道の駅グルメパーク",
+          "description": "高台の展望室やオイスターバーで厚岸の豊かな海を堪能した",
+          "badge_code": "akkeshi_conchiglie"
+        },
+        {
+          "key": "B",
+          "text": "創業百年超の老舗駅弁・氏家待合所",
+          "description": "甘辛く煮た大ぶりの牡蠣が乗る名物かきめしを味わった",
+          "badge_code": "akkeshi_ujiie"
+        },
+        {
+          "key": "C",
+          "text": "漁業と海運を伝える厚岸町海事記念館",
+          "description": "プラネタリウムも備えた施設で厚岸の海の歴史に触れた",
+          "badge_code": "akkeshi_maritime"
+        },
+        {
+          "key": "D",
+          "text": "新鮮な牡蠣が並ぶ直売店 エーウロコ",
+          "description": "厚岸港に面した漁協直営店で海の幸の活気を味わった",
+          "badge_code": "akkeshi_euroko"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "531df71a-d0e5-4daa-85ec-64703d98e949",
+        "name": "JR厚岸駅",
+        "description": "大正6年（1917年）12月1日に開業したJR根室本線（花咲線）の主要駅（終日利用可）。日本有数の牡蠣の産地として全国に知られる厚岸町の玄関口となっている。",
+        "address": "北海道厚岸郡厚岸町宮園1-6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.056061,
+        "lng": 144.841265,
+        "qr_token": "shuin-akkeshi-1",
+        "cover_image_url": "/images/akkeshi/spot1.png",
+        "f7_fragment": "大正六年開業、日本有数の牡蠣の産地・厚岸の文化を伝える花咲線の主要駅。",
+        "f7_full": "「JR厚岸駅」を後にし、名物かきめしと厚岸湾の恵みを巡る港町散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "d2a7a3e7-1ae6-40eb-805c-8086b038c270",
+        "next_spot_name": "道の駅 厚岸グルメパーク（厚岸味覚ターミナル コンキリエ）"
+      },
+      {
+        "id": "d2a7a3e7-1ae6-40eb-805c-8086b038c270",
+        "name": "道の駅 厚岸グルメパーク（厚岸味覚ターミナル コンキリエ）",
+        "description": "駅北側の高台に建つ道の駅（4月9:00〜18:00・5〜9月9:00〜19:00・10〜3月10:00〜18:00、月曜休）。厚岸湾や厚岸湖を一望できる展望室やミニ水族館、オイスターバーを備える。",
+        "address": "北海道厚岸郡厚岸町住の江2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.057773,
+        "lng": 144.843728,
+        "qr_token": "shuin-akkeshi-2",
+        "cover_image_url": "/images/akkeshi/spot2.png",
+        "f7_fragment": "厚岸湾と厚岸湖を一望する展望室やオイスターバーを備えた高台の道の駅。",
+        "f7_full": "「道の駅 厚岸グルメパーク（コンキリエ）」から厚岸湾の眺望を楽しみ、寛いだ。",
+        "is_final": false,
+        "next_spot_id": "2690c16a-d8d3-4a88-8cbf-4b6393bd6ae2",
+        "next_spot_name": "氏家待合所"
+      },
+      {
+        "id": "2690c16a-d8d3-4a88-8cbf-4b6393bd6ae2",
+        "name": "氏家待合所",
+        "description": "創業100年を超える老舗駅弁屋（4〜11月9:30〜16:00・12〜3月9:30〜15:00、木曜・元日休）。甘辛く煮た大ぶりの牡蠣やツブ貝が乗る名物「氏家かきめし」を販売。",
+        "address": "北海道厚岸郡厚岸町宮園1-15",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.055639,
+        "lng": 144.841054,
+        "qr_token": "shuin-akkeshi-3",
+        "cover_image_url": "/images/akkeshi/spot3.png",
+        "f7_fragment": "創業100年超、大ぶりの牡蠣が乗る名物駅弁「氏家かきめし」の老舗。",
+        "f7_full": "「氏家待合所」で名物のかきめしを手に入れ、百年続く厚岸の伝統を味わった。",
+        "is_final": false,
+        "next_spot_id": "eddcbfef-61c4-4662-8aa0-97e522d6d400",
+        "next_spot_name": "厚岸町海事記念館"
+      },
+      {
+        "id": "eddcbfef-61c4-4662-8aa0-97e522d6d400",
+        "name": "厚岸町海事記念館",
+        "description": "厚岸の漁業・海運の歴史資料やプラネタリウムを併設する町の文化施設（9:00〜17:00、月曜・年末年始休）。厚岸町役場前に立ち、海とともに歩んだ町の歴史を伝える。",
+        "address": "北海道厚岸郡厚岸町真栄3-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.051196,
+        "lng": 144.849127,
+        "qr_token": "shuin-akkeshi-4",
+        "cover_image_url": "/images/akkeshi/spot4.png",
+        "f7_fragment": "厚岸の漁業・海運の歴史資料やプラネタリウムを備えた町の文化施設。",
+        "f7_full": "「厚岸町海事記念館」で海とともに歩んできた厚岸の歴史を学び、見識を深めた。",
+        "is_final": false,
+        "next_spot_id": "122c2240-61ad-4230-8db8-01fde482aff4",
+        "next_spot_name": "厚岸漁業協同組合直売店 エーウロコ"
+      },
+      {
+        "id": "122c2240-61ad-4230-8db8-01fde482aff4",
+        "name": "厚岸漁業協同組合直売店 エーウロコ",
+        "description": "厚岸港に面した漁協直営の直売店（10:00〜16:00、火曜・1〜11月第1木曜・年末年始休）。水揚げされたばかりの新鮮な厚岸産牡蠣や海産物の購入が楽しめる。",
+        "address": "北海道厚岸郡厚岸町港町5-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.049617,
+        "lng": 144.853659,
+        "qr_token": "shuin-akkeshi-5",
+        "cover_image_url": "/images/akkeshi/spot5.png",
+        "f7_fragment": "厚岸港に面し、新鮮な厚岸産牡蠣や海の幸が並ぶ漁協直営の直売店。",
+        "f7_full": "「厚岸漁業協同組合直売店 エーウロコ」で海の恵みに出会い、厚岸の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "22d47738-ebb9-4c2e-8a42-e207072d9407",
+    "title": "酪農の恵みと町営軌道の面影を辿る茶内散歩",
+    "name": "酪農の恵みと町営軌道の面影を辿る茶内散歩",
+    "description": "ルパン三世パネルや町営軌道資料が並ぶJR茶内駅から濃厚ソフトのコープはまなか、食堂・北の家、茶内八幡神社、機関車保存広場へ歩くルート。",
+    "region": "茶内",
+    "area_name": "茶内",
+    "cover_image_url": "/images/chanai/route-eyecatch.png",
+    "imageUrl": "/images/chanai/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び茶内を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "濃厚牛乳が自慢のコープはまなか",
+          "description": "浜中町産の牛乳を使った名物ヨンゼロソフトと乳製品を味わった",
+          "badge_code": "chanai_coop"
+        },
+        {
+          "key": "B",
+          "text": "茶内本町で長く親しまれる食堂 北の家",
+          "description": "駅近くの地域密着の食堂で温かい食事を囲み一息ついた",
+          "badge_code": "chanai_kitanoie"
+        },
+        {
+          "key": "C",
+          "text": "大正時代に建立された茶内八幡神社",
+          "description": "琵琶瀬神社の御分霊を祀る地区の氏神へ静かに参拝した",
+          "badge_code": "chanai_hachiman"
+        },
+        {
+          "key": "D",
+          "text": "町営軌道機関車が眠る農村運動広場",
+          "description": "かつて酪農地帯を走った小さな機関車の保存展示を見学した",
+          "badge_code": "chanai_tramway"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c48845aa-ffe3-4332-8a84-3cf374ec1f34",
+        "name": "JR茶内駅",
+        "description": "大正8年（1919年）11月25日開業の無人駅（終日利用可）。モンキー・パンチ氏の出身地にちなみルパン三世パネルを設置し、旧駅務室「ふれ茶内館」に浜中町営軌道資料を展示。",
+        "address": "北海道厚岸郡浜中町茶内緑113",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.129368,
+        "lng": 145.027984,
+        "qr_token": "shuin-chanai-1",
+        "cover_image_url": "/images/chanai/spot1.png",
+        "f7_fragment": "ルパン三世の展示と旧駅務室「ふれ茶内館」の町営軌道資料がある無人駅。",
+        "f7_full": "「JR茶内駅」の資料展示を後にし、酪農スイーツと軌道の面影を辿る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "37ed0722-70e6-4fc9-8fb1-5e50ca43e12b",
+        "next_spot_name": "コープはまなか"
+      },
+      {
+        "id": "37ed0722-70e6-4fc9-8fb1-5e50ca43e12b",
+        "name": "コープはまなか",
+        "description": "JA浜中町運営の地域スーパー（平日9:30〜18:00・土曜〜15:00・日祝10:00〜15:00、無休・年始除く）。浜中町産の濃厚な牛乳を使った「ヨンゼロソフト」や乳製品が名物。",
+        "address": "北海道厚岸郡浜中町茶内栄65",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.131274,
+        "lng": 145.028173,
+        "qr_token": "shuin-chanai-2",
+        "cover_image_url": "/images/chanai/spot2.png",
+        "f7_fragment": "JA浜中町が運営し、濃厚な牛乳を使った「ヨンゼロソフト」が名物のスーパー。",
+        "f7_full": "「コープはまなか」で浜中自慢の乳製品に出会い、濃厚なミルクの恵みを味わった。",
+        "is_final": false,
+        "next_spot_id": "84185989-6ede-4314-8ae2-73dfa2c4f7af",
+        "next_spot_name": "北の家"
+      },
+      {
+        "id": "84185989-6ede-4314-8ae2-73dfa2c4f7af",
+        "name": "北の家",
+        "description": "茶内本町で長く親しまれている地域の食堂兼民宿（11:00〜13:30・17:00〜23:00、日曜・不定休）。素朴で温かい食事が道東の散策を支えてくれる。",
+        "address": "北海道厚岸郡浜中町茶内本町16",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.13124,
+        "lng": 145.02591,
+        "qr_token": "shuin-chanai-3",
+        "cover_image_url": "/images/chanai/spot3.png",
+        "f7_fragment": "茶内本町で地域の暮らしと旅人を支え続けてきた温かい老舗の食堂兼民宿。",
+        "f7_full": "「北の家」の前で茶内本町の穏やかな街並みに触れ、東の神社へと歩を進めた。",
+        "is_final": false,
+        "next_spot_id": "1096435b-1fea-446e-8e69-7c5d138a1225",
+        "next_spot_name": "茶内八幡神社"
+      },
+      {
+        "id": "1096435b-1fea-446e-8e69-7c5d138a1225",
+        "name": "茶内八幡神社",
+        "description": "大正時代に琵琶瀬神社の御分霊を戴いて建立された茶内地区の氏神（常時参拝可・無休）。静かな木立に囲まれ、地域の歴史を静かに見守り続けている。",
+        "address": "北海道厚岸郡浜中町茶内橋北東1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.134106,
+        "lng": 145.021678,
+        "qr_token": "shuin-chanai-4",
+        "cover_image_url": "/images/chanai/spot4.png",
+        "f7_fragment": "大正時代に琵琶瀬神社の御分霊を祀り建立された、茶内地区を見守る氏神。",
+        "f7_full": "「茶内八幡神社」の静かな境内に手を合わせ、茶内の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "4d67273f-98b4-40db-8dfa-4c8b360355af",
+        "next_spot_name": "浜中町農村運動広場"
+      },
+      {
+        "id": "4d67273f-98b4-40db-8dfa-4c8b360355af",
+        "name": "浜中町農村運動広場",
+        "description": "5月〜10月開放の運動広場（9:00〜19:00、冬季閉鎖）。かつて浜中町内を走った簡易軌道「浜中町営軌道」の機関車保存車が移設・展示されており、広場で一息つける。",
+        "address": "北海道厚岸郡浜中町茶内橋北東33",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.134533,
+        "lng": 145.020697,
+        "qr_token": "shuin-chanai-5",
+        "cover_image_url": "/images/chanai/spot5.png",
+        "f7_fragment": "かつて町内を走った「浜中町営軌道」の機関車が保存展示される運動広場。",
+        "f7_full": "「浜中町農村運動広場」で浜中町営軌道の保存機関車に出会い、茶内の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0caef44d-c1e9-40fe-8956-a08100320c08",
+    "title": "桜並木と開拓の記憶に触れる浜中駅南散歩",
+    "name": "桜並木と開拓の記憶に触れる浜中駅南散歩",
+    "description": "ルパン三世の装飾が迎えるJR浜中駅からコープはまなか桜店、浜中郵便局、浜中神社を経て1,200本の桜の名所・浜中桜公園へ歩くルート。",
+    "region": "浜中桜",
+    "area_name": "浜中桜",
+    "cover_image_url": "/images/hamanaka/route-eyecatch.png",
+    "imageUrl": "/images/hamanaka/route-eyecatch.png",
+    "category": "自然・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び浜中を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "暮らしを支えるコープはまなか 桜店",
+          "description": "駅近くの小規模店舗で浜中の日常と温かい雰囲気に触れた",
+          "badge_code": "hamanaka_coop_sakura"
+        },
+        {
+          "key": "B",
+          "text": "市街地に佇む浜中郵便局の風景",
+          "description": "駅西側の静かな街区で旅の便りに思いを馳せながら歩いた",
+          "badge_code": "hamanaka_post"
+        },
+        {
+          "key": "C",
+          "text": "地域の開拓を見守り続ける浜中神社",
+          "description": "桜南の穏やかな木立に包まれた社殿で静かに手を合わせた",
+          "badge_code": "hamanaka_shrine"
+        },
+        {
+          "key": "D",
+          "text": "約1,200本の桜と吊り橋の浜中桜公園",
+          "description": "住民が植えた桜の名所と夢・さくら橋の爽やかな景色に癒やされた",
+          "badge_code": "hamanaka_sakura_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "32fc88d0-1f82-4689-8d96-6c028d0c355d",
+        "name": "JR浜中駅",
+        "description": "大正8年（1919年）11月25日開業の無人駅（終日利用可）。構内には浜中町出身の漫画家モンキー・パンチ氏にちなみ『ルパン三世』のキャラクターパネルや装飾が施されている。",
+        "address": "北海道厚岸郡浜中町浜中桜北5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.157559,
+        "lng": 145.099794,
+        "qr_token": "shuin-hamanaka-1",
+        "cover_image_url": "/images/hamanaka/spot1.png",
+        "f7_fragment": "構内に『ルパン三世』のキャラクター装飾が施された酪農地帯の無人駅。",
+        "f7_full": "「JR浜中駅」の楽しい装飾を後にし、千二百本の桜名所を目指す南散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "f63e9da9-84e5-4b36-8f01-0355a66533d1",
+        "next_spot_name": "コープはまなか 桜店"
+      },
+      {
+        "id": "f63e9da9-84e5-4b36-8f01-0355a66533d1",
+        "name": "コープはまなか 桜店",
+        "description": "浜中駅近くの地域住民の暮らしを支える小規模商店（営業時間・定休日は店舗規定に準ずる）。散策の始まりに飲み物やちょっとしたおやつを調達できる便利な拠点。",
+        "address": "北海道厚岸郡浜中町浜中桜北125",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.156894,
+        "lng": 145.10248,
+        "qr_token": "shuin-hamanaka-2",
+        "cover_image_url": "/images/hamanaka/spot2.png",
+        "f7_fragment": "浜中駅近くの浜中桜北地区で住民の日常を支える地域密着の小規模商店。",
+        "f7_full": "「コープはまなか 桜店」で旅のお供を調達し、穏やかな駅前の街並みを感じた。",
+        "is_final": false,
+        "next_spot_id": "d6cca2df-c19b-4511-8ae4-8b9fc1f5b8e9",
+        "next_spot_name": "浜中郵便局"
+      },
+      {
+        "id": "d6cca2df-c19b-4511-8ae4-8b9fc1f5b8e9",
+        "name": "浜中郵便局",
+        "description": "浜中駅西側の市街地に佇む地域の郵便局（郵便窓口平日9:00〜17:00、土日祝休）。静かな酪農のまちの暮らしと通信を長年支え続けている。",
+        "address": "北海道厚岸郡浜中町浜中桜西55",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.15667,
+        "lng": 145.101889,
+        "qr_token": "shuin-hamanaka-3",
+        "cover_image_url": "/images/hamanaka/spot3.png",
+        "f7_fragment": "浜中桜西の落ち着いた市街地に佇み、地域の暮らしを支え続ける郵便局。",
+        "f7_full": "「浜中郵便局」の前を歩き、浜中桜地区の穏やかで温かい暮らしの気配を感じた。",
+        "is_final": false,
+        "next_spot_id": "83b929f9-1011-4f29-8705-078ca59b85d4",
+        "next_spot_name": "浜中神社"
+      },
+      {
+        "id": "83b929f9-1011-4f29-8705-078ca59b85d4",
+        "name": "浜中神社",
+        "description": "浜中小学校の向かいに鎮座し、地域の開拓と暮らしを静かに見守り続けてきた神社（常時参拝可・無休）。穏やかな境内で旅の無事を祈ることができる。",
+        "address": "北海道厚岸郡浜中町浜中桜南63",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.155251,
+        "lng": 145.103023,
+        "qr_token": "shuin-hamanaka-4",
+        "cover_image_url": "/images/hamanaka/spot4.png",
+        "f7_fragment": "浜中小学校向かいに鎮座し、地域の開拓と暮らしを見守り続ける神社。",
+        "f7_full": "「浜中神社」の静かな杜に手を合わせ、浜中の開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "366a5569-c092-4d02-8190-31179fad29e3",
+        "next_spot_name": "浜中桜公園"
+      },
+      {
+        "id": "366a5569-c092-4d02-8190-31179fad29e3",
+        "name": "浜中桜公園",
+        "description": "ボランティアや住民の手により約1,200本の桜が植樹された浜中の桜名所（常時開放・無休）。園内には「夢・さくら橋（吊り橋）」が架かり、自然の中で寛げる。",
+        "address": "北海道厚岸郡浜中町浜中桜南1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.154972,
+        "lng": 145.105656,
+        "qr_token": "shuin-hamanaka-5",
+        "cover_image_url": "/images/hamanaka/spot5.png",
+        "f7_fragment": "住民の手で約1,200本の桜が植えられ、「夢・さくら橋」も架かる桜の名所公園。",
+        "f7_full": "「浜中桜公園」の夢・さくら橋と広々とした緑に癒やされ、浜中の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0dc34523-aff3-4042-8952-d3b9e38ccef9",
+    "title": "牧草地とルパンの里の暮らしに触れる姉別散歩",
+    "name": "牧草地とルパンの里の暮らしに触れる姉別散歩",
+    "description": "牧草地に囲まれた無人駅・JR姉別駅から姉別農村環境改善センター、ホクレン姉別SS、風景印のある姉別郵便局、丸子小西商店へ歩くルート。",
+    "region": "姉別",
+    "area_name": "姉別",
+    "cover_image_url": "/images/anebetsu/route-eyecatch.png",
+    "imageUrl": "/images/anebetsu/route-eyecatch.png",
+    "category": "自然・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び姉別を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "集落の拠点・姉別農村環境改善センター",
+          "description": "広大な酪農地帯の中で地域コミュニティの役割を感じた",
+          "badge_code": "anebetsu_center"
+        },
+        {
+          "key": "B",
+          "text": "酪農と生活を支えるホクレン 姉別SS",
+          "description": "JA浜中町の姉別事業所で北海道らしい産業の現場を見た",
+          "badge_code": "anebetsu_hokuren"
+        },
+        {
+          "key": "C",
+          "text": "ウシとエゾシカの風景印がある姉別郵便局",
+          "description": "酪農の里ならではの絵柄が刻まれた郵便局に立ち寄った",
+          "badge_code": "anebetsu_post"
+        },
+        {
+          "key": "D",
+          "text": "ルパン三世グッズも扱う丸子小西商店",
+          "description": "地域の物資を支える温かな商店で浜中町らしいお土産を見た",
+          "badge_code": "anebetsu_konishi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "eed70f87-3669-4083-8f22-b5c4ff154da4",
+        "name": "JR姉別駅",
+        "description": "大正8年（1919年）11月25日開業の無人駅（終日利用可）。周囲に広大な牧草地と北海道らしいのどかな農村風景が広がる花咲線の駅となっている。",
+        "address": "北海道厚岸郡浜中町姉別3-50",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.196218,
+        "lng": 145.194636,
+        "qr_token": "shuin-anebetsu-1",
+        "cover_image_url": "/images/anebetsu/spot1.png",
+        "f7_fragment": "広大な牧草地と北海道らしいのどかな農村風景が広がる花咲線の無人駅。",
+        "f7_full": "「JR姉別駅」を後にし、牧草地と集落の温かな暮らしを辿る姉別の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "a3e62e71-3916-4b87-81d0-92699853ee65",
+        "next_spot_name": "浜中町姉別農村環境改善センター"
+      },
+      {
+        "id": "a3e62e71-3916-4b87-81d0-92699853ee65",
+        "name": "浜中町姉別農村環境改善センター",
+        "description": "姉別地区のコミュニティ・農村振興の拠点施設（施設利用は予約・開館時間に準ずる・外観見学可）。広大な酪農地帯の地域住民が集う大切な施設。",
+        "address": "北海道厚岸郡浜中町姉別3-41",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.198662,
+        "lng": 145.191316,
+        "qr_token": "shuin-anebetsu-2",
+        "cover_image_url": "/images/anebetsu/spot2.png",
+        "f7_fragment": "姉別地区のコミュニティ活動や農村振興を支える地域密着の拠点施設。",
+        "f7_full": "「浜中町姉別農村環境改善センター」の前を通り、酪農集落のまとまりを感じた。",
+        "is_final": false,
+        "next_spot_id": "3ffc5ea4-25f4-4018-8210-2832efa72082",
+        "next_spot_name": "ホクレン 姉別SS（JA浜中町 姉別事業所）"
+      },
+      {
+        "id": "3ffc5ea4-25f4-4018-8210-2832efa72082",
+        "name": "ホクレン 姉別SS（JA浜中町 姉別事業所）",
+        "description": "JA浜中町の姉別拠点として地域の酪農・生活インフラを支える給油・事業所（営業時間・定休日は店舗規定に準ずる）。牧郷の日常になくてはならない存在。",
+        "address": "北海道厚岸郡浜中町姉別3-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.196767,
+        "lng": 145.195153,
+        "qr_token": "shuin-anebetsu-3",
+        "cover_image_url": "/images/anebetsu/spot3.png",
+        "f7_fragment": "JA浜中町の姉別拠点として、地域の酪農と生活インフラを支える事業所。",
+        "f7_full": "「ホクレン 姉別SS（JA浜中町 姉別事業所）」を眺め、酪農の里の力強さを感じた。",
+        "is_final": false,
+        "next_spot_id": "9d86c95a-7c4e-4375-85b0-948984f36de6",
+        "next_spot_name": "姉別郵便局"
+      },
+      {
+        "id": "9d86c95a-7c4e-4375-85b0-948984f36de6",
+        "name": "姉別郵便局",
+        "description": "酪農の里らしく「ウシ・サイロ・エゾシカ」を描いた風景印がある郵便局（郵便窓口平日9:00〜17:00、土日祝休）。旅の便りを出したくなる温かな窓口。",
+        "address": "北海道厚岸郡浜中町姉別1-45",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.194767,
+        "lng": 145.193842,
+        "qr_token": "shuin-anebetsu-4",
+        "cover_image_url": "/images/anebetsu/spot4.png",
+        "f7_fragment": "「ウシ・サイロ・エゾシカ」を描いた風景印がある酪農の里の郵便局。",
+        "f7_full": "「姉別郵便局」の風景印のモチーフに心和みつつ、旅の最終目的地へ向かった。",
+        "is_final": false,
+        "next_spot_id": "e8df055a-a2bf-45ae-88a2-9a00798cc7c0",
+        "next_spot_name": "有限会社丸子小西商店"
+      },
+      {
+        "id": "e8df055a-a2bf-45ae-88a2-9a00798cc7c0",
+        "name": "有限会社丸子小西商店",
+        "description": "地域の物資を支える地元商店であり、浜中町の「ルパン三世」オリジナルグッズ取扱店にもなっている人気店（9:00〜20:00、不定休）。",
+        "address": "北海道厚岸郡浜中町姉別1-32",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.195079,
+        "lng": 145.19413,
+        "qr_token": "shuin-anebetsu-5",
+        "cover_image_url": "/images/anebetsu/spot5.png",
+        "f7_fragment": "地域の暮らしを支え、浜中町の「ルパン三世」オリジナルグッズも扱う地元商店。",
+        "f7_full": "「有限会社丸子小西商店」で温かい商店の空気とグッズに出会い、姉別の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a503bef9-e356-455c-83fb-0cab15de532d",
+    "title": "旧標津線分岐の記憶と北の宿場町を巡る厚床散歩",
+    "name": "旧標津線分岐の記憶と北の宿場町を巡る厚床散歩",
+    "description": "かつてJR標津線が分岐した要衝・JR厚床駅から人気食堂の東光園、厚床郵便局、セイコーマート、厚床蒼前神社へ歩くルート。",
+    "region": "厚床",
+    "area_name": "厚床",
+    "cover_image_url": "/images/attoko/route-eyecatch.png",
+    "imageUrl": "/images/attoko/route-eyecatch.png",
+    "category": "歴史・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び厚床を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅近くで定食や焼肉が人気の東光園",
+          "description": "厚床の街角で温かいラーメンや定食を味わい活力を得た",
+          "badge_code": "attoko_tokoen"
+        },
+        {
+          "key": "B",
+          "text": "市街地中心部に佇む厚床郵便局",
+          "description": "かつて宿場町として栄えた厚床の穏やかな街並みを感じた",
+          "badge_code": "attoko_post"
+        },
+        {
+          "key": "C",
+          "text": "国道沿いのセイコーマート 根室厚床店",
+          "description": "日本最東端の街の入口で温かい飲み物や北海道グルメを選んだ",
+          "badge_code": "attoko_seicomart"
+        },
+        {
+          "key": "D",
+          "text": "大正八年創祀の鎮守・厚床蒼前神社",
+          "description": "例大祭の山車や獅子舞の伝統を受け継ぐ社に手を合わせた",
+          "badge_code": "attoko_sozen_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7a7c0c38-2717-41eb-89f7-2db83aa7b161",
+        "name": "JR厚床駅",
+        "description": "大正8年（1919年）11月25日開業、かつてJR標津線が分岐していた交通の要衝（終日利用可）。現在は根室フットパス（厚床パス）の発着点としても親しまれている。",
+        "address": "北海道根室市厚床1-211",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.228363,
+        "lng": 145.252379,
+        "qr_token": "shuin-attoko-1",
+        "cover_image_url": "/images/attoko/spot1.png",
+        "f7_fragment": "かつてJR標津線が分岐し、今は根室フットパスの発着点にもなっている駅。",
+        "f7_full": "「JR厚床駅」を後にし、旧標津線分岐の記憶と北の宿場町を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "22b5fcff-b649-4182-8d48-e8d2a0282c1f",
+        "next_spot_name": "東光園"
+      },
+      {
+        "id": "22b5fcff-b649-4182-8d48-e8d2a0282c1f",
+        "name": "東光園",
+        "description": "厚床駅近くで定食やラーメン、焼肉を提供する地元で人気の食堂（12:00〜14:00・18:00〜翌2:00、日曜休）。温かい手料理が道東を旅する人々を迎えてくれる。",
+        "address": "北海道根室市厚床1-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.229384,
+        "lng": 145.252064,
+        "qr_token": "shuin-attoko-2",
+        "cover_image_url": "/images/attoko/spot2.png",
+        "f7_fragment": "厚床駅近くで定食やラーメン、焼肉が味わえる地元に愛される人気の食堂。",
+        "f7_full": "「東光園」の温かい食事で元気をもらい、厚床市街地の東へと歩き出した。",
+        "is_final": false,
+        "next_spot_id": "b58d2596-ec9b-4087-8725-dda745402adc",
+        "next_spot_name": "厚床郵便局"
+      },
+      {
+        "id": "b58d2596-ec9b-4087-8725-dda745402adc",
+        "name": "厚床郵便局",
+        "description": "厚床市街地の中心部に位置する郵便局（郵便窓口平日9:00〜17:00、土日祝休）。かつて宿場町・鉄道分岐点として栄えた厚床の日常を今に伝えている。",
+        "address": "北海道根室市厚床1-16-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.230129,
+        "lng": 145.252488,
+        "qr_token": "shuin-attoko-3",
+        "cover_image_url": "/images/attoko/spot3.png",
+        "f7_fragment": "宿場町・鉄道分岐点として栄えた厚床市街地の中心部で暮らしを支える郵便局。",
+        "f7_full": "「厚床郵便局」の前を歩き、かつての交通の要衝・厚床の穏やかな街並みを感じた。",
+        "is_final": false,
+        "next_spot_id": "7f7eacd9-ffbf-48a8-88aa-030f45172675",
+        "next_spot_name": "セイコーマート 根室厚床店"
+      },
+      {
+        "id": "7f7eacd9-ffbf-48a8-88aa-030f45172675",
+        "name": "セイコーマート 根室厚床店",
+        "description": "国道沿いに位置し、地域の生活と旅人の補給を支える北海道定番のコンビニエンスストア（7:00〜20:00、年中無休・元日等変更の場合あり）。",
+        "address": "北海道根室市厚床1-219-14",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.231541,
+        "lng": 145.259583,
+        "qr_token": "shuin-attoko-4",
+        "cover_image_url": "/images/attoko/spot4.png",
+        "f7_fragment": "国道沿いで根室路の旅人と地域の暮らしを支える北海道定番のコンビニ。",
+        "f7_full": "「セイコーマート 根室厚床店」で温かい飲み物を手に入れ、厚床の鎮守へ向かった。",
+        "is_final": false,
+        "next_spot_id": "d7610bc6-ac83-41b7-88dc-198270eeb54e",
+        "next_spot_name": "厚床蒼前神社"
+      },
+      {
+        "id": "d7610bc6-ac83-41b7-88dc-198270eeb54e",
+        "name": "厚床蒼前神社",
+        "description": "大正8年（1919年）創祀の地域の鎮守（常時参拝可・無休）。毎年9月上旬の例大祭では山車や獅子舞が地区内を練り歩く伝統が大切に受け継がれている。",
+        "address": "北海道根室市厚床1-70",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.231177,
+        "lng": 145.25286,
+        "qr_token": "shuin-attoko-5",
+        "cover_image_url": "/images/attoko/spot5.png",
+        "f7_fragment": "大正八年創祀、九月の例大祭で山車や獅子舞が受け継がれる厚床の鎮守。",
+        "f7_full": "「厚床蒼前神社」の静かな杜に手を合わせ、北の宿場町・厚床の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6036b914-3b49-406b-8a9a-a5df830e6eb0",
+    "title": "原野のダルマ駅と酪農の記憶を辿る",
+    "name": "原野のダルマ駅と酪農の記憶を辿る",
+    "description": "車掌車改造のダルマ駅・JR別当賀駅から廃校活用の別当賀夢原館、別当賀神社、馬頭観音を経て野鳥観察舎・別当賀泉ハイドへ歩くルート。",
+    "region": "別当賀",
+    "area_name": "別当賀",
+    "cover_image_url": "/images/bettoga/route-eyecatch.png",
+    "imageUrl": "/images/bettoga/route-eyecatch.png",
+    "category": "自然・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び別当賀を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "旧小学校を活かした別当賀夢原館",
+          "description": "原野の駅そばにある地域交流拠点で温かく一息ついた",
+          "badge_code": "bettoga_yumeharakan"
+        },
+        {
+          "key": "B",
+          "text": "白い鳥居が立つ無人の別当賀神社",
+          "description": "明治四十年創祀の社で開拓期から続く信仰に触れた",
+          "badge_code": "bettoga_shrine"
+        },
+        {
+          "key": "C",
+          "text": "牧草地沿いの別当賀フットパス・馬頭観音",
+          "description": "馬産と酪農の歴史を伝える石碑を辿って歩いた",
+          "badge_code": "bettoga_batokannon"
+        },
+        {
+          "key": "D",
+          "text": "湿原とサイロを望む別当賀泉ハイド",
+          "description": "太平洋とフレシマ湿原を見渡す観察舎で野鳥の気配を感じた",
+          "badge_code": "bettoga_izumi_hide"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c6dcfd0e-79bd-49e6-8008-a1447befedc1",
+        "name": "JR別当賀駅",
+        "description": "大正9年（1920年）11月10日開業の無人駅（終日開放・無休）。国鉄の車掌車（ヨ3500形）を再利用した通称「ダルマ駅」の待合室が原野と牧草地の中に佇む。",
+        "address": "北海道根室市別当賀230-10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.218481,
+        "lng": 145.423495,
+        "qr_token": "shuin-bettoga-1",
+        "cover_image_url": "/images/bettoga/spot1.png",
+        "f7_fragment": "大正九年開業、車掌車再利用の「ダルマ駅」が原野の中に佇む無人駅。",
+        "f7_full": "「JR別当賀駅」のダルマ駅舎を後にし、原野と湿原を巡るフットパスの旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "5afef13d-99e7-4267-8da8-8276eb0f0c04",
+        "next_spot_name": "別当賀夢原館"
+      },
+      {
+        "id": "5afef13d-99e7-4267-8da8-8276eb0f0c04",
+        "name": "別当賀夢原館",
+        "description": "廃校となった旧別当賀小学校を活用して整備された生涯学習・交流施設（9:00〜17:00、火曜・年末年始休・7〜8月無休）。屋内で休憩やトイレ利用ができる。",
+        "address": "北海道根室市別当賀253",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.21989,
+        "lng": 145.425357,
+        "qr_token": "shuin-bettoga-2",
+        "cover_image_url": "/images/bettoga/spot2.png",
+        "f7_fragment": "廃校となった旧別当賀小学校を活用し、休憩もできる地域の交流拠点。",
+        "f7_full": "「別当賀夢原館」で一息つき、かつての学び舎の温かな雰囲気を感じた。",
+        "is_final": false,
+        "next_spot_id": "2c943295-917c-4dfc-899c-eb87b709c551",
+        "next_spot_name": "別当賀神社"
+      },
+      {
+        "id": "2c943295-917c-4dfc-899c-eb87b709c551",
+        "name": "別当賀神社",
+        "description": "明治40年（1907年）創祀の無人の鎮守（参拝自由・無休）。白い鳥居の奥に三吉大神・大山祇大神・金刀比羅大神など五柱を祀り、開拓期からの信仰を伝えている。",
+        "address": "北海道根室市別当賀255",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.220574,
+        "lng": 145.423551,
+        "qr_token": "shuin-bettoga-3",
+        "cover_image_url": "/images/bettoga/spot3.png",
+        "f7_fragment": "明治四十年創祀、白い鳥居の奥に五柱を祀り開拓の信仰を伝える無人の鎮守。",
+        "f7_full": "「別当賀神社」の白い鳥居をくぐり、原野の開拓を見守る杜に手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "e198cef4-e525-4a9d-8a8c-95ff0126a578",
+        "next_spot_name": "別当賀フットパス・馬頭観音"
+      },
+      {
+        "id": "e198cef4-e525-4a9d-8a8c-95ff0126a578",
+        "name": "別当賀フットパス・馬頭観音",
+        "description": "別当賀パス沿いに残る歴史的石碑（終日開放・積雪期通行注意）。かつてこの地で盛んだった馬産・酪農の歴史と道中の安全を祈願して建てられたと伝えられる。",
+        "address": "北海道根室市別当賀387-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.220111,
+        "lng": 145.426246,
+        "qr_token": "shuin-bettoga-4",
+        "cover_image_url": "/images/bettoga/spot4.png",
+        "f7_fragment": "牧草地沿いのフットパスに残り、馬産と酪農の歴史を伝える馬頭観音碑。",
+        "f7_full": "「別当賀フットパス・馬頭観音」に出会い、大地を支えた馬と人の歩みに触れた。",
+        "is_final": false,
+        "next_spot_id": "d5ab27c5-5487-48c5-879a-721311aa3474",
+        "next_spot_name": "別当賀泉ハイド（野鳥観察舎）"
+      },
+      {
+        "id": "d5ab27c5-5487-48c5-879a-721311aa3474",
+        "name": "別当賀泉ハイド（野鳥観察舎）",
+        "description": "太平洋とフレシマ湿原を望む野鳥観察舎（日中推奨・伊藤☆牧場等で事前マップ購入/ゲート鍵借受要）。旧馬場牧場のレンガ・コンクリート造サイロ2棟の遺構も残る。",
+        "address": "北海道根室市別当賀380-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.189478,
+        "lng": 145.430182,
+        "qr_token": "shuin-bettoga-5",
+        "cover_image_url": "/images/bettoga/spot5.png",
+        "f7_fragment": "太平洋とフレシマ湿原を望み、旧牧場のサイロ2棟の遺構も残る野鳥観察舎。",
+        "f7_full": "「別当賀泉ハイド（野鳥観察舎）」で湿原とサイロ遺構を望み、別当賀の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8b617e7a-0e87-4215-88ef-bf9e0f23984f",
+    "title": "落石の坂を下り神社と漁港を巡る道",
+    "name": "落石の坂を下り神社と漁港を巡る道",
+    "description": "高台の無人駅・JR落石駅から坂を下り、落石ふるさと館、落石郵便局、落石金刀比羅神社を経て第3種漁港の落石漁港へ歩くルート。",
+    "region": "落石東・落石西",
+    "area_name": "落石東・落石西",
+    "cover_image_url": "/images/ochiishi/route-eyecatch.png",
+    "imageUrl": "/images/ochiishi/route-eyecatch.png",
+    "category": "歴史・海辺",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び落石を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "高台集落の拠点・根室市落石ふるさと館",
+          "description": "落石会館と保育所が一体となった地域の温かな空間で休んだ",
+          "badge_code": "ochiishi_furusatokan"
+        },
+        {
+          "key": "B",
+          "text": "漁村の中心に佇む落石郵便局",
+          "description": "記念切手やご当地はがきを求めながら港町の通りを歩いた",
+          "badge_code": "ochiishi_post"
+        },
+        {
+          "key": "C",
+          "text": "大漁と安全を祈る落石金刀比羅神社",
+          "description": "明治四十四年創立の社で漁師町の深い信仰に触れた",
+          "badge_code": "ochiishi_kotohira"
+        },
+        {
+          "key": "D",
+          "text": "北洋漁業の碑が残る落石漁港",
+          "description": "自然の湾を活かした活気ある港で海と魚介の恵みを感じた",
+          "badge_code": "ochiishi_port"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "907241da-a30d-4e7c-8af6-90a9e74b65a5",
+        "name": "JR落石駅",
+        "description": "大正9年（1920年）11月10日開業の花咲線の無人駅（終日開放・無休）。落石の街並みを見下ろす高台に位置し、おちいし岬パスの玄関口にもなっている。",
+        "address": "北海道根室市落石東296",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.198609,
+        "lng": 145.51969,
+        "qr_token": "shuin-ochiishi-1",
+        "cover_image_url": "/images/ochiishi/spot1.png",
+        "f7_fragment": "大正九年開業、落石の街並みを見下ろす高台に位置する花咲線の無人駅。",
+        "f7_full": "「JR落石駅」の高台を後にし、坂を下って落石の漁港を目指す散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "2ba4c0e2-a34f-41f5-8c21-5ab0b687fcf2",
+        "next_spot_name": "根室市落石ふるさと館"
+      },
+      {
+        "id": "2ba4c0e2-a34f-41f5-8c21-5ab0b687fcf2",
+        "name": "根室市落石ふるさと館",
+        "description": "落石会館と保育所を一体化した地域の複合交流施設（9:00〜22:00、利用状況により変動）。高台の集落エリアにあり、散策途中の小休止ができる。",
+        "address": "北海道根室市落石東133-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.196635,
+        "lng": 145.521291,
+        "qr_token": "shuin-ochiishi-2",
+        "cover_image_url": "/images/ochiishi/spot2.png",
+        "f7_fragment": "落石会館と保育所を一体化した、高台の集落にある地域の複合交流施設。",
+        "f7_full": "「根室市落石ふるさと館」のそばで一息つき、高台の穏やかな空気を味わった。",
+        "is_final": false,
+        "next_spot_id": "939779e1-afe4-4274-8599-5d28900223c6",
+        "next_spot_name": "落石郵便局"
+      },
+      {
+        "id": "939779e1-afe4-4274-8599-5d28900223c6",
+        "name": "落石郵便局",
+        "description": "落石地区の中心にある郵便局（郵便窓口平日9:00〜17:00、土日祝・年末年始休）。記念切手やご当地はがきの購入ができ、旅の便りを出す拠点にもなる。",
+        "address": "北海道根室市落石東273-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.185564,
+        "lng": 145.504761,
+        "qr_token": "shuin-ochiishi-3",
+        "cover_image_url": "/images/ochiishi/spot3.png",
+        "f7_fragment": "落石地区の中心に位置し、記念切手やご当地はがきも求められる郵便局。",
+        "f7_full": "「落石郵便局」の前で旅の便りに思いを馳せ、すぐ南の鎮守へと歩みを進めた。",
+        "is_final": false,
+        "next_spot_id": "77c267bf-b779-473b-82bc-8e95b1b49844",
+        "next_spot_name": "落石金刀比羅神社（落石神社）"
+      },
+      {
+        "id": "77c267bf-b779-473b-82bc-8e95b1b49844",
+        "name": "落石金刀比羅神社（落石神社）",
+        "description": "明治44年（1911年）創立の鎮守（参拝自由・無休）。海上安全と大漁を祈願する、漁師町ならではの深い信仰を集め続けている。",
+        "address": "北海道根室市落石東287-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.187472,
+        "lng": 145.505438,
+        "qr_token": "shuin-ochiishi-4",
+        "cover_image_url": "/images/ochiishi/spot4.png",
+        "f7_fragment": "明治四十四年創立、海上安全と大漁を祈願する漁師町・落石の鎮守。",
+        "f7_full": "「落石金刀比羅神社（落石神社）」で海の安全を祈り、漁師町の魂に触れた。",
+        "is_final": false,
+        "next_spot_id": "3becb4ea-fd66-4dc8-890b-6e84b853bb58",
+        "next_spot_name": "落石漁港（落石漁業協同組合周辺）"
+      },
+      {
+        "id": "3becb4ea-fd66-4dc8-890b-6e84b853bb58",
+        "name": "落石漁港（落石漁業協同組合周辺）",
+        "description": "自然の湾を活かした第3種漁港（周辺散策自由・業務の妨げにならない範囲で見学）。サケ・タコ・コンブ・ウニなどが水揚げされ、構内には北洋漁業の表功碑も残る。",
+        "address": "北海道根室市落石西395-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.179401,
+        "lng": 145.507832,
+        "qr_token": "shuin-ochiishi-5",
+        "cover_image_url": "/images/ochiishi/spot5.png",
+        "f7_fragment": "自然の湾を活かした第3種漁港で、北洋漁業の歴史を伝える石碑も残る港。",
+        "f7_full": "「落石漁港（落石漁業協同組合周辺）」の潮風に吹かれ、落石の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f128b977-8bec-474f-883b-2baf6c4a04e2",
+    "title": "森の駅から昆布の浜と風車を望む道",
+    "name": "森の駅から昆布の浜と風車を望む道",
+    "description": "林の中に佇む無人駅・JR昆布盛駅から華盛稲荷神社、昆布盛漁港、旧昆布盛小学校跡を経て昆布盛ウインドファーム周辺へ歩くルート。",
+    "region": "昆布盛",
+    "area_name": "昆布盛",
+    "cover_image_url": "/images/konbumori/route-eyecatch.png",
+    "imageUrl": "/images/konbumori/route-eyecatch.png",
+    "category": "自然・海辺",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び昆布盛を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "漁村を見守る無人の華盛稲荷神社",
+          "description": "駅から海側へ下る道沿いの鳥居をくぐり旅の安全を祈った",
+          "badge_code": "konbumori_inari"
+        },
+        {
+          "key": "B",
+          "text": "ユルリ島を望む昆布盛漁港の浜",
+          "description": "太平洋の潮風と長昆布の天日干しが見られる漁港を歩いた",
+          "badge_code": "konbumori_port"
+        },
+        {
+          "key": "C",
+          "text": "高台に残る旧昆布盛小学校跡",
+          "description": "80年の歴史を刻んだ学び舎を海を臨む高台で仰ぎ見た",
+          "badge_code": "konbumori_school"
+        },
+        {
+          "key": "D",
+          "text": "白い風車が回る昆布盛ウインドファーム",
+          "description": "海岸段丘の強い海風を受けるダイナミックな風景に見入った",
+          "badge_code": "konbumori_windfarm"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "71e6b572-3f51-42bc-8262-a667aeb7a796",
+        "name": "JR昆布盛駅",
+        "description": "昭和36年（1961年）2月1日開業、林の中に佇む静かな無人駅（終日開放・無休）。かつて周辺の漁村の生活を支えた駅で、坂を下ると太平洋側の集落へと抜ける。",
+        "address": "北海道根室市昆布盛93-5",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.228458,
+        "lng": 145.542807,
+        "qr_token": "shuin-konbumori-1",
+        "cover_image_url": "/images/konbumori/spot1.png",
+        "f7_fragment": "静かな林の中に佇み、坂を下ると太平洋の漁村へと抜ける花咲線の無人駅。",
+        "f7_full": "「JR昆布盛駅」の森の木立を抜け、昆布の浜と風車を目指す散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "c4626382-2e13-4685-8396-b806ecfb04c0",
+        "next_spot_name": "華盛稲荷神社"
+      },
+      {
+        "id": "c4626382-2e13-4685-8396-b806ecfb04c0",
+        "name": "華盛稲荷神社",
+        "description": "昆布盛の漁業集落を見守る無人の鎮守（参拝自由・無休）。駅から海側へ下る道道142号から漁港方面沿いに鳥居を構えている。",
+        "address": "北海道根室市昆布盛93",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.227067,
+        "lng": 145.545211,
+        "qr_token": "shuin-konbumori-2",
+        "cover_image_url": "/images/konbumori/spot2.png",
+        "f7_fragment": "駅から海側へ下る道沿いに鳥居を構え、昆布盛の漁業集落を見守る鎮守。",
+        "f7_full": "「華盛稲荷神社」の鳥居に手を合わせ、すぐ先に広がる太平洋の海辺へ向かった。",
+        "is_final": false,
+        "next_spot_id": "9f9e7e5a-9b27-4123-8007-e89bb2846002",
+        "next_spot_name": "昆布盛漁港（落石漁港 昆布盛地区）"
+      },
+      {
+        "id": "9f9e7e5a-9b27-4123-8007-e89bb2846002",
+        "name": "昆布盛漁港（落石漁港 昆布盛地区）",
+        "description": "太平洋に面し、沖合にユルリ島・モユルリ島を望む漁港（周辺散策自由・無休）。夏には海岸の干し場で名産の長昆布を天日干しする風物詩が見られる。",
+        "address": "北海道根室市昆布盛68",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.221816,
+        "lng": 145.551492,
+        "qr_token": "shuin-konbumori-3",
+        "cover_image_url": "/images/konbumori/spot3.png",
+        "f7_fragment": "ユルリ島・モユルリ島を望み、夏には長昆布の天日干しが見られる漁港。",
+        "f7_full": "「昆布盛漁港（落石漁港 昆布盛地区）」で潮風と沖合の島々の眺めを満喫した。",
+        "is_final": false,
+        "next_spot_id": "1ea97fd2-984b-4db1-88cb-ff2030292b80",
+        "next_spot_name": "旧昆布盛小学校跡"
+      },
+      {
+        "id": "1ea97fd2-984b-4db1-88cb-ff2030292b80",
+        "name": "旧昆布盛小学校跡",
+        "description": "80年の歴史を刻み平成27年（2015年）3月に閉校した旧小学校（外観・敷地外周見学自由、地域避難所等）。海を臨む高台に校舎と広場が残り、一息つくことができる。",
+        "address": "北海道根室市昆布盛168-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.221292,
+        "lng": 145.548378,
+        "qr_token": "shuin-konbumori-4",
+        "cover_image_url": "/images/konbumori/spot4.png",
+        "f7_fragment": "80年の歴史を刻み海を臨む高台に校舎が残る、地域の記憶を伝える旧小学校跡。",
+        "f7_full": "「旧昆布盛小学校跡」の高台を仰ぎ見て、海辺の集落が刻んだ歳月を感じた。",
+        "is_final": false,
+        "next_spot_id": "74a3a0d3-85a4-4474-8518-430b4983f28a",
+        "next_spot_name": "昆布盛ウインドファーム周辺（CEF株式会社付近）"
+      },
+      {
+        "id": "74a3a0d3-85a4-4474-8518-430b4983f28a",
+        "name": "昆布盛ウインドファーム周辺（CEF株式会社付近）",
+        "description": "海岸段丘の強い風を活かした風力発電の風車群が立ち並ぶエリア（周辺道路より景観見学自由・無休）。11月下旬には「根室昆布盛大花火大会」の会場周辺にもなる。",
+        "address": "北海道根室市昆布盛149-12",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.214009,
+        "lng": 145.54501,
+        "qr_token": "shuin-konbumori-5",
+        "cover_image_url": "/images/konbumori/spot5.png",
+        "f7_fragment": "海岸段丘の海風を受けて白い風車群が立ち並ぶ、ダイナミックな景観エリア。",
+        "f7_full": "「昆布盛ウインドファーム周辺」で回る白い風車を眺め、昆布盛の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2e744a09-dc60-4760-87fa-cbd734bb8111",
+    "title": "明治の屯田兵村と開拓の記憶を巡る",
+    "name": "明治の屯田兵村と開拓の記憶を巡る",
+    "description": "車掌車改造のダルマ駅・JR西和田駅から北海道指定有形文化財の和田屯田記念館、和田簡易郵便局、和田神社、屯田兵碑へ歩くルート。",
+    "region": "西和田・東和田",
+    "area_name": "西和田・東和田",
+    "cover_image_url": "/images/nishiwada/route-eyecatch.png",
+    "imageUrl": "/images/nishiwada/route-eyecatch.png",
+    "category": "歴史・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西和田を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治十八年築の有形文化財・和田屯田記念館",
+          "description": "木造バルーンフレーム構造の旧被服庫に開拓の息吹を感じた",
+          "badge_code": "nishiwada_tonden_hall"
+        },
+        {
+          "key": "B",
+          "text": "西和田駅前に佇む和田簡易郵便局",
+          "description": "開拓集落の日常を支え続ける静かな郵便局に立ち寄った",
+          "badge_code": "nishiwada_post"
+        },
+        {
+          "key": "C",
+          "text": "明治十九年創立の歴史ある和田神社",
+          "description": "和田屯田兵村創設時の旧大隊本部跡近くで静かに参拝した",
+          "badge_code": "nishiwada_shrine"
+        },
+        {
+          "key": "D",
+          "text": "指定文化財の和田屯田兵碑と記念碑",
+          "description": "境内奥に立つ石碑の前で屯田兵たちの不屈の志を偲んだ",
+          "badge_code": "nishiwada_monument"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b3517eb0-c186-47e0-8148-7c11e62f28da",
+        "name": "JR西和田駅",
+        "description": "大正9年（1920年）11月10日開業の無人駅（終日開放・無休）。車掌車を改装した通称「ダルマ駅」の待合室が残り、明治期に士族屯田兵が入植した和田地区の玄関口。",
+        "address": "北海道根室市西和田810",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.268014,
+        "lng": 145.542228,
+        "qr_token": "shuin-nishiwada-1",
+        "cover_image_url": "/images/nishiwada/spot1.png",
+        "f7_fragment": "車掌車改造のダルマ駅舎が残り、明治期の和田屯田兵村への玄関口となる駅。",
+        "f7_full": "「JR西和田駅」を後にし、明治の屯田兵村の開拓遺産を巡る歴史散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "bf5b8af4-b6a1-4359-85ce-5458f1d28a52",
+        "next_spot_name": "和田屯田記念館（和田屯田兵村の被服庫）"
+      },
+      {
+        "id": "bf5b8af4-b6a1-4359-85ce-5458f1d28a52",
+        "name": "和田屯田記念館（和田屯田兵村の被服庫）",
+        "description": "明治18年（1885年）建築の北海道指定有形文化財（外観見学自由・館内は要事前確認）。木造バルーンフレーム構造の被服庫が当時の姿のまま大切に保存されている。",
+        "address": "北海道根室市西和田568-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.270912,
+        "lng": 145.540684,
+        "qr_token": "shuin-nishiwada-2",
+        "cover_image_url": "/images/nishiwada/spot2.png",
+        "f7_fragment": "明治十八年建築、木造バルーンフレーム構造が残る北海道指定有形文化財。",
+        "f7_full": "「和田屯田記念館（和田屯田兵村の被服庫）」の前に立ち、明治の開拓建築に見入った。",
+        "is_final": false,
+        "next_spot_id": "57448249-eadc-4784-812e-e89368971a6a",
+        "next_spot_name": "和田簡易郵便局"
+      },
+      {
+        "id": "57448249-eadc-4784-812e-e89368971a6a",
+        "name": "和田簡易郵便局",
+        "description": "西和田駅前に佇む簡易郵便局（郵便・貯金・保険窓口平日9:00〜16:00、土日祝・年末年始休）。切手・はがき等の購入ができ、開拓集落の生活拠点として機能している。",
+        "address": "北海道根室市西和田815",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.268455,
+        "lng": 145.541012,
+        "qr_token": "shuin-nishiwada-3",
+        "cover_image_url": "/images/nishiwada/spot3.png",
+        "f7_fragment": "西和田駅前に佇み、切手やはがきの購入もできる開拓集落の簡易郵便局。",
+        "f7_full": "「和田簡易郵便局」の前を歩き、和田地区の穏やかな暮らしと歴史のつながりを感じた。",
+        "is_final": false,
+        "next_spot_id": "3188be7a-e10e-42b4-8b3d-cb1849f2a8b0",
+        "next_spot_name": "和田神社"
+      },
+      {
+        "id": "3188be7a-e10e-42b4-8b3d-cb1849f2a8b0",
+        "name": "和田神社",
+        "description": "明治19年（1886年）の和田屯田兵村創設時に建立された旧大隊本部跡近くの神社（参拝自由・無休）。開拓の先人たちが心の拠り所として大切に守り継いできた。",
+        "address": "北海道根室市東和田977-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.280921,
+        "lng": 145.543933,
+        "qr_token": "shuin-nishiwada-4",
+        "cover_image_url": "/images/nishiwada/spot4.png",
+        "f7_fragment": "明治十九年の屯田兵村創設時に建立され、旧大隊本部跡近くに鎮座する神社。",
+        "f7_full": "「和田神社」の静かな杜に参拝し、開拓の先人たちの不屈の祈りに手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "d54ca823-71b1-45ce-808a-17c97ed06ca2",
+        "next_spot_name": "和田屯田兵碑・和田開基100年記念碑"
+      },
+      {
+        "id": "d54ca823-71b1-45ce-808a-17c97ed06ca2",
+        "name": "和田屯田兵碑・和田開基100年記念碑",
+        "description": "和田神社境内奥に立つ根室市指定文化財の「和田屯田兵碑」と「和田開基100年記念碑」（見学自由・無休）。屯田兵たちの厳寒の地での開拓史を今に伝えている。",
+        "address": "北海道根室市東和田977-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.280619,
+        "lng": 145.544541,
+        "qr_token": "shuin-nishiwada-5",
+        "cover_image_url": "/images/nishiwada/spot5.png",
+        "f7_fragment": "和田神社境内奥に立ち、屯田兵の開拓史を刻む根室市指定文化財の石碑。",
+        "f7_full": "「和田屯田兵碑・和田開基100年記念碑」の前に立ち、西和田の開拓史を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "515160fe-964d-4627-8011-f2b2f9aebd9b",
+    "title": "最東端の街で名物と高台の神社を巡る",
+    "name": "最東端の街で名物と高台の神社を巡る",
+    "description": "日本最東端の有人駅・JR根室駅から元祖エスカロップのニューモンブラン、チシマザクラの清隆寺、端谷菓子店、高台の金刀比羅神社へ歩くルート。",
+    "region": "光和町・松本町・琴平町",
+    "area_name": "光和町・松本町・琴平町",
+    "cover_image_url": "/images/nemuro/route-eyecatch.png",
+    "imageUrl": "/images/nemuro/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び根室を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "元祖エスカロップの老舗 ニューモンブラン",
+          "description": "タケノコ入りバターライスとポークカツの根室名物を味わった",
+          "badge_code": "nemuro_escalope"
+        },
+        {
+          "key": "B",
+          "text": "チシマザクラが咲く名刹 清隆寺",
+          "description": "国後島から移植された日本一遅咲きの桜の名所で手を合わせた",
+          "badge_code": "nemuro_seiryuji"
+        },
+        {
+          "key": "C",
+          "text": "手焼きオランダせんべいの端谷菓子店",
+          "description": "昭和二十五年創業の老舗でしっとり柔らかな銘菓を手に入れた",
+          "badge_code": "nemuro_hashiya"
+        },
+        {
+          "key": "D",
+          "text": "根室港を一望する高台の金刀比羅神社",
+          "description": "道東屈指の古社からオホーツクの海と港の眺めを満喫した",
+          "badge_code": "nemuro_kotohira"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "b548f4d2-f630-49fa-8d79-fd6c08f450b1",
+        "name": "JR根室駅",
+        "description": "大正10年（1921年）8月5日開業、JR根室本線（花咲線）の終着駅にして日本最東端の有人駅（駅舎開放・みどりの窓口8:10〜16:10・無休）。駅舎前に最東端の駅を示す看板が立つ。",
+        "address": "北海道根室市光和町2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.326918,
+        "lng": 145.582663,
+        "qr_token": "shuin-nemuro-1",
+        "cover_image_url": "/images/nemuro/spot1.png",
+        "f7_fragment": "JR花咲線の終着駅にして、駅前に看板も立つ日本最東端の有人駅。",
+        "f7_full": "「JR根室駅」の最東端の看板を後にし、名物エスカロップと古社を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "5cdcc25f-7d90-4ec2-8055-e76f34fd05f3",
+        "next_spot_name": "ニューモンブラン"
+      },
+      {
+        "id": "5cdcc25f-7d90-4ec2-8055-e76f34fd05f3",
+        "name": "ニューモンブラン",
+        "description": "根室のご当地グルメ「エスカロップ」（タケノコ入りバターライス＋ポークカツ＋デミグラスソース）の元祖の味を受け継ぐ老舗洋食店（10:00〜15:00・17:00〜19:00、不定休）。",
+        "address": "北海道根室市光和町1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.327844,
+        "lng": 145.581591,
+        "qr_token": "shuin-nemuro-2",
+        "cover_image_url": "/images/nemuro/spot2.png",
+        "f7_fragment": "タケノコ入りバターライスとポークカツの元祖「エスカロップ」を継ぐ老舗洋食店。",
+        "f7_full": "「ニューモンブラン」で根室名物エスカロップを味わい、旅のエネルギーを満たした。",
+        "is_final": false,
+        "next_spot_id": "023d3158-ec0f-4988-8ab1-5b6a2003aebd",
+        "next_spot_name": "清隆寺"
+      },
+      {
+        "id": "023d3158-ec0f-4988-8ab1-5b6a2003aebd",
+        "name": "清隆寺",
+        "description": "国後島から移植された北海道百年記念銘木「チシマザクラ」がある名刹（境内参拝自由・無休）。日本でも最も遅咲きの桜の名所として全国から旅人が訪れる。",
+        "address": "北海道根室市松本町2-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.328574,
+        "lng": 145.575681,
+        "qr_token": "shuin-nemuro-3",
+        "cover_image_url": "/images/nemuro/spot3.png",
+        "f7_fragment": "国後島ゆかりの天然記念物「チシマザクラ」が咲く、日本一遅咲きの桜の名刹。",
+        "f7_full": "「清隆寺」のチシマザクラの古木に手を合わせ、根室に訪れる遅い春に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "8aba927b-7773-47f1-82d7-a436c00b2f3d",
+        "next_spot_name": "端谷菓子店"
+      },
+      {
+        "id": "8aba927b-7773-47f1-82d7-a436c00b2f3d",
+        "name": "端谷菓子店",
+        "description": "昭和25年（1950年）創業の老舗和菓子店（8:00〜17:00、日曜休）。しっとり柔らかな独特の食感が魅力の根室名物・元祖「オランダせんべい」を手焼きで販売している。",
+        "address": "北海道根室市千島町2-11",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.338887,
+        "lng": 145.589128,
+        "qr_token": "shuin-nemuro-4",
+        "cover_image_url": "/images/nemuro/spot4.png",
+        "f7_fragment": "昭和二十五年創業、しっとり柔らかな元祖「オランダせんべい」を手焼きする老舗。",
+        "f7_full": "「端谷菓子店」で手焼きの元祖オランダせんべいを求め、老舗の技に触れた。",
+        "is_final": false,
+        "next_spot_id": "6de7946c-c368-4445-8e40-3db714399890",
+        "next_spot_name": "金刀比羅神社"
+      },
+      {
+        "id": "6de7946c-c368-4445-8e40-3db714399890",
+        "name": "金刀比羅神社",
+        "description": "根室港とオホーツク海を一望する高台に鎮座する道東屈指の古社（参拝24時間、社務所9:00〜17:00）。サンマを模した「福ざんまいみくじ（えぞみくじ）」も人気。",
+        "address": "北海道根室市琴平町1-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.343174,
+        "lng": 145.587967,
+        "qr_token": "shuin-nemuro-5",
+        "cover_image_url": "/images/nemuro/spot5.png",
+        "f7_fragment": "根室港とオホーツク海を一望する高台に鎮座し、福ざんまいみくじも人気の古社。",
+        "f7_full": "「金刀比羅神社」の高台から根室港と海を望み、日本最東端の町の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "37cd2d24-2dae-44cf-8563-140c72cfe3ce",
+    "title": "神楽岡の鎮守と銘菓を巡るプラタナス散歩",
+    "name": "神楽岡の鎮守と銘菓を巡るプラタナス散歩",
+    "description": "JR神楽岡駅からプラタナス並木沿いのThe Sun蔵人 本店、旭川総鎮守の上川神社、老舗Cafe Sebastian、米粉パンのsora no kujiraへ歩くルート。",
+    "region": "神楽岡",
+    "area_name": "神楽岡",
+    "cover_image_url": "/images/kaguraoka/route-eyecatch.png",
+    "imageUrl": "/images/kaguraoka/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び神楽岡を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "美瑛軟石造りの名店 The Sun蔵人 本店",
+          "description": "プラタナス並木沿いで旭川銘菓「蔵生」や焼き菓子を選んだ",
+          "badge_code": "kaguraoka_sun_kurodo"
+        },
+        {
+          "key": "B",
+          "text": "上川開拓の総鎮守・上川神社の森",
+          "description": "明治二十六年創祀の厳かな境内で旅の安全を祈願した",
+          "badge_code": "kaguraoka_kamikawa_shrine"
+        },
+        {
+          "key": "C",
+          "text": "昭和五十七年創業のCafe Sebastian",
+          "description": "自家焙煎珈琲と手作りメニューが人気の老舗喫茶で寛いだ",
+          "badge_code": "kaguraoka_sebastian"
+        },
+        {
+          "key": "D",
+          "text": "米粉パンが並ぶ sora no kujira",
+          "description": "北海道産米粉を使った優しいパンやマフィンを手に取った",
+          "badge_code": "kaguraoka_soranokujira"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "11bd7d6b-1ca0-4732-83d5-ffc648da2a0f",
+        "name": "JR神楽岡駅",
+        "description": "JR富良野線の無人駅（終日利用可）。駅名は近隣の神楽岡公園・上川神社に由来し、美瑛川を渡れば神楽岡の文教・住宅エリアとプラタナス並木へと続く。",
+        "address": "北海道旭川市神楽4条14",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.745886,
+        "lng": 142.358378,
+        "qr_token": "shuin-kaguraoka-1",
+        "cover_image_url": "/images/kaguraoka/spot1.png",
+        "f7_fragment": "神楽岡公園や上川神社に由来し、プラタナス並木の街区へと続く無人駅。",
+        "f7_full": "「JR神楽岡駅」を後にし、上川総鎮守と旭川銘菓を巡るプラタナス散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "550cdd65-244c-4f37-8760-faac9a65871b",
+        "next_spot_name": "The Sun蔵人 本店"
+      },
+      {
+        "id": "550cdd65-244c-4f37-8760-faac9a65871b",
+        "name": "The Sun蔵人 本店",
+        "description": "プラタナス並木「旭川ロマンチック街道」沿いに建つ美瑛軟石造りの蔵風菓子工房（9:00〜18:00、無休）。しっとりとした食感の旭川銘菓「蔵生」が全国的に人気。",
+        "address": "北海道旭川市神楽岡8条1-1-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.748914,
+        "lng": 142.361383,
+        "qr_token": "shuin-kaguraoka-2",
+        "cover_image_url": "/images/kaguraoka/spot2.png",
+        "f7_fragment": "旭川ロマンチック街道沿いに建つ、銘菓「蔵生」が人気の軟石造りの菓子工房。",
+        "f7_full": "「The Sun蔵人 本店」で名物の蔵生を選び、プラタナス並木の優雅さを味わった。",
+        "is_final": false,
+        "next_spot_id": "2787bb51-9398-429b-8f96-98bf10c433b4",
+        "next_spot_name": "上川神社"
+      },
+      {
+        "id": "2787bb51-9398-429b-8f96-98bf10c433b4",
+        "name": "上川神社",
+        "description": "明治26年（1893年）創祀、大正13年に現在地へ遷座した上川地方開拓の守護神・旭川総鎮守（参拝終日可、社務所3〜10月9:00〜17:00・11〜2月〜16:30）。",
+        "address": "北海道旭川市神楽岡公園2-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.752788,
+        "lng": 142.364829,
+        "qr_token": "shuin-kaguraoka-3",
+        "cover_image_url": "/images/kaguraoka/spot3.png",
+        "f7_fragment": "明治二十六年創祀、歴史ある神楽岡の丘に鎮座する旭川総鎮守の神社。",
+        "f7_full": "「上川神社」の厳かな森で手を合わせ、上川開拓の深い歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "e8e6d0da-ebde-4a5f-8212-b6e3d76d234e",
+        "next_spot_name": "Cafe Sebastian（カフェ セバスチャン）"
+      },
+      {
+        "id": "e8e6d0da-ebde-4a5f-8212-b6e3d76d234e",
+        "name": "Cafe Sebastian（カフェ セバスチャン）",
+        "description": "昭和57年（1982年）創業の老舗自家焙煎カフェ（11:00〜18:00・木曜〜15:00、年末年始休）。オムライスやパスタ、濃厚なベイクドチーズケーキなど手作りメニューが人気。",
+        "address": "北海道旭川市神楽岡8条6-1-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.739848,
+        "lng": 142.37037,
+        "qr_token": "shuin-kaguraoka-4",
+        "cover_image_url": "/images/kaguraoka/spot4.png",
+        "f7_fragment": "昭和五十七年創業、オムライスやチーズケーキが人気の老舗自家焙煎カフェ。",
+        "f7_full": "「Cafe Sebastian」で老舗の自家焙煎珈琲と手作りメニューを味わい、心が和んだ。",
+        "is_final": false,
+        "next_spot_id": "b58e3e6a-31fd-4784-8676-45316515a94c",
+        "next_spot_name": "sora no kujira（そらのくじら）"
+      },
+      {
+        "id": "b58e3e6a-31fd-4784-8676-45316515a94c",
+        "name": "sora no kujira（そらのくじら）",
+        "description": "富良野から神楽岡へ移転オープンしたグルテンフリーの米粉パン・焼き菓子専門店（11:00〜18:00・売切次第終了、不定休）。北海道産米粉の食パンやマフィンが人気。",
+        "address": "北海道旭川市神楽岡12条5-4-21",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.740171,
+        "lng": 142.362454,
+        "qr_token": "shuin-kaguraoka-5",
+        "cover_image_url": "/images/kaguraoka/spot5.png",
+        "f7_fragment": "北海道産米粉を使ったグルテンフリーの食パンやマフィンが人気の専門店。",
+        "f7_full": "「sora no kujira」で優しい米粉の焼き菓子に出会い、神楽岡の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "73eb2628-c74d-4a66-8af9-bcec8d727fab",
+    "title": "緑が丘の小さな社と隠れ家カフェを巡る道",
+    "name": "緑が丘の小さな社と隠れ家カフェを巡る道",
+    "description": "JR緑が丘駅から駅裏手の西御料地神社、発酵玄米のいちりん庵、台湾カフェ阿里山STAND.を経て市民の憩いの場・神陵公園へ歩くルート。",
+    "region": "神楽岡・緑が丘",
+    "area_name": "神楽岡・緑が丘",
+    "cover_image_url": "/images/midorigaoka_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/midorigaoka_hokkaido/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び緑が丘を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "御料地の名を留める小さな西御料地神社",
+          "description": "駅裏の公園の一角に鎮座する静かなお社で旅の安全を祈った",
+          "badge_code": "midorigaoka_nishigoryochi"
+        },
+        {
+          "key": "B",
+          "text": "発酵玄米が自慢の食べ処 いちりん庵",
+          "description": "住宅街の一軒家食堂で体想いの小鉢ランチを味わった",
+          "badge_code": "midorigaoka_ichirinan"
+        },
+        {
+          "key": "C",
+          "text": "台湾カステラが人気の阿里山STAND.",
+          "description": "洗練された隠れ家カフェ空間で甘いスイーツとともに寛いだ",
+          "badge_code": "midorigaoka_alishan"
+        },
+        {
+          "key": "D",
+          "text": "広い芝生が広がる市民の憩い・神陵公園",
+          "description": "緑が丘を代表する大きな公園のベンチで心地よく一息ついた",
+          "badge_code": "midorigaoka_shinryo_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d3609846-ce10-4c5d-8553-dd565e7ef95f",
+        "name": "JR緑が丘駅",
+        "description": "平成8年（1996年）9月1日開業、木目調の待合室が特徴のJR富良野線の無人駅（終日利用可）。旭川医科大学や高校が近く、学生や住民の足となっている。",
+        "address": "北海道旭川市神楽岡13条9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.730798,
+        "lng": 142.364057,
+        "qr_token": "shuin-midorigaoka_hokkaido-1",
+        "cover_image_url": "/images/midorigaoka_hokkaido/spot1.png",
+        "f7_fragment": "平成八年開業、木目調の待合室が特徴的な文教・住宅エリアの無人駅。",
+        "f7_full": "「JR緑が丘駅」を後にし、小さな社と隠れ家カフェを巡る散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "ca0a1a6c-d3da-4cbb-85b8-d43fd36dec39",
+        "next_spot_name": "西御料地神社"
+      },
+      {
+        "id": "ca0a1a6c-d3da-4cbb-85b8-d43fd36dec39",
+        "name": "西御料地神社",
+        "description": "JR緑が丘駅の裏手、神楽岡ありんこ公園の一角に鎮座する地域の小さな社（終日参拝可・無休）。かつての御料地開拓時代の名残を社名に留めている。",
+        "address": "北海道旭川市神楽岡13条9-1-15",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.731575,
+        "lng": 142.36609,
+        "qr_token": "shuin-midorigaoka_hokkaido-2",
+        "cover_image_url": "/images/midorigaoka_hokkaido/spot2.png",
+        "f7_fragment": "緑が丘駅裏手に鎮座し、御料地開拓時代の名残を社名に留める小さな社。",
+        "f7_full": "「西御料地神社」の穏やかな境内で手を合わせ、土地の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "d18d102c-e8f8-4f34-8943-88d8754dc196",
+        "next_spot_name": "食べ処 いちりん庵"
+      },
+      {
+        "id": "d18d102c-e8f8-4f34-8943-88d8754dc196",
+        "name": "食べ処 いちりん庵",
+        "description": "住宅街に佇む一軒家食堂（11:30〜16:00・18:00〜20:00、日・月曜休）。長岡式ジャーで4日間寝かせたもっちり食感の「発酵玄米ごはん」や野菜中心の日替わり小鉢ランチが評判。",
+        "address": "北海道旭川市神楽岡14条4-2-18",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.740499,
+        "lng": 142.359315,
+        "qr_token": "shuin-midorigaoka_hokkaido-3",
+        "cover_image_url": "/images/midorigaoka_hokkaido/spot3.png",
+        "f7_fragment": "4日間寝かせた「発酵玄米ごはん」と野菜中心の小鉢ランチが評判の一軒家食堂。",
+        "f7_full": "「食べ処 いちりん庵」で体想いの発酵玄米ランチを堪能し、活力を養った。",
+        "is_final": false,
+        "next_spot_id": "bc46abcb-299a-4cbb-83cc-89f3744307f9",
+        "next_spot_name": "Cafe and Bar 阿里山STAND.（アリサンスタンド）"
+      },
+      {
+        "id": "bc46abcb-299a-4cbb-83cc-89f3744307f9",
+        "name": "Cafe and Bar 阿里山STAND.（アリサンスタンド）",
+        "description": "注文住宅工務店が手掛ける洗練された台湾カフェ・ダイニング（11:00〜17:00・ランチL.O.14:00、月曜休）。台湾カステラプレートやパフェなどで一息つける。",
+        "address": "北海道旭川市神楽岡16条4-2-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.739106,
+        "lng": 142.357287,
+        "qr_token": "shuin-midorigaoka_hokkaido-4",
+        "cover_image_url": "/images/midorigaoka_hokkaido/spot4.png",
+        "f7_fragment": "工務店が手掛ける洗練された空間で、台湾カステラやパフェを楽しめるカフェ。",
+        "f7_full": "「Cafe and Bar 阿里山STAND.」の洗練された空間で台湾スイーツに癒やされた。",
+        "is_final": false,
+        "next_spot_id": "9ae4bdbc-da53-47c8-857b-806ae21ce6e8",
+        "next_spot_name": "神陵公園"
+      },
+      {
+        "id": "9ae4bdbc-da53-47c8-857b-806ae21ce6e8",
+        "name": "神陵公園",
+        "description": "緑が丘地区を代表する大きな地域公園（終日開放・無休）。野球場や広々とした芝生広場・ベンチを備え、散策の終着点としてゆっくり腰を下ろせる市民の憩いの場。",
+        "address": "北海道旭川市緑が丘3条3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.73352,
+        "lng": 142.378792,
+        "qr_token": "shuin-midorigaoka_hokkaido-5",
+        "cover_image_url": "/images/midorigaoka_hokkaido/spot5.png",
+        "f7_fragment": "野球場や広い芝生広場・ベンチを備え、緑が丘を代表する市民の憩いの公園。",
+        "f7_full": "「神陵公園」の広々とした芝生と木陰で寛ぎ、緑が丘の街歩きを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1c17e467-5e1c-4383-822f-5c873981c406",
+    "title": "西御料の洋菓子と天然酵母パンを訪ねる散歩",
+    "name": "西御料の洋菓子と天然酵母パンを訪ねる散歩",
+    "description": "JR西御料駅から駅前の人気洋菓子店Patisserie EST！、makanai cafe ツムギ堂、西御料公園、天然酵母のパン工房たんとへ歩くルート。",
+    "region": "西御料・緑が丘南",
+    "area_name": "西御料・緑が丘南",
+    "cover_image_url": "/images/nishigoryo/route-eyecatch.png",
+    "imageUrl": "/images/nishigoryo/route-eyecatch.png",
+    "category": "グルメ・街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西御料を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前の名店 Patisserie EST！のタルト",
+          "description": "季節のフルーツを使った美しい洋菓子や焼き菓子に心躍った",
+          "badge_code": "nishigoryo_est"
+        },
+        {
+          "key": "B",
+          "text": "食堂の温かみがある makanai cafe ツムギ堂",
+          "description": "手作りのランチプレートとスイーツで穏やかな時間を過ごした",
+          "badge_code": "nishigoryo_tsumugido"
+        },
+        {
+          "key": "C",
+          "text": "緑に囲まれた広い西御料公園",
+          "description": "住宅街の静かな公園のベンチで澄んだ風を感じて休んだ",
+          "badge_code": "nishigoryo_park"
+        },
+        {
+          "key": "D",
+          "text": "自家製天然酵母のパン工房たんと",
+          "description": "くるみとレーズンのカンパーニュなど滋味深いパンを選んだ",
+          "badge_code": "nishigoryo_tanto"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "bb57ea14-1980-4569-8cc7-21a57fbf5f10",
+        "name": "JR西御料駅",
+        "description": "かつてこの一帯が皇室御料地であった歴史を駅名に伝えるJR富良野線の無人駅（終日利用可）。旭川市西御料の落ち着いた住宅街に位置し、美味しい街歩きの起点となる。",
+        "address": "北海道旭川市西御料4条3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.721222,
+        "lng": 142.371375,
+        "qr_token": "shuin-nishigoryo-1",
+        "cover_image_url": "/images/nishigoryo/spot1.png",
+        "f7_fragment": "皇室御料地だった歴史を駅名に伝える、西御料の住宅街に佇む無人駅。",
+        "f7_full": "「JR西御料駅」を後にし、洋菓子と天然酵母パンを巡る西御料の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "322ad4f6-f3a4-49ba-8faf-dcd9d49bf18d",
+        "next_spot_name": "Patisserie EST！（パティスリー エスト）"
+      },
+      {
+        "id": "322ad4f6-f3a4-49ba-8faf-dcd9d49bf18d",
+        "name": "Patisserie EST！（パティスリー エスト）",
+        "description": "旭川西武地下で愛された「六本木エスト」が2014年に移転オープンした人気洋菓子店（10:00〜19:00、水曜休）。季節のフルーツを使ったタルトや焼き菓子が豊富。",
+        "address": "北海道旭川市西御料4条3-1-20",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.721307,
+        "lng": 142.37176,
+        "qr_token": "shuin-nishigoryo-2",
+        "cover_image_url": "/images/nishigoryo/spot2.png",
+        "f7_fragment": "旧「六本木エスト」の系譜を継ぎ、季節のフルーツタルトが人気の洋菓子店。",
+        "f7_full": "「Patisserie EST！」で宝石のようなタルトと焼き菓子に出会い、心躍った。",
+        "is_final": false,
+        "next_spot_id": "76f23d50-347e-4746-88e0-408bb9cd6118",
+        "next_spot_name": "makanai cafe ツムギ堂"
+      },
+      {
+        "id": "76f23d50-347e-4746-88e0-408bb9cd6118",
+        "name": "makanai cafe ツムギ堂",
+        "description": "アットホームな食堂の温かみとカフェの居心地を兼ね備えた人気店（11:00〜16:00・ランチL.O.14:00、不定休）。手作りのランチプレートやスイーツが味わえる。",
+        "address": "北海道旭川市西御料3条3-6-17",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.720007,
+        "lng": 142.373124,
+        "qr_token": "shuin-nishigoryo-3",
+        "cover_image_url": "/images/nishigoryo/spot3.png",
+        "f7_fragment": "食堂の温かみとカフェの居心地が調和した、手作りランチが人気の隠れ家店。",
+        "f7_full": "「makanai cafe ツムギ堂」で心温まるランチプレートを味わい、元気を養った。",
+        "is_final": false,
+        "next_spot_id": "9e736bb4-676a-41b1-873e-89efba7a1ca3",
+        "next_spot_name": "西御料公園"
+      },
+      {
+        "id": "9e736bb4-676a-41b1-873e-89efba7a1ca3",
+        "name": "西御料公園",
+        "description": "広さ約1.6haの緑豊かな地域公園（終日開放・無休）。テニスコートや遊具、ベンチ・水飲み場が綺麗に整備されており、散策の途中で心地よく一息つくことができる。",
+        "address": "北海道旭川市緑が丘南2条1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.731802,
+        "lng": 142.369587,
+        "qr_token": "shuin-nishigoryo-4",
+        "cover_image_url": "/images/nishigoryo/spot4.png",
+        "f7_fragment": "約1.6haの広さを持ち、ベンチや水飲み場が整備された緑豊かな地域公園。",
+        "f7_full": "「西御料公園」の爽やかな緑陰で一息つき、落ち着いた住宅街の風を感じた。",
+        "is_final": false,
+        "next_spot_id": "33d7c760-0ec7-4494-8b15-f394bde6c4fd",
+        "next_spot_name": "パン工房たんと"
+      },
+      {
+        "id": "33d7c760-0ec7-4494-8b15-f394bde6c4fd",
+        "name": "パン工房たんと",
+        "description": "住宅街の一角にある自家製天然酵母の焼き立てパン工房（11:00〜18:00・売切次第終了、日〜水曜休・木〜土・祝中心営業）。カンパーニュや全粒粉入り食パンが評判。",
+        "address": "北海道旭川市緑が丘南3条2-2-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.728389,
+        "lng": 142.370326,
+        "qr_token": "shuin-nishigoryo-5",
+        "cover_image_url": "/images/nishigoryo/spot5.png",
+        "f7_fragment": "自家製天然酵母のカンパーニュや全粒粉入り食パンが評判の隠れ家パン工房。",
+        "f7_full": "「パン工房たんと」で天然酵母の香ばしいパンを手に入れ、西御料の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cba38207-b75d-415b-8024-4cefdbdd230c",
+    "title": "西瑞穂の田園と木の恵みに触れる北国の道",
+    "name": "西瑞穂の田園と木の恵みに触れる北国の道",
+    "description": "田園に佇む無人駅・JR西瑞穂駅から瑞穂会館、林産試験場 木と暮らしの情報館、長い参道の神楽神社、西神楽グリーンツーリズムセンターへ歩くルート。",
+    "region": "西神楽",
+    "area_name": "西神楽",
+    "cover_image_url": "/images/nishimizuho/route-eyecatch.png",
+    "imageUrl": "/images/nishimizuho/route-eyecatch.png",
+    "category": "自然・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西瑞穂を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "農村集落を支える瑞穂会館",
+          "description": "西神楽瑞穂地区の暮らしと地域のつながりを感じた",
+          "badge_code": "nishimizuho_kaikan"
+        },
+        {
+          "key": "B",
+          "text": "道産木材の魅力を伝える木と暮らしの情報館",
+          "description": "林産試験場内の施設で集成材建築や木工の知恵に触れた",
+          "badge_code": "nishimizuho_forestry"
+        },
+        {
+          "key": "C",
+          "text": "約260mの参道が続く歴史ある神楽神社",
+          "description": "木々に囲まれたまっすぐな参道を進み厳かな社殿に参拝した",
+          "badge_code": "nishimizuho_kagura_shrine"
+        },
+        {
+          "key": "D",
+          "text": "西神楽グリーンツーリズムセンター",
+          "description": "ウッドデッキや直売所で地元農産物と甘いお土産に出会った",
+          "badge_code": "nishimizuho_greentourism"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d5e2fd2c-187f-437f-83fc-03dc5fc61d79",
+        "name": "JR西瑞穂駅",
+        "description": "広大な田園風景の中に板張りホームと小さな待合室が佇むJR富良野線の無人駅（終日利用可）。国道237号（富良野国道）に並行し、北国の農村の原風景が広がる。",
+        "address": "北海道旭川市西神楽1線9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.702609,
+        "lng": 142.381868,
+        "qr_token": "shuin-nishimizuho-1",
+        "cover_image_url": "/images/nishimizuho/spot1.png",
+        "f7_fragment": "広大な田園風景の中に板張りホームと待合室が佇む北国の無人駅。",
+        "f7_full": "「JR西瑞穂駅」の板張りホームを後にし、田園と木の恵みに触れる旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "2f935e95-9cd8-4798-811c-087ffd19bd7a",
+        "next_spot_name": "瑞穂会館"
+      },
+      {
+        "id": "2f935e95-9cd8-4798-811c-087ffd19bd7a",
+        "name": "瑞穂会館",
+        "description": "西神楽の「瑞穂」地区の暮らしと地域コミュニティを支えてきた自治会館（外観見学自由）。開拓時代から続く農村集落のまとまりを伝えている。",
+        "address": "北海道旭川市西神楽1線10-174-13",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.701055,
+        "lng": 142.381912,
+        "qr_token": "shuin-nishimizuho-2",
+        "cover_image_url": "/images/nishimizuho/spot2.png",
+        "f7_fragment": "開拓から続く西神楽「瑞穂」地区の暮らしと絆を支えてきた自治会館。",
+        "f7_full": "「瑞穂会館」の前を通り、農村集落で大切に受け継がれてきた地域の絆を感じた。",
+        "is_final": false,
+        "next_spot_id": "7658c767-9125-4879-88bb-5876726dd6ab",
+        "next_spot_name": "林産試験場 木と暮らしの情報館"
+      },
+      {
+        "id": "7658c767-9125-4879-88bb-5876726dd6ab",
+        "name": "林産試験場 木と暮らしの情報館",
+        "description": "北海道立総合研究機構 森林研究本部 林産試験場内にある展示施設（9:00〜17:00、4月下旬〜10月上旬開館・冬季休館）。道産木材の集成材建築や木工文化を学べる。",
+        "address": "北海道旭川市西神楽1線10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.698522,
+        "lng": 142.382413,
+        "qr_token": "shuin-nishimizuho-3",
+        "cover_image_url": "/images/nishimizuho/spot3.png",
+        "f7_fragment": "道産木材の集成材建築や北国の木工・木の文化を学べる林産試験場の展示館。",
+        "f7_full": "「林産試験場 木と暮らしの情報館」で道産木材の美しい建築と知恵に触れた。",
+        "is_final": false,
+        "next_spot_id": "0611d3c7-48c5-4342-8ef9-0d703f560817",
+        "next_spot_name": "神楽神社"
+      },
+      {
+        "id": "0611d3c7-48c5-4342-8ef9-0d703f560817",
+        "name": "神楽神社",
+        "description": "明治期から続く西神楽地域の歴史ある村社（終日参拝可・無休）。天照皇大神・八幡大神・春日大神を祀り、約260mもの木々に囲まれたまっすぐな参道が圧巻。",
+        "address": "北海道旭川市西神楽2線15-273-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.679848,
+        "lng": 142.399357,
+        "qr_token": "shuin-nishimizuho-4",
+        "cover_image_url": "/images/nishimizuho/spot4.png",
+        "f7_fragment": "明治期創祀、約260mもの木々に囲まれたまっすぐな参道が圧巻の歴史ある神社。",
+        "f7_full": "「神楽神社」の長い森の参道を歩き、厳かな空気の中で旅の無事を祈った。",
+        "is_final": false,
+        "next_spot_id": "58ef9987-9d8f-40fc-891b-f1506f994f3a",
+        "next_spot_name": "西神楽グリーンツーリズムセンター（キャンプゼロ）"
+      },
+      {
+        "id": "58ef9987-9d8f-40fc-891b-f1506f994f3a",
+        "name": "西神楽グリーンツーリズムセンター（キャンプゼロ）",
+        "description": "展望台付きウッドデッキや芝生広場を備えた交流拠点（売店・かぐらじゅ西神楽店等11:00〜16:00、月曜休・季節変動あり）。地元農産物やアップルパイを購入できる。",
+        "address": "北海道旭川市西神楽2線16-278-3",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.672382,
+        "lng": 142.399335,
+        "qr_token": "shuin-nishimizuho-5",
+        "cover_image_url": "/images/nishimizuho/spot5.png",
+        "f7_fragment": "ウッドデッキを備え、地元農産物やアップルパイも買える西神楽の交流拠点。",
+        "f7_full": "「西神楽グリーンツーリズムセンター」で地元のお土産に出会い、旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2f0e2f05-f405-4b44-85d9-ffa96bc8f338",
+    "title": "西神楽のホタルの里と長い参道を巡る散歩",
+    "name": "西神楽のホタルの里と長い参道を巡る散歩",
+    "description": "JR西神楽駅からふくろうcafeウラル、ホタルの里として知られる西神楽公園、老舗食堂の喰処 つかもとを経て神楽神社へ歩くルート。",
+    "region": "西神楽南・北",
+    "area_name": "西神楽南・北",
+    "cover_image_url": "/images/nishikagura/route-eyecatch.png",
+    "imageUrl": "/images/nishikagura/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び西神楽を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "フクロウと寛げる ふくろうcafeウラル",
+          "description": "穏やかなフクロウたちを眺めながらドリンクを楽しんだ",
+          "badge_code": "nishikagura_ural"
+        },
+        {
+          "key": "B",
+          "text": "ホタルの里・西神楽公園のせせらぎ",
+          "description": "美しい水路と芝生が広がる公園のベンチで一息ついた",
+          "badge_code": "nishikagura_park"
+        },
+        {
+          "key": "C",
+          "text": "駅前の老舗・喰処 つかもとの味",
+          "description": "国道沿いの温かな食堂で昔ながらのラーメンや定食を楽しんだ",
+          "badge_code": "nishikagura_tsukamoto"
+        },
+        {
+          "key": "D",
+          "text": "約260mの参道が続く歴史ある神楽神社",
+          "description": "静寂に包まれた森の参道を進み厳かな社殿で旅を結んだ",
+          "badge_code": "nishikagura_kagura_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4b78473f-d1d8-42bd-8e88-685ccd60e156",
+        "name": "JR西神楽駅",
+        "description": "旭川市中心部と美瑛町のほぼ中間に位置するJR富良野線の駅（終日利用可）。西神楽市街地の玄関口として、周辺の自然やグルメ散策の起点となっている。",
+        "address": "北海道旭川市西神楽南1条1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.683387,
+        "lng": 142.39203,
+        "qr_token": "shuin-nishikagura-1",
+        "cover_image_url": "/images/nishikagura/spot1.png",
+        "f7_fragment": "旭川市中心部と美瑛町の中間に位置し、西神楽市街地の玄関口となる駅。",
+        "f7_full": "「JR西神楽駅」を後にし、ホタルの里と長い参道を巡る西神楽の散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "ab939e0c-366d-40e7-8d53-504b04449cd4",
+        "next_spot_name": "ふくろうcafeウラル"
+      },
+      {
+        "id": "ab939e0c-366d-40e7-8d53-504b04449cd4",
+        "name": "ふくろうcafeウラル",
+        "description": "旭川唯一のフクロウカフェ（平日12:00〜18:00・土日祝10:00〜18:00、月曜休・不定休あり）。穏やかなフクロウたちと触れ合いながらドリンクを楽しめる。",
+        "address": "北海道旭川市西神楽北1条3-231-31",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.683862,
+        "lng": 142.389107,
+        "qr_token": "shuin-nishikagura-2",
+        "cover_image_url": "/images/nishikagura/spot2.png",
+        "f7_fragment": "穏やかなフクロウたちと触れ合いながらドリンクを楽しめる旭川唯一のカフェ。",
+        "f7_full": "「ふくろうcafeウラル」の愛らしいフクロウたちに癒やされ、心がほっと和んだ。",
+        "is_final": false,
+        "next_spot_id": "1f451cc2-7765-42b2-8579-eb1ee9370b4f",
+        "next_spot_name": "西神楽公園"
+      },
+      {
+        "id": "1f451cc2-7765-42b2-8579-eb1ee9370b4f",
+        "name": "西神楽公園",
+        "description": "地元中学校の活動を機に始まった「ホタルの里」として知られる3.69haの自然公園（終日開放・キャンプ場夏季のみ）。せせらぎ水路やベンチが整備されている。",
+        "address": "北海道旭川市西神楽南1条1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.684156,
+        "lng": 142.39499,
+        "qr_token": "shuin-nishikagura-3",
+        "cover_image_url": "/images/nishikagura/spot3.png",
+        "f7_fragment": "地元の中学校の活動に始まる「ホタルの里」として知られる3.69haの自然公園。",
+        "f7_full": "「西神楽公園」のせせらぎ水路と緑の中で寛ぎ、ホタルが棲む自然の豊かさを感じた。",
+        "is_final": false,
+        "next_spot_id": "44e6c79d-1ada-4ba8-8795-5850c1e09a52",
+        "next_spot_name": "喰処 つかもと（つかもと食堂）"
+      },
+      {
+        "id": "44e6c79d-1ada-4ba8-8795-5850c1e09a52",
+        "name": "喰処 つかもと（つかもと食堂）",
+        "description": "西神楽駅近くの国道237号沿いに佇む老舗食堂（11:00〜20:00頃・早仕舞いあり、日・祝日休）。ラーメン、定食、丼もの、カレーなど昔ながらの味がリーズナブル。",
+        "address": "北海道旭川市西神楽南1条2-662-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.681997,
+        "lng": 142.393086,
+        "qr_token": "shuin-nishikagura-4",
+        "cover_image_url": "/images/nishikagura/spot4.png",
+        "f7_fragment": "国道237号沿いでラーメンや定食、丼ものが親しまれる西神楽の老舗食堂。",
+        "f7_full": "「喰処 つかもと（つかもと食堂）」で昔ながらの温かい食事を味わい、元気を得た。",
+        "is_final": false,
+        "next_spot_id": "9cb7e286-b524-4dd5-8bb4-32ebbc4a3221",
+        "next_spot_name": "神楽神社"
+      },
+      {
+        "id": "9cb7e286-b524-4dd5-8bb4-32ebbc4a3221",
+        "name": "神楽神社",
+        "description": "明治期創祀の西神楽の鎮守（終日参拝可・無休）。約260m続くまっすぐな森の参道は深い静寂に包まれ、散策の結びの参拝にふさわしい厳かな空間となっている。",
+        "address": "北海道旭川市西神楽2線15-273-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.679848,
+        "lng": 142.399357,
+        "qr_token": "shuin-nishikagura-5",
+        "cover_image_url": "/images/nishikagura/spot5.png",
+        "f7_fragment": "約260m続くまっすぐな森の参道が深い静寂をたたえる、明治期創祀の鎮守。",
+        "f7_full": "「神楽神社」の長い森の参道を進んで手を合わせ、西神楽の散歩を締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
