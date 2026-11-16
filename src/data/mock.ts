@@ -83200,5 +83200,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "8e6d2d65-e349-47f5-87d8-b89297d1d4af",
+    "title": "秋田・稲庭うどんと久保田城跡を歩く",
+    "name": "秋田・稲庭うどんと久保田城跡を歩く",
+    "description": "JR秋田駅から、市民の台所「秋田市民市場」と万延元年創業の稲庭うどん「八代目 佐藤養助 秋田店」、佐竹氏の居城跡「千秋公園（久保田城跡）」、秋田竿燈まつりを伝える「秋田市民俗芸能伝承館（ねぶり流し館）」、歴史ある「旧金子家住宅」を巡る散策路。",
+    "region": "秋田・千秋公園と竿燈の城下町",
+    "area_name": "秋田・千秋公園と竿燈の城下町",
+    "cover_image_url": "/images/akita/route-eyecatch.png",
+    "imageUrl": "/images/akita/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本海の幸と手延べのうどん、佐竹氏の城跡と竿燈の熱気が繋がる秋田を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「秋田市民市場」の活気ある通路を歩き、日本海の新鮮な魚介や山の幸を眺めた瞬間",
+          "description": "朝から地元の人々で賑わう秋田の台所に、北国の豊かな暮らしの息遣いが感じられた。",
+          "badge_code": "akita_ichiba"
+        },
+        {
+          "key": "B",
+          "text": "「八代目 佐藤養助 秋田店」で、透き通るような艶のある稲庭うどんを味わった瞬間",
+          "description": "万延元年創業の伝統の手延べ技が生み出す滑らかな喉越しに、秋田の食文化の奥深さを知った。",
+          "badge_code": "akita_yosuke"
+        },
+        {
+          "key": "C",
+          "text": "「千秋公園（久保田城跡）」の広大な水堀と復元された御隅櫓を見上げた瞬間",
+          "description": "佐竹二十万石の居城跡を包む木々と蓮の堀が、城下町・秋田の誇り高い歴史を物語っていた。",
+          "badge_code": "akita_senshu"
+        },
+        {
+          "key": "D",
+          "text": "「ねぶり流し館」に並ぶ勇壮な秋田竿燈の提灯を見上げ、夏祭りの熱気を感じた瞬間",
+          "description": "高さ十二メートルもの竿に連なる提灯の輝きが、みちのくの伝統芸能の力強さを伝えてくれた。",
+          "badge_code": "akita_kanto"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "29dfebda-8b99-4613-80f1-88710b6c5e83",
+        "name": "秋田市民市場",
+        "description": "JR秋田駅から徒歩約4分、日本海の新鮮な魚介や山菜、きりたんぽなどの地元食材が揃う市民の台所。5:00〜18:00（店舗により異なる）、日曜定休。",
+        "address": "秋田県秋田市中通4-7-35",
+        "prefecture": "秋田県",
+        "city": "",
+        "lat": 39.714787,
+        "lng": 140.125768,
+        "qr_token": "shuin-akita-1",
+        "cover_image_url": "/images/akita/spot1.png",
+        "f7_fragment": "秋田駅から徒歩数分、日本海の幸と地元食材が集う市民の台所。",
+        "f7_full": "「秋田市民市場」の活気ある通路を歩き、日本海の魚介や山の幸が集う秋田の豊かな食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "5df39a5e-fe92-4782-89cf-62c7d9d0a9a2",
+        "next_spot_name": "八代目 佐藤養助 秋田店"
+      },
+      {
+        "id": "5df39a5e-fe92-4782-89cf-62c7d9d0a9a2",
+        "name": "八代目 佐藤養助 秋田店",
+        "description": "万延元年（1860年）創業、日本三大うどんの一つ・稲庭うどんの老舗直営店。西武秋田店地下1階にあり、つややかでコシのあるうどんが味わえる。11:00〜20:00（L.O.19:30）、無休（施設に準ずる）。",
+        "address": "秋田県秋田市中通2-6-1 西武秋田店B1F",
+        "prefecture": "秋田県",
+        "city": "",
+        "lat": 39.716997,
+        "lng": 140.127015,
+        "qr_token": "shuin-akita-2",
+        "cover_image_url": "/images/akita/spot2.png",
+        "f7_fragment": "万延元年創業、一子相伝の手延べ技を守る本場稲庭うどんの老舗。",
+        "f7_full": "「八代目 佐藤養助 秋田店」で艶やかな本場稲庭うどんを味わい、秋田藩御用達から続く手延べの味を堪能した。",
+        "is_final": false,
+        "next_spot_id": "33ca7e10-e1a3-404e-81de-47101df904ec",
+        "next_spot_name": "千秋公園（久保田城跡）"
+      },
+      {
+        "id": "33ca7e10-e1a3-404e-81de-47101df904ec",
+        "name": "千秋公園（久保田城跡）",
+        "description": "関ヶ原の戦いの後に秋田へ移封された佐竹氏の居城「久保田城」跡を整備した歴史公園。復元された表門や御隅櫓、美しい水堀が見どころ。散策自由・無休。",
+        "address": "秋田県秋田市千秋公園1-1",
+        "prefecture": "秋田県",
+        "city": "",
+        "lat": 39.720849,
+        "lng": 140.121871,
+        "qr_token": "shuin-akita-3",
+        "cover_image_url": "/images/akita/spot3.png",
+        "f7_fragment": "佐竹二十万石の久保田城跡を整備した、水堀と櫓が美しい歴史公園。",
+        "f7_full": "「千秋公園（久保田城跡）」の水堀と復元御隅櫓を歩き、佐竹氏が治めた秋田の城下町の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "046d4c8f-fd86-49ad-8a4c-52ec080f0a11",
+        "next_spot_name": "秋田市民俗芸能伝承館（ねぶり流し館）"
+      },
+      {
+        "id": "046d4c8f-fd86-49ad-8a4c-52ec080f0a11",
+        "name": "秋田市民俗芸能伝承館（ねぶり流し館）",
+        "description": "国重要無形民俗文化財「秋田竿燈まつり」の本物の竿燈を展示し、伝統芸能の歴史を伝える伝承館。隣接する旧金子家住宅も見学できる。9:30〜16:30（入館16:15まで）、年末年始休、一般130円。",
+        "address": "秋田県秋田市大町1-3-30",
+        "prefecture": "秋田県",
+        "city": "",
+        "lat": 39.72036,
+        "lng": 140.117008,
+        "qr_token": "shuin-akita-4",
+        "cover_image_url": "/images/akita/spot4.png",
+        "f7_fragment": "高さ十二メートルの本物の竿燈を間近に望む、秋田の祭り伝承館。",
+        "f7_full": "「ねぶり流し館」で勇壮な本物の秋田竿燈を見上げ、みちのくに受け継がれる夏の伝統芸能の迫力に触れた。",
+        "is_final": false,
+        "next_spot_id": "edf3f418-f30f-4165-8fbe-18ade65baea3",
+        "next_spot_name": "旧金子家住宅"
+      },
+      {
+        "id": "edf3f418-f30f-4165-8fbe-18ade65baea3",
+        "name": "旧金子家住宅",
+        "description": "ねぶり流し館に隣接して保存されている、江戸後期から明治期の秋田の商家建築。なまこ壁の土蔵や重厚な格子戸が往時の大町の繁栄を伝える。9:30〜16:30（共通観覧券一般130円）、年末年始休。",
+        "address": "秋田県秋田市大町1-3-31",
+        "prefecture": "秋田県",
+        "city": "",
+        "lat": 39.720219,
+        "lng": 140.117175,
+        "qr_token": "shuin-akita-5",
+        "cover_image_url": "/images/akita/spot5.png",
+        "f7_fragment": "なまこ壁の土蔵と重厚な格子戸が往時の繁栄を伝える、大町の古商家。",
+        "f7_full": "明治の商家の姿を残す「旧金子家住宅」を巡り、市場と稲庭うどんと城跡を歩いた秋田の旅を温かく結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c5e146cc-fc76-426f-8833-b84c5e653eee",
+    "title": "福島・稲荷の杜と阿武隈川の御倉邸を歩く",
+    "name": "福島・稲荷の杜と阿武隈川の御倉邸を歩く",
+    "description": "JR福島駅から、県内の銘品が揃う「福島県観光物産館」とレトロモダンな老舗喫茶「自家焙煎 珈琲グルメ」、平安時代創建の総鎮守「福島稲荷神社」、福島城跡の面影を残す「紅葉山公園（板倉神社）」、昭和2年建築の「御倉邸」を巡る散策路。",
+    "region": "福島・稲荷の杜と阿武隈川の旧邸宅",
+    "area_name": "福島・稲荷の杜と阿武隈川の旧邸宅",
+    "cover_image_url": "/images/fukushima/route-eyecatch.png",
+    "imageUrl": "/images/fukushima/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "街なかのレトロ喫茶から平安の古社、そして阿武隈川の静かな日本庭園へと繋がる福島を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「福島県観光物産館」で、会津・中通り・浜通りの地酒や郷土菓子を眺めた瞬間",
+          "description": "福島県全域の魅力が一堂に集まる玄関口で、これから巡る土地の豊かさに胸が高鳴った。",
+          "badge_code": "fukushima_bussankan"
+        },
+        {
+          "key": "B",
+          "text": "「自家焙煎 珈琲グルメ」の落ち着いた店内で、香り高い珈琲と名物スイーツを味わった瞬間",
+          "description": "駅前で半世紀近く愛される純喫茶の温かな空気が、旅の歩みを心地よくほぐしてくれた。",
+          "badge_code": "fukushima_coffeegourmet"
+        },
+        {
+          "key": "C",
+          "text": "「福島稲荷神社」の朱の鳥居をくぐり、千年の歴史を持つ総鎮守に手を合わせた瞬間",
+          "description": "永延元年に安倍晴明が創建したと伝わる古社が、城下町福島の心を今も静かに守っていた。",
+          "badge_code": "fukushima_inari"
+        },
+        {
+          "key": "D",
+          "text": "「御倉邸」の和室縁側から、阿武隈川の雄大な流れと日本庭園を眺めた瞬間",
+          "description": "昭和二年建築の旧日銀支店長役宅の静けさが、街歩きの終着点を品格ある余韻で包んでくれた。",
+          "badge_code": "fukushima_okuratei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "109d8501-e1a3-43ac-8292-0e9f09665b34",
+        "name": "福島県観光物産館（コラッセふくしま）",
+        "description": "JR福島駅西口徒歩3分、コラッセふくしま1階にある県内全域の名産品が集う物産館。地酒や銘菓、伝統工芸品が揃う。9:30〜19:00、年中無休。",
+        "address": "福島県福島市三河南町1-20",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.75682,
+        "lng": 140.458127,
+        "qr_token": "shuin-fukushima-1",
+        "cover_image_url": "/images/fukushima/spot1.png",
+        "f7_fragment": "福島駅西口すぐ、県内全域の銘菓と地酒が一堂に揃う玄関口。",
+        "f7_full": "「福島県観光物産館」で県内各地の銘菓や工芸品を眺め、福島の土地が育む豊かな魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "4816d8ac-ff3a-4ab8-82da-21c18fc6c1d3",
+        "next_spot_name": "自家焙煎 珈琲グルメ"
+      },
+      {
+        "id": "4816d8ac-ff3a-4ab8-82da-21c18fc6c1d3",
+        "name": "自家焙煎 珈琲グルメ",
+        "description": "JR福島駅東口から徒歩約3分、レトロモダンな空間で自家焙煎コーヒーや名物のドリア、スイーツが楽しめる老舗喫茶。日〜木11:00〜21:00・金土〜22:00、年中無休（元日除く）。",
+        "address": "福島県福島市栄町7-33 錦ビル2F",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.75395,
+        "lng": 140.462123,
+        "qr_token": "shuin-fukushima-2",
+        "cover_image_url": "/images/fukushima/spot2.png",
+        "f7_fragment": "福島駅東口そばで自家焙煎の香りとレトロな空気を守る老舗喫茶。",
+        "f7_full": "「自家焙煎 珈琲グルメ」の落ち着いた空間で香り高い珈琲を味わい、福島の街歩きの心地よい序章を過ごした。",
+        "is_final": false,
+        "next_spot_id": "db65d873-2d99-46bf-89c7-03de56f51993",
+        "next_spot_name": "福島稲荷神社"
+      },
+      {
+        "id": "db65d873-2d99-46bf-89c7-03de56f51993",
+        "name": "福島稲荷神社",
+        "description": "平安時代の永延元年（987年）に陰陽師・安倍晴明によって創建されたと伝わる福島市の総鎮守。境内自由（社務所9:00〜17:00）、無休。",
+        "address": "福島県福島市宮町1-29",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.755677,
+        "lng": 140.468805,
+        "qr_token": "shuin-fukushima-3",
+        "cover_image_url": "/images/fukushima/spot3.png",
+        "f7_fragment": "平安時代に安倍晴明が創建したと伝わる、福島市の千年総鎮守。",
+        "f7_full": "「福島稲荷神社」の朱の鳥居をくぐって参拝し、平安時代から福島の街を見守り続ける千年の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "1c05ce29-db93-4d6e-8f57-d95b6e81dd0b",
+        "next_spot_name": "紅葉山公園（板倉神社）"
+      },
+      {
+        "id": "1c05ce29-db93-4d6e-8f57-d95b6e81dd0b",
+        "name": "紅葉山公園（板倉神社）",
+        "description": "江戸時代の福島城二の丸御外庭跡に整備された庭園風の歴史公園。旧福島藩主・板倉家の祖を祀る板倉神社や美しい日本庭園が街なかに静かな彩りを添える。散策自由・無休。",
+        "address": "福島県福島市杉妻町2-35",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.750495,
+        "lng": 140.468957,
+        "qr_token": "shuin-fukushima-4",
+        "cover_image_url": "/images/fukushima/spot4.png",
+        "f7_fragment": "福島城本丸跡に造られた日本庭園と板倉神社が残る、静かな歴史公園。",
+        "f7_full": "福島城跡の「紅葉山公園（板倉神社）」を歩き、板倉家が治めた城下町の静謐な庭園風景に心を休めた。",
+        "is_final": false,
+        "next_spot_id": "da70bb10-cdac-4681-88f5-75e6f5d7aa53",
+        "next_spot_name": "御倉邸"
+      },
+      {
+        "id": "da70bb10-cdac-4681-88f5-75e6f5d7aa53",
+        "name": "御倉邸",
+        "description": "昭和2年（1927年）に建てられた旧日本銀行福島支店長役宅を一般公開している歴史的建造物。阿武隈川を望む純和風建築と庭園が美しい。10:00〜18:00、火曜・年末年始休、無料。",
+        "address": "福島県福島市御倉町1-78",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.747629,
+        "lng": 140.465972,
+        "qr_token": "shuin-fukushima-5",
+        "cover_image_url": "/images/fukushima/spot5.png",
+        "f7_fragment": "昭和二年建築の旧日銀支店長役宅から阿武隈川を望む、無料の和風邸宅。",
+        "f7_full": "阿武隈川ほとりの「御倉邸」で純和風建築と日本庭園の静けさに浸り、福島の歴史と街を巡る旅を上品に結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "21b6e9ed-1c34-4568-8eba-dfef3bd0a30c",
+    "title": "熊谷・髙城神社と湧水の星溪園を歩く",
+    "name": "熊谷・髙城神社と湧水の星溪園を歩く",
+    "description": "JR熊谷駅から、奈良時代以前からの古社「髙城神社」とかき氷の聖地として知られる「慈げん」、埼玉県初の老舗百貨店「八木橋百貨店」、湧水池が美しい市名勝「星溪園」、桜名所の荒川堤「熊谷桜堤（荒川公園）」を巡る散策路。",
+    "region": "熊谷・総鎮守の杜と湧水庭園の街",
+    "area_name": "熊谷・総鎮守の杜と湧水庭園の街",
+    "cover_image_url": "/images/kumagaya/route-eyecatch.png",
+    "imageUrl": "/images/kumagaya/route-eyecatch.png",
+    "category": "街歩きとグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "千年を超える古社の杜から名物かき氷、そして清らかな湧水庭園へと続く熊谷を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「髙城神社」の樹齢数百年のご神木ケヤキを見上げ、熊谷総鎮守の社殿へ参拝した瞬間",
+          "description": "奈良時代以前からこの地を見守る古社の静けさが、駅前の賑わいのすぐそばに息づいていた。",
+          "badge_code": "kumagaya_takagi"
+        },
+        {
+          "key": "B",
+          "text": "「慈げん」で、雪のようにふわりと削られた独創的なかき氷をひと口味わった瞬間",
+          "description": "夏の暑さで名高い熊谷が生んだかき氷の聖地の仕事に、思わず笑顔がこぼれた。",
+          "badge_code": "kumagaya_jigen"
+        },
+        {
+          "key": "C",
+          "text": "「星溪園」の清らかな湧水池と歴史ある茶室を眺めながら、涼やかな木陰を歩いた瞬間",
+          "description": "明治の豪商が造った庭園の澄んだ水辺が、暑さのまちのイメージを爽やかに塗り替えてくれた。",
+          "badge_code": "kumagaya_seikeien"
+        },
+        {
+          "key": "D",
+          "text": "「熊谷桜堤（荒川公園）」の広々とした堤防に立ち、荒川の風と並木を仰いだ瞬間",
+          "description": "日本さくら名所百選に選ばれる開放的な河畔の風景が、熊谷の旅を清々しく結んでくれた。",
+          "badge_code": "kumagaya_sakura"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e8cf983e-9b72-4d4a-8d35-d7614d0f18e0",
+        "name": "髙城神社",
+        "description": "奈良時代以前からの歴史を誇る熊谷市の総鎮守。縁結びの神・高皇産霊尊を祀り、境内には樹齢数百年の御神木ケヤキがそびえる。社務所平日9:00〜12:00・13:00〜16:00／土日祝9:00〜16:00（仏滅休）。",
+        "address": "埼玉県熊谷市宮町2-93",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 36.145484,
+        "lng": 139.387083,
+        "qr_token": "shuin-kumagaya-1",
+        "cover_image_url": "/images/kumagaya/spot1.png",
+        "f7_fragment": "樹齢数百年の大ケヤキが枝を広げる、奈良時代以前からの熊谷総鎮守。",
+        "f7_full": "「髙城神社」の御神木ケヤキが茂る境内に参拝し、奈良時代以前から続く熊谷総鎮守の静謐な空気に触れた。",
+        "is_final": false,
+        "next_spot_id": "5155317e-21d1-4024-8730-e27bf0039de3",
+        "next_spot_name": "慈げん"
+      },
+      {
+        "id": "5155317e-21d1-4024-8730-e27bf0039de3",
+        "name": "慈げん",
+        "description": "全国からファンが訪れる「かき氷の聖地」として名高い超人気店。独創的で口溶けのよいかき氷が楽しめる。10:00〜16:00頃（予約制・不定休、公式SNS要確認）。",
+        "address": "埼玉県熊谷市宮町2-95 間庭ビル1F",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 36.144985,
+        "lng": 139.387581,
+        "qr_token": "shuin-kumagaya-2",
+        "cover_image_url": "/images/kumagaya/spot2.png",
+        "f7_fragment": "雪のような口溶けの独創的な一杯で知られる、熊谷のかき氷の聖地。",
+        "f7_full": "かき氷の聖地「慈げん」を訪ね、暑い街・熊谷が育んだ独創的で涼やかな甘味文化の奥深さに触れた。",
+        "is_final": false,
+        "next_spot_id": "500dc87a-f4e5-4c18-89fb-0005d09b485c",
+        "next_spot_name": "八木橋百貨店"
+      },
+      {
+        "id": "500dc87a-f4e5-4c18-89fb-0005d09b485c",
+        "name": "八木橋百貨店",
+        "description": "明治30年（1897年）創業、埼玉県初の百貨店として親しまれる熊谷のシンボル。正面玄関の大温度計でも有名。10:00〜18:30、不定休。",
+        "address": "埼玉県熊谷市仲町74",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 36.146086,
+        "lng": 139.38188,
+        "qr_token": "shuin-kumagaya-3",
+        "cover_image_url": "/images/kumagaya/spot3.png",
+        "f7_fragment": "明治三十年創業、大温度計でも親しまれる埼玉県初の老舗百貨店。",
+        "f7_full": "老舗の「八木橋百貨店」へ立ち寄り、明治から熊谷の暮らしを支え続ける街のシンボルに親しみを感じた。",
+        "is_final": false,
+        "next_spot_id": "28ad70d8-98af-4512-867e-d4690242440b",
+        "next_spot_name": "星溪園"
+      },
+      {
+        "id": "28ad70d8-98af-4512-867e-d4690242440b",
+        "name": "星溪園",
+        "description": "明治初年に豪商・竹井澹如翁が造った庭園。清らかな湧水が湧く「玉の池」と歴史ある茶室（星溪寮・松風庵・積翠閣）が美しい市指定名勝。9:00〜17:00（11〜2月〜16:00）、月曜・年末年始休、無料。",
+        "address": "埼玉県熊谷市鎌倉町32",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 36.144259,
+        "lng": 139.38132,
+        "qr_token": "shuin-kumagaya-4",
+        "cover_image_url": "/images/kumagaya/spot4.png",
+        "f7_fragment": "清らかな湧水「玉の池」と茶室が涼を運ぶ、明治の名勝庭園。",
+        "f7_full": "清らかな湧水が湧く「星溪園」を散策し、玉の池と数寄屋茶室が織りなす熊谷の涼やかな名勝に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "673035a4-6c4d-49f2-861e-946ac65cd17a",
+        "next_spot_name": "熊谷桜堤（荒川公園）"
+      },
+      {
+        "id": "673035a4-6c4d-49f2-861e-946ac65cd17a",
+        "name": "熊谷桜堤（荒川公園）",
+        "description": "荒川北岸に約2kmにわたって延びる日本さくら名所100選の堤防と公園。江戸時代から続く桜並木と広々とした河川敷が開放的な景色を見せる。散策自由・無休。",
+        "address": "埼玉県熊谷市河原町2-173",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 36.135973,
+        "lng": 139.385927,
+        "qr_token": "shuin-kumagaya-5",
+        "cover_image_url": "/images/kumagaya/spot5.png",
+        "f7_fragment": "江戸から続く並木と川風が心地よい、日本さくら名所百選の堤防。",
+        "f7_full": "「熊谷桜堤（荒川公園）」の広々とした河畔に立ち、古社と名物氷と湧水庭園を巡った熊谷の旅を爽やかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "feec60cf-8fd9-4972-8e6e-b5837c6daea3",
+    "title": "和歌山・紀州和歌山城と井出商店を歩く",
+    "name": "和歌山・紀州和歌山城と井出商店を歩く",
+    "description": "JR和歌山駅から、駅直結の「ホテルズカフェ パスワード」と和歌山ラーメンの元祖的有名店「井出商店」、紀州徳川家55万5千石の居城「和歌山城（天守閣）」、城内の名勝「紅葉渓庭園（西之丸庭園）」、郷土の歴史を伝える「和歌山市立博物館」を巡る散策路。",
+    "region": "和歌山・紀州徳川の城と中華そば",
+    "area_name": "和歌山・紀州徳川の城と中華そば",
+    "cover_image_url": "/images/wakayama/route-eyecatch.png",
+    "imageUrl": "/images/wakayama/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "紀州ラーメンの濃厚な一杯から徳川御三家の名城、紅葉の庭園へと繋がる和歌山を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「井出商店」のカウンターで、豚骨醤油のコクと早寿司が揃う本場・和歌山ラーメンを味わった瞬間",
+          "description": "和歌山中華そばの名を全国へ広めた老舗の味と、テーブルに並ぶ早寿司の風習が印象深かった。",
+          "badge_code": "wakayama_ide"
+        },
+        {
+          "key": "B",
+          "text": "「和歌山城」の天守閣に登り、紀ノ川と和歌山市街を見渡す大パノラマを望んだ瞬間",
+          "description": "徳川御三家・紀州五十五万五千石の居城が誇る白亜の天守と石垣に、城下町の威光を感じた。",
+          "badge_code": "wakayama_castle"
+        },
+        {
+          "key": "C",
+          "text": "「紅葉渓庭園」のお堀に架かる御橋廊下を渡り、池に映る木々の彩りを眺めた瞬間",
+          "description": "藩主の別邸時代から続く静かな水辺と珍しい屋根付き廊下橋が、城内の隠れ名勝だった。",
+          "badge_code": "wakayama_momiji"
+        },
+        {
+          "key": "D",
+          "text": "「和歌山市立博物館」で、紀州徳川家の文化や雑賀衆の歴史資料に触れて旅を結んだ瞬間",
+          "description": "お城の余韻そのままに郷土の物語を深め、和歌山の奥行きを最後まで味わうことができた。",
+          "badge_code": "wakayama_museum"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1e235f78-9058-4c4b-81ea-f64a94277b81",
+        "name": "ホテルズカフェ パスワード",
+        "description": "JR和歌山駅中央口から徒歩約2分、ホテルグランヴィア和歌山1階にある落ち着いたラウンジカフェ。香り高い珈琲やスイーツで旅の支度が整う。10:00〜19:30（L.O.18:30）、無休。",
+        "address": "和歌山県和歌山市友田町5-18",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.232523,
+        "lng": 135.190158,
+        "qr_token": "shuin-wakayama-1",
+        "cover_image_url": "/images/wakayama/spot1.png",
+        "f7_fragment": "和歌山駅中央口すぐ、旅の始まりに心地よい珈琲を味わう駅近カフェ。",
+        "f7_full": "駅そばの「ホテルズカフェ パスワード」で香り高い珈琲を味わい、紀州・和歌山の街歩きを心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "931b02d8-a0c5-4632-8ead-6579ee5ecf8a",
+        "next_spot_name": "井出商店"
+      },
+      {
+        "id": "931b02d8-a0c5-4632-8ead-6579ee5ecf8a",
+        "name": "井出商店",
+        "description": "和歌山ラーメン（中華そば）の名を全国に広めた老舗有名店。コクがありつつキレのある豚骨醤油スープと、卓上の「早寿司」「ゆで卵」を一緒に味わうのが和歌山流。11:30〜22:00（L.O.21:30）、木曜定休。",
+        "address": "和歌山県和歌山市田中町4-84",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.228506,
+        "lng": 135.189541,
+        "qr_token": "shuin-wakayama-2",
+        "cover_image_url": "/images/wakayama/spot2.png",
+        "f7_fragment": "濃厚な豚骨醤油スープと卓上の早寿司が名物の、和歌山ラーメンの老舗。",
+        "f7_full": "老舗「井出商店」で本場の和歌山ラーメンと早寿司を味わい、紀州が誇る中華そばの食文化を堪能した。",
+        "is_final": false,
+        "next_spot_id": "a5fbef9e-11fa-4010-892d-1c6a5b5bf852",
+        "next_spot_name": "和歌山城（天守閣）"
+      },
+      {
+        "id": "a5fbef9e-11fa-4010-892d-1c6a5b5bf852",
+        "name": "和歌山城（天守閣）",
+        "description": "天正13年（1585年）に豊臣秀吉の命で築城され、のちに徳川御三家・紀州藩55万5千石の居城となった名城。白亜の天守閣から紀ノ川と市街を一望できる。9:00〜17:30（入場17:00まで）、12月29〜31日休、大人410円。",
+        "address": "和歌山県和歌山市一番丁3",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.227722,
+        "lng": 135.172485,
+        "qr_token": "shuin-wakayama-3",
+        "cover_image_url": "/images/wakayama/spot3.png",
+        "f7_fragment": "紀州徳川家五十五万五千石の居城、虎伏山にそびえる白亜の天守閣。",
+        "f7_full": "「和歌山城」の天守閣へ登って紀ノ川と城下町を見渡し、徳川御三家・紀州藩の堂々たる風格を体感した。",
+        "is_final": false,
+        "next_spot_id": "4a02a132-88d3-40c9-864c-f726545f9d23",
+        "next_spot_name": "紅葉渓庭園（西之丸庭園）"
+      },
+      {
+        "id": "4a02a132-88d3-40c9-864c-f726545f9d23",
+        "name": "紅葉渓庭園（西之丸庭園）",
+        "description": "和歌山城の北西麓、西之丸跡に造られた江戸初期の大名庭園で国指定名勝。池に浮かぶ鳶魚閣や、斜めに架かる珍しい屋根付き橋「御橋廊下」が見どころ。9:00〜17:00（茶室9:00〜16:30）、12月29〜31日休、無料。",
+        "address": "和歌山県和歌山市一番丁3",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.22871,
+        "lng": 135.17073,
+        "qr_token": "shuin-wakayama-4",
+        "cover_image_url": "/images/wakayama/spot4.png",
+        "f7_fragment": "斜めに架かる御橋廊下と水面の彩りが美しい、国指定名勝の大名庭園。",
+        "f7_full": "国指定名勝の「紅葉渓庭園」で御橋廊下を渡り、お城の麓に息づく江戸時代の大名庭園の風雅に浸った。",
+        "is_final": false,
+        "next_spot_id": "3d44a65e-8aae-4e9b-8b91-e9b513f2f04c",
+        "next_spot_name": "和歌山市立博物館"
+      },
+      {
+        "id": "3d44a65e-8aae-4e9b-8b91-e9b513f2f04c",
+        "name": "和歌山市立博物館",
+        "description": "和歌山城の北西、南海和歌山市駅近くにある歴史博物館。紀州徳川家ゆかりの資料や戦国期の雑賀衆、江戸から近代の和歌山の歩みを紹介している。9:00〜17:00（入館16:30まで）、月曜・祝翌日休、一般100円。",
+        "address": "和歌山県和歌山市湊本町3-2",
+        "prefecture": "和歌山県",
+        "city": "",
+        "lat": 34.233214,
+        "lng": 135.163125,
+        "qr_token": "shuin-wakayama-5",
+        "cover_image_url": "/images/wakayama/spot5.png",
+        "f7_fragment": "紀州徳川家や雑賀衆など、和歌山の奥深い歴史を伝える市立博物館。",
+        "f7_full": "「和歌山市立博物館」で紀州の歩みを学び、和歌山ラーメンと名城・庭園を巡った和歌山の旅を豊かに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0210b229-aad8-4818-8861-07d17c6e65ce",
+    "title": "熊本・名城熊本城と城彩苑を歩く",
+    "name": "熊本・名城熊本城と城彩苑を歩く",
+    "description": "JR熊本駅から市電等も活用して中心部へ入り、城下町の食と土産が揃う「桜の馬場 城彩苑」、日本三名城の一つ「熊本城（天守閣）」、加藤清正公を祀る「加藤神社」、上通の「熊本市現代美術館」、昭和30年創業「桂花ラーメン 本店」を巡る散策路。",
+    "region": "熊本・武者の城と城下町の食文化",
+    "area_name": "熊本・武者の城と城下町の食文化",
+    "cover_image_url": "/images/kumamoto/route-eyecatch.png",
+    "imageUrl": "/images/kumamoto/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "武者返しの高石垣を誇る名城と城下町の賑わい、そして黒マー油香るラーメンが繋がる熊本を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「桜の馬場 城彩苑」の江戸風の街並みを歩き、肥後の美味や名物スイーツを味わった瞬間",
+          "description": "熊本城のふもとに再現された活気あふれる城下町が、旅の期待を一気に高めてくれた。",
+          "badge_code": "kumamoto_josaien"
+        },
+        {
+          "key": "B",
+          "text": "「熊本城」の武者返しの石垣と復興を遂げた天守閣を見上げ、清正公の築城美に圧倒された瞬間",
+          "description": "日本三名城の威容と復興へ向かう力強い姿が、熊本の誇りとして胸に深く刻まれた。",
+          "badge_code": "kumamoto_castle"
+        },
+        {
+          "key": "C",
+          "text": "「加藤神社」の境内から、大天守と小天守が並ぶ熊本城の姿を間近に仰いだ瞬間",
+          "description": "「せいしょこさん」と親しまれる加藤清正公を祀る杜から眺めるお城の姿が忘れられなかった。",
+          "badge_code": "kumamoto_kato"
+        },
+        {
+          "key": "D",
+          "text": "「桂花ラーメン 本店」で、黒マー油の香ばしさと太肉が効いた熊本ラーメンを味わった瞬間",
+          "description": "昭和三十年創業の老舗が守り続ける深いコクが、城下町歩きの締めくくりを満足感で満たした。",
+          "badge_code": "kumamoto_keika"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "93865d85-7aa3-4666-86dd-f54cabe8ea03",
+        "name": "桜の馬場 城彩苑",
+        "description": "熊本城の麓に広がる観光交流施設。江戸時代の城下町を再現した「桜の小路」でからし蓮根やいきなり団子などの熊本の美味や土産が楽しめる。桜の小路物販9:00〜18:00（3〜11月〜19:00）、12月29〜31日休。",
+        "address": "熊本県熊本市中央区二の丸1-1",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.80355,
+        "lng": 130.703677,
+        "qr_token": "shuin-kumamoto-1",
+        "cover_image_url": "/images/kumamoto/spot1.png",
+        "f7_fragment": "熊本城の麓に江戸の城下町を再現した、肥後の美味と土産の拠点。",
+        "f7_full": "「桜の馬場 城彩苑」の城下町風の小路を歩き、肥後ならではの食と土産に触れて熊本散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "ac619c37-3a8f-4583-8daf-cdec2248db37",
+        "next_spot_name": "熊本城（天守閣）"
+      },
+      {
+        "id": "ac619c37-3a8f-4583-8daf-cdec2248db37",
+        "name": "熊本城（天守閣）",
+        "description": "加藤清正が築いた日本三名城の一つ。優雅な反りを持つ「武者返し」の高石垣と復興を遂げた天守閣が圧倒的な存在感を放つ。9:00〜17:00（最終入園16:00、7〜8月〜19:00）、12月29〜31日休、高校生以上800円。",
+        "address": "熊本県熊本市中央区本丸1-1",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.805827,
+        "lng": 130.706149,
+        "qr_token": "shuin-kumamoto-2",
+        "cover_image_url": "/images/kumamoto/spot2.png",
+        "f7_fragment": "武者返しの高石垣と黒白の天守閣が勇壮な、日本三名城の熊本城。",
+        "f7_full": "日本三名城の「熊本城」で武者返しの石垣と復興した天守閣を仰ぎ、加藤清正が築いた名城の威容に圧倒された。",
+        "is_final": false,
+        "next_spot_id": "fc4ae9ac-b842-4234-8de4-c5f19d05fa27",
+        "next_spot_name": "加藤神社"
+      },
+      {
+        "id": "fc4ae9ac-b842-4234-8de4-c5f19d05fa27",
+        "name": "加藤神社",
+        "description": "熊本城本丸の北側に鎮座し、熊本の礎を築いた加藤清正公を祀る神社。境内から間近に見る熊本城天守閣と宇土櫓の眺めが絶景。参拝自由（社務所8:00〜17:00）、無休。",
+        "address": "熊本県熊本市中央区本丸2-1",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.807132,
+        "lng": 130.705332,
+        "qr_token": "shuin-kumamoto-3",
+        "cover_image_url": "/images/kumamoto/spot3.png",
+        "f7_fragment": "熊本城本丸内に鎮座し、清正公「せいしょこさん」を祀る絶景の神社。",
+        "f7_full": "熊本城内の「加藤神社」へ参拝し、清正公への敬意とともに間近に仰ぐ天守閣の絶景を胸に刻んだ。",
+        "is_final": false,
+        "next_spot_id": "fa49f322-20f4-4c98-8a3a-bc45dbfdeed6",
+        "next_spot_name": "熊本市現代美術館"
+      },
+      {
+        "id": "fa49f322-20f4-4c98-8a3a-bc45dbfdeed6",
+        "name": "熊本市現代美術館",
+        "description": "上通アーケード入口のびぷれす熊日会館3階にある都市型美術館。企画展のほか無料で利用できる美術図書室やアート空間が充実している。10:00〜20:00（展覧会入場19:30まで）、火曜・年末年始休。",
+        "address": "熊本県熊本市中央区上通町2-3 びぷれす熊日会館3F",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.803288,
+        "lng": 130.710991,
+        "qr_token": "shuin-kumamoto-4",
+        "cover_image_url": "/images/kumamoto/spot4.png",
+        "f7_fragment": "上通アーケード直結、アート図書室も備えた都市型の現代美術館。",
+        "f7_full": "「熊本市現代美術館」で開放的なアート空間に触れ、歴史ある城下町・熊本に息づく現代の文化を感じた。",
+        "is_final": false,
+        "next_spot_id": "d96670ea-2c0e-403c-875a-089b9a47505f",
+        "next_spot_name": "桂花ラーメン 本店"
+      },
+      {
+        "id": "d96670ea-2c0e-403c-875a-089b9a47505f",
+        "name": "桂花ラーメン 本店",
+        "description": "昭和30年（1955年）創業、東京にも進出し熊本ラーメンを全国に広めた老舗本店。黒マー油が香る豚骨スープと太肉（角煮）がのる太肉麺が不動の人気。月〜木11:00〜24:00・金土〜25:00・日祝〜16:30、元旦休。",
+        "address": "熊本県熊本市中央区花畑町11-9 K-1ビル1F",
+        "prefecture": "熊本県",
+        "city": "",
+        "lat": 32.801828,
+        "lng": 130.707448,
+        "qr_token": "shuin-kumamoto-5",
+        "cover_image_url": "/images/kumamoto/spot5.png",
+        "f7_fragment": "昭和三十年創業、香ばしい黒マー油と太肉麺で知られる熊本ラーメン本店。",
+        "f7_full": "老舗の「桂花ラーメン 本店」で黒マー油香る本場の一杯を味わい、名城とアートを巡った熊本の旅を力強く結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
