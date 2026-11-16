@@ -75530,5 +75530,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "8b588d46-b493-42d9-845a-1e70aef1ba26",
+    "title": "海霧と夕映えが染める釧路川辺を歩く",
+    "name": "海霧と夕映えが染める釧路川辺を歩く",
+    "description": "太平洋から流れ込む海霧と、世界三大夕日に数えられる茜色の空が出会う北の港町・釧路。戦災の記憶を刻む街なかの公園から、鉄板の上でソースが弾ける元祖洋食、四季の像が立つ名橋、港の市場と赤煉瓦の復元社屋まで、潮風とともに道東の息づかいを味わう徒歩の旅。",
+    "region": "釧路・海霧の街と幣舞橋の夕景",
+    "area_name": "釧路・海霧の街と幣舞橋の夕景",
+    "cover_image_url": "/images/kushiro/route-eyecatch.png",
+    "imageUrl": "/images/kushiro/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "海霧と鉄板の香りが交差する釧路の街で、あなたが最初に誰かへ語りたいのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「レストラン泉屋 総本店」で熱々の鉄板に載った名物スパカツを頬張った瞬間",
+          "description": "寒冷な道東の暮らしが生んだボリューム満点の洋食文化と、半世紀以上守られるミートソースのコクが記憶に残った。",
+          "badge_code": "kushiro_izumiya_spakatsu"
+        },
+        {
+          "key": "B",
+          "text": "市街地の緑陰に佇む「栄町平和公園」で、道東最初の戦災と復興の碑を見上げた瞬間",
+          "description": "賑やかな中心街のすぐ傍らに、釧路空襲の記憶と市民の平和への願いを静かに伝える場があることに胸を打たれた。",
+          "badge_code": "kushiro_heiwa_park"
+        },
+        {
+          "key": "C",
+          "text": "「幣舞橋」の欄干に立つ四季の像越しに、釧路川の河口と港の空を眺めた瞬間",
+          "description": "五代にわたって架け替えられてきた名橋の上で、道東の厳しい季節と海風が織りなす雄大な景色を体感した。",
+          "badge_code": "kushiro_nusamai_bridge"
+        },
+        {
+          "key": "D",
+          "text": "赤煉瓦の洋館「港文館」の窓辺で、石川啄木が過ごした北の新聞社時代に触れた瞬間",
+          "description": "わずか七十六日間の滞在ながら多くの歌を残した若き歌人の足跡を、珈琲の香りとともに辿ることができた。",
+          "badge_code": "kushiro_kobunkan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4aaaad1c-40ff-4984-85e7-b7513ef727bc",
+        "name": "栄町平和公園",
+        "description": "釧路市中心部に位置し、市内で最初に設置された噴水や釧路空襲の戦災記念碑が立つ歴史ある公園。終日散策自由。",
+        "address": "北海道釧路市栄町6-9",
+        "prefecture": "北海道",
+        "city": "釧路市",
+        "lat": 42.985597,
+        "lng": 144.387007,
+        "qr_token": "shuin-kushiro-1",
+        "cover_image_url": "/images/kushiro/spot1.png",
+        "f7_fragment": "木立の奥に佇む戦災記念碑と、市民の復興を見守った噴水の記憶。",
+        "f7_full": "釧路市内で最初に造られた噴水と戦災記念碑が並ぶ栄町平和公園を訪ね、北の港町が歩んだ再生の軌跡に触れた。",
+        "is_final": false,
+        "next_spot_id": "a8fc834f-5c60-4f47-8234-70de7b97790c",
+        "next_spot_name": "レストラン泉屋 総本店"
+      },
+      {
+        "id": "a8fc834f-5c60-4f47-8234-70de7b97790c",
+        "name": "レストラン泉屋 総本店",
+        "description": "末広町に店を構える釧路の老舗洋食店。熱々の鉄板にミートソーススパゲッティと豚カツを載せた名物「スパカツ」の元祖。営業時間11:00〜20:30、月1回火曜不定休。",
+        "address": "北海道釧路市末広町2-28",
+        "prefecture": "北海道",
+        "city": "釧路市",
+        "lat": 42.982673,
+        "lng": 144.386835,
+        "qr_token": "shuin-kushiro-2",
+        "cover_image_url": "/images/kushiro/spot2.png",
+        "f7_fragment": "湯気とソースの香りが立ち上る鉄板、道東の寒さを忘れる洋食の熱気。",
+        "f7_full": "冬の寒さでも料理が冷めぬよう厚手の鉄板に盛られた元祖スパカツを味わい、北国の暮らしから生まれた知恵を感じた。",
+        "is_final": false,
+        "next_spot_id": "9122f560-ae8c-4d9a-8a18-e1556814317a",
+        "next_spot_name": "幣舞橋"
+      },
+      {
+        "id": "9122f560-ae8c-4d9a-8a18-e1556814317a",
+        "name": "幣舞橋",
+        "description": "釧路川河口に架かる北海道三大名橋の一つ。欄干の四隅に「春夏秋冬」を表現したブロンズ像が立ち、夕日の名所として知られる。終日通行可能。",
+        "address": "北海道釧路市北大通1丁目",
+        "prefecture": "北海道",
+        "city": "釧路市",
+        "lat": 42.981007,
+        "lng": 144.385564,
+        "qr_token": "shuin-kushiro-3",
+        "cover_image_url": "/images/kushiro/spot3.png",
+        "f7_fragment": "釧路川の河口を見守る四季のブロンズ像と、港から吹き抜ける潮風。",
+        "f7_full": "五代にわたり街を繋いできた幣舞橋を歩き、海霧と四季のブロンズ彫刻が織りなす北の港町の景観を望んだ。",
+        "is_final": false,
+        "next_spot_id": "b7f2d043-4205-4bca-89fb-92aa72c93f17",
+        "next_spot_name": "釧路フィッシャーマンズワーフMOO"
+      },
+      {
+        "id": "b7f2d043-4205-4bca-89fb-92aa72c93f17",
+        "name": "釧路フィッシャーマンズワーフMOO",
+        "description": "幣舞橋のたもとに建つ港の複合施設。海産物や道東銘菓、地元工芸品などが揃うショッピングゾーンを備える。営業時間10:00〜19:00（11〜4月は18:00まで）、1月1日休。",
+        "address": "北海道釧路市錦町2-4",
+        "prefecture": "北海道",
+        "city": "釧路市",
+        "lat": 42.981763,
+        "lng": 144.38334,
+        "qr_token": "shuin-kushiro-4",
+        "cover_image_url": "/images/kushiro/spot4.png",
+        "f7_fragment": "海産物や道東銘菓が賑やかに並ぶ港の館、旅の記憶を包む潮の香り。",
+        "f7_full": "釧路川のほとりに建つ港の複合施設MOOを訪ね、北の海の豊かな恵みと道東ならではの土産を手に取った。",
+        "is_final": false,
+        "next_spot_id": "a8d29ba8-76bc-47e5-8096-847ce726d047",
+        "next_spot_name": "港文館"
+      },
+      {
+        "id": "a8d29ba8-76bc-47e5-8096-847ce726d047",
+        "name": "港文館",
+        "description": "明治期に石川啄木が記者として勤めた旧釧路新聞社屋を復元した赤煉瓦の洋館。1階はカフェ、2階は石川啄木資料館。営業時間10:00〜18:00（11〜4月は17:00まで）、年末年始休。",
+        "address": "北海道釧路市大町2-1-12",
+        "prefecture": "北海道",
+        "city": "釧路市",
+        "lat": 42.980176,
+        "lng": 144.382261,
+        "qr_token": "shuin-kushiro-5",
+        "cover_image_url": "/images/kushiro/spot5.png",
+        "f7_fragment": "赤煉瓦の洋館に漂う珈琲の香りと、明治の新聞社へ続く木の階段。",
+        "f7_full": "石川啄木ゆかりの復元社屋・港文館の窓辺で珈琲を傾け、海霧の港町に流れる静かな時間をゆっくり味わった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c9058a2a-ab06-4891-88e1-6c18afadaed4",
+    "title": "湘南の潮風と古刹の梅・大磯の旧道を巡る",
+    "name": "湘南の潮風と古刹の梅・大磯の旧道を巡る",
+    "description": "古くは東海道八番目の宿場町として栄え、明治期には海浜保養地と政財界人の別荘地として名を馳せた神奈川県大磯町。文豪が眠る古刹の梅林から、築八十年の古民家定食、日本三大俳諧道場の茅葺き庵、創業百四十余年の蒲鉾店を経て、大磯港の複合施設まで、海と歴史が溶け合う小径を歩く。",
+    "region": "大磯・湘南発祥の松並木と文豪の街",
+    "area_name": "大磯・湘南発祥の松並木と文豪の街",
+    "cover_image_url": "/images/oiso/route-eyecatch.png",
+    "imageUrl": "/images/oiso/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "文豪の記憶と湘南の潮風が息づく大磯で、旅の相棒にどれをおすすめしますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「地福寺」の梅林に囲まれた木立の中で、島崎藤村夫妻の墓前に手を合わせたとき",
+          "description": "『夜明け前』を書き上げた文豪が終の棲家に選んだ大磯の静謐さと、古寺の落ち着いた空気に心が洗われた。",
+          "badge_code": "oiso_jifukuji"
+        },
+        {
+          "key": "B",
+          "text": "日本三大俳諧道場「鴫立庵」の茅葺き庵で、湘南発祥の碑と庭の松を眺めたとき",
+          "description": "西行法師の歌に由来する名勝の佇まいと、江戸初期に「湘南」の名を刻んだ歴史の重みに深く惹かれた。",
+          "badge_code": "oiso_shigitatsuan"
+        },
+        {
+          "key": "C",
+          "text": "路地裏の古民家「茶屋町カフェ」で、木の温もりに包まれながら定食を味わったとき",
+          "description": "昭和の暮らしを伝える築八十年の建物で、肩の力を抜いて大磯の日常に溶け込む心地よさを実感した。",
+          "badge_code": "oiso_chayamachi_cafe"
+        },
+        {
+          "key": "D",
+          "text": "「大磯 井上蒲鉾店」で、石臼と伝統の技が守り抜くはんぺんや蒲鉾を求めたとき",
+          "description": "明治の創業以来、政財界人にも愛された無添加の手仕事が今も宿場町の一角で息づいていることに感動した。",
+          "badge_code": "oiso_inoue_kamaboko"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c17f387c-28f8-4989-8eda-7883cfd211a0",
+        "name": "地福寺",
+        "description": "大磯駅近くの真言宗東寺派の古刹。境内の梅林の中に文豪・島崎藤村夫妻の墓所があることで知られる。境内散策自由。",
+        "address": "神奈川県中郡大磯町大磯1135",
+        "prefecture": "神奈川県",
+        "city": "大磯町",
+        "lat": 35.309496,
+        "lng": 139.314434,
+        "qr_token": "shuin-oiso-1",
+        "cover_image_url": "/images/oiso/spot1.png",
+        "f7_fragment": "梅の古木が枝を広げる静かな境内、文豪が愛した大磯の木漏れ日。",
+        "f7_full": "島崎藤村が終の棲家に選んだ町の古刹・地福寺を訪ね、多くの文化人が慕った梅の木陰と穏やかな静寂に触れた。",
+        "is_final": false,
+        "next_spot_id": "e82ac1e9-8513-4001-82f6-4993ebc1f50b",
+        "next_spot_name": "茶屋町カフェ"
+      },
+      {
+        "id": "e82ac1e9-8513-4001-82f6-4993ebc1f50b",
+        "name": "茶屋町カフェ",
+        "description": "大磯駅近くの路地裏に佇む、築80年の古民家を改装したカフェ食堂。手作りの「茶屋町定食」などが人気。営業時間11:00〜21:00（日曜20:00まで）、不定休。",
+        "address": "神奈川県中郡大磯町大磯1156-10",
+        "prefecture": "神奈川県",
+        "city": "大磯町",
+        "lat": 35.310232,
+        "lng": 139.312188,
+        "qr_token": "shuin-oiso-2",
+        "cover_image_url": "/images/oiso/spot2.png",
+        "f7_fragment": "築八十年の古民家に差し込む柔らかな光と、湯気の立つ定食の温もり。",
+        "f7_full": "路地裏の古民家「茶屋町カフェ」で手作りの茶屋町定食を味わい、大磯の穏やかな日常の暮らしに溶け込んだ。",
+        "is_final": false,
+        "next_spot_id": "182ae70e-899e-4e2b-88b4-eced0f641bc3",
+        "next_spot_name": "鴫立庵"
+      },
+      {
+        "id": "182ae70e-899e-4e2b-88b4-eced0f641bc3",
+        "name": "鴫立庵",
+        "description": "日本三大俳諧道場の一つで、「湘南」発祥の地とされる史跡。西行法師の和歌に由来する名勝。開庵時間9:00〜16:00、月曜休（祝日の場合は開庵）。",
+        "address": "神奈川県中郡大磯町大磯1289",
+        "prefecture": "神奈川県",
+        "city": "大磯町",
+        "lat": 35.307325,
+        "lng": 139.311897,
+        "qr_token": "shuin-oiso-3",
+        "cover_image_url": "/images/oiso/spot3.png",
+        "f7_fragment": "松林に抱かれた茅葺きの庵と、庭の石碑に刻まれた湘南発祥の原点。",
+        "f7_full": "日本三大俳諧道場の鴫立庵を訪ね、西行法師ゆかりの歌枕と「湘南」発祥を伝える歴史の記憶を辿った。",
+        "is_final": false,
+        "next_spot_id": "c08739ba-e2ce-48e7-8eeb-896f716be285",
+        "next_spot_name": "大磯 井上蒲鉾店"
+      },
+      {
+        "id": "c08739ba-e2ce-48e7-8eeb-896f716be285",
+        "name": "大磯 井上蒲鉾店",
+        "description": "明治十一年創業の老舗蒲鉾店。保存料を使わず石臼で練り上げた蒲鉾やはんぺん、さつま揚げが名物。営業時間8:30〜17:00、水曜定休。",
+        "address": "神奈川県中郡大磯町大磯1306",
+        "prefecture": "神奈川県",
+        "city": "大磯町",
+        "lat": 35.307124,
+        "lng": 139.313361,
+        "qr_token": "shuin-oiso-4",
+        "cover_image_url": "/images/oiso/spot4.png",
+        "f7_fragment": "旧東海道の店先に並ぶ真っ白なはんぺんと、石臼が守り抜く老舗の技。",
+        "f7_full": "明治創業の「大磯 井上蒲鉾店」で昔ながらの石臼製法に触れ、大磯の名産品である練り物を求めた。",
+        "is_final": false,
+        "next_spot_id": "a4c23c7e-0eaa-4d9f-808e-85addf0d9d24",
+        "next_spot_name": "OISO CONNECT"
+      },
+      {
+        "id": "a4c23c7e-0eaa-4d9f-808e-85addf0d9d24",
+        "name": "OISO CONNECT",
+        "description": "大磯港に建つ賑わい複合施設。1階には地場産品のマルシェ、2階には相模湾を一望できるカフェ＆レストランを備える。1階9:00〜17:00（無休）、2階11:00〜20:00（水曜休）。",
+        "address": "神奈川県中郡大磯町大磯1398-6",
+        "prefecture": "神奈川県",
+        "city": "大磯町",
+        "lat": 35.307142,
+        "lng": 139.317489,
+        "qr_token": "shuin-oiso-5",
+        "cover_image_url": "/images/oiso/spot5.png",
+        "f7_fragment": "相模湾の水平線を望む港のテラスと、頬をなでる心地よい潮風。",
+        "f7_full": "大磯港の複合施設テラスで相模湾の青い海を眺めながら一息つき、宿場町と港の歩みを締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b00a45ae-64c2-468b-82da-3152a7681705",
+    "title": "雪国の知恵と老舗の甘味を巡る長岡",
+    "name": "雪国の知恵と老舗の甘味を巡る長岡",
+    "description": "越後長岡藩の城下町として栄え、豪雪と戦災を乗り越えて力強く復興を遂げてきた新潟県長岡市。木組みの大屋根が市民を迎える交流拠点から、布海苔つなぎのへぎそば、市民の守護神と称えられる古社、二百年続く名物饅頭、そして日本三大銘菓の茶房まで、雪国の暮らしと美意識に出会う。",
+    "region": "長岡・雁木通りと銘菓の城下町",
+    "area_name": "長岡・雁木通りと銘菓の城下町",
+    "cover_image_url": "/images/nagaoka/route-eyecatch.png",
+    "imageUrl": "/images/nagaoka/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "雪国の知恵と伝統の味覚が息づく長岡で、大切な人に持ち帰りたい記憶はどれだろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「アオーレ長岡」の開放的な屋根付き広場「ナカドマ」を見上げた瞬間",
+          "description": "市役所とアリーナを融合させ、雪国の雁木文化を現代建築へ昇華させた独創的な空間に驚かされた。",
+          "badge_code": "nagaoka_aore"
+        },
+        {
+          "key": "B",
+          "text": "「越後長岡小嶋屋 殿町本店」で、翡翠色のへぎそばを手繰り上げた瞬間",
+          "description": "布海苔をつなぎに使った独特のコシと喉越しに、織物の産地として栄えた越後の風土を感じた。",
+          "badge_code": "nagaoka_hegisoba"
+        },
+        {
+          "key": "C",
+          "text": "「越乃雪本舗大和屋」の茶房で、口の中で淡雪のように溶ける日本三大銘菓を味わったとき",
+          "description": "二百年以上も受け継がれてきたもち米と和三盆の繊細な口どけに、長岡藩の雅な茶の湯文化が重なった。",
+          "badge_code": "nagaoka_koshinoyuki"
+        },
+        {
+          "key": "D",
+          "text": "「御菓子司 紅屋重正」で、素朴で力強い甘みの名物「大手饅頭」を手にしたとき",
+          "description": "薄皮に包まれたたっぷりのあんこと、長岡の城下で二百年以上愛され続ける職人の誇りが伝わってきた。",
+          "badge_code": "nagaoka_beniya"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0bef1c37-fec6-46b2-81ed-c6625fa1de40",
+        "name": "アオーレ長岡",
+        "description": "建築家・隈研吾氏が設計した長岡市役所と市民交流空間の複合施設。全天候型広場「ナカドマ」は8:00〜22:00開放。",
+        "address": "新潟県長岡市大手通1-4-10",
+        "prefecture": "新潟県",
+        "city": "長岡市",
+        "lat": 37.446145,
+        "lng": 138.851233,
+        "qr_token": "shuin-nagaoka-1",
+        "cover_image_url": "/images/nagaoka/spot1.png",
+        "f7_fragment": "木組みの大屋根が雪国の街を包むナカドマ、現代に蘇る雁木の広場。",
+        "f7_full": "隈研吾氏が設計を手がけたアオーレ長岡を訪ね、雪国の伝統的な雁木の知恵を活かした開放的な木造空間を仰いだ。",
+        "is_final": false,
+        "next_spot_id": "0098dd89-92ba-4623-8d4e-c660f8408f5c",
+        "next_spot_name": "越後長岡小嶋屋 殿町本店"
+      },
+      {
+        "id": "0098dd89-92ba-4623-8d4e-c660f8408f5c",
+        "name": "越後長岡小嶋屋 殿町本店",
+        "description": "昭和三十年代に創業した長岡を代表するへぎそばの名店。布海苔をつなぎにした弾力ある蕎麦を木箱「へぎ」に盛る。営業時間11:00〜22:00（L.O. 21:00）、水曜定休（祝日の場合は営業）。",
+        "address": "新潟県長岡市殿町2-2-9",
+        "prefecture": "新潟県",
+        "city": "長岡市",
+        "lat": 37.445645,
+        "lng": 138.849953,
+        "qr_token": "shuin-nagaoka-2",
+        "cover_image_url": "/images/nagaoka/spot2.png",
+        "f7_fragment": "木箱に一口ずつ並んだ翡翠色のへぎそば、布海苔が織りなす滑らかなコシ。",
+        "f7_full": "越後の麻織物文化にルーツを持つ布海苔つなぎのへぎそばを、昭和三十年代創業の殿町の本店でじっくり味わった。",
+        "is_final": false,
+        "next_spot_id": "1666ac41-7877-498b-86ef-7a79f9a12549",
+        "next_spot_name": "平潟神社"
+      },
+      {
+        "id": "1666ac41-7877-498b-86ef-7a79f9a12549",
+        "name": "平潟神社",
+        "description": "長岡市民から「智慶様」と親しまれる表町の古社。長岡市戦災殉難者慰霊塔が隣接し、城下町の鎮守として信仰を集める。境内参拝自由。",
+        "address": "新潟県長岡市表町1-6-1",
+        "prefecture": "新潟県",
+        "city": "長岡市",
+        "lat": 37.446992,
+        "lng": 138.845479,
+        "qr_token": "shuin-nagaoka-3",
+        "cover_image_url": "/images/nagaoka/spot3.png",
+        "f7_fragment": "表町の街なかに息づく鎮守の杜と、市民が「智慶様」と慕う社殿。",
+        "f7_full": "長岡の守護神として親しまれる平潟神社に手を合わせ、城下町の祈りと戦災復興の歴史に深く思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "b0e45614-159a-4c9b-87be-5b0e33985c94",
+        "next_spot_name": "御菓子司 紅屋重正"
+      },
+      {
+        "id": "b0e45614-159a-4c9b-87be-5b0e33985c94",
+        "name": "御菓子司 紅屋重正",
+        "description": "文化年間に創業した二百年以上の歴史を誇る老舗和菓子店。薄皮でたっぷりあんを包んだ「大手饅頭」や「越後長岡藩」が銘菓。営業時間9:00〜17:00、火曜定休。",
+        "address": "新潟県長岡市表町1-10-35",
+        "prefecture": "新潟県",
+        "city": "長岡市",
+        "lat": 37.448413,
+        "lng": 138.846801,
+        "qr_token": "shuin-nagaoka-4",
+        "cover_image_url": "/images/nagaoka/spot4.png",
+        "f7_fragment": "あんこが透けるほど薄い酒種皮、二百年続く城下町の看板饅頭。",
+        "f7_full": "長岡城大手門の記憶を名に留める二百年続く老舗で、伝統の「大手饅頭」を旅の手土産として持ち帰った。",
+        "is_final": false,
+        "next_spot_id": "89ff6f1b-6163-4e7e-86c6-47a081e9de31",
+        "next_spot_name": "越乃雪本舗大和屋"
+      },
+      {
+        "id": "89ff6f1b-6163-4e7e-86c6-47a081e9de31",
+        "name": "越乃雪本舗大和屋",
+        "description": "安永七年創業、日本三大銘菓の一つ「越乃雪」を製造販売する老舗。本店には茶房が併設され、和菓子と抹茶などを味わえる。販売9:00〜17:30・茶房10:00〜16:00（L.O. 15:00）、日曜・水曜不定休。",
+        "address": "新潟県長岡市柳原町3-3",
+        "prefecture": "新潟県",
+        "city": "長岡市",
+        "lat": 37.44624,
+        "lng": 138.844136,
+        "qr_token": "shuin-nagaoka-5",
+        "cover_image_url": "/images/nagaoka/spot5.png",
+        "f7_fragment": "舌の上で淡雪のようにほどける白き銘菓と、茶房に広がる抹茶の香り。",
+        "f7_full": "日本三大銘菓「越乃雪」の本店茶房で温かいお茶とともに一服し、長岡藩ゆかりの雅な茶の湯文化に触れた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4aefec60-45b5-4911-8fd2-edc2cdf4a492",
+    "title": "千利休の井戸と芥子餅・堺の商都を訪ねる",
+    "name": "千利休の井戸と芥子餅・堺の商都を訪ねる",
+    "description": "中世に自由都市として栄え、南蛮貿易と茶の湯の文化が花開いた大阪府堺市。宣教師の名を冠した緑豊かな公園から、熱々のせいろそばが名物の老舗、千利休が茶を点てた屋敷跡、立礼呈茶で一服できる文化施設を経て、室町創業の芥子餅本舗まで、千年の商都の粋を辿る。",
+    "region": "堺・商都の茶の湯と宿院の老舗",
+    "area_name": "堺・商都の茶の湯と宿院の老舗",
+    "cover_image_url": "/images/sakai/route-eyecatch.png",
+    "imageUrl": "/images/sakai/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "茶の湯の心と商都の気風を受け継ぐ堺の街で、あなたの歩みを止めたのはどの情景だろうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "南蛮貿易の歴史を伝える「ザビエル公園」の並木道を歩いたとき",
+          "description": "かつて濠に囲まれた自由都市・堺に世界の文物が集まった時代を、爽やかな緑陰から思い描いた。",
+          "badge_code": "sakai_xavier_park"
+        },
+        {
+          "key": "B",
+          "text": "三百年以上続く老舗「ちく満」で、生卵に絡めて熱々のせいろそばを味わったとき",
+          "description": "江戸元禄の頃から変わらぬ柔らかな蒸しそばと、濃いめの熱い出汁の組み合わせに商都の食文化を見た。",
+          "badge_code": "sakai_chikuma_soba"
+        },
+        {
+          "key": "C",
+          "text": "「さかい利晶の杜」の立礼呈茶で、堺ゆかりの茶の湯文化とお抹茶をいただいたとき",
+          "description": "千利休と与謝野晶子を生んだ土地の文化的豊かさを、椅子席で気軽に味わう一服から実感した。",
+          "badge_code": "sakai_risho_tea"
+        },
+        {
+          "key": "D",
+          "text": "室町創業の「本家小嶋」で、香ばしい芥子の実をまとった伝統の「芥子餅」を手にしたとき",
+          "description": "千利休も愛したと伝わる素朴で奥深い味わいに、五百年近く続く堺の菓子づくりの底力を感じた。",
+          "badge_code": "sakai_keshimochi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d62bd2dd-05e3-4b2e-817b-06597683c227",
+        "name": "ザビエル公園",
+        "description": "フランシスコ・ザビエルが堺を訪れた際にもてなした豪商・日比屋了慶の屋敷跡に近い公園（正式名称：戎公園）。終日散策自由。",
+        "address": "大阪府堺市堺区櫛屋町西1丁",
+        "prefecture": "大阪府",
+        "city": "堺市",
+        "lat": 34.581473,
+        "lng": 135.475424,
+        "qr_token": "shuin-sakai-1",
+        "cover_image_url": "/images/sakai/spot1.png",
+        "f7_fragment": "自由都市・堺の記憶を伝える緑の木立と、南蛮渡来の歴史を刻む碑。",
+        "f7_full": "豪商たちが自治を築いた街のザビエル公園を訪ね、海の向こうの世界と繋がっていた堺の原点に触れた。",
+        "is_final": false,
+        "next_spot_id": "66a0c9a9-ba64-40b2-82e8-43875dbdf1af",
+        "next_spot_name": "ちく満"
+      },
+      {
+        "id": "66a0c9a9-ba64-40b2-82e8-43875dbdf1af",
+        "name": "ちく満",
+        "description": "元禄八年創業の堺を代表する老舗そば店。せいろで蒸した柔らかなそばを、生卵を溶いた熱い出汁につけて味わう名物スタイル。営業時間10:30〜20:30、月曜定休。",
+        "address": "大阪府堺市堺区宿院町西1-1-16",
+        "prefecture": "大阪府",
+        "city": "堺市",
+        "lat": 34.575389,
+        "lng": 135.470586,
+        "qr_token": "shuin-sakai-2",
+        "cover_image_url": "/images/sakai/spot2.png",
+        "f7_fragment": "湯気を立てる木のせいろと、生卵を溶いた熱々の蕎麦つゆの香り。",
+        "f7_full": "江戸元禄から三百年以上続く老舗ちく満を訪ね、忙しい堺の商人が愛した温かいせいろそばを味わった。",
+        "is_final": false,
+        "next_spot_id": "0f8f4f46-b706-4bd2-8a92-b6a509c9a7d3",
+        "next_spot_name": "千利休屋敷跡"
+      },
+      {
+        "id": "0f8f4f46-b706-4bd2-8a92-b6a509c9a7d3",
+        "name": "千利休屋敷跡",
+        "description": "茶の湯を大成した千利休が青年期まで過ごした今市町の屋敷跡。境内には大徳寺山門の古い部材を用いた「椿の井戸」が残る。終日見学自由。",
+        "address": "大阪府堺市堺区宿院町西1-17-1",
+        "prefecture": "大阪府",
+        "city": "堺市",
+        "lat": 34.575845,
+        "lng": 135.470691,
+        "qr_token": "shuin-sakai-3",
+        "cover_image_url": "/images/sakai/spot3.png",
+        "f7_fragment": "静かな一画に残る「椿の井戸」と、わび茶の祖が生まれ育った屋敷跡。",
+        "f7_full": "千利休屋敷跡に残る「椿の井戸」を前に、堺の町衆の暮らしから生まれた茶の湯の精神を感じ取った。",
+        "is_final": false,
+        "next_spot_id": "9f80ef7a-96cf-46e2-819f-308699c0d642",
+        "next_spot_name": "さかい利晶の杜"
+      },
+      {
+        "id": "9f80ef7a-96cf-46e2-819f-308699c0d642",
+        "name": "さかい利晶の杜",
+        "description": "千利休と与謝野晶子の生涯を伝える文化施設。茶の湯体験施設では椅子席で抹茶と堺の和菓子を味わう立礼呈茶が楽しめる。営業時間9:00〜18:00（茶の湯体験10:00〜17:00）、第3火曜休。",
+        "address": "大阪府堺市堺区宿院町西2-1-1",
+        "prefecture": "大阪府",
+        "city": "堺市",
+        "lat": 34.576015,
+        "lng": 135.470286,
+        "qr_token": "shuin-sakai-4",
+        "cover_image_url": "/images/sakai/spot4.png",
+        "f7_fragment": "椅子席で気軽に味わう一服のお抹茶と、堺の老舗和菓子の優しい甘み。",
+        "f7_full": "さかい利晶の杜の立礼呈茶で一服し、千利休と与謝野晶子という二人の巨星を生んだ堺の風土に触れた。",
+        "is_final": false,
+        "next_spot_id": "a16894ce-79f0-4bb4-8259-7ec24f124797",
+        "next_spot_name": "本家小嶋"
+      },
+      {
+        "id": "a16894ce-79f0-4bb4-8259-7ec24f124797",
+        "name": "本家小嶋",
+        "description": "室町時代の天文元年創業、千利休も茶菓子として愛したとされる堺銘菓「芥子餅」の老舗。営業時間9:00〜17:00（売切次第終了）、月曜定休。",
+        "address": "大阪府堺市堺区大町西1-2-21",
+        "prefecture": "大阪府",
+        "city": "堺市",
+        "lat": 34.577053,
+        "lng": 135.471468,
+        "qr_token": "shuin-sakai-5",
+        "cover_image_url": "/images/sakai/spot5.png",
+        "f7_fragment": "黄金色の芥子の実が香ばしく香る柔らかな餅と、五百年続く老舗の木箱。",
+        "f7_full": "室町創業の本家小嶋で伝統の芥子餅を手に取り、千年の商都・堺が守り抜く五百年の歴史を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "337ee13c-7569-422f-8a05-a3ed0e64c776",
+    "title": "眼鏡橋と焦がしニンニクの香る玉名へ",
+    "name": "眼鏡橋と焦がしニンニクの香る玉名へ",
+    "description": "菊池川の水運によって肥後有数の米の積出港として栄えた熊本県玉名市高瀬。駅前の静かな古刹から、焦がしニンニクが香る伝統の玉名ラーメン、千年の歴史を持つ総鎮守、昭和創業の和菓子店を経て、石橋と花しょうぶで知られる高瀬裏川の隠れ家茶房まで、川風が運ぶ城下・商都の面影を辿る。",
+    "region": "玉名・高瀬裏川と肥後ラーメンの里",
+    "area_name": "玉名・高瀬裏川と肥後ラーメンの里",
+    "cover_image_url": "/images/tamana/route-eyecatch.png",
+    "imageUrl": "/images/tamana/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水運の歴史と濃厚な豚骨の香りが調和する玉名の街で、心に響いたのはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "老舗「玉名ラーメン 桃苑」で、焦がしニンニクチップが香る濃厚な一杯を味わった瞬間",
+          "description": "熊本ラーメンのルーツともいわれる玉名ならではの香ばしい豚骨スープと、地元に愛される活気に魅了された。",
+          "badge_code": "tamana_touen_ramen"
+        },
+        {
+          "key": "B",
+          "text": "駅前通りに佇む「妙性寺」の境内を歩き、静かな山門と鐘楼を見上げた瞬間",
+          "description": "鉄道の玄関口のすぐ近くにありながら、凛とした静寂を保つ日蓮宗の古刹の空気に旅の始まりを感じた。",
+          "badge_code": "tamana_myoshoji"
+        },
+        {
+          "key": "C",
+          "text": "「繁根木八幡宮」の大楠の樹陰に立ち、地域の総鎮守の厳かな社殿へ拝礼した瞬間",
+          "description": "千年以上の歴史を刻む古社の佇まいと、樹齢を重ねた巨木が守る鎮守の杜の力強さに背筋が伸びた。",
+          "badge_code": "tamana_hachimangu"
+        },
+        {
+          "key": "D",
+          "text": "高瀬裏川のほとりに佇む「裏乃カフェ」で、石橋と川面を眺めながら一息ついた瞬間",
+          "description": "江戸期の船着き場や白壁の土蔵が残る歴史的水辺で、音楽と珈琲とともに流れる穏やかな時間に癒やされた。",
+          "badge_code": "tamana_urano_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "78b216dd-8d4e-4858-8850-7600b4a572f2",
+        "name": "妙性寺",
+        "description": "玉名駅のすぐ東側に境内を構える日蓮宗の寺院。落ち着いた本堂と鐘楼が街の玄関口に静寂を添える。境内散策自由。",
+        "address": "熊本県玉名市中1735",
+        "prefecture": "熊本県",
+        "city": "玉名市",
+        "lat": 32.927379,
+        "lng": 130.54906,
+        "qr_token": "shuin-tamana-1",
+        "cover_image_url": "/images/tamana/spot1.png",
+        "f7_fragment": "駅東の静かな木立に包まれた瓦屋根の本堂と、街を見守る鐘楼の姿。",
+        "f7_full": "玉名駅近くの古刹・妙性寺を訪ね、街の賑わいのすぐ傍らにある穏やかで落ち着いた静寂に触れた。",
+        "is_final": false,
+        "next_spot_id": "b0457510-bfaf-495b-81ea-9d2a2274368d",
+        "next_spot_name": "玉名ラーメン 桃苑"
+      },
+      {
+        "id": "b0457510-bfaf-495b-81ea-9d2a2274368d",
+        "name": "玉名ラーメン 桃苑",
+        "description": "玉名ラーメンを代表する老舗名店。濃厚ながら後味の良い豚骨スープに、香ばしい焦がしニンニクチップを振りかけて味わう。営業時間11:00〜22:00、火曜定休。",
+        "address": "熊本県玉名市繁根木131-2",
+        "prefecture": "熊本県",
+        "city": "玉名市",
+        "lat": 32.928864,
+        "lng": 130.559748,
+        "qr_token": "shuin-tamana-2",
+        "cover_image_url": "/images/tamana/spot2.png",
+        "f7_fragment": "濃厚な白濁スープに浮かぶ焦がしニンニク、玉名が誇る豚骨の香り。",
+        "f7_full": "老舗「玉名ラーメン 桃苑」で焦がしニンニク香る熱々の一杯を堪能し、肥後の食文化の奥深さに触れた。",
+        "is_final": false,
+        "next_spot_id": "47358418-4f19-4be1-87d7-6015baef9f61",
+        "next_spot_name": "繁根木八幡宮"
+      },
+      {
+        "id": "47358418-4f19-4be1-87d7-6015baef9f61",
+        "name": "繁根木八幡宮",
+        "description": "平安時代の応和元年に石清水八幡宮の分霊を勧請して創建された玉名の総鎮守。境内には樹齢数百年の楠の大木がそびえる。境内参拝自由。",
+        "address": "熊本県玉名市繁根木188",
+        "prefecture": "熊本県",
+        "city": "玉名市",
+        "lat": 32.927418,
+        "lng": 130.55836,
+        "qr_token": "shuin-tamana-3",
+        "cover_image_url": "/images/tamana/spot3.png",
+        "f7_fragment": "千年の歴史を刻む総鎮守の社殿と、境内の空を覆う大楠の深い緑陰。",
+        "f7_full": "細川家も崇敬した繁根木八幡宮を参拝し、玉名の暮らしを千年見守る森の気配を仰いだ。",
+        "is_final": false,
+        "next_spot_id": "e6487931-1336-4d6b-88ee-2630feba9859",
+        "next_spot_name": "菓舗 菊水堂"
+      },
+      {
+        "id": "e6487931-1336-4d6b-88ee-2630feba9859",
+        "name": "菓舗 菊水堂",
+        "description": "高瀬の町並みに店を構える老舗和菓子店。地域に親しまれる季節の和菓子や焼き菓子が並ぶ。営業時間8:30〜19:00、日曜定休。",
+        "address": "熊本県玉名市高瀬524-4",
+        "prefecture": "熊本県",
+        "city": "玉名市",
+        "lat": 32.926857,
+        "lng": 130.562107,
+        "qr_token": "shuin-tamana-4",
+        "cover_image_url": "/images/tamana/spot4.png",
+        "f7_fragment": "高瀬の旧市街に寄り添う老舗の店先と、丁寧に包まれた季節の和菓子。",
+        "f7_full": "菊池川の水運で栄えた高瀬の老舗・菊水堂を訪ね、地域に根づく和菓子の優しい味を求めた。",
+        "is_final": false,
+        "next_spot_id": "32b74956-08f9-4ef8-8c5c-19b0085cee9e",
+        "next_spot_name": "裏乃カフェ"
+      },
+      {
+        "id": "32b74956-08f9-4ef8-8c5c-19b0085cee9e",
+        "name": "裏乃カフェ",
+        "description": "石橋と花しょうぶで知られる高瀬裏川のほとりに佇む隠れ家カフェ。ウッドデッキから歴史的な水路と石垣の景観を望める。土日中心に営業（土曜11:00〜20:00・日曜11:00〜18:00、平日休等の最新営業日は公式SNSで要確認）。",
+        "address": "熊本県玉名市高瀬160",
+        "prefecture": "熊本県",
+        "city": "玉名市",
+        "lat": 32.929364,
+        "lng": 130.564643,
+        "qr_token": "shuin-tamana-5",
+        "cover_image_url": "/images/tamana/spot5.png",
+        "f7_fragment": "石橋と石積みの水路を見渡すウッドデッキ、珈琲に重なる穏やかな川風。",
+        "f7_full": "高瀬裏川のほとりに建つ裏乃カフェで一息つき、菊池川の水運が育んだ町並みの余韻に浸った。",
+        "is_final": true
+      }
+    ]
   }
 ];
