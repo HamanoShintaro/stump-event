@@ -78000,5 +78000,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "2cb3afbf-d7fd-4a20-816a-348cef3a4861",
+    "title": "日本最北の駅・稚内と宗谷の潮風を歩く",
+    "name": "日本最北の駅・稚内と宗谷の潮風を歩く",
+    "description": "日本最北端のJR稚内駅を起点に、駅ビル内の珈琲店から古代ローマ建築を思わせる北防波堤ドーム、最北の老舗菓子舗や利尻昆布だしの塩ラーメンを経て、樺太の記憶を伝える稚内副港市場の記念館へと至る、北の港町を巡る散策路。",
+    "region": "稚内・最北端の港と防波堤",
+    "area_name": "稚内・最北端の港と防波堤",
+    "cover_image_url": "/images/wakkanai/route-eyecatch.png",
+    "imageUrl": "/images/wakkanai/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本最北の潮風が吹き抜ける稚内の港町を歩いたあと、最初に誰かへ伝えたい光景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「稚内港北防波堤ドーム」の半アーチ列柱の下を、潮風を受けながら歩いた瞬間",
+          "description": "かつて樺太航路の桟橋を守り抜いた壮大なコンクリート造りの曲線に、北の港の歴史を見た。",
+          "badge_code": "wakkanai_dome"
+        },
+        {
+          "key": "B",
+          "text": "「ラーメンのたからや」で、透き通る利尻昆布だしの塩ラーメンを味わった瞬間",
+          "description": "冷涼な北の港町で身体の芯まで温まる一杯に、道北ならではの海の恵みが詰まっていた。",
+          "badge_code": "wakkanai_takaraya"
+        },
+        {
+          "key": "C",
+          "text": "「稚内市樺太記念館（稚内副港市場）」で、かつての北方の暮らしと航路を学んだ瞬間",
+          "description": "港の市場の二階に広がる静かな展示室で、宗谷海峡を挟んだ人々の記憶に思いを馳せた。",
+          "badge_code": "wakkanai_karafuto"
+        },
+        {
+          "key": "D",
+          "text": "「御菓子司 小鹿」の店先で、最北の街に根付いた素朴で温かな銘菓を選んだ瞬間",
+          "description": "荒波の町で長く親しまれてきた優しい甘さに、北国の暮らしの温もりをそのまま感じた。",
+          "badge_code": "wakkanai_oshika"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "035110ee-55d7-4af2-817c-d2b1938b7758",
+        "name": "セレクトカフェ モカマタリ",
+        "description": "JR稚内駅直結の複合施設「キタカラ」1階にあるカフェ。早朝6時から営業しており、淹れたての珈琲や軽食で最北の旅を整えられる。営業時間6:00〜17:00（L.O.16:30）、不定休。",
+        "address": "北海道稚内市中央3-6-1 キタカラ1F",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.41695,
+        "lng": 141.67686,
+        "qr_token": "shuin-wakkanai-1",
+        "cover_image_url": "/images/wakkanai/spot1.png",
+        "f7_fragment": "最北の駅舎の傍らで味わう、散策の始まりを温める香ばしい珈琲。",
+        "f7_full": "稚内駅直結の「セレクトカフェ モカマタリ」で香り高い珈琲を味わい、日本最北の街歩きの序章を心地よくゆったり始めた。",
+        "is_final": false,
+        "next_spot_id": "6fac805c-9e7b-4cf4-8c5c-d14fa19fc340",
+        "next_spot_name": "稚内港北防波堤ドーム"
+      },
+      {
+        "id": "6fac805c-9e7b-4cf4-8c5c-d14fa19fc340",
+        "name": "稚内港北防波堤ドーム",
+        "description": "北海道遺産に指定された半アーチ型の巨大防波堤。かつての稚泊航路の桟橋を荒波から守るために築かれた、古代ローマ建築を思わせる景観が圧巻。終日開放・見学無料。",
+        "address": "北海道稚内市開運1-2-2",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.42049,
+        "lng": 141.678267,
+        "qr_token": "shuin-wakkanai-2",
+        "cover_image_url": "/images/wakkanai/spot2.png",
+        "f7_fragment": "北の荒波を受け止め続ける、七十本の柱が連なる壮麗な半アーチ回廊。",
+        "f7_full": "北海道遺産「稚内港北防波堤ドーム」の壮大な列柱の下を歩き、北の港町が歩んだ連絡航路の記憶にじっくり思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "7bd486a3-419e-476a-889c-14343211d65a",
+        "next_spot_name": "御菓子司 小鹿"
+      },
+      {
+        "id": "7bd486a3-419e-476a-889c-14343211d65a",
+        "name": "御菓子司 小鹿",
+        "description": "稚内市中央で長く親しまれる老舗菓子店。最北の街ならではの銘菓や日常のおやつにぴったりな和洋菓子が揃う。営業時間9:00〜19:00。",
+        "address": "北海道稚内市中央1-3-35",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.420349,
+        "lng": 141.673287,
+        "qr_token": "shuin-wakkanai-3",
+        "cover_image_url": "/images/wakkanai/spot3.png",
+        "f7_fragment": "最北の街角で長く愛され続けてきた、老舗菓子舗の温かな手仕事。",
+        "f7_full": "稚内中央の老舗「御菓子司 小鹿」を訪ね、北国の暮らしに寄り添う郷土銘菓と素朴な甘味の魅力にじっくりと深く触れた。",
+        "is_final": false,
+        "next_spot_id": "000afd8e-a94d-438d-8ad1-cc12c089c841",
+        "next_spot_name": "ラーメンのたからや"
+      },
+      {
+        "id": "000afd8e-a94d-438d-8ad1-cc12c089c841",
+        "name": "ラーメンのたからや",
+        "description": "透き通るような利尻昆布だしのあっさり塩ラーメンが評判の老舗ラーメン店。スープがなくなり次第終了する人気の一杯を味わえる。営業時間11:00〜18:00、水曜定休（祝日の場合は営業）。",
+        "address": "北海道稚内市中央2-11-15",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.417796,
+        "lng": 141.676688,
+        "qr_token": "shuin-wakkanai-4",
+        "cover_image_url": "/images/wakkanai/spot4.png",
+        "f7_fragment": "利尻昆布の旨みが澄み渡る、最北の港町が誇る黄金の塩ラーメン。",
+        "f7_full": "老舗「ラーメンのたからや」で透き通る利尻昆布だしの塩ラーメンを味わい、北国の旅の活力をしっかり心地よく満たし終えた。",
+        "is_final": false,
+        "next_spot_id": "492c3806-bd9b-4bd7-8e49-7848fe04e6a8",
+        "next_spot_name": "稚内市樺太記念館（稚内副港市場）"
+      },
+      {
+        "id": "492c3806-bd9b-4bd7-8e49-7848fe04e6a8",
+        "name": "稚内市樺太記念館（稚内副港市場）",
+        "description": "稚内副港市場の2階にある無料の歴史展示施設。かつて稚泊航路で結ばれた樺太での人々の暮らしや文化を伝える貴重な資料を閲覧できる。開館10:00〜17:00（11〜3月は月曜休・4〜10月無休）、入館無料。",
+        "address": "北海道稚内市港1-6-28",
+        "prefecture": "北海道",
+        "city": "稚内市",
+        "lat": 45.408496,
+        "lng": 141.676659,
+        "qr_token": "shuin-wakkanai-5",
+        "cover_image_url": "/images/wakkanai/spot5.png",
+        "f7_fragment": "宗谷海峡の北へ思いを馳せる、副港市場二階の静かな歴史展示室。",
+        "f7_full": "稚内副港市場の「稚内市樺太記念館」を訪ね、北の海と連絡航路が結んだ暮らしの記憶にじっくり深く触れて締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "78f2dd21-a177-4eb0-8085-2f75689f054d",
+    "title": "会津若松・七日町通りの蔵と鶴ヶ城を歩く",
+    "name": "会津若松・七日町通りの蔵と鶴ヶ城を歩く",
+    "description": "会津若松駅から蔵や洋館が並ぶ七日町通りに入り、老舗菓房と会津漆器の店、囲炉裏で焼くみそ田楽の名店を巡り、野口英世ゆかりの洋館喫茶を経て赤瓦の天守がそびえる鶴ヶ城へと至る、城下町の誇りと手仕事を辿る散策路。",
+    "region": "会津若松・七日町通りと鶴ヶ城",
+    "area_name": "会津若松・七日町通りと鶴ヶ城",
+    "cover_image_url": "/images/aizuwakamatsu/route-eyecatch.png",
+    "imageUrl": "/images/aizuwakamatsu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "蔵の街並みと城下町の面影が残る会津若松を歩いたあと、いちずに思い出す景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「満田屋」の囲炉裏端で、香ばしい味噌ダレを塗って焼くみそ田楽を味わった瞬間",
+          "description": "歴史ある味噌蔵の中で炭火を囲んでいただく郷土の味が、会津の暮らしを教えてくれた。",
+          "badge_code": "aizu_mitsutaya"
+        },
+        {
+          "key": "B",
+          "text": "「鶴ヶ城（若松城）」の赤瓦の天守と、石垣越しに広がる会津盆地を仰いだ瞬間",
+          "description": "幾多の歴史を見守り続けてきた名城の凛とした佇まいに、城下町の誇りが重なった。",
+          "badge_code": "aizu_tsurugajo"
+        },
+        {
+          "key": "C",
+          "text": "「白木屋漆器店」の洋館風土蔵造りの店内で、艶やかな会津漆器を見つめた瞬間",
+          "description": "三百年以上受け継がれてきた職人技の深みと、歴史的建造物の重厚な空間に惹かれた。",
+          "badge_code": "aizu_shirokiya"
+        },
+        {
+          "key": "D",
+          "text": "「會津壹番館」のクラシカルな木造洋館で、野口英世ゆかりの空気と珈琲を味わった瞬間",
+          "description": "若き日の医学者が過ごした蔵造りの洋館で、時の流れを感じる穏やかな一服を楽しんだ。",
+          "badge_code": "aizu_ichibankan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1ac29a6b-3b14-4da0-8d6a-d4ec1215009d",
+        "name": "太郎庵 七日町菓房",
+        "description": "会津を代表する菓子舗の七日町通り沿い店舗。名物の会津の天神さまをはじめ、会津ゆかりの和洋菓子を揃える。営業時間9:30〜17:00、元日休。",
+        "address": "福島県会津若松市七日町3-35",
+        "prefecture": "福島県",
+        "city": "会津若松市",
+        "lat": 37.500399,
+        "lng": 139.920697,
+        "qr_token": "shuin-aizuwakamatsu-1",
+        "cover_image_url": "/images/aizuwakamatsu/spot1.png",
+        "f7_fragment": "七日町通りの入口で出会う、会津の風土を豊かに映す老舗の菓子舗。",
+        "f7_full": "七日町通りの「太郎庵 七日町菓房」を訪ね、会津の風土や物語を映した郷土菓子の豊かな品揃えにじっくりと深く触れた。",
+        "is_final": false,
+        "next_spot_id": "800a6485-535c-4c6f-836b-affc1fa846a2",
+        "next_spot_name": "白木屋漆器店"
+      },
+      {
+        "id": "800a6485-535c-4c6f-836b-affc1fa846a2",
+        "name": "白木屋漆器店",
+        "description": "三百年以上の歴史を誇る会津漆器の老舗。ルネッサンス様式の洋館風土蔵造りの店舗は市の歴史的景観指定建造物に指定されている。営業時間9:30〜17:30、水曜定休。",
+        "address": "福島県会津若松市大町1-2-10",
+        "prefecture": "福島県",
+        "city": "会津若松市",
+        "lat": 37.49903,
+        "lng": 139.926528,
+        "qr_token": "shuin-aizuwakamatsu-2",
+        "cover_image_url": "/images/aizuwakamatsu/spot2.png",
+        "f7_fragment": "洋館風土蔵造りの店内に輝く、三百年続く会津漆器の艶やかな技。",
+        "f7_full": "「白木屋漆器店」の洋館風土蔵造りの店内を巡り、三百年以上受け継がれてきた会津漆器の優美な手仕事にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "90319325-1154-4863-8f32-86076bf11c87",
+        "next_spot_name": "満田屋"
+      },
+      {
+        "id": "90319325-1154-4863-8f32-86076bf11c87",
+        "name": "満田屋",
+        "description": "天保年間創業の味噌専門店が営む、味噌蔵を改装した郷土料理店。囲炉裏の炭火で香ばしく焼く名物「みそ田楽」が人気。食事10:30〜16:30（L.O.16:20）、水曜定休。",
+        "address": "福島県会津若松市大町1-1-25",
+        "prefecture": "福島県",
+        "city": "会津若松市",
+        "lat": 37.498896,
+        "lng": 139.925147,
+        "qr_token": "shuin-aizuwakamatsu-3",
+        "cover_image_url": "/images/aizuwakamatsu/spot3.png",
+        "f7_fragment": "味噌蔵の囲炉裏で香ばしく焼き上げる、会津伝統の素朴なみそ田楽。",
+        "f7_full": "老舗味噌蔵を改装した「満田屋」の囲炉裏端で、香ばしい炭火焼きの会津みそ田楽を心ゆくまでゆったりじっくり堪能した。",
+        "is_final": false,
+        "next_spot_id": "b95633b3-7265-420e-851d-df95cfefe03a",
+        "next_spot_name": "會津壹番館"
+      },
+      {
+        "id": "b95633b3-7265-420e-851d-df95cfefe03a",
+        "name": "會津壹番館",
+        "description": "野口英世が手術を受け青春時代を過ごした旧会陽医院の蔵造り洋館を利用したレトロ喫茶。2階は野口英世青春館となっている。営業時間8:00〜20:00、1月1日休。",
+        "address": "福島県会津若松市中町4-18",
+        "prefecture": "福島県",
+        "city": "会津若松市",
+        "lat": 37.497653,
+        "lng": 139.927245,
+        "qr_token": "shuin-aizuwakamatsu-4",
+        "cover_image_url": "/images/aizuwakamatsu/spot4.png",
+        "f7_fragment": "野口英世ゆかりの蔵造り洋館で味わう、香り高い自家焙煎の珈琲。",
+        "f7_full": "旧会陽医院の洋館を活かした「會津壹番館」で自家焙煎珈琲を味わい、若き日の野口英世が過ごした空間にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "d2bf0e92-def4-484e-80a4-00dd863c83f6",
+        "next_spot_name": "鶴ヶ城（若松城）"
+      },
+      {
+        "id": "d2bf0e92-def4-484e-80a4-00dd863c83f6",
+        "name": "鶴ヶ城（若松城）",
+        "description": "会津若松の象徴であり、国内唯一の赤瓦をまとった美しい天守閣を持つ名城跡。迫力ある石垣や本丸公園の四季折々の景観を楽しめる。開館8:30〜17:00（最終入城16:30）、無休。",
+        "address": "福島県会津若松市追手町1-1",
+        "prefecture": "福島県",
+        "city": "会津若松市",
+        "lat": 37.48782,
+        "lng": 139.929666,
+        "qr_token": "shuin-aizuwakamatsu-5",
+        "cover_image_url": "/images/aizuwakamatsu/spot5.png",
+        "f7_fragment": "国内唯一の赤瓦をまとってそびえる、会津城下町の誇り高き天守閣。",
+        "f7_full": "赤瓦の天守閣が美しい「鶴ヶ城（若松城）」に登城し、城下町の誇りと会津盆地の眺めの中で散策を静かに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "a48a9c38-b497-4c17-8d24-72e2c306b1f0",
+    "title": "館山・鏡ヶ浦の潮風と里見の城山を歩く",
+    "name": "館山・鏡ヶ浦の潮風と里見の城山を歩く",
+    "description": "JR館山駅から百年続く老舗パン屋に立ち寄り、鏡ヶ浦とも呼ばれる北条海岸と海辺のカフェ、渚の駅たてやまの海の食堂を経て、南総里見八犬伝の舞台・館山城が建つ城山公園へと至る、南房総の海と歴史を辿る散策路。",
+    "region": "館山・鏡ヶ浦の海と城山",
+    "area_name": "館山・鏡ヶ浦の海と城山",
+    "cover_image_url": "/images/tateyama/route-eyecatch.png",
+    "imageUrl": "/images/tateyama/route-eyecatch.png",
+    "category": "自然・海",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鏡ヶ浦の穏やかな海と城山が寄り添う館山を歩いたあと、最初に誰かへ伝えたい風景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「北条海岸」のヤシの木並木越しに、鏡のように穏やかな館山湾を見渡した瞬間",
+          "description": "駅を出てすぐの海辺に広がる開放的な水平線と南国のような空気に、房総の風を感じた。",
+          "badge_code": "tateyama_hojo_beach"
+        },
+        {
+          "key": "B",
+          "text": "「館山なぎさ食堂（渚の駅たてやま）」で、海を眺めながら南房総の海鮮を味わった瞬間",
+          "description": "館山湾に面した明るい席で味わう地魚の鮮度が、港町・館山ならではの贅沢を教えてくれた。",
+          "badge_code": "tateyama_nagisa_shokudo"
+        },
+        {
+          "key": "C",
+          "text": "「館山城（城山公園）」の山頂の天守から、鏡ヶ浦の湾と館山の町並みを一望した瞬間",
+          "description": "八犬伝の物語が息づく城跡の高台から見下ろす海の青さに、南房総の旅が胸に刻まれた。",
+          "badge_code": "tateyama_castle"
+        },
+        {
+          "key": "D",
+          "text": "「館山中村屋 館山駅前本店」で、長年愛されるレトロなクリームパンを手にした瞬間",
+          "description": "地元の人に「なかぱん」と親しまれる老舗の温かな香りに、街の変わらぬ暮らしを感じた。",
+          "badge_code": "tateyama_nakamuraya"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cb9f2d45-c903-4063-84c2-4442c769f4f2",
+        "name": "北条海岸",
+        "description": "「鏡ヶ浦」とも称される波穏やかな館山湾に面した海岸。ヤシの木の並木が続く開放的なプロムナードで、晴れた日には富士山のシルエットも望める。終日開放・無料。",
+        "address": "千葉県館山市北条2307-46地先",
+        "prefecture": "千葉県",
+        "city": "館山市",
+        "lat": 34.999729,
+        "lng": 139.858396,
+        "qr_token": "shuin-tateyama-1",
+        "cover_image_url": "/images/tateyama/spot1.png",
+        "f7_fragment": "ヤシの木並木越しに望む、鏡のように穏やかな館山湾の青い水平線。",
+        "f7_full": "「北条海岸」の海辺の遊歩道を歩き、鏡ヶ浦と呼ばれる館山湾の穏やかな波音と開放的な景色に心から深く静かに癒やされた。",
+        "is_final": false,
+        "next_spot_id": "fdf799cd-50e5-40c4-8fb6-12987885b736",
+        "next_spot_name": "館山中村屋 館山駅前本店"
+      },
+      {
+        "id": "fdf799cd-50e5-40c4-8fb6-12987885b736",
+        "name": "館山中村屋 館山駅前本店",
+        "description": "大正8年創業、地元で「なかぱん」の名で親しまれる老舗ベーカリー＆喫茶。名物のクリームパンやレトロな菓子パンが並ぶ。営業時間8:00〜16:30、木曜定休。",
+        "address": "千葉県館山市北条1882",
+        "prefecture": "千葉県",
+        "city": "館山市",
+        "lat": 34.996349,
+        "lng": 139.863086,
+        "qr_token": "shuin-tateyama-2",
+        "cover_image_url": "/images/tateyama/spot2.png",
+        "f7_fragment": "館山駅前で百年愛され続けてきた、老舗なかぱんの優しいパンの香り。",
+        "f7_full": "駅前の老舗「館山中村屋 館山駅前本店」を訪ね、名物のクリームパンとともに南房総の暮らしの温もりにじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "0c9ae4b3-0fa8-4ab8-808d-4483cd730623",
+        "next_spot_name": "CAFE DEL MAR"
+      },
+      {
+        "id": "0c9ae4b3-0fa8-4ab8-808d-4483cd730623",
+        "name": "CAFE DEL MAR",
+        "description": "北条海岸の近くに佇む海辺のカフェ。海風を感じながら手作りスイーツや珈琲でゆったり過ごせる。営業時間11:30〜17:00頃、水曜・木曜定休等（※夏季7〜9月頃はカフェ休業や変則営業の場合あり、要事前確認）。",
+        "address": "千葉県館山市北条2806",
+        "prefecture": "千葉県",
+        "city": "館山市",
+        "lat": 34.996149,
+        "lng": 139.86018,
+        "qr_token": "shuin-tateyama-3",
+        "cover_image_url": "/images/tateyama/spot3.png",
+        "f7_fragment": "海辺の通りの穏やかな空気に包まれる、潮風香るカフェの休息時間。",
+        "f7_full": "北条海岸近くの「CAFE DEL MAR」で海風を感じながら珈琲を味わい、南房総の穏やかな昼のひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "14bf5ce2-43f6-456d-8693-2d9ac46f244e",
+        "next_spot_name": "館山なぎさ食堂（渚の駅たてやま）"
+      },
+      {
+        "id": "14bf5ce2-43f6-456d-8693-2d9ac46f244e",
+        "name": "館山なぎさ食堂（渚の駅たてやま）",
+        "description": "海の交流拠点「渚の駅たてやま」の2階にあるシーフードレストラン。館山湾を一望する席で地元で水揚げされた新鮮な海鮮丼や魚介料理を味わえる。ランチ11:00〜15:00（L.O.14:30）、無休。",
+        "address": "千葉県館山市館山1564-1",
+        "prefecture": "千葉県",
+        "city": "館山市",
+        "lat": 34.989483,
+        "lng": 139.854404,
+        "qr_token": "shuin-tateyama-4",
+        "cover_image_url": "/images/tateyama/spot4.png",
+        "f7_fragment": "館山湾を一望する窓辺で味わう、南房総の旬を盛り込んだ海鮮膳。",
+        "f7_full": "渚の駅たてやまの「館山なぎさ食堂」で館山湾を眺めながら旬の魚介を味わい、海の町の豊かな恵みにしっかり満たされた。",
+        "is_final": false,
+        "next_spot_id": "2e01b46e-6b96-4932-8b41-9fb47c52c01e",
+        "next_spot_name": "館山城（城山公園）"
+      },
+      {
+        "id": "2e01b46e-6b96-4932-8b41-9fb47c52c01e",
+        "name": "館山城（城山公園）",
+        "description": "戦国期の里見氏の居城跡に整備された城山公園の山頂に建つ三層四階の天守。館内は全国唯一の八犬伝博物館となっており、館山湾のパノラマも圧巻。開館9:00〜16:45、月曜休（祝日の場合は翌平日休）。",
+        "address": "千葉県館山市館山362",
+        "prefecture": "千葉県",
+        "city": "館山市",
+        "lat": 34.981506,
+        "lng": 139.855761,
+        "qr_token": "shuin-tateyama-5",
+        "cover_image_url": "/images/tateyama/spot5.png",
+        "f7_fragment": "八犬伝の物語が息づく城山の頂から、鏡ヶ浦の青い湾を一望する。",
+        "f7_full": "八犬伝の舞台・城山公園の「館山城」へ登城し、館山湾のパノラマを望んで南房総の海と歴史の散策を静かに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b6874f98-0f92-431e-8acd-57816d39cd51",
+    "title": "岩国・麻里布の暮らしと白蛇の杜を歩く",
+    "name": "岩国・麻里布の暮らしと白蛇の杜を歩く",
+    "description": "JR岩国駅西口から地元で愛される中華そばの老舗と岩国レンコン入りパンのベーカリーを巡り、ネルドリップ珈琲の喫茶店を経て、天然記念物のシロヘビを祀る岩國白蛇神社と白崎八幡宮へ至る、岩国の日常と信仰を辿る散策路。",
+    "region": "岩国・麻里布と白蛇の杜",
+    "area_name": "岩国・麻里布と白蛇の杜",
+    "cover_image_url": "/images/iwakuni/route-eyecatch.png",
+    "imageUrl": "/images/iwakuni/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "麻里布の街並みから今津の古社へと歩いた岩国の旅で、最初に誰かへ語りたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「寿栄広食堂」で、地元客に交じって醤油豚骨の岩国中華そばを啜った瞬間",
+          "description": "駅前の老舗に漂う湯気と気さくな活気の中に、岩国の変わらぬ日常の温もりを感じた。",
+          "badge_code": "iwakuni_suehiro"
+        },
+        {
+          "key": "B",
+          "text": "「麻里布珈琲 本店」の落ち着いた店内で、ネルドリップ珈琲とカツサンドを味わった瞬間",
+          "description": "丁寧に淹れられた自家焙煎の香りとレトロな空間が、街歩きの足をゆったり休めてくれた。",
+          "badge_code": "iwakuni_marifu_coffee"
+        },
+        {
+          "key": "C",
+          "text": "「アンデルセン 岩国店」で、特産の岩国レンコンが入った焼きたてパンを見つけた瞬間",
+          "description": "シャキシャキとした蓮根の食感とカレーの風味に、土地ならではの食材の面白さを知った。",
+          "badge_code": "iwakuni_andersen_renkon"
+        },
+        {
+          "key": "D",
+          "text": "「岩國白蛇神社」の清らかな社殿で、国の天然記念物シロヘビへの信仰に触れた瞬間",
+          "description": "白蛇モチーフの意匠と境内の清々しい空気に、岩国で大切に守られてきた文化の深みを見た。",
+          "badge_code": "iwakuni_shirohebi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "022584f5-552d-4fd0-8777-677a9c7898dd",
+        "name": "寿栄広食堂",
+        "description": "岩国駅前の商店街で長年愛される老舗食堂。あっさりしつつコクのある醤油豚骨スープの「岩国中華そば」が名物。営業時間10:00〜22:00頃、火・水曜定休。",
+        "address": "山口県岩国市麻里布町1-2-3",
+        "prefecture": "山口県",
+        "city": "岩国市",
+        "lat": 34.172627,
+        "lng": 132.225,
+        "qr_token": "shuin-iwakuni-1",
+        "cover_image_url": "/images/iwakuni/spot1.png",
+        "f7_fragment": "岩国駅前で長く親しまれてきた、醤油豚骨香る老舗の中華そばの味。",
+        "f7_full": "駅前の老舗「寿栄広食堂」で岩国中華そばを味わい、麻里布の街に根付く飾らない日常の温もりにじっくりと深く触れた。",
+        "is_final": false,
+        "next_spot_id": "6ba88dc4-7061-41a7-808c-1d260dcc9f49",
+        "next_spot_name": "アンデルセン 岩国店"
+      },
+      {
+        "id": "6ba88dc4-7061-41a7-808c-1d260dcc9f49",
+        "name": "アンデルセン 岩国店",
+        "description": "岩国駅近くにある人気ベーカリー。定番パンに加え、特産の岩国レンコンを使ったカレーパンなどご当地パンが揃う。営業時間7:00〜19:00、無休。",
+        "address": "山口県岩国市麻里布町2-1-18",
+        "prefecture": "山口県",
+        "city": "岩国市",
+        "lat": 34.171735,
+        "lng": 132.224306,
+        "qr_token": "shuin-iwakuni-2",
+        "cover_image_url": "/images/iwakuni/spot2.png",
+        "f7_fragment": "麻里布の通りに香ばしく広がる、岩国レンコン入りパンの美味しさ。",
+        "f7_full": "「アンデルセン 岩国店」を訪ね、特産の岩国レンコンを活かしたご当地パンの香ばしさと食感に心地よくたっぷりと出会った。",
+        "is_final": false,
+        "next_spot_id": "71e77974-9170-44eb-8b9e-cec2364d648a",
+        "next_spot_name": "麻里布珈琲 本店"
+      },
+      {
+        "id": "71e77974-9170-44eb-8b9e-cec2364d648a",
+        "name": "麻里布珈琲 本店",
+        "description": "麻里布町6丁目にある自家焙煎珈琲の喫茶店。ネルドリップで丁寧に淹れる珈琲や厚切りカツサンド、プリンが人気。営業時間7:30〜18:00（L.O.17:30）、水曜定休。",
+        "address": "山口県岩国市麻里布町6-13-5",
+        "prefecture": "山口県",
+        "city": "岩国市",
+        "lat": 34.169642,
+        "lng": 132.217764,
+        "qr_token": "shuin-iwakuni-3",
+        "cover_image_url": "/images/iwakuni/spot3.png",
+        "f7_fragment": "麻里布の街角で味わう、ネルドリップ自家焙煎珈琲の穏やかな一服。",
+        "f7_full": "「麻里布珈琲 本店」で丁寧に淹れられた自家焙煎珈琲を味わい、今津の古社へ向かう前の穏やかな休息をじっくりとった。",
+        "is_final": false,
+        "next_spot_id": "b7a7d6bd-a14f-4c1e-8d80-f3a4beb7fceb",
+        "next_spot_name": "岩國白蛇神社"
+      },
+      {
+        "id": "b7a7d6bd-a14f-4c1e-8d80-f3a4beb7fceb",
+        "name": "岩國白蛇神社",
+        "description": "国の天然記念物「岩国のシロヘビ」の保護と信仰にちなんで創建された神社。社殿の意匠や隣接の観覧所でシロヘビに親しまれる土地の文化に触れられる。参拝終日自由（社務所9:00〜17:00）、無休。",
+        "address": "山口県岩国市今津町6-4-2",
+        "prefecture": "山口県",
+        "city": "岩国市",
+        "lat": 34.163505,
+        "lng": 132.212641,
+        "qr_token": "shuin-iwakuni-4",
+        "cover_image_url": "/images/iwakuni/spot4.png",
+        "f7_fragment": "天然記念物シロヘビへの敬愛が息づく、今津町の清らかな社殿の杜。",
+        "f7_full": "「岩國白蛇神社」に詣で、国の天然記念物シロヘビを大切に守り伝えてきた岩国の信仰と自然への畏敬にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "97ee75ac-970b-4497-893a-d2825cc43872",
+        "next_spot_name": "白崎八幡宮"
+      },
+      {
+        "id": "97ee75ac-970b-4497-893a-d2825cc43872",
+        "name": "白崎八幡宮",
+        "description": "岩国市今津町に鎮座し、源氏の氏神などを祀る歴史ある八幡宮。地域の暮らしと安全を見守り続ける静かな境内を散策できる。終日参拝自由（社務所9:00〜17:00）、無休。",
+        "address": "山口県岩国市今津町6-12-23",
+        "prefecture": "山口県",
+        "city": "岩国市",
+        "lat": 34.160431,
+        "lng": 132.208875,
+        "qr_token": "shuin-iwakuni-5",
+        "cover_image_url": "/images/iwakuni/spot5.png",
+        "f7_fragment": "今津の静かな杜に鎮座する古社、岩国の街歩きを結ぶ祈りの空間。",
+        "f7_full": "今津町の古社「白崎八幡宮」に詣で、駅前から辿ってきた岩国の暮らしと信仰の道のりを静かに、そして深く締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "70132412-89bc-45b0-832f-6affa0e2212f",
+    "title": "由布院・湯の坪街道と朝霧の金鱗湖を歩く",
+    "name": "由布院・湯の坪街道と朝霧の金鱗湖を歩く",
+    "description": "由布岳を仰ぐJR由布院駅からメインストリートを東へ進み、名物ロールケーキのB-speakや焼きチーズケーキの由布院ミルヒ、古民家風の鞠智を経て、湖畔のベーカリーカフェと温泉が湧く金鱗湖へと至る、湯布院の王道散策路。",
+    "region": "由布院・湯の坪街道と金鱗湖",
+    "area_name": "由布院・湯の坪街道と金鱗湖",
+    "cover_image_url": "/images/yufuin/route-eyecatch.png",
+    "imageUrl": "/images/yufuin/route-eyecatch.png",
+    "category": "自然・温泉",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "由布岳を仰ぎながら湯の坪街道から金鱗湖まで歩いたあと、いちずに思い出す景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「金鱗湖」の澄んだ水面に立つ朝霧と、魚が泳ぐ静かな湖畔の佇まい",
+          "description": "温泉と清水が混ざり合う不思議な湖の神秘的な光景が、由布院の旅の記憶を彩った。",
+          "badge_code": "yufuin_kinrin_lake"
+        },
+        {
+          "key": "B",
+          "text": "「B-speak」の木漏れ日差す店先で、ふわふわのPロールを手に入れた瞬間",
+          "description": "素朴な素材の味わいにこだわった山荘無量塔の名物菓子に、湯布院らしい品格を感じた。",
+          "badge_code": "yufuin_bspeak"
+        },
+        {
+          "key": "C",
+          "text": "「由布院 鞠智（くくち）」の古民家風空間で、手焼きどら焼きや大分の味を楽しんだ瞬間",
+          "description": "大分産の食材にこだわった丁寧な甘味と食事が、湯の坪街道歩きの楽しい節目になった。",
+          "badge_code": "yufuin_cucuchi"
+        },
+        {
+          "key": "D",
+          "text": "「CAFE LA RUCHE」の湖畔テラスで、金鱗湖を眺めながら焼きたてパンを味わった瞬間",
+          "description": "水面を渡る心地よい風と自家焙煎珈琲の香りに、時間を忘れてゆったりと身を委ねた。",
+          "badge_code": "yufuin_laruche"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5cf126ab-52aa-46fb-831c-2d45b4eed323",
+        "name": "B-speak",
+        "description": "山荘無量塔がプロデュースするロールケーキ専門店。卵と小麦粉、砂糖の素朴な美味しさを引き出した「Pロール」が全国的に人気。営業時間10:00〜17:00、不定休（年2回）。",
+        "address": "大分県由布市湯布院町川上3040-2",
+        "prefecture": "大分県",
+        "city": "由布市",
+        "lat": 33.265385,
+        "lng": 131.359384,
+        "qr_token": "shuin-yufuin-1",
+        "cover_image_url": "/images/yufuin/spot1.png",
+        "f7_fragment": "湯の坪街道の入口に佇む、素朴で気品ある名物ロールケーキの店。",
+        "f7_full": "湯の坪街道の入口にある「B-speak」を訪ね、素材の味を大切にした湯布院名物の素朴で上品な菓子にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "acfce7f3-3362-442c-8b11-5ed4de509733",
+        "next_spot_name": "由布院ミルヒ 本店"
+      },
+      {
+        "id": "acfce7f3-3362-442c-8b11-5ed4de509733",
+        "name": "由布院ミルヒ 本店",
+        "description": "湯布院産の牛乳を100％使った焼きたて「ケーゼクーヘン」や「ミルヒプリン」が人気の洋菓子店。営業時間10:30〜17:30（時期により変更あり）、不定休。",
+        "address": "大分県由布市湯布院町川上3015-1",
+        "prefecture": "大分県",
+        "city": "由布市",
+        "lat": 33.26623,
+        "lng": 131.361593,
+        "qr_token": "shuin-yufuin-2",
+        "cover_image_url": "/images/yufuin/spot2.png",
+        "f7_fragment": "湯布院産牛乳のコクがとろける、湯の坪街道の焼きたてチーズ菓子。",
+        "f7_full": "「由布院ミルヒ 本店」で湯布院産牛乳を贅沢に使った温かいケーゼクーヘンを味わい、街道歩きの楽しさをぐっと深めた。",
+        "is_final": false,
+        "next_spot_id": "3535d6e7-5553-4c79-838b-93bd92e28c15",
+        "next_spot_name": "由布院 鞠智（くくち）"
+      },
+      {
+        "id": "3535d6e7-5553-4c79-838b-93bd92e28c15",
+        "name": "由布院 鞠智（くくち）",
+        "description": "手焼きのどら焼きや果物のコンフィチュール、大分名物のとり天や豊後牛の食事などが楽しめる古民家風の和洋菓子舗・カフェ。平日10:00〜17:00・土日祝10:00〜17:30、不定休。",
+        "address": "大分県由布市湯布院町川上3001-1",
+        "prefecture": "大分県",
+        "city": "由布市",
+        "lat": 33.266253,
+        "lng": 131.361945,
+        "qr_token": "shuin-yufuin-3",
+        "cover_image_url": "/images/yufuin/spot3.png",
+        "f7_fragment": "古民家の庭を眺めながら大分の味と手焼きどら焼きを楽しむ食卓。",
+        "f7_full": "「由布院 鞠智（くくち）」で大分の豊かな食材を活かした食事と手焼き菓子を味わい、街道歩きの活力をしっかり養った。",
+        "is_final": false,
+        "next_spot_id": "6bc9bd5f-4895-4de6-82d3-18876fd6ffbb",
+        "next_spot_name": "CAFE LA RUCHE"
+      },
+      {
+        "id": "6bc9bd5f-4895-4de6-82d3-18876fd6ffbb",
+        "name": "CAFE LA RUCHE",
+        "description": "金鱗湖の湖畔に佇む人気ベーカリーカフェ。美しい水面を望むウッドテラスで自家焙煎珈琲や焼きたてパンを楽しめる。営業時間9:00〜16:30頃、水曜定休。",
+        "address": "大分県由布市湯布院町川上1592-1",
+        "prefecture": "大分県",
+        "city": "由布市",
+        "lat": 33.267373,
+        "lng": 131.368847,
+        "qr_token": "shuin-yufuin-4",
+        "cover_image_url": "/images/yufuin/spot4.png",
+        "f7_fragment": "金鱗湖の静かな水面を目の前に味わう、焼きたてパンと珈琲時間。",
+        "f7_full": "湖畔の「CAFE LA RUCHE」のテラスで焼きたてパンと珈琲を味わい、金鱗湖の穏やかな水辺の風景に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "ca826561-9fbd-4936-82c4-25aceff1c897",
+        "next_spot_name": "金鱗湖"
+      },
+      {
+        "id": "ca826561-9fbd-4936-82c4-25aceff1c897",
+        "name": "金鱗湖",
+        "description": "湖底から温泉と清水が同時に湧き出る由布院を代表する名勝。水温が高いため秋から冬の朝には幻想的な朝霧が立ち込める。終日散策自由・無料。",
+        "address": "大分県由布市湯布院町川上1561-1",
+        "prefecture": "大分県",
+        "city": "由布市",
+        "lat": 33.266664,
+        "lng": 131.369027,
+        "qr_token": "shuin-yufuin-5",
+        "cover_image_url": "/images/yufuin/spot5.png",
+        "f7_fragment": "温泉と清水が湧き出し朝霧が立ち昇る、由布院を象徴する神秘の湖。",
+        "f7_full": "温泉と清水が湧く「金鱗湖」の澄んだ湖畔を歩き、湯の坪街道から辿ってきた由布院の旅を清らかに、そして静かに締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
