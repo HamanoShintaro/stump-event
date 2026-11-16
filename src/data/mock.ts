@@ -77350,5 +77350,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "48c88c73-8ac2-479d-8871-68bf3b1c5ef5",
+    "title": "赤湯の湯煙と桜丘・南陽の暮らしを歩く",
+    "name": "赤湯の湯煙と桜丘・南陽の暮らしを歩く",
+    "description": "山形新幹線も停まる赤湯駅から、全国に知られる赤湯からみそラーメン発祥の麺処や郷土の偉人を伝える記念館を巡り、温泉街の老舗あんびん餅と路地の喫茶を経て、継ぎ目なしの大石鳥居が立つ烏帽子山八幡宮へと至る、南陽の湯の町を辿る散策路。",
+    "region": "赤湯・いで湯と桜丘の街",
+    "area_name": "赤湯・いで湯と桜丘の街",
+    "cover_image_url": "/images/akayu/route-eyecatch.png",
+    "imageUrl": "/images/akayu/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "湯煙と桜丘が寄り添う赤湯の町で、あなたが旅の土産話に最初へ添えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「烏帽子山八幡宮」の継ぎ目なし大石鳥居をくぐり、赤湯の町並みを見渡した瞬間",
+          "description": "地域の誇りを映す堂々たる鳥居と桜丘の広がりに、温泉街を見守り続ける社の気配を感じた。",
+          "badge_code": "akayu_eboshiyama"
+        },
+        {
+          "key": "B",
+          "text": "「龍上海 赤湯本店」で、赤い辛味噌が溶け出す濃厚な一杯を味わった瞬間",
+          "description": "魚介の旨みと青海苔の香りが立ち昇る老舗の味に、東北の旅ならではの温もりを得た。",
+          "badge_code": "akayu_ryushanhai"
+        },
+        {
+          "key": "C",
+          "text": "「南陽市立結城豊太郎記念館」の蔵造り風展示室で、郷土の先人の足跡に触れた瞬間",
+          "description": "温泉地としての顔だけでなく、金融や商業で時代を支えた南陽の知的な側面に驚かされた。",
+          "badge_code": "akayu_yuki_kinenkan"
+        },
+        {
+          "key": "D",
+          "text": "「田中屋あんびんや」で、湯の町の朝を告げるつきたてのあんびん餅を手にした瞬間",
+          "description": "素朴な甘さと柔らかな餅のぬくもりに、温泉街の穏やかな日常がそのまま息づいていた。",
+          "badge_code": "akayu_anbinya"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d562dd73-d547-4382-8595-04f0594dd52a",
+        "name": "龍上海 赤湯本店",
+        "description": "赤湯からみそラーメン発祥として全国に知られる老舗麺処。魚介と動物系が調和したスープに赤い辛味噌を溶かしながら味わう。営業時間11:30〜19:00、水曜定休。",
+        "address": "山形県南陽市二色根6-18",
+        "prefecture": "山形県",
+        "city": "南陽市",
+        "lat": 38.050382,
+        "lng": 140.163212,
+        "qr_token": "shuin-akayu-1",
+        "cover_image_url": "/images/akayu/spot1.png",
+        "f7_fragment": "湯気の向こうで赤く溶け出す、南陽が誇る辛味噌と青海苔の香ばしい原点。",
+        "f7_full": "二色根の老舗「龍上海 赤湯本店」で青海苔香る辛味噌の一杯を味わい、南陽・赤湯のまち歩きを温かな余韻とともに始めた。",
+        "is_final": false,
+        "next_spot_id": "9109230a-a85c-4451-8349-f358f7485c16",
+        "next_spot_name": "南陽市立結城豊太郎記念館"
+      },
+      {
+        "id": "9109230a-a85c-4451-8349-f358f7485c16",
+        "name": "南陽市立結城豊太郎記念館",
+        "description": "赤湯出身で日銀総裁などを歴任した結城豊太郎の功績と郷土資料を伝える記念館。蔵造り風の落ち着いた館内と庭園を見学できる。開館9:00〜16:30（入館16:00まで）、月曜休館・入館無料。",
+        "address": "山形県南陽市赤湯362",
+        "prefecture": "山形県",
+        "city": "南陽市",
+        "lat": 38.048428,
+        "lng": 140.165042,
+        "qr_token": "shuin-akayu-2",
+        "cover_image_url": "/images/akayu/spot2.png",
+        "f7_fragment": "白壁と黒瓦の蔵に静かに息づく、置賜の先人が残した学びと文化の記憶。",
+        "f7_full": "「南陽市立結城豊太郎記念館」で郷土の先人が歩んだ足跡と貴重な資料に触れ、温泉街の奥にある置賜の歴史を丁寧に辿った。",
+        "is_final": false,
+        "next_spot_id": "d448cefb-61e2-4c62-8077-c69bba2b1b21",
+        "next_spot_name": "田中屋あんびんや"
+      },
+      {
+        "id": "d448cefb-61e2-4c62-8077-c69bba2b1b21",
+        "name": "田中屋あんびんや",
+        "description": "赤湯温泉街で早朝から営業する老舗の餅菓子店。この地域で大福を意味する名物「あんびん」が評判で、午前中に売り切れることも多い。営業時間7:00〜売り切れ次第終了、第1・第3水曜定休。",
+        "address": "山形県南陽市赤湯851-1",
+        "prefecture": "山形県",
+        "city": "南陽市",
+        "lat": 38.049923,
+        "lng": 140.165681,
+        "qr_token": "shuin-akayu-3",
+        "cover_image_url": "/images/akayu/spot3.png",
+        "f7_fragment": "いで湯の町の朝を静かに告げる、つきたてのあんびん餅の優しいぬくもり。",
+        "f7_full": "温泉街の老舗「田中屋あんびんや」を訪ね、湯の町の暮らしに深く根付いた素朴なあんびん餅の優しい味わいに出会った。",
+        "is_final": false,
+        "next_spot_id": "e82ce369-7c93-4674-8373-97d71e3bfbbf",
+        "next_spot_name": "きなりcafe"
+      },
+      {
+        "id": "e82ce369-7c93-4674-8373-97d71e3bfbbf",
+        "name": "きなりcafe",
+        "description": "赤湯温泉の静かな通り沿いに佇む落ち着いたカフェ。木の温もりを生かした店内で珈琲や季節のスイーツを楽しめる。営業時間10:30〜16:00、水・木・日曜定休。",
+        "address": "山形県南陽市赤湯853-4",
+        "prefecture": "山形県",
+        "city": "南陽市",
+        "lat": 38.050144,
+        "lng": 140.165243,
+        "qr_token": "shuin-akayu-4",
+        "cover_image_url": "/images/akayu/spot4.png",
+        "f7_fragment": "温泉街の静かな路地に寄り添う、木の香りと丁寧な珈琲のひととき。",
+        "f7_full": "赤湯温泉の「きなりcafe」で木の温もりに包まれながら香り高い珈琲を味わい、丘の上の神社へ向かう前の心と足を整えた。",
+        "is_final": false,
+        "next_spot_id": "8f05ddaa-5ee4-4c5d-82e2-e3ef5f6f60d1",
+        "next_spot_name": "烏帽子山八幡宮"
+      },
+      {
+        "id": "8f05ddaa-5ee4-4c5d-82e2-e3ef5f6f60d1",
+        "name": "烏帽子山八幡宮",
+        "description": "赤湯温泉街の背後にそびえる烏帽子山公園の頂に鎮座する古社。継ぎ目のない石造りの大鳥居と千本桜の名所として知られる。境内参拝自由・無休。",
+        "address": "山形県南陽市赤湯1415",
+        "prefecture": "山形県",
+        "city": "南陽市",
+        "lat": 38.051274,
+        "lng": 140.167226,
+        "qr_token": "shuin-akayu-5",
+        "cover_image_url": "/images/akayu/spot5.png",
+        "f7_fragment": "継ぎ目なき大鳥居の先に堂々と広がる、桜丘と赤湯の町並みの記憶。",
+        "f7_full": "赤湯の町を見下ろす「烏帽子山八幡宮」に詣で、日本有数の大石鳥居と桜丘の美しい風景の中で南陽の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "af944b54-8b97-4093-8f3c-e739764f0f84",
+    "title": "善光寺表参道と門前の香りを辿る",
+    "name": "善光寺表参道と門前の香りを辿る",
+    "description": "新幹線も発着する長野駅から中央通りを北へ進み、大門町の老舗そば処や七味唐辛子の本店、仲見世通りの甘味処を経て、天台宗本坊の大勧進と国宝・善光寺本堂へと至る、門前町の営みと千年の祈りを結ぶ王道の散策路。",
+    "region": "長野・善光寺表参道と門前町",
+    "area_name": "長野・善光寺表参道と門前町",
+    "cover_image_url": "/images/nagano/route-eyecatch.png",
+    "imageUrl": "/images/nagano/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "石畳の表参道を善光寺へと向かう道中で、あなたが誰かに語りたくなる景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "無宗派で参拝者を迎え入れる国宝「善光寺」の荘厳な撞木造りの本堂",
+          "description": "長野駅から伸びる一本の参道がすべてこの大伽藍へ繋がっていたと実感する瞬間だった。",
+          "badge_code": "nagano_zenkoji"
+        },
+        {
+          "key": "B",
+          "text": "「根元 八幡屋礒五郎 本店」の店先で出会った、色とりどりの七味唐辛子缶",
+          "description": "唐辛子や山椒が織りなす爽やかな芳香に、古くから続く門前商いの誇りが香っていた。",
+          "badge_code": "nagano_yawataya"
+        },
+        {
+          "key": "C",
+          "text": "「門前そば処 藤木庵」の白暖簾をくぐり、信州の手打ちそばを啜ったひととき",
+          "description": "二百年近く参拝者の空腹を満たしてきた老舗のつゆとそばの香りが、旅の歩みに力をくれた。",
+          "badge_code": "nagano_fujikian"
+        },
+        {
+          "key": "D",
+          "text": "「善光寺大勧進」の蓮池のほとりで、参道の賑わいを離れて耳を澄ませた時間",
+          "description": "水面に映る屋根の曲線と静かな木立が、本堂参拝を前にした心を穏やかに整えてくれた。",
+          "badge_code": "nagano_daikanjin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5983657e-eeb5-4ab2-8eb1-7def2e95960f",
+        "name": "門前そば処 藤木庵",
+        "description": "二百年近く続く大門町の老舗そば店。石臼挽きの信州そばと香り豊かなつゆが善光寺参りの人々に親しまれている。営業時間11:00〜15:00、火・木曜定休。",
+        "address": "長野県長野市大門町67",
+        "prefecture": "長野県",
+        "city": "長野市",
+        "lat": 36.656625,
+        "lng": 138.187611,
+        "qr_token": "shuin-nagano-1",
+        "cover_image_url": "/images/nagano/spot1.png",
+        "f7_fragment": "白暖簾の奥で打ち継がれてきた、門前老舗の香り高き手打ちそば。",
+        "f7_full": "大門町の老舗「門前そば処 藤木庵」を訪ね、善光寺参りの人々に長く親しまれてきた信州そばの豊かな味わいを堪能した。",
+        "is_final": false,
+        "next_spot_id": "eded91d7-3f7e-46d7-8566-9cb91f71e51d",
+        "next_spot_name": "根元 八幡屋礒五郎 本店"
+      },
+      {
+        "id": "eded91d7-3f7e-46d7-8566-9cb91f71e51d",
+        "name": "根元 八幡屋礒五郎 本店",
+        "description": "古くから善光寺境内で七味唐辛子を売り始めたという老舗の本店。定番の七味缶に加え、好みに合わせたカスタム調合も人気。営業時間9:00〜18:30、無休。",
+        "address": "長野県長野市大門町83",
+        "prefecture": "長野県",
+        "city": "長野市",
+        "lat": 36.657278,
+        "lng": 138.187666,
+        "qr_token": "shuin-nagano-2",
+        "cover_image_url": "/images/nagano/spot2.png",
+        "f7_fragment": "大門町の角にふわりと漂う、信州伝統の七味唐辛子の豊かな芳香。",
+        "f7_full": "「根元 八幡屋礒五郎 本店」を訪ね、香り豊かな七味唐辛子と門前町で長く受け継がれてきた商いの歴史にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "ee842328-d464-4bcd-8dda-d232ba7794d3",
+        "next_spot_name": "甘味処鎌倉 善光寺仲見世通り店"
+      },
+      {
+        "id": "ee842328-d464-4bcd-8dda-d232ba7794d3",
+        "name": "甘味処鎌倉 善光寺仲見世通り店",
+        "description": "本わらび粉を使った手作りわらび餅とドリンクが人気の和風甘味処。仲見世通りの散策途中に気軽に立ち寄れる。営業時間10:00〜17:00、年中無休。",
+        "address": "長野県長野市元善町486",
+        "prefecture": "長野県",
+        "city": "長野市",
+        "lat": 36.659398,
+        "lng": 138.187512,
+        "qr_token": "shuin-nagano-3",
+        "cover_image_url": "/images/nagano/spot3.png",
+        "f7_fragment": "仲見世通りの木造建築に寄り添う、手作りわらび餅の優しい甘み。",
+        "f7_full": "仲見世通りの「甘味処鎌倉」で香ばしいきな粉のわらび餅を味わい、本堂へ向かう参道歩きの合間に穏やかに一息ついた。",
+        "is_final": false,
+        "next_spot_id": "8d07c6e1-37c5-4650-83e5-4b7600112266",
+        "next_spot_name": "善光寺大勧進"
+      },
+      {
+        "id": "8d07c6e1-37c5-4650-83e5-4b7600112266",
+        "name": "善光寺大勧進",
+        "description": "善光寺の天台宗本坊。美しい蓮池と石橋を抱く静かな境内に書院や宝物館が佇む。境内自由（宝物館8:00〜15:00頃・有料）、無休。",
+        "address": "長野県長野市大字長野元善町492",
+        "prefecture": "長野県",
+        "city": "長野市",
+        "lat": 36.660343,
+        "lng": 138.186703,
+        "qr_token": "shuin-nagano-4",
+        "cover_image_url": "/images/nagano/spot4.png",
+        "f7_fragment": "蓮池のほとりに凛と佇む、天台宗本坊の静かな門前と庭園の気配。",
+        "f7_full": "「善光寺大勧進」の蓮池のほとりを歩き、表参道の賑わいから一歩入った本坊の静謐な空気に心ゆくまでじっくりと触れた。",
+        "is_final": false,
+        "next_spot_id": "ad19f765-af2f-436b-8e83-101de54de382",
+        "next_spot_name": "善光寺"
+      },
+      {
+        "id": "ad19f765-af2f-436b-8e83-101de54de382",
+        "name": "善光寺",
+        "description": "特定宗派に属さず誰をも受け入れる信州の古刹。国宝の本堂は東日本最大級の木造建築として知られ、お戒壇巡りなど深い信仰の体験が息づく。境内終日開放、無休。",
+        "address": "長野県長野市大字長野元善町491",
+        "prefecture": "長野県",
+        "city": "長野市",
+        "lat": 36.661575,
+        "lng": 138.187703,
+        "qr_token": "shuin-nagano-5",
+        "cover_image_url": "/images/nagano/spot5.png",
+        "f7_fragment": "千年の祈りを受け止め続けてきた、信州・善光寺の荘厳な大伽藍。",
+        "f7_full": "国宝「善光寺」の荘大な本堂に詣で、長野駅から表参道を辿ってきた一本の道の結びを静かに、そして深く心に刻み込んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "be2ee53c-8697-4bd9-8584-d6073ea1a6a3",
+    "title": "玉造温泉・湯の川と願い石の社を歩く",
+    "name": "玉造温泉・湯の川と願い石の社を歩く",
+    "description": "玉造温泉駅から玉湯川に沿って南へ進み、川沿いのカフェや美肌の湯にちなんだスキンケア本店、香り高い出雲そばの老舗を経て、おしろい地蔵の清巌寺と願い石で名高い玉作湯神社へと至る、神話と湯けむりの温泉街を巡る散策路。",
+    "region": "玉造温泉・玉湯川と美肌の湯",
+    "area_name": "玉造温泉・玉湯川と美肌の湯",
+    "cover_image_url": "/images/tamatsukuri_onsen/route-eyecatch.png",
+    "imageUrl": "/images/tamatsukuri_onsen/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "玉湯川のせせらぎとともに玉造温泉街を歩いたあと、最初に誰かへ伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「玉作湯神社」の緑濃い杜の奥で、丸い願い石にそっと触れて祈った瞬間",
+          "description": "勾玉の里として受け継がれてきた神聖な空気と、木漏れ日の清々しさが胸に残った。",
+          "badge_code": "tamatsukuri_tamatsukuriyu"
+        },
+        {
+          "key": "B",
+          "text": "「出雲手打ちそば そば富」で、朱塗りの器に盛られた割子そばを味わった瞬間",
+          "description": "鬼皮ごと挽いた黒いそばの力強い香りとつゆの旨みが、出雲の旅情を深めてくれた。",
+          "badge_code": "tamatsukuri_sobatomi"
+        },
+        {
+          "key": "C",
+          "text": "「清巌寺」のお堂で、白粉を塗って祈りを捧げるおしろい地蔵に出会った瞬間",
+          "description": "美肌の湯の里ならではの愛らしく優しい信仰の姿に、思わず頬が緩む思いがした。",
+          "badge_code": "tamatsukuri_seiganji"
+        },
+        {
+          "key": "D",
+          "text": "「玉造温泉美肌研究所 姫ラボ 玉造本店」で、温泉水配合の石鹸や化粧水を手に取った瞬間",
+          "description": "美肌の湯として親しまれる玉造の源泉を活かした品々に、土地の恵みと優しさを感じた。",
+          "badge_code": "tamatsukuri_himelabo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a2201cc2-623a-4c04-8ce3-68c62a30887b",
+        "name": "mame cafe",
+        "description": "玉造アートボックスの2階にある川沿いのカフェ。玉湯川を眺めながら淹れたての珈琲や季節のスイーツで寛げる。営業時間10:00〜17:00、木曜定休。",
+        "address": "島根県松江市玉湯町玉造1241 玉造アートボックス2F",
+        "prefecture": "島根県",
+        "city": "松江市",
+        "lat": 35.419351,
+        "lng": 133.008868,
+        "qr_token": "shuin-tamatsukuri_onsen-1",
+        "cover_image_url": "/images/tamatsukuri_onsen/spot1.png",
+        "f7_fragment": "玉湯川を見下ろす二階の窓辺で過ごす、穏やかで香ばしい珈琲時間。",
+        "f7_full": "玉造温泉街の「mame cafe」で玉湯川を眺めながら淹れたての珈琲を味わい、温泉街歩きの序章をゆったりと始めた。",
+        "is_final": false,
+        "next_spot_id": "a3d502eb-e4e0-45d8-8382-e71a006754b9",
+        "next_spot_name": "玉造温泉美肌研究所 姫ラボ 玉造本店"
+      },
+      {
+        "id": "a3d502eb-e4e0-45d8-8382-e71a006754b9",
+        "name": "玉造温泉美肌研究所 姫ラボ 玉造本店",
+        "description": "美肌の湯として知られる玉造温泉の源泉を配合した石鹸や化粧水などを扱うスキンケア専門店。営業時間9:00〜18:00、年中無休。",
+        "address": "島根県松江市玉湯町玉造1213",
+        "prefecture": "島根県",
+        "city": "松江市",
+        "lat": 35.416728,
+        "lng": 133.009303,
+        "qr_token": "shuin-tamatsukuri_onsen-2",
+        "cover_image_url": "/images/tamatsukuri_onsen/spot2.png",
+        "f7_fragment": "美肌の湯の恵みを暮らしへ持ち帰る、玉造温泉街の本店ショップ。",
+        "f7_full": "「玉造温泉美肌研究所 姫ラボ 玉造本店」を訪ね、美肌の湯の温泉水を活かした石鹸や化粧水の優しさにじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "d58c9345-fb6d-4039-819d-ec1e1cd7b6ab",
+        "next_spot_name": "出雲手打ちそば そば富"
+      },
+      {
+        "id": "d58c9345-fb6d-4039-819d-ec1e1cd7b6ab",
+        "name": "出雲手打ちそば そば富",
+        "description": "鬼皮ごと挽いたそば粉を手打ちする出雲そばの名店。三段の朱塗り器で味わう割子そばが人気。営業時間11:00〜14:00・17:00〜22:00（L.O.21:30）、火曜・第1・3月曜定休。",
+        "address": "島根県松江市玉湯町玉造1197-7",
+        "prefecture": "島根県",
+        "city": "松江市",
+        "lat": 35.415812,
+        "lng": 133.008842,
+        "qr_token": "shuin-tamatsukuri_onsen-3",
+        "cover_image_url": "/images/tamatsukuri_onsen/spot3.png",
+        "f7_fragment": "朱塗りの三段器で味わう、香り豊かな出雲伝統の割子そばの逸品。",
+        "f7_full": "「出雲手打ちそば そば富」で香り高い伝統の割子そばを味わい、出雲に根付く食文化の奥深さに心からゆったり触れた。",
+        "is_final": false,
+        "next_spot_id": "7add5cdb-0024-43ea-899a-519888370dd0",
+        "next_spot_name": "清巌寺"
+      },
+      {
+        "id": "7add5cdb-0024-43ea-899a-519888370dd0",
+        "name": "清巌寺",
+        "description": "美肌にご利益があると親しまれる「おしろい地蔵」を祀る寺院。参拝者がお地蔵様に白粉を塗って祈願する風習が伝わる。参拝時間夜明け〜日没、無休。",
+        "address": "島根県松江市玉湯町玉造530",
+        "prefecture": "島根県",
+        "city": "松江市",
+        "lat": 35.412651,
+        "lng": 133.011245,
+        "qr_token": "shuin-tamatsukuri_onsen-4",
+        "cover_image_url": "/images/tamatsukuri_onsen/spot4.png",
+        "f7_fragment": "美肌の湯の里で素朴な祈りを託す、おしろい地蔵の優しき面持ち。",
+        "f7_full": "「清巌寺」を訪ね、美肌の湯の里ならではの「おしろい地蔵」に白粉を添える温かな祈りの文化に心から深く静かに触れた。",
+        "is_final": false,
+        "next_spot_id": "56d13ffb-8576-4f11-8cf7-e28da81d19e0",
+        "next_spot_name": "玉作湯神社"
+      },
+      {
+        "id": "56d13ffb-8576-4f11-8cf7-e28da81d19e0",
+        "name": "玉作湯神社",
+        "description": "勾玉づくりの神と温泉の神を祀る古社。本殿裏手に鎮まる丸い「願い石」に「叶い石」を当てて祈る風習で知られる。境内自由（社務所は平日9:00〜12:00・13:00〜17:00、土日祝8:30〜17:00）、無休。",
+        "address": "島根県松江市玉湯町玉造508",
+        "prefecture": "島根県",
+        "city": "松江市",
+        "lat": 35.413682,
+        "lng": 133.011666,
+        "qr_token": "shuin-tamatsukuri_onsen-5",
+        "cover_image_url": "/images/tamatsukuri_onsen/spot5.png",
+        "f7_fragment": "勾玉の杜に静かに鎮まる願い石、出雲の旅を結ぶ清らかな祈りの場。",
+        "f7_full": "「玉作湯神社」の静かな杜に詣で、願い石の前で手を合わせて玉造温泉の旅を清らかに、そして美しく堂々と締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fee4001f-1610-4f3f-8778-0cd9d6fec95c",
+    "title": "豊後森・機関庫の記憶と玖珠の街を歩く",
+    "name": "豊後森・機関庫の記憶と玖珠の街を歩く",
+    "description": "JR久大本線の豊後森駅を起点に、塚脇の手づくり製餡所や駅前のカフェ、伐株山を望むベーカリーレストランを巡り、九州唯一の扇形機関庫が残る公園を経て、道の駅童話の里くすへ至る、玖珠の暮らしと鉄路を辿る散策路。",
+    "region": "豊後森・機関庫と玖珠の街",
+    "area_name": "豊後森・機関庫と玖珠の街",
+    "cover_image_url": "/images/bungo_mori/route-eyecatch.png",
+    "imageUrl": "/images/bungo_mori/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鉄路の遺産と平頂の山が寄り添う玖珠の町で、あなたが旅の終わりに思い返す光景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「豊後森機関庫公園」で、扇形の機関庫と転車台が凛と残る芝生広場を見渡した瞬間",
+          "description": "かつて久大本線の難所を越える列車を支えた鉄道拠点の迫力に、往時の息吹を感じた。",
+          "badge_code": "bungo_mori_roundhouse"
+        },
+        {
+          "key": "B",
+          "text": "「岩下製餡所（あんこ菓子いわした）」で、炊きたての小豆が香る和菓子に出会った瞬間",
+          "description": "製餡所ならではの瑞々しい餡子の味わいに、町の暮らしを支えてきた手仕事の誇りを見た。",
+          "badge_code": "bungo_mori_iwashita"
+        },
+        {
+          "key": "C",
+          "text": "「森のクレヨン」の大きな窓越しに、線路と伐株山の雄大な姿を見上げた瞬間",
+          "description": "テーブル状の山容と焼きたてパンの香りが、玖珠ならではの穏やかな時間を刻んでくれた。",
+          "badge_code": "bungo_mori_crayon"
+        },
+        {
+          "key": "D",
+          "text": "「道の駅 童話の里くす」で、玖珠盆地の特産品や童話にまつわる品々を手にした瞬間",
+          "description": "地域の恵みが一堂に集まる拠点で、町の人々の温かな暮らしぶりに改めて触れた。",
+          "badge_code": "bungo_mori_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "53f69149-f4c3-4abf-84f7-ac555340b3fb",
+        "name": "岩下製餡所（あんこ菓子いわした）",
+        "description": "塚脇で長年親しまれる製餡所が営むあんこ菓子店。粒あんやこしあんを使ったおはぎ、どら焼き、まんじゅうなどが並ぶ。営業時間8:00〜17:30（火曜は15:00まで）、水曜定休。",
+        "address": "大分県玖珠郡玖珠町大字塚脇370",
+        "prefecture": "大分県",
+        "city": "玖珠町",
+        "lat": 33.277338,
+        "lng": 131.153275,
+        "qr_token": "shuin-bungo_mori-1",
+        "cover_image_url": "/images/bungo_mori/spot1.png",
+        "f7_fragment": "小豆の香りに誘われて立ち寄る、塚脇の老舗が手づくりする餡子店。",
+        "f7_full": "駅近くの「岩下製餡所」で小豆本来の風味が際立つ手づくりあんこ菓子を味わい、玖珠の暮らしの温もりにじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "bc32ea1b-1742-402a-80b2-b2a3fc25c66a",
+        "next_spot_name": "Hounds Cafe Leon"
+      },
+      {
+        "id": "bc32ea1b-1742-402a-80b2-b2a3fc25c66a",
+        "name": "Hounds Cafe Leon",
+        "description": "帆足エリアの静かな街並みにある落ち着いたカフェ。森のクレヨンや機関庫へ向かう道中のひと休みに心地よい空間で珈琲やスイーツを味わえる。営業時間10:00〜17:00、火曜定休。",
+        "address": "大分県玖珠郡玖珠町大字帆足244-2",
+        "prefecture": "大分県",
+        "city": "玖珠町",
+        "lat": 33.283267,
+        "lng": 131.155154,
+        "qr_token": "shuin-bungo_mori-2",
+        "cover_image_url": "/images/bungo_mori/spot2.png",
+        "f7_fragment": "帆足の街並みにそっと寄り添う、香ばしい珈琲と温かな休息時間。",
+        "f7_full": "帆足の「Hounds Cafe Leon」で淹れたての珈琲を味わい、玖珠の街歩きの合間に穏やかな休息をとった。",
+        "is_final": false,
+        "next_spot_id": "892594bd-2fd4-438b-82f8-ae60f5338cbb",
+        "next_spot_name": "森のクレヨン"
+      },
+      {
+        "id": "892594bd-2fd4-438b-82f8-ae60f5338cbb",
+        "name": "森のクレヨン",
+        "description": "玖珠のシンボルである伐株山や線路を大きな窓から望めるベーカリー＆カフェレストラン。焼きたてパンや地元食材を使った食事が人気。営業時間10:00〜17:00（カフェ11:00〜16:00）、月・火曜定休。",
+        "address": "大分県玖珠郡玖珠町大字帆足449-1",
+        "prefecture": "大分県",
+        "city": "玖珠町",
+        "lat": 33.28187,
+        "lng": 131.158212,
+        "qr_token": "shuin-bungo_mori-3",
+        "cover_image_url": "/images/bungo_mori/spot3.png",
+        "f7_fragment": "伐株山と線路を窓辺に望み、焼きたてパンを味わう森の温かな食卓。",
+        "f7_full": "「森のクレヨン」で伐株山の雄大な風景を眺めながら焼きたてのパンと食事を楽しみ、玖珠の昼下がりを心ゆくまで満喫した。",
+        "is_final": false,
+        "next_spot_id": "41663350-d96d-4eef-8a8f-baf9d4138b4e",
+        "next_spot_name": "豊後森機関庫公園"
+      },
+      {
+        "id": "41663350-d96d-4eef-8a8f-baf9d4138b4e",
+        "name": "豊後森機関庫公園",
+        "description": "九州に現存する唯一の扇形機関庫と転車台を保存する公園。敷地内の蒸気機関車や併設ミュージアムで久大本線の歴史に触れられる。公園終日開放（ミュージアム10:00〜16:00・月曜休）。",
+        "address": "大分県玖珠郡玖珠町大字岩室36-15",
+        "prefecture": "大分県",
+        "city": "玖珠町",
+        "lat": 33.281386,
+        "lng": 131.157642,
+        "qr_token": "shuin-bungo_mori-4",
+        "cover_image_url": "/images/bungo_mori/spot4.png",
+        "f7_fragment": "九州唯一の扇形庫と転車台が伝える、山あいの鉄路の確かな誇り。",
+        "f7_full": "「豊後森機関庫公園」を訪ね、九州唯一の扇形機関庫と転車台の前に立って久大本線の長い歴史にじっくりと思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "84ad8b3d-f327-4e32-8afc-9b6348efc18a",
+        "next_spot_name": "道の駅 童話の里くす"
+      },
+      {
+        "id": "84ad8b3d-f327-4e32-8afc-9b6348efc18a",
+        "name": "道の駅 童話の里くす",
+        "description": "玖珠町の特産品や新鮮な農産物、童話の里にちなんだお土産が揃う地域の交流拠点。営業時間9:00〜18:00（冬季17:00まで）、年末年始休。",
+        "address": "大分県玖珠郡玖珠町大字帆足2121",
+        "prefecture": "大分県",
+        "city": "玖珠町",
+        "lat": 33.289496,
+        "lng": 131.157297,
+        "qr_token": "shuin-bungo_mori-5",
+        "cover_image_url": "/images/bungo_mori/spot5.png",
+        "f7_fragment": "玖珠盆地の恵みと物語の余韻が揃う、童話の里の豊かな交流拠点。",
+        "f7_full": "「道の駅 童話の里くす」で玖珠盆地の特産品と町の温もりに触れ、豊後森の街歩きを穏やかに、そして美しく締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c8df856b-ea52-4cbd-89ce-06cc636f8088",
+    "title": "那智・補陀洛の海と浜ノ宮の祈りを歩く",
+    "name": "那智・補陀洛の海と浜ノ宮の祈りを歩く",
+    "description": "太平洋の波音が近いJR那智駅を起点に、南紀の恵みが並ぶ道の駅なち、海へ抜ける那智海水浴場、駅前の洋食ビストロとカフェを経て、世界遺産の補陀洛山寺へと至る、海と信仰が交わる浜ノ宮の散策路。",
+    "region": "那智・補陀洛の海と浜ノ宮",
+    "area_name": "那智・補陀洛の海と浜ノ宮",
+    "cover_image_url": "/images/nachi/route-eyecatch.png",
+    "imageUrl": "/images/nachi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "潮風と古道の気配が重なる那智・浜ノ宮を歩いたあと、いちずに思い浮かぶ景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "世界遺産「補陀洛山寺」の朱色の本堂と、海の彼方を目指した渡海船の記憶",
+          "description": "目の前の太平洋を見つめたあとで復元船に触れ、千年の祈りの深淵に圧倒された。",
+          "badge_code": "nachi_fudarakusanji"
+        },
+        {
+          "key": "B",
+          "text": "「那智海水浴場（ブルービーチ那智）」の白い砂浜と、どこまでも続く熊野灘の水平線",
+          "description": "駅のすぐ裏手に広がる開放的な浜辺で、潮騒の音と潮風の清々しさを全身に浴びた。",
+          "badge_code": "nachi_blue_beach"
+        },
+        {
+          "key": "C",
+          "text": "「ビストロ・ボヌール」で南紀の食材を活かした丁寧な洋食を味わったひととき",
+          "description": "静かな海辺の町に根付く温かなビストロの一皿が、古道歩きの合間に心地よい余白をくれた。",
+          "badge_code": "nachi_bonheur"
+        },
+        {
+          "key": "D",
+          "text": "「道の駅 なち」の直売所で、紀州の柑橘や梅干しなど土地の恵みに触れた瞬間",
+          "description": "駅と直結するほどの近さに熊野の案内所と特産品が揃い、旅の期待が一気に膨らんだ。",
+          "badge_code": "nachi_michinoeki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cdc0c51f-b1c3-4cf4-8282-b4f5a2e2f361",
+        "name": "道の駅 なち",
+        "description": "JR那智駅に隣接する熊野の玄関口。地元農産物直売所や熊野那智世界遺産情報センターを併設する。直売所9:30〜16:00（1/1〜3休）、情報センター9:00〜17:00（月曜休）。",
+        "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮361-2",
+        "prefecture": "和歌山県",
+        "city": "那智勝浦町",
+        "lat": 33.644465,
+        "lng": 135.93667,
+        "qr_token": "shuin-nachi-1",
+        "cover_image_url": "/images/nachi/spot1.png",
+        "f7_fragment": "那智駅のすぐ隣に広がる、南紀の恵みと熊野古道の大切な案内所。",
+        "f7_full": "駅に隣接する「道の駅 なち」を訪ね、紀州の豊かな産品と熊野古道の丁寧な案内で浜ノ宮歩きの準備をしっかりと整えた。",
+        "is_final": false,
+        "next_spot_id": "2209aecc-7def-48a1-8165-e5fc2528b617",
+        "next_spot_name": "那智海水浴場（ブルービーチ那智）"
+      },
+      {
+        "id": "2209aecc-7def-48a1-8165-e5fc2528b617",
+        "name": "那智海水浴場（ブルービーチ那智）",
+        "description": "那智駅のすぐ東側に広がる美しい弧を描いた砂浜。快水浴場百選にも選ばれた透明度の高い海と松林が心地よい。終日開放・入場無料。",
+        "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮382地先",
+        "prefecture": "和歌山県",
+        "city": "那智勝浦町",
+        "lat": 33.641883,
+        "lng": 135.936491,
+        "qr_token": "shuin-nachi-2",
+        "cover_image_url": "/images/nachi/spot2.png",
+        "f7_fragment": "駅のすぐ裏手に開ける、熊野灘の水平線と白い砂浜の爽やかな風景。",
+        "f7_full": "「那智海水浴場（ブルービーチ那智）」の浜辺に立ち、潮騒の音と太平洋の開放的な水平線を深く胸に収めてゆったり歩いた。",
+        "is_final": false,
+        "next_spot_id": "ccbb824f-7c15-4ebd-8581-bc651a2e1e96",
+        "next_spot_name": "smart cafe"
+      },
+      {
+        "id": "ccbb824f-7c15-4ebd-8581-bc651a2e1e96",
+        "name": "smart cafe",
+        "description": "那智海水浴場へと通じる道の手前にある地域密着型のカフェ。ボリュームあるモーニングや淹れたての珈琲で旅人を温かく迎えてくれる。営業時間9:00〜16:00頃、水・木曜定休。",
+        "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮358",
+        "prefecture": "和歌山県",
+        "city": "那智勝浦町",
+        "lat": 33.643943,
+        "lng": 135.936162,
+        "qr_token": "shuin-nachi-3",
+        "cover_image_url": "/images/nachi/spot3.png",
+        "f7_fragment": "潮風が渡る砂浜の手前でひと息つく、海辺の穏やかなカフェ時間。",
+        "f7_full": "浜ノ宮の「smart cafe」で淹れたての珈琲を味わいながら一息つき、海辺の朝の穏やかな時間をゆったり楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "7ac3eecf-1a34-44ec-8ce5-3cce60370999",
+        "next_spot_name": "ビストロ・ボヌール"
+      },
+      {
+        "id": "7ac3eecf-1a34-44ec-8ce5-3cce60370999",
+        "name": "ビストロ・ボヌール",
+        "description": "JR那智駅前の通りにある洋食・ビストロ店。那智勝浦の海産物や地元食材を使った丁寧なランチやディナーが人気。営業時間11:00〜14:30・17:00〜21:00、火曜定休。",
+        "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮392-1",
+        "prefecture": "和歌山県",
+        "city": "那智勝浦町",
+        "lat": 33.644869,
+        "lng": 135.9359,
+        "qr_token": "shuin-nachi-4",
+        "cover_image_url": "/images/nachi/spot4.png",
+        "f7_fragment": "那智駅前の通りで出会う、南紀の恵みを味わう温かな小さなビストロ。",
+        "f7_full": "那智駅前の「ビストロ・ボヌール」で南紀の食材を活かした丁寧な一皿を味わい、午後の旅への活力をしっかりと養った。",
+        "is_final": false,
+        "next_spot_id": "408cb941-9113-43e4-87d1-1e29f0be6412",
+        "next_spot_name": "補陀洛山寺"
+      },
+      {
+        "id": "408cb941-9113-43e4-87d1-1e29f0be6412",
+        "name": "補陀洛山寺",
+        "description": "世界遺産「紀伊山地の霊場と参詣道」を構成する古寺。南の海の彼方に観音浄土を求めて小舟で漕ぎ出した「補陀洛渡海」の舞台として知られる。拝観8:30〜16:00、無休。",
+        "address": "和歌山県東牟婁郡那智勝浦町浜ノ宮348",
+        "prefecture": "和歌山県",
+        "city": "那智勝浦町",
+        "lat": 33.644689,
+        "lng": 135.934502,
+        "qr_token": "shuin-nachi-5",
+        "cover_image_url": "/images/nachi/spot5.png",
+        "f7_fragment": "南の浄土へ漕ぎ出した渡海船の記憶、世界遺産の海辺に佇む古寺。",
+        "f7_full": "世界遺産「補陀洛山寺」に詣で、那智の海から浄土を目指した渡海信仰の記憶とともに浜ノ宮の旅を静かに締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
