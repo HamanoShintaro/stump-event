@@ -81250,5 +81250,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "23c38162-470f-45dd-8274-f3a090985475",
+    "title": "帯広・十勝の元祖豚丼と名菓の本店を歩く",
+    "name": "帯広・十勝の元祖豚丼と名菓の本店を歩く",
+    "description": "JR根室本線帯広駅から、昭和8年創業の元祖豚丼店「元祖ぶた丼ぱんちょう」と帯広のソウルフード「カレーショップ インデアン まちなか店」、十勝の食が集う「北の屋台」、銘菓の本山「六花亭 帯広本店」、大判焼きの名店「高橋まんじゅう屋」を巡る散策路。",
+    "region": "帯広・十勝の豚丼と六花亭の街",
+    "area_name": "帯広・十勝の豚丼と六花亭の街",
+    "cover_image_url": "/images/obihiro/route-eyecatch.png",
+    "imageUrl": "/images/obihiro/route-eyecatch.png",
+    "category": "グルメとスイーツ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "十勝の大地が育む濃厚なグルメと名菓の本店が繋がる帯広を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「元祖ぶた丼ぱんちょう」で、炭火の香り豊かな肉厚の豚丼を頬張った瞬間",
+          "description": "昭和八年から続く秘伝の甘辛いタレと柔らかな十勝産豚肉が、旅の始まりを力強く満たした。",
+          "badge_code": "obihiro_pancho"
+        },
+        {
+          "key": "B",
+          "text": "「カレーショップ インデアン まちなか店」で、十勝っ子が愛する濃厚カレーを味わった瞬間",
+          "description": "鍋を持参して買いに来る地元の人々とともに、帯広に根付いた日常のソウルフードに出会った。",
+          "badge_code": "obihiro_indian"
+        },
+        {
+          "key": "C",
+          "text": "「六花亭 帯広本店」の二階喫茶室で、本店限定のサクサクパイや珈琲を味わった瞬間",
+          "description": "花柄の包装紙で知られる名店の原点で、十勝の乳製品を使った極上のスイーツに出会った。",
+          "badge_code": "obihiro_rokkatei"
+        },
+        {
+          "key": "D",
+          "text": "「高橋まんじゅう屋」の店先で、湯気の立つアツアツの大判焼きと肉まんに出会った瞬間",
+          "description": "たかまんの愛称で親しまれる老舗の素朴な美味しさが、帯広の街歩きの最後を温めた。",
+          "badge_code": "obihiro_takaman"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1ea864cd-dcff-4dae-8658-327700d3ac9b",
+        "name": "元祖ぶた丼ぱんちょう",
+        "description": "昭和8年（1933年）創業、帯広名物「豚丼」の発祥として知られる老舗名店。炭火で香ばしく焼き上げた豚ロースと秘伝の甘辛いタレが絶品。11:00〜19:00、月曜・第1・3火曜休。",
+        "address": "北海道帯広市西1条南11丁目19",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.919252,
+        "lng": 143.203466,
+        "qr_token": "shuin-obihiro-1",
+        "cover_image_url": "/images/obihiro/spot1.png",
+        "f7_fragment": "昭和八年創業、炭火焼きの香ばしさが際立つ帯広豚丼の元祖名店。",
+        "f7_full": "駅前の老舗「元祖ぶた丼ぱんちょう」で炭火香る元祖豚丼を味わい、十勝・帯広の力強い食文化の原点に触れた。",
+        "is_final": false,
+        "next_spot_id": "e03a0b64-1cd4-4493-8f59-a5eea6e52d3b",
+        "next_spot_name": "カレーショップ インデアン まちなか店"
+      },
+      {
+        "id": "e03a0b64-1cd4-4493-8f59-a5eea6e52d3b",
+        "name": "カレーショップ インデアン まちなか店",
+        "description": "帯広・十勝の人々に熱愛されるご当地カレーチェーンの中心街店。じっくり煮込んだ濃厚なルーとリーズナブルな価格で鍋持参の地元客も多い。11:00〜21:00、年末年始休。",
+        "address": "北海道帯広市西2条南10丁目1-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.921203,
+        "lng": 143.202073,
+        "qr_token": "shuin-obihiro-2",
+        "cover_image_url": "/images/obihiro/spot2.png",
+        "f7_fragment": "十勝っ子が愛してやまない、濃厚な味わいの帯広ご当地カレーの名店。",
+        "f7_full": "「カレーショップ インデアン まちなか店」で市民に愛されるソウルフードの香りと活気に触れ、帯広の日常を体感した。",
+        "is_final": false,
+        "next_spot_id": "3ac23683-ad09-482b-8bef-1bff2f160ed4",
+        "next_spot_name": "北の屋台"
+      },
+      {
+        "id": "3ac23683-ad09-482b-8bef-1bff2f160ed4",
+        "name": "北の屋台",
+        "description": "十勝の豊かな食材を活かした個性豊かな約20軒の屋台が軒を連ねる帯広名物の屋台村。昼間は静かな路地の佇まいも楽しい。夜17:00〜24:00頃営業（店舗・日曜定休等異なる）。",
+        "address": "北海道帯広市西1条南10丁目7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.921033,
+        "lng": 143.203417,
+        "qr_token": "shuin-obihiro-3",
+        "cover_image_url": "/images/obihiro/spot3.png",
+        "f7_fragment": "十勝の旬と温かな人情が約二十軒の屋台に集う、帯広の名物路地。",
+        "f7_full": "「北の屋台」の木造屋台が並ぶ路地を歩き、十勝の豊かな食材と人が集う帯広の温かな夜の気配に触れた。",
+        "is_final": false,
+        "next_spot_id": "5c3a19b9-ba52-4416-8adc-46ee289f61cf",
+        "next_spot_name": "六花亭 帯広本店"
+      },
+      {
+        "id": "5c3a19b9-ba52-4416-8adc-46ee289f61cf",
+        "name": "六花亭 帯広本店",
+        "description": "北海道を代表する銘菓「マルセイバターサンド」の本店。1階のショップに加え、2階喫茶室では本店・一部店舗限定の「サクサクパイ」などを味わえる。店舗10:00〜18:00、喫茶11:00〜16:30（水曜休）。",
+        "address": "北海道帯広市西2条南9丁目6",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.922278,
+        "lng": 143.202506,
+        "qr_token": "shuin-obihiro-4",
+        "cover_image_url": "/images/obihiro/spot4.png",
+        "f7_fragment": "マルセイバターサンドの原点、本店限定の喫茶と十勝菓子が揃う殿堂。",
+        "f7_full": "「六花亭 帯広本店」の喫茶室で本店限定のサクサクパイと珈琲を味わい、十勝の乳製品と菓子文化の粋を堪能した。",
+        "is_final": false,
+        "next_spot_id": "6dff967b-77b7-405a-816d-2eedb17ad04f",
+        "next_spot_name": "高橋まんじゅう屋"
+      },
+      {
+        "id": "6dff967b-77b7-405a-816d-2eedb17ad04f",
+        "name": "高橋まんじゅう屋",
+        "description": "「たかまん」の愛称で帯広市民に半世紀以上親しまれる老舗のおやき（大判焼き）・肉まん店。あんやチーズの大判焼き、蒸しパン、ソフトクリームが人気。9:00〜18:00、水曜・第2・3火曜休。",
+        "address": "北海道帯広市東1条南5丁目19-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.926468,
+        "lng": 143.20604,
+        "qr_token": "shuin-obihiro-5",
+        "cover_image_url": "/images/obihiro/spot5.png",
+        "f7_fragment": "「たかまん」の名で愛され続ける、焼きたて大判焼きと肉まんの帯広老舗。",
+        "f7_full": "市民に愛される老舗「高橋まんじゅう屋」で熱々の大判焼きに出会い、十勝の食と甘味が溢れる帯広の散策を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0b1a1f88-0f93-4ac9-82df-b1f65cfeae20",
+    "title": "新白河・名物手打ラーメンとだるま菓子の街を歩く",
+    "name": "新白河・名物手打ラーメンとだるま菓子の街を歩く",
+    "description": "みちのくの玄関口・JR新白河駅から、駅前の落ち着いた喫茶店「ティールーム高山」と開墾の歴史を伝える「大山祇神社」、王道の「白河手打ラーメン かづ枝食堂」、明治40年創業の老舗「白河菓匠 大黒屋 新白河店」、手作り洋食の「Coffee House らたん」を巡る散策路。",
+    "region": "新白河・手打ラーメンと銘菓の玄関口",
+    "area_name": "新白河・手打ラーメンと銘菓の玄関口",
+    "cover_image_url": "/images/shinshirakawa/route-eyecatch.png",
+    "imageUrl": "/images/shinshirakawa/route-eyecatch.png",
+    "category": "グルメと歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "みちのくの玄関口で王道の白河ラーメンとだるま銘菓が繋がる新白河を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ティールーム高山」の落ち着いた店内で、旅の始まりに穏やかな紅茶や珈琲を味わった瞬間",
+          "description": "新白河駅東口すぐの温かい喫茶空間と併設ショップの雑貨が、みちのく旅の心を和ませた。",
+          "badge_code": "shinshirakawa_takayama"
+        },
+        {
+          "key": "B",
+          "text": "「白河手打ラーメン かづ枝食堂」で、手打ちちぢれ麺と澄んだ醤油スープを啜った瞬間",
+          "description": "新白河駅近くで味わう王道の白河ラーメンの優しいコクが、旅人の身体を芯から温めた。",
+          "badge_code": "shinshirakawa_kadue"
+        },
+        {
+          "key": "C",
+          "text": "「白河菓匠 大黒屋 新白河店」で、愛らしい白河だるま最中や老舗の銘菓を選んだ瞬間",
+          "description": "明治四十年創業の老舗が守り続ける縁起の良いだるま菓子が、福島の温かな手土産になった。",
+          "badge_code": "shinshirakawa_daikokuya"
+        },
+        {
+          "key": "D",
+          "text": "「Coffee House らたん」のアットホームな店内で、名物の煮込みスパゲティを味わった瞬間",
+          "description": "新白河の住宅街で長く親しまれる洋食喫茶の優しい味が、駅周辺の散策を豊かに結んだ。",
+          "badge_code": "shinshirakawa_ratan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "eb664df7-6312-4d90-85dc-2f48d51b0d98",
+        "name": "ティールーム高山",
+        "description": "JR新白河駅東口すぐそばに構える落ち着いた雰囲気の喫茶店。セレクトショップも併設し、香り高い珈琲や紅茶でゆっくり過ごせる。営業時間10:00〜17:00（L.O.16:30）、月曜定休。",
+        "address": "福島県西白河郡西郷村前山東13",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.121497,
+        "lng": 140.188482,
+        "qr_token": "shuin-shinshirakawa-1",
+        "cover_image_url": "/images/shinshirakawa/spot1.png",
+        "f7_fragment": "新白河駅東口そばで旅人を迎える、雑貨も楽しい落ち着いた喫茶店。",
+        "f7_full": "駅東口近くの「ティールーム高山」で穏やかな紅茶の時間を過ごし、みちのくの玄関口・新白河の散策を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "09e07f53-fca7-43c9-819f-627843146291",
+        "next_spot_name": "大山祇神社（新白河）"
+      },
+      {
+        "id": "09e07f53-fca7-43c9-819f-627843146291",
+        "name": "大山祇神社（新白河）",
+        "description": "新白河駅の東口側に鎮座し、江戸時代後期の文化年間に越後からの移住者が開墾の守護として祀ったのが始まりと伝えられるお社。地域の静かな歴史を見守っている。参拝自由。",
+        "address": "福島県白河市新白河4-81",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.118399,
+        "lng": 140.190066,
+        "qr_token": "shuin-shinshirakawa-2",
+        "cover_image_url": "/images/shinshirakawa/spot2.png",
+        "f7_fragment": "江戸後期の開墾の歴史を伝える、新白河駅そばの静かな鎮守の社。",
+        "f7_full": "駅東口側の「大山祇神社」に参拝し、新幹線の玄関口のそばに息づく江戸時代の開墾の歴史に静かに触れた。",
+        "is_final": false,
+        "next_spot_id": "ca06408b-b5fc-4d6c-85be-9e58b684346d",
+        "next_spot_name": "白河手打ラーメン かづ枝食堂"
+      },
+      {
+        "id": "ca06408b-b5fc-4d6c-85be-9e58b684346d",
+        "name": "白河手打ラーメン かづ枝食堂",
+        "description": "新白河駅から歩いてすぐの場所にある王道の白河ラーメン人気店。澄んだ醤油スープとコシのある手打ちちぢれ麺、香ばしい焼豚が親しまれる。11:00〜14:00・16:30〜19:30頃、月曜休。",
+        "address": "福島県西白河郡西郷村字道南西89",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.12376,
+        "lng": 140.187553,
+        "qr_token": "shuin-shinshirakawa-3",
+        "cover_image_url": "/images/shinshirakawa/spot3.png",
+        "f7_fragment": "澄んだ醤油スープと手打ちちぢれ麺が自慢の、新白河駅そばの王道麺処。",
+        "f7_full": "「白河手打ラーメン かづ枝食堂」で手打ちちぢれ麺と醤油スープを堪能し、本場・白河のラーメン文化を満喫した。",
+        "is_final": false,
+        "next_spot_id": "b10d9a47-1f13-4ffe-85f2-f737c5522592",
+        "next_spot_name": "白河菓匠 大黒屋 新白河店"
+      },
+      {
+        "id": "b10d9a47-1f13-4ffe-85f2-f737c5522592",
+        "name": "白河菓匠 大黒屋 新白河店",
+        "description": "明治40年（1907年）創業の白河を代表する老舗和菓子店。縁起の良い「白河だるま最中」や柔らかな「カフェオレ大福」、季節の和菓子が人気。営業時間9:00〜18:00、火曜・隔週水曜休。",
+        "address": "福島県西白河郡西郷村豊作東11",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.125789,
+        "lng": 140.18677,
+        "qr_token": "shuin-shinshirakawa-4",
+        "cover_image_url": "/images/shinshirakawa/spot4.png",
+        "f7_fragment": "明治四十年創業、愛らしい「白河だるま最中」が人気の老舗和菓子舗。",
+        "f7_full": "「白河菓匠 大黒屋 新白河店」で愛らしい白河だるま最中に出会い、明治創業の老舗が守る福島の菓子文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "92245731-4e95-4ac5-87d9-fe487fd232a2",
+        "next_spot_name": "Coffee House らたん"
+      },
+      {
+        "id": "92245731-4e95-4ac5-87d9-fe487fd232a2",
+        "name": "Coffee House らたん",
+        "description": "新白河の街角で長く親しまれるアットホームな洋食喫茶店。こだわりの手作り煮込みスパゲティや香り高い珈琲が地元客に愛される。営業時間10:00〜19:00、日曜・祝日定休。",
+        "address": "福島県白河市新白河1-157",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.123945,
+        "lng": 140.195277,
+        "qr_token": "shuin-shinshirakawa-5",
+        "cover_image_url": "/images/shinshirakawa/spot5.png",
+        "f7_fragment": "手作り煮込みスパゲティと珈琲で地元に愛される、新白河の温かい喫茶店。",
+        "f7_full": "「Coffee House らたん」でアットホームな喫茶の時間を過ごし、ラーメンとだるま菓子の街・新白河の散策を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5346cbe9-04c4-442d-8561-ac23918ea65e",
+    "title": "姫路・白鷺の城と城下町の老舗を歩く",
+    "name": "姫路・白鷺の城と城下町の老舗を歩く",
+    "description": "世界文化遺産・姫路城への表玄関であるJR姫路駅から、姫路名物・回転焼きの「御座候 山陽店」と老舗「はまもとコーヒー」、池泉庭園が美しい「好古園」、白亜の国宝天守がそびえる「姫路城」、古民家カフェ「パンとエスプレッソと姫路城」を巡る散策路。",
+    "region": "姫路・白鷺の城と城下町",
+    "area_name": "姫路・白鷺の城と城下町",
+    "cover_image_url": "/images/himeji/route-eyecatch.png",
+    "imageUrl": "/images/himeji/route-eyecatch.png",
+    "category": "世界遺産と城下町",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "白亜の国宝天守と城下町の温かな名物が繋がる姫路を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「はまもとコーヒー」のカウンターで、姫路名物アーモンドトーストと珈琲を味わった瞬間",
+          "description": "みゆき通り商店街に佇む昭和の老舗喫茶で、香ばしいアーモンドバターの香りに包まれた。",
+          "badge_code": "himeji_hamamoto"
+        },
+        {
+          "key": "B",
+          "text": "「好古園」の御屋敷の庭で、姫路城を借景にした九つの日本庭園を歩いた瞬間",
+          "description": "築地塀と清らかな池泉が織りなす江戸の風情が、城下町散策の心を静かに整えてくれた。",
+          "badge_code": "himeji_kokoen"
+        },
+        {
+          "key": "C",
+          "text": "「姫路城」の大手門をくぐり、青空に羽ばたくような白亜の大天守を見上げた瞬間",
+          "description": "四百年以上戦火を免れて現存する白鷺城の威容と木組みの美しさに、胸が震えた。",
+          "badge_code": "himeji_castle"
+        },
+        {
+          "key": "D",
+          "text": "「パンとエスプレッソと姫路城」の古民家で、城下町の余韻に浸り珈琲を飲んだ瞬間",
+          "description": "築百年を超える町家の温もりと焼きたてパンの香りが、充実の一日を優しく結んだ。",
+          "badge_code": "himeji_espresso"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cee10fa8-aebb-4f7a-855b-c5e01b345e07",
+        "name": "御座候 山陽店",
+        "description": "姫路発祥の名物回転焼き（今川焼）「御座候」の駅前店舗。職人が手早く焼き上げる赤あん・白あんの焼き立てが地元の人々にも愛される。営業時間10:00〜19:30（山陽百貨店準拠）。",
+        "address": "兵庫県姫路市南町1",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.82828,
+        "lng": 134.690019,
+        "qr_token": "shuin-himeji-1",
+        "cover_image_url": "/images/himeji/spot1.png",
+        "f7_fragment": "姫路発祥の名物・回転焼きを職人が手早く焼き上げる、駅前の定番名店。",
+        "f7_full": "駅前の「御座候 山陽店」で姫路発祥の回転焼きの香ばしさに触れ、城下町の活気ある散策を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "4952fa3d-e302-46df-835d-2d4aa8561b18",
+        "next_spot_name": "はまもとコーヒー"
+      },
+      {
+        "id": "4952fa3d-e302-46df-835d-2d4aa8561b18",
+        "name": "はまもとコーヒー",
+        "description": "みゆき通り商店街で長く愛されるサイフォン珈琲の老舗喫茶店。姫路名物の「アーモンドトースト」や季節のコーヒーが評判。営業時間7:00〜17:00、木曜定休。",
+        "address": "兵庫県姫路市二階町49",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.831434,
+        "lng": 134.692468,
+        "qr_token": "shuin-himeji-2",
+        "cover_image_url": "/images/himeji/spot2.png",
+        "f7_fragment": "みゆき通り商店街で名物アーモンドトーストを味わう、老舗純喫茶。",
+        "f7_full": "商店街の老舗「はまもとコーヒー」で名物アーモンドトーストと珈琲を味わい、姫路の奥深い喫茶文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "35c7828c-a1df-4960-8864-3f76c91baa5f",
+        "next_spot_name": "好古園（姫路城西御屋敷跡庭園）"
+      },
+      {
+        "id": "35c7828c-a1df-4960-8864-3f76c91baa5f",
+        "name": "好古園（姫路城西御屋敷跡庭園）",
+        "description": "姫路城西御屋敷跡の発掘調査をもとに造営された池泉式の日本庭園群。趣の異なる9つの庭園が連なり、四季折々の花木や茶室「双樹庵」が楽しめる。9:00〜17:00（入園16:30まで、12/29・30休）、大人310円。",
+        "address": "兵庫県姫路市本町68",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.837086,
+        "lng": 134.690402,
+        "qr_token": "shuin-himeji-3",
+        "cover_image_url": "/images/himeji/spot3.png",
+        "f7_fragment": "姫路城を借景に九つの庭園が連なる、西御屋敷跡の優美な日本庭園。",
+        "f7_full": "「好古園」の築地塀と清らかな池泉庭園を歩き、姫路城を借景にした四季の美と静謐な空間を堪能した。",
+        "is_final": false,
+        "next_spot_id": "c3ccdf96-3300-430d-8579-c82556710681",
+        "next_spot_name": "姫路城"
+      },
+      {
+        "id": "c3ccdf96-3300-430d-8579-c82556710681",
+        "name": "姫路城",
+        "description": "1993年に日本初の世界文化遺産に登録された国宝の城郭。慶長14年（1609年）築造の白亜の連立式天守が現存し、優美な姿から「白鷺城」と呼ばれる。9:00〜17:00（入城16:00まで）、一般2500円（市民1000円）。",
+        "address": "兵庫県姫路市本町68",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.839168,
+        "lng": 134.692974,
+        "qr_token": "shuin-himeji-4",
+        "cover_image_url": "/images/himeji/spot4.png",
+        "f7_fragment": "白鷺城の名で親しまれる日本初の世界文化遺産、白亜の国宝連立式天守。",
+        "f7_full": "国宝「姫路城」の白亜の大天守を仰ぎ、四百年の歴史を刻む城郭の優美さと迫力を全身で体感した。",
+        "is_final": false,
+        "next_spot_id": "f882daca-7340-43e5-867f-28c1d774dc7a",
+        "next_spot_name": "パンとエスプレッソと姫路城"
+      },
+      {
+        "id": "f882daca-7340-43e5-867f-28c1d774dc7a",
+        "name": "パンとエスプレッソと姫路城",
+        "description": "姫路城の北西エリアに佇む築100年超の古民家を再生したベーカリーカフェ。看板の食パン「ムー」や城下町らしい和洋の軽食、エスプレッソを楽しめる。8:00〜18:00、不定休。",
+        "address": "兵庫県姫路市材木町65",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.838776,
+        "lng": 134.688854,
+        "qr_token": "shuin-himeji-5",
+        "cover_image_url": "/images/himeji/spot5.png",
+        "f7_fragment": "姫路城北西の築百年超の古民家で焼きたてパンを味わう、城下町のカフェ。",
+        "f7_full": "古民家カフェ「パンとエスプレッソと姫路城」で焼きたての香りと珈琲を味わい、白鷺の城を巡る姫路の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "e062fe05-7d7f-4f99-863e-b9dc8d1b81c7",
+    "title": "下関・関門海峡の歴史洋館と唐戸を歩く",
+    "name": "下関・関門海峡の歴史洋館と唐戸を歩く",
+    "description": "関門海峡を望む下関の観光中心地・唐戸エリアで、現存日本最古の領事館建築「旧下関英国領事館」と2階の「tearoom Liz」、海の幸が並ぶ「唐戸市場」、海上安全の古社「亀山八幡宮」、竜宮城のような朱色の社殿が映える「赤間神宮」を巡る散策路。",
+    "region": "下関・関門海峡と唐戸の港町",
+    "area_name": "下関・関門海峡と唐戸の港町",
+    "cover_image_url": "/images/shimonoseki/route-eyecatch.png",
+    "imageUrl": "/images/shimonoseki/route-eyecatch.png",
+    "category": "海峡と歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "関門海峡の潮風と近代洋館、そして平家物語の社が繋がる下関を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「旧下関英国領事館」の赤レンガ洋館で、明治の国際港・下関の記憶に触れた瞬間",
+          "description": "国重要文化財の重厚な窓辺と暖炉が、関門海峡を行き交った外国船の時代を伝えていた。",
+          "badge_code": "shimonoseki_consulate"
+        },
+        {
+          "key": "B",
+          "text": "「tearoom Liz」の洋館二階で、香り高い紅茶と焼き立てのスコーンを味わった瞬間",
+          "description": "明治の領事館のクラシカルな空間でいただく英国流のティータイムが、海辺の旅を彩った。",
+          "badge_code": "shimonoseki_liz"
+        },
+        {
+          "key": "C",
+          "text": "「唐戸市場」の賑わう市場内で、関門のふぐや新鮮な海の幸に出会った瞬間",
+          "description": "潮の香りが満ちる下関の台所で、海峡が育む豊かな魚介の活気に心を躍らせた。",
+          "badge_code": "shimonoseki_karato"
+        },
+        {
+          "key": "D",
+          "text": "「赤間神宮」の鮮やかな水天門を仰ぎ、壇ノ浦の記憶と平家物語に想いを馳せた瞬間",
+          "description": "関門海峡の青い海を背に立つ朱色の竜宮造りの社殿が、安徳天皇の鎮魂の祈りを伝えていた。",
+          "badge_code": "shimonoseki_akama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5b0ec1f1-6f1a-44b3-8df8-ab7e1650b68a",
+        "name": "旧下関英国領事館",
+        "description": "明治39年（1906年）に建てられた現存日本最古の領事館建築で、国の重要文化財。赤レンガと白い花崗岩が織りなす優美な洋館内で、国際港・下関の近代史を紹介する。9:00〜17:00、火曜休、入館無料。",
+        "address": "山口県下関市唐戸町4-11",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 33.956943,
+        "lng": 130.943208,
+        "qr_token": "shuin-shimonoseki-1",
+        "cover_image_url": "/images/shimonoseki/spot1.png",
+        "f7_fragment": "明治三十九年築の現存日本最古の領事館建築、国重文の赤レンガ洋館。",
+        "f7_full": "国重要文化財「旧下関英国領事館」で明治の赤レンガ建築と国際港の記憶に触れ、関門海峡の旅を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "ef86cb2e-d148-406d-8ebd-702dc45b12a3",
+        "next_spot_name": "tearoom Liz（旧下関英国領事館2F）"
+      },
+      {
+        "id": "ef86cb2e-d148-406d-8ebd-702dc45b12a3",
+        "name": "tearoom Liz（旧下関英国領事館2F）",
+        "description": "旧下関英国領事館の2階に併設されたクラシカルなティールーム。明治の洋館の趣ある空間で、本格的な紅茶や焼き立てスコーン、アフタヌーンティーを楽しめる。10:00〜17:00、火曜休。",
+        "address": "山口県下関市唐戸町4-11",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 33.956978,
+        "lng": 130.943206,
+        "qr_token": "shuin-shimonoseki-2",
+        "cover_image_url": "/images/shimonoseki/spot2.png",
+        "f7_fragment": "旧英国領事館の二階で紅茶とスコーンを味わう、優雅な洋館カフェ。",
+        "f7_full": "洋館二階の「tearoom Liz」で香り高い紅茶とスコーンを味わい、明治の港町らしい優雅な休息を楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "843aea57-aa00-4cc9-8792-c087ca13afe3",
+        "next_spot_name": "唐戸市場"
+      },
+      {
+        "id": "843aea57-aa00-4cc9-8792-c087ca13afe3",
+        "name": "唐戸市場",
+        "description": "関門海峡に面して建つ下関の台所。名物のふぐをはじめ新鮮な海の幸が集まり、金〜日曜・祝日には握り寿司や海鮮丼をその場で楽しめる「活きいき馬関街」が開かれる。平日5:00〜15:00・日祝7:00〜15:00。",
+        "address": "山口県下関市唐戸町5-50",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 33.956609,
+        "lng": 130.945824,
+        "qr_token": "shuin-shimonoseki-3",
+        "cover_image_url": "/images/shimonoseki/spot3.png",
+        "f7_fragment": "関門海峡を望む下関の台所、ふぐや旬の魚介の活気が満ちる名物市場。",
+        "f7_full": "海峡沿いの「唐戸市場」で下関ならではの活気と新鮮な海の幸に触れ、港町の豊かな食の恵みを満喫した。",
+        "is_final": false,
+        "next_spot_id": "ff92ab03-0b3d-48a7-87bd-c2298f551b87",
+        "next_spot_name": "亀山八幡宮"
+      },
+      {
+        "id": "ff92ab03-0b3d-48a7-87bd-c2298f551b87",
+        "name": "亀山八幡宮",
+        "description": "貞観元年（859年）創建、関門海峡を見下ろす亀山に鎮座する下関の古社。海上交通の守護神として崇敬され、境内には世界一とも称される大きな「ふく（ふぐ）の像」がある。参拝自由・無休。",
+        "address": "山口県下関市中之町1-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 33.957423,
+        "lng": 130.944986,
+        "qr_token": "shuin-shimonoseki-4",
+        "cover_image_url": "/images/shimonoseki/spot4.png",
+        "f7_fragment": "貞観元年創建、関門海峡を見守る高台の古社と名物・ふくの像。",
+        "f7_full": "高台の古社「亀山八幡宮」に参拝して関門海峡を望み、下関の海上交通の歴史と「ふく」の街の遊び心に触れた。",
+        "is_final": false,
+        "next_spot_id": "cbaaff23-58c7-484a-8454-474dd351d83f",
+        "next_spot_name": "赤間神宮"
+      },
+      {
+        "id": "cbaaff23-58c7-484a-8454-474dd351d83f",
+        "name": "赤間神宮",
+        "description": "壇ノ浦の戦いで幼くして入水された安徳天皇を祀る神社。竜宮城を模した鮮やかな朱と白の「水天門」が海峡に映え、境内には平家一門の墓や「耳なし芳一堂」がある。境内参拝自由（社務所9:00〜17:00）。",
+        "address": "山口県下関市阿弥陀寺町4-1",
+        "prefecture": "山口県",
+        "city": "",
+        "lat": 33.959367,
+        "lng": 130.948778,
+        "qr_token": "shuin-shimonoseki-5",
+        "cover_image_url": "/images/shimonoseki/spot5.png",
+        "f7_fragment": "竜宮城を模した朱色の水天門が海辺に映える、壇ノ浦ゆかりの赤間神宮。",
+        "f7_full": "「赤間神宮」の鮮やかな水天門を仰いで参拝し、平家物語の記憶と関門海峡の潮風が織りなす下関の散策を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f4054094-fd4d-4d32-88f7-55a47667fbfa",
+    "title": "久留米・筑後の水天宮と城跡を歩く",
+    "name": "久留米・筑後の水天宮と城跡を歩く",
+    "description": "九州新幹線が発着するJR久留米駅から、八女茶のスイーツが味わえる「牛島製茶 JR久留米店」と地元で親しまれる「和菓子処 とらや」、全国水天宮の総本宮「久留米水天宮」、筑後川畔の「久留米城跡・篠山神社」と「有馬記念館」を巡る散策路。",
+    "region": "久留米・城下町と豚骨ラーメンの街",
+    "area_name": "久留米・城下町と豚骨ラーメンの街",
+    "cover_image_url": "/images/kurume/route-eyecatch.png",
+    "imageUrl": "/images/kurume/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "筑後川の恵みと久留米藩の記憶、そして八女茶の香りが繋がる久留米を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「牛島製茶 JR久留米店」で、老舗茶舗ならではの濃厚な八女茶スイーツを味わった瞬間",
+          "description": "駅のすぐそばで味わう深い旨みの八女抹茶が、筑後エリアの旅の幕開けを爽やかに彩った。",
+          "badge_code": "kurume_ushijima"
+        },
+        {
+          "key": "B",
+          "text": "「和菓子処 とらや」の店頭で、香ばしいお団子や手づくりの餅菓子に出会った瞬間",
+          "description": "駅近くの京町で地元の人々に親しまれる素朴な和菓子が、街歩きの楽しいお供になった。",
+          "badge_code": "kurume_toraya"
+        },
+        {
+          "key": "C",
+          "text": "「久留米水天宮」の筑後川を望む境内で、全国水天宮総本宮の清らかな空気を感じた瞬間",
+          "description": "大きな鳥居と雄大な筑後川の流れが、古くから水と暮らしを守ってきた聖地の威厳を伝えていた。",
+          "badge_code": "kurume_suitengu"
+        },
+        {
+          "key": "D",
+          "text": "「久留米城跡（篠山神社）」の高石垣の上に立ち、筑後川と城下町の風景を見晴らした瞬間",
+          "description": "有馬氏二十一万石の居城を伝える見事な石垣と内濠が、二百五十年続いた藩政の記憶を残していた。",
+          "badge_code": "kurume_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fe6bea78-974c-4810-8ae7-389570331965",
+        "name": "牛島製茶 JR久留米店",
+        "description": "八女茶の老舗茶舗がJR久留米駅東口・えきマチ1丁目1階に構える日本茶カフェ＆ショップ。濃厚な八女抹茶パフェや煎茶スイーツ、香り高い茶葉が楽しめる。物販9:30〜18:00・カフェ11:00〜18:30（L.O.17:30）。",
+        "address": "福岡県久留米市城南町2-34",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.319987,
+        "lng": 130.501916,
+        "qr_token": "shuin-kurume-1",
+        "cover_image_url": "/images/kurume/spot1.png",
+        "f7_fragment": "JR久留米駅そばで老舗の八女茶と抹茶スイーツを味わう、日本茶カフェ。",
+        "f7_full": "駅そばの「牛島製茶 JR久留米店」で香り高い八女茶のスイーツを味わい、筑後・久留米の散策を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "f2bc099d-15b0-4196-8b8b-d05f51c9bb24",
+        "next_spot_name": "和菓子処 とらや"
+      },
+      {
+        "id": "f2bc099d-15b0-4196-8b8b-d05f51c9bb24",
+        "name": "和菓子処 とらや",
+        "description": "JR久留米駅から歩いてすぐの京町に構える昔ながらの和菓子店。ごま味噌やみたらしなど種類豊富なお団子や季節の餅菓子が地元客に親しまれる。営業時間9:00〜18:30、火曜定休。",
+        "address": "福岡県久留米市京町234-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.318677,
+        "lng": 130.49986,
+        "qr_token": "shuin-kurume-2",
+        "cover_image_url": "/images/kurume/spot2.png",
+        "f7_fragment": "久留米駅近くで多彩なお団子や餅菓子を手づくりする、地元の和菓子舗。",
+        "f7_full": "京町の「和菓子処 とらや」で素朴で多彩なお団子に出会い、久留米の日常に根付いた温かい甘味に触れた。",
+        "is_final": false,
+        "next_spot_id": "da12495d-3c67-491c-8b18-2e3e018d4d33",
+        "next_spot_name": "久留米水天宮"
+      },
+      {
+        "id": "da12495d-3c67-491c-8b18-2e3e018d4d33",
+        "name": "久留米水天宮",
+        "description": "筑後川のほとりに鎮座する全国水天宮の総本宮。安産・水難除け・開運の神として広く崇敬され、雄大な川の流れを望む境内が清々しい。参拝自由（社務所9:00〜16:30）。",
+        "address": "福岡県久留米市瀬下町265-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.320391,
+        "lng": 130.496016,
+        "qr_token": "shuin-kurume-3",
+        "cover_image_url": "/images/kurume/spot3.png",
+        "f7_fragment": "雄大な筑後川のほとりに鎮座する、全国水天宮の総本宮の古社。",
+        "f7_full": "筑後川畔に鎮座する全国総本宮「久留米水天宮」に参拝し、川と暮らしを見守り続けてきた聖地の清らかな空気に触れた。",
+        "is_final": false,
+        "next_spot_id": "17de00f2-8b53-4a42-8ba3-9e0354d4ebb1",
+        "next_spot_name": "久留米城跡（篠山神社）"
+      },
+      {
+        "id": "17de00f2-8b53-4a42-8ba3-9e0354d4ebb1",
+        "name": "久留米城跡（篠山神社）",
+        "description": "江戸時代に筑後久留米藩21万石を治めた有馬氏の居城跡。本丸の高石垣や内濠が残り、本丸跡には藩祖・有馬豊氏らを祀る篠山神社が鎮座する。散策自由（社務所日中）。",
+        "address": "福岡県久留米市篠山町444",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.328515,
+        "lng": 130.508025,
+        "qr_token": "shuin-kurume-4",
+        "cover_image_url": "/images/kurume/spot4.png",
+        "f7_fragment": "有馬氏二十一万石の居城を伝える、高石垣と篠山神社が残る久留米城跡。",
+        "f7_full": "「久留米城跡（篠山神社）」の本丸高石垣と筑後川の眺望を巡り、有馬氏二十一万石の城下町の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "6ea046dc-f823-4f37-80e1-7da22e00eb58",
+        "next_spot_name": "有馬記念館"
+      },
+      {
+        "id": "6ea046dc-f823-4f37-80e1-7da22e00eb58",
+        "name": "有馬記念館",
+        "description": "久留米城跡の本丸内に建ち、旧久留米藩主・有馬家ゆかりの大名道具や古文書、美術工芸品を展示する歴史資料館。10:00〜17:00（入館16:30まで）、火曜休館、一般210円。",
+        "address": "福岡県久留米市篠山町444",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.328223,
+        "lng": 130.507198,
+        "qr_token": "shuin-kurume-5",
+        "cover_image_url": "/images/kurume/spot5.png",
+        "f7_fragment": "久留米城跡本丸に建ち、藩主有馬家ゆかりの名宝と歴史を伝える資料館。",
+        "f7_full": "久留米城跡内の「有馬記念館」で藩主有馬家ゆかりの美術工芸と歴史を学び、筑後の城下町を巡る旅を締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
