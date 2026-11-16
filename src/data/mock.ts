@@ -85670,5 +85670,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "489b3d8b-f972-4c76-8264-8f1fe50216e4",
+    "title": "宮崎・橘通の老舗喫茶から県庁と宮崎神宮へ",
+    "name": "宮崎・橘通の老舗喫茶から県庁と宮崎神宮へ",
+    "description": "JR宮崎駅から、昭和の空気を残す老舗「珈琲専門店 ウルワシ 橘通本店」、楠並木が美しい近代ゴシック様式の「宮崎県庁本館」、大淀川沿いの南国風景「橘公園」、緑豊かな文化の森「宮崎県総合文化公園」、神武天皇を祀る「宮崎神宮」を巡る散策路。",
+    "region": "宮崎・楠並木と神話の杜",
+    "area_name": "宮崎・楠並木と神話の杜",
+    "cover_image_url": "/images/miyazaki/route-eyecatch.png",
+    "imageUrl": "/images/miyazaki/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "南国の明るい陽射しと楠並木、神話の杜が連なる宮崎を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「珈琲専門店 ウルワシ 橘通本店」で、昭和香る落ち着いた空間と深煎り珈琲を味わった瞬間",
+          "description": "地元の人々に長く愛される老舗喫茶の温もりが、南国の旅の始まりを心地よく整えてくれた。",
+          "badge_code": "miyazaki_uruwashi"
+        },
+        {
+          "key": "B",
+          "text": "「宮崎県庁本館」前の楠並木通りを歩き、重厚な近代建築の佇まいを見上げた瞬間",
+          "description": "九州現存最古の県庁舎と力強い楠の緑が、宮崎の街の品格と歴史を物語っていた。",
+          "badge_code": "miyazaki_kencho"
+        },
+        {
+          "key": "C",
+          "text": "「橘公園」の大淀川畔に立ち、ワシントニアパームの並木と川風を感じた瞬間",
+          "description": "雄大な川の流れと南国ならではのヤシ並木が、宮崎へ来たことを爽やかに実感させてくれた。",
+          "badge_code": "miyazaki_tachibana"
+        },
+        {
+          "key": "D",
+          "text": "「宮崎神宮」の長い杉木立の参道を歩き、神武天皇を祀る杜の静寂に触れた瞬間",
+          "description": "狭野杉がそびえる厳かな境内に満ちる清らかな空気が、旅の締めくくりを凛と結んでくれた。",
+          "badge_code": "miyazaki_jingu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "833f54dd-b5cb-42d6-8a96-f95baee5aca5",
+        "name": "珈琲専門店 ウルワシ 橘通本店",
+        "description": "昭和の雰囲気を色濃く残す宮崎の老舗喫茶店。クラシカルな店内で深煎りの本格珈琲やトースト、パスタなどが楽しめる。10:00〜22:00（L.O.21:20）、年始休（1/1・1/2）。",
+        "address": "宮崎県宮崎市橘通西3-10-36 原ビル2F",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.915609,
+        "lng": 131.422869,
+        "qr_token": "shuin-miyazaki-1",
+        "cover_image_url": "/images/miyazaki/spot1.png",
+        "f7_fragment": "昭和の面影を残す宮崎の老舗喫茶店、深煎りの本格珈琲が味わえる。",
+        "f7_full": "「珈琲専門店 ウルワシ 橘通本店」の落ち着いた空間で深煎り珈琲を味わい、旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "b585df4a-acb0-4296-8d16-3e271de41d06",
+        "next_spot_name": "宮崎県庁本館"
+      },
+      {
+        "id": "b585df4a-acb0-4296-8d16-3e271de41d06",
+        "name": "宮崎県庁本館",
+        "description": "昭和7年（1932年）竣工、九州現存最古の県庁舎であり国の登録有形文化財。近世ゴシック様式の重厚な外観と前の楠並木通りが美しい。外観常時見学可（庁舎開放は平日日中）。",
+        "address": "宮崎県宮崎市橘通東2-10-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.910908,
+        "lng": 131.423898,
+        "qr_token": "shuin-miyazaki-2",
+        "cover_image_url": "/images/miyazaki/spot2.png",
+        "f7_fragment": "昭和初期竣工の九州最古の県庁舎、楠並木通りの緑と調和する名建築。",
+        "f7_full": "「宮崎県庁本館」の重厚な建築と楠並木通りの緑を歩き、宮崎の品格に触れた。",
+        "is_final": false,
+        "next_spot_id": "f7725f2c-bae2-4f34-811c-91664b64ef29",
+        "next_spot_name": "橘公園"
+      },
+      {
+        "id": "f7725f2c-bae2-4f34-811c-91664b64ef29",
+        "name": "橘公園",
+        "description": "大淀川の河畔に広がる南国情緒あふれる都市公園。ワシントニアパームの並木と雄大な川の流れが宮崎らしい開放感を演出する。常時開放、無料。",
+        "address": "宮崎県宮崎市松山1-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.905106,
+        "lng": 131.427055,
+        "qr_token": "shuin-miyazaki-3",
+        "cover_image_url": "/images/miyazaki/spot3.png",
+        "f7_fragment": "大淀川畔にワシントニアパームが並ぶ、南国情緒豊かな川辺の公園。",
+        "f7_full": "「橘公園」の大淀川畔でヤシ並木と爽やかな川風を感じ、南国・宮崎を実感した。",
+        "is_final": false,
+        "next_spot_id": "f494598d-ec49-4719-81ee-be708fc03841",
+        "next_spot_name": "宮崎県総合文化公園"
+      },
+      {
+        "id": "f494598d-ec49-4719-81ee-be708fc03841",
+        "name": "宮崎県総合文化公園",
+        "description": "県立図書館・美術館・芸術劇場が集まる緑豊かな文化公園。広大な芝生と噴水、彫刻が点在し、ゆったりと散策できる。公園常時開放、無料。",
+        "address": "宮崎県宮崎市船塚3-210",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.934107,
+        "lng": 131.418624,
+        "qr_token": "shuin-miyazaki-4",
+        "cover_image_url": "/images/miyazaki/spot4.png",
+        "f7_fragment": "図書館や美術館が集う文化の森、広大な芝生と木陰が心地よい公園。",
+        "f7_full": "「宮崎県総合文化公園」の緑豊かな芝生と並木道を歩き、文化と自然の調和を味わった。",
+        "is_final": false,
+        "next_spot_id": "af8b49b5-b4e1-4594-8444-684221972c57",
+        "next_spot_name": "宮崎神宮"
+      },
+      {
+        "id": "af8b49b5-b4e1-4594-8444-684221972c57",
+        "name": "宮崎神宮",
+        "description": "初代天皇・神武天皇を主祭神として祀る由緒ある神宮。樹齢を重ねた狭野杉がそびえる厳かな参道と、狭野杉造りの社殿が神話の杜の空気を伝える。開門6:00〜17:30頃、無料。",
+        "address": "宮崎県宮崎市神宮2-4-1",
+        "prefecture": "宮崎県",
+        "city": "",
+        "lat": 31.937675,
+        "lng": 131.423995,
+        "qr_token": "shuin-miyazaki-5",
+        "cover_image_url": "/images/miyazaki/spot5.png",
+        "f7_fragment": "神武天皇を祀る由緒ある神宮、狭野杉が茂る厳かな参道が神話の杜を伝える。",
+        "f7_full": "「宮崎神宮」の長い杉木立の参道を歩き、神武天皇を祀る杜の静寂に包まれて旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "157eda62-6a59-446b-8efb-fc196b087df9",
+    "title": "大阪・純喫茶から中之島と大阪城の天守へ",
+    "name": "大阪・純喫茶から中之島と大阪城の天守へ",
+    "description": "JR大阪駅から、手焼きホットケーキで愛される老舗「喫茶サンシャイン」、学問の神様「大阪天満宮」、水辺の緑豊かな「中之島公園」、国の重要文化財「大阪市中央公会堂」、豊臣の石垣と天守がそびえる「大阪城」を巡る散策路。",
+    "region": "大阪・中之島の近代建築と大阪城",
+    "area_name": "大阪・中之島の近代建築と大阪城",
+    "cover_image_url": "/images/osaka/route-eyecatch.png",
+    "imageUrl": "/images/osaka/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和香る純喫茶の一皿と水辺の中之島、天下の名城・大阪城を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「喫茶サンシャイン」で、香り高い珈琲と名物の手焼きホットケーキを味わった瞬間",
+          "description": "昭和48年創業の老舗純喫茶が届ける温かな一皿に、大阪の元気な朝の始まりを感じた。",
+          "badge_code": "osaka_sunshine"
+        },
+        {
+          "key": "B",
+          "text": "「大阪天満宮」の堂々たる門をくぐり、天神さんとして親しまれる境内へ参拝した瞬間",
+          "description": "商都大阪の人々から千年近く敬われてきた社の活気と静けさが、街歩きの背筋を伸ばしてくれた。",
+          "badge_code": "osaka_tenmangu"
+        },
+        {
+          "key": "C",
+          "text": "「大阪市中央公会堂」の赤煉瓦と青銅のドームが水面に映える姿を見上げた瞬間",
+          "description": "大正時代の市民の志によって建てられたネオ・ルネサンス様式の美しさに、中之島の品格を見た。",
+          "badge_code": "osaka_kokaido"
+        },
+        {
+          "key": "D",
+          "text": "「大阪城」の巨大な石垣を越えて本丸に立ち、金色に輝く天守閣を見上げた瞬間",
+          "description": "幾多の歴史を見届けてきた城郭の圧倒的なスケールに、浪速の都の底力を実感した。",
+          "badge_code": "osaka_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "cce5154c-1a85-4a4b-8859-1ddf441e0aed",
+        "name": "喫茶サンシャイン",
+        "description": "1973年創業、大阪駅前第3ビル地下2階へ移転し営業を続ける老舗純喫茶。自家焙煎珈琲と注文後に焼き上げる名物ホットケーキが人気。平日7:30〜19:45・土日祝8:00〜18:30、不定休。",
+        "address": "大阪府大阪市北区梅田1-1-3 大阪駅前第3ビル B2F",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.699138,
+        "lng": 135.499839,
+        "qr_token": "shuin-osaka-1",
+        "cover_image_url": "/images/osaka/spot1.png",
+        "f7_fragment": "1973年創業の老舗純喫茶、自家焙煎珈琲と手焼きホットケーキが名物。",
+        "f7_full": "「喫茶サンシャイン」で香り高い珈琲と名物の手焼きホットケーキを味わい、旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "9f2cd485-8228-42ad-8a60-d6930c62eabd",
+        "next_spot_name": "大阪天満宮"
+      },
+      {
+        "id": "9f2cd485-8228-42ad-8a60-d6930c62eabd",
+        "name": "大阪天満宮",
+        "description": "天暦3年（949年）創建、学問の神様・菅原道真公を祀り「天満の天神さん」として親しまれる古社。日本三大祭のひとつ天神祭の舞台。5:30〜18:30頃（季節変動あり）、参拝無料。",
+        "address": "大阪府大阪市北区天神橋2-1-8",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.696058,
+        "lng": 135.512656,
+        "qr_token": "shuin-osaka-2",
+        "cover_image_url": "/images/osaka/spot2.png",
+        "f7_fragment": "「天満の天神さん」として親しまれる古社、日本三大祭・天神祭の舞台。",
+        "f7_full": "「大阪天満宮」の門をくぐって参拝し、千年近く敬われてきた浪速の信仰に触れた。",
+        "is_final": false,
+        "next_spot_id": "0d4a6b3c-b921-4e6f-8775-882f59e2d177",
+        "next_spot_name": "中之島公園"
+      },
+      {
+        "id": "0d4a6b3c-b921-4e6f-8775-882f59e2d177",
+        "name": "中之島公園",
+        "description": "明治24年（1891年）に大阪市で初めて誕生した都市公園。堂島川と土佐堀川に挟まれた緑豊かな水辺空間で、春・秋のバラ園が名高い。常時開放、無料。",
+        "address": "大阪府大阪市北区中之島1-1",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.692982,
+        "lng": 135.505917,
+        "qr_token": "shuin-osaka-3",
+        "cover_image_url": "/images/osaka/spot3.png",
+        "f7_fragment": "堂島川と土佐堀川に挟まれた大阪初の公園、バラ園と水辺の緑が魅力。",
+        "f7_full": "「中之島公園」の川辺の並木道を歩き、水都大阪ならではの爽やかな川風を感じた。",
+        "is_final": false,
+        "next_spot_id": "8e1b6985-6bde-4f24-869d-b419151f348e",
+        "next_spot_name": "大阪市中央公会堂"
+      },
+      {
+        "id": "8e1b6985-6bde-4f24-869d-b419151f348e",
+        "name": "大阪市中央公会堂",
+        "description": "大正7年（1918年）に市民・岩本栄之助氏の寄付により完成した国の重要文化財。赤煉瓦と花崗岩のネオ・ルネサンス様式が中之島の風景を彩る。9:30〜21:30、第4火曜休、展示室無料。",
+        "address": "大阪府大阪市北区中之島1-1-27",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.693548,
+        "lng": 135.503912,
+        "qr_token": "shuin-osaka-4",
+        "cover_image_url": "/images/osaka/spot4.png",
+        "f7_fragment": "大正7年完成の国の重要文化財、赤煉瓦と青銅のドームが中之島に映える。",
+        "f7_full": "「大阪市中央公会堂」の赤煉瓦とネオ・ルネサンス様式の外観を仰ぎ、中之島の品格に触れた。",
+        "is_final": false,
+        "next_spot_id": "28295c86-08cf-4293-84e7-9fa586bab2ca",
+        "next_spot_name": "大阪城"
+      },
+      {
+        "id": "28295c86-08cf-4293-84e7-9fa586bab2ca",
+        "name": "大阪城",
+        "description": "豊臣秀吉が築き、徳川幕府により再建された天下の名城。大天守や「大阪城 豊臣石垣館」で歴史を体感できる。9:00〜18:00（最終入館17:30）、12/28〜1/1休、大人1200円（中学生以下無料）。",
+        "address": "大阪府大阪市中央区大阪城1-1",
+        "prefecture": "大阪府",
+        "city": "",
+        "lat": 34.685214,
+        "lng": 135.525754,
+        "qr_token": "shuin-osaka-5",
+        "cover_image_url": "/images/osaka/spot5.png",
+        "f7_fragment": "巨大な石垣と金の装飾が輝く天守閣がそびえる、浪速の象徴・特別史跡。",
+        "f7_full": "「大阪城」の巨大な石垣と天守閣を仰ぎ見ながら、浪速の都の歴史散歩を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "91e60f5b-fab9-4321-84a2-f5551e779440",
+    "title": "川越・小江戸の蔵造りから時の鐘と氷川神社へ",
+    "name": "川越・小江戸の蔵造りから時の鐘と氷川神社へ",
+    "description": "JR川越駅から、徳川家ゆかりの古刹「喜多院」、川越のシンボルが響く「時の鐘」、ノスタルジックな「菓子屋横丁」、黒漆喰の蔵並みが続く「蔵造りの町並み」、縁結びの風鈴で知られる「川越氷川神社」を巡る散策路。",
+    "region": "川越・小江戸の蔵造りと時の鐘",
+    "area_name": "川越・小江戸の蔵造りと時の鐘",
+    "cover_image_url": "/images/kawagoe/route-eyecatch.png",
+    "imageUrl": "/images/kawagoe/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "小江戸の蔵造りと時の鐘の響き、縁結びの杜を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「喜多院」の静かな境内を歩き、五百羅漢の豊かな表情に見入った瞬間",
+          "description": "江戸城から移築された客殿や歴史ある伽藍の佇まいに、川越が「小江戸」と呼ばれる所以を感じた。",
+          "badge_code": "kawagoe_kitain"
+        },
+        {
+          "key": "B",
+          "text": "「時の鐘」の木造の櫓を見上げ、蔵の町に響く澄んだ鐘の音に耳を澄ませた瞬間",
+          "description": "江戸時代から暮らしに時を告げてきた鐘の余韻が、小江戸の町並みを優しく包んでいた。",
+          "badge_code": "kawagoe_tokinokane"
+        },
+        {
+          "key": "C",
+          "text": "「菓子屋横丁」の石畳を歩き、懐かしい駄菓子や飴の甘い香りに包まれた瞬間",
+          "description": "色とりどりのガラス瓶が並ぶ店先の賑わいが、子どもの頃の記憶を楽しく呼び覚ましてくれた。",
+          "badge_code": "kawagoe_kashiya"
+        },
+        {
+          "key": "D",
+          "text": "「川越氷川神社」の大鳥居をくぐり、千五百年の歴史を刻む縁結びの杜へ祈った瞬間",
+          "description": "大欅の木陰に満ちる清らかな空気が、小江戸川越の一日の散策を穏やかに結んでくれた。",
+          "badge_code": "kawagoe_hikawa"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c4d77c63-5bff-47e4-81a0-3c5c5937109e",
+        "name": "喜多院",
+        "description": "天長7年（830年）創建、天海僧正ゆかりの天台宗の古刹。江戸城から移築された「家光誕生の間」や五百羅漢が知られる。8:50〜16:30（冬期〜16:00、日祝は延長）、行事休止日あり。",
+        "address": "埼玉県川越市小仙波町1-20-1",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.917677,
+        "lng": 139.489535,
+        "qr_token": "shuin-kawagoe-1",
+        "cover_image_url": "/images/kawagoe/spot1.png",
+        "f7_fragment": "徳川家ゆかりの古刹、江戸城移築の客殿と五百羅漢が名高い。",
+        "f7_full": "「喜多院」の静かな境内で五百羅漢の豊かな表情に見入り、川越散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "1a5d86f4-4eed-486a-8dfd-1ed2af0d2849",
+        "next_spot_name": "時の鐘"
+      },
+      {
+        "id": "1a5d86f4-4eed-486a-8dfd-1ed2af0d2849",
+        "name": "時の鐘",
+        "description": "江戸時代初期に川越藩主・酒井忠勝によって建てられたと伝わる木造3層の鐘楼。現在も1日4回（6時・12時・15時・18時）に澄んだ音色を響かせる。外観見学自由、無料。",
+        "address": "埼玉県川越市幸町15-7",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.923476,
+        "lng": 139.483335,
+        "qr_token": "shuin-kawagoe-2",
+        "cover_image_url": "/images/kawagoe/spot2.png",
+        "f7_fragment": "江戸から時を告げ続ける木造鐘楼、1日4回響く音色が小江戸の象徴。",
+        "f7_full": "「時の鐘」の木造の櫓を見上げ、蔵の町に響き渡る歴史の音色に耳を澄ませた。",
+        "is_final": false,
+        "next_spot_id": "fb9f5663-a553-4de4-8bfc-68a6ab8c9ccf",
+        "next_spot_name": "菓子屋横丁"
+      },
+      {
+        "id": "fb9f5663-a553-4de4-8bfc-68a6ab8c9ccf",
+        "name": "菓子屋横丁",
+        "description": "明治時代初期から飴や駄菓子を作り続けてきた菓子店が軒を連ねる石畳の路地。さつまいも菓子や手作り飴の甘い香りが漂う。9:00〜17:00頃（店舗により異なる・月曜休多し）。",
+        "address": "埼玉県川越市元町2-7",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.924953,
+        "lng": 139.481083,
+        "qr_token": "shuin-kawagoe-3",
+        "cover_image_url": "/images/kawagoe/spot3.png",
+        "f7_fragment": "手作り飴やさつまいも菓子の甘い香りが漂う、石畳の駄菓子屋通り。",
+        "f7_full": "「菓子屋横丁」の石畳を歩き、ガラス瓶に並ぶ懐かしい駄菓子と甘い香りに出合った。",
+        "is_final": false,
+        "next_spot_id": "a77e3621-841e-4026-8d24-7985e76238da",
+        "next_spot_name": "蔵造りの町並み"
+      },
+      {
+        "id": "a77e3621-841e-4026-8d24-7985e76238da",
+        "name": "蔵造りの町並み",
+        "description": "一番街通りを中心に、明治の大火後に防火のために建てられた重厚な黒漆喰の蔵造り商家が立ち並ぶ小江戸川越のメインストリート。散策自由（各店舗の営業時間は異なる）。",
+        "address": "埼玉県川越市幸町7-1",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.923527,
+        "lng": 139.482933,
+        "qr_token": "shuin-kawagoe-4",
+        "cover_image_url": "/images/kawagoe/spot4.png",
+        "f7_fragment": "黒漆喰の重厚な商家が軒を連ねる、小江戸川越の重要伝統的建造物群。",
+        "f7_full": "「蔵造りの町並み」を歩き、黒漆喰の店蔵と鬼瓦が連なる小江戸の景観を堪能した。",
+        "is_final": false,
+        "next_spot_id": "3e2c45b2-b034-4a18-87ac-9aa80094527c",
+        "next_spot_name": "川越氷川神社"
+      },
+      {
+        "id": "3e2c45b2-b034-4a18-87ac-9aa80094527c",
+        "name": "川越氷川神社",
+        "description": "欽明天皇の御代に創建されたと伝わる古社で、夫婦円満・縁結びの神様として信仰される。夏の「縁むすび風鈴」や鯛みくじも人気。境内終日参拝可（授与所8:00〜16:30）、無休。",
+        "address": "埼玉県川越市宮下町2-11-3",
+        "prefecture": "埼玉県",
+        "city": "",
+        "lat": 35.927553,
+        "lng": 139.488688,
+        "qr_token": "shuin-kawagoe-5",
+        "cover_image_url": "/images/kawagoe/spot5.png",
+        "f7_fragment": "千五百年の歴史を誇る縁結びの古社、大欅の木陰と鯛みくじが親しまれる。",
+        "f7_full": "「川越氷川神社」の大鳥居をくぐり、大欅が鎮座する縁結びの杜で川越散策を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5552dfd4-064d-47aa-862c-8502c5134f8e",
+    "title": "箱根湯本・早川沿いの湯葉丼から玉簾の瀧へ",
+    "name": "箱根湯本・早川沿いの湯葉丼から玉簾の瀧へ",
+    "description": "箱根湯本駅から、早川に架かる赤い「あじさい橋」、汲み上げ湯葉が絶品の「「湯葉丼」直吉」、北条五代の菩提寺「早雲寺」、皇女和宮ゆかりの「阿弥陀寺」、境内の庭園に名瀑が落ちる「天成園 玉簾の瀧」を巡る散策路。",
+    "region": "箱根湯本・早川の湯けむりと古刹",
+    "area_name": "箱根湯本・早川の湯けむりと古刹",
+    "cover_image_url": "/images/hakoneyumoto/route-eyecatch.png",
+    "imageUrl": "/images/hakoneyumoto/route-eyecatch.png",
+    "category": "温泉と自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "早川の清流と名物の湯葉、山あいの古刹と名瀑を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「「湯葉丼」直吉」で、箱根の名水で作られた柔らかな湯葉丼を味わった瞬間",
+          "description": "早川のせせらぎを聞きながらいただく優しい味わいが、山の散策への力を満たしてくれた。",
+          "badge_code": "hakoneyumoto_naokichi"
+        },
+        {
+          "key": "B",
+          "text": "「早雲寺」の杉木立に囲まれた山門をくぐり、北条五代が眠る墓前に手を合わせた瞬間",
+          "description": "戦国時代に関東を治めた北条氏の歴史が、箱根の山あいに静かに息づいていた。",
+          "badge_code": "hakoneyumoto_sounji"
+        },
+        {
+          "key": "C",
+          "text": "「阿弥陀寺」の山道を登り、塔ノ峰の静寂の中で琵琶の伝説に触れた瞬間",
+          "description": "町並みを離れた山中の古刹に満ちる清らかな空気が、旅の歩みを深めてくれた。",
+          "badge_code": "hakoneyumoto_amidaji"
+        },
+        {
+          "key": "D",
+          "text": "「玉簾の瀧」の前に立ち、岩肌を滑り落ちる絹糸のような白い水流を見上げた瞬間",
+          "description": "マイナスイオンに満ちた庭園の水音と涼風が、箱根湯本散策の疲れを爽やかに癒やしてくれた。",
+          "badge_code": "hakoneyumoto_tamadare"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7c3ccc70-e3b3-41e6-8f92-f0194305e788",
+        "name": "あじさい橋",
+        "description": "箱根湯本駅から温泉街へと渡る、早川に架かる朱色の美しい橋。川面を吹き抜ける山の風と湯けむりの風景が旅人を迎える。常時通行可能、無料。",
+        "address": "神奈川県足柄下郡箱根町湯本706",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.233048,
+        "lng": 139.103875,
+        "qr_token": "shuin-hakoneyumoto-1",
+        "cover_image_url": "/images/hakoneyumoto/spot1.png",
+        "f7_fragment": "箱根湯本駅前から早川に架かる朱色の橋、温泉街への入り口を彩る。",
+        "f7_full": "「あじさい橋」から早川の澄んだ清流と山並みを望み、箱根湯本の旅を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "2e012e29-9595-49ab-8533-c89d3bb7f6d9",
+        "next_spot_name": "「湯葉丼」直吉"
+      },
+      {
+        "id": "2e012e29-9595-49ab-8533-c89d3bb7f6d9",
+        "name": "「湯葉丼」直吉",
+        "description": "大平台の名水「姫の水」と良質な豆乳から作る汲み上げ湯葉を、カツオ出汁の玉子とじでいただく名物店。早川の川辺に佇む人気店。11:00〜18:30（売切次第終了）、火曜休（祝営業）。",
+        "address": "神奈川県足柄下郡箱根町湯本696",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.231781,
+        "lng": 139.102883,
+        "qr_token": "shuin-hakoneyumoto-2",
+        "cover_image_url": "/images/hakoneyumoto/spot2.png",
+        "f7_fragment": "箱根の名水で作る汲み上げ湯葉の「湯葉丼」が絶品、早川沿いの人気店。",
+        "f7_full": "「「湯葉丼」直吉」で名水仕込みの柔らかな湯葉丼を味わい、箱根の恵みに満たされた。",
+        "is_final": false,
+        "next_spot_id": "f8c08f73-8aca-495c-8811-85469b04cbf1",
+        "next_spot_name": "早雲寺"
+      },
+      {
+        "id": "f8c08f73-8aca-495c-8811-85469b04cbf1",
+        "name": "早雲寺",
+        "description": "大永元年（1521年）に北条氏綱が父・北条早雲の遺命により創建した臨済宗大徳寺派の古刹。境内には北条五代の墓が静かに佇む。9:00〜16:00、無休、境内無料。",
+        "address": "神奈川県足柄下郡箱根町湯本405",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.230191,
+        "lng": 139.10394,
+        "qr_token": "shuin-hakoneyumoto-3",
+        "cover_image_url": "/images/hakoneyumoto/spot3.png",
+        "f7_fragment": "北条氏綱が父・早雲のために創建した菩提寺、北条五代の墓が佇む古刹。",
+        "f7_full": "「早雲寺」の杉木立に包まれた境内を歩き、北条五代が眠る墓前に静かに手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "61bd9610-014e-4274-8029-0b2d44180d8a",
+        "next_spot_name": "阿弥陀寺"
+      },
+      {
+        "id": "61bd9610-014e-4274-8029-0b2d44180d8a",
+        "name": "阿弥陀寺",
+        "description": "慶長10年（1605年）開山、塔ノ峰の中腹に佇む浄土宗の古刹。皇女和宮ゆかりの寺であり、あじさいの名所としても知られる。9:00〜17:00（冬期〜16:00）、無休、無料。",
+        "address": "神奈川県足柄下郡箱根町塔之沢24",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.238204,
+        "lng": 139.096669,
+        "qr_token": "shuin-hakoneyumoto-4",
+        "cover_image_url": "/images/hakoneyumoto/spot4.png",
+        "f7_fragment": "塔ノ峰の中腹に佇む皇女和宮ゆかりの古刹、あじさいの名所としても知られる。",
+        "f7_full": "「阿弥陀寺」の静かな境内で山あいの清らかな空気を吸い、歴史の物語に触れた。",
+        "is_final": false,
+        "next_spot_id": "dc868ac6-746b-4cb9-8991-84a94e68065f",
+        "next_spot_name": "箱根湯本温泉 天成園（玉簾の瀧）"
+      },
+      {
+        "id": "dc868ac6-746b-4cb9-8991-84a94e68065f",
+        "name": "箱根湯本温泉 天成園（玉簾の瀧）",
+        "description": "温泉旅館「天成園」の敷地内庭園にあり、宿泊者以外も無料で見学できる名瀑。高さ約8mの岩肌を幾筋もの清流がすだれのように流れ落ちる。庭園開放8:00〜17:00、無料。",
+        "address": "神奈川県足柄下郡箱根町湯本682",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.226902,
+        "lng": 139.069,
+        "qr_token": "shuin-hakoneyumoto-5",
+        "cover_image_url": "/images/hakoneyumoto/spot5.png",
+        "f7_fragment": "天成園の庭園に落ちる高さ約8mの名瀑、宿泊者以外も無料で見学できる。",
+        "f7_full": "「玉簾の瀧」の前で絹糸のように流れ落ちる水流を眺め、箱根湯本散策を爽やかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "30d994bc-9337-46db-8b99-77b701769da4",
+    "title": "宮島口・海を渡り厳島神社から大聖院へ",
+    "name": "宮島口・海を渡り厳島神社から大聖院へ",
+    "description": "JR宮島口駅からフェリーで神の島へ渡り、もみじ饅頭や牡蠣が並ぶ「宮島表参道商店街」、朱塗りの海上の社殿「厳島神社」、未完の大経堂「豊国神社（千畳閣）」、弥山麓の古刹「大聖院」、緑とモミジの「紅葉谷公園」を巡る散策路。",
+    "region": "宮島・海上の大鳥居と神の島",
+    "area_name": "宮島・海上の大鳥居と神の島",
+    "cover_image_url": "/images/miyajimaguchi/route-eyecatch.png",
+    "imageUrl": "/images/miyajimaguchi/route-eyecatch.png",
+    "category": "歴史と寺社",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "瀬戸内の海を渡って厳島神社の社殿と神の島を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「宮島表参道商店街」を歩き、焼きたてのもみじ饅頭や島の賑わいに触れた瞬間",
+          "description": "フェリーを降りてすぐの参道に漂う甘い香りと活気が、神の島への期待を高めてくれた。",
+          "badge_code": "miyajimaguchi_omotesando"
+        },
+        {
+          "key": "B",
+          "text": "「厳島神社」の海に浮かぶ朱塗りの回廊を歩き、沖の大鳥居を正面に望んだ瞬間",
+          "description": "満ち引きする潮と弥山の緑に調和する平安の建築美に、世界遺産の圧倒的な神聖さを感じた。",
+          "badge_code": "miyajimaguchi_itsukushima"
+        },
+        {
+          "key": "C",
+          "text": "「豊国神社（千畳閣）」の吹き抜けの板の間に座り、海と五重塔を見渡した瞬間",
+          "description": "豊臣秀吉公が建てた大経堂を吹き抜ける瀬戸内の潮風が、旅の途中に心地よい解放感をくれた。",
+          "badge_code": "miyajimaguchi_senjokaku"
+        },
+        {
+          "key": "D",
+          "text": "「大聖院」の石段を登り、五百羅漢や厳かな堂宇が連なる弥山麓の杜を歩いた瞬間",
+          "description": "宮島最古の歴史を誇る真言宗の霊場に満ちる深い祈りの空気が、心を静かに満たしてくれた。",
+          "badge_code": "miyajimaguchi_daishoin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5e361fa9-638b-4682-8dcc-c0a84eaf17e7",
+        "name": "宮島表参道商店街",
+        "description": "宮島桟橋から厳島神社へと続く約350mの商店街（清盛通り）。焼きたてのもみじ饅頭や焼き牡蠣、杓子などの土産物店が軒を連ねる。9:00〜18:00頃（店舗により異なる）。",
+        "address": "広島県廿日市市宮島町536-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.299036,
+        "lng": 132.321761,
+        "qr_token": "shuin-miyajimaguchi-1",
+        "cover_image_url": "/images/miyajimaguchi/spot1.png",
+        "f7_fragment": "宮島桟橋から厳島神社へ続くメイン参道、もみじ饅頭や焼き牡蠣が並ぶ。",
+        "f7_full": "「宮島表参道商店街」を歩き、焼きたてのもみじ饅頭と神の島の活気に出合った。",
+        "is_final": false,
+        "next_spot_id": "ff938d86-5ea7-442c-8b02-d3c5afd8caa3",
+        "next_spot_name": "厳島神社"
+      },
+      {
+        "id": "ff938d86-5ea7-442c-8b02-d3c5afd8caa3",
+        "name": "厳島神社",
+        "description": "推古天皇元年（593年）創建と伝わり、平清盛によって現在の海上社殿の規模に造営された世界遺産。潮の満ち引きにより表情を変える大鳥居と回廊が圧巻。6:30〜18:00（季節変動あり）、大人300円。",
+        "address": "広島県廿日市市宮島町1-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.29599,
+        "lng": 132.319828,
+        "qr_token": "shuin-miyajimaguchi-2",
+        "cover_image_url": "/images/miyajimaguchi/spot2.png",
+        "f7_fragment": "平清盛造営の海上社殿と大鳥居が潮の満ち引きに映える世界遺産。",
+        "f7_full": "「厳島神社」の朱塗りの回廊を歩き、潮の満ち引きと調和する平安の建築美に見入った。",
+        "is_final": false,
+        "next_spot_id": "a5e76eb4-c4e3-4d85-8104-6c27d97236fd",
+        "next_spot_name": "豊国神社（千畳閣）"
+      },
+      {
+        "id": "a5e76eb4-c4e3-4d85-8104-6c27d97236fd",
+        "name": "豊国神社（千畳閣）",
+        "description": "天正15年（1587年）に豊臣秀吉が建立を命じた大経堂で、畳857枚分の広さから「千畳閣」と呼ばれる国の重要文化財。未完のまま壁がなく開放的。8:30〜16:30、大人100円。",
+        "address": "広島県廿日市市宮島町1-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.297321,
+        "lng": 132.320279,
+        "qr_token": "shuin-miyajimaguchi-3",
+        "cover_image_url": "/images/miyajimaguchi/spot3.png",
+        "f7_fragment": "豊臣秀吉建立の未完の大経堂、開放的な板の間から五重塔と海を望む。",
+        "f7_full": "「豊国神社（千畳閣）」の板の間に座り、瀬戸内の潮風と五重塔の眺めを堪能した。",
+        "is_final": false,
+        "next_spot_id": "928923e7-72c6-4e8f-8b71-65d1f7eb16ed",
+        "next_spot_name": "大聖院"
+      },
+      {
+        "id": "928923e7-72c6-4e8f-8b71-65d1f7eb16ed",
+        "name": "大聖院",
+        "description": "大同元年（806年）に弘法大師空海によって開かれたと伝わる宮島最古の寺院。石段の摩尼車や五百羅漢庭園、数多くの仏像が見どころ。8:00〜17:00、境内拝観無料。",
+        "address": "広島県廿日市市宮島町210",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.292046,
+        "lng": 132.318493,
+        "qr_token": "shuin-miyajimaguchi-4",
+        "cover_image_url": "/images/miyajimaguchi/spot4.png",
+        "f7_fragment": "弘法大師開創と伝わる宮島最古の寺院、五百羅漢と摩尼車の石段が印象的。",
+        "f7_full": "「大聖院」の石段を登り、弥山麓の杜に抱かれた厳かな堂宇と五百羅漢に手を合わせた。",
+        "is_final": false,
+        "next_spot_id": "d09b54e1-d2ac-455f-87b3-f0123ec25131",
+        "next_spot_name": "紅葉谷公園"
+      },
+      {
+        "id": "d09b54e1-d2ac-455f-87b3-f0123ec25131",
+        "name": "紅葉谷公園",
+        "description": "弥山の麓、紅葉谷川に沿って広がる約700本のモミジが美しい自然公園。新緑や紅葉の季節はもちろん、清流と野生の鹿に出会える癒やしの散策路。常時開放、無料。",
+        "address": "広島県廿日市市宮島町紅葉谷1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.292215,
+        "lng": 132.324518,
+        "qr_token": "shuin-miyajimaguchi-5",
+        "cover_image_url": "/images/miyajimaguchi/spot5.png",
+        "f7_fragment": "約700本のモミジと清流が美しい弥山麓の公園、新緑と紅葉の名所。",
+        "f7_full": "「紅葉谷公園」の清流ともみじ橋のほとりを歩き、神の島・宮島の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
