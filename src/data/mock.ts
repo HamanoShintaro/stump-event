@@ -78650,5 +78650,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "4cf389f9-fb17-4a76-8ac5-d3857e96981c",
+    "title": "花火の街・大曲の商店街と伝統文化を歩く",
+    "name": "花火の街・大曲の商店街と伝統文化を歩く",
+    "description": "秋田新幹線も発着するJR大曲駅を起点に、駅構内のカフェや濃厚煮干しの人気ラーメン店を経て、江戸末期から続く中通の老舗和菓子店や秋田銘菓の店舗を巡り、大曲の花火を伝える資料館「はなび・アム」へと至る、大仙の暮らしと文化を辿る散策路。",
+    "region": "大曲・花火の街と中通商店街",
+    "area_name": "大曲・花火の街と中通商店街",
+    "cover_image_url": "/images/omagari/route-eyecatch.png",
+    "imageUrl": "/images/omagari/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "花火の伝統と商店街の暮らしが息づく大曲の街で、あなたが最初に誰かへ伝えたい風景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「花火伝統文化継承資料館（はなび・アム）」で、大曲の花火の歴史と迫力の映像に触れた瞬間",
+          "description": "職人たちが技を競い続けてきた全国花火競技大会の誇りが、展示の一つひとつから伝わった。",
+          "badge_code": "omagari_hanabiam"
+        },
+        {
+          "key": "B",
+          "text": "「菓子司 つじや 中通本店」で、名物のとうふかまぼこや三杯もちを手に取った瞬間",
+          "description": "百五十余年受け継がれてきた素朴で優しい郷土菓子の味わいに、大曲の暮らしの温もりを見た。",
+          "badge_code": "omagari_tsujiya"
+        },
+        {
+          "key": "C",
+          "text": "「麺屋 にぼすけ 大曲駅前店」で、旨みあふれる濃厚煮干しの一杯を味わった瞬間",
+          "description": "駅前の活気ある店内でいただく香り高い煮干しスープが、東北の街歩きに力をくれた。",
+          "badge_code": "omagari_nibosuke"
+        },
+        {
+          "key": "D",
+          "text": "「PLUS CAFE 大曲駅店」の落ち着いた空間で、淹れたての珈琲を味わいながら出発した瞬間",
+          "description": "駅の一階に広がる心地よい空間で一息つき、大仙の街へ歩き出す穏やかな気持ちを整えた。",
+          "badge_code": "omagari_plus_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0036899f-7f53-4e53-82a2-11b1a68aaf3e",
+        "name": "PLUS CAFE 大曲駅店",
+        "description": "JR大曲駅1階にあるカフェ。バリスタが淹れるスペシャルティコーヒーやスイーツ、地元酒造の地酒まで楽しめる。平日9:00〜17:00・土曜10:30〜17:00、日曜・祝日定休。",
+        "address": "秋田県大仙市大曲通町6-1",
+        "prefecture": "秋田県",
+        "city": "大仙市",
+        "lat": 39.465335,
+        "lng": 140.479661,
+        "qr_token": "shuin-omagari-1",
+        "cover_image_url": "/images/omagari/spot1.png",
+        "f7_fragment": "大曲駅の一階に広がる、香り高いスペシャルティコーヒーの空間。",
+        "f7_full": "駅構内の「PLUS CAFE 大曲駅店」で香り高い珈琲を味わい、花火の街・大曲の散策を心地よくゆったり始めた。",
+        "is_final": false,
+        "next_spot_id": "bb6bac90-6ce9-484b-8330-383bff80d066",
+        "next_spot_name": "麺屋 にぼすけ 大曲駅前店"
+      },
+      {
+        "id": "bb6bac90-6ce9-484b-8330-383bff80d066",
+        "name": "麺屋 にぼすけ 大曲駅前店",
+        "description": "濃厚な煮干し系ラーメンで知られる県内有数の人気店。香り高い魚介スープと食べ応えのある麺が評判。月・火・木17:00〜24:00、金17:00〜翌2:00、土11:00〜翌2:00、日11:00〜22:00、水曜定休。",
+        "address": "秋田県大仙市大曲通町4-1",
+        "prefecture": "秋田県",
+        "city": "大仙市",
+        "lat": 39.464172,
+        "lng": 140.480549,
+        "qr_token": "shuin-omagari-2",
+        "cover_image_url": "/images/omagari/spot2.png",
+        "f7_fragment": "大曲駅前で愛され続ける、煮干しの旨みが凝縮された濃厚な一杯。",
+        "f7_full": "通町の「麺屋 にぼすけ 大曲駅前店」で香り豊かな濃厚煮干しラーメンを味わい、大曲の活気ある食文化に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "0933dc11-a9ab-4bc4-849f-1694dc75b03b",
+        "next_spot_name": "菓子司 つじや 中通本店"
+      },
+      {
+        "id": "0933dc11-a9ab-4bc4-849f-1694dc75b03b",
+        "name": "菓子司 つじや 中通本店",
+        "description": "百五十余年続く中通町の老舗和菓子店。豆腐と白身魚のすり身を合わせた名物「とうふかまぼこ」や「三杯もち」が定番土産として親しまれる。営業時間9:30〜18:00（日祝17:00まで）、第1・第3水曜定休。",
+        "address": "秋田県大仙市大曲中通町1-20",
+        "prefecture": "秋田県",
+        "city": "大仙市",
+        "lat": 39.461946,
+        "lng": 140.478143,
+        "qr_token": "shuin-omagari-3",
+        "cover_image_url": "/images/omagari/spot3.png",
+        "f7_fragment": "中通町の老舗で出会う、とうふかまぼこと三杯もちの伝統の味わい。",
+        "f7_full": "老舗「菓子司 つじや 中通本店」を訪ね、大曲で長く愛されてきたとうふかまぼこや三杯もちの優しい味わいに触れた。",
+        "is_final": false,
+        "next_spot_id": "5052c479-71cd-46ee-8153-8d7a8e8fb121",
+        "next_spot_name": "お菓子のくらた 大曲店"
+      },
+      {
+        "id": "5052c479-71cd-46ee-8153-8d7a8e8fb121",
+        "name": "お菓子のくらた 大曲店",
+        "description": "秋田を代表する菓子舗の大曲店舗。角館ゆかりの醤油バウムクーヘンや季節の和洋菓子など、贈り物にも喜ばれる品が豊富に揃う。不定休。",
+        "address": "秋田県大仙市大曲中通町3-5",
+        "prefecture": "秋田県",
+        "city": "大仙市",
+        "lat": 39.461526,
+        "lng": 140.478934,
+        "qr_token": "shuin-omagari-4",
+        "cover_image_url": "/images/omagari/spot4.png",
+        "f7_fragment": "秋田の素材と技が光る、中通商店街の彩り豊かな創作銘菓の数々。",
+        "f7_full": "「お菓子のくらた 大曲店」で醤油バウムなど秋田ならではの創作菓子を眺め、商店街の豊かな魅力を楽しくたっぷり満喫した。",
+        "is_final": false,
+        "next_spot_id": "60d698b9-589f-40ab-8035-7288c4483b7f",
+        "next_spot_name": "花火伝統文化継承資料館（はなび・アム）"
+      },
+      {
+        "id": "60d698b9-589f-40ab-8035-7288c4483b7f",
+        "name": "花火伝統文化継承資料館（はなび・アム）",
+        "description": "日本三大花火大会の一つ「大曲の花火」の歴史と技術、文化を体感できる無料ミュージアム。4面シアターの迫力ある映像や花火玉の模型展示が人気。開館9:00〜17:00、月曜休（祝日の場合は翌平日休）・入館無料。",
+        "address": "秋田県大仙市大曲大町7-19",
+        "prefecture": "秋田県",
+        "city": "大仙市",
+        "lat": 39.459617,
+        "lng": 140.480321,
+        "qr_token": "shuin-omagari-5",
+        "cover_image_url": "/images/omagari/spot5.png",
+        "f7_fragment": "大曲の花火の技と誇りを伝える、大町の体験型花火ミュージアム。",
+        "f7_full": "「花火伝統文化継承資料館（はなび・アム）」を訪ね、大曲の花火の歴史と花火師の技に触れて散策を静かに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ef1a09d3-c8fb-457b-8e41-1bf066a4c73e",
+    "title": "新庄・とりもつラーメンと城址の街を歩く",
+    "name": "新庄・とりもつラーメンと城址の街を歩く",
+    "description": "山形新幹線の終着駅であるJR新庄駅から併設のもがみ物産館に立ち寄り、新庄名物とりもつラーメンの人気店と万場町の古民家カフェを巡り、新庄まつりの山車が並ぶふるさと歴史センターと新庄城跡の最上公園へと至る散策路。",
+    "region": "新庄・もがみの食と城址の街",
+    "area_name": "新庄・もがみの食と城址の街",
+    "cover_image_url": "/images/shinjo/route-eyecatch.png",
+    "imageUrl": "/images/shinjo/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "最上の恵みと城下町の歴史が息づく新庄の街を歩いたあと、最初に誰かへ語りたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「新旬屋 本店」で、鶏の旨みが凝縮された新庄ならではのラーメンを味わった瞬間",
+          "description": "鶏の美味しさを追求した香り高いスープと麺の味わいに、新庄の麺文化の深みを知った。",
+          "badge_code": "shinjo_shinsyunya"
+        },
+        {
+          "key": "B",
+          "text": "「新庄ふるさと歴史センター」で、ユネスコ無形文化遺産・新庄まつりの豪華な山車を見上げた瞬間",
+          "description": "江戸から続く豪華絢爛な山車の彫刻と彩りに、雪国・新庄の人々の熱い誇りを見た。",
+          "badge_code": "shinjo_rekishi_center"
+        },
+        {
+          "key": "C",
+          "text": "「最上公園（新庄城跡）」のお堀と石垣に沿って、緑豊かな城址を散策した瞬間",
+          "description": "新庄藩戸沢家の面影を残す静かな堀端と木立の風に、城下町の穏やかな時間が流れていた。",
+          "badge_code": "shinjo_mogami_park"
+        },
+        {
+          "key": "D",
+          "text": "「万場町 のくらし」の古民家を活かした落ち着いた空間で、和風クレープを味わった瞬間",
+          "description": "お堀のほど近くに佇む趣ある店内でいただく甘味が、城下町歩きの足を優しく休めてくれた。",
+          "badge_code": "shinjo_nokurashi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a6b5f851-b1d2-4be5-8483-654b33a95a84",
+        "name": "もがみ物産館",
+        "description": "JR新庄駅併設の「ゆめりあ」内にある最上地域の総合物産館。最上8市町村の特産品や地酒、伝統工芸品が充実する。営業時間8:30〜18:30、年中無休。",
+        "address": "山形県新庄市多門町1-2",
+        "prefecture": "山形県",
+        "city": "新庄市",
+        "lat": 38.762836,
+        "lng": 140.305729,
+        "qr_token": "shuin-shinjo-1",
+        "cover_image_url": "/images/shinjo/spot1.png",
+        "f7_fragment": "新庄駅直結の空間に揃う、最上八市町村の豊かな特産品と地酒の蔵。",
+        "f7_full": "駅併設の「もがみ物産館」を訪ね、最上地域の特産品や伝統菓子など土地ならではの恵みにしっかりと深く触れて旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "5657b991-9e54-4d68-800a-4d3f9eec9580",
+        "next_spot_name": "新旬屋 本店"
+      },
+      {
+        "id": "5657b991-9e54-4d68-800a-4d3f9eec9580",
+        "name": "新旬屋 本店",
+        "description": "鶏の旨みを極めたラーメンで県内外から支持される新庄の名店。金の鶏中華や、曜日限定で提供されるご当地グルメ「新庄とりもつらー麺」も人気。営業時間10:30〜14:30・16:30〜20:30、火曜定休。",
+        "address": "山形県新庄市沖の町3-20",
+        "prefecture": "山形県",
+        "city": "新庄市",
+        "lat": 38.761939,
+        "lng": 140.303435,
+        "qr_token": "shuin-shinjo-2",
+        "cover_image_url": "/images/shinjo/spot2.png",
+        "f7_fragment": "鶏の旨みを極めた黄金の一杯、新庄が誇る実力派ラーメンの名店。",
+        "f7_full": "「新旬屋 本店」で鶏の旨みが澄み渡るこだわりのラーメンを味わい、新庄ならではの豊かな麺文化を心ゆくまで堪能した。",
+        "is_final": false,
+        "next_spot_id": "b8be6da7-5e4c-4b62-8748-9e0283710fc4",
+        "next_spot_name": "万場町 のくらし"
+      },
+      {
+        "id": "b8be6da7-5e4c-4b62-8748-9e0283710fc4",
+        "name": "万場町 のくらし",
+        "description": "新庄の伝統工芸や暮らしの品々を集めた空間にカフェを併設する施設。地元食材のおやつや珈琲で寛げる。11:00〜16:30（営業日時は不定、水・日等休の場合あり要確認）。",
+        "address": "山形県新庄市万場町5-16",
+        "prefecture": "山形県",
+        "city": "新庄市",
+        "lat": 38.770765,
+        "lng": 140.301967,
+        "qr_token": "shuin-shinjo-3",
+        "cover_image_url": "/images/shinjo/spot3.png",
+        "f7_fragment": "新庄の手仕事と暮らしの品々に出会える、万場町の穏やかなカフェ。",
+        "f7_full": "「万場町 のくらし」で雪国の温かな手仕事に触れながら珈琲で寛ぎ、新庄の穏やかな昼下がりを心からゆったり楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "6318d144-438e-40cf-83f8-ec7feb83cb3e",
+        "next_spot_name": "新庄ふるさと歴史センター"
+      },
+      {
+        "id": "6318d144-438e-40cf-83f8-ec7feb83cb3e",
+        "name": "新庄ふるさと歴史センター",
+        "description": "ユネスコ無形文化遺産「新庄まつり」の山車や、新庄の民俗・歴史資料を展示する文化施設。迫力ある実物の山車展示が圧巻。開館9:00〜16:30（入館16:00まで）、火曜・年末年始休、観覧料300円。",
+        "address": "山形県新庄市堀端町4-74",
+        "prefecture": "山形県",
+        "city": "新庄市",
+        "lat": 38.767034,
+        "lng": 140.296506,
+        "qr_token": "shuin-shinjo-4",
+        "cover_image_url": "/images/shinjo/spot4.png",
+        "f7_fragment": "新庄まつりの豪華な山車を間近に仰ぐ、城下町の誇りを伝える館。",
+        "f7_full": "「新庄ふるさと歴史センター」で豪華絢爛な新庄まつりの山車を見学し、最上の歴史と祭りの情熱にじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "ca41265b-9b74-4852-889a-2a220c4e84b0",
+        "next_spot_name": "最上公園（新庄城跡）"
+      },
+      {
+        "id": "ca41265b-9b74-4852-889a-2a220c4e84b0",
+        "name": "最上公園（新庄城跡）",
+        "description": "新庄藩主・戸沢氏の居城であった新庄城跡に整備された公園。お堀や石垣、戸澤神社などが残り、四季折々の自然とともに城下町の風情を味わえる。終日開放・入園無料。",
+        "address": "山形県新庄市堀端町6-86",
+        "prefecture": "山形県",
+        "city": "新庄市",
+        "lat": 38.767071,
+        "lng": 140.29381,
+        "qr_token": "shuin-shinjo-5",
+        "cover_image_url": "/images/shinjo/spot5.png",
+        "f7_fragment": "水堀と石垣が新庄藩の面影を伝える、緑豊かな戸沢氏の城跡公園。",
+        "f7_full": "戸沢氏ゆかりの「最上公園（新庄城跡）」の堀端を歩き、城下町・新庄の静かな風情の中で散策を穏やかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0fbf88cc-60f1-48e3-8d9b-6c43ef5619de",
+    "title": "橿原神宮の杜と久米の古刹・大和を歩く",
+    "name": "橿原神宮の杜と久米の古刹・大和を歩く",
+    "description": "近鉄橿原神宮前駅から久米町の老舗和菓子店に立ち寄り、久米仙人伝説が伝わる古刹・久米寺と石川町の洗練されたカフェを巡り、橿原神宮境内のカフェ橿乃杜を経て広大な橿原神宮へと至る、神話と祈りの大和路を辿る散策路。",
+    "region": "橿原神宮前・久米の杜と古刹",
+    "area_name": "橿原神宮前・久米の杜と古刹",
+    "cover_image_url": "/images/kashiharajingumae/route-eyecatch.png",
+    "imageUrl": "/images/kashiharajingumae/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大和三山の畝傍山を仰ぐ橿原神宮の杜を歩いたあと、いちずに思い出す景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「橿原神宮」の広大な玉砂利の参道と、畝傍山を背に佇む荘厳な外拝殿",
+          "description": "一歩踏み入れた瞬間に広がる澄んだ森の気配と、日本書紀ゆかりの空間の大きさに息をのんだ。",
+          "badge_code": "kashihara_jingu"
+        },
+        {
+          "key": "B",
+          "text": "「久米寺」の静かな境内にそびえる多宝塔と、久米仙人ゆかりの穏やかな空気",
+          "description": "橿原神宮のすぐ傍らに千年以上続く古刹が佇み、大和の歴史の重層さを伝えていた。",
+          "badge_code": "kashihara_kumedera"
+        },
+        {
+          "key": "C",
+          "text": "「cafe 想奈」で、奈良県産食材のスーププレートや焼きたてフィナンシェを味わった瞬間",
+          "description": "久米・石川エリアの落ち着いた空間でいただく丁寧な一皿が、大和路の散策を豊かにした。",
+          "badge_code": "kashihara_souna"
+        },
+        {
+          "key": "D",
+          "text": "「菓匠苑 梅ぞの 橿原店」で、大和の四季を映した上品な和菓子を選んだ瞬間",
+          "description": "門前町の駅近くに根付く和菓子店の丁寧な手仕事に、奈良ならではの風雅を感じた。",
+          "badge_code": "kashihara_umezono"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2caca4dc-a7bd-4b98-8160-7af636df79df",
+        "name": "菓匠苑 梅ぞの 橿原店",
+        "description": "橿原神宮前駅から徒歩圏内に構える人気の和菓子店。大和の四季を感じさせる季節の和菓子や最中などが揃う。営業時間9:00〜17:00、火曜定休。",
+        "address": "奈良県橿原市久米町533-1",
+        "prefecture": "奈良県",
+        "city": "橿原市",
+        "lat": 34.482214,
+        "lng": 135.791509,
+        "qr_token": "shuin-kashiharajingumae-1",
+        "cover_image_url": "/images/kashiharajingumae/spot1.png",
+        "f7_fragment": "橿原神宮前駅の傍らで出会う、大和の四季を映す上品な和菓子舗。",
+        "f7_full": "久米町の「菓匠苑 梅ぞの 橿原店」を訪ね、大和の風雅を伝える丁寧な和菓子の魅力にじっくり触れて散策を穏やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "1316398a-e6db-40b3-85c9-881107cafd04",
+        "next_spot_name": "久米寺"
+      },
+      {
+        "id": "1316398a-e6db-40b3-85c9-881107cafd04",
+        "name": "久米寺",
+        "description": "聖徳太子の弟・来目皇子の創建と伝わる古刹。空海が修行した地や久米仙人の伝説でも知られ、重要文化財の多宝塔が静かな境内に佇む。参拝9:00〜17:00（境内自由・本堂拝観等大人400円）。",
+        "address": "奈良県橿原市久米町502",
+        "prefecture": "奈良県",
+        "city": "橿原市",
+        "lat": 34.484564,
+        "lng": 135.790034,
+        "qr_token": "shuin-kashiharajingumae-2",
+        "cover_image_url": "/images/kashiharajingumae/spot2.png",
+        "f7_fragment": "来目皇子と久米仙人の伝承が息づく、重要文化財の多宝塔を擁する古刹。",
+        "f7_full": "古都ゆかりの古刹「久米寺」に詣で、優雅な多宝塔と静かな境内に流れる大和の長い歴史にじっくりと深く、心静かに触れた。",
+        "is_final": false,
+        "next_spot_id": "2695b5fd-be84-42fb-895e-85e61e6aeb6f",
+        "next_spot_name": "cafe 想奈"
+      },
+      {
+        "id": "2695b5fd-be84-42fb-895e-85e61e6aeb6f",
+        "name": "cafe 想奈",
+        "description": "奈良県産食材を使った季節のスーププレートや毎朝焼き上げるフィナンシェ、スペシャルティコーヒーが人気のカフェ。営業時間11:00〜18:00（ランチ11:30〜14:00）、月・火曜定休。",
+        "address": "奈良県橿原市石川町4-1-202",
+        "prefecture": "奈良県",
+        "city": "橿原市",
+        "lat": 34.486479,
+        "lng": 135.796542,
+        "qr_token": "shuin-kashiharajingumae-3",
+        "cover_image_url": "/images/kashiharajingumae/spot3.png",
+        "f7_fragment": "奈良県産の旬の恵みと焼きたてフィナンシェが迎える、石川町の食卓。",
+        "f7_full": "石川町の「cafe 想奈」で地元産食材の温かいスーププレートと焼き菓子を味わい、午後からの英気をしっかり養った。",
+        "is_final": false,
+        "next_spot_id": "44d4e155-4c91-40cd-8ac7-3fd42fc42779",
+        "next_spot_name": "Café 橿乃杜"
+      },
+      {
+        "id": "44d4e155-4c91-40cd-8ac7-3fd42fc42779",
+        "name": "Café 橿乃杜",
+        "description": "橿原神宮の境内・養正殿内にあるガラス張りの明るいカフェ。参拝の合間に昔ながらの固めプリンや珈琲を楽しめる。営業時間10:30〜17:00（L.O.16:30）、火曜定休（祝日の場合は営業）。",
+        "address": "奈良県橿原市久米町934 橿原神宮養正殿内",
+        "prefecture": "奈良県",
+        "city": "橿原市",
+        "lat": 34.48595,
+        "lng": 135.791116,
+        "qr_token": "shuin-kashiharajingumae-4",
+        "cover_image_url": "/images/kashiharajingumae/spot4.png",
+        "f7_fragment": "神域の緑をガラス越しに望みながら味わう、橿乃杜の珈琲とプリン。",
+        "f7_full": "橿原神宮養正殿内の「Café 橿乃杜」で境内の緑を眺めながら珈琲とプリンを味わい、心穏やかな休息をたっぷりとった。",
+        "is_final": false,
+        "next_spot_id": "7313c6fb-4d9d-4ee7-8a80-691e2416afb5",
+        "next_spot_name": "橿原神宮"
+      },
+      {
+        "id": "7313c6fb-4d9d-4ee7-8a80-691e2416afb5",
+        "name": "橿原神宮",
+        "description": "大和三山の一つ・畝傍山の東麓に鎮座し、初代天皇・神武天皇を祀る広大な神域。高さ約10メートルの檜の大鳥居と広大な玉砂利の参道、荘厳な社殿が圧倒的。開門6:00〜18:00頃（季節変動）、無休。",
+        "address": "奈良県橿原市久米町934",
+        "prefecture": "奈良県",
+        "city": "橿原市",
+        "lat": 34.488326,
+        "lng": 135.786448,
+        "qr_token": "shuin-kashiharajingumae-5",
+        "cover_image_url": "/images/kashiharajingumae/spot5.png",
+        "f7_fragment": "畝傍山の深い緑を背に凛と佇む、広大な玉砂利と檜鳥居の神域の杜。",
+        "f7_full": "畝傍山の麓に広がる「橿原神宮」の広大な神域に詣で、澄んだ杜の空気の中で大和路の散策を心から清らかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0a963abb-63bd-4ba9-8333-7cd698b519c4",
+    "title": "レトロな萩駅舎と城下町の日常を歩く",
+    "name": "レトロな萩駅舎と城下町の日常を歩く",
+    "description": "国の登録有形文化財に指定される洋風木造のJR萩駅舎を起点に、山口県民のソウルフードである釜揚げうどんの名店や唐樋町の和菓子店、菊屋横丁近くの喫茶店を経て、南古萩町の萩焼と地酒の店へと至る、萩の素顔を辿る散策路。",
+    "region": "萩・往時の駅舎と城下町の暮らし",
+    "area_name": "萩・往時の駅舎と城下町の暮らし",
+    "cover_image_url": "/images/hagi/route-eyecatch.png",
+    "imageUrl": "/images/hagi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "レトロな駅舎から城下町の通りへと歩いた萩の旅で、最初に誰かへ伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「旧萩駅舎（萩市鉄道資料館）」の洋風木造建築と、往時の面影を残す美しい待合室",
+          "description": "駅に降り立った瞬間から旅情を誘う登録有形文化財の佇まいに、萩の町の誇りを感じた。",
+          "badge_code": "hagi_station_building"
+        },
+        {
+          "key": "B",
+          "text": "「手打ちうどん どんどん 唐樋店」で、山盛りのネギと甘めの出汁のうどんを啜った瞬間",
+          "description": "萩で生まれ山口県全土へ広がったソウルフードの優しい味わいに、地元の活気を感じた。",
+          "badge_code": "hagi_dondon"
+        },
+        {
+          "key": "C",
+          "text": "「かふぇ古萩」の落ち着いた店内で、優しい米粉スイーツと珈琲を味わった瞬間",
+          "description": "菊屋横丁のすぐ傍らに溶け込む穏やかな喫茶空間が、城下町歩きの足を優しく休めてくれた。",
+          "badge_code": "hagi_kohagi"
+        },
+        {
+          "key": "D",
+          "text": "「あらせ ～Hagind」で、素朴で温かな萩焼の器と萩の地酒に出会った瞬間",
+          "description": "城下町の通り沿いで、伝統の焼き物と地酒が現代の感性で息づく空間に心地よく惹かれた。",
+          "badge_code": "hagi_arase"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8e7a4602-9dab-49e3-800d-5730dcce0a99",
+        "name": "旧萩駅舎（萩市鉄道資料館）",
+        "description": "百年ほど前に建てられた洋風木造駅舎で、国の登録有形文化財に指定される萩の玄関口。館内の旧貴賓室や「萩市自然と歴史の展示館（鉄道資料館）」を見学でき、レトロな空気を満喫できる。見学自由・無料。",
+        "address": "山口県萩市大字椿3537-3",
+        "prefecture": "山口県",
+        "city": "萩市",
+        "lat": 34.393898,
+        "lng": 131.399915,
+        "qr_token": "shuin-hagi-1",
+        "cover_image_url": "/images/hagi/spot1.png",
+        "f7_fragment": "登録有形文化財の木造洋風建築、往時のロマン薫る萩の素敵な玄関口。",
+        "f7_full": "国の登録有形文化財「旧萩駅舎」の洋風木造建築と鉄道資料を見学し、往時のロマンの薫りの中で散策をゆったり始めた。",
+        "is_final": false,
+        "next_spot_id": "d1a048a0-d49d-4f0c-8032-46015f072e72",
+        "next_spot_name": "手打ちうどん どんどん 唐樋店"
+      },
+      {
+        "id": "d1a048a0-d49d-4f0c-8032-46015f072e72",
+        "name": "手打ちうどん どんどん 唐樋店",
+        "description": "山口県民のソウルフードとして親しまれる「どんどん」の発祥店。茹でたての柔らかな麺と少し甘めの出汁、卓上の入れ放題の刻みネギ、わかめむすびが名物。営業時間9:00〜20:00（L.O.19:30）、無休。",
+        "address": "山口県萩市唐樋町30-1",
+        "prefecture": "山口県",
+        "city": "萩市",
+        "lat": 34.40971,
+        "lng": 131.403157,
+        "qr_token": "shuin-hagi-2",
+        "cover_image_url": "/images/hagi/spot2.png",
+        "f7_fragment": "山盛りネギと甘めの出汁が名物、萩発祥のソウルフードの手打ちうどん。",
+        "f7_full": "萩発祥の「手打ちうどん どんどん 唐樋店」で釜揚げうどんとわかめむすびを味わい、地元の活気ある食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "2273bea7-afe7-4da2-814c-9b394aa95cc4",
+        "next_spot_name": "花ぐるま"
+      },
+      {
+        "id": "2273bea7-afe7-4da2-814c-9b394aa95cc4",
+        "name": "花ぐるま",
+        "description": "唐樋町で季節の和菓子や萩ならではの銘菓を扱う和菓子店。夏みかんを使ったお菓子や愛らしい干菓子、大福などが散策のお供や土産に人気。営業時間10:00〜18:00、不定休。",
+        "address": "山口県萩市唐樋町90-1",
+        "prefecture": "山口県",
+        "city": "萩市",
+        "lat": 34.410979,
+        "lng": 131.402349,
+        "qr_token": "shuin-hagi-3",
+        "cover_image_url": "/images/hagi/spot3.png",
+        "f7_fragment": "夏みかんや季節の彩りが並ぶ、唐樋町の温かな手づくり和菓子店。",
+        "f7_full": "唐樋町の和菓子店「花ぐるま」を訪ね、萩ならではの夏みかん菓子や季節の和菓子の繊細な美しさにじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "2bc7a19a-5ef2-4298-8835-c08170aa5e3f",
+        "next_spot_name": "かふぇ古萩"
+      },
+      {
+        "id": "2bc7a19a-5ef2-4298-8835-c08170aa5e3f",
+        "name": "かふぇ古萩",
+        "description": "城下町の観光名所・菊屋横丁のすぐ近くにある落ち着いたカフェ。身体に優しい米粉スイーツやこだわりの珈琲で散策途中の足を休められる。営業時間11:00〜17:00、月〜水曜定休。",
+        "address": "山口県萩市南古萩町20-2",
+        "prefecture": "山口県",
+        "city": "萩市",
+        "lat": 34.412464,
+        "lng": 131.393193,
+        "qr_token": "shuin-hagi-4",
+        "cover_image_url": "/images/hagi/spot4.png",
+        "f7_fragment": "菊屋横丁のすぐ近くで過ごす、米粉スイーツと珈琲の城下町カフェ時間。",
+        "f7_full": "南古萩町の「かふぇ古萩」で優しい米粉スイーツと珈琲を楽しみ、城下町歩きの穏やかな休息を心からゆったりたっぷりとった。",
+        "is_final": false,
+        "next_spot_id": "0fce58f5-dc36-4f6a-8c06-a6516bfdb121",
+        "next_spot_name": "あらせ ～Hagind"
+      },
+      {
+        "id": "0fce58f5-dc36-4f6a-8c06-a6516bfdb121",
+        "name": "あらせ ～Hagind",
+        "description": "南古萩町の城下町エリアにある萩焼と地酒の専門店。店内には萩焼の器で萩の地酒を味わえる角打ちスペースも備え、伝統と今を心地よく結ぶ。営業時間9:00〜17:00、年中無休。",
+        "address": "山口県萩市南古萩町35-8",
+        "prefecture": "山口県",
+        "city": "萩市",
+        "lat": 34.410614,
+        "lng": 131.393802,
+        "qr_token": "shuin-hagi-5",
+        "cover_image_url": "/images/hagi/spot5.png",
+        "f7_fragment": "白壁の城下町で出会う、素朴な萩焼の器と萩の地酒が息づく空間。",
+        "f7_full": "南古萩町の「あらせ ～Hagind」で萩焼の器と地酒の魅力に深く触れ、駅舎から続いた萩の散策を味わい深く結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f0b79991-a3cd-4bc3-8457-47c6a6938479",
+    "title": "南国・高知のはりまや橋と高知城を歩く",
+    "name": "南国・高知のはりまや橋と高知城を歩く",
+    "description": "JR高知駅から路面電車の走る大通りを南へ進み、よさこい節ゆかりのはりまや橋、土佐茶カフェと老舗喫茶メフィストフェレスが並ぶ帯屋町商店街を経て、土佐の食が集うひろめ市場と現存十二天守の高知城へと至る、土佐の王道散策路。",
+    "region": "高知・はりまや橋と高知城",
+    "area_name": "高知・はりまや橋と高知城",
+    "cover_image_url": "/images/kochi/route-eyecatch.png",
+    "imageUrl": "/images/kochi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "路面電車が走る高知の街をはしごして歩いたあと、最初に誰かへ伝えたい風景はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「高知城（高知公園）」の本丸に現存する、木造の天守閣と御殿を見上げた瞬間",
+          "description": "全国で唯一、本丸の建物群がそのまま残る名城の凛とした姿に、土佐の歴史の重みを感じた。",
+          "badge_code": "kochi_castle"
+        },
+        {
+          "key": "B",
+          "text": "「ひろめ市場」の活気あふれる屋台村で、藁焼き鰹のたたきを味わった瞬間",
+          "description": "昼間から地元の人と旅人が肩を並べて笑い合う土佐のおきゃく文化に、元気をもらった。",
+          "badge_code": "kochi_hirome"
+        },
+        {
+          "key": "C",
+          "text": "「ひだまり小路 土佐茶カフェ」で、芳醇な土佐茶や和紅茶の香りに出会った瞬間",
+          "description": "清流の里で育まれた土佐のお茶の爽やかな旨みに、南国の街歩きの疲れが癒やされた。",
+          "badge_code": "kochi_tosacha"
+        },
+        {
+          "key": "D",
+          "text": "「メフィストフェレス」のレトロで優雅な中庭付き喫茶室で、サイフォン珈琲を飲んだ瞬間",
+          "description": "帯屋町商店街の真ん中に広がる非日常の喫茶文化に、高知の街の奥深い魅力を見た。",
+          "badge_code": "kochi_mephistopheles"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "702364bd-7169-4ceb-890f-5eb89e8385fd",
+        "name": "はりまや橋",
+        "description": "よさこい節の舞台としても全国に知られる高知のシンボル。朱色の欄干を持つ小さな太鼓橋とせせらぎの公園が街の交差点に佇む。終日散策自由・無料。",
+        "address": "高知県高知市はりまや町1-1",
+        "prefecture": "高知県",
+        "city": "高知市",
+        "lat": 33.559999,
+        "lng": 133.543266,
+        "qr_token": "shuin-kochi-1",
+        "cover_image_url": "/images/kochi/spot1.png",
+        "f7_fragment": "よさこい節の物語が息づく、高知の街角に架かる小さな朱色の橋。",
+        "f7_full": "高知のシンボル「はりまや橋」を訪ね、よさこい節ゆかりの朱色の欄干と南国の街並みに触れて心地よく歩き始めたところだ。",
+        "is_final": false,
+        "next_spot_id": "8deb0e78-9987-4312-8466-918665591596",
+        "next_spot_name": "ひだまり小路 土佐茶カフェ"
+      },
+      {
+        "id": "8deb0e78-9987-4312-8466-918665591596",
+        "name": "ひだまり小路 土佐茶カフェ",
+        "description": "高知特産の土佐茶や和紅茶の茶葉・茶器が揃う古民家風カフェ＆ショップ。仁淀川や四万十川流域で育まれた多彩なお茶をお土産に選べる。営業時間11:00〜17:00（L.O.16:30）、水曜定休。",
+        "address": "高知県高知市帯屋町2-1-31",
+        "prefecture": "高知県",
+        "city": "高知市",
+        "lat": 33.560204,
+        "lng": 133.53727,
+        "qr_token": "shuin-kochi-2",
+        "cover_image_url": "/images/kochi/spot2.png",
+        "f7_fragment": "清流の里が育んだ土佐茶と和紅茶の香りが満ちる、帯屋町の古民家。",
+        "f7_full": "帯屋町の「ひだまり小路 土佐茶カフェ」を訪ね、高知ならではの香り高い土佐茶と和紅茶の魅力にじっくりと出会った。",
+        "is_final": false,
+        "next_spot_id": "ba75379d-4370-41a1-8572-babf562db7f3",
+        "next_spot_name": "メフィストフェレス"
+      },
+      {
+        "id": "ba75379d-4370-41a1-8572-babf562db7f3",
+        "name": "メフィストフェレス",
+        "description": "高知を代表する喫茶チェーン・現代企業社が手がける帯屋町のレトロ喫茶。100席を超える中庭付きの非日常空間でサイフォン珈琲やモーニングを楽しめる。平日9:00〜21:00（土日祝8:00〜）、無休。",
+        "address": "高知県高知市帯屋町2-5-23",
+        "prefecture": "高知県",
+        "city": "高知市",
+        "lat": 33.559473,
+        "lng": 133.53559,
+        "qr_token": "shuin-kochi-3",
+        "cover_image_url": "/images/kochi/spot3.png",
+        "f7_fragment": "帯屋町の真ん中に広がる、中庭とサイフォン珈琲のレトロな空間。",
+        "f7_full": "老舗喫茶「メフィストフェレス」の落ち着いた空間でサイフォン珈琲を味わい、高知に根付く豊かな喫茶文化にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "b7cc4818-68b3-4961-8412-140dbb122370",
+        "next_spot_name": "ひろめ市場"
+      },
+      {
+        "id": "b7cc4818-68b3-4961-8412-140dbb122370",
+        "name": "ひろめ市場",
+        "description": "約60店舗の飲食店や土産店が軒を連ねる高知最大の屋台村風フードコート。本場の藁焼き鰹のたたきや屋台餃子、地酒を地元の人と相席で楽しめる。平日祝10:00〜23:00（日曜9:00〜）、不定休。",
+        "address": "高知県高知市帯屋町2-3-1",
+        "prefecture": "高知県",
+        "city": "高知市",
+        "lat": 33.560116,
+        "lng": 133.535937,
+        "qr_token": "shuin-kochi-4",
+        "cover_image_url": "/images/kochi/spot4.png",
+        "f7_fragment": "藁焼き鰹の香ばしい煙と笑い声が満ちる、土佐の食の活気ある殿堂。",
+        "f7_full": "活気あふれる「ひろめ市場」で本場の藁焼き鰹のたたきを味わい、土佐の陽気なおきゃく文化を全身でたっぷり楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "8c3194c8-3a4b-453d-884c-ac61886c6ff4",
+        "next_spot_name": "高知城（高知公園）"
+      },
+      {
+        "id": "8c3194c8-3a4b-453d-884c-ac61886c6ff4",
+        "name": "高知城（高知公園）",
+        "description": "山内一豊によって築かれ、全国に12しか現存しない木造古天守の一つを擁する名城。本丸の御殿と天守がともに現存する日本で唯一の城として知られる。天守9:00〜17:00（12/26〜1/1休）、入館500円。",
+        "address": "高知県高知市丸ノ内1-2-1",
+        "prefecture": "高知県",
+        "city": "高知市",
+        "lat": 33.561352,
+        "lng": 133.532194,
+        "qr_token": "shuin-kochi-5",
+        "cover_image_url": "/images/kochi/spot5.png",
+        "f7_fragment": "現存天守と本丸御殿が揃う日本で唯一の名城、南海道の誇り高き城。",
+        "f7_full": "現存天守と御殿が残る「高知城」へ登城し、南国の光あふれる高知の街並みを一望して散策を清々しく元気に締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
