@@ -79300,5 +79300,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "89412e3d-54bf-4067-8f7a-2fe67fbdec47",
+    "title": "北前船の常夜燈と野辺地の歴史を歩く",
+    "name": "北前船の常夜燈と野辺地の歴史を歩く",
+    "description": "JR大湊線と青い森鉄道の分岐駅・野辺地から観光物産PRセンターに立ち寄り、町中心部の歴史民俗資料館や野辺地八幡宮、ケツメイ茶スイーツが人気のカフェを経て、陸奥湾を望む常夜燈公園へと至る港町散策路。",
+    "region": "野辺地・北前船の港町",
+    "area_name": "野辺地・北前船の港町",
+    "cover_image_url": "/images/nobechi/route-eyecatch.png",
+    "imageUrl": "/images/nobechi/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北前船が往来した歴史と陸奥湾の風が息づく野辺地を歩いたあと、誰かに伝えたい景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「野辺地町歴史民俗資料館」で、北前船交易と縄文文化が物語る豊かな歴史に触れた瞬間",
+          "description": "国の重要文化財の土偶や北前船の資料が、陸奥湾の港町が辿ってきた深い歴史を伝えていた。",
+          "badge_code": "nobechi_museum"
+        },
+        {
+          "key": "B",
+          "text": "「GARDEN CAFE」で、野辺地特産のケツメイ茶を使った香り高いワッフルを味わった瞬間",
+          "description": "泉山会館の明るい空間でいただいた特産茶のスイーツが、北国の旅に優しい彩りをくれた。",
+          "badge_code": "nobechi_garden_cafe"
+        },
+        {
+          "key": "C",
+          "text": "「常夜燈公園」の日本最古級の常夜燈と陸奥湾の潮風を目の前にして立ち尽くした瞬間",
+          "description": "かつての北前船を照らし続けた石の常夜燈と青い陸奥湾の水平線が、旅の終わりを飾った。",
+          "badge_code": "nobechi_joyato"
+        },
+        {
+          "key": "D",
+          "text": "「野辺地八幡宮」の静かな杜の中で、歴史ある本殿と木漏れ日の美しさに心を委ねた瞬間",
+          "description": "町の総鎮守として海と暮らしを守り続けてきた木造の本殿に、穏やかな祈りが宿っていた。",
+          "badge_code": "nobechi_hachimangu"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "87d26744-e9d0-4f86-882b-b977e5acebb8",
+        "name": "野辺地町観光物産PRセンター",
+        "description": "青い森鉄道・JR野辺地駅に隣接する町の玄関口。陸奥湾のホタテ加工品や特産のケツメイ茶、ご当地菓子などの物産が揃う。開館9:00〜19:30（売店9:00〜17:00）、年末年始休。",
+        "address": "青森県上北郡野辺地町字中小中野17-17",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.855987,
+        "lng": 141.119108,
+        "qr_token": "shuin-nobechi-1",
+        "cover_image_url": "/images/nobechi/spot1.png",
+        "f7_fragment": "野辺地駅に寄り添う、陸奥湾の恵みと特産ケツメイ茶が揃う玄関口。",
+        "f7_full": "駅隣接の「野辺地町観光物産PRセンター」を訪ね、ホタテやケツメイ茶など野辺地ならではの豊かな特産品に触れて旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "2032ac5f-e5cf-45cb-8cb0-00795bc462af",
+        "next_spot_name": "野辺地八幡宮"
+      },
+      {
+        "id": "2032ac5f-e5cf-45cb-8cb0-00795bc462af",
+        "name": "野辺地八幡宮",
+        "description": "慶長3年（1598年）創建と伝わる野辺地の総鎮守。本殿と末社金刀比羅宮本殿は青森県の県重宝に指定される由緒ある古社。参拝自由。",
+        "address": "青森県上北郡野辺地町字笹館12",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.86705,
+        "lng": 141.121369,
+        "qr_token": "shuin-nobechi-2",
+        "cover_image_url": "/images/nobechi/spot2.png",
+        "f7_fragment": "県の重宝に指定された本殿と金刀比羅宮を擁する、港町・野辺地の鎮守。",
+        "f7_full": "静かな木立に抱かれた「野辺地八幡宮」に参拝し、往時の航海の安全を見守り続けた由緒ある社殿の気品に心静かに触れた。",
+        "is_final": false,
+        "next_spot_id": "d4bdca9c-a10f-40aa-8be1-aa14fa9db581",
+        "next_spot_name": "野辺地町歴史民俗資料館"
+      },
+      {
+        "id": "d4bdca9c-a10f-40aa-8be1-aa14fa9db581",
+        "name": "野辺地町歴史民俗資料館",
+        "description": "国指定重要文化財の自立する土偶「縄文くらら」や漆塗木鉢、北前船や幕末の歴史資料を展示する資料館。開館9:00〜16:00、月・祝日休、観覧料210円。",
+        "address": "青森県上北郡野辺地町字野辺地1-3",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.864786,
+        "lng": 141.124266,
+        "qr_token": "shuin-nobechi-3",
+        "cover_image_url": "/images/nobechi/spot3.png",
+        "f7_fragment": "国重文の土偶と北前船の記憶を今に伝える、野辺地町の歴史の宝庫。",
+        "f7_full": "「野辺地町歴史民俗資料館」で貴重な縄文遺物や北前船交易の資料を見学し、野辺地の町が歩んできた深い歴史にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "369f745e-9d23-441a-8fec-0eaf71fb9fbf",
+        "next_spot_name": "GARDEN CAFE"
+      },
+      {
+        "id": "369f745e-9d23-441a-8fec-0eaf71fb9fbf",
+        "name": "GARDEN CAFE",
+        "description": "泉山会館1階にある人気のカフェ。野辺地特産のケツメイ茶を使ったワッフルや、地元食材を活かしたパスタ・ランチを味わえる。営業時間11:00〜16:00（L.O.15:30）、日・月曜定休。",
+        "address": "青森県上北郡野辺地町字野辺地162-1",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.865422,
+        "lng": 141.129147,
+        "qr_token": "shuin-nobechi-4",
+        "cover_image_url": "/images/nobechi/spot4.png",
+        "f7_fragment": "特産ケツメイ茶の香ばしいワッフルが迎える、泉山会館内の寛ぎカフェ。",
+        "f7_full": "泉山会館の「GARDEN CAFE」で特産ケツメイ茶を使った香り豊かなワッフルを味わい、午後の散策へ向けた心地よい休息をとった。",
+        "is_final": false,
+        "next_spot_id": "31ab3a3a-8643-4ba2-8d39-da7c4490e32a",
+        "next_spot_name": "常夜燈公園"
+      },
+      {
+        "id": "31ab3a3a-8643-4ba2-8d39-da7c4490e32a",
+        "name": "常夜燈公園",
+        "description": "往時の北前船交易で海上安全を照らした常夜燈が立つ海辺の公園。復元された北前型弁才船「みちのく丸」展示や陸奥湾の眺めが印象的。終日開放・入園無料。",
+        "address": "青森県上北郡野辺地町字野辺地568",
+        "prefecture": "青森県",
+        "city": "",
+        "lat": 40.871906,
+        "lng": 141.118777,
+        "qr_token": "shuin-nobechi-5",
+        "cover_image_url": "/images/nobechi/spot5.png",
+        "f7_fragment": "北前船の航路を照らし続けた石の常夜燈が立つ、陸奥湾沿いの海辺公園。",
+        "f7_full": "陸奥湾に面した「常夜燈公園」で往時の常夜燈と弁才船を仰ぎ、北前船の面影残る野辺地の散策を晴れやかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "1d88981c-d044-4fc8-8f8d-f9b1ad6efeca",
+    "title": "小山・祇園城址と思川を巡る城下町さんぽ",
+    "name": "小山・祇園城址と思川を巡る城下町さんぽ",
+    "description": "JR小山駅ビル内の老舗和菓子店「蛸屋」から、駅西口で愛される手打ちラーメンの名店と自家焙煎の街中カフェを経て、思川を見下ろす小山氏ゆかりの祇園城跡「城山公園」と小山の総鎮守「須賀神社」を巡る散策路。",
+    "region": "小山・城山と宿場町",
+    "area_name": "小山・城山と宿場町",
+    "cover_image_url": "/images/oyama/route-eyecatch.png",
+    "imageUrl": "/images/oyama/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "中世の城跡と思川の風景、そして地元の温かい食が息づく小山を歩いたあと、誰かに伝えたいのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「手打ちラーメン 桂林 小山店」で、手打ちの麺と澄んだスープの一杯を味わった瞬間",
+          "description": "駅西口のすぐそばでいただいた手打ち麺の心地よい食感とスープの旨みが旅の活力をくれた。",
+          "badge_code": "oyama_keirin"
+        },
+        {
+          "key": "B",
+          "text": "「Cafe FUJINUMA」の落ち着いた店内で、自家焙煎の香ばしい珈琲に癒やされた瞬間",
+          "description": "中央町の街角で出会った香り豊かなドリップ珈琲が、午後の城址歩きへ心を整えてくれた。",
+          "badge_code": "oyama_fujinuma"
+        },
+        {
+          "key": "C",
+          "text": "「城山公園（祇園城跡）」の高台から、思川の流れと城跡の緑をゆったり眺めた瞬間",
+          "description": "小山氏ゆかりの中世城郭の土塁と眼下を流れる穏やかな思川が、歴史の重みを伝えていた。",
+          "badge_code": "oyama_shiroyama"
+        },
+        {
+          "key": "D",
+          "text": "「須賀神社」の長い参道を歩き、小山の総鎮守が放つ凛とした空気に手を合わせた瞬間",
+          "description": "千年の歴史を刻む古社の木立に守られた拝殿の前で、旅の最後を清らかに締めくくった。",
+          "badge_code": "oyama_suga_jinja"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ca943e45-4f86-4c15-8412-b767de884068",
+        "name": "御菓子司 蛸屋 小山駅ビル店",
+        "description": "栃木県内で長く親しまれる老舗和菓子店の駅ビル店。小山名物の「陣中おやま餅」や「みかもの月」など土産に最適な銘菓が並ぶ。営業時間10:00〜19:00（VAL小山に準ずる）。",
+        "address": "栃木県小山市城山町3-3-22 VAL小山1F",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.31288,
+        "lng": 139.806062,
+        "qr_token": "shuin-oyama-1",
+        "cover_image_url": "/images/oyama/spot1.png",
+        "f7_fragment": "陣中おやま餅など栃木の銘菓が並ぶ、小山駅西口直結の老舗和菓子店。",
+        "f7_full": "駅直結の「御菓子司 蛸屋 小山駅ビル店」を訪ね、陣中おやま餅など小山ゆかりの親しみある和菓子の魅力に触れて歩き始めた。",
+        "is_final": false,
+        "next_spot_id": "c69fd198-ca58-416e-8958-562d6bc31c7d",
+        "next_spot_name": "手打ちラーメン 桂林 小山店"
+      },
+      {
+        "id": "c69fd198-ca58-416e-8958-562d6bc31c7d",
+        "name": "手打ちラーメン 桂林 小山店",
+        "description": "足利の名店から暖簾分けされた手打ちラーメンの人気店。青竹打ちのようなコシと滑らかさを持つ手打ち麺と旨み深いスープが自慢。昼11:30〜14:00・夜17:30〜24:00、木曜・第3水曜定休。",
+        "address": "栃木県小山市城山町3-6-31",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.314359,
+        "lng": 139.805876,
+        "qr_token": "shuin-oyama-2",
+        "cover_image_url": "/images/oyama/spot2.png",
+        "f7_fragment": "小山駅西口すぐで味わう、もちもちの手打ち麺と澄んだスープの一杯。",
+        "f7_full": "駅西口の「手打ちラーメン 桂林 小山店」でコシのある手打ち麺と旨み豊かなスープを味わい、小山の活気ある麺文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "cf5841c2-1b7a-402e-8a63-6e2621685eae",
+        "next_spot_name": "Cafe FUJINUMA"
+      },
+      {
+        "id": "cf5841c2-1b7a-402e-8a63-6e2621685eae",
+        "name": "Cafe FUJINUMA",
+        "description": "中央町の街中に佇む自家焙煎スペシャルティコーヒーのカフェ。丁寧に淹れられた珈琲とスイーツで落ち着いた時間を過ごせる。営業時間11:00〜17:00、無休。",
+        "address": "栃木県小山市中央町2-8-16",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.31374,
+        "lng": 139.804713,
+        "qr_token": "shuin-oyama-3",
+        "cover_image_url": "/images/oyama/spot3.png",
+        "f7_fragment": "小山の街中で丁寧に焙煎された豆が香る、洗練された寛ぎの珈琲店。",
+        "f7_full": "中央町の「Cafe FUJINUMA」で香り豊かな自家焙煎コーヒーを味わい、午後の城址散策へ向けた心地よい休息をとった。",
+        "is_final": false,
+        "next_spot_id": "ef442469-c008-484a-82b3-3535c29d18c9",
+        "next_spot_name": "城山公園（祇園城跡）"
+      },
+      {
+        "id": "ef442469-c008-484a-82b3-3535c29d18c9",
+        "name": "城山公園（祇園城跡）",
+        "description": "中世の名族・小山氏の居城であった祇園城（小山城）の跡地に整備された公園。土塁や空堀の遺構が残り、思川を見下ろす高台の緑が心地よい。終日開放・入園無料。",
+        "address": "栃木県小山市城山町1-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.318003,
+        "lng": 139.799471,
+        "qr_token": "shuin-oyama-4",
+        "cover_image_url": "/images/oyama/spot4.png",
+        "f7_fragment": "思川を見下ろす高台に土塁と堀の面影を残す、小山氏ゆかりの城跡。",
+        "f7_full": "思川沿いの「城山公園（祇園城跡）」を歩き、中世の土塁や豊かな緑の中で小山の長い歴史と美しい川景色に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "37325777-624f-41fc-88d2-6425b75d79f7",
+        "next_spot_name": "須賀神社"
+      },
+      {
+        "id": "37325777-624f-41fc-88d2-6425b75d79f7",
+        "name": "須賀神社",
+        "description": "藤原秀郷の創建と伝わる小山地域の総鎮守。徳川家ゆかりの朱神輿や長い参道、厳かな拝殿が親しまれる古社。参拝自由（社務所9:00〜16:00）。",
+        "address": "栃木県小山市宮本町1-2-4",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.312026,
+        "lng": 139.798438,
+        "qr_token": "shuin-oyama-5",
+        "cover_image_url": "/images/oyama/spot5.png",
+        "f7_fragment": "藤原秀郷創建と伝わり長い参道が清らかな、小山の総鎮守の古社。",
+        "f7_full": "千年の歴史を伝える「須賀神社」の厳かな参道を歩いて参拝し、小山の城下町と川辺の散策を心から清々しく締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "116a98d5-9d87-4fde-8b92-0ac61861c458",
+    "title": "清酒発祥の伊丹・酒蔵と有岡城跡を歩く",
+    "name": "清酒発祥の伊丹・酒蔵と有岡城跡を歩く",
+    "description": "JR伊丹駅前の国指定史跡・有岡城跡から、白壁の酒蔵が残る「白雪ブルワリービレッジ長寿蔵」で酒蔵ランチや地酒を楽しみ、自家焙煎珈琲店を経て、国重文の旧岡田家酒蔵を擁する市立伊丹ミュージアムと猪名野神社へと至る散策路。",
+    "region": "伊丹・清酒発祥の城下町",
+    "area_name": "伊丹・清酒発祥の城下町",
+    "cover_image_url": "/images/itami/route-eyecatch.png",
+    "imageUrl": "/images/itami/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "往時の城跡と清酒発祥の酒蔵通りが溶け合う伊丹を歩いたあと、誰かに話したい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「有岡城跡史跡公園」の駅前に広がる石垣に立ち、惣構えの城の面影を感じた瞬間",
+          "description": "駅舎を出てすぐ目の前に保存された往時の石垣が、伊丹の町の歴史の厚みを語っていた。",
+          "badge_code": "itami_arioka_castle"
+        },
+        {
+          "key": "B",
+          "text": "「白雪ブルワリービレッジ長寿蔵」の古い酒蔵で、伊丹の酒文化と食事を味わった瞬間",
+          "description": "二百余年の歴史を刻む酒蔵の太い梁の下でいただく料理と地酒が、旅を豊かに彩った。",
+          "badge_code": "itami_chojugura"
+        },
+        {
+          "key": "C",
+          "text": "「市立伊丹ミュージアム」で、国指定重要文化財の旧岡田家住宅・酒蔵を見上げた瞬間",
+          "description": "日本最古級の現存酒蔵と町家の佇まいが、清酒発祥の都・伊丹の誇りを伝えていた。",
+          "badge_code": "itami_museum"
+        },
+        {
+          "key": "D",
+          "text": "「猪名野神社」の静かな境内で、伊丹の氏神様と大きなムクロジの木に出会った瞬間",
+          "description": "有岡城の北の砦跡にも重なる清らかな社叢で、伊丹の旅を穏やかに締めくくった。",
+          "badge_code": "itami_inano_jinja"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c39a314c-8f75-40cb-88f2-08b434d12f56",
+        "name": "有岡城跡史跡公園",
+        "description": "JR伊丹駅前に整備された名城・有岡城の史跡公園。荒木村重が築き黒田官兵衛が幽閉された城として知られ、石垣や井戸跡を見学できる。終日開放・無料。",
+        "address": "兵庫県伊丹市伊丹1-14",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.782325,
+        "lng": 135.421251,
+        "qr_token": "shuin-itami-1",
+        "cover_image_url": "/images/itami/spot1.png",
+        "f7_fragment": "JR伊丹駅の目の前に石垣と井戸跡が残る、往時の惣構えの城跡。",
+        "f7_full": "駅前の「有岡城跡史跡公園」で保存された石垣や史跡を見学し、往時の記憶が息づく伊丹の街歩きを力強く心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "e9a916a3-790a-4a15-8cf1-10a66483a0be",
+        "next_spot_name": "白雪ブルワリービレッジ長寿蔵"
+      },
+      {
+        "id": "e9a916a3-790a-4a15-8cf1-10a66483a0be",
+        "name": "白雪ブルワリービレッジ長寿蔵",
+        "description": "清酒「白雪」で知られる小西酒造の築220年以上の酒蔵を活かしたレストラン＆ミュージアム。酒蔵料理やクラフトビール・日本酒を楽しめる。レストラン11:30〜21:00（ショップ10:00〜19:00・ミュージアム11:30〜17:00）、火曜定休。",
+        "address": "兵庫県伊丹市中央3-4-15",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.781119,
+        "lng": 135.417198,
+        "qr_token": "shuin-itami-2",
+        "cover_image_url": "/images/itami/spot2.png",
+        "f7_fragment": "築二百余年の白雪の酒蔵を活かした、伊丹の食と清酒の文化拠点。",
+        "f7_full": "歴史ある「白雪ブルワリービレッジ長寿蔵」で酒蔵の空間と食事を楽しみ、清酒発祥の地・伊丹ならではの文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "72951064-6b2e-48cf-82e7-e6bba25394b2",
+        "next_spot_name": "ヒロコーヒー 伊丹中央店"
+      },
+      {
+        "id": "72951064-6b2e-48cf-82e7-e6bba25394b2",
+        "name": "ヒロコーヒー 伊丹中央店",
+        "description": "北摂・阪神間で親しまれる自家焙煎珈琲専門店の中央店。落ち着いた空間でサイフォンやドリップの珈琲、特製ケーキやサンドイッチを味わえる。営業時間9:00〜19:00、無休。",
+        "address": "兵庫県伊丹市中央1-2-23",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.781251,
+        "lng": 135.413279,
+        "qr_token": "shuin-itami-3",
+        "cover_image_url": "/images/itami/spot3.png",
+        "f7_fragment": "香り高い自家焙煎珈琲とケーキが寄り添う、街角の落ち着いた喫茶店。",
+        "f7_full": "「ヒロコーヒー 伊丹中央店」で自家焙煎珈琲に癒やされる穏やかな休息をとり、酒蔵通り歩きの心地よい節目をゆっくり楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "81639d61-9b23-47df-8c70-0406a0c3a4bb",
+        "next_spot_name": "市立伊丹ミュージアム（旧岡田家住宅・酒蔵）"
+      },
+      {
+        "id": "81639d61-9b23-47df-8c70-0406a0c3a4bb",
+        "name": "市立伊丹ミュージアム（旧岡田家住宅・酒蔵）",
+        "description": "酒と文化をテーマにした総合文化施設。敷地内には国指定重要文化財「旧岡田家住宅・酒蔵」や旧石橋家住宅が保存・公開されている。開館10:00〜18:00、月曜休（祝日の場合は翌平日休）。",
+        "address": "兵庫県伊丹市宮ノ前2-5-20",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.782506,
+        "lng": 135.417384,
+        "qr_token": "shuin-itami-4",
+        "cover_image_url": "/images/itami/spot4.png",
+        "f7_fragment": "国重文の旧岡田家住宅と日本最古級の酒蔵を伝える、酒と文化の殿堂。",
+        "f7_full": "「市立伊丹ミュージアム」で国指定重要文化財の旧岡田家住宅と酒蔵を見学し、伊丹が誇る酒造りの歴史にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "c29bc4dc-59ef-4d12-859e-cd8322b47752",
+        "next_spot_name": "猪名野神社"
+      },
+      {
+        "id": "c29bc4dc-59ef-4d12-859e-cd8322b47752",
+        "name": "猪名野神社",
+        "description": "伊丹の氏神様として信仰される古社。境内は有岡城の北の砦「岸の砦」が置かれた国史跡でもあり、大きなムクロジの木が佇む。参拝自由・無休。",
+        "address": "兵庫県伊丹市宮ノ前3-6-1",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.784444,
+        "lng": 135.415206,
+        "qr_token": "shuin-itami-5",
+        "cover_image_url": "/images/itami/spot5.png",
+        "f7_fragment": "有岡城の岸の砦跡にも重なる、大きなムクロジが見守る伊丹の氏神様。",
+        "f7_full": "伊丹の氏神様「猪名野神社」の清らかな境内で手を合わせ、有岡城跡と酒蔵の記憶が息づく伊丹の散策を穏やかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5f6897e2-42be-4d3d-8f8c-42505e05f61d",
+    "title": "日本一の紙のまち・伊予三島の味と古社を歩く",
+    "name": "日本一の紙のまち・伊予三島の味と古社を歩く",
+    "description": "JR伊予三島駅から地元で愛される老舗和菓子店「菓舗 丸亀屋」に立ち寄り、本場仕込みの讃岐うどん店とアートな古民家カフェを経て、三重塔が佇む古刹「興願寺」と紙産業の守護神「三島神社」へと至る散策路。",
+    "region": "伊予三島・紙のまちと三島神社",
+    "area_name": "伊予三島・紙のまちと三島神社",
+    "cover_image_url": "/images/iyomishima/route-eyecatch.png",
+    "imageUrl": "/images/iyomishima/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本一の紙のまちとして栄える伊予三島を歩いたあと、最初に誰かに語りたくなる景色はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「菓舗 丸亀屋」で、全国菓子大博覧会受賞の銘菓ひうち焼と街の温もりに触れた瞬間",
+          "description": "三島中央の通りで親しまれてきた老舗の優しい甘味が、四国の旅の始まりを彩ってくれた。",
+          "badge_code": "iyomishima_marugameya"
+        },
+        {
+          "key": "B",
+          "text": "「ぴっぴや」で、コシの強い本格さぬきうどんと瀬戸内の出汁を勢いよく啜った瞬間",
+          "description": "香川と隣り合う土地ならではの本格的な麺のコシといりこ出汁に、心から満たされた。",
+          "badge_code": "iyomishima_pippiya"
+        },
+        {
+          "key": "C",
+          "text": "「興願寺」の境内にそびえる、県指定文化財の優雅な三重塔を見上げた瞬間",
+          "description": "重厚な仁王門の先に佇む木造の三重塔が、静かな時の流れを優雅に伝えていた。",
+          "badge_code": "iyomishima_koganji"
+        },
+        {
+          "key": "D",
+          "text": "「三島神社」の境内で、古代の磐座と紙産業のお宮が放つ静謐な空気に包まれた瞬間",
+          "description": "ものづくりのまちを千年以上見守り続けてきた聖域で、紙のまちの誇りを感じた。",
+          "badge_code": "iyomishima_mishima_jinja"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "db6e01ed-9cf0-46ee-8835-6ee08b137221",
+        "name": "菓舗 丸亀屋",
+        "description": "三島中央で長く愛される老舗和菓子店。全国菓子大博覧会で名誉総裁賞を受賞した手作りの銘菓「ひうち焼」をはじめ季節の和菓子が人気。営業時間8:30〜19:30、木曜定休。",
+        "address": "愛媛県四国中央市三島中央2-13-11",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.983938,
+        "lng": 133.544206,
+        "qr_token": "shuin-iyomishima-1",
+        "cover_image_url": "/images/iyomishima/spot1.png",
+        "f7_fragment": "燧灘ゆかりの銘菓「ひうち焼」が名物、三島中央の老舗和菓子舗。",
+        "f7_full": "三島中央の「菓舗 丸亀屋」を訪ね、名誉総裁賞受賞の銘菓ひうち焼など地元で親しまれる丁寧な和菓子の魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "29bfb6ac-94e0-4346-8a7c-94a8488a919a",
+        "next_spot_name": "ぴっぴや"
+      },
+      {
+        "id": "29bfb6ac-94e0-4346-8a7c-94a8488a919a",
+        "name": "ぴっぴや",
+        "description": "香川県出身の店主が打つ本格讃岐うどんの人気店。強いコシの麺と風味豊かな出汁、揚げたて天ぷらが地元客で賑わう。営業時間10:30〜14:00、日祝休（土曜隔週等あり）。",
+        "address": "愛媛県四国中央市三島宮川4-8-42",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.980629,
+        "lng": 133.551007,
+        "qr_token": "shuin-iyomishima-2",
+        "cover_image_url": "/images/iyomishima/spot2.png",
+        "f7_fragment": "県境の街で出会う、強いコシと旨み深い出汁の本格さぬきうどん。",
+        "f7_full": "三島宮川の「ぴっぴや」でコシのある本格讃岐うどんといりこ出汁の旨みを堪能し、四国ならではの豊かな麺文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "dea8556e-fe6b-4036-8a39-bd2db06c2c28",
+        "next_spot_name": "くう食堂"
+      },
+      {
+        "id": "dea8556e-fe6b-4036-8a39-bd2db06c2c28",
+        "name": "くう食堂",
+        "description": "三島宮川にあるアートで個性的なリノベーション空間が人気のカフェ。手作りスイーツや珈琲、焼き立てパンでほっと一息つける。営業時間11:00〜夕方、不定休。",
+        "address": "愛媛県四国中央市三島宮川2-2-33",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.985371,
+        "lng": 133.550593,
+        "qr_token": "shuin-iyomishima-3",
+        "cover_image_url": "/images/iyomishima/spot3.png",
+        "f7_fragment": "遊び心ある空間と手作りおやつが迎える、三島宮川の寛ぎカフェ。",
+        "f7_full": "三島宮川の「くう食堂」で温かな空間と珈琲・スイーツを楽しみ、寺社巡りへ向かう午後の穏やかなひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "5c0406ba-7d60-4b43-8ab0-49798f8776eb",
+        "next_spot_name": "興願寺"
+      },
+      {
+        "id": "5c0406ba-7d60-4b43-8ab0-49798f8776eb",
+        "name": "興願寺",
+        "description": "愛媛県内でも数少ない貴重な三重塔（県指定文化財）や享和元年建立の仁王門を有する真言宗の古刹。静かな境内に美しい伽藍が佇む。参拝自由。",
+        "address": "愛媛県四国中央市三島宮川3-19-16",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.984107,
+        "lng": 133.547256,
+        "qr_token": "shuin-iyomishima-4",
+        "cover_image_url": "/images/iyomishima/spot4.png",
+        "f7_fragment": "貴重な三重塔と仁王門が静かな威容を誇る、三島宮川の真言宗の古刹。",
+        "f7_full": "「興願寺」の仁王門をくぐり県指定文化財の優雅な三重塔を仰いで、歴史深い伊予三島の静謐な祈りの空間に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "7da4715a-00ef-4d32-8ca4-5cbf4c077f2c",
+        "next_spot_name": "三島神社"
+      },
+      {
+        "id": "7da4715a-00ef-4d32-8ca4-5cbf4c077f2c",
+        "name": "三島神社",
+        "description": "奈良時代初期の創建と伝わり、製紙業の繁栄を支える「紙産業のお宮」としても篤く信仰される古社。境内の旧本殿や古代祭祀遺跡の磐座が印象的。参拝自由。",
+        "address": "愛媛県四国中央市三島宮川1-1-53",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.985209,
+        "lng": 133.545145,
+        "qr_token": "shuin-iyomishima-5",
+        "cover_image_url": "/images/iyomishima/spot5.png",
+        "f7_fragment": "古代の磐座を残し「紙産業のお宮」として崇敬される、伊予三島の古社。",
+        "f7_full": "紙産業の守護神「三島神社」で古代の磐座と荘厳な社殿に手を合わせ、ものづくりのまち・伊予三島の散策を清らかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c1e35e57-c7a9-4c5f-8592-7e2ebc7804d6",
+    "title": "北九州の台所・旦過市場と小倉城を歩く",
+    "name": "北九州の台所・旦過市場と小倉城を歩く",
+    "description": "JR小倉駅から魚町銀天街入口の老舗ベーカリー「シロヤ」と明治創業の銘菓「湖月堂 本店」を経て、市民の台所として親しまれる「旦過市場」で活気を味わい、小倉祇園発祥の「八坂神社」と名城「小倉城」へと至る散策路。",
+    "region": "小倉・市場と城下町",
+    "area_name": "小倉・市場と城下町",
+    "cover_image_url": "/images/kokura/route-eyecatch.png",
+    "imageUrl": "/images/kokura/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "商店街の甘い香りと市場の活気、そして荘厳な名城が繋がる小倉を歩いたあと、誰かに話したい瞬間はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「シロヤ 小倉店」の店先で、長年愛され続けるサニーパンやオムレットを手にした瞬間",
+          "description": "駅を出てすぐの活気ある店先で手に入れた懐かしい甘さが、小倉の旅を明るく彩った。",
+          "badge_code": "kokura_shiroya"
+        },
+        {
+          "key": "B",
+          "text": "「湖月堂 本店（喫茶去）」で、名物・栗饅頭とともに落ち着いた甘味を味わった瞬間",
+          "description": "日本初のアーケード街で受け継がれる明治創業の銘菓と甘味に、老舗の風格を感じた。",
+          "badge_code": "kokura_kogetsudo"
+        },
+        {
+          "key": "C",
+          "text": "「旦過市場」の活気あふれる通りで、北九州の台所の温かい人情に触れた瞬間",
+          "description": "百年以上続く市場の路地で出会った郷土の味と威勢の良い声が、街の生命力を伝えていた。",
+          "badge_code": "kokura_tanga_market"
+        },
+        {
+          "key": "D",
+          "text": "「小倉城」の唐造りの天守を見上げ、城下町の歴史と街並みを一望した瞬間",
+          "description": "お堀の先にそびえる珍しい唐造りの天守閣と最上階からの眺めが、小倉の旅を飾った。",
+          "badge_code": "kokura_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "4a9e0936-dc23-488d-8d4e-821afcdd183a",
+        "name": "シロヤ 小倉店",
+        "description": "1950年創業、小倉っ子のソウルフードとして愛され続ける老舗ベーカリー。練乳たっぷりの「サニーパン」や小さな「オムレット」が名物。営業時間10:00〜18:00（売切次第終了）、不定休。",
+        "address": "福岡県北九州市小倉北区京町2-6-14",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.8859,
+        "lng": 130.881091,
+        "qr_token": "shuin-kokura-1",
+        "cover_image_url": "/images/kokura/spot1.png",
+        "f7_fragment": "サニーパンとオムレットで半世紀以上愛される、小倉駅前の名物パン屋。",
+        "f7_full": "小倉駅前の「シロヤ 小倉店」で名物のサニーパンやオムレットを求め、地元で長く親しまれる懐かしい甘さに触れ歩き始めた。",
+        "is_final": false,
+        "next_spot_id": "d0234e6f-29a7-45c9-80b7-768d2478f1fb",
+        "next_spot_name": "湖月堂 本店（喫茶去）"
+      },
+      {
+        "id": "d0234e6f-29a7-45c9-80b7-768d2478f1fb",
+        "name": "湖月堂 本店（喫茶去）",
+        "description": "百三十年ほど前の創業、日本初のアーケード街「魚町銀天街」に構える小倉の老舗和菓子店。代表銘菓「栗饅頭」や併設の甘味処「喫茶去」が人気。売場9:00〜19:00・喫茶11:00〜20:00、無休。",
+        "address": "福岡県北九州市小倉北区魚町1-3-11",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.885428,
+        "lng": 130.880713,
+        "qr_token": "shuin-kokura-2",
+        "cover_image_url": "/images/kokura/spot2.png",
+        "f7_fragment": "日本初のアーケード街に佇む、栗饅頭が名物の百年続く老舗和菓子店。",
+        "f7_full": "魚町銀天街の「湖月堂 本店（喫茶去）」で歴史ある栗饅頭と落ち着いた甘味を味わい、小倉の老舗の風格にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "c8ca6aca-4200-40a0-895b-66b8b7b3cb7a",
+        "next_spot_name": "旦過市場"
+      },
+      {
+        "id": "c8ca6aca-4200-40a0-895b-66b8b7b3cb7a",
+        "name": "旦過市場",
+        "description": "大正時代から「北九州の台所」として親しまれる歴史ある市場。新鮮な魚介や惣菜、名物「ぬかみそ炊き」など食べ歩きや地元グルメが楽しめる。営業時間10:00〜18:00（店舗により異なる・日曜休多し）。",
+        "address": "福岡県北九州市小倉北区魚町4-2-18",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.881311,
+        "lng": 130.879463,
+        "qr_token": "shuin-kokura-3",
+        "cover_image_url": "/images/kokura/spot3.png",
+        "f7_fragment": "ぬかみそ炊きや新鮮な魚介が並ぶ、百年以上続く北九州の賑わう台所。",
+        "f7_full": "「旦過市場」の賑わう通りを歩いて北九州ならではの味覚と人情に触れ、暮らしが息づく小倉の魅力をたっぷり堪能した。",
+        "is_final": false,
+        "next_spot_id": "87103fd4-cfce-4f37-85b8-fdd9bd430225",
+        "next_spot_name": "八坂神社（小倉祇園八坂神社）"
+      },
+      {
+        "id": "87103fd4-cfce-4f37-85b8-fdd9bd430225",
+        "name": "八坂神社（小倉祇園八坂神社）",
+        "description": "400年以上の歴史を持つ小倉の総鎮守。国の重要無形民俗文化財「小倉祇園太鼓」の発祥地として知られ、朱色の楼門や拝殿が美しい。開門6:00〜17:30（社務所8:30〜17:00）。",
+        "address": "福岡県北九州市小倉北区城内2-2",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.885157,
+        "lng": 130.873993,
+        "qr_token": "shuin-kokura-4",
+        "cover_image_url": "/images/kokura/spot4.png",
+        "f7_fragment": "小倉祇園太鼓の発祥を伝え朱色の楼門が美しい、四百年の歴史ある総鎮守。",
+        "f7_full": "小倉の総鎮守「八坂神社」の朱塗りの楼門をくぐって参拝し、小倉祇園太鼓を受け継ぐ誇り高き祭りの歴史に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "565be196-19f2-4905-8079-5918e92604aa",
+        "next_spot_name": "小倉城"
+      },
+      {
+        "id": "565be196-19f2-4905-8079-5918e92604aa",
+        "name": "小倉城",
+        "description": "細川忠興が築いた北九州のシンボル。最上階が下の階より張り出す珍しい「唐造り」の天守閣と、石垣・お堀の壮麗な景観を堪能できる。9:00〜20:00（11〜3月は19:00まで）、年中無休。",
+        "address": "福岡県北九州市小倉北区城内2-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.884403,
+        "lng": 130.874771,
+        "qr_token": "shuin-kokura-5",
+        "cover_image_url": "/images/kokura/spot5.png",
+        "f7_fragment": "珍しい唐造りの天守閣とお堀が城下町の誇りを伝える、北九州のシンボル。",
+        "f7_full": "「小倉城」の唐造りの天守から小倉の街並みと紫川を一望し、市場の活気と歴史が交差する散策を清々しく締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
