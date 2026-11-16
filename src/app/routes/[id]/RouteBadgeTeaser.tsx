@@ -3,14 +3,37 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
+import { useCustomAlert } from "@/hooks/useCustomAlert";
 
 // このルートで授かる「ルートの踏破印（メイン＋自答の儀によるサブ）」を1つの実績として提示
 export default function RouteBadgeTeaser({ routeId }: { routeId: string }) {
   const { user } = useAuth();
+  const { showAlert } = useCustomAlert();
   const [mainBadge, setMainBadge] = useState<any | null>(null);
   const [quizBadges, setQuizBadges] = useState<any[]>([]);
   const [earnedCodes, setEarnedCodes] = useState<Set<string>>(new Set());
   const [loaded, setLoaded] = useState(false);
+  const [isSigningIn, setIsSigningIn] = useState(false);
+
+  const handleGoogleSignIn = async () => {
+    setIsSigningIn(true);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: window.location.href,
+        },
+      });
+      if (error) throw error;
+    } catch (error) {
+      console.error(error);
+      setIsSigningIn(false);
+      await showAlert({
+        text: "Googleアカウント連携の開始に失敗しました。時間をおいて再度お試しください。",
+        okText: "確認",
+      });
+    }
+  };
 
   useEffect(() => {
     let active = true;
@@ -64,11 +87,11 @@ export default function RouteBadgeTeaser({ routeId }: { routeId: string }) {
         style={{
           background: "#121212",
           border: "1px solid " + (isCompleted ? "var(--accent-color)" : "rgba(201,168,76,0.25)"),
-          borderRadius: "14px",
+          borderRadius: "2px",
           padding: "20px 18px",
           maxWidth: "360px",
-          opacity: isCompleted ? 1 : 0.75,
-          filter: isCompleted ? "none" : "grayscale(0.5)",
+          opacity: isCompleted ? 1 : 0.85,
+          filter: isCompleted ? "none" : "grayscale(0.35)",
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
@@ -113,6 +136,57 @@ export default function RouteBadgeTeaser({ routeId }: { routeId: string }) {
           </div>
         )}
       </div>
+
+      {!user && (
+        <div style={{ marginTop: "14px", maxWidth: "360px" }}>
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            disabled={isSigningIn}
+            style={{
+              width: "100%",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              padding: "14px 16px",
+              background: "var(--primary-color)",
+              color: "#ffffff",
+              border: "1px solid var(--primary-color)",
+              borderRadius: "2px",
+              fontSize: "0.94rem",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+              cursor: isSigningIn ? "wait" : "pointer",
+            }}
+          >
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "22px",
+                height: "22px",
+                borderRadius: "2px",
+                background: "#ffffff",
+                flexShrink: 0,
+              }}
+            >
+              <img
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                alt=""
+                style={{ width: "14px", height: "14px" }}
+              />
+            </span>
+            <span>
+              {isSigningIn ? "連携画面へ移動中..." : "SHUIN帳を作る（無料）"}
+            </span>
+          </button>
+          <p style={{ fontSize: "0.75rem", color: "rgba(17, 17, 17, 0.58)", marginTop: "6px", lineHeight: 1.5 }}>
+            押印の記録や踏破印をあなたの手元に残せます。
+          </p>
+        </div>
+      )}
     </section>
   );
 }

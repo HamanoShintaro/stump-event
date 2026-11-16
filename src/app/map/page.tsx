@@ -1,7 +1,7 @@
 import HeaderNav from "@/components/HeaderNav";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
-import { IconMap, IconScroll, IconChevronRight } from "@/components/icons/ShuinIcons";
+import { Search, Map as MapIcon, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "街歩き発見マップ - SHUIN",
@@ -29,64 +29,102 @@ export default function MapPage() {
       </header>
 
       <div>
-        <div
+        {/* 探索モード切り替え（検索・地図・エリアの固定3軸） */}
+        <nav
+          aria-label="ルートの探し方"
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            flexWrap: "wrap",
-            gap: "8px",
-            marginBottom: "14px",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: "6px",
+            marginBottom: "18px",
           }}
         >
-          <div>
-            <h1
-              style={{
-                fontSize: "1.4rem",
-                fontWeight: "800",
-                color: "var(--text-color)",
-                marginBottom: "4px",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
-            >
-              <IconMap size={22} color="var(--primary-color)" strokeWidth={1.9} />
-              地図から巡る・足跡を振り返る
-            </h1>
-            <p
-              style={{
-                fontSize: "0.84rem",
-                color: "var(--text-color)",
-                opacity: 0.78,
-                margin: 0,
-                fontWeight: "600",
-              }}
-            >
-              周辺の街歩きルートを探したり、「自分の足跡」に切り替えて訪れた場所のしるしを地図上で振り返れます。
-            </p>
-          </div>
           <Link
             href="/routes"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "5px",
-              fontSize: "0.8rem",
-              fontWeight: 800,
-              color: "var(--primary-color)",
+              justifyContent: "center",
+              gap: "4px",
+              padding: "10px 6px",
+              borderRadius: "2px",
+              border: "1px solid rgba(17, 17, 17, 0.16)",
+              background: "#FAF8F3",
+              color: "var(--text-color)",
               textDecoration: "none",
-              padding: "7px 12px",
-              borderRadius: "8px",
-              border: "1px solid var(--primary-color)",
-              background: "rgba(199, 68, 46, 0.05)",
+              fontSize: "0.75rem",
+              fontWeight: 700,
               whiteSpace: "nowrap",
             }}
           >
-            <IconScroll size={14} color="var(--primary-color)" />
-            一覧でルートを探す
-            <IconChevronRight size={13} color="var(--primary-color)" />
+            <Search size={14} color="var(--primary-color)" />
+            <span>検索して探す</span>
           </Link>
+          <span
+            aria-current="page"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "4px",
+              padding: "10px 6px",
+              borderRadius: "2px",
+              border: "1px solid var(--primary-color)",
+              background: "var(--primary-color)",
+              color: "#fff",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+            }}
+          >
+            <MapIcon size={14} color="#fff" />
+            <span>地図から探す</span>
+          </span>
+          <Link
+            href="/areas"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "4px",
+              padding: "10px 6px",
+              borderRadius: "2px",
+              border: "1px solid rgba(17, 17, 17, 0.16)",
+              background: "#FAF8F3",
+              color: "var(--text-color)",
+              textDecoration: "none",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+            }}
+          >
+            <MapPin size={14} color="var(--primary-color)" />
+            <span>エリアから探す</span>
+          </Link>
+        </nav>
+
+        <div style={{ marginBottom: "14px" }}>
+          <h1
+            style={{
+              fontSize: "1.35rem",
+              fontWeight: "800",
+              color: "var(--text-color)",
+              margin: "0 0 6px 0",
+              lineHeight: 1.4,
+            }}
+          >
+            地図から巡る・足跡を振り返る
+          </h1>
+          <p
+            style={{
+              fontSize: "0.9rem",
+              color: "rgba(43, 43, 43, 0.78)",
+              margin: 0,
+              lineHeight: 1.65,
+            }}
+          >
+            周辺の街歩きルートを探したり、訪れた場所のしるしを地図上で振り返れます。
+          </p>
         </div>
 
         <MapWrapper />

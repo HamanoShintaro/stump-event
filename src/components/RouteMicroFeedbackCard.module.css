@@ -1,11 +1,9 @@
 .wrapper {
-  margin-top: 32px;
-  padding: 24px 22px;
-  border-radius: 18px;
-  border: 1px solid var(--accent-color);
+  margin-top: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .sectionHeader {
@@ -15,7 +13,7 @@
 }
 
 .title {
-  font-size: var(--font-size-h2);
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-color);
   margin: 0;
@@ -25,34 +23,51 @@
 }
 
 .subtitle {
-  font-size: var(--font-size-small);
-  color: var(--text-color);
-  opacity: 0.82;
+  font-size: 0.84rem;
+  color: rgba(17, 17, 17, 0.72);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .optionsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
+}
+
+@media (min-width: 560px) {
+  .optionsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .optionBtn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   justify-content: flex-start;
   text-align: left;
   width: 100%;
-  font-size: var(--font-size-small);
-  padding: 11px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 2px;
+  padding: 13px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.optionBtn:hover:not(:disabled) {
+  background: rgba(17, 17, 17, 0.04);
+  border-color: rgba(17, 17, 17, 0.45);
 }
 
 .optionBtnActive {
   border-color: var(--primary-color);
   color: var(--primary-color);
-  background: rgba(212, 175, 55, 0.14);
+  background: rgba(199, 68, 46, 0.06);
 }
 
 .detailForm {
@@ -60,13 +75,13 @@
   flex-direction: column;
   gap: 12px;
   padding: 16px;
-  border-radius: 14px;
-  background: var(--bg-color);
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 2px;
+  background: rgba(255, 253, 249, 0.72);
+  border: 1px solid rgba(17, 17, 17, 0.16);
 }
 
 .formLabel {
-  font-size: var(--font-size-small);
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-color);
   display: flex;
@@ -77,46 +92,89 @@
 .textInput {
   width: 100%;
   padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.55);
-  background: var(--bg-color);
+  border-radius: 2px;
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  background: #ffffff;
   color: var(--text-color);
-  font-size: var(--font-size-body);
+  font-size: 0.92rem;
   font-family: var(--font-family);
+}
+
+.submitBtn {
+  background: var(--primary-color);
+  color: #ffffff;
+  border: 1px solid var(--primary-color);
+  border-radius: 2px;
+  padding: 11px 18px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .thanksBox {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: rgba(212, 175, 55, 0.14);
+  padding: 10px 12px;
+  border-radius: 2px;
+  background: rgba(201, 168, 76, 0.14);
+  border: 1px solid rgba(201, 168, 76, 0.45);
   color: var(--text-color);
-  font-size: var(--font-size-small);
+  font-size: 0.82rem;
   font-weight: 700;
 }
 
 .shareDivider {
-  border-top: 1px dashed rgba(212, 175, 55, 0.45);
-  padding-top: 16px;
+  padding-top: 4px;
+}
+
+.shareRow {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .shareTitle {
-  font-size: var(--font-size-small);
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: rgba(17, 17, 17, 0.78);
   margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .shareButtonsRow {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+}
+
+.shareIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 2px;
+  border: 1px solid rgba(17, 17, 17, 0.22);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.shareIconBtn:hover {
+  background: #ffffff;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.copiedLabel {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }

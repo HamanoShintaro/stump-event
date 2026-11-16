@@ -138,10 +138,10 @@ export default async function AreasIndexPage() {
             ホーム
           </Link>
           <span>/</span>
-          <span>全国エリア別ルート一覧</span>
+          <span>エリアから探す</span>
         </nav>
 
-        <section className={"glass-card " + styles.heroCard}>
+        <section className={styles.heroCard}>
           <div className={styles.regionBadge}>
             <Compass size={14} color="var(--primary-color)" />
             <span>全国エリア・都道府県インデックス</span>
@@ -228,24 +228,7 @@ export default async function AreasIndexPage() {
               }}
             >
               <Link
-                href="/map"
-                className="btn-primary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  padding: "9px 16px",
-                  fontSize: "0.84rem",
-                  fontWeight: 800,
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                }}
-              >
-                <span>🗺️ 全国マップからルートを探す</span>
-              </Link>
-              <Link
                 href="/routes"
-                className="btn-secondary"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -253,11 +236,32 @@ export default async function AreasIndexPage() {
                   padding: "9px 16px",
                   fontSize: "0.84rem",
                   fontWeight: 700,
-                  borderRadius: "999px",
+                  borderRadius: "2px",
+                  border: "1px solid rgba(17, 17, 17, 0.24)",
+                  background: "#FAF8F3",
+                  color: "var(--text-color)",
                   textDecoration: "none",
                 }}
               >
-                <span>🧭 全ルート一覧・条件絞り込み</span>
+                <span>検索して探す</span>
+              </Link>
+              <Link
+                href="/map"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "9px 16px",
+                  fontSize: "0.84rem",
+                  fontWeight: 700,
+                  borderRadius: "2px",
+                  border: "1px solid rgba(17, 17, 17, 0.24)",
+                  background: "#FAF8F3",
+                  color: "var(--text-color)",
+                  textDecoration: "none",
+                }}
+              >
+                <span>地図から探す</span>
               </Link>
             </div>
           </div>

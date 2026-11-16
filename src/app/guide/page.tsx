@@ -1430,7 +1430,7 @@ export default function GuidePage() {
               }}
             >
               <IconCompass size={17} color="currentColor" />
-              <span>物語（ルート一覧）から探す</span>
+              <span>検索して探す</span>
             </Link>
             <Link
               href="/map"
@@ -1443,7 +1443,19 @@ export default function GuidePage() {
               }}
             >
               <IconMap size={17} color="var(--primary-color)" />
-              <span>現在地マップから探す</span>
+              <span>地図から探す</span>
+            </Link>
+            <Link
+              href="/areas"
+              className="btn-secondary"
+              style={{
+                width: "100%",
+                padding: "12px 22px",
+                fontSize: "0.88rem",
+                textDecoration: "none",
+              }}
+            >
+              <span>エリアから探す</span>
             </Link>
           </div>
         </section>

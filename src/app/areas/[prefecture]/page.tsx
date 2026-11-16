@@ -143,13 +143,13 @@ export default async function PrefectureHubPage({
           </Link>
           <span>/</span>
           <Link href="/areas" className={styles.breadcrumbLink}>
-            全国エリア別ルート一覧
+            エリアから探す
           </Link>
           <span>/</span>
           <span>{prefecture}の街歩きルート</span>
         </nav>
 
-        <section className={"glass-card " + styles.heroCard}>
+        <section className={styles.heroCard}>
           <div className={styles.regionBadge}>
             <Compass size={14} color="var(--primary-color)" />
             <span>{region}エリア • {prefecture}</span>
@@ -210,7 +210,7 @@ export default async function PrefectureHubPage({
         <section>
           <h2 className={styles.sectionTitle}>
             <Footprints size={18} color="var(--primary-color)" />
-            <span>{prefecture}の街歩き・観光ルート一覧（{prefRoutes.length}件）</span>
+            <span>{prefecture}の街歩きルート（{prefRoutes.length}件）</span>
           </h2>
           <p className={styles.sectionSubtitle}>
             それぞれのルートでは、5つの実在スポットを一筆書きの徒歩動線で巡りながら、その土地に眠る物語と「SHUIN（まちのしるし）」を集めることができます。

@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
 import {
   Search,
+  Menu,
   X,
   User,
   BookOpen,
@@ -39,6 +40,7 @@ export default function HeaderNav() {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -48,6 +50,7 @@ export default function HeaderNav() {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
+        setMobileNavOpen(false);
       }
     };
     const handleOpenSearch = () => setSearchOpen(true);
@@ -148,15 +151,40 @@ export default function HeaderNav() {
                 ルートを探す
               </h2>
 
-              {/* クイック探索ショートカット（地図から探す・都道府県一覧・手引き） */}
+              {/* クイック探索ショートカット（検索して探す・地図から探す・エリアから探す） */}
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "8px",
+                  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                  gap: "6px",
                   marginBottom: "16px",
                 }}
               >
+                <Link
+                  href="/routes"
+                  onClick={() => {
+                    triggerNavigationLoading("/routes");
+                    setSearchOpen(false);
+                  }}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "4px",
+                    padding: "10px 4px",
+                    borderRadius: "2px",
+                    background: "#FAF8F3",
+                    border: "1px solid rgba(17, 17, 17, 0.22)",
+                    color: "var(--text-color)",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <Search size={13} color="var(--primary-color)" />
+                  <span>検索して探す</span>
+                </Link>
                 <Link
                   href="/map"
                   onClick={() => {
@@ -167,19 +195,19 @@ export default function HeaderNav() {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "5px",
-                    padding: "10px 8px",
-                    borderRadius: "10px",
-                    background: "rgba(199, 68, 46, 0.08)",
-                    border: "1.5px solid var(--primary-color)",
-                    color: "var(--primary-color)",
-                    fontSize: "0.78rem",
-                    fontWeight: 800,
+                    gap: "4px",
+                    padding: "10px 4px",
+                    borderRadius: "2px",
+                    background: "#FAF8F3",
+                    border: "1px solid rgba(17, 17, 17, 0.22)",
+                    color: "var(--text-color)",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
                     textDecoration: "none",
                     whiteSpace: "nowrap",
                   }}
                 >
-                  <MapIcon size={15} />
+                  <MapIcon size={13} color="var(--primary-color)" />
                   <span>地図から探す</span>
                 </Link>
                 <Link
@@ -192,20 +220,20 @@ export default function HeaderNav() {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: "5px",
-                    padding: "10px 8px",
-                    borderRadius: "10px",
-                    background: "#FFFDF9",
-                    border: "1px solid #D6CEC3",
+                    gap: "4px",
+                    padding: "10px 4px",
+                    borderRadius: "2px",
+                    background: "#FAF8F3",
+                    border: "1px solid rgba(17, 17, 17, 0.22)",
                     color: "var(--text-color)",
-                    fontSize: "0.78rem",
-                    fontWeight: 800,
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
                     textDecoration: "none",
                     whiteSpace: "nowrap",
                   }}
                 >
-                  <MapPin size={15} color="var(--primary-color)" />
-                  <span>47都道府県一覧</span>
+                  <MapPin size={13} color="var(--primary-color)" />
+                  <span>エリアから探す</span>
                 </Link>
               </div>
 
@@ -394,11 +422,36 @@ export default function HeaderNav() {
   return (
     <>
       <nav ref={menuRef} className="shuin-header-nav">
-        {/* 地図から探す（スマホでも1タップで全国マップへ遷移可能） */}
+        {/* デスクトップ用：固定順3軸ナビ＋手引き */}
+        <Link
+          href="/routes"
+          title="検索して探す"
+          aria-label="検索して探す"
+          className="shuin-header-pill shuin-header-desktop-only"
+          style={{
+            background:
+              pathname === "/routes"
+                ? "var(--primary-color)"
+                : "rgba(255, 253, 249, 0.94)",
+            border:
+              pathname === "/routes"
+                ? "1px solid var(--primary-color)"
+                : "1px solid #D6CEC3",
+            color: pathname === "/routes" ? "#FFFDF9" : "var(--text-color)",
+          }}
+        >
+          <Search
+            size={15}
+            color={pathname === "/routes" ? "#FFFDF9" : "var(--primary-color)"}
+          />
+          <span>検索して探す</span>
+        </Link>
+
         <Link
           href="/map"
-          title="地図からルートを探す"
-          className="shuin-header-pill"
+          title="地図から探す"
+          aria-label="地図から探す"
+          className="shuin-header-pill shuin-header-desktop-only"
           style={{
             background:
               pathname === "/map"
@@ -412,44 +465,44 @@ export default function HeaderNav() {
           }}
         >
           <MapIcon
-            size={14}
+            size={15}
             color={pathname === "/map" ? "#FFFDF9" : "var(--primary-color)"}
           />
-          <span>地図</span>
+          <span>地図から探す</span>
         </Link>
 
-        {/* 共通探索導線：ルート一覧を探す */}
         <Link
-          href="/routes"
-          title="ルートを探す"
-          className="shuin-header-pill"
+          href="/areas"
+          title="エリアから探す"
+          aria-label="エリアから探す"
+          className="shuin-header-pill shuin-header-desktop-only"
           style={{
             background:
-              pathname === "/routes"
+              pathname?.startsWith("/areas")
                 ? "var(--primary-color)"
                 : "rgba(255, 253, 249, 0.94)",
             border:
-              pathname === "/routes"
+              pathname?.startsWith("/areas")
                 ? "1px solid var(--primary-color)"
                 : "1px solid #D6CEC3",
-            color: pathname === "/routes" ? "#FFFDF9" : "var(--text-color)",
+            color: pathname?.startsWith("/areas") ? "#FFFDF9" : "var(--text-color)",
           }}
         >
-          <Compass
-            size={14}
-            color={pathname === "/routes" ? "#FFFDF9" : "var(--primary-color)"}
+          <MapPin
+            size={15}
+            color={pathname?.startsWith("/areas") ? "#FFFDF9" : "var(--primary-color)"}
           />
-          <span className="shuin-header-label-desktop">ルートを探す</span>
-          <span className="shuin-header-label-mobile">一覧</span>
+          <span>エリアから探す</span>
         </Link>
 
-        {/* 街歩きの手引き（PCヘッダー表示＋スマホは検索モーダル＆メニュー内） */}
+        {/* 街歩きの手引き（PCヘッダー表示＋スマホはメニュー内） */}
         <Link
           href="/guide"
           title="街歩きの手引き（使い方）"
           aria-label="街歩きの手引き（使い方）"
           className="shuin-header-pill shuin-header-desktop-only"
           style={{
+            borderRadius: "2px",
             background: "rgba(255, 253, 249, 0.92)",
             border: "1px solid #D6CEC3",
             color: "#5C4E43",
@@ -458,17 +511,6 @@ export default function HeaderNav() {
           <HelpCircle size={15} color="var(--primary-color)" />
           <span>手引き</span>
         </Link>
-
-        {/* 検索ボタン（キーワード・条件で直接探す） */}
-        <button
-          type="button"
-          onClick={() => setSearchOpen(true)}
-          aria-label="条件を指定してルートを検索"
-          title="条件を指定してルートを検索"
-          className="shuin-header-icon-btn"
-        >
-          <Search size={16} />
-        </button>
 
         {loading ? (
           <div style={{ width: "40px", height: "40px" }}></div>
@@ -733,36 +775,101 @@ export default function HeaderNav() {
           </>
         ) : (
           /* 未ログイン用アイコン */
-          <Link
-            href={`/login?redirect=${pathname}`}
-            title="ログイン"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "4px",
-              height: "34px",
-              padding: "0 9px",
-              borderRadius: "999px",
-              background: "#FFFDF9",
-              border: "1.5px solid #D6CEC3",
-              textDecoration: "none",
-              boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
-              whiteSpace: "nowrap",
-              flexShrink: 0,
-            }}
-          >
-            <User size={15} color="var(--primary-color)" />
-            <span
+          <>
+            <Link
+              href={`/login?redirect=${pathname}`}
+              title="ログイン"
+              aria-label="ログイン"
+              className="shuin-header-icon-btn shuin-header-mobile-only"
+            >
+              <User size={20} color="var(--primary-color)" />
+            </Link>
+            <Link
+              href={`/login?redirect=${pathname}`}
+              title="ログイン"
+              aria-label="ログイン"
+              className="shuin-header-pill shuin-header-desktop-only"
               style={{
-                fontSize: "0.7rem",
-                fontWeight: "800",
-                color: "#5C4E43",
+                background: "rgba(255, 253, 249, 0.94)",
+                border: "1px solid #D6CEC3",
+                color: "var(--text-color)",
               }}
             >
-              ログイン
-            </span>
-          </Link>
+              <User size={15} color="var(--primary-color)" />
+              <span>ログイン</span>
+            </Link>
+          </>
+        )}
+
+        {/* モバイル用：メニューボタン（44×44px） */}
+        <button
+          type="button"
+          onClick={() => {
+            setMobileNavOpen(!mobileNavOpen);
+            setMenuOpen(false);
+          }}
+          aria-label={mobileNavOpen ? "メニューを閉じる" : "メニューを開く"}
+          aria-expanded={mobileNavOpen}
+          className="shuin-header-icon-btn shuin-header-mobile-only"
+        >
+          {mobileNavOpen ? (
+            <X size={20} color="var(--primary-color)" />
+          ) : (
+            <Menu size={20} color="var(--primary-color)" />
+          )}
+        </button>
+
+        {/* モバイル用ドロップダウンメニュー（固定順の3軸＋手引き） */}
+        {mobileNavOpen && (
+          <div
+            className="shuin-header-mobile-only"
+            style={{
+              position: "absolute",
+              top: "52px",
+              right: 0,
+              width: "240px",
+              background: "#FAF8F3",
+              border: "1px solid #D6CEC3",
+              borderRadius: "2px",
+              padding: "6px",
+              flexDirection: "column",
+              alignItems: "stretch",
+              zIndex: 1200,
+              boxShadow: "0 8px 24px rgba(26, 20, 16, 0.12)",
+            }}
+          >
+            {[
+              { href: "/routes", label: "検索して探す", icon: Search, active: pathname === "/routes" },
+              { href: "/map", label: "地図から探す", icon: MapIcon, active: pathname === "/map" },
+              { href: "/areas", label: "エリアから探す", icon: MapPin, active: Boolean(pathname?.startsWith("/areas")) },
+              { href: "/guide", label: "街歩きの手引き", icon: HelpCircle, active: pathname === "/guide" },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileNavOpen(false)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    minHeight: "48px",
+                    padding: "0 14px",
+                    textDecoration: "none",
+                    fontSize: "0.95rem",
+                    fontWeight: 700,
+                    color: item.active ? "var(--primary-color)" : "var(--text-color)",
+                    borderTop: idx === 0 ? "none" : "1px solid rgba(17, 17, 17, 0.08)",
+                    background: item.active ? "rgba(196, 61, 46, 0.06)" : "transparent",
+                  }}
+                >
+                  <Icon size={18} color="var(--primary-color)" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </div>
         )}
       </nav>
       {searchModalNode}

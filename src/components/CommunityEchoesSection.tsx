@@ -32,7 +32,7 @@ export default function CommunityEchoesSection({
       refreshKey,
     });
 
-  if (loading) {
+  if (loading || (totalFootprints === 0 && echoItems.length === 0) || echoItems.length === 0) {
     return null;
   }
 

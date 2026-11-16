@@ -416,325 +416,167 @@ export default function ClientSpotList({
           }
         }
 
+        const spotLabel = `${index + 1}.`;
+
         return (
           <div key={spot.id}>
-          <div 
-            className={"glass-card " + styles.spotCard + (isActive ? ` ${styles.spotCardActive}` : "")} 
-            style={{
-              position: "relative",
-              overflow: "hidden",
-              padding: 0,
-              ...(isNextRecommended && !isActive
-                ? { border: "1.5px solid var(--accent-color)", boxShadow: "0 6px 22px rgba(201, 168, 76, 0.14)" }
-                : {}),
-            }}
+          <article
+            className={`${styles.spotEntry}${isActive ? ` ${styles.spotEntryActive}` : ""}`}
           >
-            {/* 画像がない場合のでかでかと重ねる目的地スタンプ */}
-            {!spot.image_url && isActive && (
-              <div style={{
-                position: "absolute",
-                right: "24px",
-                top: "24px",
-                width: "120px",
-                height: "120px",
-                transform: "rotate(-15deg)",
-                zIndex: 1,
-                pointerEvents: "none",
-                opacity: 0.7
-              }}>
-                <img 
-                  src="/stamps/destination_stump.png" 
-                  alt="目的地" 
-                  style={{ 
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "contain"
-                  }}
-                />
-              </div>
-            )}
+            {/* 見出し（章番号＋スポット名＋状態ラベル） */}
+            <div className={styles.spotHeader}>
+              <span className={styles.spotIndex}>{spotLabel}</span>
+              <h3 className={styles.spotName} style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+                <Link href={`/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`} className={styles.spotNameLink}>
+                  {spot.name}
+                </Link>
+                {isNextRecommended && (
+                  <span style={{
+                    border: "1px solid var(--accent-color)",
+                    color: "var(--primary-color)",
+                    padding: "2px 8px",
+                    borderRadius: "2px",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                  }}>
+                    <Sparkles size={11} strokeWidth={1.8} />
+                    <span>次のおすすめ</span>
+                  </span>
+                )}
+                {isStamped && (
+                  <span style={{
+                    border: "1px solid var(--accent-color)",
+                    backgroundColor: "rgba(201, 168, 76, 0.1)",
+                    color: "var(--text-color)",
+                    padding: "2px 8px",
+                    borderRadius: "2px",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "5px",
+                  }}>
+                    <img
+                      src={stampImgUrl}
+                      alt="しるし"
+                      style={{ width: "14px", height: "14px", objectFit: "contain" }}
+                    />
+                    しるし獲得済み
+                  </span>
+                )}
+              </h3>
+            </div>
 
             {spot.image_url && (
               <div className={styles.spotImageContainer}>
                 <Link href={`/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`} style={{ display: "block", width: "100%", height: "100%" }}>
-                  <div 
+                  <div
                     className={styles.spotImage}
                     style={{
                       backgroundImage: `url(${spot.image_url})`,
                     }}
                   />
                 </Link>
-                {/* 画像にでかでかと重ねる目的地スタンプ */}
                 {isActive && (
                   <div style={{
                     position: "absolute",
-                    bottom: "-15px",
-                    right: "15px",
-                    width: "135px",
-                    height: "135px",
-                    transform: "rotate(-15deg)",
+                    bottom: "8px",
+                    right: "8px",
+                    width: "96px",
+                    height: "96px",
+                    transform: "rotate(-12deg)",
                     zIndex: 3,
                     pointerEvents: "none",
-                    opacity: 0.95
+                    opacity: 0.92
                   }}>
-                    <img 
-                      src="/stamps/destination_stump.png" 
-                      alt="目的地" 
-                      style={{ 
-                        width: "100%", 
-                        height: "100%", 
+                    <img
+                      src="/stamps/destination_stump.png"
+                      alt="目的地"
+                      style={{
+                        width: "100%",
+                        height: "100%",
                         objectFit: "contain",
-                        filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.95)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35))"
                       }}
                     />
-                  </div>
-                )}
-
-                {/* 次のおすすめ訪問先バッジ */}
-                {isNextRecommended && (
-                  <div style={{
-                    position: "absolute",
-                    top: "14px",
-                    left: "14px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "5px",
-                    background: "rgba(255, 253, 249, 0.96)",
-                    border: "1.5px solid var(--accent-color)",
-                    color: "var(--primary-color)",
-                    padding: "4px 10px",
-                    borderRadius: "6px",
-                    fontSize: "0.75rem",
-                    fontWeight: 800,
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                    zIndex: 3,
-                  }}>
-                    <Sparkles size={13} strokeWidth={2} />
-                    <span>次のおすすめ訪問先</span>
-                  </div>
-                )}
-
-                {/* 押印済みバッジ */}
-                {isStamped && (
-                  <div style={{
-                    position: "absolute",
-                    top: "14px",
-                    right: "14px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    backgroundColor: "rgba(255, 255, 255, 0.98)",
-                    padding: "6px 14px",
-                    borderRadius: "30px",
-                    boxShadow: "0 4px 15px rgba(0,0,0,0.15)",
-                    border: "1.5px solid var(--accent-color)",
-                    transform: "rotate(3deg)",
-                    zIndex: 3
-                  }}>
-                    <img 
-                      src={stampImgUrl} 
-                      alt="しるし" 
-                      style={{ width: "22px", height: "22px", objectFit: "contain" }}
-                    />
-                    <span style={{
-                      color: "var(--text-color)",
-                      fontSize: "0.8rem",
-                      fontWeight: "800",
-                    }}>
-                      しるし獲得済み
-                    </span>
                   </div>
                 )}
               </div>
             )}
-            
-            <div style={{ padding: "24px" }}>
-              <div className={styles.spotHeader} style={{ position: "relative", zIndex: 2 }}>
-                <div className={styles.spotIndex}>{index + 1}</div>
-                <h3 className={styles.spotName} style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-                  <Link href={`/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`} className={styles.spotNameLink}>
-                    {spot.name}
-                  </Link>
-                  {!spot.image_url && isNextRecommended && (
-                    <span style={{
-                      backgroundColor: "rgba(255, 253, 249, 0.98)",
-                      border: "1.5px solid var(--accent-color)",
-                      color: "var(--primary-color)",
-                      padding: "3px 10px",
-                      borderRadius: "6px",
-                      fontSize: "0.74rem",
-                      fontWeight: 800,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "4px",
-                    }}>
-                      <Sparkles size={12} strokeWidth={2} />
-                      <span>次のおすすめ訪問先</span>
-                    </span>
-                  )}
-                  {/* 画像がない場合のしるし獲得済みバッジ */}
-                  {!spot.image_url && isStamped && (
-                    <span style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.98)",
-                      border: "1.5px solid var(--accent-color)",
-                      color: "var(--text-color)",
-                      padding: "3px 10px",
-                      borderRadius: "14px",
-                      fontSize: "0.75rem",
-                      fontWeight: "800",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "6px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                      transform: "rotate(1deg)"
-                    }}>
-                      <img 
-                        src={stampImgUrl} 
-                        alt="しるし" 
-                        style={{ width: "16px", height: "16px", objectFit: "contain" }} 
-                      />
-                      しるし獲得済み
-                    </span>
-                  )}
-                </h3>
-              </div>
-              <p className={styles.spotDesc} style={{ whiteSpace: "pre-wrap", position: "relative", zIndex: 2, marginBottom: "16px" }}>
-                {spot.description}
-              </p>
-              <p style={{ fontSize: "0.85rem", color: "#666", marginBottom: "16px", display: "flex", alignItems: "center", gap: "5px" }}>
-                <MapPin size={14} strokeWidth={2} color="var(--primary-color)" style={{ flexShrink: 0 }} />
+
+            <p className={styles.spotDesc} style={{ whiteSpace: "pre-wrap" }}>
+              {spot.description}
+            </p>
+
+            {spot.address && (
+              <p className={styles.spotAddress}>
+                <MapPin size={13} strokeWidth={1.8} color="var(--primary-color)" style={{ flexShrink: 0 }} />
                 <span>{spot.address}</span>
               </p>
-              <div className={styles.spotActions} style={{ position: "relative", zIndex: 2 }}>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(132px, 1fr))", gap: "10px", width: "100%" }}>
-                  <button
-                    className={isJoined && !isActive && !isStamped ? "btn-secondary" : "btn-primary"}
-                    style={{
-                      width: "100%",
-                      padding: "10px 12px",
-                      fontSize: "0.86rem",
-                      fontWeight: 800,
-                      whiteSpace: "nowrap",
-                    }}
-                    onClick={() => {
-                      trackSpotDetailOpen(routeId, spot.id);
-                      const spotUrl = `/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`;
-                      triggerNavigationLoading(spotUrl);
-                      router.push(spotUrl);
-                    }}
-                  >
-                    {isStamped ? "しるし・詳細を見る" : user ? "詳細 / 押印へ" : "詳細を見る"}
-                  </button>
+            )}
 
-                  {isJoined && !isActive && !isStamped ? (
-                    <button
-                      className="btn-primary"
-                      style={{
-                        width: "100%",
-                        padding: "10px 12px",
-                        fontSize: "0.86rem",
-                        fontWeight: 800,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "6px",
-                        whiteSpace: "nowrap",
-                      }}
-                      onClick={() => handleSetDestination(spot.id)}
-                      disabled={isSettingDest !== null}
-                    >
-                      <Navigation size={15} />
-                      <span>{isSettingDest === spot.id ? "設定中..." : "目的地にして地図へ"}</span>
-                    </button>
-                  ) : (
-                    <button
-                      className="btn-secondary"
-                      style={{
-                        width: "100%",
-                        padding: "10px 12px",
-                        fontSize: "0.86rem",
-                        fontWeight: 700,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "6px",
-                        whiteSpace: "nowrap",
-                      }}
-                      onClick={() => {
-                        trackRouteMapOpen(routeId);
-                        const mapUrl =
-                          `/routes/${routeId}/map?spotId=${encodeURIComponent(spot.id)}` +
-                          (targetGroupId ? `&groupId=${encodeURIComponent(targetGroupId)}` : "");
-                        triggerNavigationLoading(mapUrl);
-                        router.push(mapUrl);
-                      }}
-                    >
-                      <MapIcon size={15} />
-                      <span>地図で場所を見る</span>
-                    </button>
-                  )}
-                </div>
-              </div>
+            <div className={styles.spotActions}>
+              {isJoined && !isActive && !isStamped && (
+                <button
+                  type="button"
+                  className={styles.spotActionPrimary}
+                  onClick={() => handleSetDestination(spot.id)}
+                  disabled={isSettingDest !== null}
+                >
+                  <Navigation size={13} strokeWidth={1.8} />
+                  <span>{isSettingDest === spot.id ? "設定中..." : "目的地にして地図へ"}</span>
+                </button>
+              )}
+
+              {user && (
+                <button
+                  type="button"
+                  className={styles.spotActionLink}
+                  onClick={() => {
+                    trackSpotDetailOpen(routeId, spot.id);
+                    const spotUrl = `/routes/${routeId}/spot/${spot.id}${targetGroupQuery}`;
+                    triggerNavigationLoading(spotUrl);
+                    router.push(spotUrl);
+                  }}
+                >
+                  <span>{isStamped ? "しるしを見る" : "押印へ進む"}</span>
+                </button>
+              )}
+
+              {(!isJoined || isActive || isStamped) && (
+                <button
+                  type="button"
+                  className={user ? styles.spotActionTextLink : styles.spotActionLink}
+                  onClick={() => {
+                    trackRouteMapOpen(routeId);
+                    const mapUrl =
+                      `/routes/${routeId}/map?spotId=${encodeURIComponent(spot.id)}` +
+                      (targetGroupId ? `&groupId=${encodeURIComponent(targetGroupId)}` : "");
+                    triggerNavigationLoading(mapUrl);
+                    router.push(mapUrl);
+                  }}
+                >
+                  <MapIcon size={13} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>地図で場所を見る</span>
+                </button>
+              )}
             </div>
-          </div>
+          </article>
 
-          {/* スポット間の徒歩目安コネクター */}
+          {/* スポット間の徒歩目安（極細の縦線＋文字） */}
           {segmentConnector && (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                padding: "4px 0",
-              }}
-            >
-              <div
-                style={{
-                  width: "2px",
-                  height: "14px",
-                  borderLeft: "2px dashed var(--accent-color)",
-                  opacity: 0.7,
-                }}
-              />
-              <div
-                style={{
-                  background: "rgba(255, 253, 249, 0.94)",
-                  border: "1px dashed var(--accent-color)",
-                  borderRadius: "20px",
-                  padding: "6px 14px",
-                  fontSize: "0.76rem",
-                  fontWeight: 700,
-                  color: "var(--text-color)",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "6px",
-                  maxWidth: "100%",
-                  textAlign: "center",
-                  lineHeight: 1.4,
-                }}
-              >
-                <Footprints size={13} strokeWidth={2} color="var(--primary-color)" style={{ flexShrink: 0 }} />
-                <span>
-                  次のスポット「{segmentConnector.nextName}」まで{" "}
-                  <span style={{ whiteSpace: "nowrap" }}>
-                    約
-                    {segmentConnector.distMeters < 1000
-                      ? `${segmentConnector.distMeters}m`
-                      : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
-                  </span>
-                  <span style={{ whiteSpace: "nowrap" }}>（徒歩約{segmentConnector.walkMin}分）</span>
-                </span>
-              </div>
-              <div
-                style={{
-                  width: "2px",
-                  height: "14px",
-                  borderLeft: "2px dashed var(--accent-color)",
-                  opacity: 0.7,
-                }}
-              />
+            <div className={styles.spotConnector}>
+              <div className={styles.spotConnectorLine} />
+              <Footprints size={12} strokeWidth={1.8} color="var(--primary-color)" style={{ flexShrink: 0 }} />
+              <span>
+                次まで約
+                {segmentConnector.distMeters < 1000
+                  ? `${segmentConnector.distMeters}m`
+                  : `${(segmentConnector.distMeters / 1000).toFixed(1)}km`}
+                （徒歩約{segmentConnector.walkMin}分）
+              </span>
             </div>
           )}
           </div>
@@ -1044,81 +886,6 @@ export default function ClientSpotList({
         reason="photo_limit"
         usedPhotoCount={usedPhotoCount}
       />
-
-      {/* スクロール中も常時アクセスできる下部フローティング導線（ルート地図 ＆ 別ルート検索） */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: "12px",
-          left: "12px",
-          right: "12px",
-          maxWidth: "560px",
-          margin: "0 auto",
-          zIndex: 85,
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "8px",
-          padding: "8px",
-          borderRadius: "16px",
-          background: "rgba(253, 251, 247, 0.96)",
-          backdropFilter: "blur(12px)",
-          border: "1.5px solid rgba(44, 38, 35, 0.14)",
-          boxShadow: "0 10px 28px rgba(0, 0, 0, 0.14)",
-        }}
-      >
-        <button
-          type="button"
-          className="btn-primary"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-            padding: "10px 8px",
-            fontSize: "0.82rem",
-            fontWeight: 800,
-            borderRadius: "10px",
-            whiteSpace: "nowrap",
-          }}
-          onClick={() => {
-            trackRouteMapOpen(routeId);
-            const targetGroupId = effectiveGroupId || groupId;
-            const queryParts: string[] = [];
-            if (activeSpotId) queryParts.push(`spotId=${encodeURIComponent(activeSpotId)}`);
-            if (targetGroupId) queryParts.push(`groupId=${encodeURIComponent(targetGroupId)}`);
-            const mapUrl =
-              `/routes/${routeId}/map` + (queryParts.length > 0 ? `?${queryParts.join("&")}` : "");
-            triggerNavigationLoading(mapUrl);
-            router.push(mapUrl);
-          }}
-        >
-          <MapIcon size={15} />
-          <span>ルート地図を開く</span>
-        </button>
-
-        <button
-          type="button"
-          className="btn-secondary"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "6px",
-            padding: "10px 8px",
-            fontSize: "0.82rem",
-            fontWeight: 800,
-            borderRadius: "10px",
-            whiteSpace: "nowrap",
-            background: "#FFFDF9",
-          }}
-          onClick={() => {
-            window.dispatchEvent(new CustomEvent("openSearchModal"));
-          }}
-        >
-          <Search size={15} />
-          <span>別のルートを探す</span>
-        </button>
-      </div>
     </>
   );
 }

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
 import styles from "./page.module.css";
-import { JoinRallyButton, BookmarkRouteButton } from "./ClientRallyButtons";
+import { JoinRallyButton, BookmarkRouteButton, FloatingMapButton } from "./ClientRallyButtons";
 import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import CommunityEchoesSection from "@/components/CommunityEchoesSection";
@@ -18,7 +18,7 @@ import {
   buildRouteSeoMetadata,
   extractRouteAreaInfo,
 } from "@/utils/seo";
-import { Footprints, Star, MapPin, Clock, Wallet } from "lucide-react";
+import { Footprints, Star, MapPin, Clock, Wallet, Search } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
 
@@ -117,66 +117,85 @@ export default async function RallyDetailPage({
         <HeaderNav />
       </header>
 
-      <main className={styles.main} style={{ paddingBottom: "84px" }}>
-        {/* ナラティブヘッダー情報 */}
-        <div className={"glass-card " + styles.headerCard}>
-          <div 
-            className={styles.imageBox} 
-            style={{ backgroundImage: `url(${rally.thumbnail_url || 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80'})` }} 
-          />
-          <div className={styles.headerInfo}>
-             <div className={styles.regionTag}>{rally.prefecture} • {rally.category}</div>
-             <h1 className={styles.title}>{rally.title}</h1>
-             <p className={styles.description}>{rally.description}</p>
-
-             {/* 街歩きの目安スペックバー */}
-             <div className={styles.walkSpecGrid}>
-               <div className={styles.walkSpecItem}>
-                 <MapPin size={15} color="var(--primary-color)" />
-                 <span>全 {walkMetrics.spotCount} 箇所</span>
-               </div>
-               <div className={styles.walkSpecItem}>
-                 <Footprints size={15} color="var(--primary-color)" />
-                 <span>歩行 約 {walkMetrics.distanceKm.toFixed(1)} km</span>
-               </div>
-               <div className={styles.walkSpecItem}>
-                 <Clock size={15} color="var(--primary-color)" />
-                 <span>目安 約 {walkMetrics.estimatedMinutes} 分</span>
-               </div>
-               <div className={styles.walkSpecItem}>
-                 <Wallet size={15} color="var(--primary-color)" />
-                 <span>予算 {budgetLabel}</span>
-               </div>
-             </div>
-
-             {(stats.participants > 0 || stats.favorites > 0) && (
-             <div style={{ display: "flex", gap: "16px", color: "#888", fontWeight: "600", fontSize: "0.95rem", margin: "4px 0 16px 0" }}>
-                {stats.participants > 0 && (
-                <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <Footprints size={16} strokeWidth={2} />
-                  {stats.participants}人が巡っています
-                </span>)}
-                {stats.favorites > 0 && (
-                <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--primary-color)" }}>
-                  <Star size={16} fill="currentColor" strokeWidth={2} />
-                  {stats.favorites}人が保存
-                </span>)}
-             </div>)}
-             <div style={{ marginTop: "auto", marginBottom: "12px", display: "flex", flexDirection: "column", gap: "10px" }}>
-               <JoinRallyButton 
-                 rallyId={rally.id} 
-                 routeTitle={rally.title}
-                 routeDescription={rally.description}
-                 routePrologue={rally.theme_prologue}
-                 groupId={groupId}
-               />
-               <BookmarkRouteButton
-                 routeId={rally.id}
-                 initialFavoriteCount={stats.favorites}
-               />
-             </div>
+      <main className={styles.main} style={{ paddingBottom: "0" }}>
+        {/* ルート概要（紙面・エディトリアル構成） */}
+        <section className={styles.headerSection}>
+          <div className={styles.metaLine}>
+            <span>{rally.prefecture}</span>
+            {rally.category && (
+              <>
+                <span className={styles.metaDivider}>／</span>
+                <span>{rally.category}</span>
+              </>
+            )}
           </div>
-        </div>
+
+          <h1 className={styles.title}>{rally.title}</h1>
+
+          {(stats.participants > 0 || stats.favorites > 0) && (
+            <div className={styles.statsInline}>
+              {stats.participants > 0 && (
+                <span className={styles.statsItem}>
+                  <Footprints size={13} strokeWidth={1.8} />
+                  {stats.participants}人が巡っています
+                </span>
+              )}
+              {stats.favorites > 0 && (
+                <span className={`${styles.statsItem} ${styles.statsItemSaved}`}>
+                  <Star size={13} fill="currentColor" strokeWidth={1.8} />
+                  {stats.favorites}人が保存
+                </span>
+              )}
+            </div>
+          )}
+
+          <div className={styles.headerBody}>
+            <div
+              className={styles.imageBox}
+              style={{ backgroundImage: `url(${rally.thumbnail_url || 'https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=600&q=80'})` }}
+              role="img"
+              aria-label={rally.title}
+            />
+
+            <div className={styles.headerTextCol}>
+              <p className={styles.description}>{rally.description}</p>
+
+              {/* 街歩きの目安スペックバー（上下罫線のみ） */}
+              <div className={styles.walkSpecBar}>
+                <div className={styles.walkSpecItem}>
+                  <MapPin size={14} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>全 {walkMetrics.spotCount} 箇所</span>
+                </div>
+                <div className={styles.walkSpecItem}>
+                  <Footprints size={14} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>歩行 約 {walkMetrics.distanceKm.toFixed(1)} km</span>
+                </div>
+                <div className={styles.walkSpecItem}>
+                  <Clock size={14} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>目安 約 {walkMetrics.estimatedMinutes} 分</span>
+                </div>
+                <div className={styles.walkSpecItem}>
+                  <Wallet size={14} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>予算 {budgetLabel}</span>
+                </div>
+              </div>
+
+              <JoinRallyButton
+                rallyId={rally.id}
+                routeTitle={rally.title}
+                routeDescription={rally.description}
+                routePrologue={rally.theme_prologue}
+                groupId={groupId}
+                bookmarkButton={
+                  <BookmarkRouteButton
+                    routeId={rally.id}
+                    initialFavoriteCount={stats.favorites}
+                  />
+                }
+              />
+            </div>
+          </div>
+        </section>
 
         {/* スポット一覧セクション */}
         <section className={styles.spotSection}>
@@ -192,151 +211,53 @@ export default async function RallyDetailPage({
 
         <RouteBadgeTeaser routeId={rally.id} />
 
-        {/* 1タップ・マイクロアンケート ＆ SNSシェア */}
-        <RouteMicroFeedbackCard
-          routeId={rally.id}
-          routeTitle={rally.title}
-          areaName={areaInfo.areaName}
-        />
+        {/* 上スクロール時に右下へ表示する地図ボタン */}
+        <FloatingMapButton rallyId={rally.id} groupId={groupId} />
 
-        {/* 別の街・ルートをフリーワードや地図から探す回遊カード（検索・SNS流入後の離脱防止） */}
+        {/* メインコンテンツ後の付録・回遊ゾーン（背景を和紙から切替） */}
+        <div className={styles.appendixZone}>
+          {/* 1タップ・マイクロアンケート ＆ SNSシェア */}
+          <RouteMicroFeedbackCard
+            routeId={rally.id}
+            routeTitle={rally.title}
+            areaName={areaInfo.areaName}
+          />
+
+        {/* 別の街・ルートをフリーワードや地図から探す回遊セクション */}
         <section
-          className="glass-card"
+          className={styles.discoverSection}
           aria-labelledby="discover-other-routes-title"
-          style={{
-            padding: "24px 20px",
-            marginTop: "28px",
-            border: "1.5px solid rgba(201, 168, 76, 0.45)",
-            borderRadius: "18px",
-            background: "rgba(255, 253, 249, 0.96)",
-          }}
         >
-          <h2
-            id="discover-other-routes-title"
-            style={{
-              margin: "0 0 8px 0",
-              fontSize: "1.15rem",
-              fontWeight: 800,
-              color: "var(--text-color)",
-            }}
-          >
-            🔍 別の街・駅のルートも探してみる
+          <h2 id="discover-other-routes-title" className={styles.discoverTitle}>
+            <Search size={17} strokeWidth={1.8} color="var(--primary-color)" />
+            <span>別の街・駅のルートも探してみる</span>
           </h2>
-          <p
-            style={{
-              margin: "0 0 14px 0",
-              fontSize: "0.86rem",
-              lineHeight: 1.6,
-              color: "var(--text-color)",
-              opacity: 0.8,
-            }}
-          >
+          <p className={styles.discoverDesc}>
             駅名・街名・スポット名のフリーワード入力や、全国マップ・都道府県一覧から次の散策先を探せます。
           </p>
 
-          <form
-            action="/routes"
-            method="get"
-            style={{
-              display: "flex",
-              gap: "8px",
-              width: "100%",
-              marginBottom: "14px",
-            }}
-          >
+          <form action="/routes" method="get" className={styles.discoverForm}>
             <input
               type="text"
               name="q"
               placeholder="駅名・街名・スポット名で検索..."
               aria-label="駅名・街名・スポット名で検索"
-              style={{
-                flex: 1,
-                minWidth: 0,
-                padding: "11px 14px",
-                fontSize: "0.9rem",
-                borderRadius: "10px",
-                border: "1.5px solid rgba(44, 38, 35, 0.2)",
-                background: "#FFFFFF",
-                color: "var(--text-color)",
-                outline: "none",
-              }}
+              className={styles.discoverInput}
             />
-            <button
-              type="submit"
-              className="btn-primary"
-              style={{
-                flexShrink: 0,
-                whiteSpace: "nowrap",
-                padding: "11px 18px",
-                fontSize: "0.88rem",
-                fontWeight: 800,
-                borderRadius: "10px",
-              }}
-            >
+            <button type="submit" className={styles.discoverSubmitBtn}>
               検索
             </button>
           </form>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-              gap: "10px",
-            }}
-          >
-            <Link
-              href="/map"
-              className="btn-primary"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "6px",
-                padding: "11px 12px",
-                fontSize: "0.84rem",
-                fontWeight: 800,
-                borderRadius: "10px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>🗺️ 地図から探す</span>
+          <div className={styles.discoverLinksRow}>
+            <Link href="/routes" className={styles.discoverLinkBtn}>
+              検索して探す
             </Link>
-            <Link
-              href="/routes"
-              className="btn-secondary"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "6px",
-                padding: "11px 12px",
-                fontSize: "0.84rem",
-                fontWeight: 800,
-                borderRadius: "10px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>🧭 全ルート一覧</span>
+            <Link href="/map" className={styles.discoverLinkBtn}>
+              地図から探す
             </Link>
-            <Link
-              href="/areas"
-              className="btn-secondary"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "6px",
-                padding: "11px 12px",
-                fontSize: "0.84rem",
-                fontWeight: 800,
-                borderRadius: "10px",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>🗾 都道府県一覧</span>
+            <Link href="/areas" className={styles.discoverLinkBtn}>
+              エリアから探す
             </Link>
           </div>
         </section>
@@ -393,14 +314,14 @@ export default async function RallyDetailPage({
           <div className={styles.seoAreaLinks}>
             <Link
               href={`/routes?q=${encodeURIComponent(areaInfo.areaName)}`}
-              className="btn-secondary"
+              className={styles.seoAreaLink}
             >
               {areaInfo.areaName}周辺のルートをもっと見る
             </Link>
             {areaInfo.cityName && areaInfo.cityName !== areaInfo.areaName && (
               <Link
                 href={`/routes?q=${encodeURIComponent(areaInfo.cityName)}`}
-                className="btn-secondary"
+                className={styles.seoAreaLink}
               >
                 {areaInfo.cityName}のルート一覧
               </Link>
@@ -408,16 +329,17 @@ export default async function RallyDetailPage({
             {areaInfo.prefecture && (
               <Link
                 href={`/areas/${encodeURIComponent(areaInfo.prefecture)}`}
-                className="btn-secondary"
+                className={styles.seoAreaLink}
               >
                 {areaInfo.prefecture}の観光・街歩きルートまとめ
               </Link>
             )}
-            <Link href="/areas" className="btn-secondary">
+            <Link href="/areas" className={styles.seoAreaLink}>
               全国エリア・都道府県一覧
             </Link>
           </div>
         </section>
+        </div>
       </main>
     </div>
   );

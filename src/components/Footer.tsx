@@ -5,24 +5,20 @@ export default function Footer() {
     <footer
       data-nosnippet
       style={{
-      background: "var(--card-bg)",
-      backdropFilter: "blur(16px)",
-      WebkitBackdropFilter: "blur(16px)",
-      borderTop: "1px solid rgba(255, 255, 255, 0.6)",
-      padding: "48px 20px 32px",
+      background: "#ECE7DC",
+      padding: "48px 20px 36px",
       marginTop: "auto",
       color: "var(--text-color)",
       textAlign: "center",
-      boxShadow: "0 -4px 20px rgba(0,0,0,0.02)"
     }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "32px" }}>
+      <div style={{ maxWidth: "760px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "28px" }}>
         
         {/* サイトタイトルと説明 */}
         <div>
-          <h2 style={{ fontSize: "1.4rem", fontWeight: "800", color: "var(--primary-color)", marginBottom: "12px", letterSpacing: "-0.05em" }}>
+          <h2 style={{ fontSize: "1.35rem", fontWeight: "800", color: "var(--primary-color)", marginBottom: "10px", letterSpacing: "0.02em" }}>
             SHUIN まちのしるし
           </h2>
-          <p style={{ fontSize: "0.7rem", color: "var(--secondary-color)", lineHeight: "1.6", fontWeight: "600", wordBreak: "keep-all" }}>
+          <p style={{ fontSize: "0.8125rem", color: "var(--secondary-color)", lineHeight: "1.7", fontWeight: "600", wordBreak: "keep-all" }}>
             街を歩いて、しるしを刻む。<br />
             訪れた場所が、あなたのしるしになる。
           </p>
@@ -30,9 +26,10 @@ export default function Footer() {
 
         {/* SNSシェア */}
         <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
-          <a href="#" style={{ 
+          <a href="#" aria-label="Instagram" style={{ 
             display: "flex", justifyContent: "center", alignItems: "center", 
-            width: "44px", height: "44px", borderRadius: "50%", background: "#EBE5D9",
+            width: "44px", height: "44px", borderRadius: "2px", background: "#FAF8F3",
+            border: "1px solid rgba(17, 17, 17, 0.14)",
             color: "var(--text-color)", transition: "transform 0.2s" 
           }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -41,9 +38,10 @@ export default function Footer() {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <a href="#" style={{ 
+          <a href="#" aria-label="X" style={{ 
             display: "flex", justifyContent: "center", alignItems: "center", 
-            width: "44px", height: "44px", borderRadius: "50%", background: "#EBE5D9",
+            width: "44px", height: "44px", borderRadius: "2px", background: "#FAF8F3",
+            border: "1px solid rgba(17, 17, 17, 0.14)",
             color: "var(--text-color)", transition: "transform 0.2s" 
           }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -55,11 +53,13 @@ export default function Footer() {
 
         {/* リンク集 */}
         <div style={{ 
-          display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px 24px", 
-          fontSize: "0.8rem", fontWeight: "700", color: "#5C4E43"
+          display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "14px 20px", 
+          fontSize: "0.8125rem", fontWeight: "700", color: "#5C4E43"
         }}>
           <Link href="/guide" style={{ textDecoration: "none", color: "var(--primary-color)", fontWeight: 800 }}>街歩きの手引き・使い方</Link>
-          <Link href="/routes" style={{ textDecoration: "none", color: "inherit" }}>ルート一覧</Link>
+          <Link href="/routes" style={{ textDecoration: "none", color: "inherit" }}>検索して探す</Link>
+          <Link href="/map" style={{ textDecoration: "none", color: "inherit" }}>地図から探す</Link>
+          <Link href="/areas" style={{ textDecoration: "none", color: "inherit" }}>エリアから探す</Link>
           <Link href="/terms" style={{ textDecoration: "none", color: "inherit" }}>利用規約</Link>
           <Link href="/privacy" style={{ textDecoration: "none", color: "inherit" }}>プライバシーポリシー</Link>
           <Link href="/tokushoho" style={{ textDecoration: "none", color: "inherit" }}>特定商取引法に基づく表記</Link>
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* コピーライト */}
-        <div style={{ fontSize: "0.75rem", color: "#A39687", marginTop: "8px", fontWeight: "600" }}>
+        <div style={{ fontSize: "0.75rem", color: "#8C8072", marginTop: "4px", fontWeight: "600" }}>
           &copy; {new Date().getFullYear()} SHUIN まちのしるし All Rights Reserved.
         </div>
       </div>

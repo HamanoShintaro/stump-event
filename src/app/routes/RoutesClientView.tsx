@@ -20,6 +20,7 @@ import {
   Tag,
   X,
   ChevronDown,
+  ChevronRight,
 } from "lucide-react";
 
 interface RoutesClientViewProps {
@@ -269,7 +270,35 @@ export default function RoutesClientView({
                 prefetch={false}
                 className={styles.cardWrapper}
               >
-                <div className={styles.card}>
+                <article className={styles.card}>
+                  {/* メタ情報行（地域 ／ ジャンル ＋ 現在地からの距離） */}
+                  <div className={styles.cardMetaRow}>
+                    <div className={styles.cardMetaLine}>
+                      <span>{routeItem.prefecture}</span>
+                      {routeItem.routeAreas?.[0] && routeItem.routeAreas[0] !== routeItem.prefecture && (
+                        <>
+                          <span className={styles.cardMetaDivider}>・</span>
+                          <span>{routeItem.routeAreas[0]}</span>
+                        </>
+                      )}
+                      {routeItem.category && (
+                        <>
+                          <span className={styles.cardMetaDivider}>／</span>
+                          <span>{routeItem.category}</span>
+                        </>
+                      )}
+                    </div>
+                    {distanceFromUserKm !== null && (
+                      <span className={styles.distanceInline}>
+                        現在地から約{distanceFromUserKm}km
+                      </span>
+                    )}
+                  </div>
+
+                  {/* タイトル（画像より先に配置） */}
+                  <h2 className={styles.rallyTitle}>{routeItem.title}</h2>
+
+                  {/* 和紙に馴染むアイキャッチ画像（バッジ重ねなし） */}
                   <div className={styles.imageBox}>
                     <Image
                       src={thumbSrc}
@@ -285,113 +314,41 @@ export default function RoutesClientView({
                       unoptimized={!canOptimize}
                       className={styles.cardThumbImage}
                     />
-                    <div className={styles.overlayTopTags}>
-                      <div className={styles.categoryBadge}>{routeItem.category}</div>
-                      <div className={styles.areaBadge}>{routeItem.prefecture}</div>
-                      {routeItem.routeAreas?.[0] && (
-                        <div className={styles.areaBadge}>
-                          <MapPin size={10} strokeWidth={2} />
-                          <span>{routeItem.routeAreas[0]}</span>
-                        </div>
-                      )}
-                      {distanceFromUserKm !== null && (
-                        <div className={styles.distanceBadge}>
-                          <Navigation size={10} strokeWidth={2} />
-                          <span>現在地から約{distanceFromUserKm}km</span>
-                        </div>
-                      )}
-                    </div>
-                    <div className={styles.cardOverlay}>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          width: "100%",
-                        }}
-                      >
-                        <span
-                          style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "4px",
-                            fontSize: "0.72rem",
-                            fontWeight: 700,
-                            textShadow: "0 1px 2px rgba(0,0,0,0.8)",
-                          }}
-                        >
-                          <Coins size={12} strokeWidth={2} />
-                          <span>
-                            {routeItem.budget_tier === 1
-                              ? "〜1,000円"
-                              : routeItem.budget_tier === 2
-                                ? "〜5,000円"
-                                : "5,000円〜"}
-                          </span>
-                        </span>
-                        <div
-                          style={{
-                            display: "flex",
-                            gap: "8px",
-                            fontSize: "0.72rem",
-                            fontWeight: 700,
-                            textShadow: "0 1px 2px rgba(0,0,0,0.8)",
-                          }}
-                        >
-                          {stats?.participants > 0 && (
-                            <span
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "3px",
-                              }}
-                            >
-                              <Footprints size={12} strokeWidth={2} />
-                              {stats.participants}
-                            </span>
-                          )}
-                          {stats?.favorites > 0 && (
-                            <span
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "3px",
-                                color: "var(--accent-color)",
-                              }}
-                            >
-                              <Star
-                                size={12}
-                                fill="currentColor"
-                                strokeWidth={2}
-                              />
-                              {stats.favorites}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
                   </div>
+
+                  {/* 説明文・スペック行 */}
                   <div className={styles.cardContent}>
-                    <h2 className={styles.rallyTitle}>{routeItem.title}</h2>
                     <p className={styles.rallyDesc}>{routeItem.description}</p>
                     <div className={styles.walkMetaStrip}>
                       <span className={styles.walkMetaItem}>
-                        <MapPin size={12} strokeWidth={2} color="var(--primary-color)" />
+                        <MapPin size={12} strokeWidth={1.8} color="var(--primary-color)" />
                         全{walkMetrics.spotCount}箇所
                       </span>
-                      <span className={styles.walkMetaDivider}>•</span>
+                      <span className={styles.walkMetaDivider}>／</span>
                       <span className={styles.walkMetaItem}>
-                        <Footprints size={12} strokeWidth={2} color="var(--primary-color)" />
                         約{walkMetrics.distanceKm.toFixed(1)}km
                       </span>
-                      <span className={styles.walkMetaDivider}>•</span>
+                      <span className={styles.walkMetaDivider}>／</span>
                       <span className={styles.walkMetaItem}>
-                        <Clock size={12} strokeWidth={2} color="var(--primary-color)" />
                         約{walkMetrics.estimatedMinutes}分
+                      </span>
+                      <span className={styles.walkMetaDivider}>／</span>
+                      <span className={styles.walkMetaItem}>
+                        {routeItem.budget_tier === 1
+                          ? "〜1,000円"
+                          : routeItem.budget_tier === 2
+                            ? "〜5,000円"
+                            : "5,000円〜"}
+                      </span>
+                    </div>
+                    <div className={styles.cardActionRow}>
+                      <span className={styles.cardActionBtn}>
+                        <span>詳細を確認</span>
+                        <ChevronRight size={14} strokeWidth={1.8} />
                       </span>
                     </div>
                   </div>
-                </div>
+                </article>
               </Link>
             );
           })
@@ -402,21 +359,26 @@ export default function RoutesClientView({
             </p>
             <button
               type="button"
-              className="btn-secondary"
               onClick={() => {
                 setKeyword("");
                 setDurationFilter("all");
                 setSelectedArea("すべて");
               }}
               style={{
-                padding: "8px 20px",
-                fontSize: "0.85rem",
+                padding: "9px 18px",
+                fontSize: "0.84rem",
+                fontWeight: 600,
+                borderRadius: "2px",
+                border: "1px solid rgba(17, 17, 17, 0.24)",
+                background: "transparent",
+                color: "var(--text-color)",
+                cursor: "pointer",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "6px",
               }}
             >
-              <RotateCcw size={14} strokeWidth={2} />
+              <RotateCcw size={14} strokeWidth={1.8} />
               <span>検索条件をリセットする</span>
             </button>
           </div>
@@ -429,9 +391,9 @@ export default function RoutesClientView({
           <button
             type="button"
             onClick={loadMore}
-            className={`btn-secondary ${styles.loadMoreBtn}`}
+            className={styles.loadMoreBtn}
           >
-            <ChevronDown size={16} strokeWidth={2} />
+            <ChevronDown size={16} strokeWidth={1.8} />
             <span>さらにルートを表示する（残り {remainingCount} 件）</span>
           </button>
         </div>

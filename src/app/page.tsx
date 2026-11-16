@@ -9,7 +9,7 @@ import NearbyDiscoverySection from "@/components/NearbyDiscoverySection";
 import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 import { getSiteUrl } from "@/utils/seo";
-import { Star, Map } from "lucide-react";
+import { Star, Map, MapPin, Search } from "lucide-react";
 import {
   IconCoin,
   IconMapPin,
@@ -78,16 +78,26 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* スティッキーになるアクションボタンバー */}
+      {/* スティッキーになるアクションボタンバー（上に「ルートを探す」、アイコン下に1語ラベル） */}
       <div className={styles.stickyActionBar} data-nosnippet>
-        <Link href="/map" className={styles.heroActionBtnWrapper}>
-          <div className={styles.heroActionBtn}>
-            <Map size={56} strokeWidth={1.5} />
-          </div>
-          <span className={styles.heroActionText}>地図から探す</span>
-        </Link>
+        <span className={styles.stickyBarCaption}>ルートを探す</span>
+        <div className={styles.stickyActionRow}>
+          <ClientSearchButton />
 
-        <ClientSearchButton />
+          <Link href="/map" className={styles.heroActionBtnWrapper} aria-label="地図から探す">
+            <div className={styles.heroActionBtn}>
+              <Map size={36} strokeWidth={1.5} />
+            </div>
+            <span className={styles.heroActionText}>地図</span>
+          </Link>
+
+          <Link href="/areas" className={styles.heroActionBtnWrapper} aria-label="エリアから探す">
+            <div className={styles.heroActionBtn}>
+              <MapPin size={36} strokeWidth={1.5} />
+            </div>
+            <span className={styles.heroActionText}>エリア</span>
+          </Link>
+        </div>
       </div>
 
       {/* コンテンツ部分 (通常スクロール) */}
@@ -102,16 +112,9 @@ export default async function Home() {
             textAlign: "center",
           }}
         >
-          <h1
-            style={{
-              fontSize: "0.95rem",
-              fontWeight: 800,
-              color: "var(--primary-color)",
-              margin: "0 0 6px 0",
-              letterSpacing: "0.04em",
-            }}
-          >
-            街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。
+          <h1 className={styles.mainCopyHeading}>
+            <span className={styles.mainCopyLine}>街を歩いて、しるしを刻む。</span>
+            <span className={styles.mainCopyLine}>訪れた場所が、あなたのしるしになる。</span>
           </h1>
           <p
             style={{
@@ -127,13 +130,13 @@ export default async function Home() {
           </p>
         </section>
 
-        {/* はじめての方へ・街歩きの手引きバナー（コンパクト2行構成） */}
+        {/* はじめての方へ・街歩きの手引き（罫線区切り） */}
         <div
           className="container"
           data-nosnippet
           style={{
-            padding: "0 20px 10px",
-            maxWidth: "1200px",
+            padding: "8px 20px 12px",
+            maxWidth: "760px",
             margin: "0 auto",
           }}
         >
@@ -143,13 +146,10 @@ export default async function Home() {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              gap: "10px",
-              padding: "11px 14px",
-              borderRadius: "14px",
-              background:
-                "linear-gradient(135deg, rgba(255,253,249,0.96) 0%, rgba(246,239,224,0.93) 100%)",
-              border: "1px solid rgba(201, 168, 76, 0.55)",
-              boxShadow: "0 4px 14px rgba(0,0,0,0.04)",
+              gap: "12px",
+              padding: "12px 4px",
+              borderTop: "1px solid rgba(17, 17, 17, 0.14)",
+              borderBottom: "1px solid rgba(17, 17, 17, 0.14)",
               textDecoration: "none",
               color: "var(--text-color)",
             }}
@@ -163,70 +163,30 @@ export default async function Home() {
                 flex: 1,
               }}
             >
-              <div
-                style={{
-                  width: "34px",
-                  height: "34px",
-                  borderRadius: "9px",
-                  background: "rgba(199, 68, 46, 0.08)",
-                  border: "1px solid rgba(199, 68, 46, 0.25)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
-                <IconScroll size={17} color="var(--primary-color)" />
-              </div>
+              <IconScroll size={18} color="var(--primary-color)" />
               <div style={{ minWidth: 0, flex: 1 }}>
                 <div
                   style={{
-                    fontSize: "0.78rem",
-                    fontWeight: 800,
+                    fontSize: "0.875rem",
+                    fontWeight: 700,
                     color: "var(--text-color)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
+                    lineHeight: 1.4,
                   }}
                 >
-                  <span>はじめての方へ・街歩きの手引き</span>
+                  はじめての方へ・街歩きの手引き
                 </div>
                 <div
                   style={{
-                    fontSize: "0.68rem",
-                    color: "#5C4E43",
+                    fontSize: "0.75rem",
+                    color: "rgba(43, 43, 43, 0.68)",
                     marginTop: "2px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
                   }}
                 >
-                  物語を選ぶ・押印・連れ立ち・SHUIN帳の4ステップ
+                  ルート選択・押印・SHUIN帳の4ステップ
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "2px",
-                fontSize: "0.75rem",
-                fontWeight: 800,
-                color: "var(--primary-color)",
-                background: "rgba(199, 68, 46, 0.08)",
-                border: "1px solid rgba(199, 68, 46, 0.22)",
-                padding: "5px 10px",
-                borderRadius: "999px",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-              }}
-            >
-              <span>手引き</span>
-              <IconChevronRight size={14} color="var(--primary-color)" />
-            </div>
+            <IconChevronRight size={18} color="var(--primary-color)" />
           </Link>
         </div>
 
@@ -253,146 +213,50 @@ export default async function Home() {
                 const canOptimize =
                   thumbSrc.startsWith("/") ||
                   thumbSrc.startsWith("https://images.unsplash.com/");
+                const budgetLabel =
+                  rally.budget_tier === 1
+                    ? "~1,000円"
+                    : rally.budget_tier === 2
+                      ? "~5,000円"
+                      : "5,000円~";
                 return (
                   <Link
                     href={`/routes/${rally.id}`}
                     key={rally.id}
                     className={styles.rallyCard}
                   >
+                    <div className={styles.entryMeta}>
+                      {rally.prefecture} ／ {rally.category}
+                    </div>
+                    <h3 className={styles.cardTitle}>{rally.title}</h3>
                     <div className={styles.cardImageContainer}>
                       <Image
                         src={thumbSrc}
                         alt={rally.title}
                         width={600}
-                        height={360}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        height={375}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         quality={75}
                         loading="lazy"
                         unoptimized={!canOptimize}
                         className={styles.cardImage}
                       />
-                      <div className={styles.overlayTopTags}>
-                        <div className={styles.categoryBadge}>
-                          {rally.category}
-                        </div>
-                        <div className={styles.areaBadge}>
-                          {rally.prefecture}
-                        </div>
-                      </div>
-                      <div className={styles.cardOverlay}>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            width: "100%",
-                          }}
-                        >
-                          <span
-                            style={{
-                              fontSize: "0.7rem",
-                              fontWeight: "bold",
-                              textShadow: "0 1px 2px rgba(0,0,0,0.8)",
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "4px",
-                            }}
-                          >
-                            <IconCoin size={12} color="currentColor" />
-                            <span>
-                              {rally.budget_tier === 1
-                                ? "~1,000円"
-                                : rally.budget_tier === 2
-                                  ? "~5,000円"
-                                  : "5,000円~"}
-                            </span>
-                          </span>
-                          <div
-                            style={{
-                              display: "flex",
-                              gap: "8px",
-                              fontSize: "0.7rem",
-                              fontWeight: "bold",
-                              textShadow: "0 1px 2px rgba(0,0,0,0.8)",
-                            }}
-                          >
-                            {statsMap[rally.id]?.participants > 0 && (
-                              <span
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: "2px",
-                                }}
-                              >
-                                <IconFootprints size={12} color="currentColor" />
-                                {statsMap[rally.id].participants}
-                              </span>
-                            )}
-                            {statsMap[rally.id]?.favorites > 0 && (
-                              <span
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: "2px",
-                                  color: "var(--accent-color)",
-                                }}
-                              >
-                                <Star
-                                  size={12}
-                                  fill="currentColor"
-                                  strokeWidth={2}
-                                />
-                                {statsMap[rally.id].favorites}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                    <div className={styles.cardContent}>
-                      <h3 className={styles.cardTitle}>{rally.title}</h3>
+                    <div className={styles.entrySpecBar}>
                       {walkMetrics.spotCount > 0 && (
-                        <div
-                          style={{
-                            fontSize: "0.72rem",
-                            fontWeight: 700,
-                            color: "var(--primary-color)",
-                            marginBottom: "6px",
-                            display: "flex",
-                            alignItems: "center",
-                            flexWrap: "wrap",
-                            gap: "6px",
-                          }}
-                        >
-                          <span
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "3px",
-                            }}
-                          >
-                            <IconMapPin size={12} color="var(--primary-color)" />
-                            全{walkMetrics.spotCount}箇所
+                        <>
+                          <span>全{walkMetrics.spotCount}箇所</span>
+                          <span>・</span>
+                          <span>
+                            約{walkMetrics.distanceKm}km（約{walkMetrics.estimatedMinutes}分）
                           </span>
                           <span>・</span>
-                          <span
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "3px",
-                            }}
-                          >
-                            <IconFootprints
-                              size={12}
-                              color="var(--primary-color)"
-                            />
-                            約{walkMetrics.distanceKm}km（約
-                            {walkMetrics.estimatedMinutes}分）
-                          </span>
-                        </div>
+                        </>
                       )}
-                      <p className={styles.cardDesc}>{rally.description}</p>
+                      <span>{budgetLabel}</span>
                     </div>
+                    <p className={styles.cardDesc}>{rally.description}</p>
+                    <span className={styles.entryCta}>詳細を確認</span>
                   </Link>
                 );
               })
@@ -413,38 +277,74 @@ export default async function Home() {
           {allRallies.length > FEATURED_ROUTES_LIMIT && (
             <div
               style={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "12px",
+                display: "grid",
+                gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                gap: "8px",
                 marginTop: "32px",
               }}
             >
               <Link
                 href="/routes"
-                className="btn-secondary"
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "5px",
+                  padding: "12px 6px",
+                  borderRadius: "2px",
+                  border: "1px solid rgba(17, 17, 17, 0.24)",
+                  background: "#FAF8F3",
+                  color: "var(--text-color)",
                   textDecoration: "none",
-                  fontSize: "var(--font-size-body)",
-                  padding: "13px 28px",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
                 }}
               >
-                <IconCompass size={17} color="var(--primary-color)" />
-                <span>すべてのルートを見る（全{allRallies.length}件）</span>
-                <IconChevronRight size={16} color="var(--primary-color)" />
+                <Search size={14} color="var(--primary-color)" />
+                <span>検索して探す</span>
+              </Link>
+              <Link
+                href="/map"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "5px",
+                  padding: "12px 6px",
+                  borderRadius: "2px",
+                  border: "1px solid rgba(17, 17, 17, 0.24)",
+                  background: "#FAF8F3",
+                  color: "var(--text-color)",
+                  textDecoration: "none",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <Map size={14} color="var(--primary-color)" />
+                <span>地図から探す</span>
               </Link>
               <Link
                 href="/areas"
-                className="btn-secondary"
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "5px",
+                  padding: "12px 6px",
+                  borderRadius: "2px",
+                  border: "1px solid rgba(17, 17, 17, 0.24)",
+                  background: "#FAF8F3",
+                  color: "var(--text-color)",
                   textDecoration: "none",
-                  fontSize: "var(--font-size-body)",
-                  padding: "13px 24px",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  whiteSpace: "nowrap",
                 }}
               >
-                <IconMapPin size={17} color="var(--primary-color)" />
-                <span>都道府県・エリア別に探す</span>
-                <IconChevronRight size={16} color="var(--primary-color)" />
+                <IconMapPin size={14} color="var(--primary-color)" />
+                <span>エリアから探す</span>
               </Link>
             </div>
           )}

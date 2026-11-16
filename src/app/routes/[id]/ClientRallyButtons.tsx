@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase";
@@ -19,7 +19,8 @@ import { useRouteBookmark } from "@/hooks/useRouteBookmark";
 import { useSubscription } from "@/hooks/useSubscription";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { trackRouteJoin } from "@/utils/analytics";
-import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Sparkles } from "lucide-react";
+import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Sparkles, Search } from "lucide-react";
+import styles from "./page.module.css";
 
 export function BookmarkRouteButton({
   routeId,
@@ -38,50 +39,19 @@ export function BookmarkRouteButton({
       type="button"
       onClick={toggleBookmark}
       disabled={loading}
-      style={{
-        width: "100%",
-        padding: "11px 16px",
-        fontSize: "0.88rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "8px",
-        borderRadius: "10px",
-        border: isBookmarked ? "1px solid var(--accent-color)" : "1px solid #DED6C6",
-        background: isBookmarked ? "rgba(201, 168, 76, 0.14)" : "#F6F1E6",
-        color: "var(--text-color)",
-        fontWeight: 700,
-        cursor: loading ? "wait" : "pointer",
-        transition: "all 0.2s ease",
-      }}
+      className={`${styles.secondaryActionBtn} ${isBookmarked ? styles.secondaryActionBtnActive : ""}`}
+      style={{ cursor: loading ? "wait" : "pointer" }}
     >
       <Bookmark
-        size={16}
+        size={15}
         fill={isBookmarked ? "var(--accent-color)" : "none"}
         color={isBookmarked ? "var(--primary-color)" : "currentColor"}
-        strokeWidth={2}
+        strokeWidth={1.8}
       />
       <span>
-        {isBookmarked ? "保存済み（いつか歩きたい街）" : "このルートを保存する（栞）"}
+        {isBookmarked ? "保存済み" : "保存する"}
+        {favoriteCount > 0 ? ` (${favoriteCount})` : ""}
       </span>
-      {favoriteCount > 0 && (
-        <span
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "3px",
-            marginLeft: "4px",
-            fontSize: "0.78rem",
-            color: "var(--primary-color)",
-            background: "rgba(199, 68, 46, 0.08)",
-            padding: "2px 8px",
-            borderRadius: "6px",
-          }}
-        >
-          <Star size={11} fill="currentColor" />
-          {favoriteCount}
-        </span>
-      )}
     </button>
   );
 }
@@ -91,13 +61,15 @@ export function JoinRallyButton({
   routeTitle, 
   routeDescription, 
   routePrologue,
-  groupId = null
+  groupId = null,
+  bookmarkButton,
 }: { 
   rallyId: string;
   routeTitle: string;
   routeDescription: string;
   routePrologue?: string;
   groupId?: string | null;
+  bookmarkButton?: React.ReactNode;
 }) {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
@@ -439,7 +411,7 @@ export function JoinRallyButton({
       )}
       
       {loading ? (
-        <button className="btn-primary" style={{ width: "100%", fontSize: "1.1rem", padding: "16px", opacity: 0.7 }} disabled>確認中...</button>
+        <button className={styles.primaryActionBtn} style={{ opacity: 0.7 }} disabled>確認中...</button>
       ) : isJoined ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
           
@@ -778,94 +750,94 @@ export function JoinRallyButton({
               )}
             </>
           )}
+          {bookmarkButton}
         </div>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+        <div className={styles.actionStack}>
           {user && hasPastParticipation && (
-            <div style={{ fontSize: "0.82rem", color: "#8A7E72", textAlign: "center", lineHeight: 1.5 }}>
-              これまでに参加・押印した記録があるルートです。<br />再参加すると本日から24時間「進行中」に設定されます。
+            <div style={{ fontSize: "0.78rem", color: "rgba(17, 17, 17, 0.62)", textAlign: "center", lineHeight: 1.5 }}>
+              これまでに参加・押印した記録があるルートです。再参加すると本日から24時間「進行中」になります。
             </div>
           )}
-          <button 
-            onClick={handleJoin} 
-            disabled={isNavigating}
-            className="btn-primary" 
-            style={{ 
-              width: "100%", 
-              fontSize: "clamp(0.9rem, 3.8vw, 1.08rem)", 
-              padding: "14px 12px",
-              whiteSpace: "nowrap",
-              opacity: isNavigating ? 0.7 : 1,
-              cursor: isNavigating ? "not-allowed" : "pointer"
-            }}
-          >
-            {isNavigating
-              ? "読み込み中..."
-              : user
-                ? hasPastParticipation
+
+          {/* 第1階層：主アクション（未ログイン時は登録不要の「地図を見る」を最優先） */}
+          {user ? (
+            <button
+              type="button"
+              onClick={handleJoin}
+              disabled={isNavigating}
+              className={styles.primaryActionBtn}
+            >
+              {isNavigating
+                ? "読み込み中..."
+                : hasPastParticipation
                   ? "このルートに再参加する"
-                  : "このルートに参加する"
-                : "ログインしてこのルートに参加する"}
-          </button>
+                  : "このルートに参加する"}
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                setIsNavigating(true);
+                const targetGroupId = activeGroupId || groupId;
+                const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+                triggerNavigationLoading(mapUrl);
+                router.push(mapUrl);
+              }}
+              disabled={isNavigating}
+              className={styles.primaryActionBtn}
+            >
+              <MapIcon size={16} strokeWidth={1.8} />
+              <span>{isNavigating ? "読み込み中..." : "地図でルート・歩き方を見る"}</span>
+            </button>
+          )}
 
-          <button
-            type="button"
-            onClick={() => {
-              setIsNavigating(true);
-              const targetGroupId = activeGroupId || groupId;
-              const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
-              triggerNavigationLoading(mapUrl);
-              router.push(mapUrl);
-            }}
-            disabled={isNavigating}
-            className="btn-secondary"
-            style={{
-              width: "100%",
-              padding: "12px",
-              fontSize: "0.92rem",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "6px",
-              opacity: isNavigating ? 0.7 : 1,
-              cursor: isNavigating ? "not-allowed" : "pointer",
-            }}
-          >
-            <MapIcon size={16} strokeWidth={2} color="var(--primary-color)" />
-            <span>地図でルートを確認する</span>
-          </button>
-
-          {user && (
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          {/* 第2階層：補助アクション（横並び2列） */}
+          <div className={styles.secondaryActionGrid}>
+            {user ? (
               <button
                 type="button"
-                onClick={() => setShowJoinByCodeInput((prev) => !prev)}
-                className="btn-secondary"
-                style={{
-                  width: "100%",
-                  padding: "12px",
-                  fontSize: "0.92rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "6px",
+                onClick={() => {
+                  setIsNavigating(true);
+                  const targetGroupId = activeGroupId || groupId;
+                  const mapUrl = `/routes/${rallyId}/map` + (targetGroupId ? `?groupId=${targetGroupId}` : "");
+                  triggerNavigationLoading(mapUrl);
+                  router.push(mapUrl);
                 }}
+                disabled={isNavigating}
+                className={styles.secondaryActionBtn}
               >
-                <KeyRound size={15} strokeWidth={2} />
-                <span>友達の招待コードで連れ立ち参加する</span>
+                <MapIcon size={15} strokeWidth={1.8} color="var(--primary-color)" />
+                <span>地図で確認</span>
               </button>
-              {showJoinByCodeInput && (
-                <form
-                  onSubmit={handleJoinByCode}
-                  style={{
-                    padding: "14px",
-                    borderRadius: "12px",
-                    border: "1px solid var(--accent-color)",
-                    background: "#FFFDF9",
-                    display: "flex",
-                    gap: "8px",
-                  }}
+            ) : (
+              <button
+                type="button"
+                onClick={handleJoin}
+                disabled={isNavigating}
+                className={styles.secondaryActionBtn}
+              >
+                <span>{isNavigating ? "読み込み中..." : "巡って記録する"}</span>
+              </button>
+            )}
+            {bookmarkButton}
+          </div>
+
+          {/* 第3階層：特殊アクション（控えめなテキストリンク） */}
+          {user && (
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <div className={styles.tertiaryLinkWrap}>
+                <button
+                  type="button"
+                  onClick={() => setShowJoinByCodeInput((prev) => !prev)}
+                  className={styles.tertiaryTextLink}
                 >
+                  <KeyRound size={13} strokeWidth={1.8} />
+                  <span>友達の招待コードで連れ立ち参加する</span>
+                </button>
+              </div>
+              {showJoinByCodeInput && (
+                <form onSubmit={handleJoinByCode} className={styles.inlineCodeForm}>
                   <input
                     type="text"
                     inputMode="numeric"
@@ -873,23 +845,15 @@ export function JoinRallyButton({
                     placeholder="6桁の招待コード"
                     value={joinCodeInput}
                     onChange={(e) => setJoinCodeInput(e.target.value)}
-                    style={{
-                      flex: 1,
-                      padding: "10px",
-                      borderRadius: "8px",
-                      border: "1px solid #D5CEC4",
-                      fontSize: "1rem",
-                      letterSpacing: "3px",
-                      textAlign: "center",
-                    }}
+                    className={styles.inlineCodeInput}
                   />
                   <button
                     type="submit"
                     disabled={isJoiningByCode || joinCodeInput.trim().length !== 6}
-                    className="btn-primary"
-                    style={{ padding: "10px 16px", fontSize: "0.9rem", whiteSpace: "nowrap" }}
+                    className={styles.primaryActionBtn}
+                    style={{ width: "auto", padding: "8px 14px", fontSize: "0.85rem", whiteSpace: "nowrap" }}
                   >
-                    {isJoiningByCode ? "合流中..." : "合流して参加"}
+                    {isJoiningByCode ? "合流中..." : "合流する"}
                   </button>
                 </form>
               )}
@@ -936,6 +900,78 @@ export function SpotButton({ spotId, rallyId, groupId }: { spotId: string; rally
       }}
     >
       {isNavigating ? "読み込み中..." : user ? "詳細 / 押印する" : "詳細を見る"}
+    </button>
+  );
+}
+
+export function FloatingMapButton({
+  rallyId,
+  groupId,
+}: {
+  rallyId: string;
+  groupId?: string | null;
+}) {
+  const router = useRouter();
+  const [visible, setVisible] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const lastYRef = useRef(0);
+
+  useEffect(() => {
+    lastYRef.current = window.scrollY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const diff = currentY - lastYRef.current;
+
+      if (currentY <= 360) {
+        setVisible(false);
+      } else if (diff < -6) {
+        // 上方向へスクロールしたときだけ表示
+        setVisible(true);
+      } else if (diff > 6) {
+        // 下方向へスクロールしているときは邪魔にならないよう隠す
+        setVisible(false);
+      }
+
+      lastYRef.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      type="button"
+      disabled={isNavigating}
+      aria-label="ルート地図を開く"
+      title="ルート地図を開く"
+      onClick={() => {
+        setIsNavigating(true);
+        const mapUrl = `/routes/${rallyId}/map` + (groupId ? `?groupId=${encodeURIComponent(groupId)}` : "");
+        triggerNavigationLoading(mapUrl);
+        router.push(mapUrl);
+      }}
+      style={{
+        position: "fixed",
+        right: "16px",
+        bottom: "20px",
+        zIndex: 80,
+        width: "48px",
+        height: "48px",
+        borderRadius: "50%",
+        background: "var(--primary-color)",
+        color: "#ffffff",
+        border: "1px solid rgba(255, 255, 255, 0.35)",
+        boxShadow: "0 4px 14px rgba(17, 17, 17, 0.22)",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: isNavigating ? "wait" : "pointer",
+      }}
+    >
+      <MapIcon size={20} strokeWidth={1.8} />
     </button>
   );
 }

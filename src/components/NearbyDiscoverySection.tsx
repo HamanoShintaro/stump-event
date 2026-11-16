@@ -500,20 +500,14 @@ export default function NearbyDiscoverySection({
     <section
       className="container"
       style={{
-        padding: "8px 20px 20px",
-        maxWidth: "1200px",
+        padding: "16px 20px 24px",
+        maxWidth: "760px",
         margin: "0 auto",
       }}
     >
       <div
-        className="glass-card"
         style={{
-          padding: "22px 20px",
-          border: "1.5px solid var(--accent-color)",
-          borderRadius: "20px",
-          background:
-            "linear-gradient(145deg, rgba(255,253,248,0.96) 0%, rgba(246,239,224,0.92) 100%)",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+          padding: "0",
         }}
       >
         {/* ============================================================

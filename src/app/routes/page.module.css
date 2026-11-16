@@ -1,44 +1,86 @@
 .main {
-  padding: 28px 0 80px 0;
+  padding: 12px 0 64px 0;
 }
 
 .pageTitle {
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 6px;
   color: var(--text-color);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 @media (min-width: 768px) {
   .pageTitle {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
 .pageSubtitle {
   font-size: 0.92rem;
-  color: #5C4E43;
-  margin-bottom: 20px;
+  color: rgba(17, 17, 17, 0.72);
+  margin-bottom: 16px;
   font-weight: 500;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+
+/* 探し方レイヤー（3列切り替え） */
+.searchModeBar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.searchModeTabActive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border-radius: 2px;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.searchModeTab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border-radius: 2px;
+  background: #FAF8F3;
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  color: var(--text-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.searchModeTab:hover {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.45);
 }
 
 .discoveryBar {
-  padding: 16px;
+  padding: 0 0 18px 0;
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  border-radius: 14px;
-  border: 1px solid #E5DEC9;
-  background: rgba(255, 253, 249, 0.96);
-  box-shadow: 0 4px 18px rgba(44, 37, 32, 0.04);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
 }
 
 .searchRow {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 @media (min-width: 640px) {
@@ -58,25 +100,24 @@
 .searchIcon {
   position: absolute;
   left: 12px;
-  color: #6E6256;
+  color: rgba(17, 17, 17, 0.5);
   pointer-events: none;
 }
 
 .searchInput {
   width: 100%;
-  padding: 10px 36px 10px 38px;
-  border-radius: 10px;
-  border: 1px solid #DED6C6;
-  background: #FFFDF9;
-  font-size: 0.9rem;
+  padding: 10px 36px 10px 36px;
+  border-radius: 2px;
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  background: #ffffff;
+  font-size: 0.92rem;
   color: var(--text-color);
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .searchInput:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(199, 68, 46, 0.1);
 }
 
 .clearKeywordBtn {
@@ -84,7 +125,7 @@
   right: 10px;
   background: none;
   border: none;
-  color: #8A7E72;
+  color: rgba(17, 17, 17, 0.5);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -94,7 +135,7 @@
 
 .sortWrapper {
   position: relative;
-  min-width: 210px;
+  min-width: 200px;
   display: flex;
   align-items: center;
 }
@@ -102,23 +143,23 @@
 .sortIcon {
   position: absolute;
   left: 11px;
-  color: #6E6256;
+  color: rgba(17, 17, 17, 0.5);
   pointer-events: none;
 }
 
 .sortSelect {
   width: 100%;
   padding: 10px 12px 10px 32px;
-  border-radius: 10px;
-  border: 1px solid #DED6C6;
-  background: #FFFDF9;
+  border-radius: 2px;
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  background: #ffffff;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-color);
   cursor: pointer;
 }
 
-/* 所要時間セグメントタブバー（丸ピルボタンの乱立を解消） */
+/* 所要時間セグメントタブバー */
 .segmentedGroup {
   display: flex;
   flex-direction: column;
@@ -131,17 +172,14 @@
   gap: 5px;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #6E6256;
+  color: rgba(17, 17, 17, 0.65);
   letter-spacing: 0.04em;
 }
 
 .segmentedBar {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
-  background: #EFE9DC;
-  padding: 4px;
-  border-radius: 10px;
+  gap: 6px;
 }
 
 @media (min-width: 640px) {
@@ -152,10 +190,10 @@
 
 .segmentTab {
   background: transparent;
-  border: none;
-  color: #5C4E43;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  color: rgba(17, 17, 17, 0.75);
   padding: 8px 6px;
-  border-radius: 7px;
+  border-radius: 2px;
   font-size: 0.76rem;
   font-weight: 600;
   cursor: pointer;
@@ -166,31 +204,31 @@
 }
 
 .segmentTab:hover {
+  border-color: rgba(17, 17, 17, 0.45);
   color: var(--text-color);
 }
 
 .segmentTabActive {
-  background: #FFFDF9;
-  border: none;
-  color: var(--primary-color);
+  background: var(--text-color);
+  border: 1px solid var(--text-color);
+  color: #ffffff;
   padding: 8px 6px;
-  border-radius: 7px;
+  border-radius: 2px;
   font-size: 0.76rem;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 1px 4px rgba(44, 37, 32, 0.1);
   text-align: center;
   line-height: 1.3;
   white-space: nowrap;
 }
 
-/* 街・エリア図鑑タグ（角丸6pxの落ち着いたタグ） */
+/* 街・エリア図鑑タグ */
 .areaDirectorySection {
   display: flex;
   flex-direction: column;
   gap: 6px;
   padding-top: 10px;
-  border-top: 1px solid #EAE3D5;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
 }
 
 .areaTagsScroll {
@@ -203,11 +241,11 @@
 }
 
 .areaTag {
-  background: #F2ECE1;
-  border: 1px solid transparent;
-  color: #4A3E35;
+  background: transparent;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  color: rgba(17, 17, 17, 0.78);
   padding: 5px 10px;
-  border-radius: 6px;
+  border-radius: 2px;
   font-size: 0.76rem;
   font-weight: 600;
   cursor: pointer;
@@ -220,15 +258,15 @@
 }
 
 .areaTag:hover {
-  background: #E8E0D2;
+  border-color: rgba(17, 17, 17, 0.45);
 }
 
 .areaTagActive {
-  background: #2C2520;
-  border: 1px solid #2C2520;
-  color: #FFFDF9;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #ffffff;
   padding: 5px 10px;
-  border-radius: 6px;
+  border-radius: 2px;
   font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
@@ -250,23 +288,23 @@
   flex-wrap: wrap;
   gap: 8px;
   padding-top: 8px;
-  border-top: 1px dashed #E5DEC9;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
   font-size: 0.78rem;
 }
 
 .filterLabel {
   font-weight: 700;
-  color: #6E6256;
+  color: rgba(17, 17, 17, 0.65);
 }
 
 .activeFilterTag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid var(--accent-color);
   color: var(--text-color);
-  padding: 3px 10px;
-  border-radius: 6px;
+  padding: 3px 8px;
+  border-radius: 2px;
   font-weight: 700;
 }
 
@@ -275,6 +313,7 @@
   color: var(--primary-color);
   font-weight: 700;
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .resultMetaRow {
@@ -311,36 +350,60 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid #EFE9DC;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #4A3E35;
+  gap: 6px 10px;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.65);
 }
 
 .walkMetaItem {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 
 .walkMetaDivider {
-  color: #C7BDB1;
+  color: rgba(17, 17, 17, 0.25);
+}
+
+.cardActionRow {
+  margin-top: 16px;
+  display: block;
+  width: 100%;
+}
+
+.cardActionBtn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 2px;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .cardActionBtn {
+  opacity: 0.92;
 }
 
 .emptyStateBox {
   grid-column: 1 / -1;
   text-align: center;
   padding: 44px 20px;
-  background: rgba(255, 253, 249, 0.85);
-  border-radius: 14px;
-  border: 1px dashed #D6CEC3;
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
 }
 
 .emptyStateText {
-  color: #6E6256;
+  color: rgba(17, 17, 17, 0.7);
   margin-bottom: 14px;
   font-weight: 600;
 }
@@ -348,12 +411,12 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 0;
 }
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
   }
 }
 
@@ -366,32 +429,63 @@
 /* ファーストビュー外のカード（7件目以降）のレイアウト・描画を遅延し、1,000件超でも初期描画を高速化 */
 .cardWrapper:nth-child(n + 7) {
   content-visibility: auto;
-  contain-intrinsic-size: auto 315px;
-  contain-intrinsic-size: auto none auto 315px;
+  contain-intrinsic-size: auto 340px;
 }
 
 .card {
-  padding: 0;
-  overflow: hidden;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 1px solid #E5DEC9;
-  border-radius: 14px;
-  background: #FFFDF9;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 26px rgba(44, 37, 32, 0.08);
+.cardMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cardMetaLine {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cardMetaDivider {
+  color: rgba(17, 17, 17, 0.28);
+  font-weight: 400;
+}
+
+.distanceInline {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: rgba(17, 17, 17, 0.65);
+  white-space: nowrap;
 }
 
 .imageBox {
-  height: 172px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   position: relative;
   overflow: hidden;
-  background-color: var(--bg-color);
+  margin-bottom: 12px;
+  mix-blend-mode: multiply;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .cardThumbImage {
@@ -401,86 +495,39 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  z-index: 1;
-  transition: transform 0.35s ease;
+  transition: transform 0.45s ease;
 }
 
 .card:hover .cardThumbImage {
-  transform: scale(1.04);
-}
-
-.overlayTopTags {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-  z-index: 2;
-}
-
-.categoryBadge {
-  background: rgba(44, 37, 32, 0.85);
-  color: #FFFDF9;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-}
-
-.areaBadge {
-  background: rgba(255, 253, 249, 0.92);
-  color: #3D332B;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.cardOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to top, rgba(28, 23, 20, 0.84) 0%, rgba(28, 23, 20, 0.35) 60%, transparent 100%);
-  padding: 26px 10px 8px 10px;
-  color: #FFFDF9;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 2;
+  transform: scale(1.03);
 }
 
 .cardContent {
-  padding: 13px 14px 14px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .rallyTitle {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
   line-height: 1.42;
   color: var(--text-color);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+}
+
+.card:hover .rallyTitle {
+  color: var(--primary-color);
 }
 
 .rallyDesc {
-  font-size: 0.76rem;
-  color: #6E6256;
+  font-size: 0.94rem;
+  color: rgba(17, 17, 17, 0.84);
   margin-bottom: 0;
   flex-grow: 1;
-  line-height: 1.55;
+  line-height: 1.7;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -496,7 +543,17 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
-  font-size: var(--font-size-body);
+  padding: 12px 24px;
+  border-radius: 2px;
+  border: 1px solid rgba(17, 17, 17, 0.24);
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.88rem;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.loadMoreBtn:hover {
+  background: rgba(17, 17, 17, 0.04);
+  border-color: rgba(17, 17, 17, 0.45);
 }

@@ -5,6 +5,7 @@ import HeaderNav from "@/components/HeaderNav";
 import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
 import { getSiteUrl } from "@/utils/seo";
 import RoutesClientView from "./RoutesClientView";
+import { Search, Map as MapIcon, MapPin } from "lucide-react";
 
 export const revalidate = 300; // 5分間キャッシュ（ISR）で毎回のDB全件クエリ負荷を軽減
 
@@ -66,66 +67,38 @@ export default async function RoutesPage({
         <p className={styles.pageSubtitle}>
           街の風景や物語をめぐるこだわりのルート一覧。今の気分や歩く時間に合わせて、気になる街を探してみましょう。
         </p>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "10px",
-            flexWrap: "wrap",
-            marginBottom: "20px",
-          }}
-        >
-          <Link
-            href="/map"
-            className="btn-primary"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              padding: "10px 18px",
-              fontSize: "0.88rem",
-              fontWeight: 800,
-              textDecoration: "none",
-              borderRadius: "999px",
-            }}
-          >
-            <span>🗺️ 地図からルートを探す</span>
+        {/* 探し方レイヤー（左から：検索して探す ／ 地図から探す ／ エリアから探す） */}
+        <nav className={styles.searchModeBar} aria-label="探し方の切り替え">
+          <div className={styles.searchModeTabActive} aria-current="page">
+            <Search size={13} strokeWidth={2} />
+            <span>検索して探す</span>
+          </div>
+          <Link href="/map" className={styles.searchModeTab}>
+            <MapIcon size={13} strokeWidth={1.8} color="var(--primary-color)" />
+            <span>地図から探す</span>
           </Link>
-          <Link
-            href="/areas"
-            className="btn-secondary"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              padding: "10px 18px",
-              fontSize: "0.88rem",
-              fontWeight: 700,
-              textDecoration: "none",
-              borderRadius: "999px",
-            }}
-          >
-            <span>🗾 都道府県・エリア一覧から探す</span>
+          <Link href="/areas" className={styles.searchModeTab}>
+            <MapPin size={13} strokeWidth={1.8} color="var(--primary-color)" />
+            <span>エリアから探す</span>
           </Link>
-          {prefecture && (
+        </nav>
+
+        {prefecture && (
+          <div style={{ marginBottom: "14px" }}>
             <Link
               href={`/areas/${encodeURIComponent(prefecture)}`}
-              className="btn-secondary"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                padding: "10px 18px",
-                fontSize: "0.88rem",
+                fontSize: "0.82rem",
                 fontWeight: 700,
-                textDecoration: "none",
-                borderRadius: "999px",
+                color: "var(--primary-color)",
+                textDecoration: "underline",
+                textUnderlineOffset: "4px",
               }}
             >
-              <span>{prefecture}の街歩きまとめを見る</span>
+              {prefecture}の街歩きまとめを見る →
             </Link>
-          )}
-        </div>
+          </div>
+        )}
 
         <RoutesClientView
           initialRoutes={ralliesList}
