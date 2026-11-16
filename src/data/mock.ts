@@ -81900,5 +81900,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "f869e10f-0e03-456b-8722-a701b63b5de9",
+    "title": "山形・霞城の堀と冷しらーめんの街を歩く",
+    "name": "山形・霞城の堀と冷しらーめんの街を歩く",
+    "description": "JR山形駅から、桜と石垣が美しい「霞城公園（山形城跡）」と「最上義光歴史館」、元祖冷しらーめんの「栄屋本店」、老舗和菓子店「乃し梅本舗 佐藤屋 七日町店」、国重要文化財の大正建築「文翔館（山形県郷土館）」を巡る散策路。",
+    "region": "山形・霞城と大正ロマンの街",
+    "area_name": "山形・霞城と大正ロマンの街",
+    "cover_image_url": "/images/yamagata/route-eyecatch.png",
+    "imageUrl": "/images/yamagata/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "戦国の城跡と名物冷しらーめん、そして大正ロマン建築が繋がる山形を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「霞城公園（山形城跡）」の広大な水堀と復元された東大手門を仰いだ瞬間",
+          "description": "五十七万石を誇った最上家の居城の規模と、穏やかな水面に映る石垣の美しさに息を呑んだ。",
+          "badge_code": "yamagata_kajo"
+        },
+        {
+          "key": "B",
+          "text": "「栄屋本店」で、氷が浮かぶ元祖・冷しらーめんの澄んだスープを味わった瞬間",
+          "description": "昭和二十七年に山形で生まれたひんやりコクのある一杯が、街歩きの身体を爽やかに癒やした。",
+          "badge_code": "yamagata_sakaeya"
+        },
+        {
+          "key": "C",
+          "text": "「乃し梅本舗 佐藤屋 七日町店」で、江戸から続く琥珀色の銘菓・乃し梅に出会った瞬間",
+          "description": "完熟梅の爽やかな酸味と竹皮に包まれた老舗の佇まいが、城下町の粋な手土産を教えてくれた。",
+          "badge_code": "yamagata_satoya"
+        },
+        {
+          "key": "D",
+          "text": "「文翔館（山形県郷土館）」の重厚な煉瓦建築と優雅な大正ロマンの階段を仰いだ瞬間",
+          "description": "英国近世復興様式の旧県庁舎の気品あふれる空間が、山形散策のフィナーレを美しく飾った。",
+          "badge_code": "yamagata_bunshokan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "186c4023-cf88-45fa-8f29-7673dfca0513",
+        "name": "霞城公園（山形城跡）",
+        "description": "出羽山形藩57万石の城主・最上義光が整備した輪郭式の平城跡で日本100名城の一つ。広大な水堀と復元された東大手門、重要文化財の旧済生館本館などが公園内に点在する。入園自由・無料。",
+        "address": "山形県山形市霞城町1",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.254736,
+        "lng": 140.328237,
+        "qr_token": "shuin-yamagata-1",
+        "cover_image_url": "/images/yamagata/spot1.png",
+        "f7_fragment": "最上義光ゆかりの日本百名城、広大な水堀と東大手門が残る山形城跡。",
+        "f7_full": "「霞城公園（山形城跡）」の広大な水堀と復元東大手門を歩き、出羽五十七万石の風格を感じて山形の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "06871b12-7939-44e6-820c-ba197a2a7fa9",
+        "next_spot_name": "最上義光歴史館"
+      },
+      {
+        "id": "06871b12-7939-44e6-820c-ba197a2a7fa9",
+        "name": "最上義光歴史館",
+        "description": "霞城公園の東大手門のすぐ向かいに建つ歴史資料館。山形発展の礎を築いた戦国武将・最上義光ゆかりの甲冑や書状、山形城の復元模型を無料で観覧できる。9:00〜17:00、月曜休館。",
+        "address": "山形県山形市大手町1-53",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.255094,
+        "lng": 140.333436,
+        "qr_token": "shuin-yamagata-2",
+        "cover_image_url": "/images/yamagata/spot2.png",
+        "f7_fragment": "霞城公園そばで名将・最上義光の生涯と山形城の歴史を伝える無料資料館。",
+        "f7_full": "「最上義光歴史館」で城下町の礎を築いた名将の足跡と資料を学び、山形の歴史の奥深さに親しんだ。",
+        "is_final": false,
+        "next_spot_id": "452f9808-4a00-4f22-86ab-77be1d5cfa3c",
+        "next_spot_name": "栄屋本店"
+      },
+      {
+        "id": "452f9808-4a00-4f22-86ab-77be1d5cfa3c",
+        "name": "栄屋本店",
+        "description": "昭和27年（1952年）に日本で初めて「冷しらーめん」を考案したとされる山形の老舗麺処。牛骨ベースの澄んだ冷製スープとコシのある中太麺、氷の涼やかな見た目が名物。夏期11:30〜20:15・冬期11:30〜19:30、水曜休。",
+        "address": "山形県山形市本町2-3-21",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.251381,
+        "lng": 140.33993,
+        "qr_token": "shuin-yamagata-3",
+        "cover_image_url": "/images/yamagata/spot3.png",
+        "f7_fragment": "昭和二十七年に「冷しらーめん」を生んだ、山形麺文化を象徴する老舗。",
+        "f7_full": "老舗「栄屋本店」で氷が浮かぶ元祖・冷しらーめんを堪能し、山形ならではの独創的な麺文化の美味しさに感動した。",
+        "is_final": false,
+        "next_spot_id": "53ce9953-9b8c-4aff-8542-e9299168c1b0",
+        "next_spot_name": "乃し梅本舗 佐藤屋 七日町店"
+      },
+      {
+        "id": "53ce9953-9b8c-4aff-8542-e9299168c1b0",
+        "name": "乃し梅本舗 佐藤屋 七日町店",
+        "description": "文政4年（1821年）創業の山形を代表する老舗和菓子舗の七日町店。山形産完熟梅を寒天で固めて竹皮で挟んだ名物「乃し梅」や、創作和菓子が人気。営業時間9:30〜18:00、日・祝休。",
+        "address": "山形県山形市七日町1-2-35",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.252267,
+        "lng": 140.338381,
+        "qr_token": "shuin-yamagata-4",
+        "cover_image_url": "/images/yamagata/spot4.png",
+        "f7_fragment": "文政四年創業、完熟梅と竹皮が香る山形銘菓「乃し梅」の老舗店舗。",
+        "f7_full": "老舗「乃し梅本舗 佐藤屋 七日町店」を訪ね、江戸から受け継がれる銘菓・乃し梅と粋な和菓子の世界に触れた。",
+        "is_final": false,
+        "next_spot_id": "bd0b47f2-3dcf-425c-8d2d-4265400fa98b",
+        "next_spot_name": "文翔館（山形県郷土館）"
+      },
+      {
+        "id": "bd0b47f2-3dcf-425c-8d2d-4265400fa98b",
+        "name": "文翔館（山形県郷土館）",
+        "description": "大正5年（1916年）に建てられた旧山形県庁舎・県会議事堂で、国の重要文化財。英国近世復興様式の優美な煉瓦造りと壮麗な正庁・大時計塔が見どころ。9:00〜16:30、第1・3月曜休、無料。",
+        "address": "山形県山形市旅篭町3-4-51",
+        "prefecture": "山形県",
+        "city": "",
+        "lat": 38.256637,
+        "lng": 140.341187,
+        "qr_token": "shuin-yamagata-5",
+        "cover_image_url": "/images/yamagata/spot5.png",
+        "f7_fragment": "英国近世復興様式の旧県庁舎を伝える、国重文の大正ロマン煉瓦建築。",
+        "f7_full": "国重要文化財「文翔館」の壮麗な大正煉瓦建築と優美な館内を歩き、歴史と麺文化が響く山形の散策を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "676163ac-4e53-47b8-886a-8f10b510493e",
+    "title": "宇都宮・二荒山の杜と餃子通りの街を歩く",
+    "name": "宇都宮・二荒山の杜と餃子通りの街を歩く",
+    "description": "JR宇都宮駅から、駅前のレトロな「パーラー&喫茶 BC 宇都宮駅前店」と大通り沿いの「fudan cafe」、千六百年の歴史を誇る下野一之宮「宇都宮二荒山神社」、餃子通りの名店「宇都宮みんみん 本店」、関東七名城の一角「宇都宮城址公園」を巡る散策路。",
+    "region": "宇都宮・二荒山と餃子の街",
+    "area_name": "宇都宮・二荒山と餃子の街",
+    "cover_image_url": "/images/utsunomiya/route-eyecatch.png",
+    "imageUrl": "/images/utsunomiya/route-eyecatch.png",
+    "category": "グルメと歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "下野一之宮の社と名物餃子の活気、そして城跡が繋がる宇都宮を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「パーラー&喫茶 BC」のレトロな店内で、昔ながらの喫茶文化に触れた瞬間",
+          "description": "JR宇都宮駅から数分の昭和の香り漂う空間が、餃子の街歩きの幕開けを優しく彩った。",
+          "badge_code": "utsunomiya_bc"
+        },
+        {
+          "key": "B",
+          "text": "「宇都宮二荒山神社」の急な石段を登り、街を見下ろす千六百年の社に参拝した瞬間",
+          "description": "宇都宮の地名の由来とも伝えられる下野一之宮の厳かな杜が、中心街の上に広がっていた。",
+          "badge_code": "utsunomiya_futaarayama"
+        },
+        {
+          "key": "C",
+          "text": "「宇都宮みんみん 本店」で、パリッと焼かれた名物の焼き餃子と水餃子を味わった瞬間",
+          "description": "昭和三十三年創業の総本山でいただく野菜たっぷりの軽やかな餃子が、街歩きの活力をくれた。",
+          "badge_code": "utsunomiya_minmin"
+        },
+        {
+          "key": "D",
+          "text": "「宇都宮城址公園」の美しい土塁と復元された清明台櫓を見上げた瞬間",
+          "description": "関東七名城に数えられた城の記憶と市民の憩いの広場が、宇都宮散策の結びを飾った。",
+          "badge_code": "utsunomiya_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d48a5add-02d3-49c7-82d1-9f58f20fc0a8",
+        "name": "パーラー&喫茶 BC 宇都宮駅前店",
+        "description": "JR宇都宮駅西口から歩いてすぐの昭和レトロな老舗喫茶店。昔ながらのナポリタンやサンドイッチ、パフェ、香り高い珈琲で地元客にも親しまれる。営業時間7:00〜23:00、無休。",
+        "address": "栃木県宇都宮市駅前通り1-5-6",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.559566,
+        "lng": 139.897309,
+        "qr_token": "shuin-utsunomiya-1",
+        "cover_image_url": "/images/utsunomiya/spot1.png",
+        "f7_fragment": "JR宇都宮駅西口そばで昭和の温もりを守る、レトロなパーラー喫茶。",
+        "f7_full": "駅近くの「パーラー&喫茶 BC」で昭和レトロな珈琲の時間を過ごし、餃子の街・宇都宮の散策を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "9ad00d50-efe5-4f28-8c46-c34214d98e7b",
+        "next_spot_name": "fudan cafe"
+      },
+      {
+        "id": "9ad00d50-efe5-4f28-8c46-c34214d98e7b",
+        "name": "fudan cafe",
+        "description": "宇都宮中心部の大通り沿いに佇む開放的でスタイリッシュな人気カフェ。自家製スイーツやランチ、スペシャリティコーヒーが気軽に楽しめる。平日8:30〜18:30（土日祝8:00〜18:30）、不定休。",
+        "address": "栃木県宇都宮市大通り1-1-3",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.561462,
+        "lng": 139.889377,
+        "qr_token": "shuin-utsunomiya-2",
+        "cover_image_url": "/images/utsunomiya/spot2.png",
+        "f7_fragment": "大通り沿いで宇都宮の洗練された日常に出会う、開放的な人気カフェ。",
+        "f7_full": "大通り沿いの「fudan cafe」で開放的な空気と珈琲を味わい、歴史と現代が調和する宇都宮の街の表情に触れた。",
+        "is_final": false,
+        "next_spot_id": "0cd19c91-f366-42ac-8f37-3a3fd81050cb",
+        "next_spot_name": "宇都宮二荒山神社"
+      },
+      {
+        "id": "0cd19c91-f366-42ac-8f37-3a3fd81050cb",
+        "name": "宇都宮二荒山神社",
+        "description": "約1600年の歴史を誇り「宇都宮」の地名の由来とも伝えられる下野国一之宮。中心街の小高い明神山に鎮座し、大鳥居と長い石段が街を見守る。参拝6:00〜18:00（社務所9:00〜16:00）、無休。",
+        "address": "栃木県宇都宮市馬場通り1-1-1",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.561809,
+        "lng": 139.885725,
+        "qr_token": "shuin-utsunomiya-3",
+        "cover_image_url": "/images/utsunomiya/spot3.png",
+        "f7_fragment": "千六百年の歴史を誇り街の中心を見守る、下野一之宮の宇都宮総鎮守。",
+        "f7_full": "明神山に鎮座する「宇都宮二荒山神社」の石段を登って参拝し、宇都宮の地名ゆかりの千六百年の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "0ffe4c5c-600c-4cc5-8512-a72f86d3cde6",
+        "next_spot_name": "宇都宮みんみん 本店"
+      },
+      {
+        "id": "0ffe4c5c-600c-4cc5-8512-a72f86d3cde6",
+        "name": "宇都宮みんみん 本店",
+        "description": "昭和33年（1958年）創業、宇都宮餃子を代表する名店が並ぶ「餃子通り」の本店。白菜を中心にした野菜の甘みが際立つ焼餃子・水餃子・揚餃子が不動の人気。11:00〜20:30、不定休。",
+        "address": "栃木県宇都宮市馬場通り4-2-3",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.561613,
+        "lng": 139.887368,
+        "qr_token": "shuin-utsunomiya-4",
+        "cover_image_url": "/images/utsunomiya/spot4.png",
+        "f7_fragment": "昭和三十三年創業、餃子通りに佇む宇都宮餃子の王道老舗本店。",
+        "f7_full": "餃子通りの「宇都宮みんみん 本店」で香ばしい焼餃子と水餃子を味わい、宇都宮が誇る餃子の食文化を堪能した。",
+        "is_final": false,
+        "next_spot_id": "d0add042-c906-4839-86ae-d6265906826d",
+        "next_spot_name": "宇都宮城址公園"
+      },
+      {
+        "id": "d0add042-c906-4839-86ae-d6265906826d",
+        "name": "宇都宮城址公園",
+        "description": "関東七名城の一つに数えられた宇都宮城の本丸の一部を復元・整備した歴史公園。伝統工法で復元された清明台櫓や富士見櫓、土塁と展示施設「清明館」が見どころ。公園24時間・清明館9:00〜17:00。",
+        "address": "栃木県宇都宮市本丸町1-15",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.554659,
+        "lng": 139.885038,
+        "qr_token": "shuin-utsunomiya-5",
+        "cover_image_url": "/images/utsunomiya/spot5.png",
+        "f7_fragment": "関東七名城・宇都宮城の土塁と復元櫓が往時を伝える、街なかの歴史公園。",
+        "f7_full": "「宇都宮城址公園」の復元された清明台櫓と土塁を歩き、神社と餃子と城が繋がる宇都宮の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3b608482-8c1d-4069-8459-7801d2834ff7",
+    "title": "徳島・城跡の堀と阿波おどりの街を歩く",
+    "name": "徳島・城跡の堀と阿波おどりの街を歩く",
+    "description": "JR徳島駅から、蜂須賀家ゆかりの「徳島城跡（徳島中央公園）」と天然酵母パンが人気の「O-ba'sh cafe.」、一年中阿波おどりが体感できる「阿波おどり会館」、市街を一望する「眉山ロープウェイ」、名店の「徳島ラーメン いのたに 本店」を巡る散策路。",
+    "region": "徳島・阿波おどりと眉山の街",
+    "area_name": "徳島・阿波おどりと眉山の街",
+    "cover_image_url": "/images/tokushima/route-eyecatch.png",
+    "imageUrl": "/images/tokushima/route-eyecatch.png",
+    "category": "文化とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "蜂須賀家の城跡と阿波おどりの熱気、そして徳島ラーメンが繋がる徳島を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「徳島城跡（徳島中央公園）」の緑豊かな水堀と復元された鷲の門を歩いた瞬間",
+          "description": "駅北側のすぐそばに広がる阿波二十五万石の居城跡が、旅の始まりを穏やかに包んでくれた。",
+          "badge_code": "tokushima_castle"
+        },
+        {
+          "key": "B",
+          "text": "「阿波おどり会館」で、本場徳島の鳴り物と踊りの熱気を間近に体感した瞬間",
+          "description": "四百年の伝統を誇る阿波おどりの躍動感と歴史に触れ、心まで軽やかに弾み出した。",
+          "badge_code": "tokushima_awaodori"
+        },
+        {
+          "key": "C",
+          "text": "「眉山ロープウェイ」で山頂へ上り、吉野川と徳島の街並みを一望した瞬間",
+          "description": "どの方向から眺めても眉の形に見える徳島のシンボルから、海と川が織りなす絶景を望んだ。",
+          "badge_code": "tokushima_bizan"
+        },
+        {
+          "key": "D",
+          "text": "「徳島ラーメン いのたに 本店」で、甘辛い豚肉と生卵が絡む一杯を啜った瞬間",
+          "description": "昭和の老舗が守り続ける濃厚な豚骨醤油のコクと優しい旨みが、旅の最後を満たしてくれた。",
+          "badge_code": "tokushima_inotani"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d7a2a758-07ef-4164-8fc0-8aa8474f73d3",
+        "name": "徳島城跡（徳島中央公園）",
+        "description": "蜂須賀家政が築いた阿波25万石の徳島城跡を整備した公園。復元された「鷲の門」や阿波青石を用いた見事な石垣、美しい水堀がJR徳島駅のすぐそばに広がる。入園自由・無料。",
+        "address": "徳島県徳島市徳島町城内1",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.075239,
+        "lng": 134.554436,
+        "qr_token": "shuin-tokushima-1",
+        "cover_image_url": "/images/tokushima/spot1.png",
+        "f7_fragment": "蜂須賀家ゆかりの阿波青石の石垣と鷲の門が残る、駅そばの城址公園。",
+        "f7_full": "「徳島城跡（徳島中央公園）」の阿波青石の石垣と水堀を歩き、駅そばに広がる阿波二十五万石の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "28c28a19-f25d-402f-8e7e-c7ae08b7a43d",
+        "next_spot_name": "O-ba'sh cafe.（オーバッシュ カフェ）"
+      },
+      {
+        "id": "28c28a19-f25d-402f-8e7e-c7ae08b7a43d",
+        "name": "O-ba'sh cafe.（オーバッシュ カフェ）",
+        "description": "新町川沿いの東船場エリアに佇む人気のナチュラルカフェ。自家製の天然酵母パンや地元の旬の野菜を使った料理、香り高い珈琲が楽しめる。7:30〜17:00（L.O.16:30）、月曜定休。",
+        "address": "徳島県徳島市東船場町1-26",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.070763,
+        "lng": 134.548113,
+        "qr_token": "shuin-tokushima-2",
+        "cover_image_url": "/images/tokushima/spot2.png",
+        "f7_fragment": "新町川近くで自家製天然酵母パンと珈琲を味わう、東船場の人気カフェ。",
+        "f7_full": "東船場の「O-ba'sh cafe.」で天然酵母パンと珈琲の温かな時間を過ごし、川に囲まれた徳島の街の魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "790ce1fe-157f-42ac-8a72-b4763c924b3e",
+        "next_spot_name": "阿波おどり会館"
+      },
+      {
+        "id": "790ce1fe-157f-42ac-8a72-b4763c924b3e",
+        "name": "阿波おどり会館",
+        "description": "400年以上の歴史を持つ「阿波おどり」を一年中体感できる徳島観光の拠点。昼夜の公演ホールや歴史展示、特産品館「あるでよ徳島」が揃う。9:00〜20:00（展示は17:00まで）、年4回休館。",
+        "address": "徳島県徳島市新町橋2-20",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.070164,
+        "lng": 134.54499,
+        "qr_token": "shuin-tokushima-3",
+        "cover_image_url": "/images/tokushima/spot3.png",
+        "f7_fragment": "四百年の歴史を誇る阿波おどりを一年中体感できる、徳島文化の拠点。",
+        "f7_full": "「阿波おどり会館」で徳島の伝統芸能・阿波おどりの歴史と魅力に触れ、地域に息づく熱い文化を体感した。",
+        "is_final": false,
+        "next_spot_id": "fe052d0e-2bfd-489c-8393-072956c2e4a6",
+        "next_spot_name": "眉山ロープウェイ（あわぎん眉山ロープウェイ）"
+      },
+      {
+        "id": "fe052d0e-2bfd-489c-8393-072956c2e4a6",
+        "name": "眉山ロープウェイ（あわぎん眉山ロープウェイ）",
+        "description": "阿波おどり会館5階から徳島のシンボル「眉山」の山頂まで約6分で結ぶロープウェイ。山頂展望台からは徳島市街や吉野川河口、晴天時には淡路島まで一望できる。9:00〜17:30（4〜10月は21:00まで）。",
+        "address": "徳島県徳島市新町橋2-20",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.070089,
+        "lng": 134.544938,
+        "qr_token": "shuin-tokushima-4",
+        "cover_image_url": "/images/tokushima/spot4.png",
+        "f7_fragment": "市街から約六分で山頂へ、吉野川と海を一望する徳島の絶景ロープウェイ。",
+        "f7_full": "「眉山ロープウェイ」で山頂へ上り、吉野川と徳島の街並みを見渡す壮大な風景に包まれて感動を味わった。",
+        "is_final": false,
+        "next_spot_id": "c624fc57-e69e-49cb-8df7-f07c8e5cbdbd",
+        "next_spot_name": "徳島ラーメン いのたに 本店"
+      },
+      {
+        "id": "c624fc57-e69e-49cb-8df7-f07c8e5cbdbd",
+        "name": "徳島ラーメン いのたに 本店",
+        "description": "徳島ラーメンの名を全国に広めた昭和41年（1966年）創業の老舗。コクがありつつ後味の良い豚骨醤油スープに、甘辛く煮た豚バラ肉と生卵が相性抜群。10:30〜17:00（売切終了）、月曜休。",
+        "address": "徳島県徳島市西大工町4-25",
+        "prefecture": "徳島県",
+        "city": "",
+        "lat": 34.074448,
+        "lng": 134.54305,
+        "qr_token": "shuin-tokushima-5",
+        "cover_image_url": "/images/tokushima/spot5.png",
+        "f7_fragment": "甘辛い豚バラ肉と生卵が豚骨醤油スープに絡む、徳島ラーメンの老舗名店。",
+        "f7_full": "老舗「徳島ラーメン いのたに 本店」で本場の一杯を味わい、城と踊りと眉山を巡った徳島の旅を力強く結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8610c521-a17e-4e4f-821b-53ca2f27ecfd",
+    "title": "佐世保・港の教会と元祖バーガーの街を歩く",
+    "name": "佐世保・港の教会と元祖バーガーの街を歩く",
+    "description": "日本最西端のJR駅・佐世保駅から、駅構内の「ログキット 佐世保駅店」と高台にそびえるゴシック様式の「カトリック三浦町教会」、海辺の「させぼ五番街」、昭和26年創業の老舗「ハンバーガーショップ ヒカリ させぼ五番街店」、活気ある「四ヶ町商店街」を巡る散策路。",
+    "region": "佐世保・港と教会の街",
+    "area_name": "佐世保・港と教会の街",
+    "cover_image_url": "/images/sasebo/route-eyecatch.png",
+    "imageUrl": "/images/sasebo/route-eyecatch.png",
+    "category": "港町とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "港町の異国情緒と本場佐世保バーガーの活気が繋がる佐世保を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ログキット 佐世保駅店」で、ボリューム満点のアメリカンスタイルバーガーに出会った瞬間",
+          "description": "駅に降り立った瞬間から漂うジューシーな香りに、海軍ゆかりの佐世保の食文化を実感した。",
+          "badge_code": "sasebo_logkit"
+        },
+        {
+          "key": "B",
+          "text": "「カトリック三浦町教会」の高台を見上げ、白と赤煉瓦の尖塔が青空に映える姿を見た瞬間",
+          "description": "戦火を耐え抜いた昭和初期のゴシック教会が、港町・佐世保の静かな祈りを伝えていた。",
+          "badge_code": "sasebo_church"
+        },
+        {
+          "key": "C",
+          "text": "「ハンバーガーショップ ヒカリ させぼ五番街店」で、創業半世紀超の老舗の味を頬張った瞬間",
+          "description": "海風を感じながら味わう特製マヨネーズと肉汁のハーモニーが、佐世保の旅を特別なものにした。",
+          "badge_code": "sasebo_hikari"
+        },
+        {
+          "key": "D",
+          "text": "「四ヶ町商店街」の一直線に伸びるアーケードを歩き、港町の賑わいと人情に触れた瞬間",
+          "description": "三ヶ町と繋がり日本一の長さを誇る一直線の商店街に、市民の暮らしが息づいていた。",
+          "badge_code": "sasebo_yonkacho"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "87e7e1c1-3b20-433b-894f-b092d952b154",
+        "name": "ログキット 佐世保駅店",
+        "description": "米海軍基地の街・佐世保で本場アメリカの味を伝える老舗「ログキット」の駅構内店。注文を受けてから焼き上げるジューシーなパティと自家製マヨネーズが人気。10:00〜19:00頃、木曜休。",
+        "address": "長崎県佐世保市三浦町21-2",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 33.163789,
+        "lng": 129.726111,
+        "qr_token": "shuin-sasebo-1",
+        "cover_image_url": "/images/sasebo/spot1.png",
+        "f7_fragment": "JR佐世保駅構内で本場アメリカ仕込みの味が楽しめる、老舗バーガー店。",
+        "f7_full": "駅構内の「ログキット 佐世保駅店」で本場仕込みの佐世保バーガーに触れ、異国情緒ある港町の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c34b6b4c-f93d-4ae4-8547-4b4b54058416",
+        "next_spot_name": "カトリック三浦町教会"
+      },
+      {
+        "id": "c34b6b4c-f93d-4ae4-8547-4b4b54058416",
+        "name": "カトリック三浦町教会",
+        "description": "昭和6年（1931年）に献堂された佐世保のシンボル的教会。駅のすぐ目の前の高台にそびえるゴシック様式の白と赤煉瓦の尖塔は、空襲を免れて港を見守り続けている。外観自由（堂内10:00〜14:00頃）。",
+        "address": "長崎県佐世保市三浦町4-25",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 33.16607,
+        "lng": 129.726101,
+        "qr_token": "shuin-sasebo-2",
+        "cover_image_url": "/images/sasebo/spot2.png",
+        "f7_fragment": "佐世保駅前の高台にそびえ戦火を耐え抜いた、優美なゴシック教会。",
+        "f7_full": "駅前の高台に立つ「カトリック三浦町教会」の優美な尖塔を仰ぎ、佐世保の祈りと異国情緒の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "d00a17ab-677d-4762-8d00-e56701a137c4",
+        "next_spot_name": "させぼ五番街"
+      },
+      {
+        "id": "d00a17ab-677d-4762-8d00-e56701a137c4",
+        "name": "させぼ五番街",
+        "description": "JR佐世保駅みなと口からすぐ、佐世保港に面して広がる海辺のオープンモール。青い港と停泊する艦船、九十九島方面の海風を感じながら買い物や散策が楽しめる。10:00〜21:00頃（店舗により異なる）。",
+        "address": "長崎県佐世保市新港町2-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 33.165304,
+        "lng": 129.722956,
+        "qr_token": "shuin-sasebo-3",
+        "cover_image_url": "/images/sasebo/spot3.png",
+        "f7_fragment": "佐世保駅みなと口すぐの海辺に広がる、潮風心地よい港のプロムナード。",
+        "f7_full": "佐世保港沿いの「させぼ五番街」で青い海と潮風を感じながら歩き、港町ならではの開放的な風景を満喫した。",
+        "is_final": false,
+        "next_spot_id": "4aafdd89-50e1-41a4-80a8-87e2cae02665",
+        "next_spot_name": "ハンバーガーショップ ヒカリ させぼ五番街店"
+      },
+      {
+        "id": "4aafdd89-50e1-41a4-80a8-87e2cae02665",
+        "name": "ハンバーガーショップ ヒカリ させぼ五番街店",
+        "description": "昭和26年（1951年）創業、佐世保バーガーの草分けとして愛される老舗「ヒカリ」の海辺の店舗。甘めの特製マヨネーズと香ばしいバンズが自慢のスペシャルバーガーが人気。10:00〜21:00、無休。",
+        "address": "長崎県佐世保市新港町3-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 33.164229,
+        "lng": 129.724031,
+        "qr_token": "shuin-sasebo-4",
+        "cover_image_url": "/images/sasebo/spot4.png",
+        "f7_fragment": "昭和二十六年創業、佐世保バーガーの草分け「ヒカリ」を味わう海辺の店。",
+        "f7_full": "老舗「ヒカリ させぼ五番街店」で伝統の特製マヨネーズが効いた佐世保バーガーを味わい、港町の食の粋を堪能した。",
+        "is_final": false,
+        "next_spot_id": "38adfdfb-cd12-4b9c-8cf5-093845fb3105",
+        "next_spot_name": "四ヶ町商店街"
+      },
+      {
+        "id": "38adfdfb-cd12-4b9c-8cf5-093845fb3105",
+        "name": "四ヶ町商店街",
+        "description": "隣接する三ヶ町商店街と合わせて直線約960mという日本一の長さを誇る全蓋式アーケード商店街。老舗の和洋菓子店や飲食店、雑貨店が軒を連ねて賑わう。各店舗10:00〜20:00頃中心。",
+        "address": "長崎県佐世保市本島町4-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 33.170053,
+        "lng": 129.722107,
+        "qr_token": "shuin-sasebo-5",
+        "cover_image_url": "/images/sasebo/spot5.png",
+        "f7_fragment": "三ヶ町と繋がり日本一の直線アーケードを誇る、佐世保の活気ある商店街。",
+        "f7_full": "一直線に伸びる「四ヶ町商店街」のアーケードを歩き、港町の賑わいと人情に包まれて佐世保の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "abeb0d21-afa3-44cf-8835-8aec16d4f2e7",
+    "title": "大沼・秀峰駒ヶ岳と湖畔の名物だんごを歩く",
+    "name": "大沼・秀峰駒ヶ岳と湖畔の名物だんごを歩く",
+    "description": "JR函館本線大沼駅から、濃厚なジャージー牛乳ソフトが人気の「山川牧場ミルクプラント」と森の隠れ家「caf'e DIANE」、明治38年創業の元祖大沼だんご「沼の家」、湖畔の憩いの場「ポロト館 大沼公園店」、絶景の「大沼国定公園（大沼公園広場）」を巡る散策路。",
+    "region": "大沼・駒ヶ岳と湖畔の名物だんご",
+    "area_name": "大沼・駒ヶ岳と湖畔の名物だんご",
+    "cover_image_url": "/images/onuma/route-eyecatch.png",
+    "imageUrl": "/images/onuma/route-eyecatch.png",
+    "category": "自然とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "秀峰駒ヶ岳を映す湖と明治から続く大沼だんごが繋がる大沼を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「山川牧場ミルクプラント」で、絞りたての特濃ソフトクリームを味わった瞬間",
+          "description": "大沼の豊かな牧草地が育むジャージー牛とホルスタイン牛のミルクのコクが、旅の始まりを彩った。",
+          "badge_code": "onuma_yamakawa"
+        },
+        {
+          "key": "B",
+          "text": "「沼の家」の折箱を開け、大沼の島々に見立てた一口サイズの元祖大沼だんごを見た瞬間",
+          "description": "明治三十八年創業の老舗が守り続ける素朴な正油と餡の味わいに、百二十年の歴史を感じた。",
+          "badge_code": "onuma_numanoya"
+        },
+        {
+          "key": "C",
+          "text": "「ポロト館 大沼公園店」で手作り体験や道南の食事を楽しみ、湖畔の賑わいに触れた瞬間",
+          "description": "大沼公園の散策拠点で味わう地元の恵みが、北海道の自然旅をいっそう豊かにしてくれた。",
+          "badge_code": "onuma_poroto"
+        },
+        {
+          "key": "D",
+          "text": "「大沼国定公園」の小島を結ぶ橋を渡り、湖の向こうにそびえる駒ヶ岳を仰いだ瞬間",
+          "description": "新日本三景にも選ばれた雄大な山容と湖面のきらめきが、大沼歩きの最後を美しく飾った。",
+          "badge_code": "onuma_park"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ae26463f-5a25-438c-8a83-7e2c7996527b",
+        "name": "山川牧場ミルクプラント",
+        "description": "大沼駅から北東へ延びる道沿いに構える牧場直営ショップ。自家牧場の特濃牛乳や濃厚なソフトクリーム、ローストビーフサンドが人気。4〜10月10:00〜17:00（11〜3月10:00〜16:00）、木曜定休。",
+        "address": "北海道亀田郡七飯町字大沼町628",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.971796,
+        "lng": 140.677624,
+        "qr_token": "shuin-onuma-1",
+        "cover_image_url": "/images/onuma/spot1.png",
+        "f7_fragment": "自家牧場の特濃ジャージー牛乳とソフトクリームが人気の、直営ショップ。",
+        "f7_full": "「山川牧場ミルクプラント」で絞りたての濃厚なソフトクリームを味わい、道南・大沼の豊かな散策を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "2fba7667-06ac-4eec-8937-cfac5f8ed69f",
+        "next_spot_name": "caf'e DIANE（カフェ・ダイアン）"
+      },
+      {
+        "id": "2fba7667-06ac-4eec-8937-cfac5f8ed69f",
+        "name": "caf'e DIANE（カフェ・ダイアン）",
+        "description": "大沼の穏やかな森のそばに佇むアットホームなカフェレストラン。地元ブランド豚「ひこま豚」のトンテキや大沼牛のカレー、自家製スイーツが味わえる。10:00〜20:00、木曜定休。",
+        "address": "北海道亀田郡七飯町字大沼町501-54",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.974578,
+        "lng": 140.671853,
+        "qr_token": "shuin-onuma-2",
+        "cover_image_url": "/images/onuma/spot2.png",
+        "f7_fragment": "ひこま豚や大沼牛など道南の恵みを味わえる、森のそばの温かいカフェ。",
+        "f7_full": "大沼の「caf'e DIANE」で地元ブランド豚や大沼牛の温かい食事を味わい、道南の大地が育む豊かな恵みに触れた。",
+        "is_final": false,
+        "next_spot_id": "33b6867d-1818-4a71-88f2-a7751f822ed9",
+        "next_spot_name": "沼の家（元祖大沼だんご）"
+      },
+      {
+        "id": "33b6867d-1818-4a71-88f2-a7751f822ed9",
+        "name": "沼の家（元祖大沼だんご）",
+        "description": "明治38年（1905年）創業、大沼名物「大沼だんご」の元祖として親しまれる老舗和菓子店。大沼・小沼に浮かぶ島々を表現したひと口サイズのお団子が名物。8:30〜18:00（売切終了）、無休。",
+        "address": "北海道亀田郡七飯町字大沼町145",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.981612,
+        "lng": 140.670648,
+        "qr_token": "shuin-onuma-3",
+        "cover_image_url": "/images/onuma/spot3.png",
+        "f7_fragment": "明治三十八年創業、大沼の島々を折箱に映した元祖大沼だんごの老舗。",
+        "f7_full": "明治創業の老舗「沼の家」で大沼の島々に見立てた元祖大沼だんごを手に取り、湖畔の伝統ある味わいに触れた。",
+        "is_final": false,
+        "next_spot_id": "7ac2d38f-ed1a-4216-8b1a-64a5e88bb4d8",
+        "next_spot_name": "ポロト館 大沼公園店"
+      },
+      {
+        "id": "7ac2d38f-ed1a-4216-8b1a-64a5e88bb4d8",
+        "name": "ポロト館 大沼公園店",
+        "description": "大沼国定公園の広場すぐそばに構える食事・体験・お土産の観光拠点。自家製アイスクリームや生キャラメルなどの乳製品スイーツ、地元食材の食事が楽しめる。9:00〜15:00頃（季節変動あり）、無休。",
+        "address": "北海道亀田郡七飯町大沼町1023-19",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.983191,
+        "lng": 140.672839,
+        "qr_token": "shuin-onuma-4",
+        "cover_image_url": "/images/onuma/spot4.png",
+        "f7_fragment": "大沼公園広場のすぐそばで、道南の味覚と体験を楽しめる湖畔の拠点。",
+        "f7_full": "大沼公園そばの「ポロト館 大沼公園店」で道南の味覚に触れ、湖畔散策の楽しいひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "12ee53ea-86df-4847-8535-a6fa57797f98",
+        "next_spot_name": "大沼国定公園（大沼公園広場）"
+      },
+      {
+        "id": "12ee53ea-86df-4847-8535-a6fa57797f98",
+        "name": "大沼国定公園（大沼公園広場）",
+        "description": "活火山・北海道駒ヶ岳の噴火によって生まれた大小の湖と126もの小島が織りなす新日本三景の一つ。湖上の小島を橋で結びながら散策でき、四季折々の雄大な絶景が広がる。散策自由・無料。",
+        "address": "北海道亀田郡七飯町字大沼町1023-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.985602,
+        "lng": 140.671056,
+        "qr_token": "shuin-onuma-5",
+        "cover_image_url": "/images/onuma/spot5.png",
+        "f7_fragment": "秀峰・駒ヶ岳と百二十六の小島を橋で結ぶ、新日本三景の大沼国定公園。",
+        "f7_full": "「大沼国定公園」の小島を結ぶ橋を渡って駒ヶ岳の絶景を仰ぎ、道南の自然と名物を巡った大沼の旅を清らかに結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
