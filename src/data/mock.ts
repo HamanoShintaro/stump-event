@@ -85150,5 +85150,525 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "b94daf3a-3ce0-42db-8275-087355363224",
+    "title": "札幌・赤れんが庁舎から時計台と大通へ",
+    "name": "札幌・赤れんが庁舎から時計台と大通へ",
+    "description": "JR札幌駅から、2025年7月に改修を終え再開した「北海道庁旧本庁舎（赤れんが庁舎）」、開拓の鐘が響く「札幌市時計台」、開放的な「MORIHICO. 藝術劇場」、札幌の中心を東西に貫く「大通公園」、街を一望する「さっぽろテレビ塔」を巡る散策路。",
+    "region": "札幌・赤れんがと時計台の街",
+    "area_name": "札幌・赤れんがと時計台の街",
+    "cover_image_url": "/images/sapporo/route-eyecatch.png",
+    "imageUrl": "/images/sapporo/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北国の開拓史を伝える赤れんがと時計台、緑豊かな大通を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「北海道庁旧本庁舎（赤れんが庁舎）」の重厚な煉瓦と緑の庭を眺めた瞬間",
+          "description": "保存修理を終えて蘇った明治の洋館が、札幌の開拓の歴史を力強く物語っていた。",
+          "badge_code": "sapporo_akarenga"
+        },
+        {
+          "key": "B",
+          "text": "「札幌市時計台」の白い木造建築を見上げ、澄んだ鐘の音に耳を澄ませた瞬間",
+          "description": "ビル街の中で時を刻み続ける時計台の姿に、北海道開拓への清らかな志を感じた。",
+          "badge_code": "sapporo_tokeidai"
+        },
+        {
+          "key": "C",
+          "text": "「MORIHICO. 藝術劇場」で、開放的な空間に広がる自家焙煎珈琲を味わった瞬間",
+          "description": "北海道発の珈琲文化に触れるひとときが、北の都の散策に心地よい余白をくれた。",
+          "badge_code": "sapporo_morihico"
+        },
+        {
+          "key": "D",
+          "text": "「さっぽろテレビ塔」の展望台から、真っ直ぐに伸びる大通公園を一望した瞬間",
+          "description": "碁盤の目の街並みと緑の帯が織りなすパノラマに、札幌という街の雄大さを実感した。",
+          "badge_code": "sapporo_tvtower"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "76cf5f60-9f2b-4824-8a47-325bfcc158cc",
+        "name": "北海道庁旧本庁舎（赤れんが庁舎）",
+        "description": "明治21年（1888年）に建てられたアメリカン・ネオバロック様式の煉瓦造洋館。大規模改修を経て2025年7月にリニューアルオープンした。8:45〜21:00、一般300円。",
+        "address": "北海道札幌市中央区北3条西6丁目1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.064111,
+        "lng": 141.34742,
+        "qr_token": "shuin-sapporo-1",
+        "cover_image_url": "/images/sapporo/spot1.png",
+        "f7_fragment": "明治の面影を残す赤煉瓦の洋館、2025年7月に改修を終えリニューアル。",
+        "f7_full": "「北海道庁旧本庁舎（赤れんが庁舎）」の重厚な煉瓦と緑の庭を眺め、札幌の歩みに触れた。",
+        "is_final": false,
+        "next_spot_id": "868787bc-1258-49f0-801f-0e49c2c23683",
+        "next_spot_name": "札幌市時計台"
+      },
+      {
+        "id": "868787bc-1258-49f0-801f-0e49c2c23683",
+        "name": "札幌市時計台",
+        "description": "旧札幌農学校の演武場として明治11年（1878年）に建てられた国の重要文化財。毎正時に澄んだ鐘の音が響く。8:45〜17:10、年始休、大人350円（高校生以下無料）。",
+        "address": "北海道札幌市中央区北1条西2丁目",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.062886,
+        "lng": 141.353487,
+        "qr_token": "shuin-sapporo-2",
+        "cover_image_url": "/images/sapporo/spot2.png",
+        "f7_fragment": "旧札幌農学校の演武場として建てられた国の重要文化財、澄んだ鐘が響く。",
+        "f7_full": "「札幌市時計台」の白い木造建築を見上げ、明治から時を刻む鐘の音に耳を澄ませた。",
+        "is_final": false,
+        "next_spot_id": "606fa5ff-4384-4228-8025-88b85cbc6f85",
+        "next_spot_name": "MORIHICO. 藝術劇場"
+      },
+      {
+        "id": "606fa5ff-4384-4228-8025-88b85cbc6f85",
+        "name": "MORIHICO. 藝術劇場",
+        "description": "札幌市民交流プラザ1階にある人気コーヒーブランド「森彦」の開放的な店舗。高い天井の下で自家焙煎珈琲とスイーツを味わえる。9:00〜19:00（L.O.18:30）。",
+        "address": "北海道札幌市中央区北1条西1丁目 札幌市民交流プラザ1F",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.062966,
+        "lng": 141.356206,
+        "qr_token": "shuin-sapporo-3",
+        "cover_image_url": "/images/sapporo/spot3.png",
+        "f7_fragment": "札幌市民交流プラザ1階、高い天井の下で森彦の自家焙煎珈琲が味わえる。",
+        "f7_full": "「MORIHICO. 藝術劇場」の開放的な空間で自家焙煎珈琲を味わい、北のカフェ文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "a8ce5ebe-0e45-4b08-88ff-9e70812eaa76",
+        "next_spot_name": "大通公園"
+      },
+      {
+        "id": "a8ce5ebe-0e45-4b08-88ff-9e70812eaa76",
+        "name": "大通公園",
+        "description": "札幌市の中心部を東西約1.5kmにわたって貫く都市公園。花壇や噴水、彫刻が配され、四季折々のイベントの舞台となる。常時開放、入園無料。",
+        "address": "北海道札幌市中央区大通西3丁目",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.060781,
+        "lng": 141.354132,
+        "qr_token": "shuin-sapporo-4",
+        "cover_image_url": "/images/sapporo/spot4.png",
+        "f7_fragment": "札幌中心部を東西に貫く緑の帯、花壇と噴水が彩る市民の憩いの場。",
+        "f7_full": "「大通公園」の開放的な花壇と並木道を歩き、札幌の伸びやかな街並みを体感した。",
+        "is_final": false,
+        "next_spot_id": "276eef83-6162-4b19-85ff-c86da20a1c9f",
+        "next_spot_name": "さっぽろテレビ塔"
+      },
+      {
+        "id": "276eef83-6162-4b19-85ff-c86da20a1c9f",
+        "name": "さっぽろテレビ塔",
+        "description": "大通公園の東端に立つ札幌のランドマーク。地上約90mの展望台から大通公園や石狩平野、日本海まで360度の景色を楽しめる。9:00〜22:00（最終入場21:50）、不定休。",
+        "address": "北海道札幌市中央区大通西1丁目",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.06109,
+        "lng": 141.35643,
+        "qr_token": "shuin-sapporo-5",
+        "cover_image_url": "/images/sapporo/spot5.png",
+        "f7_fragment": "大通公園東端に立つランドマーク、展望台から札幌市街を一望できる。",
+        "f7_full": "「さっぽろテレビ塔」の展望台から真っ直ぐ伸びる大通公園を一望し、札幌の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "f09562ea-3b9f-4ad4-87dc-268b4f976b95",
+    "title": "日光・朱塗りの神橋から東照宮と二荒山へ",
+    "name": "日光・朱塗りの神橋から東照宮と二荒山へ",
+    "description": "JR日光駅から、大谷川に架かる美しい朱塗りの「神橋」、天台宗の古刹「日光山 輪王寺」、徳川家康公を祀る豪華絢爛な「日光東照宮」、日光の総鎮守「日光二荒山神社」、古民家で味わう「日光珈琲 御用邸通」を巡る散策路。",
+    "region": "日光・世界遺産の社寺と杉並木",
+    "area_name": "日光・世界遺産の社寺と杉並木",
+    "cover_image_url": "/images/nikko/route-eyecatch.png",
+    "imageUrl": "/images/nikko/route-eyecatch.png",
+    "category": "歴史と寺社",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "清流に架かる朱塗りの橋と杉木立の世界遺産、御用邸通の珈琲を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「神橋」の鮮やかな朱塗りの欄干と、大谷川の清流が織りなす風景を望んだ瞬間",
+          "description": "日光山内への入り口を告げる美しい橋の姿に、これから始まる聖域の旅へ背筋が伸びた。",
+          "badge_code": "nikko_shinkyo"
+        },
+        {
+          "key": "B",
+          "text": "「日光山 輪王寺」の壮大な三佛堂で、金色の御本尊に静かに向き合った瞬間",
+          "description": "奈良時代に開かれた日光山信仰の原点に触れ、歴史の重みと静謐な空気に包まれた。",
+          "badge_code": "nikko_rinnoji"
+        },
+        {
+          "key": "C",
+          "text": "「日光東照宮」の陽明門の前に立ち、精緻を極めた極彩色の彫刻に見入った瞬間",
+          "description": "江戸時代初期の職人の技と美意識が結晶した門の輝きに、思わず時間を忘れた。",
+          "badge_code": "nikko_toshogu"
+        },
+        {
+          "key": "D",
+          "text": "「日光珈琲 御用邸通」で、古民家の温もりに包まれながら珈琲を味わった瞬間",
+          "description": "杉並木の余韻を感じながらいただく自家焙煎の一杯が、日光の旅を心地よく結んでくれた。",
+          "badge_code": "nikko_coffee"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8e163f80-eb8d-41a4-8676-d88293134a36",
+        "name": "神橋",
+        "description": "日光山内の入り口、大谷川の清流に架かる朱塗りの木造橋で世界遺産。奈良時代に勝道上人が山を開いた際の伝説に由来する。4〜10月8:30〜16:00（11〜3月9:30〜15:00）、渡橋料大人300円。",
+        "address": "栃木県日光市上鉢石町1300",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.75268,
+        "lng": 139.601345,
+        "qr_token": "shuin-nikko-1",
+        "cover_image_url": "/images/nikko/spot1.png",
+        "f7_fragment": "大谷川に架かる朱塗りの木造橋、日光山内の入り口を告げる世界遺産。",
+        "f7_full": "「神橋」の鮮やかな朱塗りの欄干と大谷川の清流を望み、日光の聖域へ足を踏み入れた。",
+        "is_final": false,
+        "next_spot_id": "8bbfb482-b457-4919-819c-796f04094c8a",
+        "next_spot_name": "日光山 輪王寺"
+      },
+      {
+        "id": "8bbfb482-b457-4919-819c-796f04094c8a",
+        "name": "日光山 輪王寺",
+        "description": "天平神護2年（766年）に勝道上人によって開かれた日光山信仰の総本山。三体の大仏を祀る三佛堂や大猷院などが世界遺産に登録。8:00〜17:00（11〜3月〜16:00）、三佛堂400円。",
+        "address": "栃木県日光市山内2300",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.756384,
+        "lng": 139.598257,
+        "qr_token": "shuin-nikko-2",
+        "cover_image_url": "/images/nikko/spot2.png",
+        "f7_fragment": "奈良時代開山の日光山総本山、三体の大仏を祀る壮大な三佛堂が名高い。",
+        "f7_full": "「日光山 輪王寺」の壮大な三佛堂で金色の御本尊に向き合い、日光山信仰の原点に触れた。",
+        "is_final": false,
+        "next_spot_id": "64cfb680-c8e2-457a-8780-c170050dbd92",
+        "next_spot_name": "日光東照宮"
+      },
+      {
+        "id": "64cfb680-c8e2-457a-8780-c170050dbd92",
+        "name": "日光東照宮",
+        "description": "江戸幕府初代将軍・徳川家康公を祀る世界遺産の神社。陽明門や眠り猫、三猿など江戸初期の豪華絢爛な彫刻が杉木立に輝く。9:00〜17:00（11〜3月〜16:00）、大人1600円。",
+        "address": "栃木県日光市山内2301",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.757037,
+        "lng": 139.599736,
+        "qr_token": "shuin-nikko-3",
+        "cover_image_url": "/images/nikko/spot3.png",
+        "f7_fragment": "徳川家康公を祀る世界遺産、陽明門や三猿など極彩色の彫刻が圧巻。",
+        "f7_full": "「日光東照宮」の陽明門の前に立ち、江戸初期の粋を集めた極彩色の彫刻に見入った。",
+        "is_final": false,
+        "next_spot_id": "d3e1d529-9fd6-4175-8fb0-b83bf8640215",
+        "next_spot_name": "日光二荒山神社"
+      },
+      {
+        "id": "d3e1d529-9fd6-4175-8fb0-b83bf8640215",
+        "name": "日光二荒山神社",
+        "description": "男体山を御神体山と仰ぎ、日光開山以来の厚い信仰を集める下野国一之宮で世界遺産。縁結びや開運の社として親しまれる。8:00〜17:00（11〜3月9:00〜16:00）、境内無料（神苑500円）。",
+        "address": "栃木県日光市山内2307",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.758487,
+        "lng": 139.596984,
+        "qr_token": "shuin-nikko-4",
+        "cover_image_url": "/images/nikko/spot4.png",
+        "f7_fragment": "男体山を御神体と仰ぐ下野国一之宮、御神木と霊泉が息づく世界遺産。",
+        "f7_full": "「日光二荒山神社」の朱塗りの社殿と御神木を拝観し、日光開山からの自然信仰に触れた。",
+        "is_final": false,
+        "next_spot_id": "0692c5fa-c13b-4a92-8334-36c73081d89c",
+        "next_spot_name": "日光珈琲 御用邸通"
+      },
+      {
+        "id": "0692c5fa-c13b-4a92-8334-36c73081d89c",
+        "name": "日光珈琲 御用邸通",
+        "description": "日光田母沢御用邸記念公園へ向かう歴史ある通りに佇む古民家カフェ。築80年以上の商家を改装した空間で自家焙煎珈琲やガレットを味わえる。10:00〜18:00（L.O.17:00）、月曜・第1・3火曜休。",
+        "address": "栃木県日光市本町3-13",
+        "prefecture": "栃木県",
+        "city": "",
+        "lat": 36.753193,
+        "lng": 139.595298,
+        "qr_token": "shuin-nikko-5",
+        "cover_image_url": "/images/nikko/spot5.png",
+        "f7_fragment": "御用邸通の古民家カフェ、自家焙煎珈琲や天然氷のかき氷が味わえる。",
+        "f7_full": "「日光珈琲 御用邸通」の古民家で自家焙煎珈琲を味わい、世界遺産散策の余韻を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7439619e-fc75-494e-8156-bfef801db5c0",
+    "title": "名古屋・老舗喫茶から四間道と名古屋城へ",
+    "name": "名古屋・老舗喫茶から四間道と名古屋城へ",
+    "description": "JR名古屋駅から、名物エビフライサンドが人気の老舗「コンパル サンロード店」、赤レンガ工場が並ぶ「ノリタケの森」、土蔵と屋根神様が残る「四間道」、下町の風情あふれる「円頓寺商店街」、金の鯱が輝く「名古屋城」を巡る散策路。",
+    "region": "名古屋・四間道と金の鯱の城下",
+    "area_name": "名古屋・四間道と金の鯱の城下",
+    "cover_image_url": "/images/nagoya/route-eyecatch.png",
+    "imageUrl": "/images/nagoya/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "名古屋喫茶の一杯と赤レンガの庭、土蔵の路地から名城までを巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「コンパル サンロード店」で、香り高い珈琲と名物エビフライサンドを味わった瞬間",
+          "description": "昭和から続く名古屋喫茶の活気と丁寧な味わいが、尾張の旅の始まりを力強く満たしてくれた。",
+          "badge_code": "nagoya_konparu"
+        },
+        {
+          "key": "B",
+          "text": "「ノリタケの森」で、明治の赤レンガ工場と緑豊かな芝生の広場を歩いた瞬間",
+          "description": "近代日本の陶磁器産業を牽引した歴史と、都心の開放的な緑の調和が心地よかった。",
+          "badge_code": "nagoya_noritake"
+        },
+        {
+          "key": "C",
+          "text": "「四間道」の白壁の土蔵が続く石畳を歩き、屋根の上の小さな祠を見つけた瞬間",
+          "description": "大通りから一歩入った静かな路地に、江戸時代の商人の町並みが色濃く息づいていた。",
+          "badge_code": "nagoya_shikemichi"
+        },
+        {
+          "key": "D",
+          "text": "「名古屋城」の広大な本丸に入り、金色に輝く鯱と絢爛な本丸御殿を仰いだ瞬間",
+          "description": "徳川御三家筆頭の威光を示す壮大な石垣と御殿の美しさに、尾張名古屋の底力を感じた。",
+          "badge_code": "nagoya_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7895784d-2b7d-41d2-8473-8d757588528e",
+        "name": "コンパル サンロード店",
+        "description": "昭和22年創業、名古屋を代表する老舗喫茶店の名駅地下街店舗。濃いめの珈琲と熱々のエビフライサンドが名物。8:00〜21:00、無休（元日休）。",
+        "address": "愛知県名古屋市中村区名駅4-7-25先 名古屋地下街サンロード",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.169718,
+        "lng": 136.884547,
+        "qr_token": "shuin-nagoya-1",
+        "cover_image_url": "/images/nagoya/spot1.png",
+        "f7_fragment": "昭和22年創業の名古屋老舗喫茶、名物エビフライサンドが人気。",
+        "f7_full": "「コンパル サンロード店」で珈琲とエビフライサンドを味わい、名古屋の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "102b3417-d398-4803-82b5-5e03a776aba9",
+        "next_spot_name": "ノリタケの森"
+      },
+      {
+        "id": "102b3417-d398-4803-82b5-5e03a776aba9",
+        "name": "ノリタケの森",
+        "description": "洋食器メーカー・ノリタケの本社敷地内に広がる複合施設。明治期の赤レンガ工場建築や窯の煙突、緑豊かな広場が調和する。10:00〜18:00（施設により異なる）、月曜休。",
+        "address": "愛知県名古屋市西区則武新町3-1-36",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.179115,
+        "lng": 136.881218,
+        "qr_token": "shuin-nagoya-2",
+        "cover_image_url": "/images/nagoya/spot2.png",
+        "f7_fragment": "明治の赤レンガ工場と緑の芝生が調和する、陶磁器の文化拠点。",
+        "f7_full": "「ノリタケの森」で明治の赤レンガ工場と緑豊かな広場を歩き、ものづくりの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "e292e57c-0da8-42e9-8406-29dd981724a6",
+        "next_spot_name": "四間道"
+      },
+      {
+        "id": "e292e57c-0da8-42e9-8406-29dd981724a6",
+        "name": "四間道",
+        "description": "元禄13年（1700年）の大火後に防火のため道幅を四間（約7m）に広げたことに由来する歴史的町並み。白壁の土蔵と町家が並ぶ。散策自由、無料。",
+        "address": "愛知県名古屋市西区那古野1-36",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.174947,
+        "lng": 136.892625,
+        "qr_token": "shuin-nagoya-3",
+        "cover_image_url": "/images/nagoya/spot3.png",
+        "f7_fragment": "江戸の大火後に築かれた白壁の土蔵と屋根神様が残る歴史的町並み。",
+        "f7_full": "「四間道」の白壁の土蔵が続く静かな路地を歩き、屋根神様が残る城下町の風情に触れた。",
+        "is_final": false,
+        "next_spot_id": "ee621a59-7747-49c5-8b9f-e6331fdf39cf",
+        "next_spot_name": "円頓寺商店街"
+      },
+      {
+        "id": "ee621a59-7747-49c5-8b9f-e6331fdf39cf",
+        "name": "円頓寺商店街",
+        "description": "名古屋駅と名古屋城の中間に位置する、明治時代からの歴史を持つアーケード商店街。老舗の和菓子屋や個性的なカフェが軒を連ねる。店舗により営業時間・定休日は異なる。",
+        "address": "愛知県名古屋市西区那古野1-10",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.176896,
+        "lng": 136.891083,
+        "qr_token": "shuin-nagoya-4",
+        "cover_image_url": "/images/nagoya/spot4.png",
+        "f7_fragment": "明治から続く下町のアーケード商店街、老舗と新店が心地よく共存する。",
+        "f7_full": "「円頓寺商店街」のアーケードを歩き、老舗と新しい店が交わる下町の温もりに触れた。",
+        "is_final": false,
+        "next_spot_id": "6eeeccb7-5749-420a-8059-d4adde0d0757",
+        "next_spot_name": "名古屋城"
+      },
+      {
+        "id": "6eeeccb7-5749-420a-8059-d4adde0d0757",
+        "name": "名古屋城",
+        "description": "慶長15年（1610年）に徳川家康公の命で築城された日本三名城のひとつ。金の鯱を戴く天守外観と忠実に復元された豪華な本丸御殿が見事。9:00〜16:30（入場16:00迄）、大人1000円。",
+        "address": "愛知県名古屋市中区本丸1-1",
+        "prefecture": "愛知県",
+        "city": "",
+        "lat": 35.18475,
+        "lng": 136.899688,
+        "qr_token": "shuin-nagoya-5",
+        "cover_image_url": "/images/nagoya/spot5.png",
+        "f7_fragment": "金の鯱が輝く徳川御三家筆頭の名城、復元された本丸御殿が壮麗。",
+        "f7_full": "「名古屋城」で金の鯱と豪華な本丸御殿を仰ぎ見ながら、尾張名古屋の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "6cd8a12c-52ac-42c3-87c3-1974ea210b1e",
+    "title": "京都・東寺の五重塔から本願寺と渉成園へ",
+    "name": "京都・東寺の五重塔から本願寺と渉成園へ",
+    "description": "JR京都駅から、駅構内で創業の味を楽しめる「イノダコーヒ 八条口支店」、日本一高い木造五重塔がそびえる世界遺産「東寺（教王護国寺）」、唐門や御影堂が壮麗な「西本願寺」、世界最大級の木造伽藍「東本願寺」、名勝池泉庭園「渉成園」を巡る散策路。",
+    "region": "京都・駅南東の大伽藍と庭園",
+    "area_name": "京都・駅南東の大伽藍と庭園",
+    "cover_image_url": "/images/kyoto/route-eyecatch.png",
+    "imageUrl": "/images/kyoto/route-eyecatch.png",
+    "category": "歴史と寺社",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "京都駅を起点に千年の大伽藍と名勝庭園、老舗の珈琲を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「イノダコーヒ 八条口支店」で、創業以来の深い香りの珈琲を味わった瞬間",
+          "description": "旅の出発点・京都駅でいただくクラシックな一杯が、千年の都への歩みを優雅に整えてくれた。",
+          "badge_code": "kyoto_inoda"
+        },
+        {
+          "key": "B",
+          "text": "「東寺（教王護国寺）」の境内で、日本一高い木造の五重塔を仰ぎ見た瞬間",
+          "description": "平安京の時代から京都の玄関口を見守り続ける塔の威容に、思わず息を呑んだ。",
+          "badge_code": "kyoto_toji"
+        },
+        {
+          "key": "C",
+          "text": "「西本願寺」の広大な境内に立ち、国宝の御影堂と阿弥陀堂の壮麗さに触れた瞬間",
+          "description": "桃山文化の粋を今に伝える大伽藍の静けさが、街の賑わいを忘れさせてくれた。",
+          "badge_code": "kyoto_nishihonganji"
+        },
+        {
+          "key": "D",
+          "text": "「渉成園」の印月池のほとりを歩き、都心とは思えない静かな庭園を眺めた瞬間",
+          "description": "木々の向こうに京都タワーが顔を覗かせる借景の美しさに、新旧が調和する京都を感じた。",
+          "badge_code": "kyoto_shoseien"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7ed36524-536a-4f22-81f5-d83b229538c1",
+        "name": "イノダコーヒ 八条口支店",
+        "description": "昭和15年創業の京都を代表する老舗珈琲店の駅構内店舗。看板メニュー「アラビアの真珠」やモーニングを旅の始まりに楽しめる。8:00〜20:00（L.O.19:30）、無休。",
+        "address": "京都府京都市下京区東塩小路高倉町8-3 JR京都駅八条口1F",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.984569,
+        "lng": 135.759335,
+        "qr_token": "shuin-kyoto-1",
+        "cover_image_url": "/images/kyoto/spot1.png",
+        "f7_fragment": "京都駅構内で昭和15年創業の味わいを楽しめる老舗珈琲店。",
+        "f7_full": "「イノダコーヒ 八条口支店」で伝統の珈琲を味わい、京都の旅を優雅に始めた。",
+        "is_final": false,
+        "next_spot_id": "92ba366d-c7b2-4e65-8ffd-3bb80f669a13",
+        "next_spot_name": "東寺（教王護国寺）"
+      },
+      {
+        "id": "92ba366d-c7b2-4e65-8ffd-3bb80f669a13",
+        "name": "東寺（教王護国寺）",
+        "description": "平安京遷都とともに創建された真言宗の総本山で世界遺産。高さ約55mの日本一高い木造五重塔が京都の象徴としてそびえる。境内5:00〜17:00（金堂・講堂8:00〜17:00、大人800円）。",
+        "address": "京都府京都市南区九条町1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.980339,
+        "lng": 135.747693,
+        "qr_token": "shuin-kyoto-2",
+        "cover_image_url": "/images/kyoto/spot2.png",
+        "f7_fragment": "高さ約55mの日本一高い木造五重塔がそびえる、真言宗総本山の世界遺産。",
+        "f7_full": "「東寺（教王護国寺）」の境内で日本一高い五重塔を仰ぎ見、平安京からの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "18cf4d5d-36c6-4063-8761-d6d30a9b0ff2",
+        "next_spot_name": "西本願寺"
+      },
+      {
+        "id": "18cf4d5d-36c6-4063-8761-d6d30a9b0ff2",
+        "name": "西本願寺",
+        "description": "浄土真宗本願寺派の本山で世界遺産。国宝の御影堂・阿弥陀堂や豪華な唐門など桃山文化の粋を伝える。5:30〜17:00、境内参拝無料。",
+        "address": "京都府京都市下京区堀川通花屋町下る本願寺門前町60",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.992012,
+        "lng": 135.754363,
+        "qr_token": "shuin-kyoto-3",
+        "cover_image_url": "/images/kyoto/spot3.png",
+        "f7_fragment": "国宝の御影堂と阿弥陀堂がそびえ、桃山文化を今に伝える世界遺産。",
+        "f7_full": "「西本願寺」の広大な境内で国宝の御影堂と唐門を拝観し、壮麗な伽藍の静けさに触れた。",
+        "is_final": false,
+        "next_spot_id": "605545d9-f268-4f1a-87e0-49a5c2854445",
+        "next_spot_name": "東本願寺"
+      },
+      {
+        "id": "605545d9-f268-4f1a-87e0-49a5c2854445",
+        "name": "東本願寺",
+        "description": "烏丸通に面してそびえる真宗大谷派の本山（真宗本廟）。世界最大級の木造建築である御影堂が旅人を迎える。3〜10月5:50〜17:30（11〜2月6:20〜16:30）、参拝無料。",
+        "address": "京都府京都市下京区烏丸通七条上る常葉町754",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.990446,
+        "lng": 135.75956,
+        "qr_token": "shuin-kyoto-4",
+        "cover_image_url": "/images/kyoto/spot4.png",
+        "f7_fragment": "世界最大級の木造建築・御影堂が烏丸通にそびえる真宗大谷派の本山。",
+        "f7_full": "「東本願寺」の広大な御影堂に座り、木の香りと静謐な空気に包まれるひとときを過ごした。",
+        "is_final": false,
+        "next_spot_id": "d7a7d62d-2b39-48b5-8e2c-6da6aeb389d9",
+        "next_spot_name": "渉成園"
+      },
+      {
+        "id": "d7a7d62d-2b39-48b5-8e2c-6da6aeb389d9",
+        "name": "渉成園",
+        "description": "東本願寺の飛地境内にある国指定名勝の池泉庭園（枳殻邸）。印月池の周囲に書院や茶室、侵雪橋などが配される。3〜10月9:00〜17:00（11〜2月〜16:00）、参拝寄付金700円以上。",
+        "address": "京都府京都市下京区下珠数屋町通間之町東入東玉水町1",
+        "prefecture": "京都府",
+        "city": "",
+        "lat": 34.991319,
+        "lng": 135.762883,
+        "qr_token": "shuin-kyoto-5",
+        "cover_image_url": "/images/kyoto/spot5.png",
+        "f7_fragment": "東本願寺の飛地境内に広がる国指定名勝の池泉庭園、四季の風情が豊か。",
+        "f7_full": "「渉成園」の印月池のほとりを歩き、都心の静寂に包まれて京都の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
