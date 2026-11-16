@@ -82550,5 +82550,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "237267a6-2f95-450e-85b8-524a0930119e",
+    "title": "旭川・旭川ラーメンと石狩川に架かる旭橋を歩く",
+    "name": "旭川・旭川ラーメンと石狩川に架かる旭橋を歩く",
+    "description": "JR旭川駅から、昭和44年創業の「梅光軒 旭川本店」と歴史的建造物を活かした「福吉カフェ 旭橋本店」、常磐公園の「上川神社頓宮」と「常磐公園」、北海道遺産に選ばれる石狩川の鉄橋「旭橋」を巡る散策路。",
+    "region": "旭川・買物公園と石狩川の旭橋",
+    "area_name": "旭川・買物公園と石狩川の旭橋",
+    "cover_image_url": "/images/asahikawa/route-eyecatch.png",
+    "imageUrl": "/images/asahikawa/route-eyecatch.png",
+    "category": "街歩きとグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北海道第二の都市の食と水辺のシンボルが繋がる旭川を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「梅光軒 旭川本店」で、豚骨と魚介のダブルスープに極太メンマがのる旭川ラーメンを味わった瞬間",
+          "description": "昭和四十四年創業の老舗が守り続ける醤油のコクが、北の大地の街歩きを温かく支えてくれた。",
+          "badge_code": "asahikawa_baikoken"
+        },
+        {
+          "key": "B",
+          "text": "「福吉カフェ 旭橋本店」のレトロな空間で、和の素材を使ったときわ焼きと焙煎珈琲を味わった瞬間",
+          "description": "大正時代の旧製粉所を活かした温かな店内で、旭橋のたもとの穏やかな時間に癒やされた。",
+          "badge_code": "asahikawa_fukuyoshi"
+        },
+        {
+          "key": "C",
+          "text": "「上川神社頓宮」の木立に包まれた社殿へ参拝し、旭川開拓の総鎮守に旅の無事を祈った瞬間",
+          "description": "千鳥ヶ池のほとりに鎮まる厳かな境内が、都市の真ん中にある静けさを教えてくれた。",
+          "badge_code": "asahikawa_kamikawa"
+        },
+        {
+          "key": "D",
+          "text": "「旭橋」の優美な曲線を描く鋼鉄アーチの歩道を渡り、雄大な石狩川の流れを望んだ瞬間",
+          "description": "昭和七年架橋の北海道遺産越しに見る大雪山の山並みが、旭川の旅を誇らしく締めくくった。",
+          "badge_code": "asahikawa_asahibashi"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c8e52aad-70d6-44cc-801f-a05528327dbf",
+        "name": "梅光軒 旭川本店",
+        "description": "昭和44年（1969年）創業、動物系と魚介系のダブルスープに極太メンマを合わせた旭川ラーメンの老舗本店。11:00〜15:30・17:00〜21:00（日祝〜20:30）、不定休。",
+        "address": "北海道旭川市2条通8丁目 買物公園ピアザビル B1F",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.766158,
+        "lng": 142.359704,
+        "qr_token": "shuin-asahikawa-1",
+        "cover_image_url": "/images/asahikawa/spot1.png",
+        "f7_fragment": "昭和四十四年創業、豚骨と魚介のダブルスープを守る旭川ラーメンの名店。",
+        "f7_full": "旭川の「梅光軒 旭川本店」で豚骨と魚介が調和する老舗の醤油ラーメンを味わい、北の街歩きの活力を得た。",
+        "is_final": false,
+        "next_spot_id": "7d6f02c0-901a-4670-8b55-1f953608ec2f",
+        "next_spot_name": "福吉カフェ 旭橋本店"
+      },
+      {
+        "id": "7d6f02c0-901a-4670-8b55-1f953608ec2f",
+        "name": "福吉カフェ 旭橋本店",
+        "description": "大正14年建築の旧北島製粉所を再生したレトロな古建築カフェ。旭橋のトラスをイメージした名物「ときわ焼き」や和ドリンクが人気。10:00〜19:00（季節により変動あり）、年中無休。",
+        "address": "北海道旭川市常盤通2丁目1970-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.775554,
+        "lng": 142.362207,
+        "qr_token": "shuin-asahikawa-2",
+        "cover_image_url": "/images/asahikawa/spot2.png",
+        "f7_fragment": "大正時代の旧製粉所を再生した、旭橋たもとの和モダン茶房。",
+        "f7_full": "旭川の「福吉カフェ 旭橋本店」で大正建築のぬくもりに触れながら名物ときわ焼きを味わい、川辺への歩みを進めた。",
+        "is_final": false,
+        "next_spot_id": "1217abeb-5648-4447-838e-08d8088d5f7d",
+        "next_spot_name": "上川神社頓宮"
+      },
+      {
+        "id": "1217abeb-5648-4447-838e-08d8088d5f7d",
+        "name": "上川神社頓宮",
+        "description": "神楽岡に本宮を構える上川神社の街中の拠点として、常磐公園の千鳥ヶ池ほとりに鎮座する古社。開拓の祖神・天照皇大神などを祀る。境内自由・社務所9:00〜17:00、無休。",
+        "address": "北海道旭川市常磐公園1971-34",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.775179,
+        "lng": 142.359106,
+        "qr_token": "shuin-asahikawa-3",
+        "cover_image_url": "/images/asahikawa/spot3.png",
+        "f7_fragment": "千鳥ヶ池のほとりに鎮座し、市民の祈りを受け止める上川神社の街の杜。",
+        "f7_full": "常磐公園内の「上川神社頓宮」に参拝し、木立と池に囲まれた静謐な境内で旭川の開拓の歴史に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "6262e549-04c7-445b-8b15-e10b6bd7d22d",
+        "next_spot_name": "常磐公園"
+      },
+      {
+        "id": "6262e549-04c7-445b-8b15-e10b6bd7d22d",
+        "name": "常磐公園",
+        "description": "日本の都市公園100選にも選ばれた旭川最古の総合公園。石狩川の旧流路を活かした千鳥ヶ池や白鳥池、豊かな緑と文化施設が調和する。入園自由・無休。",
+        "address": "北海道旭川市常磐公園1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.775929,
+        "lng": 142.357704,
+        "qr_token": "shuin-asahikawa-4",
+        "cover_image_url": "/images/asahikawa/spot4.png",
+        "f7_fragment": "日本の都市公園百選に選ばれる、石狩川沿いの緑豊かな旭川最古の公園。",
+        "f7_full": "四季の表情豊かな「常磐公園」の池畔を歩き、文化施設と自然が寄り添う旭川の穏やかな時間を感じた。",
+        "is_final": false,
+        "next_spot_id": "4b2c8cfc-f647-4c27-8c86-414a2a252471",
+        "next_spot_name": "旭橋"
+      },
+      {
+        "id": "4b2c8cfc-f647-4c27-8c86-414a2a252471",
+        "name": "旭橋",
+        "description": "昭和7年（1932年）に完成した全長225mの優美な鋼鉄アーチ橋で、北海道遺産に選定されている旭川のシンボル。石狩川と遠く大雪連峰を一望できる。通行自由・終日開放。",
+        "address": "北海道旭川市常盤通3丁目",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 43.778511,
+        "lng": 142.360179,
+        "qr_token": "shuin-asahikawa-5",
+        "cover_image_url": "/images/asahikawa/spot5.png",
+        "f7_fragment": "昭和七年架橋、石狩川に優雅なアーチを描く北海道遺産のシンボル橋。",
+        "f7_full": "北海道遺産の「旭橋」から石狩川と大雪連峰を望み、ラーメンと古建築と水辺の杜を巡った旭川の旅を誇らしく結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cb023136-94d0-4f99-844b-de4a6751e713",
+    "title": "盛岡・賢治の民藝と赤レンガの城下町を歩く",
+    "name": "盛岡・賢治の民藝と赤レンガの城下町を歩く",
+    "description": "JR盛岡駅から、宮沢賢治『注文の多い料理店』を出版した「光原社 可否館」と南部藩総鎮守「櫻山神社」、石垣美しい「盛岡城跡公園」、明治の洋館「岩手銀行赤レンガ館」、明治40年創業「東家 本店」を巡る散策路。",
+    "region": "盛岡・賢治の足跡と赤レンガの城下町",
+    "area_name": "盛岡・賢治の足跡と赤レンガの城下町",
+    "cover_image_url": "/images/morioka/route-eyecatch.png",
+    "imageUrl": "/images/morioka/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "文学と民藝、明治の洋風建築と伝統の食が響き合う盛岡を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「光原社 可否館」の中庭へ続く小径を抜け、重厚な木造喫茶室で珈琲を味わった瞬間",
+          "description": "宮沢賢治の童話集を世に出した老舗の空気と、南部鉄器や漆器の温もりが旅の序章を彩った。",
+          "badge_code": "morioka_kogensha"
+        },
+        {
+          "key": "B",
+          "text": "「盛岡城跡公園」の幾重にも積まれた花崗岩の石垣の上に立ち、城下町を見渡した瞬間",
+          "description": "北上川と中津川に抱かれた不来方城の石垣が、四百年続く盛岡の品格を物語っていた。",
+          "badge_code": "morioka_castle"
+        },
+        {
+          "key": "C",
+          "text": "「岩手銀行赤レンガ館」の辰野式赤レンガと白い花崗岩のコントラストを見上げた瞬間",
+          "description": "東京駅と同じ辰野金吾が手掛けた明治の洋館が、中津川のたもとで今も街を照らしていた。",
+          "badge_code": "morioka_akarenga"
+        },
+        {
+          "key": "D",
+          "text": "「東家 本店」の座敷で、威勢のよい掛け声とともに名物・わんこそばを味わった瞬間",
+          "description": "明治四十年創業の老舗のおもてなしと薬味の彩りが、盛岡の旅の締めくくりを笑顔にした。",
+          "badge_code": "morioka_azumaya"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f0c4cb7d-6843-4a54-85a1-ef0894a24364",
+        "name": "光原社 可否館",
+        "description": "大正13年創業、宮沢賢治の童話集『注文の多い料理店』を出版した民藝の老舗に併設された喫茶室。深煎り珈琲とくるみクッキーが人気。10:00〜17:00、毎月15日休（土日祝は翌平日振替）。",
+        "address": "岩手県盛岡市材木町2-18",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.705982,
+        "lng": 141.138004,
+        "qr_token": "shuin-morioka-1",
+        "cover_image_url": "/images/morioka/spot1.png",
+        "f7_fragment": "宮沢賢治の童話集を刊行した老舗民藝店に佇む、静謐な珈琲室。",
+        "f7_full": "盛岡の「光原社 可否館」で民藝の美と深煎り珈琲に触れ、宮沢賢治の息吹が残る城下町歩きを始めた。",
+        "is_final": false,
+        "next_spot_id": "3a3b114f-df88-4f16-80c3-8655fd5ebef7",
+        "next_spot_name": "櫻山神社"
+      },
+      {
+        "id": "3a3b114f-df88-4f16-80c3-8655fd5ebef7",
+        "name": "櫻山神社",
+        "description": "盛岡城跡の懐に鎮座する南部藩総鎮守。南部藩初代藩主・南部信直公などを祀り、社殿背後には高さ約6mの巨岩「烏帽子岩」がそびえる。参拝24時間（社務所9:00〜17:00）、無休。",
+        "address": "岩手県盛岡市内丸1-42",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.701448,
+        "lng": 141.151904,
+        "qr_token": "shuin-morioka-2",
+        "cover_image_url": "/images/morioka/spot2.png",
+        "f7_fragment": "巨大な烏帽子岩が鎮座する、南部藩総鎮守「桜山さん」。",
+        "f7_full": "南部藩総鎮守の「櫻山神社」に参拝し、ご神体の巨岩「烏帽子岩」と城下町の祈りの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "0d075919-8a0d-45c7-8208-9ac570a1ffbb",
+        "next_spot_name": "盛岡城跡公園"
+      },
+      {
+        "id": "0d075919-8a0d-45c7-8208-9ac570a1ffbb",
+        "name": "盛岡城跡公園",
+        "description": "北上川と中津川の合流点に築かれた不来方城跡の史跡公園。地元産の花崗岩を精巧に積み上げた石垣は東北三大城跡の一つに数えられる美しさを誇る。散策自由・無休。",
+        "address": "岩手県盛岡市内丸1-37",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.7003,
+        "lng": 141.151079,
+        "qr_token": "shuin-morioka-3",
+        "cover_image_url": "/images/morioka/spot3.png",
+        "f7_fragment": "精巧な花崗岩の石垣が残る、石川啄木や宮沢賢治も愛した不来方城跡。",
+        "f7_full": "「盛岡城跡公園」の美しい花崗岩の石垣を歩き、啄木や賢治が青春時代に眺めた盛岡の風景を重ねた。",
+        "is_final": false,
+        "next_spot_id": "a2afae9c-3b40-4dc7-8f31-e0774046dd03",
+        "next_spot_name": "岩手銀行赤レンガ館"
+      },
+      {
+        "id": "a2afae9c-3b40-4dc7-8f31-e0774046dd03",
+        "name": "岩手銀行赤レンガ館",
+        "description": "東京駅を手掛けた辰野金吾と盛岡出身の葛西萬司の設計により、明治44年（1911年）に建てられた国重要文化財の洋館。10:00〜17:00（最終入館16:30）、火曜休、岩手銀行ゾーン無料（盛岡銀行ゾーン300円）。",
+        "address": "岩手県盛岡市中ノ橋通1-2-20",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.700519,
+        "lng": 141.155215,
+        "qr_token": "shuin-morioka-4",
+        "cover_image_url": "/images/morioka/spot4.png",
+        "f7_fragment": "辰野金吾と葛西萬司が手掛けた、明治四十四年建築の国重要文化財。",
+        "f7_full": "「岩手銀行赤レンガ館」の重厚な赤レンガと白い花崗岩の造形を仰ぎ、明治の盛岡の近代建築美を堪能した。",
+        "is_final": false,
+        "next_spot_id": "b6cb4d54-6da0-4f8f-8b80-fc572950f2db",
+        "next_spot_name": "東家 本店"
+      },
+      {
+        "id": "b6cb4d54-6da0-4f8f-8b80-fc572950f2db",
+        "name": "東家 本店",
+        "description": "明治40年（1907年）創業、盛岡名物「わんこそば」の老舗本店。給仕の掛け声とともに温かいひと口そばを味わえるほか、特製かつ丼なども人気。11:00〜15:00・17:00〜19:00 L.O.（わんこそば18:30 L.O.）、第1水曜休。",
+        "address": "岩手県盛岡市中ノ橋通1-8-3",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.700486,
+        "lng": 141.156575,
+        "qr_token": "shuin-morioka-5",
+        "cover_image_url": "/images/morioka/spot5.png",
+        "f7_fragment": "明治四十年創業、お給仕のおもてなしが名物のわんこそばの老舗本店。",
+        "f7_full": "明治創業の「東家 本店」で伝統のわんこそばのおもてなしを味わい、文学と建築と食の盛岡旅を笑顔で結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "144af45e-3c11-4027-8a9e-2e86fe211b32",
+    "title": "高崎・名建築と純喫茶の城下町を歩く",
+    "name": "高崎・名建築と純喫茶の城下町を歩く",
+    "description": "JR高崎駅から、アントニン・レーモンドの建築思想を継ぐ「高崎市美術館・旧井上房一郎邸」と鞘町の音楽と珈琲の隠れ家「SLOW TIME cafe」、白壁の乾櫓が残る「高崎城址公園」、源頼政公ゆかりの「頼政神社」、高崎総鎮守「高崎神社」を巡る散策路。",
+    "region": "高崎・旧邸宅の美とレトロ純喫茶の城下町",
+    "area_name": "高崎・旧邸宅の美とレトロ純喫茶の城下町",
+    "cover_image_url": "/images/takasaki/route-eyecatch.png",
+    "imageUrl": "/images/takasaki/route-eyecatch.png",
+    "category": "街歩きとアート",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "建築と純喫茶、城跡と古社が駅近くに凝縮する高崎を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「高崎市美術館・旧井上房一郎邸」で、戦後の高崎文化を支えたモダニズムの平屋と庭を眺めた瞬間",
+          "description": "建築家アントニン・レーモンドの自宅兼事務所を移築したような清々しい木造空間が印象に残った。",
+          "badge_code": "takasaki_inouetei"
+        },
+        {
+          "key": "B",
+          "text": "「SLOW TIME cafe」の音楽とアートブックに囲まれた空間で、こだわりの珈琲を味わった瞬間",
+          "description": "鞘町のビル二階に広がる心地よい隠れ家カフェの時間が、街歩きの足を優しく休ませてくれた。",
+          "badge_code": "takasaki_slowtime"
+        },
+        {
+          "key": "C",
+          "text": "「高崎城址公園」のお堀端に立ち、移築復元された白壁の乾櫓と東門を見上げた瞬間",
+          "description": "井伊直政が築いた高崎城の面影が、水面に映る松並木とともに静かに息づいていた。",
+          "badge_code": "takasaki_castle"
+        },
+        {
+          "key": "D",
+          "text": "「高崎神社」の厳かな参道を歩き、高崎の総鎮守の社殿前で旅の締めくくりに手を合わせた瞬間",
+          "description": "鎌倉時代から続く城下町の守り神が、赤坂の杜の中で今も穏やかに街を見守っていた。",
+          "badge_code": "takasaki_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "9f02efa1-9e2f-40e7-8dd1-95dcacff3d37",
+        "name": "高崎市美術館・旧井上房一郎邸",
+        "description": "高崎駅西口徒歩3分の美術館と、アントニン・レーモンドの自邸を模して建てられた和モダン住宅の複合施設。10:00〜18:00（金曜〜20:00）、月曜・祝翌日休（企画展により観覧料設定あり）。",
+        "address": "群馬県高崎市八島町110-27",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.320717,
+        "lng": 139.010104,
+        "qr_token": "shuin-takasaki-1",
+        "cover_image_url": "/images/takasaki/spot1.png",
+        "f7_fragment": "レーモンド建築の思想を継ぐ名邸を併設した、駅近のアート拠点。",
+        "f7_full": "「高崎市美術館・旧井上房一郎邸」で清々しい木造モダニズム建築に触れ、文化都市・高崎の散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "7b92407b-e822-4314-8833-b815970a561f",
+        "next_spot_name": "SLOW TIME cafe（スロウタイム カフェ）"
+      },
+      {
+        "id": "7b92407b-e822-4314-8833-b815970a561f",
+        "name": "SLOW TIME cafe（スロウタイム カフェ）",
+        "description": "高崎市鞘町のビル2階に佇む、音楽とアートブックに囲まれた心地よいカフェ。自家焙煎の珈琲やスイーツをゆったりと味わえる。12:00〜19:00（金土〜20:00）、月・火曜休（祝日の場合営業）。",
+        "address": "群馬県高崎市鞘町82-2 2F",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.324673,
+        "lng": 139.005687,
+        "qr_token": "shuin-takasaki-2",
+        "cover_image_url": "/images/takasaki/spot2.png",
+        "f7_fragment": "音楽とアートブックに囲まれ、丁寧な珈琲を味わう鞘町の隠れ家カフェ。",
+        "f7_full": "鞘町の「SLOW TIME cafe」で音楽と珈琲の豊かな時間を過ごし、高崎の街なかのカルチャーに触れた。",
+        "is_final": false,
+        "next_spot_id": "e333ab26-d3f6-45bb-8f87-abbcf10b6f43",
+        "next_spot_name": "高崎城址公園"
+      },
+      {
+        "id": "e333ab26-d3f6-45bb-8f87-abbcf10b6f43",
+        "name": "高崎城址公園",
+        "description": "慶長3年（1598年）に井伊直政が築いた高崎城の跡地。水堀と土塁がよく残り、移築復元された白壁の乾櫓と東門が往時の風格を伝える。散策自由・無休。",
+        "address": "群馬県高崎市高松町35",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.321812,
+        "lng": 139.004377,
+        "qr_token": "shuin-takasaki-3",
+        "cover_image_url": "/images/takasaki/spot3.png",
+        "f7_fragment": "井伊直政が築いた城跡に、白壁の乾櫓と水堀が美しく残る公園。",
+        "f7_full": "「高崎城址公園」のお堀端を歩き、移築復元された白壁の乾櫓と東門から井伊直政の城づくりの面影を感じた。",
+        "is_final": false,
+        "next_spot_id": "0e94d026-79dd-4361-8859-c4d2389d1028",
+        "next_spot_name": "頼政神社"
+      },
+      {
+        "id": "0e94d026-79dd-4361-8859-c4d2389d1028",
+        "name": "頼政神社",
+        "description": "平安時代末期の武将・歌人である源頼政公を祀る古社。高崎公園に隣接し、江戸時代には藩主・大河内松平家の崇敬を受けて城内へ遷された歴史を持つ。常時開放・無休。",
+        "address": "群馬県高崎市宮元町143",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.319522,
+        "lng": 139.002575,
+        "qr_token": "shuin-takasaki-4",
+        "cover_image_url": "/images/takasaki/spot4.png",
+        "f7_fragment": "平安の武将・源頼政公を祀り、高崎城の鬼門を守った静かな古社。",
+        "f7_full": "城址の緑に寄り添う「頼政神社」に参拝し、武将であり歌人でもあった源頼政公ゆかりの歴史を辿った。",
+        "is_final": false,
+        "next_spot_id": "1d626a2a-0ea1-4803-8791-98926f785b5f",
+        "next_spot_name": "高崎神社"
+      },
+      {
+        "id": "1d626a2a-0ea1-4803-8791-98926f785b5f",
+        "name": "高崎神社",
+        "description": "寛元元年（1243年）に和田小太郎正信が熊野権現を勧請したことに始まる高崎総鎮守。境内には「和田の立石」などの史跡も残る。参拝常時（社務所9:00〜16:00頃）、無休。",
+        "address": "群馬県高崎市赤坂町94",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.329597,
+        "lng": 139.000417,
+        "qr_token": "shuin-takasaki-5",
+        "cover_image_url": "/images/takasaki/spot5.png",
+        "f7_fragment": "鎌倉時代から続く高崎の総鎮守、歴史の深い赤坂町の杜。",
+        "f7_full": "高崎総鎮守の「高崎神社」に参拝し、モダニズム建築と鞘町のカフェと城址を巡った高崎の旅を清らかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9ba8712c-659f-4221-8c3e-4caaa6c3e3f5",
+    "title": "松山・鍋焼きうどんと松山城を歩く",
+    "name": "松山・鍋焼きうどんと松山城を歩く",
+    "description": "JR松山駅から市内電車も活用しつつ中心街へ入り、昭和24年創業の鍋焼きうどん「ことり」と安藤忠雄設計「坂の上の雲ミュージアム」、大正のフランス風洋館「萬翠荘」、「松山城二之丸史跡庭園」、現存十二天守「松山城」を巡る散策路。",
+    "region": "松山・現存十二天守と大正洋館の城下町",
+    "area_name": "松山・現存十二天守と大正洋館の城下町",
+    "cover_image_url": "/images/matsuyama/route-eyecatch.png",
+    "imageUrl": "/images/matsuyama/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "甘めの鍋焼きうどんから大正ロマン、そして現存十二天守へと登る松山を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ことり」のレトロな店内で、アルミ鍋に入った甘めのお出汁の鍋焼きうどんを味わった瞬間",
+          "description": "昭和二十四年創業から変わらぬ素朴な味わいが、松山の旅の始まりを優しく温めてくれた。",
+          "badge_code": "matsuyama_kotori"
+        },
+        {
+          "key": "B",
+          "text": "「坂の上の雲ミュージアム」の三角形の吹き抜け空間を歩き、明治の青春に思いを馳せた瞬間",
+          "description": "安藤忠雄氏の建築美と正岡子規・秋山兄弟の物語が、城下町の空気に重なり合った。",
+          "badge_code": "matsuyama_sakanoue"
+        },
+        {
+          "key": "C",
+          "text": "「萬翠荘」のステンドグラスがきらめくフランス風洋館の階段を見上げた瞬間",
+          "description": "大正十一年に旧松山藩主の別邸として建てられた優美な館に、大正ロマンの気品が息づいていた。",
+          "badge_code": "matsuyama_bansuiso"
+        },
+        {
+          "key": "D",
+          "text": "「松山城」の標高132メートルの本丸天守から、瀬戸内海と松山市街を一望した瞬間",
+          "description": "全国に十二しか残らない現存天守の威容と城下町の眺望が、伊予の旅を誇らしく結んでくれた。",
+          "badge_code": "matsuyama_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0bee530e-1bd7-433b-893a-c40c437267ce",
+        "name": "鍋焼きうどん ことり",
+        "description": "昭和24年（1949年）創業の松山名物・鍋焼きうどんの名店。メニューは鍋焼きうどんといなりすしのみ。アルミ鍋で供される甘めのお出汁と柔らかい麺が特徴。10:00〜14:00（売切終了）、水曜休。",
+        "address": "愛媛県松山市湊町3-7-2",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.836126,
+        "lng": 132.769614,
+        "qr_token": "shuin-matsuyama-1",
+        "cover_image_url": "/images/matsuyama/spot1.png",
+        "f7_fragment": "昭和二十四年創業、アルミ鍋と甘い出汁を守る鍋焼きうどんの名店。",
+        "f7_full": "松山の「ことり」でアルミ鍋に入った伝統の甘めな鍋焼きうどんを味わい、伊予の城下町歩きを温かく始めた。",
+        "is_final": false,
+        "next_spot_id": "d4f677db-233e-4ec0-8244-d98e304540d2",
+        "next_spot_name": "坂の上の雲ミュージアム"
+      },
+      {
+        "id": "d4f677db-233e-4ec0-8244-d98e304540d2",
+        "name": "坂の上の雲ミュージアム",
+        "description": "司馬遼太郎『坂の上の雲』をテーマに、松山出身の秋山兄弟と正岡子規の足跡を紹介する安藤忠雄設計の文化施設。9:00〜18:30（入館18:00まで）、月曜休、一般500円。",
+        "address": "愛媛県松山市一番町3-20",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.841529,
+        "lng": 132.769094,
+        "qr_token": "shuin-matsuyama-2",
+        "cover_image_url": "/images/matsuyama/spot2.png",
+        "f7_fragment": "安藤忠雄設計の空間で、秋山兄弟と正岡子規の明治の物語に出会う館。",
+        "f7_full": "「坂の上の雲ミュージアム」の美しい吹き抜け空間を歩き、松山が生んだ明治の青年たちの情熱に触れた。",
+        "is_final": false,
+        "next_spot_id": "f01954e9-3ee8-47c6-8fda-6baec01cb21a",
+        "next_spot_name": "萬翠荘"
+      },
+      {
+        "id": "f01954e9-3ee8-47c6-8fda-6baec01cb21a",
+        "name": "萬翠荘",
+        "description": "大正11年（1922年）に旧松山藩主・久松定謨伯爵の別邸として建てられた純フランス風の洋館で国重要文化財。9:00〜18:00、月曜休、大人400円・小中高200円。",
+        "address": "愛媛県松山市一番町3-3-7",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.842439,
+        "lng": 132.768189,
+        "qr_token": "shuin-matsuyama-3",
+        "cover_image_url": "/images/matsuyama/spot3.png",
+        "f7_fragment": "旧松山藩主の別邸として建てられた、大正ロマン薫る国重文の洋館。",
+        "f7_full": "国重要文化財の「萬翠荘」でフランス風洋館の優美なステンドグラスを見上げ、大正ロマンの薫りに浸った。",
+        "is_final": false,
+        "next_spot_id": "fdfbdfa9-8493-4a1c-8320-8d94984c30f9",
+        "next_spot_name": "松山城二之丸史跡庭園"
+      },
+      {
+        "id": "fdfbdfa9-8493-4a1c-8320-8d94984c30f9",
+        "name": "松山城二之丸史跡庭園",
+        "description": "かつて藩主の御殿が建っていた敷地を整備した庭園。奥御殿の間取りを流水や柑橘の植栽で立体的に表現する。9:00〜17:00（8月〜17:30、12〜1月〜16:30）、12月第3水曜休、大人200円。",
+        "address": "愛媛県松山市丸之内5",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.842943,
+        "lng": 132.764381,
+        "qr_token": "shuin-matsuyama-4",
+        "cover_image_url": "/images/matsuyama/spot4.png",
+        "f7_fragment": "藩主御殿の間取りを水と柑橘で表現した、城山麓の優美な史跡庭園。",
+        "f7_full": "「松山城二之丸史跡庭園」で御殿の間取りを模した美しい水辺を巡り、城山山頂の天守へ向けて歩みを高めた。",
+        "is_final": false,
+        "next_spot_id": "94a904e9-23ad-4c0e-8107-1124a048eb67",
+        "next_spot_name": "松山城（本丸・天守）"
+      },
+      {
+        "id": "94a904e9-23ad-4c0e-8107-1124a048eb67",
+        "name": "松山城（本丸・天守）",
+        "description": "標高132mの勝山山頂にそびえる日本に12しかない現存天守の一つ。加藤嘉明が築いた連立式天守と高石垣が圧巻。9:00〜17:00（8月〜17:30、12〜1月〜16:30）、12月第3水曜休、大人520円。",
+        "address": "愛媛県松山市丸之内1",
+        "prefecture": "愛媛県",
+        "city": "",
+        "lat": 33.845577,
+        "lng": 132.765535,
+        "qr_token": "shuin-matsuyama-5",
+        "cover_image_url": "/images/matsuyama/spot5.png",
+        "f7_fragment": "標高百三十二メートルの山頂にそびえる、日本に十二のみの現存天守。",
+        "f7_full": "現存十二天守の「松山城」本丸天守から瀬戸内海と城下町を一望し、うどんに大正洋館を巡った松山の旅を誇らしく結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "35d0f47c-1a81-4d19-80dd-1742eccff7f1",
+    "title": "鹿児島中央・維新の史跡と白熊を歩く",
+    "name": "鹿児島中央・維新の史跡と白熊を歩く",
+    "description": "JR鹿児島中央駅から、甲突川沿いの「維新ふるさと館」と「大久保利通銅像」、南国の名物かき氷「天文館むじゃき 本店」、島津斉彬公を祀る「照國神社」、城山を背に立つ「西郷隆盛銅像」を巡る散策路。",
+    "region": "鹿児島中央・維新の英傑と南国の城下町",
+    "area_name": "鹿児島中央・維新の英傑と南国の城下町",
+    "cover_image_url": "/images/kagoshimachuo/route-eyecatch.png",
+    "imageUrl": "/images/kagoshimachuo/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "明治維新を動かした英傑たちの足跡と南国の甘い名物が繋がる鹿児島を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「維新ふるさと館」の甲突川沿いの遊歩道を歩き、幕末の薩摩の熱気に触れた瞬間",
+          "description": "西郷隆盛や大久保利通が生まれ育った加治屋町の空気が、近代日本の夜明けを身近に感じさせた。",
+          "badge_code": "kagoshima_ishin"
+        },
+        {
+          "key": "B",
+          "text": "「天文館むじゃき 本店」で、練乳たっぷりのフルーツかき氷「元祖白熊」を味わった瞬間",
+          "description": "南国の賑やかなアーケード街で頬張った真っ白な氷の甘さが、歴史歩きの足を軽やかにしてくれた。",
+          "badge_code": "kagoshima_mujyaki"
+        },
+        {
+          "key": "C",
+          "text": "「照國神社」の大きな鳥居をくぐり、島津斉彬公を祀る社殿前で手を合わせた瞬間",
+          "description": "集成館事業を興して近代化を先導した名君への敬意が、南国の光あふれる境内に満ちていた。",
+          "badge_code": "kagoshima_terukuni"
+        },
+        {
+          "key": "D",
+          "text": "城山の緑を背に堂々と立つ「西郷隆盛銅像」を仰ぎ見ながら、鹿児島の旅を結んだ瞬間",
+          "description": "高さ約八メートルの威風堂々たる姿が、桜島を望む街の歴史を誇り高く物語っていた。",
+          "badge_code": "kagoshima_saigo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "058b6b00-15b3-4d2c-840a-2810f2a51ea3",
+        "name": "維新ふるさと館",
+        "description": "西郷隆盛や大久保利通らが育った甲突川沿いの加治屋町に建つ歴史博物館。ジオラマや等身大ロボットで明治維新を体感できる。9:00〜17:00（最終入館16:30）、年中無休（※令和8年11月24日〜令和9年1月22日はリニューアル休館）。",
+        "address": "鹿児島県鹿児島市加治屋町23-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.584639,
+        "lng": 130.547792,
+        "qr_token": "shuin-kagoshimachuo-1",
+        "cover_image_url": "/images/kagoshimachuo/spot1.png",
+        "f7_fragment": "西郷・大久保らが生まれた加治屋町に建つ、明治維新の体感歴史館。",
+        "f7_full": "甲突川沿いの「維新ふるさと館」で薩摩の英傑たちが育った加治屋町の熱気に触れ、歴史散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "47d96842-ceef-4529-8a15-cd375d578540",
+        "next_spot_name": "大久保利通銅像"
+      },
+      {
+        "id": "47d96842-ceef-4529-8a15-cd375d578540",
+        "name": "大久保利通銅像",
+        "description": "甲突川左岸緑地の高見橋たもとに立つ、明治政府の内務卿・大久保利通の没後百年を記念した銅像（本体約4.3m、台座含め総高約9.7m）。見学自由・無休・無料。",
+        "address": "鹿児島県鹿児島市西千石町1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.586563,
+        "lng": 130.546107,
+        "qr_token": "shuin-kagoshimachuo-2",
+        "cover_image_url": "/images/kagoshimachuo/spot2.png",
+        "f7_fragment": "明治政府の近代化を牽引した、甲突川河畔に立つ大久保利通の銅像。",
+        "f7_full": "甲突川沿いの「大久保利通銅像」を見上げ、幼なじみの西郷とともに近代日本を切り拓いた功績に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "4bc2f010-66c3-43ee-8cd4-7405b169e14b",
+        "next_spot_name": "天文館むじゃき 本店"
+      },
+      {
+        "id": "4bc2f010-66c3-43ee-8cd4-7405b169e14b",
+        "name": "天文館むじゃき 本店",
+        "description": "鹿児島名物・元祖かき氷「白熊」の本店。ふんわり削った氷に自家製ミルク蜜とフルーツを盛り付けた白熊が人気。11:00〜19:00（白熊L.O.18:30）、不定休。",
+        "address": "鹿児島県鹿児島市千日町5-8",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.589238,
+        "lng": 130.555969,
+        "qr_token": "shuin-kagoshimachuo-3",
+        "cover_image_url": "/images/kagoshimachuo/spot3.png",
+        "f7_fragment": "秘伝のミルク蜜と色とりどりの果実がのる、元祖かき氷「白熊」の本店。",
+        "f7_full": "「天文館むじゃき 本店」で練乳たっぷりの元祖白熊を味わい、歴史歩きの合間に南国らしい涼やかな甘味を楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "9ca25459-1b67-4f8e-8b40-de7607b71857",
+        "next_spot_name": "照國神社"
+      },
+      {
+        "id": "9ca25459-1b67-4f8e-8b40-de7607b71857",
+        "name": "照國神社",
+        "description": "薩摩藩第11代藩主・島津斉彬公を御祭神とする鹿児島屈指の格式ある神社。境内自由・授与所9:00〜17:00、無休。",
+        "address": "鹿児島県鹿児島市照国町19-35",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.59463,
+        "lng": 130.550406,
+        "qr_token": "shuin-kagoshimachuo-4",
+        "cover_image_url": "/images/kagoshimachuo/spot4.png",
+        "f7_fragment": "名君・島津斉彬公を祀る、鶴丸城跡そばの格式高い照國神社。",
+        "f7_full": "「照國神社」の楠茂る境内へ進み、日本の近代化を先導した名君・島津斉彬公の御前に静かに参拝した。",
+        "is_final": false,
+        "next_spot_id": "64e5bed9-fae8-4450-8dfc-a3a5925dd6f7",
+        "next_spot_name": "西郷隆盛銅像"
+      },
+      {
+        "id": "64e5bed9-fae8-4450-8dfc-a3a5925dd6f7",
+        "name": "西郷隆盛銅像",
+        "description": "城山の緑を背に陸軍大将の制服姿で立つ高さ約8mの銅像。忠犬ハチ公像を手掛けた彫刻家・安藤照が昭和12年（1937年）に完成させた。見学自由・無休・無料。",
+        "address": "鹿児島県鹿児島市城山町4-36",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.595268,
+        "lng": 130.553522,
+        "qr_token": "shuin-kagoshimachuo-5",
+        "cover_image_url": "/images/kagoshimachuo/spot5.png",
+        "f7_fragment": "城山の緑を背に陸軍大将姿で立つ、高さ約八メートルの西郷さん銅像。",
+        "f7_full": "城山麓の「西郷隆盛銅像」を仰ぎ見ながら、維新の歴史と天文館の白熊を巡った鹿児島中央の旅を誇らしく結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
