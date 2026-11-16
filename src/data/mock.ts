@@ -86320,5 +86320,525 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "d13a152b-264f-4ab8-806d-56ff3976cd26",
+    "title": "鹿児島・鶴丸城跡から城山と名勝仙巌園へ",
+    "name": "鹿児島・鶴丸城跡から城山と名勝仙巌園へ",
+    "description": "JR鹿児島駅から、薩摩の歴史を伝える焙煎珈琲「Blue Beans Roastery」、国内最大級の城門「鶴丸城跡（御楼門）」、仁王立ちの「西郷隆盛銅像」、桜島を一望する「城山展望台」、錦江湾を借景とする大名庭園「仙巌園」を巡る散策路。",
+    "region": "鹿児島・鶴丸城跡と桜島の絶景",
+    "area_name": "鹿児島・鶴丸城跡と桜島の絶景",
+    "cover_image_url": "/images/kagoshima/route-eyecatch.png",
+    "imageUrl": "/images/kagoshima/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "薩摩の歴史が息づく城跡と城山、桜島を借景とする仙巌園を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「鶴丸城跡（御楼門）」の前に立ち、国内最大級の城門と石垣を仰ぎ見た瞬間",
+          "description": "約147年ぶりに蘇った堂々たる御楼門の姿に、薩摩藩七十七万石の気概を感じた。",
+          "badge_code": "kagoshima_tsurumaru"
+        },
+        {
+          "key": "B",
+          "text": "「西郷隆盛銅像」を見上げ、城山を背に仁王立ちする凛々しい姿に対面した瞬間",
+          "description": "故郷・鹿児島を見守り続ける郷土の英雄の眼差しに、幕末維新の志が重なった。",
+          "badge_code": "kagoshima_saigo"
+        },
+        {
+          "key": "C",
+          "text": "「城山展望台」に立ち、錦江湾の向こうに噴煙を上げる桜島を一望した瞬間",
+          "description": "眼下に広がる鹿児島市街と雄大な桜島のパノラマが、旅の高揚感を一気に満たしてくれた。",
+          "badge_code": "kagoshima_shiroyama"
+        },
+        {
+          "key": "D",
+          "text": "「仙巌園」の池泉庭園を歩き、桜島と錦江湾を丸ごと借景にした絶景に息を呑んだ瞬間",
+          "description": "島津家の美意識と近代化遺産の重厚さが溶け合う大名庭園が、鹿児島の旅を最高に飾ってくれた。",
+          "badge_code": "kagoshima_senganen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "72fd820e-b388-43fa-86f7-3e10c105664f",
+        "name": "Blue Beans Roastery",
+        "description": "JR鹿児島駅から徒歩圏内の上竜尾町に佇む自家焙煎スペシャルティコーヒー店。丁寧なハンドドリップ珈琲と季節のスイーツが人気。9:00〜19:00（不定休あり）。",
+        "address": "鹿児島県鹿児島市上竜尾町4-21",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.605755,
+        "lng": 130.560726,
+        "qr_token": "shuin-kagoshima-1",
+        "cover_image_url": "/images/kagoshima/spot1.png",
+        "f7_fragment": "鹿児島駅近くの自家焙煎コーヒー店、香り高い一杯とスイーツが人気。",
+        "f7_full": "「Blue Beans Roastery」で香り高いスペシャルティ珈琲を味わい、鹿児島の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "957c4f84-ef9b-40db-8271-3beae2adcecd",
+        "next_spot_name": "鶴丸城跡（御楼門）"
+      },
+      {
+        "id": "957c4f84-ef9b-40db-8271-3beae2adcecd",
+        "name": "鶴丸城跡（御楼門）",
+        "description": "島津家代々の居城であった鹿児島城（鶴丸城）跡。2020年に国内最大級の城門として約147年ぶりに復元された御楼門と石垣が圧巻。城跡・御楼門常時見学可（ライトアップ日没〜22:00）、無料。",
+        "address": "鹿児島県鹿児島市城山町7-2",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.59861,
+        "lng": 130.555204,
+        "qr_token": "shuin-kagoshima-2",
+        "cover_image_url": "/images/kagoshima/spot2.png",
+        "f7_fragment": "2020年に復元された国内最大級の城門「御楼門」がそびえる島津家の居城跡。",
+        "f7_full": "「鶴丸城跡（御楼門）」の前に立ち、復元された国内最大級の城門と石垣の威容を仰いだ。",
+        "is_final": false,
+        "next_spot_id": "700cc297-08ac-47d7-8c15-f29189e333d3",
+        "next_spot_name": "西郷隆盛銅像"
+      },
+      {
+        "id": "700cc297-08ac-47d7-8c15-f29189e333d3",
+        "name": "西郷隆盛銅像",
+        "description": "城山を背に、軍服姿で仁王立ちする高さ約8mの堂々たる銅像。鹿児島出身の彫刻家・安藤照によって昭和12年（1937年）に制作された。見学自由、無料。",
+        "address": "鹿児島県鹿児島市城山町4-36",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.595268,
+        "lng": 130.553522,
+        "qr_token": "shuin-kagoshima-3",
+        "cover_image_url": "/images/kagoshima/spot3.png",
+        "f7_fragment": "城山を背景に仁王立ちする高さ約8mの銅像、薩摩の英雄の象徴。",
+        "f7_full": "「西郷隆盛銅像」を見上げ、城山を背に立つ郷土の英雄の凛々しい姿に対面した。",
+        "is_final": false,
+        "next_spot_id": "3ae5d768-9768-43ce-84b9-dc1fd5f814f7",
+        "next_spot_name": "城山展望台"
+      },
+      {
+        "id": "3ae5d768-9768-43ce-84b9-dc1fd5f814f7",
+        "name": "城山展望台",
+        "description": "標高107mの小高い山「城山」の山頂にある鹿児島屈指の展望スポット。眼下に鹿児島市街、錦江湾、そして雄大な桜島を一望できる。終日開放、無料。",
+        "address": "鹿児島県鹿児島市城山町22-13",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.596242,
+        "lng": 130.550046,
+        "qr_token": "shuin-kagoshima-4",
+        "cover_image_url": "/images/kagoshima/spot4.png",
+        "f7_fragment": "標高107mから鹿児島市街と錦江湾、雄大な桜島を一望できる絶景スポット。",
+        "f7_full": "「城山展望台」に立ち、錦江湾の向こうに噴煙を上げる雄大な桜島を一望した。",
+        "is_final": false,
+        "next_spot_id": "8e88066a-871f-4031-8c07-3b6706b60525",
+        "next_spot_name": "仙巌園"
+      },
+      {
+        "id": "8e88066a-871f-4031-8c07-3b6706b60525",
+        "name": "仙巌園",
+        "description": "万治元年（1658年）に島津家19代・島津光久によって築かれた別邸と庭園。桜島を築山、錦江湾を池に見立てた雄大な借景庭園と世界文化遺産の反射炉跡がある。9:00〜17:00、大人1600円。",
+        "address": "鹿児島県鹿児島市吉野町9700-1",
+        "prefecture": "鹿児島県",
+        "city": "",
+        "lat": 31.617415,
+        "lng": 130.577197,
+        "qr_token": "shuin-kagoshima-5",
+        "cover_image_url": "/images/kagoshima/spot5.png",
+        "f7_fragment": "桜島と錦江湾を借景にした島津家別邸の名勝庭園、世界遺産エリアも併設。",
+        "f7_full": "「仙巌園」の庭園を歩き、桜島と錦江湾を借景にした雄大な絶景の中で旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "7800a4d3-4ca0-4ab1-8d82-5281bc7b6a2e",
+    "title": "いわき・駅前の老舗喫茶から国宝阿弥陀堂へ",
+    "name": "いわき・駅前の老舗喫茶から国宝阿弥陀堂へ",
+    "description": "JRいわき駅から、厚切りグリルサンドで親しまれる老舗「ブレイク 平本店」、浄土庭園に浮かぶ福島県唯一の国宝「白水阿弥陀堂」、常磐炭田と化石を学ぶ「いわき市石炭・化石館 ほるる」、海の幸が集う「道の駅 いわき・ら・ら・ミュウ」、白亜の「塩屋埼灯台」を巡る散策路。",
+    "region": "いわき・国宝阿弥陀堂と太平洋の灯台",
+    "area_name": "いわき・国宝阿弥陀堂と太平洋の灯台",
+    "cover_image_url": "/images/iwaki/route-eyecatch.png",
+    "imageUrl": "/images/iwaki/route-eyecatch.png",
+    "category": "歴史と海景色",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "炭鉱と恐竜の記憶、平安の国宝阿弥陀堂と太平洋の潮風を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ブレイク 平本店」で、名物の分厚いグリルサンドと香り高い珈琲を味わった瞬間",
+          "description": "駅前からすぐの老舗喫茶に漂う温かな空気が、いわき巡りの始まりを元気に彩ってくれた。",
+          "badge_code": "iwaki_break"
+        },
+        {
+          "key": "B",
+          "text": "「白水阿弥陀堂」の浄土庭園に立ち、池に映る平安末期の国宝建築を眺めた瞬間",
+          "description": "緩やかな曲線を描く屋根と蓮池の静けさに、みちのくの地に咲いた極楽浄土の世界を見た。",
+          "badge_code": "iwaki_shiramizu"
+        },
+        {
+          "key": "C",
+          "text": "「いわき市石炭・化石館 ほるる」で、フタバスズキリュウと炭鉱の歴史に触れた瞬間",
+          "description": "太古の海と近代のエネルギーを支えた常磐炭田の記憶が、いわきの土地の深さを教えてくれた。",
+          "badge_code": "iwaki_horuru"
+        },
+        {
+          "key": "D",
+          "text": "「塩屋埼灯台」の白亜の塔に登り、太平洋の水平線と潮風を一望した瞬間",
+          "description": "大海原を見渡す断崖の上の清々しい風が、いわきの旅の締めくくりを爽やかに満たしてくれた。",
+          "badge_code": "iwaki_shioyazaki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "f363be36-95af-45c9-879f-5125c37dd9dd",
+        "name": "ブレイク 平本店",
+        "description": "JRいわき駅から徒歩約3分、地元で長く愛される老舗喫茶店。ボリューム満点の分厚いグリルサンドやパフェ、こだわりの珈琲が楽しめる。8:00〜19:00、元日休。",
+        "address": "福島県いわき市平字田町68-1",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.056921,
+        "lng": 140.891223,
+        "qr_token": "shuin-iwaki-1",
+        "cover_image_url": "/images/iwaki/spot1.png",
+        "f7_fragment": "いわき駅前の老舗喫茶店、分厚い名物グリルサンドと珈琲が人気。",
+        "f7_full": "「ブレイク 平本店」で名物の分厚いグリルサンドと珈琲を味わい、旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "1ef8ca87-b5cf-42fc-8093-7be2d80be14e",
+        "next_spot_name": "白水阿弥陀堂"
+      },
+      {
+        "id": "1ef8ca87-b5cf-42fc-8093-7be2d80be14e",
+        "name": "白水阿弥陀堂",
+        "description": "永暦元年（1160年）に徳姫が夫・岩城則道の供養のために建立した福島県唯一の国宝建造物。優美な浄土庭園に囲まれる。9:00〜16:15（1〜3月〜15:45）、第4水曜休、大人500円。",
+        "address": "福島県いわき市内郷白水町広畑221",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.036516,
+        "lng": 140.837321,
+        "qr_token": "shuin-iwaki-2",
+        "cover_image_url": "/images/iwaki/spot2.png",
+        "f7_fragment": "平安末期建立の福島県唯一の国宝建造物、池泉の浄土庭園が美しい。",
+        "f7_full": "「白水阿弥陀堂」の浄土庭園に立ち、池に映る平安末期の国宝建築を拝観した。",
+        "is_final": false,
+        "next_spot_id": "a2ce5943-cb49-4b88-8a44-45832140391b",
+        "next_spot_name": "いわき市石炭・化石館 ほるる"
+      },
+      {
+        "id": "a2ce5943-cb49-4b88-8a44-45832140391b",
+        "name": "いわき市石炭・化石館 ほるる",
+        "description": "いわき市で発掘されたフタバスズキリュウなどの貴重な化石標本と、近代日本の発展を支えた常磐炭田の歴史を体感できる博物館。9:00〜17:00、第3火曜休、大人660円。",
+        "address": "福島県いわき市常磐湯本町向田3-1",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 37.012617,
+        "lng": 140.848492,
+        "qr_token": "shuin-iwaki-3",
+        "cover_image_url": "/images/iwaki/spot3.png",
+        "f7_fragment": "フタバスズキリュウの化石と常磐炭田の模擬坑道を体感できる博物館。",
+        "f7_full": "「いわき市石炭・化石館 ほるる」で恐竜の化石と常磐炭田の模擬坑道に触れた。",
+        "is_final": false,
+        "next_spot_id": "8626b909-41cf-421d-8bbf-1a3e4caf2d14",
+        "next_spot_name": "道の駅 いわき・ら・ら・ミュウ"
+      },
+      {
+        "id": "8626b909-41cf-421d-8bbf-1a3e4caf2d14",
+        "name": "道の駅 いわき・ら・ら・ミュウ",
+        "description": "小名浜港のウォーターフロントに立つ大型観光物産センター（道の駅）。新鮮な常磐ものの魚介市場やグルメ通り、土産店が揃う。9:00〜18:00（飲食10:00〜）、不定休。",
+        "address": "福島県いわき市小名浜辰巳町43-1",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 36.944506,
+        "lng": 140.905627,
+        "qr_token": "shuin-iwaki-4",
+        "cover_image_url": "/images/iwaki/spot4.png",
+        "f7_fragment": "小名浜港の観光物産センター、新鮮な「常磐もの」の魚介とグルメが集う。",
+        "f7_full": "「道の駅 いわき・ら・ら・ミュウ」で小名浜港の活気と豊かな海の幸に触れた。",
+        "is_final": false,
+        "next_spot_id": "c00d9cc1-8262-4154-8cc6-fe5e267ebe71",
+        "next_spot_name": "塩屋埼灯台"
+      },
+      {
+        "id": "c00d9cc1-8262-4154-8cc6-fe5e267ebe71",
+        "name": "塩屋埼灯台",
+        "description": "明治32年（1899年）初点灯、全国に16基しかない「のぼれる灯台」のひとつ。白亜の塔上から太平洋の大パノラマを一望できる。9:00〜16:00（12〜13時昼休）、参観寄付金300円。",
+        "address": "福島県いわき市平薄磯宿崎34",
+        "prefecture": "福島県",
+        "city": "",
+        "lat": 36.995228,
+        "lng": 140.981929,
+        "qr_token": "shuin-iwaki-5",
+        "cover_image_url": "/images/iwaki/spot5.png",
+        "f7_fragment": "太平洋の断崖に立つ白亜の「のぼれる灯台」、海と空の大パノラマが圧巻。",
+        "f7_full": "「塩屋埼灯台」の白亜の塔に登り、太平洋の水平線と爽やかな潮風を一望して旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2004094a-1277-41e8-8eac-169f43602726",
+    "title": "横浜・開港記念会館から赤レンガと山下公園へ",
+    "name": "横浜・開港記念会館から赤レンガと山下公園へ",
+    "description": "JR横浜駅から、みなとみらいの海沿いに続く「臨港パーク」、赤煉瓦と時計塔の「横浜市開港記念会館」、明治・大正の面影を残す「横浜赤レンガ倉庫」、海と氷川丸を望む「山下公園」、活気あふれる「横浜中華街」を巡る散策路。",
+    "region": "横浜・赤レンガと異国情緒の港街",
+    "area_name": "横浜・赤レンガと異国情緒の港街",
+    "cover_image_url": "/images/yokohama/route-eyecatch.png",
+    "imageUrl": "/images/yokohama/route-eyecatch.png",
+    "category": "街歩きと海景色",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "潮風薫る開港の街と赤煉瓦の歴史建築、活気ある中華街を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「横浜市開港記念会館」の赤煉瓦と時計塔「ジャックの塔」を見上げた瞬間",
+          "description": "大正時代に建てられた歴史建築の重厚な佇まいに、開港の街・横浜の誇りを感じた。",
+          "badge_code": "yokohama_kaikokinen"
+        },
+        {
+          "key": "B",
+          "text": "「横浜赤レンガ倉庫」の広場に立ち、明治・大正の煉瓦造りと海景色を眺めた瞬間",
+          "description": "かつての保税倉庫が賑わいの場へと生まれ変わった姿に、港町の歴史と今が重なった。",
+          "badge_code": "yokohama_akarenga"
+        },
+        {
+          "key": "C",
+          "text": "「山下公園」の海沿いの遊歩道を歩き、潮風とともに横浜港の景色を眺めた瞬間",
+          "description": "氷川丸が停泊する穏やかな海辺の風景が、横浜らしい開放感で心を満たしてくれた。",
+          "badge_code": "yokohama_yamashita"
+        },
+        {
+          "key": "D",
+          "text": "「横浜中華街」の極彩色の牌楼をくぐり、湯気と香辛料の香りが満ちる街を歩いた瞬間",
+          "description": "異国情緒と活気に満ちた通りの賑わいが、開港都市・横浜の散策を楽しく結んでくれた。",
+          "badge_code": "yokohama_chinatown"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7a5939f2-f8b6-4865-82be-a00ef68a8c70",
+        "name": "臨港パーク",
+        "description": "みなとみらいエリア最大の緑地公園。目の前に横浜港と横浜ベイブリッジが広がり、芝生広場と潮入りの池が心地よい海辺空間をつくる。常時開放、無料。",
+        "address": "神奈川県横浜市西区みなとみらい1-1",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.461884,
+        "lng": 139.63691,
+        "qr_token": "shuin-yokohama-1",
+        "cover_image_url": "/images/yokohama/spot1.png",
+        "f7_fragment": "みなとみらい最大の海辺公園、芝生広場から横浜港とベイブリッジを望む。",
+        "f7_full": "「臨港パーク」の海辺で横浜港の景色と爽やかな潮風を感じ、港街の散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "e3c27e18-2b50-42c9-8ba7-16547abf3137",
+        "next_spot_name": "横浜市開港記念会館"
+      },
+      {
+        "id": "e3c27e18-2b50-42c9-8ba7-16547abf3137",
+        "name": "横浜市開港記念会館",
+        "description": "大正6年（1917年）に横浜開港50周年を記念して建てられた国の重要文化財。「ジャックの塔」の愛称で横浜三塔のひとつに数えられる。9:00〜22:00（見学10:00〜16:00）、第2水曜休、無料。",
+        "address": "神奈川県横浜市中区本町1-6",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.44729,
+        "lng": 139.641276,
+        "qr_token": "shuin-yokohama-2",
+        "cover_image_url": "/images/yokohama/spot2.png",
+        "f7_fragment": "大正6年竣工の国の重要文化財、「ジャックの塔」として親しまれる名建築。",
+        "f7_full": "「横浜市開港記念会館」の赤煉瓦と時計塔を見上げ、開港都市・横浜の品格に触れた。",
+        "is_final": false,
+        "next_spot_id": "9cd5d8c6-a197-428d-88b1-f0dd7c77b524",
+        "next_spot_name": "横浜赤レンガ倉庫"
+      },
+      {
+        "id": "9cd5d8c6-a197-428d-88b1-f0dd7c77b524",
+        "name": "横浜赤レンガ倉庫",
+        "description": "明治末期から大正初期にかけて国の模範倉庫として建てられた歴史的煉瓦建築。現在はショッピングやグルメ、イベントが楽しめる横浜の定番拠点。1号館10:00〜19:00・2号館11:00〜20:00、無休。",
+        "address": "神奈川県横浜市中区新港1-1",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.452608,
+        "lng": 139.642932,
+        "qr_token": "shuin-yokohama-3",
+        "cover_image_url": "/images/yokohama/spot3.png",
+        "f7_fragment": "明治・大正の保税倉庫を活かした歴史建築、海辺のショップやグルメが並ぶ。",
+        "f7_full": "「横浜赤レンガ倉庫」の広場に立ち、歴史ある煉瓦造りと横浜港の開放的な景色を眺めた。",
+        "is_final": false,
+        "next_spot_id": "13866e65-dae3-49e4-8135-80256d866de9",
+        "next_spot_name": "山下公園"
+      },
+      {
+        "id": "13866e65-dae3-49e4-8135-80256d866de9",
+        "name": "山下公園",
+        "description": "昭和5年（1930年）に開園した横浜を代表する海辺の公園。氷川丸が係留され、バラ園や「赤い靴はいてた女の子」像など見どころが点在する。常時開放、無料。",
+        "address": "神奈川県横浜市中区山下町279",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.444203,
+        "lng": 139.648535,
+        "qr_token": "shuin-yokohama-4",
+        "cover_image_url": "/images/yokohama/spot4.png",
+        "f7_fragment": "横浜港と氷川丸を望む海辺の名園、バラ園と潮風薫る遊歩道が魅力。",
+        "f7_full": "「山下公園」の海沿いの遊歩道を歩き、氷川丸と横浜港の穏やかな風景を眺めた。",
+        "is_final": false,
+        "next_spot_id": "06129b3e-f971-4a4d-84f1-944d79a0ad77",
+        "next_spot_name": "横浜中華街"
+      },
+      {
+        "id": "06129b3e-f971-4a4d-84f1-944d79a0ad77",
+        "name": "横浜中華街",
+        "description": "東西南北に彩り豊かな牌楼（門）が立ち、数百軒の中華料理店や点心・茶葉・雑貨店が軒を連ねる日本最大級の中華街。店舗により11:00〜22:00頃（物販10:00〜19:00頃）。",
+        "address": "神奈川県横浜市中区山下町118-2",
+        "prefecture": "神奈川県",
+        "city": "",
+        "lat": 35.442282,
+        "lng": 139.645158,
+        "qr_token": "shuin-yokohama-5",
+        "cover_image_url": "/images/yokohama/spot5.png",
+        "f7_fragment": "極彩色の牌楼と本場の中華料理・点心が軒を連ねる日本最大級の中華街。",
+        "f7_full": "「横浜中華街」の牌楼をくぐり、湯気と香辛料が薫る活気ある通りで旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "8dc2a510-441e-4c1d-8090-4a48ca050f5d",
+    "title": "有馬温泉・太閤橋から金の湯と炭酸泉源へ",
+    "name": "有馬温泉・太閤橋から金の湯と炭酸泉源へ",
+    "description": "神戸電鉄有馬温泉駅から、湯けむり広場を見守る「太閤橋」、赤褐色の名湯が湧く「有馬本温泉 金の湯」、からくり玩具の世界「有馬玩具博物館」、行基開創の古刹「温泉寺」、炭酸せんべいの原点を味わう「炭酸泉源公園」を巡る散策路。",
+    "region": "有馬温泉・金泉と太閤の湯煙",
+    "area_name": "有馬温泉・金泉と太閤の湯煙",
+    "cover_image_url": "/images/arimaonsen/route-eyecatch.png",
+    "imageUrl": "/images/arimaonsen/route-eyecatch.png",
+    "category": "温泉と自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本三古湯の歴史と湯けむり薫る坂道、金泉・炭酸泉の恵みを巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「有馬本温泉 金の湯」の赤褐色の名湯と、玄関横の無料足湯で温まった瞬間",
+          "description": "鉄分と塩分を豊富に含んだ黄金色の湯のぬくもりが、六甲の山あいの旅を実感させてくれた。",
+          "badge_code": "arimaonsen_kinnoyu"
+        },
+        {
+          "key": "B",
+          "text": "「有馬玩具博物館」で、精巧なからくり人形や木製玩具の温もりに見入った瞬間",
+          "description": "大人が思わず夢中になる世界各国の玩具の仕組みに、旅の途中で童心がよみがえった。",
+          "badge_code": "arimaonsen_toymuseum"
+        },
+        {
+          "key": "C",
+          "text": "「温泉寺」の急な石段を登り、有馬温泉を見守ってきた古刹の静寂に触れた瞬間",
+          "description": "奈良時代に行基が開いた歴史と太閤秀吉ゆかりの記憶が、温泉街の高台に息づいていた。",
+          "badge_code": "arimaonsen_onsenji"
+        },
+        {
+          "key": "D",
+          "text": "「炭酸泉源公園」で、冷たい天然の炭酸水を一口味わい名物の原点を体感した瞬間",
+          "description": "しゅわっと弾ける自然の恵みに、有馬が誇るもうひとつの泉質「銀泉」の面白さを知った。",
+          "badge_code": "arimaonsen_tansan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "852b5948-cb9d-4557-8c3b-ef30e27bc207",
+        "name": "太閤橋",
+        "description": "神戸電鉄有馬温泉駅の正面、有馬川に架かる朱色の橋。傍らのゆけむり広場には有馬を愛した豊臣秀吉公の像が立ち、温泉街への玄関口を彩る。常時通行可、無料。",
+        "address": "兵庫県神戸市北区有馬町字ウツギ谷252-4",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.79886,
+        "lng": 135.246985,
+        "qr_token": "shuin-arimaonsen-1",
+        "cover_image_url": "/images/arimaonsen/spot1.png",
+        "f7_fragment": "有馬温泉駅前に架かる朱色の橋、太閤秀吉像が立つゆけむり広場に隣接。",
+        "f7_full": "「太閤橋」から有馬川とゆけむり広場を望み、日本三古湯の散策を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "7572864b-31e0-4a40-80d6-0ef509ca0793",
+        "next_spot_name": "有馬本温泉 金の湯"
+      },
+      {
+        "id": "7572864b-31e0-4a40-80d6-0ef509ca0793",
+        "name": "有馬本温泉 金の湯",
+        "description": "鉄分と塩分を豊富に含み、空気に触れると赤褐色に染まる有馬の名湯「金泉」を楽しめる外湯。館外に無料の「太閤の足湯」も併設。8:00〜22:00、第2・4火曜休、大人平日650円（土日祝800円）。",
+        "address": "兵庫県神戸市北区有馬町833",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.796797,
+        "lng": 135.247886,
+        "qr_token": "shuin-arimaonsen-2",
+        "cover_image_url": "/images/arimaonsen/spot2.png",
+        "f7_fragment": "有馬名物の赤褐色「金泉」に入れる外湯、無料の足湯も併設。",
+        "f7_full": "「有馬本温泉 金の湯」で赤褐色の名湯と足湯に触れ、古湯のぬくもりを実感した。",
+        "is_final": false,
+        "next_spot_id": "df8abfc0-c621-4d38-8261-39c621485f28",
+        "next_spot_name": "有馬玩具博物館"
+      },
+      {
+        "id": "df8abfc0-c621-4d38-8261-39c621485f28",
+        "name": "有馬玩具博物館",
+        "description": "ドイツの木工芸品やブリキのおもちゃ、精巧なからくり人形（オートマタ）など約4,000点を展示する博物館。実演やショップも充実。10:00〜17:00、不定休、大人1000円。",
+        "address": "兵庫県神戸市北区有馬町797",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.797065,
+        "lng": 135.247909,
+        "qr_token": "shuin-arimaonsen-3",
+        "cover_image_url": "/images/arimaonsen/spot3.png",
+        "f7_fragment": "ドイツの木工玩具や精巧なからくり人形など約4,000点を展示する博物館。",
+        "f7_full": "「有馬玩具博物館」で精巧なからくり人形と木製玩具の温もりに見入り、童心に返った。",
+        "is_final": false,
+        "next_spot_id": "90f9206f-9bf4-466a-8d2d-fee5bfd208dd",
+        "next_spot_name": "温泉寺"
+      },
+      {
+        "id": "90f9206f-9bf4-466a-8d2d-fee5bfd208dd",
+        "name": "温泉寺",
+        "description": "神亀元年（724年）に名僧・行基によって建立されたと伝わる黄檗宗の古刹。有馬温泉の守護寺として親しまれ、紅葉の名所でもある。8:30〜16:30、無休、境内無料（御祖師庵100円）。",
+        "address": "兵庫県神戸市北区有馬町1643",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.795868,
+        "lng": 135.248186,
+        "qr_token": "shuin-arimaonsen-4",
+        "cover_image_url": "/images/arimaonsen/spot4.png",
+        "f7_fragment": "奈良時代に行基が開創した有馬の守護寺、石段の先に静かな境内が広がる。",
+        "f7_full": "「温泉寺」の石段を登って参拝し、有馬温泉を見守り続けてきた古刹の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "4227af32-7cbc-4aef-8a84-592e24f0b15c",
+        "next_spot_name": "炭酸泉源公園"
+      },
+      {
+        "id": "4227af32-7cbc-4aef-8a84-592e24f0b15c",
+        "name": "炭酸泉源公園",
+        "description": "有馬名物「炭酸せんべい」の原料ともなった天然の炭酸泉が湧き出る泉源を整備した公園。水飲み場では冷たい天然炭酸水を試飲できる。常時開放、無料。",
+        "address": "兵庫県神戸市北区有馬町1400",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.794808,
+        "lng": 135.250534,
+        "qr_token": "shuin-arimaonsen-5",
+        "cover_image_url": "/images/arimaonsen/spot5.png",
+        "f7_fragment": "天然の冷たい炭酸水が湧き出る泉源公園、名物・炭酸せんべいの原点。",
+        "f7_full": "「炭酸泉源公園」で天然の炭酸泉に触れ、有馬の豊かな泉質の物語を味わって旅を結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
