@@ -76180,5 +76180,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "8dbe19d5-895f-4140-8850-aa97ef173067",
+    "title": "旧北上川の潮風と復興の街・石巻を歩く",
+    "name": "旧北上川の潮風と復興の街・石巻を歩く",
+    "description": "かつて仙台藩の米の積出港として栄え、近代以降は水産業と文化の拠点として歩んできた宮城県石巻市。駅近くの稲荷社から、新鮮な地魚が味わえる食事処、蘇った老舗喫茶、戦前の百貨店建築、そして川沿いの市場まで、港町の誇りと再生の息づかいを辿る。",
+    "region": "石巻・旧北上川の港町と復興の街",
+    "area_name": "石巻・旧北上川の港町と復興の街",
+    "cover_image_url": "/images/ishinomaki/route-eyecatch.png",
+    "imageUrl": "/images/ishinomaki/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "港町の歴史と再生の歩みが重なり合う石巻で、あなたが最初に誰かへ伝えたいのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前の街なかに鎮座する「豊川稲荷」の静かな境内で、旅の無事を祈った瞬間",
+          "description": "賑やかな商店街のすぐ傍らに、地域の商売繁盛を見守り続けてきた信仰の場があることに安らぎを覚えた。",
+          "badge_code": "ishinomaki_toyokawa_inari"
+        },
+        {
+          "key": "B",
+          "text": "石巻初の百貨店として建てられた「旧観慶丸商店」のタイル張り外観を見上げた瞬間",
+          "description": "震災を乗り越えて修復された往時の洋風建築に、かつて「北上川河口の大商港」と謳われた石巻の誇りを見た。",
+          "badge_code": "ishinomaki_kankeimaru"
+        },
+        {
+          "key": "C",
+          "text": "「食事処 海船」で、石巻港に揚がった新鮮な魚介の定食を味わった瞬間",
+          "description": "金華山沖の豊かな漁場に恵まれた港町ならではの鮮度と、大将の丁寧な仕事に心が満たされた。",
+          "badge_code": "ishinomaki_umifune"
+        },
+        {
+          "key": "D",
+          "text": "旧北上川沿いの「いしのまき元気いちば」で、三陸の海の幸を手に入れた瞬間",
+          "description": "復興の象徴として賑わう市場の活気と、川面を渡る爽やかな潮風に石巻の明るい未来を感じた。",
+          "badge_code": "ishinomaki_genki_ichiba"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "fac49b3b-7300-4041-8652-8eb573a89b4e",
+        "name": "豊川稲荷",
+        "description": "石巻駅南側の立町商店街近くに鎮座する寺院。商売繁盛や家内安全の信仰を集め、街なかに静かな祈りの空間を保つ。境内参拝自由。",
+        "address": "宮城県石巻市立町2-7",
+        "prefecture": "宮城県",
+        "city": "石巻市",
+        "lat": 38.433292,
+        "lng": 141.304993,
+        "qr_token": "shuin-ishinomaki-1",
+        "cover_image_url": "/images/ishinomaki/spot1.png",
+        "f7_fragment": "商店街の傍らに佇む朱の鳥居と、港町の商いを守り続ける静かな境内。",
+        "f7_full": "石巻駅近くの立町にある豊川稲荷を訪ね、北上川の水運と漁業で栄えた港町の静かな信仰と祈りの歴史にじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "f2b497a7-6a8e-4feb-8a5d-bf5b9e2fb458",
+        "next_spot_name": "食事処 海船"
+      },
+      {
+        "id": "f2b497a7-6a8e-4feb-8a5d-bf5b9e2fb458",
+        "name": "食事処 海船",
+        "description": "石巻中央の老舗魚介料理店。地元の新鮮な刺身や浜料理の定食、鯨の竜田揚げなどが味わえる。営業時間11:00〜14:00・17:00〜22:00（土曜は夜のみ）、日曜定休。",
+        "address": "宮城県石巻市中央2-1-23",
+        "prefecture": "宮城県",
+        "city": "石巻市",
+        "lat": 38.430439,
+        "lng": 141.307027,
+        "qr_token": "shuin-ishinomaki-2",
+        "cover_image_url": "/images/ishinomaki/spot2.png",
+        "f7_fragment": "港町ならではの鮮魚が並ぶ定食と、大将の包丁が光る浜の味わい。",
+        "f7_full": "石巻中央の「食事処 海船」を訪ね、世界三大漁場・金華山沖の豊かな恵みと職人技が光る旬の昼食を心から存分に楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "bde425f6-7a11-4430-86d6-185064581740",
+        "next_spot_name": "加非館"
+      },
+      {
+        "id": "bde425f6-7a11-4430-86d6-185064581740",
+        "name": "加非館",
+        "description": "石巻市民に長年愛され、一度の閉店を経て新オーナーのもとで復活を遂げた老舗喫茶店。香り高い珈琲とホットケーキが人気。営業時間10:00〜17:00、火・水曜定休。",
+        "address": "宮城県石巻市中央2-2-13",
+        "prefecture": "宮城県",
+        "city": "石巻市",
+        "lat": 38.430653,
+        "lng": 141.307833,
+        "qr_token": "shuin-ishinomaki-3",
+        "cover_image_url": "/images/ishinomaki/spot3.png",
+        "f7_fragment": "老舗の記憶を受け継ぐ珈琲の香りと、焼き立てホットケーキの甘み。",
+        "f7_full": "市民の熱い想いで復活を遂げた老舗喫茶「加非館」で香り高い珈琲と甘味を味わい、石巻の温かな日常の空気に優しく触れた。",
+        "is_final": false,
+        "next_spot_id": "65088e80-fb3a-4be3-87ec-703d4627f892",
+        "next_spot_name": "旧観慶丸商店"
+      },
+      {
+        "id": "65088e80-fb3a-4be3-87ec-703d4627f892",
+        "name": "旧観慶丸商店",
+        "description": "昭和初期に石巻初の百貨店として建てられた石巻市指定有形文化財。白いタイル張りの洋風建築が復興の象徴として保存・公開されている。開館9:00〜17:00、火曜休。",
+        "address": "宮城県石巻市中央3-6-9",
+        "prefecture": "宮城県",
+        "city": "石巻市",
+        "lat": 38.43209,
+        "lng": 141.309422,
+        "qr_token": "shuin-ishinomaki-4",
+        "cover_image_url": "/images/ishinomaki/spot4.png",
+        "f7_fragment": "白いタイルとアーチ窓が映える往時の百貨店、復興を見守る洋風建築。",
+        "f7_full": "石巻市指定有形文化財の旧観慶丸商店を仰ぎ、震災の困難を越えて蘇った港町の気品ある建築美と確かな誇りを胸に刻んだ。",
+        "is_final": false,
+        "next_spot_id": "0a733690-5da2-4a8c-859a-68ff42e4e210",
+        "next_spot_name": "いしのまき元気いちば"
+      },
+      {
+        "id": "0a733690-5da2-4a8c-859a-68ff42e4e210",
+        "name": "いしのまき元気いちば",
+        "description": "旧北上川のほとりに建つ石巻の食と物産の拠点。三陸の新鮮な魚介や水産加工品、地酒、銘菓などが豊富に揃う。営業時間9:00〜19:00、年中無休。",
+        "address": "宮城県石巻市中央2-11-11",
+        "prefecture": "宮城県",
+        "city": "石巻市",
+        "lat": 38.430105,
+        "lng": 141.30937,
+        "qr_token": "shuin-ishinomaki-5",
+        "cover_image_url": "/images/ishinomaki/spot5.png",
+        "f7_fragment": "旧北上川沿いに広がる賑わいの市場と、三陸の海の幸が並ぶ充実の棚。",
+        "f7_full": "旧北上川のほとりに建つ「いしのまき元気いちば」で三陸の土産を手に取り、力強く再生する港町・石巻の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "fae60043-63f9-49fe-8a0e-8d065ec170b8",
+    "title": "水戸藩の湊町と漁港の活気・那珂湊へ",
+    "name": "水戸藩の湊町と漁港の活気・那珂湊へ",
+    "description": "那珂川の河口に開け、藩政期には東北諸藩の廻船が寄港する水戸藩最大の港町として栄えた茨城県ひたちなか市那珂湊。古くから続く高台の古社から、手延べせいろ蒸し麺の元祖焼きそば、水戸黄門ゆかりの別邸跡公園、海を望むカフェを経て、活気あふれるおさかな市場までを辿る。",
+    "region": "那珂湊・水戸藩の湊町と漁港の活気",
+    "area_name": "那珂湊・水戸藩の湊町と漁港の活気",
+    "cover_image_url": "/images/nakaminato/route-eyecatch.png",
+    "imageUrl": "/images/nakaminato/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水戸藩の湊町の歴史と潮の香りが溶け合う那珂湊で、次の旅人へ何を最初に教えますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「那珂湊天満宮」の高台から港の町並みを見下ろし、海へ神輿が入る祭りの話を聞いたとき",
+          "description": "古くから海とともに暮らしてきた湊町の人々の信仰と、力強い海の祭礼の伝統に胸を打たれた。",
+          "badge_code": "nakaminato_tenmangu"
+        },
+        {
+          "key": "B",
+          "text": "「喰い道楽 すみよし」で、もちもちの蒸し麺を使った元祖・那珂湊焼きそばを味わったとき",
+          "description": "地元の製麺所が守る手延べせいろ蒸し麺ならではの食感と、港町で親しまれてきた素朴な旨みに唸った。",
+          "badge_code": "nakaminato_yakisoba"
+        },
+        {
+          "key": "C",
+          "text": "水戸光圀公の別邸跡「湊公園」に立ち、潮風に揺れるクロマツ越しに太平洋を望んだとき",
+          "description": "かつて水戸黄門が海と川の景色を愛でた同じ高台から、変わらない海の広がりを見渡す贅沢を味わった。",
+          "badge_code": "nakaminato_minato_park"
+        },
+        {
+          "key": "D",
+          "text": "「那珂湊おさかな市場」の活気ある通りで、威勢のよい掛け声とともに海の幸を選んだとき",
+          "description": "漁港直結ならではの鮮度と賑わいに触れ、北関東を代表する港町のエネルギーを五感で受け取った。",
+          "badge_code": "nakaminato_fish_market"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2d0d7d9d-0e42-4336-8ac0-5c57d366f94c",
+        "name": "那珂湊天満宮",
+        "description": "中世に創建されたと伝わる湊町の古社。毎年八月に神輿が海へ入る「湊八朔祭り」の舞台として知られる。境内参拝自由。",
+        "address": "茨城県ひたちなか市釈迦町11-1",
+        "prefecture": "茨城県",
+        "city": "ひたちなか市",
+        "lat": 36.341433,
+        "lng": 140.588657,
+        "qr_token": "shuin-nakaminato-1",
+        "cover_image_url": "/images/nakaminato/spot1.png",
+        "f7_fragment": "潮風が渡る古社の鳥居と、鎌倉時代から湊町を見守る静かな社殿。",
+        "f7_full": "鎌倉時代の創建と伝わる高台の古社・那珂湊天満宮に参拝し、海と深く結びついた湊町の伝統的な信仰と祈りにじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "dba71c8f-a048-4659-8cbd-3184736b87b7",
+        "next_spot_name": "喰い道楽 すみよし"
+      },
+      {
+        "id": "dba71c8f-a048-4659-8cbd-3184736b87b7",
+        "name": "喰い道楽 すみよし",
+        "description": "地元名物「那珂湊焼きそば」の元祖として知られる人気食堂。手延べせいろ蒸し麺を使ったもちもちの焼きそばや海の幸が楽しめる。営業時間11:00〜14:00・17:00〜22:00、不定休。",
+        "address": "茨城県ひたちなか市湊中央1-5-12",
+        "prefecture": "茨城県",
+        "city": "ひたちなか市",
+        "lat": 36.34125,
+        "lng": 140.590983,
+        "qr_token": "shuin-nakaminato-2",
+        "cover_image_url": "/images/nakaminato/spot2.png",
+        "f7_fragment": "鉄板から立つソースの香ばしい湯気、もちもち食感の手延べ蒸し麺。",
+        "f7_full": "那珂湊焼きそばの元祖として知られる「喰い道楽 すみよし」を訪ね、地元製麺所の技が光る香ばしい一皿を存分に味わった。",
+        "is_final": false,
+        "next_spot_id": "fb5523a4-cfcb-429f-8bb9-3fb201e36c2a",
+        "next_spot_name": "湊公園"
+      },
+      {
+        "id": "fb5523a4-cfcb-429f-8bb9-3fb201e36c2a",
+        "name": "湊公園",
+        "description": "水戸藩二代藩主・徳川光圀公の別邸「い賓閣」が建っていた高台の公園。那珂川河口と太平洋、大洗の海岸線まで一望できる。終日散策自由。",
+        "address": "茨城県ひたちなか市湊中央1-1",
+        "prefecture": "茨城県",
+        "city": "ひたちなか市",
+        "lat": 36.340346,
+        "lng": 140.589766,
+        "qr_token": "shuin-nakaminato-3",
+        "cover_image_url": "/images/nakaminato/spot3.png",
+        "f7_fragment": "潮風に耐えるクロマツの枝ぶりと、高台から見渡す那珂川河口の絶景。",
+        "f7_full": "水戸藩主・徳川光圀公の別邸跡に造られた湊公園の高台に立ち、水戸藩の海の玄関口と雄大な太平洋の大海原を一望した。",
+        "is_final": false,
+        "next_spot_id": "94f87b7d-6bd0-4991-8f08-f0b0b82b4757",
+        "next_spot_name": "夢海カフェ"
+      },
+      {
+        "id": "94f87b7d-6bd0-4991-8f08-f0b0b82b4757",
+        "name": "夢海カフェ",
+        "description": "那珂湊漁港近くの海門町にあるカフェ。茨城県産の紅はるかを使った濃厚な焼き芋シェイクやいちごシェイクなど地元スイーツが人気。営業時間10:00〜17:00、水曜定休。",
+        "address": "茨城県ひたちなか市海門町1-17-14",
+        "prefecture": "茨城県",
+        "city": "ひたちなか市",
+        "lat": 36.339062,
+        "lng": 140.594065,
+        "qr_token": "shuin-nakaminato-4",
+        "cover_image_url": "/images/nakaminato/spot4.png",
+        "f7_fragment": "茨城の甘い芋スイーツと、海の玄関口・海門町に吹く爽やかな潮風。",
+        "f7_full": "海門町の「夢海カフェ」で茨城特産の甘い芋スイーツを味わい、海辺の港町散策の合間に潮風を感じながら心地よく一息ついた。",
+        "is_final": false,
+        "next_spot_id": "77a158b7-7765-48dd-84f6-fe51e1951e56",
+        "next_spot_name": "那珂湊おさかな市場"
+      },
+      {
+        "id": "77a158b7-7765-48dd-84f6-fe51e1951e56",
+        "name": "那珂湊おさかな市場",
+        "description": "那珂湊漁港に隣接する関東有数の海鮮市場。鮮魚店や水産加工品店が軒を連ね、水揚げされたばかりの海の幸が並ぶ。営業時間8:00〜17:00（店舗により異なる）、水曜休が多い。",
+        "address": "茨城県ひたちなか市湊本町19-8",
+        "prefecture": "茨城県",
+        "city": "ひたちなか市",
+        "lat": 36.339773,
+        "lng": 140.594556,
+        "qr_token": "shuin-nakaminato-5",
+        "cover_image_url": "/images/nakaminato/spot5.png",
+        "f7_fragment": "威勢の良い声が響く鮮魚店の通りと、氷の上に輝く旬の魚介の数々。",
+        "f7_full": "漁港直結の那珂湊おさかな市場で活気ある港の空気を全身に体感し、茨城ならではの豊かな海の幸を大切な旅の土産に選んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5bec2a0d-3635-4039-845f-84dcb3dea168",
+    "title": "北前船の記憶と越前そばが香る三国湊",
+    "name": "北前船の記憶と越前そばが香る三国湊",
+    "description": "九頭竜川の河口に開け、江戸から明治にかけて北前船の寄港地として空前の繁栄を極めた福井県坂井市三国湊。国宝を伝える古刹の名園から、かぐら建ての老舗越前そば、提灯屋の蔵カフェ、県内最古の洋風銀行建築を経て、地域に愛される酒饅頭の老舗まで、豪商たちの美意識が息づく湊町を歩く。",
+    "region": "三国港・北前船の湊と歴史的町家",
+    "area_name": "三国港・北前船の湊と歴史的町家",
+    "cover_image_url": "/images/mikuniminato/route-eyecatch.png",
+    "imageUrl": "/images/mikuniminato/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "北前船の豪商たちが築いた美意識が残る三国湊で、あなたが記憶に留めておきたいのはどの風景だろう？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "国名勝庭園を擁する古刹「瀧谷寺」の書院から、山の斜面を活かした庭を眺めたとき",
+          "description": "古くから続く名刹の重厚な佇まいと、季節の移ろいを映す池泉庭園の静寂に心が洗われた。",
+          "badge_code": "mikuniminato_takidanji"
+        },
+        {
+          "key": "B",
+          "text": "築百三十年超の町家「そば処 盛安」で、香り高い越前おろしそばを味わったとき",
+          "description": "三国特有の「かぐら建て」の空間でいただく辛味大根と出汁の風味に、北陸の食文化の深みを感じた。",
+          "badge_code": "mikuniminato_moriyasu_soba"
+        },
+        {
+          "key": "C",
+          "text": "老舗提灯店の土蔵を活かした「Cafe 三國湊・食の蔵 灯」で、和の灯りに包まれて寛いだとき",
+          "description": "二百余年続く提灯職人の文化と、土蔵の落ち着いた空間が織りなす心地よい時間に癒やされた。",
+          "badge_code": "mikuniminato_akari_cafe"
+        },
+        {
+          "key": "D",
+          "text": "国登録有形文化財「旧森田銀行本店」の豪華な漆喰装飾と吹き抜けを見上げたとき",
+          "description": "往時の湊町の財力と、地方銀行建築に込められた西欧古典主義の華麗な意匠に圧倒された。",
+          "badge_code": "mikuniminato_morita_bank"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "810e438c-16b1-45e3-8dd7-652563d1116c",
+        "name": "瀧谷寺",
+        "description": "六百余年前に創建された三国最古の真言宗寺院。国宝の宝相華文磬や国の名勝に指定された池泉庭園を有する。拝観8:00〜17:00（11〜2月は16:30まで）、無休。",
+        "address": "福井県坂井市三国町滝谷1-7-15",
+        "prefecture": "福井県",
+        "city": "坂井市",
+        "lat": 36.221844,
+        "lng": 136.146061,
+        "qr_token": "shuin-mikuniminato-1",
+        "cover_image_url": "/images/mikuniminato/spot1.png",
+        "f7_fragment": "山の緑を借景にした国名勝の池泉庭園と、古刹の重厚な伽藍。",
+        "f7_full": "三国最古の古刹として知られる瀧谷寺を訪ね、かつての武将も庇護した静謐な名園と歴史ある伽藍の佇まいに深く触れた。",
+        "is_final": false,
+        "next_spot_id": "89120829-8d75-4448-8681-b0a8589d97b5",
+        "next_spot_name": "そば処 盛安"
+      },
+      {
+        "id": "89120829-8d75-4448-8681-b0a8589d97b5",
+        "name": "そば処 盛安",
+        "description": "創業百三十年を超える三国湊の老舗蕎麦店。三国特有の町家建築「かぐら建て」の店舗で、二八の越前おろしそばを味わえる。営業時間11:00〜14:00（土日祝は夜営業あり）、水曜定休。",
+        "address": "福井県坂井市三国町北本町3-2-30",
+        "prefecture": "福井県",
+        "city": "坂井市",
+        "lat": 36.215754,
+        "lng": 136.14682,
+        "qr_token": "shuin-mikuniminato-2",
+        "cover_image_url": "/images/mikuniminato/spot2.png",
+        "f7_fragment": "かぐら建ての町家に響く蕎麦をすする音、辛味大根が香る越前そば。",
+        "f7_full": "創業百三十年超の老舗「そば処 盛安」を訪ね、三国特有の伝統町家の中で香り高い越前おろしそばをじっくり味わった。",
+        "is_final": false,
+        "next_spot_id": "73c5a95d-a9af-4aa2-8e50-83512fd1e6fe",
+        "next_spot_name": "Cafe 三國湊・食の蔵 灯"
+      },
+      {
+        "id": "73c5a95d-a9af-4aa2-8e50-83512fd1e6fe",
+        "name": "Cafe 三國湊・食の蔵 灯",
+        "description": "二百余年の歴史を誇る老舗提灯店が営む、土蔵をリノベーションしたカフェ。落ち着いた蔵空間で自家製ドリンクやスイーツを楽しめる。営業時間11:00〜16:00、火・水曜定休。",
+        "address": "福井県坂井市三国町北本町4-4-46",
+        "prefecture": "福井県",
+        "city": "坂井市",
+        "lat": 36.214273,
+        "lng": 136.149196,
+        "qr_token": "shuin-mikuniminato-3",
+        "cover_image_url": "/images/mikuniminato/spot3.png",
+        "f7_fragment": "白壁の土蔵に灯る柔らかな明かりと、老舗提灯店が営む穏やかな喫茶空間。",
+        "f7_full": "老舗提灯店が営む土蔵カフェで心地よく一服し、三国湊に息づく伝統の手仕事と暮らしの温もりにじっくりと心を寄せた。",
+        "is_final": false,
+        "next_spot_id": "e8a9a616-c072-4f7e-85f4-3b8e503954ce",
+        "next_spot_name": "旧森田銀行本店"
+      },
+      {
+        "id": "e8a9a616-c072-4f7e-85f4-3b8e503954ce",
+        "name": "旧森田銀行本店",
+        "description": "百余年前に建てられた福井県内最古の鉄筋コンクリート造銀行建築（国登録有形文化財）。豪華な漆喰装飾の吹き抜け営業室を公開。開館9:00〜17:00、月曜休（祝日は開館）。",
+        "address": "福井県坂井市三国町南本町3-3-26",
+        "prefecture": "福井県",
+        "city": "坂井市",
+        "lat": 36.213598,
+        "lng": 136.149543,
+        "qr_token": "shuin-mikuniminato-4",
+        "cover_image_url": "/images/mikuniminato/spot4.png",
+        "f7_fragment": "西欧古典主義の重厚な石壁と、吹き抜け天井を彩る豪華な漆喰彫刻。",
+        "f7_full": "国登録有形文化財の旧森田銀行本店を仰ぎ、北前船の富が築いた往時の華麗な洋風建築と装飾の意匠を深くじっくり体感した。",
+        "is_final": false,
+        "next_spot_id": "ee2b9d5e-cb4b-4032-8286-b7f1afbb42a0",
+        "next_spot_name": "いまで涛花堂"
+      },
+      {
+        "id": "ee2b9d5e-cb4b-4032-8286-b7f1afbb42a0",
+        "name": "いまで涛花堂",
+        "description": "三国町南本町で長く親しまれる和洋菓子店。三国名物の酒万寿（酒饅頭）やとびつき団子など、地元に根づくお菓子が並ぶ。営業時間8:00〜18:00（日曜17:00まで）、火曜定休。",
+        "address": "福井県坂井市三国町南本町1-1-48",
+        "prefecture": "福井県",
+        "city": "坂井市",
+        "lat": 36.213129,
+        "lng": 136.154973,
+        "qr_token": "shuin-mikuniminato-5",
+        "cover_image_url": "/images/mikuniminato/spot5.png",
+        "f7_fragment": "酒麹の香りがほのかに漂う素朴な酒万寿と、湊町の暮らしに寄り添う菓子舗。",
+        "f7_full": "南本町の老舗・いまで涛花堂で名物の酒万寿を手に取り、北前船が往来した三国湊の町歩きの旅を美しく見事に締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "56ae938d-a779-4d75-882d-eb55a158f88c",
+    "title": "町家の格子戸と佐野町場の粋を訪ねる",
+    "name": "町家の格子戸と佐野町場の粋を訪ねる",
+    "description": "江戸時代に廻船業と木綿・醤油づくりで栄え、本瓦屋根と格子戸の町並み「さの町場」を今に残す大阪府泉佐野市。北前船の寄港地を見守った総社から、老舗の寿司、醤油業で財を成した有形文化財の町家、町家改装の和カフェを経て、明治創業の銘菓本店まで、泉州の商都を巡る。",
+    "region": "泉佐野・さの町場の格子戸と古社",
+    "area_name": "泉佐野・さの町場の格子戸と古社",
+    "cover_image_url": "/images/izumisano/route-eyecatch.png",
+    "imageUrl": "/images/izumisano/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "商家の面影と泉州の味が息づく佐野町場で、誰かへ語りたくなるのはどれ？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「泉佐野ふるさと町屋館」の土間と帳場で、往時の商人の暮らしぶりに触れたとき",
+          "description": "醤油業を営んだ豪商の堂々たる梁や日本画家の襖絵から、当時のさの町場の豊かな文化を実感した。",
+          "badge_code": "izumisano_machiyakan"
+        },
+        {
+          "key": "B",
+          "text": "「春日神社」の境内で、北前船の時代から商売繁盛を願う石燈籠を見上げたとき",
+          "description": "かつて漁業と廻船で栄えた佐野町場の総社に立ち、海と商いを結んだ地域の祈りを感じ取った。",
+          "badge_code": "izumisano_kasuga_shrine"
+        },
+        {
+          "key": "C",
+          "text": "元酒屋を活かした「甘味茶房 さのまち庵」で、焼き団子と日本茶を味わったとき",
+          "description": "古い町家の落ち着いた空気の中で、香ばしく焼いたお団子とともに寛ぐ時間が旅の疲れを癒やしてくれた。",
+          "badge_code": "izumisano_sanomachian"
+        },
+        {
+          "key": "D",
+          "text": "百三十年超続く「むか新 本店」で、泉州銘菓のみたらしだんごや焼き菓子を選んだとき",
+          "description": "百三十年以上にわたり泉佐野の玄関口で愛され続ける老舗の温もりと、変わらぬ和洋菓子の魅力に惹かれた。",
+          "badge_code": "izumisano_mukashin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7ea3cc6a-c059-46a4-801e-010524c2b284",
+        "name": "春日神社",
+        "description": "かつて漁業と廻船業で栄えた「さの町場」の総社。境内には豪商が奉納した石燈籠や赤手拭稲荷神社が鎮座する。境内参拝自由。",
+        "address": "大阪府泉佐野市春日町4-12",
+        "prefecture": "大阪府",
+        "city": "泉佐野市",
+        "lat": 34.415188,
+        "lng": 135.318032,
+        "qr_token": "shuin-izumisano-1",
+        "cover_image_url": "/images/izumisano/spot1.png",
+        "f7_fragment": "豪商が奉納した立派な石燈籠が並ぶ境内、廻船の町を見守る総社。",
+        "f7_full": "さの町場の総社・春日神社に参拝し、海運と商いで栄えた泉佐野の確かな原点と町衆の祈りの歴史にじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "a689af05-e856-4da3-88e5-9a70217f0ee4",
+        "next_spot_name": "松右エ門ずし"
+      },
+      {
+        "id": "a689af05-e856-4da3-88e5-9a70217f0ee4",
+        "name": "松右エ門ずし",
+        "description": "さの町場の本町通りに構える老舗の寿司・和食店。泉州の海の幸を使った落ち着いた昼食や和食を味わえる。営業時間11:30〜14:00・17:00〜21:00、水曜定休。",
+        "address": "大阪府泉佐野市本町4-23",
+        "prefecture": "大阪府",
+        "city": "泉佐野市",
+        "lat": 34.414387,
+        "lng": 135.316539,
+        "qr_token": "shuin-izumisano-2",
+        "cover_image_url": "/images/izumisano/spot2.png",
+        "f7_fragment": "歴史ある町家の暖簾の先で味わう、大阪湾の旬の寿司と和の味わい。",
+        "f7_full": "さの町場の本町通りに構える老舗「松右エ門ずし」を訪ね、大阪湾と泉州の豊かな海の恵みをじっくり心ゆくまで堪能した。",
+        "is_final": false,
+        "next_spot_id": "cdc77d42-6e12-4d5b-82c6-9748dc971f35",
+        "next_spot_name": "泉佐野ふるさと町屋館"
+      },
+      {
+        "id": "cdc77d42-6e12-4d5b-82c6-9748dc971f35",
+        "name": "泉佐野ふるさと町屋館",
+        "description": "往時に醤油業を営むために建てられた旧新川家住宅を公開する泉佐野市指定有形文化財。開館9:00〜16:00（入館料200円）、年末年始休。",
+        "address": "大阪府泉佐野市本町5-29",
+        "prefecture": "大阪府",
+        "city": "泉佐野市",
+        "lat": 34.414724,
+        "lng": 135.316026,
+        "qr_token": "shuin-izumisano-3",
+        "cover_image_url": "/images/izumisano/spot3.png",
+        "f7_fragment": "通り土間と太い梁が伝える往時の商い、本瓦屋根の豪商の住まい。",
+        "f7_full": "泉佐野市指定有形文化財のふるさと町屋館を訪ね、醤油商が築いた町家の粋と暮らしの知恵にじっくりと心ゆくまで触れた。",
+        "is_final": false,
+        "next_spot_id": "158eed1a-3cc6-45ed-8d9b-5eb4eec01d7d",
+        "next_spot_name": "甘味茶房 さのまち庵"
+      },
+      {
+        "id": "158eed1a-3cc6-45ed-8d9b-5eb4eec01d7d",
+        "name": "甘味茶房 さのまち庵",
+        "description": "築百年の元酒屋の町家をリノベーションした和カフェ。自分で焼き上げる団子セットや抹茶、和スイーツが楽しめる。営業時間11:00〜17:00、月曜定休（祝日の場合は翌平日休）。",
+        "address": "大阪府泉佐野市元町1-2",
+        "prefecture": "大阪府",
+        "city": "泉佐野市",
+        "lat": 34.413137,
+        "lng": 135.315517,
+        "qr_token": "shuin-izumisano-4",
+        "cover_image_url": "/images/izumisano/spot4.png",
+        "f7_fragment": "古い町家に漂う香ばしい焼き団子の香りと、温かい日本茶のぬくもり。",
+        "f7_full": "元酒屋の町家を再生した「甘味茶房 さのまち庵」で一服し、古き良き町家の寛ぎの時間を心ゆくまでゆっくり味わった。",
+        "is_final": false,
+        "next_spot_id": "ab816d34-7cbb-4e4d-809c-7eaa25a87bca",
+        "next_spot_name": "むか新 本店"
+      },
+      {
+        "id": "ab816d34-7cbb-4e4d-809c-7eaa25a87bca",
+        "name": "むか新 本店",
+        "description": "百三十年以上の歴史を誇る大阪・泉州を代表する老舗和洋菓子店。元祖大阪みたらしだんごやこがしバターケーキなどが人気。営業時間9:00〜18:00、水曜定休。",
+        "address": "大阪府泉佐野市上町3-11-4",
+        "prefecture": "大阪府",
+        "city": "泉佐野市",
+        "lat": 34.411259,
+        "lng": 135.318459,
+        "qr_token": "shuin-izumisano-5",
+        "cover_image_url": "/images/izumisano/spot5.png",
+        "f7_fragment": "泉佐野駅前に佇む百三十年続く老舗、焦がしバターとみたらしの甘い誘い。",
+        "f7_full": "百三十年超の歴史を誇る老舗「むか新 本店」で泉州銘菓を手に取り、さの町場の歴史と暮らしを巡る旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "636eadbb-bd33-4389-80c9-8999c40d9e77",
+    "title": "鹿島城下の杜と発酵銘菓の香りを巡る",
+    "name": "鹿島城下の杜と発酵銘菓の香りを巡る",
+    "description": "多良岳山系から湧き出る豊かな伏流水に恵まれ、鹿島藩二万石の城下町および酒蔵と発酵のまちとして栄えてきた佐賀県鹿島市。旧城内の鎮守から、大正創業の老舗割烹の昼食、歴史ある寺院、白壁カフェの寛ぎを経て、醤油麹やみりんを活かした老舗の郷土銘菓までを巡る。",
+    "region": "肥前鹿島・城下町と発酵文化の街",
+    "area_name": "肥前鹿島・城下町と発酵文化の街",
+    "cover_image_url": "/images/hizen_kashima/route-eyecatch.png",
+    "imageUrl": "/images/hizen_kashima/route-eyecatch.png",
+    "category": "歴史・文化",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "豊かな水と城下の歴史が息づく肥前鹿島で、あなたの五感を優しく満たしたのはどれでしょうか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "鹿島城跡の一角に鎮座する「松蔭神社」の静かな杜を歩いたとき",
+          "description": "歴代鹿島藩主を祀る歴史の重みと、旭ヶ岡の緑深い静寂に心がすっと整うのを感じた。",
+          "badge_code": "hizen_kashima_shoin_shrine"
+        },
+        {
+          "key": "B",
+          "text": "老舗「赤門堂」で、醤油麹やみりんを隠し味に使った名物「兄弟ぼうろ」を手にしたとき",
+          "description": "酒どころ・発酵のまち鹿島ならではの伝統が、素朴な焼き菓子の奥深い風味に活かされていて驚いた。",
+          "badge_code": "hizen_kashima_akamondo"
+        },
+        {
+          "key": "C",
+          "text": "百余年続く老舗「割烹 清川」で、地元の旬を活かした昼定食を味わったとき",
+          "description": "有明海や多良岳の恵みを取り入れた丁寧な料理と、百余年続く割烹の落ち着いた空気に満たされた。",
+          "badge_code": "hizen_kashima_kiyokawa"
+        },
+        {
+          "key": "D",
+          "text": "白い壁が印象的な「Rana Cafe」で、こだわりの珈琲とスイーツで一息ついたとき",
+          "description": "城下町の歴史を歩いたあとに、洗練されたカフェ空間で味わう穏やかな時間が心地よかった。",
+          "badge_code": "hizen_kashima_rana_cafe"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "65cdcc1d-73d0-450f-8d59-5d2d25f956e2",
+        "name": "松蔭神社",
+        "description": "鹿島城跡（旭ヶ岡公園）の一角に鎮座し、歴代鹿島藩主を祀る神社。桜の名所としても知られ、城下町の歴史を今に伝える。境内参拝自由。",
+        "address": "佐賀県鹿島市大字高津原460",
+        "prefecture": "佐賀県",
+        "city": "鹿島市",
+        "lat": 33.102838,
+        "lng": 130.092852,
+        "qr_token": "shuin-hizen_kashima-1",
+        "cover_image_url": "/images/hizen_kashima/spot1.png",
+        "f7_fragment": "鹿島城跡の緑に包まれた松蔭神社、藩主の記憶を伝える鎮守の杜。",
+        "f7_full": "鹿島城跡（旭ヶ岡公園）に鎮座する松蔭神社を訪ね、二万石の城下町が歩んだ歴史と静寂の原点にじっくりと深く触れた。",
+        "is_final": false,
+        "next_spot_id": "8393ebe9-69a1-4e26-8ad8-1492edb8cbcd",
+        "next_spot_name": "割烹 清川"
+      },
+      {
+        "id": "8393ebe9-69a1-4e26-8ad8-1492edb8cbcd",
+        "name": "割烹 清川",
+        "description": "百余年の歴史を誇る老舗割烹。館内の「創作料理 樂亭」などで、地元の旬を活かした日替り定食や御膳ランチを味わえる。ランチ11:00〜14:00（月〜土）、不定休。",
+        "address": "佐賀県鹿島市大字高津原3590",
+        "prefecture": "佐賀県",
+        "city": "鹿島市",
+        "lat": 33.10944,
+        "lng": 130.093756,
+        "qr_token": "shuin-hizen_kashima-2",
+        "cover_image_url": "/images/hizen_kashima/spot2.png",
+        "f7_fragment": "百余年続く老舗割烹で味わう、有明海と多良岳の旬を盛り付けた膳。",
+        "f7_full": "百余年の歴史を誇る老舗「割烹 清川」で鹿島の旬を活かした昼定食を味わい、丁寧な和のもてなしに心から深く触れた。",
+        "is_final": false,
+        "next_spot_id": "ee04d958-cd0b-4dd8-8d56-a139d50df5c7",
+        "next_spot_name": "浄林寺"
+      },
+      {
+        "id": "ee04d958-cd0b-4dd8-8d56-a139d50df5c7",
+        "name": "浄林寺",
+        "description": "高津原の街なかに佇む歴史ある寺院。落ち着いた瓦屋根の本堂と手入れされた境内が城下町の静寂を伝えている。境内散策自由。",
+        "address": "佐賀県鹿島市大字高津原862",
+        "prefecture": "佐賀県",
+        "city": "鹿島市",
+        "lat": 33.108808,
+        "lng": 130.091938,
+        "qr_token": "shuin-hizen_kashima-3",
+        "cover_image_url": "/images/hizen_kashima/spot3.png",
+        "f7_fragment": "高津原の町並みに寄り添う重厚な瓦屋根の本堂と、静謐な境内の木陰。",
+        "f7_full": "城下町の面影が色濃く残る高津原の浄林寺を訪ね、地域の暮らしと共にある穏やかな祈りの静寂にじっくり心から触れた。",
+        "is_final": false,
+        "next_spot_id": "7ff45736-5ecf-4f64-8219-bd5fddefe977",
+        "next_spot_name": "Rana Cafe"
+      },
+      {
+        "id": "7ff45736-5ecf-4f64-8219-bd5fddefe977",
+        "name": "Rana Cafe",
+        "description": "白い壁が目を引くスタイリッシュなカフェ。香り高い珈琲や自家製ガトーショコラなどのスイーツが人気。営業時間11:30〜16:00・18:00〜22:00、日曜・第1・3月曜定休。",
+        "address": "佐賀県鹿島市高津原3751-5",
+        "prefecture": "佐賀県",
+        "city": "鹿島市",
+        "lat": 33.111907,
+        "lng": 130.090681,
+        "qr_token": "shuin-hizen_kashima-4",
+        "cover_image_url": "/images/hizen_kashima/spot4.png",
+        "f7_fragment": "白い壁の空間に広がる珈琲の香りと、手作りガトーショコラの甘み。",
+        "f7_full": "高津原の「Rana Cafe」で香り高い珈琲と手作りスイーツを楽しみ、城下町歩きの合間に心地よくゆったり一息ついた。",
+        "is_final": false,
+        "next_spot_id": "21e2a2c8-4839-4f20-8576-80cab69b6042",
+        "next_spot_name": "赤門堂"
+      },
+      {
+        "id": "21e2a2c8-4839-4f20-8576-80cab69b6042",
+        "name": "赤門堂",
+        "description": "発酵のまち鹿島ならではの醤油麹やみりんを隠し味に用いた「兄弟ぼうろ」や「丸房露」を手がける老舗和菓子店。営業時間9:00〜18:00、不定休。",
+        "address": "佐賀県鹿島市高津原4305-6",
+        "prefecture": "佐賀県",
+        "city": "鹿島市",
+        "lat": 33.111693,
+        "lng": 130.095328,
+        "qr_token": "shuin-hizen_kashima-5",
+        "cover_image_url": "/images/hizen_kashima/spot5.png",
+        "f7_fragment": "醤油こうじとみりんが香る伝統の丸房露、鹿島の発酵文化が生んだ銘菓。",
+        "f7_full": "老舗和菓子店・赤門堂で発酵の知恵を活かした郷土銘菓を手に取り、肥前鹿島の城下町を巡る旅を美しく心から締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
