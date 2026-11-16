@@ -80600,5 +80600,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "40df3dfc-10ff-498c-868d-dc02bb66cc62",
+    "title": "前橋・詩人の川辺と迎賓館の街を歩く",
+    "name": "前橋・詩人の川辺と迎賓館の街を歩く",
+    "description": "「水と緑と詩のまち」として親しまれるJR前橋駅から、現代アートの拠点「アーツ前橋」と建築美が光る「白井屋ホテル」、昭和レトロな洋食店「パーラーレストラン モモヤ」、萩原朔太郎ゆかりの「前橋文学館」、国重要文化財「臨江閣」を巡る散策路。",
+    "region": "前橋・水と緑と詩のまち",
+    "area_name": "前橋・水と緑と詩のまち",
+    "cover_image_url": "/images/maebashi/route-eyecatch.png",
+    "imageUrl": "/images/maebashi/route-eyecatch.png",
+    "category": "アートと歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "アートとレトロな洋食、そして詩人の川辺が交差する前橋を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「白井屋ホテル」の吹き抜け空間で、現代アートと緑が彩る建築美を見上げた瞬間",
+          "description": "三百年以上の歴史を継ぐ宿が、国内外のアーティストの作品を纏い街の新たな象徴となっていた。",
+          "badge_code": "maebashi_shiroiya"
+        },
+        {
+          "key": "B",
+          "text": "「パーラーレストラン モモヤ」で、昔ながらのナポリタンやパフェを味わった瞬間",
+          "description": "中央通り商店街の一角で半世紀以上愛され続ける昭和レトロな空間が、旅の心を和ませた。",
+          "badge_code": "maebashi_momoya"
+        },
+        {
+          "key": "C",
+          "text": "「前橋文学館」の窓辺から広瀬川の清流を眺め、詩人・萩原朔太郎の言葉に触れた瞬間",
+          "description": "川面を渡る風と柳の緑が、近代日本詩の礎を築いた前橋の文学的風土を物語っていた。",
+          "badge_code": "maebashi_bungakukan"
+        },
+        {
+          "key": "D",
+          "text": "「臨江閣」の気品ある木造迎賓館で、明治期の美しい和風建築と庭園を眺めた瞬間",
+          "description": "日本の近代化を支えた迎賓の場が、今も静かな池と松の緑とともに前橋公園に佇んでいた。",
+          "badge_code": "maebashi_rinkokaku"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0acb8bf9-a8f8-4e2b-812c-e81c13dd6715",
+        "name": "アーツ前橋",
+        "description": "商業施設を再生して誕生した前橋市の公立美術館。地域や暮らしと結びついた多彩な現代アートの展覧会を開催する。開館10:00〜18:00（入館17:30まで）、水曜休館。",
+        "address": "群馬県前橋市千代田町5-1-16",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.39048,
+        "lng": 139.071215,
+        "qr_token": "shuin-maebashi-1",
+        "cover_image_url": "/images/maebashi/spot1.png",
+        "f7_fragment": "旧商業施設を再生し街とアートを繋ぐ、前橋文化の開放的な発信拠点。",
+        "f7_full": "街なかの公立美術館「アーツ前橋」で現代アートと再生建築の開放的な空間に触れ、前橋の豊かな文化散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "b1e59e19-249e-44ae-81d6-d543f7b5b340",
+        "next_spot_name": "白井屋ホテル"
+      },
+      {
+        "id": "b1e59e19-249e-44ae-81d6-d543f7b5b340",
+        "name": "白井屋ホテル",
+        "description": "江戸時代創業の老舗旅館を建築家・藤本壮介氏の設計で再生したアートホテル。ロビーの吹き抜けや敷地内のカフェ・ベーカリーが街に開かれている。ロビー・カフェ日中開放。",
+        "address": "群馬県前橋市本町2-2-15",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.390172,
+        "lng": 139.070053,
+        "qr_token": "shuin-maebashi-2",
+        "cover_image_url": "/images/maebashi/spot2.png",
+        "f7_fragment": "老舗旅館を藤本壮介氏が再生した、光とアートが響く前橋の名建築。",
+        "f7_full": "「白井屋ホテル」の吹き抜けに満ちる光と現代アートの空間を仰ぎ、老舗の記憶を受け継ぐ前橋の新たな街の魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "9ec4c394-f548-46bf-86df-d73501499f87",
+        "next_spot_name": "パーラーレストラン モモヤ"
+      },
+      {
+        "id": "9ec4c394-f548-46bf-86df-d73501499f87",
+        "name": "パーラーレストラン モモヤ",
+        "description": "前橋中央通り商店街で長く愛される昭和レトロな老舗洋食喫茶。昔ながらのナポリタンやクリームソーダ、特製パフェが人気。営業時間10:00〜19:00、水曜・第3木曜定休。",
+        "address": "群馬県前橋市千代田町2-12-2",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.391556,
+        "lng": 139.069081,
+        "qr_token": "shuin-maebashi-3",
+        "cover_image_url": "/images/maebashi/spot3.png",
+        "f7_fragment": "中央通り商店街で半世紀以上愛される、昭和レトロな洋食と甘味の店。",
+        "f7_full": "商店街の老舗「パーラーレストラン モモヤ」で懐かしい洋食と甘いひとときを味わい、前橋の温かな日常に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "da47c5dd-843c-4267-825c-ce6ac70ac7e8",
+        "next_spot_name": "前橋文学館"
+      },
+      {
+        "id": "da47c5dd-843c-4267-825c-ce6ac70ac7e8",
+        "name": "前橋文学館",
+        "description": "前橋出身の詩人・萩原朔太郎をはじめとする近代文学の資料を展示する文学館。広瀬川の美しい遊歩道に面して建つ。開館9:00〜17:00（入館16:30まで）、水曜定休。",
+        "address": "群馬県前橋市千代田町3-12-10",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.393852,
+        "lng": 139.072178,
+        "qr_token": "shuin-maebashi-4",
+        "cover_image_url": "/images/maebashi/spot4.png",
+        "f7_fragment": "広瀬川のほとりで萩原朔太郎と近代詩の世界を伝える、美しい文学館。",
+        "f7_full": "広瀬川沿いの「前橋文学館」で萩原朔太郎の言葉と川辺の柳の風景に出会い、「水と緑と詩のまち」の風情を味わった。",
+        "is_final": false,
+        "next_spot_id": "2f974f9e-2bd7-4be7-8d98-86a0a7fa9355",
+        "next_spot_name": "臨江閣"
+      },
+      {
+        "id": "2f974f9e-2bd7-4be7-8d98-86a0a7fa9355",
+        "name": "臨江閣",
+        "description": "明治17年（1884年）に迎賓館として建てられた国指定重要文化財の木造建築群。数寄屋造りの本館と別館が前橋公園の緑に映える（※2026年6月〜2027年3月末は防火改修工事のため館内休館・公園から外観と庭園を見学可）。",
+        "address": "群馬県前橋市大手町3-15",
+        "prefecture": "群馬県",
+        "city": "",
+        "lat": 36.39587,
+        "lng": 139.062239,
+        "qr_token": "shuin-maebashi-5",
+        "cover_image_url": "/images/maebashi/spot5.png",
+        "f7_fragment": "明治の迎賓館の気品を今に伝える、前橋公園内の国重要文化財の木造建築。",
+        "f7_full": "国重要文化財「臨江閣」の気品ある木造建築と庭園を歩き、アートと詩と歴史が響き合う前橋の散策を清々しく締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b72e334c-ad89-4638-8a95-2daeaa50d4d2",
+    "title": "牛久・日本初の葡萄酒蔵と煉瓦の街を歩く",
+    "name": "牛久・日本初の葡萄酒蔵と煉瓦の街を歩く",
+    "description": "JR常磐線牛久駅から、日本遺産・国重要文化財に指定される明治の赤煉瓦ワイン醸造場「牛久シャトー」と「牛久シャトーレストラン」、駅東口の芋菓子専門店「芋千」、ジャズ喫茶「サイトウコーヒー」、老舗「伊勢屋餅菓子店」を巡る散策路。",
+    "region": "牛久・赤煉瓦の葡萄酒蔵と城下町",
+    "area_name": "牛久・赤煉瓦の葡萄酒蔵と城下町",
+    "cover_image_url": "/images/ushiku/route-eyecatch.png",
+    "imageUrl": "/images/ushiku/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "日本ワイン発祥の赤煉瓦建築と街角の温かな味が繋がる牛久を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「牛久シャトー」の広大な敷地で、明治期そのままの赤煉瓦醸造場を見上げた瞬間",
+          "description": "神谷傳兵衛が築いた日本初の本格ワイン醸造場の重厚な煉瓦壁が、百年以上の時を伝えていた。",
+          "badge_code": "ushiku_chateau"
+        },
+        {
+          "key": "B",
+          "text": "「牛久シャトーレストラン」の煉瓦蔵の中で、地元食材の一皿を味わった瞬間",
+          "description": "百年を超えるワイン貯蔵庫を活かした高い天井の空間で、優雅な昼食の時間を楽しんだ。",
+          "badge_code": "ushiku_chateau_restaurant"
+        },
+        {
+          "key": "C",
+          "text": "「芋千」の店頭で、艶やかな茨城産さつまいもの大学芋に出会った瞬間",
+          "description": "黄金色に輝く大学芋やスイートポテトの香ばしさが、茨城ならではの豊かな恵みを伝えていた。",
+          "badge_code": "ushiku_imosen"
+        },
+        {
+          "key": "D",
+          "text": "「サイトウコーヒー」のジャズが流れる店内で、ネルドリップ珈琲を味わった瞬間",
+          "description": "自家焙煎の深い香りと遊び心あるカッパフェが、牛久の街歩きの午後に彩りを添えた。",
+          "badge_code": "ushiku_saitoh_coffee"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "53e5c791-3c46-40d9-882c-fbe5e30db37f",
+        "name": "牛久シャトー",
+        "description": "明治36年（1903年）に神谷傳兵衛が築いた日本初の本格的ワイン醸造場。本館や旧醗酵室など赤煉瓦建築群が国重要文化財・日本遺産に認定。見学施設10:00〜16:00（年末年始休）。",
+        "address": "茨城県牛久市中央3-20-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.977821,
+        "lng": 140.147367,
+        "qr_token": "shuin-ushiku-1",
+        "cover_image_url": "/images/ushiku/spot1.png",
+        "f7_fragment": "明治に神谷傳兵衛が築いた日本初の本格ワイン醸造場、国重文の赤煉瓦群。",
+        "f7_full": "国重要文化財「牛久シャトー」の優美な赤煉瓦建築群を歩き、明治の日本ワイン発祥の歴史と異国情緒を満喫した。",
+        "is_final": false,
+        "next_spot_id": "a4111c61-ebad-4953-83cc-fd951d44caa7",
+        "next_spot_name": "牛久シャトーレストラン"
+      },
+      {
+        "id": "a4111c61-ebad-4953-83cc-fd951d44caa7",
+        "name": "牛久シャトーレストラン",
+        "description": "牛久シャトー敷地内の煉瓦造り旧ワイン貯蔵庫を改装したレストラン。高い天井の重厚な空間で、地元食材を活かしたカジュアルフレンチを味わえる。昼11:30〜15:00、月曜定休。",
+        "address": "茨城県牛久市中央3-20-1",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.978185,
+        "lng": 140.147159,
+        "qr_token": "shuin-ushiku-2",
+        "cover_image_url": "/images/ushiku/spot2.png",
+        "f7_fragment": "百年超の赤煉瓦ワイン貯蔵庫を改装した、趣あふれるシャトーレストラン。",
+        "f7_full": "「牛久シャトーレストラン」の重厚な赤煉瓦空間で地元食材のランチを味わい、歴史あるワイナリーの豊かさに浸った。",
+        "is_final": false,
+        "next_spot_id": "d76c4283-14db-46a3-88fb-11ae6b89e55e",
+        "next_spot_name": "芋千"
+      },
+      {
+        "id": "d76c4283-14db-46a3-88fb-11ae6b89e55e",
+        "name": "芋千",
+        "description": "牛久駅東口近くにある茨城特産さつまいも菓子の専門店。艶やかな蜜を纏った「大学芋」や「芋すふれ」「芋けんぴ」が人気。営業時間10:00〜19:00（売切終了）、月曜定休。",
+        "address": "茨城県牛久市中央5-14-25",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.975359,
+        "lng": 140.141417,
+        "qr_token": "shuin-ushiku-3",
+        "cover_image_url": "/images/ushiku/spot3.png",
+        "f7_fragment": "茨城産さつまいもの魅力を引き出す、牛久駅東口近くの芋菓子専門店。",
+        "f7_full": "牛久駅近くの芋菓子専門店「芋千」を訪ね、艶やかな大学芋や茨城産さつまいもの優しい甘味を手土産に選んだ。",
+        "is_final": false,
+        "next_spot_id": "5af0b139-89e6-4fa9-8b44-5287424af229",
+        "next_spot_name": "サイトウコーヒー"
+      },
+      {
+        "id": "5af0b139-89e6-4fa9-8b44-5287424af229",
+        "name": "サイトウコーヒー",
+        "description": "ジャズが流れる落ち着いた空間で自家焙煎のネルドリップ珈琲が味わえる牛久の人気喫茶店。牛久ゆかりの「カッパフェ」（15:00〜17:30提供）も名物。営業時間10:00〜18:00、月曜定休。",
+        "address": "茨城県牛久市南1-3-13",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.973209,
+        "lng": 140.143163,
+        "qr_token": "shuin-ushiku-4",
+        "cover_image_url": "/images/ushiku/spot4.png",
+        "f7_fragment": "ジャズとネルドリップ珈琲、可愛いカッパフェに出会う牛久の純喫茶。",
+        "f7_full": "ジャズが流れる「サイトウコーヒー」で自家焙煎のネルドリップ珈琲を味わい、牛久の温かな街の空気に心地よく寛いだ。",
+        "is_final": false,
+        "next_spot_id": "5f4619d3-05c9-4470-8b0d-20fdd6b069d3",
+        "next_spot_name": "伊勢屋餅菓子店"
+      },
+      {
+        "id": "5f4619d3-05c9-4470-8b0d-20fdd6b069d3",
+        "name": "伊勢屋餅菓子店",
+        "description": "牛久駅西口からほど近い田宮町で長年親しまれる昔ながらの和菓子・餅菓子店。お団子や大福、お赤飯、いなり寿司など素朴な手づくりの味が並ぶ。営業時間月〜土9:30〜17:00・日9:30〜16:30、水曜定休。",
+        "address": "茨城県牛久市田宮町188-2",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.978378,
+        "lng": 140.139418,
+        "qr_token": "shuin-ushiku-5",
+        "cover_image_url": "/images/ushiku/spot5.png",
+        "f7_fragment": "田宮町で団子や大福、赤飯を手づくりし続ける、牛久の昔ながらの餅菓子店。",
+        "f7_full": "駅西側の老舗「伊勢屋餅菓子店」で手づくりの団子や大福に触れ、赤煉瓦のワイナリーと日常が息づく牛久の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "0e56302b-a519-478c-85bb-7b7255f404c1",
+    "title": "松戸・水戸徳川ゆかりの丘と純喫茶を歩く",
+    "name": "松戸・水戸徳川ゆかりの丘と純喫茶を歩く",
+    "description": "JR常磐線松戸駅から、昭和の面影を残す「純喫茶 若松」と「松戸神社」、地元に親しまれる「珈琲店 川名」と老舗和菓子店「和菓子 峰月」を経て、水戸藩最後の藩主・徳川昭武が暮らした国重要文化財「戸定邸（戸定が丘歴史公園）」を巡る散策路。",
+    "region": "松戸・水戸徳川ゆかりの丘と珈琲の街",
+    "area_name": "松戸・水戸徳川ゆかりの丘と珈琲の街",
+    "cover_image_url": "/images/matsudo/route-eyecatch.png",
+    "imageUrl": "/images/matsudo/route-eyecatch.png",
+    "category": "歴史と喫茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "昭和の喫茶文化と水戸徳川ゆかりの邸宅が繋がる松戸を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「純喫茶 若松」の階段を上がった空間で、昭和の香り漂う珈琲を味わった瞬間",
+          "description": "駅西口の雑居ビルの二階に広がるレトロな時間が、松戸の街歩きの幕開けを優しく彩った。",
+          "badge_code": "matsudo_wakamatsu"
+        },
+        {
+          "key": "B",
+          "text": "「松戸神社」の清らかな境内で、水戸光圀ゆかりの銀杏と鎮守の杜を仰いだ瞬間",
+          "description": "坂川のせせらぎのそばに佇む古社で、松戸宿の歴史と人々の祈りに静かに触れた。",
+          "badge_code": "matsudo_jinja"
+        },
+        {
+          "key": "C",
+          "text": "「和菓子 峰月」の店先で、矢切の渡しをモチーフにした郷土銘菓に出会った瞬間",
+          "description": "戸定の丘へ向かう途中で立ち寄った老舗の手づくり菓子に、松戸の風景が映っていた。",
+          "badge_code": "matsudo_hogetsu"
+        },
+        {
+          "key": "D",
+          "text": "「戸定邸」の長い縁側に座り、徳川昭武が愛した名園と富士山方面の眺めを望んだ瞬間",
+          "description": "明治期の姿そのままに残る国重要文化財の邸宅で、水戸徳川家の雅な暮らしを体感した。",
+          "badge_code": "matsudo_tojotei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8f5c6830-ba25-4bae-8e22-93fb1e2ce1b0",
+        "name": "純喫茶 若松",
+        "description": "松戸駅西口からすぐのビル2階に佇む昭和レトロな老舗純喫茶。落ち着いた店内で香り高い珈琲や軽食を味わえる。営業時間10:00〜18:00、不定休。",
+        "address": "千葉県松戸市本町18-2",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.78486,
+        "lng": 139.899047,
+        "qr_token": "shuin-matsudo-1",
+        "cover_image_url": "/images/matsudo/spot1.png",
+        "f7_fragment": "松戸駅西口そばの二階で昭和の時間を守り続ける、落ち着いた純喫茶。",
+        "f7_full": "駅西口の「純喫茶 若松」で昭和の趣を残す静かな空間と珈琲を味わい、珈琲の街・松戸の散策を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "6b940c8c-5bdb-4442-82ee-02c152315862",
+        "next_spot_name": "松戸神社"
+      },
+      {
+        "id": "6b940c8c-5bdb-4442-82ee-02c152315862",
+        "name": "松戸神社",
+        "description": "江戸時代初期の創建と伝えられ、水戸光圀（水戸黄門）ゆかりの伝説も残る松戸の総鎮守。坂川沿いの緑豊かな境内が親しまれる。参拝自由（社務所8:30〜17:00）。",
+        "address": "千葉県松戸市松戸1457",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.780621,
+        "lng": 139.897766,
+        "qr_token": "shuin-matsudo-2",
+        "cover_image_url": "/images/matsudo/spot2.png",
+        "f7_fragment": "坂川のほとりに鎮座し水戸光圀の逸話も残る、松戸宿の総鎮守。",
+        "f7_full": "坂川沿いの「松戸神社」で水戸光圀ゆかりの境内を歩き、旧宿場町・松戸の穏やかな祈りと歴史の気配に触れた。",
+        "is_final": false,
+        "next_spot_id": "43ed1aa8-8ce3-46a7-8360-1ecdf621da6a",
+        "next_spot_name": "珈琲店 川名"
+      },
+      {
+        "id": "43ed1aa8-8ce3-46a7-8360-1ecdf621da6a",
+        "name": "珈琲店 川名",
+        "description": "旧水戸街道沿いに構える松戸の老舗喫茶店。丁寧なハンドドリップ珈琲と落ち着いた雰囲気で地元の人々に親しまれる。営業時間9:00〜20:00頃（平日〜20:30）、日曜定休。",
+        "address": "千葉県松戸市松戸1230",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.783583,
+        "lng": 139.900777,
+        "qr_token": "shuin-matsudo-3",
+        "cover_image_url": "/images/matsudo/spot3.png",
+        "f7_fragment": "旧水戸街道沿いで丁寧な珈琲を淹れ続ける、松戸の落ち着いた老舗喫茶。",
+        "f7_full": "旧街道沿いの「珈琲店 川名」で丁寧に淹れられた珈琲を味わい、地域に根付く松戸の豊かな喫茶文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "c19311fc-79bc-4c6e-81ca-ea5350ef8e1a",
+        "next_spot_name": "和菓子 峰月"
+      },
+      {
+        "id": "c19311fc-79bc-4c6e-81ca-ea5350ef8e1a",
+        "name": "和菓子 峰月",
+        "description": "松戸の歴史や江戸川の風景を映した和菓子を手づくりする老舗菓子舗。名物「矢切の渡し舟」や季節の上生菓子が人気。営業時間9:00〜19:00、火曜定休。",
+        "address": "千葉県松戸市松戸1281",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.78355,
+        "lng": 139.898545,
+        "qr_token": "shuin-matsudo-4",
+        "cover_image_url": "/images/matsudo/spot4.png",
+        "f7_fragment": "「矢切の渡し舟」など松戸の情景を手づくり菓子に映す、老舗和菓子舗。",
+        "f7_full": "老舗「和菓子 峰月」を訪ね、江戸川や松戸の情景を映した手づくりの銘菓に触れて旅の楽しい手土産を選んだ。",
+        "is_final": false,
+        "next_spot_id": "eb7abba7-7849-4bcb-8948-7b3e1187e65f",
+        "next_spot_name": "戸定邸（戸定が丘歴史公園）"
+      },
+      {
+        "id": "eb7abba7-7849-4bcb-8948-7b3e1187e65f",
+        "name": "戸定邸（戸定が丘歴史公園）",
+        "description": "最後の大名・徳川昭武が明治17年（1884年）に建てた邸宅で国の重要文化財。明治の面影をそのまま残す木造和風建築と日本の歴史公園100選の庭園が広がる。9:30〜17:00、月曜休。",
+        "address": "千葉県松戸市松戸714-1",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.777476,
+        "lng": 139.899189,
+        "qr_token": "shuin-matsudo-5",
+        "cover_image_url": "/images/matsudo/spot5.png",
+        "f7_fragment": "最後の水戸藩主・徳川昭武が暮らした、国重文の明治邸宅と美しい名園。",
+        "f7_full": "戸定が丘の「戸定邸」で明治期の優雅な木造建築と名園を歩き、珈琲と歴史が息づく松戸の散策を晴れやかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "3d14389f-3962-4804-881f-810bd53b6652",
+    "title": "取手・水戸街道の本陣と利根の社を歩く",
+    "name": "取手・水戸街道の本陣と利根の社を歩く",
+    "description": "利根川を望む茨城の玄関口・JR取手駅から、明治元年創業の奈良漬舗「新六本店」と風情あるそば処「伊勢利」、茨城県指定有形文化財「旧取手宿本陣染野家住宅」、精巧な彫刻が美しい「取手八坂神社」、隠れ家「Atelier + café ju-tou」を巡る散策路。",
+    "region": "取手・水戸街道の本陣と利根川の街",
+    "area_name": "取手・水戸街道の本陣と利根川の街",
+    "cover_image_url": "/images/toride/route-eyecatch.png",
+    "imageUrl": "/images/toride/route-eyecatch.png",
+    "category": "歴史と街道",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "水戸街道の宿場町の記憶と利根川畔の文化が息づく取手を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「新六本店」の旧水戸街道沿いの店構えで、明治元年創業の奈良漬に出会った瞬間",
+          "description": "酒粕の芳醇な香りと百五十年以上の伝統が、宿場町・取手の豊かな食文化を伝えていた。",
+          "badge_code": "toride_shinroku"
+        },
+        {
+          "key": "B",
+          "text": "「旧取手宿本陣染野家住宅」の茅葺屋根を仰ぎ、水戸徳川家の旅路を想った瞬間",
+          "description": "寛政七年建築の重厚な本陣建物が、参勤交代や水戸藩ゆかりの往来を静かに物語っていた。",
+          "badge_code": "toride_honjin"
+        },
+        {
+          "key": "C",
+          "text": "「取手八坂神社」の拝殿と本殿に施された、息を呑むほど精巧な木彫を眺めた瞬間",
+          "description": "江戸初期から取手を見守ってきた総鎮守の社殿に、職人の技と地域の誇りが刻まれていた。",
+          "badge_code": "toride_yasaka"
+        },
+        {
+          "key": "D",
+          "text": "「Atelier + café ju-tou」の静かな空間で、こだわりの珈琲と手作り菓子を味わった瞬間",
+          "description": "アンティーク家具が配された隠れ家カフェで、取手散策の午後に穏やかな余韻を添えた。",
+          "badge_code": "toride_jutou"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "600e1ba0-fed2-418c-80b6-7ce199cb3f42",
+        "name": "新六本店",
+        "description": "明治元年（1868年）創業、旧水戸街道沿いに店を構える奈良漬の老舗専門店。大吟醸の酒粕などで漬け込んだ伝統の奈良漬が人気。営業時間9:00〜18:00、月曜定休。",
+        "address": "茨城県取手市取手2-13-36",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.893689,
+        "lng": 140.063439,
+        "qr_token": "shuin-toride-1",
+        "cover_image_url": "/images/toride/spot1.png",
+        "f7_fragment": "明治元年創業、旧水戸街道沿いで伝統の奈良漬を守る取手の老舗。",
+        "f7_full": "旧水戸街道沿いの老舗「新六本店」を訪ね、明治から受け継がれる伝統の奈良漬と宿場町の面影に心地よく触れた。",
+        "is_final": false,
+        "next_spot_id": "ff6f2ec0-dea8-46a4-8342-b4a9d2e5f0d1",
+        "next_spot_name": "伊勢利"
+      },
+      {
+        "id": "ff6f2ec0-dea8-46a4-8342-b4a9d2e5f0d1",
+        "name": "伊勢利",
+        "description": "取手駅東口からほど近い旧市街に佇む、地元で長年愛される手打ちそば・うどんの店。風情ある空間で香り高い蕎麦を味わえる。営業時間11:00〜14:00・16:00〜20:00、月曜定休。",
+        "address": "茨城県取手市取手2-6-15",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.892786,
+        "lng": 140.063454,
+        "qr_token": "shuin-toride-2",
+        "cover_image_url": "/images/toride/spot2.png",
+        "f7_fragment": "取手駅東口近くの旧市街で愛される、風情ある地元の手打ちそば処。",
+        "f7_full": "旧市街のそば処「伊勢利」で香り豊かなお蕎麦を味わい、地元に根付いた取手の素朴で温かな日常の食に触れた。",
+        "is_final": false,
+        "next_spot_id": "fc8f289d-2ed9-4f00-81a0-dd0166777ddc",
+        "next_spot_name": "旧取手宿本陣染野家住宅"
+      },
+      {
+        "id": "fc8f289d-2ed9-4f00-81a0-dd0166777ddc",
+        "name": "旧取手宿本陣染野家住宅",
+        "description": "寛政7年（1795年）に建てられた水戸街道・取手宿の本陣建築で、茨城県指定有形文化財。重厚な茅葺屋根の主屋と表門が往時を伝える。公開金〜日・祝10:00〜16:00、無料。",
+        "address": "茨城県取手市取手2-16-41",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.891583,
+        "lng": 140.065668,
+        "qr_token": "shuin-toride-3",
+        "cover_image_url": "/images/toride/spot3.png",
+        "f7_fragment": "寛政七年築の茅葺屋根を今に伝える、水戸街道・取手宿の本陣遺構。",
+        "f7_full": "茨城県有形文化財「旧取手宿本陣染野家住宅」で茅葺屋根の主屋を見学し、水戸街道の往時の歴史に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "8ca4f8f2-48d7-4a4a-87c2-2b8fbf5e7c87",
+        "next_spot_name": "取手八坂神社"
+      },
+      {
+        "id": "8ca4f8f2-48d7-4a4a-87c2-2b8fbf5e7c87",
+        "name": "取手八坂神社",
+        "description": "江戸時代初期の寛永年間から取手の総鎮守として崇敬される古社。明治期に再建された社殿には精巧で躍動感あふれる彫刻が施されている。参拝自由（社務所9:00〜16:30・年中無休）。",
+        "address": "茨城県取手市東1-2-9",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.889831,
+        "lng": 140.066294,
+        "qr_token": "shuin-toride-4",
+        "cover_image_url": "/images/toride/spot4.png",
+        "f7_fragment": "精巧な彫刻が社殿を彩る、江戸初期創建の取手総鎮守・八坂神社。",
+        "f7_full": "取手総鎮守「取手八坂神社」の精巧な木彫が美しい社殿に参拝し、利根川畔の宿場町に息づく祈りの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "10d401b7-7791-46bd-857a-a13cf34792b5",
+        "next_spot_name": "Atelier + café ju-tou"
+      },
+      {
+        "id": "10d401b7-7791-46bd-857a-a13cf34792b5",
+        "name": "Atelier + café ju-tou",
+        "description": "元・産婦人科医院のビル3階にあるアトリエ併設の隠れ家カフェ。動物性食材を使わない優しい菓子やオーガニック珈琲が楽しめる。営業時間12:00〜17:00、月数日の不定期営業・予約制中心（営業日要確認）。",
+        "address": "茨城県取手市井野1-7-10",
+        "prefecture": "茨城県",
+        "city": "",
+        "lat": 35.899588,
+        "lng": 140.070423,
+        "qr_token": "shuin-toride-5",
+        "cover_image_url": "/images/toride/spot5.png",
+        "f7_fragment": "元医院の三階に広がるアンティークと手作り菓子の隠れ家アトリエカフェ。",
+        "f7_full": "隠れ家「Atelier + café ju-tou」で優しい珈琲と菓子を味わい、水戸街道の歴史とアートが息づく取手の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "351145c9-3082-4444-854a-9b4f2b54802e",
+    "title": "柏・路地裏の名店カレーと老舗喫茶を歩く",
+    "name": "柏・路地裏の名店カレーと老舗喫茶を歩く",
+    "description": "JR常磐線・東武線が交差する柏駅から、街の鎮守「柏神社」とアンティークなカフェ「kikkake」、柏が誇る伝説のカレー名店「カレーの店 ボンベイ 本店」、天然氷のかき氷「三日月氷菓店」、老舗純喫茶「コーヒープラザ壹番館」を巡る散策路。",
+    "region": "柏・スパイスと喫茶が香る路地裏の街",
+    "area_name": "柏・スパイスと喫茶が香る路地裏の街",
+    "cover_image_url": "/images/kashiwa/route-eyecatch.png",
+    "imageUrl": "/images/kashiwa/route-eyecatch.png",
+    "category": "グルメと喫茶",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "賑やかな駅前の路地裏に名店と鎮守が寄り添う柏を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「柏神社」の綺麗に整えられた境内で、都会の喧騒を忘れ手を合わせた瞬間",
+          "description": "東口から数分の賑わいのそばに佇む街の鎮守が、柏散策の心を穏やかに整えてくれた。",
+          "badge_code": "kashiwa_jinja"
+        },
+        {
+          "key": "B",
+          "text": "「カレーの店 ボンベイ 本店」で、刺激的で奥深い名物カシミールカレーを味わった瞬間",
+          "description": "昭和四十三年から柏で受け継がれてきた秘伝のスパイスの余韻が、記憶に深く刻まれた。",
+          "badge_code": "kashiwa_bombay"
+        },
+        {
+          "key": "C",
+          "text": "「三日月氷菓店」で、ふわっと溶ける天然氷と自家製シロップのかき氷に出会った瞬間",
+          "description": "スパイスの余韻を優しく包む繊細な氷の口どけが、柏の街歩きを至福の時間に変えた。",
+          "badge_code": "kashiwa_mikazuki"
+        },
+        {
+          "key": "D",
+          "text": "「コーヒープラザ壹番館」のクラシカルな空間で、サイフォン珈琲を味わい旅を結んだ瞬間",
+          "description": "柏髙島屋の中で半世紀近く愛される純喫茶の気品が、一日の締めくくりにふさわしかった。",
+          "badge_code": "kashiwa_ichibankan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "57d1d6ce-f569-415b-8424-c9319bab55d5",
+        "name": "柏神社",
+        "description": "JR柏駅東口から徒歩約5分に位置し、柏の鎮守として親しまれる由緒ある神社。月替わりの御朱印や綺麗に整えられた境内が多くの参拝者に愛される。社務所10:00〜16:00（土日祝9:30〜16:30・不定休）。",
+        "address": "千葉県柏市柏3-2-2",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.859876,
+        "lng": 139.973795,
+        "qr_token": "shuin-kashiwa-1",
+        "cover_image_url": "/images/kashiwa/spot1.png",
+        "f7_fragment": "柏駅東口近くの賑わいのそばで街を見守り続ける、清らかな鎮守の社。",
+        "f7_full": "駅東口近くの「柏神社」で静かな境内に参拝し、賑やかな街並みと穏やかな祈りが同居する柏の散策を心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "fc22f1fa-af57-4f39-82fa-7986491dafc3",
+        "next_spot_name": "kikkake"
+      },
+      {
+        "id": "fc22f1fa-af57-4f39-82fa-7986491dafc3",
+        "name": "kikkake",
+        "description": "柏神社のすぐ近くにあるアメリカンビンテージ風の落ち着いたカフェ。手作りの豆乳シフォンケーキやこだわりの珈琲、スパイス料理が人気。営業時間11:00〜21:30頃（日により〜22:00）、日曜定休（祝前変更あり）。",
+        "address": "千葉県柏市柏3-3-17",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.858987,
+        "lng": 139.975037,
+        "qr_token": "shuin-kashiwa-2",
+        "cover_image_url": "/images/kashiwa/spot2.png",
+        "f7_fragment": "柏神社そばの二階に佇む、ビンテージ家具とシフォンケーキの隠れ家カフェ。",
+        "f7_full": "柏神社近くの「kikkake」で温かなビンテージ空間と優しい珈琲の時間を楽しみ、柏の奥深い路地裏の魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "66e598a4-b984-47ef-8606-3443b3035f67",
+        "next_spot_name": "カレーの店 ボンベイ 本店"
+      },
+      {
+        "id": "66e598a4-b984-47ef-8606-3443b3035f67",
+        "name": "カレーの店 ボンベイ 本店",
+        "description": "昭和43年（1968年）創業、柏が全国に誇る伝説的なインドカレーの名店。爽快な辛さと奥深い旨みの「カシミールカレー」や「インドカレー」が不動の人気。11:30〜21:30、不定休。",
+        "address": "千葉県柏市柏3-6-16",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.860191,
+        "lng": 139.974228,
+        "qr_token": "shuin-kashiwa-3",
+        "cover_image_url": "/images/kashiwa/spot3.png",
+        "f7_fragment": "昭和四十三年から柏で受け継がれる、名物カシミールカレーの伝説的名店。",
+        "f7_full": "「カレーの店 ボンベイ 本店」で奥深いスパイスの名物カシミールカレーを味わい、柏が誇る半世紀の食文化に感動した。",
+        "is_final": false,
+        "next_spot_id": "77aaac24-b5c7-4277-8b72-2a5f67b04824",
+        "next_spot_name": "三日月氷菓店"
+      },
+      {
+        "id": "77aaac24-b5c7-4277-8b72-2a5f67b04824",
+        "name": "三日月氷菓店",
+        "description": "日光の天然氷と無添加の自家製生シロップにこだわったかき氷の名店。苺や宇治金時など一年中楽しめる繊細な一杯が人気。11:00〜18:00、火曜休（10〜5月は火・水曜休）。",
+        "address": "千葉県柏市柏1-5-5",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.860592,
+        "lng": 139.972744,
+        "qr_token": "shuin-kashiwa-4",
+        "cover_image_url": "/images/kashiwa/spot4.png",
+        "f7_fragment": "日光の天然氷と自家製生シロップが雪のように溶ける、柏のかき氷の名店。",
+        "f7_full": "「三日月氷菓店」で天然氷と自家製シロップの繊細なかき氷を味わい、スパイスの余韻に寄り添う至福の甘味を堪能した。",
+        "is_final": false,
+        "next_spot_id": "eba5c014-41f2-482d-8e5a-3c9622fff815",
+        "next_spot_name": "コーヒープラザ壹番館（柏髙島屋店）"
+      },
+      {
+        "id": "eba5c014-41f2-482d-8e5a-3c9622fff815",
+        "name": "コーヒープラザ壹番館（柏髙島屋店）",
+        "description": "柏駅西口直結の柏髙島屋内で長年親しまれるクラシカルな老舗純喫茶。サイフォンで淹れる珈琲や季節のスイーツが人気。営業時間10:30〜17:30（L.O.16:30）、休館日準拠。",
+        "address": "千葉県柏市末広町3-16",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.863494,
+        "lng": 139.970761,
+        "qr_token": "shuin-kashiwa-5",
+        "cover_image_url": "/images/kashiwa/spot5.png",
+        "f7_fragment": "柏髙島屋の中で半世紀近く愛される、サイフォン珈琲のクラシカルな純喫茶。",
+        "f7_full": "柏髙島屋の老舗「コーヒープラザ壹番館」でサイフォン珈琲を味わい、路地裏と文化が交差する柏の散策を穏やかに結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
