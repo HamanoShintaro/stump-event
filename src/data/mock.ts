@@ -84500,5 +84500,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "02c96eac-77e4-4ff2-8616-b3a56fb11270",
+    "title": "新潟・今代司酒造と萬代橋から豪商の庭へ",
+    "name": "新潟・今代司酒造と萬代橋から豪商の庭へ",
+    "description": "JR新潟駅から、新潟駅最寄りの老舗蔵元「今代司酒造」、信濃川に架かる国の重要文化財「萬代橋」、昭和香る自家焙煎喫茶「シャモニー 古町店」、砂丘地形を活かした国指定名勝「旧齋藤家別邸」、千有余年の歴史を誇る新潟総鎮守「白山神社」を巡る散策路。",
+    "region": "新潟・信濃川の萬代橋と豪商の庭",
+    "area_name": "新潟・信濃川の萬代橋と豪商の庭",
+    "cover_image_url": "/images/niigata/route-eyecatch.png",
+    "imageUrl": "/images/niigata/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "信濃川の雄大な川風と酒蔵の香り、豪商が愛した庭園の静寂を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「今代司酒造」で、新潟駅から歩いて行ける木造蔵の空気と酒造りの技に触れた瞬間",
+          "description": "全量純米造りにこだわる蔵元の歴史と醸造の香りに、越後の米と水の豊かさを実感した。",
+          "badge_code": "niigata_imayotsukasa"
+        },
+        {
+          "key": "B",
+          "text": "「シャモニー 古町店」で、サイフォン珈琲の香りに包まれながら一息ついた瞬間",
+          "description": "古町の老舗喫茶店に漂う昭和の落ち着きが、旅の歩みを心地よく整えてくれた。",
+          "badge_code": "niigata_chamonix"
+        },
+        {
+          "key": "C",
+          "text": "「旧齋藤家別邸」の座敷から、砂丘の斜面を活かした庭園の緑を眺めた瞬間",
+          "description": "開放的な和風建築の建具越しに切り取られた松と滝の景観が、一幅の絵画のように美しかった。",
+          "badge_code": "niigata_saitouke"
+        },
+        {
+          "key": "D",
+          "text": "「白山神社」の赤い鳥居をくぐり、千年の森に抱かれた本殿へ手を合わせた瞬間",
+          "description": "新潟総鎮守として人々の祈りを受け止めてきた境内の静けさに、旅の締めくくりが澄み渡った。",
+          "badge_code": "niigata_hakusan"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "0aaf756b-fb49-4b51-84fa-48b50fd671dc",
+        "name": "今代司酒造",
+        "description": "JR新潟駅から徒歩約15分、沼垂エリアに構える全量純米造りの老舗酒蔵。酒蔵見学や直売店で越後の日本酒文化に触れられる。9:00〜17:00、年末年始休。",
+        "address": "新潟県新潟市中央区鏡が岡1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.915962,
+        "lng": 139.071874,
+        "qr_token": "shuin-niigata-1",
+        "cover_image_url": "/images/niigata/spot1.png",
+        "f7_fragment": "新潟駅最寄りの全量純米造りの老舗蔵元、木造蔵の見学も人気。",
+        "f7_full": "「今代司酒造」で木造蔵の空気と純米造りの酒造りに触れ、越後の風土の豊かさを感じた。",
+        "is_final": false,
+        "next_spot_id": "31c5216d-f3ae-49ec-8be5-caf48e3cc863",
+        "next_spot_name": "萬代橋"
+      },
+      {
+        "id": "31c5216d-f3ae-49ec-8be5-caf48e3cc863",
+        "name": "萬代橋",
+        "description": "信濃川に架かる新潟市のシンボルで、国の重要文化財に指定された六連コンクリートアーチ橋。昭和4年竣工。常時通行可能、無料。",
+        "address": "新潟県新潟市中央区万代1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.916611,
+        "lng": 139.057602,
+        "qr_token": "shuin-niigata-2",
+        "cover_image_url": "/images/niigata/spot2.png",
+        "f7_fragment": "信濃川に架かる国の重要文化財、御影石の六連アーチが美しい新潟の象徴。",
+        "f7_full": "「萬代橋」の緩やかな六連アーチを歩き、信濃川の広やかな川面と街並みを眺めた。",
+        "is_final": false,
+        "next_spot_id": "fae45b35-bdfa-4347-81c6-3004bf70c51f",
+        "next_spot_name": "シャモニー 古町店"
+      },
+      {
+        "id": "fae45b35-bdfa-4347-81c6-3004bf70c51f",
+        "name": "シャモニー 古町店",
+        "description": "古町通五番町で長く愛される自家焙煎の老舗喫茶店。階段を上った先の落ち着いた空間でサイフォン珈琲を味わえる。8:00〜18:00、木曜休（当面の間、月曜も定休）。",
+        "address": "新潟県新潟市中央区古町通5番町591 2F",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.919299,
+        "lng": 139.043905,
+        "qr_token": "shuin-niigata-3",
+        "cover_image_url": "/images/niigata/spot3.png",
+        "f7_fragment": "古町通で親しまれる自家焙煎の老舗喫茶、サイフォン珈琲が魅力。",
+        "f7_full": "「シャモニー 古町店」でサイフォン珈琲の香りに包まれながら、古町の落ち着いた時間を愉しんだ。",
+        "is_final": false,
+        "next_spot_id": "2cbab3d2-ea05-41aa-81dc-a055a8ea41ba",
+        "next_spot_name": "旧齋藤家別邸"
+      },
+      {
+        "id": "2cbab3d2-ea05-41aa-81dc-a055a8ea41ba",
+        "name": "旧齋藤家別邸",
+        "description": "大正時代に新潟の豪商・齋藤家が建てた別荘。砂丘の斜面を活かした国指定名勝の庭園と近代和風建築が残る。9:30〜18:00（10〜3月は〜17:00）、月曜休、一般300円。",
+        "address": "新潟県新潟市中央区西大畑町576",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.925934,
+        "lng": 139.040435,
+        "qr_token": "shuin-niigata-4",
+        "cover_image_url": "/images/niigata/spot4.png",
+        "f7_fragment": "砂丘地形を活かした国指定名勝の庭園と近代和風建築が残る豪商の別邸。",
+        "f7_full": "「旧齋藤家別邸」の座敷から砂丘の斜面を活かした庭園を眺め、近代和風建築の美しさを堪能した。",
+        "is_final": false,
+        "next_spot_id": "84c0fb8a-fb23-4ff9-833b-e2b1eff19330",
+        "next_spot_name": "白山神社"
+      },
+      {
+        "id": "84c0fb8a-fb23-4ff9-833b-e2b1eff19330",
+        "name": "白山神社",
+        "description": "千有余年の歴史を誇り、新潟総鎮守として厚く信仰される古社。縁結びの神様・菊理媛大神を祀る。参拝6:00〜19:00（社務所7:00〜19:00）、無休。",
+        "address": "新潟県新潟市中央区一番堀通町1-1",
+        "prefecture": "新潟県",
+        "city": "",
+        "lat": 37.91499,
+        "lng": 139.038358,
+        "qr_token": "shuin-niigata-5",
+        "cover_image_url": "/images/niigata/spot5.png",
+        "f7_fragment": "千有余年の歴史を誇る新潟総鎮守、緑豊かな白山公園に隣接する古社。",
+        "f7_full": "「白山神社」の赤い鳥居をくぐり、千年の森に抱かれた本殿へ参拝して新潟の街歩きを結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "4987c63c-ca10-4160-8b58-631db9d8ccac",
+    "title": "富山・運河の環水公園からガラスと薬都へ",
+    "name": "富山・運河の環水公園からガラスと薬都へ",
+    "description": "JR富山駅から、水辺と天門橋が開放的な「富岩運河環水公園」、昭和の空気を残す老舗「純喫茶ツタヤ」、隈研吾氏設計の「富山市ガラス美術館」、反魂丹を伝える「池田屋安兵衛商店」、石垣と天守が映える「富山城址公園」を巡る散策路。",
+    "region": "富山・運河のきらめきと薬都の街",
+    "area_name": "富山・運河のきらめきと薬都の街",
+    "cover_image_url": "/images/toyama/route-eyecatch.png",
+    "imageUrl": "/images/toyama/route-eyecatch.png",
+    "category": "街歩きとアート",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "運河の開放的な水辺と現代ガラスの輝き、越中売薬の老舗を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「富岩運河環水公園」の天門橋から、穏やかな水面と立山連峰の方向を望んだ瞬間",
+          "description": "駅北に広がる開放的な水辺空間が、北陸の玄関口・富山の旅を爽やかに始めてくれた。",
+          "badge_code": "toyama_kansui"
+        },
+        {
+          "key": "B",
+          "text": "「富山市ガラス美術館」で、杉板の木組みと現代ガラスアートの輝きに見入った瞬間",
+          "description": "光を受けて表情を変えるガラス作品の美しさが、木の温もりに満ちた建築と響き合っていた。",
+          "badge_code": "toyama_glass"
+        },
+        {
+          "key": "C",
+          "text": "「池田屋安兵衛商店」で、伝統の和漢薬と丸薬づくりの文化に触れた瞬間",
+          "description": "越中富山の薬売りが紡いできた知恵と実直な商いの歴史に、思わず背筋が伸びた。",
+          "badge_code": "toyama_ikedaya"
+        },
+        {
+          "key": "D",
+          "text": "「富山城址公園」で、堀の水面に映る石垣と城の姿を仰ぎ見た瞬間",
+          "description": "街の中心にどっしりと構える城郭の風景に、富山が歩んできた城下町の歴史が重なった。",
+          "badge_code": "toyama_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "91d6a2e3-6d58-42f6-8a20-c5d2d9141df1",
+        "name": "富岩運河環水公園",
+        "description": "JR富山駅北口から徒歩約9分、富岩運河の船溜まりを整備した親水公園。シンボルの天門橋と広々とした芝生が魅力。常時開放、入園無料。",
+        "address": "富山県富山市湊入船町1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.709377,
+        "lng": 137.212433,
+        "qr_token": "shuin-toyama-1",
+        "cover_image_url": "/images/toyama/spot1.png",
+        "f7_fragment": "富山駅北の親水公園、天門橋の展望塔から運河と立山連峰を望む。",
+        "f7_full": "「富岩運河環水公園」の天門橋から穏やかな水面と開放的な街並みを望み、旅を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "9f01fa29-bd6a-4c1a-8ea4-0e0f0e1ddf51",
+        "next_spot_name": "純喫茶ツタヤ"
+      },
+      {
+        "id": "9f01fa29-bd6a-4c1a-8ea4-0e0f0e1ddf51",
+        "name": "純喫茶ツタヤ",
+        "description": "堤町通りで長年親しまれるレトロな純喫茶。朝から珈琲やトーストを味わえ、路面電車の行き交う街角で落ち着いた時間を過ごせる。7:00〜17:00頃、火・水曜休（不定休あり）。",
+        "address": "富山県富山市堤町通り1-4-1 セントラルコート西町プレミア1F",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.688497,
+        "lng": 137.21766,
+        "qr_token": "shuin-toyama-2",
+        "cover_image_url": "/images/toyama/spot2.png",
+        "f7_fragment": "西町電停近くの純喫茶、路面電車の街角で昔ながらの珈琲が味わえる。",
+        "f7_full": "「純喫茶ツタヤ」で香り高い珈琲を味わい、富山の街角に息づく穏やかな時間を愉しんだ。",
+        "is_final": false,
+        "next_spot_id": "66bf2d9d-865e-4cfa-8353-2fdfa3b6035e",
+        "next_spot_name": "富山市ガラス美術館"
+      },
+      {
+        "id": "66bf2d9d-865e-4cfa-8353-2fdfa3b6035e",
+        "name": "富山市ガラス美術館",
+        "description": "隈研吾氏設計の複合施設「TOYAMAキラリ」内にある美術館。県産杉の木組み空間で現代ガラス芸術を鑑賞できる。9:30〜18:00、第1・3水曜休、常設展一般200円。",
+        "address": "富山県富山市西町5-1",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.688416,
+        "lng": 137.215186,
+        "qr_token": "shuin-toyama-3",
+        "cover_image_url": "/images/toyama/spot3.png",
+        "f7_fragment": "隈研吾氏設計の「TOYAMAキラリ」内で現代ガラス芸術に出会う美術館。",
+        "f7_full": "「富山市ガラス美術館」で杉板の木組みと現代ガラスアートの輝きに見入り、建築美を堪能した。",
+        "is_final": false,
+        "next_spot_id": "472f87bb-068e-4dfa-840b-faa4ebf1c137",
+        "next_spot_name": "池田屋安兵衛商店"
+      },
+      {
+        "id": "472f87bb-068e-4dfa-840b-faa4ebf1c137",
+        "name": "池田屋安兵衛商店",
+        "description": "江戸時代から続く越中富山の売薬文化を伝える老舗和漢薬店。伝統の「越中反魂丹」や丸薬づくり体験ができる。9:00〜18:00、無休（年末年始除く・2階薬都は火水休）。",
+        "address": "富山県富山市堤町通り1-3-5",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.68852,
+        "lng": 137.21588,
+        "qr_token": "shuin-toyama-4",
+        "cover_image_url": "/images/toyama/spot4.png",
+        "f7_fragment": "越中反魂丹を伝える老舗和漢薬店、昔ながらの丸薬づくり体験も人気。",
+        "f7_full": "「池田屋安兵衛商店」で伝統の和漢薬と丸薬づくりの文化に触れ、越中薬売りの知恵を感じた。",
+        "is_final": false,
+        "next_spot_id": "7f4ad08b-c8d3-4493-8f62-712b48a4623c",
+        "next_spot_name": "富山城址公園"
+      },
+      {
+        "id": "7f4ad08b-c8d3-4493-8f62-712b48a4623c",
+        "name": "富山城址公園",
+        "description": "前田家ゆかりの富山城跡を整備した公園。お堀越しに石垣と天守を望み、天守内の郷土博物館で城の歴史を学べる。公園常時開放（博物館9:00〜17:00、大人210円）。",
+        "address": "富山県富山市本丸1-62",
+        "prefecture": "富山県",
+        "city": "",
+        "lat": 36.693002,
+        "lng": 137.211259,
+        "qr_token": "shuin-toyama-5",
+        "cover_image_url": "/images/toyama/spot5.png",
+        "f7_fragment": "水堀と石垣に囲まれた富山城の跡地、天守内の郷土博物館も併設。",
+        "f7_full": "「富山城址公園」で堀の水面に映る石垣と天守を仰ぎ見ながら、城下町・富山の旅を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "07930a29-2cb4-4671-8728-25cbe90523a8",
+    "title": "奈良・ならまちの格子戸から東大寺の大仏へ",
+    "name": "奈良・ならまちの格子戸から東大寺の大仏へ",
+    "description": "JR奈良駅から、高速餅つきで名高い「中谷堂」、格子戸の町家が残る「ならまち格子の家」、天平文化を今に伝える世界遺産「興福寺」、朱塗りの回廊と釣燈籠が幻想的な「春日大社」、大仏さまが鎮座する「東大寺」を巡る散策路。",
+    "region": "奈良・ならまちと天平の杜",
+    "area_name": "奈良・ならまちと天平の杜",
+    "cover_image_url": "/images/nara/route-eyecatch.png",
+    "imageUrl": "/images/nara/route-eyecatch.png",
+    "category": "歴史と寺社",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "町家の暮らしが息づくならまちと千年の社寺を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「中谷堂」で、つきたてのよもぎ餅の香りと柔らかな食感に笑顔になった瞬間",
+          "description": "三条通の賑わいの中で手にした温かい餅が、古都・奈良の散策を力強く後押ししてくれた。",
+          "badge_code": "nara_nakatanidou"
+        },
+        {
+          "key": "B",
+          "text": "「興福寺」の広大な境内を歩き、天平の伽藍と中金堂の堂々たる姿を見上げた瞬間",
+          "description": "奈良公園の入り口で静かに時を刻む寺の佇まいが、古都の歴史の厚みを教えてくれた。",
+          "badge_code": "nara_kofukuji"
+        },
+        {
+          "key": "C",
+          "text": "「春日大社」の朱塗りの回廊で、数多くの燈籠が織りなす静謐な光景に出会った瞬間",
+          "description": "春日山の原生林に包まれた神域の空気に、千年続く祈りの清らかさを感じた。",
+          "badge_code": "nara_kasuga"
+        },
+        {
+          "key": "D",
+          "text": "「東大寺」の大仏殿を仰ぎ見ながら、悠久の時を見守る盧舎那仏と向き合った瞬間",
+          "description": "圧倒的なスケールの木造建築と大仏さまの穏やかな眼差しに、旅の締めくくりが満ち足りた。",
+          "badge_code": "nara_todaiji"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "92bc0f39-37e5-41a4-8f66-1945c0ecdb23",
+        "name": "中谷堂",
+        "description": "三条通にある高速餅つきで有名な和菓子店。国産もち米とよもぎを使ったつきたてのよもぎ餅が名物。10:00〜19:00（売切次第終了）、不定休。",
+        "address": "奈良県奈良市橋本町29",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.681943,
+        "lng": 135.8289,
+        "qr_token": "shuin-nara-1",
+        "cover_image_url": "/images/nara/spot1.png",
+        "f7_fragment": "三条通の高速餅つきで有名な和菓子店、つきたてのよもぎ餅が名物。",
+        "f7_full": "「中谷堂」でつきたての香り豊かなよもぎ餅を味わい、古都・奈良の旅を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "02f33ce5-ce3a-41e4-8679-4d9776fd1326",
+        "next_spot_name": "ならまち格子の家"
+      },
+      {
+        "id": "02f33ce5-ce3a-41e4-8679-4d9776fd1326",
+        "name": "ならまち格子の家",
+        "description": "間口が狭く奥行きが深い伝統的な町家「うなぎの寝床」を再現した無料見学施設。採光や風通しの工夫に触れられる。9:00〜17:00、月曜休（祝日時は翌平日）。",
+        "address": "奈良県奈良市元興寺町44",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.675011,
+        "lng": 135.830736,
+        "qr_token": "shuin-nara-2",
+        "cover_image_url": "/images/nara/spot2.png",
+        "f7_fragment": "伝統的な町家「うなぎの寝床」の構造を無料で見学できるならまちの拠点。",
+        "f7_full": "「ならまち格子の家」で細長い町家を抜ける風を感じ、古都の暮らしの知恵に触れた。",
+        "is_final": false,
+        "next_spot_id": "9158ee4d-3176-4beb-8a39-f62be6201224",
+        "next_spot_name": "興福寺"
+      },
+      {
+        "id": "9158ee4d-3176-4beb-8a39-f62be6201224",
+        "name": "興福寺",
+        "description": "平城遷都とともに移された法相宗の大本山で世界遺産。中金堂や国宝館の阿修羅像など天平の名宝を拝観できる。9:00〜17:00（境内自由）、無休、中金堂1000円・国宝館900円。",
+        "address": "奈良県奈良市登大路町48",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.682895,
+        "lng": 135.830964,
+        "qr_token": "shuin-nara-3",
+        "cover_image_url": "/images/nara/spot3.png",
+        "f7_fragment": "中金堂や国宝館の阿修羅像が名高い、奈良公園入口の世界遺産寺院。",
+        "f7_full": "「興福寺」の広大な境内を歩き、再建された中金堂と天平文化の厚みに触れた。",
+        "is_final": false,
+        "next_spot_id": "befad6bf-c11f-4637-8eb7-2e917bf3f07e",
+        "next_spot_name": "春日大社"
+      },
+      {
+        "id": "befad6bf-c11f-4637-8eb7-2e917bf3f07e",
+        "name": "春日大社",
+        "description": "平城京の守護として創建された世界遺産の古社。御蓋山の麓の深緑に朱塗りの回廊と無数の石燈籠・釣燈籠が映える。6:30〜17:30（冬期7:00〜17:00）、境内無料（特別参拝700円）。",
+        "address": "奈良県奈良市春日野町160",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.681545,
+        "lng": 135.848472,
+        "qr_token": "shuin-nara-4",
+        "cover_image_url": "/images/nara/spot4.png",
+        "f7_fragment": "深緑の森に朱塗りの回廊と無数の燈籠が映える、世界遺産の古社。",
+        "f7_full": "「春日大社」の朱塗りの回廊と燈籠が織りなす静謐な神域で、千年の祈りに触れた。",
+        "is_final": false,
+        "next_spot_id": "4d00b69b-98d5-4bfe-8c51-5b1229c98e9f",
+        "next_spot_name": "東大寺"
+      },
+      {
+        "id": "4d00b69b-98d5-4bfe-8c51-5b1229c98e9f",
+        "name": "東大寺",
+        "description": "聖武天皇の発願により創建された華厳宗の大本山。金剛力士像が守る南大門の奥に世界最大級の木造建築・大仏殿と大仏さまが鎮座する。7:30〜17:30（冬期8:00〜17:00）、大人800円。",
+        "address": "奈良県奈良市雑司町406-1",
+        "prefecture": "奈良県",
+        "city": "",
+        "lat": 34.687541,
+        "lng": 135.840469,
+        "qr_token": "shuin-nara-5",
+        "cover_image_url": "/images/nara/spot5.png",
+        "f7_fragment": "南大門の奥に大仏殿がそびえ、奈良の大仏が鎮座する世界遺産の総本山。",
+        "f7_full": "「東大寺」の大仏殿を仰ぎ見ながら盧舎那仏と向き合い、古都・奈良の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "ce8071aa-5440-4751-80b5-66459165dd30",
+    "title": "鳥取・すなば珈琲から民藝と城下町の庭へ",
+    "name": "鳥取・すなば珈琲から民藝と城下町の庭へ",
+    "description": "JR鳥取駅から、ご当地喫茶の代名詞「すなば珈琲 新鳥取駅前店」、吉田璋也が築いた「鳥取民藝美術館」、童謡と玩具の「わらべ館」、久松山に抱かれた「鳥取城跡（久松公園）」、池泉庭園を眺めながら一服できる「観音院」を巡る散策路。",
+    "region": "鳥取・民藝の里と城下町の庭",
+    "area_name": "鳥取・民藝の里と城下町の庭",
+    "cover_image_url": "/images/tottori/route-eyecatch.png",
+    "imageUrl": "/images/tottori/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "鳥取ならではのご当地珈琲と民藝の温もり、城下町の面影を巡ったあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「すなば珈琲 新鳥取駅前店」で、砂焼き珈琲の香りと鳥取らしいおもてなしに触れた瞬間",
+          "description": "ユーモアから生まれたご当地喫茶の温かい一杯が、鳥取城下町歩きの始まりを楽しく彩った。",
+          "badge_code": "tottori_sunaba"
+        },
+        {
+          "key": "B",
+          "text": "「鳥取民藝美術館」で、暮らしの中に息づく用の美と手仕事の温もりに見入った瞬間",
+          "description": "飾らず力強い民藝の器や染織の佇まいが、日々の暮らしを豊かにする美意識を教えてくれた。",
+          "badge_code": "tottori_mingei"
+        },
+        {
+          "key": "C",
+          "text": "「鳥取城跡（久松公園）」で、山裾に築かれた重厚な石垣と堀の風景を仰ぎ見た瞬間",
+          "description": "戦国から江戸へと続く城郭の遺構が、久松山の緑の中で静かに歴史を語りかけてきた。",
+          "badge_code": "tottori_castle"
+        },
+        {
+          "key": "D",
+          "text": "「観音院」の書院から、緑深い池泉庭園を眺めながら一服の抹茶をいただいた瞬間",
+          "description": "城下の喧騒を離れた静かな庭と抹茶の余韻が、鳥取の旅を上品に締めくくってくれた。",
+          "badge_code": "tottori_kannonin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "6c1a78c1-8b80-4b5e-82e9-4068693a0642",
+        "name": "すなば珈琲 新鳥取駅前店",
+        "description": "JR鳥取駅北口から徒歩約2分、鳥取名物のご当地喫茶。砂丘の砂で焙煎した「砂焼き珈琲」やモーニングが楽しめる。平日8:00〜16:00・土日祝8:00〜18:00頃、火曜休。",
+        "address": "鳥取県鳥取市栄町706 B1F",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.495062,
+        "lng": 134.227188,
+        "qr_token": "shuin-tottori-1",
+        "cover_image_url": "/images/tottori/spot1.png",
+        "f7_fragment": "鳥取駅北口すぐのご当地喫茶、砂焼き珈琲とモーニングが名物。",
+        "f7_full": "「すなば珈琲 新鳥取駅前店」で砂焼き珈琲を味わい、鳥取らしい温かいおもてなしに触れた。",
+        "is_final": false,
+        "next_spot_id": "f1e08172-cdef-4a01-8fe6-ee52aeaba0db",
+        "next_spot_name": "鳥取民藝美術館"
+      },
+      {
+        "id": "f1e08172-cdef-4a01-8fe6-ee52aeaba0db",
+        "name": "鳥取民藝美術館",
+        "description": "民藝運動を牽引した医師・吉田璋也が創設した美術館。牛ノ戸焼や因州中井窯など手仕事の器や染織に出会える。10:00〜17:00、水曜休、大人500円。",
+        "address": "鳥取県鳥取市栄町651",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.496155,
+        "lng": 134.227133,
+        "qr_token": "shuin-tottori-2",
+        "cover_image_url": "/images/tottori/spot2.png",
+        "f7_fragment": "吉田璋也が創設した蔵造りの美術館、民藝の器と手仕事が並ぶ。",
+        "f7_full": "「鳥取民藝美術館」で暮らしに根付く用の美と手仕事の温もりに見入った。",
+        "is_final": false,
+        "next_spot_id": "47824a5f-04a0-4ec7-8687-9a89604b73b6",
+        "next_spot_name": "わらべ館"
+      },
+      {
+        "id": "47824a5f-04a0-4ec7-8687-9a89604b73b6",
+        "name": "わらべ館",
+        "description": "昭和の旧鳥取県立図書館の外観を復元した童謡・唱歌とおもちゃのミュージアム。約二千点の玩具と名曲の展示が楽しめる。9:00〜17:00、第3水曜休（8月無休）、大人500円。",
+        "address": "鳥取県鳥取市西町3-202",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.504336,
+        "lng": 134.233419,
+        "qr_token": "shuin-tottori-3",
+        "cover_image_url": "/images/tottori/spot3.png",
+        "f7_fragment": "レトロな旧図書館を復元した童謡・唱歌とおもちゃのミュージアム。",
+        "f7_full": "「わらべ館」で懐かしい童謡の旋律と日本の伝統玩具に出会い、心が柔らかくなった。",
+        "is_final": false,
+        "next_spot_id": "3bf03015-1ba3-4e77-84ae-fad80a469b1c",
+        "next_spot_name": "鳥取城跡（久松公園）"
+      },
+      {
+        "id": "3bf03015-1ba3-4e77-84ae-fad80a469b1c",
+        "name": "鳥取城跡（久松公園）",
+        "description": "戦国の兵糧攻めの舞台となり、江戸期には池田氏三十二万石の居城として栄えた城跡。重厚な石垣と復元された擬宝珠橋が見事。公園常時開放（展示館9:00〜17:00・月曜休）、無料。",
+        "address": "鳥取県鳥取市東町2",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.508108,
+        "lng": 134.238997,
+        "qr_token": "shuin-tottori-4",
+        "cover_image_url": "/images/tottori/spot4.png",
+        "f7_fragment": "久松山の麓に重厚な石垣と擬宝珠橋が残る、池田氏三十二万石の城跡。",
+        "f7_full": "「鳥取城跡（久松公園）」で山裾に築かれた石垣と堀を歩き、城下町の歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "b4e3a03b-b946-4565-81f6-389c69a3f147",
+        "next_spot_name": "観音院"
+      },
+      {
+        "id": "b4e3a03b-b946-4565-81f6-389c69a3f147",
+        "name": "観音院",
+        "description": "鳥取藩初代藩主・池田光仲公創建の天台宗寺院。書院から国指定名勝の池泉鑑賞式庭園を望みながら抹茶をいただける。9:00〜17:00、無休、拝観料750円（抹茶・菓子付）。",
+        "address": "鳥取県鳥取市上町162",
+        "prefecture": "鳥取県",
+        "city": "",
+        "lat": 35.496103,
+        "lng": 134.241547,
+        "qr_token": "shuin-tottori-5",
+        "cover_image_url": "/images/tottori/spot5.png",
+        "f7_fragment": "国指定名勝の池泉庭園を書院から望み、抹茶の一服を愉しめる古刹。",
+        "f7_full": "「観音院」の書院から名勝庭園を眺めながら一服の抹茶をいただき、鳥取の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "039684d4-f01e-4c63-83ee-6c8bbe5fe516",
+    "title": "広島・縮景園の緑から平和記念公園へ",
+    "name": "広島・縮景園の緑から平和記念公園へ",
+    "description": "JR広島駅から、浅野藩主ゆかりの大名庭園「縮景園」、太田川河畔に佇む鯉城「広島城」、本通の老舗ベーカリーカフェ「広島アンデルセン」、世界遺産「原爆ドーム」、未来への祈りを伝える「広島平和記念資料館」を巡る散策路。",
+    "region": "広島・大名庭園と平和の杜",
+    "area_name": "広島・大名庭園と平和の杜",
+    "cover_image_url": "/images/hiroshima/route-eyecatch.png",
+    "imageUrl": "/images/hiroshima/route-eyecatch.png",
+    "category": "歴史と街歩き",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "大名庭園と城跡の緑、本通の温かなパンの香り、平和への祈りが連なる広島を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「縮景園」の跨虹橋を渡り、水面に映る松や茶室の風情に心を澄ませた瞬間",
+          "description": "都心のすぐそばに広がる静かな大名庭園が、広島の長い歴史の入り口を優雅に開いてくれた。",
+          "badge_code": "hiroshima_shukkeien"
+        },
+        {
+          "key": "B",
+          "text": "「広島アンデルセン」で、焼き立てパンの香りにつつまれながら一息ついた瞬間",
+          "description": "被爆建物を継承した歴史ある空間で味わう温かい食卓に、街のたくましい再生力を感じた。",
+          "badge_code": "hiroshima_andersen"
+        },
+        {
+          "key": "C",
+          "text": "「原爆ドーム」の前に立ち、元安川の穏やかな流れとともに平和の尊さを想った瞬間",
+          "description": "静かに佇む世界遺産の姿が、過去から未来へと語り継ぐべきメッセージを深く胸に刻んだ。",
+          "badge_code": "hiroshima_dome"
+        },
+        {
+          "key": "D",
+          "text": "「広島平和記念資料館」を巡り、慰霊碑の向こうに続く平和の灯を見つめた瞬間",
+          "description": "一つひとつの記録と向き合ったあとの緑豊かな公園の静けさが、旅の締めくくりに重みを添えた。",
+          "badge_code": "hiroshima_peace_museum"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "913a3d8c-bf36-4b93-8261-92dcdde2436b",
+        "name": "縮景園",
+        "description": "元和6年（1620年）に広島藩主・浅野長晟の別邸として築かれた大名庭園。跨虹橋や茶室が池の周囲に配される。9:00〜18:00（冬期〜17:00）、12/29〜31休、一般350円。",
+        "address": "広島県広島市中区上幟町2-11",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.400483,
+        "lng": 132.467721,
+        "qr_token": "shuin-hiroshima-1",
+        "cover_image_url": "/images/hiroshima/spot1.png",
+        "f7_fragment": "広島藩主・浅野家ゆかりの大名庭園、跨虹橋と四季の池泉が美しい。",
+        "f7_full": "「縮景園」の跨虹橋を渡り、水面に映る松や茶室の風情に心を澄ませて旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "c56ff81b-f099-4bf1-8c66-b3a26ce1a350",
+        "next_spot_name": "広島城"
+      },
+      {
+        "id": "c56ff81b-f099-4bf1-8c66-b3a26ce1a350",
+        "name": "広島城",
+        "description": "毛利輝元が築城した平城で、別名「鯉城」。広大な水堀と石垣、二の丸復元建物が見事（天守は2026年3月閉城し外観公開のみ）。城跡無料。",
+        "address": "広島県広島市中区基町21-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.402746,
+        "lng": 132.459105,
+        "qr_token": "shuin-hiroshima-2",
+        "cover_image_url": "/images/hiroshima/spot2.png",
+        "f7_fragment": "毛利輝元が築いた「鯉城」、水堀と石垣越しに仰ぐ天守の外観が壮麗。",
+        "f7_full": "「広島城」の石垣と水堀を歩き、広島の街の原点となった鯉城の威容を仰ぎ見た。",
+        "is_final": false,
+        "next_spot_id": "41f7c4b3-ac29-45dd-8635-899279943224",
+        "next_spot_name": "広島アンデルセン"
+      },
+      {
+        "id": "41f7c4b3-ac29-45dd-8635-899279943224",
+        "name": "広島アンデルセン",
+        "description": "本通商店街の中心に佇む老舗ベーカリー＆レストラン。1階マーケットやサンドイッチスタンドで気軽に休憩できる。10:00〜19:30（施設により異なる）、不定休。",
+        "address": "広島県広島市中区本通7-1",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.393017,
+        "lng": 132.458349,
+        "qr_token": "shuin-hiroshima-3",
+        "cover_image_url": "/images/hiroshima/spot3.png",
+        "f7_fragment": "本通商店街の老舗ベーカリー、焼きたてパンと珈琲でひと息つける名店。",
+        "f7_full": "「広島アンデルセン」で焼きたてパンの香りに包まれながら、本通の温かい食卓を味わった。",
+        "is_final": false,
+        "next_spot_id": "9c21b997-bc15-459e-8e8b-960e5684102a",
+        "next_spot_name": "原爆ドーム"
+      },
+      {
+        "id": "9c21b997-bc15-459e-8e8b-960e5684102a",
+        "name": "原爆ドーム",
+        "description": "大正時代に広島県物産陳列館として建てられ、被爆の惨禍を今に伝える負の世界遺産。元安川畔から常時見学可能、無料。",
+        "address": "広島県広島市中区大手町1-10",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.39548,
+        "lng": 132.45359,
+        "qr_token": "shuin-hiroshima-4",
+        "cover_image_url": "/images/hiroshima/spot4.png",
+        "f7_fragment": "元安川のほとりに静かに佇み、恒久平和の大切さを訴える世界遺産。",
+        "f7_full": "「原爆ドーム」の前に立ち、元安川の穏やかな流れとともに平和の尊さを静かに想った。",
+        "is_final": false,
+        "next_spot_id": "0b351c70-cb96-4671-8565-a10154cef5e0",
+        "next_spot_name": "広島平和記念資料館"
+      },
+      {
+        "id": "0b351c70-cb96-4671-8565-a10154cef5e0",
+        "name": "広島平和記念資料館",
+        "description": "平和記念公園の南側に建つ丹下健三氏設計の資料館。被爆資料や遺品を通じて歴史の記憶を伝える。7:30〜19:00（季節変動あり）、12/30〜31・2月中旬休、大人200円。",
+        "address": "広島県広島市中区中島町1-2",
+        "prefecture": "広島県",
+        "city": "",
+        "lat": 34.391503,
+        "lng": 132.453158,
+        "qr_token": "shuin-hiroshima-5",
+        "cover_image_url": "/images/hiroshima/spot5.png",
+        "f7_fragment": "丹下健三氏設計の本館で被爆資料と証言を伝える、平和記念公園の中核施設。",
+        "f7_full": "「広島平和記念資料館」で歴史の記憶と向き合い、緑豊かな平和記念公園で旅を締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
