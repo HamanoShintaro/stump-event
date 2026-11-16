@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import HeaderNav from "@/components/HeaderNav";
+import PrefectureMapWrapper from "@/components/PrefectureMapWrapper";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
 import { parseWKBPoint } from "@/utils/wkb";
 import {
@@ -176,36 +177,8 @@ export default async function PrefectureHubPage({
           </div>
         </section>
 
-        {hubInfo.areaNames.length > 0 && (
-          <section className={styles.areaTagsSection}>
-            <h2 className={styles.sectionTitle}>
-              <MapPin size={18} color="var(--primary-color)" />
-              <span>{prefecture}で巡れる街・駅・沿線エリア</span>
-            </h2>
-            <div className={styles.tagCloud}>
-              {(hubInfo.lines || []).map((line) => (
-                <Link
-                  key={`line-${line}`}
-                  href={`/routes?q=${encodeURIComponent(line)}`}
-                  className={styles.areaTagChip}
-                >
-                  <Compass size={13} color="var(--primary-color)" />
-                  <span>{line}沿線の街歩き</span>
-                </Link>
-              ))}
-              {hubInfo.areaNames.map((area) => (
-                <Link
-                  key={area}
-                  href={`/routes?q=${encodeURIComponent(area)}`}
-                  className={styles.areaTagChip}
-                >
-                  <MapPin size={13} color="var(--primary-color)" />
-                  <span>{area}の街歩き</span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* 都道府県全域のインタラクティブマップ（ピン/カードタップでルート範囲をアニメーション表示） */}
+        <PrefectureMapWrapper prefecture={prefecture} routes={prefRoutes} />
 
         <section>
           <h2 className={styles.sectionTitle}>
@@ -304,6 +277,37 @@ export default async function PrefectureHubPage({
             </div>
           )}
         </section>
+
+        {hubInfo.areaNames.length > 0 && (
+          <section className={styles.areaTagsSection}>
+            <h2 className={styles.sectionTitle}>
+              <MapPin size={18} color="var(--primary-color)" />
+              <span>{prefecture}で巡れる街・駅・沿線エリア</span>
+            </h2>
+            <div className={styles.tagCloud}>
+              {(hubInfo.lines || []).map((line) => (
+                <Link
+                  key={`line-${line}`}
+                  href={`/routes?q=${encodeURIComponent(line)}`}
+                  className={styles.areaTagChip}
+                >
+                  <Compass size={13} color="var(--primary-color)" />
+                  <span>{line}沿線の街歩き</span>
+                </Link>
+              ))}
+              {hubInfo.areaNames.map((area) => (
+                <Link
+                  key={area}
+                  href={`/routes?q=${encodeURIComponent(area)}`}
+                  className={styles.areaTagChip}
+                >
+                  <MapPin size={13} color="var(--primary-color)" />
+                  <span>{area}の街歩き</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ルート数がまだ少ない都道府県（1〜3件）では、同地方ブロックのルートも併記して体験と網羅性を補完 */}
         {neighborRoutes.length > 0 && (

@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/context/AuthContext";
 import { parseWKBPoint } from "@/utils/wkb";
+import { getGuestActiveSpotId } from "@/utils/guestProgress";
 import { useCustomAlert } from "@/hooks/useCustomAlert";
 import LoadingOverlay from "@/components/LoadingOverlay";
 import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
@@ -380,6 +381,11 @@ export default function MapPage({
           
         if (userData) {
           setActiveSpotId(userData.active_spot_id);
+        }
+      } else {
+        const guestSpotId = getGuestActiveSpotId();
+        if (guestSpotId) {
+          setActiveSpotId(guestSpotId);
         }
       }
       

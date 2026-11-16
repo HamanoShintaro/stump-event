@@ -9,6 +9,7 @@ import ClientSpotList from "./ClientSpotList";
 import RouteBadgeTeaser from "./RouteBadgeTeaser";
 import CommunityEchoesSection from "@/components/CommunityEchoesSection";
 import RouteMicroFeedbackCard from "@/components/RouteMicroFeedbackCard";
+import RouteOverviewMapWrapper from "@/components/RouteOverviewMapWrapper";
 import BackButton from "@/components/BackButton";
 import { getRouteStatsMap } from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
@@ -121,7 +122,12 @@ export default async function RallyDetailPage({
         {/* ルート概要（紙面・エディトリアル構成） */}
         <section className={styles.headerSection}>
           <div className={styles.metaLine}>
-            <span>{rally.prefecture}</span>
+            <span>
+              {rally.prefecture}
+              {areaInfo.cityName && areaInfo.cityName !== rally.prefecture
+                ? ` ${areaInfo.cityName}`
+                : ""}
+            </span>
             {rally.category && (
               <>
                 <span className={styles.metaDivider}>／</span>
@@ -178,6 +184,15 @@ export default async function RallyDetailPage({
                   <Wallet size={14} strokeWidth={1.8} color="var(--primary-color)" />
                   <span>予算 {budgetLabel}</span>
                 </div>
+              </div>
+
+              <div style={{ margin: "16px 0" }}>
+                <RouteOverviewMapWrapper
+                  routeId={rally.id}
+                  spots={spotsList}
+                  groupId={groupId}
+                  areaLabel={[rally.prefecture, areaInfo.cityName].filter(Boolean).join(" ")}
+                />
               </div>
 
               <JoinRallyButton

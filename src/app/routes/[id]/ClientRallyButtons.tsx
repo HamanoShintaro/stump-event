@@ -19,6 +19,7 @@ import { useRouteBookmark } from "@/hooks/useRouteBookmark";
 import { useSubscription } from "@/hooks/useSubscription";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { trackRouteJoin } from "@/utils/analytics";
+import { isGuestRouteJoined, saveGuestJoinedRoute } from "@/utils/guestProgress";
 import { Bookmark, Star, Users, KeyRound, Map as MapIcon, Sparkles, Search } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -116,6 +117,7 @@ export function JoinRallyButton({
     }
 
     if (!user) {
+      setIsJoined(isGuestRouteJoined(rallyId));
       setLoading(false);
       return;
     }
@@ -162,11 +164,25 @@ export function JoinRallyButton({
 
   const handleJoin = async () => {
     if (!user) {
-      setIsNavigating(true);
-      const loginUrl = `/login?redirect=/routes/${rallyId}`;
-      triggerNavigationLoading(loginUrl);
-      // 未ログインなら、この画面に戻ってくるようにリダイレクト先を指定してログイン画面へ
-      router.push(loginUrl);
+      const proceedAsGuest = await showAlert({
+        type: "warning",
+        text: "ログインせずに巡る場合、押印や目的地の記録はこのブラウザに仮保存されます。\n\n履歴・キャッシュの削除や別ブラウザへの切り替えで記録が消える場合があります。確実に残すにはログインがおすすめです。",
+        okText: "このままブラウザ保存で巡る",
+        ngText: "ログインして始める",
+      });
+
+      if (!proceedAsGuest) {
+        setIsNavigating(true);
+        const loginUrl = `/login?redirect=/routes/${rallyId}`;
+        triggerNavigationLoading(loginUrl);
+        router.push(loginUrl);
+        return;
+      }
+
+      saveGuestJoinedRoute(rallyId);
+      setIsJoined(true);
+      trackRouteJoin(rallyId, routeTitle);
+      setShowAnimation(true);
       return;
     }
     setIsNavigating(true);

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import HeaderNav from "@/components/HeaderNav";
-import SplashAnimation from "@/components/SplashAnimation";
 import ClientSearchButton from "@/components/ClientSearchButton";
 import NearbyDiscoverySection from "@/components/NearbyDiscoverySection";
 import { getCachedPublishedRoutesWithStats } from "@/utils/routeStats";
@@ -44,9 +43,20 @@ export default async function Home() {
     await getCachedPublishedRoutesWithStats();
 
   const featuredRallies = allRallies.slice(0, FEATURED_ROUTES_LIMIT);
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SHUIN",
+    alternateName: ["SHUIN まちのしるし", "まちのしるし"],
+    url: siteUrl,
+  };
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       <header
         className="container"
         data-nosnippet
@@ -62,9 +72,6 @@ export default async function Home() {
         {/* トップページのみ左上のロゴを非表示にし、コンテンツ側に配置する */}
         <HeaderNav />
       </header>
-
-      {/* 初回訪問時のみ表示されるスプラッシュアニメーション */}
-      <SplashAnimation />
 
       {/* ヒーローロゴ部分 (通常スクロール) */}
       <div className={styles.heroLogoSection}>

@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { User, Session } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 import { syncUserProfileAndGroupStatus } from "@/utils/stampMedia";
+import { syncGuestProgressToSupabase } from "@/utils/guestProgress";
 
 interface AuthContextType {
   user: User | null;
@@ -29,7 +30,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setSession(data.session);
         setUser(data.session?.user ?? null);
         if (data.session?.user) {
-          syncUserProfileAndGroupStatus(supabase, data.session.user);
+          await syncUserProfileAndGroupStatus(supabase, data.session.user);
+          await syncGuestProgressToSupabase(supabase, data.session.user);
         }
       } catch (error) {
         console.error("--- AuthContext: Error getting initial session ---", error);
@@ -43,13 +45,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // 認証状態の変更を監視（ログイン・ログアウト時）
     console.log("--- AuthContext: Setting up onAuthStateChange listener ---");
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
       console.log("--- AuthContext: onAuthStateChange triggered ---", { event: _event, hasSession: !!session });
       try {
         setSession(session);
         setUser(session?.user ?? null);
         if (session?.user) {
-          syncUserProfileAndGroupStatus(supabase, session.user);
+          await syncUserProfileAndGroupStatus(supabase, session.user);
+          await syncGuestProgressToSupabase(supabase, session.user);
         }
       } catch (error) {
         console.error("--- AuthContext: Error in onAuthStateChange ---", error);

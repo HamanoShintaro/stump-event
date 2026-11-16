@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description:
       '街を歩いて、しるしを刻む。訪れた場所が、あなたのしるしになる。全国の街を徒歩でめぐる観光モデルコース・街歩きルート。',
     url: siteUrl,
-    siteName: 'SHUIN まちのしるし',
+    siteName: 'SHUIN',
     locale: 'ja_JP',
     type: 'website',
   },

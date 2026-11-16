@@ -14,6 +14,7 @@ import PremiumUpgradeModal from "@/components/PremiumUpgradeModal";
 import { triggerNavigationLoading } from "@/hooks/useNavigationLoading";
 import { useCompanionGroup } from "@/hooks/useCompanionGroup";
 import { useSubscription } from "@/hooks/useSubscription";
+import { saveGuestStamp, setGuestActiveSpotId } from "@/utils/guestProgress";
 import {
   getDisplayNameFromAuthUser,
   persistStampEventMemory,
@@ -649,11 +650,6 @@ export default function SpotCheckInPage({
   };
 
   const performCheckIn = async (qrTokenUsed?: string) => {
-    if (!user) {
-      await showAlert({ text: "押印するにはログインが必要です。", okText: "確認" });
-      return;
-    }
-
     setIsCheckingIn(true);
     try {
       let clientLat = 0, clientLng = 0;
@@ -665,6 +661,24 @@ export default function SpotCheckInPage({
             { timeout: 2000 }
           );
         });
+      }
+
+      if (!user) {
+        saveGuestStamp({
+          spotId: spot.id,
+          routeId: route.id,
+          method: qrTokenUsed ? "qr" : "gps",
+          qrTokenUsed: qrTokenUsed || null,
+          lat: clientLat || null,
+          lng: clientLng || null,
+          distanceToSpotM: distance || null,
+          acquiredAt: new Date().toISOString(),
+        });
+        setIsRevisit(false);
+        triggerCeremony(47);
+        await refetchStampStatus();
+        setIsCheckingIn(false);
+        return;
       }
 
       // P3: このユーザーの当該スポット 初回/再訪 を判定
@@ -1774,6 +1788,8 @@ export default function SpotCheckInPage({
                       } catch (e) {
                         console.warn("Failed to set active_spot_id:", e);
                       }
+                    } else {
+                      setGuestActiveSpotId(spot.id);
                     }
                     triggerNavigationLoading();
                     router.push(
@@ -2187,9 +2203,39 @@ export default function SpotCheckInPage({
 
             <div className={"glass-card " + styles.scannerSection}>
               <h2 className={styles.sectionTitle}>押印する</h2>
-              
+
+              {!user && (
+                <div
+                  style={{
+                    marginBottom: "12px",
+                    padding: "10px 12px",
+                    borderRadius: "4px",
+                    border: "1px solid rgba(196, 61, 46, 0.28)",
+                    background: "rgba(196, 61, 46, 0.05)",
+                    fontSize: "0.8rem",
+                    lineHeight: 1.55,
+                    color: "var(--text-color)",
+                  }}
+                >
+                  現在ログインしていないため、押印はブラウザに仮保存されます（キャッシュ削除等で消える場合があります）。
+                  <Link
+                    href={`/login?redirect=${encodeURIComponent(
+                      `/routes/${resolvedParams.id}/spot/${spot.id}${groupId ? `?groupId=${groupId}` : ""}`
+                    )}`}
+                    style={{
+                      marginLeft: "6px",
+                      color: "var(--primary-color)",
+                      fontWeight: 700,
+                      textDecoration: "underline",
+                    }}
+                  >
+                    ログインして保存
+                  </Link>
+                </div>
+              )}
+
               {locationError && <div className={styles.errorBox}>{locationError}</div>}
-              
+
               {distance !== null ? (
                 <div className={styles.distanceBox}>
                   <p>現在の距離: <strong>約 {distance}m</strong></p>
@@ -2237,7 +2283,7 @@ export default function SpotCheckInPage({
               )}
 
               {isCheckingIn && <div style={{ padding: "40px 0", textAlign: "center" }}><h3>確認中...</h3></div>}
-              
+
               {(process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_DEMO === "true") && (
                 <div className={styles.demoOverride} onClick={() => performCheckIn(spot.qr_token || "demo-qr")}>
                   🧪 [Demo] 強制押印テスト（Supabase永続化 ＆ プレミアム演出起動）

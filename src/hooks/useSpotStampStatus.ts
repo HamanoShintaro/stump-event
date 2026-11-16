@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
+import { getGuestStampsForSpot } from "@/utils/guestProgress";
 
 export function useSpotStampStatus(spotId: string, userId: string | undefined) {
   const [isAcquired, setIsAcquired] = useState(false); // 生涯で1回以上押印しているか
@@ -10,10 +11,36 @@ export function useSpotStampStatus(spotId: string, userId: string | undefined) {
   const [loading, setLoading] = useState(true);
 
   const fetchStatus = useCallback(async () => {
-    if (!userId || !spotId) {
+    if (!spotId) {
       setIsAcquired(false);
       setIsTodayStamped(false);
       setVisitCount(0);
+      setLoading(false);
+      return;
+    }
+
+    if (!userId) {
+      const guestStamps = getGuestStampsForSpot(spotId);
+      const count = guestStamps.length;
+      setVisitCount(count);
+      if (count > 0) {
+        const latest = guestStamps[0];
+        setIsAcquired(true);
+        setVisitorNumber(47);
+        setScannedDate(new Date(latest.acquiredAt).toLocaleDateString("ja-JP"));
+        const jstOffset = 9 * 60 * 60 * 1000;
+        const todayJst = new Date(Date.now() + jstOffset);
+        const todayStr = `${todayJst.getUTCFullYear()}-${String(todayJst.getUTCMonth() + 1).padStart(2, "0")}-${String(todayJst.getUTCDate()).padStart(2, "0")}`;
+        const hasToday = guestStamps.some((s) => {
+          const d = new Date(new Date(s.acquiredAt).getTime() + jstOffset);
+          const sStr = `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
+          return sStr === todayStr;
+        });
+        setIsTodayStamped(hasToday);
+      } else {
+        setIsAcquired(false);
+        setIsTodayStamped(false);
+      }
       setLoading(false);
       return;
     }
