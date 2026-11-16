@@ -83850,5 +83850,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "6a4fb3e6-bec1-458f-8cd9-3c5bfcd215a9",
+    "title": "仙台・ずんだ茶寮と政宗公の瑞鳳殿を歩く",
+    "name": "仙台・ずんだ茶寮と政宗公の瑞鳳殿を歩く",
+    "description": "JR仙台駅から、駅構内の人気スイーツ「ずんだ茶寮 仙台駅ずんだ小径店」と仙台の台所「仙台朝市」、広瀬川ほとりの隠れ家「珈琲まめぼう」、伊達政宗公が眠る豪華絢爛な霊屋「瑞鳳殿」、天守台から街を一望する「青葉城（仙台城跡）」を巡る散策路。",
+    "region": "仙台・伊達政宗の杜と朝市の街",
+    "area_name": "仙台・伊達政宗の杜と朝市の街",
+    "cover_image_url": "/images/sendai/route-eyecatch.png",
+    "imageUrl": "/images/sendai/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "ずんだの優しい甘さと朝市の活気、伊達政宗公の美意識が繋がる仙台を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ずんだ茶寮」で、枝豆の豊かな風味が広がるずんだ餅やずんだシェイクを味わった瞬間",
+          "description": "鮮やかな若草色の甘味が、杜の都・仙台の旅の始まりを爽やかに彩ってくれた。",
+          "badge_code": "sendai_zunda"
+        },
+        {
+          "key": "B",
+          "text": "「仙台朝市」の活気あふれる商店街を歩き、三陸の海の幸や地元食材を眺めた瞬間",
+          "description": "駅前からすぐの場所に広がる庶民的な市場に、東北最大の都市の豊かな食の土台を感じた。",
+          "badge_code": "sendai_asaichi"
+        },
+        {
+          "key": "C",
+          "text": "「瑞鳳殿」の杉木立の石段を登り、極彩色の桃山建築と伊達政宗公の霊屋を仰いだ瞬間",
+          "description": "経ヶ峯の静かな森に輝く黒漆と金箔の彫刻に、仙台藩祖・政宗公の美意識が息づいていた。",
+          "badge_code": "sendai_zuihoden"
+        },
+        {
+          "key": "D",
+          "text": "「青葉城（仙台城跡）」の本丸跡に立ち、広瀬川の向こうに仙台市街を一望した瞬間",
+          "description": "伊達政宗公騎馬像の視線の先に広がる杜の都のパノラマが、旅を誇らしく結んでくれた。",
+          "badge_code": "sendai_aobajo"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3ab00817-9e52-4c6a-855b-a792be0fe104",
+        "name": "ずんだ茶寮 仙台駅ずんだ小径店",
+        "description": "JR仙台駅3階「ずんだ小径」にある人気店。仙台伝統の枝豆を使った「ずんだ餅」や名物「ずんだシェイク」を気軽に味わえる。物販9:00〜21:00・喫茶10:00〜18:30（L.O.18:00）、無休。",
+        "address": "宮城県仙台市青葉区中央1-1-1 仙台駅3F",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.260213,
+        "lng": 140.881939,
+        "qr_token": "shuin-sendai-1",
+        "cover_image_url": "/images/sendai/spot1.png",
+        "f7_fragment": "仙台駅構内で名物ずんだ餅とずんだシェイクを味わう、定番スイーツ店。",
+        "f7_full": "「ずんだ茶寮」で枝豆の香り豊かなずんだ餅とシェイクを味わい、杜の都・仙台の旅を爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "4c949c66-bc1f-424c-816b-ac3a8de65a85",
+        "next_spot_name": "仙台朝市"
+      },
+      {
+        "id": "4c949c66-bc1f-424c-816b-ac3a8de65a85",
+        "name": "仙台朝市",
+        "description": "仙台駅から徒歩約5分、「仙台の台所」として親しまれる活気ある商店街。新鮮な三陸の魚介や野菜、コロッケなどの食べ歩きグルメが並ぶ。8:00〜17:00頃（店舗により異なる）、日曜・祝日休の店舗多数。",
+        "address": "宮城県仙台市青葉区中央3-8-5",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.258796,
+        "lng": 140.878668,
+        "qr_token": "shuin-sendai-2",
+        "cover_image_url": "/images/sendai/spot2.png",
+        "f7_fragment": "仙台駅から徒歩5分、三陸の魚介と惣菜が並ぶ活気ある「仙台の台所」。",
+        "f7_full": "「仙台朝市」の賑やかな商店街を歩き、三陸の海の幸や地元の食材が集まる仙台の活気に触れた。",
+        "is_final": false,
+        "next_spot_id": "5910af42-e171-46ac-8421-3f4c5125f075",
+        "next_spot_name": "珈琲まめぼう"
+      },
+      {
+        "id": "5910af42-e171-46ac-8421-3f4c5125f075",
+        "name": "珈琲まめぼう",
+        "description": "広瀬川のほとり、米ヶ袋の緑豊かな環境に佇む隠れ家スペシャルティコーヒー専門店。丁寧なハンドドリップ珈琲が味わえる。12:00〜19:00、木曜休（祝日の場合営業）。",
+        "address": "宮城県仙台市青葉区米ヶ袋1-1-12",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.254975,
+        "lng": 140.869416,
+        "qr_token": "shuin-sendai-3",
+        "cover_image_url": "/images/sendai/spot3.png",
+        "f7_fragment": "広瀬川のほとりで丁寧なスペシャルティ珈琲を味わう、米ヶ袋の隠れ家。",
+        "f7_full": "米ヶ袋の「珈琲まめぼう」で豊かな香りの一杯を味わい、広瀬川沿いの静かな杜の都の空気に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "40d479a0-5903-4733-8fd8-f7e3b934b760",
+        "next_spot_name": "瑞鳳殿"
+      },
+      {
+        "id": "40d479a0-5903-4733-8fd8-f7e3b934b760",
+        "name": "瑞鳳殿",
+        "description": "寛永14年（1637年）に造営された仙台藩祖・伊達政宗公の霊屋。杉木立の中に黒漆と極彩色の桃山様式建築が輝く。9:00〜16:50（12〜1月〜16:20）、12月31日休、大人570円。",
+        "address": "宮城県仙台市青葉区霊屋下23-2",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.251009,
+        "lng": 140.865775,
+        "qr_token": "shuin-sendai-4",
+        "cover_image_url": "/images/sendai/spot4.png",
+        "f7_fragment": "黒漆と極彩色の桃山様式が杉木立に輝く、伊達政宗公の豪華な霊屋。",
+        "f7_full": "経ヶ峯の「瑞鳳殿」で黒漆と金箔が輝く極彩色の霊屋を仰ぎ、仙台藩祖・伊達政宗公の美意識に触れた。",
+        "is_final": false,
+        "next_spot_id": "05d40465-16c7-42b9-87d1-6b3bf82be62d",
+        "next_spot_name": "青葉城（仙台城跡）"
+      },
+      {
+        "id": "05d40465-16c7-42b9-87d1-6b3bf82be62d",
+        "name": "青葉城（仙台城跡）",
+        "description": "伊達政宗公が築いた仙台城の本丸跡。天守台からは広瀬川と仙台市街の大パノラマが広がり、政宗公の騎馬像が街を見守る。散策自由（本丸会館9:00〜17:00・施設により異なる）、無休。",
+        "address": "宮城県仙台市青葉区川内1",
+        "prefecture": "宮城県",
+        "city": "",
+        "lat": 38.252891,
+        "lng": 140.856304,
+        "qr_token": "shuin-sendai-5",
+        "cover_image_url": "/images/sendai/spot5.png",
+        "f7_fragment": "伊達政宗公騎馬像が立ち、杜の都・仙台を一望する高台の城跡。",
+        "f7_full": "「青葉城（仙台城跡）」から杜の都のパノラマを一望し、ずんだと朝市と伊達の歴史を巡った仙台の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c03969b2-7ee4-4e29-8628-08ea644bc09e",
+    "title": "金沢・近江町市場と兼六園を歩く",
+    "name": "金沢・近江町市場と兼六園を歩く",
+    "description": "JR金沢駅から、市民の台所「近江町市場」と浅野川沿いの伝統街並み「ひがし茶屋街」、加賀百万石の居城跡「金沢城公園」、日本三名園の特別名勝「兼六園」、円形ガラス建築の「金沢21世紀美術館」を巡る散策路。",
+    "region": "金沢・兼六園と茶屋街の城下町",
+    "area_name": "金沢・兼六園と茶屋街の城下町",
+    "cover_image_url": "/images/kanazawa/route-eyecatch.png",
+    "imageUrl": "/images/kanazawa/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "加賀百万石の庭園美と江戸の茶屋街、現代アートが響き合う金沢を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「近江町市場」の賑やかなアーケードを歩き、日本海の鮮魚や加賀野菜を眺めた瞬間",
+          "description": "三百年以上続く金沢の台所の活気に、北陸の豊かな海の幸と暮らしの息遣いを感じた。",
+          "badge_code": "kanazawa_omicho"
+        },
+        {
+          "key": "B",
+          "text": "「ひがし茶屋街」の紅殻格子の町並みを歩き、江戸の粋が息づく茶屋文化に触れた瞬間",
+          "description": "石畳に響く足音と和菓子や金箔の輝きが、タイムスリップしたような風情を運んでくれた。",
+          "badge_code": "kanazawa_higashi"
+        },
+        {
+          "key": "C",
+          "text": "「兼六園」の霞ヶ池ほとりに立ち、徽軫灯籠と美しい松の枝ぶりを仰いだ瞬間",
+          "description": "歴代加賀藩主が歳月をかけて造り上げた日本三名園の静謐な景色に、心が深く洗われた。",
+          "badge_code": "kanazawa_kenrokuen"
+        },
+        {
+          "key": "D",
+          "text": "「金沢21世紀美術館」のガラス張りの円形空間を歩き、現代アートと街の融合を体感した瞬間",
+          "description": "伝統の城下町の真ん中に開かれた軽やかな美術館が、金沢の未来への感性を示していた。",
+          "badge_code": "kanazawa_21st"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5a3e2106-565c-4f08-8949-1dc2be6a7cf9",
+        "name": "近江町市場",
+        "description": "享保6年（1721年）から続く「金沢市民の台所」。新鮮な日本海の魚介や加賀野菜、海鮮丼や食べ歩きグルメが約170店舗に並ぶ。9:00〜17:00頃（店舗により異なる・水曜休の店多し）、年始休。",
+        "address": "石川県金沢市上近江町50-1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.571734,
+        "lng": 136.655865,
+        "qr_token": "shuin-kanazawa-1",
+        "cover_image_url": "/images/kanazawa/spot1.png",
+        "f7_fragment": "享保六年からの歴史を誇る、日本海の幸が集う「金沢市民の台所」。",
+        "f7_full": "「近江町市場」の活気あふれる通りを歩き、日本海の鮮魚や加賀野菜が並ぶ金沢の豊かな食文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "9a2a6bd0-5b64-4fba-8877-f07927b98d71",
+        "next_spot_name": "ひがし茶屋街"
+      },
+      {
+        "id": "9a2a6bd0-5b64-4fba-8877-f07927b98d71",
+        "name": "ひがし茶屋街",
+        "description": "文政3年（1820年）に加賀藩が整備した茶屋街で国重要伝統的建造物群保存地区。木虫籠の美しい町家カフェや和菓子店、金箔工芸の店が並ぶ。散策自由（店舗10:00〜17:00頃）。",
+        "address": "石川県金沢市東山1-13",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.572694,
+        "lng": 136.665822,
+        "qr_token": "shuin-kanazawa-2",
+        "cover_image_url": "/images/kanazawa/spot2.png",
+        "f7_fragment": "木虫籠の町家が石畳に連なる、江戸の粋を伝える茶屋街。",
+        "f7_full": "「ひがし茶屋街」の紅殻格子の石畳を歩き、江戸時代から受け継がれる金沢の優美な茶屋文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "d4bcb6a1-4644-489f-8b11-ee07eed3ee5a",
+        "next_spot_name": "金沢城公園"
+      },
+      {
+        "id": "d4bcb6a1-4644-489f-8b11-ee07eed3ee5a",
+        "name": "金沢城公園",
+        "description": "加賀百万石・前田家の居城跡を整備した公園。鉛瓦の白い屋根が美しい石川門や復元された菱櫓・五十間長屋が見どころ。7:00〜18:00（10/16〜2月末8:00〜17:00）、無休、入園無料（一部施設有料）。",
+        "address": "石川県金沢市丸の内1-1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.565946,
+        "lng": 136.658845,
+        "qr_token": "shuin-kanazawa-3",
+        "cover_image_url": "/images/kanazawa/spot3.png",
+        "f7_fragment": "白い鉛瓦の石川門と多様な石垣が残る、加賀百万石の居城跡。",
+        "f7_full": "「金沢城公園」の白い石川門と石垣を歩き、加賀百万石を築いた前田家の威容と城づくりの知恵に触れた。",
+        "is_final": false,
+        "next_spot_id": "b00f43bd-8c61-4172-8dff-1b619bbcece0",
+        "next_spot_name": "兼六園"
+      },
+      {
+        "id": "b00f43bd-8c61-4172-8dff-1b619bbcece0",
+        "name": "兼六園",
+        "description": "日本三名園の一つに数えられる国の特別名勝。歴代加賀藩主が長い歳月をかけて築いた大名庭園で、霞ヶ池と二本脚の徽軫灯籠が象徴的。7:00〜18:00（10/16〜2月末8:00〜17:00）、年中無休、大人320円。",
+        "address": "石川県金沢市兼六町1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.562128,
+        "lng": 136.662652,
+        "qr_token": "shuin-kanazawa-4",
+        "cover_image_url": "/images/kanazawa/spot4.png",
+        "f7_fragment": "霞ヶ池と徽軫灯籠が象徴的な、日本三名園・国の特別名勝。",
+        "f7_full": "日本三名園の「兼六園」で徽軫灯籠と霞ヶ池の絶景を眺め、歴代加賀藩主が磨いた大名庭園の粋を味わった。",
+        "is_final": false,
+        "next_spot_id": "afd851c5-80eb-4fc2-86c8-984ef2bc1888",
+        "next_spot_name": "金沢21世紀美術館"
+      },
+      {
+        "id": "afd851c5-80eb-4fc2-86c8-984ef2bc1888",
+        "name": "金沢21世紀美術館",
+        "description": "円形の全面ガラス張り建築が特徴の現代美術館。街に開かれた交流ゾーンではユニークな建築やパブリックアートを気軽に楽しめる。展覧会ゾーン10:00〜18:00（金土〜20:00・月曜休）／交流ゾーン9:00〜22:00。",
+        "address": "石川県金沢市広坂1-2-1",
+        "prefecture": "石川県",
+        "city": "",
+        "lat": 36.560792,
+        "lng": 136.658825,
+        "qr_token": "shuin-kanazawa-5",
+        "cover_image_url": "/images/kanazawa/spot5.png",
+        "f7_fragment": "街に開かれた円形ガラス建築が象徴的な、現代アートの殿堂。",
+        "f7_full": "「金沢21世紀美術館」の開放的な空間で現代アートに出会い、伝統と革新が調和する金沢の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "be4a1751-e6f5-4739-8eec-0cc6fedb43f5",
+    "title": "岡山・烏城の岡山城と後楽園を歩く",
+    "name": "岡山・烏城の岡山城と後楽園を歩く",
+    "description": "JR岡山駅から、オランダ通り近くの老舗純喫茶「ダンケ」と白桃スイーツが人気の「城下カフェ 表町店」、漆黒の天守「岡山城（烏城）」、旭川沿いの「碧水園」、日本三名園「岡山後楽園」を巡る散策路。",
+    "region": "岡山・烏城と後楽園の城下町",
+    "area_name": "岡山・烏城と後楽園の城下町",
+    "cover_image_url": "/images/okayama/route-eyecatch.png",
+    "imageUrl": "/images/okayama/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "表町商店街の珈琲とフルーツの香り、漆黒の烏城と広大な後楽園が繋がる岡山を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「ダンケ」の落ち着いた二階の純喫茶空間で、香り高い珈琲を味わった瞬間",
+          "description": "オランダ通りそばで長年愛される喫茶店が、晴れの国の街歩きを穏やかに始めてくれた。",
+          "badge_code": "okayama_danke"
+        },
+        {
+          "key": "B",
+          "text": "「城下カフェ 表町店」で、フルーツ王国・岡山ならではの瑞々しいスイーツを味わった瞬間",
+          "description": "城下町散策の途中で出会う甘い果実の彩りが、岡山の旅をいっそう華やかにしてくれた。",
+          "badge_code": "okayama_jyokacafe"
+        },
+        {
+          "key": "C",
+          "text": "「岡山城」の漆黒の下見板張りの天守閣を見上げ、旭川の水面に映る烏城を眺めた瞬間",
+          "description": "宇喜多秀家や小早川秀秋らが築いた勇壮な黒いお城が、岡山の空に凛とそびえていた。",
+          "badge_code": "okayama_castle"
+        },
+        {
+          "key": "D",
+          "text": "「岡山後楽園」の広々とした芝生と沢の池を眺め、日本三名園の開放感に包まれた瞬間",
+          "description": "旭川の向こうに烏城を借景として取り込む雄大な大名庭園が、旅のフィナーレを飾った。",
+          "badge_code": "okayama_korakuen"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "42bdbd77-b358-425c-8563-2f0c3bc69f5b",
+        "name": "ダンケ",
+        "description": "オランダ通り近く、岡山シンフォニーホール脇に佇む長年愛される純喫茶。朝8時から香り高いコーヒーやモーニングで落ち着いた時間を過ごせる。8:00〜18:00、火曜休。",
+        "address": "岡山県岡山市北区表町1-4-1 表町一丁目第二開発ビル 2F",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.664734,
+        "lng": 133.929737,
+        "qr_token": "shuin-okayama-1",
+        "cover_image_url": "/images/okayama/spot1.png",
+        "f7_fragment": "オランダ通りそばで朝の珈琲と落ち着いた時間を守る、老舗純喫茶。",
+        "f7_full": "表町の老舗純喫茶「ダンケ」で香り高い珈琲を味わい、城下町・岡山の静かな散策を始めた。",
+        "is_final": false,
+        "next_spot_id": "362b4145-1894-46b6-8bd8-d93333b3e182",
+        "next_spot_name": "城下カフェ 表町店"
+      },
+      {
+        "id": "362b4145-1894-46b6-8bd8-d93333b3e182",
+        "name": "城下カフェ 表町店",
+        "description": "表町のオランダ通りエリアに佇む人気カフェ。フルーツ王国・岡山の新鮮な果実を使ったパフェやスイーツ、ランチが楽しめる。11:00〜18:00（金土〜22:00）、火曜休（※不定期の臨時休業あり）。",
+        "address": "岡山県岡山市北区表町1-1-8 ライオンズタワー岡山表町1F",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.665242,
+        "lng": 133.928887,
+        "qr_token": "shuin-okayama-2",
+        "cover_image_url": "/images/okayama/spot2.png",
+        "f7_fragment": "フルーツ王国・岡山ならではの季節のパフェが人気の、表町のカフェ。",
+        "f7_full": "「城下カフェ 表町店」で岡山ならではの季節のフルーツスイーツに触れ、晴れの国の豊かな恵みを感じた。",
+        "is_final": false,
+        "next_spot_id": "4a28aae8-1215-4baa-8f7d-4bfb67700727",
+        "next_spot_name": "岡山城（烏城）"
+      },
+      {
+        "id": "4a28aae8-1215-4baa-8f7d-4bfb67700727",
+        "name": "岡山城（烏城）",
+        "description": "宇喜多秀家が築いた名城で、黒塗りの下見板張りから「烏城（うじょう）」と呼ばれる。令和の大改修で展示も一新された。9:00〜17:30（入場17:00まで）、12月29〜31日休、大人500円。",
+        "address": "岡山県岡山市北区丸の内2-3-1",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.665613,
+        "lng": 133.935737,
+        "qr_token": "shuin-okayama-3",
+        "cover_image_url": "/images/okayama/spot3.png",
+        "f7_fragment": "漆黒の下見板張りから「烏城」と呼ばれる、宇喜多秀家ゆかりの名城。",
+        "f7_full": "漆黒の「岡山城（烏城）」を見上げて天守閣へ登り、宇喜多秀家から続く岡山の城下町の歴史を体感した。",
+        "is_final": false,
+        "next_spot_id": "a1404462-2173-44b0-87f9-ba72d2b203ac",
+        "next_spot_name": "碧水園"
+      },
+      {
+        "id": "a1404462-2173-44b0-87f9-ba72d2b203ac",
+        "name": "碧水園",
+        "description": "岡山後楽園と岡山城を結ぶ月見橋のたもと、旭川沿いに佇む歴史ある食事処・カフェ。岡山城を眺めながらカレーやオムライス、甘味を味わえる。10:00〜17:00頃（季節変動あり）、不定休。",
+        "address": "岡山県岡山市北区後楽園1-6",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.666726,
+        "lng": 133.935055,
+        "qr_token": "shuin-okayama-4",
+        "cover_image_url": "/images/okayama/spot4.png",
+        "f7_fragment": "旭川のほとりで烏城を望みながら食事や甘味を味わう、水辺の茶屋。",
+        "f7_full": "旭川沿いの「碧水園」で対岸の岡山城を眺めながら寛ぎ、水都・岡山の穏やかな時間の流れを感じた。",
+        "is_final": false,
+        "next_spot_id": "7f16b71f-56e4-43b8-8c95-5a7d5b07faef",
+        "next_spot_name": "岡山後楽園"
+      },
+      {
+        "id": "7f16b71f-56e4-43b8-8c95-5a7d5b07faef",
+        "name": "岡山後楽園",
+        "description": "岡山藩主・池田綱政が造らせた日本三名園の一つで国の特別名勝。広大な芝生と沢の池、岡山城を借景にした雄大な景観が広がる。7:30〜18:00（10〜3月8:00〜17:00）、年中無休、大人500円。",
+        "address": "岡山県岡山市北区後楽園1-5",
+        "prefecture": "岡山県",
+        "city": "",
+        "lat": 34.667334,
+        "lng": 133.93617,
+        "qr_token": "shuin-okayama-5",
+        "cover_image_url": "/images/okayama/spot5.png",
+        "f7_fragment": "広大な芝生と烏城の借景が伸びやかな、日本三名園の特別名勝。",
+        "f7_full": "日本三名園の「岡山後楽園」で開放的な芝生と借景の岡山城を仰ぎ、表町と烏城を巡った岡山の旅を結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "88cdba93-ab74-4b19-864b-a6643ccdadc2",
+    "title": "高松・玉藻公園と栗林公園の讃岐を歩く",
+    "name": "高松・玉藻公園と栗林公園の讃岐を歩く",
+    "description": "JR高松駅から、駅前の人気セルフうどん「めりけんや 高松駅前店」と日本三大水城の史跡「高松城跡・玉藻公園」、海沿いのリノベーション倉庫街「北浜alley」、名物釜バターうどんの「手打十段うどんバカ一代」、ミシュラン三ツ星の特別名勝「栗林公園」を巡る散策路。",
+    "region": "高松・玉藻城と栗林公園の讃岐路",
+    "area_name": "高松・玉藻城と栗林公園の讃岐路",
+    "cover_image_url": "/images/takamatsu/route-eyecatch.png",
+    "imageUrl": "/images/takamatsu/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "瀬戸内の海水を引き込んだ水城から讃岐うどんの湯気、天下の名園へと続く高松を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「高松城跡・玉藻公園」の海水のお堀を覗き込み、タイが泳ぐ日本三大水城の石垣を歩いた瞬間",
+          "description": "高松駅のすぐ隣に広がる瀬戸内海と一体化したお城の造りが、海の玄関口ならではだった。",
+          "badge_code": "takamatsu_tamamo"
+        },
+        {
+          "key": "B",
+          "text": "「北浜alley」の古い港湾倉庫を活かした海辺の空間で、瀬戸内の潮風を感じた瞬間",
+          "description": "昭和の穀物倉庫を再生した洗練された街並みに、現代の高松の心地よい感性が光っていた。",
+          "badge_code": "takamatsu_kitahama"
+        },
+        {
+          "key": "C",
+          "text": "「手打十段うどんバカ一代」で、熱々の麺にバターと黒胡椒が絡む名物釜バターうどんを味わった瞬間",
+          "description": "讃岐うどんの王道でありながら独創的な一杯の力強いコシに、うどん県の実力を実感した。",
+          "badge_code": "takamatsu_udon"
+        },
+        {
+          "key": "D",
+          "text": "「栗林公園」の飛来峰から偃月橋と南湖を見下ろし、紫雲山を借景にした名園を仰いだ瞬間",
+          "description": "ミシュラン三ツ星にも輝く一歩一景の大名庭園の美しさが、讃岐の旅を忘れがたいものにした。",
+          "badge_code": "takamatsu_ritsurin"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "7ac4c5ec-6897-45ec-85f8-111ce67a60cc",
+        "name": "めりけんや 高松駅前店",
+        "description": "JR高松駅から徒歩約2分、朝7時から営業する人気のセルフ讃岐うどん店。もっちりとした太麺と香り高い出汁、豊富な天ぷらで地元客と旅人に愛される。7:00〜20:00、無休（元日除く）。",
+        "address": "香川県高松市西の丸町6-20",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.349763,
+        "lng": 134.047279,
+        "qr_token": "shuin-takamatsu-1",
+        "cover_image_url": "/images/takamatsu/spot1.png",
+        "f7_fragment": "高松駅すぐそばで朝七時から香り高い出汁が迎える、人気セルフうどん店。",
+        "f7_full": "高松駅そばの「めりけんや 高松駅前店」で本場のセルフ讃岐うどんを味わい、うどん県の街歩きを爽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "eaabb826-f9fd-4030-8bc5-4d2fb1ac56fb",
+        "next_spot_name": "高松城跡・玉藻公園"
+      },
+      {
+        "id": "eaabb826-f9fd-4030-8bc5-4d2fb1ac56fb",
+        "name": "高松城跡・玉藻公園",
+        "description": "生駒親正が築き、のち松平家の居城となった日本三大水城の一つ。海水を引き込んだお堀にタイが泳ぎ、国重要文化財の披雲閣や艮櫓が残る。開園時間は季節変動あり（5:30〜19:00〜7:00〜17:00頃）、12月29〜31日休、一般300円。",
+        "address": "香川県高松市玉藻町2-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.350316,
+        "lng": 134.051619,
+        "qr_token": "shuin-takamatsu-2",
+        "cover_image_url": "/images/takamatsu/spot2.png",
+        "f7_fragment": "海水のお堀に鯛が泳ぐ、瀬戸内海に面した日本三大水城跡。",
+        "f7_full": "「高松城跡・玉藻公園」で海水のお堀と天守台からの瀬戸内の景色を眺め、日本三大水城の魅力に触れた。",
+        "is_final": false,
+        "next_spot_id": "b1013363-b7f6-4b51-8a7a-7205b1cd7834",
+        "next_spot_name": "北浜alley（キタハマアリー）"
+      },
+      {
+        "id": "b1013363-b7f6-4b51-8a7a-7205b1cd7834",
+        "name": "北浜alley（キタハマアリー）",
+        "description": "高松港そばの古い港湾倉庫をリノベーションした海辺の複合商業エリア。瀬戸内海を望むおしゃれなカフェや雑貨店が並び、潮風を感じながら寛げる。店舗により異なる（概ね11:00〜18:00頃）。",
+        "address": "香川県高松市北浜町4-14",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.351007,
+        "lng": 134.056653,
+        "qr_token": "shuin-takamatsu-3",
+        "cover_image_url": "/images/takamatsu/spot3.png",
+        "f7_fragment": "昭和の港湾倉庫を再生した、瀬戸内海を望むおしゃれな海辺の街区。",
+        "f7_full": "高松港そばの「北浜alley」でレトロな倉庫群と海辺のカフェを楽しみ、瀬戸内の穏やかな潮風に癒やされた。",
+        "is_final": false,
+        "next_spot_id": "fecbf266-2052-4fd8-8748-d21e31dcb246",
+        "next_spot_name": "手打十段うどんバカ一代"
+      },
+      {
+        "id": "fecbf266-2052-4fd8-8748-d21e31dcb246",
+        "name": "手打十段うどんバカ一代",
+        "description": "高松を代表する超人気讃岐うどん店。打ち立ての麺にバター・生卵・黒胡椒を絡める名物「釜バターうどん」で全国からファンが訪れる。6:00〜18:00、年中無休（元日除く）。",
+        "address": "香川県高松市多賀町1-6-7",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.336742,
+        "lng": 134.058538,
+        "qr_token": "shuin-takamatsu-4",
+        "cover_image_url": "/images/takamatsu/spot4.png",
+        "f7_fragment": "名物「釜バターうどん」で全国から行列ができる、讃岐うどんの超人気店。",
+        "f7_full": "「手打十段うどんバカ一代」で熱々の釜バターうどんを味わい、力強いコシと独創的な讃岐の味を堪能した。",
+        "is_final": false,
+        "next_spot_id": "0f0f3c36-1e18-446b-82c2-e0019b26dac4",
+        "next_spot_name": "栗林公園"
+      },
+      {
+        "id": "0f0f3c36-1e18-446b-82c2-e0019b26dac4",
+        "name": "栗林公園",
+        "description": "国の特別名勝に指定された江戸初期の大名庭園。紫雲山を借景に六つの池と千本の松が織りなす「一歩一景」の美しさはミシュラン三ツ星にも輝く。日の出〜日没（概ね5:30〜17:00〜18:30）、年中無休、大人500円。",
+        "address": "香川県高松市栗林町1-20-16",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.328655,
+        "lng": 134.041946,
+        "qr_token": "shuin-takamatsu-5",
+        "cover_image_url": "/images/takamatsu/spot5.png",
+        "f7_fragment": "紫雲山を借景に千本の松と池が輝く、ミシュラン三ツ星の特別名勝庭園。",
+        "f7_full": "特別名勝「栗林公園」の飛来峰から偃月橋と南湖を仰ぎ、水城とうどんを巡った高松の旅を優雅に結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "276f5f54-1148-4420-85d4-e362d0d9afb5",
+    "title": "長崎・出島と南山手の洋館を歩く",
+    "name": "長崎・出島と南山手の洋館を歩く",
+    "description": "JR長崎駅から、中島川に架かる日本最古のアーチ石橋「眼鏡橋」とカステラの老舗「文明堂総本店」、鎖国期の貿易窓口「出島（出島和蘭商館跡）」、現存最古の国宝教会「大浦天主堂」、長崎港を一望する「グラバー園」を巡る散策路。",
+    "region": "長崎・出島と南山手の異国情緒",
+    "area_name": "長崎・出島と南山手の異国情緒",
+    "cover_image_url": "/images/nagasaki/route-eyecatch.png",
+    "imageUrl": "/images/nagasaki/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "中島川の石橋と甘いカステラ、和蘭商館から南山手の丘へと続く長崎を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「眼鏡橋」の川面に映る二つのアーチを眺め、護岸の石積みからハートストーンを探した瞬間",
+          "description": "江戸時代から中島川に架かり続ける石橋の優美な姿に、長崎の和華蘭文化の始まりを見た。",
+          "badge_code": "nagasaki_meganebashi"
+        },
+        {
+          "key": "B",
+          "text": "「文明堂総本店」の重厚な店構えをくぐり、ザラメが香る伝統のカステラを手にした瞬間",
+          "description": "明治三十三年創業の老舗が守り続ける黄金色の焼き上がりが、異国情緒の旅を甘く彩った。",
+          "badge_code": "nagasaki_bunmeido"
+        },
+        {
+          "key": "C",
+          "text": "「出島」の和洋折衷の商館跡を歩き、鎖国時代に唯一西欧へ開かれた窓を体感した瞬間",
+          "description": "復元されたカピタン部屋や畳とシャンデリアが調和する空間が、歴史の教科書を生き生きとさせた。",
+          "badge_code": "nagasaki_dejima"
+        },
+        {
+          "key": "D",
+          "text": "「グラバー園」の旧グラバー住宅のベランダから、夕暮れ近い長崎港と稲佐山を一望した瞬間",
+          "description": "幕末から明治の洋館群と花々が彩る南山手の丘の眺望が、長崎の旅を美しく結んでくれた。",
+          "badge_code": "nagasaki_glover"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "c4c93200-50c5-42e3-80d9-fb47a242ff6c",
+        "name": "眼鏡橋",
+        "description": "寛永11年（1634年）に興福寺の黙子如定禅師が架けた日本現存最古のアーチ型石橋。川面に映る影が眼鏡に見えることで親しまれ、護岸のハートストーンも人気。散策自由・無休。",
+        "address": "長崎県長崎市魚の町3-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.747251,
+        "lng": 129.880247,
+        "qr_token": "shuin-nagasaki-1",
+        "cover_image_url": "/images/nagasaki/spot1.png",
+        "f7_fragment": "寛永十一年架橋、川面に眼鏡の影を映す日本最古のアーチ石橋。",
+        "f7_full": "中島川の「眼鏡橋」で川面に映る二連のアーチを眺め、江戸から続く長崎の美しい石造り文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "ed81181f-aef3-4cf0-827c-e5ae7bbc6b82",
+        "next_spot_name": "文明堂総本店"
+      },
+      {
+        "id": "ed81181f-aef3-4cf0-827c-e5ae7bbc6b82",
+        "name": "文明堂総本店",
+        "description": "明治33年（1900年）創業の長崎カステラの老舗総本店。伝統製法で焼き上げるカステラや三笠山が旅人から愛される。9:00〜18:00、元日休。",
+        "address": "長崎県長崎市江戸町1-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.74552,
+        "lng": 129.872378,
+        "qr_token": "shuin-nagasaki-2",
+        "cover_image_url": "/images/nagasaki/spot2.png",
+        "f7_fragment": "明治三十三年創業、ザラメの食感が香る長崎カステラの老舗総本店。",
+        "f7_full": "「文明堂総本店」で職人の技が息づく長崎カステラに出会い、南蛮渡来の甘い歴史を手土産に収めた。",
+        "is_final": false,
+        "next_spot_id": "62ae9180-961d-44d9-8d54-4da9e8fb3166",
+        "next_spot_name": "出島（出島和蘭商館跡）"
+      },
+      {
+        "id": "62ae9180-961d-44d9-8d54-4da9e8fb3166",
+        "name": "出島（出島和蘭商館跡）",
+        "description": "江戸時代の鎖国期に西欧へ開かれた唯一の貿易窓口。明治以降の姿や江戸期の商館群が忠実に復元されている。8:00〜21:00（最終入場20:40）、年中無休、大人1100円。",
+        "address": "長崎県長崎市出島町6-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.742995,
+        "lng": 129.871164,
+        "qr_token": "shuin-nagasaki-3",
+        "cover_image_url": "/images/nagasaki/spot3.png",
+        "f7_fragment": "鎖国時代に唯一西洋へ開かれていた、和洋折衷の出島和蘭商館跡。",
+        "f7_full": "「出島（出島和蘭商館跡）」の復元された商館や石畳を歩き、江戸時代に西洋文化が伝わった窓口を体感した。",
+        "is_final": false,
+        "next_spot_id": "bb79ddc6-344f-489b-8466-596be925ce71",
+        "next_spot_name": "大浦天主堂"
+      },
+      {
+        "id": "bb79ddc6-344f-489b-8466-596be925ce71",
+        "name": "大浦天主堂",
+        "description": "元治元年（1864年）に建立された日本現存最古のキリスト教建築物で国宝。ステンドグラスが輝くゴシック様式の聖堂が南山手の丘に立つ。8:30〜17:30（3〜10月〜18:00・最終受付30分前）、大人1000円。",
+        "address": "長崎県長崎市南山手町5-3",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.734494,
+        "lng": 129.870026,
+        "qr_token": "shuin-nagasaki-4",
+        "cover_image_url": "/images/nagasaki/spot4.png",
+        "f7_fragment": "幕末に建立された日本現存最古のキリスト教建築、国宝の大浦天主堂。",
+        "f7_full": "国宝の「大浦天主堂」で優美なゴシック建築とステンドグラスを仰ぎ、長崎に受け継がれる祈りの歴史に触れた。",
+        "is_final": false,
+        "next_spot_id": "f9ddd3e4-1470-45a6-8a11-0402fcaf3a1a",
+        "next_spot_name": "グラバー園"
+      },
+      {
+        "id": "f9ddd3e4-1470-45a6-8a11-0402fcaf3a1a",
+        "name": "グラバー園",
+        "description": "幕末から明治にかけて長崎に暮らした外国人居留地の洋館群を移築・保存した丘の上の庭園。国重要文化財の旧グラバー住宅と長崎港の眺望が絶景。8:00〜18:00（季節夜間延長あり）、無休、大人1300円。",
+        "address": "長崎県長崎市南山手町8-1",
+        "prefecture": "長崎県",
+        "city": "",
+        "lat": 32.734331,
+        "lng": 129.869189,
+        "qr_token": "shuin-nagasaki-5",
+        "cover_image_url": "/images/nagasaki/spot5.png",
+        "f7_fragment": "世界遺産の旧グラバー住宅と長崎港の絶景が広がる、南山手の丘。",
+        "f7_full": "南山手の「グラバー園」で旧グラバー住宅と長崎港の絶景を眺め、出島と天主堂を巡った長崎の旅を美しく結んだ。",
+        "is_final": true
+      }
+    ]
   }
 ];
