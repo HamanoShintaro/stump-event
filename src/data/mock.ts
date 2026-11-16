@@ -79950,5 +79950,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "d15bca3e-d671-44fe-899c-d8e4bca447a5",
+    "title": "三陸・宮古の市場と海の恵みを歩く",
+    "name": "三陸・宮古の市場と海の恵みを歩く",
+    "description": "三陸鉄道リアス線とJR山田線が結ぶ宮古駅から、市民の台所「宮古市魚菜市場」と老舗「小林餅店」、希少なヤギミルクスイーツの人気洋菓子店を経て、駅前の老舗寿司店「蛇の目本店」と高台の古社「横山八幡宮」へと至る港町散策路。",
+    "region": "宮古・魚菜市場と三陸の玄関口",
+    "area_name": "宮古・魚菜市場と三陸の玄関口",
+    "cover_image_url": "/images/miyako/route-eyecatch.png",
+    "imageUrl": "/images/miyako/route-eyecatch.png",
+    "category": "海とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "三陸の海の恵みと市民の台所、そして高台の社が繋がる宮古を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「宮古市魚菜市場」の賑わう通りで、三陸の魚介と地元野菜の活気に触れた瞬間",
+          "description": "朝から開かれる市民の台所で交わされる威勢の良い声と季節の魚介に心が躍った。",
+          "badge_code": "miyako_gyosai"
+        },
+        {
+          "key": "B",
+          "text": "「パティスリー レ・ド・シェーブル」で、珍しいヤギミルクのスイーツに出会った瞬間",
+          "description": "三陸の自然が育む優しいミルクの風味と可愛らしい焼き菓子が、街歩きに彩りを添えた。",
+          "badge_code": "miyako_chevre"
+        },
+        {
+          "key": "C",
+          "text": "「蛇の目本店」で、三陸の旬を詰めた名物・瓶ドンや握り寿司を味わった瞬間",
+          "description": "駅を出てすぐの老舗でいただいた海の幸の鮮度と彩りに、三陸の豊かさを実感した。",
+          "badge_code": "miyako_janome"
+        },
+        {
+          "key": "D",
+          "text": "「横山八幡宮」の高台の境内から、宮古の街並みと海の気配を静かに見渡した瞬間",
+          "description": "長い石段を登った先にある町の総鎮守で、海とともに歩む宮古の静かな祈りに触れた。",
+          "badge_code": "miyako_yokoyama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "d525a845-16fe-4fad-8bc5-5c71bb985b85",
+        "name": "宮古市魚菜市場",
+        "description": "宮古市民の台所として親しまれる活気あふれる市場。三陸の新鮮な魚介や干物、地元農家の採れたて野菜、総菜などが並ぶ。営業時間6:30〜17:30、水曜定休。",
+        "address": "岩手県宮古市五月町1-1",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.646362,
+        "lng": 141.945953,
+        "qr_token": "shuin-miyako-1",
+        "cover_image_url": "/images/miyako/spot1.png",
+        "f7_fragment": "三陸の旬の魚介と山の恵みが揃う、宮古市民に愛される活気ある市場。",
+        "f7_full": "「宮古市魚菜市場」の賑わう通路を巡り、三陸の海の幸と地元の暮らしが息づく温かな台所の風景にじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "51600191-fdf1-4d93-8c70-8980088fb02a",
+        "next_spot_name": "小林餅店"
+      },
+      {
+        "id": "51600191-fdf1-4d93-8c70-8980088fb02a",
+        "name": "小林餅店",
+        "description": "大通に店を構え早朝から営業する昔ながらの餅・和菓子店。つきたての柔らかな大福や赤飯、素朴な餅菓子が地元の人々に愛される。営業時間4:30〜14:00、日曜定休（不定休あり）。",
+        "address": "岩手県宮古市大通3-5-4",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.639627,
+        "lng": 141.949897,
+        "qr_token": "shuin-miyako-2",
+        "cover_image_url": "/images/miyako/spot2.png",
+        "f7_fragment": "早朝からつきたての大福や餅菓子が並ぶ、大通の素朴で温かな老舗餅店。",
+        "f7_full": "大通の老舗「小林餅店」を訪ね、昔ながらの製法で守られてきた手づくり大福と餅菓子の優しい魅力に深く触れた。",
+        "is_final": false,
+        "next_spot_id": "82261381-b991-4a24-8453-e29d1474a731",
+        "next_spot_name": "パティスリー レ・ド・シェーブル"
+      },
+      {
+        "id": "82261381-b991-4a24-8453-e29d1474a731",
+        "name": "パティスリー レ・ド・シェーブル",
+        "description": "宮古市のしあわせ乳業による希少な「ヤギミルク」を使った洋菓子専門店。さっぱりとコクのあるソフトクリームやクッキー缶が人気。営業時間10:30〜19:00（売切次第終了）、不定休。",
+        "address": "岩手県宮古市大通4-5-10",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.641087,
+        "lng": 141.947039,
+        "qr_token": "shuin-miyako-3",
+        "cover_image_url": "/images/miyako/spot3.png",
+        "f7_fragment": "宮古生まれの希少なヤギミルクを使った、優しく上品な洋菓子専門店。",
+        "f7_full": "「パティスリー レ・ド・シェーブル」で希少なヤギミルクのスイーツを味わい、宮古の新たな特産品の魅力に出会った。",
+        "is_final": false,
+        "next_spot_id": "d0e09e8d-8c09-4691-80a9-96a17191412e",
+        "next_spot_name": "蛇の目本店"
+      },
+      {
+        "id": "d0e09e8d-8c09-4691-80a9-96a17191412e",
+        "name": "蛇の目本店",
+        "description": "JR・三陸鉄道宮古駅の目の前に構える老舗の寿司・海鮮料理店。三陸の旬の魚介を牛乳瓶に詰めたご当地グルメ「瓶ドン」や寿司が人気。営業時間10:00〜20:00、水曜定休。",
+        "address": "岩手県宮古市栄町2-8",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.640908,
+        "lng": 141.946611,
+        "qr_token": "shuin-miyako-4",
+        "cover_image_url": "/images/miyako/spot4.png",
+        "f7_fragment": "宮古駅目の前で三陸の旬と名物「瓶ドン」を味わう、老舗の海鮮寿司処。",
+        "f7_full": "駅前の老舗「蛇の目本店」で三陸の旬が詰まった名物・瓶ドンを堪能し、港町・宮古ならではの海の恵みを満喫した。",
+        "is_final": false,
+        "next_spot_id": "35581f75-5731-47b0-8dda-6ed2f54d307a",
+        "next_spot_name": "横山八幡宮"
+      },
+      {
+        "id": "35581f75-5731-47b0-8dda-6ed2f54d307a",
+        "name": "横山八幡宮",
+        "description": "宮古市街を一望する高台に鎮座し、源義経ゆかりの北行伝承も持つ宮古の古社。長い石段の上には荘厳な社殿が佇む。参拝自由・無休。",
+        "address": "岩手県宮古市宮町2-5-1",
+        "prefecture": "岩手県",
+        "city": "",
+        "lat": 39.638062,
+        "lng": 141.943816,
+        "qr_token": "shuin-miyako-5",
+        "cover_image_url": "/images/miyako/spot5.png",
+        "f7_fragment": "宮古の街並みと海を高台から見守り続ける、由緒ある鎮守の八幡宮。",
+        "f7_full": "高台に鎮座する「横山八幡宮」の石段を登って参拝し、宮古の街と三陸の気配を見渡しながら港町の散策を清らかに結んだ。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "9b70ba42-1937-4e9c-8a67-14be770c75d4",
+    "title": "勝浦朝市と遠見岬神社を巡る外房の港町さんぽ",
+    "name": "勝浦朝市と遠見岬神社を巡る外房の港町さんぽ",
+    "description": "JR勝浦駅から南国風カフェ「cafe vinrose」とご当地グルメ・勝浦タンタンメンの一杯を経て、四百三十年以上の歴史を誇る日本三大朝市「勝浦朝市」と六十段の石段が印象的な「遠見岬神社」へと至る外房の港町散策路。",
+    "region": "勝浦・日本三大朝市と港町",
+    "area_name": "勝浦・日本三大朝市と港町",
+    "cover_image_url": "/images/katsuura/route-eyecatch.png",
+    "imageUrl": "/images/katsuura/route-eyecatch.png",
+    "category": "海とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "四百年続く朝市の活気と外房の潮風が心地よい勝浦を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「Ocean 勝浦駅前店」で、ラー油と刻み玉ねぎが効いた勝浦タンタンメンを味わった瞬間",
+          "description": "海で冷えた漁師の身体を温めてきた真っ赤な一杯の旨辛さに、港町の底力を感じた。",
+          "badge_code": "katsuura_tantanmen"
+        },
+        {
+          "key": "B",
+          "text": "「港町ベヰカリ」で、朝市通りの風景に溶け込む焼きたてパンの香りに包まれた瞬間",
+          "description": "朝の港町に似合う素朴で温かなパン屋さんの佇まいが、海辺の旅を一層楽しくしてくれた。",
+          "badge_code": "katsuura_bakery"
+        },
+        {
+          "key": "C",
+          "text": "「勝浦朝市」の通りで、地元の人々の温かな声と海の幸・山の幸に出会った瞬間",
+          "description": "四百三十年以上受け継がれてきた日本三大朝市の賑わいが、港町の暮らしを伝えていた。",
+          "badge_code": "katsuura_asaichi"
+        },
+        {
+          "key": "D",
+          "text": "「遠見岬神社」の石段を登り、外房の青い海と勝浦の街並みを見渡した瞬間",
+          "description": "街を見守るように鎮座する社殿と爽やかな潮風が、外房の散策を清らかに結んでくれた。",
+          "badge_code": "katsuura_tomisaki"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "3d89bb9e-fcef-4b29-89d7-9d410b288774",
+        "name": "cafe vinrose",
+        "description": "JR勝浦駅のすぐ近くにある南国風の明るいカフェ。淹れたての珈琲や軽食で、外房の街歩き前のひとときをゆっくり過ごせる。営業時間10:00〜16:00、月・水曜定休（他不定休）。",
+        "address": "千葉県勝浦市墨名258-4",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.152277,
+        "lng": 140.313108,
+        "qr_token": "shuin-katsuura-1",
+        "cover_image_url": "/images/katsuura/spot1.png",
+        "f7_fragment": "勝浦駅近くで旅人を迎えてくれる、南国風の明るい喫茶店だ。",
+        "f7_full": "駅近くの「cafe vinrose」で朝の珈琲を味わい、外房の潮風薫る勝浦の街歩きを心地よくとても軽やかに始めた。",
+        "is_final": false,
+        "next_spot_id": "1ff2b78e-8668-43b0-8efd-c63f119b5256",
+        "next_spot_name": "Ocean 勝浦駅前店"
+      },
+      {
+        "id": "1ff2b78e-8668-43b0-8efd-c63f119b5256",
+        "name": "Ocean 勝浦駅前店",
+        "description": "勝浦タンタンメン企業組合が運営する駅前の名店。醤油ベースのスープにたっぷりのラー油、刻み玉ねぎと挽き肉が入った元祖の味わいが楽しめる。昼11:00〜15:00・夜17:00〜22:00。",
+        "address": "千葉県勝浦市墨名707",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.150805,
+        "lng": 140.311555,
+        "qr_token": "shuin-katsuura-2",
+        "cover_image_url": "/images/katsuura/spot2.png",
+        "f7_fragment": "ラー油と刻み玉ねぎが旨みを引き立てる、駅前で味わう勝浦タンタンメン。",
+        "f7_full": "「Ocean 勝浦駅前店」でラー油と玉ねぎが効いた勝浦タンタンメンを味わい、港町ならではの熱い麺文化に触れた。",
+        "is_final": false,
+        "next_spot_id": "56510bef-fb1c-47f8-825b-6d4148a54165",
+        "next_spot_name": "港町ベヰカリ"
+      },
+      {
+        "id": "56510bef-fb1c-47f8-825b-6d4148a54165",
+        "name": "港町ベヰカリ",
+        "description": "朝市通り周辺・浜勝浦に佇む素朴で人気のベーカリー。早朝から焼き上がる香ばしいパンは、地元の人々や朝市帰りの客に親しまれる。営業時間7:00〜11:00、水曜等不定休。",
+        "address": "千葉県勝浦市浜勝浦69",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.146306,
+        "lng": 140.314325,
+        "qr_token": "shuin-katsuura-3",
+        "cover_image_url": "/images/katsuura/spot3.png",
+        "f7_fragment": "朝市通り近くで早朝から焼きたてが並ぶ、港町の素朴なパン屋さん。",
+        "f7_full": "浜勝浦の「港町ベヰカリ」を訪ね、朝の港町に溶け込む素朴な店構えと焼きたてのパンの温かな魅力にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "c0fff254-16ba-4e6f-877b-64a39609a93b",
+        "next_spot_name": "勝浦朝市"
+      },
+      {
+        "id": "c0fff254-16ba-4e6f-877b-64a39609a93b",
+        "name": "勝浦朝市",
+        "description": "四百三十年以上の歴史を誇り日本三大朝市の一つに数えられる名物市。1〜15日は下本町通り、16〜月末は仲本町通りで開かれ、干物や野菜、総菜が並ぶ。6:30頃〜11:00頃、水曜・元旦休。",
+        "address": "千葉県勝浦市勝浦175-2",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.148732,
+        "lng": 140.315282,
+        "qr_token": "shuin-katsuura-4",
+        "cover_image_url": "/images/katsuura/spot4.png",
+        "f7_fragment": "四百三十年続く日本三大朝市、港町の人情と旬の恵みが並ぶ路上の市。",
+        "f7_full": "歴史ある「勝浦朝市」の通りを歩き、干物や旬の野菜を並べる露店の活気と勝浦の人々の温かな人情にたっぷり触れた。",
+        "is_final": false,
+        "next_spot_id": "250e3b63-c5dd-494a-8c1c-f50201bd045e",
+        "next_spot_name": "遠見岬神社"
+      },
+      {
+        "id": "250e3b63-c5dd-494a-8c1c-f50201bd045e",
+        "name": "遠見岬神社",
+        "description": "房総開拓の神・天冨命を祀る古社。急勾配の六十段の石段はひな祭りの飾り付けでも知られ、上からは勝浦の街並みと海を一望できる。参拝自由（社務所9:00〜17:00頃・不定休）。",
+        "address": "千葉県勝浦市浜勝浦1",
+        "prefecture": "千葉県",
+        "city": "",
+        "lat": 35.146786,
+        "lng": 140.315437,
+        "qr_token": "shuin-katsuura-5",
+        "cover_image_url": "/images/katsuura/spot5.png",
+        "f7_fragment": "六十段の石段の上から勝浦の港町と海を見守る、房総開拓の古社。",
+        "f7_full": "「遠見岬神社」の六十段の石段を登りきって勝浦の街と海を望み、外房の朝市と港町の散策を晴れやかに締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "cebcdf06-58bf-4cce-8dc1-a27cd09add7b",
+    "title": "明石・魚の棚の玉子焼と明石城の櫓を歩く",
+    "name": "明石・魚の棚の玉子焼と明石城の櫓を歩く",
+    "description": "JR・山陽明石駅から四百年の歴史を誇る「魚の棚商店街」へ入り、名物・明石焼（玉子焼）の名店「たこ磯」と「よし川」周辺を味わい尽くしたあと、緑豊かな明石公園内の「TTT」で寛ぎ、国の重要文化財の二重の櫓が並ぶ「明石城」へと至る散策路。",
+    "region": "明石・魚の棚と明石城",
+    "area_name": "明石・魚の棚と明石城",
+    "cover_image_url": "/images/akashi/route-eyecatch.png",
+    "imageUrl": "/images/akashi/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "海産物の活気と名物・玉子焼の香り、そして白い櫓が輝く明石を歩いたあと、誰かに伝えたい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「魚の棚商店街」のアーケードで、明石ダコや鯛が並ぶ四百年の活気に触れた瞬間",
+          "description": "威勢の良い声と明石海峡の恵みがずらりと並ぶ通りを歩くだけで、港町の元気をもらえた。",
+          "badge_code": "akashi_uonotana"
+        },
+        {
+          "key": "B",
+          "text": "「たこ磯」で、温かい出汁につけて頬張るふわとろの明石焼（玉子焼）を味わった瞬間",
+          "description": "口の中でとろける玉子生地とぷりぷりの明石ダコ、優しい出汁の組み合わせが忘れられない。",
+          "badge_code": "akashi_takoiso"
+        },
+        {
+          "key": "C",
+          "text": "「food & drinks TTT」の明るい空間から、明石公園の緑と城の石垣を眺めた瞬間",
+          "description": "歴史ある城郭公園のすぐそばで過ごす開放的なカフェ時間が、旅の午後を豊かにした。",
+          "badge_code": "akashi_ttt"
+        },
+        {
+          "key": "D",
+          "text": "「明石城（明石公園）」の広大な石垣の上に並ぶ、巽櫓と坤櫓の美しい姿を見上げた瞬間",
+          "description": "国指定重要文化財の二つの三重櫓が青空に映える城址で、明石の誇りを感じた。",
+          "badge_code": "akashi_castle"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "aca7ebfa-d9b3-4b80-8363-384d49b7834a",
+        "name": "魚の棚商店街",
+        "description": "明石の台所として約400年の歴史を持つ全長約350mのアーケード商店街。明石ダイや明石ダコなど鮮魚店や練り物店が軒を連ねる。営業時間8:00〜18:00頃（店舗により異なる・木曜休多し）。",
+        "address": "兵庫県明石市本町1-1-16",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.647014,
+        "lng": 134.992652,
+        "qr_token": "shuin-akashi-1",
+        "cover_image_url": "/images/akashi/spot1.png",
+        "f7_fragment": "四百年の歴史と明石海峡の恵みが詰まった、活気あふれる「うおんたな」。",
+        "f7_full": "明石の台所「魚の棚商店街」を歩き、明石ダコや鯛が並ぶ活気ある通りで四百年続く港町の暮らしにじっくり深く触れた。",
+        "is_final": false,
+        "next_spot_id": "90095034-c2cc-46a6-828d-0134cb0e31e4",
+        "next_spot_name": "たこ磯（本店）"
+      },
+      {
+        "id": "90095034-c2cc-46a6-828d-0134cb0e31e4",
+        "name": "たこ磯（本店）",
+        "description": "魚の棚商店街の中に構える明石焼（玉子焼）の代表的名店。明石ダコや穴子入りのふんわりとした玉子焼を特製のお出汁で味わえる。営業時間10:00〜19:00、無休。",
+        "address": "兵庫県明石市本町1-1-11",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.646678,
+        "lng": 134.992816,
+        "qr_token": "shuin-akashi-2",
+        "cover_image_url": "/images/akashi/spot2.png",
+        "f7_fragment": "ふんわり玉子生地とぷりぷりの明石ダコを出汁で味わう、玉子焼の名店。",
+        "f7_full": "魚の棚の「たこ磯（本店）」で本場の玉子焼（明石焼）を温かいお出汁で味わい、明石が誇る食文化の魅力を深く堪能した。",
+        "is_final": false,
+        "next_spot_id": "b414a694-8dba-4825-8b4a-6e6ee088cc88",
+        "next_spot_name": "よし川"
+      },
+      {
+        "id": "b414a694-8dba-4825-8b4a-6e6ee088cc88",
+        "name": "よし川",
+        "description": "魚の棚商店街に店を構える玉子焼の老舗人気店。長年受け継継がれてきた優しい出汁とふんわり食感の玉子焼が親しまれる。平日10:00〜18:00・土日祝10:00〜19:00（売切次第終了）、木曜定休。",
+        "address": "兵庫県明石市本町1-2-16",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.647201,
+        "lng": 134.991055,
+        "qr_token": "shuin-akashi-3",
+        "cover_image_url": "/images/akashi/spot3.png",
+        "f7_fragment": "店ごとの出汁と焼き加減の違いを伝える、魚の棚の老舗玉子焼店。",
+        "f7_full": "商店街の老舗「よし川」周辺を歩いて明石焼の奥深い個性と地元の愛着に触れ、魚の棚の豊かな食文化をしっかり確かめた。",
+        "is_final": false,
+        "next_spot_id": "12e80b38-e85e-41ba-8027-17f5d935faf6",
+        "next_spot_name": "food & drinks TTT"
+      },
+      {
+        "id": "12e80b38-e85e-41ba-8027-17f5d935faf6",
+        "name": "food & drinks TTT",
+        "description": "明石公園の緑に囲まれた開放的な人気カフェ。テラス席から明石城の景色を眺めながら、珈琲やスイーツ、軽食を楽しめる。営業時間11:00〜21:00（17:00以降は予約制）。",
+        "address": "兵庫県明石市明石公園1-27",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.650519,
+        "lng": 134.992127,
+        "qr_token": "shuin-akashi-4",
+        "cover_image_url": "/images/akashi/spot4.png",
+        "f7_fragment": "明石公園の緑と城の景色を望みながら寛ぐ、開放的なテラスカフェ。",
+        "f7_full": "明石公園内の「food & drinks TTT」で緑と石垣を眺めながら珈琲を味わい、午後の城址歩きへ向けた穏やかな休息をとった。",
+        "is_final": false,
+        "next_spot_id": "ef9948ed-218d-467c-8dbb-73a4ce0d5e8b",
+        "next_spot_name": "明石城（明石公園）"
+      },
+      {
+        "id": "ef9948ed-218d-467c-8dbb-73a4ce0d5e8b",
+        "name": "明石城（明石公園）",
+        "description": "1619年に徳川秀忠の命で小笠原忠政が築いた名城の跡地。全国に12基しか現存しない三重櫓のうち「巽櫓」と「坤櫓」の2基が並び立つ国の重要文化財。公園終日開放・入園無料。",
+        "address": "兵庫県明石市明石公園1-27",
+        "prefecture": "兵庫県",
+        "city": "",
+        "lat": 34.654383,
+        "lng": 134.99283,
+        "qr_token": "shuin-akashi-5",
+        "cover_image_url": "/images/akashi/spot5.png",
+        "f7_fragment": "国重要文化財の巽櫓と坤櫓が左右に並び立つ、白亜の石垣が美しい名城。",
+        "f7_full": "「明石城（明石公園）」の壮大な石垣と二つの三重櫓を仰ぎ、瀬戸内の風を感じながら明石の散策を清々しく締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "b936129a-132e-4c38-8de5-98e568bf56c9",
+    "title": "塩のまち坂出・讃岐うどんと名園を歩く",
+    "name": "塩のまち坂出・讃岐うどんと名園を歩く",
+    "description": "瀬戸大橋の玄関口・JR坂出駅から日本庭園「香風園」と登録有形文化財の「鎌田共済会郷土博物館」を経て、老舗「鎌田醤油」直営のカフェと本場の讃岐うどん店、そして戦後建築の傑作「坂出人工土地」を巡る散策路。",
+    "region": "坂出・塩と醤油と讃岐うどん",
+    "area_name": "坂出・塩と醤油と讃岐うどん",
+    "cover_image_url": "/images/sakaide/route-eyecatch.png",
+    "imageUrl": "/images/sakaide/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "塩田の歴史と醤油の香り、そして名園と讃岐うどんが繋がる坂出を歩いたあと、誰かに話したい場面はどれですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「香風園」の池泉庭園で、讃岐富士を望む緑と静かな池を眺めた瞬間",
+          "description": "駅からすぐの街中に広がる歴史ある日本庭園の静けさに、旅の始まりから癒やされた。",
+          "badge_code": "sakaide_kofuen"
+        },
+        {
+          "key": "B",
+          "text": "「鎌田共済会郷土博物館」のレトロな建物で、坂出の塩田開発の歴史を知った瞬間",
+          "description": "国の登録有形文化財の建築と貴重な資料が、塩のまち・坂出の歩みを物語っていた。",
+          "badge_code": "sakaide_museum"
+        },
+        {
+          "key": "C",
+          "text": "「本町一丁目カフェ（鎌田醤油直営）」で、だし醤油スイーツや玉子かけご飯を味わった瞬間",
+          "description": "寛政創業の醤油蔵が提案する新しい食の楽しみと保護猫たちの空間に心が和んだ。",
+          "badge_code": "sakaide_kamada_cafe"
+        },
+        {
+          "key": "D",
+          "text": "「讃岐うどん 桃山亭 坂出店」で、コシのある麺と出汁の旨みを存分に味わった瞬間",
+          "description": "本場・香川ならではの活気あるセルフうどんの美味しさに、お腹も心も満たされた。",
+          "badge_code": "sakaide_momoyamatei"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "09a60741-2d3c-4d58-899a-a9d12ce4194b",
+        "name": "香風園",
+        "description": "JR坂出駅近くに広がる歴史ある庭園。池泉式の日本庭園と、緑の芝生が広がる洋風庭園が調和し、四季折々の自然を楽しめる。8:30〜18:00（7〜8月は20:00まで）、庭園は無休（園内施設は月・祝翌日休）、無料。",
+        "address": "香川県坂出市本町1-3489-2",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.313381,
+        "lng": 133.852647,
+        "qr_token": "shuin-sakaide-1",
+        "cover_image_url": "/images/sakaide/spot1.png",
+        "f7_fragment": "和と洋の庭園が調和し四季の自然が息づく、坂出駅そばの素敵な名園。",
+        "f7_full": "駅近くの「香風園」で池泉式の日本庭園と緑の芝生を歩き、穏やかな自然の中で坂出の散策を心地よくゆっくり始めた。",
+        "is_final": false,
+        "next_spot_id": "b5de9b4d-63ca-4917-8c91-7ef779e2e8e7",
+        "next_spot_name": "鎌田共済会郷土博物館"
+      },
+      {
+        "id": "b5de9b4d-63ca-4917-8c91-7ef779e2e8e7",
+        "name": "鎌田共済会郷土博物館",
+        "description": "百余年前（1922年）建築のレトロな鉄筋コンクリート造で国の登録有形文化財に指定される博物館。坂出の塩田開発の歴史や重要文化財の資料を無料で展示。9:30〜16:30、月・祝休、無料。",
+        "address": "香川県坂出市本町1-1-24",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.313339,
+        "lng": 133.851996,
+        "qr_token": "shuin-sakaide-2",
+        "cover_image_url": "/images/sakaide/spot2.png",
+        "f7_fragment": "登録有形文化財の洋風建物で塩田の歴史を伝える、無料の郷土館。",
+        "f7_full": "登録有形文化財「鎌田共済会郷土博物館」でレトロな建築美と坂出の塩田開発の歴史に触れ、土地の歩みをより深く学んだ。",
+        "is_final": false,
+        "next_spot_id": "626e361c-2330-4b96-835e-c18bd3794133",
+        "next_spot_name": "本町一丁目カフェ（鎌田醤油直営）"
+      },
+      {
+        "id": "626e361c-2330-4b96-835e-c18bd3794133",
+        "name": "本町一丁目カフェ（鎌田醤油直営）",
+        "description": "寛政元年（1789年）創業の老舗・鎌田醤油が営む直営カフェ。だし醤油を使った玉子かけご飯や醤油スイーツが人気で、ガラス越しに保護猫を眺められる。11:00〜16:00、日・月・祝休（キャッシュレス決済のみ）。",
+        "address": "香川県坂出市本町1-6-35",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.313929,
+        "lng": 133.853069,
+        "qr_token": "shuin-sakaide-3",
+        "cover_image_url": "/images/sakaide/spot3.png",
+        "f7_fragment": "寛政創業の鎌田醤油が営む、だし醤油グルメと保護猫に出会うカフェ。",
+        "f7_full": "老舗・鎌田醤油直営の「本町一丁目カフェ」でだし醤油の風味豊かなメニューを味わい、坂出ならではの寛ぎの時間を楽しんだ。",
+        "is_final": false,
+        "next_spot_id": "cec6c9f2-a6bd-4585-849d-9a51339c0ee5",
+        "next_spot_name": "讃岐うどん 桃山亭 坂出店"
+      },
+      {
+        "id": "cec6c9f2-a6bd-4585-849d-9a51339c0ee5",
+        "name": "讃岐うどん 桃山亭 坂出店",
+        "description": "坂出駅から徒歩圏内で本場・香川の味を手軽に楽しめる人気のセルフ讃岐うどん店。コシのある麺と旨み豊かな出汁、揚げたて天ぷらが地元客にも親しまれる。営業時間11:00〜21:00、年中無休。",
+        "address": "香川県坂出市本町3-5-16",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.317894,
+        "lng": 133.850825,
+        "qr_token": "shuin-sakaide-4",
+        "cover_image_url": "/images/sakaide/spot4.png",
+        "f7_fragment": "本町の通りで地元客とともに味わう、コシと出汁自慢の讃岐うどん。",
+        "f7_full": "「讃岐うどん 桃山亭 坂出店」でコシのある麺と香り豊かな出汁を味わい、うどん県・坂出の豊かな日常の食に触れた。",
+        "is_final": false,
+        "next_spot_id": "8e69194e-d633-419e-871a-28a15ff6b035",
+        "next_spot_name": "坂出人工土地"
+      },
+      {
+        "id": "8e69194e-d633-419e-871a-28a15ff6b035",
+        "name": "坂出人工土地",
+        "description": "建築家・大高正人氏の設計により建設された日本を代表するメタボリズム建築群（市営京町団地）。一階の商店街の上に人工地盤が広がる空中都市の構造が特徴。屋外空間のみ散策可（居住者への配慮要）。",
+        "address": "香川県坂出市京町2-1",
+        "prefecture": "香川県",
+        "city": "",
+        "lat": 34.315822,
+        "lng": 133.856514,
+        "qr_token": "shuin-sakaide-5",
+        "cover_image_url": "/images/sakaide/spot5.png",
+        "f7_fragment": "人工地盤の上に暮らしと広場を築いた、日本建築史に残る空中都市。",
+        "f7_full": "名建築「坂出人工土地」の独創的な立体空間を静かに見上げ、歴史と建築とうどんが交差する坂出の散策を締めくくった。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "51306de6-c47e-4882-87ee-8843a062a769",
+    "title": "門司・赤煉瓦の麦酒蔵と大里の街を歩く",
+    "name": "門司・赤煉瓦の麦酒蔵と大里の街を歩く",
+    "description": "本州と九州を繋ぐ関門トンネルの九州側玄関・JR門司駅から、歴史ある赤煉瓦建築「門司麦酒煉瓦館」と「BRICK HALL」を経て、駅前の老舗和菓子店「梅園」と昔ながらのラーメン店「笑福亭」、そして古社「戸ノ上神社」を巡る散策路。",
+    "region": "門司・赤煉瓦と大里の街",
+    "area_name": "門司・赤煉瓦と大里の街",
+    "cover_image_url": "/images/moji/route-eyecatch.png",
+    "imageUrl": "/images/moji/route-eyecatch.png",
+    "category": "歴史とグルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "赤煉瓦の麦酒蔵の記憶と地元の老舗の味が息づく門司・大里を歩いたあと、誰かに伝えたいのはどの場面ですか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "「門司麦酒煉瓦館」の重厚な赤煉瓦建築の中で、九州のビール造りの歴史に触れた瞬間",
+          "description": "帝国麦酒から受け継がれた美しい赤煉瓦の空間が、大里の近代史を伝えていた。",
+          "badge_code": "moji_rengakan"
+        },
+        {
+          "key": "B",
+          "text": "「BRICK HALL」の赤煉瓦の温もりある空間で、音楽や珈琲の気配に癒やされた瞬間",
+          "description": "歴史あるレンガ倉庫を活かした文化空間が、駅北側の海辺の街歩きを豊かにしてくれた。",
+          "badge_code": "moji_brick_hall"
+        },
+        {
+          "key": "C",
+          "text": "「笑福亭」の昔ながらの店内で、ごま油香る懐かしいラーメンを啜った瞬間",
+          "description": "地元で半世紀愛され続けるレトロな中華そばの味わいが、街歩きに活力をくれた。",
+          "badge_code": "moji_shofukutei"
+        },
+        {
+          "key": "D",
+          "text": "「戸ノ上神社」の緑深い境内で、千百年余りの歴史を誇る門司の古社に手を合わせた瞬間",
+          "description": "赤煉瓦と街並みを抜けた先にある静かな山の麓の杜で、心穏やかに旅を締めくくった。",
+          "badge_code": "moji_tonoe_jinja"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ef011097-a794-4981-8c9c-d3b4472cbbc1",
+        "name": "門司麦酒煉瓦館",
+        "description": "旧サッポロビール九州工場（帝国麦酒）の事務所棟を活かした文化交流拠点。大正期の優美な赤煉瓦建築の中で、喫茶や市民の文化展示などを楽しめる。開館10:00〜20:00（火曜定休）、入館無料。",
+        "address": "福岡県北九州市門司区大里本町3-6-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.906132,
+        "lng": 130.931541,
+        "qr_token": "shuin-moji-1",
+        "cover_image_url": "/images/moji/spot1.png",
+        "f7_fragment": "大正期の帝国麦酒事務所棟を伝える、大里海辺の優美な赤煉瓦建築。",
+        "f7_full": "駅北側の「門司麦酒煉瓦館」で優美な赤煉瓦建築とビール造りの歴史に触れ、門司・大里の旅を凛として心地よく始めた。",
+        "is_final": false,
+        "next_spot_id": "c3719aaa-70bf-4c8b-8d33-08bd6d0dd566",
+        "next_spot_name": "BRICK HALL（ブリックホール）"
+      },
+      {
+        "id": "c3719aaa-70bf-4c8b-8d33-08bd6d0dd566",
+        "name": "BRICK HALL（ブリックホール）",
+        "description": "門司赤煉瓦プレイス内にあるレンガ造りのカフェ＆イベントスペース。歴史的空間の中で珈琲や焼きカレーなどを味わえる。火〜木11:00〜17:00・金11:00〜22:00（土日祝変動）、月曜定休。",
+        "address": "福岡県北九州市門司区大里本町3-6-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.905815,
+        "lng": 130.931664,
+        "qr_token": "shuin-moji-2",
+        "cover_image_url": "/images/moji/spot2.png",
+        "f7_fragment": "赤煉瓦の倉庫を活かした、大里海辺の温もりあるカフェ＆文化空間。",
+        "f7_full": "赤煉瓦プレイスの「BRICK HALL」で歴史的空間の温もりを感じながら休息をとり、門司の街並みへの期待を高めた。",
+        "is_final": false,
+        "next_spot_id": "f5778bc0-1bf6-4c74-8d2e-6faffc1a861b",
+        "next_spot_name": "梅園 門司駅前本店"
+      },
+      {
+        "id": "f5778bc0-1bf6-4c74-8d2e-6faffc1a861b",
+        "name": "梅園 門司駅前本店",
+        "description": "門司駅南口からすぐの柳町に店を構える老舗和菓子店。カリッと香ばしい名物「かりんとう饅頭」やどら焼き、季節の和菓子が手土産に人気。営業時間9:00〜20:00。",
+        "address": "福岡県北九州市門司区柳町2-2-1",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.904084,
+        "lng": 130.934214,
+        "qr_token": "shuin-moji-3",
+        "cover_image_url": "/images/moji/spot3.png",
+        "f7_fragment": "香ばしい名物・かりんとう饅頭が人気の、門司駅南口の老舗和菓子舗。",
+        "f7_full": "柳町の「梅園 門司駅前本店」を訪ね、名物のかりんとう饅頭や季節の和菓子など地元で親しまれる優しい甘味に触れた。",
+        "is_final": false,
+        "next_spot_id": "a69df074-2654-4a80-841e-7b83f5d7f9ec",
+        "next_spot_name": "笑福亭"
+      },
+      {
+        "id": "a69df074-2654-4a80-841e-7b83f5d7f9ec",
+        "name": "笑福亭",
+        "description": "昭和50年創業、柳町の通りに佇むレトロな雰囲気の老舗ラーメン店。ごま油の風味が香る懐かしい豚骨醤油ラーメンや焼飯が地元客に愛される。営業時間11:00〜14:00・17:00〜19:30頃、木曜等不定休。",
+        "address": "福岡県北九州市門司区柳町3-3-22",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.902765,
+        "lng": 130.938622,
+        "qr_token": "shuin-moji-4",
+        "cover_image_url": "/images/moji/spot4.png",
+        "f7_fragment": "ごま油香る懐かしい一杯を半世紀守り続ける、柳町のレトロな老舗麺処。",
+        "f7_full": "柳町の老舗「笑福亭」でごま油香る懐かしいラーメンを味わい、半世紀続く門司の温かい日常の食文化にじっくり触れた。",
+        "is_final": false,
+        "next_spot_id": "b5fafa8b-9d66-48a8-83e7-cf05a4de10a1",
+        "next_spot_name": "戸ノ上神社"
+      },
+      {
+        "id": "b5fafa8b-9d66-48a8-83e7-cf05a4de10a1",
+        "name": "戸ノ上神社",
+        "description": "門司区の最高峰・戸ノ上山の麓に鎮座し、千百年余りの歴史を持つ由緒ある古社。緑深い境内に厳かな社殿が佇み、大里の街を静かに見守っている。参拝自由（社務所日中）。",
+        "address": "福岡県北九州市門司区大里戸ノ上4-4-2",
+        "prefecture": "福岡県",
+        "city": "",
+        "lat": 33.901514,
+        "lng": 130.944008,
+        "qr_token": "shuin-moji-5",
+        "cover_image_url": "/images/moji/spot5.png",
+        "f7_fragment": "戸ノ上山の麓で千百年余りの歴史を刻み大里を見守る、緑深い古社。",
+        "f7_full": "戸ノ上山の麓に鎮座する「戸ノ上神社」の静かな杜で参拝し、赤煉瓦と麺の街・門司大里の散策を穏やかに締めくくった。",
+        "is_final": true
+      }
+    ]
   }
 ];
