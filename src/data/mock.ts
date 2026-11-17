@@ -103220,5 +103220,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "0e6e6a6a-587c-4e3b-8825-304f8ddfa3f6",
+    "title": "噴火湾の潮風と国縫の記憶をめぐる旅路",
+    "name": "噴火湾の潮風と国縫の記憶をめぐる旅路",
+    "description": "木造駅舎のJR国縫駅から日本初の島式漁港に隣接する国縫漁港海浜公園、国縫神社、シャクシャイン古戦場跡碑を経てはっぴーディアーズへ巡るルート。",
+    "region": "国縫・中ノ沢",
+    "area_name": "国縫・中ノ沢",
+    "cover_image_url": "/images/kunnui/route-eyecatch.png",
+    "imageUrl": "/images/kunnui/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び国縫を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "島式漁港を望む 国縫漁港海浜公園",
+          "description": "日本初の島式漁港に隣接する公園で噴火湾の潮風に吹かれた",
+          "badge_code": "kunnui_harbor_park"
+        },
+        {
+          "key": "B",
+          "text": "明治二十八年創建の 国縫神社",
+          "description": "函館八幡宮より御分霊を勧請した地域の鎮守で静かに手を合わせた",
+          "badge_code": "kunnui_shrine"
+        },
+        {
+          "key": "C",
+          "text": "寛文九年の記憶 シャクシャイン古戦場跡碑",
+          "description": "クンヌイ古戦場の慰霊碑の前に立ち道南の歴史の重みを感じた",
+          "badge_code": "kunnui_battlefield"
+        },
+        {
+          "key": "D",
+          "text": "旧校舎の菓子店 はっぴーディアーズ",
+          "description": "廃校を改装した明るい空間で名物雪花青とソフトクリームを楽しんだ",
+          "badge_code": "kunnui_happydeers"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "ac040d3c-441a-4f2b-8c32-34d4e3d45f79",
+        "name": "JR国縫駅",
+        "description": "明治36年（1903年）開業、昭和14年改築の木造駅舎が残るJR函館本線の無人駅（終日開放）。かつては国鉄瀬棚線が分岐していた道南交通の要衝として知られる。",
+        "address": "北海道山越郡長万部町字国縫1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.438578,
+        "lng": 140.320633,
+        "qr_token": "shuin-kunnui-1",
+        "cover_image_url": "/images/kunnui/spot1.png",
+        "f7_fragment": "昭和十四年改築の木造駅舎が残り、かつて国鉄瀬棚線が分岐した要衝の駅。",
+        "f7_full": "「JR国縫駅」の木造駅舎を後にし、海浜公園と道南史の舞台を巡り始めた。",
+        "is_final": false,
+        "next_spot_id": "3322afdb-a2ac-4727-826d-bd710a13ebc4",
+        "next_spot_name": "国縫漁港海浜公園"
+      },
+      {
+        "id": "3322afdb-a2ac-4727-826d-bd710a13ebc4",
+        "name": "国縫漁港海浜公園",
+        "description": "平成6年（1994年）に開設された噴火湾沿いの海浜公園（常時開放・無休）。隣接する国縫漁港は全国でも先駆けとなる「日本初の島式漁港」として広く知られている。",
+        "address": "北海道山越郡長万部町字国縫165-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.439522,
+        "lng": 140.328818,
+        "qr_token": "shuin-kunnui-2",
+        "cover_image_url": "/images/kunnui/spot2.png",
+        "f7_fragment": "日本初の島式漁港に隣接して整備され、噴火湾を一望できる海浜公園。",
+        "f7_full": "「国縫漁港海浜公園」で噴火湾の潮風に吹かれ、国縫の鎮守へ向かった。",
+        "is_final": false,
+        "next_spot_id": "412d916d-7121-428f-868c-ef8a5a17c675",
+        "next_spot_name": "国縫神社"
+      },
+      {
+        "id": "412d916d-7121-428f-868c-ef8a5a17c675",
+        "name": "国縫神社",
+        "description": "明治28年（1895年）に函館八幡宮より御分霊を勧請して創建された地域の鎮守（参拝自由・無人）。応神天皇を祀り、海辺の集落の暮らしを長年にわたり見守り続けている。",
+        "address": "北海道山越郡長万部町字国縫171-40",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.439122,
+        "lng": 140.323157,
+        "qr_token": "shuin-kunnui-3",
+        "cover_image_url": "/images/kunnui/spot3.png",
+        "f7_fragment": "明治二十八年に函館八幡宮より御分霊を勧請して創建された地域の鎮守社。",
+        "f7_full": "「国縫神社」の静かな境内で旅の安全を祈願し、歴史ある古戦場跡へ向かった。",
+        "is_final": false,
+        "next_spot_id": "f22dbed6-634d-4784-89c0-001cbe37be8d",
+        "next_spot_name": "シャクシャイン古戦場跡碑"
+      },
+      {
+        "id": "f22dbed6-634d-4784-89c0-001cbe37be8d",
+        "name": "シャクシャイン古戦場跡碑",
+        "description": "寛文9年（1669年）のシャクシャインの戦いでアイヌ軍と松前藩が激突した「クンヌイ古戦場」を伝える慰霊碑（常時見学可、平成28年建立）。旧国縫小学校グラウンド一角に立つ。",
+        "address": "北海道山越郡長万部町字国縫30",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.4352,
+        "lng": 140.319069,
+        "qr_token": "shuin-kunnui-4",
+        "cover_image_url": "/images/kunnui/spot4.png",
+        "f7_fragment": "寛文九年のシャクシャインの戦いの激戦地・クンヌイ古戦場を伝える慰霊碑。",
+        "f7_full": "「シャクシャイン古戦場跡碑」の前に立ち、北海道史の記憶に深く思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "ab68ed5a-d3da-49f8-82f3-ea6e98d75586",
+        "next_spot_name": "お菓子の王国 はっぴーディアーズ"
+      },
+      {
+        "id": "ab68ed5a-d3da-49f8-82f3-ea6e98d75586",
+        "name": "お菓子の王国 はっぴーディアーズ",
+        "description": "廃校になった旧中ノ沢小学校を改装した青華堂の直営店（8:00〜18:00、無休・季節変動あり）。名物クッキー「雪花青」やソフトクリームが人気で休憩スペースもある。",
+        "address": "北海道山越郡長万部町字中ノ沢13-2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.474203,
+        "lng": 140.345336,
+        "qr_token": "shuin-kunnui-5",
+        "cover_image_url": "/images/kunnui/spot5.png",
+        "f7_fragment": "旧中ノ沢小学校を改装した直営菓子店で、名物「雪花青」やソフトが人気。",
+        "f7_full": "「お菓子の王国 はっぴーディアーズ」で名物菓子を楽しみ、国縫の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "52a10032-0b82-47a9-89ed-7b54e2282d04",
+    "title": "北限のブナ林と黒松内の恵みを巡る小径",
+    "name": "北限のブナ林と黒松内の恵みを巡る小径",
+    "description": "JR黒松内駅から街中カフェKumagera Kitchen 樻里花、大鳥神社、日帰り名湯の黒松内温泉ぶなの森を経て黒松内町ブナセンターへ歩くルート。",
+    "region": "黒松内・歌才ブナ林",
+    "area_name": "黒松内・歌才ブナ林",
+    "cover_image_url": "/images/kuromatsunai/route-eyecatch.png",
+    "imageUrl": "/images/kuromatsunai/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び黒松内を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "にぎわい拠点 Kumagera Kitchen 樻里花",
+          "description": "地元食材メニューや本格タイ料理を味わい街歩きの活力を得た",
+          "badge_code": "kuromatsunai_kirika"
+        },
+        {
+          "key": "B",
+          "text": "明治遷座の高台社 大鳥神社",
+          "description": "日本武尊を祀る歴史ある鎮守の境内で町の安寧を祈った",
+          "badge_code": "kuromatsunai_otori_shrine"
+        },
+        {
+          "key": "C",
+          "text": "ブナ林の湯 黒松内温泉 ぶなの森",
+          "description": "露天風呂やサウナで温まり名物の手打ちそばに癒やされた",
+          "badge_code": "kuromatsunai_bunanomori"
+        },
+        {
+          "key": "D",
+          "text": "北限の自然を伝える 黒松内町ブナセンター",
+          "description": "国の天然記念物・歌才ブナ林の入口で豊かな森の生態に触れた",
+          "badge_code": "kuromatsunai_bunacenter"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "2e453fee-d857-4ad0-876f-eeb8d03cbf78",
+        "name": "JR黒松内駅",
+        "description": "明治36年（1903年）開業のJR函館本線の駅（無人駅・終日開放、臨時特急ニセコ停車駅）。かつて寿都鉄道が分岐し機関庫も置かれた要衝で、ブナ北限の里の玄関口となっている。",
+        "address": "北海道寿都郡黒松内町字黒松内1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.66964,
+        "lng": 140.305849,
+        "qr_token": "shuin-kuromatsunai-1",
+        "cover_image_url": "/images/kuromatsunai/spot1.png",
+        "f7_fragment": "かつて寿都鉄道が分岐した要衝で、ブナ北限の里・黒松内の玄関口。",
+        "f7_full": "「JR黒松内駅」を後にし、街中の食と温泉、北限のブナ林を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "e77607b7-6d7d-4c2d-8ba1-ead0ecf671f5",
+        "next_spot_name": "Kumagera Kitchen 樻里花（クマゲラキッチン キリカ）"
+      },
+      {
+        "id": "e77607b7-6d7d-4c2d-8ba1-ead0ecf671f5",
+        "name": "Kumagera Kitchen 樻里花（クマゲラキッチン キリカ）",
+        "description": "令和7年（2025年）3月末に街中でリニューアルオープンしたにぎわい拠点（11:00〜15:00・17:00〜21:00、木曜休）。黒松内産の地元食材メニューや本格タイ料理が味わえる。",
+        "address": "北海道寿都郡黒松内町字黒松内257-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.668959,
+        "lng": 140.307418,
+        "qr_token": "shuin-kuromatsunai-2",
+        "cover_image_url": "/images/kuromatsunai/spot2.png",
+        "f7_fragment": "黒松内町役場横に立つにぎわい拠点で、地元食材料理や本格タイ料理が人気。",
+        "f7_full": "「Kumagera Kitchen 樻里花」で温かな料理を味わい、高台の古社へ向かった。",
+        "is_final": false,
+        "next_spot_id": "4a4e9c1c-1675-43de-8f9c-b81311766711",
+        "next_spot_name": "大鳥神社"
+      },
+      {
+        "id": "4a4e9c1c-1675-43de-8f9c-b81311766711",
+        "name": "大鳥神社",
+        "description": "花岡利右衛門の邸内小祠を起源とし、明治9年に村社へ列格、明治45年に現在地の高台へ遷座した神社（参拝自由・無休）。日本武尊を祀り町の歩みを静かに見守っている。",
+        "address": "北海道寿都郡黒松内町字黒松内463",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.662177,
+        "lng": 140.306029,
+        "qr_token": "shuin-kuromatsunai-3",
+        "cover_image_url": "/images/kuromatsunai/spot3.png",
+        "f7_fragment": "明治四十五年に現在地の高台へ遷座し、日本武尊を祀る黒松内の鎮守社。",
+        "f7_full": "「大鳥神社」の高台から町の安寧を祈り、森に抱かれた名湯へ向かった。",
+        "is_final": false,
+        "next_spot_id": "10241e12-1a5c-415f-8fac-7e98a33c30c3",
+        "next_spot_name": "黒松内温泉 ぶなの森"
+      },
+      {
+        "id": "10241e12-1a5c-415f-8fac-7e98a33c30c3",
+        "name": "黒松内温泉 ぶなの森",
+        "description": "ナトリウム・塩化物泉の日帰り温泉施設（4〜10月11:00〜21:30・第1水曜休、11〜3月11:00〜21:00・第1・3水曜休）。露天風呂やサウナ、そば処ぶなの森を併設し観光協会も入居。",
+        "address": "北海道寿都郡黒松内町字黒松内545",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.657132,
+        "lng": 140.309196,
+        "qr_token": "shuin-kuromatsunai-4",
+        "cover_image_url": "/images/kuromatsunai/spot4.png",
+        "f7_fragment": "露天風呂やサウナ、そば処を備え観光協会も入居する日帰り名湯。",
+        "f7_full": "「黒松内温泉 ぶなの森」の柔らかな湯に癒やされ、ブナ林の拠点へ向かった。",
+        "is_final": false,
+        "next_spot_id": "b6d31081-a4d7-451f-8dd1-fb4f40e7477e",
+        "next_spot_name": "黒松内町ブナセンター"
+      },
+      {
+        "id": "b6d31081-a4d7-451f-8dd1-fb4f40e7477e",
+        "name": "黒松内町ブナセンター",
+        "description": "国の天然記念物「歌才ブナ林」の入口に位置する自然博物館・体験拠点（9:30〜17:00・木曜夜間開館あり、観覧無料、月・火曜休）。ブナ北限の豊かな生態や町の歴史を紹介。",
+        "address": "北海道寿都郡黒松内町字黒松内512-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.651027,
+        "lng": 140.306411,
+        "qr_token": "shuin-kuromatsunai-5",
+        "cover_image_url": "/images/kuromatsunai/spot5.png",
+        "f7_fragment": "国の天然記念物「歌才ブナ林」の入口にあり、ブナ北限の自然を伝える施設。",
+        "f7_full": "「黒松内町ブナセンター」で北限ブナ林の奥深さに触れ、黒松内の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "d06146e9-96d8-404f-8314-9f821dfbf82b",
+    "title": "白井川の風に吹かれ熱郛の味わいを巡る",
+    "name": "白井川の風に吹かれ熱郛の味わいを巡る",
+    "description": "町民サロン併設のJR熱郛駅から白光山永昌寺、手打ちそばのこの花、焼きたてパンとピザが人気の道の駅くろまつないを経て熱郛馬頭観世音へ歩くルート。",
+    "region": "熱郛・白井川",
+    "area_name": "熱郛・白井川",
+    "cover_image_url": "/images/neppu/route-eyecatch.png",
+    "imageUrl": "/images/neppu/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び熱郛を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "明治開拓の古刹 白光山 永昌寺",
+          "description": "白井川地区に根ざす静かな曹洞宗寺院の佇まいに心洗われた",
+          "badge_code": "neppu_eishoji"
+        },
+        {
+          "key": "B",
+          "text": "奈川在来種が自慢の そば屋 この花",
+          "description": "黒松内産そば粉を使ったコシの強い手打ちそばを堪能した",
+          "badge_code": "neppu_konohana_soba"
+        },
+        {
+          "key": "C",
+          "text": "パンとピザの名所 道の駅くろまつない",
+          "description": "トワ・ヴェール・ドゥーの焼きたてパンと窯焼きピザに笑顔になった",
+          "badge_code": "neppu_michinoeki"
+        },
+        {
+          "key": "D",
+          "text": "開拓碑が並ぶ 熱郛馬頭観世音",
+          "description": "旧熱郛村役場跡広場で先人たちの開拓百年の歩みに手を合わせた",
+          "badge_code": "neppu_batokannon"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "e2311261-bd36-409e-8246-a557a4e9f593",
+        "name": "JR熱郛駅",
+        "description": "明治36年（1903年）開業、JR北海道函館支社管轄の最北端駅（終日開放・町民サロン「熱郛ホール」併設）。アイヌ語に由来する難読駅名でも知られ、白井川地区の玄関口。",
+        "address": "北海道寿都郡黒松内町字白井川1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.675559,
+        "lng": 140.374951,
+        "qr_token": "shuin-neppu-1",
+        "cover_image_url": "/images/neppu/spot1.png",
+        "f7_fragment": "JR北海道函館支社管轄の最北端駅で、町民サロン「熱郛ホール」を併設。",
+        "f7_full": "「JR熱郛駅」を後にし、白井川の古刹と名物そば・道の駅の旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "1fd544a5-4031-4f5c-8a52-12b23cf3fc91",
+        "next_spot_name": "白光山 永昌寺"
+      },
+      {
+        "id": "1fd544a5-4031-4f5c-8a52-12b23cf3fc91",
+        "name": "白光山 永昌寺",
+        "description": "明治10年頃から開拓が始まった白井川地区に根ざす歴史ある曹洞宗の寺院（参拝・外観見学自由）。開拓の時代から地域の心の拠り所として静かな佇まいを保っている。",
+        "address": "北海道寿都郡黒松内町字白井川8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.673737,
+        "lng": 140.379369,
+        "qr_token": "shuin-neppu-2",
+        "cover_image_url": "/images/neppu/spot2.png",
+        "f7_fragment": "明治の白井川開拓期から地域の歴史とともに歩んできた曹洞宗の古刹。",
+        "f7_full": "「白光山 永昌寺」の前で静かな祈りの空気に触れ、評判の手打ちそば店へ向かった。",
+        "is_final": false,
+        "next_spot_id": "f69ee614-26ef-4596-8cde-289af1ffb3da",
+        "next_spot_name": "そば屋 この花"
+      },
+      {
+        "id": "f69ee614-26ef-4596-8cde-289af1ffb3da",
+        "name": "そば屋 この花",
+        "description": "黒松内産「奈川在来種」を使ったコシの強い手打ちそばが評判の人気店（11:30〜14:45頃・売切次第終了、月・火曜休・変動あり）。素朴な味わいと豊かなそばの香りが旅人を魅了する。",
+        "address": "北海道寿都郡黒松内町字白井川8-216",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.673084,
+        "lng": 140.377012,
+        "qr_token": "shuin-neppu-3",
+        "cover_image_url": "/images/neppu/spot3.png",
+        "f7_fragment": "黒松内産「奈川在来種」のコシの強い手打ちそばが評判の人気店。",
+        "f7_full": "「そば屋 この花」で奈川在来種の香り高い手打ちそばを堪能し、心が満たされた。",
+        "is_final": false,
+        "next_spot_id": "2a68c233-117b-4217-81e9-4cb5d04e4f03",
+        "next_spot_name": "道の駅くろまつない toit vert Ⅱ（トワ・ヴェール・ドゥー）"
+      },
+      {
+        "id": "2a68c233-117b-4217-81e9-4cb5d04e4f03",
+        "name": "道の駅くろまつない toit vert Ⅱ（トワ・ヴェール・ドゥー）",
+        "description": "道産小麦の焼き立てパンや黒松内産チーズ等を使った本格窯焼きピザ「ピザドゥ」が名物の道の駅（4〜9月9:00〜18:00・10〜3月9:00〜17:00、11〜3月火曜休）。",
+        "address": "北海道寿都郡黒松内町字白井川8-10",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.672638,
+        "lng": 140.379894,
+        "qr_token": "shuin-neppu-4",
+        "cover_image_url": "/images/neppu/spot4.png",
+        "f7_fragment": "道産小麦の焼きたてパンや本格窯焼きピザ「ピザドゥ」が名物の道の駅。",
+        "f7_full": "「道の駅くろまつない」で焼きたてパンと特産品に出会い、道路向かいの史跡へ向かった。",
+        "is_final": false,
+        "next_spot_id": "cd8fa8b5-cb5b-4867-8e57-1f730c6ca89b",
+        "next_spot_name": "熱郛馬頭観世音（旧熱郛村役場跡広場）"
+      },
+      {
+        "id": "cd8fa8b5-cb5b-4867-8e57-1f730c6ca89b",
+        "name": "熱郛馬頭観世音（旧熱郛村役場跡広場）",
+        "description": "旧熱郛村役場跡地に整備された開拓記念の広場（常時見学可）。「白井川開拓百周年記念之碑」「乳牛感謝之碑」「横村儀兵衛之碑」等の石碑群と馬頭観世音が集められている。",
+        "address": "北海道寿都郡黒松内町字白井川9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.672016,
+        "lng": 140.379326,
+        "qr_token": "shuin-neppu-5",
+        "cover_image_url": "/images/neppu/spot5.png",
+        "f7_fragment": "旧熱郛村役場跡地に開拓百周年碑などの石碑群と馬頭観世音が並ぶ広場。",
+        "f7_full": "「熱郛馬頭観世音」の開拓石碑群の前で手を合わせ、熱郛の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "c5fa688d-dd62-490d-8fd8-bd27a9f5981c",
+    "title": "目名の杜と実りの丘をめぐるのどかな道",
+    "name": "目名の杜と実りの丘をめぐるのどかな道",
+    "description": "町民サロン併設のJR目名駅から目名郵便局、原生林に抱かれた目名八幡神社を経て道の駅らんこし・ふるさとの丘とキャンプ場へ歩くルート。",
+    "region": "目名・相生",
+    "area_name": "目名・相生",
+    "cover_image_url": "/images/mena/route-eyecatch.png",
+    "imageUrl": "/images/mena/route-eyecatch.png",
+    "category": "自然・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び目名を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "駅前市街の面影を残す 目名郵便局",
+          "description": "かつての中目名市街の気配を伝える街角を静かに歩いた",
+          "badge_code": "mena_post"
+        },
+        {
+          "key": "B",
+          "text": "原生林に抱かれた 目名八幡神社",
+          "description": "明治三十九年創立の旧村社で清々しい杜の空気を感じた",
+          "badge_code": "mena_hachiman_shrine"
+        },
+        {
+          "key": "C",
+          "text": "らんこし米の直売 道の駅「らんこし・ふるさとの丘」",
+          "description": "特産のらんこし米や地元野菜・手作りアイスクリームに出合った",
+          "badge_code": "mena_michinoeki"
+        },
+        {
+          "key": "D",
+          "text": "森に囲まれた ふるさとの丘キャンプ場",
+          "description": "道の駅裏手の静かな森で北海道らしい開放的な自然に癒やされた",
+          "badge_code": "mena_campground"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5c79f1bb-f475-4f97-8cb8-a0def05a7c8f",
+        "name": "JR目名駅",
+        "description": "明治37年（1904年）「磯谷駅」として開業、翌年に「目名駅」へ改称した無人駅（終日開放・町民サロン併設）。平成12年の有珠山噴火による迂回輸送でも重要な役割を担った。",
+        "address": "北海道磯谷郡蘭越町目名町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.761365,
+        "lng": 140.465352,
+        "qr_token": "shuin-mena-1",
+        "cover_image_url": "/images/mena/spot1.png",
+        "f7_fragment": "明治三十七年開業、町民サロンを併設し目名市街の玄関口となる無人駅。",
+        "f7_full": "「JR目名駅」を後にし、原生林の杜と実りの丘を巡る穏やかな散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "bd141694-f0fc-49a7-8eb1-e31af492eddb",
+        "next_spot_name": "目名郵便局"
+      },
+      {
+        "id": "bd141694-f0fc-49a7-8eb1-e31af492eddb",
+        "name": "目名郵便局",
+        "description": "JR目名駅前に佇む地域の生活拠点（窓口平日9:00〜17:00、土日祝休）。昔ながらの目名市街（旧・中目名）の落ち着いた街並みの面影を今に伝えている。",
+        "address": "北海道磯谷郡蘭越町目名町694",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.761668,
+        "lng": 140.465292,
+        "qr_token": "shuin-mena-2",
+        "cover_image_url": "/images/mena/spot2.png",
+        "f7_fragment": "JR目名駅前に佇み、昔ながらの目名市街の面影を残す生活拠点。",
+        "f7_full": "「目名郵便局」の前を通り過ぎ、すぐ北西の高台に鎮座する杜の古社へ向かった。",
+        "is_final": false,
+        "next_spot_id": "c5221a61-ee31-461f-8212-4e004da7be13",
+        "next_spot_name": "目名八幡神社（八幡神社）"
+      },
+      {
+        "id": "c5221a61-ee31-461f-8212-4e004da7be13",
+        "name": "目名八幡神社（八幡神社）",
+        "description": "明治39年（1906年）創立の旧村社（参拝自由・無休）。駅北西の高台で原生林に囲まれて鎮座し、9月15日の例祭では伝統の神楽も奉納される由緒ある鎮守。",
+        "address": "北海道磯谷郡蘭越町目名町527",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.762428,
+        "lng": 140.456914,
+        "qr_token": "shuin-mena-3",
+        "cover_image_url": "/images/mena/spot3.png",
+        "f7_fragment": "明治三十九年創立の旧村社で、原生林に囲まれた高台に鎮座する鎮守社。",
+        "f7_full": "「目名八幡神社」の原生林の杜で手を合わせ、実り豊かな道の駅へ向かった。",
+        "is_final": false,
+        "next_spot_id": "cadab9b8-d919-4110-82ea-dc3e918f16cc",
+        "next_spot_name": "道の駅「らんこし・ふるさとの丘」"
+      },
+      {
+        "id": "cadab9b8-d919-4110-82ea-dc3e918f16cc",
+        "name": "道の駅「らんこし・ふるさとの丘」",
+        "description": "平成15年開業の直売センター（9:00〜17:00・11〜3月〜16:00、11〜3月火曜休）。名高い特産「らんこし米」や新鮮な地元野菜、隣接工場の手作りアイスクリームが人気。",
+        "address": "北海道磯谷郡蘭越町字相生969",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.761977,
+        "lng": 140.479303,
+        "qr_token": "shuin-mena-4",
+        "cover_image_url": "/images/mena/spot4.png",
+        "f7_fragment": "特産「らんこし米」や地元野菜、手作りアイスクリームが人気の道の駅。",
+        "f7_full": "「道の駅 らんこし・ふるさとの丘」でらんこし米と甘いアイスに笑顔になった。",
+        "is_final": false,
+        "next_spot_id": "1d7e0c2d-5842-4c99-8bab-d3f8dd2820bd",
+        "next_spot_name": "ふるさとの丘キャンプ場"
+      },
+      {
+        "id": "1d7e0c2d-5842-4c99-8bab-d3f8dd2820bd",
+        "name": "ふるさとの丘キャンプ場",
+        "description": "道の駅裏手の森に囲まれた静かなキャンプ場（5月上旬〜10月中旬営業・期間中無休、冬期閉鎖、受付は道の駅）。近年ドッグランも整備され、季節の自然拠点として親しまれる。",
+        "address": "北海道磯谷郡蘭越町字相生969",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.764942,
+        "lng": 140.474768,
+        "qr_token": "shuin-mena-5",
+        "cover_image_url": "/images/mena/spot5.png",
+        "f7_fragment": "道の駅裏手の森に囲まれ、ドッグランも備えた開放的な自然拠点。",
+        "f7_full": "「ふるさとの丘キャンプ場」の爽やかな森の風を感じ、目名の散歩を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "2e401dc7-9732-4fa7-835b-5c5e7083eae0",
+    "title": "らんこし米の香りと尻別の街並みを歩く",
+    "name": "らんこし米の香りと尻別の街並みを歩く",
+    "description": "簡易委託駅のJR蘭越駅から大正元年創業のおかしのほりかわ、らんこし米が味わえるレストランぼん田、蘭越八幡神社を経て花一会図書館へ歩くルート。",
+    "region": "蘭越中心街",
+    "area_name": "蘭越中心街",
+    "cover_image_url": "/images/rankoshi/route-eyecatch.png",
+    "imageUrl": "/images/rankoshi/route-eyecatch.png",
+    "category": "グルメ・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び蘭越を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "大正元年創業の老舗 おかしのほりかわ",
+          "description": "ニセコ雪饅や蘭越米の米粉を使ったロールケーキを味わった",
+          "badge_code": "rankoshi_horikawa"
+        },
+        {
+          "key": "B",
+          "text": "釜焚きらんこし米の レストランぼん田",
+          "description": "街の茶屋で艶やかならんこし米のおにぎりや釜飯を堪能した",
+          "badge_code": "rankoshi_bonta"
+        },
+        {
+          "key": "C",
+          "text": "石川開拓民ゆかりの 蘭越八幡神社",
+          "description": "明治三十一年に佐奇神社より分霊された歴史ある社に参拝した",
+          "badge_code": "rankoshi_shrine"
+        },
+        {
+          "key": "D",
+          "text": "静かな学びの拠点 蘭越町花一会図書館",
+          "description": "街歩きの締めくくりに温かな文化施設でゆったりと一息ついた",
+          "badge_code": "rankoshi_library"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "1bd117b8-e765-4c34-8913-d52d466d514c",
+        "name": "JR蘭越駅",
+        "description": "明治37年（1904年）開業の簡易委託駅（日中窓口営業あり）。かつて急行「ニセコ」が停車し、現在は快速「ニセコライナー」の始発駅としても知られる尻別川流域の玄関口。",
+        "address": "北海道磯谷郡蘭越町蘭越町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.804549,
+        "lng": 140.528668,
+        "qr_token": "shuin-rankoshi-1",
+        "cover_image_url": "/images/rankoshi/spot1.png",
+        "f7_fragment": "明治三十七年開業、快速ニセコライナーの始発駅ともなる蘭越町の玄関口。",
+        "f7_full": "「JR蘭越駅」を後にし、大正創業の老舗菓子店とらんこし米を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "4a63b658-7b8a-4f12-8763-65e435ef6624",
+        "next_spot_name": "おかしのほりかわ"
+      },
+      {
+        "id": "4a63b658-7b8a-4f12-8763-65e435ef6624",
+        "name": "おかしのほりかわ",
+        "description": "大正元年（1912年）創業の老舗和洋菓子店（月〜土8:30〜19:00、日9:30〜18:00、不定休）。全国菓子大博覧会受賞の「ニセコ雪饅」や蘭越米の米粉スイーツが名物。",
+        "address": "北海道磯谷郡蘭越町蘭越町135",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.805095,
+        "lng": 140.527888,
+        "qr_token": "shuin-rankoshi-2",
+        "cover_image_url": "/images/rankoshi/spot2.png",
+        "f7_fragment": "大正元年創業で、銘菓「ニセコ雪饅」や蘭越米粉スイーツが人気の菓子店。",
+        "f7_full": "「おかしのほりかわ」で蘭越米の優しい甘みに出会い、笑顔がほころんだ。",
+        "is_final": false,
+        "next_spot_id": "8ce4e6a3-3038-4553-8b1f-c52027cbcba2",
+        "next_spot_name": "街の茶屋 レストランぼん田"
+      },
+      {
+        "id": "8ce4e6a3-3038-4553-8b1f-c52027cbcba2",
+        "name": "街の茶屋 レストランぼん田",
+        "description": "蘭越町観光物産協会が入る「街の茶屋」内のレストラン（物販9:00〜17:00、レストラン11:00〜14:00頃）。ブランド米「らんこし米」の釜焚きおにぎりや釜飯・定食が人気。",
+        "address": "北海道磯谷郡蘭越町蘭越町130",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.805655,
+        "lng": 140.527348,
+        "qr_token": "shuin-rankoshi-3",
+        "cover_image_url": "/images/rankoshi/spot3.png",
+        "f7_fragment": "街の茶屋内にあり、釜焚き「らんこし米」のおにぎりや釜飯が味わえる店。",
+        "f7_full": "「レストランぼん田」で艶やかならんこし米を味わい、町の鎮守へ向かった。",
+        "is_final": false,
+        "next_spot_id": "b098f91d-3719-4811-8b41-e12c02ecf359",
+        "next_spot_name": "蘭越八幡神社"
+      },
+      {
+        "id": "b098f91d-3719-4811-8b41-e12c02ecf359",
+        "name": "蘭越八幡神社",
+        "description": "明治31年（1898年）、石川県からの開拓民が故郷の佐奇神社から分霊を受け創建した鎮守（参拝自由・無人）。昭和59年に現在地へ移転し、神功皇后を祀っている。",
+        "address": "北海道磯谷郡蘭越町蘭越町258-7",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.8091,
+        "lng": 140.529143,
+        "qr_token": "shuin-rankoshi-4",
+        "cover_image_url": "/images/rankoshi/spot4.png",
+        "f7_fragment": "石川県からの開拓民が佐奇神社より分霊を受け創建した蘭越の鎮守社。",
+        "f7_full": "「蘭越八幡神社」の境内で開拓民の歴史に手を合わせ、図書館へ向かった。",
+        "is_final": false,
+        "next_spot_id": "34a955d0-cfd3-42a6-8ed1-7596ed3ae5bf",
+        "next_spot_name": "蘭越町花一会図書館"
+      },
+      {
+        "id": "34a955d0-cfd3-42a6-8ed1-7596ed3ae5bf",
+        "name": "蘭越町花一会図書館",
+        "description": "コミュニティプラザ花一会内にある町立図書館（10:00〜18:00・水曜〜20:00、月曜・祝日・第4金曜・年末年始休）。散策の合間に立ち寄れる静かで温かな文化・休憩拠点。",
+        "address": "北海道磯谷郡蘭越町蘭越町880-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.803854,
+        "lng": 140.527559,
+        "qr_token": "shuin-rankoshi-5",
+        "cover_image_url": "/images/rankoshi/spot5.png",
+        "f7_fragment": "コミュニティプラザ花一会内にあり、駅からも近い静かな文化・休憩拠点。",
+        "f7_full": "「蘭越町花一会図書館」で静かな余韻を味わい、蘭越の散歩を終えた。",
+        "is_final": true
+      }
+    ]
   }
 ];
