@@ -1127,6 +1127,61 @@ function isOutingIntentSuggestion(s, areaName = "", city = "") {
   return OUTING_INTENT_PATTERNS.some((re) => re.test(intentPart));
 }
 
+function extractCleanAreaName(rawAreaName, rawStation, fallbackArea) {
+  const stationClean =
+    rawStation && typeof rawStation === "string"
+      ? rawStation
+          .trim()
+          .replace(/^(.{2,})(?<!道の)駅$/, "$1")
+          .trim()
+      : "";
+
+  const areaTrimmed =
+    rawAreaName && typeof rawAreaName === "string" ? rawAreaName.trim() : "";
+
+  if (areaTrimmed) {
+    const isCatchphrase =
+      areaTrimmed.length > 15 ||
+      /を辿る|を歩く|を巡る|をめぐる|の道$|の街$|と[一-龠ァ-ヶー]{2,}の/.test(
+        areaTrimmed
+      );
+    if (!isCatchphrase) {
+      return areaTrimmed;
+    }
+    if (stationClean && stationClean.length >= 2) {
+      return stationClean;
+    }
+    const firstPart = areaTrimmed
+      .split("・")[0]
+      .replace(/（[^）]*）$/, "")
+      .replace(/^(.{2,})(?<!道の)駅$/, "$1")
+      .trim();
+    if (firstPart && firstPart.length >= 2) {
+      return firstPart;
+    }
+  }
+
+  if (stationClean && stationClean.length >= 2) {
+    return stationClean;
+  }
+  return fallbackArea;
+}
+
+function formatShortAreaLabel(areaName) {
+  if (!areaName || typeof areaName !== "string") return "";
+  let s = areaName.replace(/（[^）]*）/g, "").trim();
+  if (s.includes("・")) {
+    const parts = s.split("・").map((p) => p.trim()).filter(Boolean);
+    if (parts.length > 1) {
+      const first = parts[0];
+      const isPref = /^(?:北海道|東京都|京都府|大阪府|.{2,3}県)$/.test(first);
+      s = isPref && parts[1] ? parts[1] : first;
+    }
+  }
+  s = s.replace(/^(.{2,})(?<!道の)駅$/, "$1").trim();
+  return s || areaName.trim();
+}
+
 function buildSmartHookFromSuggestions(
   areaName,
   realSuggestions,
@@ -1137,7 +1192,7 @@ function buildSmartHookFromSuggestions(
   const joined = [...gscQueries, ...realSuggestions].join(" ");
 
   const hasModelCourse = /モデル\s*コース/.test(joined);
-  const hasCarFree = /車なし|徒歩/.test(joined);
+  const hasCarFree = /車\s*なし|徒歩/.test(joined);
   const hasHalfDay = /半日/.test(joined);
   const hasFoodWalk = /食べ歩き/.test(joined);
   const hasLunchCafe = /ランチ|カフェ|グルメ/.test(joined);
@@ -1157,6 +1212,8 @@ function buildSmartHookFromSuggestions(
     mainPhrase = "街歩きデート・散歩コース";
   } else if (!isPrefecture && hasDate && !hasModelCourse) {
     mainPhrase = "デート・お出かけコース";
+  } else if (hasModelCourse && hasHalfDay && hasCarFree) {
+    mainPhrase = "半日観光モデルコース（車なし・徒歩）";
   } else if (hasModelCourse && hasHalfDay) {
     mainPhrase = "半日観光モデルコース";
   } else if (hasModelCourse && hasCarFree) {
@@ -1182,6 +1239,9 @@ function buildSmartHookFromSuggestions(
   }
 
   const subHooks = [];
+  if (hasCarFree && !mainPhrase.includes("車なし")) {
+    subHooks.push("車なし・徒歩");
+  }
   if (!isPrefecture && hasDate && !mainPhrase.includes("デート")) {
     subHooks.push("デート・散歩");
   } else if (!isPrefecture && hasHoliday && !mainPhrase.includes("お出かけ")) {
@@ -1196,7 +1256,7 @@ function buildSmartHookFromSuggestions(
   ) {
     subHooks.push("グルメ・カフェ");
   }
-  if (hasMap) subHooks.push("マップ");
+  if (hasMap) subHooks.push("徒歩マップ");
   if (hasDuration) subHooks.push("所要時間");
   if (subHooks.length === 0) subHooks.push("徒歩マップ・所要時間");
 
@@ -1321,13 +1381,19 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     const city =
       spots.map((s) => extractCityFromAddress(s.address)).find(Boolean) || null;
     const localDef = localAreaMap.get(String(r.title || "").trim());
-    const extractedArea =
-      localDef?.area_name ||
-      localDef?.station ||
-      extractAreaFromTitleOrDesc(r.title, r.description, city);
-    const primaryArea =
-      extractedArea ||
+    const extractedFallback = extractAreaFromTitleOrDesc(
+      r.title,
+      r.description,
+      city
+    );
+    const fallbackArea =
+      extractedFallback ||
       (city ? city.replace(/^.+?郡/, "").replace(/[市区町村]$/, "") : r.prefecture || "街歩き");
+    const primaryArea = extractCleanAreaName(
+      localDef?.area_name,
+      localDef?.station,
+      fallbackArea
+    );
 
     const pref = String(r.prefecture || "").trim();
 
@@ -1384,16 +1450,18 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     }
   }
 
-  const byAreaName = { ...(existingData.byAreaName || {}) };
-  const byRouteId = { ...(existingData.byRouteId || {}) };
-  const byPrefecture = { ...(existingData.byPrefecture || {}) };
+  const byAreaName = {};
+  const byRouteId = {};
+  const byPrefecture = {};
 
   for (const [areaName, info] of areaMap.entries()) {
+    const queryAreaName = formatShortAreaLabel(areaName) || areaName;
     // 1. Check GSC queries matching this area or routes in this area
     const matchingGsc = (gscRows || [])
       .filter(
         (row) =>
           row.query.includes(areaName) ||
+          row.query.includes(queryAreaName) ||
           info.routeIds.some((id) => row.page.includes(id))
       )
       .sort((a, b) => b.impressions - a.impressions);
@@ -1404,10 +1472,10 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 
     // 2. Fetch Google Suggest for general search intent around this area
     const [sugBase, sugKanko, sugSanpo, sugDate] = await Promise.all([
-      fetchGoogleSuggestions(`${areaName} `),
-      fetchGoogleSuggestions(`${areaName} 観光 `),
-      fetchGoogleSuggestions(`${areaName} 散歩`),
-      fetchGoogleSuggestions(`${areaName} デート`),
+      fetchGoogleSuggestions(`${queryAreaName} `),
+      fetchGoogleSuggestions(`${queryAreaName} 観光 `),
+      fetchGoogleSuggestions(`${queryAreaName} 散歩`),
+      fetchGoogleSuggestions(`${queryAreaName} デート`),
     ]);
 
     const rawSuggestions = Array.from(
@@ -1415,7 +1483,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     );
 
     const filteredSuggestions = rawSuggestions.filter((s) =>
-      isOutingIntentSuggestion(s, areaName, info.city)
+      isOutingIntentSuggestion(s, queryAreaName, info.city)
     );
 
     // If suburban/residential station had few matches on `{areaName} 観光 `, also check `{city} 観光 `
@@ -1423,7 +1491,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       const sugCity = await fetchGoogleSuggestions(`${info.city} 観光 `);
       for (const s of sugCity) {
         if (
-          isOutingIntentSuggestion(s, areaName, info.city) &&
+          isOutingIntentSuggestion(s, queryAreaName, info.city) &&
           !filteredSuggestions.includes(s)
         ) {
           filteredSuggestions.push(s);
@@ -1539,9 +1607,12 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       new Set([...gscTopQueries, ...filteredPrefSuggestions, ...fallbackPrefKeywords])
     ).slice(0, 18);
 
+    const shortAreas = Array.from(
+      new Set(areaList.map((a) => formatShortAreaLabel(a)).filter(Boolean))
+    );
     const areaPreview =
-      areaList.length > 0
-        ? `${areaList.slice(0, 6).join("・")}${areaList.length > 6 ? "など" : ""}`
+      shortAreas.length > 0
+        ? `${shortAreas.slice(0, 6).join("・")}${shortAreas.length > 6 ? "など" : ""}`
         : pref;
     const linePreview =
       lineList.length > 0

@@ -295,7 +295,7 @@ export default async function RallyDetailPage({
           <div className={styles.seoFaqList}>
             <div className={styles.seoFaqItem}>
               <h3 className={styles.seoFaqQuestion}>
-                Q. {areaInfo.areaName}の観光・街歩きにかかる所要時間や距離はどのくらいですか？
+                Q. {areaInfo.shortAreaName}の観光・街歩きにかかる所要時間や距離はどのくらいですか？
               </h3>
               <p className={styles.seoFaqAnswer}>
                 全{walkMetrics.spotCount}箇所のスポットを徒歩でめぐるモデルコースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。食事・カフェや買い物のスポットも組み込まれているため、車なしでの半日観光や休日のお出かけにも適しています。
@@ -303,7 +303,7 @@ export default async function RallyDetailPage({
             </div>
             <div className={styles.seoFaqItem}>
               <h3 className={styles.seoFaqQuestion}>
-                Q. この{areaInfo.areaName}ルートではどの順番でスポットをめぐりますか？
+                Q. この{areaInfo.shortAreaName}ルートではどの順番でスポットをめぐりますか？
               </h3>
               <p className={styles.seoFaqAnswer}>
                 {spotsList.map((spot: any, i: number) => (
@@ -328,12 +328,12 @@ export default async function RallyDetailPage({
 
           <div className={styles.seoAreaLinks}>
             <Link
-              href={`/routes?q=${encodeURIComponent(areaInfo.areaName)}`}
+              href={`/routes?q=${encodeURIComponent(areaInfo.shortAreaName)}`}
               className={styles.seoAreaLink}
             >
-              {areaInfo.areaName}周辺のルートをもっと見る
+              {areaInfo.shortAreaName}周辺のルートをもっと見る
             </Link>
-            {areaInfo.cityName && areaInfo.cityName !== areaInfo.areaName && (
+            {areaInfo.cityName && areaInfo.cityName !== areaInfo.shortAreaName && (
               <Link
                 href={`/routes?q=${encodeURIComponent(areaInfo.cityName)}`}
                 className={styles.seoAreaLink}

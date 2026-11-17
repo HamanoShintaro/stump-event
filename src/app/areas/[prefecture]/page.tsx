@@ -13,6 +13,7 @@ import {
   buildPrefectureHubSeoMetadata,
   extractPrefectureHubSeoInfo,
   extractRouteAreaInfo,
+  formatShortAreaLabel,
   normalizePrefectureParam,
   PREFECTURE_REGION_MAP,
 } from "@/utils/seo";
@@ -111,6 +112,11 @@ export default async function PrefectureHubPage({
     await fetchPrefectureAndRegionRoutes(prefecture);
 
   const hubInfo = extractPrefectureHubSeoInfo(prefecture, prefRoutes);
+  const shortAreas = Array.from(
+    new Set(
+      hubInfo.areaNames.map((a) => formatShortAreaLabel(a)).filter(Boolean)
+    )
+  );
   const jsonLd = buildPrefectureHubJsonLd(prefecture, prefRoutes);
 
   return (
@@ -225,7 +231,7 @@ export default async function PrefectureHubPage({
                       />
                       <div className={styles.routeBadgeRow}>
                         <span className={styles.routeAreaBadge}>
-                          {routeAreaInfo.areaName}
+                          {routeAreaInfo.shortAreaName}
                         </span>
                         <span className={styles.routeCategoryBadge}>
                           {route.category}
@@ -295,7 +301,7 @@ export default async function PrefectureHubPage({
                   <span>{line}沿線の街歩き</span>
                 </Link>
               ))}
-              {hubInfo.areaNames.map((area) => (
+              {shortAreas.map((area) => (
                 <Link
                   key={area}
                   href={`/routes?q=${encodeURIComponent(area)}`}
@@ -352,7 +358,7 @@ export default async function PrefectureHubPage({
                       />
                       <div className={styles.routeBadgeRow}>
                         <span className={styles.routeAreaBadge}>
-                          {route.prefecture}・{routeAreaInfo.areaName}
+                          {route.prefecture}・{routeAreaInfo.shortAreaName}
                         </span>
                         <span className={styles.routeCategoryBadge}>
                           {route.category}
@@ -391,8 +397,8 @@ export default async function PrefectureHubPage({
                 Q. {prefecture}のルートではどのような場所を訪れますか？
               </h3>
               <p className={styles.faqAnswer}>
-                {hubInfo.areaNames.length > 0
-                  ? `${hubInfo.areaNames.join("・")}の各駅周辺を起点に、`
+                {shortAreas.length > 0
+                  ? `${shortAreas.join("・")}の各駅周辺を起点に、`
                   : `${prefecture}内の駅や街を起点に、`}
                 {hubInfo.featuredSpots.length > 0
                   ? `${hubInfo.featuredSpots.slice(0, 8).join("、")}など`

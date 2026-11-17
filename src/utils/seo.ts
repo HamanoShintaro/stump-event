@@ -212,8 +212,27 @@ export function extractAreaFromTitle(
   return null;
 }
 
+export function formatShortAreaLabel(areaName?: string | null): string {
+  if (!areaName || typeof areaName !== "string") return "";
+  let s = areaName.replace(/（[^）]*）/g, "").trim();
+  if (s.includes("・")) {
+    const parts = s
+      .split("・")
+      .map((p) => p.trim())
+      .filter(Boolean);
+    if (parts.length > 1) {
+      const first = parts[0];
+      const isPref = /^(?:北海道|東京都|京都府|大阪府|.{2,3}県)$/.test(first);
+      s = isPref && parts[1] ? parts[1] : first;
+    }
+  }
+  s = s.replace(/^(.{2,})(?<!道の)駅$/, "$1").trim();
+  return s || areaName.trim();
+}
+
 export interface RouteAreaSeoInfo {
   areaName: string;
+  shortAreaName: string;
   cityName: string | null;
   prefecture: string;
   line: string | null;
@@ -306,12 +325,15 @@ export function extractRouteAreaInfo(
           `${areaName} おすすめスポット`,
         ];
 
+  const shortAreaName = formatShortAreaLabel(areaName) || areaName;
+
   return {
     areaName,
+    shortAreaName,
     cityName: resolvedCity,
     prefecture,
     line: resolvedLine,
-    fullAreaLabel: fullAreaLabel || areaName,
+    fullAreaLabel: fullAreaLabel || shortAreaName,
     titleHook,
     subHook,
     topSearchKeywords,
@@ -594,9 +616,12 @@ export function extractPrefectureHubSeoInfo(
     cached?.titleHook || `${prefecture}の観光・街歩きモデルコース`;
   const subHook = cached?.subHook || "徒歩マップ・所要時間";
 
+  const shortAreas = Array.from(
+    new Set(areaNames.map((a) => formatShortAreaLabel(a)).filter(Boolean))
+  );
   const areaPreview =
-    areaNames.length > 0
-      ? `${areaNames.slice(0, 6).join("・")}${areaNames.length > 6 ? "など" : ""}`
+    shortAreas.length > 0
+      ? `${shortAreas.slice(0, 6).join("・")}${shortAreas.length > 6 ? "など" : ""}`
       : prefecture;
   const spotPreview =
     spotNames.length > 0
@@ -647,12 +672,20 @@ export function buildPrefectureHubSeoMetadata(
   const hubInfo = extractPrefectureHubSeoInfo(prefecture, routesList);
   const canonicalUrl = `${siteUrl}/areas/${encodeURIComponent(prefecture)}`;
 
+  const shortAreas = Array.from(
+    new Set(
+      hubInfo.areaNames.map((a) => formatShortAreaLabel(a)).filter(Boolean)
+    )
+  );
   const areaPreview =
-    hubInfo.areaNames.length > 0
-      ? `（${hubInfo.areaNames.slice(0, 4).join("・")}${hubInfo.areaNames.length > 4 ? "ほか" : ""}）`
+    shortAreas.length > 0
+      ? `${shortAreas.slice(0, 4).join("・")}${shortAreas.length > 4 ? "ほか" : ""}`
       : "";
 
-  const seoTitle = `${hubInfo.titleHook}一覧${areaPreview}｜全${hubInfo.routeCount}ルート・${hubInfo.spotCount}スポット`;
+  const metaParts = [areaPreview, hubInfo.subHook, `全${hubInfo.routeCount}ルート`]
+    .filter(Boolean)
+    .join("｜");
+  const seoTitle = `${hubInfo.titleHook}｜${metaParts}`;
   const seoDescription = hubInfo.leadSummary;
 
   const firstThumb = routesList.find((r) => r?.thumbnail_url)?.thumbnail_url;
@@ -748,6 +781,11 @@ export function buildPrefectureHubJsonLd(
     ],
   };
 
+  const shortAreas = Array.from(
+    new Set(
+      hubInfo.areaNames.map((a) => formatShortAreaLabel(a)).filter(Boolean)
+    )
+  );
   const faqPage = {
     "@type": "FAQPage",
     mainEntity: [
@@ -764,7 +802,7 @@ export function buildPrefectureHubJsonLd(
         name: `${prefecture}のルートではどのエリアやスポットをめぐることができますか？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${hubInfo.areaNames.length > 0 ? `${hubInfo.areaNames.join("・")}の各駅・街エリアを中心に、` : ""}${hubInfo.featuredSpots.length > 0 ? `${hubInfo.featuredSpots.slice(0, 8).join("、")}など` : ""}計${hubInfo.spotCount}箇所のスポットを一筆書きの徒歩ルートで巡ることができます。`,
+          text: `${shortAreas.length > 0 ? `${shortAreas.join("・")}の各駅・街エリアを中心に、` : ""}${hubInfo.featuredSpots.length > 0 ? `${hubInfo.featuredSpots.slice(0, 8).join("、")}など` : ""}計${hubInfo.spotCount}箇所のスポットを一筆書きの徒歩ルートで巡ることができます。`,
         },
       },
     ],
@@ -790,7 +828,7 @@ export function buildSpotSeoMetadata(
     1;
   const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
 
-  const seoTitle = `${spot.name}（${areaInfo.areaName}）の見どころ・街歩き案内｜${rally.title}`;
+  const seoTitle = `${spot.name}（${areaInfo.shortAreaName}）の見どころ・街歩き案内｜${rally.title}`;
   const rawSpotDesc =
     typeof spot?.description === "string" && spot.description.trim()
       ? spot.description.trim()
