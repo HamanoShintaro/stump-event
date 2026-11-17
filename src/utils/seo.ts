@@ -343,15 +343,34 @@ export function buildRouteSeoMetadata(
 
   const seoDescription = `【${info.fullAreaLabel}・${info.titleHook}】${
     spotsPreview ? `${spotsPreview}の全${spotCount}箇所を` : `全${spotCount}箇所を`
-  }徒歩約${mins}分（約${distKm}km・予算目安${info.budgetLabel}）でめぐる物語「${rally.title}」。${descExcerpt}`;
+  }徒歩約${mins}分（約${distKm}km・予算目安${info.budgetLabel}）でめぐる物語「${rally.title}」。休日のデートやひとり散歩にもおすすめ。${descExcerpt}`;
 
   const keywordSet = new Set<string>([
     ...info.topSearchKeywords,
+    `${info.areaName} デート`,
+    `${info.areaName} 散歩`,
+    `${info.areaName} カフェ`,
+    `${info.areaName} お出かけ`,
+    `${info.areaName} 休日`,
+    `${info.areaName} スタンプラリー`,
+    `${info.areaName} デジタルスタンプラリー`,
+    "街歩き スタンプラリー",
     ...(info.cityName
-      ? [`${info.cityName} 観光`, `${info.cityName} 街歩き`]
+      ? [
+          `${info.cityName} 観光`,
+          `${info.cityName} 街歩き`,
+          `${info.cityName} デート`,
+          `${info.cityName} スタンプラリー`,
+        ]
       : []),
     ...(info.line
-      ? [`${info.line} 街歩き`, `${info.line} 観光`, `${info.line} 散歩`, `SHUIN ${info.line}`]
+      ? [
+          `${info.line} 街歩き`,
+          `${info.line} 観光`,
+          `${info.line} 散歩`,
+          `${info.line} スタンプラリー`,
+          `SHUIN ${info.line}`,
+        ]
       : []),
     ...info.spotNames.slice(0, 5),
     "SHUIN",
@@ -428,6 +447,15 @@ export function buildRouteJsonLd(
     url: canonicalUrl,
     image: ogImageUrl,
     touristType: info.topSearchKeywords.slice(0, 5),
+    keywords: Array.from(
+      new Set([
+        ...info.topSearchKeywords.slice(0, 8),
+        `${info.areaName} デート`,
+        `${info.areaName} 散歩`,
+        `${info.areaName} スタンプラリー`,
+        `${info.areaName} デジタルスタンプラリー`,
+      ])
+    ).join(", "),
     itinerary: {
       "@type": "ItemList",
       numberOfItems: spotsList.length,
@@ -502,7 +530,7 @@ export function buildRouteJsonLd(
         name: `${info.titleHook}「${rally.title}」の所要時間と歩行距離は？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコースとして楽しめます。`,
+          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコース、休日のデートやひとり散歩コースとしても楽しめます。`,
         },
       },
       {
@@ -639,6 +667,11 @@ export function buildPrefectureHubSeoMetadata(
     description: seoDescription,
     keywords: [
       ...hubInfo.topSearchKeywords,
+      `${prefecture} デート`,
+      `${prefecture.replace(/[都府県]$/, "")} 散歩`,
+      `${prefecture} スタンプラリー`,
+      `${prefecture.replace(/[都府県]$/, "")} スタンプラリー`,
+      `${prefecture} デジタルスタンプラリー`,
       ...hubInfo.featuredSpots.slice(0, 6),
       "SHUIN",
       "まちのしるし",
@@ -782,7 +815,12 @@ export function buildSpotSeoMetadata(
       `${spot.name} 見どころ`,
       `${spot.name} 歴史`,
       `${spot.name} アクセス`,
+      `${spot.name} デート`,
+      `${spot.name} 散歩`,
+      `${spot.name} スタンプラリー`,
       areaInfo.areaName,
+      `${areaInfo.areaName} デート`,
+      `${areaInfo.areaName} スタンプラリー`,
       ...areaInfo.topSearchKeywords.slice(0, 5),
       "SHUIN",
       "まちのしるし",

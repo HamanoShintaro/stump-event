@@ -1023,8 +1023,13 @@ const OUTING_INTENT_PATTERNS = [
   /グルメ/,
   /お土産/,
   /デート/,
+  /デート\s*スポット/,
+  /カップル/,
   /休日/,
   /お出かけ/,
+  /暇つぶし/,
+  /気分転換/,
+  /ひとり旅|一人旅|ひとり散歩/,
   /レトロ/,
   /御朱印/,
   /城下町/,
@@ -1122,7 +1127,13 @@ function isOutingIntentSuggestion(s, areaName = "", city = "") {
   return OUTING_INTENT_PATTERNS.some((re) => re.test(intentPart));
 }
 
-function buildSmartHookFromSuggestions(areaName, realSuggestions, gscQueries, routeCategory) {
+function buildSmartHookFromSuggestions(
+  areaName,
+  realSuggestions,
+  gscQueries,
+  routeCategory,
+  isPrefecture = false
+) {
   const joined = [...gscQueries, ...realSuggestions].join(" ");
 
   const hasModelCourse = /モデル\s*コース/.test(joined);
@@ -1134,11 +1145,19 @@ function buildSmartHookFromSuggestions(areaName, realSuggestions, gscQueries, ro
   const hasDuration = /所要時間/.test(joined);
   const hasWalkCourse = /散歩|街歩き|散策/.test(joined);
   const hasSpots = /スポット|見どころ|おすすめ|名所|周辺\s*観光/.test(joined);
+  const hasDate = /デート|カップル/.test(joined);
+  const hasHoliday = /休日|お出かけ|暇つぶし|気分転換/.test(joined);
 
   // 実際の検索需要（Googleサジェスト・Search Console上位）に合わせて最も検索されやすいフックフレーズを組み立てる
   let mainPhrase = "";
 
-  if (hasModelCourse && hasHalfDay) {
+  if (!isPrefecture && hasDate && hasLunchCafe && !hasModelCourse) {
+    mainPhrase = "デート・カフェ散歩コース";
+  } else if (!isPrefecture && hasDate && hasWalkCourse && !hasModelCourse) {
+    mainPhrase = "街歩きデート・散歩コース";
+  } else if (!isPrefecture && hasDate && !hasModelCourse) {
+    mainPhrase = "デート・お出かけコース";
+  } else if (hasModelCourse && hasHalfDay) {
     mainPhrase = "半日観光モデルコース";
   } else if (hasModelCourse && hasCarFree) {
     mainPhrase = "観光モデルコース（車なし・徒歩）";
@@ -1163,8 +1182,18 @@ function buildSmartHookFromSuggestions(areaName, realSuggestions, gscQueries, ro
   }
 
   const subHooks = [];
+  if (!isPrefecture && hasDate && !mainPhrase.includes("デート")) {
+    subHooks.push("デート・散歩");
+  } else if (!isPrefecture && hasHoliday && !mainPhrase.includes("お出かけ")) {
+    subHooks.push("休日のお出かけ");
+  }
   if (hasFoodWalk && !mainPhrase.includes("食べ歩き")) subHooks.push("食べ歩き");
-  if (hasLunchCafe && !mainPhrase.includes("グルメ") && !mainPhrase.includes("ランチ")) {
+  if (
+    hasLunchCafe &&
+    !mainPhrase.includes("グルメ") &&
+    !mainPhrase.includes("ランチ") &&
+    !mainPhrase.includes("カフェ")
+  ) {
     subHooks.push("グルメ・カフェ");
   }
   if (hasMap) subHooks.push("マップ");
@@ -1374,14 +1403,15 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     ).slice(0, 8);
 
     // 2. Fetch Google Suggest for general search intent around this area
-    const [sugBase, sugKanko, sugSanpo] = await Promise.all([
+    const [sugBase, sugKanko, sugSanpo, sugDate] = await Promise.all([
       fetchGoogleSuggestions(`${areaName} `),
       fetchGoogleSuggestions(`${areaName} 観光 `),
       fetchGoogleSuggestions(`${areaName} 散歩`),
+      fetchGoogleSuggestions(`${areaName} デート`),
     ]);
 
     const rawSuggestions = Array.from(
-      new Set([...sugKanko, ...sugBase, ...sugSanpo])
+      new Set([...sugKanko, ...sugBase, ...sugSanpo, ...sugDate])
     );
 
     const filteredSuggestions = rawSuggestions.filter((s) =>
@@ -1414,6 +1444,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     // Ensure essential high-intent general queries are also represented in keywords list
     const fallbackIntents = [
       `${areaName} 観光 モデルコース`,
+      `${areaName} デート`,
       `${areaName} 街歩き`,
       `${areaName} 散歩コース`,
       `${areaName} 観光 所要時間`,
@@ -1490,7 +1521,8 @@ async function discoverAreaSearchIntents(routes, gscRows) {
       pref,
       filteredPrefSuggestions,
       gscTopQueries,
-      categoryList[0] || ""
+      categoryList[0] || "",
+      true
     );
 
     const fallbackPrefKeywords = [
