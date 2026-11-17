@@ -102570,5 +102570,655 @@ export const mockRallies: Route[] = [
         "is_final": true
       }
     ]
+  },
+  {
+    "id": "6ff5fb90-da98-4d63-82fd-c6b3bf15beec",
+    "title": "大沼湖畔の洋食と森の学び舎を巡る散策路",
+    "name": "大沼湖畔の洋食と森の学び舎を巡る散策路",
+    "description": "丸太小屋風のJR大沼公園駅から大沼郵便局、レストラン梓、大沼駒ヶ岳神社を経て大沼国際セミナーハウスへ歩くルート。",
+    "region": "大沼公園・湖畔",
+    "area_name": "大沼公園・湖畔",
+    "cover_image_url": "/images/onuma_koen/route-eyecatch.png",
+    "imageUrl": "/images/onuma_koen/route-eyecatch.png",
+    "category": "自然・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び大沼公園を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "風景印も親しまれる 大沼郵便局",
+          "description": "湖畔エリア入口の街角で駒ヶ岳の麓に暮らす日常を感じた",
+          "badge_code": "onuma_koen_post"
+        },
+        {
+          "key": "B",
+          "text": "名物あんかけ焼きそばの レストラン梓",
+          "description": "地元で愛される洋食・中華の老舗で大沼牛ハンバーグを味わった",
+          "badge_code": "onuma_koen_azusa"
+        },
+        {
+          "key": "C",
+          "text": "大岩が鎮座する 大沼駒ヶ岳神社",
+          "description": "駒ヶ岳を仰ぐ森の境内で開拓の歴史と霊峰への祈りに触れた",
+          "badge_code": "onuma_koen_komagatake_shrine"
+        },
+        {
+          "key": "D",
+          "text": "森と湖に抱かれた 大沼国際セミナーハウス",
+          "description": "静かな森林公園の入口で爽やかな木漏れ日と深呼吸を楽しんだ",
+          "badge_code": "onuma_koen_seminar"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "a46903b1-0f7b-458b-809d-007502a1c6d8",
+        "name": "JR大沼公園駅",
+        "description": "大沼国定公園の玄関口となる丸太小屋風の駅舎（始発〜終電）。JR函館本線の本線と砂原支線が分岐する交通の要衝でもあり、湖畔エリアの散策の起点として親しまれている。",
+        "address": "北海道亀田郡七飯町字大沼町85-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.981031,
+        "lng": 140.669745,
+        "qr_token": "shuin-onuma_koen-1",
+        "cover_image_url": "/images/onuma_koen/spot1.png",
+        "f7_fragment": "丸太小屋風の駅舎を持ち、大沼国定公園の玄関口として親しまれる駅。",
+        "f7_full": "「JR大沼公園駅」を後にし、湖畔の洋食店と森の学び舎を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "62047240-699b-4002-85a6-75dba598e7da",
+        "next_spot_name": "大沼郵便局"
+      },
+      {
+        "id": "62047240-699b-4002-85a6-75dba598e7da",
+        "name": "大沼郵便局",
+        "description": "駅東側の湖畔エリア入口に位置する郵便局（郵便窓口平日9:00〜17:00・昼休業の場合あり、土日祝休）。駒ヶ岳と大沼を描いた風景印でも知られる旅の立ち寄り処。",
+        "address": "北海道亀田郡七飯町字大沼町301-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.980969,
+        "lng": 140.674426,
+        "qr_token": "shuin-onuma_koen-2",
+        "cover_image_url": "/images/onuma_koen/spot2.png",
+        "f7_fragment": "湖畔エリア入口にあり、駒ヶ岳と大沼の風景印でも知られる郵便局。",
+        "f7_full": "「大沼郵便局」の前を通り過ぎ、地元の人々に愛される洋食店へ向かった。",
+        "is_final": false,
+        "next_spot_id": "49e7f18f-ad5b-4d70-8856-b69e7e6f25eb",
+        "next_spot_name": "レストラン梓"
+      },
+      {
+        "id": "49e7f18f-ad5b-4d70-8856-b69e7e6f25eb",
+        "name": "レストラン梓",
+        "description": "地元で長年親しまれる洋食・中華レストラン（11:00〜19:00頃・季節変動あり、水曜休）。大沼名物のあんかけ焼きそばや大沼牛ハンバーグが観光客にも人気。",
+        "address": "北海道亀田郡七飯町字大沼町324-9",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.982208,
+        "lng": 140.675064,
+        "qr_token": "shuin-onuma_koen-3",
+        "cover_image_url": "/images/onuma_koen/spot3.png",
+        "f7_fragment": "大沼名物のあんかけ焼きそばや大沼牛ハンバーグが人気の老舗レストラン。",
+        "f7_full": "「レストラン梓」で名物グルメの魅力に触れ、霊峰を祀る森の古社へ向かった。",
+        "is_final": false,
+        "next_spot_id": "93af2bee-f09d-4d2f-8625-5c4e047bc0b1",
+        "next_spot_name": "大沼駒ヶ岳神社"
+      },
+      {
+        "id": "93af2bee-f09d-4d2f-8625-5c4e047bc0b1",
+        "name": "大沼駒ヶ岳神社",
+        "description": "霊峰・北海道駒ヶ岳を祀り、登山安全や開運の社として親しまれる大沼の鎮守（参拝自由・無休）。境内の巨大な割石は登山安全のパワースポットとして知られている。",
+        "address": "北海道亀田郡七飯町字大沼町85",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.007265,
+        "lng": 140.699397,
+        "qr_token": "shuin-onuma_koen-4",
+        "cover_image_url": "/images/onuma_koen/spot4.png",
+        "f7_fragment": "霊峰・北海道駒ヶ岳を祀り、境内の大岩でも知られる大沼湖畔の鎮守社。",
+        "f7_full": "「大沼駒ヶ岳神社」の静謐な森で旅の無事を祈り、学び舎へと歩を進めた。",
+        "is_final": false,
+        "next_spot_id": "965ff6f9-b480-451d-8c4e-8ffbd4240bf3",
+        "next_spot_name": "大沼国際セミナーハウス"
+      },
+      {
+        "id": "965ff6f9-b480-451d-8c4e-8ffbd4240bf3",
+        "name": "大沼国際セミナーハウス",
+        "description": "森と湖に囲まれたコンベンション施設（8:30〜17:00、年末年始休）。エントランスにコワーキングスペースを備え、裏手には自然豊かな大沼森林公園が広がっている。",
+        "address": "北海道亀田郡七飯町字大沼町127-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 41.999124,
+        "lng": 140.665342,
+        "qr_token": "shuin-onuma_koen-5",
+        "cover_image_url": "/images/onuma_koen/spot5.png",
+        "f7_fragment": "森と湖に囲まれ、コワーキングスペースや森林公園が隣接する静かな施設。",
+        "f7_full": "「大沼国際セミナーハウス」の豊かな森の空気に癒やされ、大沼公園の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "27eaa771-dd4d-4a4c-85b9-ff59023bba7f",
+    "title": "日本最北の関所跡と噴火湾の丘を巡る旅",
+    "name": "日本最北の関所跡と噴火湾の丘を巡る旅",
+    "description": "関所風駅舎のJR山越駅から日本最北の関所・山越内関所跡、山越諏訪神社を経て高台のハーベスター八雲と噴火湾パノラマパークへ歩くルート。",
+    "region": "山越・浜松",
+    "area_name": "山越・浜松",
+    "cover_image_url": "/images/yamakoshi/route-eyecatch.png",
+    "imageUrl": "/images/yamakoshi/route-eyecatch.png",
+    "category": "歴史・自然",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び山越を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "享和元年設置の史跡 山越内関所跡",
+          "description": "和人地と蝦夷地の境界として往来を見守った日本最北の関所跡に立った",
+          "badge_code": "yamakoshi_sekisho"
+        },
+        {
+          "key": "B",
+          "text": "会所の井戸も伝わる 山越諏訪神社",
+          "description": "海を望む関所跡近くの古社で道南と蝦夷地の歴史に手を合わせた",
+          "badge_code": "yamakoshi_suwa_shrine"
+        },
+        {
+          "key": "C",
+          "text": "高台の名店 ハーベスター八雲",
+          "description": "噴火湾を見晴らす丘で国産ハーブ鶏のチキンや石窯ピザを味わった",
+          "badge_code": "yamakoshi_harvester"
+        },
+        {
+          "key": "D",
+          "text": "絶景の丘 噴火湾パノラマパーク",
+          "description": "パノラマ館の展望ラウンジから噴火湾の大パノラマを一望した",
+          "badge_code": "yamakoshi_panorama"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "63ecbd87-741d-4638-8d73-8725b3de2a5d",
+        "name": "JR山越駅",
+        "description": "平成元年（1989年）改築の無人駅（常時開放）。江戸時代にこの地に置かれた山越内関所・会所を模した和風デザインの駅舎が特徴的な、海沿いの歴史薫る旅の起点。",
+        "address": "北海道二海郡八雲町山越898-19",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.231121,
+        "lng": 140.326924,
+        "qr_token": "shuin-yamakoshi-1",
+        "cover_image_url": "/images/yamakoshi/spot1.png",
+        "f7_fragment": "山越内関所・会所を模した和風デザインの駅舎が印象的な海沿いの無人駅。",
+        "f7_full": "「JR山越駅」を後にし、日本最北の関所跡から噴火湾を望む丘を巡り始めた。",
+        "is_final": false,
+        "next_spot_id": "962ffba6-70b8-46f5-8288-95e9f9dd0444",
+        "next_spot_name": "山越内関所跡"
+      },
+      {
+        "id": "962ffba6-70b8-46f5-8288-95e9f9dd0444",
+        "name": "山越内関所跡",
+        "description": "享和元年（1801年）に江戸幕府が設置した日本最北端の関所跡（常時開放・屋外史跡）。和人地と蝦夷地の境界として往来を取り締まった、北海道史における重要な舞台。",
+        "address": "北海道二海郡八雲町山越206",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.230267,
+        "lng": 140.329524,
+        "qr_token": "shuin-yamakoshi-2",
+        "cover_image_url": "/images/yamakoshi/spot2.png",
+        "f7_fragment": "1801年に江戸幕府が設置した、和人地と蝦夷地の境界・日本最北端の関所跡。",
+        "f7_full": "「山越内関所跡」の前に立ち、江戸時代の北の境界線に思いを馳せた。",
+        "is_final": false,
+        "next_spot_id": "cf0497a5-6673-4e86-8651-ec104a23abc8",
+        "next_spot_name": "山越諏訪神社"
+      },
+      {
+        "id": "cf0497a5-6673-4e86-8651-ec104a23abc8",
+        "name": "山越諏訪神社",
+        "description": "山越内関所跡近くの海を望む地に鎮座する古社（参拝自由・無休）。境内周辺にはかつての会所の井戸などの歴史的遺構が残り、往時の面影を静かに今に伝えている。",
+        "address": "北海道二海郡八雲町山越201-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.229485,
+        "lng": 140.328687,
+        "qr_token": "shuin-yamakoshi-3",
+        "cover_image_url": "/images/yamakoshi/spot3.png",
+        "f7_fragment": "関所跡近くに位置し、会所の井戸などの遺構も周辺に残る海辺の古社。",
+        "f7_full": "「山越諏訪神社」で往時の歴史に手を合わせ、噴火湾を見晴らす高台を目指した。",
+        "is_final": false,
+        "next_spot_id": "84e19157-cfc6-405b-8936-05bae0b97067",
+        "next_spot_name": "ハーベスター八雲"
+      },
+      {
+        "id": "84e19157-cfc6-405b-8936-05bae0b97067",
+        "name": "ハーベスター八雲",
+        "description": "KFCの実験農場発祥の地に建つ丘の上のレストラン（季節・曜日変動あり、平日11:00〜等・夏期や土日祝10:30〜19:00、3〜11月無休・12〜2月月曜休）。噴火湾を見晴らしながら国産ハーブ鶏や石窯ピザを味わえる。",
+        "address": "北海道二海郡八雲町浜松365",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.22759,
+        "lng": 140.316696,
+        "qr_token": "shuin-yamakoshi-4",
+        "cover_image_url": "/images/yamakoshi/spot4.png",
+        "f7_fragment": "噴火湾を見晴らす高台に建ち、国産ハーブ鶏や石窯ピザが人気のレストラン。",
+        "f7_full": "「ハーベスター八雲」で噴火湾を望みつつハーブ鶏と石窯ピザを堪能した。",
+        "is_final": false,
+        "next_spot_id": "b5d25d85-b326-4977-805a-c3c32f385372",
+        "next_spot_name": "噴火湾パノラマパーク（パノラマ館）"
+      },
+      {
+        "id": "b5d25d85-b326-4977-805a-c3c32f385372",
+        "name": "噴火湾パノラマパーク（パノラマ館）",
+        "description": "噴火湾を一望する広大な丘陵公園の拠点施設（パノラマ館10:00〜18:00、季節・施設により変動あり）。館内には軽食コーナーや展望ラウンジ、キッズアリーナを備えている。",
+        "address": "北海道二海郡八雲町浜松368-8",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.227138,
+        "lng": 140.313895,
+        "qr_token": "shuin-yamakoshi-5",
+        "cover_image_url": "/images/yamakoshi/spot5.png",
+        "f7_fragment": "噴火湾を一望する広大な丘陵公園にあり、展望ラウンジや軽食を備えた施設。",
+        "f7_full": "「噴火湾パノラマパーク」から海の大パノラマを望み、山越の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "5a7c00ea-8e69-4e53-802f-8821e8072ba5",
+    "title": "木彫り熊発祥の街と歴史の社を巡る散策路",
+    "name": "木彫り熊発祥の街と歴史の社を巡る散策路",
+    "description": "尾張徳川家開拓ゆかりのJR八雲駅から老舗喫茶ホーラク、洋菓子のクレールいとう、木彫り熊資料館を経て熱田神宮分社・八雲神社へ歩くルート。",
+    "region": "八雲本町・末広町",
+    "area_name": "八雲本町・末広町",
+    "cover_image_url": "/images/yakumo/route-eyecatch.png",
+    "imageUrl": "/images/yakumo/route-eyecatch.png",
+    "category": "歴史・グルメ",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び八雲を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "木彫り熊に囲まれる 軽食＆喫茶 ホーラク",
+          "description": "無数の木彫り熊が並ぶ圧巻の店内で名物チーズ焼きカレーを味わった",
+          "badge_code": "yakumo_horaku"
+        },
+        {
+          "key": "B",
+          "text": "本町通りの老舗洋菓子 クレールいとう",
+          "description": "地元で長く愛される焼菓子やスイーツを手土産に選んだ",
+          "badge_code": "yakumo_clair_ito"
+        },
+        {
+          "key": "C",
+          "text": "発祥の歴史を学ぶ 木彫り熊資料館",
+          "description": "徳川義親公から始まる北海道の木彫り熊の原点に触れた",
+          "badge_code": "yakumo_bear_museum"
+        },
+        {
+          "key": "D",
+          "text": "熱田神宮唯一の分社 八雲神社",
+          "description": "明治二十年に尾張徳川家の働きかけで創建された社に参拝した",
+          "badge_code": "yakumo_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "50fcd039-f85d-44b3-82d9-e437743bdaf5",
+        "name": "JR八雲駅",
+        "description": "旧尾張徳川家の開拓に始まる八雲町の玄関口（特急停車駅・みどりの窓口あり）。北海道の木彫り熊発祥の地ならではの文化と歴史を感じながら、駅前から町歩きを始められる。",
+        "address": "北海道二海郡八雲町本町1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.253771,
+        "lng": 140.272959,
+        "qr_token": "shuin-yakumo-1",
+        "cover_image_url": "/images/yakumo/spot1.png",
+        "f7_fragment": "旧尾張徳川家の開拓に始まる八雲町の玄関口で、木彫り熊文化が薫る駅。",
+        "f7_full": "「JR八雲駅」を後にし、木彫り熊の原点と尾張ゆかりの古社を巡る旅を始めた。",
+        "is_final": false,
+        "next_spot_id": "b87dc9be-c9e1-47ec-8b82-dd655bb48a19",
+        "next_spot_name": "軽食＆喫茶 ホーラク"
+      },
+      {
+        "id": "b87dc9be-c9e1-47ec-8b82-dd655bb48a19",
+        "name": "軽食＆喫茶 ホーラク",
+        "description": "駅前の老舗喫茶店（10:00〜15:00・18:00〜23:00、無休）。壁面や棚に無数の木彫り熊が並ぶ圧巻の空間の中で、名物のチーズ焼きカレーなどの温かい軽食を楽しめる。",
+        "address": "北海道二海郡八雲町本町145",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.253874,
+        "lng": 140.273551,
+        "qr_token": "shuin-yakumo-2",
+        "cover_image_url": "/images/yakumo/spot2.png",
+        "f7_fragment": "壁や棚に無数の木彫り熊が並ぶ圧巻の空間とチーズ焼きカレーが名物の喫茶店。",
+        "f7_full": "「軽食＆喫茶 ホーラク」の木彫り熊と名物カレーに感動し、本町通りを歩いた。",
+        "is_final": false,
+        "next_spot_id": "bcb2097e-67d4-4a3b-825d-46617ec6bf2a",
+        "next_spot_name": "クレールいとう"
+      },
+      {
+        "id": "bcb2097e-67d4-4a3b-825d-46617ec6bf2a",
+        "name": "クレールいとう",
+        "description": "本町通りで長く愛される地元の洋菓子店（月〜土9:00〜18:00、日10:00〜18:00、元日休）。八雲にちなんだ焼菓子やケーキなど、街歩きの手土産にぴったりの品が揃う。",
+        "address": "北海道二海郡八雲町本町234-4",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.255915,
+        "lng": 140.27112,
+        "qr_token": "shuin-yakumo-3",
+        "cover_image_url": "/images/yakumo/spot3.png",
+        "f7_fragment": "本町通りで長く愛され、八雲にちなんだ焼菓子やスイーツが揃う洋菓子店。",
+        "f7_full": "「クレールいとう」で温かな街の洋菓子に出会い、木彫り熊の資料館へ向かった。",
+        "is_final": false,
+        "next_spot_id": "564a2fcc-8fe9-46e7-8d9a-77a2da2efc9f",
+        "next_spot_name": "八雲町郷土資料館・木彫り熊資料館"
+      },
+      {
+        "id": "564a2fcc-8fe9-46e7-8d9a-77a2da2efc9f",
+        "name": "八雲町郷土資料館・木彫り熊資料館",
+        "description": "北海道の木彫り熊発祥と町の歩みを伝える資料館（9:00〜16:30、入館無料、月曜・祝祭日・年末年始休）。徳川義親がスイスから持ち帰った熊を原点とする貴重な資料を展示。",
+        "address": "北海道二海郡八雲町末広町154",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.254427,
+        "lng": 140.268266,
+        "qr_token": "shuin-yakumo-4",
+        "cover_image_url": "/images/yakumo/spot4.png",
+        "f7_fragment": "徳川義親に始まる北海道の木彫り熊発祥の資料を展示する入館無料の資料館。",
+        "f7_full": "「八雲町郷土資料館・木彫り熊資料館」で北海道工芸の原点に触れ、胸が熱くなった。",
+        "is_final": false,
+        "next_spot_id": "905b1e76-1e9c-43e0-82d4-75fc6a076682",
+        "next_spot_name": "八雲神社"
+      },
+      {
+        "id": "905b1e76-1e9c-43e0-82d4-75fc6a076682",
+        "name": "八雲神社",
+        "description": "明治20年（1887年）に尾張徳川家の働きかけで創建された神社（参拝自由・無休）。愛知県・熱田神宮の全国で唯一の分社として、開拓の歴史と深い信仰を今に伝えている。",
+        "address": "北海道二海郡八雲町宮園町56",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.252175,
+        "lng": 140.262159,
+        "qr_token": "shuin-yakumo-5",
+        "cover_image_url": "/images/yakumo/spot5.png",
+        "f7_fragment": "1887年に尾張徳川家の働きかけで創建された、熱田神宮の全国唯一の分社。",
+        "f7_full": "「八雲神社」の境内で尾張と北海道の深い縁に手を合わせ、八雲の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "462a7907-fed0-4027-8c99-93b526d46ba2",
+    "title": "噴火湾の潮風と山崎の浜辺を巡る静かな旅",
+    "name": "噴火湾の潮風と山崎の浜辺を巡る静かな旅",
+    "description": "国道5号と噴火湾に挟まれたJR山崎駅から地域の安井商店、旧山崎小学校前、海辺の山崎浜公園を経て海岸沿いの山崎浜神社へ歩くルート。",
+    "region": "山崎海岸・八雲町",
+    "area_name": "山崎海岸・八雲町",
+    "cover_image_url": "/images/yamasaki_hokkaido/route-eyecatch.png",
+    "imageUrl": "/images/yamasaki_hokkaido/route-eyecatch.png",
+    "category": "自然・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び山崎を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "国道沿いの地域商店 安井商店",
+          "description": "駅近くの食料品や日用品を扱う昔ながらの商店の佇まいを感じた",
+          "badge_code": "yamasaki_yasui_shop"
+        },
+        {
+          "key": "B",
+          "text": "地域の記憶を残す 旧山崎小学校",
+          "description": "のどかな農村風景に調和する学び舎跡を公道から眺めて集落の歩みを感じた",
+          "badge_code": "yamasaki_school"
+        },
+        {
+          "key": "C",
+          "text": "噴火湾に面した 山崎浜公園",
+          "description": "潮風を感じながら対岸まで広がる海の景色をゆったりと眺めた",
+          "badge_code": "yamasaki_hama_park"
+        },
+        {
+          "key": "D",
+          "text": "海を望む赤い鳥居 山崎浜神社",
+          "description": "漁業と集落の安全を見守り続けてきた海辺の社で静かに手を合わせた",
+          "badge_code": "yamasaki_hama_shrine"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "5b6fdb68-3d8d-47a6-8010-1a0062a30e4d",
+        "name": "JR山崎駅",
+        "description": "国道5号と噴火湾に挟まれた静かな無人駅（常時開放）。かつて山崎地区の生活・物流を支えてきた素朴な佇まいを今に残し、海辺の集落散歩の穏やかな起点となっている。",
+        "address": "北海道二海郡八雲町山崎1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.31433,
+        "lng": 140.274357,
+        "qr_token": "shuin-yamasaki_hokkaido-1",
+        "cover_image_url": "/images/yamasaki_hokkaido/spot1.png",
+        "f7_fragment": "国道5号と噴火湾に挟まれ、素朴な佇まいを残す海辺の無人駅。",
+        "f7_full": "「JR山崎駅」を後にし、集落の街並みから噴火湾の浜辺を巡る散歩を始めた。",
+        "is_final": false,
+        "next_spot_id": "1da90944-005e-4f5e-8509-65d1908793d1",
+        "next_spot_name": "安井商店"
+      },
+      {
+        "id": "1da90944-005e-4f5e-8509-65d1908793d1",
+        "name": "安井商店",
+        "description": "JR山崎駅から徒歩約2分の国道沿いに建つ、地域に根差した食料品・日用品の個人商店（営業時間は要現地確認）。小さな集落の暮らしを支えてきた昔ながらの店構えが残る。",
+        "address": "北海道二海郡八雲町山崎142",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.315634,
+        "lng": 140.273721,
+        "qr_token": "shuin-yamasaki_hokkaido-2",
+        "cover_image_url": "/images/yamasaki_hokkaido/spot2.png",
+        "f7_fragment": "山崎駅から徒歩約2分の国道沿いに建ち、地域の暮らしを支える個人商店。",
+        "f7_full": "「安井商店」の前を通り過ぎ、山崎の集落を見守る学び舎へと歩を進めた。",
+        "is_final": false,
+        "next_spot_id": "73abfa89-ce42-4491-8943-02237bc94375",
+        "next_spot_name": "旧山崎小学校"
+      },
+      {
+        "id": "73abfa89-ce42-4491-8943-02237bc94375",
+        "name": "旧山崎小学校",
+        "description": "令和3年（2021年）3月末をもって閉校し、八雲小学校へ統合された地域の学び舎跡（敷地外からの外観見学のみ）。周囲ののどかな農村風景と調和した落ち着いた佇まいが印象的。",
+        "address": "北海道二海郡八雲町山崎375",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.317545,
+        "lng": 140.27256,
+        "qr_token": "shuin-yamasaki_hokkaido-3",
+        "cover_image_url": "/images/yamasaki_hokkaido/spot3.png",
+        "f7_fragment": "2021年閉校まで山崎集落の中心を見守り続けた地域の学び舎跡。",
+        "f7_full": "「旧山崎小学校」の前から長閑な風景を眺め、噴火湾の潮風が待つ海辺へ向かった。",
+        "is_final": false,
+        "next_spot_id": "8b262bbc-bd04-4d17-86f0-727436332aae",
+        "next_spot_name": "山崎浜公園"
+      },
+      {
+        "id": "8b262bbc-bd04-4d17-86f0-727436332aae",
+        "name": "山崎浜公園",
+        "description": "駅から南へ徒歩約5〜6分、噴火湾の海辺に面して整備された海浜公園（常時開放・無休）。心地よい潮風を感じながら、水平線の向こうに対岸の景色をゆったりと望める。",
+        "address": "北海道二海郡八雲町山崎61-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.310765,
+        "lng": 140.27513,
+        "qr_token": "shuin-yamasaki_hokkaido-4",
+        "cover_image_url": "/images/yamasaki_hokkaido/spot4.png",
+        "f7_fragment": "噴火湾の海辺に面し、潮風を感じながら対岸の景色を望める海浜公園。",
+        "f7_full": "「山崎浜公園」で噴火湾の波音と潮風に癒やされ、最後の海辺の社へ向かった。",
+        "is_final": false,
+        "next_spot_id": "6edfd098-19c7-49b0-883a-d763b50a3692",
+        "next_spot_name": "山崎浜神社"
+      },
+      {
+        "id": "6edfd098-19c7-49b0-883a-d763b50a3692",
+        "name": "山崎浜神社",
+        "description": "海を背景に赤い鳥居と社殿が佇む、山崎地区の漁業と暮らしを見守ってきた鎮守の社（参拝自由・無人社）。海岸線と線路の近くにあり、道南の漁村ならではの風情を湛える。",
+        "address": "北海道二海郡八雲町山崎2",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.320126,
+        "lng": 140.276095,
+        "qr_token": "shuin-yamasaki_hokkaido-5",
+        "cover_image_url": "/images/yamasaki_hokkaido/spot5.png",
+        "f7_fragment": "海を背景に赤い鳥居が佇み、山崎の漁業と暮らしを見守る海辺の鎮守社。",
+        "f7_full": "「山崎浜神社」の海を望む赤い鳥居の前で旅の無事を祈り、山崎の旅を終えた。",
+        "is_final": true
+      }
+    ]
+  },
+  {
+    "id": "15306c1b-f589-4ec5-839a-33f8ea6cc764",
+    "title": "神の石とレトロな駅舎が残る黒岩の海辺旅",
+    "name": "神の石とレトロな駅舎が残る黒岩の海辺旅",
+    "description": "レトロな無人駅・JR黒岩駅から黒岩公園、加藤商店、黒岩郵便局を経てアイヌ語で神の石を意味する海岸の黒岩の奇岩（シュマカムイ）へ歩くルート。",
+    "region": "黒岩海岸・八雲町",
+    "area_name": "黒岩海岸・八雲町",
+    "cover_image_url": "/images/kuroiwa/route-eyecatch.png",
+    "imageUrl": "/images/kuroiwa/route-eyecatch.png",
+    "category": "自然・歴史",
+    "route_type": "platform",
+    "display_terminology": "shuin",
+    "rarity_estimated_min": 90,
+    "is_published": true,
+    "completion_ceremony_type": "quiz_4choice",
+    "completion_quiz_data": {
+      "question": "次の旅で再び黒岩を訪れるとしたら、どの場所に足を運びますか？",
+      "choices": [
+        {
+          "key": "A",
+          "text": "芝生と園路の憩い 黒岩公園",
+          "description": "駅の北東隣に広がる緑の公園で小さな海辺集落の空気を感じた",
+          "badge_code": "kuroiwa_park"
+        },
+        {
+          "key": "B",
+          "text": "集落の暮らしを支える 加藤商店",
+          "description": "黒岩駅至近の個人商店の前を歩き昔ながらの商店の温もりを感じた",
+          "badge_code": "kuroiwa_kato_shop"
+        },
+        {
+          "key": "C",
+          "text": "集落中心部の 黒岩郵便局",
+          "description": "駅からほど近い郵便局の前で黒岩の穏やかな日常に触れた",
+          "badge_code": "kuroiwa_post"
+        },
+        {
+          "key": "D",
+          "text": "神の石と伝わる 黒岩の奇岩（シュマカムイ）",
+          "description": "海岸線に鋭くそびえる黒い巨岩を仰ぎ見て地名の由来に触れた",
+          "badge_code": "kuroiwa_shuma_kamui"
+        }
+      ]
+    },
+    "spots": [
+      {
+        "id": "8e7406f3-3597-4ec0-80bc-c1a7d8608c5e",
+        "name": "JR黒岩駅",
+        "description": "木造のレトロな趣を残すJR函館本線の無人駅（常時開放）。かつて鉄道ファンにも広く親しまれた、噴火湾沿いの小さな海辺集落・黒岩の玄関口となっている。",
+        "address": "北海道二海郡八雲町黒岩124",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.368051,
+        "lng": 140.288215,
+        "qr_token": "shuin-kuroiwa-1",
+        "cover_image_url": "/images/kuroiwa/spot1.png",
+        "f7_fragment": "木造のレトロな趣を残し、海辺の小さな集落の玄関口となる無人駅。",
+        "f7_full": "「JR黒岩駅」のレトロな駅舎を後にし、神の石と伝わる海岸の奇岩を目指した。",
+        "is_final": false,
+        "next_spot_id": "c0569831-0e0e-4f95-867a-d05462209726",
+        "next_spot_name": "黒岩公園"
+      },
+      {
+        "id": "c0569831-0e0e-4f95-867a-d05462209726",
+        "name": "黒岩公園",
+        "description": "JR黒岩駅のすぐ北東隣に整備された芝生と園路の公園（常時開放・無休）。地域の憩いの場となっており、静かな海辺の集落の穏やかな空気を肌で感じられる。",
+        "address": "北海道二海郡八雲町黒岩644-26",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.369262,
+        "lng": 140.288918,
+        "qr_token": "shuin-kuroiwa-2",
+        "cover_image_url": "/images/kuroiwa/spot2.png",
+        "f7_fragment": "JR黒岩駅のすぐ北東隣に整備され、芝生と園路が広がる集落の憩いの公園。",
+        "f7_full": "「黒岩公園」の穏やかな芝生を抜け、駅前の商店街の面影が残る通りへ出た。",
+        "is_final": false,
+        "next_spot_id": "5a0a8835-b4e1-4b50-8a10-4f7e0ae93d19",
+        "next_spot_name": "加藤商店"
+      },
+      {
+        "id": "5a0a8835-b4e1-4b50-8a10-4f7e0ae93d19",
+        "name": "加藤商店",
+        "description": "JR黒岩駅至近で食料品や酒類を扱う地域密着の個人商店（営業時間は要現地確認）。噴火湾沿いの小さな集落の暮らしを長年にわたり支えてきた歴史ある一軒。",
+        "address": "北海道二海郡八雲町黒岩161",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.367746,
+        "lng": 140.288934,
+        "qr_token": "shuin-kuroiwa-3",
+        "cover_image_url": "/images/kuroiwa/spot3.png",
+        "f7_fragment": "黒岩駅至近で食料品や酒類を扱い、小さな集落の暮らしを支える個人商店。",
+        "f7_full": "「加藤商店」の前で昔ながらの集落の温もりに触れ、すぐ東の郵便局へ向かった。",
+        "is_final": false,
+        "next_spot_id": "1c77fe09-1d72-46d9-8e01-fd34b1ea58e4",
+        "next_spot_name": "黒岩郵便局"
+      },
+      {
+        "id": "1c77fe09-1d72-46d9-8e01-fd34b1ea58e4",
+        "name": "黒岩郵便局",
+        "description": "駅から東へ徒歩約2分の集落中心部に位置する郵便局（郵便窓口平日9:00〜17:00・昼休業の場合あり、土日祝休）。道南の海辺集落の日常を見守り続けている。",
+        "address": "北海道二海郡八雲町黒岩31-1",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.367792,
+        "lng": 140.289484,
+        "qr_token": "shuin-kuroiwa-4",
+        "cover_image_url": "/images/kuroiwa/spot4.png",
+        "f7_fragment": "黒岩駅から徒歩約2分の集落中心部に位置し、地域の暮らしを支える郵便局。",
+        "f7_full": "「黒岩郵便局」の前を通り過ぎ、地名の由来となった海岸の巨岩を目指した。",
+        "is_final": false,
+        "next_spot_id": "f152df5c-5a3c-4c1c-8610-3031a56b34f9",
+        "next_spot_name": "黒岩の奇岩（シュマカムイ）"
+      },
+      {
+        "id": "f152df5c-5a3c-4c1c-8610-3031a56b34f9",
+        "name": "黒岩の奇岩（シュマカムイ）",
+        "description": "国道5号沿いの海岸線にそびえる鋭く尖った黒い巨岩（常時開放・屋外景勝地）。アイヌ語で「神の石」を意味する「シュマカムイ」と呼ばれ、黒岩の地名の由来にも関わる名勝。",
+        "address": "北海道二海郡八雲町黒岩142",
+        "prefecture": "北海道",
+        "city": "",
+        "lat": 42.362798,
+        "lng": 140.289529,
+        "qr_token": "shuin-kuroiwa-5",
+        "cover_image_url": "/images/kuroiwa/spot5.png",
+        "f7_fragment": "アイヌ語で「神の石」を意味し、黒岩の地名の由来にも関わる海岸の巨岩。",
+        "f7_full": "「黒岩の奇岩（シュマカムイ）」の迫力ある姿を仰ぎ見て、黒岩の旅を終えた。",
+        "is_final": true
+      }
+    ]
   }
 ];
