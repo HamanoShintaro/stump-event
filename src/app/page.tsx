@@ -27,9 +27,9 @@ export const revalidate = 300;
 const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  title: "SHUIN｜あなたの知らない、あなたの街 — 駅からはじまる街歩き・散歩・散策ルート",
+  title: "SHUIN｜知っている街の、知らない散歩道 — 駅からはじまる街歩き・散策ルート",
   description:
-    "「あなたの知らない、あなたの街」を歩く。全国47都道府県の駅や地元の路地を徒歩でめぐる街歩き・散歩・散策ルートガイド。ひとり散歩や休日のお出かけに、5つのスポットを訪れて現地で「SHUIN」を押印できます。",
+    "「知っている街の、知らない散歩道」を歩く。全国47都道府県の駅や地元の路地を徒歩でめぐる街歩き・散歩・散策ルートガイド。ひとり散歩や休日のお出かけに、5つのスポットを訪れて現地で「SHUIN」を押印できます。",
   alternates: {
     canonical: siteUrl,
   },
@@ -47,7 +47,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "SHUIN",
-    alternateName: ["SHUIN｜あなたの知らない、あなたの街", "SHUIN まちのしるし", "まちのしるし"],
+    alternateName: ["SHUIN｜知っている街の、知らない散歩道", "SHUIN まちのしるし", "まちのしるし"],
     url: siteUrl,
   };
 

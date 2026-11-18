@@ -18,9 +18,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = getSiteUrl();
   const canonicalUrl = `${siteUrl}/areas`;
   const title = "全国エリア・都道府県別の街歩き・散歩ルート一覧";
-  const ogTitle = `${title}｜SHUIN｜あなたの知らない、あなたの街`;
+  const ogTitle = `${title}｜SHUIN｜知っている街の、知らない散歩道`;
   const description =
-    "「あなたの知らない、あなたの街」を歩く。北海道から九州・沖縄まで、日本全国の駅や地元の路地を徒歩（車なし）でめぐる街歩き・散歩・散策ルート一覧。所要時間・歩行距離・立ち寄りスポットを探し、現地で「SHUIN」を押印できます。";
+    "「知っている街の、知らない散歩道」を歩く。北海道から九州・沖縄まで、日本全国の駅や地元の路地を徒歩（車なし）でめぐる街歩き・散歩・散策ルート一覧。所要時間・歩行距離・立ち寄りスポットを探し、現地で「SHUIN」を押印できます。";
 
   return {
     title,
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: ogTitle,
       description,
       url: canonicalUrl,
-      siteName: "SHUIN｜あなたの知らない、あなたの街",
+      siteName: "SHUIN｜知っている街の、知らない散歩道",
       locale: "ja_JP",
       type: "website",
       images: [{ url: `${siteUrl}/shuin-logo-horizontal.png`, alt: ogTitle }],
