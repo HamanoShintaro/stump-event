@@ -365,7 +365,7 @@ export function buildRouteSeoMetadata(
 
   const seoDescription = `【${info.fullAreaLabel}・${info.titleHook}】${
     spotsPreview ? `${spotsPreview}の全${spotCount}箇所を` : `全${spotCount}箇所を`
-  }徒歩約${mins}分（約${distKm}km・予算目安${info.budgetLabel}）でめぐる物語「${rally.title}」。休日のデートやひとり散歩にもおすすめ。${descExcerpt}`;
+  }徒歩約${mins}分（約${distKm}km・予算目安${info.budgetLabel}）でめぐる物語「${rally.title}」。ひとり散歩や休日のお出かけにもおすすめ。${descExcerpt}`;
 
   const keywordSet = new Set<string>([
     ...info.topSearchKeywords,
@@ -415,10 +415,10 @@ export function buildRouteSeoMetadata(
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       url: canonicalUrl,
-      siteName: "SHUIN まちのしるし",
+      siteName: "SHUIN｜あなたの知らない、あなたの街",
       locale: "ja_JP",
       type: "article",
       images: [
@@ -436,7 +436,7 @@ export function buildRouteSeoMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       images: [dynamicOgUrl],
     },
@@ -552,7 +552,7 @@ export function buildRouteJsonLd(
         name: `${info.titleHook}「${rally.title}」の所要時間と歩行距離は？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコース、休日のデートやひとり散歩コースとしても楽しめます。`,
+          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコース、ひとり散歩や休日のお出かけコースとしても楽しめます。`,
         },
       },
       {
@@ -713,17 +713,17 @@ export function buildPrefectureHubSeoMetadata(
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       url: canonicalUrl,
-      siteName: "SHUIN まちのしるし",
+      siteName: "SHUIN｜あなたの知らない、あなたの街",
       locale: "ja_JP",
       type: "website",
       images: [{ url: ogImageUrl, alt: seoTitle }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       images: [ogImageUrl],
     },
@@ -867,17 +867,17 @@ export function buildSpotSeoMetadata(
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       url: canonicalUrl,
-      siteName: "SHUIN まちのしるし",
+      siteName: "SHUIN｜あなたの知らない、あなたの街",
       locale: "ja_JP",
       type: "article",
       images: [{ url: ogImageUrl, alt: `${spot.name}（${areaInfo.areaName}）` }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${seoTitle} | SHUIN まちのしるし`,
+      title: `${seoTitle} | SHUIN｜あなたの知らない、あなたの街`,
       description: seoDescription,
       images: [ogImageUrl],
     },

@@ -1206,12 +1206,12 @@ function buildSmartHookFromSuggestions(
   // 実際の検索需要（Googleサジェスト・Search Console上位）に合わせて最も検索されやすいフックフレーズを組み立てる
   let mainPhrase = "";
 
-  if (!isPrefecture && hasDate && hasLunchCafe && !hasModelCourse) {
-    mainPhrase = "デート・カフェ散歩コース";
-  } else if (!isPrefecture && hasDate && hasWalkCourse && !hasModelCourse) {
-    mainPhrase = "街歩きデート・散歩コース";
-  } else if (!isPrefecture && hasDate && !hasModelCourse) {
-    mainPhrase = "デート・お出かけコース";
+  if (!isPrefecture && hasWalkCourse && hasLunchCafe && !hasModelCourse) {
+    mainPhrase = "散歩・カフェ散策コース";
+  } else if (!isPrefecture && hasWalkCourse && !hasModelCourse) {
+    mainPhrase = "街歩き・散歩散策コース";
+  } else if (!isPrefecture && (hasDate || hasHoliday) && !hasModelCourse) {
+    mainPhrase = "街歩き・お出かけ散策コース";
   } else if (hasModelCourse && hasHalfDay && hasCarFree) {
     mainPhrase = "半日観光モデルコース（車なし・徒歩）";
   } else if (hasModelCourse && hasHalfDay) {
@@ -1235,17 +1235,17 @@ function buildSmartHookFromSuggestions(
   } else if (routeCategory === "食べたい" || hasLunchCafe) {
     mainPhrase = "グルメ・カフェ＆街歩きコース";
   } else {
-    mainPhrase = "観光・街歩きモデルコース";
+    mainPhrase = "街歩き・散歩散策コース";
   }
 
   const subHooks = [];
   if (hasCarFree && !mainPhrase.includes("車なし")) {
     subHooks.push("車なし・徒歩");
   }
-  if (!isPrefecture && hasDate && !mainPhrase.includes("デート")) {
-    subHooks.push("デート・散歩");
-  } else if (!isPrefecture && hasHoliday && !mainPhrase.includes("お出かけ")) {
-    subHooks.push("休日のお出かけ");
+  if (!isPrefecture && (hasHoliday || hasDate) && !mainPhrase.includes("お出かけ")) {
+    subHooks.push("ひとり散歩・休日のお出かけ");
+  } else if (!isPrefecture && hasWalkCourse && !mainPhrase.includes("散歩") && !mainPhrase.includes("散策")) {
+    subHooks.push("散歩・散策");
   }
   if (hasFoodWalk && !mainPhrase.includes("食べ歩き")) subHooks.push("食べ歩き");
   if (

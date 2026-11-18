@@ -17,9 +17,9 @@ export const revalidate = 1800; // 30分ごとに再検証
 export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = getSiteUrl();
   const canonicalUrl = `${siteUrl}/areas`;
-  const title = "全国エリア・都道府県別の観光・街歩きルート一覧｜SHUIN まちのしるし";
+  const title = "全国エリア・都道府県別の街歩き・散歩ルート一覧｜SHUIN｜あなたの知らない、あなたの街";
   const description =
-    "北海道から九州・沖縄まで、日本全国の街の風景と物語を徒歩（車なし）でめぐる街歩きルート一覧。都道府県・駅エリアごとに所要時間・歩行距離・立ち寄りスポットを探し、現地で「SHUIN（まちのしるし）」を押印できます。";
+    "「あなたの知らない、あなたの街」を歩く。北海道から九州・沖縄まで、日本全国の駅や地元の路地を徒歩（車なし）でめぐる街歩き・散歩・散策ルート一覧。所要時間・歩行距離・立ち寄りスポットを探し、現地で「SHUIN」を押印できます。";
 
   return {
     title,
@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: canonicalUrl,
-      siteName: "SHUIN まちのしるし",
+      siteName: "SHUIN｜あなたの知らない、あなたの街",
       locale: "ja_JP",
       type: "website",
       images: [{ url: `${siteUrl}/shuin-logo-horizontal.png`, alt: title }],
