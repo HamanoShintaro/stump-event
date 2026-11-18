@@ -658,6 +658,116 @@
   background: #ECE7DC;
 }
 
+/* 近くの他の散歩ルート一覧 */
+.nearbySection {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(17, 17, 17, 0.14);
+}
+
+.nearbyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.nearbyTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nearbyMoreLink {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.nearbyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 720px) {
+  .nearbyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.nearbyCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  border-radius: 2px;
+  background: #FAF8F3;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nearbyCard:hover {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.38);
+}
+
+.nearbyThumb {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(17, 17, 17, 0.08);
+}
+
+.nearbyCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.nearbyCardTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.nearbyCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: rgba(17, 17, 17, 0.65);
+}
+
+.nearbyCardDist {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nearbyCardArrow {
+  flex-shrink: 0;
+  color: rgba(17, 17, 17, 0.42);
+}
+
 /* 別の街・駅のルート検索セクション */
 .discoverSection {
   margin-top: 36px;

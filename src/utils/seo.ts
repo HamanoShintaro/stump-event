@@ -312,16 +312,16 @@ export function extractRouteAreaInfo(
           : "気軽に散策";
 
   const titleHook =
-    matchedEntry?.titleHook || `${areaName}の観光・街歩きモデルコース`;
+    matchedEntry?.titleHook || `${areaName}の街歩き・散歩散策コース`;
   const subHook = matchedEntry?.subHook || "徒歩マップ・所要時間";
   const topSearchKeywords =
     matchedEntry?.topSearchKeywords && matchedEntry.topSearchKeywords.length > 0
       ? matchedEntry.topSearchKeywords
       : [
-          `${areaName} 観光 モデルコース`,
-          `${areaName} 街歩き`,
           `${areaName} 散歩コース`,
-          `${areaName} 観光 所要時間`,
+          `${areaName} 街歩き`,
+          `${areaName} 散策コース`,
+          `${areaName} 散歩 所要時間`,
           `${areaName} おすすめスポット`,
         ];
 
@@ -523,7 +523,7 @@ export function buildRouteJsonLd(
             {
               "@type": "ListItem",
               position: 3,
-              name: `${info.prefecture}の観光・街歩きルート`,
+              name: `${info.prefecture}の街歩き・散歩ルート`,
               item: `${siteUrl}/areas/${encodeURIComponent(info.prefecture)}`,
             },
             {
@@ -552,12 +552,12 @@ export function buildRouteJsonLd(
         name: `${info.titleHook}「${rally.title}」の所要時間と歩行距離は？`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日観光や街歩きコース、ひとり散歩や休日のお出かけコースとしても楽しめます。`,
+          text: `${info.areaName}（${info.fullAreaLabel}）を徒歩でめぐるこのルートは、全${spotCount}箇所・歩行距離約${distKm}kmで、所要時間は約${mins}分が目安です。車なしで気軽に巡る半日散歩や街歩きコース、ひとり散歩や休日のお出かけコースとしても楽しめます。`,
         },
       },
       {
         "@type": "Question",
-        name: `この${info.areaName}ルートではどんな観光スポット・立ち寄り先をめぐりますか？`,
+        name: `この${info.areaName}ルートではどんなスポット・立ち寄り先をめぐりますか？`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `${info.spotNames.join(" → ")}の順に全${spotCount}箇所を訪れます。グルメ・カフェや買い物の立ち寄りを含めた予算目安は「${info.budgetLabel}」です。`,
@@ -613,7 +613,7 @@ export function extractPrefectureHubSeoInfo(
   const areaNames = Array.from(areaSet);
   const shortPref = prefecture.replace(/[都府県]$/, "");
   const titleHook =
-    cached?.titleHook || `${prefecture}の観光・街歩きモデルコース`;
+    cached?.titleHook || `${prefecture}の街歩き・散歩散策コース`;
   const subHook = cached?.subHook || "徒歩マップ・所要時間";
 
   const shortAreas = Array.from(
@@ -639,10 +639,10 @@ export function extractPrefectureHubSeoInfo(
     cached?.topSearchKeywords && cached.topSearchKeywords.length > 0
       ? cached.topSearchKeywords
       : [
-          `${prefecture} 観光 モデルコース`,
+          `${prefecture} 散歩コース`,
           `${shortPref} 街歩き`,
-          `${shortPref} 散歩コース`,
-          `${shortPref} 日帰り 観光 電車`,
+          `${shortPref} 散策コース`,
+          `${shortPref} ひとり散歩 電車`,
           ...areaNames.slice(0, 6).map((a) => `${a} 街歩き`),
         ];
 
@@ -775,7 +775,7 @@ export function buildPrefectureHubJsonLd(
       {
         "@type": "ListItem",
         position: 3,
-        name: `${prefecture}の観光・街歩きルート`,
+        name: `${prefecture}の街歩き・散歩ルート`,
         item: canonicalUrl,
       },
     ],
@@ -791,7 +791,7 @@ export function buildPrefectureHubJsonLd(
     mainEntity: [
       {
         "@type": "Question",
-        name: `${prefecture}で車なし（電車・徒歩）で巡れる街歩き・観光モデルコースはありますか？`,
+        name: `${prefecture}で車なし（電車・徒歩）で巡れる街歩き・散歩コースはありますか？`,
         acceptedAnswer: {
           "@type": "Answer",
           text: hubInfo.leadSummary,
@@ -931,7 +931,7 @@ export function buildSpotJsonLd(
             {
               "@type": "ListItem",
               position: 2,
-              name: `${areaInfo.prefecture}の観光・街歩きルート`,
+              name: `${areaInfo.prefecture}の街歩き・散歩ルート`,
               item: `${siteUrl}/areas/${encodeURIComponent(areaInfo.prefecture)}`,
             },
             {

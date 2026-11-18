@@ -74,7 +74,7 @@ export default async function AreasIndexPage() {
       {
         "@type": "CollectionPage",
         "@id": `${siteUrl}/areas#collection`,
-        name: "全国エリア・都道府県別の観光・街歩きルート一覧",
+        name: "全国エリア・都道府県別の街歩き・散歩ルート一覧",
         description:
           "日本全国の都道府県・駅エリア別に徒歩で巡る街歩きルートと立ち寄りスポットをまとめたインデックスページ。",
         url: `${siteUrl}/areas`,
@@ -84,7 +84,7 @@ export default async function AreasIndexPage() {
           itemListElement: coveredPrefectures.map((pref, idx) => ({
             "@type": "ListItem",
             position: idx + 1,
-            name: `${pref}の観光・街歩きモデルコース（全${routesByPref.get(pref)?.length || 0}ルート）`,
+            name: `${pref}の街歩き・散歩散策コース（全${routesByPref.get(pref)?.length || 0}ルート）`,
             url: `${siteUrl}/areas/${encodeURIComponent(pref)}`,
           })),
         },

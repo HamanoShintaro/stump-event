@@ -383,7 +383,7 @@ export default async function PrefectureHubPage({
 
         <section className={"glass-card " + styles.seoGuideBox} aria-labelledby="pref-faq-heading">
           <h2 id="pref-faq-heading" className={styles.sectionTitle}>
-            <span>{prefecture}の街歩き・観光モデルコースに関するよくある質問</span>
+            <span>{prefecture}の街歩き・散歩コースに関するよくある質問</span>
           </h2>
           <div className={styles.faqList}>
             <div className={styles.faqItem}>

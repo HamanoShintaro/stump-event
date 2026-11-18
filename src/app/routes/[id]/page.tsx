@@ -11,15 +11,22 @@ import CommunityEchoesSection from "@/components/CommunityEchoesSection";
 import RouteMicroFeedbackCard from "@/components/RouteMicroFeedbackCard";
 import RouteOverviewMapWrapper from "@/components/RouteOverviewMapWrapper";
 import BackButton from "@/components/BackButton";
-import { getRouteStatsMap } from "@/utils/routeStats";
+import {
+  getCachedPublishedRoutesWithStats,
+  getRouteStatsMap,
+} from "@/utils/routeStats";
 import { computeRouteWalkMetrics } from "@/utils/routeMetrics";
+import {
+  formatNearbyDistanceLabel,
+  selectNearbyRoutes,
+} from "@/utils/nearbyRoutes";
 import { parseWKBPoint } from "@/utils/wkb";
 import {
   buildRouteJsonLd,
   buildRouteSeoMetadata,
   extractRouteAreaInfo,
 } from "@/utils/seo";
-import { Footprints, Star, MapPin, Clock, Wallet, Search } from "lucide-react";
+import { Footprints, Star, MapPin, Clock, Wallet, Search, Compass, ChevronRight } from "lucide-react";
 
 export const revalidate = 0; // 常に最新データを取得
 
@@ -101,8 +108,18 @@ export default async function RallyDetailPage({
   }
 
   const { rally, spotsList, walkMetrics } = loaded;
-  const statsMap = await getRouteStatsMap([rally.id]);
+  const [statsMap, { routes: allPublishedRoutes }] = await Promise.all([
+    getRouteStatsMap([rally.id]),
+    getCachedPublishedRoutesWithStats(),
+  ]);
   const stats = statsMap[rally.id] || { participants: 0, favorites: 0 };
+  const nearbyRoutes = selectNearbyRoutes(
+    allPublishedRoutes,
+    rally.id,
+    { lat: walkMetrics.centerLat, lng: walkMetrics.centerLng },
+    rally.prefecture || "",
+    4
+  );
   const areaInfo = extractRouteAreaInfo(rally, spotsList);
   const jsonLd = buildRouteJsonLd(rally, spotsList, walkMetrics);
   const budgetLabel = areaInfo.budgetLabel;
@@ -238,6 +255,71 @@ export default async function RallyDetailPage({
             areaName={areaInfo.areaName}
           />
 
+          {/* 近くの他の散歩ルート */}
+          {nearbyRoutes.length > 0 && (
+            <section
+              className={styles.nearbySection}
+              aria-labelledby="nearby-routes-title"
+            >
+              <div className={styles.nearbyHeader}>
+                <h2 id="nearby-routes-title" className={styles.nearbyTitle}>
+                  <Compass size={17} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>近くの他の散歩ルート</span>
+                </h2>
+                <Link
+                  href={
+                    areaInfo.prefecture
+                      ? `/areas/${encodeURIComponent(areaInfo.prefecture)}`
+                      : "/routes"
+                  }
+                  className={styles.nearbyMoreLink}
+                >
+                  一覧を見る
+                </Link>
+              </div>
+
+              <div className={styles.nearbyGrid}>
+                {nearbyRoutes.map(({ route: near, distanceMeters }) => {
+                  const distLabel = formatNearbyDistanceLabel(distanceMeters);
+                  const nearMins = near.walkMetrics?.estimatedMinutes;
+                  return (
+                    <Link
+                      key={near.id}
+                      href={`/routes/${near.id}`}
+                      className={styles.nearbyCard}
+                    >
+                      <div
+                        className={styles.nearbyThumb}
+                        style={{
+                          backgroundImage: `url(${near.thumbnail_url || "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?w=300&q=80"})`,
+                        }}
+                        aria-hidden="true"
+                      />
+                      <div className={styles.nearbyCardBody}>
+                        <div className={styles.nearbyCardTitle}>{near.title}</div>
+                        <div className={styles.nearbyCardMeta}>
+                          {distLabel && (
+                            <span className={styles.nearbyCardDist}>{distLabel}</span>
+                          )}
+                          {typeof nearMins === "number" && nearMins > 0 && (
+                            <span>徒歩 約{nearMins}分</span>
+                          )}
+                          {near.prefecture && <span>{near.prefecture}</span>}
+                        </div>
+                      </div>
+                      <ChevronRight
+                        size={16}
+                        strokeWidth={1.8}
+                        className={styles.nearbyCardArrow}
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
         {/* 別の街・ルートをフリーワードや地図から探す回遊セクション */}
         <section
           className={styles.discoverSection}
@@ -295,10 +377,10 @@ export default async function RallyDetailPage({
           <div className={styles.seoFaqList}>
             <div className={styles.seoFaqItem}>
               <h3 className={styles.seoFaqQuestion}>
-                Q. {areaInfo.shortAreaName}の観光・街歩きにかかる所要時間や距離はどのくらいですか？
+                Q. {areaInfo.shortAreaName}の散歩・街歩きにかかる所要時間や距離はどのくらいですか？
               </h3>
               <p className={styles.seoFaqAnswer}>
-                全{walkMetrics.spotCount}箇所のスポットを徒歩でめぐるモデルコースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。食事・カフェや買い物のスポットも組み込まれているため、車なしでの半日観光や休日のお出かけにも適しています。
+                全{walkMetrics.spotCount}箇所のスポットを徒歩でめぐる散策コースで、歩行距離は約{walkMetrics.distanceKm.toFixed(1)}km、立ち寄りを含めた所要時間は約{walkMetrics.estimatedMinutes}分が目安です。食事・カフェや買い物のスポットも組み込まれているため、車なしでのひとり散歩や休日のお出かけにも適しています。
               </p>
             </div>
             <div className={styles.seoFaqItem}>
@@ -346,7 +428,7 @@ export default async function RallyDetailPage({
                 href={`/areas/${encodeURIComponent(areaInfo.prefecture)}`}
                 className={styles.seoAreaLink}
               >
-                {areaInfo.prefecture}の観光・街歩きルートまとめ
+                {areaInfo.prefecture}の街歩き・散歩ルートまとめ
               </Link>
             )}
             <Link href="/areas" className={styles.seoAreaLink}>
