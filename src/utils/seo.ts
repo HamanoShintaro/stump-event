@@ -630,7 +630,7 @@ export function extractPrefectureHubSeoInfo(
 
   const leadSummary =
     routeCount >= 3
-      ? `${prefecture}では現在、${areaPreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
+      ? `車なし・駅から徒歩で巡れる${prefecture}の半日観光・街歩きモデルコース全${routeCount}ルート（計${spotCount}箇所のスポット）。${areaPreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで「SHUIN（まちのしるし）」を集める散策を楽しめます。`
       : routeCount >= 1
         ? `${prefecture}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${prefecture}内の新たな駅・エリアのルートも拡充しています。`
         : `${prefecture}エリアの街歩きルートは現在準備・拡充中です。近隣の${region}エリアで公開中のルートから気になる街を探してみてください。`;
@@ -679,12 +679,17 @@ export function buildPrefectureHubSeoMetadata(
   );
   const areaPreview =
     shortAreas.length > 0
-      ? `${shortAreas.slice(0, 4).join("・")}${shortAreas.length > 4 ? "ほか" : ""}`
+      ? `${shortAreas.slice(0, 3).join("・")}${shortAreas.length > 3 ? "ほか" : ""}`
       : "";
 
-  const metaParts = [areaPreview, hubInfo.subHook, `全${hubInfo.routeCount}ルート`]
-    .filter(Boolean)
-    .join("｜");
+  const hasCarFreeInTitle = /車なし|徒歩/.test(hubInfo.titleHook);
+  const hookBadge =
+    hubInfo.routeCount > 0
+      ? hasCarFreeInTitle
+        ? `全${hubInfo.routeCount}ルート（${hubInfo.subHook}）`
+        : `車なし・徒歩マップ全${hubInfo.routeCount}選`
+      : hubInfo.subHook;
+  const metaParts = [hookBadge, areaPreview].filter(Boolean).join("｜");
   const seoTitle = `${hubInfo.titleHook}｜${metaParts}`;
   const seoDescription = hubInfo.leadSummary;
 

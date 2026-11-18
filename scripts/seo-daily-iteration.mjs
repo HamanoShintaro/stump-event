@@ -1348,7 +1348,7 @@ const REGION_BY_PREFECTURE = {
 
 const ALL_PREFECTURES = Object.keys(REGION_BY_PREFECTURE);
 
-async function discoverAreaSearchIntents(routes, gscRows) {
+async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false) {
   const existingPath = path.resolve(
     process.cwd(),
     "src/data/seo_area_keywords.json"
@@ -1367,6 +1367,16 @@ async function discoverAreaSearchIntents(routes, gscRows) {
     } catch {
       existingData = { byRouteId: {}, byAreaName: {}, byPrefecture: {} };
     }
+  }
+
+  if (skipOverwrite || !Array.isArray(routes) || routes.length === 0) {
+    console.warn(
+      "⚠️ Skipping seo_area_keywords.json update due to incomplete or empty routes fetch (preserving existing data)."
+    );
+    return {
+      byAreaName: existingData.byAreaName || {},
+      byPrefecture: existingData.byPrefecture || {},
+    };
   }
 
   const localAreaMap = await loadLocalAreaDefinitionsByTitle();
@@ -1625,7 +1635,7 @@ async function discoverAreaSearchIntents(routes, gscRows) {
 
     const leadSummary =
       routeCount >= 3
-        ? `${pref}では現在、${areaPreview}${linePreview}をめぐる全${routeCount}ルート（計${spotCount}箇所のスポット）を公開しています。${spotPreview ? `${spotPreview}を訪ねながら、` : ""}駅から徒歩（車なし）で1〜2時間ほどで歩ける物語と、現地で押印できる「SHUIN（まちのしるし）」を集める街歩きを楽しめます。`
+        ? `車なし・駅から徒歩で巡れる${pref}の半日観光・街歩きモデルコース全${routeCount}ルート（計${spotCount}箇所のスポット）。${areaPreview}${linePreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで「SHUIN（まちのしるし）」を集める散策を楽しめます。`
         : `${pref}では現在、${areaPreview}${linePreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
 
     byPrefecture[pref] = {
@@ -1682,6 +1692,7 @@ async function main() {
 
   const routes = [];
   const microFeedbackList = [];
+  let routesFetchFailed = false;
   let supabaseClient = null;
   if (supabaseUrl && supabaseKey) {
     supabaseClient = createClient(supabaseUrl, supabaseKey, {
@@ -1689,19 +1700,32 @@ async function main() {
       realtime: { transport: ws },
     });
     const supabase = supabaseClient;
-    const PAGE_SIZE = 1000;
+    const PAGE_SIZE = 200;
     let offset = 0;
     while (true) {
-      const { data, error } = await supabase
-        .from("routes")
-        .select(
-          "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, description, address, location, order_index)"
-        )
-        .eq("is_published", true)
-        .order("created_at", { ascending: false })
-        .range(offset, offset + PAGE_SIZE - 1);
+      let data = null;
+      let error = null;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const res = await supabase
+          .from("routes")
+          .select(
+            "id, title, description, prefecture, category, budget_tier, thumbnail_url, is_published, created_at, spots(id, name, description, address, location, order_index)"
+          )
+          .eq("is_published", true)
+          .order("created_at", { ascending: false })
+          .range(offset, offset + PAGE_SIZE - 1);
+        data = res.data;
+        error = res.error;
+        if (!error) break;
+        await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+      }
 
-      if (error || !data || data.length === 0) break;
+      if (error) {
+        routesFetchFailed = true;
+        console.warn(`⚠️ Supabase routes fetch error at offset ${offset}:`, error.message || error);
+        break;
+      }
+      if (!data || data.length === 0) break;
       routes.push(...data);
       if (data.length < PAGE_SIZE) break;
       offset += PAGE_SIZE;
@@ -1724,7 +1748,7 @@ async function main() {
 
   const [userMetrics, areaIntentResult] = await Promise.all([
     fetchUserMetrics(supabaseClient, hasServiceRoleKey, ga4Result),
-    discoverAreaSearchIntents(routes, gscResult.rows || []),
+    discoverAreaSearchIntents(routes, gscResult.rows || [], routesFetchFailed),
   ]);
   const { byAreaName: areaKeywordsMap, byPrefecture: prefectureKeywordsMap } =
     areaIntentResult;
