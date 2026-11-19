@@ -1203,35 +1203,41 @@ function buildSmartHookFromSuggestions(
   const hasDate = /デート|カップル/.test(joined);
   const hasHoliday = /休日|お出かけ|暇つぶし|気分転換/.test(joined);
 
-  // 実際の検索需要（Googleサジェスト・Search Console上位）に合わせて最も検索されやすいフックフレーズを組み立てる
+  // SHUIN本来の「知っている街の、知らない散歩道（街歩き・散歩・散策）」の文脈でフックフレーズを組み立てる（「観光」「モデルコース」は使わない）
   let mainPhrase = "";
 
-  if (!isPrefecture && hasWalkCourse && hasLunchCafe && !hasModelCourse) {
-    mainPhrase = "散歩・カフェ散策コース";
-  } else if (!isPrefecture && hasWalkCourse && !hasModelCourse) {
-    mainPhrase = "街歩き・散歩散策コース";
-  } else if (!isPrefecture && (hasDate || hasHoliday) && !hasModelCourse) {
-    mainPhrase = "街歩き・お出かけ散策コース";
-  } else if (hasModelCourse && hasHalfDay && hasCarFree) {
-    mainPhrase = "半日観光モデルコース（車なし・徒歩）";
-  } else if (hasModelCourse && hasHalfDay) {
-    mainPhrase = "半日観光モデルコース";
-  } else if (hasModelCourse && hasCarFree) {
-    mainPhrase = "観光モデルコース（車なし・徒歩）";
-  } else if (hasModelCourse && hasFoodWalk) {
-    mainPhrase = "観光・食べ歩きモデルコース";
-  } else if (hasModelCourse) {
-    mainPhrase = "観光モデルコース";
-  } else if (hasFoodWalk) {
-    mainPhrase = "観光・食べ歩きコース";
+  if (isPrefecture) {
+    if (hasHalfDay && hasCarFree) {
+      mainPhrase = "半日街歩き・散歩コース（車なし・徒歩）";
+    } else if (hasHalfDay) {
+      mainPhrase = "半日街歩き・散歩コース";
+    } else if (hasCarFree) {
+      mainPhrase = "街歩き・散歩コース（車なし・徒歩）";
+    } else if (hasFoodWalk) {
+      mainPhrase = "街歩き・食べ歩き散歩コース";
+    } else if (hasLunchCafe) {
+      mainPhrase = "街歩き・カフェ散歩コース";
+    } else {
+      mainPhrase = "街歩き・散歩散策コース";
+    }
   } else if (hasWalkCourse && hasLunchCafe) {
-    mainPhrase = "散歩コース・カフェ＆ランチ巡り";
-  } else if (hasSpots && hasLunchCafe) {
-    mainPhrase = "観光スポット・グルメ＆街歩き";
-  } else if (hasSpots) {
-    mainPhrase = "観光スポット・街歩きコース";
+    mainPhrase = "散歩・カフェ散策コース";
   } else if (hasWalkCourse) {
-    mainPhrase = "散歩・街歩きコース";
+    mainPhrase = "街歩き・散歩散策コース";
+  } else if (hasDate || hasHoliday) {
+    mainPhrase = "街歩き・お出かけ散策コース";
+  } else if (hasHalfDay && hasCarFree) {
+    mainPhrase = "半日街歩き・散歩コース（車なし・徒歩）";
+  } else if (hasHalfDay) {
+    mainPhrase = "半日街歩き・散歩コース";
+  } else if (hasCarFree) {
+    mainPhrase = "街歩き・散歩コース（車なし・徒歩）";
+  } else if (hasFoodWalk) {
+    mainPhrase = "食べ歩き・街歩き散歩コース";
+  } else if (hasSpots && hasLunchCafe) {
+    mainPhrase = "カフェ・見どころ街歩き散歩コース";
+  } else if (hasSpots) {
+    mainPhrase = "見どころ・街歩き散歩コース";
   } else if (routeCategory === "食べたい" || hasLunchCafe) {
     mainPhrase = "グルメ・カフェ＆街歩きコース";
   } else {
@@ -1480,25 +1486,25 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
       new Set(matchingGsc.map((r) => r.query).filter(Boolean))
     ).slice(0, 8);
 
-    // 2. Fetch Google Suggest for general search intent around this area
-    const [sugBase, sugKanko, sugSanpo, sugDate] = await Promise.all([
+    // 2. Fetch Google Suggest for walking/strolling search intent around this area
+    const [sugBase, sugSansaku, sugSanpo, sugDate] = await Promise.all([
       fetchGoogleSuggestions(`${queryAreaName} `),
-      fetchGoogleSuggestions(`${queryAreaName} 観光 `),
+      fetchGoogleSuggestions(`${queryAreaName} 散策`),
       fetchGoogleSuggestions(`${queryAreaName} 散歩`),
       fetchGoogleSuggestions(`${queryAreaName} デート`),
     ]);
 
     const rawSuggestions = Array.from(
-      new Set([...sugKanko, ...sugBase, ...sugSanpo, ...sugDate])
+      new Set([...sugSansaku, ...sugBase, ...sugSanpo, ...sugDate])
     );
 
     const filteredSuggestions = rawSuggestions.filter((s) =>
       isOutingIntentSuggestion(s, queryAreaName, info.city)
     );
 
-    // If suburban/residential station had few matches on `{areaName} 観光 `, also check `{city} 観光 `
+    // If suburban/residential station had few matches on `{areaName}`, also check `{city} 散歩 `
     if (filteredSuggestions.length < 3 && info.city) {
-      const sugCity = await fetchGoogleSuggestions(`${info.city} 観光 `);
+      const sugCity = await fetchGoogleSuggestions(`${info.city} 散歩 `);
       for (const s of sugCity) {
         if (
           isOutingIntentSuggestion(s, queryAreaName, info.city) &&
@@ -1519,14 +1525,14 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
       info.sampleCategory
     );
 
-    // Ensure essential high-intent general queries are also represented in keywords list
+    // Ensure essential high-intent walking/strolling queries are also represented in keywords list
     const fallbackIntents = [
-      `${areaName} 観光 モデルコース`,
-      `${areaName} デート`,
       `${areaName} 街歩き`,
       `${areaName} 散歩コース`,
-      `${areaName} 観光 所要時間`,
-      `${areaName} おすすめスポット`,
+      `${areaName} 散策コース`,
+      `${areaName} デート`,
+      `${areaName} 散歩 所要時間`,
+      `${areaName} 路地 散歩`,
     ];
     for (const fb of fallbackIntents) {
       if (filteredSuggestions.length < 8 && !filteredSuggestions.includes(fb)) {
@@ -1547,7 +1553,7 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
           ...gscTopQueries,
           ...filteredSuggestions,
           ...(info.line
-            ? [`${info.line} 街歩き`, `${info.line} 観光`, `${info.line} 散歩`]
+            ? [`${info.line} 街歩き`, `${info.line} 散策`, `${info.line} 散歩`]
             : []),
           ...(info.tags || []),
         ])
@@ -1586,13 +1592,13 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
       new Set(matchingPrefGsc.map((r) => r.query).filter(Boolean))
     ).slice(0, 8);
 
-    const [sugPrefKanko, sugPrefSanpo] = await Promise.all([
-      fetchGoogleSuggestions(`${shortPref} 観光 `),
+    const [sugPrefSanpo, sugPrefMachiaruki] = await Promise.all([
+      fetchGoogleSuggestions(`${shortPref} 散歩 `),
       fetchGoogleSuggestions(`${shortPref} 街歩き`),
     ]);
 
     const filteredPrefSuggestions = Array.from(
-      new Set([...sugPrefKanko, ...sugPrefSanpo])
+      new Set([...sugPrefSanpo, ...sugPrefMachiaruki])
     ).filter((s) => isOutingIntentSuggestion(s, shortPref, pref));
 
     const { titleHook, subHook } = buildSmartHookFromSuggestions(
@@ -1604,11 +1610,11 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
     );
 
     const fallbackPrefKeywords = [
-      `${pref} 観光 モデルコース`,
-      `${shortPref} 街歩き`,
+      `${pref} 街歩き`,
       `${shortPref} 散歩コース`,
-      `${shortPref} 日帰り 観光 電車`,
-      `${shortPref} 穴場スポット`,
+      `${shortPref} 散策ルート`,
+      `${shortPref} ひとり散歩 電車`,
+      `${shortPref} 路地 散歩`,
       ...lineList.slice(0, 6).map((l) => `${l} 街歩き`),
       ...areaList.slice(0, 6).map((a) => `${a} 街歩き`),
     ];
@@ -1635,7 +1641,7 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
 
     const leadSummary =
       routeCount >= 3
-        ? `車なし・駅から徒歩で巡れる${pref}の半日観光・街歩きモデルコース全${routeCount}ルート（計${spotCount}箇所のスポット）。${areaPreview}${linePreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで「SHUIN（まちのしるし）」を集める散策を楽しめます。`
+        ? `車なし・駅から徒歩で巡れる${pref}の街歩き・散歩ルート全${routeCount}コース（計${spotCount}箇所のスポット）。${areaPreview}${linePreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで土地の物語と「SHUIN（まちのしるし）」を集める散策を楽しめます。`
         : `${pref}では現在、${areaPreview}${linePreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
 
     byPrefecture[pref] = {
