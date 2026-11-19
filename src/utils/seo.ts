@@ -374,15 +374,15 @@ export function buildRouteSeoMetadata(
     `${info.areaName} カフェ`,
     `${info.areaName} お出かけ`,
     `${info.areaName} 休日`,
-    `${info.areaName} スタンプラリー`,
-    `${info.areaName} デジタルスタンプラリー`,
-    "街歩き スタンプラリー",
+    `${info.areaName} 街歩き`,
+    `${info.areaName} 散策ルート`,
+    "街歩き 散歩コース",
     ...(info.cityName
       ? [
           `${info.cityName} 散策`,
           `${info.cityName} 街歩き`,
           `${info.cityName} デート`,
-          `${info.cityName} スタンプラリー`,
+          `${info.cityName} 散歩コース`,
         ]
       : []),
     ...(info.line
@@ -390,7 +390,7 @@ export function buildRouteSeoMetadata(
           `${info.line} 街歩き`,
           `${info.line} 散策`,
           `${info.line} 散歩`,
-          `${info.line} スタンプラリー`,
+          `${info.line} 沿線散歩`,
           `SHUIN ${info.line}`,
         ]
       : []),
@@ -474,8 +474,8 @@ export function buildRouteJsonLd(
         ...info.topSearchKeywords.slice(0, 8),
         `${info.areaName} デート`,
         `${info.areaName} 散歩`,
-        `${info.areaName} スタンプラリー`,
-        `${info.areaName} デジタルスタンプラリー`,
+        `${info.areaName} 街歩き`,
+        `${info.areaName} 散策ルート`,
       ])
     ).join(", "),
     itinerary: {
@@ -707,9 +707,9 @@ export function buildPrefectureHubSeoMetadata(
       ...hubInfo.topSearchKeywords,
       `${prefecture} デート`,
       `${prefecture.replace(/[都府県]$/, "")} 散歩`,
-      `${prefecture} スタンプラリー`,
-      `${prefecture.replace(/[都府県]$/, "")} スタンプラリー`,
-      `${prefecture} デジタルスタンプラリー`,
+      `${prefecture} 街歩き`,
+      `${prefecture.replace(/[都府県]$/, "")} 散策`,
+      `${prefecture} 車なし 散歩`,
       ...hubInfo.featuredSpots.slice(0, 6),
       "SHUIN",
       "まちのしるし",
@@ -833,7 +833,13 @@ export function buildSpotSeoMetadata(
     1;
   const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
 
-  const seoTitle = `${spot.name}（${areaInfo.shortAreaName}）の見どころ・街歩き案内｜${rally.title}`;
+  const spotRegionTag =
+    areaInfo.shortAreaName && !spot.name.includes(areaInfo.shortAreaName)
+      ? areaInfo.shortAreaName
+      : areaInfo.prefecture || areaInfo.shortAreaName;
+  const seoTitle = spotRegionTag
+    ? `${spot.name}（${spotRegionTag}）の見どころ・街歩き案内｜${rally.title}`
+    : `${spot.name}の見どころ・街歩き案内｜${rally.title}`;
   const rawSpotDesc =
     typeof spot?.description === "string" && spot.description.trim()
       ? spot.description.trim()
@@ -841,7 +847,7 @@ export function buildSpotSeoMetadata(
   const descExcerpt =
     rawSpotDesc.length > 100 ? `${rawSpotDesc.slice(0, 100)}…` : rawSpotDesc;
 
-  const seoDescription = `【${areaInfo.fullAreaLabel}・${spot.name}】${descExcerpt}（所在地：${spot.address || areaInfo.fullAreaLabel}）。徒歩約${walkMetrics.estimatedMinutes}分で全${walkMetrics.spotCount}箇所をめぐる物語「${rally.title}」の立ち寄りスポット案内。`;
+  const seoDescription = `【${areaInfo.fullAreaLabel}・${spot.name}】${descExcerpt}${spot.address ? `（所在地：${spot.address}）` : ""}。徒歩約${walkMetrics.estimatedMinutes}分で全${walkMetrics.spotCount}箇所をめぐる街歩きルート「${rally.title}」の立ち寄りスポット案内。`;
 
   const imgRaw = spot?.image_url || spot?.cover_image_url || rally?.thumbnail_url;
   const ogImageUrl = imgRaw
@@ -860,10 +866,10 @@ export function buildSpotSeoMetadata(
       `${spot.name} アクセス`,
       `${spot.name} デート`,
       `${spot.name} 散歩`,
-      `${spot.name} スタンプラリー`,
+      `${spot.name} 街歩き`,
       areaInfo.areaName,
       `${areaInfo.areaName} デート`,
-      `${areaInfo.areaName} スタンプラリー`,
+      `${areaInfo.areaName} 散策`,
       ...areaInfo.topSearchKeywords.slice(0, 5),
       "SHUIN",
       "まちのしるし",
