@@ -1628,21 +1628,17 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
     );
     const areaPreview =
       shortAreas.length > 0
-        ? `${shortAreas.slice(0, 6).join("・")}${shortAreas.length > 6 ? "など" : ""}`
+        ? `${shortAreas.slice(0, 4).join("・")}${shortAreas.length > 4 ? "など" : ""}`
         : pref;
-    const linePreview =
-      lineList.length > 0
-        ? `（${lineList.slice(0, 4).join("・")}${lineList.length > 4 ? "ほか" : ""}沿線）`
-        : "";
     const spotPreview =
       pInfo.spotNames.length > 0
-        ? `${pInfo.spotNames.slice(0, 5).join("、")}${pInfo.spotNames.length > 5 ? "など" : ""}`
+        ? pInfo.spotNames.slice(0, 3).join("、")
         : "";
 
     const leadSummary =
       routeCount >= 3
-        ? `車なし・駅から徒歩で巡れる${pref}の街歩き・散歩ルート全${routeCount}コース（計${spotCount}箇所のスポット）。${areaPreview}${linePreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで土地の物語と「SHUIN（まちのしるし）」を集める散策を楽しめます。`
-        : `${pref}では現在、${areaPreview}${linePreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
+        ? `車なし・徒歩で半日から巡れる${pref}の街歩き・散歩ルート全${routeCount}コース（徒歩マップ・所要時間付き）。${areaPreview}を中心に${spotPreview ? `${spotPreview}など` : ""}計${spotCount}箇所を訪ね、土地の物語としるしを辿れます。`
+        : `${pref}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${pref}内の新たな駅・エリアのルートも拡充しています。`;
 
     byPrefecture[pref] = {
       prefecture: pref,

@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -30,7 +31,7 @@ import { Footprints, Star, MapPin, Clock, Wallet, Search, Compass, ChevronRight 
 
 export const revalidate = 0; // 常に最新データを取得
 
-async function fetchRouteWithSpots(routeId: string) {
+const fetchRouteWithSpots = cache(async (routeId: string) => {
   const { data: rally, error: rallyError } = await supabase
     .from("routes")
     .select("*")
@@ -70,7 +71,7 @@ async function fetchRouteWithSpots(routeId: string) {
   );
 
   return { rally, spotsList, walkMetrics };
-}
+});
 
 export async function generateMetadata({
   params,

@@ -621,16 +621,16 @@ export function extractPrefectureHubSeoInfo(
   );
   const areaPreview =
     shortAreas.length > 0
-      ? `${shortAreas.slice(0, 6).join("・")}${shortAreas.length > 6 ? "など" : ""}`
+      ? `${shortAreas.slice(0, 4).join("・")}${shortAreas.length > 4 ? "など" : ""}`
       : prefecture;
   const spotPreview =
     spotNames.length > 0
-      ? `${spotNames.slice(0, 5).join("、")}${spotNames.length > 5 ? "など" : ""}`
+      ? spotNames.slice(0, 3).join("、")
       : "";
 
   const leadSummary =
     routeCount >= 3
-      ? `車なし・駅から徒歩で巡れる${prefecture}の街歩き・散歩ルート全${routeCount}コース（計${spotCount}箇所のスポット）。${areaPreview}を中心に${spotPreview ? `${spotPreview}を訪ね、` : ""}所要時間・徒歩マップ付きで土地の物語と「SHUIN（まちのしるし）」を集める散策を楽しめます。`
+      ? `車なし・徒歩で半日から巡れる${prefecture}の街歩き・散歩ルート全${routeCount}コース（徒歩マップ・所要時間付き）。${areaPreview}を中心に${spotPreview ? `${spotPreview}など` : ""}計${spotCount}箇所を訪ね、土地の物語としるしを辿れます。`
       : routeCount >= 1
         ? `${prefecture}では現在、${areaPreview}をめぐる街歩きルート（全${routeCount}ルート・${spotCount}箇所のスポット）を公開中です。${spotPreview ? `${spotPreview}など、` : ""}ガイドブックだけでは見えない街の物語を徒歩で辿りながら、訪れた場所のしるし（SHUIN）を刻むことができます。順次${prefecture}内の新たな駅・エリアのルートも拡充しています。`
         : `${prefecture}エリアの街歩きルートは現在準備・拡充中です。近隣の${region}エリアで公開中のルートから気になる街を探してみてください。`;
@@ -845,9 +845,14 @@ export function buildSpotSeoMetadata(
       ? spot.description.trim()
       : `${areaInfo.fullAreaLabel}の街歩きルート「${rally.title}」第${spotOrder}スポット。`;
   const descExcerpt =
-    rawSpotDesc.length > 100 ? `${rawSpotDesc.slice(0, 100)}…` : rawSpotDesc;
+    rawSpotDesc.length > 85 ? `${rawSpotDesc.slice(0, 85)}…` : rawSpotDesc;
 
-  const seoDescription = `【${areaInfo.fullAreaLabel}・${spot.name}】${descExcerpt}${spot.address ? `（所在地：${spot.address}）` : ""}。徒歩約${walkMetrics.estimatedMinutes}分で全${walkMetrics.spotCount}箇所をめぐる街歩きルート「${rally.title}」の立ち寄りスポット案内。`;
+  const spotCompactLoc =
+    [areaInfo.prefecture, areaInfo.shortAreaName]
+      .filter((v, i, arr) => Boolean(v) && arr.indexOf(v) === i)
+      .join("・") || areaInfo.fullAreaLabel;
+
+  const seoDescription = `【${spotCompactLoc}】${descExcerpt}${spot.address ? `（${spot.address}）` : ""}｜徒歩約${walkMetrics.estimatedMinutes}分で全${walkMetrics.spotCount}箇所を巡る「${rally.title}」の立ち寄りスポット案内。`;
 
   const imgRaw = spot?.image_url || spot?.cover_image_url || rally?.thumbnail_url;
   const ogImageUrl = imgRaw

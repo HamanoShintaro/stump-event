@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +40,7 @@ function normalizeRouteSpots(route: any) {
   });
 }
 
-async function fetchPrefectureAndRegionRoutes(prefecture: string) {
+const fetchPrefectureAndRegionRoutes = cache(async (prefecture: string) => {
   const region = PREFECTURE_REGION_MAP[prefecture] || "全国";
   const sameRegionPrefs = ALL_PREFECTURE_NAMES.filter(
     (p) => PREFECTURE_REGION_MAP[p] === region && p !== prefecture
@@ -78,7 +79,7 @@ async function fetchPrefectureAndRegionRoutes(prefecture: string) {
   }
 
   return { prefRoutes, neighborRoutes, region, sameRegionPrefs };
-}
+});
 
 export async function generateMetadata({
   params,
