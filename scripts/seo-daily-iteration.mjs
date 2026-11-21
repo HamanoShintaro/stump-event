@@ -416,6 +416,11 @@ async function submitSitemapToSearchConsole() {
 }
 
 async function fetchGa4Metrics() {
+  const emptyOverview = {
+    yesterday: { screenPageViews: 0, activeUsers: 0, sessions: 0 },
+    last7d: { screenPageViews: 0, activeUsers: 0, sessions: 0 },
+    last28d: { screenPageViews: 0, activeUsers: 0, sessions: 0 },
+  };
   const propertyId = (process.env.GA4_PROPERTY_ID || "562267296")
     .replace(/^properties\//, "")
     .trim();
@@ -424,6 +429,8 @@ async function fetchGa4Metrics() {
       status: "unconfigured",
       message:
         "GA4_PROPERTY_ID が未設定です。GA4作成後に GA4_PROPERTY_ID（数字のプロパティID）を .env.local に設定すると、ページ別滞在時間・エンゲージメント率・ルート参加CV数も自動取得されます。",
+      pageMetricsWindow: "28daysAgo..yesterday",
+      overview: emptyOverview,
       rows: [],
     };
   }
@@ -433,6 +440,8 @@ async function fetchGa4Metrics() {
     return {
       status: "unconfigured",
       message: "Google 認証情報が未設定のため GA4 Data API をスキップしました。",
+      pageMetricsWindow: "28daysAgo..yesterday",
+      overview: emptyOverview,
       rows: [],
     };
   }
@@ -482,28 +491,63 @@ async function fetchGa4Metrics() {
       propertyId
     )}:runReport`;
 
-    const res = await fetch(endpoint, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({
-        dateRanges: [{ startDate: "28daysAgo", endDate: "yesterday" }],
-        dimensions: [{ name: "pagePath" }],
-        metrics: [
-          { name: "screenPageViews" },
-          { name: "activeUsers" },
-          { name: "engagementRate" },
-          { name: "averageSessionDuration" },
-          { name: "eventCount" },
-        ],
-        limit: 250,
+    const fetchSiteTotals = async (startDate, endDate) => {
+      const totalsRes = await fetch(endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          dateRanges: [{ startDate, endDate }],
+          metrics: [
+            { name: "screenPageViews" },
+            { name: "activeUsers" },
+            { name: "sessions" },
+          ],
+        }),
+      });
+      if (!totalsRes.ok) {
+        const errText = await totalsRes.text();
+        throw new Error(
+          `GA4 Data API 全体集計エラー (${totalsRes.status}, ${startDate}..${endDate}): ${errText}`
+        );
+      }
+      const totalsData = await totalsRes.json();
+      const mv = totalsData.rows?.[0]?.metricValues || [];
+      return {
+        screenPageViews: Number(mv[0]?.value || 0),
+        activeUsers: Number(mv[1]?.value || 0),
+        sessions: Number(mv[2]?.value || 0),
+      };
+    };
+
+    const [res, yesterdayTotals, last7dTotals, last28dTotals] = await Promise.all([
+      fetch(endpoint, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          dateRanges: [{ startDate: "28daysAgo", endDate: "yesterday" }],
+          dimensions: [{ name: "pagePath" }],
+          metrics: [
+            { name: "screenPageViews" },
+            { name: "activeUsers" },
+            { name: "engagementRate" },
+            { name: "averageSessionDuration" },
+            { name: "eventCount" },
+          ],
+          limit: 250,
+        }),
       }),
-    });
+      fetchSiteTotals("yesterday", "yesterday"),
+      fetchSiteTotals("7daysAgo", "yesterday"),
+      fetchSiteTotals("28daysAgo", "yesterday"),
+    ]);
 
     if (!res.ok) {
       const errText = await res.text();
       return {
         status: "error",
         message: `GA4 Data API 応答エラー (${res.status}): ${errText}`,
+        pageMetricsWindow: "28daysAgo..yesterday",
+        overview: emptyOverview,
         rows: [],
       };
     }
@@ -521,12 +565,20 @@ async function fetchGa4Metrics() {
     return {
       status: "ok",
       propertyId,
+      pageMetricsWindow: "28daysAgo..yesterday",
+      overview: {
+        yesterday: yesterdayTotals,
+        last7d: last7dTotals,
+        last28d: last28dTotals,
+      },
       rows,
     };
   } catch (err) {
     return {
       status: "error",
       message: err instanceof Error ? err.message : String(err),
+      pageMetricsWindow: "28daysAgo..yesterday",
+      overview: emptyOverview,
       rows: [],
     };
   }
@@ -1941,6 +1993,7 @@ async function main() {
     sitemapSubmission: sitemapSubmitResult,
     ga4Status: ga4Result.status,
     ga4Message: ga4Result.message || null,
+    ga4PageMetricsWindow: ga4Result.pageMetricsWindow || "28daysAgo..yesterday",
     summary: {
       externalRegisteredUsers:
         userMetrics?.headline?.externalRegisteredUsers ?? 0,
@@ -1959,6 +2012,13 @@ async function main() {
       stripeNetRevenue30dJpy: stripeMetrics?.payments?.netRevenue30dJpy ?? 0,
       stripeNetRevenueTotalJpy:
         stripeMetrics?.payments?.netRevenueTotalJpy ?? 0,
+      ga4PvYesterday: ga4Result.overview?.yesterday?.screenPageViews ?? 0,
+      ga4UsersYesterday: ga4Result.overview?.yesterday?.activeUsers ?? 0,
+      ga4SessionsYesterday: ga4Result.overview?.yesterday?.sessions ?? 0,
+      ga4Pv7d: ga4Result.overview?.last7d?.screenPageViews ?? 0,
+      ga4Users7d: ga4Result.overview?.last7d?.activeUsers ?? 0,
+      ga4Pv28d: ga4Result.overview?.last28d?.screenPageViews ?? 0,
+      ga4Users28d: ga4Result.overview?.last28d?.activeUsers ?? 0,
       totalGscRows: (gscResult.rows || []).length,
       totalGscPages: (gscResult.pageRows || []).length,
       sitemapStatus: sitemapSubmitResult.status,
@@ -1980,6 +2040,7 @@ async function main() {
     },
     userMetrics,
     stripeMetrics,
+    ga4TrafficOverview: ga4Result.overview || null,
     dailySnsPick,
     microFeedbackSummary,
     prefectureHubAudit,
