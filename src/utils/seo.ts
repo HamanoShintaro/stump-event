@@ -686,7 +686,7 @@ export function buildPrefectureHubSeoMetadata(
   const hookBadge =
     hubInfo.routeCount > 0
       ? hasCarFreeInTitle
-        ? `全${hubInfo.routeCount}ルート（${hubInfo.subHook}）`
+        ? `徒歩マップ全${hubInfo.routeCount}選`
         : `車なし・徒歩マップ全${hubInfo.routeCount}選`
       : hubInfo.subHook;
   const metaParts = [hookBadge, areaPreview].filter(Boolean).join("｜");
@@ -833,13 +833,43 @@ export function buildSpotSeoMetadata(
     1;
   const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
 
-  const spotRegionTag =
-    areaInfo.shortAreaName && !spot.name.includes(areaInfo.shortAreaName)
-      ? areaInfo.shortAreaName
-      : areaInfo.prefecture || areaInfo.shortAreaName;
+  const shortPref = areaInfo.prefecture
+    ? areaInfo.prefecture.replace(/[都府県]$/, "")
+    : "";
+  const areaCore = areaInfo.shortAreaName
+    ? areaInfo.shortAreaName.replace(/(?:駅|前|口)$/, "")
+    : "";
+  const spotOverlapsArea =
+    Boolean(areaInfo.shortAreaName && spot.name.includes(areaInfo.shortAreaName)) ||
+    Boolean(areaCore.length >= 2 && spot.name.includes(areaCore));
+
+  let spotRegionTag = "";
+  if (spotOverlapsArea) {
+    const cityCore = areaInfo.cityName
+      ? areaInfo.cityName.replace(/[市区町村]$/, "")
+      : "";
+    if (areaInfo.cityName && (!cityCore || !spot.name.includes(cityCore))) {
+      spotRegionTag =
+        shortPref && !areaInfo.cityName.includes(shortPref)
+          ? `${shortPref}・${areaInfo.cityName}`
+          : areaInfo.cityName;
+    } else {
+      spotRegionTag = areaInfo.prefecture || areaInfo.cityName || "";
+    }
+  } else if (areaInfo.shortAreaName) {
+    spotRegionTag =
+      shortPref &&
+      areaInfo.shortAreaName !== areaInfo.prefecture &&
+      !areaInfo.shortAreaName.includes(shortPref)
+        ? `${shortPref}・${areaInfo.shortAreaName}`
+        : areaInfo.shortAreaName;
+  } else {
+    spotRegionTag = areaInfo.prefecture || "";
+  }
+
   const seoTitle = spotRegionTag
-    ? `${spot.name}（${spotRegionTag}）の見どころ・街歩き案内｜${rally.title}`
-    : `${spot.name}の見どころ・街歩き案内｜${rally.title}`;
+    ? `${spot.name}（${spotRegionTag}）｜見どころ・散歩案内｜${rally.title}`
+    : `${spot.name}｜見どころ・散歩案内｜${rally.title}`;
   const rawSpotDesc =
     typeof spot?.description === "string" && spot.description.trim()
       ? spot.description.trim()
