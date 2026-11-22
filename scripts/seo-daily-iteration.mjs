@@ -1311,6 +1311,7 @@ const NON_TARGET_GSC_PATTERNS = [
   /終電/,
   /定期代|定期券/,
   /天気/,
+  /買取|査定|売却/,
 ];
 
 function isExcludedGscQuery(q) {
