@@ -54,6 +54,15 @@ function formatDate(d) {
   return d.toISOString().split("T")[0];
 }
 
+function getJstDateString(offsetDays = 0) {
+  const jstTodayStr = new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Asia/Tokyo",
+  }).format(new Date());
+  const [y, m, day] = jstTodayStr.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, day + offsetDays));
+  return dt.toISOString().split("T")[0];
+}
+
 function base64UrlEncode(strOrBuf) {
   const buf = Buffer.isBuffer(strOrBuf)
     ? strOrBuf
@@ -168,7 +177,9 @@ async function fetchSearchConsoleMetrics() {
       status: "unconfigured",
       message:
         "Google Search Console サービスアカウント未設定のため、Googleサジェスト（実検索トレンド）＋Supabaseルート監査モードで実行しました。",
+      overview: null,
       rows: [],
+      recent3dRows: [],
       pageRows: [],
     };
   }
@@ -210,9 +221,11 @@ async function fetchSearchConsoleMetrics() {
       }
     }
 
-    const endDate = new Date();
-    const startDate = new Date(endDate);
-    startDate.setDate(startDate.getDate() - 30);
+    const yesterday = getJstDateString(-1);
+    const twoDaysAgo = getJstDateString(-2);
+    const start3d = getJstDateString(-3);
+    const start7d = getJstDateString(-7);
+    const start28d = getJstDateString(-28);
 
     const apiEndpoint = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
       SITE_URL
@@ -223,53 +236,166 @@ async function fetchSearchConsoleMetrics() {
       "Content-Type": "application/json",
     };
 
-    const [res, pageRes] = await Promise.all([
-      fetch(apiEndpoint, {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-          startDate: formatDate(startDate),
-          endDate: formatDate(endDate),
-          dimensions: ["query", "page"],
-          rowLimit: 500,
-          dataState: "all",
+    const [dateRes, recent3dRes, last7dQueryRes, last7dPageRes] =
+      await Promise.all([
+        fetch(apiEndpoint, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            startDate: start28d,
+            endDate: yesterday,
+            dimensions: ["date"],
+            rowLimit: 60,
+            dataState: "all",
+          }),
         }),
-      }),
-      fetch(apiEndpoint, {
-        method: "POST",
-        headers,
-        body: JSON.stringify({
-          startDate: formatDate(startDate),
-          endDate: formatDate(endDate),
-          dimensions: ["page"],
-          rowLimit: 200,
-          dataState: "all",
+        fetch(apiEndpoint, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            startDate: start3d,
+            endDate: yesterday,
+            dimensions: ["query", "page"],
+            rowLimit: 250,
+            dataState: "all",
+          }),
         }),
-      }),
-    ]);
+        fetch(apiEndpoint, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            startDate: start7d,
+            endDate: yesterday,
+            dimensions: ["query", "page"],
+            rowLimit: 500,
+            dataState: "all",
+          }),
+        }),
+        fetch(apiEndpoint, {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            startDate: start7d,
+            endDate: yesterday,
+            dimensions: ["page"],
+            rowLimit: 200,
+            dataState: "all",
+          }),
+        }),
+      ]);
 
-    if (!res.ok) {
-      const errText = await res.text();
+    if (!last7dQueryRes.ok) {
+      const errText = await last7dQueryRes.text();
       return {
         status: "error",
-        message: `Search Console API 応答エラー (${res.status}): ${errText}`,
+        message: `Search Console API 応答エラー (${last7dQueryRes.status}): ${errText}`,
+        overview: null,
         rows: [],
+        recent3dRows: [],
         pageRows: [],
       };
     }
 
-    const data = await res.json();
-    const rows = (data.rows || []).map((r) => ({
-      query: r.keys?.[0] || "",
-      page: r.keys?.[1] || "",
-      clicks: r.clicks || 0,
-      impressions: r.impressions || 0,
-      ctr: r.ctr || 0,
-      position: Number((r.position || 0).toFixed(1)),
-    }));
+    if (!dateRes.ok || !recent3dRes.ok || !last7dPageRes.ok) {
+      const failedStatuses = [
+        !dateRes.ok ? `date=${dateRes.status}` : null,
+        !recent3dRes.ok ? `recent3d=${recent3dRes.status}` : null,
+        !last7dPageRes.ok ? `page7d=${last7dPageRes.status}` : null,
+      ]
+        .filter(Boolean)
+        .join(", ");
+      return {
+        status: "error",
+        message: `Search Console API 応答エラー (${failedStatuses})`,
+        overview: null,
+        rows: [],
+        recent3dRows: [],
+        pageRows: [],
+      };
+    }
 
-    const pageData = pageRes.ok ? await pageRes.json() : {};
-    const pageRows = (pageData.rows || []).map((r) => ({
+    const mapQueryPageRows = (json) =>
+      (json?.rows || []).map((r) => ({
+        query: r.keys?.[0] || "",
+        page: r.keys?.[1] || "",
+        clicks: r.clicks || 0,
+        impressions: r.impressions || 0,
+        ctr: r.ctr || 0,
+        position: Number((r.position || 0).toFixed(1)),
+      }));
+
+    const [dateData, recent3dData, last7dQueryData, last7dPageData] =
+      await Promise.all([
+        dateRes.json(),
+        recent3dRes.json(),
+        last7dQueryRes.json(),
+        last7dPageRes.json(),
+      ]);
+
+    const dateRows = (dateData?.rows || [])
+      .map((r) => ({
+        date: r.keys?.[0] || "",
+        clicks: r.clicks || 0,
+        impressions: r.impressions || 0,
+        ctr: Number((r.ctr || 0).toFixed(4)),
+        position: Number((r.position || 0).toFixed(1)),
+      }))
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    const summarizeDateRows = (list) => {
+      const clicks = list.reduce((sum, r) => sum + (r.clicks || 0), 0);
+      const impressions = list.reduce((sum, r) => sum + (r.impressions || 0), 0);
+      const weightedPosSum = list.reduce(
+        (sum, r) => sum + (r.position || 0) * (r.impressions || 0),
+        0
+      );
+      return {
+        clicks,
+        impressions,
+        ctr: impressions > 0 ? Number((clicks / impressions).toFixed(4)) : 0,
+        position:
+          impressions > 0
+            ? Number((weightedPosSum / impressions).toFixed(1))
+            : 0,
+      };
+    };
+
+    const overview = {
+      yesterday: {
+        date: yesterday,
+        ...summarizeDateRows(dateRows.filter((d) => d.date === yesterday)),
+      },
+      twoDaysAgo: {
+        date: twoDaysAgo,
+        ...summarizeDateRows(dateRows.filter((d) => d.date === twoDaysAgo)),
+      },
+      last3d: {
+        startDate: start3d,
+        endDate: yesterday,
+        ...summarizeDateRows(
+          dateRows.filter((d) => d.date >= start3d && d.date <= yesterday)
+        ),
+      },
+      last7d: {
+        startDate: start7d,
+        endDate: yesterday,
+        ...summarizeDateRows(
+          dateRows.filter((d) => d.date >= start7d && d.date <= yesterday)
+        ),
+      },
+      last28d: {
+        startDate: start28d,
+        endDate: yesterday,
+        ...summarizeDateRows(dateRows),
+      },
+      dailyTrend7d: dateRows.filter(
+        (d) => d.date >= start7d && d.date <= yesterday
+      ),
+    };
+
+    const rows7d = mapQueryPageRows(last7dQueryData);
+    const rows3d = mapQueryPageRows(recent3dData);
+    const pageRows7d = (last7dPageData?.rows || []).map((r) => ({
       page: r.keys?.[0] || "",
       clicks: r.clicks || 0,
       impressions: r.impressions || 0,
@@ -279,15 +405,24 @@ async function fetchSearchConsoleMetrics() {
 
     return {
       status: "ok",
-      period: { startDate: formatDate(startDate), endDate: formatDate(endDate) },
-      rows,
-      pageRows,
+      period: {
+        analysisWindow: "last7d",
+        startDate: start7d,
+        endDate: yesterday,
+        recent3dStartDate: start3d,
+      },
+      overview,
+      rows: rows7d,
+      recent3dRows: rows3d,
+      pageRows: pageRows7d,
     };
   } catch (err) {
     return {
       status: "error",
       message: err instanceof Error ? err.message : String(err),
+      overview: null,
       rows: [],
+      recent3dRows: [],
       pageRows: [],
     };
   }
@@ -1049,9 +1184,8 @@ async function fetchGoogleSuggestions(seedQuery) {
   }
 }
 
-// 街歩き・お出かけ・観光文脈に合致する一般的な検索意図キーワードの判定
+// 街歩き・お出かけ文脈に合致する一般的な検索意図キーワードの判定（「観光」「モデルコース」は除外）
 const OUTING_INTENT_PATTERNS = [
-  /モデル\s*コース/,
   /車なし/,
   /徒歩/,
   /半日/,
@@ -1061,11 +1195,6 @@ const OUTING_INTENT_PATTERNS = [
   /まち歩き/,
   /散歩/,
   /散策/,
-  /観光\s*スポット/,
-  /観光\s*おすすめ/,
-  /観光\s*マップ/,
-  /観光\s*所要時間/,
-  /観光/,
   /見どころ/,
   /おすすめ\s*スポット/,
   /名所/,
@@ -1095,6 +1224,8 @@ const OUTING_INTENT_PATTERNS = [
 ];
 
 const NOISE_PATTERNS = [
+  /モデル\s*コース/,
+  /観光/,
   /天気/,
   /ホテル/,
   /宿泊/,
@@ -1162,9 +1293,36 @@ const NOISE_PATTERNS = [
   /有田哲平/,
 ];
 
+const NON_TARGET_GSC_PATTERNS = [
+  /モデル\s*コース/,
+  /観光/,
+  /駐車場/,
+  /レンタカー/,
+  /カーシェア/,
+  /バスツアー/,
+  /ホテル/,
+  /宿泊/,
+  /旅館\s*予約/,
+  /賃貸/,
+  /不動産/,
+  /求人/,
+  /バイト/,
+  /時刻表/,
+  /終電/,
+  /定期代|定期券/,
+  /天気/,
+];
+
+function isExcludedGscQuery(q) {
+  if (!q || typeof q !== "string") return true;
+  const compact = q.replace(/\s+/g, "");
+  return NON_TARGET_GSC_PATTERNS.some((re) => re.test(q) || re.test(compact));
+}
+
 function isOutingIntentSuggestion(s, areaName = "", city = "") {
   if (!s || typeof s !== "string") return false;
-  if (NOISE_PATTERNS.some((re) => re.test(s))) return false;
+  const compact = s.replace(/\s+/g, "");
+  if (NOISE_PATTERNS.some((re) => re.test(s) || re.test(compact))) return false;
 
   // 地名（areaName, city）を除去した検索意図部分を抽出して誤判定（地名に含まれる「寺」など）を防止
   let intentPart = s;
@@ -1243,7 +1401,6 @@ function buildSmartHookFromSuggestions(
 ) {
   const joined = [...gscQueries, ...realSuggestions].join(" ");
 
-  const hasModelCourse = /モデル\s*コース/.test(joined);
   const hasCarFree = /車\s*なし|徒歩/.test(joined);
   const hasHalfDay = /半日/.test(joined);
   const hasFoodWalk = /食べ歩き/.test(joined);
@@ -1251,7 +1408,7 @@ function buildSmartHookFromSuggestions(
   const hasMap = /マップ/.test(joined);
   const hasDuration = /所要時間/.test(joined);
   const hasWalkCourse = /散歩|街歩き|散策/.test(joined);
-  const hasSpots = /スポット|見どころ|おすすめ|名所|周辺\s*観光/.test(joined);
+  const hasSpots = /スポット|見どころ|おすすめ|名所/.test(joined);
   const hasDate = /デート|カップル/.test(joined);
   const hasHoliday = /休日|お出かけ|暇つぶし|気分転換/.test(joined);
 
@@ -1524,13 +1681,14 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
 
   for (const [areaName, info] of areaMap.entries()) {
     const queryAreaName = formatShortAreaLabel(areaName) || areaName;
-    // 1. Check GSC queries matching this area or routes in this area
+    // 1. Check GSC queries matching this area or routes in this area (excluding tourism/model-course noise)
     const matchingGsc = (gscRows || [])
       .filter(
         (row) =>
-          row.query.includes(areaName) ||
-          row.query.includes(queryAreaName) ||
-          info.routeIds.some((id) => row.page.includes(id))
+          !isExcludedGscQuery(row.query) &&
+          (row.query.includes(areaName) ||
+            row.query.includes(queryAreaName) ||
+            info.routeIds.some((id) => row.page.includes(id)))
       )
       .sort((a, b) => b.impressions - a.impressions);
 
@@ -1611,7 +1769,7 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
         ])
       ).slice(0, 14),
       gscTopQueries,
-      updatedAt: new Date().toISOString().split("T")[0],
+      updatedAt: getJstDateString(0),
     };
 
     byAreaName[areaName] = areaEntry;
@@ -1634,9 +1792,11 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
     const matchingPrefGsc = (gscRows || [])
       .filter(
         (row) =>
-          row.query.includes(shortPref) ||
-          row.page.includes(encodeURIComponent(pref)) ||
-          pInfo.routeIds.some((id) => row.page.includes(id))
+          !isExcludedGscQuery(row.query) &&
+          (row.query.includes(shortPref) ||
+            row.query.includes(pref) ||
+            row.page.includes(encodeURIComponent(pref)) ||
+            pInfo.routeIds.some((id) => row.page.includes(id)))
       )
       .sort((a, b) => b.impressions - a.impressions);
 
@@ -1708,7 +1868,7 @@ async function discoverAreaSearchIntents(routes, gscRows, skipOverwrite = false)
       leadSummary,
       topSearchKeywords,
       gscTopQueries,
-      updatedAt: new Date().toISOString().split("T")[0],
+      updatedAt: getJstDateString(0),
     };
   }
 
@@ -1800,9 +1960,16 @@ async function main() {
     }
   }
 
+  const targetGscRows7d = (gscResult.rows || []).filter(
+    (r) => !isExcludedGscQuery(r.query)
+  );
+  const targetGscRows3d = (gscResult.recent3dRows || []).filter(
+    (r) => !isExcludedGscQuery(r.query)
+  );
+
   const [userMetrics, areaIntentResult] = await Promise.all([
     fetchUserMetrics(supabaseClient, hasServiceRoleKey, ga4Result),
-    discoverAreaSearchIntents(routes, gscResult.rows || [], routesFetchFailed),
+    discoverAreaSearchIntents(routes, targetGscRows7d, routesFetchFailed),
   ]);
   const { byAreaName: areaKeywordsMap, byPrefecture: prefectureKeywordsMap } =
     areaIntentResult;
@@ -1926,8 +2093,12 @@ async function main() {
     terminologyViolations: terminologyViolations.slice(0, 10),
   };
 
-  // Top queries from GSC (unfiltered, sorted by impressions so we see real user intent!)
-  const topGscQueriesByImpressions = [...(gscResult.rows || [])]
+  // Top queries from GSC (last 7d & 3d, excluding non-target 観光/モデルコース/駐車場 queries)
+  const recent3dGscQueries = [...targetGscRows3d]
+    .sort((a, b) => b.clicks - a.clicks || b.impressions - a.impressions)
+    .slice(0, 20);
+
+  const topGscQueriesByImpressions = [...targetGscRows7d]
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 30);
 
@@ -1935,13 +2106,13 @@ async function main() {
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 30);
 
-  const lowCtrOpportunities = (gscResult.rows || [])
-    .filter((r) => r.impressions >= 15 && r.ctr < 0.03)
+  const lowCtrOpportunities = targetGscRows7d
+    .filter((r) => r.impressions >= 8 && r.ctr < 0.03)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15);
 
-  const strikingDistanceQueries = (gscResult.rows || [])
-    .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 1)
+  const strikingDistanceQueries = targetGscRows7d
+    .filter((r) => r.position >= 4 && r.position <= 20 && r.impressions >= 3)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15);
 
@@ -2019,7 +2190,18 @@ async function main() {
       ga4Users7d: ga4Result.overview?.last7d?.activeUsers ?? 0,
       ga4Pv28d: ga4Result.overview?.last28d?.screenPageViews ?? 0,
       ga4Users28d: ga4Result.overview?.last28d?.activeUsers ?? 0,
+      gscClicksYesterday: gscResult.overview?.yesterday?.clicks ?? 0,
+      gscImpressionsYesterday: gscResult.overview?.yesterday?.impressions ?? 0,
+      gscClicks2DaysAgo: gscResult.overview?.twoDaysAgo?.clicks ?? 0,
+      gscImpressions2DaysAgo: gscResult.overview?.twoDaysAgo?.impressions ?? 0,
+      gscClicks7d: gscResult.overview?.last7d?.clicks ?? 0,
+      gscImpressions7d: gscResult.overview?.last7d?.impressions ?? 0,
+      gscClicks28d: gscResult.overview?.last28d?.clicks ?? 0,
+      gscImpressions28d: gscResult.overview?.last28d?.impressions ?? 0,
       totalGscRows: (gscResult.rows || []).length,
+      totalGscTargetRows7d: targetGscRows7d.length,
+      excludedNonTargetGscRows7d:
+        (gscResult.rows || []).length - targetGscRows7d.length,
       totalGscPages: (gscResult.pageRows || []).length,
       sitemapStatus: sitemapSubmitResult.status,
       lowCtrOpportunityCount: lowCtrOpportunities.length,
@@ -2041,10 +2223,12 @@ async function main() {
     userMetrics,
     stripeMetrics,
     ga4TrafficOverview: ga4Result.overview || null,
+    gscTrafficOverview: gscResult.overview || null,
     dailySnsPick,
     microFeedbackSummary,
     prefectureHubAudit,
     llmsAudit,
+    recent3dGscQueries,
     topGscQueriesByImpressions,
     topGscPages,
     lowCtrOpportunities,
