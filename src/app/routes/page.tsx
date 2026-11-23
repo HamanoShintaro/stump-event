@@ -12,7 +12,7 @@ export const revalidate = 300; // 5分間キャッシュ（ISR）で毎回のDB�
 const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  title: "街歩き・散歩ルートを探す｜ひとり散歩・休日のお出かけに",
+  title: "全国47都道府県の街歩き・散歩ルート一覧｜徒歩マップ・所要時間付き",
   description:
     "「知っている街の、知らない散歩道」を見つける。全国47都道府県の駅や地元を歩いて巡る散歩・散策ルートを検索。気分やエリア、所要時間から、今日のひとり散歩や休日のお出かけにぴったりの街歩きが見つかります。",
   alternates: {

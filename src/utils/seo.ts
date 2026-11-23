@@ -146,6 +146,10 @@ export function extractCityFromAddress(address?: string | null): string | null {
   return match && match[1] ? match[1].trim() : null;
 }
 
+function stripCountyPrefix(cityName: string): string {
+  return cityName.replace(/^.+?郡(?=.+[町村]$)/, "").trim();
+}
+
 export function extractAreaFromTitle(
   title?: string | null,
   description?: string | null,
@@ -200,8 +204,7 @@ export function extractAreaFromTitle(
     if (wardMatch && wardMatch[1] && wardMatch[1].length >= 2) {
       return wardMatch[1].trim();
     }
-    const cleanCity = cityName
-      .replace(/^.+?郡/, "")
+    const cleanCity = stripCountyPrefix(cityName)
       .replace(/[市区町村]$/, "")
       .trim();
     if (cleanCity.length >= 2) {
@@ -279,7 +282,7 @@ export function extractRouteAreaInfo(
     matchedByRoute?.areaName ||
     explicitArea ||
     titleArea ||
-    (cityName ? cityName.replace(/^.+?郡/, "").replace(/[市区町村]$/, "") : "") ||
+    (cityName ? stripCountyPrefix(cityName).replace(/[市区町村]$/, "") : "") ||
     prefecture ||
     "街歩き";
 
@@ -355,7 +358,7 @@ export function buildRouteSeoMetadata(
 
   const shortPref = info.prefecture ? info.prefecture.replace(/[都府県]$/, "") : "";
   const cleanCityDisplay = info.cityName
-    ? info.cityName.replace(/^.+?郡/, "").trim()
+    ? stripCountyPrefix(info.cityName)
     : "";
   const wardMatch = cleanCityDisplay.match(/^(.+?)市([^\d\s]+?)区$/);
   const cityMatchTokens = wardMatch
@@ -861,6 +864,25 @@ export function buildPrefectureHubJsonLd(
   };
 }
 
+function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string {
+  if (/駅(?:[（(][^）)]*[）)])?$/.test(spotName.trim())) {
+    return "駅周辺の見どころ・徒歩マップ";
+  }
+  const isDiningOrShop =
+    /(?:カフェ|喫茶|cafe|restaurant|レストラン|食堂|茶屋|菓舗|パン|ベーカリー|ラーメン|そば|うどん|酒造|ブルワリー|朝市|市場|洋食|甘味|和菓子)/i.test(
+      spotName
+    ) ||
+    /(?:営業|定休|L\.O\.|ランチ|モーニング|カフェ|名物|味わえる)/.test(
+      actualSpotDesc
+    );
+  if (isDiningOrShop) {
+    return /(?:\d{1,2}:\d{2}|営業|定休)/.test(actualSpotDesc)
+      ? "営業時間・名物・アクセス"
+      : "名物・アクセス";
+  }
+  return "見どころ・アクセス";
+}
+
 export function buildSpotSeoMetadata(
   rally: any,
   spot: any,
@@ -881,21 +903,28 @@ export function buildSpotSeoMetadata(
   const shortPref = areaInfo.prefecture
     ? areaInfo.prefecture.replace(/[都府県]$/, "")
     : "";
-  const areaCore = areaInfo.shortAreaName
-    ? areaInfo.shortAreaName.replace(/(?:駅|前|口)$/, "")
+  const cleanSpotCity = areaInfo.cityName
+    ? stripCountyPrefix(areaInfo.cityName)
+    : "";
+  const cityCore = cleanSpotCity
+    ? cleanSpotCity.replace(/[市区町村]$/, "")
+    : "";
+  const preferCityOverLongArea =
+    Boolean(cleanSpotCity) &&
+    areaInfo.shortAreaName.length > 7 &&
+    !spotName.includes(areaInfo.shortAreaName);
+  const resolvedSpotArea = preferCityOverLongArea
+    ? cleanSpotCity
+    : areaInfo.shortAreaName;
+  const areaCore = resolvedSpotArea
+    ? resolvedSpotArea.replace(/(?:駅|前|口|[市区町村])$/, "")
     : "";
   const spotOverlapsArea =
-    Boolean(areaInfo.shortAreaName && spotName.includes(areaInfo.shortAreaName)) ||
+    Boolean(resolvedSpotArea && spotName.includes(resolvedSpotArea)) ||
     Boolean(areaCore.length >= 2 && spotName.includes(areaCore));
 
   let spotRegionTag = "";
   if (spotOverlapsArea) {
-    const cleanSpotCity = areaInfo.cityName
-      ? areaInfo.cityName.replace(/^.+?郡/, "").trim()
-      : "";
-    const cityCore = cleanSpotCity
-      ? cleanSpotCity.replace(/[市区町村]$/, "")
-      : "";
     if (cleanSpotCity && (!cityCore || !spotName.includes(cityCore))) {
       spotRegionTag =
         shortPref && !cleanSpotCity.includes(shortPref)
@@ -904,37 +933,39 @@ export function buildSpotSeoMetadata(
     } else {
       spotRegionTag = areaInfo.prefecture || cleanSpotCity || "";
     }
-  } else if (areaInfo.shortAreaName) {
+  } else if (resolvedSpotArea) {
     spotRegionTag =
       shortPref &&
-      areaInfo.shortAreaName !== areaInfo.prefecture &&
-      !areaInfo.shortAreaName.includes(shortPref)
-        ? `${shortPref}・${areaInfo.shortAreaName}`
-        : areaInfo.shortAreaName;
+      resolvedSpotArea !== areaInfo.prefecture &&
+      !resolvedSpotArea.includes(shortPref)
+        ? `${shortPref}・${resolvedSpotArea}`
+        : resolvedSpotArea;
   } else {
     spotRegionTag = areaInfo.prefecture || "";
   }
 
+  const actualSpotDesc =
+    typeof spot?.description === "string" ? spot.description.trim() : "";
+  const rawSpotDesc =
+    actualSpotDesc ||
+    `${areaInfo.fullAreaLabel}の街歩きルート「${rallyTitle}」第${spotOrder}スポット。`;
+  const spotAngle = resolveSpotTitleAngle(spotName, actualSpotDesc);
   const spotHasParen = /[（(].*[)）]/.test(spotName);
   const seoTitle = spotRegionTag
     ? spotHasParen
-      ? `${spotName}｜${spotRegionTag} 見どころ・アクセス｜${rallyTitle}`
-      : `${spotName}（${spotRegionTag}）｜見どころ・アクセス｜${rallyTitle}`
-    : `${spotName}｜見どころ・アクセス｜${rallyTitle}`;
-  const rawSpotDesc =
-    typeof spot?.description === "string" && spot.description.trim()
-      ? spot.description.trim()
-      : `${areaInfo.fullAreaLabel}の街歩きルート「${rallyTitle}」第${spotOrder}スポット。`;
+      ? `${spotName}｜${spotRegionTag} ${spotAngle}｜${rallyTitle}`
+      : `${spotName}（${spotRegionTag}）｜${spotAngle}｜${rallyTitle}`
+    : `${spotName}｜${spotAngle}｜${rallyTitle}`;
   const descExcerpt =
-    rawSpotDesc.length > 75 ? `${rawSpotDesc.slice(0, 75)}…` : rawSpotDesc;
+    rawSpotDesc.length > 105 ? `${rawSpotDesc.slice(0, 105)}…` : rawSpotDesc;
 
   const locParts = [shortPref || areaInfo.prefecture].filter(Boolean);
   if (
-    areaInfo.shortAreaName &&
-    areaInfo.shortAreaName !== areaInfo.prefecture &&
-    areaInfo.shortAreaName !== shortPref
+    resolvedSpotArea &&
+    resolvedSpotArea !== areaInfo.prefecture &&
+    resolvedSpotArea !== shortPref
   ) {
-    locParts.push(areaInfo.shortAreaName);
+    locParts.push(resolvedSpotArea);
   }
   const spotCompactLoc = locParts.join("・") || areaInfo.fullAreaLabel;
 
