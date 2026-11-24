@@ -150,6 +150,7 @@ export default function SpotCheckInClient({
 
   const [locationError, setLocationError] = useState<string | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+  const [guestGpsEnabled, setGuestGpsEnabled] = useState(false);
   const [isCheckingIn, setIsCheckingIn] = useState(false);
   const [showQRScanner, setShowQRScanner] = useState(false);
 
@@ -532,7 +533,8 @@ export default function SpotCheckInClient({
 
   // F. ユーザーのクリア進捗＆目的地算出
   useEffect(() => {
-    if (!route || !spot || !user) return;
+    if (!route || !spot) return;
+    if (!user && !guestGpsEnabled) return;
 
     if (!navigator.geolocation) {
       setLocationError("お使いのブラウザはGPSをサポートしていません。");
@@ -555,7 +557,7 @@ export default function SpotCheckInClient({
     );
 
     return () => navigator.geolocation.clearWatch(watchId);
-  }, [spot]);
+  }, [route, spot, user, guestGpsEnabled]);
 
   // 2.5 接近に応じてActバナー（物語の幕が進む）: 300m=壱 / 100m=弐 / 50m=終
   useEffect(() => {
@@ -2324,7 +2326,23 @@ export default function SpotCheckInClient({
                   )}
                 </div>
               ) : !locationError ? (
-                <p>現在地を取得中...</p>
+                !user && !guestGpsEnabled ? (
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", margin: "4px 0" }}>
+                    <p style={{ fontSize: "0.85rem", lineHeight: 1.55, margin: 0, opacity: 0.85 }}>
+                      スポット付近（半径{effectiveRadius}m圏内）で現在地を確認すると、ログインなしでも押印できます。
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setGuestGpsEnabled(true)}
+                      className="btn-primary"
+                      style={{ width: "100%", padding: "12px", fontSize: "0.95rem", fontWeight: 800 }}
+                    >
+                      現在地を確認して押印する
+                    </button>
+                  </div>
+                ) : (
+                  <p>現在地を取得中...</p>
+                )
               ) : null}
 
               {isLocationValid && !spot.qr_only && !isCheckingIn && (

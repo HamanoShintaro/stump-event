@@ -382,7 +382,13 @@ export function buildRouteSeoMetadata(
           .filter(Boolean)
           .join("・")
       : "";
-  const routeHeadline = regionHint ? `${info.titleHook}（${regionHint}）` : info.titleHook;
+  const compactTitleHook = info.titleHook.replace(
+    /街歩き・散歩散策コース$/,
+    "街歩き・散歩コース"
+  );
+  const routeHeadline = regionHint
+    ? `${compactTitleHook}（${regionHint}）`
+    : compactTitleHook;
   const seoTitle = `${routeHeadline}｜${rally.title}（徒歩約${mins}分・${info.subHook}）`;
 
   const spotsPreview =
@@ -724,18 +730,22 @@ export function buildPrefectureHubSeoMetadata(
   );
   const areaPreview =
     shortAreas.length > 0
-      ? `${shortAreas.slice(0, 3).join("・")}${shortAreas.length > 3 ? "ほか" : ""}`
+      ? `${shortAreas.slice(0, 3).join("・")}${shortAreas.length > 3 ? "など" : ""}`
       : "";
 
-  const hasCarFreeInTitle = /車なし|徒歩/.test(hubInfo.titleHook);
-  const hookBadge =
+  const compactPrefTitleHook = hubInfo.titleHook.replace(
+    /街歩き・散歩散策コース$/,
+    "街歩き・散歩コース"
+  );
+  const hasCarFreeInTitle = /車なし|徒歩/.test(compactPrefTitleHook);
+  const countBadge =
     hubInfo.routeCount > 0
       ? hasCarFreeInTitle
-        ? `徒歩マップ全${hubInfo.routeCount}選`
-        : `車なし・徒歩マップ全${hubInfo.routeCount}選`
+        ? `全${hubInfo.routeCount}選`
+        : `車なし徒歩${hubInfo.routeCount}選`
       : hubInfo.subHook;
-  const metaParts = [hookBadge, areaPreview].filter(Boolean).join("｜");
-  const seoTitle = `${hubInfo.titleHook}｜${metaParts}`;
+  const metaTail = areaPreview ? `${areaPreview} ${countBadge}` : countBadge;
+  const seoTitle = `${compactPrefTitleHook}｜${metaTail}`;
   const seoDescription = hubInfo.leadSummary;
 
   const firstThumb = routesList.find((r) => r?.thumbnail_url)?.thumbnail_url;
@@ -876,9 +886,13 @@ function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string
       actualSpotDesc
     );
   if (isDiningOrShop) {
-    return /(?:\d{1,2}:\d{2}|営業|定休)/.test(actualSpotDesc)
-      ? "営業時間・名物・アクセス"
-      : "名物・アクセス";
+    if (/(?:\d{1,2}:\d{2}|営業)/.test(actualSpotDesc)) {
+      return "営業時間・名物・アクセス";
+    }
+    if (/定休/.test(actualSpotDesc)) {
+      return "定休日・名物・アクセス";
+    }
+    return "名物・アクセス";
   }
   return "見どころ・アクセス";
 }
