@@ -229,6 +229,7 @@ export function formatShortAreaLabel(areaName?: string | null): string {
       s = isPref && parts[1] ? parts[1] : first;
     }
   }
+  s = s.replace(/空港ターミナル$/, "空港").trim();
   s = s.replace(/^(.{2,})(?<!道の)駅$/, "$1").trim();
   return s || areaName.trim();
 }
@@ -876,16 +877,18 @@ export function buildPrefectureHubJsonLd(
 
 function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string {
   if (/駅(?:[（(][^）)]*[）)])?$/.test(spotName.trim())) {
-    return "駅周辺の見どころ・徒歩マップ";
+    return "周辺の見どころ・徒歩マップ";
   }
-  const isDiningOrShop =
-    /(?:カフェ|喫茶|cafe|restaurant|レストラン|食堂|茶屋|菓舗|パン|ベーカリー|ラーメン|そば|うどん|酒造|ブルワリー|朝市|市場|洋食|甘味|和菓子)/i.test(
+  const isDiningOrFoodShop =
+    /(?:カフェ|喫茶|cafe|restaurant|レストラン|食堂|茶屋|菓舗|菓子|パン|ベーカリー|ラーメン|そば|蕎麦|うどん|鮨|寿司|酒造|ブルワリー|朝市|市場|洋食|甘味|和菓子)/i.test(
       spotName
     ) ||
-    /(?:営業|定休|L\.O\.|ランチ|モーニング|カフェ|名物|味わえる)/.test(
-      actualSpotDesc
+    /(?:ランチ|モーニング|名物|味わえる)/.test(actualSpotDesc);
+  const isFacilityOrCraftShop =
+    /(?:複合施設|ファクトリーショップ|美術館|博物館|資料館|ギャラリー|工房|案内所)/.test(
+      `${spotName} ${actualSpotDesc}`
     );
-  if (isDiningOrShop) {
+  if (isDiningOrFoodShop && !isFacilityOrCraftShop) {
     if (/(?:\d{1,2}:\d{2}|営業)/.test(actualSpotDesc)) {
       return "営業時間・名物・アクセス";
     }
@@ -893,6 +896,12 @@ function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string
       return "定休日・名物・アクセス";
     }
     return "名物・アクセス";
+  }
+  if (/(?:\d{1,2}:\d{2}|営業)/.test(actualSpotDesc)) {
+    return "営業時間・見どころ・アクセス";
+  }
+  if (/定休/.test(actualSpotDesc)) {
+    return "定休日・見どころ・アクセス";
   }
   return "見どころ・アクセス";
 }
@@ -926,7 +935,10 @@ export function buildSpotSeoMetadata(
   const preferCityOverLongArea =
     Boolean(cleanSpotCity) &&
     areaInfo.shortAreaName.length > 7 &&
-    !spotName.includes(areaInfo.shortAreaName);
+    !spotName.includes(areaInfo.shortAreaName) &&
+    !/(?:空港|温泉|港|駅|宿|海岸|公園|大社|神社|城下町?)$/.test(
+      areaInfo.shortAreaName
+    );
   const resolvedSpotArea = preferCityOverLongArea
     ? cleanSpotCity
     : areaInfo.shortAreaName;

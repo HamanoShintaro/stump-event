@@ -1389,6 +1389,7 @@ function formatShortAreaLabel(areaName) {
       s = isPref && parts[1] ? parts[1] : first;
     }
   }
+  s = s.replace(/空港ターミナル$/, "空港").trim();
   s = s.replace(/^(.{2,})(?<!道の)駅$/, "$1").trim();
   return s || areaName.trim();
 }

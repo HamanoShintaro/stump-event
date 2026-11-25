@@ -11,14 +11,19 @@ export const revalidate = 300; // 5分間キャッシュ（ISR）で毎回のDB�
 
 const siteUrl = getSiteUrl();
 
-export const metadata: Metadata = {
-  title: "全国47都道府県の街歩き・散歩ルート一覧｜徒歩マップ・所要時間付き",
-  description:
-    "「知っている街の、知らない散歩道」を見つける。全国47都道府県の駅や地元を歩いて巡る散歩・散策ルートを検索。気分やエリア、所要時間から、今日のひとり散歩や休日のお出かけにぴったりの街歩きが見つかります。",
-  alternates: {
-    canonical: `${siteUrl}/routes`,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { routes: allRoutes } = await getCachedPublishedRoutesWithStats();
+  const count = allRoutes.length;
+  const countLabel = count > 0 ? `（全${count}コース）` : "";
+  const countText = count > 0 ? `全${count}コース` : "全国";
+  return {
+    title: `全国47都道府県の街歩き・散歩ルート一覧${countLabel}｜車なし徒歩マップ付き`,
+    description: `「知っている街の、知らない散歩道」を見つける。全国47都道府県の駅や地元を車なし・徒歩で巡る散歩・散策ルート（${countText}）を掲載。所要時間やマップから、今日のひとり散歩や休日のお出かけにぴったりの街歩きが見つかります。`,
+    alternates: {
+      canonical: `${siteUrl}/routes`,
+    },
+  };
+}
 
 export default async function RoutesPage({
   searchParams,
