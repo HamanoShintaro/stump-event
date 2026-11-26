@@ -252,8 +252,6 @@ export function extractRouteAreaInfo(
   rally: any,
   spotsList: any[]
 ): RouteAreaSeoInfo {
-  const prefecture = (rally?.prefecture || "").trim();
-
   let cityName: string | null = null;
   for (const s of spotsList || []) {
     if (typeof s?.city === "string" && s.city.trim()) {
@@ -268,6 +266,11 @@ export function extractRouteAreaInfo(
   }
 
   const matchedByRoute = rally?.id ? byRouteIdMap[rally.id] : undefined;
+  const prefecture = (
+    rally?.prefecture ||
+    matchedByRoute?.prefecture ||
+    ""
+  ).trim();
 
   const explicitArea =
     typeof rally?.area_name === "string" && rally.area_name.trim()
@@ -906,6 +909,18 @@ function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string
   return "見どころ・アクセス";
 }
 
+const SPOT_SEARCH_READING_ALIASES: Record<string, string> = {
+  "fudan cafe": "フダンカフェ",
+  "b-speak": "ビースピーク",
+};
+
+function resolveSpotReadingAlias(spotName: string): string | null {
+  const normalized = spotName.trim().toLowerCase();
+  const alias = SPOT_SEARCH_READING_ALIASES[normalized];
+  if (!alias || spotName.includes(alias)) return null;
+  return alias;
+}
+
 export function buildSpotSeoMetadata(
   rally: any,
   spot: any,
@@ -921,6 +936,7 @@ export function buildSpotSeoMetadata(
   const canonicalUrl = `${siteUrl}/routes/${rally.id}/spot/${spot.id}`;
 
   const spotName = typeof spot?.name === "string" ? spot.name : "";
+  const spotReadingAlias = resolveSpotReadingAlias(spotName);
   const rallyTitle = typeof rally?.title === "string" ? rally.title : "";
 
   const shortPref = areaInfo.prefecture
@@ -951,7 +967,7 @@ export function buildSpotSeoMetadata(
 
   let spotRegionTag = "";
   if (spotOverlapsArea) {
-    if (cleanSpotCity && (!cityCore || !spotName.includes(cityCore))) {
+    if (cleanSpotCity && !spotName.includes(cleanSpotCity)) {
       spotRegionTag =
         shortPref && !cleanSpotCity.includes(shortPref)
           ? `${shortPref}・${cleanSpotCity}`
@@ -977,21 +993,29 @@ export function buildSpotSeoMetadata(
     `${areaInfo.fullAreaLabel}の街歩きルート「${rallyTitle}」第${spotOrder}スポット。`;
   const spotAngle = resolveSpotTitleAngle(spotName, actualSpotDesc);
   const spotHasParen = /[（(].*[)）]/.test(spotName);
-  const seoTitle = spotRegionTag
+  const titleParenContent = [spotReadingAlias, spotRegionTag]
+    .filter(Boolean)
+    .join("／");
+  const seoTitle = titleParenContent
     ? spotHasParen
-      ? `${spotName}｜${spotRegionTag} ${spotAngle}｜${rallyTitle}`
-      : `${spotName}（${spotRegionTag}）｜${spotAngle}｜${rallyTitle}`
+      ? `${spotName}｜${titleParenContent} ${spotAngle}｜${rallyTitle}`
+      : `${spotName}（${titleParenContent}）｜${spotAngle}｜${rallyTitle}`
     : `${spotName}｜${spotAngle}｜${rallyTitle}`;
   const descExcerpt =
     rawSpotDesc.length > 105 ? `${rawSpotDesc.slice(0, 105)}…` : rawSpotDesc;
 
   const locParts = [shortPref || areaInfo.prefecture].filter(Boolean);
+  const locSecondary = spotOverlapsArea
+    ? cleanSpotCity && !spotName.includes(cleanSpotCity)
+      ? cleanSpotCity
+      : ""
+    : resolvedSpotArea;
   if (
-    resolvedSpotArea &&
-    resolvedSpotArea !== areaInfo.prefecture &&
-    resolvedSpotArea !== shortPref
+    locSecondary &&
+    locSecondary !== areaInfo.prefecture &&
+    locSecondary !== shortPref
   ) {
-    locParts.push(resolvedSpotArea);
+    locParts.push(locSecondary);
   }
   const spotCompactLoc = locParts.join("・") || areaInfo.fullAreaLabel;
 
@@ -1014,6 +1038,7 @@ export function buildSpotSeoMetadata(
     description: seoDescription,
     keywords: [
       spot.name,
+      ...(spotReadingAlias ? [spotReadingAlias] : []),
       `${spot.name} 見どころ`,
       `${spot.name} 歴史`,
       `${spot.name} アクセス`,

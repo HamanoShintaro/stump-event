@@ -2559,6 +2559,66 @@ export default function SpotCheckInClient({
             </div>
           )}
 
+          {/* このスポットをめぐる街歩きルート全体の順路 */}
+          {ceremonyStep === 'idle' && allSpots.length > 1 && route && (
+            <section
+              className={styles.routeTrailSection}
+              aria-labelledby="spot-route-trail-title"
+            >
+              <div className={styles.routeTrailHeader}>
+                <h2 id="spot-route-trail-title" className={styles.routeTrailHeading}>
+                  <Footprints size={16} strokeWidth={1.8} color="var(--primary-color)" />
+                  <span>この街歩きルートの順路</span>
+                </h2>
+                <span className={styles.routeTrailMeta}>
+                  全{allSpots.length}箇所{walkMinutes > 0 ? `・徒歩約${walkMinutes}分` : ""}
+                </span>
+              </div>
+
+              <Link
+                href={`/routes/${resolvedParams.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                className={styles.routeTrailTitleLink}
+              >
+                {route.title || route.name}
+              </Link>
+
+              <ol className={styles.routeTrailList}>
+                {allSpots.map((s, idx) => {
+                  const isCurrent = s.id === spot.id;
+                  return (
+                    <li key={s.id} className={styles.routeTrailItem}>
+                      {isCurrent ? (
+                        <div className={styles.routeTrailLinkCurrent} aria-current="page">
+                          <span className={styles.routeTrailLeft}>
+                            <span className={styles.routeTrailNum}>{idx + 1}.</span>
+                            <span className={styles.routeTrailName}>{s.name}</span>
+                          </span>
+                          <span className={styles.routeTrailCurrentTag}>現在地ページ</span>
+                        </div>
+                      ) : (
+                        <Link
+                          href={`/routes/${resolvedParams.id}/spot/${s.id}${groupId ? `?groupId=${groupId}` : ""}`}
+                          className={styles.routeTrailLink}
+                        >
+                          <span className={styles.routeTrailLeft}>
+                            <span className={styles.routeTrailNum}>{idx + 1}.</span>
+                            <span className={styles.routeTrailName}>{s.name}</span>
+                          </span>
+                          <ChevronRight
+                            size={15}
+                            strokeWidth={1.8}
+                            style={{ flexShrink: 0, opacity: 0.55 }}
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </section>
+          )}
+
           {/* 街角の余韻（この場所を訪れた旅人のしるし） */}
           {ceremonyStep === 'idle' && (
             <CommunityEchoesSection

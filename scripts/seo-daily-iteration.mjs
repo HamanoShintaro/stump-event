@@ -1291,6 +1291,9 @@ const NOISE_PATTERNS = [
   /芸能人/,
   /有名人/,
   /有田哲平/,
+  /島田\s*雅彦/,
+  /雅彦/,
+  /別れる/,
 ];
 
 const NON_TARGET_GSC_PATTERNS = [
