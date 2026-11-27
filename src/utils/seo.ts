@@ -912,13 +912,34 @@ function resolveSpotTitleAngle(spotName: string, actualSpotDesc: string): string
 const SPOT_SEARCH_READING_ALIASES: Record<string, string> = {
   "fudan cafe": "フダンカフェ",
   "b-speak": "ビースピーク",
+  "cafe 想奈": "カフェ 想奈",
+  "caf'e diane（カフェ・ダイアン）": "cafe diane",
 };
 
 function resolveSpotReadingAlias(spotName: string): string | null {
   const normalized = spotName.trim().toLowerCase();
   const alias = SPOT_SEARCH_READING_ALIASES[normalized];
-  if (!alias || spotName.includes(alias)) return null;
+  if (!alias || spotName.toLowerCase().includes(alias.toLowerCase())) return null;
   return alias;
+}
+
+function resolveMatchingAreaSegment(
+  areaName: string,
+  spotName: string,
+  spotAddress?: string | null
+): string | null {
+  if (!areaName || !areaName.includes("・")) return null;
+  const parts = areaName
+    .split("・")
+    .map((p) => p.replace(/（[^）]*）/g, "").trim())
+    .filter(
+      (p) =>
+        p.length >= 2 &&
+        !/^(?:北海道|東京都|京都府|大阪府|.{2,3}県)$/.test(p)
+    );
+  if (parts.length <= 1) return null;
+  const haystack = `${spotAddress || ""} ${spotName}`;
+  return parts.find((part) => haystack.includes(part)) || null;
 }
 
 export function buildSpotSeoMetadata(
@@ -948,16 +969,22 @@ export function buildSpotSeoMetadata(
   const cityCore = cleanSpotCity
     ? cleanSpotCity.replace(/[市区町村]$/, "")
     : "";
+  const matchedSegment = resolveMatchingAreaSegment(
+    areaInfo.areaName,
+    spotName,
+    spot?.address
+  );
+  const effectiveShortArea = matchedSegment || areaInfo.shortAreaName;
   const preferCityOverLongArea =
     Boolean(cleanSpotCity) &&
-    areaInfo.shortAreaName.length > 7 &&
-    !spotName.includes(areaInfo.shortAreaName) &&
+    effectiveShortArea.length > 7 &&
+    !spotName.includes(effectiveShortArea) &&
     !/(?:空港|温泉|港|駅|宿|海岸|公園|大社|神社|城下町?)$/.test(
-      areaInfo.shortAreaName
+      effectiveShortArea
     );
   const resolvedSpotArea = preferCityOverLongArea
     ? cleanSpotCity
-    : areaInfo.shortAreaName;
+    : effectiveShortArea;
   const areaCore = resolvedSpotArea
     ? resolvedSpotArea.replace(/(?:駅|前|口|[市区町村])$/, "")
     : "";
@@ -1046,6 +1073,7 @@ export function buildSpotSeoMetadata(
       `${spot.name} 散歩`,
       `${spot.name} 街歩き`,
       areaInfo.areaName,
+      ...(cleanSpotCity && cleanSpotCity !== areaInfo.areaName ? [cleanSpotCity] : []),
       `${areaInfo.areaName} デート`,
       `${areaInfo.areaName} 散策`,
       ...areaInfo.topSearchKeywords.slice(0, 5),
